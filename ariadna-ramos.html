@@ -114,6 +114,53 @@ details[open] summary::before{transform:rotate(90deg);}
 .pay-step-desc{font-size:11px;color:rgba(255,255,255,0.45);line-height:1.5;}
 .pay-note{font-size:11px;color:rgba(255,255,255,0.3);line-height:1.65;font-style:italic;border-top:1px solid rgba(255,255,255,0.1);padding-top:14px;}
 
+
+/* FINANCIACIÓN */
+.financing-wrap{background:var(--white);border-radius:16px;border:1.5px solid var(--gray-border);box-shadow:0 2px 16px rgba(0,51,102,0.06);overflow:hidden;margin-bottom:24px;}
+.financing-head{background:linear-gradient(135deg,var(--blue-dark),var(--blue));padding:22px 32px;display:flex;align-items:center;justify-content:space-between;gap:16px;}
+.financing-head-left{display:flex;align-items:center;gap:16px;}
+.fin-icon{font-size:28px;flex-shrink:0;}
+.fin-title{font-family:'Josefin Sans',sans-serif;font-size:16px;font-weight:700;color:var(--white);margin-bottom:3px;}
+.fin-sub{font-size:11px;color:rgba(255,255,255,0.5);line-height:1.4;}
+.fin-badge{background:rgba(125,212,74,0.2);border:1px solid rgba(125,212,74,0.4);color:#7dd44a;font-family:'Josefin Sans',sans-serif;font-size:11px;font-weight:700;letter-spacing:1px;padding:6px 14px;border-radius:20px;white-space:nowrap;}
+.financing-body{padding:28px 32px;}
+.fin-opcion-label,.fin-plazo-label{font-family:'Josefin Sans',sans-serif;font-size:9px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--text-light);margin-bottom:10px;}
+.fin-opcion-selector{margin-bottom:24px;}
+.fin-opcion-btns{display:flex;gap:10px;flex-wrap:wrap;}
+.fin-opcion-btn{background:var(--gray-card);border:1.5px solid var(--gray-border);border-radius:10px;padding:10px 16px;cursor:pointer;text-align:left;transition:all .2s;display:flex;flex-direction:column;gap:3px;}
+.fin-opcion-btn:hover{border-color:var(--blue-mid);background:var(--blue-light);}
+.fin-opcion-btn.active{border-color:var(--blue);background:var(--blue-light);}
+.fin-opcion-nombre{font-size:10px;font-weight:700;letter-spacing:1px;text-transform:uppercase;color:var(--text-light);}
+.fin-opcion-btn.active .fin-opcion-nombre{color:var(--blue);}
+.fin-opcion-precio{font-family:'Josefin Sans',sans-serif;font-size:16px;font-weight:700;color:var(--text);}
+.fin-opcion-btn.active .fin-opcion-precio{color:var(--blue);}
+.fin-plazo-wrap{margin-bottom:24px;}
+.fin-plazos{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;}
+.fin-plazo{background:var(--gray-card);border:1.5px solid var(--gray-border);border-radius:12px;padding:14px 12px;cursor:pointer;text-align:center;transition:all .2s;}
+.fin-plazo:hover{border-color:var(--blue-mid);transform:translateY(-2px);}
+.fin-plazo.active{border-color:var(--green);background:var(--green-light);box-shadow:0 4px 16px rgba(76,158,12,0.15);}
+.fin-plazo-meses{font-family:'Josefin Sans',sans-serif;font-size:15px;font-weight:700;color:var(--text);margin-bottom:6px;}
+.fin-plazo.active .fin-plazo-meses{color:var(--green-dark);}
+.fin-plazo-badge{display:inline-block;border-radius:20px;padding:2px 8px;font-size:9px;font-weight:700;letter-spacing:0.5px;margin-bottom:4px;}
+.fin-plazo-badge.sin-intereses{background:var(--green-light);color:var(--green-dark);border:1px solid rgba(76,158,12,0.3);}
+.fin-plazo-badge.con-intereses{background:var(--blue-light);color:var(--blue);border:1px solid rgba(0,51,102,0.2);}
+.fin-plazo-quien{font-size:9px;color:var(--text-light);line-height:1.3;}
+.fin-resultado{display:grid;grid-template-columns:auto 1fr;gap:24px;background:linear-gradient(135deg,var(--blue-dark),var(--blue));border-radius:14px;padding:24px 28px;margin-bottom:16px;align-items:center;}
+.fin-resultado-main{text-align:center;border-right:1px solid rgba(255,255,255,0.15);padding-right:24px;}
+.fin-cuota-label{font-size:10px;font-weight:600;letter-spacing:2px;text-transform:uppercase;color:rgba(255,255,255,0.5);margin-bottom:6px;}
+.fin-cuota-valor{font-family:'Josefin Sans',sans-serif;font-size:36px;font-weight:700;color:#7dd44a;line-height:1;margin-bottom:4px;}
+.fin-cuota-sub{font-size:11px;color:rgba(255,255,255,0.45);}
+.fin-resultado-detalle{display:flex;flex-direction:column;gap:10px;}
+.fin-det-row{display:flex;justify-content:space-between;align-items:center;gap:12px;}
+.fin-det-label{font-size:12px;color:rgba(255,255,255,0.55);}
+.fin-det-val{font-size:13px;font-weight:600;color:var(--white);}
+.fin-det-green{color:#7dd44a !important;}
+.fin-det-total{border-top:1px solid rgba(255,255,255,0.15);padding-top:10px;margin-top:2px;}
+.fin-det-total .fin-det-label{color:rgba(255,255,255,0.7);font-weight:600;}
+.fin-det-total .fin-det-val{font-family:'Josefin Sans',sans-serif;font-size:16px;color:var(--white);}
+.fin-nota{font-size:11px;color:var(--text-light);line-height:1.6;background:var(--gray-card);border-radius:8px;padding:12px 16px;border-left:3px solid var(--blue-light);}
+@media(max-width:720px){.fin-plazos{grid-template-columns:repeat(2,1fr);}.fin-resultado{grid-template-columns:1fr;}.fin-resultado-main{border-right:none;border-bottom:1px solid rgba(255,255,255,0.15);padding-right:0;padding-bottom:20px;}.financing-head{flex-direction:column;align-items:flex-start;}.fin-opcion-btns{flex-direction:column;}}
+
 @media(max-width:720px){
   .header{padding:16px 20px;}.hero{padding:28px 20px 24px;}.hero-name{font-size:28px;}
   .main{padding:28px 16px 48px;}.includes-grid{grid-template-columns:1fr;}.opciones-grid{grid-template-columns:1fr;}
@@ -389,6 +436,115 @@ details[open] summary::before{transform:rotate(90deg);}
     </div>
   </div>
 
+
+  <!-- FINANCIACIÓN -->
+  <div class="section-title"><h2>Financia tu programa</h2></div>
+  <div class="financing-wrap">
+    <div class="financing-head">
+      <div class="financing-head-left">
+        <div class="fin-icon">💳</div>
+        <div>
+          <div class="fin-title">Paga a tu ritmo, sin preocupaciones</div>
+          <div class="fin-sub">Financiación flexible · Aprobación rápida · 100% online · Sin comisión de apertura</div>
+        </div>
+      </div>
+      <div class="fin-badge">Hasta 36 meses</div>
+    </div>
+    <div class="financing-body">
+      <div class="fin-opcion-selector">
+        <div class="fin-opcion-label">Selecciona la opción del programa</div>
+        <div class="fin-opcion-btns">
+          <button class="fin-opcion-btn active" onclick="setOpcion(this, 19430)">
+            <span class="fin-opcion-nombre">⭐ Opción 1 · Battle River SD</span>
+            <span class="fin-opcion-precio">19.430 €</span>
+          </button>
+          <button class="fin-opcion-btn" onclick="setOpcion(this, 23000)">
+            <span class="fin-opcion-nombre">Opción 2 · Peace River North</span>
+            <span class="fin-opcion-precio">23.000 €</span>
+          </button>
+          <button class="fin-opcion-btn" onclick="setOpcion(this, 20550)">
+            <span class="fin-opcion-nombre">Opción 3 · New Brunswick</span>
+            <span class="fin-opcion-precio">20.550 €</span>
+          </button>
+        </div>
+      </div>
+      <div class="fin-plazo-wrap">
+        <div class="fin-plazo-label">Elige tu plazo de financiación</div>
+        <div class="fin-plazos">
+          <div class="fin-plazo active" onclick="setPlazo(this,12)">
+            <div class="fin-plazo-meses">12 meses</div>
+            <div class="fin-plazo-badge sin-intereses">TIN 0%</div>
+            <div class="fin-plazo-quien">¡MLQ asume los intereses!</div>
+          </div>
+          <div class="fin-plazo" onclick="setPlazo(this,18)">
+            <div class="fin-plazo-meses">18 meses</div>
+            <div class="fin-plazo-badge con-intereses">TIN 10,46%</div>
+            <div class="fin-plazo-quien">Intereses a cargo del cliente</div>
+          </div>
+          <div class="fin-plazo" onclick="setPlazo(this,24)">
+            <div class="fin-plazo-meses">24 meses</div>
+            <div class="fin-plazo-badge con-intereses">TIN 10,46%</div>
+            <div class="fin-plazo-quien">Intereses a cargo del cliente</div>
+          </div>
+          <div class="fin-plazo" onclick="setPlazo(this,36)">
+            <div class="fin-plazo-meses">36 meses</div>
+            <div class="fin-plazo-badge con-intereses">TIN 10,46%</div>
+            <div class="fin-plazo-quien">Intereses a cargo del cliente</div>
+          </div>
+        </div>
+      </div>
+      <div class="fin-resultado">
+        <div class="fin-resultado-main">
+          <div class="fin-cuota-label">Cuota mensual estimada</div>
+          <div class="fin-cuota-valor" id="cuotaValor">1.619,17 €</div>
+          <div class="fin-cuota-sub" id="cuotaSub">/mes · 12 pagos · TIN 0%</div>
+        </div>
+        <div class="fin-resultado-detalle">
+          <div class="fin-det-row">
+            <span class="fin-det-label">Importe del programa</span>
+            <span class="fin-det-val" id="detCapital">19.430 €</span>
+          </div>
+          <div class="fin-det-row">
+            <span class="fin-det-label">Intereses totales</span>
+            <span class="fin-det-val fin-det-green" id="detIntereses">0 € · ¡MLQ los asume!</span>
+          </div>
+          <div class="fin-det-row fin-det-total">
+            <span class="fin-det-label">Total a pagar</span>
+            <span class="fin-det-val" id="detTotal">19.430 €</span>
+          </div>
+        </div>
+      </div>
+      <div class="fin-nota">ℹ️ Financiación sujeta a aprobación bancaria. Cuota orientativa calculada sobre el importe total del programa. Sin comisión de apertura ni penalización por cancelación anticipada. Los precios incluyen el descuento de 1.000 € ya aplicado.</div>
+    </div>
+  </div>
+
 </main>
+
+<script>
+var _cap = 19430, _mes = 12;
+function _fmt(n,d){return n.toLocaleString('es-ES',{minimumFractionDigits:d||0,maximumFractionDigits:d||0})+' €';}
+function _cuota(c,t,m){if(t===0)return c/m;var r=(t/100)/12;return c*r/(1-Math.pow(1+r,-m));}
+function _update(){
+  var tin=_mes===12?0:10.46;
+  var q=_cuota(_cap,tin,_mes);
+  var tot=q*_mes;
+  var inter=tot-_cap;
+  document.getElementById('cuotaValor').textContent=_fmt(q,2);
+  document.getElementById('cuotaSub').textContent='/mes · '+_mes+' pagos · TIN '+(tin===0?'0%':'10,46%');
+  document.getElementById('detCapital').textContent=_fmt(Math.round(_cap));
+  document.getElementById('detTotal').textContent=_fmt(Math.round(tot));
+  if(tin===0){
+    document.getElementById('detIntereses').textContent='0 € · ¡MLQ los asume!';
+    document.getElementById('detIntereses').className='fin-det-val fin-det-green';
+  } else {
+    document.getElementById('detIntereses').textContent=_fmt(Math.round(inter));
+    document.getElementById('detIntereses').className='fin-det-val';
+  }
+}
+function setOpcion(btn,cap){_cap=cap;document.querySelectorAll('.fin-opcion-btn').forEach(function(b){b.classList.remove('active');});btn.classList.add('active');_update();}
+function setPlazo(el,m){_mes=m;document.querySelectorAll('.fin-plazo').forEach(function(p){p.classList.remove('active');});el.classList.add('active');_update();}
+_update();
+</script>
+
 </body>
 </html>
