@@ -35,7 +35,7 @@ body{font-family:'Fira Sans',sans-serif;background:var(--gray-bg);color:var(--te
 .section-title{display:flex;align-items:center;gap:12px;margin-bottom:24px;}
 .section-title h2{font-family:'Josefin Sans',sans-serif;font-size:11px;font-weight:700;letter-spacing:3px;text-transform:uppercase;color:var(--text-light);}
 .section-title::after{content:'';flex:1;height:1px;background:var(--gray-border);}
-.opciones-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(330px,1fr));gap:20px;margin-bottom:40px;}
+.opciones-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:20px;margin-bottom:40px;}
 .opcion-card{background:var(--white);border-radius:16px;border:1.5px solid var(--gray-border);overflow:hidden;box-shadow:0 2px 16px rgba(0,51,102,0.06);position:relative;transition:transform .2s,box-shadow .2s,border-color .2s;}
 .opcion-card:hover{transform:translateY(-4px);box-shadow:0 12px 40px rgba(0,51,102,0.13);border-color:var(--blue-mid);}
 .opcion-card.recomendada{border-color:var(--green);box-shadow:0 4px 24px rgba(76,158,12,0.15);}
@@ -58,7 +58,6 @@ body{font-family:'Fira Sans',sans-serif;background:var(--gray-bg);color:var(--te
 .tag{border-radius:5px;padding:2px 8px;font-size:9px;font-weight:700;text-transform:uppercase;}
 .tag.pub{background:var(--green);color:var(--white);}
 .tag.info{background:var(--blue-light);color:var(--blue);}
-.tag.res{background:#f0e6ff;color:#5a00a8;}
 details{border-top:1px solid var(--gray-border);}
 details summary{list-style:none;cursor:pointer;padding:9px 14px;font-size:11px;font-weight:600;color:var(--red);display:flex;align-items:center;gap:6px;user-select:none;-webkit-user-select:none;}
 details summary:hover{background:var(--red-light);}
@@ -147,6 +146,7 @@ details[open] summary::before{transform:rotate(90deg);}
   .pay-cols{grid-template-columns:1fr;}.gestor-grid{grid-template-columns:repeat(2,1fr);}
   .fin-plazos{grid-template-columns:repeat(2,1fr);}.fin-resultado{grid-template-columns:1fr;}
   .fin-resultado-main{border-right:none;border-bottom:1px solid rgba(255,255,255,0.15);padding-right:0;padding-bottom:20px;}
+  .financing-head{flex-direction:column;align-items:flex-start;}
 }
 </style>
 </head>
@@ -183,50 +183,11 @@ details[open] summary::before{transform:rotate(90deg);}
   <div class="section-title"><h2>Opciones recomendadas</h2></div>
   <div class="opciones-grid">
 
-    <!-- OPCIÓN 1: PEI -->
-    <div class="opcion-card">
-      <div class="opcion-header">
-        <div class="opcion-num">Opción 01</div>
-        <div class="opcion-distrito">Prince Edward Island ISP</div>
-        <div class="opcion-loc">📍 Isla Príncipe Eduardo · Este de Canadá</div>
-        <div class="precio-chip"><span class="val">21.100 €</span><span class="desc">/ año · vuelos incl.*</span><span class="tachado">22.100 €</span></div>
-      </div>
-      <div class="opcion-body">
-        <div class="colegios">
-          <div class="colegio">
-            <div class="colegio-top">
-              <div class="colegio-nombre">Charlottetown Rural High School</div>
-              <div class="colegio-meta"><span class="tag pub">Público</span><span class="tag info">~900 alumnos</span><span class="tag info">Charlottetown</span><span class="tag info">Capital provincial</span></div>
-            </div>
-            <details><summary>Por qué encaja con su perfil</summary>
-            <div class="colegio-razon">Con su inglés muy bueno y su buen nivel académico, Charlottetown Rural le ofrece el reto perfecto: variedad de asignaturas, vida social activa y una ciudad capital de tamaño humano, segura y preciosa. Rugby, fútbol, baloncesto, teatro y liderazgo estudiantil garantizan una experiencia completa. Charlottetown es una de las ciudades más encantadoras de Canadá — exactamente la zona atractiva que busca su padre.</div>
-            </details>
-          </div>
-          <div class="colegio">
-            <div class="colegio-top">
-              <div class="colegio-nombre">Bluefield High School</div>
-              <div class="colegio-meta"><span class="tag pub">Público</span><span class="tag info">~600 alumnos</span><span class="tag info">Cornwall · cerca Charlottetown</span></div>
-            </div>
-            <details><summary>Por qué encaja con su perfil</summary>
-            <div class="colegio-razon">Bluefield combina un entorno tranquilo y seguro con acceso fácil a Charlottetown. Tamaño medio ideal para integrarse bien y hacer amigos rápidamente. Banda, coro, teatro, club de tecnología y liderazgo estudiantil — variedad suficiente para una alumna activa y curiosa con un nivel de inglés que le permite aprovechar todo desde el primer día.</div>
-            </details>
-          </div>
-        </div>
-      </div>
-      <div class="match-bar">
-        <div class="match-tag">Isla única en Canadá</div>
-        <div class="match-tag">Zona muy segura</div>
-        <div class="match-tag">Paisajes espectaculares</div>
-        <div class="match-tag">Precio competitivo</div>
-        <div class="match-tag">Vida social rica</div>
-      </div>
-    </div>
-
-    <!-- OPCIÓN 2: LANGLEY — RECOMENDADA -->
+    <!-- OPCIÓN 1: LANGLEY — RECOMENDADA -->
     <div class="opcion-card recomendada">
       <div class="badge-rec">★ RECOMENDADA</div>
       <div class="opcion-header">
-        <div class="opcion-num">Opción 02</div>
+        <div class="opcion-num">Opción 01</div>
         <div class="opcion-distrito">Langley School District</div>
         <div class="opcion-loc">📍 Langley · British Columbia · Gran Vancouver</div>
         <div class="precio-chip"><span class="val">24.700 €</span><span class="desc">/ año · vuelos incl.*</span><span class="tachado">25.700 €</span></div>
@@ -239,7 +200,7 @@ details[open] summary::before{transform:rotate(90deg);}
               <div class="colegio-meta"><span class="tag pub">Público</span><span class="tag info">~1.200 alumnos</span><span class="tag info">Programa IB</span><span class="tag info">Pista de hielo propia</span></div>
             </div>
             <details><summary>Por qué encaja con su perfil</summary>
-            <div class="colegio-razon">La única escuela de Langley con Bachillerato Internacional — perfecta para una alumna con buen nivel académico que quiere un reto real. Tiene pista de hielo, gimnasio e instalaciones multiusos justo al lado. Fútbol, baloncesto, rugby y hockey. Su inglés muy bueno le permite acceder desde el primer día a los cursos más exigentes y sacarles el máximo partido.</div>
+            <div class="colegio-razon">La única escuela de Langley con Bachillerato Internacional — perfecta para una alumna con buen nivel académico que quiere un reto real. Tiene pista de hielo, gimnasio e instalaciones multiusos justo al lado. Fútbol, baloncesto, rugby y hockey entre sus extracurriculares. Su inglés muy bueno le permite acceder desde el primer día a los cursos más exigentes y sacarles el máximo partido.</div>
             </details>
           </div>
           <div class="colegio">
@@ -248,7 +209,7 @@ details[open] summary::before{transform:rotate(90deg);}
               <div class="colegio-meta"><span class="tag pub">Público</span><span class="tag info">~2.000 alumnos</span><span class="tag info">Programa AP</span><span class="tag info">Bellas Artes</span></div>
             </div>
             <details><summary>Por qué encaja con su perfil</summary>
-            <div class="colegio-razon">Uno de los colegios más completos de BC: programa de Colocación Avanzada, bellas artes, informática, deportes reconocidos a nivel provincial. La diversidad del alumnado (más de 2.000 estudiantes) garantiza una red social rica e internacional. Langley está a 40 minutos de Vancouver: ciudad, montaña, playa y naturaleza a su alcance. El sueño canadiense hecho realidad.</div>
+            <div class="colegio-razon">Uno de los colegios más completos de BC: programa de Colocación Avanzada, bellas artes, informática y deportes reconocidos a nivel provincial. La diversidad del alumnado garantiza una red social rica e internacional. Langley está a 40 minutos de Vancouver — ciudad, montaña, playa y naturaleza a su alcance. El sueño canadiense hecho realidad.</div>
             </details>
           </div>
         </div>
@@ -259,15 +220,53 @@ details[open] summary::before{transform:rotate(90deg);}
         <div class="match-tag">Naturaleza + ciudad</div>
         <div class="match-tag">Programa IB / AP</div>
         <div class="match-tag">Máxima seguridad</div>
-        <div class="match-tag">Muy atractiva</div>
       </div>
     </div>
 
-    <!-- OPCIÓN 3: GOLDEN HILLS FAMILIA -->
+    <!-- OPCIÓN 2: AVON MAITLAND -->
+    <div class="opcion-card">
+      <div class="opcion-header">
+        <div class="opcion-num">Opción 02</div>
+        <div class="opcion-distrito">Avon Maitland District School Board</div>
+        <div class="opcion-loc">📍 Stratford / Wingham · Ontario</div>
+        <div class="precio-chip"><span class="val">24.800 €</span><span class="desc">/ año · vuelos incl.*</span><span class="tachado">25.800 €</span></div>
+      </div>
+      <div class="opcion-body">
+        <div class="colegios">
+          <div class="colegio">
+            <div class="colegio-top">
+              <div class="colegio-nombre">Stratford District Secondary School</div>
+              <div class="colegio-meta"><span class="tag pub">Público</span><span class="tag info">~1.400 alumnos</span><span class="tag info">Stratford · Ontario</span><span class="tag info">Tecnología</span></div>
+            </div>
+            <details><summary>Por qué encaja con su perfil</summary>
+            <div class="colegio-razon">El colegio más grande de Avon Maitland, ubicado en Stratford — una ciudad culturalmente vibrante, famosa por su Festival de Shakespeare y reconocida como una de las más atractivas y seguras de Ontario. Amplia oferta académica con sólido departamento de tecnología, artes y ciencias sociales. Rugby, voleibol, natación, hockey y fútbol. Un entorno que combina cultura, seguridad y vida estudiantil activa.</div>
+            </details>
+          </div>
+          <div class="colegio">
+            <div class="colegio-top">
+              <div class="colegio-nombre">F.E. Madill Secondary School</div>
+              <div class="colegio-meta"><span class="tag pub">Público</span><span class="tag info">~750 alumnos</span><span class="tag info">Wingham · Ontario</span><span class="tag info">Campeones deportivos</span></div>
+            </div>
+            <details><summary>Por qué encaja con su perfil</summary>
+            <div class="colegio-razon">F.E. Madill destaca por su ambiente positivo, sus equipos deportivos campeones y su fuerte comunidad escolar. Especializaciones en agricultura, construcción y salud. Con un tamaño más contenido que Stratford, la integración es más rápida y personal — ideal para una estudiante de 16 años que llega con muy buen inglés y quiere protagonismo desde el primer día.</div>
+            </details>
+          </div>
+        </div>
+      </div>
+      <div class="match-bar">
+        <div class="match-tag">Ontario · Ciudad cultural</div>
+        <div class="match-tag">Festival Shakespeare</div>
+        <div class="match-tag">Entorno muy seguro</div>
+        <div class="match-tag">Deportes campeones</div>
+        <div class="match-tag">Comunidad acogedora</div>
+      </div>
+    </div>
+
+    <!-- OPCIÓN 3: GOLDEN HILLS -->
     <div class="opcion-card">
       <div class="opcion-header">
         <div class="opcion-num">Opción 03</div>
-        <div class="opcion-distrito">Golden Hills · Opción Familia</div>
+        <div class="opcion-distrito">Golden Hills School Division</div>
         <div class="opcion-loc">📍 Three Hills / Strathmore · Alberta</div>
         <div class="precio-chip"><span class="val">25.000 €</span><span class="desc">/ año · vuelos incl.*</span><span class="tachado">26.000 €</span></div>
       </div>
@@ -276,29 +275,67 @@ details[open] summary::before{transform:rotate(90deg);}
           <div class="colegio">
             <div class="colegio-top">
               <div class="colegio-nombre">Three Hills School</div>
-              <div class="colegio-meta"><span class="tag pub">Público</span><span class="tag info">~490 alumnos</span><span class="tag info">40 int'l</span><span class="tag info">K-12</span><span class="tag res">🏠 Familia</span></div>
+              <div class="colegio-meta"><span class="tag pub">Público</span><span class="tag info">~490 alumnos</span><span class="tag info">40 internacionales</span><span class="tag info">K-12</span></div>
             </div>
             <details><summary>Por qué encaja con su perfil</summary>
-            <div class="colegio-razon">Three Hills School es de las pocas escuelas en Canadá que ofrece atención continua de Kinder a Grade 12, con 40 estudiantes internacionales ya integrados. El Club de Estudiantes Internacionales y la Semana Internacional hacen que la integración sea natural e inmediata. Con su buen inglés, aprovechará todo desde el primer día. Alberta ofrece montañas Rocosas a pocas horas — Canadá en estado puro.</div>
+            <div class="colegio-razon">Three Hills School ofrece atención continua de Kinder a Grade 12, con 40 estudiantes internacionales ya integrados. El Club de Estudiantes Internacionales y la Semana Internacional hacen que la integración sea natural e inmediata. Con su buen inglés, aprovechará todo desde el primer día. Alberta tiene las Montañas Rocosas a pocas horas — Canadá en estado puro.</div>
             </details>
           </div>
           <div class="colegio">
             <div class="colegio-top">
               <div class="colegio-nombre">Prairie Christian Academy</div>
-              <div class="colegio-meta"><span class="tag pub">Concertado</span><span class="tag info">~350 alumnos</span><span class="tag info">Bellas Artes</span><span class="tag info">Three Hills</span><span class="tag res">🏠 Familia</span></div>
+              <div class="colegio-meta"><span class="tag pub">Concertado</span><span class="tag info">~350 alumnos</span><span class="tag info">Bellas Artes</span><span class="tag info">Three Hills</span></div>
             </div>
             <details><summary>Por qué encaja con su perfil</summary>
-            <div class="colegio-razon">PCA destaca por su ambiente familiar y sus valores de comunidad — ideal para una estudiante de 16 años que busca una experiencia auténtica. Programa dinámico de Bellas Artes, deportes competitivos y fuertes lazos entre familia y escuela. La diversidad cultural del alumnado es una de sus señas de identidad. Alojamiento en familia garantiza la inmersión más completa posible.</div>
+            <div class="colegio-razon">PCA destaca por su ambiente familiar y sus valores de comunidad — ideal para una estudiante de 16 años que busca una experiencia auténtica. Programa dinámico de Bellas Artes y deportes competitivos. La diversidad cultural del alumnado es una de sus señas de identidad, y el alojamiento en familia garantiza la inmersión más completa posible.</div>
             </details>
           </div>
         </div>
       </div>
       <div class="match-bar">
         <div class="match-tag">Comunidad muy acogedora</div>
-        <div class="match-tag">Alojamiento familia garantizado</div>
         <div class="match-tag">Estudiantes internacionales</div>
         <div class="match-tag">Alberta · Montañas Rocosas</div>
         <div class="match-tag">Inmersión total</div>
+      </div>
+    </div>
+
+    <!-- OPCIÓN 4: PEI -->
+    <div class="opcion-card">
+      <div class="opcion-header">
+        <div class="opcion-num">Opción 04</div>
+        <div class="opcion-distrito">Prince Edward Island ISP</div>
+        <div class="opcion-loc">📍 Isla Príncipe Eduardo · Este de Canadá</div>
+        <div class="precio-chip"><span class="val">21.100 €</span><span class="desc">/ año · vuelos incl.*</span><span class="tachado">22.100 €</span></div>
+      </div>
+      <div class="opcion-body">
+        <div class="colegios">
+          <div class="colegio">
+            <div class="colegio-top">
+              <div class="colegio-nombre">Charlottetown Rural High School</div>
+              <div class="colegio-meta"><span class="tag pub">Público</span><span class="tag info">~900 alumnos</span><span class="tag info">Charlottetown · Capital</span></div>
+            </div>
+            <details><summary>Por qué encaja con su perfil</summary>
+            <div class="colegio-razon">Con su inglés muy bueno y su buen nivel académico, Charlottetown Rural le ofrece el reto perfecto: variedad de asignaturas, vida social activa y una ciudad capital de tamaño humano, segura y preciosa. Rugby, fútbol, baloncesto, teatro y liderazgo estudiantil. Charlottetown es una de las ciudades más encantadoras de Canadá — exactamente la zona atractiva y segura que busca su padre.</div>
+            </details>
+          </div>
+          <div class="colegio">
+            <div class="colegio-top">
+              <div class="colegio-nombre">Bluefield High School</div>
+              <div class="colegio-meta"><span class="tag pub">Público</span><span class="tag info">~600 alumnos</span><span class="tag info">Cornwall · cerca Charlottetown</span></div>
+            </div>
+            <details><summary>Por qué encaja con su perfil</summary>
+            <div class="colegio-razon">Bluefield combina un entorno tranquilo y seguro con acceso fácil a Charlottetown. Tamaño medio ideal para integrarse bien y hacer amigos rápidamente. Banda, coro, teatro, club de tecnología y liderazgo estudiantil. Su nivel de inglés le permite aprovechar todo desde el primer día a un precio muy competitivo.</div>
+            </details>
+          </div>
+        </div>
+      </div>
+      <div class="match-bar">
+        <div class="match-tag">Isla única en Canadá</div>
+        <div class="match-tag">Zona muy segura</div>
+        <div class="match-tag">Paisajes espectaculares</div>
+        <div class="match-tag">Mejor precio</div>
+        <div class="match-tag">Vida social rica</div>
       </div>
     </div>
 
@@ -365,19 +402,13 @@ details[open] summary::before{transform:rotate(90deg);}
             <div class="col-title">No incluido</div>
             <ul class="inc-list no">
               <li>Exceso de vuelos sobre 1.000 € (a cargo de la familia)</li>
-              <li>Actividades extracurriculares de pago: equipos deportivos con licencia, bandas, teatro</li>
+              <li>Actividades extracurriculares de pago</li>
               <li>Excursiones y viajes escolares organizados por el colegio</li>
               <li>Material escolar: cuadernos, calculadora, material de arte, uniforme deportivo</li>
               <li>Fotografía escolar y anuario (yearbook)</li>
               <li>Tasas de exámenes opcionales (AP, Cambridge avanzado)</li>
               <li>Transporte local mensual (autobús, tarjeta de transporte)</li>
-              <li>Teléfono móvil y plan de datos en Canadá</li>
-              <li>Ropa de invierno: abrigo, botas de nieve, accesorios</li>
               <li>Gastos de ocio personal: cine, deportes, salidas, viajes durante vacaciones</li>
-              <li>Medicamentos y gastos médicos no cubiertos por el seguro</li>
-              <li>Tratamientos dentales y de visión</li>
-              <li>Ordenador portátil o tablet (requerido por algunos colegios)</li>
-              <li>Gastos de pasaporte si no está vigente</li>
             </ul>
           </div>
         </div>
@@ -443,17 +474,21 @@ details[open] summary::before{transform:rotate(90deg);}
       <div class="fin-opcion-selector">
         <div class="fin-opcion-label">Selecciona la opción del programa</div>
         <div class="fin-opcion-btns">
-          <button class="fin-opcion-btn" onclick="setOpcion(this, 21100)">
-            <span class="fin-opcion-nombre">Opción 1 · Prince Edward Island</span>
-            <span class="fin-opcion-precio">21.100 €</span>
-          </button>
           <button class="fin-opcion-btn active" onclick="setOpcion(this, 24700)">
-            <span class="fin-opcion-nombre">⭐ Opción 2 · Langley</span>
+            <span class="fin-opcion-nombre">⭐ Opción 1 · Langley</span>
             <span class="fin-opcion-precio">24.700 €</span>
           </button>
+          <button class="fin-opcion-btn" onclick="setOpcion(this, 24800)">
+            <span class="fin-opcion-nombre">Opción 2 · Avon Maitland</span>
+            <span class="fin-opcion-precio">24.800 €</span>
+          </button>
           <button class="fin-opcion-btn" onclick="setOpcion(this, 25000)">
-            <span class="fin-opcion-nombre">Opción 3 · Golden Hills Familia</span>
+            <span class="fin-opcion-nombre">Opción 3 · Golden Hills</span>
             <span class="fin-opcion-precio">25.000 €</span>
+          </button>
+          <button class="fin-opcion-btn" onclick="setOpcion(this, 21100)">
+            <span class="fin-opcion-nombre">Opción 4 · Prince Edward Island</span>
+            <span class="fin-opcion-precio">21.100 €</span>
           </button>
         </div>
       </div>
