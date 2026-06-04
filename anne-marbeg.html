@@ -1,0 +1,516 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Propuesta · Anne · My Language Quest</title>
+<link href="https://fonts.googleapis.com/css2?family=Fira+Sans:wght@300;400;500;600;700&family=Josefin+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --blue:#003366;--blue-dark:#001f40;--blue-mid:#0a4a8a;--blue-light:#dce8f5;
+  --red:#B12900;--red-dark:#8A1F00;--red-light:#fdf0ec;
+  --green:#4C9E0C;--green-dark:#3A7A09;--green-light:#eef8e3;
+  --gray-bg:#f0f2f6;--gray-card:#f8f9fb;--gray-border:#dde1ea;
+  --text:#0d1b2a;--text-mid:#3d4f62;--text-light:#7a8a9b;--white:#ffffff;
+}
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box;}
+body{font-family:'Fira Sans',sans-serif;background:var(--gray-bg);color:var(--text);}
+
+.header{background:var(--white);padding:18px 48px;display:flex;align-items:center;justify-content:space-between;box-shadow:0 1px 0 var(--gray-border),0 4px 24px rgba(0,51,102,0.07);position:relative;z-index:10;}
+.header::after{content:'';position:absolute;bottom:0;left:0;right:0;height:3px;background:linear-gradient(90deg,var(--red),var(--blue) 50%,var(--green));}
+.logo-text{font-family:'Josefin Sans',sans-serif;font-size:18px;font-weight:700;color:var(--blue);letter-spacing:1px;display:flex;flex-direction:column;line-height:1;}
+.logo-text span{font-size:8px;font-weight:400;letter-spacing:3px;color:var(--text-light);text-transform:uppercase;margin-top:3px;}
+.header-right{text-align:right;}
+.header-label{font-family:'Josefin Sans',sans-serif;font-size:9px;letter-spacing:3px;text-transform:uppercase;color:var(--text-light);}
+.header-year{font-family:'Josefin Sans',sans-serif;font-size:26px;font-weight:700;color:var(--blue);line-height:1;margin-top:2px;}
+
+.hero{background:var(--blue);position:relative;overflow:hidden;padding:40px 48px 36px;}
+.hero::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 80% 120% at 110% 50%,rgba(76,158,12,0.18) 0%,transparent 60%),radial-gradient(ellipse 60% 80% at -10% 80%,rgba(177,41,0,0.22) 0%,transparent 55%);}
+.hero-dots{position:absolute;inset:0;pointer-events:none;background-image:radial-gradient(rgba(255,255,255,0.07) 1px,transparent 1px);background-size:28px 28px;}
+.hero-inner{position:relative;z-index:2;}
+.hero-tag{display:inline-flex;align-items:center;gap:6px;background:rgba(255,255,255,0.1);border:1px solid rgba(255,255,255,0.2);border-radius:20px;padding:4px 12px;font-size:10px;font-weight:600;letter-spacing:2px;text-transform:uppercase;color:rgba(255,255,255,0.7);margin-bottom:12px;}
+.hero-tag::before{content:'✈';}
+.hero-name{font-family:'Josefin Sans',sans-serif;font-size:38px;font-weight:700;color:var(--white);line-height:1;margin-bottom:8px;}
+.hero-subtitle{font-size:13px;color:rgba(255,255,255,0.55);font-weight:300;margin-bottom:20px;}
+.hero-pills{display:flex;flex-wrap:wrap;gap:8px;}
+.hero-pill{display:flex;align-items:center;gap:6px;background:rgba(255,255,255,0.1);border:1px solid rgba(255,255,255,0.18);border-radius:8px;padding:6px 12px;font-size:11px;color:var(--white);font-weight:500;}
+.hero-pill.destaca{background:rgba(177,41,0,0.25);border-color:rgba(177,41,0,0.6);color:#ffb8a0;}
+
+.main{max-width:1140px;margin:0 auto;padding:40px 24px 64px;}
+.section-title{display:flex;align-items:center;gap:12px;margin-bottom:24px;}
+.section-title h2{font-family:'Josefin Sans',sans-serif;font-size:11px;font-weight:700;letter-spacing:3px;text-transform:uppercase;color:var(--text-light);}
+.section-title::after{content:'';flex:1;height:1px;background:var(--gray-border);}
+
+.alert-box{display:flex;gap:12px;align-items:flex-start;background:#fff4f0;border:1.5px solid rgba(177,41,0,0.3);border-radius:12px;padding:14px 18px;margin-bottom:28px;}
+.alert-icon{font-size:20px;flex-shrink:0;}
+.alert-text{font-size:12px;color:#6b1a00;line-height:1.6;}
+.alert-text strong{color:var(--red-dark);}
+
+.alert-box.blue{background:var(--blue-light);border-color:rgba(0,51,102,0.25);}
+.alert-box.blue .alert-text{color:var(--blue-dark);}
+
+.opciones-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(330px,1fr));gap:20px;margin-bottom:40px;}
+.opcion-card{background:var(--white);border-radius:16px;border:1.5px solid var(--gray-border);overflow:hidden;box-shadow:0 2px 16px rgba(0,51,102,0.06);position:relative;transition:transform .2s,box-shadow .2s,border-color .2s;}
+.opcion-card:hover{transform:translateY(-4px);box-shadow:0 12px 40px rgba(0,51,102,0.13);border-color:var(--blue-mid);}
+.opcion-card.recomendada{border-color:var(--green);box-shadow:0 4px 24px rgba(76,158,12,0.15);}
+.badge-rec{position:absolute;top:14px;right:-32px;background:var(--green);color:var(--white);font-size:8px;font-weight:700;letter-spacing:1.5px;padding:5px 40px;transform:rotate(45deg);width:130px;text-align:center;z-index:10;}
+.opcion-header{background:linear-gradient(135deg,var(--blue-dark) 0%,var(--blue) 100%);padding:22px 24px 18px;}
+.opcion-num{font-family:'Josefin Sans',sans-serif;font-size:9px;letter-spacing:3px;text-transform:uppercase;color:rgba(255,255,255,0.38);margin-bottom:8px;}
+.opcion-distrito{font-family:'Josefin Sans',sans-serif;font-size:16px;font-weight:700;color:var(--white);margin-bottom:5px;}
+.opcion-loc{font-size:11px;color:rgba(255,255,255,0.48);margin-bottom:12px;}
+.precio-chip{display:inline-flex;align-items:baseline;gap:4px;background:rgba(255,255,255,0.1);border:1px solid rgba(255,255,255,0.18);border-radius:8px;padding:6px 12px;}
+.precio-chip .val{font-family:'Josefin Sans',sans-serif;font-size:20px;font-weight:700;color:#7dd44a;}
+.precio-chip .desc{font-size:10px;color:rgba(255,255,255,0.5);}
+.precio-chip.warning .val{color:#ffd080;}
+.opcion-body{padding:20px 22px;}
+.colegios{display:flex;flex-direction:column;gap:12px;}
+.colegio{border:1.5px solid var(--gray-border);border-radius:12px;overflow:hidden;background:var(--gray-card);}
+.colegio:hover{border-color:var(--red);}
+.colegio-top{padding:12px 14px 10px;}
+.colegio-nombre{font-family:'Josefin Sans',sans-serif;font-size:13px;font-weight:700;color:var(--blue);margin-bottom:5px;}
+.colegio-meta{display:flex;flex-wrap:wrap;align-items:center;gap:6px;}
+.tag{border-radius:5px;padding:2px 8px;font-size:9px;font-weight:700;text-transform:uppercase;}
+.tag.pub{background:var(--green);color:var(--white);}
+.tag.info{background:var(--blue-light);color:var(--blue);}
+.tag.basket{background:rgba(177,41,0,0.12);color:var(--red-dark);border:1px solid rgba(177,41,0,0.3);}
+.tag.fr{background:#f0e6ff;color:#5500aa;border:1px solid rgba(85,0,170,0.3);}
+details{border-top:1px solid var(--gray-border);}
+details summary{list-style:none;cursor:pointer;padding:9px 14px;font-size:11px;font-weight:600;color:var(--red);display:flex;align-items:center;gap:6px;user-select:none;-webkit-user-select:none;}
+details summary:hover{background:var(--red-light);}
+details summary::-webkit-details-marker{display:none;}
+details summary::before{content:'▸';font-size:10px;transition:transform .2s;display:inline-block;}
+details[open] summary::before{transform:rotate(90deg);}
+.colegio-razon{padding:10px 14px 13px;font-size:12px;color:var(--text-mid);line-height:1.7;border-left:3px solid var(--red);margin:0 14px 12px;background:var(--red-light);border-radius:0 6px 6px 0;}
+.match-bar{display:flex;gap:6px;flex-wrap:wrap;padding:14px 22px;border-top:1px solid var(--gray-border);background:linear-gradient(to right,var(--gray-card),var(--white));}
+.match-tag{display:flex;align-items:center;gap:4px;font-size:10px;font-weight:600;color:var(--green-dark);background:var(--green-light);border:1px solid rgba(76,158,12,0.25);border-radius:20px;padding:3px 10px;}
+.match-tag::before{content:'✓';}
+
+.includes-wrap{background:var(--white);border-radius:16px;border:1.5px solid var(--gray-border);box-shadow:0 2px 16px rgba(0,51,102,0.05);overflow:hidden;margin-bottom:24px;}
+.includes-head{background:linear-gradient(135deg,var(--blue-dark),var(--blue));padding:20px 32px;}
+.includes-head h3{font-family:'Josefin Sans',sans-serif;font-size:14px;font-weight:700;color:var(--white);letter-spacing:1px;}
+.includes-body{padding:28px 32px;}
+.includes-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:32px;}
+.col-title{font-family:'Josefin Sans',sans-serif;font-size:9px;font-weight:700;letter-spacing:2.5px;text-transform:uppercase;color:var(--red);margin-bottom:14px;padding-bottom:8px;border-bottom:2px solid var(--red-light);}
+.inc-list{list-style:none;display:flex;flex-direction:column;gap:8px;}
+.inc-list li{font-size:12px;color:var(--text-mid);display:flex;align-items:flex-start;gap:8px;line-height:1.55;}
+.inc-list li::before{content:'✓';color:var(--green);font-weight:700;font-size:11px;flex-shrink:0;margin-top:1px;}
+.inc-list.no li::before{content:'✗';color:var(--red);}
+.inc-list li small{font-size:10px;color:var(--text-light);display:block;margin-top:2px;}
+.gestor-wrap{background:linear-gradient(135deg,var(--blue-dark),var(--blue-mid));border-radius:12px;padding:20px 24px;margin-top:16px;}
+.gestor-title{font-family:'Josefin Sans',sans-serif;font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:rgba(255,255,255,0.6);margin-bottom:14px;}
+.gestor-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;}
+.gestor-item{background:rgba(255,255,255,0.08);border:1px solid rgba(255,255,255,0.12);border-radius:8px;padding:10px 12px;font-size:11px;color:rgba(255,255,255,0.85);line-height:1.4;}
+.gestor-item::before{content:'→';color:#7dd44a;font-weight:700;margin-right:5px;}
+
+.payment-wrap{background:linear-gradient(135deg,var(--blue-dark) 0%,var(--blue) 60%,var(--blue-mid) 100%);border-radius:16px;padding:32px;position:relative;overflow:hidden;margin-bottom:20px;}
+.payment-wrap::before{content:'';position:absolute;inset:0;background-image:radial-gradient(rgba(255,255,255,0.05) 1px,transparent 1px);background-size:22px 22px;}
+.payment-inner{position:relative;z-index:2;}
+.pay-title{font-family:'Josefin Sans',sans-serif;font-size:16px;font-weight:700;color:var(--white);margin-bottom:6px;}
+.pay-subtitle{font-size:12px;color:rgba(255,255,255,0.45);margin-bottom:20px;}
+.pay-cols{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:18px;}
+.pay-col{background:rgba(255,255,255,0.07);border:1px solid rgba(255,255,255,0.12);border-radius:12px;padding:18px 20px;}
+.pay-col-title{font-family:'Josefin Sans',sans-serif;font-size:9px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:#7dd44a;margin-bottom:12px;}
+.pay-step{margin-bottom:10px;}
+.pay-step-num{font-size:9px;font-weight:700;color:rgba(255,255,255,0.4);text-transform:uppercase;letter-spacing:1px;margin-bottom:2px;}
+.pay-step-title{font-size:13px;font-weight:600;color:var(--white);}
+.pay-step-desc{font-size:11px;color:rgba(255,255,255,0.45);line-height:1.5;}
+.pay-note{font-size:11px;color:rgba(255,255,255,0.3);line-height:1.65;font-style:italic;border-top:1px solid rgba(255,255,255,0.1);padding-top:14px;}
+
+.financing-wrap{background:var(--white);border-radius:16px;border:1.5px solid var(--gray-border);box-shadow:0 2px 16px rgba(0,51,102,0.06);overflow:hidden;margin-bottom:24px;}
+.financing-head{background:linear-gradient(135deg,var(--blue-dark),var(--blue));padding:22px 32px;display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap;}
+.financing-head-left{display:flex;align-items:center;gap:16px;}
+.fin-icon{font-size:28px;}
+.fin-title{font-family:'Josefin Sans',sans-serif;font-size:16px;font-weight:700;color:var(--white);margin-bottom:3px;}
+.fin-sub{font-size:11px;color:rgba(255,255,255,0.5);}
+.fin-badge{background:rgba(125,212,74,0.2);border:1px solid rgba(125,212,74,0.4);color:#7dd44a;font-family:'Josefin Sans',sans-serif;font-size:11px;font-weight:700;letter-spacing:1px;padding:6px 14px;border-radius:20px;white-space:nowrap;}
+.financing-body{padding:28px 32px;}
+.fin-opcion-label,.fin-plazo-label{font-family:'Josefin Sans',sans-serif;font-size:9px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--text-light);margin-bottom:10px;}
+.fin-opcion-selector{margin-bottom:24px;}
+.fin-opcion-btns{display:flex;gap:10px;flex-wrap:wrap;}
+.fin-opcion-btn{background:var(--gray-card);border:1.5px solid var(--gray-border);border-radius:10px;padding:10px 16px;cursor:pointer;text-align:left;transition:all .2s;display:flex;flex-direction:column;gap:3px;}
+.fin-opcion-btn:hover,.fin-opcion-btn.active{border-color:var(--blue);background:var(--blue-light);}
+.fin-opcion-nombre{font-size:10px;font-weight:700;letter-spacing:1px;text-transform:uppercase;color:var(--text-light);}
+.fin-opcion-btn.active .fin-opcion-nombre{color:var(--blue);}
+.fin-opcion-precio{font-family:'Josefin Sans',sans-serif;font-size:16px;font-weight:700;color:var(--text);}
+.fin-opcion-btn.active .fin-opcion-precio{color:var(--blue);}
+.fin-plazo-wrap{margin-bottom:24px;}
+.fin-plazos{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;}
+.fin-plazo{background:var(--gray-card);border:1.5px solid var(--gray-border);border-radius:12px;padding:14px 12px;cursor:pointer;text-align:center;transition:all .2s;}
+.fin-plazo:hover{border-color:var(--blue-mid);transform:translateY(-2px);}
+.fin-plazo.active{border-color:var(--green);background:var(--green-light);box-shadow:0 4px 16px rgba(76,158,12,0.15);}
+.fin-plazo-meses{font-family:'Josefin Sans',sans-serif;font-size:15px;font-weight:700;color:var(--text);margin-bottom:6px;}
+.fin-plazo.active .fin-plazo-meses{color:var(--green-dark);}
+.fin-plazo-badge{display:inline-block;border-radius:20px;padding:2px 8px;font-size:9px;font-weight:700;margin-bottom:4px;}
+.sin-intereses{background:var(--green-light);color:var(--green-dark);border:1px solid rgba(76,158,12,0.3);}
+.con-intereses{background:var(--blue-light);color:var(--blue);border:1px solid rgba(0,51,102,0.2);}
+.fin-plazo-quien{font-size:9px;color:var(--text-light);line-height:1.3;}
+.fin-resultado{display:grid;grid-template-columns:auto 1fr;gap:24px;background:linear-gradient(135deg,var(--blue-dark),var(--blue));border-radius:14px;padding:24px 28px;margin-bottom:16px;align-items:center;}
+.fin-resultado-main{text-align:center;border-right:1px solid rgba(255,255,255,0.15);padding-right:24px;}
+.fin-cuota-label{font-size:10px;font-weight:600;letter-spacing:2px;text-transform:uppercase;color:rgba(255,255,255,0.5);margin-bottom:6px;}
+.fin-cuota-valor{font-family:'Josefin Sans',sans-serif;font-size:36px;font-weight:700;color:#7dd44a;line-height:1;margin-bottom:4px;}
+.fin-cuota-sub{font-size:11px;color:rgba(255,255,255,0.45);}
+.fin-resultado-detalle{display:flex;flex-direction:column;gap:10px;}
+.fin-det-row{display:flex;justify-content:space-between;align-items:center;gap:12px;}
+.fin-det-label{font-size:12px;color:rgba(255,255,255,0.55);}
+.fin-det-val{font-size:13px;font-weight:600;color:var(--white);}
+.fin-det-green{color:#7dd44a !important;}
+.fin-det-total{border-top:1px solid rgba(255,255,255,0.15);padding-top:10px;margin-top:2px;}
+.fin-det-total .fin-det-label{color:rgba(255,255,255,0.7);font-weight:600;}
+.fin-det-total .fin-det-val{font-family:'Josefin Sans',sans-serif;font-size:16px;}
+.fin-nota{font-size:11px;color:var(--text-light);line-height:1.6;background:var(--gray-card);border-radius:8px;padding:12px 16px;border-left:3px solid var(--blue-light);}
+
+@media(max-width:720px){
+  .header{padding:16px 20px;}.hero{padding:28px 20px 24px;}.hero-name{font-size:28px;}
+  .main{padding:28px 16px 48px;}.includes-grid{grid-template-columns:1fr;}.opciones-grid{grid-template-columns:1fr;}
+  .pay-cols{grid-template-columns:1fr;}.gestor-grid{grid-template-columns:repeat(2,1fr);}
+  .fin-plazos{grid-template-columns:repeat(2,1fr);}.fin-resultado{grid-template-columns:1fr;}
+  .fin-resultado-main{border-right:none;border-bottom:1px solid rgba(255,255,255,0.15);padding-right:0;padding-bottom:20px;}
+}
+</style>
+</head>
+<body>
+
+<header class="header">
+  <div class="logo-text">My Language Quest<span>Explore · Learn · Grow</span></div>
+  <div class="header-right">
+    <div class="header-label">Programa Académico · Canadá · Ontario</div>
+    <div class="header-year">2026/27</div>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="hero-dots"></div>
+  <div class="hero-inner">
+    <div class="hero-tag">Propuesta personalizada</div>
+    <div class="hero-name">Anne</div>
+    <div class="hero-subtitle">Año escolar completo · Ontario, Canadá · Familia anfitriona</div>
+    <div class="hero-pills">
+      <div class="hero-pill">🎓 Grade 11</div>
+      <div class="hero-pill">🏀 Baloncesto</div>
+      <div class="hero-pill">🏠 Ciudad pequeña y segura</div>
+      <div class="hero-pill">📚 Colegio bilingüe en España</div>
+      <div class="hero-pill destaca">📍 Ontario</div>
+      <div class="hero-pill">🌍 Inglés B1</div>
+    </div>
+  </div>
+</section>
+
+<main class="main">
+
+  <div class="alert-box blue">
+    <div class="alert-icon">🏀</div>
+    <div class="alert-text"><strong>Selección pensada para Anne:</strong> Todos los distritos propuestos están en Ontario, tienen equipos de baloncesto competitivos, ofrecen ciudades pequeñas y seguras con vida urbana real, y están dentro del presupuesto familiar. Venir de un colegio bilingüe es una ventaja: Anne llegará con una base sólida que le permitirá integrarse rápido y brillar en Grade 11.</div>
+  </div>
+
+  <div class="section-title"><h2>Opciones recomendadas</h2></div>
+  <div class="opciones-grid">
+
+    <!-- OPCIÓN 1 RECOMENDADA: AVON MAITLAND -->
+    <div class="opcion-card recomendada">
+      <div class="badge-rec">★ RECOMENDADA</div>
+      <div class="opcion-header">
+        <div class="opcion-num">Opción 01</div>
+        <div class="opcion-distrito">Avon Maitland District School Board</div>
+        <div class="opcion-loc">📍 Stratford / Wingham / Mitchell · Ontario · Ciudades pequeñas y seguras</div>
+        <div class="precio-chip"><span class="val">23.480 €</span><span class="desc">/ año completo</span></div>
+      </div>
+      <div class="opcion-body">
+        <div class="colegios">
+
+          <div class="colegio">
+            <div class="colegio-top">
+              <div class="colegio-nombre">⭐ Stratford District Secondary School</div>
+              <div class="colegio-meta">
+                <span class="tag pub">Público</span>
+                <span class="tag info">Grade 9–12</span>
+                <span class="tag info">1.400 alumnos</span>
+                <span class="tag info">Stratford, ON</span>
+                <span class="tag basket">🏀 Baloncesto</span>
+              </div>
+            </div>
+            <details><summary>Por qué es perfecta para Anne</summary>
+            <div class="colegio-razon">Stratford es mundialmente conocida por su festival de teatro Shakespeare — una ciudad culturalmente rica, segura y con mucha vida, pero de escala humana (35.000 habitantes). La escuela más grande del distrito (1.400 alumnos) ofrece exactamente el equilibrio que busca Anne: suficiente variedad social y académica, pero sin el anonimato de una gran ciudad. Tiene equipos de baloncesto propios y un sólido Departamento de Tecnología con cursos de informática. Coming from a bilingual school, Anne will adapt quickly and can even try Advanced courses thanks to her language foundation.</div>
+            </details>
+          </div>
+
+          <div class="colegio">
+            <div class="colegio-top">
+              <div class="colegio-nombre">F.E. Madill Secondary School</div>
+              <div class="colegio-meta">
+                <span class="tag pub">Público</span>
+                <span class="tag info">Grade 9–12</span>
+                <span class="tag info">750 alumnos</span>
+                <span class="tag info">Wingham, ON</span>
+                <span class="tag basket">🏀 Baloncesto</span>
+              </div>
+            </div>
+            <details><summary>Por qué es perfecta para Anne</summary>
+            <div class="colegio-razon">F.E. Madill es la opción más íntima del distrito: 750 alumnos en Wingham, una ciudad tranquila de 3.000 habitantes donde Anne será conocida por todos y tendrá una integración muy personal. Los valores del colegio —creatividad, respeto mutuo y ciudadanía responsable— encajan perfectamente con el perfil de una estudiante que viene de un entorno bilingüe exigente. Baloncesto, hockey y rugby entre sus deportes estrella. Ideal si Anne prefiere una experiencia canadiense más auténtica y cercana.</div>
+            </details>
+          </div>
+
+        </div>
+      </div>
+      <div class="match-bar">
+        <div class="match-tag">Dentro del presupuesto</div>
+        <div class="match-tag">Baloncesto propio</div>
+        <div class="match-tag">Ciudad pequeña y segura</div>
+        <div class="match-tag">Ontario auténtico</div>
+        <div class="match-tag">Entorno urbano</div>
+      </div>
+    </div>
+
+    <!-- OPCIÓN 2: UPPER CANADA -->
+    <div class="opcion-card">
+      <div class="opcion-header">
+        <div class="opcion-num">Opción 02</div>
+        <div class="opcion-distrito">Upper Grand District School Board</div>
+        <div class="opcion-loc">📍 Guelph / Orangeville · Ontario · Cerca de Toronto</div>
+        <div class="precio-chip warning"><span class="val">25.850 €</span><span class="desc">/ año completo · ligeramente sobre el tope</span></div>
+      </div>
+      <div class="opcion-body">
+        <div class="colegios">
+
+          <div class="colegio">
+            <div class="colegio-top">
+              <div class="colegio-nombre">Centennial Collegiate Vocational Institute</div>
+              <div class="colegio-meta">
+                <span class="tag pub">Público</span>
+                <span class="tag info">Grade 9–12</span>
+                <span class="tag info">1.400 alumnos</span>
+                <span class="tag info">Guelph, ON</span>
+                <span class="tag basket">🏀 Baloncesto</span>
+                <span class="tag fr">🇨🇦 Cerca universidad</span>
+              </div>
+            </div>
+            <details><summary>Por qué es perfecta para Anne</summary>
+            <div class="colegio-razon">Guelph es una ciudad universitaria de 145.000 habitantes — más urbana que Stratford, con una energía joven y cosmopolita gracias a la Universidad de Guelph. Centennial CVI tiene proximidad directa a esa universidad, lo que eleva el nivel académico del entorno y de las aspiraciones de sus estudiantes. Anne, que viene de un colegio bilingüe exigente, encajará perfectamente en este ambiente. Baloncesto, curling, hockey, natación y Rugby entre sus deportes. El Club de Cultura Internacional le vendrá perfecto para su integración. Precio algo por encima del tope indicado (25.850€) — se puede plantear a la familia como inversión justificada por el entorno universitario.</div>
+            </details>
+          </div>
+
+          <div class="colegio">
+            <div class="colegio-top">
+              <div class="colegio-nombre">Westside Secondary School</div>
+              <div class="colegio-meta">
+                <span class="tag pub">Público</span>
+                <span class="tag info">Grade 9–12</span>
+                <span class="tag info">800 alumnos</span>
+                <span class="tag info">Orangeville, ON</span>
+                <span class="tag basket">🏀 Baloncesto</span>
+              </div>
+            </div>
+            <details><summary>Por qué es perfecta para Anne</summary>
+            <div class="colegio-razon">Orangeville (30.000 habitantes) es exactamente lo que Anne busca: entorno urbano pero manejable, seguro y con fuerte sentido de comunidad. Westside Secondary ofrece un ambiente íntimo y enriquecedor donde cada estudiante es conocido por su nombre. Baloncesto, rugby y atletismo en deportes. El Club de Escritura y la Banda de Jazz muestran que es un colegio con personalidad. A 70 km de Toronto, con acceso fácil a la ciudad para los fines de semana libres. Misma tarifa que Centennial (25.850€).</div>
+            </details>
+          </div>
+
+        </div>
+      </div>
+      <div class="match-bar">
+        <div class="match-tag">Entorno urbano real</div>
+        <div class="match-tag">Baloncesto</div>
+        <div class="match-tag">Cerca de Toronto</div>
+        <div class="match-tag">Ambiente universitario</div>
+        <div class="match-tag">Grade 11 avanzado</div>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="alert-box">
+    <div class="alert-icon">💡</div>
+    <div class="alert-text"><strong>Nota sobre presupuesto:</strong> Avon Maitland (23.480€) encaja perfectamente en la horquilla 20K–25K. Upper Grand (25.850€) supera ligeramente el tope indicado, pero sigue siendo una opción muy competitiva si la familia tiene algo de flexibilidad — Guelph y Orangeville ofrecen un retorno muy alto en calidad de vida y entorno académico.</div>
+  </div>
+
+  <!-- INCLUYE -->
+  <div class="section-title"><h2>El programa incluye</h2></div>
+  <div class="includes-wrap">
+    <div class="includes-head"><h3>📋 Todo lo que cubre My Language Quest</h3></div>
+    <div class="includes-body">
+      <div class="includes-grid">
+        <div>
+          <div class="col-title">Antes del viaje</div>
+          <ul class="inc-list">
+            <li>Reunión inicial (presencial, teléfono o videoconferencia) con padres o tutores</li>
+            <li>Prueba de inglés y entrevista personal online con la estudiante</li>
+            <li>Propuesta personalizada de distrito y colegios</li>
+            <li>Inscripción y matriculación en centro escolar en Canadá</li>
+            <li>Selección de familia anfitriona en régimen de pensión completa y habitación individual o compartida</li>
+            <li>Un único estudiante hispanohablante por familia garantizado</li>
+            <li>Seguro médico y de accidentes</li>
+            <li>Libros (algunas asignaturas)</li>
+            <li>Gestión del visado Study Permit</li>
+            <li>Vuelos de ida y vuelta <small>Coste máximo 1.000 €. Exceso a cargo de la familia</small></li>
+            <li>Orientación pre-viaje en Madrid o online</li>
+            <li>Welcome pack sorpresa de My Language Quest</li>
+          </ul>
+        </div>
+        <div>
+          <div class="col-title">Durante el viaje</div>
+          <ul class="inc-list">
+            <li>Recibimiento en aeropuerto y traslados</li>
+            <li>Asesoramiento en elección de asignaturas (garantizando convalidación)</li>
+            <li>Clases de inglés Cambridge y libro incluido</li>
+            <li>Taller MIT de 3 sesiones</li>
+            <li>Supervisión local: visitas, tutorías y emergencias 24h</li>
+            <li>Acompañamiento psicológico</li>
+            <li>Atención 24h en España para emergencias</li>
+            <li>Apoyo para matriculación en actividades extraescolares</li>
+            <li>Gestión de cambio de familia si fuera necesario</li>
+          </ul>
+          <div class="gestor-wrap">
+            <div class="gestor-title">Gestor estudiantil · 8 funciones</div>
+            <div class="gestor-grid">
+              <div class="gestor-item">Seguimiento personalizado del desempeño</div>
+              <div class="gestor-item">Información a padres mensualmente</div>
+              <div class="gestor-item">Notas oficiales cada trimestre</div>
+              <div class="gestor-item">Asesoría en cambio de asignaturas</div>
+              <div class="gestor-item">Todas las tutorías necesarias</div>
+              <div class="gestor-item">Reuniones con padres y/o estudiante</div>
+              <div class="gestor-item">Apoyo en actividades extraescolares</div>
+              <div class="gestor-item">Resolución de situaciones con familia o centro</div>
+            </div>
+          </div>
+        </div>
+        <div>
+          <div class="col-title">Después del viaje</div>
+          <ul class="inc-list">
+            <li>Trámites de convalidación ante el Ministerio de Educación</li>
+            <li>Validación de notas y apostilla de la Haya</li>
+            <li>Dossier final detallando la experiencia</li>
+          </ul>
+          <div style="margin-top:24px">
+            <div class="col-title">No incluido</div>
+            <ul class="inc-list no">
+              <li>Exceso de vuelos sobre 1.000 € (a cargo de la familia)</li>
+              <li>Actividades extracurriculares de pago (equipos deportivos con licencia, etc.)</li>
+              <li>Excursiones y viajes escolares organizados por el colegio</li>
+              <li>Material escolar: cuadernos, calculadora, uniforme deportivo</li>
+              <li>Fotografía escolar y anuario (yearbook)</li>
+              <li>Tasas de exámenes opcionales (AP, Cambridge avanzado)</li>
+              <li>Transporte local mensual (autobús, tarjeta)</li>
+              <li>Teléfono móvil y plan de datos en Canadá</li>
+              <li>Ropa de invierno: abrigo, botas de nieve, accesorios</li>
+              <li>Gastos de ocio personal</li>
+              <li>Medicamentos y gastos médicos no cubiertos por el seguro</li>
+              <li>Tratamientos dentales y de visión</li>
+              <li>Ordenador portátil o tablet</li>
+              <li>Gastos de pasaporte si no está vigente</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- FORMAS DE PAGO -->
+  <div class="section-title"><h2>Formas de pago</h2></div>
+  <div class="payment-wrap">
+    <div class="payment-inner">
+      <div class="pay-title">💳 Condiciones económicas</div>
+      <div class="pay-subtitle">La cantidad íntegra debe abonarse antes del 10 de abril</div>
+      <div class="pay-cols">
+        <div class="pay-col">
+          <div class="pay-col-title">Pago fraccionado</div>
+          <div class="pay-step"><div class="pay-step-num">Paso 1 · Firma del contrato</div><div class="pay-step-title">3.500 €</div></div>
+          <div class="pay-step"><div class="pay-step-num">Paso 2 · Aceptación en el programa</div><div class="pay-step-title">40% del importe restante</div></div>
+          <div class="pay-step"><div class="pay-step-num">Paso 3</div><div class="pay-step-title">Resto · Antes del 10 de abril</div></div>
+        </div>
+        <div class="pay-col">
+          <div class="pay-col-title">Pago completo</div>
+          <div class="pay-step"><div class="pay-step-num">Paso 1 · Firma del contrato</div><div class="pay-step-title">3.500 €</div></div>
+          <div class="pay-step"><div class="pay-step-num">Paso 2 · Aceptación en el programa</div><div class="pay-step-title">Resto del importe en su totalidad</div></div>
+        </div>
+      </div>
+      <div class="pay-note">El seguro de anulación e interrupción debe contratarse y abonarse en el momento de la firma del contrato. Su coste varía según el importe del programa y es emitido una vez la estudiante es aceptada por el centro escolar. Su importe no es reembolsable bajo ninguna circunstancia.</div>
+    </div>
+  </div>
+
+  <!-- FINANCIACIÓN -->
+  <div class="section-title"><h2>Financia tu programa</h2></div>
+  <div class="financing-wrap">
+    <div class="financing-head">
+      <div class="financing-head-left">
+        <div class="fin-icon">💳</div>
+        <div>
+          <div class="fin-title">Paga a tu ritmo, sin preocupaciones</div>
+          <div class="fin-sub">Financiación flexible · Sin comisión de apertura · Sin penalización por cancelación anticipada</div>
+        </div>
+      </div>
+      <div class="fin-badge">Hasta 36 meses</div>
+    </div>
+    <div class="financing-body">
+      <div class="fin-opcion-selector">
+        <div class="fin-opcion-label">Selecciona la opción del programa</div>
+        <div class="fin-opcion-btns">
+          <button class="fin-opcion-btn active" onclick="setOpcion(this,23480)">
+            <span class="fin-opcion-nombre">⭐ Opción 1 · Avon Maitland</span>
+            <span class="fin-opcion-precio">23.480 €</span>
+          </button>
+          <button class="fin-opcion-btn" onclick="setOpcion(this,25850)">
+            <span class="fin-opcion-nombre">Opción 2 · Upper Grand</span>
+            <span class="fin-opcion-precio">25.850 €</span>
+          </button>
+        </div>
+      </div>
+      <div class="fin-plazo-wrap">
+        <div class="fin-plazo-label">Elige tu plazo de financiación</div>
+        <div class="fin-plazos">
+          <div class="fin-plazo active" onclick="setPlazo(this,12)">
+            <div class="fin-plazo-meses">12 meses</div>
+            <div class="fin-plazo-badge sin-intereses">TIN 0%</div>
+            <div class="fin-plazo-quien">¡MLQ asume los intereses!</div>
+          </div>
+          <div class="fin-plazo" onclick="setPlazo(this,18)">
+            <div class="fin-plazo-meses">18 meses</div>
+            <div class="fin-plazo-badge con-intereses">TIN 10,46%</div>
+            <div class="fin-plazo-quien">Intereses a cargo del cliente</div>
+          </div>
+          <div class="fin-plazo" onclick="setPlazo(this,24)">
+            <div class="fin-plazo-meses">24 meses</div>
+            <div class="fin-plazo-badge con-intereses">TIN 10,46%</div>
+            <div class="fin-plazo-quien">Intereses a cargo del cliente</div>
+          </div>
+          <div class="fin-plazo" onclick="setPlazo(this,36)">
+            <div class="fin-plazo-meses">36 meses</div>
+            <div class="fin-plazo-badge con-intereses">TIN 10,46%</div>
+            <div class="fin-plazo-quien">Intereses a cargo del cliente</div>
+          </div>
+        </div>
+      </div>
+      <div class="fin-resultado">
+        <div class="fin-resultado-main">
+          <div class="fin-cuota-label">Cuota mensual estimada</div>
+          <div class="fin-cuota-valor" id="cuotaValor">1.957,00 €</div>
+          <div class="fin-cuota-sub" id="cuotaSub">/mes · 12 pagos · TIN 0%</div>
+        </div>
+        <div class="fin-resultado-detalle">
+          <div class="fin-det-row"><span class="fin-det-label">Importe del programa</span><span class="fin-det-val" id="detCapital">23.480 €</span></div>
+          <div class="fin-det-row"><span class="fin-det-label">Intereses totales</span><span class="fin-det-val fin-det-green" id="detIntereses">0 € · ¡MLQ los asume!</span></div>
+          <div class="fin-det-row fin-det-total"><span class="fin-det-label">Total a pagar</span><span class="fin-det-val" id="detTotal">23.480 €</span></div>
+        </div>
+      </div>
+      <div class="fin-nota">ℹ️ Financiación sujeta a aprobación bancaria. Cuota orientativa calculada sobre el importe total del programa. Sin comisión de apertura ni penalización por cancelación anticipada. Los precios incluyen el descuento de 1.000 € ya aplicado.</div>
+    </div>
+  </div>
+</main>
+
+<script>
+var _cap=23480,_mes=12;
+function _fmt(n,d){return n.toLocaleString('es-ES',{minimumFractionDigits:d||0,maximumFractionDigits:d||0})+' €';}
+function _cuota(c,t,m){if(t===0)return c/m;var r=(t/100)/12;return c*r/(1-Math.pow(1+r,-m));}
+function _update(){
+  var tin=_mes===12?0:10.46,q=_cuota(_cap,tin,_mes),tot=q*_mes,inter=tot-_cap;
+  document.getElementById('cuotaValor').textContent=_fmt(q,2);
+  document.getElementById('cuotaSub').textContent='/mes · '+_mes+' pagos · TIN '+(tin===0?'0%':'10,46%');
+  document.getElementById('detCapital').textContent=_fmt(Math.round(_cap));
+  document.getElementById('detTotal').textContent=_fmt(Math.round(tot));
+  if(tin===0){document.getElementById('detIntereses').textContent='0 € · ¡MLQ los asume!';document.getElementById('detIntereses').className='fin-det-val fin-det-green';}
+  else{document.getElementById('detIntereses').textContent=_fmt(Math.round(inter));document.getElementById('detIntereses').className='fin-det-val';}
+}
+function setOpcion(btn,cap){_cap=cap;document.querySelectorAll('.fin-opcion-btn').forEach(function(b){b.classList.remove('active');});btn.classList.add('active');_update();}
+function setPlazo(el,m){_mes=m;document.querySelectorAll('.fin-plazo').forEach(function(p){p.classList.remove('active');});el.classList.add('active');_update();}
+_update();
+</script>
+</body>
+</html>
