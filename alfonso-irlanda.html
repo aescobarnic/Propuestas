@@ -35,6 +35,7 @@ body{font-family:'Fira Sans',sans-serif;background:var(--gray-bg);color:var(--te
 .hero-precio-label{font-size:9px;letter-spacing:2px;text-transform:uppercase;color:rgba(255,255,255,0.5);margin-bottom:6px;font-weight:600;}
 .hero-precio-val{font-family:'Josefin Sans',sans-serif;font-size:32px;font-weight:700;color:#a5d6a7;line-height:1;}
 .hero-precio-sub{font-size:10px;color:rgba(255,255,255,0.4);margin-top:4px;}
+.hero-precio-original{font-family:'Josefin Sans',sans-serif;font-size:16px;font-weight:600;color:rgba(255,255,255,0.35);text-decoration:line-through;margin-bottom:2px;}
 .hero-precio-badge{display:inline-block;background:rgba(255,136,62,0.3);border:1px solid rgba(255,136,62,0.5);color:#ffcc80;font-size:9px;font-weight:700;letter-spacing:1px;padding:3px 10px;border-radius:20px;margin-top:8px;text-transform:uppercase;}
 .main{max-width:1100px;margin:0 auto;padding:40px 24px 64px;}
 .section-title{display:flex;align-items:center;gap:12px;margin-bottom:24px;}
@@ -185,12 +186,11 @@ body{font-family:'Fira Sans',sans-serif;background:var(--gray-bg);color:var(--te
       </div>
     </div>
     <div class="hero-precio">
-      <div>
-        <div class="hero-precio-label">Programa Choice</div>
-        <div class="hero-precio-val">15.950 €</div>
-        <div class="hero-precio-sub">año escolar completo</div>
-      </div>
-      <div class="hero-precio-badge">🎉 -1.000€ Últimas plazas</div>
+      <div class="hero-precio-label">Programa Choice</div>
+      <div class="hero-precio-original">16.950 €</div>
+      <div class="hero-precio-val">15.950 €</div>
+      <div class="hero-precio-sub">año escolar completo</div>
+      <div class="hero-precio-badge">🎉 -1.000 € últimas plazas</div>
     </div>
   </div>
 </section>
@@ -500,69 +500,6 @@ body{font-family:'Fira Sans',sans-serif;background:var(--gray-bg);color:var(--te
     </div>
   </div>
 
-  <!-- FINANCIACIÓN -->
-  <div class="section-title"><h2>Financia tu programa</h2></div>
-  <div class="financing-wrap">
-    <div class="financing-head">
-      <div style="display:flex;align-items:center;gap:16px;">
-        <div class="fin-icon">💳</div>
-        <div>
-          <div class="fin-title">Paga a tu ritmo, sin preocupaciones</div>
-          <div class="fin-sub">Financiación flexible · Aprobación rápida · 100% online · Sin comisión de apertura</div>
-        </div>
-      </div>
-      <div class="fin-badge">Hasta 36 meses</div>
-    </div>
-    <div class="financing-body">
-      <div class="fin-plazo-wrap">
-        <div class="fin-plazo-label">Elige tu plazo · Programa Choice 15.950 €</div>
-        <div class="fin-plazos">
-          <div class="fin-plazo active" onclick="setPlazo(this,12)">
-            <div class="fin-plazo-meses">12 meses</div>
-            <div class="fin-plazo-badge sin">TIN 0%</div>
-            <div class="fin-plazo-quien">¡MLQ asume los intereses!</div>
-          </div>
-          <div class="fin-plazo" onclick="setPlazo(this,18)">
-            <div class="fin-plazo-meses">18 meses</div>
-            <div class="fin-plazo-badge con">TIN 10,46%</div>
-            <div class="fin-plazo-quien">Intereses a cargo del cliente</div>
-          </div>
-          <div class="fin-plazo" onclick="setPlazo(this,24)">
-            <div class="fin-plazo-meses">24 meses</div>
-            <div class="fin-plazo-badge con">TIN 10,46%</div>
-            <div class="fin-plazo-quien">Intereses a cargo del cliente</div>
-          </div>
-          <div class="fin-plazo" onclick="setPlazo(this,36)">
-            <div class="fin-plazo-meses">36 meses</div>
-            <div class="fin-plazo-badge con">TIN 10,46%</div>
-            <div class="fin-plazo-quien">Intereses a cargo del cliente</div>
-          </div>
-        </div>
-      </div>
-      <div class="fin-resultado">
-        <div class="fin-resultado-main">
-          <div class="fin-cuota-label">Cuota mensual estimada</div>
-          <div class="fin-cuota-valor" id="cuotaValor">1.412,50 €</div>
-          <div class="fin-cuota-sub" id="cuotaSub">/mes · 12 pagos · TIN 0%</div>
-        </div>
-        <div class="fin-resultado-detalle">
-          <div class="fin-det-row">
-            <span class="fin-det-label">Importe del programa</span>
-            <span class="fin-det-val">15.950 €</span>
-          </div>
-          <div class="fin-det-row">
-            <span class="fin-det-label">Intereses totales</span>
-            <span class="fin-det-val fin-det-green" id="detIntereses">0 € · ¡MLQ los asume!</span>
-          </div>
-          <div class="fin-det-row fin-det-total">
-            <span class="fin-det-label">Total a pagar</span>
-            <span class="fin-det-val" id="detTotal">15.950 €</span>
-          </div>
-        </div>
-      </div>
-      <div class="fin-nota">ℹ️ Financiación sujeta a aprobación bancaria. Sin comisión de apertura ni penalización por cancelación anticipada.</div>
-    </div>
-  </div>
 
   <!-- FORMAS DE PAGO -->
   <div class="section-title"><h2>Formas de pago</h2></div>
@@ -596,20 +533,5 @@ body{font-family:'Fira Sans',sans-serif;background:var(--gray-bg);color:var(--te
 
 </main>
 
-<script>
-var _mes=12,_cap=15950;
-function _fmt(n,d){return n.toLocaleString('es-ES',{minimumFractionDigits:d||0,maximumFractionDigits:d||0})+' €';}
-function _cuota(c,t,m){if(t===0)return c/m;var r=(t/100)/12;return c*r/(1-Math.pow(1+r,-m));}
-function _update(){
-  var tin=_mes===12?0:10.46;var q=_cuota(_cap,tin,_mes);var tot=q*_mes;var inter=tot-_cap;
-  document.getElementById('cuotaValor').textContent=_fmt(q,2);
-  document.getElementById('cuotaSub').textContent='/mes · '+_mes+' pagos · TIN '+(tin===0?'0%':'10,46%');
-  document.getElementById('detTotal').textContent=_fmt(Math.round(tot));
-  if(tin===0){document.getElementById('detIntereses').textContent='0 € · ¡MLQ los asume!';document.getElementById('detIntereses').className='fin-det-val fin-det-green';}
-  else{document.getElementById('detIntereses').textContent=_fmt(Math.round(inter));document.getElementById('detIntereses').className='fin-det-val';}
-}
-function setPlazo(el,m){_mes=m;document.querySelectorAll('.fin-plazo').forEach(function(p){p.classList.remove('active');});el.classList.add('active');_update();}
-_update();
-</script>
 </body>
 </html>
