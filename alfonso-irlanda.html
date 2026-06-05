@@ -132,7 +132,24 @@ body{font-family:'Fira Sans',sans-serif;background:var(--gray-bg);color:var(--te
 .pay-step-amount{font-family:'Josefin Sans',sans-serif;font-size:22px;font-weight:700;color:#a5d6a7;margin-top:8px;}
 .pay-note{font-size:11px;color:rgba(255,255,255,0.3);line-height:1.65;font-style:italic;border-top:1px solid rgba(255,255,255,0.1);padding-top:14px;}
 @media(max-width:720px){
-  .header{padding:16px 20px;}.hero{padding:28px 20px 24px;}.hero-name{font-size:28px;}.hero-precio{display:none;}
+  .header{padding:16px 20px;}.hero{padding:28px 20px 24px;}.hero-name{font-size:28px;}
+  .hero-inner{flex-direction:column;gap:16px;}
+  .hero-precio{
+    display:block;
+    width:100%;
+    background:rgba(0,0,0,0.25);
+    border:1px solid rgba(255,255,255,0.18);
+    border-radius:12px;
+    padding:14px 18px;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:12px;
+  }
+  .hero-precio-label{font-size:9px;margin-bottom:2px;}
+  .hero-precio-val{font-size:26px;}
+  .hero-precio-sub{font-size:9px;margin-top:2px;}
+  .hero-precio-badge{margin-top:4px;font-size:8px;}
   .main{padding:28px 16px 48px;}.includes-grid{grid-template-columns:1fr;}.colegios-grid{grid-template-columns:1fr;}
   .pay-steps-row{grid-template-columns:1fr;}.gestor-grid{grid-template-columns:repeat(2,1fr);}
   .fin-plazos{grid-template-columns:repeat(2,1fr);}.fin-resultado{grid-template-columns:1fr;}
@@ -168,9 +185,11 @@ body{font-family:'Fira Sans',sans-serif;background:var(--gray-bg);color:var(--te
       </div>
     </div>
     <div class="hero-precio">
-      <div class="hero-precio-label">Programa Choice</div>
-      <div class="hero-precio-val">15.950 €</div>
-      <div class="hero-precio-sub">año escolar completo</div>
+      <div>
+        <div class="hero-precio-label">Programa Choice</div>
+        <div class="hero-precio-val">15.950 €</div>
+        <div class="hero-precio-sub">año escolar completo</div>
+      </div>
       <div class="hero-precio-badge">🎉 -1.000€ Últimas plazas</div>
     </div>
   </div>
