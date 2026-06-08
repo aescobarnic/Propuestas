@@ -1,0 +1,821 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>My Language Quest — Guía para Familias</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --green: #2D6A4F;
+    --green-light: #52B788;
+    --green-pale: #D8F3DC;
+    --amber: #E9C46A;
+    --navy: #1B2A41;
+    --navy-light: #2E4057;
+    --cream: #FAF8F3;
+    --text: #1B2A41;
+    --text-muted: #5C6B7A;
+    --border: #E2DDD4;
+    --red-soft: #C1666B;
+    --blue-soft: #457B9D;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    font-family: 'DM Sans', sans-serif;
+    background: var(--cream);
+    color: var(--text);
+    line-height: 1.7;
+  }
+
+  /* NAV */
+  nav {
+    position: sticky; top: 0; z-index: 100;
+    background: var(--navy);
+    padding: 0 2rem;
+    display: flex; align-items: center; justify-content: space-between;
+    height: 60px;
+    border-bottom: 3px solid var(--green-light);
+  }
+  .nav-logo { font-family: 'Playfair Display', serif; color: #fff; font-size: 1.1rem; letter-spacing: 0.02em; }
+  .nav-logo span { color: var(--green-light); }
+  .nav-links { display: flex; gap: 1.5rem; list-style: none; }
+  .nav-links a { color: rgba(255,255,255,0.75); text-decoration: none; font-size: 0.82rem; font-weight: 500; letter-spacing: 0.04em; text-transform: uppercase; transition: color 0.2s; }
+  .nav-links a:hover { color: var(--green-light); }
+
+  /* HERO */
+  .hero {
+    background: var(--navy);
+    padding: 6rem 2rem 5rem;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+  }
+  .hero::before {
+    content: '';
+    position: absolute; inset: 0;
+    background: radial-gradient(ellipse at 70% 50%, rgba(82,183,136,0.12) 0%, transparent 70%),
+                radial-gradient(ellipse at 20% 80%, rgba(233,196,106,0.08) 0%, transparent 60%);
+  }
+  .hero-tag {
+    display: inline-block;
+    background: rgba(82,183,136,0.15);
+    border: 1px solid rgba(82,183,136,0.4);
+    color: var(--green-light);
+    font-size: 0.75rem; letter-spacing: 0.12em; text-transform: uppercase; font-weight: 500;
+    padding: 6px 16px; border-radius: 100px;
+    margin-bottom: 1.5rem;
+  }
+  .hero h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(2.2rem, 5vw, 3.8rem);
+    color: #fff;
+    line-height: 1.2;
+    max-width: 780px; margin: 0 auto 1.2rem;
+  }
+  .hero h1 em { color: var(--green-light); font-style: normal; }
+  .hero p {
+    color: rgba(255,255,255,0.65);
+    font-size: 1.05rem; max-width: 580px; margin: 0 auto 2.5rem;
+  }
+  .hero-pills {
+    display: flex; gap: 12px; justify-content: center; flex-wrap: wrap;
+  }
+  .pill {
+    background: rgba(255,255,255,0.06);
+    border: 1px solid rgba(255,255,255,0.15);
+    color: rgba(255,255,255,0.85);
+    padding: 8px 18px; border-radius: 100px;
+    font-size: 0.85rem; font-weight: 300;
+  }
+
+  /* SECTIONS */
+  section { padding: 5rem 2rem; max-width: 900px; margin: 0 auto; }
+  .section-label {
+    font-size: 0.72rem; letter-spacing: 0.14em; text-transform: uppercase;
+    color: var(--green); font-weight: 500; margin-bottom: 0.6rem;
+  }
+  h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(1.7rem, 3vw, 2.4rem);
+    color: var(--navy); line-height: 1.25; margin-bottom: 1.2rem;
+  }
+  .lead {
+    font-size: 1.05rem; color: var(--text-muted); max-width: 640px; margin-bottom: 2.5rem;
+  }
+  hr.divider {
+    border: none; border-top: 1px solid var(--border);
+    margin: 0 2rem;
+  }
+
+  /* DEST CARDS */
+  .dest-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-bottom: 2rem; }
+  .dest-card {
+    border-radius: 16px; padding: 2rem;
+    position: relative; overflow: hidden;
+    border: 1px solid var(--border);
+  }
+  .dest-card.usa { background: linear-gradient(135deg, #1B2A41 0%, #2E4057 100%); color: #fff; }
+  .dest-card.canada { background: linear-gradient(135deg, #5C1A1A 0%, #8B2E2E 100%); color: #fff; }
+  .dest-card .flag { font-size: 2.5rem; margin-bottom: 1rem; display: block; }
+  .dest-card h3 { font-family: 'Playfair Display', serif; font-size: 1.4rem; margin-bottom: 0.4rem; }
+  .dest-card .sub { font-size: 0.85rem; opacity: 0.7; margin-bottom: 1.2rem; }
+  .dest-card .price-tag {
+    display: inline-block;
+    background: rgba(255,255,255,0.15);
+    border: 1px solid rgba(255,255,255,0.25);
+    padding: 6px 14px; border-radius: 8px;
+    font-size: 0.9rem; font-weight: 500;
+    margin-bottom: 0.5rem;
+  }
+  .dest-card .price-note { font-size: 0.78rem; opacity: 0.6; }
+
+  /* STEPS */
+  .steps { display: flex; flex-direction: column; gap: 0; }
+  .step {
+    display: grid; grid-template-columns: 56px 1fr;
+    gap: 1.5rem; padding: 2rem 0;
+    border-bottom: 1px solid var(--border);
+    position: relative;
+  }
+  .step:last-child { border-bottom: none; }
+  .step-num {
+    width: 48px; height: 48px;
+    background: var(--navy);
+    color: #fff;
+    border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    font-family: 'Playfair Display', serif;
+    font-size: 1.2rem; font-weight: 600;
+    flex-shrink: 0;
+    margin-top: 2px;
+  }
+  .step-num.accent { background: var(--green); }
+  .step h3 { font-size: 1.05rem; font-weight: 500; margin-bottom: 0.4rem; color: var(--navy); }
+  .step p { font-size: 0.92rem; color: var(--text-muted); }
+  .step .badge {
+    display: inline-block; margin-top: 8px;
+    font-size: 0.75rem; padding: 3px 10px; border-radius: 100px;
+    font-weight: 500;
+  }
+  .badge-green { background: var(--green-pale); color: var(--green); }
+  .badge-amber { background: #FEF3C7; color: #92400E; }
+  .badge-red { background: #FEE2E2; color: #991B1B; }
+  .badge-blue { background: #DBEAFE; color: #1E40AF; }
+
+  /* FORMULA BOX */
+  .formula-section { background: var(--navy); border-radius: 20px; padding: 3rem; color: #fff; margin: 2rem 0; }
+  .formula-section h3 { font-family: 'Playfair Display', serif; font-size: 1.5rem; margin-bottom: 0.5rem; }
+  .formula-section .sub { color: rgba(255,255,255,0.6); font-size: 0.9rem; margin-bottom: 2rem; }
+  .formula-block {
+    background: rgba(255,255,255,0.06);
+    border: 1px solid rgba(255,255,255,0.12);
+    border-radius: 12px; padding: 1.5rem;
+    font-family: 'DM Sans', monospace;
+    font-size: 0.95rem; line-height: 2;
+    margin-bottom: 1.5rem;
+  }
+  .formula-block .highlight { color: var(--green-light); font-weight: 500; }
+  .formula-block .dim { color: rgba(255,255,255,0.45); }
+  .formula-note {
+    font-size: 0.82rem; color: rgba(255,255,255,0.5);
+    border-top: 1px solid rgba(255,255,255,0.1);
+    padding-top: 1rem; margin-top: 1rem;
+  }
+
+  /* CALC INTERACTIVE */
+  .calc-box {
+    background: #fff; border: 1px solid var(--border);
+    border-radius: 20px; padding: 2.5rem;
+    margin: 2rem 0;
+    box-shadow: 0 4px 24px rgba(0,0,0,0.05);
+  }
+  .calc-box h3 { font-family: 'Playfair Display', serif; font-size: 1.3rem; color: var(--navy); margin-bottom: 0.3rem; }
+  .calc-box .sub { font-size: 0.88rem; color: var(--text-muted); margin-bottom: 2rem; }
+  .slider-row { margin-bottom: 1.4rem; }
+  .slider-label { display: flex; justify-content: space-between; align-items: center; margin-bottom: 6px; }
+  .slider-label span { font-size: 0.88rem; color: var(--text-muted); }
+  .slider-label strong { font-size: 1rem; color: var(--navy); min-width: 36px; text-align: right; }
+  input[type=range] {
+    width: 100%; height: 4px; border-radius: 2px;
+    background: var(--border); outline: none; cursor: pointer;
+    -webkit-appearance: none;
+  }
+  input[type=range]::-webkit-slider-thumb {
+    -webkit-appearance: none; width: 18px; height: 18px;
+    background: var(--navy); border-radius: 50%; cursor: pointer;
+    border: 3px solid #fff;
+    box-shadow: 0 0 0 2px var(--navy);
+  }
+  .results-grid { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 12px; margin: 1.5rem 0; }
+  .result-card {
+    background: var(--cream); border-radius: 12px; padding: 1rem;
+    text-align: center; border: 1px solid var(--border);
+  }
+  .result-card .label { font-size: 0.75rem; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.06em; margin-bottom: 6px; }
+  .result-card .val { font-family: 'Playfair Display', serif; font-size: 2rem; color: var(--navy); font-weight: 600; }
+  .result-card .max { font-size: 0.75rem; color: var(--text-muted); }
+  .verdict {
+    border-radius: 12px; padding: 1rem 1.25rem;
+    font-size: 0.92rem; font-weight: 500;
+    display: flex; align-items: center; gap: 10px;
+  }
+  .verdict-icon { font-size: 1.3rem; }
+  .corte-list { margin-top: 1.5rem; display: flex; flex-direction: column; gap: 10px; }
+  .corte-row { display: grid; grid-template-columns: 1fr auto; align-items: center; gap: 12px; }
+  .corte-name { font-size: 0.88rem; color: var(--text); }
+  .corte-bar-wrap { grid-column: 1 / -1; margin-top: -4px; }
+  .corte-bar-bg { height: 5px; background: var(--border); border-radius: 3px; overflow: hidden; }
+  .corte-bar-fill { height: 100%; border-radius: 3px; transition: width 0.4s ease; }
+  .corte-meta { font-size: 0.78rem; white-space: nowrap; }
+
+  /* SEDE BOX */
+  .sede-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin: 2rem 0; }
+  .sede-card {
+    border: 1px solid var(--border); border-radius: 14px; padding: 1.5rem;
+    background: #fff;
+  }
+  .sede-card .dest { font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.1em; color: var(--text-muted); margin-bottom: 6px; }
+  .sede-card h4 { font-size: 1rem; font-weight: 500; color: var(--navy); margin-bottom: 8px; }
+  .sede-card .date { font-size: 0.85rem; color: var(--green); font-weight: 500; }
+  .sede-card .note { font-size: 0.8rem; color: var(--text-muted); margin-top: 6px; }
+
+  /* ALERT */
+  .alert {
+    border-left: 4px solid;
+    border-radius: 0 12px 12px 0;
+    padding: 1rem 1.25rem;
+    margin: 1.5rem 0;
+    font-size: 0.9rem;
+  }
+  .alert-green { border-color: var(--green); background: #F0FAF4; color: #1A4731; }
+  .alert-amber { border-color: #D97706; background: #FFFBEB; color: #78350F; }
+  .alert strong { display: block; margin-bottom: 3px; }
+
+  /* NMB MIXTA */
+  .nmb-example {
+    background: #fff; border: 1px solid var(--border);
+    border-radius: 16px; padding: 2rem; margin: 1.5rem 0;
+  }
+  .nmb-row { display: flex; align-items: center; gap: 12px; margin-bottom: 12px; font-size: 0.92rem; }
+  .nmb-badge {
+    background: var(--navy); color: #fff;
+    font-size: 0.75rem; padding: 3px 10px; border-radius: 6px;
+    font-weight: 500; white-space: nowrap;
+  }
+  .nmb-badge.ext { background: var(--green); }
+  .nmb-badge.result { background: var(--amber); color: var(--navy); }
+  .nmb-arrow { color: var(--text-muted); font-size: 1.1rem; }
+  .nmb-nota { font-size: 1.1rem; font-weight: 600; color: var(--navy); min-width: 32px; }
+
+  /* MLQ INCLUDES */
+  .includes-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; margin: 2rem 0; }
+  .inc-card {
+    border: 1px solid var(--border); border-radius: 14px; padding: 1.2rem;
+    background: #fff;
+  }
+  .inc-card .icon { font-size: 1.4rem; margin-bottom: 8px; }
+  .inc-card h4 { font-size: 0.9rem; font-weight: 500; color: var(--navy); margin-bottom: 4px; }
+  .inc-card p { font-size: 0.8rem; color: var(--text-muted); }
+
+  /* FAQ */
+  .faq { display: flex; flex-direction: column; gap: 0; }
+  .faq-item { border-bottom: 1px solid var(--border); }
+  .faq-q {
+    width: 100%; text-align: left; background: none; border: none; cursor: pointer;
+    padding: 1.2rem 0;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 0.97rem; font-weight: 500; color: var(--navy);
+    display: flex; justify-content: space-between; align-items: center; gap: 12px;
+  }
+  .faq-q .arrow { transition: transform 0.25s; color: var(--text-muted); font-size: 1.1rem; flex-shrink: 0; }
+  .faq-q.open .arrow { transform: rotate(180deg); }
+  .faq-a {
+    font-size: 0.9rem; color: var(--text-muted);
+    max-height: 0; overflow: hidden; transition: max-height 0.35s ease, padding 0.2s;
+  }
+  .faq-a.open { max-height: 400px; padding-bottom: 1.2rem; }
+
+  /* CTA */
+  .cta-section {
+    background: var(--green);
+    padding: 5rem 2rem; text-align: center; color: #fff;
+  }
+  .cta-section h2 { font-family: 'Playfair Display', serif; font-size: 2rem; margin-bottom: 1rem; }
+  .cta-section p { opacity: 0.85; max-width: 500px; margin: 0 auto 2rem; }
+  .cta-btn {
+    display: inline-block;
+    background: #fff; color: var(--green);
+    padding: 14px 32px; border-radius: 100px;
+    font-weight: 500; font-size: 0.95rem;
+    text-decoration: none;
+    border: 2px solid #fff;
+    transition: background 0.2s, color 0.2s;
+  }
+
+  /* FOOTER */
+  footer {
+    background: var(--navy); color: rgba(255,255,255,0.5);
+    text-align: center; padding: 2rem;
+    font-size: 0.82rem;
+  }
+  footer span { color: var(--green-light); }
+
+  @media(max-width: 640px) {
+    .dest-grid, .sede-grid, .results-grid, .includes-grid { grid-template-columns: 1fr; }
+    .nav-links { display: none; }
+    section { padding: 3rem 1.2rem; }
+    .formula-section { padding: 2rem 1.2rem; }
+    .calc-box { padding: 1.5rem; }
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-logo">My Language <span>Quest</span></div>
+  <ul class="nav-links">
+    <li><a href="#destinos">Destinos</a></li>
+    <li><a href="#proceso">Proceso</a></li>
+    <li><a href="#universidad">Universidad</a></li>
+    <li><a href="#calculo">Calculadora</a></li>
+    <li><a href="#faq">FAQ</a></li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+<div class="hero">
+  <div class="hero-tag">Guía para Familias · 2025–2026</div>
+  <h1>Un año en el extranjero.<br><em>Una puerta a la universidad.</em></h1>
+  <p>Todo lo que necesitáis saber sobre el programa académico en Estados Unidos y Canadá, y cómo se gestiona el acceso a la universidad española al volver.</p>
+  <div class="hero-pills">
+    <div class="pill">🇺🇸 Estados Unidos — Programa J1</div>
+    <div class="pill">🇨🇦 Canadá — Study Permit</div>
+    <div class="pill">Convalidación incluida</div>
+    <div class="pill">Acceso universidad española</div>
+  </div>
+</div>
+
+<!-- DESTINOS -->
+<section id="destinos">
+  <div class="section-label">Los programas</div>
+  <h2>Dos países, una misma oportunidad</h2>
+  <p class="lead">Ambos programas incluyen familia anfitriona, colegio local, gestor estudiantil personal y gestión completa de convalidación. Las diferencias clave están en el visado, la selección del destino y el precio.</p>
+
+  <div class="dest-grid">
+    <div class="dest-card usa">
+      <span class="flag">🇺🇸</span>
+      <h3>Estados Unidos</h3>
+      <div class="sub">Programa J1 — Visado de intercambio</div>
+      <div class="price-tag">Año completo: 13.600 €</div><br>
+      <div class="price-tag" style="margin-top:6px">Semestre: 10.850 €</div>
+      <div class="price-note" style="margin-top:10px">+ suplementos regionales desde 500 €</div>
+    </div>
+    <div class="dest-card canada">
+      <span class="flag">🇨🇦</span>
+      <h3>Canadá</h3>
+      <div class="sub">Study Permit — Vuelos incluidos*</div>
+      <div class="price-tag">Año completo: desde 19.430 €</div><br>
+      <div class="price-tag" style="margin-top:6px">Semestre: desde 10.860 €</div>
+      <div class="price-note" style="margin-top:10px">*Vuelos incluidos hasta 1.000 €. Quebec: +550 € visado.</div>
+    </div>
+  </div>
+
+  <div style="display:grid; grid-template-columns:1fr 1fr; gap:16px; margin-top:8px;">
+    <div style="background:#fff;border:1px solid var(--border);border-radius:14px;padding:1.4rem;">
+      <div style="font-size:0.8rem;color:var(--text-muted);text-transform:uppercase;letter-spacing:.08em;margin-bottom:10px;">EE.UU. — Peculiaridades</div>
+      <ul style="font-size:0.88rem;color:var(--text-muted);list-style:none;display:flex;flex-direction:column;gap:7px;">
+        <li>📍 Pequeñas localidades rurales, sin elección de destino base</li>
+        <li>📝 Examen ELTIS mínimo 690 pts o iTEP 70 pts</li>
+        <li>📊 Nota media mínima ~6/10 en expediente español</li>
+        <li>🏛️ Entrevista en Embajada de EEUU en Madrid</li>
+        <li>📅 No visitas familiares antes del 15 de abril</li>
+      </ul>
+    </div>
+    <div style="background:#fff;border:1px solid var(--border);border-radius:14px;padding:1.4rem;">
+      <div style="font-size:0.8rem;color:var(--text-muted);text-transform:uppercase;letter-spacing:.08em;margin-bottom:10px;">Canadá — Ventajas clave</div>
+      <ul style="font-size:0.88rem;color:var(--text-muted);list-style:none;display:flex;flex-direction:column;gap:7px;">
+        <li>🎯 Eliges distrito y colegio entre 3 opciones</li>
+        <li>🗣️ Se garantiza único hispanohablante por familia</li>
+        <li>✈️ Vuelos de ida y vuelta incluidos (hasta 1.000 €)</li>
+        <li>👨‍✈️ Monitor acompañante en el vuelo de ida</li>
+        <li>🎓 Taller 3 sesiones con docente del MIT</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<hr class="divider">
+
+<!-- PROCESO -->
+<section id="proceso">
+  <div class="section-label">Cómo funciona</div>
+  <h2>El proceso, paso a paso</h2>
+  <p class="lead">Desde la primera reunión hasta la resolución de convalidación en España. MLQ acompaña cada etapa.</p>
+
+  <div class="steps">
+    <div class="step">
+      <div class="step-num">1</div>
+      <div>
+        <h3>Reunión inicial y evaluación del estudiante</h3>
+        <p>Reunión con los padres y entrevista personal con el estudiante. En EEUU se realiza el examen ELTIS de nivel de inglés. Se valora el expediente académico (nota media mínima ~6/10 para J1).</p>
+        <span class="badge badge-blue">Antes del viaje</span>
+      </div>
+    </div>
+    <div class="step">
+      <div class="step-num">2</div>
+      <div>
+        <h3>Inscripción, visado y familia anfitriona</h3>
+        <p>MLQ gestiona la matriculación en el colegio, la tramitación del visado (J1 o Study Permit), y la selección de familia anfitriona en pensión completa. Para Canadá se envía propuesta de 3 colegios.</p>
+        <span class="badge badge-blue">Antes del viaje</span>
+      </div>
+    </div>
+    <div class="step">
+      <div class="step-num accent">3</div>
+      <div>
+        <h3>Orientación pre-viaje en Madrid</h3>
+        <p>Sesión presencial para estudiantes y familias. En EEUU incluye orientación en Nueva York: 4 días / 3 noches con talleres "Life in the USA", transporte y coordinador.</p>
+        <span class="badge badge-green">Incluido en el programa</span>
+      </div>
+    </div>
+    <div class="step">
+      <div class="step-num accent">4</div>
+      <div>
+        <h3>El año académico en el extranjero</h3>
+        <p>Gestor estudiantil personal, coordinador local 24h, clases Cambridge, acompañamiento psicológico y reportes mensuales a los padres. MLQ supervisa desde España.</p>
+        <span class="badge badge-green">Durante el viaje</span>
+      </div>
+    </div>
+    <div class="step">
+      <div class="step-num">5</div>
+      <div>
+        <h3>Convalidación ante el Ministerio de Educación</h3>
+        <p>MLQ recoge los transcripts, gestiona la Apostilla de La Haya, coordina con notario y presenta el expediente ante el Ministerio. Se hace seguimiento hasta resolución definitiva.</p>
+        <span class="badge badge-amber">Después del viaje · gestionado por MLQ</span>
+      </div>
+    </div>
+    <div class="step">
+      <div class="step-num">6</div>
+      <div>
+        <h3>Acceso a la universidad: UNEDasiss y PCE</h3>
+        <p>Con el bachillerato homologado, el estudiante obtiene su Acreditación UNEDasiss y, si la carrera lo requiere, se presenta a las Pruebas de Competencias Específicas (PCE) — la "selectividad para quienes estudiaron fuera".</p>
+        <span class="badge badge-amber">Después del viaje · gestionado por el estudiante</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<hr class="divider">
+
+<!-- UNIVERSIDAD -->
+<section id="universidad">
+  <div class="section-label">Acceso a la universidad</div>
+  <h2>¿Cómo entra mi hijo en la universidad española?</h2>
+  <p class="lead">Esta es la pregunta que más preocupa a las familias. La respuesta es clara: a través de <strong>UNEDasiss</strong>, el sistema oficial equivalente a la selectividad para estudiantes con bachillerato extranjero.</p>
+
+  <!-- NMB MIXTA -->
+  <div style="margin-bottom:2rem;">
+    <h3 style="font-size:1.05rem;font-weight:500;color:var(--navy);margin-bottom:0.8rem;">⚠️ Un detalle clave: la nota media del bachillerato es la de ambos cursos</h3>
+    <p style="font-size:0.9rem;color:var(--text-muted);margin-bottom:1rem;">Si el estudiante hizo 1º de Bachillerato en España y 2º en el extranjero, UNEDasiss calcula la Nota Media de Bachillerato (NMB) combinando los dos cursos. <strong>No es solo la nota del año en el extranjero.</strong></p>
+
+    <div class="nmb-example">
+      <div style="font-size:0.8rem;text-transform:uppercase;letter-spacing:.08em;color:var(--text-muted);margin-bottom:1rem;">Ejemplo real — cómo se forma la NMB</div>
+      <div class="nmb-row">
+        <div class="nmb-badge">1º Bach. España</div>
+        <div class="nmb-nota">7.5</div>
+        <div class="nmb-arrow">→</div>
+        <div style="font-size:0.85rem;color:var(--text-muted);">notas del instituto español, ya fijas</div>
+      </div>
+      <div class="nmb-row">
+        <div class="nmb-badge ext">2º Bach. EEUU/Canadá</div>
+        <div class="nmb-nota">8.8</div>
+        <div class="nmb-arrow">→</div>
+        <div style="font-size:0.85rem;color:var(--text-muted);">notas del colegio extranjero, convertidas a escala española</div>
+      </div>
+      <div style="border-top:1px solid var(--border);margin:12px 0;"></div>
+      <div class="nmb-row">
+        <div class="nmb-badge result">NMB resultante</div>
+        <div class="nmb-nota">≈ 8.2</div>
+        <div class="nmb-arrow">→</div>
+        <div style="font-size:0.85rem;color:var(--text-muted);">media ponderada de los dos cursos calculada por UNEDasiss</div>
+      </div>
+    </div>
+
+    <div class="alert alert-amber">
+      <strong>Implicación directa para las familias</strong>
+      Las notas de 1º de Bachillerato en España ya no se pueden cambiar y pesan tanto como las del año fuera. Un estudiante con un 1º flojo que mejore mucho en el extranjero verá subir su NMB, pero uno con un excelente 1º que baje en el extranjero la verá descender. Por eso el asesoramiento de asignaturas durante el programa es estratégico.
+    </div>
+  </div>
+
+  <!-- FORMULA -->
+  <div class="formula-section">
+    <h3>La fórmula UNEDasiss explicada</h3>
+    <div class="sub">Dos notas distintas: nota de acceso (hasta 10) y nota de admisión (hasta 14)</div>
+
+    <div style="font-size:0.85rem;color:rgba(255,255,255,0.6);margin-bottom:1rem;">PASO 1 — Nota de acceso (sobre 10)</div>
+    <div class="formula-block">
+      <span class="highlight">Nota de acceso</span> = 4 + (<span class="highlight">NMB</span> × 0.2) + (M1 × 0.1) + (M2 × 0.1) + (M3 × 0.1) + (M4 × 0.1)<br>
+      <span class="dim">donde M1–M4 = notas de 4 asignaturas PCE (solo cuentan si ≥ 5)</span>
+    </div>
+
+    <div style="font-size:0.85rem;color:rgba(255,255,255,0.6);margin-bottom:1rem;">PASO 2 — Nota de admisión (sobre 14)</div>
+    <div class="formula-block">
+      <span class="highlight">Nota de admisión</span> = Nota de acceso + (<span class="highlight">M5</span> × 0.2) + (<span class="highlight">M6</span> × 0.2)<br>
+      <span class="dim">donde M5 y M6 = las 2 mejores PCE que ponderen 0.2 para tu carrera específica</span>
+    </div>
+
+    <div class="formula-note">
+      Con una NMB de 10, la nota de acceso base es solo 6/10. Los 8 puntos restantes vienen de las PCE. Por eso las PCE son determinantes para carreras con nota de corte alta como Medicina o Ingeniería.
+    </div>
+  </div>
+
+  <!-- SEDES PCE -->
+  <h3 style="font-size:1.1rem;font-weight:500;color:var(--navy);margin-bottom:0.6rem;">Dónde y cuándo se examinan estando en el extranjero</h3>
+  <p style="font-size:0.9rem;color:var(--text-muted);margin-bottom:1.2rem;">La gran ventaja: el estudiante puede hacer las PCE <strong>sin volver a España</strong>. Hay sedes oficiales en ambos países.</p>
+
+  <div class="sede-grid">
+    <div class="sede-card">
+      <div class="dest">🇺🇸 Estados Unidos</div>
+      <h4>Sede: Nueva York</h4>
+      <div class="date">10–13 junio 2026 (conv. ordinaria)</div>
+      <div class="date" style="color:var(--text-muted);margin-top:3px;">2–8 septiembre 2026 (conv. extraordinaria)</div>
+      <div class="note">El programa J1 termina en mayo/junio. El estudiante puede examinarse antes de volver o en septiembre ya en España.</div>
+    </div>
+    <div class="sede-card">
+      <div class="dest">🇨🇦 Canadá</div>
+      <h4>Sedes: Toronto y Vancouver</h4>
+      <div class="date">10–13 junio 2026 (conv. ordinaria)</div>
+      <div class="date" style="color:var(--text-muted);margin-top:3px;">2–8 septiembre 2026 (conv. extraordinaria)</div>
+      <div class="note">Las pruebas son presenciales. Se recomienda reservar plaza con antelación: las plazas en sedes internacionales son limitadas.</div>
+    </div>
+  </div>
+
+  <div class="alert alert-green">
+    <strong>Inscripción a las PCE 2026</strong>
+    El plazo de inscripción a la convocatoria ordinaria estuvo abierto del 16 de marzo al 28 de abril de 2026. Para la convocatoria de septiembre los plazos se abren en verano. Es necesario haber iniciado el trámite de homologación del bachillerato antes de inscribirse.
+  </div>
+</section>
+
+<hr class="divider">
+
+<!-- CALCULADORA -->
+<section id="calculo">
+  <div class="section-label">Calculadora orientativa</div>
+  <h2>Simula la nota de tu hijo</h2>
+  <p class="lead">Introduce las notas estimadas para ver qué nota de admisión podría obtener y qué carreras estarían a su alcance.</p>
+
+  <div class="calc-box">
+    <h3>Simulador de nota UNEDasiss</h3>
+    <div class="sub">Orientativo · basado en la fórmula oficial para bachillerato extranjero con 4 PCE</div>
+
+    <div class="slider-row">
+      <div class="slider-label">
+        <span>Nota media bachillerato (NMB) — ambos cursos</span>
+        <strong id="v-nmb">8.0</strong>
+      </div>
+      <input type="range" id="s-nmb" min="5" max="10" step="0.1" value="8.0" oninput="simCalc()">
+    </div>
+    <div class="slider-row">
+      <div class="slider-label">
+        <span>PCE Materia 1 — general</span>
+        <strong id="v-m1">7.0</strong>
+      </div>
+      <input type="range" id="s-m1" min="0" max="10" step="0.5" value="7" oninput="simCalc()">
+    </div>
+    <div class="slider-row">
+      <div class="slider-label">
+        <span>PCE Materia 2 — general</span>
+        <strong id="v-m2">7.0</strong>
+      </div>
+      <input type="range" id="s-m2" min="0" max="10" step="0.5" value="7" oninput="simCalc()">
+    </div>
+    <div class="slider-row">
+      <div class="slider-label">
+        <span>PCE Materia 3 — específica (pondera 0.2)</span>
+        <strong id="v-m3">8.0</strong>
+      </div>
+      <input type="range" id="s-m3" min="0" max="10" step="0.5" value="8" oninput="simCalc()">
+    </div>
+    <div class="slider-row">
+      <div class="slider-label">
+        <span>PCE Materia 4 — específica (pondera 0.2)</span>
+        <strong id="v-m4">8.0</strong>
+      </div>
+      <input type="range" id="s-m4" min="0" max="10" step="0.5" value="8" oninput="simCalc()">
+    </div>
+
+    <div class="results-grid">
+      <div class="result-card">
+        <div class="label">Nota de acceso</div>
+        <div class="val" id="r-acceso">—</div>
+        <div class="max">sobre 10</div>
+      </div>
+      <div class="result-card">
+        <div class="label">Nota de admisión</div>
+        <div class="val" id="r-admision">—</div>
+        <div class="max">sobre 14</div>
+      </div>
+      <div class="result-card">
+        <div class="label">Contribución NMB</div>
+        <div class="val" id="r-nmb-contrib">—</div>
+        <div class="max">de 14 posibles</div>
+      </div>
+    </div>
+
+    <div id="verdict-box"></div>
+
+    <div style="margin-top:1.5rem;border-top:1px solid var(--border);padding-top:1.2rem;">
+      <div style="font-size:0.8rem;text-transform:uppercase;letter-spacing:.08em;color:var(--text-muted);margin-bottom:1rem;">Comparativa con notas de corte orientativas</div>
+      <div class="corte-list" id="corte-list"></div>
+    </div>
+  </div>
+</section>
+
+<hr class="divider">
+
+<!-- MLQ GESTIONA -->
+<section>
+  <div class="section-label">Lo que incluye MLQ</div>
+  <h2>Todo el proceso, gestionado por MLQ</h2>
+  <p class="lead">Desde la matrícula hasta la resolución de convalidación. El gestor estudiantil personal es el hilo conductor de todo el año.</p>
+
+  <div class="includes-grid">
+    <div class="inc-card">
+      <div class="icon">👨‍💼</div>
+      <h4>Gestor estudiantil personal</h4>
+      <p>Para padres y estudiante. Seguimiento mensual, reuniones ilimitadas, notas oficiales cada trimestre.</p>
+    </div>
+    <div class="inc-card">
+      <div class="icon">🏫</div>
+      <h4>Selección de asignaturas estratégica</h4>
+      <p>Orientadas a convalidación Y a maximizar la NMB para la carrera objetivo del estudiante.</p>
+    </div>
+    <div class="inc-card">
+      <div class="icon">🏠</div>
+      <h4>Familia anfitriona</h4>
+      <p>Pensión completa. Gestión de cambio de familia si fuera necesario. Un solo hispanohablante por familia (Canadá).</p>
+    </div>
+    <div class="inc-card">
+      <div class="icon">🧠</div>
+      <h4>Acompañamiento psicológico</h4>
+      <p>Durante todo el programa. Atención 24h en España para emergencias de estudiantes y familias.</p>
+    </div>
+    <div class="inc-card">
+      <div class="icon">📋</div>
+      <h4>Convalidación ante el Ministerio</h4>
+      <p>Apostilla de La Haya, transcripts, traducciones juradas y seguimiento del expediente hasta resolución.</p>
+    </div>
+    <div class="inc-card">
+      <div class="icon">🎓</div>
+      <h4>Clases Cambridge + MIT</h4>
+      <p>Inglés Cambridge con libro incluido. Taller de 3 sesiones con docente del MIT Oscar Corominas (Canadá y Irlanda).</p>
+    </div>
+  </div>
+</section>
+
+<hr class="divider">
+
+<!-- FAQ -->
+<section id="faq">
+  <div class="section-label">Preguntas frecuentes</div>
+  <h2>Lo que más preguntan las familias</h2>
+
+  <div class="faq">
+    <div class="faq-item">
+      <button class="faq-q" onclick="toggleFaq(this)">
+        ¿Mi hijo necesita hacer la selectividad (EBAU) cuando vuelva?
+        <span class="arrow">▾</span>
+      </button>
+      <div class="faq-a">
+        No exactamente. Los estudiantes que hicieron 2º de Bachillerato en el extranjero acceden a la universidad a través de UNEDasiss y las Pruebas de Competencias Específicas (PCE), no por la EBAU tradicional. Las PCE son el equivalente para bachilleratos extranjeros. Si la nota de acceso ya es suficiente para la carrera deseada, puede que ni siquiera haya que examinarse de PCE.
+      </div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-q" onclick="toggleFaq(this)">
+        ¿Las notas de 1º de Bachillerato en España afectan al acceso universitario?
+        <span class="arrow">▾</span>
+      </button>
+      <div class="faq-a">
+        Sí, y mucho. UNEDasiss calcula la Nota Media de Bachillerato (NMB) con los dos cursos. Si tu hijo sacó un 7 en 1º y un 9 en el extranjero, su NMB no es un 9: es aproximadamente un 8. Por eso recomendamos que el estudiante llegue al programa con el mejor expediente posible de 1º.
+      </div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-q" onclick="toggleFaq(this)">
+        ¿Pueden hacer las PCE sin volver a España?
+        <span class="arrow">▾</span>
+      </button>
+      <div class="faq-a">
+        Sí. Hay sedes oficiales de UNEDasiss en Nueva York (para EEUU) y en Toronto y Vancouver (para Canadá). La convocatoria ordinaria es del 10 al 13 de junio, cuando los programas ya están finalizando. Si no se llega a tiempo, existe una convocatoria extraordinaria en septiembre, ya de vuelta en España.
+      </div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-q" onclick="toggleFaq(this)">
+        ¿A qué carreras puede acceder con la nota UNEDasiss?
+        <span class="arrow">▾</span>
+      </button>
+      <div class="faq-a">
+        A todas las mismas carreras que cualquier estudiante español, compitiendo en el mismo grupo. La nota de admisión va de 5 a 14. Para la mayoría de grados (ADE, Derecho, Educación, Ingeniería...) una nota entre 9 y 11 suele ser suficiente. Para Medicina se necesitan más de 13.5, lo que requiere sacar notas muy altas en las PCE.
+      </div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-q" onclick="toggleFaq(this)">
+        ¿Qué pasa si la carrera requiere Modalidad de Bachillerato?
+        <span class="arrow">▾</span>
+      </button>
+      <div class="faq-a">
+        Algunas universidades (Madrid, Salamanca, Valladolid, Burgos y León) exigen acreditar la Modalidad de Bachillerato. UNEDasiss también gestiona esto: se establece según qué PCE ha superado el estudiante. Es importante planificar con MLQ qué asignaturas elegir en el colegio extranjero para cubrirlo.
+      </div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-q" onclick="toggleFaq(this)">
+        ¿Cuándo hay que iniciar el trámite de homologación?
+        <span class="arrow">▾</span>
+      </button>
+      <div class="faq-a">
+        Idealmente al volver de destino, en mayo-junio. No hace falta tener la homologación resuelta para inscribirse en las PCE: solo hay que haber iniciado el trámite. MLQ gestiona todo esto como parte del programa.
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<div class="cta-section">
+  <h2>¿Listos para dar el paso?</h2>
+  <p>Contactad con My Language Quest para una reunión inicial sin compromiso. Os orientamos sobre el programa más adecuado para vuestro hijo y resolvemos todas vuestras dudas.</p>
+  <a href="#" class="cta-btn">Solicitar información</a>
+</div>
+
+<footer>
+  Documento orientativo elaborado por <span>My Language Quest</span> · Explore, Learn, Grow<br>
+  <span style="color:rgba(255,255,255,0.3);font-size:0.75rem;">Los precios, fechas y condiciones son orientativos y pueden variar. Consultar siempre la propuesta oficial vigente.</span>
+</footer>
+
+<script>
+const cortes = [
+  { name: 'Medicina (UCM)', corte: 13.6 },
+  { name: 'Psicología (UAM)', corte: 10.8 },
+  { name: 'ADE (UC3M)', corte: 9.8 },
+  { name: 'Derecho (UAM)', corte: 9.5 },
+  { name: 'Ingeniería Informática (UPM)', corte: 8.9 },
+  { name: 'Educación Primaria (UAM)', corte: 7.2 },
+];
+
+function gv(id){ return parseFloat(document.getElementById(id).value); }
+
+function simCalc(){
+  const nmb = gv('s-nmb'), m1=gv('s-m1'), m2=gv('s-m2'), m3=gv('s-m3'), m4=gv('s-m4');
+  document.getElementById('v-nmb').textContent = nmb.toFixed(1);
+  document.getElementById('v-m1').textContent = m1.toFixed(1);
+  document.getElementById('v-m2').textContent = m2.toFixed(1);
+  document.getElementById('v-m3').textContent = m3.toFixed(1);
+  document.getElementById('v-m4').textContent = m4.toFixed(1);
+
+  const vm = x => x >= 5 ? x : 0;
+  const acceso = Math.min(4 + nmb*0.2 + vm(m1)*0.1 + vm(m2)*0.1 + vm(m3)*0.1 + vm(m4)*0.1, 10);
+  const pond = (vm(m3)>=5 ? vm(m3)*0.2 : 0) + (vm(m4)>=5 ? vm(m4)*0.2 : 0);
+  const admision = Math.min(acceso + pond, 14);
+  const nmbContrib = parseFloat((4 + nmb*0.2).toFixed(2));
+
+  document.getElementById('r-acceso').textContent = acceso.toFixed(2);
+  document.getElementById('r-admision').textContent = admision.toFixed(2);
+  document.getElementById('r-nmb-contrib').textContent = nmbContrib.toFixed(2);
+
+  let vcolor, vbg, vtext;
+  if(admision >= 11){ vcolor='#1A4731'; vbg='#D1FAE5'; vtext='✅ Nota competitiva para la mayoría de carreras, incluyendo alta demanda.'; }
+  else if(admision >= 8){ vcolor='#78350F'; vbg='#FEF3C7'; vtext='⚡ Acceso garantizado a muchos grados. Con mejores PCE se pueden alcanzar carreras más exigentes.'; }
+  else { vcolor='#991B1B'; vbg='#FEE2E2'; vtext='⚠️ Nota de acceso ajustada. Hay que centrarse en mejorar las notas PCE o la NMB.'; }
+
+  document.getElementById('verdict-box').innerHTML = `<div style="background:${vbg};color:${vcolor};border-radius:12px;padding:1rem 1.25rem;font-size:0.9rem;font-weight:500;margin-top:1rem;">${vtext}</div>`;
+
+  const list = document.getElementById('corte-list');
+  list.innerHTML = cortes.map(c => {
+    const ok = admision >= c.corte;
+    const pct = Math.min((admision/c.corte)*100, 100);
+    const barColor = ok ? '#2D6A4F' : '#C1666B';
+    const meta = ok
+      ? `<span style="color:#2D6A4F;font-weight:500;">✓ alcanzado</span>`
+      : `<span style="color:#C1666B;">faltan ${(c.corte-admision).toFixed(2)} pts</span>`;
+    return `<div>
+      <div style="display:flex;justify-content:space-between;margin-bottom:5px;">
+        <span style="font-size:0.87rem;color:var(--text);">${c.name}</span>
+        <span style="font-size:0.78rem;color:var(--text-muted);">corte ${c.corte} · ${meta}</span>
+      </div>
+      <div class="corte-bar-bg"><div class="corte-bar-fill" style="width:${pct.toFixed(1)}%;background:${barColor};"></div></div>
+    </div>`;
+  }).join('');
+}
+
+function toggleFaq(btn){
+  const ans = btn.nextElementSibling;
+  const isOpen = ans.classList.contains('open');
+  document.querySelectorAll('.faq-a').forEach(a => a.classList.remove('open'));
+  document.querySelectorAll('.faq-q').forEach(b => b.classList.remove('open'));
+  if(!isOpen){ ans.classList.add('open'); btn.classList.add('open'); }
+}
+
+simCalc();
+</script>
+</body>
+</html>
