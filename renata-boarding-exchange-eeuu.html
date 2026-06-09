@@ -361,26 +361,32 @@ body{font-family:'Fira Sans',sans-serif;background:var(--gray-bg);color:var(--te
       </div>
 
       <!-- SELECTOR PLAZOS -->
-      <div style="font-family:'Josefin Sans',sans-serif;font-size:9px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--text-light);margin-bottom:12px;">Elige tu plazo · Importe a financiar: 11.375 €</div>
-      <div class="fin-plazos">
-        <div class="fin-plazo active" onclick="setPlazo(this,12)">
+      <div style="font-family:'Josefin Sans',sans-serif;font-size:9px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--text-light);margin-bottom:12px;">Elige tu opción de pago · Importe restante: 11.375 €</div>
+      <div class="fin-plazos" style="grid-template-columns:repeat(3,1fr);">
+        <div class="fin-plazo active" onclick="setPlazo(this,'12')">
           <div class="fin-plazo-meses">12 meses</div>
           <div class="fin-plazo-badge">TIN 0% · Sin intereses</div>
-          <div class="fin-plazo-quien">Financiación MLQ directa</div>
+          <div class="fin-plazo-quien">Cuotas mensuales · jul 2026 – jun 2027</div>
           <div class="fin-plazo-cuota" id="cuota12">947,92 €/mes</div>
         </div>
-        <div class="fin-plazo" onclick="setPlazo(this,18)">
+        <div class="fin-plazo" onclick="setPlazo(this,'18')">
           <div class="fin-plazo-meses">18 meses</div>
           <div class="fin-plazo-badge">TIN 0% · Sin intereses</div>
-          <div class="fin-plazo-quien">Financiación MLQ directa</div>
+          <div class="fin-plazo-quien">Cuotas mensuales · jul 2026 – dic 2027</div>
           <div class="fin-plazo-cuota" id="cuota18">631,94 €/mes</div>
+        </div>
+        <div class="fin-plazo" onclick="setPlazo(this,'2plazos')">
+          <div class="fin-plazo-meses">2 plazos</div>
+          <div class="fin-plazo-badge">Sin cuotas mensuales</div>
+          <div class="fin-plazo-quien">50% junio + resto antes 1 marzo 2027</div>
+          <div class="fin-plazo-cuota">11.375 € · 1 mar 2027</div>
         </div>
       </div>
 
       <!-- RESULTADO -->
       <div class="fin-resultado">
         <div class="fin-resultado-main">
-          <div class="fin-cuota-label">Cuota mensual</div>
+          <div class="fin-cuota-label" id="cuotaLabel">Cuota mensual</div>
           <div class="fin-cuota-valor" id="cuotaValor">947,92 €</div>
           <div class="fin-cuota-sub" id="cuotaSub">/mes · 12 pagos · desde julio 2026</div>
         </div>
@@ -389,16 +395,16 @@ body{font-family:'Fira Sans',sans-serif;background:var(--gray-bg);color:var(--te
             <span class="fin-det-label">Entrada junio 2026</span>
             <span class="fin-det-val">11.375 €</span>
           </div>
-          <div class="fin-det-row">
-            <span class="fin-det-label">Importe financiado</span>
+          <div class="fin-det-row" id="rowFinanciado">
+            <span class="fin-det-label">Importe restante</span>
             <span class="fin-det-val">11.375 €</span>
           </div>
           <div class="fin-det-row">
             <span class="fin-det-label">Intereses</span>
             <span class="fin-det-val fin-det-highlight">0 € · ¡Sin intereses!</span>
           </div>
-          <div class="fin-det-row">
-            <span class="fin-det-label">Inicio cuotas</span>
+          <div class="fin-det-row" id="rowFecha">
+            <span class="fin-det-label" id="fechaLabel">Inicio cuotas</span>
             <span class="fin-det-val fin-det-highlight" id="detInicio">Julio 2026</span>
           </div>
           <div class="fin-det-row fin-det-total">
@@ -407,7 +413,7 @@ body{font-family:'Fira Sans',sans-serif;background:var(--gray-bg);color:var(--te
           </div>
         </div>
       </div>
-      <div class="fin-nota">ℹ️ Financiación interna de My Language Quest — sin banco, sin intereses, sin comisión de apertura, sin penalización por cancelación anticipada. Los pagos se realizan directamente a MLQ.</div>
+      <div class="fin-nota" id="finNota">ℹ️ Financiación interna de My Language Quest — sin banco, sin intereses, sin comisión de apertura, sin penalización por cancelación anticipada. Los pagos se realizan directamente a MLQ.</div>
     </div>
   </div>
 
@@ -437,7 +443,7 @@ body{font-family:'Fira Sans',sans-serif;background:var(--gray-bg);color:var(--te
           <div class="cal-step-desc" id="calPaso3Desc">Completa los 11.375 € de entrada · los 11.375 € restantes se financian a partir de julio</div>
         </div>
       </div>
-      <div class="cal-cuotas">
+      <div class="cal-cuotas" id="calCuotasBox">
         <div class="cal-cuotas-label" id="calCuotasLabel">A partir de julio 2026 · 12 cuotas mensuales</div>
         <div class="cal-cuotas-val" id="calCuotasVal">947,92 €/mes · de julio 2026 a junio 2027 · TIN 0% · Financiación MLQ directa</div>
       </div>
@@ -477,27 +483,61 @@ body{font-family:'Fira Sans',sans-serif;background:var(--gray-bg);color:var(--te
 </main>
 
 <script>
-var _mes = 12;
+var _opcion = '12';
 var _cap = 11375;
-var _meses12 = ['julio','agosto','septiembre','octubre','noviembre','diciembre','enero','febrero','marzo','abril','mayo','junio'];
-var _meses18 = ['julio','agosto','septiembre','octubre','noviembre','diciembre','enero','febrero','marzo','abril','mayo','junio','julio','agosto','septiembre','octubre','noviembre','diciembre'];
 
-function _fmt(n, d) { return n.toLocaleString('es-ES', {minimumFractionDigits: d||2, maximumFractionDigits: d||2}) + ' €'; }
+function _fmt(n) { return n.toLocaleString('es-ES', {minimumFractionDigits:2, maximumFractionDigits:2}) + ' €'; }
 
 function _update() {
-  var q = _cap / _mes;
-  var fin = _mes === 12 ? 'junio 2027' : 'diciembre 2027';
-  document.getElementById('cuotaValor').textContent = _fmt(q);
-  document.getElementById('cuotaSub').textContent = '/mes · ' + _mes + ' pagos · desde julio 2026';
-  document.getElementById('calCuotasLabel').textContent = 'A partir de julio 2026 · ' + _mes + ' cuotas mensuales';
-  document.getElementById('calCuotasVal').textContent = _fmt(q) + '/mes · de julio 2026 a ' + fin + ' · TIN 0% · Financiación MLQ directa';
-  // Actualizar cuotas en tarjetas
+  var q, sub, calLabel, calVal, cuotaLabel, fechaLabel, fechaVal, nota;
+
+  if (_opcion === '12') {
+    q = _cap / 12;
+    sub = '/mes · 12 pagos · desde julio 2026';
+    cuotaLabel = 'Cuota mensual';
+    fechaLabel = 'Inicio cuotas';
+    fechaVal = 'Julio 2026';
+    calLabel = 'A partir de julio 2026 · 12 cuotas mensuales';
+    calVal = _fmt(q) + '/mes · de julio 2026 a junio 2027 · TIN 0% · Financiación MLQ directa';
+    nota = 'ℹ️ Financiación interna MLQ — sin banco, sin intereses, sin comisión de apertura. 12 cuotas de ' + _fmt(q) + ' desde julio 2026. Pagos directamente a MLQ.';
+    document.getElementById('calCuotasBox').style.display = '';
+  } else if (_opcion === '18') {
+    q = _cap / 18;
+    sub = '/mes · 18 pagos · desde julio 2026';
+    cuotaLabel = 'Cuota mensual';
+    fechaLabel = 'Inicio cuotas';
+    fechaVal = 'Julio 2026';
+    calLabel = 'A partir de julio 2026 · 18 cuotas mensuales';
+    calVal = _fmt(q) + '/mes · de julio 2026 a diciembre 2027 · TIN 0% · Financiación MLQ directa';
+    nota = 'ℹ️ Financiación interna MLQ — sin banco, sin intereses, sin comisión de apertura. 18 cuotas de ' + _fmt(q) + ' desde julio 2026. Pagos directamente a MLQ.';
+    document.getElementById('calCuotasBox').style.display = '';
+  } else {
+    // 2 plazos
+    q = 11375;
+    sub = '· pago único antes del 1 de marzo de 2027';
+    cuotaLabel = 'Segundo pago';
+    fechaLabel = 'Fecha límite';
+    fechaVal = '1 de marzo de 2027';
+    calLabel = 'Sin cuotas mensuales · Pago único del resto';
+    calVal = '11.375 € · pago único antes del 1 de marzo de 2027 · sin intereses · sin cuotas';
+    nota = '✅ Opción más sencilla — solo 2 pagos: 11.375 € en junio 2026 y 11.375 € antes del 1 de marzo de 2027. Sin cuotas mensuales, sin intereses, sin banco. Tener el total pagado antes de marzo 2027 garantiza tramitar el I-20 y el visado F1 con total tranquilidad.';
+    document.getElementById('calCuotasBox').style.display = '';
+  }
+
+  document.getElementById('cuotaLabel').textContent = cuotaLabel;
+  document.getElementById('cuotaValor').textContent = _opcion === '2plazos' ? '11.375,00 €' : _fmt(q);
+  document.getElementById('cuotaSub').textContent = sub;
+  document.getElementById('fechaLabel').textContent = fechaLabel;
+  document.getElementById('detInicio').textContent = fechaVal;
+  document.getElementById('calCuotasLabel').textContent = calLabel;
+  document.getElementById('calCuotasVal').textContent = calVal;
+  document.getElementById('finNota').textContent = nota;
   document.getElementById('cuota12').textContent = _fmt(11375/12) + '/mes';
   document.getElementById('cuota18').textContent = _fmt(11375/18) + '/mes';
 }
 
-function setPlazo(el, m) {
-  _mes = m;
+function setPlazo(el, op) {
+  _opcion = op;
   document.querySelectorAll('.fin-plazo').forEach(function(p) { p.classList.remove('active'); });
   el.classList.add('active');
   _update();
