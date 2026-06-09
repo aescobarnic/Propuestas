@@ -430,7 +430,7 @@ var _cap = 11375;
 function _fmt(n) { return n.toLocaleString('es-ES', {minimumFractionDigits:2, maximumFractionDigits:2}) + ' €'; }
 
 function _update() {
-  var q, sub, calLabel, calVal, cuotaLabel, fechaLabel, fechaVal, nota;
+  var q, sub, cuotaLabel, fechaLabel, fechaVal, nota;
 
   if (_opcion === '12') {
     q = _cap / 12;
@@ -438,31 +438,21 @@ function _update() {
     cuotaLabel = 'Cuota mensual';
     fechaLabel = 'Inicio cuotas';
     fechaVal = 'Julio 2026';
-    calLabel = 'A partir de julio 2026 · 12 cuotas mensuales';
-    calVal = _fmt(q) + '/mes · de julio 2026 a junio 2027 · TIN 0% · Financiación MLQ directa';
     nota = 'ℹ️ Financiación interna MLQ — sin banco, sin intereses, sin comisión de apertura. 12 cuotas de ' + _fmt(q) + ' desde julio 2026. Pagos directamente a MLQ.';
-    document.getElementById('calCuotasBox').style.display = '';
   } else if (_opcion === '18') {
     q = _cap / 18;
     sub = '/mes · 18 pagos · desde julio 2026';
     cuotaLabel = 'Cuota mensual';
     fechaLabel = 'Inicio cuotas';
     fechaVal = 'Julio 2026';
-    calLabel = 'A partir de julio 2026 · 18 cuotas mensuales';
-    calVal = _fmt(q) + '/mes · de julio 2026 a diciembre 2027 · TIN 0% · Financiación MLQ directa';
     nota = 'ℹ️ Financiación interna MLQ — sin banco, sin intereses, sin comisión de apertura. 18 cuotas de ' + _fmt(q) + ' desde julio 2026. Pagos directamente a MLQ.';
-    document.getElementById('calCuotasBox').style.display = '';
   } else {
-    // 2 plazos
     q = 11375;
     sub = '· pago único antes del 1 de marzo de 2027';
     cuotaLabel = 'Segundo pago';
     fechaLabel = 'Fecha límite';
     fechaVal = '1 de marzo de 2027';
-    calLabel = 'Sin cuotas mensuales · Pago único del resto';
-    calVal = '11.375 € · pago único antes del 1 de marzo de 2027 · sin intereses · sin cuotas';
     nota = '✅ Opción más sencilla — solo 2 pagos: 11.375 € en junio 2026 y 11.375 € antes del 1 de marzo de 2027. Sin cuotas mensuales, sin intereses, sin banco. Tener el total pagado antes de marzo 2027 garantiza tramitar el I-20 y el visado F1 con total tranquilidad.';
-    document.getElementById('calCuotasBox').style.display = '';
   }
 
   document.getElementById('cuotaLabel').textContent = cuotaLabel;
@@ -470,8 +460,6 @@ function _update() {
   document.getElementById('cuotaSub').textContent = sub;
   document.getElementById('fechaLabel').textContent = fechaLabel;
   document.getElementById('detInicio').textContent = fechaVal;
-  document.getElementById('calCuotasLabel').textContent = calLabel;
-  document.getElementById('calCuotasVal').textContent = calVal;
   document.getElementById('finNota').textContent = nota;
   document.getElementById('cuota12').textContent = _fmt(11375/12) + '/mes';
   document.getElementById('cuota18').textContent = _fmt(11375/18) + '/mes';
