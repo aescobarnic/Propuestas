@@ -279,14 +279,14 @@
     const intereses = totalPagar - IMPORTE;
 
     document.getElementById('cuotaValor').textContent = fmt(cuota);
-    document.getElementById('cuotaSub').textContent = ;
+    document.getElementById('cuotaSub').textContent = `/mes · ${meses} pagos · TIN ${sinIntereses ? '0%' : '10,46%'}`;
     document.getElementById('detIntereses').textContent = sinIntereses
       ? '0 € · ¡MLQ los asume!'
       : fmt(intereses);
     document.getElementById('detIntereses').className = sinIntereses
       ? 'fin-det-val fin-det-green'
       : 'fin-det-val';
-    document.getElementById('detTotal').textContent = fmt(PRECIO_TOTAL - ENTRADA + intereses + ENTRADA);
+    document.getElementById('detTotal').textContent = fmt(PRECIO_TOTAL + intereses);
   }
 </script>
 </body>
