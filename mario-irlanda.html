@@ -188,7 +188,23 @@ body{font-family:'Fira Sans',sans-serif;background:var(--gray-bg);color:var(--te
     </div>
   </div>
 
-  <div class="section-title"><h2>Colegios recomendados</h2></div>
+  <!-- PROMO VUELOS -->
+  <div style="background:linear-gradient(135deg,#0d47a1,#1565c0,#1976d2);border-radius:16px;padding:24px 32px;margin-bottom:32px;position:relative;overflow:hidden;display:flex;align-items:center;gap:24px;flex-wrap:wrap;">
+    <div style="position:absolute;inset:0;background-image:radial-gradient(rgba(255,255,255,0.05) 1px,transparent 1px);background-size:24px 24px;pointer-events:none;"></div>
+    <div style="font-size:48px;flex-shrink:0;position:relative;z-index:2;">✈️</div>
+    <div style="flex:1;position:relative;z-index:2;">
+      <div style="font-family:'Josefin Sans',sans-serif;font-size:9px;font-weight:700;letter-spacing:3px;text-transform:uppercase;color:rgba(255,255,255,0.55);margin-bottom:6px;">Promoción especial · Incluido en este programa</div>
+      <div style="font-family:'Josefin Sans',sans-serif;font-size:22px;font-weight:700;color:#ffffff;margin-bottom:8px;">🎉 Vuelos de ida y vuelta incluidos — 2 pasajeros</div>
+      <div style="font-size:12px;color:rgba(255,255,255,0.7);line-height:1.65;">MLQ gestiona y cubre el coste de los vuelos de ida y vuelta de <strong style="color:#fff;">2 pasajeros</strong> (estudiante + acompañante). Salida desde España a Irlanda al inicio del programa, y vuelta al finalizar el año escolar. <strong style="color:#90caf9;">Sin coste adicional para la familia.</strong></div>
+    </div>
+    <div style="background:rgba(255,255,255,0.12);border:1.5px solid rgba(255,255,255,0.25);border-radius:12px;padding:16px 22px;text-align:center;flex-shrink:0;position:relative;z-index:2;">
+      <div style="font-size:10px;color:rgba(255,255,255,0.5);letter-spacing:1px;text-transform:uppercase;margin-bottom:4px;">Valor estimado</div>
+      <div style="font-family:'Josefin Sans',sans-serif;font-size:26px;font-weight:700;color:#90caf9;">~800 €</div>
+      <div style="font-size:10px;color:rgba(255,255,255,0.4);margin-top:2px;">¡incluido sin coste!</div>
+    </div>
+  </div>
+
+  <div class="section-title"><h2>Colegios recomendados para Mario</h2></div>
   <div class="colegios-grid">
 
     <!-- COLEGIO 1 RECOMENDADO: COLAISTE CHRIOST RI -->
@@ -405,7 +421,7 @@ body{font-family:'Fira Sans',sans-serif;background:var(--gray-bg);color:var(--te
           <div style="margin-top:24px">
             <div class="col-title">No incluido</div>
             <ul class="inc-list no">
-              <li>Vuelos de ida y vuelta <small>MLQ gestiona la búsqueda; el coste corre a cargo de la familia</small></li>
+              <li>Vuelos de ida y vuelta <small style="color:var(--ireland-green);font-weight:600;">✓ ¡Incluidos en esta propuesta! (2 pasajeros, promo especial)</small></li>
               <li>Actividades extracurriculares de pago</li>
               <li>Excursiones y viajes escolares</li>
               <li>Material escolar adicional</li>
@@ -439,8 +455,14 @@ body{font-family:'Fira Sans',sans-serif;background:var(--gray-bg);color:var(--te
       <div class="fin-badge">Hasta 36 meses</div>
     </div>
     <div class="financing-body">
+      <div style="background:var(--green-light);border:1.5px solid rgba(46,125,50,0.25);border-radius:10px;padding:12px 16px;margin-bottom:20px;display:flex;align-items:center;gap:12px;">
+        <span style="font-size:20px;">💡</span>
+        <div style="font-size:12px;color:var(--green-dark);line-height:1.6;">
+          <strong>Entrada inicial: 5.000 €</strong> — El resto, <strong>11.950 €</strong>, se financia a plazos. A 12 meses con TIN 0%, MLQ asume los intereses.
+        </div>
+      </div>
       <div class="fin-plazo-wrap">
-        <div class="fin-plazo-label">Elige tu plazo · Programa Choice 16.950 €</div>
+        <div class="fin-plazo-label">Elige tu plazo · Importe a financiar: 11.950 € (tras entrada de 5.000 €)</div>
         <div class="fin-plazos">
           <div class="fin-plazo active" onclick="setPlazo(this,12)">
             <div class="fin-plazo-meses">12 meses</div>
@@ -467,13 +489,21 @@ body{font-family:'Fira Sans',sans-serif;background:var(--gray-bg);color:var(--te
       <div class="fin-resultado">
         <div class="fin-resultado-main">
           <div class="fin-cuota-label">Cuota mensual estimada</div>
-          <div class="fin-cuota-valor" id="cuotaValor">1.412,50 €</div>
+          <div class="fin-cuota-valor" id="cuotaValor">995,83 €</div>
           <div class="fin-cuota-sub" id="cuotaSub">/mes · 12 pagos · TIN 0%</div>
         </div>
         <div class="fin-resultado-detalle">
           <div class="fin-det-row">
-            <span class="fin-det-label">Importe del programa</span>
+            <span class="fin-det-label">Importe total del programa</span>
             <span class="fin-det-val">16.950 €</span>
+          </div>
+          <div class="fin-det-row">
+            <span class="fin-det-label">Entrada inicial</span>
+            <span class="fin-det-val fin-det-green">− 5.000 €</span>
+          </div>
+          <div class="fin-det-row">
+            <span class="fin-det-label">Importe a financiar</span>
+            <span class="fin-det-val">11.950 €</span>
           </div>
           <div class="fin-det-row">
             <span class="fin-det-label">Intereses totales</span>
@@ -485,7 +515,7 @@ body{font-family:'Fira Sans',sans-serif;background:var(--gray-bg);color:var(--te
           </div>
         </div>
       </div>
-      <div class="fin-nota">ℹ️ Financiación sujeta a aprobación bancaria. Sin comisión de apertura ni penalización por cancelación anticipada.</div>
+      <div class="fin-nota">ℹ️ Financiación sujeta a aprobación bancaria. Sin comisión de apertura ni penalización por cancelación anticipada. La entrada de 5.000 € se abona antes del inicio de la financiación.</div>
     </div>
   </div>
 
@@ -515,21 +545,21 @@ body{font-family:'Fira Sans',sans-serif;background:var(--gray-bg);color:var(--te
           <div class="pay-step-desc" style="margin-top:6px;">Las inscripciones tardías deben cumplir con los plazos ya pasados</div>
         </div>
       </div>
-      <div class="pay-note">El seguro de anulación e interrupción cubre gastos de cancelación por diferentes causas. Su coste es de 500 € y se emite a los 15 días de la firma del contrato. Su importe no es reembolsable bajo ninguna circunstancia. Los vuelos no están incluidos en el programa — MLQ gestiona la búsqueda y el coste corre a cargo de la familia.</div>
+      <div class="pay-note">✈️ <strong style="color:rgba(255,255,255,0.7);">Promo especial:</strong> Los vuelos de ida y vuelta (2 pasajeros) están incluidos en este programa sin coste adicional. El seguro de anulación e interrupción cubre gastos de cancelación por diferentes causas; su coste es de 500 € y se emite a los 15 días de la firma del contrato. Su importe no es reembolsable bajo ninguna circunstancia.</div>
     </div>
   </div>
 
 </main>
 
 <script>
-var _mes=12,_cap=16950;
+var _mes=12,_cap=11950; /* 16.950 - 5.000 entrada */
 function _fmt(n,d){return n.toLocaleString('es-ES',{minimumFractionDigits:d||0,maximumFractionDigits:d||0})+' €';}
 function _cuota(c,t,m){if(t===0)return c/m;var r=(t/100)/12;return c*r/(1-Math.pow(1+r,-m));}
 function _update(){
   var tin=_mes===12?0:10.46;var q=_cuota(_cap,tin,_mes);var tot=q*_mes;var inter=tot-_cap;
   document.getElementById('cuotaValor').textContent=_fmt(q,2);
   document.getElementById('cuotaSub').textContent='/mes · '+_mes+' pagos · TIN '+(tin===0?'0%':'10,46%');
-  document.getElementById('detTotal').textContent=_fmt(Math.round(tot));
+  document.getElementById('detTotal').textContent=_fmt(Math.round(tot+5000));
   if(tin===0){document.getElementById('detIntereses').textContent='0 € · ¡MLQ los asume!';document.getElementById('detIntereses').className='fin-det-val fin-det-green';}
   else{document.getElementById('detIntereses').textContent=_fmt(Math.round(inter));document.getElementById('detIntereses').className='fin-det-val';}
 }
