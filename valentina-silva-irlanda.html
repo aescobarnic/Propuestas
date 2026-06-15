@@ -140,13 +140,29 @@ body{font-family:'Fira Sans',sans-serif;background:var(--gray-bg);color:var(--te
 .trimestre-opcion-label{font-size:10px;font-weight:600;letter-spacing:1.5px;text-transform:uppercase;color:var(--text-light);margin-bottom:8px;}
 .trimestre-opcion-val{font-family:'Josefin Sans',sans-serif;font-size:26px;font-weight:700;color:var(--green-dark);}
 .trimestre-opcion-sub{font-size:10px;color:var(--text-light);margin-top:4px;}
+/* Widget precios */
+.precios-widget{background:linear-gradient(135deg,var(--green-dark) 0%,var(--green) 60%,var(--green-mid) 100%);border-radius:16px;padding:28px 32px;margin-bottom:28px;position:relative;overflow:hidden;}
+.precios-widget::before{content:'';position:absolute;inset:0;background-image:radial-gradient(rgba(255,255,255,0.04) 1px,transparent 1px);background-size:22px 22px;}
+.precios-widget-inner{position:relative;z-index:2;}
+.precios-widget-label{font-family:'Josefin Sans',sans-serif;font-size:9px;font-weight:700;letter-spacing:3px;text-transform:uppercase;color:rgba(255,255,255,0.5);margin-bottom:4px;}
+.precios-widget-desde{font-family:'Josefin Sans',sans-serif;font-size:11px;font-weight:600;color:rgba(255,255,255,0.6);margin-bottom:2px;}
+.precios-widget-main{font-family:'Josefin Sans',sans-serif;font-size:40px;font-weight:700;color:#a5d6a7;line-height:1;margin-bottom:4px;}
+.precios-widget-sub{font-size:11px;color:rgba(255,255,255,0.45);margin-bottom:20px;}
+.precios-rows{display:flex;flex-direction:column;gap:8px;margin-bottom:16px;}
+.precios-row{display:flex;align-items:center;justify-content:space-between;background:rgba(255,255,255,0.08);border:1px solid rgba(255,255,255,0.13);border-radius:10px;padding:10px 16px;}
+.precios-row.highlight{background:rgba(255,200,0,0.15);border-color:rgba(255,200,0,0.35);}
+.precios-row-left{display:flex;align-items:center;gap:8px;font-size:13px;color:rgba(255,255,255,0.85);font-weight:500;}
+.precios-row-left::before{content:'☘';font-size:11px;color:#a5d6a7;}
+.precios-row.highlight .precios-row-left::before{content:'⭐';font-size:11px;}
+.precios-row-val{font-family:'Josefin Sans',sans-serif;font-size:16px;font-weight:700;color:#a5d6a7;}
+.precios-row.highlight .precios-row-val{color:#ffe082;}
+.precios-badge{display:inline-flex;align-items:center;gap:6px;background:rgba(255,136,62,0.25);border:1px solid rgba(255,136,62,0.45);color:#ffcc80;font-size:10px;font-weight:700;letter-spacing:1px;padding:6px 16px;border-radius:20px;margin-top:4px;}
 @media(max-width:720px){
   .header{padding:16px 20px;}.hero{padding:28px 20px 24px;}.hero-name{font-size:28px;}.hero-precio{display:none;}
   .main{padding:28px 16px 48px;}.includes-grid{grid-template-columns:1fr;}.colegios-grid{grid-template-columns:1fr;}
   .pay-steps-row{grid-template-columns:1fr;}.gestor-grid{grid-template-columns:repeat(2,1fr);}
   .fin-plazos{grid-template-columns:repeat(2,1fr);}.fin-resultado{grid-template-columns:1fr;}
   .fin-resultado-main{border-right:none;border-bottom:1px solid rgba(255,255,255,0.15);padding-right:0;padding-bottom:20px;}
-  .trimestre-body{grid-template-columns:1fr;}
 }
 </style>
 </head>
@@ -194,6 +210,27 @@ body{font-family:'Fira Sans',sans-serif;background:var(--gray-bg);color:var(--te
       el precio es único para todos los colegios day school — <strong>16.650 €</strong> (año escolar completo).
       Hemos seleccionado cuatro colegios que combinan tamaño contenido, buen nivel académico y entorno familiar,
       priorizando los que mejor encajan con el perfil de Valentina y su pasión por el ballet.
+    </div>
+  </div>
+
+  <!-- WIDGET PRECIOS -->
+  <div class="precios-widget">
+    <div class="precios-widget-inner">
+      <div class="precios-widget-label">Programa Choice · Irlanda 2026/27</div>
+      <div class="precios-widget-desde">Desde</div>
+      <div class="precios-widget-main">9.500 €</div>
+      <div class="precios-widget-sub">trimestre · vuelos incl. desde Madrid</div>
+      <div class="precios-rows">
+        <div class="precios-row">
+          <span class="precios-row-left">Trimestre (Ago-Dic)</span>
+          <span class="precios-row-val">9.500 €</span>
+        </div>
+        <div class="precios-row highlight">
+          <span class="precios-row-left">Año escolar (Ago-May)</span>
+          <span class="precios-row-val">16.650 €</span>
+        </div>
+      </div>
+      <div class="precios-badge">✈ Vuelos Madrid incluidos</div>
     </div>
   </div>
 
@@ -417,26 +454,6 @@ body{font-family:'Fira Sans',sans-serif;background:var(--gray-bg);color:var(--te
 
   </div>
 
-  <!-- PRECIOS -->
-  <div class="section-title"><h2>Opciones de programa</h2></div>
-  <div class="trimestre-box">
-    <div class="trimestre-head">
-      <span>💶 Precios · Programa Choice · Irlanda 2026/27</span>
-    </div>
-    <div class="trimestre-body">
-      <div class="trimestre-opcion">
-        <div class="trimestre-opcion-label">Trimestre · Sin vuelos</div>
-        <div class="trimestre-opcion-val">9.500 €</div>
-        <div class="trimestre-opcion-sub">Vuelos gestionados por MLQ · coste a cargo de la familia</div>
-      </div>
-      <div class="trimestre-opcion">
-        <div class="trimestre-opcion-label">Trimestre · Con 2 vuelos</div>
-        <div class="trimestre-opcion-val">9.850 €</div>
-        <div class="trimestre-opcion-sub">2 vuelos incluidos (ida y vuelta)</div>
-      </div>
-    </div>
-  </div>
-
   <!-- EL PROGRAMA INCLUYE -->
   <div class="section-title"><h2>El programa incluye</h2></div>
   <div class="includes-wrap">
@@ -533,25 +550,42 @@ body{font-family:'Fira Sans',sans-serif;background:var(--gray-bg);color:var(--te
       <div class="fin-badge">Hasta 36 meses</div>
     </div>
     <div class="financing-body">
+      <!-- SELECTOR PROGRAMA -->
+      <div style="margin-bottom:20px;">
+        <div class="fin-plazo-label">Selecciona tu programa</div>
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:10px;">
+          <div class="fin-plazo active" id="btn-trimestre" onclick="setPrograma('trimestre')">
+            <div class="fin-plazo-meses">Trimestre</div>
+            <div style="font-size:13px;font-weight:700;color:var(--green-dark);margin:4px 0;">9.500 €</div>
+            <div class="fin-plazo-quien">Ago-Dic</div>
+          </div>
+          <div class="fin-plazo" id="btn-anyo" onclick="setPrograma('anyo')">
+            <div class="fin-plazo-meses">Año escolar</div>
+            <div style="font-size:13px;font-weight:700;color:var(--text);margin:4px 0;">16.650 €</div>
+            <div class="fin-plazo-quien">Ago-May</div>
+          </div>
+        </div>
+      </div>
+      <!-- SELECTOR PLAZO -->
       <div class="fin-plazo-wrap">
-        <div class="fin-plazo-label">Elige tu plazo · Programa Choice 16.650 €</div>
+        <div class="fin-plazo-label" id="plazo-label">Elige tu plazo · Trimestre 9.500 €</div>
         <div class="fin-plazos">
-          <div class="fin-plazo active" onclick="setPlazo(this,12)">
+          <div class="fin-plazo active" id="p12" onclick="setPlazo(this,12)">
             <div class="fin-plazo-meses">12 meses</div>
             <div class="fin-plazo-badge sin">TIN 0%</div>
             <div class="fin-plazo-quien">¡MLQ asume los intereses!</div>
           </div>
-          <div class="fin-plazo" onclick="setPlazo(this,18)">
+          <div class="fin-plazo" id="p18" onclick="setPlazo(this,18)">
             <div class="fin-plazo-meses">18 meses</div>
             <div class="fin-plazo-badge con">TIN 10,46%</div>
             <div class="fin-plazo-quien">Intereses a cargo del cliente</div>
           </div>
-          <div class="fin-plazo" onclick="setPlazo(this,24)">
+          <div class="fin-plazo" id="p24" onclick="setPlazo(this,24)">
             <div class="fin-plazo-meses">24 meses</div>
             <div class="fin-plazo-badge con">TIN 10,46%</div>
             <div class="fin-plazo-quien">Intereses a cargo del cliente</div>
           </div>
-          <div class="fin-plazo" onclick="setPlazo(this,36)">
+          <div class="fin-plazo" id="p36" onclick="setPlazo(this,36)">
             <div class="fin-plazo-meses">36 meses</div>
             <div class="fin-plazo-badge con">TIN 10,46%</div>
             <div class="fin-plazo-quien">Intereses a cargo del cliente</div>
@@ -561,13 +595,13 @@ body{font-family:'Fira Sans',sans-serif;background:var(--gray-bg);color:var(--te
       <div class="fin-resultado">
         <div class="fin-resultado-main">
           <div class="fin-cuota-label">Cuota mensual estimada</div>
-          <div class="fin-cuota-valor" id="cuotaValor">1.387,50 €</div>
+          <div class="fin-cuota-valor" id="cuotaValor">791,67 €</div>
           <div class="fin-cuota-sub" id="cuotaSub">/mes · 12 pagos · TIN 0%</div>
         </div>
         <div class="fin-resultado-detalle">
           <div class="fin-det-row">
             <span class="fin-det-label">Importe del programa</span>
-            <span class="fin-det-val">16.650 €</span>
+            <span class="fin-det-val" id="detImporte">9.500 €</span>
           </div>
           <div class="fin-det-row">
             <span class="fin-det-label">Intereses totales</span>
@@ -575,7 +609,7 @@ body{font-family:'Fira Sans',sans-serif;background:var(--gray-bg);color:var(--te
           </div>
           <div class="fin-det-row fin-det-total">
             <span class="fin-det-label">Total a pagar</span>
-            <span class="fin-det-val" id="detTotal">16.650 €</span>
+            <span class="fin-det-val" id="detTotal">9.500 €</span>
           </div>
         </div>
       </div>
@@ -616,18 +650,50 @@ body{font-family:'Fira Sans',sans-serif;background:var(--gray-bg);color:var(--te
 </main>
 
 <script>
-var _mes=12,_cap=16650;
+var _mes=12, _cap=9500, _prog='trimestre';
+var _caps={trimestre:9500, anyo:16650};
+var _nombres={trimestre:'Trimestre', anyo:'Año escolar'};
+
 function _fmt(n,d){return n.toLocaleString('es-ES',{minimumFractionDigits:d||0,maximumFractionDigits:d||0})+' €';}
 function _cuota(c,t,m){if(t===0)return c/m;var r=(t/100)/12;return c*r/(1-Math.pow(1+r,-m));}
+
+function setPrograma(prog){
+  _prog=prog; _cap=_caps[prog];
+  // update program buttons
+  document.getElementById('btn-trimestre').classList.toggle('active', prog==='trimestre');
+  document.getElementById('btn-anyo').classList.toggle('active', prog==='anyo');
+  // update year val color
+  document.getElementById('btn-anyo').querySelector('div:nth-child(2)').style.color = prog==='anyo' ? 'var(--green-dark)' : 'var(--text)';
+  // update plazo label
+  document.getElementById('plazo-label').textContent='Elige tu plazo · '+_nombres[prog]+' '+_fmt(_cap);
+  // update importe
+  document.getElementById('detImporte').textContent=_fmt(_cap);
+  _update();
+}
+
+function setPlazo(el,m){
+  _mes=m;
+  document.querySelectorAll('.fin-plazo[id^="p"]').forEach(function(p){p.classList.remove('active');});
+  el.classList.add('active');
+  _update();
+}
+
 function _update(){
-  var tin=_mes===12?0:10.46;var q=_cuota(_cap,tin,_mes);var tot=q*_mes;var inter=tot-_cap;
+  var tin=_mes===12?0:10.46;
+  var q=_cuota(_cap,tin,_mes);
+  var tot=q*_mes;
+  var inter=tot-_cap;
   document.getElementById('cuotaValor').textContent=_fmt(q,2);
   document.getElementById('cuotaSub').textContent='/mes · '+_mes+' pagos · TIN '+(tin===0?'0%':'10,46%');
   document.getElementById('detTotal').textContent=_fmt(Math.round(tot));
-  if(tin===0){document.getElementById('detIntereses').textContent='0 € · ¡MLQ los asume!';document.getElementById('detIntereses').className='fin-det-val fin-det-green';}
-  else{document.getElementById('detIntereses').textContent=_fmt(Math.round(inter));document.getElementById('detIntereses').className='fin-det-val';}
+  if(tin===0){
+    document.getElementById('detIntereses').textContent='0 € · ¡MLQ los asume!';
+    document.getElementById('detIntereses').className='fin-det-val fin-det-green';
+  } else {
+    document.getElementById('detIntereses').textContent=_fmt(Math.round(inter));
+    document.getElementById('detIntereses').className='fin-det-val';
+  }
 }
-function setPlazo(el,m){_mes=m;document.querySelectorAll('.fin-plazo').forEach(function(p){p.classList.remove('active');});el.classList.add('active');_update();}
 _update();
 </script>
 </body>
