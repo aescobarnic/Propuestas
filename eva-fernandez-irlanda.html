@@ -168,9 +168,9 @@ body{font-family:'Fira Sans',sans-serif;background:var(--gray-bg);color:var(--te
     </div>
     <div class="hero-precio">
       <div class="hero-precio-label">Programa Choice</div>
-      <div class="hero-precio-val">16.950 €</div>
-      <div class="hero-precio-sub">año escolar completo</div>
-      <div class="hero-precio-badge">☘ Precio único</div>
+      <div class="hero-precio-val" id="heroPrecio">16.650 €</div>
+      <div class="hero-precio-sub" id="heroPrecioSub">sin vuelos · año escolar completo</div>
+      <div class="hero-precio-badge">☘ 2 opciones disponibles</div>
     </div>
   </div>
 </section>
@@ -180,7 +180,7 @@ body{font-family:'Fira Sans',sans-serif;background:var(--gray-bg);color:var(--te
   <div class="choice-box">
     <div class="choice-icon">☘</div>
     <div class="choice-text">
-      <strong>Programa Choice · Plaza confirmada en el colegio solicitado:</strong> Tras confirmar disponibilidad de plaza en 5th Year, My Language Quest presenta esta propuesta personalizada para el Royal School Cavan — el colegio donde la estudiante ya realizó su Transition Year en el curso 2025/26. Precio único <strong>16.950 €</strong> para todos los colegios day school del programa Choice.
+      <strong>Programa Choice · Plaza confirmada en el colegio solicitado:</strong> Tras confirmar disponibilidad de plaza en 5th Year, My Language Quest presenta esta propuesta personalizada para el Royal School Cavan — el colegio donde la estudiante ya realizó su Transition Year en el curso 2025/26. Precio <strong>16.650 €</strong> sin vuelos · <strong>17.350 €</strong> incluyendo los 4 vuelos individuales desde Barcelona.
     </div>
   </div>
 
@@ -266,7 +266,6 @@ body{font-family:'Fira Sans',sans-serif;background:var(--gray-bg);color:var(--te
             <li>Máximo 1 hispanohablante por familia</li>
             <li>Seguro médico privado + RC</li>
             <li>Libros de asignaturas obligatorias</li>
-            <li>Uniforme escolar</li>
             <li>Masterclass cultura irlandesa · 10h online</li>
             <li>Orientación presencial en Madrid</li>
             <li>Welcome pack de bienvenida</li>
@@ -340,8 +339,25 @@ body{font-family:'Fira Sans',sans-serif;background:var(--gray-bg);color:var(--te
       <div class="fin-badge">Hasta 36 meses</div>
     </div>
     <div class="financing-body">
+      <div style="margin-bottom:20px;">
+        <div class="fin-plazo-label" style="margin-bottom:10px;">Selecciona tu opción de programa</div>
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:24px;">
+          <div class="fin-plazo active" id="btnSinVuelos" onclick="setPrograma('sin')" style="text-align:left;padding:16px 18px;">
+            <div style="font-size:9px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:var(--text-light);margin-bottom:6px;">Opción A</div>
+            <div style="font-family:'Josefin Sans',sans-serif;font-size:18px;font-weight:700;color:var(--green-dark);">16.650 €</div>
+            <div style="font-size:11px;color:var(--text-mid);margin-top:4px;">✗ Vuelos no incluidos</div>
+            <div style="font-size:10px;color:var(--text-light);margin-top:2px;">MLQ puede gestionarlos aparte</div>
+          </div>
+          <div class="fin-plazo" id="btnConVuelos" onclick="setPrograma('con')" style="text-align:left;padding:16px 18px;">
+            <div style="font-size:9px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:var(--text-light);margin-bottom:6px;">Opción B</div>
+            <div style="font-family:'Josefin Sans',sans-serif;font-size:18px;font-weight:700;color:var(--green-dark);">17.350 €</div>
+            <div style="font-size:11px;color:var(--text-mid);margin-top:4px;">✓ 4 vuelos individuales incluidos</div>
+            <div style="font-size:10px;color:var(--text-light);margin-top:2px;">Inicio · Navidad ida/vuelta · Fin</div>
+          </div>
+        </div>
+      </div>
       <div class="fin-plazo-wrap">
-        <div class="fin-plazo-label">Elige tu plazo · Programa Choice 16.950 €</div>
+        <div class="fin-plazo-label">Elige tu plazo de financiación</div>
         <div class="fin-plazos">
           <div class="fin-plazo active" onclick="setPlazo(this,12)">
             <div class="fin-plazo-meses">12 meses</div>
@@ -368,13 +384,13 @@ body{font-family:'Fira Sans',sans-serif;background:var(--gray-bg);color:var(--te
       <div class="fin-resultado">
         <div class="fin-resultado-main">
           <div class="fin-cuota-label">Cuota mensual estimada</div>
-          <div class="fin-cuota-valor" id="cuotaValor">1.412,50 €</div>
+          <div class="fin-cuota-valor" id="cuotaValor">1.387,50 €</div>
           <div class="fin-cuota-sub" id="cuotaSub">/mes · 12 pagos · TIN 0%</div>
         </div>
         <div class="fin-resultado-detalle">
           <div class="fin-det-row">
             <span class="fin-det-label">Importe del programa</span>
-            <span class="fin-det-val">16.950 €</span>
+            <span class="fin-det-val" id="detImporte">16.650 €</span>
           </div>
           <div class="fin-det-row">
             <span class="fin-det-label">Intereses totales</span>
@@ -382,7 +398,7 @@ body{font-family:'Fira Sans',sans-serif;background:var(--gray-bg);color:var(--te
           </div>
           <div class="fin-det-row fin-det-total">
             <span class="fin-det-label">Total a pagar</span>
-            <span class="fin-det-val" id="detTotal">16.950 €</span>
+            <span class="fin-det-val" id="detTotal">16.650 €</span>
           </div>
         </div>
       </div>
@@ -423,18 +439,28 @@ body{font-family:'Fira Sans',sans-serif;background:var(--gray-bg);color:var(--te
 </main>
 
 <script>
-var _mes=12,_cap=16950;
+var _mes=12,_cap=16650;
+var _precios={sin:16650,con:17350};
 function _fmt(n,d){return n.toLocaleString('es-ES',{minimumFractionDigits:d||0,maximumFractionDigits:d||0})+' €';}
 function _cuota(c,t,m){if(t===0)return c/m;var r=(t/100)/12;return c*r/(1-Math.pow(1+r,-m));}
 function _update(){
   var tin=_mes===12?0:10.46;var q=_cuota(_cap,tin,_mes);var tot=q*_mes;var inter=tot-_cap;
   document.getElementById('cuotaValor').textContent=_fmt(q,2);
   document.getElementById('cuotaSub').textContent='/mes · '+_mes+' pagos · TIN '+(tin===0?'0%':'10,46%');
+  document.getElementById('detImporte').textContent=_fmt(_cap);
   document.getElementById('detTotal').textContent=_fmt(Math.round(tot));
+  document.getElementById('heroPrecio').textContent=_fmt(_cap);
+  document.getElementById('heroPrecioSub').textContent=(_cap===16650?'sin vuelos':'4 vuelos incluidos')+' · año escolar completo';
   if(tin===0){document.getElementById('detIntereses').textContent='0 € · ¡MLQ los asume!';document.getElementById('detIntereses').className='fin-det-val fin-det-green';}
   else{document.getElementById('detIntereses').textContent=_fmt(Math.round(inter));document.getElementById('detIntereses').className='fin-det-val';}
 }
-function setPlazo(el,m){_mes=m;document.querySelectorAll('.fin-plazo').forEach(function(p){p.classList.remove('active');});el.classList.add('active');_update();}
+function setPrograma(opt){
+  _cap=_precios[opt];
+  document.getElementById('btnSinVuelos').classList.toggle('active',opt==='sin');
+  document.getElementById('btnConVuelos').classList.toggle('active',opt==='con');
+  _update();
+}
+function setPlazo(el,m){_mes=m;document.querySelectorAll('.fin-plazos .fin-plazo').forEach(function(p){p.classList.remove('active');});el.classList.add('active');_update();}
 _update();
 </script>
 </body>
