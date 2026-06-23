@@ -25,7 +25,7 @@ body{font-family:'Fira Sans',sans-serif;background:var(--gray-bg);color:var(--te
 .hero{background:var(--blue);position:relative;overflow:hidden;padding:40px 48px 36px;}
 .hero::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 80% 120% at 110% 50%,rgba(76,158,12,0.18) 0%,transparent 60%),radial-gradient(ellipse 60% 80% at -10% 80%,rgba(177,41,0,0.22) 0%,transparent 55%);}
 .hero-dots{position:absolute;inset:0;pointer-events:none;background-image:radial-gradient(rgba(255,255,255,0.07) 1px,transparent 1px);background-size:28px 28px;}
-.hero-inner{position:relative;z-index:2;display:flex;align-items:flex-end;justify-content:space-between;gap:24px;flex-wrap:wrap;}
+.hero-inner{position:relative;z-index:2;}
 .hero-tag{display:inline-flex;align-items:center;gap:6px;background:rgba(255,255,255,0.1);border:1px solid rgba(255,255,255,0.2);border-radius:20px;padding:4px 12px;font-size:10px;font-weight:600;letter-spacing:2px;text-transform:uppercase;color:rgba(255,255,255,0.7);margin-bottom:12px;}
 .hero-tag::before{content:'✈';font-size:11px;}
 .hero-name{font-family:'Josefin Sans',sans-serif;font-size:38px;font-weight:700;color:var(--white);line-height:1;margin-bottom:8px;}
@@ -66,8 +66,10 @@ body{font-family:'Fira Sans',sans-serif;background:var(--gray-bg);color:var(--te
 .colegio-meta{display:flex;flex-wrap:wrap;align-items:center;gap:6px;}
 .tag{border-radius:5px;padding:2px 8px;font-size:9px;font-weight:700;text-transform:uppercase;}
 .tag.pub{background:var(--green);color:var(--white);}
+.tag.cat{background:#7c3aed;color:var(--white);}
 .tag.info{background:var(--blue-light);color:var(--blue);}
 .tag.sport{background:#fff3cd;color:#856404;}
+.tag.rural{background:#d1fae5;color:#065f46;}
 details{border-top:1px solid var(--gray-border);}
 details summary{list-style:none;cursor:pointer;padding:9px 14px;font-size:11px;font-weight:600;color:var(--red);display:flex;align-items:center;gap:6px;user-select:none;-webkit-user-select:none;}
 details summary:hover{background:var(--red-light);}
@@ -82,18 +84,12 @@ details[open] summary::before{transform:rotate(90deg);}
 .match-tag.handball::before{content:'🤾';font-size:10px;}
 .match-tag.gifted{color:var(--purple);background:var(--purple-light);border-color:rgba(92,61,153,0.25);}
 .match-tag.gifted::before{content:'🧠';font-size:10px;}
-
-/* BLOQUES INFORMATIVOS DENTRO DE LA TARJETA */
-.info-block{margin:0 0 0 0;}
 .info-block-title{font-family:'Josefin Sans',sans-serif;font-size:9px;font-weight:700;letter-spacing:2px;text-transform:uppercase;padding:10px 22px 6px;border-top:1px solid var(--gray-border);}
 .info-block-title.gifted-title{color:var(--purple);background:var(--purple-light);}
 .info-block-title.handball-title{color:#92400e;background:#fef3c7;}
-.info-block-body{padding:10px 22px 14px;font-size:12px;line-height:1.65;color:var(--text-mid);}
+.info-block-body{padding:10px 14px 13px;font-size:12px;line-height:1.65;color:var(--text-mid);}
 .info-block-body.gifted-body{background:var(--purple-light);border-left:3px solid var(--purple);margin:0 14px 12px;border-radius:0 6px 6px 0;}
 .info-block-body.handball-body{background:#fef3c7;border-left:3px solid #d97706;margin:0 14px 12px;border-radius:0 6px 6px 0;}
-.info-block-body strong{font-weight:700;}
-
-/* INCLUDES */
 .includes-wrap{background:var(--white);border-radius:16px;border:1.5px solid var(--gray-border);box-shadow:0 2px 16px rgba(0,51,102,0.05);overflow:hidden;margin-bottom:24px;}
 .includes-head{background:linear-gradient(135deg,var(--blue-dark),var(--blue));padding:20px 32px;}
 .includes-head h3{font-family:'Josefin Sans',sans-serif;font-size:14px;font-weight:700;color:var(--white);letter-spacing:1px;}
@@ -166,11 +162,13 @@ details[open] summary::before{transform:rotate(90deg);}
 .fin-det-total .fin-det-label{color:rgba(255,255,255,0.7);font-weight:600;}
 .fin-det-total .fin-det-val{font-family:'Josefin Sans',sans-serif;font-size:16px;color:var(--white);}
 .fin-nota{font-size:11px;color:var(--text-light);line-height:1.6;background:var(--gray-card);border-radius:8px;padding:12px 16px;border-left:3px solid var(--blue-light);}
-@media(max-width:720px){.fin-plazos{grid-template-columns:repeat(2,1fr);}.fin-resultado{grid-template-columns:1fr;}.fin-resultado-main{border-right:none;border-bottom:1px solid rgba(255,255,255,0.15);padding-right:0;padding-bottom:20px;}.financing-head{flex-direction:column;align-items:flex-start;}.fin-opcion-btns{flex-direction:column;}}
 @media(max-width:720px){
   .header{padding:16px 20px;}.hero{padding:28px 20px 24px;}.hero-name{font-size:28px;}
   .main{padding:28px 16px 48px;}.includes-grid{grid-template-columns:1fr;}.opciones-grid{grid-template-columns:1fr;}
   .pay-cols{grid-template-columns:1fr;}.gestor-grid{grid-template-columns:repeat(2,1fr);}
+  .fin-plazos{grid-template-columns:repeat(2,1fr);}.fin-resultado{grid-template-columns:1fr;}
+  .fin-resultado-main{border-right:none;border-bottom:1px solid rgba(255,255,255,0.15);padding-right:0;padding-bottom:20px;}
+  .financing-head{flex-direction:column;align-items:flex-start;}.fin-opcion-btns{flex-direction:column;}
 }
 </style>
 </head>
@@ -207,18 +205,19 @@ details[open] summary::before{transform:rotate(90deg);}
 
   <div class="alert-box purple" style="margin-bottom:12px;">
     <div class="alert-icon">🧠</div>
-    <div class="alert-text purple"><strong>Altas Capacidades:</strong> Los tres distritos propuestos operan bajo marcos provinciales que obligan a elaborar un <strong>Plan de Programa Individual (IPP)</strong> para estudiantes con altas capacidades, garantizando aceleración curricular, proyectos de enriquecimiento y atención diferenciada. Se ha priorizado la presencia de programas AP u Honours en los colegios seleccionados.</div>
+    <div class="alert-text purple"><strong>Altas Capacidades:</strong> Los tres distritos propuestos operan bajo marcos provinciales que obligan a elaborar un <strong>Plan de Programa Individual (IPP)</strong> para estudiantes gifted, con aceleración curricular y proyectos de enriquecimiento. Las dos opciones de Alberta comparten el mismo marco legal provincial — el más avanzado de Canadá en educación de altas capacidades.</div>
   </div>
-
   <div class="alert-box" style="margin-bottom:28px;">
     <div class="alert-icon">🤾</div>
-    <div class="alert-text"><strong>Balonmano:</strong> Se ha investigado la disponibilidad de balonmano tanto <em>dentro del colegio</em> como en <em>clubes federados cercanos</em> para cada distrito. La situación varía significativamente entre opciones — los detalles aparecen en cada tarjeta.</div>
+    <div class="alert-text"><strong>Balonmano:</strong> Se ha investigado disponibilidad tanto escolar como en clubes federados cercanos. Opciones 1 y 3 tienen balonmano <strong>confirmado en sus fichas oficiales</strong>. Los detalles de cada club aparecen dentro de cada tarjeta.</div>
   </div>
 
   <div class="section-title"><h2>Opciones recomendadas</h2></div>
   <div class="opciones-grid">
 
-    <!-- OPCIÓN 1 RECOMENDADA: BATTLE RIVER -->
+    <!-- ═══════════════════════════════════════════════════════
+         OPCIÓN 1 ⭐ BATTLE RIVER — RECOMENDADA
+    ═══════════════════════════════════════════════════════ -->
     <div class="opcion-card recomendada">
       <div class="badge-rec">★ RECOMENDADA</div>
       <div class="opcion-header">
@@ -232,56 +231,44 @@ details[open] summary::before{transform:rotate(90deg);}
           <div class="colegio">
             <div class="colegio-top">
               <div class="colegio-nombre">Bashaw School</div>
-              <div class="colegio-meta"><span class="tag pub">Público</span><span class="tag info">K–12</span><span class="tag info">~900 hab.</span><span class="tag info">Rural 100%</span><span class="tag sport">🤾 Balonmano escolar</span></div>
+              <div class="colegio-meta"><span class="tag pub">Público</span><span class="tag info">K–12</span><span class="tag rural">~900 hab.</span><span class="tag sport">🤾 Balonmano escolar</span></div>
             </div>
             <details><summary>Por qué es ideal para Arnau</summary>
-            <div class="colegio-razon">Bashaw es la comunidad que Arnau entiende: pueblo rural auténtico donde el colegio es el corazón social. Viene de 15 habitantes — aquí encontrará una escala humana con la que conectar desde el primer día. El tamaño reducido del colegio es un argumento directo para la <strong>atención individualizada de sus altas capacidades</strong>: en un K-12 pequeño, los profesores te conocen y pueden adaptar el ritmo mucho mejor que en un instituto de 2.000 alumnos. <strong>El balonmano está en el programa extracurricular oficial</strong> — Arnau podrá jugar desde septiembre sin buscar nada externo.</div>
+            <div class="colegio-razon">Bashaw es la comunidad que Arnau entiende: pueblo rural auténtico donde el colegio es el corazón social del pueblo. Viene de 15 habitantes — aquí encontrará una escala humana real. El tamaño reducido del K-12 es argumento directo para altas capacidades: los profesores conocen a cada alumno y adaptan el ritmo. <strong>Balonmano confirmado en el programa extracurricular oficial</strong> — puede unirse al equipo desde septiembre.</div>
             </details>
           </div>
           <div class="colegio">
             <div class="colegio-top">
               <div class="colegio-nombre">Daysland School</div>
-              <div class="colegio-meta"><span class="tag pub">Público</span><span class="tag info">K–12</span><span class="tag info">~800 hab.</span><span class="tag info">Rural · Agrícola</span><span class="tag sport">🤾 Balonmano escolar</span></div>
+              <div class="colegio-meta"><span class="tag pub">Público</span><span class="tag info">K–12</span><span class="tag rural">~800 hab.</span><span class="tag sport">🤾 Balonmano escolar</span></div>
             </div>
             <details><summary>Por qué es ideal para Arnau</summary>
-            <div class="colegio-razon">Comunidad agrícola pequeña y cohesionada. Como estudiante internacional, Arnau será un acontecimiento para el pueblo — eso genera una integración genuina imposible en ciudades grandes. El programa de balonmano está disponible a nivel escolar. Las praderas de Alberta, con un horizonte que no acaba, sorprenderán a alguien acostumbrado a paisajes abiertos de interior.</div>
+            <div class="colegio-razon">Comunidad agrícola pequeña y cohesionada. Como estudiante internacional, Arnau será bienvenido con un calor genuino imposible en ciudades grandes. Balonmano disponible a nivel escolar dentro del programa oficial de BRSD. Las praderas abiertas de Alberta — el horizonte que no acaba — conectarán con alguien acostumbrado a paisajes de interior.</div>
             </details>
           </div>
         </div>
       </div>
-
-      <!-- BLOQUE ALTAS CAPACIDADES -->
-      <div class="info-block">
-        <div class="info-block-title gifted-title">🧠 Altas Capacidades · Battle River / Alberta</div>
-        <div class="info-block-body gifted-body">
-          Alberta es la provincia canadiense con el <strong>marco legal más sólido</strong> para altas capacidades. La <em>Ministerial Order 190/2017 — Inclusive Education</em> obliga a identificar y atender a todos los estudiantes gifted mediante un <strong>IPP (Individual Program Plan)</strong> personalizado. BRSD aplica el programa provincial <strong>CAPE (Challenging Academic Program of Excellence)</strong> con aceleración curricular y proyectos de enriquecimiento académico. En colegios K-12 pequeños, el IPP se implementa con mucha más fidelidad que en centros grandes.
-        </div>
-      </div>
-
-      <!-- BLOQUE BALONMANO -->
-      <div class="info-block">
-        <div class="info-block-title handball-title">🤾 Balonmano · Dentro del colegio + Club cercano</div>
-        <div class="info-block-body handball-body">
-          <strong>Escolar (confirmado):</strong> BRSD lista Balonmano explícitamente entre sus extracurriculares oficiales — Arnau puede unirse al equipo desde el primer día de curso.<br><br>
-          <strong>Club federado:</strong> Edmonton Team Handball Club (Alberta Team Handball Association · ATHA), a ~90 min de Camrose. Compite en liga provincial. Para partidos de fin de semana, la distancia es perfectamente asumible — muchos jugadores europeos hacen más para entrenar.
-        </div>
-      </div>
-
+      <div class="info-block-title gifted-title">🧠 Altas Capacidades · Battle River / Alberta</div>
+      <div class="info-block-body gifted-body">Alberta es la provincia con el <strong>marco legal más sólido</strong> para altas capacidades de Canadá (<em>Ministerial Order 190/2017</em>). BRSD aplica el programa <strong>CAPE (Challenging Academic Program of Excellence)</strong> con IPP obligatorio y aceleración curricular. En colegios K-12 de 800–900 alumnos, el IPP se implementa con máxima fidelidad: los profesores te conocen en profundidad.</div>
+      <div class="info-block-title handball-title">🤾 Balonmano · Escolar confirmado + Club provincial</div>
+      <div class="info-block-body handball-body"><strong>Escolar (confirmado en ficha):</strong> Balonmano figura explícitamente entre los extracurriculares oficiales de BRSD — Arnau juega desde el primer día de septiembre.<br><br><strong>Club federado:</strong> Edmonton Team Handball Club (Alberta Team Handball Association · ATHA), a ~90 min de Camrose. Compite en liga provincial y nacional. Para partidos de fin de semana, distancia perfectamente asumible.</div>
       <div class="match-bar">
-        <div class="match-tag handball">Balonmano escolar confirmado</div>
-        <div class="match-tag handball">Club Edmonton ~90 min</div>
+        <div class="match-tag handball">🤾 Balonmano escolar confirmado</div>
+        <div class="match-tag handball">Edmonton HC · 90 min</div>
         <div class="match-tag gifted">IPP + CAPE Alberta</div>
-        <div class="match-tag">Rural auténtico</div>
-        <div class="match-tag">Mejor precio</div>
+        <div class="match-tag">Rural auténtico · Praderas</div>
+        <div class="match-tag">Mejor precio · 19.430€</div>
       </div>
     </div>
 
-    <!-- OPCIÓN 2: NEW BRUNSWICK -->
+    <!-- ═══════════════════════════════════════════════════════
+         OPCIÓN 2 — NEW BRUNSWICK
+    ═══════════════════════════════════════════════════════ -->
     <div class="opcion-card">
       <div class="opcion-header">
         <div class="opcion-num">Opción 02</div>
         <div class="opcion-distrito">New Brunswick School District</div>
-        <div class="opcion-loc">📍 Moncton, New Brunswick · Este de Canadá</div>
+        <div class="opcion-loc">📍 Moncton · New Brunswick · Este de Canadá</div>
         <div class="precio-chip"><span class="val">20.550 €</span><span class="desc">/ año · vuelos incl.*</span><span class="tachado">21.550 €</span></div>
       </div>
       <div class="opcion-body">
@@ -289,107 +276,82 @@ details[open] summary::before{transform:rotate(90deg);}
           <div class="colegio">
             <div class="colegio-top">
               <div class="colegio-nombre">Bernice MacNaughton High School</div>
-              <div class="colegio-meta"><span class="tag pub">Público</span><span class="tag info">Grade 9–12</span><span class="tag info">800 alumnos</span><span class="tag info">Moncton</span></div>
+              <div class="colegio-meta"><span class="tag pub">Público</span><span class="tag info">Gr. 9–12</span><span class="tag info">800 alumnos</span><span class="tag info">Moncton</span></div>
             </div>
             <details><summary>Por qué es ideal para Arnau</summary>
-            <div class="colegio-razon">Bernice MacNaughton forma <em>"Highlanders íntegros"</em> — estudiantes que conectan, se adaptan, respetan y se comprometen. Esos valores encajan con el perfil de Arnau. Moncton es una ciudad pequeña y acogedora rodeada de bosques y costas de las Marítimas. El colegio tiene extracurriculares activos: Soccer, Rugby, Basketball, Wrestling, Hockey... y Arnau podría proponer balonmano — el club de Moncton está a minutos.</div>
+            <div class="colegio-razon">BMHS forma <em>"Highlanders íntegros"</em> — estudiantes que conectan, se adaptan y se comprometen. Valores que encajan con el perfil de Arnau. Moncton es ciudad pequeña rodeada de bosques y costas atlánticas. Club de balonmano a minutos del colegio. Extracurriculares activos: Soccer, Rugby, Basketball, Hockey, Wrestling.</div>
             </details>
           </div>
           <div class="colegio">
             <div class="colegio-top">
               <div class="colegio-nombre">Leo Hayes High School</div>
-              <div class="colegio-meta"><span class="tag pub">Público</span><span class="tag info">Grade 9–12</span><span class="tag info">Fredericton</span><span class="tag info">Río · Bosque</span></div>
+              <div class="colegio-meta"><span class="tag pub">Público</span><span class="tag info">Gr. 9–12</span><span class="tag info">Fredericton</span><span class="tag info">Río · Bosque</span></div>
             </div>
             <details><summary>Por qué es ideal para Arnau</summary>
-            <div class="colegio-razon">Leo Hayes tiene <strong>programa AP (Advanced Placement)</strong> — el sistema más reconocido para altas capacidades en Norteamérica. Asignaturas como Calculus AP, Physics AP o AP English permiten a Arnau trabajar a su nivel real. Fredericton es la capital de NB: pequeña (60.000 hab.), rodeada de naturaleza, con el río Saint John a pasos del colegio. El Fredericton Handball Club está en la misma ciudad.</div>
+            <div class="colegio-razon">Leo Hayes ofrece <strong>programa AP (Advanced Placement)</strong>, el sistema más reconocido internacionalmente para altas capacidades: Calculus AP, Physics AP, AP English. Fredericton es capital pequeña (60k hab.) rodeada de naturaleza con el río Saint John a pasos. El Fredericton Handball Club está en la misma ciudad.</div>
             </details>
           </div>
         </div>
       </div>
-
-      <!-- BLOQUE ALTAS CAPACIDADES -->
-      <div class="info-block">
-        <div class="info-block-title gifted-title">🧠 Altas Capacidades · New Brunswick</div>
-        <div class="info-block-body gifted-body">
-          NB tiene <strong>coordinadores provinciales dedicados a gifted education</strong> y aplica la política <em>Positive Learning and Working Environment</em> con IPP obligatorio. <strong>Leo Hayes ofrece programas AP</strong> (Advanced Placement reconocidos por universidades de todo el mundo): ideal si Arnau quiere ser desafiado académicamente. Bernice MacNaughton trabaja el desarrollo integral del estudiante con proyectos de liderazgo y enriquecimiento. NB es considerada una de las mejores provincias en educación inclusiva.
-        </div>
-      </div>
-
-      <!-- BLOQUE BALONMANO -->
-      <div class="info-block">
-        <div class="info-block-title handball-title">🤾 Balonmano · Club federado en la misma ciudad</div>
-        <div class="info-block-body handball-body">
-          <strong>Escolar:</strong> No figura explícitamente en extracurriculares de los colegios propuestos (sí hay soccer, rugby, basketball, hockey).<br><br>
-          <strong>Club federado:</strong> <strong>Moncton Handball Club</strong> — el más activo de las Marítimas, compite en la <em>Maritime Handball League</em>. Para Leo Hayes (Fredericton): <strong>Fredericton Handball Club</strong>, en la misma ciudad. Ambos clubs participan en los <em>Canada Games</em>. Arnau podría mantener su nivel competitivo fuera del horario escolar.
-        </div>
-      </div>
-
+      <div class="info-block-title gifted-title">🧠 Altas Capacidades · New Brunswick</div>
+      <div class="info-block-body gifted-body">NB cuenta con <strong>coordinadores provinciales dedicados a gifted education</strong> e IPP obligatorio. <strong>Leo Hayes ofrece programas AP</strong> (Advanced Placement reconocidos por universidades de todo el mundo). NB es considerada una de las mejores provincias de Canadá en educación inclusiva.</div>
+      <div class="info-block-title handball-title">🤾 Balonmano · Clubs federados en la misma ciudad</div>
+      <div class="info-block-body handball-body"><strong>Escolar:</strong> No figura en extracurriculares de los colegios propuestos.<br><br><strong>Clubs federados:</strong> <strong>Moncton Handball Club</strong> — el más activo de las Marítimas, compite en la <em>Maritime Handball League</em>. Para Fredericton: <strong>Fredericton Handball Club</strong>, en la misma ciudad. Ambos participan en los <em>Canada Games</em>.</div>
       <div class="match-bar">
-        <div class="match-tag handball">Moncton HC · mismo ciudad</div>
-        <div class="match-tag handball">Fredericton HC · mismo ciudad</div>
+        <div class="match-tag handball">Moncton HC · misma ciudad</div>
+        <div class="match-tag handball">Fredericton HC · misma ciudad</div>
         <div class="match-tag gifted">Programa AP · Leo Hayes</div>
-        <div class="match-tag gifted">Coordinador gifted NB</div>
-        <div class="match-tag">Naturaleza Marítimas</div>
+        <div class="match-tag gifted">Coordinador gifted provincial</div>
+        <div class="match-tag">Bosques y costas Marítimas</div>
       </div>
     </div>
 
-    <!-- OPCIÓN 3: PEI -->
+    <!-- ═══════════════════════════════════════════════════════
+         OPCIÓN 3 — RED DEER (nueva, sustituye PEI)
+    ═══════════════════════════════════════════════════════ -->
     <div class="opcion-card">
       <div class="opcion-header">
         <div class="opcion-num">Opción 03</div>
-        <div class="opcion-distrito">Prince Edward Island</div>
-        <div class="opcion-loc">📍 O'Leary · Isla Príncipe Eduardo · Este de Canadá</div>
-        <div class="precio-chip"><span class="val">21.100 €</span><span class="desc">/ año · vuelos incl.*</span><span class="tachado">22.100 €</span></div>
+        <div class="opcion-distrito">Red Deer Catholic Regional Schools</div>
+        <div class="opcion-loc">📍 Red Deer · Rocky Mountain House · Alberta</div>
+        <div class="precio-chip"><span class="val">23.560 €</span><span class="desc">/ año · vuelos incl.*</span><span class="tachado">24.560 €</span></div>
       </div>
       <div class="opcion-body">
         <div class="colegios">
           <div class="colegio">
             <div class="colegio-top">
-              <div class="colegio-nombre">Westisle Composite High School</div>
-              <div class="colegio-meta"><span class="tag pub">Público</span><span class="tag info">Gr. 9–12</span><span class="tag info">350 alumnos</span><span class="tag info">O'Leary · Rural</span></div>
+              <div class="colegio-nombre">Notre Dame High School</div>
+              <div class="colegio-meta"><span class="tag cat">Católico</span><span class="tag info">Gr. 10–12</span><span class="tag info">1.240 alumnos</span><span class="tag sport">🤾 Balonmano escolar</span></div>
             </div>
             <details><summary>Por qué es ideal para Arnau</summary>
-            <div class="colegio-razon">Westisle está en O'Leary — una comunidad rural pequeña en el oeste de PEI, isla en sí misma rodeada de Atlántico. El colegio destaca <strong>explícitamente por su ambiente familiar, clases reducidas y atención muy personalizada</strong> al estudiante internacional — palabras que resuenan directamente con el perfil de altas capacidades de Arnau. Con 350 alumnos, es el colegio más pequeño de las tres opciones: máxima atención individual garantizada. Extracurriculares: baloncesto, voleibol, fútbol, atletismo, bádminton.</div>
+            <div class="colegio-razon">Notre Dame es la opción más completa para un perfil de altas capacidades con balonmano: <strong>balonmano confirmado en extracurriculares oficiales</strong>, programa académico exigente con cinco áreas clave de desarrollo, orientación profesional y un ambiente donde superarse es el estándar. Red Deer está a 90 minutos de Edmonton — el hub de balonmano de Alberta — y a 45 minutos de Rocky Mountain House.</div>
             </details>
           </div>
           <div class="colegio">
             <div class="colegio-top">
-              <div class="colegio-nombre">Souris Regional School</div>
-              <div class="colegio-meta"><span class="tag pub">Público</span><span class="tag info">K–12</span><span class="tag info">350 alumnos</span><span class="tag info">Souris · Costera</span></div>
+              <div class="colegio-nombre">St. Dominic Catholic High School</div>
+              <div class="colegio-meta"><span class="tag cat">Católico</span><span class="tag info">Gr. 10–12</span><span class="tag rural">200 alumnos</span><span class="tag rural">Rocky Mtn. House</span></div>
             </div>
             <details><summary>Por qué es ideal para Arnau</summary>
-            <div class="colegio-razon">Souris es un pueblo costero pequeño con una identidad local fortísima — el tipo de comunidad donde un estudiante internacional es acogido con calor genuino. Colegio K-12 de tamaño muy reducido: precisamente el entorno donde las altas capacidades de Arnau recibirán más atención. El entorno natural de PEI — costas, acantilados, campos — sorprenderá a alguien que llega del interior peninsular.</div>
+            <div class="colegio-razon">St. Dominic está en Rocky Mountain House — un pueblo de ~6.000 habitantes en el borde de las Montañas Rocosas. Con <strong>solo 200 alumnos</strong>, es el colegio más pequeño e íntimo de las tres opciones: la atención individualizada para altas capacidades es máxima. Ambiente acogedor, comunidad unida, naturaleza espectacular a la puerta. A 45 minutos de Red Deer donde se practica balonmano.</div>
             </details>
           </div>
         </div>
       </div>
-
-      <!-- BLOQUE ALTAS CAPACIDADES -->
-      <div class="info-block">
-        <div class="info-block-title gifted-title">🧠 Altas Capacidades · Prince Edward Island</div>
-        <div class="info-block-body gifted-body">
-          PEI aplica la política <em>Programming for Exceptional Students (PES)</em> con identificación y atención a estudiantes gifted. El tamaño extremadamente pequeño de Westisle y Souris (350 alumnos cada uno) es en sí mismo una ventaja: <strong>en colegios tan pequeños el IPP se implementa con máxima fidelidad</strong> — los profesores conocen a cada alumno en profundidad. Aceleración por asignatura disponible con aprobación del departamento provincial.
-        </div>
-      </div>
-
-      <!-- BLOQUE BALONMANO -->
-      <div class="info-block">
-        <div class="info-block-title handball-title">🤾 Balonmano · Situación en PEI</div>
-        <div class="info-block-body handball-body">
-          <strong>Escolar:</strong> No figura en los extracurriculares de Westisle ni Souris (baloncesto, voleibol, fútbol, atletismo, bádminton).<br><br>
-          <strong>Club federado:</strong> PEI <strong>no tiene estructura federada de balonmano</strong> — Handball Canada no cuenta con afiliado en la isla. Si el balonmano federado es prioritario para Arnau, esta opción no lo cubre. <em>Compensación:</em> Arnau podría practicar deportes de equipo equivalentes (baloncesto, voleibol) en un entorno escolar muy pequeño donde el protagonismo en el equipo está garantizado.
-        </div>
-      </div>
-
+      <div class="info-block-title gifted-title">🧠 Altas Capacidades · Red Deer / Alberta</div>
+      <div class="info-block-body gifted-body">Mismo marco provincial que Battle River: <strong>Ministerial Order 190/2017 de Alberta</strong> con IPP obligatorio y programa CAPE. Notre Dame añade un componente diferencial: <strong>cinco áreas clave de desarrollo académico</strong> incluyendo excelencia académica, orientación profesional y Aprendizaje Registrado (certificaciones reconocidas). St. Dominic con 200 alumnos ofrece la <strong>atención más personalizada del catálogo</strong>.</div>
+      <div class="info-block-title handball-title">🤾 Balonmano · Confirmado en ficha + Club provincial</div>
+      <div class="info-block-body handball-body"><strong>Escolar (confirmado en ficha oficial):</strong> Notre Dame H.S. lista balonmano explícitamente entre sus extracurriculares junto a fútbol americano, voleibol, baloncesto, curling, lucha libre, rugby y atletismo.<br><br><strong>Club federado:</strong> Red Deer tiene liga local de balonmano. Edmonton Team Handball Club (ATHA) a ~90 min. Alberta es la provincia con mayor actividad de balonmano fuera de Ontario y Quebec.</div>
       <div class="match-bar">
-        <div class="match-tag gifted">Máx. atención individual (350 alum.)</div>
-        <div class="match-tag gifted">IPP · PES framework</div>
-        <div class="match-tag">Rural isleño auténtico</div>
-        <div class="match-tag">Comunidad muy pequeña</div>
+        <div class="match-tag handball">🤾 Balonmano escolar confirmado</div>
+        <div class="match-tag handball">Liga local Red Deer</div>
+        <div class="match-tag gifted">IPP + CAPE Alberta</div>
+        <div class="match-tag gifted">200 alumnos · St. Dominic</div>
+        <div class="match-tag">Montañas Rocosas · Alberta</div>
       </div>
     </div>
 
-  </div>
+  </div><!-- fin opciones-grid -->
 
   <!-- EL PROGRAMA INCLUYE -->
   <div class="section-title"><h2>El programa incluye</h2></div>
@@ -403,7 +365,7 @@ details[open] summary::before{transform:rotate(90deg);}
             <li>Reunión inicial con padres o tutores (presencial, teléfono o videoconferencia)</li>
             <li>Prueba de inglés y entrevista personal online con el estudiante</li>
             <li>Propuesta personalizada de distrito y colegios</li>
-            <li>Inscripción y matriculación en centro escolar de educación secundaria en Canadá</li>
+            <li>Inscripción y matriculación en centro escolar en Canadá</li>
             <li>Selección de familia anfitriona en régimen de pensión completa y habitación individual o compartida</li>
             <li>Un único estudiante hispanohablante por familia garantizado</li>
             <li>Seguro médico y de accidentes</li>
@@ -452,7 +414,7 @@ details[open] summary::before{transform:rotate(90deg);}
             <div class="col-title">No incluido</div>
             <ul class="inc-list no">
               <li>Exceso de vuelos sobre 1.000 € (a cargo de la familia)</li>
-              <li>Actividades extracurriculares de pago: equipos deportivos con licencia federada</li>
+              <li>Actividades extracurriculares de pago: equipos con licencia federada</li>
               <li>Excursiones y viajes escolares organizados por el colegio</li>
               <li>Material escolar: cuadernos, calculadora, uniforme deportivo</li>
               <li>Fotografía escolar y anuario (yearbook)</li>
@@ -461,7 +423,7 @@ details[open] summary::before{transform:rotate(90deg);}
               <li>Teléfono móvil y plan de datos en Canadá</li>
               <li>Ropa de invierno: abrigo, botas de nieve, accesorios</li>
               <li>Gastos de ocio personal</li>
-              <li>Medicamentos no cubiertos por seguro <small>Los antihistamínicos para la alergia de Arnau son de venta libre en Canadá sin complicaciones</small></li>
+              <li>Medicamentos no cubiertos por seguro <small>Los antihistamínicos de Arnau son de venta libre en Canadá, sin complicación</small></li>
               <li>Tratamientos dentales y de visión</li>
               <li>Ordenador portátil o tablet</li>
               <li>Gastos de pasaporte si no está vigente</li>
@@ -480,38 +442,18 @@ details[open] summary::before{transform:rotate(90deg);}
       <div class="pay-subtitle">La cantidad íntegra debe abonarse antes del 10 de abril</div>
       <div class="pay-cols">
         <div class="pay-col">
-          <div class="pay-col-title">Distritos con pago fraccionado</div>
-          <div class="pay-step">
-            <div class="pay-step-num">Paso 1</div>
-            <div class="pay-step-title">Firma del contrato</div>
-            <div class="pay-step-desc">3.500 €</div>
-          </div>
-          <div class="pay-step">
-            <div class="pay-step-num">Paso 2 · Aceptación en el programa</div>
-            <div class="pay-step-title">40% del importe restante</div>
-            <div class="pay-step-desc"></div>
-          </div>
-          <div class="pay-step">
-            <div class="pay-step-num">Paso 3</div>
-            <div class="pay-step-title">Resto del importe</div>
-            <div class="pay-step-desc">Antes del 10 de abril</div>
-          </div>
+          <div class="pay-col-title">Pago fraccionado</div>
+          <div class="pay-step"><div class="pay-step-num">Paso 1</div><div class="pay-step-title">Firma del contrato</div><div class="pay-step-desc">3.500 €</div></div>
+          <div class="pay-step"><div class="pay-step-num">Paso 2 · Aceptación</div><div class="pay-step-title">40% del importe restante</div></div>
+          <div class="pay-step"><div class="pay-step-num">Paso 3</div><div class="pay-step-title">Resto del importe</div><div class="pay-step-desc">Antes del 10 de abril</div></div>
         </div>
         <div class="pay-col">
-          <div class="pay-col-title">Distritos con pago completo</div>
-          <div class="pay-step">
-            <div class="pay-step-num">Paso 1</div>
-            <div class="pay-step-title">Firma del contrato</div>
-            <div class="pay-step-desc">3.500 €</div>
-          </div>
-          <div class="pay-step">
-            <div class="pay-step-num">Paso 2 · Aceptación en el programa</div>
-            <div class="pay-step-title">Resto del importe en su totalidad</div>
-            <div class="pay-step-desc"></div>
-          </div>
+          <div class="pay-col-title">Pago completo</div>
+          <div class="pay-step"><div class="pay-step-num">Paso 1</div><div class="pay-step-title">Firma del contrato</div><div class="pay-step-desc">3.500 €</div></div>
+          <div class="pay-step"><div class="pay-step-num">Paso 2 · Aceptación</div><div class="pay-step-title">Resto del importe íntegro</div></div>
         </div>
       </div>
-      <div class="pay-note">El seguro de anulación e interrupción debe contratarse y abonarse en el momento de la firma del contrato. Su coste varía según el importe del programa y es emitido una vez el estudiante es aceptado. Su importe no es reembolsable bajo ninguna circunstancia.</div>
+      <div class="pay-note">El seguro de anulación debe contratarse en el momento de la firma. Su importe no es reembolsable bajo ninguna circunstancia.</div>
     </div>
   </div>
 
@@ -532,17 +474,17 @@ details[open] summary::before{transform:rotate(90deg);}
       <div class="fin-opcion-selector">
         <div class="fin-opcion-label">Selecciona la opción del programa</div>
         <div class="fin-opcion-btns">
-          <button class="fin-opcion-btn active" onclick="setOpcion(this, 19430)">
-            <span class="fin-opcion-nombre">⭐ Opción 1 · Battle River SD</span>
+          <button class="fin-opcion-btn active" onclick="setOpcion(this,19430)">
+            <span class="fin-opcion-nombre">⭐ Op. 1 · Battle River SD</span>
             <span class="fin-opcion-precio">19.430 €</span>
           </button>
-          <button class="fin-opcion-btn" onclick="setOpcion(this, 20550)">
-            <span class="fin-opcion-nombre">Opción 2 · New Brunswick</span>
+          <button class="fin-opcion-btn" onclick="setOpcion(this,20550)">
+            <span class="fin-opcion-nombre">Op. 2 · New Brunswick</span>
             <span class="fin-opcion-precio">20.550 €</span>
           </button>
-          <button class="fin-opcion-btn" onclick="setOpcion(this, 21100)">
-            <span class="fin-opcion-nombre">Opción 3 · Prince Edward Island</span>
-            <span class="fin-opcion-precio">21.100 €</span>
+          <button class="fin-opcion-btn" onclick="setOpcion(this,23560)">
+            <span class="fin-opcion-nombre">Op. 3 · Red Deer Catholic</span>
+            <span class="fin-opcion-precio">23.560 €</span>
           </button>
         </div>
       </div>
@@ -578,28 +520,19 @@ details[open] summary::before{transform:rotate(90deg);}
           <div class="fin-cuota-sub" id="cuotaSub">/mes · 12 pagos · TIN 0%</div>
         </div>
         <div class="fin-resultado-detalle">
-          <div class="fin-det-row">
-            <span class="fin-det-label">Importe del programa</span>
-            <span class="fin-det-val" id="detCapital">19.430 €</span>
-          </div>
-          <div class="fin-det-row">
-            <span class="fin-det-label">Intereses totales</span>
-            <span class="fin-det-val fin-det-green" id="detIntereses">0 € · ¡MLQ los asume!</span>
-          </div>
-          <div class="fin-det-row fin-det-total">
-            <span class="fin-det-label">Total a pagar</span>
-            <span class="fin-det-val" id="detTotal">19.430 €</span>
-          </div>
+          <div class="fin-det-row"><span class="fin-det-label">Importe del programa</span><span class="fin-det-val" id="detCapital">19.430 €</span></div>
+          <div class="fin-det-row"><span class="fin-det-label">Intereses totales</span><span class="fin-det-val fin-det-green" id="detIntereses">0 € · ¡MLQ los asume!</span></div>
+          <div class="fin-det-row fin-det-total"><span class="fin-det-label">Total a pagar</span><span class="fin-det-val" id="detTotal">19.430 €</span></div>
         </div>
       </div>
-      <div class="fin-nota">ℹ️ Financiación sujeta a aprobación bancaria. Cuota orientativa calculada sobre el importe total del programa. Sin comisión de apertura ni penalización por cancelación anticipada. Los precios incluyen el descuento de 1.000 € ya aplicado.</div>
+      <div class="fin-nota">ℹ️ Financiación sujeta a aprobación bancaria. Cuota orientativa calculada sobre el importe total. Sin comisión de apertura ni penalización por cancelación anticipada. Precios con descuento de 1.000 € ya aplicado.</div>
     </div>
   </div>
 
 </main>
 
 <script>
-var _cap = 19430, _mes = 12;
+var _cap=19430,_mes=12;
 function _fmt(n,d){return n.toLocaleString('es-ES',{minimumFractionDigits:d||0,maximumFractionDigits:d||0})+' €';}
 function _cuota(c,t,m){if(t===0)return c/m;var r=(t/100)/12;return c*r/(1-Math.pow(1+r,-m));}
 function _update(){
@@ -611,18 +544,12 @@ function _update(){
   document.getElementById('cuotaSub').textContent='/mes · '+_mes+' pagos · TIN '+(tin===0?'0%':'10,46%');
   document.getElementById('detCapital').textContent=_fmt(Math.round(_cap));
   document.getElementById('detTotal').textContent=_fmt(Math.round(tot));
-  if(tin===0){
-    document.getElementById('detIntereses').textContent='0 € · ¡MLQ los asume!';
-    document.getElementById('detIntereses').className='fin-det-val fin-det-green';
-  } else {
-    document.getElementById('detIntereses').textContent=_fmt(Math.round(inter));
-    document.getElementById('detIntereses').className='fin-det-val';
-  }
+  if(tin===0){document.getElementById('detIntereses').textContent='0 € · ¡MLQ los asume!';document.getElementById('detIntereses').className='fin-det-val fin-det-green';}
+  else{document.getElementById('detIntereses').textContent=_fmt(Math.round(inter));document.getElementById('detIntereses').className='fin-det-val';}
 }
 function setOpcion(btn,cap){_cap=cap;document.querySelectorAll('.fin-opcion-btn').forEach(function(b){b.classList.remove('active');});btn.classList.add('active');_update();}
 function setPlazo(el,m){_mes=m;document.querySelectorAll('.fin-plazo').forEach(function(p){p.classList.remove('active');});el.classList.add('active');_update();}
 _update();
 </script>
-
 </body>
 </html>
