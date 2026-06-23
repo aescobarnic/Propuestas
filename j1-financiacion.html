@@ -188,7 +188,12 @@
       <div class="fin-plazo-wrap">
         <div class="fin-plazo-label">Elige tu plazo · Importe a financiar: 10.100 € (precio total 13.600 € − entrada 3.500 €) · Programa J1 Intercambio Cultural</div>
         <div class="fin-plazos">
-          <div class="fin-plazo active" onclick="setPlazo(this,18)">
+          <div class="fin-plazo active" onclick="setPlazo(this,12)">
+            <div class="fin-plazo-meses">12 meses</div>
+            <div class="fin-plazo-badge sin">TIN 0%</div>
+            <div class="fin-plazo-quien">¡MLQ asume los intereses!</div>
+          </div>
+          <div class="fin-plazo" onclick="setPlazo(this,18)">
             <div class="fin-plazo-meses">18 meses</div>
             <div class="fin-plazo-badge con">TIN 10,46%</div>
             <div class="fin-plazo-quien">Intereses a cargo del cliente</div>
@@ -209,8 +214,8 @@
       <div class="fin-resultado">
         <div class="fin-resultado-main">
           <div class="fin-cuota-label">Cuota mensual estimada</div>
-          <div class="fin-cuota-valor" id="cuotaValor">608,72 €</div>
-          <div class="fin-cuota-sub" id="cuotaSub">/mes · 18 pagos · TIN 10,46%</div>
+          <div class="fin-cuota-valor" id="cuotaValor">841,67 €</div>
+          <div class="fin-cuota-sub" id="cuotaSub">/mes · 12 pagos · TIN 0%</div>
         </div>
         <div class="fin-resultado-detalle">
           <div class="fin-det-row">
@@ -227,11 +232,11 @@
           </div>
           <div class="fin-det-row">
             <span class="fin-det-label">Intereses totales</span>
-            <span class="fin-det-val" id="detIntereses">856,92 €</span>
+            <span class="fin-det-val fin-det-green" id="detIntereses">0 € · ¡MLQ los asume!</span>
           </div>
           <div class="fin-det-row fin-det-total">
             <span class="fin-det-label">Total a pagar</span>
-            <span class="fin-det-val" id="detTotal">14.456,92 €</span>
+            <span class="fin-det-val" id="detTotal">13.600 €</span>
           </div>
         </div>
       </div>
@@ -267,15 +272,20 @@
     document.querySelectorAll('.fin-plazo').forEach(p => p.classList.remove('active'));
     el.classList.add('active');
 
-    const tin = TIN;
+    const sinIntereses = meses === 12;
+    const tin = sinIntereses ? 0 : TIN;
     const cuota = calcCuota(IMPORTE, meses, tin);
-    const totalPagar = cuota * meses;
+    const totalPagar = sinIntereses ? IMPORTE : cuota * meses;
     const intereses = totalPagar - IMPORTE;
 
     document.getElementById('cuotaValor').textContent = fmt(cuota);
-    document.getElementById('cuotaSub').textContent = `/mes · ${meses} pagos · TIN 10,46%`;
-    document.getElementById('detIntereses').textContent = fmt(intereses);
-    document.getElementById('detIntereses').className = 'fin-det-val';
+    document.getElementById('cuotaSub').textContent = `/mes · ${meses} pagos · TIN ${sinIntereses ? '0%' : '10,46%'}`;
+    document.getElementById('detIntereses').textContent = sinIntereses
+      ? '0 € · ¡MLQ los asume!'
+      : fmt(intereses);
+    document.getElementById('detIntereses').className = sinIntereses
+      ? 'fin-det-val fin-det-green'
+      : 'fin-det-val';
     document.getElementById('detTotal').textContent = fmt(PRECIO_TOTAL + intereses);
   }
 </script>
