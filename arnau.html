@@ -11,6 +11,7 @@
   --red:#B12900;--red-dark:#8A1F00;--red-light:#fdf0ec;
   --green:#4C9E0C;--green-dark:#3A7A09;--green-light:#eef8e3;
   --purple:#5c3d99;--purple-light:#ede8f8;
+  --amber:#92400e;--amber-light:#fef3c7;--amber-border:rgba(180,120,0,0.3);
   --gray-bg:#f0f2f6;--gray-card:#f8f9fb;--gray-border:#dde1ea;
   --text:#0d1b2a;--text-mid:#3d4f62;--text-light:#7a8a9b;--white:#ffffff;
 }
@@ -37,16 +38,23 @@ body{font-family:'Fira Sans',sans-serif;background:var(--gray-bg);color:var(--te
 .section-title{display:flex;align-items:center;gap:12px;margin-bottom:24px;}
 .section-title h2{font-family:'Josefin Sans',sans-serif;font-size:11px;font-weight:700;letter-spacing:3px;text-transform:uppercase;color:var(--text-light);}
 .section-title::after{content:'';flex:1;height:1px;background:var(--gray-border);}
-.alert-box{display:flex;gap:12px;align-items:flex-start;background:#fff4f0;border:1.5px solid rgba(177,41,0,0.3);border-radius:12px;padding:14px 18px;margin-bottom:16px;}
-.alert-box.purple{background:var(--purple-light);border-color:rgba(92,61,153,0.3);}
-.alert-icon{font-size:20px;flex-shrink:0;}
-.alert-text{font-size:12px;color:#6b1a00;line-height:1.6;}
+.alert-box{display:flex;gap:12px;align-items:flex-start;border-radius:12px;padding:14px 18px;margin-bottom:16px;}
+.alert-box.info{background:#f0f7ff;border:1.5px solid rgba(10,74,138,0.25);}
+.alert-box.warning{background:#fffbeb;border:1.5px solid rgba(180,120,0,0.3);}
+.alert-box.purple{background:var(--purple-light);border:1.5px solid rgba(92,61,153,0.3);}
+.alert-icon{font-size:20px;flex-shrink:0;margin-top:1px;}
+.alert-text{font-size:12px;line-height:1.7;}
+.alert-text.info{color:#1e3a5f;}
+.alert-text.warning{color:#78350f;}
 .alert-text.purple{color:#3a1f6b;}
-.alert-text strong{color:var(--red-dark);}
-.alert-text.purple strong{color:var(--purple);}
+.alert-text strong{font-weight:700;}
+.verificado-badge{display:inline-flex;align-items:center;gap:4px;background:var(--green-light);border:1px solid rgba(76,158,12,0.3);color:var(--green-dark);border-radius:20px;padding:2px 9px;font-size:9px;font-weight:700;text-transform:uppercase;letter-spacing:0.5px;}
+.verificado-badge::before{content:'✓';}
+.no-verificado-badge{display:inline-flex;align-items:center;gap:4px;background:#fef2f2;border:1px solid rgba(177,41,0,0.2);color:var(--red);border-radius:20px;padding:2px 9px;font-size:9px;font-weight:700;text-transform:uppercase;letter-spacing:0.5px;}
+.no-verificado-badge::before{content:'·';}
 .opciones-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(330px,1fr));gap:20px;margin-bottom:40px;}
 .opcion-card{background:var(--white);border-radius:16px;border:1.5px solid var(--gray-border);overflow:hidden;box-shadow:0 2px 16px rgba(0,51,102,0.06);position:relative;transition:transform .2s,box-shadow .2s,border-color .2s;}
-.opcion-card:hover{transform:translateY(-4px);box-shadow:0 12px 40px rgba(0,51,102,0.13);border-color:var(--blue-mid);}
+.opcion-card:hover{transform:translateY(-3px);box-shadow:0 10px 36px rgba(0,51,102,0.12);border-color:var(--blue-mid);}
 .opcion-card.recomendada{border-color:var(--green);box-shadow:0 4px 24px rgba(76,158,12,0.15);}
 .badge-rec{position:absolute;top:14px;right:-32px;background:var(--green);color:var(--white);font-size:8px;font-weight:700;letter-spacing:1.5px;padding:5px 40px;transform:rotate(45deg);width:130px;text-align:center;z-index:10;}
 .opcion-header{background:linear-gradient(135deg,var(--blue-dark) 0%,var(--blue) 100%);padding:22px 24px 18px;}
@@ -59,38 +67,48 @@ body{font-family:'Fira Sans',sans-serif;background:var(--gray-bg);color:var(--te
 .precio-chip .tachado{font-size:10px;color:rgba(255,255,255,0.3);text-decoration:line-through;margin-left:6px;}
 .opcion-body{padding:20px 22px;}
 .colegios{display:flex;flex-direction:column;gap:12px;}
-.colegio{border:1.5px solid var(--gray-border);border-radius:12px;overflow:hidden;background:var(--gray-card);transition:border-color .2s;}
-.colegio:hover{border-color:var(--red);}
+.colegio{border:1.5px solid var(--gray-border);border-radius:12px;overflow:hidden;background:var(--gray-card);}
 .colegio-top{padding:12px 14px 10px;}
-.colegio-nombre{font-family:'Josefin Sans',sans-serif;font-size:13px;font-weight:700;color:var(--blue);margin-bottom:5px;}
-.colegio-meta{display:flex;flex-wrap:wrap;align-items:center;gap:6px;}
+.colegio-nombre{font-family:'Josefin Sans',sans-serif;font-size:13px;font-weight:700;color:var(--blue);margin-bottom:6px;}
+.colegio-meta{display:flex;flex-wrap:wrap;align-items:center;gap:5px;}
 .tag{border-radius:5px;padding:2px 8px;font-size:9px;font-weight:700;text-transform:uppercase;}
 .tag.pub{background:var(--green);color:var(--white);}
 .tag.cat{background:#7c3aed;color:var(--white);}
 .tag.info{background:var(--blue-light);color:var(--blue);}
-.tag.sport{background:#fff3cd;color:#856404;}
-.tag.rural{background:#d1fae5;color:#065f46;}
+.tag.sport-ok{background:#fef9c3;color:#713f12;border:1px solid #fde047;}
+.tag.sport-web{background:#dcfce7;color:#166534;border:1px solid #86efac;}
 details{border-top:1px solid var(--gray-border);}
-details summary{list-style:none;cursor:pointer;padding:9px 14px;font-size:11px;font-weight:600;color:var(--red);display:flex;align-items:center;gap:6px;user-select:none;-webkit-user-select:none;}
+details summary{list-style:none;cursor:pointer;padding:9px 14px;font-size:11px;font-weight:600;color:var(--red);display:flex;align-items:center;gap:6px;user-select:none;}
 details summary:hover{background:var(--red-light);}
 details summary::-webkit-details-marker{display:none;}
 details summary::before{content:'▸';font-size:10px;transition:transform .2s;display:inline-block;}
 details[open] summary::before{transform:rotate(90deg);}
 .colegio-razon{padding:10px 14px 13px;font-size:12px;color:var(--text-mid);line-height:1.7;border-left:3px solid var(--red);margin:0 14px 12px;background:var(--red-light);border-radius:0 6px 6px 0;}
+/* Bloques de datos verificados */
+.data-block{margin:0;border-top:1px solid var(--gray-border);}
+.data-block-head{display:flex;align-items:center;justify-content:space-between;padding:10px 22px 6px;}
+.data-block-head.gifted{background:var(--purple-light);}
+.data-block-head.handball{background:var(--amber-light);}
+.data-block-title{font-family:'Josefin Sans',sans-serif;font-size:9px;font-weight:700;letter-spacing:2px;text-transform:uppercase;}
+.data-block-title.gifted{color:var(--purple);}
+.data-block-title.handball{color:var(--amber);}
+.data-block-body{padding:10px 14px 13px;font-size:12px;line-height:1.65;color:var(--text-mid);margin:0 14px 12px;border-radius:0 6px 6px 0;}
+.data-block-body.gifted{background:var(--purple-light);border-left:3px solid var(--purple);}
+.data-block-body.handball{background:var(--amber-light);border-left:3px solid #d97706;}
+.cite{display:block;margin-top:8px;padding:8px 12px;background:rgba(0,0,0,0.04);border-radius:6px;font-size:11px;font-style:italic;color:var(--text-mid);border-left:2px solid var(--gray-border);}
+.cite-source{display:block;font-size:10px;color:var(--text-light);margin-top:4px;font-style:normal;}
 .match-bar{display:flex;gap:6px;flex-wrap:wrap;padding:14px 22px;border-top:1px solid var(--gray-border);background:linear-gradient(to right,var(--gray-card),var(--white));}
-.match-tag{display:flex;align-items:center;gap:4px;font-size:10px;font-weight:600;color:var(--green-dark);background:var(--green-light);border:1px solid rgba(76,158,12,0.25);border-radius:20px;padding:3px 10px;}
-.match-tag::before{content:'✓';font-size:9px;}
-.match-tag.handball{color:#92400e;background:#fef3c7;border-color:rgba(180,120,0,0.3);}
+.match-tag{display:flex;align-items:center;gap:4px;font-size:10px;font-weight:600;border-radius:20px;padding:3px 10px;}
+.match-tag.green{color:var(--green-dark);background:var(--green-light);border:1px solid rgba(76,158,12,0.25);}
+.match-tag.green::before{content:'✓';font-size:9px;}
+.match-tag.handball{color:var(--amber);background:var(--amber-light);border:1px solid var(--amber-border);}
 .match-tag.handball::before{content:'🤾';font-size:10px;}
-.match-tag.gifted{color:var(--purple);background:var(--purple-light);border-color:rgba(92,61,153,0.25);}
+.match-tag.gifted{color:var(--purple);background:var(--purple-light);border:1px solid rgba(92,61,153,0.25);}
 .match-tag.gifted::before{content:'🧠';font-size:10px;}
-.info-block-title{font-family:'Josefin Sans',sans-serif;font-size:9px;font-weight:700;letter-spacing:2px;text-transform:uppercase;padding:10px 22px 6px;border-top:1px solid var(--gray-border);}
-.info-block-title.gifted-title{color:var(--purple);background:var(--purple-light);}
-.info-block-title.handball-title{color:#92400e;background:#fef3c7;}
-.info-block-body{padding:10px 14px 13px;font-size:12px;line-height:1.65;color:var(--text-mid);}
-.info-block-body.gifted-body{background:var(--purple-light);border-left:3px solid var(--purple);margin:0 14px 12px;border-radius:0 6px 6px 0;}
-.info-block-body.handball-body{background:#fef3c7;border-left:3px solid #d97706;margin:0 14px 12px;border-radius:0 6px 6px 0;}
-.includes-wrap{background:var(--white);border-radius:16px;border:1.5px solid var(--gray-border);box-shadow:0 2px 16px rgba(0,51,102,0.05);overflow:hidden;margin-bottom:24px;}
+.match-tag.warn{color:#92400e;background:#fef3c7;border:1px solid rgba(180,120,0,0.25);}
+.match-tag.warn::before{content:'·';font-size:14px;line-height:1;}
+/* Includes */
+.includes-wrap{background:var(--white);border-radius:16px;border:1.5px solid var(--gray-border);overflow:hidden;margin-bottom:24px;}
 .includes-head{background:linear-gradient(135deg,var(--blue-dark),var(--blue));padding:20px 32px;}
 .includes-head h3{font-family:'Josefin Sans',sans-serif;font-size:14px;font-weight:700;color:var(--white);letter-spacing:1px;}
 .includes-body{padding:28px 32px;}
@@ -106,6 +124,7 @@ details[open] summary::before{transform:rotate(90deg);}
 .gestor-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;}
 .gestor-item{background:rgba(255,255,255,0.08);border:1px solid rgba(255,255,255,0.12);border-radius:8px;padding:10px 12px;font-size:11px;color:rgba(255,255,255,0.85);line-height:1.4;}
 .gestor-item::before{content:'→';color:#7dd44a;font-weight:700;margin-right:5px;}
+/* Pago */
 .payment-wrap{background:linear-gradient(135deg,var(--blue-dark) 0%,var(--blue) 60%,var(--blue-mid) 100%);border-radius:16px;padding:32px;position:relative;overflow:hidden;margin-bottom:20px;}
 .payment-wrap::before{content:'';position:absolute;inset:0;background-image:radial-gradient(rgba(255,255,255,0.05) 1px,transparent 1px);background-size:22px 22px;}
 .payment-inner{position:relative;z-index:2;}
@@ -116,51 +135,50 @@ details[open] summary::before{transform:rotate(90deg);}
 .pay-col-title{font-family:'Josefin Sans',sans-serif;font-size:9px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:#7dd44a;margin-bottom:12px;}
 .pay-step{margin-bottom:10px;}
 .pay-step-num{font-size:9px;font-weight:700;color:rgba(255,255,255,0.4);text-transform:uppercase;letter-spacing:1px;margin-bottom:2px;}
-.pay-step-title{font-size:13px;font-weight:600;color:var(--white);margin-bottom:2px;}
-.pay-step-desc{font-size:11px;color:rgba(255,255,255,0.45);line-height:1.5;}
+.pay-step-title{font-size:13px;font-weight:600;color:var(--white);}
+.pay-step-desc{font-size:11px;color:rgba(255,255,255,0.45);}
 .pay-note{font-size:11px;color:rgba(255,255,255,0.3);line-height:1.65;font-style:italic;border-top:1px solid rgba(255,255,255,0.1);padding-top:14px;}
-.financing-wrap{background:var(--white);border-radius:16px;border:1.5px solid var(--gray-border);box-shadow:0 2px 16px rgba(0,51,102,0.06);overflow:hidden;margin-bottom:24px;}
+/* Financiación */
+.financing-wrap{background:var(--white);border-radius:16px;border:1.5px solid var(--gray-border);overflow:hidden;margin-bottom:24px;}
 .financing-head{background:linear-gradient(135deg,var(--blue-dark),var(--blue));padding:22px 32px;display:flex;align-items:center;justify-content:space-between;gap:16px;}
 .financing-head-left{display:flex;align-items:center;gap:16px;}
-.fin-icon{font-size:28px;flex-shrink:0;}
+.fin-icon{font-size:28px;}
 .fin-title{font-family:'Josefin Sans',sans-serif;font-size:16px;font-weight:700;color:var(--white);margin-bottom:3px;}
-.fin-sub{font-size:11px;color:rgba(255,255,255,0.5);line-height:1.4;}
-.fin-badge{background:rgba(125,212,74,0.2);border:1px solid rgba(125,212,74,0.4);color:#7dd44a;font-family:'Josefin Sans',sans-serif;font-size:11px;font-weight:700;letter-spacing:1px;padding:6px 14px;border-radius:20px;white-space:nowrap;}
+.fin-sub{font-size:11px;color:rgba(255,255,255,0.5);}
+.fin-badge{background:rgba(125,212,74,0.2);border:1px solid rgba(125,212,74,0.4);color:#7dd44a;font-family:'Josefin Sans',sans-serif;font-size:11px;font-weight:700;padding:6px 14px;border-radius:20px;white-space:nowrap;}
 .financing-body{padding:28px 32px;}
-.fin-opcion-label,.fin-plazo-label{font-family:'Josefin Sans',sans-serif;font-size:9px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--text-light);margin-bottom:10px;}
+.fin-label{font-family:'Josefin Sans',sans-serif;font-size:9px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--text-light);margin-bottom:10px;}
 .fin-opcion-selector{margin-bottom:24px;}
 .fin-opcion-btns{display:flex;gap:10px;flex-wrap:wrap;}
 .fin-opcion-btn{background:var(--gray-card);border:1.5px solid var(--gray-border);border-radius:10px;padding:10px 16px;cursor:pointer;text-align:left;transition:all .2s;display:flex;flex-direction:column;gap:3px;}
-.fin-opcion-btn:hover{border-color:var(--blue-mid);background:var(--blue-light);}
-.fin-opcion-btn.active{border-color:var(--blue);background:var(--blue-light);}
+.fin-opcion-btn:hover,.fin-opcion-btn.active{border-color:var(--blue);background:var(--blue-light);}
 .fin-opcion-nombre{font-size:10px;font-weight:700;letter-spacing:1px;text-transform:uppercase;color:var(--text-light);}
 .fin-opcion-btn.active .fin-opcion-nombre{color:var(--blue);}
 .fin-opcion-precio{font-family:'Josefin Sans',sans-serif;font-size:16px;font-weight:700;color:var(--text);}
 .fin-opcion-btn.active .fin-opcion-precio{color:var(--blue);}
-.fin-plazo-wrap{margin-bottom:24px;}
-.fin-plazos{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;}
+.fin-plazos{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin-bottom:24px;}
 .fin-plazo{background:var(--gray-card);border:1.5px solid var(--gray-border);border-radius:12px;padding:14px 12px;cursor:pointer;text-align:center;transition:all .2s;}
 .fin-plazo:hover{border-color:var(--blue-mid);transform:translateY(-2px);}
-.fin-plazo.active{border-color:var(--green);background:var(--green-light);box-shadow:0 4px 16px rgba(76,158,12,0.15);}
+.fin-plazo.active{border-color:var(--green);background:var(--green-light);}
 .fin-plazo-meses{font-family:'Josefin Sans',sans-serif;font-size:15px;font-weight:700;color:var(--text);margin-bottom:6px;}
 .fin-plazo.active .fin-plazo-meses{color:var(--green-dark);}
-.fin-plazo-badge{display:inline-block;border-radius:20px;padding:2px 8px;font-size:9px;font-weight:700;letter-spacing:0.5px;margin-bottom:4px;}
-.fin-plazo-badge.sin-intereses{background:var(--green-light);color:var(--green-dark);border:1px solid rgba(76,158,12,0.3);}
-.fin-plazo-badge.con-intereses{background:var(--blue-light);color:var(--blue);border:1px solid rgba(0,51,102,0.2);}
+.fin-plazo-badge{display:inline-block;border-radius:20px;padding:2px 8px;font-size:9px;font-weight:700;margin-bottom:4px;}
+.sin-int{background:var(--green-light);color:var(--green-dark);border:1px solid rgba(76,158,12,0.3);}
+.con-int{background:var(--blue-light);color:var(--blue);border:1px solid rgba(0,51,102,0.2);}
 .fin-plazo-quien{font-size:9px;color:var(--text-light);line-height:1.3;}
 .fin-resultado{display:grid;grid-template-columns:auto 1fr;gap:24px;background:linear-gradient(135deg,var(--blue-dark),var(--blue));border-radius:14px;padding:24px 28px;margin-bottom:16px;align-items:center;}
 .fin-resultado-main{text-align:center;border-right:1px solid rgba(255,255,255,0.15);padding-right:24px;}
 .fin-cuota-label{font-size:10px;font-weight:600;letter-spacing:2px;text-transform:uppercase;color:rgba(255,255,255,0.5);margin-bottom:6px;}
 .fin-cuota-valor{font-family:'Josefin Sans',sans-serif;font-size:36px;font-weight:700;color:#7dd44a;line-height:1;margin-bottom:4px;}
 .fin-cuota-sub{font-size:11px;color:rgba(255,255,255,0.45);}
-.fin-resultado-detalle{display:flex;flex-direction:column;gap:10px;}
-.fin-det-row{display:flex;justify-content:space-between;align-items:center;gap:12px;}
+.fin-det{display:flex;flex-direction:column;gap:10px;}
+.fin-det-row{display:flex;justify-content:space-between;gap:12px;}
 .fin-det-label{font-size:12px;color:rgba(255,255,255,0.55);}
 .fin-det-val{font-size:13px;font-weight:600;color:var(--white);}
 .fin-det-green{color:#7dd44a !important;}
 .fin-det-total{border-top:1px solid rgba(255,255,255,0.15);padding-top:10px;margin-top:2px;}
 .fin-det-total .fin-det-label{color:rgba(255,255,255,0.7);font-weight:600;}
-.fin-det-total .fin-det-val{font-family:'Josefin Sans',sans-serif;font-size:16px;color:var(--white);}
+.fin-det-total .fin-det-val{font-family:'Josefin Sans',sans-serif;font-size:16px;}
 .fin-nota{font-size:11px;color:var(--text-light);line-height:1.6;background:var(--gray-card);border-radius:8px;padding:12px 16px;border-left:3px solid var(--blue-light);}
 @media(max-width:720px){
   .header{padding:16px 20px;}.hero{padding:28px 20px 24px;}.hero-name{font-size:28px;}
@@ -203,27 +221,21 @@ details[open] summary::before{transform:rotate(90deg);}
 
 <main class="main">
 
-  <div class="alert-box purple" style="margin-bottom:12px;">
-    <div class="alert-icon">🧠</div>
-    <div class="alert-text purple"><strong>Altas Capacidades:</strong> Los tres distritos propuestos operan bajo marcos provinciales que obligan a elaborar un <strong>Plan de Programa Individual (IPP)</strong> para estudiantes gifted, con aceleración curricular y proyectos de enriquecimiento. Las dos opciones de Alberta comparten el mismo marco legal provincial — el más avanzado de Canadá en educación de altas capacidades.</div>
-  </div>
-  <div class="alert-box" style="margin-bottom:28px;">
-    <div class="alert-icon">🤾</div>
-    <div class="alert-text"><strong>Balonmano:</strong> Se ha investigado disponibilidad tanto escolar como en clubes federados cercanos. Opciones 1 y 3 tienen balonmano <strong>confirmado en sus fichas oficiales</strong>. Los detalles de cada club aparecen dentro de cada tarjeta.</div>
+  <div class="alert-box warning" style="margin-bottom:12px;">
+    <div class="alert-icon">🔍</div>
+    <div class="alert-text warning">Esta propuesta ha sido <strong>verificada en directo</strong> el 23/06/2026 navegando las webs oficiales de cada distrito, las federaciones de balonmano y Handball Canada. Cada dato incluye su fuente y nivel de verificación. Los datos sin verificar web se indican explícitamente.</div>
   </div>
 
   <div class="section-title"><h2>Opciones recomendadas</h2></div>
   <div class="opciones-grid">
 
-    <!-- ═══════════════════════════════════════════════════════
-         OPCIÓN 1 ⭐ BATTLE RIVER — RECOMENDADA
-    ═══════════════════════════════════════════════════════ -->
+    <!-- ═══ OPCIÓN 1: BATTLE RIVER ═══ -->
     <div class="opcion-card recomendada">
       <div class="badge-rec">★ RECOMENDADA</div>
       <div class="opcion-header">
         <div class="opcion-num">Opción 01</div>
         <div class="opcion-distrito">Battle River School Division</div>
-        <div class="opcion-loc">📍 Camrose, Alberta · Corazón de las Praderas</div>
+        <div class="opcion-loc">📍 Camrose, Alberta · Praderas canadienses</div>
         <div class="precio-chip"><span class="val">19.430 €</span><span class="desc">/ año · vuelos incl.*</span><span class="tachado">20.430 €</span></div>
       </div>
       <div class="opcion-body">
@@ -231,39 +243,61 @@ details[open] summary::before{transform:rotate(90deg);}
           <div class="colegio">
             <div class="colegio-top">
               <div class="colegio-nombre">Bashaw School</div>
-              <div class="colegio-meta"><span class="tag pub">Público</span><span class="tag info">K–12</span><span class="tag rural">~900 hab.</span><span class="tag sport">🤾 Balonmano escolar</span></div>
+              <div class="colegio-meta">
+                <span class="tag pub">Público</span><span class="tag info">K–12</span><span class="tag info">Bashaw · ~900 hab.</span>
+                <span class="tag sport-ok">🤾 Balonmano · ficha MLQ</span>
+              </div>
             </div>
-            <details><summary>Por qué es ideal para Arnau</summary>
-            <div class="colegio-razon">Bashaw es la comunidad que Arnau entiende: pueblo rural auténtico donde el colegio es el corazón social del pueblo. Viene de 15 habitantes — aquí encontrará una escala humana real. El tamaño reducido del K-12 es argumento directo para altas capacidades: los profesores conocen a cada alumno y adaptan el ritmo. <strong>Balonmano confirmado en el programa extracurricular oficial</strong> — puede unirse al equipo desde septiembre.</div>
+            <details><summary>Por qué encaja con Arnau</summary>
+            <div class="colegio-razon">Pueblo de 900 habitantes donde el colegio K-12 es literalmente el centro de la vida del pueblo — la misma lógica que Arnau conoce de sus 15 habitantes, pero con una escala que le permite socializar. El balonmano figura en la ficha interna del programa MLQ; los subdominios de cada colegio (bashaw.brsd.ab.ca) no estaban accesibles en la verificación web, pero la ficha es fuente directa del distrito. La política provincial de Alberta <em>Inclusive Education</em> garantiza atención a necesidades educativas diversas en todos los centros, lo que incluye altas capacidades mediante adaptación curricular individual.</div>
             </details>
           </div>
           <div class="colegio">
             <div class="colegio-top">
               <div class="colegio-nombre">Daysland School</div>
-              <div class="colegio-meta"><span class="tag pub">Público</span><span class="tag info">K–12</span><span class="tag rural">~800 hab.</span><span class="tag sport">🤾 Balonmano escolar</span></div>
+              <div class="colegio-meta">
+                <span class="tag pub">Público</span><span class="tag info">K–12</span><span class="tag info">Daysland · ~800 hab.</span>
+                <span class="tag sport-ok">🤾 Balonmano · ficha MLQ</span>
+              </div>
             </div>
-            <details><summary>Por qué es ideal para Arnau</summary>
-            <div class="colegio-razon">Comunidad agrícola pequeña y cohesionada. Como estudiante internacional, Arnau será bienvenido con un calor genuino imposible en ciudades grandes. Balonmano disponible a nivel escolar dentro del programa oficial de BRSD. Las praderas abiertas de Alberta — el horizonte que no acaba — conectarán con alguien acostumbrado a paisajes de interior.</div>
+            <details><summary>Por qué encaja con Arnau</summary>
+            <div class="colegio-razon">Comunidad agrícola pequeña y cohesionada. Un estudiante internacional en Daysland no pasa desapercibido — y eso es exactamente lo que produce una integración auténtica e inmersión lingüística total. Misma nota sobre balonmano: confirmado en ficha MLQ, pendiente de verificación en subdominio del colegio. Entorno de pradera abierta que conectará con alguien acostumbrado a paisajes de interior.</div>
             </details>
           </div>
         </div>
       </div>
-      <div class="info-block-title gifted-title">🧠 Altas Capacidades · Battle River / Alberta</div>
-      <div class="info-block-body gifted-body">Alberta es la provincia con el <strong>marco legal más sólido</strong> para altas capacidades de Canadá (<em>Ministerial Order 190/2017</em>). BRSD aplica el programa <strong>CAPE (Challenging Academic Program of Excellence)</strong> con IPP obligatorio y aceleración curricular. En colegios K-12 de 800–900 alumnos, el IPP se implementa con máxima fidelidad: los profesores te conocen en profundidad.</div>
-      <div class="info-block-title handball-title">🤾 Balonmano · Escolar confirmado + Club provincial</div>
-      <div class="info-block-body handball-body"><strong>Escolar (confirmado en ficha):</strong> Balonmano figura explícitamente entre los extracurriculares oficiales de BRSD — Arnau juega desde el primer día de septiembre.<br><br><strong>Club federado:</strong> Edmonton Team Handball Club (Alberta Team Handball Association · ATHA), a ~90 min de Camrose. Compite en liga provincial y nacional. Para partidos de fin de semana, distancia perfectamente asumible.</div>
+      <!-- Bloque Altas Capacidades BRSD -->
+      <div class="data-block">
+        <div class="data-block-head gifted">
+          <span class="data-block-title gifted">🧠 Altas Capacidades · Alberta / BRSD</span>
+          <span class="no-verificado-badge">Marco provincial</span>
+        </div>
+        <div class="data-block-body gifted">
+          La web oficial de BRSD encuadra la atención a la diversidad bajo <strong>Inclusive Education</strong>, sin sección específica de gifted ni programa CAPE documentado. Lo que sí está garantizado por la legislación provincial de Alberta es que cada colegio debe ofrecer entornos de aprendizaje flexibles adaptados a las necesidades individuales de cada estudiante.
+          <span class="cite">"BRSD recognizes that students come to school with diverse learning needs and we are committed to provide learning experiences that meet their needs in an inclusive and flexible manner."<span class="cite-source">Fuente: brsd.ab.ca/learning/inclusive-education · verificado 23/06/2026</span></span>
+          El argumento real para altas capacidades en BRSD no es un programa nominal, sino el <strong>tamaño reducido de sus colegios K-12</strong>: en un centro de 800-900 alumnos con un solo grupo por nivel, la atención individual es estructuralmente mayor que en centros de 1.200+.
+        </div>
+      </div>
+      <!-- Bloque Balonmano BRSD -->
+      <div class="data-block">
+        <div class="data-block-head handball">
+          <span class="data-block-title handball">🤾 Balonmano · BRSD</span>
+          <span class="no-verificado-badge">Ficha MLQ · web no accesible</span>
+        </div>
+        <div class="data-block-body handball">
+          La ficha oficial del programa MLQ para BRSD lista balonmano en los extracurriculares del distrito. La web pública de BRSD no tiene una sección centralizada de deportes por colegio — la información detallada reside en los subdominios de cada escuela (bashaw.brsd.ab.ca, daysland.brsd.ab.ca), que no estaban accesibles en la verificación.<br><br>
+          <strong>Club federado:</strong> Alberta Team Handball Association (<em>albertateamhandball.com</em>) está <strong>confirmada como asociación afiliada activa</strong> por Handball Canada. Dominio accesible para más detalle sobre clubes en la zona de Camrose/Edmonton.
+        </div>
+      </div>
       <div class="match-bar">
-        <div class="match-tag handball">🤾 Balonmano escolar confirmado</div>
-        <div class="match-tag handball">Edmonton HC · 90 min</div>
-        <div class="match-tag gifted">IPP + CAPE Alberta</div>
-        <div class="match-tag">Rural auténtico · Praderas</div>
-        <div class="match-tag">Mejor precio · 19.430€</div>
+        <div class="match-tag handball">Balonmano · ficha MLQ</div>
+        <div class="match-tag green">Alberta Handball afiliada</div>
+        <div class="match-tag green">Rural auténtico · K-12</div>
+        <div class="match-tag green">Mejor precio · 19.430 €</div>
       </div>
     </div>
 
-    <!-- ═══════════════════════════════════════════════════════
-         OPCIÓN 2 — NEW BRUNSWICK
-    ═══════════════════════════════════════════════════════ -->
+    <!-- ═══ OPCIÓN 2: NEW BRUNSWICK ═══ -->
     <div class="opcion-card">
       <div class="opcion-header">
         <div class="opcion-num">Opción 02</div>
@@ -276,39 +310,59 @@ details[open] summary::before{transform:rotate(90deg);}
           <div class="colegio">
             <div class="colegio-top">
               <div class="colegio-nombre">Bernice MacNaughton High School</div>
-              <div class="colegio-meta"><span class="tag pub">Público</span><span class="tag info">Gr. 9–12</span><span class="tag info">800 alumnos</span><span class="tag info">Moncton</span></div>
+              <div class="colegio-meta">
+                <span class="tag pub">Público</span><span class="tag info">Gr. 9–12</span><span class="tag info">800 alumnos · Moncton</span>
+              </div>
             </div>
-            <details><summary>Por qué es ideal para Arnau</summary>
-            <div class="colegio-razon">BMHS forma <em>"Highlanders íntegros"</em> — estudiantes que conectan, se adaptan y se comprometen. Valores que encajan con el perfil de Arnau. Moncton es ciudad pequeña rodeada de bosques y costas atlánticas. Club de balonmano a minutos del colegio. Extracurriculares activos: Soccer, Rugby, Basketball, Hockey, Wrestling.</div>
+            <details><summary>Por qué encaja con Arnau</summary>
+            <div class="colegio-razon">BMHS forma ciudadanos íntegros que aprenden a conectar, adaptarse y comprometerse — valores que resuenan con el perfil de Arnau. Moncton es una ciudad pequeña con un ritmo tranquilo, rodeada de bosques y costas atlánticas. New Brunswick tiene asociación de handball activa y afiliada a Handball Canada, lo que abre la puerta a actividad organizada fuera del colegio.</div>
             </details>
           </div>
           <div class="colegio">
             <div class="colegio-top">
               <div class="colegio-nombre">Leo Hayes High School</div>
-              <div class="colegio-meta"><span class="tag pub">Público</span><span class="tag info">Gr. 9–12</span><span class="tag info">Fredericton</span><span class="tag info">Río · Bosque</span></div>
+              <div class="colegio-meta">
+                <span class="tag pub">Público</span><span class="tag info">Gr. 9–12</span><span class="tag info">Fredericton</span>
+              </div>
             </div>
-            <details><summary>Por qué es ideal para Arnau</summary>
-            <div class="colegio-razon">Leo Hayes ofrece <strong>programa AP (Advanced Placement)</strong>, el sistema más reconocido internacionalmente para altas capacidades: Calculus AP, Physics AP, AP English. Fredericton es capital pequeña (60k hab.) rodeada de naturaleza con el río Saint John a pasos. El Fredericton Handball Club está en la misma ciudad.</div>
+            <details><summary>Por qué encaja con Arnau</summary>
+            <div class="colegio-razon">Fredericton es la capital de NB: pequeña, con el río Saint John y bosques a pasos. Leo Hayes es el instituto de referencia académica de la ciudad. La web nbed.nb.ca no era accesible en la verificación, por lo que el programa AP no ha podido confirmarse directamente — es una opción a verificar con el coordinador de MLQ antes de presentar al cliente.</div>
             </details>
           </div>
         </div>
       </div>
-      <div class="info-block-title gifted-title">🧠 Altas Capacidades · New Brunswick</div>
-      <div class="info-block-body gifted-body">NB cuenta con <strong>coordinadores provinciales dedicados a gifted education</strong> e IPP obligatorio. <strong>Leo Hayes ofrece programas AP</strong> (Advanced Placement reconocidos por universidades de todo el mundo). NB es considerada una de las mejores provincias de Canadá en educación inclusiva.</div>
-      <div class="info-block-title handball-title">🤾 Balonmano · Clubs federados en la misma ciudad</div>
-      <div class="info-block-body handball-body"><strong>Escolar:</strong> No figura en extracurriculares de los colegios propuestos.<br><br><strong>Clubs federados:</strong> <strong>Moncton Handball Club</strong> — el más activo de las Marítimas, compite en la <em>Maritime Handball League</em>. Para Fredericton: <strong>Fredericton Handball Club</strong>, en la misma ciudad. Ambos participan en los <em>Canada Games</em>.</div>
+      <!-- Bloque Altas Capacidades NB -->
+      <div class="data-block">
+        <div class="data-block-head gifted">
+          <span class="data-block-title gifted">🧠 Altas Capacidades · New Brunswick</span>
+          <span class="no-verificado-badge">No verificado web</span>
+        </div>
+        <div class="data-block-body gifted">
+          Las URL específicas de gifted education en gnb.ca devolvieron <strong>error 404</strong> durante la verificación, y los dominios nbed.nb.ca (BMHS, Leo Hayes) no eran accesibles. No se puede afirmar con datos verificados que NB tenga un programa gifted estructurado ni que Leo Hayes ofrezca AP.<br><br>
+          Lo que sí se puede decir: New Brunswick tiene reputación de sistema educativo inclusivo y es una de las pocas provincias con bilingüismo oficial (inglés-francés), lo que añade riqueza al entorno escolar de Arnau.
+        </div>
+      </div>
+      <!-- Bloque Balonmano NB -->
+      <div class="data-block">
+        <div class="data-block-head handball">
+          <span class="data-block-title handball">🤾 Balonmano · New Brunswick</span>
+          <span class="verificado-badge">Handball Canada · 23/06/2026</span>
+        </div>
+        <div class="data-block-body handball">
+          <strong>Confirmado:</strong> New Brunswick tiene asociación provincial de balonmano activa y afiliada a Handball Canada.
+          <span class="cite">"Handball Canada is proud to support our great Provincial Handball Organization Members!" — New Brunswick → handballnb.ca/en/home/<span class="cite-source">Fuente: handballcanada.ca/members · verificado 23/06/2026</span></span>
+          El dominio handballnb.ca no era accesible en esta sesión para confirmar clubs específicos (Moncton HC, Fredericton HC) ni su calendario de temporada. Se recomienda contactar directamente con handballnb.ca para confirmar actividad en las ciudades propuestas.
+        </div>
+      </div>
       <div class="match-bar">
-        <div class="match-tag handball">Moncton HC · misma ciudad</div>
-        <div class="match-tag handball">Fredericton HC · misma ciudad</div>
-        <div class="match-tag gifted">Programa AP · Leo Hayes</div>
-        <div class="match-tag gifted">Coordinador gifted provincial</div>
-        <div class="match-tag">Bosques y costas Marítimas</div>
+        <div class="match-tag handball">NB Handball afiliada · confirmado</div>
+        <div class="match-tag warn">AP Leo Hayes · por confirmar</div>
+        <div class="match-tag green">Bilingüe · inglés-francés</div>
+        <div class="match-tag green">Costas y bosques Marítimas</div>
       </div>
     </div>
 
-    <!-- ═══════════════════════════════════════════════════════
-         OPCIÓN 3 — RED DEER (nueva, sustituye PEI)
-    ═══════════════════════════════════════════════════════ -->
+    <!-- ═══ OPCIÓN 3: RED DEER CATHOLIC ═══ -->
     <div class="opcion-card">
       <div class="opcion-header">
         <div class="opcion-num">Opción 03</div>
@@ -321,37 +375,61 @@ details[open] summary::before{transform:rotate(90deg);}
           <div class="colegio">
             <div class="colegio-top">
               <div class="colegio-nombre">Notre Dame High School</div>
-              <div class="colegio-meta"><span class="tag cat">Católico</span><span class="tag info">Gr. 10–12</span><span class="tag info">1.240 alumnos</span><span class="tag sport">🤾 Balonmano escolar</span></div>
+              <div class="colegio-meta">
+                <span class="tag cat">Católico</span><span class="tag info">Gr. 10–12 · 1.240 alumnos</span>
+                <span class="tag sport-web">🤾 Balonmano · web oficial</span>
+              </div>
             </div>
-            <details><summary>Por qué es ideal para Arnau</summary>
-            <div class="colegio-razon">Notre Dame es la opción más completa para un perfil de altas capacidades con balonmano: <strong>balonmano confirmado en extracurriculares oficiales</strong>, programa académico exigente con cinco áreas clave de desarrollo, orientación profesional y un ambiente donde superarse es el estándar. Red Deer está a 90 minutos de Edmonton — el hub de balonmano de Alberta — y a 45 minutos de Rocky Mountain House.</div>
+            <details><summary>Por qué encaja con Arnau</summary>
+            <div class="colegio-razon">Notre Dame es el único colegio del catálogo con <strong>doble confirmación oficial en web</strong>: balonmano en lista de deportes Y programa Advanced Placement de distrito. Para un perfil de altas capacidades con pasión por el balonmano, este colegio ofrece las dos cosas verificadas directamente en su página oficial. Ambiente académico exigente con cinco áreas de desarrollo, orientación profesional y Sports Academy. 1.240 alumnos — más grande que las opciones rurales, pero con más recursos y equipo de balonmano competitivo.</div>
             </details>
           </div>
           <div class="colegio">
             <div class="colegio-top">
               <div class="colegio-nombre">St. Dominic Catholic High School</div>
-              <div class="colegio-meta"><span class="tag cat">Católico</span><span class="tag info">Gr. 10–12</span><span class="tag rural">200 alumnos</span><span class="tag rural">Rocky Mtn. House</span></div>
+              <div class="colegio-meta">
+                <span class="tag cat">Católico</span><span class="tag info">Gr. 9–12</span><span class="tag info">Rocky Mountain House</span>
+              </div>
             </div>
-            <details><summary>Por qué es ideal para Arnau</summary>
-            <div class="colegio-razon">St. Dominic está en Rocky Mountain House — un pueblo de ~6.000 habitantes en el borde de las Montañas Rocosas. Con <strong>solo 200 alumnos</strong>, es el colegio más pequeño e íntimo de las tres opciones: la atención individualizada para altas capacidades es máxima. Ambiente acogedor, comunidad unida, naturaleza espectacular a la puerta. A 45 minutos de Red Deer donde se practica balonmano.</div>
+            <details><summary>Por qué encaja con Arnau</summary>
+            <div class="colegio-razon">St. Dominic está en Rocky Mountain House, a los pies de las Rocosas canadienses — un pueblo de ~6.000 habitantes con una escala mucho más próxima al mundo de Arnau. Comparte campus con West Central High School y Red Deer College (Confluence Campus), lo que le da acceso a instalaciones universitarias siendo un colegio pequeño. Su lista de deportes incluye golf, baloncesto, voleibol, rugby, bádminton, campo a través, fútbol americano y atletismo, aunque el balonmano no aparece en su web.</div>
             </details>
           </div>
         </div>
       </div>
-      <div class="info-block-title gifted-title">🧠 Altas Capacidades · Red Deer / Alberta</div>
-      <div class="info-block-body gifted-body">Mismo marco provincial que Battle River: <strong>Ministerial Order 190/2017 de Alberta</strong> con IPP obligatorio y programa CAPE. Notre Dame añade un componente diferencial: <strong>cinco áreas clave de desarrollo académico</strong> incluyendo excelencia académica, orientación profesional y Aprendizaje Registrado (certificaciones reconocidas). St. Dominic con 200 alumnos ofrece la <strong>atención más personalizada del catálogo</strong>.</div>
-      <div class="info-block-title handball-title">🤾 Balonmano · Confirmado en ficha + Club provincial</div>
-      <div class="info-block-body handball-body"><strong>Escolar (confirmado en ficha oficial):</strong> Notre Dame H.S. lista balonmano explícitamente entre sus extracurriculares junto a fútbol americano, voleibol, baloncesto, curling, lucha libre, rugby y atletismo.<br><br><strong>Club federado:</strong> Red Deer tiene liga local de balonmano. Edmonton Team Handball Club (ATHA) a ~90 min. Alberta es la provincia con mayor actividad de balonmano fuera de Ontario y Quebec.</div>
+      <!-- Bloque Altas Capacidades Red Deer -->
+      <div class="data-block">
+        <div class="data-block-head gifted">
+          <span class="data-block-title gifted">🧠 Altas Capacidades · Red Deer Catholic / Notre Dame</span>
+          <span class="verificado-badge">Web oficial · 23/06/2026</span>
+        </div>
+        <div class="data-block-body gifted">
+          <strong>Confirmado en notredamehigh.ca:</strong> Notre Dame alberga el programa Advanced Placement (AP) a nivel de distrito — el sistema de aceleración académica más reconocido internacionalmente, con asignaturas que equivalen a créditos universitarios.
+          <span class="cite">"We also house a district Advanced Placement program, a Knowledge and Employability program, a Senior Foundations program, a French Immersion program and a Sports Academy program."<span class="cite-source">Fuente: notredamehigh.ca/about · verificado 23/06/2026</span></span>
+          RDCRS en general no tiene un programa gifted documentado en su web — la atención a altas capacidades se canaliza a través del programa AP de Notre Dame y el enfoque de excelencia académica del centro.
+        </div>
+      </div>
+      <!-- Bloque Balonmano Red Deer -->
+      <div class="data-block">
+        <div class="data-block-head handball">
+          <span class="data-block-title handball">🤾 Balonmano · Notre Dame HS</span>
+          <span class="verificado-badge">Web oficial · 23/06/2026</span>
+        </div>
+        <div class="data-block-body handball">
+          <strong>Confirmado en notredamehigh.ca/programs/athletics:</strong> Handball figura en la lista oficial de equipos atléticos junto a golf, cross country, football, basketball, volleyball, rugby, curling, track and field, badminton, soccer, tennis y wrestling.
+          <span class="cite">"The athletic teams of Notre Dame are listed below... Golf, Cross Country Running, Football, Basketball, Volleyball, Rugby, Curling, Track and Field, Badminton, Soccer, Tennis, <strong>Handball</strong>, Wrestling."<span class="cite-source">Fuente: notredamehigh.ca/programs/athletics · verificado 23/06/2026</span></span>
+          St. Dominic (Rocky Mountain House) no lista balonmano en sus deportes. Alberta Team Handball (albertateamhandball.com) confirmada como afiliada activa por Handball Canada para actividad federada en la provincia.
+        </div>
+      </div>
       <div class="match-bar">
-        <div class="match-tag handball">🤾 Balonmano escolar confirmado</div>
-        <div class="match-tag handball">Liga local Red Deer</div>
-        <div class="match-tag gifted">IPP + CAPE Alberta</div>
-        <div class="match-tag gifted">200 alumnos · St. Dominic</div>
-        <div class="match-tag">Montañas Rocosas · Alberta</div>
+        <div class="match-tag handball">🤾 Balonmano · web oficial Notre Dame</div>
+        <div class="match-tag gifted">🧠 Programa AP · web oficial Notre Dame</div>
+        <div class="match-tag green">Alberta Handball afiliada</div>
+        <div class="match-tag green">Rocky Mtn. House · St. Dominic</div>
       </div>
     </div>
 
-  </div><!-- fin opciones-grid -->
+  </div><!-- /opciones-grid -->
 
   <!-- EL PROGRAMA INCLUYE -->
   <div class="section-title"><h2>El programa incluye</h2></div>
@@ -410,20 +488,20 @@ details[open] summary::before{transform:rotate(90deg);}
             <li>Validación de notas y apostilla de la Haya</li>
             <li>Dossier final detallando la experiencia</li>
           </ul>
-          <div style="margin-top:24px">
+          <div style="margin-top:24px;">
             <div class="col-title">No incluido</div>
             <ul class="inc-list no">
               <li>Exceso de vuelos sobre 1.000 € (a cargo de la familia)</li>
               <li>Actividades extracurriculares de pago: equipos con licencia federada</li>
-              <li>Excursiones y viajes escolares organizados por el colegio</li>
+              <li>Excursiones y viajes escolares</li>
               <li>Material escolar: cuadernos, calculadora, uniforme deportivo</li>
-              <li>Fotografía escolar y anuario (yearbook)</li>
+              <li>Fotografía escolar y anuario</li>
               <li>Tasas de exámenes opcionales (AP, Cambridge avanzado)</li>
               <li>Transporte local mensual</li>
               <li>Teléfono móvil y plan de datos en Canadá</li>
               <li>Ropa de invierno: abrigo, botas de nieve, accesorios</li>
               <li>Gastos de ocio personal</li>
-              <li>Medicamentos no cubiertos por seguro <small>Los antihistamínicos de Arnau son de venta libre en Canadá, sin complicación</small></li>
+              <li>Medicamentos no cubiertos por seguro <small>Los antihistamínicos de Arnau son de venta libre en Canadá</small></li>
               <li>Tratamientos dentales y de visión</li>
               <li>Ordenador portátil o tablet</li>
               <li>Gastos de pasaporte si no está vigente</li>
@@ -472,45 +550,43 @@ details[open] summary::before{transform:rotate(90deg);}
     </div>
     <div class="financing-body">
       <div class="fin-opcion-selector">
-        <div class="fin-opcion-label">Selecciona la opción del programa</div>
+        <div class="fin-label">Selecciona la opción del programa</div>
         <div class="fin-opcion-btns">
           <button class="fin-opcion-btn active" onclick="setOpcion(this,19430)">
-            <span class="fin-opcion-nombre">⭐ Op. 1 · Battle River SD</span>
+            <span class="fin-opcion-nombre">⭐ Op.1 · Battle River SD</span>
             <span class="fin-opcion-precio">19.430 €</span>
           </button>
           <button class="fin-opcion-btn" onclick="setOpcion(this,20550)">
-            <span class="fin-opcion-nombre">Op. 2 · New Brunswick</span>
+            <span class="fin-opcion-nombre">Op.2 · New Brunswick</span>
             <span class="fin-opcion-precio">20.550 €</span>
           </button>
           <button class="fin-opcion-btn" onclick="setOpcion(this,23560)">
-            <span class="fin-opcion-nombre">Op. 3 · Red Deer Catholic</span>
+            <span class="fin-opcion-nombre">Op.3 · Red Deer Catholic</span>
             <span class="fin-opcion-precio">23.560 €</span>
           </button>
         </div>
       </div>
-      <div class="fin-plazo-wrap">
-        <div class="fin-plazo-label">Elige tu plazo de financiación</div>
-        <div class="fin-plazos">
-          <div class="fin-plazo active" onclick="setPlazo(this,12)">
-            <div class="fin-plazo-meses">12 meses</div>
-            <div class="fin-plazo-badge sin-intereses">TIN 0%</div>
-            <div class="fin-plazo-quien">¡MLQ asume los intereses!</div>
-          </div>
-          <div class="fin-plazo" onclick="setPlazo(this,18)">
-            <div class="fin-plazo-meses">18 meses</div>
-            <div class="fin-plazo-badge con-intereses">TIN 10,46%</div>
-            <div class="fin-plazo-quien">Intereses a cargo del cliente</div>
-          </div>
-          <div class="fin-plazo" onclick="setPlazo(this,24)">
-            <div class="fin-plazo-meses">24 meses</div>
-            <div class="fin-plazo-badge con-intereses">TIN 10,46%</div>
-            <div class="fin-plazo-quien">Intereses a cargo del cliente</div>
-          </div>
-          <div class="fin-plazo" onclick="setPlazo(this,36)">
-            <div class="fin-plazo-meses">36 meses</div>
-            <div class="fin-plazo-badge con-intereses">TIN 10,46%</div>
-            <div class="fin-plazo-quien">Intereses a cargo del cliente</div>
-          </div>
+      <div class="fin-label" style="margin-top:0;">Elige tu plazo</div>
+      <div class="fin-plazos">
+        <div class="fin-plazo active" onclick="setPlazo(this,12)">
+          <div class="fin-plazo-meses">12 meses</div>
+          <div class="fin-plazo-badge sin-int">TIN 0%</div>
+          <div class="fin-plazo-quien">¡MLQ asume los intereses!</div>
+        </div>
+        <div class="fin-plazo" onclick="setPlazo(this,18)">
+          <div class="fin-plazo-meses">18 meses</div>
+          <div class="fin-plazo-badge con-int">TIN 10,46%</div>
+          <div class="fin-plazo-quien">Intereses a cargo del cliente</div>
+        </div>
+        <div class="fin-plazo" onclick="setPlazo(this,24)">
+          <div class="fin-plazo-meses">24 meses</div>
+          <div class="fin-plazo-badge con-int">TIN 10,46%</div>
+          <div class="fin-plazo-quien">Intereses a cargo del cliente</div>
+        </div>
+        <div class="fin-plazo" onclick="setPlazo(this,36)">
+          <div class="fin-plazo-meses">36 meses</div>
+          <div class="fin-plazo-badge con-int">TIN 10,46%</div>
+          <div class="fin-plazo-quien">Intereses a cargo del cliente</div>
         </div>
       </div>
       <div class="fin-resultado">
@@ -519,7 +595,7 @@ details[open] summary::before{transform:rotate(90deg);}
           <div class="fin-cuota-valor" id="cuotaValor">1.619,17 €</div>
           <div class="fin-cuota-sub" id="cuotaSub">/mes · 12 pagos · TIN 0%</div>
         </div>
-        <div class="fin-resultado-detalle">
+        <div class="fin-det">
           <div class="fin-det-row"><span class="fin-det-label">Importe del programa</span><span class="fin-det-val" id="detCapital">19.430 €</span></div>
           <div class="fin-det-row"><span class="fin-det-label">Intereses totales</span><span class="fin-det-val fin-det-green" id="detIntereses">0 € · ¡MLQ los asume!</span></div>
           <div class="fin-det-row fin-det-total"><span class="fin-det-label">Total a pagar</span><span class="fin-det-val" id="detTotal">19.430 €</span></div>
@@ -530,16 +606,12 @@ details[open] summary::before{transform:rotate(90deg);}
   </div>
 
 </main>
-
 <script>
 var _cap=19430,_mes=12;
 function _fmt(n,d){return n.toLocaleString('es-ES',{minimumFractionDigits:d||0,maximumFractionDigits:d||0})+' €';}
 function _cuota(c,t,m){if(t===0)return c/m;var r=(t/100)/12;return c*r/(1-Math.pow(1+r,-m));}
 function _update(){
-  var tin=_mes===12?0:10.46;
-  var q=_cuota(_cap,tin,_mes);
-  var tot=q*_mes;
-  var inter=tot-_cap;
+  var tin=_mes===12?0:10.46,q=_cuota(_cap,tin,_mes),tot=q*_mes,inter=tot-_cap;
   document.getElementById('cuotaValor').textContent=_fmt(q,2);
   document.getElementById('cuotaSub').textContent='/mes · '+_mes+' pagos · TIN '+(tin===0?'0%':'10,46%');
   document.getElementById('detCapital').textContent=_fmt(Math.round(_cap));
@@ -547,8 +619,8 @@ function _update(){
   if(tin===0){document.getElementById('detIntereses').textContent='0 € · ¡MLQ los asume!';document.getElementById('detIntereses').className='fin-det-val fin-det-green';}
   else{document.getElementById('detIntereses').textContent=_fmt(Math.round(inter));document.getElementById('detIntereses').className='fin-det-val';}
 }
-function setOpcion(btn,cap){_cap=cap;document.querySelectorAll('.fin-opcion-btn').forEach(function(b){b.classList.remove('active');});btn.classList.add('active');_update();}
-function setPlazo(el,m){_mes=m;document.querySelectorAll('.fin-plazo').forEach(function(p){p.classList.remove('active');});el.classList.add('active');_update();}
+function setOpcion(btn,cap){_cap=cap;document.querySelectorAll('.fin-opcion-btn').forEach(b=>b.classList.remove('active'));btn.classList.add('active');_update();}
+function setPlazo(el,m){_mes=m;document.querySelectorAll('.fin-plazo').forEach(p=>p.classList.remove('active'));el.classList.add('active');_update();}
 _update();
 </script>
 </body>
