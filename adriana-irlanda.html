@@ -70,11 +70,11 @@ body{font-family:"Fira Sans",sans-serif;background:var(--gray-bg);color:var(--te
 .por-que{background:var(--green-light);border-left:3px solid var(--ireland-green);border-radius:0 8px 8px 0;padding:12px 14px;margin-top:14px;}
 .por-que-title{font-family:"Josefin Sans",sans-serif;font-size:8px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--green-dark);margin-bottom:8px;}
 .por-que-list{list-style:none;display:flex;flex-direction:column;gap:6px;}
-.por-que-list li{font-size:11px;color:var(--green-dark);line-height:1.6;display:flex;gap:8px;}
-.por-que-list li::before{content:"&#x2192;";color:var(--ireland-green);font-weight:700;flex-shrink:0;}
+.por-que-list li{font-size:11px;color:var(--green-dark);line-height:1.6;padding-left:18px;position:relative;}
+.por-que-list li::before{content:"→";color:var(--ireland-green);font-weight:700;position:absolute;left:0;top:0;}
 .match-bar{display:flex;gap:6px;flex-wrap:wrap;padding:12px 20px;border-top:1px solid var(--gray-border);background:linear-gradient(to right,var(--green-pale),var(--white));}
 .match-tag{display:flex;align-items:center;gap:4px;font-size:10px;font-weight:600;color:var(--green-dark);background:var(--green-light);border:1px solid rgba(46,125,50,0.25);border-radius:20px;padding:3px 10px;}
-.match-tag::before{content:"&#x2713;";font-size:9px;}
+.match-tag::before{content:"✓";font-size:9px;}
 .includes-wrap{background:var(--white);border-radius:16px;border:1.5px solid var(--gray-border);box-shadow:0 2px 16px rgba(0,80,0,0.05);overflow:hidden;margin-bottom:24px;}
 .includes-head{background:linear-gradient(135deg,var(--green-dark),var(--green));padding:20px 32px;}
 .includes-head h3{font-family:"Josefin Sans",sans-serif;font-size:14px;font-weight:700;color:var(--white);letter-spacing:1px;}
@@ -82,14 +82,15 @@ body{font-family:"Fira Sans",sans-serif;background:var(--gray-bg);color:var(--te
 .includes-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:32px;}
 .col-title{font-family:"Josefin Sans",sans-serif;font-size:9px;font-weight:700;letter-spacing:2.5px;text-transform:uppercase;color:var(--green-dark);margin-bottom:14px;padding-bottom:8px;border-bottom:2px solid var(--green-light);}
 .inc-list{list-style:none;display:flex;flex-direction:column;gap:8px;}
-.inc-list li{font-size:12px;color:var(--text-mid);display:flex;align-items:flex-start;gap:8px;line-height:1.55;}
-.inc-list li::before{content:"&#x2713;";color:var(--ireland-green);font-weight:700;font-size:11px;flex-shrink:0;margin-top:1px;}
-.inc-list.no li::before{content:"&#x2717;";color:#c62828;}
+.inc-list li{font-size:12px;color:var(--text-mid);padding-left:18px;position:relative;line-height:1.55;}
+.inc-list li::before{content:"✓";color:var(--ireland-green);font-weight:700;font-size:11px;position:absolute;left:0;top:0;}
+.inc-list.no li::before{content:"✗";color:#c62828;}
 .inc-list li small{font-size:10px;color:var(--text-light);display:block;margin-top:2px;}
 .gestor-wrap{background:linear-gradient(135deg,var(--green-dark),var(--green-mid));border-radius:12px;padding:20px 24px;margin-top:20px;}
 .gestor-title{font-family:"Josefin Sans",sans-serif;font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:rgba(255,255,255,0.6);margin-bottom:14px;}
 .gestor-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;}
-.gestor-item{background:rgba(255,255,255,0.08);border:1px solid rgba(255,255,255,0.12);border-radius:8px;padding:10px 12px;font-size:11px;color:rgba(255,255,255,0.85);line-height:1.4;}
+.gestor-item{background:rgba(255,255,255,0.08);border:1px solid rgba(255,255,255,0.12);border-radius:8px;padding:10px 12px;font-size:11px;color:rgba(255,255,255,0.85);line-height:1.4;padding-left:22px;position:relative;}
+.gestor-item::before{content:"→";color:#a5d6a7;font-weight:700;position:absolute;left:10px;top:10px;}
 .financing-wrap{background:var(--white);border-radius:16px;border:1.5px solid var(--gray-border);box-shadow:0 2px 16px rgba(0,80,0,0.06);overflow:hidden;margin-bottom:24px;}
 .financing-head{background:linear-gradient(135deg,var(--green-dark),var(--green));padding:22px 32px;display:flex;align-items:center;justify-content:space-between;gap:16px;}
 .fin-icon{font-size:28px;flex-shrink:0;}
@@ -203,7 +204,7 @@ body{font-family:"Fira Sans",sans-serif;background:var(--gray-bg);color:var(--te
   <div class="section-title"><h2>Colegios recomendados</h2></div>
   <div class="colegios-grid">
 
-    <!-- ===== COLEGIO 1: ST. CIARAN'S — RECOMENDADO ===== -->
+    <!-- COLEGIO 1: ST. CIARAN'S — RECOMENDADO -->
     <div class="colegio-card recomendado">
       <div class="badge-rec">&#9733; RECOMENDADO</div>
       <div class="colegio-header">
@@ -220,7 +221,7 @@ body{font-family:"Fira Sans",sans-serif;background:var(--gray-bg);color:var(--te
       </div>
       <div class="colegio-body">
         <div class="colegio-desc">
-          St. Ciaran&#39;s es uno de los colegios con mejor reputaci&oacute;n en el condado de Meath: tranquilo, seguro y con un Transition Year especialmente rico en experiencias deportivas y culturales. Kells es un pueblo hist&oacute;rico (cuna del Libro de Kells) a 1 hora en autob&uacute;s de Dubl&iacute;n, lo que permite disfrutar de la capital los fines de semana sin vivir su ritmo acelerado. Especialmente conocido por la calidez con que reciben a los estudiantes internacionales.
+          St. Ciaran&#39;s es uno de los colegios con mejor reputaci&oacute;n en el condado de Meath: tranquilo, seguro y con un Transition Year especialmente rico en deportes y cultura. Kells, cuna del Libro de Kells, est&aacute; a 1 hora en autob&uacute;s de Dubl&iacute;n &mdash; lo que permite disfrutar de la capital los fines de semana sin vivir su ritmo. Especialmente conocido por la calidez con que acogen a los estudiantes internacionales.
         </div>
         <div class="colegio-section-title">Extracurriculares destacados</div>
         <div class="extra-tags">
@@ -235,7 +236,7 @@ body{font-family:"Fira Sans",sans-serif;background:var(--gray-bg);color:var(--te
         </div>
         <div class="colegio-section-title" style="margin-top:12px;">Actividades en la zona</div>
         <div class="actividades-ciudad">
-          Kells Heritage Town &middot; Loughcrew Cairns &middot; r&iacute;o Blackwater &middot; rutas de senderismo y ciclismo &middot; piscina municipal &middot; Dubl&iacute;n a 1h en bus &mdash; museos, zonas comerciales, vida estudiantil los fines de semana.
+          Kells Heritage Town &middot; Loughcrew Cairns &middot; r&iacute;o Blackwater &middot; rutas de senderismo y ciclismo &middot; piscina municipal &middot; Dubl&iacute;n a 1h en bus &mdash; museos, zonas comerciales y vida estudiantil los fines de semana.
         </div>
         <div class="por-que">
           <div class="por-que-title">Por qu&eacute; encaja con Adriana</div>
@@ -243,7 +244,7 @@ body{font-family:"Fira Sans",sans-serif;background:var(--gray-bg);color:var(--te
             <li>Volleyball en el propio colegio &mdash; equipo desde la primera semana, la v&iacute;a m&aacute;s r&aacute;pida hacia nuevas amistades</li>
             <li>TY con teatro, mini empresa y salidas &mdash; el tipo de a&ntilde;o que marca la diferencia a los 14</li>
             <li>Pueblo tranquilo con Dubl&iacute;n a 1 hora &mdash; lo mejor de los dos mundos para una chica activa</li>
-            <li>Con nota media 8-9 se adaptar&aacute; al ritmo acad&eacute;mico sin esfuerzo y podr&aacute; brillar en TY</li>
+            <li>Con nota media 8-9 se adaptar&aacute; al ritmo sin esfuerzo y podr&aacute; brillar en el entorno TY</li>
           </ul>
         </div>
       </div>
@@ -251,63 +252,63 @@ body{font-family:"Fira Sans",sans-serif;background:var(--gray-bg);color:var(--te
         <div class="match-tag">Volleyball</div>
         <div class="match-tag">TY muy completo</div>
         <div class="match-tag">Pueblo seguro</div>
-        <div class="match-tag">Dubl&iacute;n cerca</div>
+        <div class="match-tag">Dubl&iacute;n a 1h</div>
         <div class="match-tag">Acogedores internacionales</div>
       </div>
     </div>
 
-    <!-- ===== COLEGIO 2: ARDSCOIL LA SALLE D5 ===== -->
+    <!-- COLEGIO 2: COLAISTE EANNA D16 -->
     <div class="colegio-card">
       <div class="colegio-header">
-        <div class="colegio-zona">Dubl&iacute;n 5 &middot; Norte de la ciudad &middot; Costa</div>
-        <div class="colegio-nombre">Ardscoil La Salle</div>
-        <div class="colegio-loc">&#128205; Raheny &middot; Dubl&iacute;n 5 &middot; A 8 km del centro</div>
+        <div class="colegio-zona">Dubl&iacute;n 16 &middot; Sur residencial &middot; Rathfarnham</div>
+        <div class="colegio-nombre">Col&aacute;iste &Eacute;anna</div>
+        <div class="colegio-loc">&#128205; Rathfarnham &middot; Dubl&iacute;n 16 &middot; A 9 km del centro</div>
         <div class="colegio-chips">
           <div class="chip">Masculino</div>
-          <div class="chip">Cat&oacute;lico &middot; La Salle</div>
-          <div class="chip">~600 alumnos</div>
-          <div class="chip">Barrio residencial costero</div>
-          <div class="chip gold">&#9752; TY &amp; 5th Year &middot; Dubl&iacute;n ciudad</div>
+          <div class="chip">Cat&oacute;lico &middot; CBS</div>
+          <div class="chip">~900 alumnos</div>
+          <div class="chip">Zona residencial premium</div>
+          <div class="chip gold">&#9752; TY &amp; 5th Year &middot; Instalaciones top</div>
         </div>
       </div>
       <div class="colegio-body">
         <div class="colegio-desc">
-          Ardscoil La Salle est&aacute; en Raheny, uno de los barrios m&aacute;s tranquilos y seguros del norte de Dubl&iacute;n, a pocos minutos de la playa de Dollymount y Bull Island. Colegio de tradici&oacute;n con s&oacute;lida oferta deportiva y un TY muy activo con proyectos culturales y de empresa. Estar en Dubl&iacute;n con DART al centro en 15 minutos da a Adriana una independencia real desde el primer d&iacute;a.
+          Col&aacute;iste &Eacute;anna es uno de los colegios m&aacute;s grandes y mejor equipados del sur de Dubl&iacute;n &mdash; instalaciones deportivas de primer nivel, campo de rugby propio, pabellones cubiertos y un campus verde espectacular en Rathfarnham. El barrio es uno de los m&aacute;s bonitos y seguros de Dubl&iacute;n, rodeado de las montañas de Dublin Hills y a 15 minutos del centro. Su Transition Year es muy activo y reconocido, con una tradici&oacute;n deportiva s&oacute;lida a nivel nacional.
         </div>
         <div class="colegio-section-title">Extracurriculares destacados</div>
         <div class="extra-tags">
           <span class="extra-tag">&#127952; Volleyball &middot; Baloncesto</span>
+          <span class="extra-tag">&#127951; Rugby &middot; Campo propio</span>
           <span class="extra-tag">&#9917; F&uacute;tbol &middot; GAA</span>
-          <span class="extra-tag">&#127939; Atletismo &middot; Cross country</span>
-          <span class="extra-tag">&#127917; Drama &middot; TY productions</span>
-          <span class="extra-tag">&#128161; Mini empresa TY</span>
-          <span class="extra-tag">&#127925; M&uacute;sica &middot; Coro</span>
-          <span class="extra-tag">&#128200; BT Young Scientist</span>
-          <span class="extra-tag">&#127807; Proyectos medioambientales</span>
+          <span class="extra-tag">&#127939; Atletismo competitivo</span>
+          <span class="extra-tag">&#127917; Teatro &middot; Musical anual TY</span>
+          <span class="extra-tag">&#128161; Mini empresa &middot; Young Entrepreneurs</span>
+          <span class="extra-tag">&#127925; M&uacute;sica &middot; Bandas</span>
+          <span class="extra-tag">&#127774; Senderismo Dublin Mountains</span>
         </div>
         <div class="colegio-section-title" style="margin-top:12px;">Actividades en la zona</div>
         <div class="actividades-ciudad">
-          Bull Island &amp; playa de Dollymount a 5 min a pie &middot; Clontarf Promenade &middot; St. Anne&#39;s Park (uno de los mayores parques de Dubl&iacute;n) &middot; DART al centro en 15 min sin transbordo &middot; zona residencial muy segura y familiar.
+          Dublin Mountains Way a la puerta &middot; Rathfarnham Castle &middot; Marlay Park (uno de los parques m&aacute;s bonitos de Dubl&iacute;n) &middot; zona residencial muy segura &middot; bus directo al centro en 20 min &middot; Dundrum Town Centre (el mayor centro comercial de Irlanda) a 5 min.
         </div>
         <div class="por-que">
           <div class="por-que-title">Por qu&eacute; encaja con Adriana</div>
           <ul class="por-que-list">
-            <li>Dubl&iacute;n 5 es una de las zonas m&aacute;s seguras de la ciudad &mdash; ideal para los padres, estimulante para Adriana</li>
-            <li>DART al centro en 15 min &mdash; autonom&iacute;a total para explorar Dubl&iacute;n desde el primer fin de semana</li>
-            <li>TY con proyectos deportivos y culturales &mdash; Adriana podr&aacute; explorar intereses m&aacute;s all&aacute; del temario</li>
-            <li>Playa y naturaleza a la puerta &mdash; estilo de vida activo en plena ciudad para una chica deportista</li>
+            <li>Volleyball y deportes de equipo con instalaciones de primer nivel &mdash; para una chica deportista, el entorno marca la diferencia</li>
+            <li>Campus verde y hermoso en Rathfarnham &mdash; uno de los entornos escolares m&aacute;s bonitos de Dubl&iacute;n</li>
+            <li>TY muy activo con musical, mini empresa y salidas &mdash; perfecto para explorar nuevas pasiones</li>
+            <li>Zona sur de Dubl&iacute;n muy segura y familiar &mdash; tranquilidad para los padres, vida activa para Adriana</li>
           </ul>
         </div>
       </div>
       <div class="match-bar">
         <div class="match-tag">Volleyball</div>
-        <div class="match-tag">DART 15 min al centro</div>
-        <div class="match-tag">D5 costero &amp; seguro</div>
-        <div class="match-tag">TY activo</div>
+        <div class="match-tag">Campus &amp; instalaciones top</div>
+        <div class="match-tag">D16 sur residencial</div>
+        <div class="match-tag">TY reconocido</div>
       </div>
     </div>
 
-    <!-- ===== COLEGIO 3: ST. KEVIN'S C.S. D22 ===== -->
+    <!-- COLEGIO 3: ST. KEVIN'S C.S. D22 -->
     <div class="colegio-card">
       <div class="colegio-header">
         <div class="colegio-zona">Dubl&iacute;n 22 &middot; Oeste de la ciudad &middot; Clondalkin</div>
@@ -323,7 +324,7 @@ body{font-family:"Fira Sans",sans-serif;background:var(--gray-bg);color:var(--te
       </div>
       <div class="colegio-body">
         <div class="colegio-desc">
-          St. Kevin&#39;s es uno de los pocos colegios de la lista con plazas disponibles en m&uacute;ltiples cursos &mdash; incluyendo TY, 5th, 3rd y 2nd Year. Est&aacute; en Clondalkin, un barrio multicultural del oeste de Dubl&iacute;n muy bien comunicado con el Luas rojo y autobuses directos al centro. El colegio destaca por su ambiente diverso e integrador, perfecto para una estudiante internacional que se adapta bien a diferentes entornos.
+          St. Kevin&#39;s es uno de los pocos colegios de la lista con plazas disponibles en m&uacute;ltiples cursos &mdash; TY, 5th, 3rd y 2nd Year. Est&aacute; en Clondalkin, barrio multicultural del oeste de Dubl&iacute;n muy bien comunicado con el Luas rojo y autobuses directos al centro. Destaca por su ambiente diverso e integrador, perfecto para una estudiante internacional que se adapta bien a cualquier entorno.
         </div>
         <div class="colegio-section-title">Extracurriculares destacados</div>
         <div class="extra-tags">
@@ -338,7 +339,7 @@ body{font-family:"Fira Sans",sans-serif;background:var(--gray-bg);color:var(--te
         </div>
         <div class="colegio-section-title" style="margin-top:12px;">Actividades en la zona</div>
         <div class="actividades-ciudad">
-          Luas L&iacute;nea Roja al centro de Dubl&iacute;n &middot; Corkagh Regional Park a 5 min &middot; Liffey Valley Shopping Centre &middot; Round Tower of Clondalkin &middot; Phoenix Park a 15 min &middot; amplia oferta deportiva municipal.
+          Luas L&iacute;nea Roja directo al centro &middot; Corkagh Regional Park a 5 min &middot; Liffey Valley Shopping Centre &middot; Torre redonda de Clondalkin (siglo IX) &middot; Phoenix Park a 15 min &middot; amplia oferta deportiva municipal.
         </div>
         <div class="por-que">
           <div class="por-que-title">Por qu&eacute; encaja con Adriana</div>
@@ -346,7 +347,7 @@ body{font-family:"Fira Sans",sans-serif;background:var(--gray-bg);color:var(--te
             <li>Mayor flexibilidad de cursos &mdash; si el TY se confirmara tarde, hay opciones alternativas en el mismo colegio</li>
             <li>Ambiente multicultural muy acogedor &mdash; una chica que se adapta bien encajar&aacute; r&aacute;pido en este entorno diverso</li>
             <li>Volleyball y deportes de equipo &mdash; integraci&oacute;n social inmediata desde el primer entrenamiento</li>
-            <li>Luas directo al centro &mdash; autonom&iacute;a y libertad para moverse por Dubl&iacute;n con total seguridad</li>
+            <li>Luas directo al centro &mdash; autonom&iacute;a para moverse por Dubl&iacute;n con total seguridad</li>
           </ul>
         </div>
       </div>
@@ -354,7 +355,7 @@ body{font-family:"Fira Sans",sans-serif;background:var(--gray-bg);color:var(--te
         <div class="match-tag">Volleyball</div>
         <div class="match-tag">TY + multi-curso</div>
         <div class="match-tag">Multicultural</div>
-        <div class="match-tag">Luas centro D&uacute;blin</div>
+        <div class="match-tag">Luas centro Dubl&iacute;n</div>
       </div>
     </div>
 
@@ -440,7 +441,7 @@ body{font-family:"Fira Sans",sans-serif;background:var(--gray-bg);color:var(--te
     </div>
   </div>
 
-  <!-- FINANCIACI&Oacute;N -->
+  <!-- FINANCIACION -->
   <div class="section-title"><h2>Financia tu programa</h2></div>
   <div class="financing-wrap">
     <div class="financing-head">
