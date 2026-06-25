@@ -10,6 +10,7 @@
   --blue:#003366;--blue-dark:#001f40;--blue-mid:#0a4a8a;--blue-light:#dce8f5;
   --red:#B12900;--red-dark:#8A1F00;--red-light:#fdf0ec;
   --green:#4C9E0C;--green-dark:#3A7A09;--green-light:#eef8e3;
+  --gold:#c8820a;--gold-light:#fdf5e6;
   --gray-bg:#f0f2f6;--gray-card:#f8f9fb;--gray-border:#dde1ea;
   --text:#0d1b2a;--text-mid:#3d4f62;--text-light:#7a8a9b;--white:#ffffff;
 }
@@ -27,29 +28,39 @@ body{font-family:'Fira Sans',sans-serif;background:var(--gray-bg);color:var(--te
 .hero-inner{position:relative;z-index:2;display:flex;align-items:flex-end;justify-content:space-between;gap:24px;flex-wrap:wrap;}
 .hero-tag{display:inline-flex;align-items:center;gap:6px;background:rgba(255,255,255,0.1);border:1px solid rgba(255,255,255,0.2);border-radius:20px;padding:4px 12px;font-size:10px;font-weight:600;letter-spacing:2px;text-transform:uppercase;color:rgba(255,255,255,0.7);margin-bottom:12px;}
 .hero-tag::before{content:'✈';font-size:11px;}
+.hero-oferta{display:inline-flex;align-items:center;gap:6px;background:rgba(200,130,10,0.25);border:1px solid rgba(200,130,10,0.5);border-radius:20px;padding:4px 14px;font-size:10px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:#f5c76a;margin-bottom:12px;margin-left:8px;}
 .hero-name{font-family:'Josefin Sans',sans-serif;font-size:38px;font-weight:700;color:var(--white);line-height:1;margin-bottom:8px;}
 .hero-subtitle{font-size:13px;color:rgba(255,255,255,0.55);font-weight:300;}
 .hero-pills{display:flex;flex-wrap:wrap;gap:8px;margin-top:20px;}
 .hero-pill{display:flex;align-items:center;gap:6px;background:rgba(255,255,255,0.1);border:1px solid rgba(255,255,255,0.18);border-radius:8px;padding:6px 12px;font-size:11px;color:var(--white);font-weight:500;}
-.main{max-width:1140px;margin:0 auto;padding:40px 24px 64px;}
+.main{max-width:900px;margin:0 auto;padding:40px 24px 64px;}
 .section-title{display:flex;align-items:center;gap:12px;margin-bottom:24px;}
 .section-title h2{font-family:'Josefin Sans',sans-serif;font-size:11px;font-weight:700;letter-spacing:3px;text-transform:uppercase;color:var(--text-light);}
 .section-title::after{content:'';flex:1;height:1px;background:var(--gray-border);}
-.opciones-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(310px,1fr));gap:20px;margin-bottom:40px;}
-.opcion-card{background:var(--white);border-radius:16px;border:1.5px solid var(--gray-border);overflow:hidden;box-shadow:0 2px 16px rgba(0,51,102,0.06);position:relative;transition:transform .2s,box-shadow .2s,border-color .2s;}
-.opcion-card:hover{transform:translateY(-4px);box-shadow:0 12px 40px rgba(0,51,102,0.13);border-color:var(--blue-mid);}
-.opcion-card.recomendada{border-color:var(--green);box-shadow:0 4px 24px rgba(76,158,12,0.15);}
+
+/* Oferta banner */
+.oferta-banner{background:linear-gradient(135deg,#7a4f00,#c8820a);border-radius:14px;padding:20px 28px;margin-bottom:28px;display:flex;align-items:center;gap:20px;}
+.oferta-icon{font-size:32px;flex-shrink:0;}
+.oferta-text{flex:1;}
+.oferta-title{font-family:'Josefin Sans',sans-serif;font-size:15px;font-weight:700;color:var(--white);margin-bottom:3px;}
+.oferta-sub{font-size:12px;color:rgba(255,255,255,0.65);}
+.oferta-precios{text-align:right;flex-shrink:0;}
+.oferta-precio-antiguo{font-size:14px;color:rgba(255,255,255,0.4);text-decoration:line-through;margin-bottom:2px;}
+.oferta-precio-nuevo{font-family:'Josefin Sans',sans-serif;font-size:32px;font-weight:700;color:#f5c76a;line-height:1;}
+.oferta-descuento{font-size:11px;color:rgba(255,255,255,0.55);margin-top:2px;}
+
+.opcion-card{background:var(--white);border-radius:16px;border:1.5px solid var(--green);overflow:hidden;box-shadow:0 4px 24px rgba(76,158,12,0.15);position:relative;margin-bottom:24px;}
 .badge-rec{position:absolute;top:14px;right:-32px;background:var(--green);color:var(--white);font-size:8px;font-weight:700;letter-spacing:1.5px;padding:5px 40px;transform:rotate(45deg);width:130px;text-align:center;z-index:10;}
 .opcion-header{background:linear-gradient(135deg,var(--blue-dark) 0%,var(--blue) 100%);padding:22px 24px 18px;}
 .opcion-num{font-family:'Josefin Sans',sans-serif;font-size:9px;letter-spacing:3px;text-transform:uppercase;color:rgba(255,255,255,0.38);margin-bottom:8px;}
-.opcion-distrito{font-family:'Josefin Sans',sans-serif;font-size:16px;font-weight:700;color:var(--white);margin-bottom:5px;}
-.opcion-loc{font-size:11px;color:rgba(255,255,255,0.48);margin-bottom:12px;}
-.precio-chip{display:inline-flex;align-items:baseline;gap:4px;background:rgba(255,255,255,0.1);border:1px solid rgba(255,255,255,0.18);border-radius:8px;padding:6px 12px;}
-.precio-chip .val{font-family:'Josefin Sans',sans-serif;font-size:20px;font-weight:700;color:#7dd44a;}
+.opcion-distrito{font-family:'Josefin Sans',sans-serif;font-size:18px;font-weight:700;color:var(--white);margin-bottom:5px;}
+.opcion-loc{font-size:11px;color:rgba(255,255,255,0.48);margin-bottom:14px;}
+.precio-chip{display:inline-flex;align-items:baseline;gap:8px;background:rgba(255,255,255,0.1);border:1px solid rgba(255,255,255,0.18);border-radius:8px;padding:8px 16px;}
+.precio-chip .val{font-family:'Josefin Sans',sans-serif;font-size:24px;font-weight:700;color:#f5c76a;}
 .precio-chip .desc{font-size:10px;color:rgba(255,255,255,0.5);}
-.precio-chip .tachado{font-size:10px;color:rgba(255,255,255,0.3);text-decoration:line-through;margin-left:6px;}
+.precio-chip .tachado{font-size:13px;color:rgba(255,255,255,0.3);text-decoration:line-through;}
 .opcion-body{padding:20px 22px;}
-.colegios{display:flex;flex-direction:column;gap:12px;}
+.colegios{display:grid;grid-template-columns:1fr 1fr;gap:12px;}
 .colegio{border:1.5px solid var(--gray-border);border-radius:12px;overflow:hidden;background:var(--gray-card);transition:border-color .2s;}
 .colegio:hover{border-color:var(--red);}
 .colegio-top{padding:12px 14px 10px;}
@@ -68,6 +79,31 @@ details[open] summary::before{transform:rotate(90deg);}
 .match-bar{display:flex;gap:6px;flex-wrap:wrap;padding:14px 22px;border-top:1px solid var(--gray-border);background:linear-gradient(to right,var(--gray-card),var(--white));}
 .match-tag{display:flex;align-items:center;gap:4px;font-size:10px;font-weight:600;color:var(--green-dark);background:var(--green-light);border:1px solid rgba(76,158,12,0.25);border-radius:20px;padding:3px 10px;}
 .match-tag::before{content:'✓';font-size:9px;}
+
+/* PAGO */
+.payment-wrap{background:linear-gradient(135deg,var(--blue-dark) 0%,var(--blue) 60%,var(--blue-mid) 100%);border-radius:16px;padding:32px;position:relative;overflow:hidden;margin-bottom:24px;}
+.payment-wrap::before{content:'';position:absolute;inset:0;background-image:radial-gradient(rgba(255,255,255,0.05) 1px,transparent 1px);background-size:22px 22px;}
+.payment-inner{position:relative;z-index:2;}
+.pay-title{font-family:'Josefin Sans',sans-serif;font-size:16px;font-weight:700;color:var(--white);margin-bottom:4px;}
+.pay-subtitle{font-size:12px;color:rgba(255,255,255,0.45);margin-bottom:24px;}
+.pay-steps{display:flex;flex-direction:column;gap:0;}
+.pay-step-row{display:grid;grid-template-columns:32px 1fr auto;gap:16px;align-items:stretch;padding:16px 0;border-bottom:1px solid rgba(255,255,255,0.08);}
+.pay-step-row:last-child{border-bottom:none;}
+.step-num-col{display:flex;flex-direction:column;align-items:center;gap:0;}
+.step-circle{width:32px;height:32px;border-radius:50%;background:rgba(255,255,255,0.12);border:1.5px solid rgba(255,255,255,0.25);display:flex;align-items:center;justify-content:center;font-family:'Josefin Sans',sans-serif;font-size:12px;font-weight:700;color:var(--white);flex-shrink:0;}
+.step-circle.highlight{background:rgba(200,130,10,0.4);border-color:rgba(200,130,10,0.7);color:#f5c76a;}
+.step-line{flex:1;width:1.5px;background:rgba(255,255,255,0.1);margin:4px auto 0;}
+.step-content{padding-top:4px;}
+.step-label{font-size:9px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:rgba(255,255,255,0.4);margin-bottom:4px;}
+.step-title{font-size:14px;font-weight:600;color:var(--white);margin-bottom:3px;}
+.step-desc{font-size:11px;color:rgba(255,255,255,0.5);line-height:1.55;}
+.step-desc em{color:rgba(255,255,255,0.35);font-style:normal;}
+.step-amount{text-align:right;padding-top:4px;white-space:nowrap;}
+.amount-val{font-family:'Josefin Sans',sans-serif;font-size:18px;font-weight:700;color:#7dd44a;}
+.amount-val.gold{color:#f5c76a;}
+.amount-label{font-size:9px;color:rgba(255,255,255,0.35);margin-top:2px;}
+.pay-note{font-size:11px;color:rgba(255,255,255,0.3);line-height:1.65;font-style:italic;border-top:1px solid rgba(255,255,255,0.1);padding-top:14px;margin-top:8px;}
+
 .includes-wrap{background:var(--white);border-radius:16px;border:1.5px solid var(--gray-border);box-shadow:0 2px 16px rgba(0,51,102,0.05);overflow:hidden;margin-bottom:24px;}
 .includes-head{background:linear-gradient(135deg,var(--blue-dark),var(--blue));padding:20px 32px;}
 .includes-head h3{font-family:'Josefin Sans',sans-serif;font-size:14px;font-weight:700;color:var(--white);letter-spacing:1px;}
@@ -84,19 +120,7 @@ details[open] summary::before{transform:rotate(90deg);}
 .gestor-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;}
 .gestor-item{background:rgba(255,255,255,0.08);border:1px solid rgba(255,255,255,0.12);border-radius:8px;padding:10px 12px;font-size:11px;color:rgba(255,255,255,0.85);line-height:1.4;}
 .gestor-item::before{content:'→';color:#7dd44a;font-weight:700;margin-right:5px;}
-.payment-wrap{background:linear-gradient(135deg,var(--blue-dark) 0%,var(--blue) 60%,var(--blue-mid) 100%);border-radius:16px;padding:32px;position:relative;overflow:hidden;margin-bottom:20px;}
-.payment-wrap::before{content:'';position:absolute;inset:0;background-image:radial-gradient(rgba(255,255,255,0.05) 1px,transparent 1px);background-size:22px 22px;}
-.payment-inner{position:relative;z-index:2;}
-.pay-title{font-family:'Josefin Sans',sans-serif;font-size:16px;font-weight:700;color:var(--white);margin-bottom:6px;}
-.pay-subtitle{font-size:12px;color:rgba(255,255,255,0.45);margin-bottom:20px;}
-.pay-cols{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:18px;}
-.pay-col{background:rgba(255,255,255,0.07);border:1px solid rgba(255,255,255,0.12);border-radius:12px;padding:18px 20px;}
-.pay-col-title{font-family:'Josefin Sans',sans-serif;font-size:9px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:#7dd44a;margin-bottom:12px;}
-.pay-step{margin-bottom:10px;}
-.pay-step-num{font-size:9px;font-weight:700;color:rgba(255,255,255,0.4);text-transform:uppercase;letter-spacing:1px;margin-bottom:2px;}
-.pay-step-title{font-size:13px;font-weight:600;color:var(--white);margin-bottom:2px;}
-.pay-step-desc{font-size:11px;color:rgba(255,255,255,0.45);line-height:1.5;}
-.pay-note{font-size:11px;color:rgba(255,255,255,0.3);line-height:1.65;font-style:italic;border-top:1px solid rgba(255,255,255,0.1);padding-top:14px;}
+
 .financing-wrap{background:var(--white);border-radius:16px;border:1.5px solid var(--gray-border);box-shadow:0 2px 16px rgba(0,51,102,0.06);overflow:hidden;margin-bottom:24px;}
 .financing-head{background:linear-gradient(135deg,var(--blue-dark),var(--blue));padding:22px 32px;display:flex;align-items:center;justify-content:space-between;gap:16px;}
 .financing-head-left{display:flex;align-items:center;gap:16px;}
@@ -105,16 +129,7 @@ details[open] summary::before{transform:rotate(90deg);}
 .fin-sub{font-size:11px;color:rgba(255,255,255,0.5);line-height:1.4;}
 .fin-badge{background:rgba(125,212,74,0.2);border:1px solid rgba(125,212,74,0.4);color:#7dd44a;font-family:'Josefin Sans',sans-serif;font-size:11px;font-weight:700;letter-spacing:1px;padding:6px 14px;border-radius:20px;white-space:nowrap;}
 .financing-body{padding:28px 32px;}
-.fin-opcion-label,.fin-plazo-label{font-family:'Josefin Sans',sans-serif;font-size:9px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--text-light);margin-bottom:10px;}
-.fin-opcion-selector{margin-bottom:24px;}
-.fin-opcion-btns{display:flex;gap:10px;flex-wrap:wrap;}
-.fin-opcion-btn{background:var(--gray-card);border:1.5px solid var(--gray-border);border-radius:10px;padding:10px 16px;cursor:pointer;text-align:left;transition:all .2s;display:flex;flex-direction:column;gap:3px;}
-.fin-opcion-btn:hover{border-color:var(--blue-mid);background:var(--blue-light);}
-.fin-opcion-btn.active{border-color:var(--blue);background:var(--blue-light);}
-.fin-opcion-nombre{font-size:10px;font-weight:700;letter-spacing:1px;text-transform:uppercase;color:var(--text-light);}
-.fin-opcion-btn.active .fin-opcion-nombre{color:var(--blue);}
-.fin-opcion-precio{font-family:'Josefin Sans',sans-serif;font-size:16px;font-weight:700;color:var(--text);}
-.fin-opcion-btn.active .fin-opcion-precio{color:var(--blue);}
+.fin-plazo-label{font-family:'Josefin Sans',sans-serif;font-size:9px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--text-light);margin-bottom:10px;}
 .fin-plazo-wrap{margin-bottom:24px;}
 .fin-plazos{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;}
 .fin-plazo{background:var(--gray-card);border:1.5px solid var(--gray-border);border-radius:12px;padding:14px 12px;cursor:pointer;text-align:center;transition:all .2s;}
@@ -140,7 +155,15 @@ details[open] summary::before{transform:rotate(90deg);}
 .fin-det-total .fin-det-label{color:rgba(255,255,255,0.7);font-weight:600;}
 .fin-det-total .fin-det-val{font-family:'Josefin Sans',sans-serif;font-size:16px;color:var(--white);}
 .fin-nota{font-size:11px;color:var(--text-light);line-height:1.6;background:var(--gray-card);border-radius:8px;padding:12px 16px;border-left:3px solid var(--blue-light);}
-@media(max-width:720px){.header{padding:16px 20px;}.hero{padding:28px 20px 24px;}.hero-name{font-size:28px;}.main{padding:28px 16px 48px;}.includes-grid{grid-template-columns:1fr;}.opciones-grid{grid-template-columns:1fr;}.pay-cols{grid-template-columns:1fr;}.gestor-grid{grid-template-columns:repeat(2,1fr);}.fin-plazos{grid-template-columns:repeat(2,1fr);}.fin-resultado{grid-template-columns:1fr;}.fin-resultado-main{border-right:none;border-bottom:1px solid rgba(255,255,255,0.15);padding-right:0;padding-bottom:20px;}.financing-head{flex-direction:column;align-items:flex-start;}.fin-opcion-btns{flex-direction:column;}}
+@media(max-width:720px){
+  .header{padding:16px 20px;}.hero{padding:28px 20px 24px;}.hero-name{font-size:28px;}
+  .main{padding:28px 16px 48px;}.includes-grid{grid-template-columns:1fr;}
+  .colegios{grid-template-columns:1fr;}.pay-step-row{grid-template-columns:28px 1fr auto;gap:10px;}
+  .gestor-grid{grid-template-columns:repeat(2,1fr);}.fin-plazos{grid-template-columns:repeat(2,1fr);}
+  .fin-resultado{grid-template-columns:1fr;}.fin-resultado-main{border-right:none;border-bottom:1px solid rgba(255,255,255,0.15);padding-right:0;padding-bottom:20px;}
+  .financing-head{flex-direction:column;align-items:flex-start;}.oferta-banner{flex-direction:column;text-align:center;}
+  .oferta-precios{text-align:center;}
+}
 </style>
 </head>
 <body>
@@ -157,16 +180,18 @@ details[open] summary::before{transform:rotate(90deg);}
   <div class="hero-dots"></div>
   <div class="hero-inner">
     <div>
-      <div class="hero-tag">Propuesta personalizada</div>
+      <div style="display:flex;flex-wrap:wrap;gap:8px;align-items:center;">
+        <div class="hero-tag">Propuesta personalizada</div>
+        <div class="hero-oferta">⭐ Oferta definitiva</div>
+      </div>
       <div class="hero-name">Lucas</div>
-      <div class="hero-subtitle">Año escolar completo · Canadá · Sin preferencia de zona</div>
+      <div class="hero-subtitle">Año escolar completo · Canadá · District School Board of Delta, BC</div>
       <div class="hero-pills">
         <div class="hero-pill">🎓 Grade 10 (4º ESO)</div>
         <div class="hero-pill">🏀 Baloncesto · Fútbol · Pádel</div>
         <div class="hero-pill">🏊 Natación</div>
         <div class="hero-pill">🚴 Bicicleta</div>
         <div class="hero-pill">🔬 Ciencias</div>
-        <div class="hero-pill"></div>
       </div>
     </div>
   </div>
@@ -174,164 +199,128 @@ details[open] summary::before{transform:rotate(90deg);}
 
 <main class="main">
 
-  <div class="section-title"><h2>Opciones recomendadas</h2></div>
-  <div class="opciones-grid">
-
-    <!-- OPCIÓN 1 RECOMENDADA: Avon Maitland -->
-    <div class="opcion-card recomendada">
-      <div class="badge-rec">★ RECOMENDADA</div>
-      <div class="opcion-header">
-        <div class="opcion-num">Opción 01</div>
-        <div class="opcion-distrito">Avon Maitland District School Board</div>
-        <div class="opcion-loc">📍 Goderich · Ontario · Lago Hurón</div>
-        <div class="precio-chip"><span class="val">23.480 €</span><span class="desc">/ año · vuelos incl.*</span><span class="tachado">24.480 €</span></div>
-      </div>
-      <div class="opcion-body">
-        <div class="colegios">
-          <div class="colegio">
-            <div class="colegio-top">
-              <div class="colegio-nombre">Goderich District Collegiate Institute</div>
-              <div class="colegio-meta"><span class="tag pub">Público</span><span class="tag info">Grade 9–12</span><span class="tag info">~350 alumnos</span><span class="tag info">Lago Hurón</span></div>
-            </div>
-            <details><summary>Por qué encaja con Lucas</summary>
-            <div class="colegio-razon">Goderich está a orillas del lago Hurón y ofrece un programa deportivo muy completo: baloncesto, fútbol, natación, rugby y atletismo, que coincide directamente con los intereses de Lucas. El club de ciencias y robótica encaja con su lado académico. El colegio es pequeño, lo que garantiza una atención más cercana y una integración más rápida para un perfil tranquilo como el suyo.</div>
-            </details>
-          </div>
-          <div class="colegio">
-            <div class="colegio-top">
-              <div class="colegio-nombre">Listowel District Secondary School</div>
-              <div class="colegio-meta"><span class="tag pub">Público</span><span class="tag info">Grade 9–12</span><span class="tag info">~7.500 hab.</span><span class="tag info">Semiurbana</span></div>
-            </div>
-            <details><summary>Por qué encaja con Lucas</summary>
-            <div class="colegio-razon">Listowel es una comunidad tranquila y acogedora del suroeste de Ontario. Tiene baloncesto, fútbol y natación entre sus deportes, y un entorno semiurbano-rural ideal para salidas en bicicleta. El tamaño del colegio y la vida comunitaria activa facilitan que Lucas se sienta parte del grupo desde el primer día.</div>
-            </details>
-          </div>
-        </div>
-      </div>
-      <div class="match-bar">
-        <div class="match-tag">Natación · Baloncesto · Fútbol</div>
-        <div class="match-tag">Lago Hurón · Bicicleta</div>
-        <div class="match-tag">Club de Ciencias</div>
-        <div class="match-tag">Entorno tranquilo · Ontario</div>
-      </div>
+  <!-- OFERTA BANNER -->
+  <div class="oferta-banner" style="margin-top:32px;">
+    <div class="oferta-icon">🏷️</div>
+    <div class="oferta-text">
+      <div class="oferta-title">Oferta definitiva · District School Board of Delta</div>
+      <div class="oferta-sub">Precio especial negociado para Lucas · British Columbia · Aeropuerto YVR (Vancouver)</div>
     </div>
-
-    <!-- OPCIÓN 2: PEI -->
-    <div class="opcion-card">
-      <div class="opcion-header">
-        <div class="opcion-num">Opción 02</div>
-        <div class="opcion-distrito">Isla del Príncipe Eduardo (PEI)</div>
-        <div class="opcion-loc">📍 Charlottetown · Summerside · Este de Canadá</div>
-        <div class="precio-chip"><span class="val">21.100 €</span><span class="desc">/ año · vuelos incl.*</span><span class="tachado">22.100 €</span></div>
-      </div>
-      <div class="opcion-body">
-        <div class="colegios">
-          <div class="colegio">
-            <div class="colegio-top">
-              <div class="colegio-nombre">Charlottetown Rural High School</div>
-              <div class="colegio-meta"><span class="tag pub">Público</span><span class="tag info">Grade 9–12</span><span class="tag info">~40.000 hab.</span><span class="tag info">Semiurbana</span></div>
-            </div>
-            <details><summary>Por qué encaja con Lucas</summary>
-            <div class="colegio-razon">PEI es una de las provincias más seguras y tranquilas de Canadá, perfecta para el perfil de Lucas. Charlottetown Rural HS tiene baloncesto, fútbol y natación. La isla es plana, ideal para moverse en bicicleta por sus carreteras costeras. El vuelo llega directo al aeropuerto de Charlottetown sin trasbordos, lo que facilita mucho la llegada y los viajes de los padres si decidieran visitar.</div>
-            </details>
-          </div>
-          <div class="colegio">
-            <div class="colegio-top">
-              <div class="colegio-nombre">Colonel Gray Senior High School</div>
-              <div class="colegio-meta"><span class="tag pub">Público</span><span class="tag info">Grade 9–12</span><span class="tag info">~40.000 hab.</span><span class="tag info">Semiurbana</span></div>
-            </div>
-            <details><summary>Por qué encaja con Lucas</summary>
-            <div class="colegio-razon">Colonel Gray es el colegio de referencia de la isla, con una oferta deportiva completa: baloncesto, fútbol, natación, rugby y atletismo. El ambiente comunitario es muy acogedor y los alumnos internacionales se integran con facilidad. Su programa de ciencias es sólido, algo que encaja bien con los intereses académicos de Lucas.</div>
-            </details>
-          </div>
-        </div>
-      </div>
-      <div class="match-bar">
-        <div class="match-tag">Baloncesto · Fútbol · Natación</div>
-        <div class="match-tag">Isla tranquila y segura</div>
-        <div class="match-tag">Vuelo directo YYG</div>
-        <div class="match-tag">Bici por rutas costeras</div>
-      </div>
+    <div class="oferta-precios">
+      <div class="oferta-precio-antiguo">26.800 €</div>
+      <div class="oferta-precio-nuevo">25.500 €</div>
+      <div class="oferta-descuento">− 1.300 € de descuento</div>
     </div>
-
-    <!-- OPCIÓN 3: Battle River -->
-    <div class="opcion-card">
-      <div class="opcion-header">
-        <div class="opcion-num">Opción 03</div>
-        <div class="opcion-distrito">Battle River School Division</div>
-        <div class="opcion-loc">📍 Camrose · Alberta · Pradera canadiense</div>
-        <div class="precio-chip"><span class="val">19.430 €</span><span class="desc">/ año · vuelos incl.*</span><span class="tachado">20.430 €</span></div>
-      </div>
-      <div class="opcion-body">
-        <div class="colegios">
-          <div class="colegio">
-            <div class="colegio-top">
-              <div class="colegio-nombre">Camrose Composite High School</div>
-              <div class="colegio-meta"><span class="tag pub">Público</span><span class="tag info">Grade 10–12</span><span class="tag info">~19.000 hab.</span><span class="tag info">Semiurbana</span></div>
-            </div>
-            <details><summary>Por qué encaja con Lucas</summary>
-            <div class="colegio-razon">Camrose tiene baloncesto y fútbol que compiten a nivel provincial de Alberta. Ritmo de vida tranquilo y comunitario, exactamente lo que Lucas busca. Las llanuras de Alberta ofrecen rutas extensas en bicicleta. Al ser el distrito más económico de la propuesta, queda más margen de presupuesto para actividades durante el año.</div>
-            </details>
-          </div>
-          <div class="colegio">
-            <div class="colegio-top">
-              <div class="colegio-nombre">Tofield School</div>
-              <div class="colegio-meta"><span class="tag pub">Público</span><span class="tag info">K–12</span><span class="tag info">~2.200 hab.</span><span class="tag info">Rural · Pequeña ciudad</span></div>
-            </div>
-            <details><summary>Por qué encaja con Lucas</summary>
-            <div class="colegio-razon">Tofield ofrece la experiencia canadiense más auténtica e inmersiva: comunidad pequeña donde Lucas será acogido como uno más desde el primer día. Baloncesto y fútbol como deportes principales. El perfil tranquilo de Lucas es exactamente lo que se valora en comunidades así, donde la inmersión lingüística es máxima.</div>
-            </details>
-          </div>
-        </div>
-      </div>
-      <div class="match-bar">
-        <div class="match-tag">Baloncesto · Fútbol</div>
-        <div class="match-tag">Alberta · Bicicleta</div>
-        <div class="match-tag">Inmersión total</div>
-        <div class="match-tag">Mejor precio</div>
-      </div>
-    </div>
-
-    <!-- OPCIÓN 4: Delta -->
-    <div class="opcion-card">
-      <div class="opcion-header">
-        <div class="opcion-num">Opción 04</div>
-        <div class="opcion-distrito">District School Board of Delta</div>
-        <div class="opcion-loc">📍 Delta · British Columbia · Metro Vancouver</div>
-        <div class="precio-chip"><span class="val">26.800 €</span><span class="desc">/ año · vuelos incl.*</span><span class="tachado">27.800 €</span></div>
-      </div>
-      <div class="opcion-body">
-        <div class="colegios">
-          <div class="colegio">
-            <div class="colegio-top">
-              <div class="colegio-nombre">Seaquam Secondary School</div>
-              <div class="colegio-meta"><span class="tag pub">Público</span><span class="tag info">Grade 8–12</span><span class="tag info">~1.300 alumnos</span><span class="tag info">North Delta</span></div>
-            </div>
-            <details><summary>Por qué encaja con Lucas</summary>
-            <div class="colegio-razon">Seaquam es el colegio académicamente más sólido del distrito, con IB y una reputación excelente en ciencias — algo que conecta directamente con los intereses de Lucas. Tiene fútbol, baloncesto y natación (aquatics) en sus equipos. El club de Health Science y el de ingeniería encajan con su perfil. Delta está junto a Vancouver y al océano, con un entorno residencial tranquilo y muy buenas comunicaciones.</div>
-            </details>
-          </div>
-          <div class="colegio">
-            <div class="colegio-top">
-              <div class="colegio-nombre">Delta Secondary School</div>
-              <div class="colegio-meta"><span class="tag pub">Público</span><span class="tag info">Grade 8–12</span><span class="tag info">~1.500 alumnos</span><span class="tag info">Ladner · Delta</span></div>
-            </div>
-            <details><summary>Por qué encaja con Lucas</summary>
-            <div class="colegio-razon">Delta Secondary es el colegio más grande del distrito, con las instalaciones más completas: 3 gimnasios, pistas de baloncesto y tenis al aire libre, campos de deporte y piscina comunitaria enfrente del colegio. Ofrece fútbol, baloncesto y natación. Está ubicado en Ladner, una comunidad tranquila junto al río Fraser, con acceso a rutas de bicicleta y naturaleza costera. Ideal para un estudiante activo y tranquilo como Lucas.</div>
-            </details>
-          </div>
-        </div>
-      </div>
-      <div class="match-bar">
-        <div class="match-tag">Fútbol · Baloncesto · Natación</div>
-        <div class="match-tag">Junto al océano · BC</div>
-        <div class="match-tag">Ciencias · IB disponible</div>
-        <div class="match-tag">Rutas bici · Naturaleza costera</div>
-      </div>
-    </div>
-
   </div>
 
+  <div class="section-title"><h2>Opción seleccionada</h2></div>
+
+  <div class="opcion-card">
+    <div class="badge-rec">★ SELECCIONADA</div>
+    <div class="opcion-header">
+      <div class="opcion-num">District School Board of Delta · British Columbia</div>
+      <div class="opcion-distrito">Delta School District</div>
+      <div class="opcion-loc">📍 Delta · Ladner · North Delta · Metro Vancouver · Aeropuerto YVR</div>
+      <div style="display:flex;align-items:baseline;gap:12px;flex-wrap:wrap;">
+        <div class="precio-chip">
+          <span class="val">25.500 €</span>
+          <span class="desc">/ año · vuelos incl.*</span>
+          <span class="tachado">26.800 €</span>
+        </div>
+      </div>
+    </div>
+    <div class="opcion-body">
+      <div class="colegios">
+        <div class="colegio">
+          <div class="colegio-top">
+            <div class="colegio-nombre">Seaquam Secondary School</div>
+            <div class="colegio-meta"><span class="tag pub">Público</span><span class="tag info">Grade 8–12</span><span class="tag info">~1.300 alumnos</span><span class="tag info">North Delta · IB</span></div>
+          </div>
+          <details><summary>Por qué encaja con Lucas</summary>
+          <div class="colegio-razon">Seaquam es el colegio académicamente más sólido del distrito, con programa IB y una reputación excelente en ciencias. Tiene fútbol, baloncesto y natación (aquatics) en sus equipos, además de Health Science Club e ingeniería, perfectos para el perfil de Lucas. Entorno residencial tranquilo en North Delta con buenas comunicaciones a Vancouver.</div>
+          </details>
+        </div>
+        <div class="colegio">
+          <div class="colegio-top">
+            <div class="colegio-nombre">Delta Secondary School</div>
+            <div class="colegio-meta"><span class="tag pub">Público</span><span class="tag info">Grade 8–12</span><span class="tag info">~1.500 alumnos</span><span class="tag info">Ladner · Delta</span></div>
+          </div>
+          <details><summary>Por qué encaja con Lucas</summary>
+          <div class="colegio-razon">Delta Secondary es el colegio más grande del distrito, con las instalaciones más completas: 3 gimnasios, 5 pistas de baloncesto y tenis al aire libre, campos de deporte y piscina comunitaria enfrente del colegio. Ofrece fútbol, baloncesto y natación. Ubicado en Ladner, comunidad tranquila junto al río Fraser, con acceso a rutas de bicicleta y naturaleza costera.</div>
+          </details>
+        </div>
+      </div>
+    </div>
+    <div class="match-bar">
+      <div class="match-tag">Fútbol · Baloncesto · Natación</div>
+      <div class="match-tag">Junto al océano · BC</div>
+      <div class="match-tag">Ciencias · IB disponible</div>
+      <div class="match-tag">Bici · Naturaleza costera</div>
+      <div class="match-tag">Aeropuerto YVR (Vancouver)</div>
+    </div>
+  </div>
+
+  <!-- CONDICIONES DE PAGO -->
+  <div class="section-title"><h2>Condiciones de pago</h2></div>
+  <div class="payment-wrap">
+    <div class="payment-inner">
+      <div class="pay-title">💳 Plan de pagos personalizado · Lucas</div>
+      <div class="pay-subtitle">Precio final del programa: 25.500 € · La tasa de aplicación (300 €) se descuenta del importe total</div>
+      <div class="pay-steps">
+
+        <div class="pay-step-row">
+          <div class="step-num-col">
+            <div class="step-circle highlight">1</div>
+            <div class="step-line"></div>
+          </div>
+          <div class="step-content">
+            <div class="step-label">Inmediatamente · Firma del contrato</div>
+            <div class="step-title">Tasa de aplicación</div>
+            <div class="step-desc">Pago no reembolsable que inicia el proceso de plaza escolar. <em>Se descuenta del precio final del programa.</em></div>
+          </div>
+          <div class="step-amount">
+            <div class="amount-val gold">300 €</div>
+            <div class="amount-label">no reembolsable</div>
+          </div>
+        </div>
+
+        <div class="pay-step-row">
+          <div class="step-num-col">
+            <div class="step-circle">2</div>
+            <div class="step-line"></div>
+          </div>
+          <div class="step-content">
+            <div class="step-label">1 de octubre de 2026 · Tras aceptación en el programa</div>
+            <div class="step-title">Reserva de plaza confirmada</div>
+            <div class="step-desc">Una vez confirmada la aceptación en el colegio del distrito de Delta.</div>
+          </div>
+          <div class="step-amount">
+            <div class="amount-val">7.500 €</div>
+            <div class="amount-label">3.500 € + 4.000 €</div>
+          </div>
+        </div>
+
+        <div class="pay-step-row">
+          <div class="step-num-col">
+            <div class="step-circle">3</div>
+          </div>
+          <div class="step-content">
+            <div class="step-label">Antes del 15 de enero · Límite para estudio Permit</div>
+            <div class="step-title">Pago del saldo restante</div>
+            <div class="step-desc">Necesario para iniciar los trámites del visado Study Permit a tiempo. <em>Importe: 25.500 € − 300 € (tasa) − 7.500 € (2º pago) = 17.700 €</em></div>
+          </div>
+          <div class="step-amount">
+            <div class="amount-val">17.700 €</div>
+            <div class="amount-label">saldo restante</div>
+          </div>
+        </div>
+
+      </div>
+      <div class="pay-note">La tasa de aplicación de 300 € abonada en el Paso 1 es no reembolsable y se descuenta del precio total del programa. El pago del saldo antes del 15 de enero es imprescindible para iniciar los trámites del visado Study Permit con margen suficiente.</div>
+    </div>
+  </div>
+
+  <!-- INCLUYE -->
   <div class="section-title"><h2>El programa incluye</h2></div>
   <div class="includes-wrap">
     <div class="includes-head"><h3>📋 Todo lo que cubre My Language Quest</h3></div>
@@ -412,28 +401,7 @@ details[open] summary::before{transform:rotate(90deg);}
     </div>
   </div>
 
-  <div class="section-title"><h2>Formas de pago</h2></div>
-  <div class="payment-wrap">
-    <div class="payment-inner">
-      <div class="pay-title">💳 Condiciones económicas</div>
-      <div class="pay-subtitle">La cantidad íntegra debe abonarse antes del 10 de abril</div>
-      <div class="pay-cols">
-        <div class="pay-col">
-          <div class="pay-col-title">Pago fraccionado</div>
-          <div class="pay-step"><div class="pay-step-num">Paso 1</div><div class="pay-step-title">Firma del contrato</div><div class="pay-step-desc">3.500 €</div></div>
-          <div class="pay-step"><div class="pay-step-num">Paso 2 · Aceptación en el programa</div><div class="pay-step-title">40% del importe restante</div></div>
-          <div class="pay-step"><div class="pay-step-num">Paso 3</div><div class="pay-step-title">Resto del importe</div><div class="pay-step-desc">Antes del 10 de abril</div></div>
-        </div>
-        <div class="pay-col">
-          <div class="pay-col-title">Pago completo</div>
-          <div class="pay-step"><div class="pay-step-num">Paso 1</div><div class="pay-step-title">Firma del contrato</div><div class="pay-step-desc">3.500 €</div></div>
-          <div class="pay-step"><div class="pay-step-num">Paso 2 · Aceptación en el programa</div><div class="pay-step-title">Resto del importe en su totalidad</div></div>
-        </div>
-      </div>
-      <div class="pay-note">El seguro de anulación e interrupción debe contratarse y abonarse en el momento de la firma del contrato. Su importe no es reembolsable bajo ninguna circunstancia.</div>
-    </div>
-  </div>
-
+  <!-- FINANCIACIÓN -->
   <div class="section-title"><h2>Financia tu programa</h2></div>
   <div class="financing-wrap">
     <div class="financing-head">
@@ -447,29 +415,8 @@ details[open] summary::before{transform:rotate(90deg);}
       <div class="fin-badge">Hasta 36 meses</div>
     </div>
     <div class="financing-body">
-      <div class="fin-opcion-selector">
-        <div class="fin-opcion-label">Selecciona la opción del programa</div>
-        <div class="fin-opcion-btns">
-          <button class="fin-opcion-btn active" onclick="setOpcion(this,23480)">
-            <span class="fin-opcion-nombre">⭐ Opción 1 · Avon Maitland</span>
-            <span class="fin-opcion-precio">23.480 €</span>
-          </button>
-          <button class="fin-opcion-btn" onclick="setOpcion(this,21100)">
-            <span class="fin-opcion-nombre">Opción 2 · PEI</span>
-            <span class="fin-opcion-precio">21.100 €</span>
-          </button>
-          <button class="fin-opcion-btn" onclick="setOpcion(this,19430)">
-            <span class="fin-opcion-nombre">Opción 3 · Battle River SD</span>
-            <span class="fin-opcion-precio">19.430 €</span>
-          </button>
-          <button class="fin-opcion-btn" onclick="setOpcion(this,26800)">
-            <span class="fin-opcion-nombre">Opción 4 · Delta</span>
-            <span class="fin-opcion-precio">26.800 €</span>
-          </button>
-        </div>
-      </div>
       <div class="fin-plazo-wrap">
-        <div class="fin-plazo-label">Elige tu plazo de financiación</div>
+        <div class="fin-plazo-label">Elige tu plazo de financiación · Precio del programa: 25.500 €</div>
         <div class="fin-plazos">
           <div class="fin-plazo active" onclick="setPlazo(this,12)">
             <div class="fin-plazo-meses">12 meses</div>
@@ -496,23 +443,23 @@ details[open] summary::before{transform:rotate(90deg);}
       <div class="fin-resultado">
         <div class="fin-resultado-main">
           <div class="fin-cuota-label">Cuota mensual estimada</div>
-          <div class="fin-cuota-valor" id="cuotaValor">1.956,67 €</div>
+          <div class="fin-cuota-valor" id="cuotaValor">2.125,00 €</div>
           <div class="fin-cuota-sub" id="cuotaSub">/mes · 12 pagos · TIN 0%</div>
         </div>
         <div class="fin-resultado-detalle">
-          <div class="fin-det-row"><span class="fin-det-label">Importe del programa</span><span class="fin-det-val" id="detCapital">23.480 €</span></div>
+          <div class="fin-det-row"><span class="fin-det-label">Importe del programa</span><span class="fin-det-val" id="detCapital">25.500 €</span></div>
           <div class="fin-det-row"><span class="fin-det-label">Intereses totales</span><span class="fin-det-val fin-det-green" id="detIntereses">0 € · ¡MLQ los asume!</span></div>
-          <div class="fin-det-row fin-det-total"><span class="fin-det-label">Total a pagar</span><span class="fin-det-val" id="detTotal">23.480 €</span></div>
+          <div class="fin-det-row fin-det-total"><span class="fin-det-label">Total a pagar</span><span class="fin-det-val" id="detTotal">25.500 €</span></div>
         </div>
       </div>
-      <div class="fin-nota">ℹ️ Financiación sujeta a aprobación bancaria. Cuota orientativa calculada sobre el importe total del programa. Sin comisión de apertura ni penalización por cancelación anticipada. Los precios incluyen el descuento de 1.000 € ya aplicado.</div>
+      <div class="fin-nota">ℹ️ Financiación sujeta a aprobación bancaria. Cuota orientativa calculada sobre el importe total del programa. Sin comisión de apertura ni penalización por cancelación anticipada.</div>
     </div>
   </div>
 
 </main>
 
 <script>
-var _cap=23480,_mes=12;
+var _cap=25500,_mes=12;
 function _fmt(n,d){return n.toLocaleString('es-ES',{minimumFractionDigits:d||0,maximumFractionDigits:d||0})+' €';}
 function _cuota(c,t,m){if(t===0)return c/m;var r=(t/100)/12;return c*r/(1-Math.pow(1+r,-m));}
 function _update(){
@@ -525,7 +472,6 @@ function _update(){
   if(tin===0){document.getElementById('detIntereses').textContent='0 € · ¡MLQ los asume!';document.getElementById('detIntereses').className='fin-det-val fin-det-green';}
   else{document.getElementById('detIntereses').textContent=_fmt(Math.round(inter));document.getElementById('detIntereses').className='fin-det-val';}
 }
-function setOpcion(btn,cap){_cap=cap;document.querySelectorAll('.fin-opcion-btn').forEach(function(b){b.classList.remove('active');});btn.classList.add('active');_update();}
 function setPlazo(el,m){_mes=m;document.querySelectorAll('.fin-plazo').forEach(function(p){p.classList.remove('active');});el.classList.add('active');_update();}
 _update();
 </script>
