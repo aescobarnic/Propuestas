@@ -30,13 +30,14 @@ body{font-family:"Fira Sans",sans-serif;background:var(--gray-bg);color:var(--te
 .hero-subtitle{font-size:13px;color:rgba(255,255,255,0.55);font-weight:300;}
 .hero-pills{display:flex;flex-wrap:wrap;gap:8px;margin-top:20px;}
 .hero-pill{display:flex;align-items:center;gap:6px;background:rgba(255,255,255,0.12);border:1px solid rgba(255,255,255,0.2);border-radius:8px;padding:6px 12px;font-size:11px;color:var(--white);font-weight:500;}
-.hero-precio-box{flex-shrink:0;background:rgba(0,0,0,0.25);border:1px solid rgba(255,255,255,0.15);border-radius:16px;padding:20px 28px;text-align:center;min-width:210px;}
-.hero-precio-label{font-size:9px;letter-spacing:2px;text-transform:uppercase;color:rgba(255,255,255,0.5);margin-bottom:6px;font-weight:600;}
-.hero-precio-val{font-family:"Josefin Sans",sans-serif;font-size:32px;font-weight:700;color:#ffb3b3;line-height:1;}
-.hero-precio-sub{font-size:10px;color:rgba(255,255,255,0.4);margin-top:4px;margin-bottom:10px;}
-.duracion-toggle{display:flex;gap:8px;justify-content:center;}
-.dur-btn{padding:5px 16px;border-radius:20px;border:1.5px solid rgba(255,255,255,0.35);background:transparent;color:rgba(255,255,255,0.65);font-size:11px;font-weight:600;cursor:pointer;transition:all .2s;font-family:"Fira Sans",sans-serif;}
-.dur-btn.active{background:var(--red);border-color:var(--red);color:var(--white);}
+.hero-precio-box{flex-shrink:0;background:rgba(0,0,0,0.25);border:1px solid rgba(255,255,255,0.15);border-radius:16px;padding:20px 24px;text-align:center;min-width:230px;}
+.hero-precio-label{font-size:9px;letter-spacing:2px;text-transform:uppercase;color:rgba(255,255,255,0.5);margin-bottom:14px;font-weight:600;}
+.hero-opciones{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:10px;}
+.hero-opcion{border:1.5px solid rgba(255,255,255,0.2);border-radius:10px;padding:10px 12px;cursor:pointer;transition:all .2s;background:rgba(255,255,255,0.06);}
+.hero-opcion:hover{background:rgba(255,255,255,0.12);border-color:rgba(255,255,255,0.4);}
+.hero-opcion-nombre{font-size:9px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:rgba(255,255,255,0.55);margin-bottom:5px;}
+.hero-opcion-precio{font-family:"Josefin Sans",sans-serif;font-size:20px;font-weight:700;color:#ffb3b3;line-height:1;}
+.hero-precio-sub{font-size:10px;color:rgba(255,255,255,0.35);line-height:1.4;}
 .main{max-width:1100px;margin:0 auto;padding:40px 24px 64px;}
 .section-title{display:flex;align-items:center;gap:12px;margin-bottom:24px;}
 .section-title h2{font-family:"Josefin Sans",sans-serif;font-size:11px;font-weight:700;letter-spacing:3px;text-transform:uppercase;color:var(--text-light);}
@@ -169,13 +170,18 @@ body{font-family:"Fira Sans",sans-serif;background:var(--gray-bg);color:var(--te
       </div>
     </div>
     <div class="hero-precio-box">
-      <div class="hero-precio-label">Programa Classic</div>
-      <div class="hero-precio-val" id="heroPrice">14.100 €</div>
-      <div class="hero-precio-sub" id="heroSub">trimestre · año escolar 2026/27</div>
-      <div class="duracion-toggle">
-        <button class="dur-btn active" onclick="setDuracion(this,14100,'trimestre')">Trimestre</button>
-        <button class="dur-btn" onclick="setDuracion(this,15300,'semestre')">Semestre</button>
+      <div class="hero-precio-label">Programa Classic · 2026/27</div>
+      <div class="hero-opciones">
+        <div class="hero-opcion" id="opt-trim" onclick="setDuracion(this,14100,'trimestre')" style="border-color:rgba(200,16,46,0.8);background:rgba(200,16,46,0.15);">
+          <div class="hero-opcion-nombre">Trimestre</div>
+          <div class="hero-opcion-precio">14.100 €</div>
+        </div>
+        <div class="hero-opcion" id="opt-sem" onclick="setDuracion(this,15300,'semestre')">
+          <div class="hero-opcion-nombre">Semestre</div>
+          <div class="hero-opcion-precio">15.300 €</div>
+        </div>
       </div>
+      <div class="hero-precio-sub" id="heroSub">Selecciona la duración · toca para calcular financiación</div>
     </div>
   </div>
 </section>
@@ -454,13 +460,17 @@ function setPlazo(el, m) {
 }
 function setDuracion(el, cap, label) {
   _cap = cap;
-  document.querySelectorAll('.dur-btn').forEach(function(b) { b.classList.remove('active'); });
-  el.classList.add('active');
-  document.getElementById('heroPrice').textContent = _fmt(cap);
-  document.getElementById('heroSub').textContent = label + ' · año escolar 2026/27';
+  document.querySelectorAll('.hero-opcion').forEach(function(b) {
+    b.style.borderColor = 'rgba(255,255,255,0.2)';
+    b.style.background = 'rgba(255,255,255,0.06)';
+  });
+  el.style.borderColor = 'rgba(200,16,46,0.8)';
+  el.style.background = 'rgba(200,16,46,0.15)';
   var labelEs = label === 'trimestre' ? 'Trimestre' : 'Semestre';
+  document.getElementById('heroSub').textContent = labelEs + ' seleccionado · calculando financiación…';
   document.getElementById('paySubtitle').textContent = 'Reino Unido 2026/27 · ' + labelEs + ' · ' + _fmt(cap);
   _update();
+  document.getElementById('heroSub').textContent = labelEs + ' · cuota desde ' + _fmt(_cap/12, 2) + '/mes';
 }
 _update();
 </script>
