@@ -402,16 +402,6 @@ details[open] summary::before{transform:rotate(90deg);}
   </div>
 
   <!-- FINANCIACIÓN -->
-  <div class="section-title"><h2>Financia tu programa</h2></div>
-  <div class="financing-wrap">
-    <div class="financing-head">
-      <div class="financing-head-left">
-        <div class="fin-icon">💳</div>
-        <div>
-          <div class="fin-title">Paga a tu ritmo, sin preocupaciones</div>
-          <div class="fin-sub">Financiación flexible · Aprobación rápida · 100% online · Sin comisión de apertura</div>
-        </div>
-      </div>
       <div class="fin-badge">Hasta 36 meses</div>
     </div>
     <div class="financing-body">
@@ -457,23 +447,5 @@ details[open] summary::before{transform:rotate(90deg);}
   </div>
 
 </main>
-
-<script>
-var _cap=25500,_mes=12;
-function _fmt(n,d){return n.toLocaleString('es-ES',{minimumFractionDigits:d||0,maximumFractionDigits:d||0})+' €';}
-function _cuota(c,t,m){if(t===0)return c/m;var r=(t/100)/12;return c*r/(1-Math.pow(1+r,-m));}
-function _update(){
-  var tin=_mes===12?0:10.46;
-  var q=_cuota(_cap,tin,_mes);var tot=q*_mes;var inter=tot-_cap;
-  document.getElementById('cuotaValor').textContent=_fmt(q,2);
-  document.getElementById('cuotaSub').textContent='/mes · '+_mes+' pagos · TIN '+(tin===0?'0%':'10,46%');
-  document.getElementById('detCapital').textContent=_fmt(Math.round(_cap));
-  document.getElementById('detTotal').textContent=_fmt(Math.round(tot));
-  if(tin===0){document.getElementById('detIntereses').textContent='0 € · ¡MLQ los asume!';document.getElementById('detIntereses').className='fin-det-val fin-det-green';}
-  else{document.getElementById('detIntereses').textContent=_fmt(Math.round(inter));document.getElementById('detIntereses').className='fin-det-val';}
-}
-function setPlazo(el,m){_mes=m;document.querySelectorAll('.fin-plazo').forEach(function(p){p.classList.remove('active');});el.classList.add('active');_update();}
-_update();
-</script>
 </body>
 </html>
