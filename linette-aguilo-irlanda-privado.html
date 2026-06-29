@@ -118,6 +118,10 @@ body{font-family:'Fira Sans',sans-serif;background:var(--gray-bg);color:var(--te
   .gestor-grid{grid-template-columns:repeat(2,1fr);}
   .header{padding:14px 20px;}.main{padding:24px 16px 48px;}
 }
+
+.calc-stab{padding:10px 16px;border-radius:8px;border:1.5px solid var(--gray-border);background:var(--gray-card);color:var(--text-light);font-family:'Josefin Sans',sans-serif;font-size:11px;font-weight:700;letter-spacing:1px;text-transform:uppercase;cursor:pointer;transition:all .15s;text-align:center;line-height:1.5;}
+.calc-stab:hover{border-color:var(--green-mid);color:var(--green-dark);}
+.calc-stab-active{background:var(--green-dark)!important;color:#fff!important;border-color:var(--green-dark)!important;}
 </style>
 </head>
 <body>
@@ -487,98 +491,64 @@ body{font-family:'Fira Sans',sans-serif;background:var(--gray-bg);color:var(--te
       </div>
     </div>
 
-  <!-- FINANCIACIÓN -->
-  <div class="section-title"><h2>Opciones de financiación por colegio</h2></div>
+  <!-- CALCULADORA INTERACTIVA -->
+  <div class="section-title"><h2>Simulador de financiación</h2></div>
 
-  <div class="section-title"><h2>🏛️ Monaghan Collegiate School · 25.600,00 €</h2></div>
-  <div class="financing-wrap">
-    <div class="financing-head">
-      <div><div class="fin-icon">💚</div><div class="fin-title">Opción 1 · Sabadell 12 meses sin intereses</div><div class="fin-sub">Entrada 4.000,00 € + 21.600,00 € en 12 cuotas · TIN 0%</div></div>
-      <div class="fin-badge">TIN 0% · MLQ asume los intereses</div>
-    </div>
-    <div class="financing-body">
-      <div class="fin-schedule">
-        <div class="fin-sch-item"><div class="fin-sch-fecha">Entrada inicial</div><div class="fin-sch-desc">Al inicio de la financiación</div><div class="fin-sch-amount">4.000,00 €</div></div>
-        <div class="fin-sch-item"><div class="fin-sch-fecha">12 cuotas mensuales</div><div class="fin-sch-desc">21.600,00 € en 12 meses · sin intereses</div><div class="fin-sch-amount">1.800,00 €/mes</div></div>
-      </div>
-      <p style="font-size:11px;color:var(--text-light);margin-top:14px;">Total: <strong style="color:var(--green-dark);">25.600,00 €</strong> · Sin comisión de apertura · Sin intereses</p>
-    </div>
-  </div>
-  <div class="financing-wrap">
-    <div class="financing-head">
-      <div><div class="fin-icon">🏦</div><div class="fin-title">Opción 2 · Sabadell 18, 24 o 36 meses</div><div class="fin-sub">Entrada 4.000,00 € · Resto 21.600,00 € financiado con TIN 10,46%</div></div>
-      <div class="fin-badge">TIN 10,46% · Sin comisión apertura</div>
-    </div>
-    <div class="financing-body">
-      <p style="font-size:12px;color:var(--text-mid);margin-bottom:16px;">Capital a financiar: <strong>21.600,00 €</strong></p>
-      <div class="fin-plazos">
-        <div class="fin-plazo"><div class="fin-plazo-meses">18</div><span class="fin-plazo-label">meses</span><div class="fin-plazo-cuota">1.301,81 €/mes</div><div class="fin-plazo-total">Total aprox. 27.432,63 €</div></div>
-        <div class="fin-plazo"><div class="fin-plazo-meses">24</div><span class="fin-plazo-label">meses</span><div class="fin-plazo-cuota">1.001,32 €/mes</div><div class="fin-plazo-total">Total aprox. 28.031,74 €</div></div>
-        <div class="fin-plazo"><div class="fin-plazo-meses">36</div><span class="fin-plazo-label">meses</span><div class="fin-plazo-cuota">701,65 €/mes</div><div class="fin-plazo-total">Total aprox. 29.259,24 €</div></div>
-      </div>
-      <p style="font-size:11px;color:var(--text-light);margin-top:14px;">TIN 10,46% nominal anual · Sin comisión de apertura · Cuotas calculadas por el método francés sobre 21.600,00 €</p>
-    </div>
-  </div>
+  <div style="background:var(--white);border-radius:16px;border:1.5px solid var(--gray-border);box-shadow:0 2px 16px rgba(0,80,0,0.06);overflow:hidden;margin-bottom:24px;">
 
+    <div style="background:linear-gradient(135deg,var(--green-dark),var(--green));padding:22px 32px;">
+      <div style="font-family:'Josefin Sans',sans-serif;font-size:15px;font-weight:700;color:var(--white);margin-bottom:4px;">Calculadora de financiación Sabadell</div>
+      <div style="font-size:12px;color:rgba(255,255,255,0.5);">Selecciona el colegio y la modalidad para ver tus cuotas al instante</div>
+    </div>
 
-  <div class="section-title"><h2>🏛️ Stratford College · 27.240,00 €</h2></div>
-  <div class="financing-wrap">
-    <div class="financing-head">
-      <div><div class="fin-icon">💚</div><div class="fin-title">Opción 1 · Sabadell 12 meses sin intereses</div><div class="fin-sub">Entrada 4.000,00 € + 23.240,00 € en 12 cuotas · TIN 0%</div></div>
-      <div class="fin-badge">TIN 0% · MLQ asume los intereses</div>
-    </div>
-    <div class="financing-body">
-      <div class="fin-schedule">
-        <div class="fin-sch-item"><div class="fin-sch-fecha">Entrada inicial</div><div class="fin-sch-desc">Al inicio de la financiación</div><div class="fin-sch-amount">4.000,00 €</div></div>
-        <div class="fin-sch-item"><div class="fin-sch-fecha">12 cuotas mensuales</div><div class="fin-sch-desc">23.240,00 € en 12 meses · sin intereses</div><div class="fin-sch-amount">1.936,67 €/mes</div></div>
-      </div>
-      <p style="font-size:11px;color:var(--text-light);margin-top:14px;">Total: <strong style="color:var(--green-dark);">27.240,00 €</strong> · Sin comisión de apertura · Sin intereses</p>
-    </div>
-  </div>
-  <div class="financing-wrap">
-    <div class="financing-head">
-      <div><div class="fin-icon">🏦</div><div class="fin-title">Opción 2 · Sabadell 18, 24 o 36 meses</div><div class="fin-sub">Entrada 4.000,00 € · Resto 23.240,00 € financiado con TIN 10,46%</div></div>
-      <div class="fin-badge">TIN 10,46% · Sin comisión apertura</div>
-    </div>
-    <div class="financing-body">
-      <p style="font-size:12px;color:var(--text-mid);margin-bottom:16px;">Capital a financiar: <strong>23.240,00 €</strong></p>
-      <div class="fin-plazos">
-        <div class="fin-plazo"><div class="fin-plazo-meses">18</div><span class="fin-plazo-label">meses</span><div class="fin-plazo-cuota">1.400,65 €/mes</div><div class="fin-plazo-total">Total aprox. 29.211,77 €</div></div>
-        <div class="fin-plazo"><div class="fin-plazo-meses">24</div><span class="fin-plazo-label">meses</span><div class="fin-plazo-cuota">1.077,35 €/mes</div><div class="fin-plazo-total">Total aprox. 29.856,37 €</div></div>
-        <div class="fin-plazo"><div class="fin-plazo-meses">36</div><span class="fin-plazo-label">meses</span><div class="fin-plazo-cuota">754,92 €/mes</div><div class="fin-plazo-total">Total aprox. 31.177,07 €</div></div>
-      </div>
-      <p style="font-size:11px;color:var(--text-light);margin-top:14px;">TIN 10,46% nominal anual · Sin comisión de apertura · Cuotas calculadas por el método francés sobre 23.240,00 €</p>
-    </div>
-  </div>
+    <div style="padding:28px 32px;">
 
+      <!-- SCHOOL TABS -->
+      <div style="font-family:'Josefin Sans',sans-serif;font-size:9px;font-weight:700;letter-spacing:2.5px;text-transform:uppercase;color:var(--text-light);margin-bottom:10px;">Selecciona el colegio</div>
+      <div style="display:flex;gap:8px;flex-wrap:wrap;margin-bottom:24px;" id="school-tabs">
+        <button onclick="calcSetSchool(0)" class="calc-stab calc-stab-active">Monaghan Collegiate<br><span style="font-size:10px;opacity:0.7;">25.600 €</span></button>
+        <button onclick="calcSetSchool(1)" class="calc-stab">Stratford College<br><span style="font-size:10px;opacity:0.7;">27.240 €</span></button>
+        <button onclick="calcSetSchool(2)" class="calc-stab">John Scottus<br><span style="font-size:10px;opacity:0.7;">27.840 €</span></button>
+      </div>
 
-  <div class="section-title"><h2>🏛️ John Scottus Secondary School · 27.840,00 €</h2></div>
-  <div class="financing-wrap">
-    <div class="financing-head">
-      <div><div class="fin-icon">💚</div><div class="fin-title">Opción 1 · Sabadell 12 meses sin intereses</div><div class="fin-sub">Entrada 4.000,00 € + 23.840,00 € en 12 cuotas · TIN 0%</div></div>
-      <div class="fin-badge">TIN 0% · MLQ asume los intereses</div>
-    </div>
-    <div class="financing-body">
-      <div class="fin-schedule">
-        <div class="fin-sch-item"><div class="fin-sch-fecha">Entrada inicial</div><div class="fin-sch-desc">Al inicio de la financiación</div><div class="fin-sch-amount">4.000,00 €</div></div>
-        <div class="fin-sch-item"><div class="fin-sch-fecha">12 cuotas mensuales</div><div class="fin-sch-desc">23.840,00 € en 12 meses · sin intereses</div><div class="fin-sch-amount">1.986,67 €/mes</div></div>
+      <!-- OPT TABS -->
+      <div style="font-family:'Josefin Sans',sans-serif;font-size:9px;font-weight:700;letter-spacing:2.5px;text-transform:uppercase;color:var(--text-light);margin-bottom:10px;">Modalidad</div>
+      <div style="display:flex;gap:8px;margin-bottom:24px;">
+        <button onclick="calcSetOpt(1)" id="calc-otab-1" style="flex:1;padding:10px;border-radius:8px;border:1.5px solid var(--ireland-green);background:var(--green-light);color:var(--green-dark);font-size:12px;font-weight:600;cursor:pointer;">💚 Opción 1 — sin intereses</button>
+        <button onclick="calcSetOpt(2)" id="calc-otab-2" style="flex:1;padding:10px;border-radius:8px;border:1.5px solid var(--gray-border);background:var(--gray-card);color:var(--text-light);font-size:12px;font-weight:600;cursor:pointer;">🏦 Opción 2 — con intereses</button>
       </div>
-      <p style="font-size:11px;color:var(--text-light);margin-top:14px;">Total: <strong style="color:var(--green-dark);">27.840,00 €</strong> · Sin comisión de apertura · Sin intereses</p>
-    </div>
-  </div>
-  <div class="financing-wrap">
-    <div class="financing-head">
-      <div><div class="fin-icon">🏦</div><div class="fin-title">Opción 2 · Sabadell 18, 24 o 36 meses</div><div class="fin-sub">Entrada 4.000,00 € · Resto 23.840,00 € financiado con TIN 10,46%</div></div>
-      <div class="fin-badge">TIN 10,46% · Sin comisión apertura</div>
-    </div>
-    <div class="financing-body">
-      <p style="font-size:12px;color:var(--text-mid);margin-bottom:16px;">Capital a financiar: <strong>23.840,00 €</strong></p>
-      <div class="fin-plazos">
-        <div class="fin-plazo"><div class="fin-plazo-meses">18</div><span class="fin-plazo-label">meses</span><div class="fin-plazo-cuota">1.436,82 €/mes</div><div class="fin-plazo-total">Total aprox. 29.862,68 €</div></div>
-        <div class="fin-plazo"><div class="fin-plazo-meses">24</div><span class="fin-plazo-label">meses</span><div class="fin-plazo-cuota">1.105,16 €/mes</div><div class="fin-plazo-total">Total aprox. 30.523,92 €</div></div>
-        <div class="fin-plazo"><div class="fin-plazo-meses">36</div><span class="fin-plazo-label">meses</span><div class="fin-plazo-cuota">774,41 €/mes</div><div class="fin-plazo-total">Total aprox. 31.878,71 €</div></div>
+
+      <!-- RESULT CARDS -->
+      <div style="display:grid;grid-template-columns:repeat(2,1fr);gap:10px;margin-bottom:20px;">
+        <div style="background:var(--green-pale);border:1px solid rgba(46,125,50,0.15);border-radius:10px;padding:14px;">
+          <div style="font-size:10px;color:var(--text-light);text-transform:uppercase;letter-spacing:1px;font-weight:600;margin-bottom:6px;">Precio del programa</div>
+          <div style="font-family:'Josefin Sans',sans-serif;font-size:22px;font-weight:700;color:var(--green-dark);" id="calc-precio">25.600 €</div>
+        </div>
+        <div style="background:var(--green-pale);border:1px solid rgba(46,125,50,0.15);border-radius:10px;padding:14px;">
+          <div style="font-size:10px;color:var(--text-light);text-transform:uppercase;letter-spacing:1px;font-weight:600;margin-bottom:6px;">Entrada inicial</div>
+          <div style="font-family:'Josefin Sans',sans-serif;font-size:22px;font-weight:700;color:var(--green-dark);">4.000 €</div>
+        </div>
+        <div style="background:var(--green-pale);border:1px solid rgba(46,125,50,0.15);border-radius:10px;padding:14px;">
+          <div style="font-size:10px;color:var(--text-light);text-transform:uppercase;letter-spacing:1px;font-weight:600;margin-bottom:6px;" id="calc-cuota-label">Cuota mensual · 12 meses</div>
+          <div style="font-family:'Josefin Sans',sans-serif;font-size:22px;font-weight:700;color:var(--ireland-green);" id="calc-cuota">1.800 €</div>
+        </div>
+        <div style="background:var(--green-pale);border:1px solid rgba(46,125,50,0.15);border-radius:10px;padding:14px;">
+          <div style="font-size:10px;color:var(--text-light);text-transform:uppercase;letter-spacing:1px;font-weight:600;margin-bottom:6px;" id="calc-total-label">Total programa</div>
+          <div style="font-family:'Josefin Sans',sans-serif;font-size:22px;font-weight:700;color:var(--green-dark);" id="calc-total">25.600 €</div>
+        </div>
       </div>
-      <p style="font-size:11px;color:var(--text-light);margin-top:14px;">TIN 10,46% nominal anual · Sin comisión de apertura · Cuotas calculadas por el método francés sobre 23.840,00 €</p>
+
+      <!-- PLAZO SELECTOR (opt 2 only) -->
+      <div id="calc-plazo-wrap" style="display:none;">
+        <div style="font-family:'Josefin Sans',sans-serif;font-size:9px;font-weight:700;letter-spacing:2.5px;text-transform:uppercase;color:var(--text-light);margin-bottom:10px;">Plazo de financiación</div>
+        <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-bottom:20px;" id="calc-plazo-grid"></div>
+      </div>
+
+      <!-- NOTICE -->
+      <div id="calc-notice" style="background:var(--green-light);border:1px solid rgba(46,125,50,0.25);border-radius:8px;padding:10px 14px;font-size:11px;color:var(--green-dark);line-height:1.6;">
+        Sin comisión de apertura · Sin intereses · MLQ asume el coste financiero íntegro
+      </div>
+
     </div>
   </div>
 
@@ -591,5 +561,65 @@ body{font-family:'Fira Sans',sans-serif;background:var(--gray-bg);color:var(--te
   </div>
 
 </main>
+
+<script>
+(function(){
+var schools=[{n:'Monaghan Collegiate',p:25600},{n:'Stratford College',p:27240},{n:'John Scottus',p:27840}];
+var TIN=0.1046,ENTRADA=4000,PLAZOS=[18,24,36];
+var curS=0,curO=1,curPlazo=18;
+function fmt(n){return new Intl.NumberFormat('es-ES',{minimumFractionDigits:0,maximumFractionDigits:0}).format(Math.round(n))+' €';}
+function cf(cap,n){var r=TIN/12;return cap*r/(1-Math.pow(1+r,-n));}
+window.calcSetSchool=function(i){
+  curS=i;
+  document.querySelectorAll('.calc-stab').forEach(function(b,j){b.classList.toggle('calc-stab-active',i===j);});
+  render();
+};
+window.calcSetOpt=function(o){
+  curO=o;
+  var s1='flex:1;padding:10px;border-radius:8px;font-size:12px;font-weight:600;cursor:pointer;';
+  document.getElementById('calc-otab-1').style.cssText=s1+(o===1?'border:1.5px solid var(--ireland-green);background:var(--green-light);color:var(--green-dark);':'border:1.5px solid var(--gray-border);background:var(--gray-card);color:var(--text-light);');
+  document.getElementById('calc-otab-2').style.cssText=s1+(o===2?'border:1.5px solid var(--ireland-green);background:var(--green-light);color:var(--green-dark);':'border:1.5px solid var(--gray-border);background:var(--gray-card);color:var(--text-light);');
+  document.getElementById('calc-plazo-wrap').style.display=o===2?'':'none';
+  render();
+};
+window.calcSetPlazo=function(p){curPlazo=p;renderPlazos();renderResults();};
+function renderPlazos(){
+  var cap=schools[curS].p-ENTRADA;
+  document.getElementById('calc-plazo-grid').innerHTML=PLAZOS.map(function(p){
+    var c=cf(cap,p),t=c*p+ENTRADA;
+    var act=p===curPlazo;
+    return '<div onclick="calcSetPlazo('+p+')" style="padding:16px 10px;border-radius:10px;border:'+(act?'2px solid var(--ireland-green);background:var(--green-light)':'1.5px solid var(--gray-border);background:var(--gray-card)')+';text-align:center;cursor:pointer;">'
+      +'<div style="font-size:10px;color:var(--text-light);letter-spacing:1px;text-transform:uppercase;">meses</div>'
+      +'<div style="font-family:Josefin Sans,sans-serif;font-size:26px;font-weight:700;color:var(--green-dark);">'+p+'</div>'
+      +'<div style="font-size:13px;font-weight:600;color:var(--ireland-green);">'+fmt(c)+'/mes</div>'
+      +'<div style="font-size:10px;color:var(--text-light);margin-top:3px;">Total ~'+fmt(t)+'</div>'
+      +'</div>';
+  }).join('');
+}
+function renderResults(){
+  var precio=schools[curS].p;
+  var cap=precio-ENTRADA;
+  document.getElementById('calc-precio').textContent=fmt(precio);
+  if(curO===1){
+    var cuota=cap/12;
+    document.getElementById('calc-cuota-label').textContent='Cuota mensual · 12 meses';
+    document.getElementById('calc-cuota').textContent=fmt(cuota)+'/mes';
+    document.getElementById('calc-total-label').textContent='Total programa';
+    document.getElementById('calc-total').textContent=fmt(precio);
+    document.getElementById('calc-notice').textContent='Sin comisión de apertura · Sin intereses · MLQ asume el coste financiero íntegro';
+  } else {
+    var c=cf(cap,curPlazo),t=c*curPlazo+ENTRADA;
+    document.getElementById('calc-cuota-label').textContent='Cuota mensual · '+curPlazo+' meses';
+    document.getElementById('calc-cuota').textContent=fmt(c)+'/mes';
+    document.getElementById('calc-total-label').textContent='Total aprox.';
+    document.getElementById('calc-total').textContent='~'+fmt(t);
+    document.getElementById('calc-notice').textContent='TIN 10,46% nominal anual · Sin comisión de apertura · Método francés sobre '+fmt(cap);
+  }
+}
+function render(){renderPlazos();renderResults();}
+render();
+})();
+</script>
+
 </body>
 </html>
