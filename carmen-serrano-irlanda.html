@@ -544,25 +544,62 @@
   </table>
   <p style="font-size:13px;color:#777;margin-bottom:16px;">* Seguro de cancelación opcional: <strong>500 €</strong> a la firma del contrato.</p>
   <div class="financiacion">
-    <div class="fin-title">💳 Financiación Banco Sabadell — sin comisión de apertura</div>
-    <div class="fin-grid">
-      <div class="fin-item">
-        <div class="plazo">12 m</div>
-        <div class="tin">TIN 0% · MLQ asume intereses</div>
-        <div class="cuota">≈ 1.412 €/mes</div>
+    <div class="fin-title">💳 Calculadora de financiación · Banco Sabadell — sin comisión de apertura</div>
+    <div style="margin-bottom:14px;">
+      <div style="display:flex;align-items:center;gap:12px;flex-wrap:wrap;margin-bottom:10px;">
+        <label style="font-size:12px;font-weight:700;color:var(--verde-dark);white-space:nowrap;">Entrada inicial:</label>
+        <input type="range" id="fin-entrada" min="0" max="17400" step="100" value="3500"
+          style="flex:1;min-width:160px;accent-color:var(--verde-dark);"
+          oninput="calcFin()">
+        <span id="fin-entrada-val" style="font-size:15px;font-weight:800;color:var(--verde-dark);min-width:80px;text-align:right;">3.500 €</span>
       </div>
-      <div class="fin-item">
-        <div class="plazo">18 m</div>
-        <div class="tin">TIN 10,46% · cliente</div>
-        <div class="cuota">≈ 1.033 €/mes</div>
-      </div>
-      <div class="fin-item">
-        <div class="plazo">24 m</div>
-        <div class="tin">TIN 10,46% · cliente</div>
-        <div class="cuota">≈ 808 €/mes</div>
+      <div style="display:flex;align-items:center;gap:12px;flex-wrap:wrap;">
+        <label style="font-size:12px;font-weight:700;color:var(--texto-suave);white-space:nowrap;">Importe financiado:</label>
+        <span id="fin-financiado" style="font-size:15px;font-weight:800;color:var(--naranja);">13.900 €</span>
       </div>
     </div>
+    <div class="fin-grid" id="fin-grid-calc">
+      <div class="fin-item" id="fin-12">
+        <div class="plazo">12 m</div>
+        <div class="tin">TIN 0% · MLQ asume intereses</div>
+        <div class="cuota" id="cuota-12">≈ 1.158 €/mes</div>
+      </div>
+      <div class="fin-item" id="fin-18">
+        <div class="plazo">18 m</div>
+        <div class="tin">TIN 10,46% · cliente</div>
+        <div class="cuota" id="cuota-18">≈ 848 €/mes</div>
+      </div>
+      <div class="fin-item" id="fin-24">
+        <div class="plazo">24 m</div>
+        <div class="tin">TIN 10,46% · cliente</div>
+        <div class="cuota" id="cuota-24">≈ 663 €/mes</div>
+      </div>
+    </div>
+    <p style="font-size:11px;color:#999;margin-top:10px;">* Cuotas calculadas sobre el importe financiado tras la entrada. TIN 10,46% para plazos 18 y 24 meses (TAE orientativa). Sujeto a aprobación Banco Sabadell.</p>
   </div>
+  <script>
+  function calcFin() {
+    var total = 17400;
+    var entrada = parseInt(document.getElementById('fin-entrada').value) || 0;
+    if (entrada > total) entrada = total;
+    var financiado = total - entrada;
+    document.getElementById('fin-entrada-val').textContent = entrada.toLocaleString('es-ES') + ' €';
+    document.getElementById('fin-financiado').textContent = financiado.toLocaleString('es-ES') + ' €';
+    // 12m TIN 0% — cuota simple
+    var c12 = financiado > 0 ? Math.ceil(financiado / 12) : 0;
+    document.getElementById('cuota-12').textContent = '≈ ' + c12.toLocaleString('es-ES') + ' €/mes';
+    // 18m TIN 10,46% — cuota con interés mensual
+    var tin18 = 0.1046;
+    var r18 = tin18 / 12;
+    var c18 = financiado > 0 ? Math.ceil(financiado * r18 / (1 - Math.pow(1 + r18, -18))) : 0;
+    document.getElementById('cuota-18').textContent = '≈ ' + c18.toLocaleString('es-ES') + ' €/mes';
+    // 24m TIN 10,46%
+    var r24 = tin18 / 12;
+    var c24 = financiado > 0 ? Math.ceil(financiado * r24 / (1 - Math.pow(1 + r24, -24))) : 0;
+    document.getElementById('cuota-24').textContent = '≈ ' + c24.toLocaleString('es-ES') + ' €/mes';
+  }
+  window.addEventListener('DOMContentLoaded', calcFin);
+  </script>
 </div>
 
 <div style="background:#fff;border-radius:14px;box-shadow:0 2px 16px rgba(0,0,0,0.10);margin-bottom:32px;overflow:hidden;">
