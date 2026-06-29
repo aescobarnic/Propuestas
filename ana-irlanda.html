@@ -164,7 +164,7 @@ body{font-family:'Fira Sans',sans-serif;background:var(--gray-bg);color:var(--te
     <div>
       <div class="hero-tag">Propuesta personalizada · Irlanda</div>
       <div class="hero-name">Ana</div>
-      <div class="hero-subtitle">Programa Choice · Dos opciones: trimestre escolar + curso de inglés para adultos · 18 años</div>
+      <div class="hero-subtitle">Programa Choice · Dos opciones: trimestre escolar + curso de inglés adultos 12 semanas · 18 años</div>
       <div class="hero-pills">
         <div class="hero-pill">🎓 6th Year · 18 años</div>
         <div class="hero-pill">🏠 Familia anfitriona</div>
@@ -278,25 +278,26 @@ body{font-family:'Fira Sans',sans-serif;background:var(--gray-bg);color:var(--te
   </div>
 
   <!-- ===================== OPCIÓN B: ADULTOS ===================== -->
-  <div class="section-title"><h2>Opción B · Curso de inglés para adultos · Semi-intensivo</h2></div>
+  <div class="section-title"><h2>Opción B · Curso de inglés para adultos · Semi-intensivo · 12 semanas</h2></div>
 
   <div class="opcion-card adultos" style="margin-bottom:40px;">
     <div class="opcion-header purple">
       <div class="opcion-label">Programa de inglés para adultos · Irlanda</div>
-      <div class="opcion-nombre">Curso Semi-Intensivo de Inglés</div>
+      <div class="opcion-nombre">Curso Semi-Intensivo de Inglés · 12 semanas</div>
       <div style="font-size:11px;color:rgba(255,255,255,0.55);">📍 Irlanda · Familia anfitriona con pensión completa</div>
       <div class="opcion-precio" style="color:#ce93d8;">7.595 €</div>
       <div class="opcion-precio-sub">precio total del programa</div>
       <div class="opcion-chips">
         <div class="chip">Para mayores de 18 años</div>
         <div class="chip">20h/semana de clase</div>
-        <div class="chip">Familia anfitriona · Pensión completa</div>
+        <div class="chip">12 semanas</div>
+          <div class="chip">Familia anfitriona · Pensión completa</div>
         <div class="chip" style="background:rgba(206,147,216,0.15);border-color:rgba(206,147,216,0.3);color:#ce93d8;">🎓 Semi-intensivo</div>
       </div>
     </div>
     <div class="opcion-body">
       <div class="opcion-desc">
-        Este programa está diseñado específicamente para adultos que quieren mejorar su inglés de forma estructurada y efectiva. Con 20 horas semanales de clase — 15 de inglés general más 5 de una asignatura lectiva a elegir — Ana avanzará rápidamente desde su nivel B1. Todo incluido: alojamiento en familia anfitriona con pensión completa, material escolar y tasa de aplicación.
+        Este programa, de <strong>12 semanas de duración</strong>, está diseñado específicamente para adultos que quieren mejorar su inglés de forma estructurada y efectiva. Con 20 horas semanales de clase — 15 de inglés general más 5 de una asignatura lectiva a elegir — Ana avanzará rápidamente desde su nivel B1 a lo largo de las 12 semanas. Todo incluido: alojamiento en familia anfitriona con pensión completa, material escolar y tasa de aplicación.
       </div>
 
       <div style="display:grid;grid-template-columns:1fr 1fr;gap:20px;">
@@ -416,69 +417,6 @@ body{font-family:'Fira Sans',sans-serif;background:var(--gray-bg);color:var(--te
   </div>
 
   <!-- FINANCIACIÓN -->
-  <div class="section-title"><h2>Financiación Sabadell</h2></div>
-  <div class="financing-wrap">
-    <div class="financing-head">
-      <div>
-        <div class="fin-title">💳 Financiación bancaria flexible</div>
-        <div class="fin-sub">En colaboración con Banco Sabadell · Sin comisión de apertura · Sin penalización por cancelación anticipada</div>
-      </div>
-      <div class="fin-badge">CALCULADORA INTERACTIVA</div>
-    </div>
-    <div class="financing-body">
-      <div class="fin-plazo-wrap">
-        <div class="fin-plazo-label">Elige el plazo de financiación</div>
-        <div class="fin-plazos">
-          <div class="fin-plazo active" onclick="setPlazo(this,12)">
-            <div class="fin-plazo-meses">12 meses</div>
-            <div class="fin-plazo-badge sin">TIN 0%</div>
-            <div class="fin-plazo-quien">¡MLQ asume los intereses!</div>
-          </div>
-          <div class="fin-plazo" onclick="setPlazo(this,18)">
-            <div class="fin-plazo-meses">18 meses</div>
-            <div class="fin-plazo-badge con">TIN 10,46%</div>
-            <div class="fin-plazo-quien">Intereses a cargo del cliente</div>
-          </div>
-          <div class="fin-plazo" onclick="setPlazo(this,24)">
-            <div class="fin-plazo-meses">24 meses</div>
-            <div class="fin-plazo-badge con">TIN 10,46%</div>
-            <div class="fin-plazo-quien">Intereses a cargo del cliente</div>
-          </div>
-          <div class="fin-plazo" onclick="setPlazo(this,36)">
-            <div class="fin-plazo-meses">36 meses</div>
-            <div class="fin-plazo-badge con">TIN 10,46%</div>
-            <div class="fin-plazo-quien">Intereses a cargo del cliente</div>
-          </div>
-        </div>
-      </div>
-      <div class="fin-resultado">
-        <div class="fin-resultado-main">
-          <div class="fin-cuota-label">Cuota mensual estimada</div>
-          <div class="fin-cuota-valor" id="cuotaValor">791,67 €</div>
-          <div class="fin-cuota-sub" id="cuotaSub">/mes · 12 pagos · TIN 0%</div>
-        </div>
-        <div class="fin-resultado-detalle">
-          <div class="fin-det-row">
-            <span class="fin-det-label">Programa seleccionado</span>
-            <span class="fin-det-val" id="detPrograma">Opción A · Trimestre · 9.500 €</span>
-          </div>
-          <div class="fin-det-row">
-            <span class="fin-det-label">Intereses totales</span>
-            <span class="fin-det-val fin-det-green" id="detIntereses">0 € · ¡MLQ los asume!</span>
-          </div>
-          <div class="fin-det-row fin-det-total">
-            <span class="fin-det-label">Total a pagar</span>
-            <span class="fin-det-val" id="detTotal">9.500 €</span>
-          </div>
-        </div>
-      </div>
-      <div style="display:flex;gap:12px;margin-bottom:16px;flex-wrap:wrap;">
-        <button onclick="setOpcion('A')" id="btnA" style="flex:1;padding:8px 16px;border-radius:8px;border:1.5px solid var(--ireland-green);background:var(--green-light);color:var(--green-dark);font-family:inherit;font-size:11px;font-weight:700;cursor:pointer;">Opción A · Trimestre · 9.500 €</button>
-        <button onclick="setOpcion('B')" id="btnB" style="flex:1;padding:8px 16px;border-radius:8px;border:1.5px solid var(--gray-border);background:var(--white);color:var(--text-mid);font-family:inherit;font-size:11px;font-weight:600;cursor:pointer;">Opción B · Adultos · 7.595 €</button>
-      </div>
-      <div class="fin-nota">ℹ️ Financiación sujeta a aprobación bancaria. Sin comisión de apertura ni penalización por cancelación anticipada.</div>
-    </div>
-  </div>
 
   <!-- FORMAS DE PAGO -->
   <div class="section-title"><h2>Formas de pago · Opción A</h2></div>
@@ -512,33 +450,4 @@ body{font-family:'Fira Sans',sans-serif;background:var(--gray-bg);color:var(--te
 
 </main>
 
-<script>
-var _mes=12;
-var _caps={A:9500,B:7595};
-var _opcion='A';
-var _cap=9500;
-function _fmt(n,d){return n.toLocaleString('es-ES',{minimumFractionDigits:d||0,maximumFractionDigits:d||0})+' €';}
-function _cuota(c,t,m){if(t===0)return c/m;var r=(t/100)/12;return c*r/(1-Math.pow(1+r,-m));}
-function _update(){
-  var tin=_mes===12?0:10.46;var q=_cuota(_cap,tin,_mes);var tot=q*_mes;var inter=tot-_cap;
-  document.getElementById('cuotaValor').textContent=_fmt(q,2);
-  document.getElementById('cuotaSub').textContent='/mes · '+_mes+' pagos · TIN '+(tin===0?'0%':'10,46%');
-  document.getElementById('detTotal').textContent=_fmt(Math.round(tot));
-  var prog=_opcion==='A'?'Opción A · Trimestre · 9.500 €':'Opción B · Adultos · 7.595 €';
-  document.getElementById('detPrograma').textContent=prog;
-  if(tin===0){document.getElementById('detIntereses').textContent='0 € · ¡MLQ los asume!';document.getElementById('detIntereses').className='fin-det-val fin-det-green';}
-  else{document.getElementById('detIntereses').textContent=_fmt(Math.round(inter));document.getElementById('detIntereses').className='fin-det-val';}
-}
-function setPlazo(el,m){_mes=m;document.querySelectorAll('.fin-plazo').forEach(function(p){p.classList.remove('active');});el.classList.add('active');_update();}
-function setOpcion(op){
-  _opcion=op;_cap=_caps[op];
-  document.getElementById('btnA').style.background=op==='A'?'var(--green-light)':'var(--white)';
-  document.getElementById('btnA').style.borderColor=op==='A'?'var(--ireland-green)':'var(--gray-border)';
-  document.getElementById('btnB').style.background=op==='B'?'#EDE7F6':'var(--white)';
-  document.getElementById('btnB').style.borderColor=op==='B'?'#9C27B0':'var(--gray-border)';
-  _update();
-}
-_update();
-</script>
-</body>
-</html>
+</body></html>
