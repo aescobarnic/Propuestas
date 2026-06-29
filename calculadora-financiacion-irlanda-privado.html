@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Calculadora · Colegios Privados Irlanda · MLQ</title>
+<link href="https://fonts.googleapis.com/css2?family=Fira+Sans:wght@300;400;500;600;700&family=Josefin+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+:root {
+  --green:#2E7D32;--green-dark:#1B5E20;--green-mid:#388E3C;--green-light:#E8F5E9;--green-pale:#F1F8F1;
+  --gray-bg:#f0f4f0;--gray-card:#f8faf8;--gray-border:#d8e4d8;
+  --text:#0d1f0d;--text-mid:#3d5c3d;--text-light:#7a9a7a;--white:#ffffff;
+  --ireland-green:#169B62;--ireland-orange:#FF883E;--gold:#B8860B;
+  --accent-blue:#1565C0;--accent-bg:#E3F2FD;
+}
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box;}
+body{font-family:'Fira Sans',sans-serif;background:var(--gray-bg);color:var(--text);min-height:100vh;display:flex;align-items:center;justify-content:center;padding:32px 16px;}
+.wrap{width:100%;max-width:720px;}
+.card{background:var(--white);border-radius:16px;border:1.5px solid var(--gray-border);overflow:hidden;box-shadow:0 4px 24px rgba(0,80,0,0.08);}
+.card-head{background:linear-gradient(135deg,var(--green-dark),var(--green));padding:24px 28px;}
+.card-head h1{font-family:'Josefin Sans',sans-serif;font-size:15px;font-weight:700;color:rgba(255,255,255,0.6);letter-spacing:2px;text-transform:uppercase;margin-bottom:4px;}
+.card-head p{font-size:13px;color:rgba(255,255,255,0.45);}
+.card-body{padding:28px;}
+
+/* SCHOOL TABS */
+.school-tabs{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:24px;}
+.stab{padding:9px 18px;border-radius:8px;border:1.5px solid var(--gray-border);background:var(--gray-card);color:var(--text-light);font-family:'Josefin Sans',sans-serif;font-size:11px;font-weight:700;letter-spacing:1px;text-transform:uppercase;cursor:pointer;transition:all .15s;}
+.stab:hover{border-color:var(--green-mid);color:var(--green-dark);}
+.stab.active{background:var(--green-dark);color:#fff;border-color:var(--green-dark);}
+
+/* PRICE */
+.price-row{display:flex;align-items:baseline;gap:10px;margin-bottom:24px;padding:16px 20px;background:var(--green-pale);border-radius:10px;border:1px solid rgba(46,125,50,0.15);}
+.price-label{font-size:12px;color:var(--text-light);font-weight:500;}
+.price-val{font-family:'Josefin Sans',sans-serif;font-size:30px;font-weight:700;color:var(--green-dark);}
+.price-sub{font-size:11px;color:var(--text-light);}
+
+/* OPT TABS */
+.section-label{font-family:'Josefin Sans',sans-serif;font-size:9px;font-weight:700;letter-spacing:2.5px;text-transform:uppercase;color:var(--text-light);margin-bottom:10px;}
+.opt-tabs{display:flex;gap:8px;margin-bottom:24px;}
+.otab{flex:1;padding:10px;border-radius:8px;border:1.5px solid var(--gray-border);background:var(--gray-card);color:var(--text-light);font-size:12px;font-weight:600;cursor:pointer;transition:all .15s;text-align:center;}
+.otab:hover{border-color:var(--green-mid);color:var(--green-dark);}
+.otab.active{background:var(--green-light);color:var(--green-dark);border-color:var(--ireland-green);}
+
+/* RESULT GRID */
+.result-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:10px;margin-bottom:20px;}
+.result-card{background:var(--green-pale);border:1px solid rgba(46,125,50,0.15);border-radius:10px;padding:14px;}
+.result-card-label{font-size:10px;color:var(--text-light);text-transform:uppercase;letter-spacing:1px;font-weight:600;margin-bottom:6px;}
+.result-card-val{font-family:'Josefin Sans',sans-serif;font-size:22px;font-weight:700;color:var(--green-dark);}
+.result-card-val.accent{color:var(--ireland-green);}
+
+/* PLAZO GRID */
+.plazo-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-bottom:20px;}
+.plazo-btn{padding:16px 10px;border-radius:10px;border:1.5px solid var(--gray-border);background:var(--gray-card);text-align:center;cursor:pointer;transition:all .15s;}
+.plazo-btn:hover{border-color:var(--green-mid);}
+.plazo-btn.active{border:2px solid var(--ireland-green);background:var(--green-light);}
+.plazo-meses{font-family:'Josefin Sans',sans-serif;font-size:28px;font-weight:700;color:var(--green-dark);}
+.plazo-unit{font-size:10px;color:var(--text-light);letter-spacing:1px;text-transform:uppercase;display:block;margin-bottom:8px;}
+.plazo-cuota{font-size:14px;font-weight:600;color:var(--ireland-green);}
+.plazo-total{font-size:10px;color:var(--text-light);margin-top:4px;}
+
+/* SCHEDULE */
+.schedule{display:flex;flex-direction:column;gap:8px;margin-bottom:16px;}
+.sched-row{display:flex;justify-content:space-between;align-items:center;padding:12px 14px;background:var(--gray-card);border-radius:8px;border:1px solid var(--gray-border);}
+.sched-left .sched-fecha{font-size:12px;font-weight:600;color:var(--green-dark);}
+.sched-left .sched-desc{font-size:11px;color:var(--text-light);margin-top:2px;}
+.sched-amount{font-family:'Josefin Sans',sans-serif;font-size:16px;font-weight:700;color:var(--green-dark);}
+
+/* NOTICE */
+.notice{background:#FFF8E1;border:1px solid #FFD54F;border-radius:8px;padding:10px 14px;font-size:11px;color:#5D4037;line-height:1.6;margin-top:4px;}
+.notice.green{background:var(--green-light);border-color:rgba(46,125,50,0.25);color:var(--green-dark);}
+
+@media(max-width:480px){
+  .result-grid{grid-template-columns:1fr;}
+  .plazo-grid{grid-template-columns:repeat(3,1fr);}
+  .school-tabs{gap:6px;}
+  .stab{font-size:10px;padding:7px 12px;}
+}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="card">
+    <div class="card-head">
+      <h1>Calculadora de financiación</h1>
+      <p>Colegios privados · Irlanda · Año escolar 2026/27 · Linette Aguilo</p>
+    </div>
+    <div class="card-body">
+
+      <!-- SCHOOL TABS -->
+      <div class="section-label">Selecciona el colegio</div>
+      <div class="school-tabs">
+        <button class="stab active" onclick="setSchool(0)">Monaghan Collegiate</button>
+        <button class="stab" onclick="setSchool(1)">Stratford College</button>
+        <button class="stab" onclick="setSchool(2)">John Scottus</button>
+      </div>
+
+      <!-- PRICE -->
+      <div class="price-row">
+        <span class="price-label">Precio del programa</span>
+        <span class="price-val" id="precio-display">25.600 €</span>
+        <span class="price-sub">año completo · familia anfitriona incluida</span>
+      </div>
+
+      <!-- OPT TABS -->
+      <div class="section-label">Modalidad de financiación</div>
+      <div class="opt-tabs">
+        <button class="otab active" onclick="setOpt(1)">Opción 1 — sin intereses</button>
+        <button class="otab" onclick="setOpt(2)">Opción 2 — con intereses Sabadell</button>
+      </div>
+
+      <!-- OPT 1 -->
+      <div id="opt1-content">
+        <div class="result-grid">
+          <div class="result-card">
+            <div class="result-card-label">Entrada inicial</div>
+            <div class="result-card-val">4.000 €</div>
+          </div>
+          <div class="result-card">
+            <div class="result-card-label">Capital a financiar</div>
+            <div class="result-card-val accent" id="o1-capital">21.600 €</div>
+          </div>
+          <div class="result-card">
+            <div class="result-card-label">Cuota mensual · 12 meses</div>
+            <div class="result-card-val accent" id="o1-cuota">1.800 €</div>
+          </div>
+          <div class="result-card">
+            <div class="result-card-label">Total programa</div>
+            <div class="result-card-val" id="o1-total">25.600 €</div>
+          </div>
+        </div>
+        <div class="section-label">Calendario</div>
+        <div class="schedule">
+          <div class="sched-row">
+            <div class="sched-left">
+              <div class="sched-fecha">Entrada inicial</div>
+              <div class="sched-desc">Al formalizar la financiación</div>
+            </div>
+            <div class="sched-amount">4.000 €</div>
+          </div>
+          <div class="sched-row">
+            <div class="sched-left">
+              <div class="sched-fecha">12 cuotas mensuales · TIN 0%</div>
+              <div class="sched-desc">MLQ absorbe los intereses · sin coste para la familia</div>
+            </div>
+            <div class="sched-amount" id="o1-sched-cuota">1.800 €/mes</div>
+          </div>
+        </div>
+        <div class="notice green">Sin comisión de apertura · Sin intereses · MLQ asume el coste financiero íntegro</div>
+      </div>
+
+      <!-- OPT 2 -->
+      <div id="opt2-content" style="display:none;">
+        <div class="section-label">Selecciona el plazo</div>
+        <div class="plazo-grid" id="plazo-grid"></div>
+        <div class="result-grid">
+          <div class="result-card">
+            <div class="result-card-label">Entrada inicial</div>
+            <div class="result-card-val">4.000 €</div>
+          </div>
+          <div class="result-card">
+            <div class="result-card-label">Capital financiado</div>
+            <div class="result-card-val accent" id="o2-capital">21.600 €</div>
+          </div>
+          <div class="result-card">
+            <div class="result-card-label">Cuota mensual</div>
+            <div class="result-card-val accent" id="o2-cuota">—</div>
+          </div>
+          <div class="result-card">
+            <div class="result-card-label">Total aprox.</div>
+            <div class="result-card-val" id="o2-total">—</div>
+          </div>
+        </div>
+        <div class="notice">TIN 10,46% nominal anual · Sin comisión de apertura · Método francés de amortización</div>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<script>
+const schools = [
+  { name: "Monaghan Collegiate", precio: 25600 },
+  { name: "Stratford College",   precio: 27240 },
+  { name: "John Scottus",        precio: 27840 }
+];
+const TIN = 0.1046;
+const ENTRADA = 4000;
+const PLAZOS = [18, 24, 36];
+let curSchool = 0, curOpt = 1, curPlazo = 18;
+
+function fmtEur(n) {
+  return new Intl.NumberFormat('es-ES', {minimumFractionDigits: 0, maximumFractionDigits: 0}).format(Math.round(n)) + ' €';
+}
+function cuotaFrances(cap, n) {
+  const r = TIN / 12;
+  return cap * r / (1 - Math.pow(1 + r, -n));
+}
+
+function setSchool(i) {
+  curSchool = i;
+  document.querySelectorAll('.stab').forEach((b, j) => b.classList.toggle('active', i === j));
+  render();
+}
+function setOpt(o) {
+  curOpt = o;
+  document.querySelectorAll('.otab').forEach((b, j) => b.classList.toggle('active', j + 1 === o));
+  document.getElementById('opt1-content').style.display = o === 1 ? '' : 'none';
+  document.getElementById('opt2-content').style.display = o === 2 ? '' : 'none';
+  render();
+}
+function setPlazo(p) {
+  curPlazo = p;
+  renderPlazos();
+  renderOpt2();
+}
+
+function render() {
+  const precio = schools[curSchool].precio;
+  document.getElementById('precio-display').textContent = fmtEur(precio);
+  renderOpt1();
+  renderPlazos();
+  renderOpt2();
+}
+
+function renderOpt1() {
+  const precio = schools[curSchool].precio;
+  const cap = precio - ENTRADA;
+  const cuota = cap / 12;
+  document.getElementById('o1-capital').textContent = fmtEur(cap);
+  document.getElementById('o1-cuota').textContent = fmtEur(cuota);
+  document.getElementById('o1-total').textContent = fmtEur(precio);
+  document.getElementById('o1-sched-cuota').textContent = fmtEur(cuota) + '/mes';
+}
+
+function renderPlazos() {
+  const cap = schools[curSchool].precio - ENTRADA;
+  document.getElementById('plazo-grid').innerHTML = PLAZOS.map(p => {
+    const c = cuotaFrances(cap, p);
+    const t = c * p + ENTRADA;
+    return `<div class="plazo-btn${p === curPlazo ? ' active' : ''}" onclick="setPlazo(${p})">
+      <span class="plazo-unit">meses</span>
+      <div class="plazo-meses">${p}</div>
+      <div class="plazo-cuota">${fmtEur(c)}/mes</div>
+      <div class="plazo-total">Total ~${fmtEur(t)}</div>
+    </div>`;
+  }).join('');
+}
+
+function renderOpt2() {
+  const precio = schools[curSchool].precio;
+  const cap = precio - ENTRADA;
+  const c = cuotaFrances(cap, curPlazo);
+  const t = c * curPlazo + ENTRADA;
+  document.getElementById('o2-capital').textContent = fmtEur(cap);
+  document.getElementById('o2-cuota').textContent = fmtEur(c) + '/mes';
+  document.getElementById('o2-total').textContent = '~' + fmtEur(t);
+}
+
+render();
+</script>
+</body>
+</html>
