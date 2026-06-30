@@ -203,6 +203,11 @@ details[open] summary::before{transform:rotate(90deg);}
     <div class="alert-text"><strong>Perfil rural y deportista:</strong> Las tres opciones propuestas combinan comunidades de tamaño similar al entorno de Arnau (en torno a 8.000 habitantes), buena oferta deportiva y un acompañamiento sólido para reforzar su inglés durante el año.</div>
   </div>
 
+  <div class="alert-box" style="background:#eef8e3;border-color:rgba(76,158,12,0.4);">
+    <div class="alert-icon">🎉</div>
+    <div class="alert-text"><strong>Descuento de 1.000 € por confirmación temprana:</strong> Si la plaza se confirma antes del <strong>30 de julio</strong>, se aplica un descuento de 1.000 € sobre el precio del programa en cualquiera de las tres opciones. Los precios mostrados a continuación ya incluyen este descuento.</div>
+  </div>
+
   <div class="section-title"><h2>Opciones recomendadas</h2></div>
   <div class="opciones-grid">
 
@@ -212,7 +217,7 @@ details[open] summary::before{transform:rotate(90deg);}
         <div class="opcion-num">Opción 01</div>
         <div class="opcion-distrito">Battle River School Division</div>
         <div class="opcion-loc">📍 Alberta · Corazón de las Praderas canadienses</div>
-        <div class="precio-chip"><span class="val">19.430 €</span><span class="desc">/ año · vuelos incl.*</span><span class="tachado">20.430 €</span></div>
+        <div class="precio-chip"><span class="val">19.800 €</span><span class="desc">/ año · vuelos incl.* · confirmando antes 30 jul.</span><span class="tachado">20.800 €</span></div>
       </div>
       <div class="opcion-body">
         <div class="colegios">
@@ -251,7 +256,7 @@ details[open] summary::before{transform:rotate(90deg);}
         <div class="opcion-num">Opción 02</div>
         <div class="opcion-distrito">Avon Maitland District School Board</div>
         <div class="opcion-loc">📍 Suroeste de Ontario · Comunidades pequeñas y seguras</div>
-        <div class="precio-chip"><span class="val">23.480 €</span><span class="desc">/ año · vuelos incl.*</span></div>
+        <div class="precio-chip"><span class="val">22.480 €</span><span class="desc">/ año · vuelos incl.* · confirmando antes 30 jul.</span><span class="tachado">23.480 €</span></div>
       </div>
       <div class="opcion-body">
         <div class="colegios">
@@ -289,7 +294,7 @@ details[open] summary::before{transform:rotate(90deg);}
         <div class="opcion-num">Opción 03</div>
         <div class="opcion-distrito">Campbell River School District</div>
         <div class="opcion-loc">📍 Isla de Vancouver · British Columbia</div>
-        <div class="precio-chip"><span class="val">24.620 €</span><span class="desc">/ año · vuelos incl.*</span></div>
+        <div class="precio-chip"><span class="val">23.620 €</span><span class="desc">/ año · vuelos incl.* · confirmando antes 30 jul.</span><span class="tachado">24.620 €</span></div>
       </div>
       <div class="opcion-body">
         <div class="colegios">
@@ -464,17 +469,17 @@ details[open] summary::before{transform:rotate(90deg);}
       <div class="fin-opcion-selector">
         <div class="fin-opcion-label">Selecciona la opción del programa</div>
         <div class="fin-opcion-btns">
-          <button class="fin-opcion-btn" onclick="setOpcion(this, 19430)">
+          <button class="fin-opcion-btn" onclick="setOpcion(this, 19800)">
             <span class="fin-opcion-nombre">Opción 1 · Battle River SD</span>
-            <span class="fin-opcion-precio">19.430 €</span>
+            <span class="fin-opcion-precio">19.800 €</span>
           </button>
-          <button class="fin-opcion-btn active" onclick="setOpcion(this, 23480)">
+          <button class="fin-opcion-btn active" onclick="setOpcion(this, 22480)">
             <span class="fin-opcion-nombre">⭐ Opción 2 · Avon Maitland</span>
-            <span class="fin-opcion-precio">23.480 €</span>
+            <span class="fin-opcion-precio">22.480 €</span>
           </button>
-          <button class="fin-opcion-btn" onclick="setOpcion(this, 24620)">
+          <button class="fin-opcion-btn" onclick="setOpcion(this, 23620)">
             <span class="fin-opcion-nombre">Opción 3 · Campbell River (BC)</span>
-            <span class="fin-opcion-precio">24.620 €</span>
+            <span class="fin-opcion-precio">23.620 €</span>
           </button>
         </div>
       </div>
@@ -506,13 +511,13 @@ details[open] summary::before{transform:rotate(90deg);}
       <div class="fin-resultado">
         <div class="fin-resultado-main">
           <div class="fin-cuota-label">Cuota mensual estimada</div>
-          <div class="fin-cuota-valor" id="cuotaValor">1.956,67 €</div>
+          <div class="fin-cuota-valor" id="cuotaValor">1.873,33 €</div>
           <div class="fin-cuota-sub" id="cuotaSub">/mes · 12 pagos · TIN 0%</div>
         </div>
         <div class="fin-resultado-detalle">
           <div class="fin-det-row">
             <span class="fin-det-label">Importe del programa</span>
-            <span class="fin-det-val" id="detCapital">23.480 €</span>
+            <span class="fin-det-val" id="detCapital">22.480 €</span>
           </div>
           <div class="fin-det-row">
             <span class="fin-det-label">Intereses totales</span>
@@ -520,18 +525,18 @@ details[open] summary::before{transform:rotate(90deg);}
           </div>
           <div class="fin-det-row fin-det-total">
             <span class="fin-det-label">Total a pagar</span>
-            <span class="fin-det-val" id="detTotal">23.480 €</span>
+            <span class="fin-det-val" id="detTotal">22.480 €</span>
           </div>
         </div>
       </div>
-      <div class="fin-nota">ℹ️ Financiación sujeta a aprobación bancaria. Cuota orientativa calculada sobre el importe total del programa. Sin comisión de apertura ni penalización por cancelación anticipada. Los precios incluyen el descuento de 1.000 € ya aplicado.</div>
+      <div class="fin-nota">ℹ️ Financiación sujeta a aprobación bancaria. Cuota orientativa calculada sobre el importe total del programa. Sin comisión de apertura ni penalización por cancelación anticipada. Los precios incluyen el descuento de 1.000 € por confirmación de plaza antes del 30 de julio.</div>
     </div>
   </div>
 
 </main>
 
 <script>
-var _cap = 23480, _mes = 12;
+var _cap = 22480, _mes = 12;
 function _fmt(n,d){return n.toLocaleString('es-ES',{minimumFractionDigits:d||0,maximumFractionDigits:d||0})+' €';}
 function _cuota(c,t,m){if(t===0)return c/m;var r=(t/100)/12;return c*r/(1-Math.pow(1+r,-m));}
 function _update(){
