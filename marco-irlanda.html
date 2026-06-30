@@ -377,7 +377,7 @@ body{font-family:'Fira Sans',sans-serif;background:var(--gray-bg);color:var(--te
             <li>Coordinador local en Irlanda: visitas, tutorías y emergencias 24h</li>
             <li>Acompañamiento psicológico</li>
             <li>Atención 24h en España para emergencias</li>
-            <li>Gestión de vuelos ajustados a fechas escolares con supervisión MLQ <small>Coste de vuelos no incluido</small></li>
+            <li>Gestión de vuelos ajustados a fechas escolares con supervisión MLQ <small>2 vuelos de ida y vuelta incluidos</small></li>
             <li>Apoyo para matriculación en actividades extraescolares</li>
             <li>Gestión de cambio de familia si fuera necesario</li>
           </ul>
@@ -405,7 +405,6 @@ body{font-family:'Fira Sans',sans-serif;background:var(--gray-bg);color:var(--te
           <div style="margin-top:24px">
             <div class="col-title">No incluido</div>
             <ul class="inc-list no">
-              <li>Vuelos de ida y vuelta <small>MLQ gestiona la búsqueda; el coste corre a cargo de la familia</small></li>
               <li>Actividades extracurriculares de pago</li>
               <li>Excursiones y viajes escolares</li>
               <li>Material escolar adicional</li>
@@ -422,70 +421,6 @@ body{font-family:'Fira Sans',sans-serif;background:var(--gray-bg);color:var(--te
           </div>
         </div>
       </div>
-    </div>
-  </div>
-
-  <!-- FINANCIACIÓN -->
-  <div class="section-title"><h2>Financia tu programa</h2></div>
-  <div class="financing-wrap">
-    <div class="financing-head">
-      <div style="display:flex;align-items:center;gap:16px;">
-        <div class="fin-icon">💳</div>
-        <div>
-          <div class="fin-title">Paga a tu ritmo, sin preocupaciones</div>
-          <div class="fin-sub">Financiación flexible · Aprobación rápida · 100% online · Sin comisión de apertura</div>
-        </div>
-      </div>
-      <div class="fin-badge">Hasta 36 meses</div>
-    </div>
-    <div class="financing-body">
-      <div class="fin-plazo-wrap">
-        <div class="fin-plazo-label">Elige tu plazo · Programa Choice Trimestre 9.500 €</div>
-        <div class="fin-plazos">
-          <div class="fin-plazo active" onclick="setPlazo(this,12)">
-            <div class="fin-plazo-meses">12 meses</div>
-            <div class="fin-plazo-badge sin">TIN 0%</div>
-            <div class="fin-plazo-quien">¡MLQ asume los intereses!</div>
-          </div>
-          <div class="fin-plazo" onclick="setPlazo(this,18)">
-            <div class="fin-plazo-meses">18 meses</div>
-            <div class="fin-plazo-badge con">TIN 10,46%</div>
-            <div class="fin-plazo-quien">Intereses a cargo del cliente</div>
-          </div>
-          <div class="fin-plazo" onclick="setPlazo(this,24)">
-            <div class="fin-plazo-meses">24 meses</div>
-            <div class="fin-plazo-badge con">TIN 10,46%</div>
-            <div class="fin-plazo-quien">Intereses a cargo del cliente</div>
-          </div>
-          <div class="fin-plazo" onclick="setPlazo(this,36)">
-            <div class="fin-plazo-meses">36 meses</div>
-            <div class="fin-plazo-badge con">TIN 10,46%</div>
-            <div class="fin-plazo-quien">Intereses a cargo del cliente</div>
-          </div>
-        </div>
-      </div>
-      <div class="fin-resultado">
-        <div class="fin-resultado-main">
-          <div class="fin-cuota-label">Cuota mensual estimada</div>
-          <div class="fin-cuota-valor" id="cuotaValor">1.412,50 €</div>
-          <div class="fin-cuota-sub" id="cuotaSub">/mes · 12 pagos · TIN 0%</div>
-        </div>
-        <div class="fin-resultado-detalle">
-          <div class="fin-det-row">
-            <span class="fin-det-label">Importe del programa</span>
-            <span class="fin-det-val">9.500 €</span>
-          </div>
-          <div class="fin-det-row">
-            <span class="fin-det-label">Intereses totales</span>
-            <span class="fin-det-val fin-det-green" id="detIntereses">0 € · ¡MLQ los asume!</span>
-          </div>
-          <div class="fin-det-row fin-det-total">
-            <span class="fin-det-label">Total a pagar</span>
-            <span class="fin-det-val" id="detTotal">9.500 €</span>
-          </div>
-        </div>
-      </div>
-      <div class="fin-nota">ℹ️ Financiación sujeta a aprobación bancaria. Sin comisión de apertura ni penalización por cancelación anticipada.</div>
     </div>
   </div>
 
@@ -515,26 +450,12 @@ body{font-family:'Fira Sans',sans-serif;background:var(--gray-bg);color:var(--te
           <div class="pay-step-desc" style="margin-top:6px;">Las inscripciones tardías deben cumplir con los plazos ya pasados</div>
         </div>
       </div>
-      <div class="pay-note">El seguro de anulación e interrupción cubre gastos de cancelación por diferentes causas. Su coste es de 500 € y se emite a los 15 días de la firma del contrato. Su importe no es reembolsable bajo ninguna circunstancia. Los vuelos no están incluidos en el programa — MLQ gestiona la búsqueda y el coste corre a cargo de la familia.</div>
+      <div class="pay-note">El seguro de anulación e interrupción cubre gastos de cancelación por diferentes causas. Su coste es de 500 € y se emite a los 15 días de la firma del contrato. Su importe no es reembolsable bajo ninguna circunstancia. El programa incluye 2 vuelos de ida y vuelta gestionados por MLQ.</div>
     </div>
   </div>
 
 </main>
 
-<script>
-var _mes=12,_cap=9500;
-function _fmt(n,d){return n.toLocaleString('es-ES',{minimumFractionDigits:d||0,maximumFractionDigits:d||0})+' €';}
-function _cuota(c,t,m){if(t===0)return c/m;var r=(t/100)/12;return c*r/(1-Math.pow(1+r,-m));}
-function _update(){
-  var tin=_mes===12?0:10.46;var q=_cuota(_cap,tin,_mes);var tot=q*_mes;var inter=tot-_cap;
-  document.getElementById('cuotaValor').textContent=_fmt(q,2);
-  document.getElementById('cuotaSub').textContent='/mes · '+_mes+' pagos · TIN '+(tin===0?'0%':'10,46%');
-  document.getElementById('detTotal').textContent=_fmt(Math.round(tot));
-  if(tin===0){document.getElementById('detIntereses').textContent='0 € · ¡MLQ los asume!';document.getElementById('detIntereses').className='fin-det-val fin-det-green';}
-  else{document.getElementById('detIntereses').textContent=_fmt(Math.round(inter));document.getElementById('detIntereses').className='fin-det-val';}
-}
-function setPlazo(el,m){_mes=m;document.querySelectorAll('.fin-plazo').forEach(function(p){p.classList.remove('active');});el.classList.add('active');_update();}
-_update();
-</script>
+
 </body>
 </html>
