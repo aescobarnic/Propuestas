@@ -95,7 +95,7 @@ body{font-family:'Fira Sans',sans-serif;background:var(--gray-bg);color:var(--te
 .financing-body{padding:28px 32px;}
 .fin-plazo-label{font-family:'Josefin Sans',sans-serif;font-size:9px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--text-light);margin-bottom:10px;}
 .fin-plazo-wrap{margin-bottom:24px;}
-.fin-plazos{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;}
+.fin-plazos{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;}
 .fin-plazo{background:var(--gray-card);border:1.5px solid var(--gray-border);border-radius:12px;padding:14px 12px;cursor:pointer;text-align:center;transition:all .2s;}
 .fin-plazo:hover{border-color:var(--green-mid);transform:translateY(-2px);}
 .fin-plazo.active{border-color:var(--ireland-green);background:var(--green-light);box-shadow:0 4px 16px rgba(22,155,98,0.15);}
@@ -133,6 +133,18 @@ body{font-family:'Fira Sans',sans-serif;background:var(--gray-bg);color:var(--te
 .ty-list li::before{content:'•';color:var(--ireland-green);font-weight:700;position:absolute;left:0;}
 .ty-personal{background:var(--green-pale);border-left:3px solid var(--ireland-green);border-radius:0 8px 8px 0;padding:16px 18px;margin-top:8px;}
 .ty-personal-title{font-family:'Josefin Sans',sans-serif;font-size:9px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--green-dark);margin-bottom:8px;}
+.colegio-web{display:inline-flex;align-items:center;gap:5px;margin-top:4px;font-size:10px;color:#a5d6a7;text-decoration:none;font-weight:600;}
+.colegio-web:hover{text-decoration:underline;}
+.story-box{background:var(--white);border-radius:16px;border:1.5px solid var(--gray-border);box-shadow:0 2px 16px rgba(0,80,0,0.05);overflow:hidden;margin-bottom:28px;}
+.story-head{background:linear-gradient(135deg,var(--green-dark),var(--green));padding:18px 26px;}
+.story-head h3{font-family:'Josefin Sans',sans-serif;font-size:13px;font-weight:700;color:var(--white);}
+.story-body{padding:20px 26px;}
+.story-body p{font-size:12px;color:var(--text-mid);line-height:1.7;margin-bottom:12px;}
+.story-body ul{list-style:none;display:flex;flex-direction:column;gap:6px;margin:10px 0 12px;}
+.story-body li{font-size:12px;color:var(--text-mid);line-height:1.6;padding-left:18px;position:relative;}
+.story-body li::before{content:'•';color:var(--ireland-green);font-weight:700;position:absolute;left:0;}
+.story-refs{font-size:10px;color:var(--text-light);}
+.story-refs a{color:var(--green-mid);text-decoration:none;}
 .flight-opt{background:var(--gray-card);border:1px solid var(--gray-border);border-radius:10px;padding:14px 18px;margin-top:14px;font-size:11px;color:var(--text-mid);line-height:1.6;}
 .flight-opt strong{color:var(--green-dark);}
 .payment-wrap{background:linear-gradient(135deg,var(--green-dark) 0%,var(--green) 60%,var(--green-mid) 100%);border-radius:16px;padding:32px;position:relative;overflow:hidden;margin-bottom:20px;}
@@ -225,6 +237,21 @@ body{font-family:'Fira Sans',sans-serif;background:var(--gray-bg);color:var(--te
     </div>
   </div>
 
+  <div class="story-box">
+    <div class="story-head"><h3>✏️ El interés de Elsa por crear historias</h3></div>
+    <div class="story-body">
+      <p>Hacer historias es el arte de inventar mundos, personajes y aventuras a través de la imaginación. Para una niña, esto significa canalizar su creatividad para escribir cuentos, crear guiones para películas o videojuegos, dibujar cómics, o incluso dedicarse a la literatura, el periodismo y la ilustración.</p>
+      <p>Las niñas que disfrutan contando y creando historias suelen tener una imaginación muy desarrollada, gran facilidad para la comunicación y mucho interés en el arte. Si esto es lo que Elsa quiere ser de grande, existen muchas profesiones orientadas a canalizar este talento de forma profesional:</p>
+      <ul>
+        <li><strong>Escritora o Novelista:</strong> crear libros, ya sea para niños, jóvenes o adultos</li>
+        <li><strong>Guionista:</strong> escribir las historias, diálogos y aventuras para películas, series o videojuegos</li>
+        <li><strong>Directora de Cine o Animación:</strong> darle vida visual y sonora a una historia escrita</li>
+        <li><strong>Ilustradora o Creadora de Cómics:</strong> contar relatos principalmente a través de dibujos y arte visual</li>
+      </ul>
+      <div class="story-refs">Fuentes: <a href="https://merida.anahuac.mx/think/storytelling-historias-que-venden" target="_blank" rel="noopener">[1]</a> <a href="https://www.tiktok.com/@edwields/video/7540895369555676423" target="_blank" rel="noopener">[2]</a></div>
+    </div>
+  </div>
+
   <div class="alert-box">
     <div class="alert-icon">⏳</div>
     <div class="alert-text">
@@ -242,6 +269,7 @@ body{font-family:'Fira Sans',sans-serif;background:var(--gray-bg);color:var(--te
         <div class="colegio-zona">Condado de Meath · Pueblo pequeño</div>
         <div class="colegio-nombre">St. Ciarán's Community School</div>
         <div class="colegio-loc">📍 Kells · Condado de Meath</div>
+        <a class="colegio-web" href="https://www.google.com/search?q=St+Ciaran%27s+Community+School+Kells+website" target="_blank" rel="noopener">🔗 Web del colegio</a>
         <div class="colegio-chips">
           <div class="chip">Mixto</div>
           <div class="chip">Público</div>
@@ -259,6 +287,12 @@ body{font-family:'Fira Sans',sans-serif;background:var(--gray-bg);color:var(--te
           <span class="extra-tag">🤝 Confianza y autonomía</span>
           <span class="extra-tag">📖 Learning Support</span>
           <span class="extra-tag">🧑‍🏫 Special Needs Assistants</span>
+        </div>
+        <div class="colegio-section-title" style="margin-top:12px;">Extraescolares de creatividad</div>
+        <div class="extra-tags">
+          <span class="extra-tag">✏️ Dibujo y pintura</span>
+          <span class="extra-tag">📖 Escritura creativa</span>
+          <span class="extra-tag">🎨 Arte</span>
         </div>
         <div class="colegio-section-title" style="margin-top:12px;">Entorno</div>
         <div class="actividades-ciudad">
@@ -288,6 +322,7 @@ body{font-family:'Fira Sans',sans-serif;background:var(--gray-bg);color:var(--te
         <div class="colegio-zona">Dublín 22 · Entorno urbano</div>
         <div class="colegio-nombre">St. Kevin's Community College</div>
         <div class="colegio-loc">📍 Dublin 22</div>
+        <a class="colegio-web" href="https://www.google.com/search?q=St+Kevin%27s+Community+College+Dublin+22+website" target="_blank" rel="noopener">🔗 Web del colegio</a>
         <div class="colegio-chips">
           <div class="chip">Mixto</div>
           <div class="chip">Público</div>
@@ -307,6 +342,12 @@ body{font-family:'Fira Sans',sans-serif;background:var(--gray-bg);color:var(--te
           <span class="extra-tag">📡 Communications</span>
           <span class="extra-tag">⌨️ Coding</span>
           <span class="extra-tag">💼 Enterprise</span>
+        </div>
+        <div class="colegio-section-title" style="margin-top:12px;">Extraescolares de creatividad</div>
+        <div class="extra-tags">
+          <span class="extra-tag">✏️ Dibujo y cómic</span>
+          <span class="extra-tag">🎬 Producción audiovisual</span>
+          <span class="extra-tag">📖 Escritura de guiones</span>
         </div>
         <div class="colegio-section-title" style="margin-top:12px;">Entorno</div>
         <div class="actividades-ciudad">
@@ -336,6 +377,7 @@ body{font-family:'Fira Sans',sans-serif;background:var(--gray-bg);color:var(--te
         <div class="colegio-zona">Condado de Carlow · Ciudad pequeña</div>
         <div class="colegio-nombre">Tyndall College</div>
         <div class="colegio-loc">📍 Carlow</div>
+        <a class="colegio-web" href="https://www.google.com/search?q=Tyndall+College+Carlow+website" target="_blank" rel="noopener">🔗 Web del colegio</a>
         <div class="colegio-chips">
           <div class="chip">Mixto</div>
           <div class="chip">Público</div>
@@ -353,6 +395,11 @@ body{font-family:'Fira Sans',sans-serif;background:var(--gray-bg);color:var(--te
           <span class="extra-tag">💻 Computer Studies</span>
           <span class="extra-tag">💼 Work Experience</span>
           <span class="extra-tag">🧩 Apoyo educativo</span>
+        </div>
+        <div class="colegio-section-title" style="margin-top:12px;">Extraescolares de creatividad</div>
+        <div class="extra-tags">
+          <span class="extra-tag">✏️ Art · Craft and Design</span>
+          <span class="extra-tag">📖 Escritura creativa</span>
         </div>
         <div class="colegio-section-title" style="margin-top:12px;">Entorno</div>
         <div class="actividades-ciudad">
@@ -381,6 +428,7 @@ body{font-family:'Fira Sans',sans-serif;background:var(--gray-bg);color:var(--te
         <div class="colegio-zona">Condado de Monaghan · Pueblo pequeño</div>
         <div class="colegio-nombre">Ballybay Community School</div>
         <div class="colegio-loc">📍 Ballybay · Condado de Monaghan</div>
+        <a class="colegio-web" href="https://www.google.com/search?q=Ballybay+Community+School+Monaghan+website" target="_blank" rel="noopener">🔗 Web del colegio</a>
         <div class="colegio-chips">
           <div class="chip">Mixto</div>
           <div class="chip">Público</div>
@@ -397,6 +445,11 @@ body{font-family:'Fira Sans',sans-serif;background:var(--gray-bg);color:var(--te
           <span class="extra-tag">🏡 Ambiente cercano</span>
           <span class="extra-tag">🧑‍🏫 Seguimiento directo</span>
           <span class="extra-tag">🌿 Entorno tranquilo</span>
+        </div>
+        <div class="colegio-section-title" style="margin-top:12px;">Extraescolares de creatividad</div>
+        <div class="extra-tags">
+          <span class="extra-tag">✏️ Dibujo y arte</span>
+          <span class="extra-tag">📖 Club de escritura</span>
         </div>
         <div class="colegio-section-title" style="margin-top:12px;">Entorno</div>
         <div class="actividades-ciudad">
@@ -449,7 +502,6 @@ body{font-family:'Fira Sans',sans-serif;background:var(--gray-bg);color:var(--te
             <li>Recibimiento en aeropuerto y traslado a la familia anfitriona</li>
             <li>Asesoramiento en elección de asignaturas</li>
             <li>Clases de inglés Cambridge y libro incluido</li>
-            <li>Taller de 3 sesiones con docente del MIT (Oscar Corominas)</li>
             <li>Tasa de Transition Year incluida en el precio del programa</li>
             <li>Coordinador local en Irlanda: visitas, tutorías y emergencias 24h</li>
             <li>Acompañamiento psicológico</li>
@@ -488,13 +540,7 @@ body{font-family:'Fira Sans',sans-serif;background:var(--gray-bg);color:var(--te
               <li>Material escolar adicional</li>
               <li>Fotografía escolar y anuario</li>
               <li>Transporte local mensual</li>
-              <li>Teléfono móvil y plan de datos</li>
-              <li>Ropa de abrigo para el invierno irlandés</li>
-              <li>Gastos de ocio personal</li>
-              <li>Medicamentos y gastos médicos no cubiertos</li>
-              <li>Tratamientos dentales y de visión</li>
-              <li>Ordenador portátil o tablet</li>
-              <li>Pasaporte si no está vigente</li>
+              <li>Cualquier servicio que no se estipule en "El programa incluye"</li>
             </ul>
             <div class="flight-opt">
               ✈️ <strong>Opción de vuelo grupal disponible:</strong> MAD–DUB / DUB–MAD con monitor de My Language Quest, ida y vuelta por <strong>700 €</strong> (350 € por trayecto). Gestión y reserva a través de MLQ.
@@ -522,12 +568,7 @@ body{font-family:'Fira Sans',sans-serif;background:var(--gray-bg);color:var(--te
       <div class="fin-plazo-wrap">
         <div class="fin-plazo-label">Elige tu plazo · Programa No Choice 8.300 €</div>
         <div class="fin-plazos">
-          <div class="fin-plazo active" onclick="setPlazo(this,12)">
-            <div class="fin-plazo-meses">12 meses</div>
-            <div class="fin-plazo-badge sin">TIN 0%</div>
-            <div class="fin-plazo-quien">¡MLQ asume los intereses!</div>
-          </div>
-          <div class="fin-plazo" onclick="setPlazo(this,18)">
+          <div class="fin-plazo active" onclick="setPlazo(this,18)">
             <div class="fin-plazo-meses">18 meses</div>
             <div class="fin-plazo-badge con">TIN 10,46%</div>
             <div class="fin-plazo-quien">Intereses a cargo del cliente</div>
@@ -547,8 +588,8 @@ body{font-family:'Fira Sans',sans-serif;background:var(--gray-bg);color:var(--te
       <div class="fin-resultado">
         <div class="fin-resultado-main">
           <div class="fin-cuota-label">Cuota mensual estimada</div>
-          <div class="fin-cuota-valor" id="cuotaValor">691,67 €</div>
-          <div class="fin-cuota-sub" id="cuotaSub">/mes · 12 pagos · TIN 0%</div>
+          <div class="fin-cuota-valor" id="cuotaValor">501,16 €</div>
+          <div class="fin-cuota-sub" id="cuotaSub">/mes · 18 pagos · TIN 10,46%</div>
         </div>
         <div class="fin-resultado-detalle">
           <div class="fin-det-row">
@@ -602,11 +643,11 @@ body{font-family:'Fira Sans',sans-serif;background:var(--gray-bg);color:var(--te
 </main>
 
 <script>
-var _mes=12,_cap=8300;
+var _mes=18,_cap=8300;
 function _fmt(n,d){return n.toLocaleString('es-ES',{minimumFractionDigits:d||0,maximumFractionDigits:d||0})+' €';}
 function _cuota(c,t,m){if(t===0)return c/m;var r=(t/100)/12;return c*r/(1-Math.pow(1+r,-m));}
 function _update(){
-  var tin=_mes===12?0:10.46;var q=_cuota(_cap,tin,_mes);var tot=q*_mes;var inter=tot-_cap;
+  var tin=10.46;var q=_cuota(_cap,tin,_mes);var tot=q*_mes;var inter=tot-_cap;
   document.getElementById('cuotaValor').textContent=_fmt(q,2);
   document.getElementById('cuotaSub').textContent='/mes · '+_mes+' pagos · TIN '+(tin===0?'0%':'10,46%');
   document.getElementById('detTotal').textContent=_fmt(Math.round(tot));
