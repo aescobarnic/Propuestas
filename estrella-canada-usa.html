@@ -166,6 +166,29 @@ details[open] summary::before{transform:rotate(90deg);}
   .main{padding:28px 16px 48px;}.includes-grid{grid-template-columns:1fr;}.opciones-grid{grid-template-columns:1fr;}
   .pay-cols{grid-template-columns:1fr;}.gestor-grid{grid-template-columns:repeat(2,1fr);}
 }
+
+/* DESTINO THEMING — Canadá (rojo) vs Estados Unidos (azul) */
+.destino-banner{display:flex;align-items:center;gap:10px;border-radius:12px;padding:16px 24px;margin:0 0 24px;font-family:'Josefin Sans',sans-serif;font-weight:700;font-size:15px;letter-spacing:0.5px;color:var(--white);box-shadow:0 6px 24px rgba(0,0,0,0.12);}
+.destino-banner-canada{background:linear-gradient(135deg,var(--red-dark),var(--red));}
+.destino-banner-usa{background:linear-gradient(135deg,var(--blue-dark),var(--blue-mid));}
+.destino-section{border-radius:18px;padding:20px;margin-bottom:8px;}
+.destino-canada{background:linear-gradient(180deg,rgba(177,41,0,0.045),transparent 180px);border:1.5px solid rgba(177,41,0,0.15);}
+.destino-usa{background:linear-gradient(180deg,rgba(0,51,102,0.045),transparent 180px);border:1.5px solid rgba(0,51,102,0.15);}
+.destino-canada .section-title::after{background:rgba(177,41,0,0.25);}
+.destino-usa .section-title::after{background:rgba(0,51,102,0.25);}
+.destino-canada .opcion-header{background:linear-gradient(135deg,var(--red-dark),var(--red));}
+.destino-canada .opcion-card.recomendada{border-color:var(--red);box-shadow:0 4px 24px rgba(177,41,0,0.15);}
+.destino-canada .badge-rec{background:var(--green);}
+.destino-canada .includes-head,.destino-canada .financing-head,.destino-canada .payment-wrap,.destino-canada .gestor-wrap{background:linear-gradient(135deg,var(--red-dark),var(--red));}
+.destino-canada .colegio:hover{border-color:var(--blue-mid);}
+.destino-canada details summary{color:var(--blue-mid);}
+.destino-canada details summary:hover{background:var(--blue-light);}
+.destino-canada .colegio-razon{border-left-color:var(--blue-mid);background:var(--blue-light);}
+.destino-usa .opcion-header{background:linear-gradient(135deg,var(--blue-dark),var(--blue-mid));}
+.destino-usa .includes-head,.destino-usa .financing-head,.destino-usa .gestor-wrap{background:linear-gradient(135deg,var(--blue-dark),var(--blue-mid));}
+.alert-box-usa{background:#eef4fb;border:1.5px solid rgba(10,74,138,0.3);}
+.alert-box-usa .alert-text{color:var(--blue-dark);}
+.alert-box-usa .alert-text strong{color:var(--blue);}
 </style>
 </head>
 <body>
@@ -203,7 +226,8 @@ details[open] summary::before{transform:rotate(90deg);}
     <div class="alert-text"><strong>Propuesta comparativa de dos destinos:</strong> Esta propuesta incluye dos opciones de año académico completo: <strong>Canadá</strong> (Programa Choice, con selección de distrito y colegio) y <strong>Estados Unidos</strong> (Programa J1). Con el nivel de inglés avanzado de Estrella, ambas opciones son perfectamente viables — la diferencia principal está en el grado de personalización del destino y el presupuesto.</div>
   </div>
 
-  <div class="section-title"><h2>Destino 1 · Canadá — Programa Choice (3 distritos más económicos)</h2></div>
+  <div class="destino-banner destino-banner-canada">🇨🇦 DESTINO 1 · CANADÁ — Programa Choice (3 distritos más económicos)</div>
+  <div class="destino-section destino-canada">
   <div class="opciones-grid">
 
     <!-- OPCIÓN 1 RECOMENDADA -->
@@ -321,45 +345,8 @@ details[open] summary::before{transform:rotate(90deg);}
 
   </div>
 
-  <!-- DESTINO 2: ESTADOS UNIDOS J1 -->
-  <div class="section-title"><h2>Destino 2 · Estados Unidos — Programa J1</h2></div>
-  <div class="opciones-grid" style="grid-template-columns:1fr;">
-    <div class="opcion-card">
-      <div class="opcion-header">
-        <div class="opcion-num">Programa académico</div>
-        <div class="opcion-distrito">Programa J1 · Año académico completo</div>
-        <div class="opcion-loc">📍 Destino asignado por el sponsor americano · Localidad rural, cualquier estado de EE.UU.</div>
-        <div class="precio-chip"><span class="val">13.600 €</span><span class="desc">/ año académico completo</span></div>
-      </div>
-      <div class="opcion-body">
-        <div class="colegio-razon" style="margin:0 0 16px;">
-          Con el nivel de inglés avanzado de Estrella, el programa J1 es una opción perfectamente viable: el requisito mínimo de acceso es 690 puntos en el examen Eltis (o 70 en iTEP) y una nota media aproximada de 6/10, ambos fácilmente alcanzables con su perfil. Es la opción más económica de las dos, pero implica menor grado de personalización: <strong>ni el destino ni la familia anfitriona pueden elegirse</strong>, y el estudiante puede ser ubicado en cualquier punto del país en una localidad habitualmente rural.
-        </div>
-        <div class="colegio-meta" style="margin-bottom:14px;">
-          <span class="tag info">Duración: año académico completo</span>
-          <span class="tag info">Familia anfitriona · pensión completa</span>
-          <span class="tag info">Visado J1</span>
-          <span class="tag info">Sin selección de destino/familia</span>
-        </div>
-        <div class="colegio-razon" style="margin:0;">
-          <strong>Condiciones particulares a tener en cuenta:</strong> el destino y la familia se confirman como muy tarde el 31 de agosto; una vez asignados, el estudiante deberá contactar con la familia en un plazo de 24–72h. Las visitas de familiares no pueden programarse antes del 15 de abril y deben ser aprobadas por la familia anfitriona. Existen suplementos opcionales (900 €–2.000 €) para acotar la zona: región, estados cálidos, entorno metropolitano/urbano, o acceso a "Top Schools" (requiere Eltis +710).
-        </div>
-      </div>
-      <div class="match-bar">
-        <div class="match-tag">Opción más económica</div>
-        <div class="match-tag">Inglés avanzado = acceso garantizado</div>
-        <div class="match-tag">Sin elección de destino</div>
-      </div>
-    </div>
-  </div>
-
-  <div class="alert-box" style="margin-top:-8px;">
-    <div class="alert-icon">💡</div>
-    <div class="alert-text"><strong>Alternativa dentro del J1:</strong> también existe la opción de <strong>semestre</strong> por <strong>10.850 €</strong>, si Estrella prefiriera probar la experiencia sin comprometerse a un año académico completo.</div>
-  </div>
-
   <!-- EL PROGRAMA INCLUYE -->
-  <div class="section-title"><h2>El programa incluye · Destino 1 (Canadá)</h2></div>
+  <div class="section-title"><h2>El programa incluye</h2></div>
   <div class="includes-wrap">
     <div class="includes-head"><h3>📋 Todo lo que cubre My Language Quest en Canadá</h3></div>
     <div class="includes-body">
@@ -438,68 +425,6 @@ details[open] summary::before{transform:rotate(90deg);}
     </div>
   </div>
 
-  <!-- EL PROGRAMA J1 INCLUYE -->
-  <div class="section-title"><h2>El programa incluye · Destino 2 (EE.UU. · J1)</h2></div>
-  <div class="includes-wrap">
-    <div class="includes-head"><h3>📋 Todo lo que cubre My Language Quest en el programa J1</h3></div>
-    <div class="includes-body">
-      <div class="includes-grid">
-        <div>
-          <div class="col-title">Antes del viaje</div>
-          <ul class="inc-list">
-            <li>Reunión inicial con padres o tutores</li>
-            <li>Examen Eltis y entrevista personal online</li>
-            <li>Inscripción y matriculación en centro escolar asignado por el sponsor americano</li>
-            <li>Selección de familia anfitriona en régimen de pensión completa</li>
-            <li>Seguro médico y de accidentes</li>
-            <li>Tasas y tramitación del visado J1 + cita en Embajada</li>
-            <li>Programa formativo obligatorio pre-viaje para el estudiante</li>
-            <li>Orientación pre-viaje en Madrid + welcome pack</li>
-          </ul>
-        </div>
-        <div>
-          <div class="col-title">Durante el viaje</div>
-          <ul class="inc-list">
-            <li>Recibimiento en aeropuerto y traslados</li>
-            <li>Asesoramiento en elección de asignaturas</li>
-            <li>Libros de asignaturas obligatorias + transporte escolar</li>
-            <li>Clases de inglés Cambridge y libro incluido</li>
-            <li>Supervisión local 24h de la organización americana</li>
-            <li>Acompañamiento psicológico + atención 24h España</li>
-            <li>Orientación pre-viaje en Nueva York (4 días/3 noches) <small>Incluido solo en programas de año completo</small></li>
-          </ul>
-          <div class="gestor-wrap" style="margin-top:16px;">
-            <div class="gestor-title">Gestor estudiantil · se encarga de</div>
-            <div class="gestor-grid">
-              <div class="gestor-item">Seguimiento personalizado</div>
-              <div class="gestor-item">Info mensual a padres</div>
-              <div class="gestor-item">Notas oficiales por trimestre</div>
-              <div class="gestor-item">Resolución de incidencias</div>
-            </div>
-          </div>
-        </div>
-        <div>
-          <div class="col-title">Después del viaje</div>
-          <ul class="inc-list">
-            <li>Recogida de transcripts finales</li>
-            <li>Apostilla de La Haya de las calificaciones</li>
-            <li>Presentación del expediente ante el Ministerio de Educación</li>
-            <li>Dossier final de la experiencia</li>
-          </ul>
-          <div style="margin-top:24px">
-            <div class="col-title">No incluido</div>
-            <ul class="inc-list no">
-              <li>Vuelos (no incluidos en el J1, a cargo de la familia)</li>
-              <li>Extracurriculares de pago, excursiones y material adicional</li>
-              <li>Transporte local, móvil/datos, ropa de invierno, ocio personal</li>
-              <li>Suplementos regionales opcionales (900 €–2.000 €)</li>
-            </ul>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-
   <!-- FORMAS DE PAGO -->
   <div class="section-title"><h2>Formas de pago</h2></div>
   <div class="payment-wrap">
@@ -540,7 +465,6 @@ details[open] summary::before{transform:rotate(90deg);}
         </div>
       </div>
       <div class="pay-note">El seguro de anulación e interrupción debe contratarse y abonarse en el momento de la firma del contrato. Su coste varía según el importe del programa y es emitido una vez el estudiante es aceptado por el centro escolar. Su importe no es reembolsable bajo ninguna circunstancia. Las inscripciones tardías deben cumplir con los plazos de pago ya pasados en el momento de la inscripción.</div>
-      <div class="pay-note" style="font-style:normal;margin-top:12px;">🇺🇸 <strong>Programa J1 (EE.UU.):</strong> condiciones de pago específicas a confirmar con tu asesor MLQ — precio de referencia 13.600 € (año completo) / 10.850 € (semestre).</div>
     </div>
   </div>
 
@@ -626,6 +550,187 @@ details[open] summary::before{transform:rotate(90deg);}
     </div>
   </div>
 
+  </div><!-- /destino-canada -->
+
+  <div class="destino-banner destino-banner-usa">🇺🇸 DESTINO 2 · ESTADOS UNIDOS — Programa J1</div>
+  <div class="destino-section destino-usa">
+
+  <div class="opciones-grid" style="grid-template-columns:1fr;">
+    <div class="opcion-card">
+      <div class="opcion-header">
+        <div class="opcion-num">Programa académico</div>
+        <div class="opcion-distrito">Programa J1 · Año académico completo</div>
+        <div class="opcion-loc">📍 Destino asignado por el sponsor americano · Localidad rural, cualquier estado de EE.UU.</div>
+        <div class="precio-chip"><span class="val">13.600 €</span><span class="desc">/ año académico completo</span></div>
+      </div>
+      <div class="opcion-body">
+        <div class="colegio-razon" style="margin:0 0 16px;border-left-color:var(--blue-mid);background:var(--blue-light);">
+          Con el nivel de inglés avanzado de Estrella, el programa J1 es una opción perfectamente viable: el requisito mínimo de acceso es 690 puntos en el examen Eltis (o 70 en iTEP) y una nota media aproximada de 6/10, ambos fácilmente alcanzables con su perfil. Es la opción más económica de las dos, pero implica menor grado de personalización: <strong>ni el destino ni la familia anfitriona pueden elegirse</strong>, y el estudiante puede ser ubicado en cualquier punto del país en una localidad habitualmente rural.
+        </div>
+        <div class="colegio-meta" style="margin-bottom:14px;">
+          <span class="tag info">Duración: año académico completo</span>
+          <span class="tag info">Familia anfitriona · pensión completa</span>
+          <span class="tag info">Visado J1</span>
+          <span class="tag info">Sin selección de destino/familia</span>
+        </div>
+        <div class="colegio-razon" style="margin:0;border-left-color:var(--blue-mid);background:var(--blue-light);">
+          <strong>Condiciones particulares a tener en cuenta:</strong> el destino y la familia se confirman como muy tarde el 31 de agosto; una vez asignados, el estudiante deberá contactar con la familia en un plazo de 24–72h. Las visitas de familiares no pueden programarse antes del 15 de abril y deben ser aprobadas por la familia anfitriona. Existen suplementos opcionales (900 €–2.000 €) para acotar la zona: región, estados cálidos, entorno metropolitano/urbano, o acceso a "Top Schools" (requiere Eltis +710).
+        </div>
+      </div>
+      <div class="match-bar">
+        <div class="match-tag">Opción más económica</div>
+        <div class="match-tag">Inglés avanzado = acceso garantizado</div>
+        <div class="match-tag">Sin elección de destino</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="alert-box alert-box-usa" style="margin-top:-8px;">
+    <div class="alert-icon">💡</div>
+    <div class="alert-text"><strong>Alternativa dentro del J1:</strong> también existe la opción de <strong>semestre</strong> por <strong>10.850 €</strong>, si Estrella prefiriera probar la experiencia sin comprometerse a un año académico completo.</div>
+  </div>
+
+  <!-- EL PROGRAMA J1 INCLUYE -->
+  <div class="section-title"><h2>El programa incluye</h2></div>
+  <div class="includes-wrap">
+    <div class="includes-head"><h3>📋 Todo lo que cubre My Language Quest en el programa J1</h3></div>
+    <div class="includes-body">
+      <div class="includes-grid">
+        <div>
+          <div class="col-title">Antes del viaje</div>
+          <ul class="inc-list">
+            <li>Reunión inicial con padres o tutores</li>
+            <li>Examen Eltis y entrevista personal online</li>
+            <li>Inscripción y matriculación en centro escolar asignado por el sponsor americano</li>
+            <li>Selección de familia anfitriona en régimen de pensión completa</li>
+            <li>Seguro médico y de accidentes</li>
+            <li>Tasas y tramitación del visado J1 + cita en Embajada</li>
+            <li>Programa formativo obligatorio pre-viaje para el estudiante</li>
+            <li>Orientación pre-viaje en Madrid + welcome pack</li>
+          </ul>
+        </div>
+        <div>
+          <div class="col-title">Durante el viaje</div>
+          <ul class="inc-list">
+            <li>Recibimiento en aeropuerto y traslados</li>
+            <li>Asesoramiento en elección de asignaturas</li>
+            <li>Libros de asignaturas obligatorias + transporte escolar</li>
+            <li>Clases de inglés Cambridge y libro incluido</li>
+            <li>Supervisión local 24h de la organización americana</li>
+            <li>Acompañamiento psicológico + atención 24h España</li>
+            <li>Orientación pre-viaje en Nueva York (4 días/3 noches) <small>Incluido solo en programas de año completo</small></li>
+          </ul>
+          <div class="gestor-wrap" style="margin-top:16px;">
+            <div class="gestor-title">Gestor estudiantil · se encarga de</div>
+            <div class="gestor-grid">
+              <div class="gestor-item">Seguimiento personalizado</div>
+              <div class="gestor-item">Info mensual a padres</div>
+              <div class="gestor-item">Notas oficiales por trimestre</div>
+              <div class="gestor-item">Resolución de incidencias</div>
+            </div>
+          </div>
+        </div>
+        <div>
+          <div class="col-title">Después del viaje</div>
+          <ul class="inc-list">
+            <li>Recogida de transcripts finales</li>
+            <li>Apostilla de La Haya de las calificaciones</li>
+            <li>Presentación del expediente ante el Ministerio de Educación</li>
+            <li>Dossier final de la experiencia</li>
+          </ul>
+          <div style="margin-top:24px">
+            <div class="col-title">No incluido</div>
+            <ul class="inc-list no">
+              <li>Vuelos (no incluidos en el J1, a cargo de la familia)</li>
+              <li>Extracurriculares de pago, excursiones y material adicional</li>
+              <li>Transporte local, móvil/datos, ropa de invierno, ocio personal</li>
+              <li>Suplementos regionales opcionales (900 €–2.000 €)</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- FINANCIACIÓN J1 -->
+  <div class="section-title"><h2>Financia tu programa J1</h2></div>
+  <div class="financing-wrap">
+    <div class="financing-head">
+      <div class="financing-head-left">
+        <div class="fin-icon">💳</div>
+        <div>
+          <div class="fin-title">Paga a tu ritmo, sin preocupaciones</div>
+          <div class="fin-sub">Financiación flexible · Aprobación rápida · 100% online · Sin comisión de apertura</div>
+        </div>
+      </div>
+      <div class="fin-badge">Hasta 36 meses</div>
+    </div>
+    <div class="financing-body">
+      <div class="fin-opcion-selector">
+        <div class="fin-opcion-label">Selecciona la duración del programa</div>
+        <div class="fin-opcion-btns">
+          <button class="fin-opcion-btn active" onclick="setOpcionUSA(this, 13600)">
+            <span class="fin-opcion-nombre">⭐ Año académico completo</span>
+            <span class="fin-opcion-precio">13.600 €</span>
+          </button>
+          <button class="fin-opcion-btn" onclick="setOpcionUSA(this, 10850)">
+            <span class="fin-opcion-nombre">Semestre</span>
+            <span class="fin-opcion-precio">10.850 €</span>
+          </button>
+        </div>
+      </div>
+      <div class="fin-plazo-wrap">
+        <div class="fin-plazo-label">Elige tu plazo de financiación</div>
+        <div class="fin-plazos">
+          <div class="fin-plazo active" onclick="setPlazoUSA(this,12)">
+            <div class="fin-plazo-meses">12 meses</div>
+            <div class="fin-plazo-badge sin-intereses">TIN 0%</div>
+            <div class="fin-plazo-quien">¡MLQ asume los intereses!</div>
+          </div>
+          <div class="fin-plazo" onclick="setPlazoUSA(this,18)">
+            <div class="fin-plazo-meses">18 meses</div>
+            <div class="fin-plazo-badge con-intereses">TIN 10,46%</div>
+            <div class="fin-plazo-quien">Intereses a cargo del cliente</div>
+          </div>
+          <div class="fin-plazo" onclick="setPlazoUSA(this,24)">
+            <div class="fin-plazo-meses">24 meses</div>
+            <div class="fin-plazo-badge con-intereses">TIN 10,46%</div>
+            <div class="fin-plazo-quien">Intereses a cargo del cliente</div>
+          </div>
+          <div class="fin-plazo" onclick="setPlazoUSA(this,36)">
+            <div class="fin-plazo-meses">36 meses</div>
+            <div class="fin-plazo-badge con-intereses">TIN 10,46%</div>
+            <div class="fin-plazo-quien">Intereses a cargo del cliente</div>
+          </div>
+        </div>
+      </div>
+      <div class="fin-resultado">
+        <div class="fin-resultado-main">
+          <div class="fin-cuota-label">Cuota mensual estimada</div>
+          <div class="fin-cuota-valor" id="cuotaValorUSA">1.133,33 €</div>
+          <div class="fin-cuota-sub" id="cuotaSubUSA">/mes · 12 pagos · TIN 0%</div>
+        </div>
+        <div class="fin-resultado-detalle">
+          <div class="fin-det-row">
+            <span class="fin-det-label">Importe del programa</span>
+            <span class="fin-det-val" id="detCapitalUSA">13.600 €</span>
+          </div>
+          <div class="fin-det-row">
+            <span class="fin-det-label">Intereses totales</span>
+            <span class="fin-det-val fin-det-green" id="detInteresesUSA">0 € · ¡MLQ los asume!</span>
+          </div>
+          <div class="fin-det-row fin-det-total">
+            <span class="fin-det-label">Total a pagar</span>
+            <span class="fin-det-val" id="detTotalUSA">13.600 €</span>
+          </div>
+        </div>
+      </div>
+      <div class="fin-nota">ℹ️ Financiación sujeta a aprobación bancaria. Cuota orientativa calculada sobre el importe del programa J1. Sin comisión de apertura ni penalización por cancelación anticipada.</div>
+    </div>
+  </div>
+
+  </div><!-- /destino-usa -->
+
 </main>
 
 <script>
@@ -649,9 +754,55 @@ function _update(){
     document.getElementById('detIntereses').className='fin-det-val';
   }
 }
-function setOpcion(btn,cap){_cap=cap;document.querySelectorAll('.fin-opcion-btn').forEach(function(b){b.classList.remove('active');});btn.classList.add('active');_update();}
-function setPlazo(el,m){_mes=m;document.querySelectorAll('.fin-plazo').forEach(function(p){p.classList.remove('active');});el.classList.add('active');_update();}
+function setOpcion(btn,cap){
+  _cap=cap;
+  var wrap=btn.closest('.financing-body');
+  wrap.querySelectorAll('.fin-opcion-btn').forEach(function(b){b.classList.remove('active');});
+  btn.classList.add('active');
+  _update();
+}
+function setPlazo(el,m){
+  _mes=m;
+  var wrap=el.closest('.financing-body');
+  wrap.querySelectorAll('.fin-plazo').forEach(function(p){p.classList.remove('active');});
+  el.classList.add('active');
+  _update();
+}
 _update();
+
+var _capUSA = 13600, _mesUSA = 12;
+function _updateUSA(){
+  var tin=_mesUSA===12?0:10.46;
+  var q=_cuota(_capUSA,tin,_mesUSA);
+  var tot=q*_mesUSA;
+  var inter=tot-_capUSA;
+  document.getElementById('cuotaValorUSA').textContent=_fmt(q,2);
+  document.getElementById('cuotaSubUSA').textContent='/mes · '+_mesUSA+' pagos · TIN '+(tin===0?'0%':'10,46%');
+  document.getElementById('detCapitalUSA').textContent=_fmt(Math.round(_capUSA));
+  document.getElementById('detTotalUSA').textContent=_fmt(Math.round(tot));
+  if(tin===0){
+    document.getElementById('detInteresesUSA').textContent='0 € · ¡MLQ los asume!';
+    document.getElementById('detInteresesUSA').className='fin-det-val fin-det-green';
+  } else {
+    document.getElementById('detInteresesUSA').textContent=_fmt(Math.round(inter));
+    document.getElementById('detInteresesUSA').className='fin-det-val';
+  }
+}
+function setOpcionUSA(btn,cap){
+  _capUSA=cap;
+  var wrap=btn.closest('.financing-body');
+  wrap.querySelectorAll('.fin-opcion-btn').forEach(function(b){b.classList.remove('active');});
+  btn.classList.add('active');
+  _updateUSA();
+}
+function setPlazoUSA(el,m){
+  _mesUSA=m;
+  var wrap=el.closest('.financing-body');
+  wrap.querySelectorAll('.fin-plazo').forEach(function(p){p.classList.remove('active');});
+  el.classList.add('active');
+  _updateUSA();
+}
+_updateUSA();
 </script>
 
 </body>
