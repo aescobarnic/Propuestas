@@ -176,6 +176,87 @@
     .header { padding: 14px 20px; }
     .main { padding: 20px 12px 40px; }
   }
+
+  /* ── REDISEÑO v2 ── */
+  .hero {
+    background: linear-gradient(135deg, #1a3d24 0%, var(--verde-dark) 45%, var(--verde) 100%);
+    color: #fff; padding: 56px 40px 48px; position: relative; overflow: hidden;
+  }
+  .hero::after {
+    content: ''; position: absolute; bottom: 0; left: 0; right: 0; height: 4px;
+    background: linear-gradient(90deg, #169B62, #fff 50%, #FF883E);
+  }
+  .hero-name { font-size: 46px; font-weight: 900; line-height: 1.05; margin-bottom: 8px; letter-spacing: -1px; }
+  .hero-precio { border-radius: 16px; background: rgba(0,0,0,0.25); border: 1px solid rgba(255,255,255,0.2); }
+  .shapo-wrap {
+    background: var(--blanco); border-radius: var(--radio); box-shadow: var(--sombra);
+    padding: 28px 32px; margin-bottom: 32px; overflow: hidden;
+  }
+  .shapo-header { display: flex; align-items: center; gap: 12px; margin-bottom: 18px; }
+  .shapo-header-text { font-size: 18px; font-weight: 800; color: var(--verde-dark); }
+  .shapo-header-sub { font-size: 13px; color: var(--texto-suave); margin-top: 2px; }
+  .colegios-grid { gap: 24px; }
+  .colegio-card { border-radius: 16px; transition: transform .2s, box-shadow .2s; border: 1.5px solid #e0ede2; }
+  .colegio-card:hover { transform: translateY(-4px); box-shadow: 0 12px 40px rgba(45,96,53,0.14); }
+  .colegio-card.recomendado { border-color: var(--naranja); }
+  .colegio-header-gradient {
+    background: linear-gradient(135deg, var(--verde-dark), var(--verde));
+    padding: 20px 22px 16px; color: #fff;
+  }
+  .colegio-header-gradient .colegio-zona { color: rgba(255,255,255,0.65); }
+  .colegio-header-gradient .colegio-nombre { color: #fff; font-size: 20px; }
+  .colegio-header-gradient .colegio-loc { color: rgba(255,255,255,0.7); }
+  .colegio-header-gradient .chip { background: rgba(255,255,255,0.15); color: #fff; border: 1px solid rgba(255,255,255,0.25); }
+  .colegio-header-gradient .chip.gold { background: rgba(255,200,0,0.2); color: #ffe082; border-color: rgba(255,200,0,0.4); }
+  .colegio-web-btn {
+    display: inline-flex; align-items: center; gap: 6px;
+    background: rgba(255,255,255,0.15); border: 1px solid rgba(255,255,255,0.3);
+    color: #fff; text-decoration: none; font-size: 11px; font-weight: 700;
+    padding: 5px 12px; border-radius: 20px; margin-top: 10px; transition: background .15s;
+  }
+  .colegio-web-btn:hover { background: rgba(255,255,255,0.25); }
+  .colegio-mapa { width: 100%; height: 155px; border: none; display: block; border-top: 1px solid #eee; }
+  .fin-nueva {
+    background: linear-gradient(135deg, var(--verde-dark), var(--verde));
+    border-radius: 14px; padding: 24px 28px; margin-top: 20px; color: #fff;
+  }
+  .fin-nueva-title { font-size: 13px; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; opacity: 0.8; margin-bottom: 16px; }
+  .fin-entrada-row { display: flex; align-items: center; gap: 12px; margin-bottom: 6px; flex-wrap: wrap; }
+  .fin-entrada-label { font-size: 13px; opacity: 0.8; white-space: nowrap; }
+  .fin-entrada-val { font-size: 22px; font-weight: 800; color: #a5d6a7; min-width: 110px; }
+  .fin-range { flex: 1; min-width: 160px; accent-color: #a5d6a7; cursor: pointer; }
+  .fin-range-limits { display: flex; justify-content: space-between; font-size: 10px; opacity: 0.5; margin-bottom: 14px; }
+  .fin-capital-display {
+    background: rgba(0,0,0,0.2); border-radius: 10px; padding: 12px 16px;
+    display: flex; justify-content: space-between; align-items: center;
+    margin-bottom: 18px; flex-wrap: wrap; gap: 8px;
+  }
+  .fin-capital-label { font-size: 12px; opacity: 0.65; }
+  .fin-capital-val { font-size: 18px; font-weight: 800; color: #a5d6a7; }
+  .fin-grid-nueva { display: grid; grid-template-columns: repeat(4,1fr); gap: 10px; }
+  .fin-item-nueva {
+    background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.15);
+    border-radius: 10px; padding: 12px 10px; text-align: center; cursor: pointer;
+    transition: background .15s, border-color .15s;
+  }
+  .fin-item-nueva:hover, .fin-item-nueva.activo { background: rgba(255,255,255,0.22); border-color: rgba(255,255,255,0.45); }
+  .fin-item-nueva .plazo { font-size: 16px; font-weight: 800; color: #fff; }
+  .fin-item-nueva .tin { font-size: 10px; color: rgba(255,255,255,0.55); margin: 3px 0; }
+  .fin-item-nueva .cuota { font-size: 13px; font-weight: 700; color: #a5d6a7; }
+  .fin-nota-nueva { font-size: 11px; opacity: 0.55; margin-top: 14px; line-height: 1.6; }
+  @media (max-width: 700px) {
+    .hero { padding: 32px 20px 28px; }
+    .hero-name { font-size: 30px; }
+    .hero-precio { min-width: unset; width: 100%; }
+    .colegios-grid { grid-template-columns: 1fr !important; }
+    .fin-grid-nueva { grid-template-columns: repeat(2,1fr); }
+    .shapo-wrap { padding: 20px 14px; }
+    .main { padding: 20px 14px 40px; }
+    .cta { padding: 28px 20px; }
+    .pago-box { padding: 20px 16px; }
+    .dos-col { grid-template-columns: 1fr; }
+    .perfil-box { grid-template-columns: 1fr; }
+  }
 </style>
 <script src="chrome-extension://liecbddmkiiihnedobmlmillhodjkdmb/js/recordConsoleEvents.js"></script></head>
 <body>
@@ -207,6 +288,23 @@
     </div>
   </div>
 </section>
+
+<!-- GOOGLE REVIEWS · SHAPO WIDGET -->
+<div style="max-width:980px;margin:28px auto 0;padding:0 24px;">
+  <div class="shapo-wrap">
+    <div class="shapo-header">
+      <div style="font-size:22px;">⭐</div>
+      <div>
+        <div class="shapo-header-text">Lo que dicen nuestras familias</div>
+        <div class="shapo-header-sub">Reseñas verificadas · My Language Quest</div>
+      </div>
+    </div>
+    <div id="shapo-widget-9a6f1ecbfd605f6b3050"></div>
+    <script id="shapo-embed-js" type="text/javascript" src="https://cdn.shapo.io/js/embed.js" defer></script>
+  </div>
+</div>
+
+
 <main class="main">
 <div class="perfil-box">
   <h3>📋 Perfil de Pío Miguel</h3>
@@ -237,7 +335,7 @@
 <div class="colegios-grid">
   <div class="colegio-card recomendado">
     <div class="badge-rec">★ RECOMENDADO</div>
-    <div class="colegio-header">
+    <div class="colegio-header-gradient">
       <div class="colegio-zona">Condado de Meath · Ciudad pequeña moderna</div>
       <div class="colegio-nombre">Coláiste Ríoga</div>
       <div class="colegio-loc">📍 Dunshaughlin · Co. Meath · A 29 km de Navan</div>
@@ -248,7 +346,9 @@
         <div class="chip gold">🏉 Rugby</div>
         <div class="chip gold">☘ Entorno tranquilo</div>
       </div>
+      <a href="https://www.colaisteRioga.ie" target="_blank" class="colegio-web-btn">🌐 Sitio web oficial</a>
     </div>
+    <iframe class="colegio-mapa" src="https://maps.google.com/maps?q=Dunshaughlin,+Co.+Meath,+Ireland&z=12&output=embed" loading="lazy" title="Ubicación Dunshaughlin"></iframe>
     <div class="colegio-body">
       <div class="colegio-desc">
         Dunshaughlin es una localidad moderna y en expansión del Condado de Meath — ambiente tranquilo, comunidad acogedora y excelente conexión con Dublín. Coláiste Ríoga, con 500 alumnos, es el punto de equilibrio perfecto: ni demasiado pequeño para agobiar, ni demasiado grande para perderse. Y es el único colegio de la propuesta con <strong>rugby</strong> entre sus actividades.
@@ -295,7 +395,7 @@
 
 
   <div class="colegio-card">
-    <div class="colegio-header">
+    <div class="colegio-header-gradient">
       <div class="colegio-zona">Cork City · Norte de la ciudad</div>
       <div class="colegio-nombre">Nano Nagle College</div>
       <div class="colegio-loc">📍 Farranree · Norte de Cork City · A 10–15 min del centro</div>
@@ -306,7 +406,10 @@
         <div class="chip gold">✝️ Católico</div>
         <div class="chip gold">☘ Atención personalizada</div>
       </div>
+    
+       <a href="https://www.nanonaglecollege.ie" target="_blank" class="colegio-web-btn">🌐 Sitio web oficial</a>
     </div>
+    <iframe class="colegio-mapa" src="https://maps.google.com/maps?q=Farranree,+Cork+City,+Ireland&z=12&output=embed" loading="lazy" title="Ubicación Cork City">></iframe>
     <div class="colegio-body">
       <div class="colegio-desc">
         Nano Nagle College destaca por ser el colegio más cercano y de trato más familiar de toda la propuesta — 136 alumnos en un ambiente donde cada estudiante es conocido por nombre por todo el profesorado. Cork, segunda ciudad de Irlanda, ofrece una vida cultural y deportiva muy rica. Para un chico tranquilo como Pío Miguel, este entorno puede ser muy contenedor y facilitar una integración más natural.
@@ -347,7 +450,7 @@
 
 
   <div class="colegio-card">
-    <div class="colegio-header">
+    <div class="colegio-header-gradient">
       <div class="colegio-zona">Condado de Dublín · Afueras de la ciudad</div>
       <div class="colegio-nombre">Bremore ETSS</div>
       <div class="colegio-loc">📍 Balbriggan · A 32 km al norte de Dublín centro · Co. Dublin</div>
@@ -358,7 +461,10 @@
         <div class="chip">Laico</div>
         <div class="chip gold">☘ Entorno Dublín</div>
       </div>
+    
+       <a href="https://www.bromoreetss.ie" target="_blank" class="colegio-web-btn">🌐 Sitio web oficial</a>
     </div>
+    <iframe class="colegio-mapa" src="https://maps.google.com/maps?q=Balbriggan,+Co.+Dublin,+Ireland&z=12&output=embed" loading="lazy" title="Ubicación Balbriggan">></iframe>
     <div class="colegio-body">
       <div class="colegio-desc">
         Bremore ETSS es un colegio moderno y dinámico situado en Balbriggan, al norte del Gran Dublín. Con casi 800 alumnos ofrece un ambiente diverso y activo, con acceso a todas las infraestructuras deportivas de la zona metropolitana de Dublín — incluyendo clubs de rugby, estadios y centros de alto rendimiento. Ideal para un chico deportista que quiere vivir la experiencia irlandesa sin alejarse de la gran ciudad.
@@ -402,7 +508,7 @@
 
 
   <div class="colegio-card">
-    <div class="colegio-header">
+    <div class="colegio-header-gradient">
       <div class="colegio-zona">Condado de Dublín · Suburbio sur</div>
       <div class="colegio-nombre">St. Kevin's Community College</div>
       <div class="colegio-loc">📍 Entre Dundrum y Sandyford · A 12 km de Dublín centro · Co. Dublin</div>
@@ -412,7 +518,9 @@
         <div class="chip">434 alumnos</div>
         <div class="chip gold">☘ Dublin Southside</div>
       </div>
+      <a href="https://www.stkevinscollege.ie" target="_blank" class="colegio-web-btn">🌐 Sitio web oficial</a>
     </div>
+    <iframe class="colegio-mapa" src="https://maps.google.com/maps?q=Dundrum,+Dublin,+Ireland&z=12&output=embed" loading="lazy" title="Ubicación Dundrum Dublin"></iframe>
     <div class="colegio-body">
       <div class="colegio-desc">
         Situado en el sur de Dublín, entre los barrios residenciales de Dundrum y Sandyford, St. Kevin's ofrece la tranquilidad de una zona suburbana de alta calidad de vida con todas las ventajas de estar a 12 km del centro de Dublín. Con 434 alumnos, mantiene un tamaño manejable que facilita la integración sin resultar abrumador. Acceso directo en metro ligero (Luas) a toda la ciudad.
@@ -635,123 +743,6 @@
 </script>
 
 
-<!-- RESEÑAS GOOGLE -->
-<div style="background:#fff;border-radius:14px;box-shadow:0 2px 16px rgba(0,0,0,0.10);margin-bottom:32px;overflow:hidden;">
-  <div style="background:var(--verde-dark);color:#fff;padding:18px 28px;display:flex;align-items:center;justify-content:space-between;gap:20px;flex-wrap:wrap;">
-    <div style="display:flex;align-items:center;gap:16px;">
-      <div>
-        <div style="font-size:10px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;opacity:0.7;margin-bottom:6px;">Google Reviews · My Language Quest</div>
-        <div style="font-size:40px;font-weight:900;line-height:1;">4,8</div>
-        <div style="display:flex;gap:3px;margin:5px 0 3px;">
-          <span style="color:#FFC107;font-size:16px;">★</span><span style="color:#FFC107;font-size:16px;">★</span><span style="color:#FFC107;font-size:16px;">★</span><span style="color:#FFC107;font-size:16px;">★</span><span style="color:#FFC107;font-size:16px;">★</span>
-        </div>
-        <div style="font-size:11px;opacity:0.65;">127 reseñas verificadas</div>
-      </div>
-    </div>
-    <div>
-      <div style="font-size:10px;font-weight:700;letter-spacing:1px;text-transform:uppercase;opacity:0.6;margin-bottom:8px;text-align:right;">Valoración por categoría</div>
-      <div style="display:flex;flex-direction:column;gap:6px;max-width:230px;">
-        <div style="display:flex;align-items:center;gap:10px;"><span style="font-size:10px;opacity:0.7;width:120px;text-align:right;flex-shrink:0;">Profesorado</span><div style="flex:1;height:4px;background:rgba(255,255,255,0.2);border-radius:2px;overflow:hidden;"><div style="width:96%;height:100%;background:#FFC107;"></div></div></div>
-        <div style="display:flex;align-items:center;gap:10px;"><span style="font-size:10px;opacity:0.7;width:120px;text-align:right;flex-shrink:0;">Familia anfitriona</span><div style="flex:1;height:4px;background:rgba(255,255,255,0.2);border-radius:2px;overflow:hidden;"><div style="width:92%;height:100%;background:#FFC107;"></div></div></div>
-        <div style="display:flex;align-items:center;gap:10px;"><span style="font-size:10px;opacity:0.7;width:120px;text-align:right;flex-shrink:0;">Organización MLQ</span><div style="flex:1;height:4px;background:rgba(255,255,255,0.2);border-radius:2px;overflow:hidden;"><div style="width:98%;height:100%;background:#FFC107;"></div></div></div>
-        <div style="display:flex;align-items:center;gap:10px;"><span style="font-size:10px;opacity:0.7;width:120px;text-align:right;flex-shrink:0;">Integración</span><div style="flex:1;height:4px;background:rgba(255,255,255,0.2);border-radius:2px;overflow:hidden;"><div style="width:95%;height:100%;background:#FFC107;"></div></div></div>
-      </div>
-    </div>
-  </div>
-  <div style="padding:20px;overflow:hidden;">
-    <div id="reviewTrack" style="display:flex;gap:16px;transition:transform .38s ease;">
-      <div style="min-width:calc(50% - 8px);background:var(--gris);border-radius:10px;padding:18px;flex-shrink:0;">
-        <div style="display:flex;align-items:center;gap:10px;margin-bottom:10px;">
-          <div style="width:38px;height:38px;border-radius:50%;background:#e8f5e9;color:#2e7d32;display:flex;align-items:center;justify-content:center;font-size:13px;font-weight:700;flex-shrink:0;">SM</div>
-          <div><div style="font-size:13px;font-weight:700;color:var(--texto);">Sofía M.</div><div style="font-size:11px;color:var(--texto-suave);">Hace 3 meses · Madrid</div></div>
-        </div>
-        <div style="margin-bottom:8px;"><span style="color:#FFC107;">★★★★★</span></div>
-        <div style="font-size:12.5px;color:var(--texto-suave);line-height:1.6;font-style:italic;">"Mi hija pasó el año completo en Irlanda y volvió completamente transformada. El nivel de inglés subió muchísimo y la acogida de la familia fue increíble desde el primer día."</div>
-        <div style="display:inline-block;margin-top:10px;font-size:10px;font-weight:700;padding:3px 10px;border-radius:20px;background:var(--verde-light);color:var(--verde-dark);">Año completo · Irlanda</div>
-      </div>
-      <div style="min-width:calc(50% - 8px);background:var(--gris);border-radius:10px;padding:18px;flex-shrink:0;">
-        <div style="display:flex;align-items:center;gap:10px;margin-bottom:10px;">
-          <div style="width:38px;height:38px;border-radius:50%;background:#e3f2fd;color:#1565c0;display:flex;align-items:center;justify-content:center;font-size:13px;font-weight:700;flex-shrink:0;">JR</div>
-          <div><div style="font-size:13px;font-weight:700;color:var(--texto);">Javier R.</div><div style="font-size:11px;color:var(--texto-suave);">Hace 5 meses · Barcelona</div></div>
-        </div>
-        <div style="margin-bottom:8px;"><span style="color:#FFC107;">★★★★★</span></div>
-        <div style="font-size:12.5px;color:var(--texto-suave);line-height:1.6;font-style:italic;">"El equipo de MLQ estuvo disponible en todo momento. Mi hijo tardó dos semanas en adaptarse y luego no quería volver. El ambiente del colegio fue excepcional."</div>
-        <div style="display:inline-block;margin-top:10px;font-size:10px;font-weight:700;padding:3px 10px;border-radius:20px;background:var(--verde-light);color:var(--verde-dark);">Familia anfitriona</div>
-      </div>
-      <div style="min-width:calc(50% - 8px);background:var(--gris);border-radius:10px;padding:18px;flex-shrink:0;">
-        <div style="display:flex;align-items:center;gap:10px;margin-bottom:10px;">
-          <div style="width:38px;height:38px;border-radius:50%;background:#fff8e1;color:#f57f17;display:flex;align-items:center;justify-content:center;font-size:13px;font-weight:700;flex-shrink:0;">AL</div>
-          <div><div style="font-size:13px;font-weight:700;color:var(--texto);">Ana L.</div><div style="font-size:11px;color:var(--texto-suave);">Hace 7 meses · Valencia</div></div>
-        </div>
-        <div style="margin-bottom:8px;"><span style="color:#FFC107;">★★★★★</span></div>
-        <div style="font-size:12.5px;color:var(--texto-suave);line-height:1.6;font-style:italic;">"Proceso muy bien organizado desde el principio. La orientación previa fue muy útil. Mi hija hizo amigos de toda Europa y volvió con una mentalidad mucho más abierta."</div>
-        <div style="display:inline-block;margin-top:10px;font-size:10px;font-weight:700;padding:3px 10px;border-radius:20px;background:var(--verde-light);color:var(--verde-dark);">Integración</div>
-      </div>
-      <div style="min-width:calc(50% - 8px);background:var(--gris);border-radius:10px;padding:18px;flex-shrink:0;">
-        <div style="display:flex;align-items:center;gap:10px;margin-bottom:10px;">
-          <div style="width:38px;height:38px;border-radius:50%;background:#f3e5f5;color:#6a1b9a;display:flex;align-items:center;justify-content:center;font-size:13px;font-weight:700;flex-shrink:0;">PG</div>
-          <div><div style="font-size:13px;font-weight:700;color:var(--texto);">Pablo G.</div><div style="font-size:11px;color:var(--texto-suave);">Hace 9 meses · Sevilla</div></div>
-        </div>
-        <div style="margin-bottom:8px;"><span style="color:#FFC107;">★★★★★</span></div>
-        <div style="font-size:12.5px;color:var(--texto-suave);line-height:1.6;font-style:italic;">"Lo que más me sorprendió fue el seguimiento del gestor estudiantil. Siempre supe cómo estaba mi hijo, sus notas y actividades. Una tranquilidad total para los padres."</div>
-        <div style="display:inline-block;margin-top:10px;font-size:10px;font-weight:700;padding:3px 10px;border-radius:20px;background:var(--verde-light);color:var(--verde-dark);">Gestor estudiantil</div>
-      </div>
-      <div style="min-width:calc(50% - 8px);background:var(--gris);border-radius:10px;padding:18px;flex-shrink:0;">
-        <div style="display:flex;align-items:center;gap:10px;margin-bottom:10px;">
-          <div style="width:38px;height:38px;border-radius:50%;background:#e8f5e9;color:#2e7d32;display:flex;align-items:center;justify-content:center;font-size:13px;font-weight:700;flex-shrink:0;">MT</div>
-          <div><div style="font-size:13px;font-weight:700;color:var(--texto);">Marta T.</div><div style="font-size:11px;color:var(--texto-suave);">Hace 11 meses · Bilbao</div></div>
-        </div>
-        <div style="margin-bottom:8px;"><span style="color:#FFC107;">★★★★★</span></div>
-        <div style="font-size:12.5px;color:var(--texto-suave);line-height:1.6;font-style:italic;">"Irlanda superó todas las expectativas. El pueblo es precioso, seguro y tranquilo. Mi hija practicó hockey sobre hierba por primera vez y ahora es su deporte favorito."</div>
-        <div style="display:inline-block;margin-top:10px;font-size:10px;font-weight:700;padding:3px 10px;border-radius:20px;background:var(--verde-light);color:var(--verde-dark);">Deporte · Irlanda</div>
-      </div>
-      <div style="min-width:calc(50% - 8px);background:var(--gris);border-radius:10px;padding:18px;flex-shrink:0;">
-        <div style="display:flex;align-items:center;gap:10px;margin-bottom:10px;">
-          <div style="width:38px;height:38px;border-radius:50%;background:#fce4ec;color:#880e4f;display:flex;align-items:center;justify-content:center;font-size:13px;font-weight:700;flex-shrink:0;">CR</div>
-          <div><div style="font-size:13px;font-weight:700;color:var(--texto);">Carmen R.</div><div style="font-size:11px;color:var(--texto-suave);">Hace 1 año · Zaragoza</div></div>
-        </div>
-        <div style="margin-bottom:8px;"><span style="color:#FFC107;">★★★★★</span></div>
-        <div style="font-size:12.5px;color:var(--texto-suave);line-height:1.6;font-style:italic;">"Repetiremos sin dudarlo. El cambio en la madurez y autonomía de nuestra hija fue increíble. La convalidación de notas también fue más sencilla de lo esperado."</div>
-        <div style="display:inline-block;margin-top:10px;font-size:10px;font-weight:700;padding:3px 10px;border-radius:20px;background:var(--verde-light);color:var(--verde-dark);">Convalidación</div>
-      </div>
-    </div>
-  </div>
-  <div style="display:flex;align-items:center;justify-content:center;gap:14px;padding:4px 20px 18px;">
-    <button id="reviewPrev" aria-label="Anterior" style="width:34px;height:34px;border-radius:50%;border:1.5px solid #ddd;background:#fff;cursor:pointer;font-size:16px;color:var(--texto-suave);">‹</button>
-    <div id="reviewDots" style="display:flex;gap:7px;"></div>
-    <button id="reviewNext" aria-label="Siguiente" style="width:34px;height:34px;border-radius:50%;border:1.5px solid #ddd;background:#fff;cursor:pointer;font-size:16px;color:var(--texto-suave);">›</button>
-  </div>
-</div>
-
-<script>
-var _rTrack = document.getElementById('reviewTrack');
-var _rCards = _rTrack.children;
-var _rDots = document.getElementById('reviewDots');
-var _rTotal = Math.ceil(_rCards.length / 2);
-var _rCur = 0;
-for (var i = 0; i < _rTotal; i++) {
-  var d = document.createElement('div');
-  d.style.cssText = 'width:6px;height:6px;border-radius:50%;background:#ddd;cursor:pointer;transition:background .2s,width .2s;';
-  d.setAttribute('data-i', i);
-  if (i === 0) { d.style.background = '#e8871a'; d.style.width = '18px'; d.style.borderRadius = '3px'; }
-  d.addEventListener('click', function () { _reviewGoTo(parseInt(this.getAttribute('data-i'))); });
-  _rDots.appendChild(d);
-}
-function _reviewGoTo(idx) {
-  _rCur = Math.max(0, Math.min(idx, _rTotal - 1));
-  var w = _rCards[0].offsetWidth + 16;
-  _rTrack.style.transform = 'translateX(-' + (_rCur * w * 2) + 'px)';
-  Array.prototype.forEach.call(_rDots.children, function (d, i) {
-    var active = i === _rCur;
-    d.style.background = active ? '#e8871a' : '#ddd';
-    d.style.width = active ? '18px' : '6px';
-    d.style.borderRadius = active ? '3px' : '50%';
-  });
-}
-document.getElementById('reviewPrev').addEventListener('click', function () { _reviewGoTo(_rCur - 1); });
-document.getElementById('reviewNext').addEventListener('click', function () { _reviewGoTo(_rCur + 1); });
-</script>
-
 <div class="pago-box">
   <h3>💳 Formas de pago</h3>
   <table class="pago-table">
@@ -763,38 +754,80 @@ document.getElementById('reviewNext').addEventListener('click', function () { _r
     <tr class="total"><td><strong>TOTAL Programa Choice + Vuelos</strong></td><td><strong>17.400 €</strong></td></tr>
   </tbody></table>
   <p style="font-size:13px;color:#777;margin-bottom:16px;">* Seguro de cancelación opcional: <strong>500 €</strong> a la firma del contrato.</p>
-  <div class="financiacion">
-    <div class="fin-title">💳 Calculadora de financiación · Banco Sabadell — sin comisión de apertura</div>
-    <div style="margin-bottom:14px;">
-      <div style="display:flex;align-items:center;gap:12px;flex-wrap:wrap;margin-bottom:10px;">
-        <label style="font-size:12px;font-weight:700;color:var(--verde-dark);white-space:nowrap;">Entrada inicial:</label>
-        <input type="range" id="fin-entrada" min="0" max="17400" step="100" value="3500" style="flex:1;min-width:160px;accent-color:var(--verde-dark);" oninput="calcFin()">
-        <span id="fin-entrada-val" style="font-size:15px;font-weight:800;color:var(--verde-dark);min-width:80px;text-align:right;">3500 €</span>
+  <div class="fin-nueva">
+    <div class="fin-nueva-title">💳 Calculadora de financiación · Banco Sabadell — sin comisión de apertura</div>
+    <div class="fin-entrada-row">
+      <div class="fin-entrada-label">Entrada inicial (mín. 3.500 €):</div>
+      <div class="fin-entrada-val" id="fin-entrada-display">3.500 €</div>
+    </div>
+    <input type="range" class="fin-range" id="fin-range-entrada" min="3500" max="8000" step="100" value="3500">
+    <div class="fin-range-limits"><span>3.500 € (mín.)</span><span>8.000 €</span></div>
+    <div class="fin-capital-display">
+      <div>
+        <div class="fin-capital-label">Precio total del programa</div>
+        <div style="font-size:12px;opacity:0.5;margin-top:2px;">– Entrada seleccionada</div>
       </div>
-      <div style="display:flex;align-items:center;gap:12px;flex-wrap:wrap;">
-        <label style="font-size:12px;font-weight:700;color:var(--texto-suave);white-space:nowrap;">Importe financiado:</label>
-        <span id="fin-financiado" style="font-size:15px;font-weight:800;color:var(--naranja);">13.900 €</span>
+      <div>
+        <div class="fin-capital-label" style="text-align:right;">Capital a financiar</div>
+        <div class="fin-capital-val" id="fin-capital-val">13.900 €</div>
       </div>
     </div>
-    <div class="fin-grid" id="fin-grid-calc">
-      <div class="fin-item" id="fin-12">
+    <div class="fin-grid-nueva" id="fin-grid-nueva">
+      <div class="fin-item-nueva activo" onclick="finSetPlazo(this,12)">
         <div class="plazo">12 m</div>
-        <div class="tin">TIN 0% · MLQ asume intereses</div>
-        <div class="cuota" id="cuota-12">≈ 1159 €/mes</div>
+        <div class="tin">TIN 0% · MLQ paga intereses</div>
+        <div class="cuota" id="fin-cuota-12">≈ — €/mes</div>
       </div>
-      <div class="fin-item" id="fin-18">
+      <div class="fin-item-nueva" onclick="finSetPlazo(this,18)">
         <div class="plazo">18 m</div>
         <div class="tin">TIN 10,46% · cliente</div>
-        <div class="cuota" id="cuota-18">≈ 838 €/mes</div>
+        <div class="cuota" id="fin-cuota-18">≈ — €/mes</div>
       </div>
-      <div class="fin-item" id="fin-24">
+      <div class="fin-item-nueva" onclick="finSetPlazo(this,24)">
         <div class="plazo">24 m</div>
         <div class="tin">TIN 10,46% · cliente</div>
-        <div class="cuota" id="cuota-24">≈ 645 €/mes</div>
+        <div class="cuota" id="fin-cuota-24">≈ — €/mes</div>
+      </div>
+      <div class="fin-item-nueva" onclick="finSetPlazo(this,36)">
+        <div class="plazo">36 m</div>
+        <div class="tin">TIN 10,46% · cliente</div>
+        <div class="cuota" id="fin-cuota-36">≈ — €/mes</div>
       </div>
     </div>
-    <p style="font-size:11px;color:#999;margin-top:10px;">* Cuotas calculadas sobre el importe financiado tras la entrada. TIN 10,46% para plazos 18 y 24 meses (TAE orientativa). Sujeto a aprobación Banco Sabadell.</p>
+    <div class="fin-nota-nueva">Sin comisión de apertura · Sin penalización por cancelación anticipada · Sujeto a aprobación bancaria</div>
   </div>
+  <script>
+  (function(){
+    var precioTotal = 17400;
+    var plazoActual = 12;
+    function fmt(n){ return Math.round(n).toLocaleString('es-ES') + ' €'; }
+    function cuota(capital, tin, meses){
+      if(tin===0) return capital/meses;
+      var r = (tin/100)/12;
+      return capital * r / (1 - Math.pow(1+r,-meses));
+    }
+    function update(){
+      var entrada = parseInt(document.getElementById('fin-range-entrada').value);
+      document.getElementById('fin-entrada-display').textContent = fmt(entrada);
+      var capital = precioTotal - entrada;
+      if(capital < 0) capital = 0;
+      document.getElementById('fin-capital-val').textContent = fmt(capital);
+      var plazos = [[12,0],[18,10.46],[24,10.46],[36,10.46]];
+      plazos.forEach(function(p){
+        var el = document.getElementById('fin-cuota-'+p[0]);
+        if(el) el.textContent = '≈ ' + fmt(cuota(capital,p[1],p[0])) + '/mes';
+      });
+    }
+    function finSetPlazo(el, m){
+      plazoActual = m;
+      document.querySelectorAll('.fin-item-nueva').forEach(function(x){ x.classList.remove('activo'); });
+      el.classList.add('activo');
+    }
+    window.finSetPlazo = finSetPlazo;
+    document.getElementById('fin-range-entrada').addEventListener('input', update);
+    update();
+  })();
+  </script>
   <script>
   function calcFin() {
     var total = 17400;
