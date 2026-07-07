@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-<!-- build:20260707-101707 -->
+<!-- build:20260707-102354 -->
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Propuesta · Pilar · My Language Quest</title>
@@ -448,7 +448,7 @@ details[open] summary::before{transform:rotate(90deg);}
       <div class="fin-resultado">
         <div class="fin-resultado-main">
           <div class="fin-cuota-label">Cuota mensual estimada</div>
-          <div class="fin-cuota-valor" id="cuotaValor">1.579,17 €</div>
+          <div class="fin-cuota-valor" id="cuotaValor">804,17 €</div>
           <div class="fin-cuota-sub" id="cuotaSub">/mes · 12 pagos · TIN 0%</div>
         </div>
         <div class="fin-resultado-detalle">
@@ -457,16 +457,24 @@ details[open] summary::before{transform:rotate(90deg);}
             <span class="fin-det-val" id="detCapital">19.300 €</span>
           </div>
           <div class="fin-det-row">
+            <span class="fin-det-label">Entrada requerida (50%)</span>
+            <span class="fin-det-val" id="detEntrada">9.650 €</span>
+          </div>
+          <div class="fin-det-row">
+            <span class="fin-det-label">Importe financiado (50% restante)</span>
+            <span class="fin-det-val" id="detFinanciado">9.650 €</span>
+          </div>
+          <div class="fin-det-row">
             <span class="fin-det-label">Intereses totales</span>
             <span class="fin-det-val fin-det-green" id="detIntereses">0 € · ¡MLQ los asume!</span>
           </div>
           <div class="fin-det-row fin-det-total">
-            <span class="fin-det-label">Total a pagar</span>
-            <span class="fin-det-val" id="detTotal">19.300 €</span>
+            <span class="fin-det-label">Total a pagar (financiado)</span>
+            <span class="fin-det-val" id="detTotal">9.650 €</span>
           </div>
         </div>
       </div>
-      <div class="fin-nota">ℹ️ Financiación sujeta a aprobación bancaria. Cuota orientativa calculada sobre el importe total del programa. Sin comisión de apertura ni penalización por cancelación anticipada.</div>
+      <div class="fin-nota">ℹ️ La familia debe aportar un <strong>50% de entrada</strong> sobre el importe del programa; el <strong>50% restante</strong> es el importe financiable con Sabadell Consumer Finance. Financiación sujeta a aprobación bancaria. Cuota orientativa calculada sobre el importe financiado. Sin comisión de apertura ni penalización por cancelación anticipada.</div>
     </div>
   </div>
 
@@ -478,12 +486,16 @@ function _fmt(n,d){return n.toLocaleString('es-ES',{minimumFractionDigits:d||0,m
 function _cuota(c,t,m){if(t===0)return c/m;var r=(t/100)/12;return c*r/(1-Math.pow(1+r,-m));}
 function _update(){
   var tin=_mes===12?0:10.46;
-  var q=_cuota(_cap,tin,_mes);
+  var entrada=_cap*0.5;
+  var financiado=_cap-entrada;
+  var q=_cuota(financiado,tin,_mes);
   var tot=q*_mes;
-  var inter=tot-_cap;
+  var inter=tot-financiado;
   document.getElementById('cuotaValor').textContent=_fmt(q,2);
   document.getElementById('cuotaSub').textContent='/mes · '+_mes+' pagos · TIN '+(tin===0?'0%':'10,46%');
   document.getElementById('detCapital').textContent=_fmt(Math.round(_cap));
+  document.getElementById('detEntrada').textContent=_fmt(Math.round(entrada));
+  document.getElementById('detFinanciado').textContent=_fmt(Math.round(financiado));
   document.getElementById('detTotal').textContent=_fmt(Math.round(tot));
   if(tin===0){
     document.getElementById('detIntereses').textContent='0 € · ¡MLQ los asume!';
