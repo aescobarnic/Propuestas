@@ -36,6 +36,10 @@ body{font-family:'Fira Sans',sans-serif;background:var(--gray-bg);color:var(--te
 .hero-precio-val{font-family:'Josefin Sans',sans-serif;font-size:32px;font-weight:700;color:#ff8a95;line-height:1;}
 .hero-precio-sub{font-size:10px;color:rgba(255,255,255,0.4);margin-top:4px;}
 .hero-precio-badge{display:inline-block;background:rgba(200,16,46,0.3);border:1px solid rgba(200,16,46,0.5);color:#ffb3bd;font-size:9px;font-weight:700;letter-spacing:1px;padding:3px 10px;border-radius:20px;margin-top:8px;text-transform:uppercase;}
+.hero-duracion-toggle{display:flex;gap:6px;margin-bottom:12px;}
+.hero-dur-opt{flex:1;background:rgba(255,255,255,0.1);border:1px solid rgba(255,255,255,0.2);border-radius:8px;padding:6px 10px;font-size:11px;font-weight:600;color:rgba(255,255,255,0.7);cursor:pointer;transition:all .2s;white-space:nowrap;}
+.hero-dur-opt:hover{background:rgba(255,255,255,0.18);}
+.hero-dur-opt.active{background:rgba(200,16,46,0.35);border-color:rgba(200,16,46,0.6);color:var(--white);}
 .main{max-width:1100px;margin:0 auto;padding:40px 24px 64px;}
 .section-title{display:flex;align-items:center;gap:12px;margin-bottom:24px;}
 .section-title h2{font-family:'Josefin Sans',sans-serif;font-size:11px;font-weight:700;letter-spacing:3px;text-transform:uppercase;color:var(--text-light);}
@@ -158,19 +162,23 @@ table.tt tr.eve td.row-label{background:#FFF6DE;}
       <div class="hero-name">Gabriel Carmona</div>
       <div class="hero-subtitle">Verano Británico en Familia · Campamento multiactividades · Marco, 15 años</div>
       <div class="hero-pills">
-        <div class="hero-pill">📅 2 al 16 de agosto · 2 semanas</div>
+        <div class="hero-pill" id="heroDatesPill">📅 2 al 16 de agosto · 2 semanas</div>
         <div class="hero-pill">🏠 Familia anfitriona · Pensión completa</div>
         <div class="hero-pill">🗣 Curso de inglés 15h/semana</div>
-        <div class="hero-pill">🎯 5 actividades medio día + 2 nocturnas/semana</div>
+        <div class="hero-pill">🎯 Multisports · excursiones y entrenamientos</div>
         <div class="hero-pill">🚌 Transporte local incluido</div>
-        <div class="hero-pill">✈️ Vuelos ida y vuelta incluidos</div>
+        <div class="hero-pill">🚕 Traslados de aeropuerto incluidos</div>
       </div>
     </div>
     <div class="hero-precio">
-      <div class="hero-precio-label">Programa completo</div>
-      <div class="hero-precio-val">4.200 €</div>
-      <div class="hero-precio-sub">2 semanas · todo incluido</div>
-      <div class="hero-precio-badge">🇬🇧 Precio único</div>
+      <div class="hero-precio-label">Elige la duración</div>
+      <div class="hero-duracion-toggle">
+        <div class="hero-dur-opt active" onclick="setDuracion(this,2)">2 semanas</div>
+        <div class="hero-dur-opt" onclick="setDuracion(this,3)">3 semanas</div>
+      </div>
+      <div class="hero-precio-val" id="heroPrecioVal">3.100 €</div>
+      <div class="hero-precio-sub" id="heroPrecioSub">2 al 16 de agosto · todo incluido</div>
+      <div class="hero-precio-badge">🇬🇧 Multisports</div>
     </div>
   </div>
 </section>
@@ -180,7 +188,7 @@ table.tt tr.eve td.row-label{background:#FFF6DE;}
   <div class="camp-box">
     <div class="camp-icon">🎯</div>
     <div class="camp-text">
-      <strong>Verano Británico en Familia</strong> combina inmersión lingüística real con un programa de actividades pensado para que Marco disfrute cada día: deporte, excursiones y vida social en inglés, siempre con el acompañamiento y la supervisión de una familia anfitriona y del equipo de welfare 24/7.
+      <strong>Verano Británico en Familia · Multisports</strong> combina inmersión lingüística real con un programa deportivo pensado para que Marco disfrute cada día: entrenamientos, excursiones y vida social en inglés, siempre con el acompañamiento y la supervisión de una familia anfitriona y del equipo de welfare 24/7. Con 15 años, Marco cumple sin problema el requisito mínimo de edad (14+) para viajar solo hasta la familia anfitriona con el servicio de traslados incluido.
     </div>
   </div>
 
@@ -246,7 +254,7 @@ table.tt tr.eve td.row-label{background:#FFF6DE;}
             <li>Curso de inglés (15 h/semana)</li>
             <li>Alojamiento en familia anfitriona</li>
             <li>Pensión completa</li>
-            <li>5 actividades de medio día</li>
+            <li>5 actividades de medio día<small>Multisports: 1 excursión de medio día + 4 sesiones de entrenamiento deportivo</small></li>
             <li>2 actividades por la noche</li>
             <li>1 actividad de día completo por semana</li>
             <li>Transporte local (bus pass si la familia está a +30 min caminando)</li>
@@ -255,12 +263,13 @@ table.tt tr.eve td.row-label{background:#FFF6DE;}
             <li>Supervisión y welfare service 24/7</li>
             <li>Fee de registro y alojamiento incluidos</li>
             <li>Seguro médico y de responsabilidad civil</li>
-            <li>Vuelos ida y vuelta</li>
+            <li>Traslados de ida y vuelta de aeropuerto<small>Recogida por representante a la llegada del vuelo → autocar National Express hasta Exeter (viaja solo) → recogida en taxi privado hasta la familia anfitriona. Servicio disponible a partir de 14 años · vuelos con llegada entre las 9:00 y las 16:00</small></li>
           </ul>
         </div>
         <div>
           <div class="col-title">No incluido</div>
           <ul class="inc-list no">
+            <li>Vuelos<small>La familia reserva el vuelo · MLQ puede ayudar en la búsqueda</small></li>
             <li>Gastos personales y ocio no programado</li>
             <li>Actividades o excursiones fuera del programa base</li>
             <li>Ropa y material personal</li>
@@ -353,7 +362,7 @@ table.tt tr.eve td.row-label{background:#FFF6DE;}
         <div class="fin-resultado-detalle">
           <div class="fin-det-row">
             <span class="fin-det-label">Importe del programa</span>
-            <span class="fin-det-val">4.200 €</span>
+            <span class="fin-det-val" id="detImporte">3.100 €</span>
           </div>
           <div class="fin-det-row">
             <span class="fin-det-label">Intereses totales</span>
@@ -373,18 +382,18 @@ table.tt tr.eve td.row-label{background:#FFF6DE;}
   <div class="payment-wrap">
     <div class="payment-inner">
       <div class="pay-title">💳 Condiciones económicas · Verano en Familia</div>
-      <div class="pay-subtitle">Reino Unido 2026 · 2 al 16 de agosto</div>
+      <div class="pay-subtitle" id="paySubtitle">Reino Unido 2026 · 2 al 16 de agosto · 2 semanas</div>
       <div class="pay-steps-row">
         <div class="pay-step-card">
           <div class="pay-step-num">Pago único</div>
           <div class="pay-step-title">A la confirmación de la reserva</div>
-          <div class="pay-step-amount">4.200 €</div>
-          <div class="pay-step-desc" style="margin-top:6px;">Incluye la totalidad del programa: curso, alojamiento, actividades, seguro y vuelos</div>
+          <div class="pay-step-amount" id="payAmount">3.100 €</div>
+          <div class="pay-step-desc" style="margin-top:6px;">Incluye la totalidad del programa: curso, alojamiento, actividades, seguro y traslados de aeropuerto</div>
         </div>
         <div class="pay-step-card">
           <div class="pay-step-num">Alternativa · Financiado</div>
           <div class="pay-step-title">3 o 6 meses sin intereses</div>
-          <div class="pay-step-amount">Desde 700 €/mes</div>
+          <div class="pay-step-amount" id="payFinanciado">Desde 516,67 €/mes</div>
           <div class="pay-step-desc" style="margin-top:6px;">MLQ asume el coste de la financiación · TIN 0%</div>
         </div>
       </div>
@@ -395,7 +404,11 @@ table.tt tr.eve td.row-label{background:#FFF6DE;}
 </main>
 
 <script>
-var _mes=3,_cap=4200;
+var _planes={
+  2:{precio:3100,fechas:'2 al 16 de agosto',fechasCortas:'2 al 16 de agosto · 2 semanas',label:'2 semanas'},
+  3:{precio:4020,fechas:'26 de julio al 16 de agosto',fechasCortas:'26 de julio al 16 de agosto · 3 semanas',label:'3 semanas'}
+};
+var _dur=2,_mes=3,_cap=_planes[2].precio;
 function _fmt(n,d){return n.toLocaleString('es-ES',{minimumFractionDigits:d||0,maximumFractionDigits:d||0})+' €';}
 function _cuota(c,m){return c/m;}
 function _update(){
@@ -406,7 +419,21 @@ function _update(){
   document.getElementById('detIntereses').textContent='0 € · ¡MLQ los asume!';
 }
 function setPlazo(el,m){_mes=m;document.querySelectorAll('.fin-plazo').forEach(function(p){p.classList.remove('active');});el.classList.add('active');_update();}
+function setDuracion(el,d){
+  _dur=d;_cap=_planes[d].precio;
+  document.querySelectorAll('.hero-dur-opt').forEach(function(p){p.classList.remove('active');});
+  el.classList.add('active');
+  document.getElementById('heroPrecioVal').textContent=_fmt(_planes[d].precio);
+  document.getElementById('heroPrecioSub').textContent=_planes[d].fechas+' · todo incluido';
+  document.getElementById('heroDatesPill').textContent='📅 '+_planes[d].fechasCortas;
+  document.getElementById('paySubtitle').textContent='Reino Unido 2026 · '+_planes[d].fechasCortas;
+  document.getElementById('payAmount').textContent=_fmt(_planes[d].precio);
+  document.getElementById('detImporte').textContent=_fmt(_planes[d].precio);
+  document.getElementById('payFinanciado').textContent='Desde '+_fmt(_planes[d].precio/6,2)+'/mes';
+  _update();
+}
 _update();
+setDuracion(document.querySelector('.hero-dur-opt.active'),2);
 </script>
 </body>
 </html>
