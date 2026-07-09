@@ -31,15 +31,15 @@ body{font-family:'Fira Sans',sans-serif;background:var(--gray-bg);color:var(--te
 .hero-subtitle{font-size:13px;color:rgba(255,255,255,0.55);font-weight:300;}
 .hero-pills{display:flex;flex-wrap:wrap;gap:8px;margin-top:20px;}
 .hero-pill{display:flex;align-items:center;gap:6px;background:rgba(255,255,255,0.12);border:1px solid rgba(255,255,255,0.2);border-radius:8px;padding:6px 12px;font-size:11px;color:var(--white);font-weight:500;}
-.hero-precio{flex-shrink:0;background:rgba(0,0,0,0.2);border:1px solid rgba(255,255,255,0.15);border-radius:16px;padding:20px 28px;text-align:center;}
+.hero-precio-group{display:flex;gap:14px;justify-content:center;flex-shrink:0;}
+.hero-precio{flex:1;min-width:170px;background:rgba(0,0,0,0.2);border:1.5px solid rgba(255,255,255,0.15);border-radius:16px;padding:18px 20px;text-align:center;cursor:pointer;transition:all .2s;}
+.hero-precio:hover{background:rgba(0,0,0,0.28);}
+.hero-precio.active{background:rgba(200,16,46,0.22);border-color:rgba(200,16,46,0.55);box-shadow:0 4px 20px rgba(200,16,46,0.2);}
 .hero-precio-label{font-size:9px;letter-spacing:2px;text-transform:uppercase;color:rgba(255,255,255,0.5);margin-bottom:6px;font-weight:600;}
-.hero-precio-val{font-family:'Josefin Sans',sans-serif;font-size:32px;font-weight:700;color:#ff8a95;line-height:1;}
+.hero-precio.active .hero-precio-label{color:#ffb3bd;}
+.hero-precio-val{font-family:'Josefin Sans',sans-serif;font-size:28px;font-weight:700;color:#ff8a95;line-height:1;}
 .hero-precio-sub{font-size:10px;color:rgba(255,255,255,0.4);margin-top:4px;}
 .hero-precio-badge{display:inline-block;background:rgba(200,16,46,0.3);border:1px solid rgba(200,16,46,0.5);color:#ffb3bd;font-size:9px;font-weight:700;letter-spacing:1px;padding:3px 10px;border-radius:20px;margin-top:8px;text-transform:uppercase;}
-.hero-duracion-toggle{display:flex;gap:6px;margin-bottom:12px;}
-.hero-dur-opt{flex:1;background:rgba(255,255,255,0.1);border:1px solid rgba(255,255,255,0.2);border-radius:8px;padding:6px 10px;font-size:11px;font-weight:600;color:rgba(255,255,255,0.7);cursor:pointer;transition:all .2s;white-space:nowrap;}
-.hero-dur-opt:hover{background:rgba(255,255,255,0.18);}
-.hero-dur-opt.active{background:rgba(200,16,46,0.35);border-color:rgba(200,16,46,0.6);color:var(--white);}
 .main{max-width:1100px;margin:0 auto;padding:40px 24px 64px;}
 .section-title{display:flex;align-items:center;gap:12px;margin-bottom:24px;}
 .section-title h2{font-family:'Josefin Sans',sans-serif;font-size:11px;font-weight:700;letter-spacing:3px;text-transform:uppercase;color:var(--text-light);}
@@ -104,7 +104,8 @@ body{font-family:'Fira Sans',sans-serif;background:var(--gray-bg);color:var(--te
 .pay-step-amount{font-family:'Josefin Sans',sans-serif;font-size:22px;font-weight:700;color:#ff8a95;margin-top:8px;}
 .pay-note{font-size:11px;color:rgba(255,255,255,0.3);line-height:1.65;font-style:italic;border-top:1px solid rgba(255,255,255,0.1);padding-top:14px;}
 @media(max-width:720px){
-  .header{padding:16px 20px;}.hero{padding:28px 20px 24px;}.hero-name{font-size:28px;}.hero-precio{display:none;}
+  .header{padding:16px 20px;}.hero{padding:28px 20px 24px;}.hero-name{font-size:28px;}
+  .hero-precio-group{width:100%;flex-direction:column;}
   .main{padding:28px 16px 48px;}.includes-grid{grid-template-columns:1fr;}
   .pay-steps-row{grid-template-columns:1fr;}
   .fin-plazos{grid-template-columns:repeat(2,1fr);}.fin-resultado{grid-template-columns:1fr;}
@@ -162,7 +163,7 @@ table.tt tr.eve td.row-label{background:#FFF6DE;}
       <div class="hero-name">Gabriel Carmona</div>
       <div class="hero-subtitle">Verano Británico en Familia · Campamento multiactividades · Marco, 15 años</div>
       <div class="hero-pills">
-        <div class="hero-pill" id="heroDatesPill">📅 2 al 16 de agosto · 2 semanas</div>
+        <div class="hero-pill" id="heroDatesPill">📅 2 al 16 de agosto</div>
         <div class="hero-pill">🏠 Familia anfitriona · Pensión completa</div>
         <div class="hero-pill">🗣 Curso de inglés 15h/semana</div>
         <div class="hero-pill">🎯 Multisports · excursiones y entrenamientos</div>
@@ -170,15 +171,19 @@ table.tt tr.eve td.row-label{background:#FFF6DE;}
         <div class="hero-pill">✈️ Vuelos y traslados de aeropuerto incluidos</div>
       </div>
     </div>
-    <div class="hero-precio">
-      <div class="hero-precio-label">Elige la duración</div>
-      <div class="hero-duracion-toggle">
-        <div class="hero-dur-opt active" onclick="setDuracion(this,2)">2 semanas</div>
-        <div class="hero-dur-opt" onclick="setDuracion(this,3)">3 semanas</div>
+    <div class="hero-precio-group">
+      <div class="hero-precio active" id="cardDur2" onclick="setDuracion(this,2)">
+        <div class="hero-precio-label">2 semanas</div>
+        <div class="hero-precio-val" id="precioVal2">3.100 €</div>
+        <div class="hero-precio-sub">2 al 16 de agosto</div>
+        <div class="hero-precio-badge">🇬🇧 Multisports</div>
       </div>
-      <div class="hero-precio-val" id="heroPrecioVal">3.100 €</div>
-      <div class="hero-precio-sub" id="heroPrecioSub">2 al 16 de agosto · todo incluido</div>
-      <div class="hero-precio-badge">🇬🇧 Multisports</div>
+      <div class="hero-precio" id="cardDur3" onclick="setDuracion(this,3)">
+        <div class="hero-precio-label">3 semanas</div>
+        <div class="hero-precio-val" id="precioVal3">4.020 €</div>
+        <div class="hero-precio-sub">26 jul – 16 ago</div>
+        <div class="hero-precio-badge">🇬🇧 Multisports</div>
+      </div>
     </div>
   </div>
 </section>
@@ -405,11 +410,16 @@ table.tt tr.eve td.row-label{background:#FFF6DE;}
 
 <script>
 var _planes={
-  2:{precio:3100,fechas:'2 al 16 de agosto',fechasCortas:'2 al 16 de agosto · 2 semanas',label:'2 semanas'},
-  3:{precio:4020,fechas:'26 de julio al 16 de agosto',fechasCortas:'26 de julio al 16 de agosto · 3 semanas',label:'3 semanas'}
+  2:{precio:3100,fechas:'2 al 16 de agosto',fechasCortas:'2 al 16 de agosto',label:'2 semanas'},
+  3:{precio:4020,fechas:'26 de julio al 16 de agosto',fechasCortas:'26 de julio al 16 de agosto',label:'3 semanas'}
 };
 var _dur=2,_mes=3,_cap=_planes[2].precio;
-function _fmt(n,d){return n.toLocaleString('es-ES',{minimumFractionDigits:d||0,maximumFractionDigits:d||0})+' €';}
+function _fmt(n,d){
+  var neg=n<0;n=Math.abs(n);
+  var parts=n.toFixed(d||0).split('.');
+  parts[0]=parts[0].replace(/\B(?=(\d{3})+(?!\d))/g,'.');
+  return (neg?'-':'')+parts.join(',')+' €';
+}
 function _cuota(c,m){return c/m;}
 function _update(){
   var q=_cuota(_cap,_mes);var tot=q*_mes;
@@ -421,19 +431,18 @@ function _update(){
 function setPlazo(el,m){_mes=m;document.querySelectorAll('.fin-plazo').forEach(function(p){p.classList.remove('active');});el.classList.add('active');_update();}
 function setDuracion(el,d){
   _dur=d;_cap=_planes[d].precio;
-  document.querySelectorAll('.hero-dur-opt').forEach(function(p){p.classList.remove('active');});
+  document.querySelectorAll('.hero-precio').forEach(function(p){p.classList.remove('active');});
   el.classList.add('active');
-  document.getElementById('heroPrecioVal').textContent=_fmt(_planes[d].precio);
-  document.getElementById('heroPrecioSub').textContent=_planes[d].fechas+' · todo incluido';
   document.getElementById('heroDatesPill').textContent='📅 '+_planes[d].fechasCortas;
-  document.getElementById('paySubtitle').textContent='Reino Unido 2026 · '+_planes[d].fechasCortas;
+  document.getElementById('paySubtitle').textContent='Reino Unido 2026 · '+_planes[d].fechasCortas+' · '+_planes[d].label;
   document.getElementById('payAmount').textContent=_fmt(_planes[d].precio);
   document.getElementById('detImporte').textContent=_fmt(_planes[d].precio);
   document.getElementById('payFinanciado').textContent='Desde '+_fmt(_planes[d].precio/6,2)+'/mes';
   _update();
 }
-_update();
-setDuracion(document.querySelector('.hero-dur-opt.active'),2);
+document.getElementById('precioVal2').textContent=_fmt(_planes[2].precio);
+document.getElementById('precioVal3').textContent=_fmt(_planes[3].precio);
+setDuracion(document.getElementById('cardDur2'),2);
 </script>
 </body>
 </html>
