@@ -68,7 +68,7 @@ body{font-family:'Fira Sans',sans-serif;background:var(--gray-bg);color:var(--te
 .financing-body{padding:28px 32px;}
 .fin-plazo-label{font-family:'Josefin Sans',sans-serif;font-size:9px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--text-light);margin-bottom:10px;}
 .fin-plazo-wrap{margin-bottom:24px;}
-.fin-plazos{display:grid;grid-template-columns:repeat(2,1fr);gap:10px;max-width:420px;}
+.fin-plazos{display:grid;grid-template-columns:repeat(2,1fr);gap:14px;}
 .fin-plazo{background:var(--gray-card);border:1.5px solid var(--gray-border);border-radius:12px;padding:14px 12px;cursor:pointer;text-align:center;transition:all .2s;}
 .fin-plazo:hover{border-color:var(--navy-mid);transform:translateY(-2px);}
 .fin-plazo.active{border-color:var(--navy);background:var(--navy-light);box-shadow:0 4px 16px rgba(27,42,74,0.15);}
@@ -114,10 +114,10 @@ body{font-family:'Fira Sans',sans-serif;background:var(--gray-bg);color:var(--te
 .photo-section{background:var(--white);border-radius:16px;border:1.5px solid var(--gray-border);box-shadow:0 2px 16px rgba(10,20,50,0.05);overflow:hidden;margin-bottom:24px;}
 .photo-head{background:linear-gradient(135deg,var(--navy-dark),var(--navy));padding:20px 32px;}
 .photo-head h3{font-family:'Josefin Sans',sans-serif;font-size:14px;font-weight:700;color:var(--white);letter-spacing:1px;}
-.photo-body{padding:28px 32px;display:grid;grid-template-columns:1fr 1fr;gap:32px;align-items:center;}
+.photo-body{padding:28px 32px;display:grid;grid-template-columns:0.85fr 1fr;gap:32px;align-items:flex-start;}
 .photo-body.reverse .photo-img{order:2;}
 .photo-body.reverse .photo-text{order:1;}
-.photo-img img{width:100%;border-radius:12px;box-shadow:0 4px 20px rgba(10,20,50,0.15);display:block;}
+.photo-img img{width:100%;height:230px;object-fit:cover;border-radius:12px;box-shadow:0 4px 20px rgba(10,20,50,0.15);display:block;}
 .photo-img-row{display:flex;gap:14px;}
 .photo-img-row img{width:50%;border-radius:12px;box-shadow:0 4px 20px rgba(10,20,50,0.15);display:block;}
 .photo-text p{font-size:12.5px;color:var(--text-mid);line-height:1.75;margin-bottom:12px;}
@@ -167,7 +167,7 @@ table.tt tr.eve td.row-label{background:#FFF6DE;}
         <div class="hero-pill">🗣 Curso de inglés 15h/semana</div>
         <div class="hero-pill">🎯 Multisports · excursiones y entrenamientos</div>
         <div class="hero-pill">🚌 Transporte local incluido</div>
-        <div class="hero-pill">🚕 Traslados de aeropuerto incluidos</div>
+        <div class="hero-pill">✈️ Vuelos y traslados de aeropuerto incluidos</div>
       </div>
     </div>
     <div class="hero-precio">
@@ -263,13 +263,13 @@ table.tt tr.eve td.row-label{background:#FFF6DE;}
             <li>Supervisión y welfare service 24/7</li>
             <li>Fee de registro y alojamiento incluidos</li>
             <li>Seguro médico y de responsabilidad civil</li>
+            <li>Vuelos ida y vuelta</li>
             <li>Traslados de ida y vuelta de aeropuerto<small>Recogida por representante a la llegada del vuelo → autocar National Express hasta Exeter (viaja solo) → recogida en taxi privado hasta la familia anfitriona. Servicio disponible a partir de 14 años · vuelos con llegada entre las 9:00 y las 16:00</small></li>
           </ul>
         </div>
         <div>
           <div class="col-title">No incluido</div>
           <ul class="inc-list no">
-            <li>Vuelos<small>La familia reserva el vuelo · MLQ puede ayudar en la búsqueda</small></li>
             <li>Gastos personales y ocio no programado</li>
             <li>Actividades o excursiones fuera del programa base</li>
             <li>Ropa y material personal</li>
@@ -331,8 +331,8 @@ table.tt tr.eve td.row-label{background:#FFF6DE;}
       <div style="display:flex;align-items:center;gap:14px;">
         <div class="fin-icon">💳</div>
         <div>
-          <div class="fin-title">Simulador de financiación</div>
-          <div class="fin-sub">Sin intereses · MLQ asume el coste de la financiación</div>
+          <div class="fin-title">Simulador de financiación · Banco Sabadell</div>
+          <div class="fin-sub">3 o 6 meses sin intereses · MLQ asume el coste de la financiación</div>
         </div>
       </div>
       <div class="fin-badge">TIN 0%</div>
@@ -374,7 +374,7 @@ table.tt tr.eve td.row-label{background:#FFF6DE;}
           </div>
         </div>
       </div>
-      <div class="fin-nota">ℹ️ Financiación sujeta a aprobación bancaria. Sin comisión de apertura ni penalización por cancelación anticipada.</div>
+      <div class="fin-nota">ℹ️ Financiación ofrecida a través de Banco Sabadell, sujeta a aprobación bancaria. Sin comisión de apertura ni penalización por cancelación anticipada.</div>
     </div>
   </div>
 
@@ -388,7 +388,7 @@ table.tt tr.eve td.row-label{background:#FFF6DE;}
           <div class="pay-step-num">Pago único</div>
           <div class="pay-step-title">A la confirmación de la reserva</div>
           <div class="pay-step-amount" id="payAmount">3.100 €</div>
-          <div class="pay-step-desc" style="margin-top:6px;">Incluye la totalidad del programa: curso, alojamiento, actividades, seguro y traslados de aeropuerto</div>
+          <div class="pay-step-desc" style="margin-top:6px;">Incluye la totalidad del programa: curso, alojamiento, actividades, seguro, vuelos y traslados de aeropuerto</div>
         </div>
         <div class="pay-step-card">
           <div class="pay-step-num">Alternativa · Financiado</div>
