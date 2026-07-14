@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Calculadora de financiación · Banco Sabadell · My Language Quest</title>
+<style>
+  :root{
+    --blue-dark:#001f40;
+    --blue-mid:#0a4a8a;
+    --blue:#003366;
+    --blue-light:#dce8f5;
+    --red:#B12900;
+    --red-dark:#8A1F00;
+    --red-light:#fdf0ec;
+    --gray-bg:#f0f2f6;
+    --gray-card:#f8f9fb;
+    --gray-border:#dde1ea;
+    --text:#0d1b2a;
+    --text-mid:#3d4f62;
+    --text-light:#7a8a9b;
+    --gold:#C9A227;
+    --gold-dark:#9c7d1c;
+    --white:#ffffff;
+  }
+  *{box-sizing:border-box;}
+  body{
+    margin:0;
+    background:#e7eaf0;
+    font-family:'Segoe UI', Arial, sans-serif;
+    padding:40px 16px;
+  }
+  .stage{max-width:900px;margin:0 auto;}
+
+  .calc-card{
+    background:var(--blue-light);
+    border-radius:16px;
+    padding:26px 28px 22px;
+    border:1px solid var(--blue-mid);
+    box-shadow:0 1px 3px rgba(13,27,42,0.08);
+  }
+
+  .calc-title{
+    display:flex;
+    align-items:center;
+    gap:10px;
+    margin-bottom:8px;
+  }
+  .calc-title svg{flex-shrink:0;}
+  .calc-title .t{
+    font-size:16.5px;
+    font-weight:700;
+    color:var(--blue-dark);
+  }
+  .calc-title .t span{
+    font-weight:500;
+    color:var(--text-mid);
+  }
+
+  .school-line{
+    display:inline-block;
+    background:var(--red);
+    color:var(--white);
+    font-size:11.5px;
+    font-weight:700;
+    letter-spacing:.03em;
+    padding:4px 10px;
+    border-radius:5px;
+    margin-bottom:20px;
+  }
+
+  .slider-row{
+    margin-bottom:20px;
+  }
+  .slider-row .top{
+    display:flex;
+    justify-content:space-between;
+    align-items:baseline;
+    margin-bottom:10px;
+  }
+  .slider-row .top label{
+    font-weight:700;
+    color:var(--blue-dark);
+    font-size:14.5px;
+  }
+  .slider-row .top .value{
+    font-weight:700;
+    font-size:17px;
+    color:var(--text);
+    font-variant-numeric:tabular-nums;
+  }
+  .slider-row.financiado .top .value{
+    color:var(--gold-dark);
+    font-size:19px;
+  }
+
+  .financed-line{
+    display:flex;
+    justify-content:space-between;
+    background:var(--white);
+    border:1px solid var(--gray-border);
+    border-radius:10px;
+    padding:14px 18px;
+    margin-bottom:6px;
+    font-size:14px;
+    color:var(--text-mid);
+  }
+  .financed-line b{color:var(--text);}
+  .financed-line b.gold{color:var(--gold-dark);font-size:17px;}
+
+  input[type="range"]{
+    -webkit-appearance:none;
+    width:100%;
+    height:7px;
+    border-radius:4px;
+    background:linear-gradient(to right, var(--blue) 0%, var(--blue) var(--fill,30%), var(--gray-border) var(--fill,30%), var(--gray-border) 100%);
+    outline:none;
+  }
+  input[type="range"]::-webkit-slider-thumb{
+    -webkit-appearance:none;
+    width:20px;height:20px;
+    border-radius:50%;
+    background:var(--gold);
+    border:3px solid var(--white);
+    box-shadow:0 0 0 1px var(--gold-dark), 0 1px 3px rgba(0,0,0,0.25);
+    cursor:pointer;
+    margin-top:-7px;
+  }
+  input[type="range"]::-moz-range-thumb{
+    width:20px;height:20px;
+    border-radius:50%;
+    background:var(--gold);
+    border:3px solid var(--white);
+    box-shadow:0 0 0 1px var(--gold-dark), 0 1px 3px rgba(0,0,0,0.25);
+    cursor:pointer;
+  }
+  input[type="range"]::-webkit-slider-runnable-track{
+    height:6px;
+    border-radius:4px;
+  }
+
+  .range-hint{
+    display:flex;
+    justify-content:space-between;
+    font-size:11px;
+    color:var(--text-light);
+    margin-top:6px;
+  }
+
+  .cards-grid{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:14px;
+    margin-top:24px;
+  }
+  @media(max-width:720px){
+    .cards-grid{grid-template-columns:repeat(2,1fr);}
+  }
+
+  .plan-card{
+    background:var(--white);
+    border:1px solid var(--gray-border);
+    border-top:4px solid var(--blue);
+    border-radius:12px;
+    padding:20px 12px 18px;
+    text-align:center;
+  }
+  .plan-card.interest-plan{
+    border-top:4px solid var(--red);
+  }
+  .plan-card .months{
+    font-size:26px;
+    font-weight:700;
+    color:var(--blue-dark);
+    margin-bottom:6px;
+  }
+  .plan-card .tin{
+    font-size:12px;
+    color:var(--text-light);
+    margin-bottom:2px;
+  }
+  .plan-card .who{
+    font-size:12px;
+    color:var(--text-light);
+    margin-bottom:10px;
+  }
+  .plan-card .who.zero{color:var(--blue-mid);font-weight:600;}
+  .plan-card .who.interest{color:var(--red);font-weight:600;}
+  .plan-card .cuota{
+    font-size:20px;
+    font-weight:700;
+    color:var(--gold-dark);
+  }
+  .plan-card .cuota small{
+    font-size:12px;
+    font-weight:500;
+    color:var(--text-light);
+  }
+
+  .foot-note{
+    margin-top:18px;
+    font-size:11.5px;
+    color:var(--text-light);
+    font-style:italic;
+    line-height:1.5;
+  }
+</style>
+</head>
+<body>
+<div class="stage">
+<div class="calc-card">
+
+  <div class="calc-title">
+    <svg width="22" height="22" viewBox="0 0 24 24" fill="none">
+      <rect x="2" y="5" width="20" height="14" rx="2" fill="#003366"/>
+      <rect x="2" y="8" width="20" height="3" fill="#B12900"/>
+      <rect x="4" y="14" width="6" height="2.2" rx="1" fill="#C9A227"/>
+    </svg>
+    <div class="t">Calculadora de financiación · Banco Sabadell <span>— sin comisión de apertura</span></div>
+  </div>
+  <div class="school-line">PROGRAMA F1 · LIFE PREPARATORY ACADEMY</div>
+
+  <div class="slider-row">
+    <div class="top">
+      <label>Entrada inicial</label>
+      <span class="value" id="downVal">3.500 €</span>
+    </div>
+    <input type="range" id="downSlider" min="3500" max="20000" step="100" value="3500">
+    <div class="range-hint"><span>3.500 € mínimo</span><span>20.000 €</span></div>
+  </div>
+
+  <div class="financed-line">
+    <span>Precio total del programa: <b>20.000 €</b></span>
+    <span>Importe financiado: <b class="gold" id="financedVal">16.500 €</b></span>
+  </div>
+
+  <div class="cards-grid" id="cardsGrid">
+    <div class="plan-card">
+      <div class="months">12 m</div>
+      <div class="tin">TIN 0%</div>
+      <div class="who zero">Sabadell · MLQ asume interés</div>
+      <div class="cuota" id="cuota12">— €<br><small>/mes</small></div>
+    </div>
+    <div class="plan-card interest-plan">
+      <div class="months">18 m</div>
+      <div class="tin">TIN 10,46%</div>
+      <div class="who interest">A cargo del cliente</div>
+      <div class="cuota" id="cuota18">— €<br><small>/mes</small></div>
+    </div>
+    <div class="plan-card interest-plan">
+      <div class="months">24 m</div>
+      <div class="tin">TIN 10,46%</div>
+      <div class="who interest">A cargo del cliente</div>
+      <div class="cuota" id="cuota24">— €<br><small>/mes</small></div>
+    </div>
+    <div class="plan-card interest-plan">
+      <div class="months">36 m</div>
+      <div class="tin">TIN 10,46%</div>
+      <div class="who interest">A cargo del cliente</div>
+      <div class="cuota" id="cuota36">— €<br><small>/mes</small></div>
+    </div>
+  </div>
+
+  <div class="foot-note">* Cuotas calculadas sobre el importe financiado. TIN 10,46% para plazos de 18, 24 y 36 meses (TAE orientativa). Sujeto a aprobación de Banco Sabadell. Válido para el programa F1 en Life Preparatory Academy.</div>
+
+</div>
+</div>
+
+<script>
+(function(){
+  const downSlider = document.getElementById('downSlider');
+  const downVal = document.getElementById('downVal');
+  const financedVal = document.getElementById('financedVal');
+  const TOTAL_PRICE = 20000;
+  const ANNUAL_RATE = 0.1046;
+
+  function formatEUR(n){
+    let rounded = Math.round(n);
+    let neg = rounded < 0;
+    rounded = Math.abs(rounded);
+    let s = String(rounded).replace(/\B(?=(\d{3})+(?!\d))/g, '.');
+    return (neg ? '-' : '') + s + ' €';
+  }
+
+  function cuota(id, financed, months){
+    const el = document.getElementById(id);
+    let monthly;
+    if(financed <= 0){
+      monthly = 0;
+    } else if(months === 12){
+      monthly = financed / 12;
+    } else {
+      const r = ANNUAL_RATE / 12;
+      monthly = financed * r / (1 - Math.pow(1+r, -months));
+    }
+    el.innerHTML = formatEUR(monthly) + '<br><small>/mes</small>';
+  }
+
+  function recalc(){
+    const down = parseInt(downSlider.value,10);
+    downVal.textContent = formatEUR(down);
+    const pct = ((down - 3500) / (20000 - 3500)) * 100;
+    downSlider.style.setProperty('--fill', pct + '%');
+    const financed = TOTAL_PRICE - down;
+    financedVal.textContent = formatEUR(financed);
+
+    cuota('cuota12', financed, 12);
+    cuota('cuota18', financed, 18);
+    cuota('cuota24', financed, 24);
+    cuota('cuota36', financed, 36);
+  }
+
+  downSlider.addEventListener('input', recalc);
+
+  recalc();
+})();
+</script>
+</body>
+</html>
