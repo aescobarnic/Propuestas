@@ -135,15 +135,16 @@
 
   /* GALLERY MOSAIC */
   .gallery-quote { font-family: 'Josefin Sans', sans-serif; font-size: 15px; font-style: italic; color: var(--blue); text-align: center; margin-bottom: 22px; padding-bottom: 18px; border-bottom: 1px dashed var(--gray-border); }
-  .gallery-mosaic { display: grid; grid-template-columns: 1.4fr 1fr; grid-template-rows: repeat(2, 140px); gap: 14px; }
-  .gallery-item { position: relative; border-radius: 14px; overflow: hidden; box-shadow: 0 6px 18px rgba(0,51,102,0.14); }
-  .gallery-item.big { grid-row: span 2; }
+  .gallery-mosaic { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; }
+  .gallery-item { position: relative; border-radius: 14px; overflow: hidden; height: 150px; box-shadow: 0 6px 18px rgba(0,51,102,0.14); }
+  .gallery-item.feature { grid-column: span 3; height: 280px; }
   .gallery-item img { width: 100%; height: 100%; object-fit: cover; display: block; transition: transform .4s ease; }
   .gallery-item:hover img { transform: scale(1.06); }
   .gallery-overlay { position: absolute; left: 0; right: 0; bottom: 0; padding: 10px 12px 8px; font-size: 11px; font-weight: 600; color: var(--white); background: linear-gradient(to top, rgba(0,51,102,0.85), transparent); }
   @media (max-width: 700px) {
-    .gallery-mosaic { grid-template-columns: 1fr 1fr; grid-template-rows: repeat(3, 130px); }
-    .gallery-item.big { grid-column: span 2; grid-row: span 1; }
+    .gallery-mosaic { grid-template-columns: 1fr 1fr; }
+    .gallery-item.feature { grid-column: span 2; height: 200px; }
+    .gallery-item { height: 130px; }
   }
 </style>
 </head>
@@ -226,9 +227,13 @@
   <div class="gallery-wrap">
     <div class="gallery-quote">“El día del aeropuerto los nervios se convierten en ilusión.”</div>
     <div class="gallery-mosaic">
-      <div class="gallery-item big">
+      <div class="gallery-item feature">
+        <img src="mlq-alumnos-4.jpg" alt="Alumnos MLQ en el aeropuerto" loading="lazy">
+        <div class="gallery-overlay">Primer paso, gran año ✈️</div>
+      </div>
+      <div class="gallery-item">
         <img src="mlq-alumnos-1.jpg" alt="Alumnos MLQ en el aeropuerto" loading="lazy">
-        <div class="gallery-overlay">Rumbo a EE.UU. ✈️</div>
+        <div class="gallery-overlay">Rumbo a EE.UU.</div>
       </div>
       <div class="gallery-item">
         <img src="mlq-alumnos-2.jpg" alt="Alumnos MLQ en el aeropuerto" loading="lazy">
@@ -237,10 +242,6 @@
       <div class="gallery-item">
         <img src="mlq-alumnos-3.jpg" alt="Alumnos MLQ en el aeropuerto" loading="lazy">
         <div class="gallery-overlay">Lista la maleta</div>
-      </div>
-      <div class="gallery-item">
-        <img src="mlq-alumnos-4.jpg" alt="Alumnos MLQ en el aeropuerto" loading="lazy">
-        <div class="gallery-overlay">Primer paso, gran año</div>
       </div>
     </div>
     <div class="gallery-caption">Diana se unirá a esta misma comunidad de estudiantes MLQ que ya han vivido su despegue hacia el año más importante de su etapa escolar.</div>
@@ -256,4 +257,4 @@
 </body>
 </html>
 
-<!-- build:2026-07-16T11:21:12.154175+00:00 -->
+<!-- build:2026-07-16T11:31:19.393355+00:00 -->
