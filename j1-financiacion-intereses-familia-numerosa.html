@@ -113,6 +113,17 @@
     .fin-resultado { grid-template-columns: 1fr; }
     .fin-resultado-main { border-right: none; border-bottom: 1px solid rgba(255,255,255,0.15); padding-right: 0; padding-bottom: 20px; }
   }
+
+  /* GALLERY */
+  .gallery-wrap { background: var(--white); border-radius: 16px; padding: 28px 32px; box-shadow: 0 2px 10px rgba(0,0,0,0.04); border: 1px solid var(--gray-border); margin-bottom: 40px; }
+  .gallery-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px; }
+  .gallery-item { border-radius: 12px; overflow: hidden; aspect-ratio: 3/4; box-shadow: 0 4px 14px rgba(0,51,102,0.12); }
+  .gallery-item img { width: 100%; height: 100%; object-fit: cover; display: block; transition: transform .3s ease; }
+  .gallery-item:hover img { transform: scale(1.05); }
+  .gallery-caption { margin-top: 18px; font-size: 12.5px; color: var(--text-light); text-align: center; line-height: 1.6; }
+  @media (max-width: 700px) {
+    .gallery-grid { grid-template-columns: repeat(2, 1fr); }
+  }
 </style>
 </head>
 <body>
@@ -169,75 +180,26 @@
   </div>
 
   <div class="section-title">
-    <h2>O financia con Banco Sabadell</h2>
-    <p>Paga el resto del programa cómodamente, a tu ritmo</p>
+    <h2>Nuestros estudiantes, en ruta</h2>
+    <p>Momentos reales de alumnos MLQ el día de su salida</p>
   </div>
 
-  <div class="financing-wrap">
-    <div class="financing-head">
-      <div class="financing-head-left">
-        <div class="fin-icon">💳</div>
-        <div>
-          <div class="fin-title">Paga a tu ritmo, sin preocupaciones</div>
-          <div class="fin-sub">Financiación flexible · Aprobación rápida · 100% online · Sin comisión de apertura</div>
-        </div>
+  <div class="gallery-wrap">
+    <div class="gallery-grid">
+      <div class="gallery-item">
+        <img src="mlq-alumnos-1.jpg" alt="Alumnos MLQ en el aeropuerto" loading="lazy">
       </div>
-      <div class="fin-badge">Hasta 36 meses</div>
+      <div class="gallery-item">
+        <img src="mlq-alumnos-2.jpg" alt="Alumnos MLQ en el aeropuerto" loading="lazy">
+      </div>
+      <div class="gallery-item">
+        <img src="mlq-alumnos-3.jpg" alt="Alumnos MLQ en el aeropuerto" loading="lazy">
+      </div>
+      <div class="gallery-item">
+        <img src="mlq-alumnos-4.jpg" alt="Alumnos MLQ en el aeropuerto" loading="lazy">
+      </div>
     </div>
-    <div class="financing-body">
-      <div class="fin-plazo-wrap">
-        <div class="fin-plazo-label">Elige tu plazo · Importe a financiar: 9.800 € (precio total 13.300 € − entrada 3.500 €) · Programa J1 Intercambio Cultural</div>
-        <div class="fin-plazos">
-          <div class="fin-plazo active" onclick="setPlazo(this,18)">
-            <div class="fin-plazo-meses">18 meses</div>
-            <div class="fin-plazo-badge con">TIN 10,46%</div>
-            <div class="fin-plazo-quien">Intereses a cargo del cliente</div>
-          </div>
-          <div class="fin-plazo" onclick="setPlazo(this,24)">
-            <div class="fin-plazo-meses">24 meses</div>
-            <div class="fin-plazo-badge con">TIN 10,46%</div>
-            <div class="fin-plazo-quien">Intereses a cargo del cliente</div>
-          </div>
-          <div class="fin-plazo" onclick="setPlazo(this,36)">
-            <div class="fin-plazo-meses">36 meses</div>
-            <div class="fin-plazo-badge con">TIN 10,46%</div>
-            <div class="fin-plazo-quien">Intereses a cargo del cliente</div>
-          </div>
-        </div>
-      </div>
-
-      <div class="fin-resultado">
-        <div class="fin-resultado-main">
-          <div class="fin-cuota-label">Cuota mensual estimada</div>
-          <div class="fin-cuota-valor" id="cuotaValor">590,64 €</div>
-          <div class="fin-cuota-sub" id="cuotaSub">/mes · 18 pagos · TIN 10,46%</div>
-        </div>
-        <div class="fin-resultado-detalle">
-          <div class="fin-det-row">
-            <span class="fin-det-label">Precio total del programa</span>
-            <span class="fin-det-val">13.300 €</span>
-          </div>
-          <div class="fin-det-row">
-            <span class="fin-det-label">Entrada inicial</span>
-            <span class="fin-det-val">− 3.500 €</span>
-          </div>
-          <div class="fin-det-row">
-            <span class="fin-det-label">Importe financiado</span>
-            <span class="fin-det-val">9.800 €</span>
-          </div>
-          <div class="fin-det-row">
-            <span class="fin-det-label">Intereses totales</span>
-            <span class="fin-det-val" id="detIntereses">831,47 €</span>
-          </div>
-          <div class="fin-det-row fin-det-total">
-            <span class="fin-det-label">Total a pagar</span>
-            <span class="fin-det-val" id="detTotal">14.131,47 €</span>
-          </div>
-        </div>
-      </div>
-
-      <div class="fin-nota">ℹ️ Financiación sujeta a aprobación bancaria. Sin comisión de apertura ni penalización por cancelación anticipada. Las cuotas son orientativas; el banco confirmará el importe exacto. Entrada de 3.500 € no incluida en la financiación.</div>
-    </div>
+    <div class="gallery-caption">Así viven la experiencia otros estudiantes de My Language Quest, camino a su año escolar en el extranjero.</div>
   </div>
 
 </div>
@@ -247,38 +209,7 @@
   Para más información contacta con tu asesor personal
 </footer>
 
-<script>
-  const PRECIO_TOTAL = 13300;
-  const ENTRADA = 3500;
-  const IMPORTE = PRECIO_TOTAL - ENTRADA; // 9.800
-  const TIN = 10.46;
-
-  function calcCuota(capital, meses, tin) {
-    if (tin === 0) return capital / meses;
-    const r = tin / 100 / 12;
-    return capital * r / (1 - Math.pow(1 + r, -meses));
-  }
-
-  function fmt(n) {
-    return n.toLocaleString('es-ES', { minimumFractionDigits: 2, maximumFractionDigits: 2 }) + ' €';
-  }
-
-  function setPlazo(el, meses) {
-    document.querySelectorAll('.fin-plazo').forEach(p => p.classList.remove('active'));
-    el.classList.add('active');
-
-    const cuota = calcCuota(IMPORTE, meses, TIN);
-    const totalPagar = cuota * meses;
-    const intereses = totalPagar - IMPORTE;
-
-    document.getElementById('cuotaValor').textContent = fmt(cuota);
-    document.getElementById('cuotaSub').textContent = `/mes · ${meses} pagos · TIN 10,46%`;
-    document.getElementById('detIntereses').textContent = fmt(intereses);
-    document.getElementById('detIntereses').className = 'fin-det-val';
-    document.getElementById('detTotal').textContent = fmt(PRECIO_TOTAL + intereses);
-  }
-</script>
 </body>
 </html>
 
-<!-- build:2026-07-16T11:06:21.533987 -->
+<!-- build:2026-07-16T11:12:19.541136+00:00 -->
