@@ -36,6 +36,7 @@ body{font-family:'Fira Sans',sans-serif;background:var(--gray-bg);color:var(--te
 .hero-precio-val{font-family:'Josefin Sans',sans-serif;font-size:32px;font-weight:700;color:#a5d6a7;line-height:1;}
 .hero-precio-sub{font-size:10px;color:rgba(255,255,255,0.4);margin-top:4px;}
 .hero-precio-badge{display:inline-block;background:rgba(255,136,62,0.3);border:1px solid rgba(255,136,62,0.5);color:#ffcc80;font-size:9px;font-weight:700;letter-spacing:1px;padding:3px 10px;border-radius:20px;margin-top:8px;text-transform:uppercase;}
+.tachado{font-size:15px;color:rgba(255,255,255,0.35);text-decoration:line-through;margin-left:8px;font-weight:500;}
 .main{max-width:1100px;margin:0 auto;padding:40px 24px 64px;}
 .section-title{display:flex;align-items:center;gap:12px;margin-bottom:24px;}
 .section-title h2{font-family:'Josefin Sans',sans-serif;font-size:11px;font-weight:700;letter-spacing:3px;text-transform:uppercase;color:var(--text-light);}
@@ -157,7 +158,7 @@ body{font-family:'Fira Sans',sans-serif;background:var(--gray-bg);color:var(--te
     <div>
       <div class="hero-tag">Propuesta personalizada · Irlanda</div>
       <div class="hero-name">Carla</div>
-      <div class="hero-subtitle">Programa Choice · Año escolar completo · Irlanda · 5th Year</div>
+      <div class="hero-subtitle">Programa Choice · Trimestre · Irlanda · 5th Year</div>
       <div class="hero-pills">
         <div class="hero-pill">🎓 5th Year</div>
         <div class="hero-pill">🏠 Familia anfitriona</div>
@@ -168,10 +169,10 @@ body{font-family:'Fira Sans',sans-serif;background:var(--gray-bg);color:var(--te
       </div>
     </div>
     <div class="hero-precio">
-      <div class="hero-precio-label">Programa Choice</div>
-      <div class="hero-precio-val">16.950 €</div>
-      <div class="hero-precio-sub">año escolar completo</div>
-      <div class="hero-precio-badge">☘ Precio único</div>
+      <div class="hero-precio-label">Programa Choice · Trimestre</div>
+      <div class="hero-precio-val">9.000 €<span class="tachado">9.500 €</span></div>
+      <div class="hero-precio-sub">trimestre · dto. recomendación incluido</div>
+      <div class="hero-precio-badge">☘ -500 € recomendación</div>
     </div>
   </div>
 </section>
@@ -182,7 +183,8 @@ body{font-family:'Fira Sans',sans-serif;background:var(--gray-bg);color:var(--te
     <div class="choice-icon">☘</div>
     <div class="choice-text">
       <strong>Programa Choice · Todo incluido:</strong> Con el programa Choice de My Language Quest,
-      el precio es único para todos los colegios day school — <strong>16.950 €</strong>.
+      el precio del trimestre es de <strong>9.500 €</strong>, y con el descuento de <strong>500 €
+      por recomendación</strong> queda en <strong>9.000 €</strong>.
       Hemos seleccionado tres colegios con fuerte tradición deportiva y buena conexión con zonas
       urbanas, ideales para el perfil extrovertido y deportista de Carla.
     </div>
@@ -445,7 +447,7 @@ body{font-family:'Fira Sans',sans-serif;background:var(--gray-bg);color:var(--te
     </div>
     <div class="financing-body">
       <div class="fin-plazo-wrap">
-        <div class="fin-plazo-label">Elige tu plazo · Programa Choice 16.950 €</div>
+        <div class="fin-plazo-label">Elige tu plazo · Programa Choice 9.000 €</div>
         <div class="fin-plazos">
           <div class="fin-plazo active" onclick="setPlazo(this,12)">
             <div class="fin-plazo-meses">12 meses</div>
@@ -472,13 +474,13 @@ body{font-family:'Fira Sans',sans-serif;background:var(--gray-bg);color:var(--te
       <div class="fin-resultado">
         <div class="fin-resultado-main">
           <div class="fin-cuota-label">Cuota mensual estimada</div>
-          <div class="fin-cuota-valor" id="cuotaValor">1.412,50 €</div>
+          <div class="fin-cuota-valor" id="cuotaValor">750,00 €</div>
           <div class="fin-cuota-sub" id="cuotaSub">/mes · 12 pagos · TIN 0%</div>
         </div>
         <div class="fin-resultado-detalle">
           <div class="fin-det-row">
             <span class="fin-det-label">Importe del programa</span>
-            <span class="fin-det-val">16.950 €</span>
+            <span class="fin-det-val">9.000 €</span>
           </div>
           <div class="fin-det-row">
             <span class="fin-det-label">Intereses totales</span>
@@ -486,7 +488,7 @@ body{font-family:'Fira Sans',sans-serif;background:var(--gray-bg);color:var(--te
           </div>
           <div class="fin-det-row fin-det-total">
             <span class="fin-det-label">Total a pagar</span>
-            <span class="fin-det-val" id="detTotal">16.950 €</span>
+            <span class="fin-det-val" id="detTotal">9.000 €</span>
           </div>
         </div>
       </div>
@@ -499,7 +501,7 @@ body{font-family:'Fira Sans',sans-serif;background:var(--gray-bg);color:var(--te
   <div class="payment-wrap">
     <div class="payment-inner">
       <div class="pay-title">💳 Condiciones económicas · Programa Choice</div>
-      <div class="pay-subtitle">Irlanda 2026/27 · Año escolar completo</div>
+      <div class="pay-subtitle">Irlanda 2026/27 · Trimestre</div>
       <div class="pay-steps-row">
         <div class="pay-step-card">
           <div class="pay-step-num">Paso 1 · Firma del contrato</div>
@@ -527,7 +529,7 @@ body{font-family:'Fira Sans',sans-serif;background:var(--gray-bg);color:var(--te
 </main>
 
 <script>
-var _mes=12,_cap=16950;
+var _mes=12,_cap=9000;
 function _fmt(n,d){return n.toLocaleString('es-ES',{minimumFractionDigits:d||0,maximumFractionDigits:d||0})+' €';}
 function _cuota(c,t,m){if(t===0)return c/m;var r=(t/100)/12;return c*r/(1-Math.pow(1+r,-m));}
 function _update(){
@@ -541,6 +543,6 @@ function _update(){
 function setPlazo(el,m){_mes=m;document.querySelectorAll('.fin-plazo').forEach(function(p){p.classList.remove('active');});el.classList.add('active');_update();}
 _update();
 </script>
-<!-- build:20260724-115648 -->
+<!-- build:20260724-121713 -->
 </body>
 </html>
