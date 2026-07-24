@@ -52,6 +52,8 @@ body{font-family:'Fira Sans',sans-serif;background:var(--gray-bg);color:var(--te
 @media(max-width:900px){.colegios-grid{grid-template-columns:1fr;}}
 .colegio-card{background:var(--white);border-radius:16px;border:1.5px solid var(--gray-border);overflow:hidden;box-shadow:0 2px 16px rgba(0,80,0,0.06);position:relative;transition:transform .2s,box-shadow .2s,border-color .2s;}
 .colegio-card:hover{transform:translateY(-4px);box-shadow:0 12px 40px rgba(0,80,0,0.12);border-color:var(--green-mid);}
+.colegio-card.recomendado{border-color:var(--ireland-green);box-shadow:0 4px 24px rgba(22,155,98,0.15);}
+.badge-rec{position:absolute;top:14px;right:-32px;background:var(--ireland-green);color:var(--white);font-size:8px;font-weight:700;letter-spacing:1.5px;padding:5px 40px;transform:rotate(45deg);width:130px;text-align:center;z-index:10;}
 .colegio-header{background:linear-gradient(135deg,var(--green-dark),var(--green));padding:20px 22px 16px;}
 .colegio-zona{font-family:'Josefin Sans',sans-serif;font-size:8px;letter-spacing:3px;text-transform:uppercase;color:rgba(255,255,255,0.45);margin-bottom:6px;}
 .colegio-nombre{font-family:'Josefin Sans',sans-serif;font-size:17px;font-weight:700;color:var(--white);margin-bottom:4px;line-height:1.2;}
@@ -212,7 +214,8 @@ body{font-family:'Fira Sans',sans-serif;background:var(--gray-bg);color:var(--te
   <div class="colegios-grid">
 
     <!-- COLEGIO 1: ST CIARAN'S -->
-    <div class="colegio-card">
+    <div class="colegio-card recomendado">
+      <div class="badge-rec">★ RECOMENDADO</div>
       <div class="colegio-header">
         <div class="colegio-zona">Condado de Meath · Ciudad pequeña</div>
         <div class="colegio-nombre">St. Ciarán's Community School</div>
@@ -256,10 +259,19 @@ body{font-family:'Fira Sans',sans-serif;background:var(--gray-bg);color:var(--te
             <li>Plazas de Transition Year confirmadas</li>
           </ul>
         </div>
+        <div class="colegio-section-title" style="margin-top:12px;">Un plus para Aitor: economía y empresa</div>
+        <div class="actividades-ciudad">
+          Además del excelente encaje personal y deportivo, creemos que St. Ciarán's puede aportar un valor
+          añadido porque su programa de Transition Year incluye actividades de emprendimiento, creación de
+          empresas (Mini Company), experiencia laboral y orientación profesional. Como Aitor ya muestra interés
+          por el mundo de la empresa y la economía, pensamos que puede ser una oportunidad muy enriquecedora
+          para descubrir si realmente quiere orientar sus estudios hacia ese ámbito.
+        </div>
       </div>
       <div class="match-bar">
         <div class="match-tag">Fútbol · Gaélico</div>
         <div class="match-tag">Vida social activa</div>
+        <div class="match-tag">Emprendimiento · Mini Company</div>
         <div class="match-tag">TY confirmado</div>
       </div>
     </div>
