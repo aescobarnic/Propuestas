@@ -97,6 +97,7 @@ body{font-family:'Fira Sans',sans-serif;background:var(--gray-bg);color:var(--te
 .fin-plazo-label{font-family:'Josefin Sans',sans-serif;font-size:9px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--text-light);margin-bottom:10px;}
 .fin-plazo-wrap{margin-bottom:24px;}
 .fin-plazos{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;}
+.fin-duraciones{display:grid;grid-template-columns:repeat(2,1fr);gap:10px;}
 .fin-plazo{background:var(--gray-card);border:1.5px solid var(--gray-border);border-radius:12px;padding:14px 12px;cursor:pointer;text-align:center;transition:all .2s;}
 .fin-plazo:hover{border-color:var(--green-mid);transform:translateY(-2px);}
 .fin-plazo.active{border-color:var(--ireland-green);background:var(--green-light);box-shadow:0 4px 16px rgba(22,155,98,0.15);}
@@ -158,7 +159,7 @@ body{font-family:'Fira Sans',sans-serif;background:var(--gray-bg);color:var(--te
     <div>
       <div class="hero-tag">Propuesta personalizada · Irlanda</div>
       <div class="hero-name">Carla</div>
-      <div class="hero-subtitle">Programa Choice · Trimestre · Irlanda · 5th Year</div>
+      <div class="hero-subtitle">Programa Choice · Irlanda · 5th Year</div>
       <div class="hero-pills">
         <div class="hero-pill">🎓 5th Year</div>
         <div class="hero-pill">🏠 Familia anfitriona</div>
@@ -169,10 +170,20 @@ body{font-family:'Fira Sans',sans-serif;background:var(--gray-bg);color:var(--te
       </div>
     </div>
     <div class="hero-precio">
-      <div class="hero-precio-label">Programa Choice · Trimestre</div>
-      <div class="hero-precio-val">9.000 €<span class="tachado">9.500 €</span></div>
-      <div class="hero-precio-sub">trimestre · dto. recomendación incluido</div>
-      <div class="hero-precio-badge">☘ -500 € recomendación</div>
+      <div class="hero-precio-label">Programa Choice</div>
+      <div style="display:flex;gap:18px;align-items:center;">
+        <div style="text-align:center;">
+          <div class="hero-precio-val" style="font-size:24px;">9.000 €<span class="tachado" style="font-size:12px;">9.500 €</span></div>
+          <div class="hero-precio-sub">trimestre</div>
+          <div class="hero-precio-badge">☘ -500 €</div>
+        </div>
+        <div style="width:1px;align-self:stretch;background:rgba(255,255,255,0.15);"></div>
+        <div style="text-align:center;">
+          <div class="hero-precio-val" style="font-size:24px;">16.200 €<span class="tachado" style="font-size:12px;">16.950 €</span></div>
+          <div class="hero-precio-sub">año completo</div>
+          <div class="hero-precio-badge">☘ -750 €</div>
+        </div>
+      </div>
     </div>
   </div>
 </section>
@@ -183,10 +194,12 @@ body{font-family:'Fira Sans',sans-serif;background:var(--gray-bg);color:var(--te
     <div class="choice-icon">☘</div>
     <div class="choice-text">
       <strong>Programa Choice · Todo incluido:</strong> Con el programa Choice de My Language Quest,
-      el precio del trimestre es de <strong>9.500 €</strong>, y con el descuento de <strong>500 €
-      por recomendación</strong> queda en <strong>9.000 €</strong>.
+      Carla puede cursar un <strong>trimestre</strong> por 9.500 €, que con el descuento de
+      <strong>500 € por recomendación</strong> queda en <strong>9.000 €</strong>; o el
+      <strong>año escolar completo</strong> por 16.950 €, que con el descuento de
+      <strong>750 € por recomendación</strong> queda en <strong>16.200 €</strong>.
       Hemos seleccionado tres colegios con fuerte tradición deportiva y buena conexión con zonas
-      urbanas, ideales para el perfil extrovertido y deportista de Carla.
+      urbanas, ideales para su perfil extrovertido y deportista.
     </div>
   </div>
 
@@ -446,8 +459,23 @@ body{font-family:'Fira Sans',sans-serif;background:var(--gray-bg);color:var(--te
       <div class="fin-badge">Hasta 36 meses</div>
     </div>
     <div class="financing-body">
-      <div class="fin-plazo-wrap">
-        <div class="fin-plazo-label">Elige tu plazo · Programa Choice 9.000 €</div>
+      <div class="fin-plazo-wrap fin-duracion-outer">
+        <div class="fin-plazo-label">Elige la duración</div>
+        <div class="fin-duraciones">
+          <div class="fin-plazo active" onclick="setDuracion(this,9000,'9.000 €')">
+            <div class="fin-plazo-meses">Trimestre</div>
+            <div class="fin-plazo-badge sin">9.000 €</div>
+            <div class="fin-plazo-quien">9.500 € − 500 € recomendación</div>
+          </div>
+          <div class="fin-plazo" onclick="setDuracion(this,16200,'16.200 €')">
+            <div class="fin-plazo-meses">Año completo</div>
+            <div class="fin-plazo-badge sin">16.200 €</div>
+            <div class="fin-plazo-quien">16.950 € − 750 € recomendación</div>
+          </div>
+        </div>
+      </div>
+      <div class="fin-plazo-wrap fin-term-outer">
+        <div class="fin-plazo-label" id="finPlazoLabel">Elige tu plazo · Programa Choice 9.000 €</div>
         <div class="fin-plazos">
           <div class="fin-plazo active" onclick="setPlazo(this,12)">
             <div class="fin-plazo-meses">12 meses</div>
@@ -480,7 +508,7 @@ body{font-family:'Fira Sans',sans-serif;background:var(--gray-bg);color:var(--te
         <div class="fin-resultado-detalle">
           <div class="fin-det-row">
             <span class="fin-det-label">Importe del programa</span>
-            <span class="fin-det-val">9.000 €</span>
+            <span class="fin-det-val" id="detImporte">9.000 €</span>
           </div>
           <div class="fin-det-row">
             <span class="fin-det-label">Intereses totales</span>
@@ -501,7 +529,7 @@ body{font-family:'Fira Sans',sans-serif;background:var(--gray-bg);color:var(--te
   <div class="payment-wrap">
     <div class="payment-inner">
       <div class="pay-title">💳 Condiciones económicas · Programa Choice</div>
-      <div class="pay-subtitle">Irlanda 2026/27 · Trimestre</div>
+      <div class="pay-subtitle">Irlanda 2026/27 · Trimestre o año escolar completo</div>
       <div class="pay-steps-row">
         <div class="pay-step-card">
           <div class="pay-step-num">Paso 1 · Firma del contrato</div>
@@ -517,8 +545,8 @@ body{font-family:'Fira Sans',sans-serif;background:var(--gray-bg);color:var(--te
         </div>
         <div class="pay-step-card">
           <div class="pay-step-num">Paso 3 · Fecha límite</div>
-          <div class="pay-step-title">Resto del importe</div>
-          <div class="pay-step-amount">Antes del 1 de junio</div>
+          <div class="pay-step-title">Resto del importe · Antes del 1 de junio</div>
+          <div class="pay-step-amount" style="font-size:16px;line-height:1.5;">1.500 € <span style="font-size:10px;color:rgba(255,255,255,0.45);">(trimestre)</span><br>8.700 € <span style="font-size:10px;color:rgba(255,255,255,0.45);">(año completo)</span></div>
           <div class="pay-step-desc" style="margin-top:6px;">Las inscripciones tardías deben cumplir con los plazos ya pasados</div>
         </div>
       </div>
@@ -536,13 +564,15 @@ function _update(){
   var tin=_mes===12?0:10.46;var q=_cuota(_cap,tin,_mes);var tot=q*_mes;var inter=tot-_cap;
   document.getElementById('cuotaValor').textContent=_fmt(q,2);
   document.getElementById('cuotaSub').textContent='/mes · '+_mes+' pagos · TIN '+(tin===0?'0%':'10,46%');
+  document.getElementById('detImporte').textContent=_fmt(_cap);
   document.getElementById('detTotal').textContent=_fmt(Math.round(tot));
   if(tin===0){document.getElementById('detIntereses').textContent='0 € · ¡MLQ los asume!';document.getElementById('detIntereses').className='fin-det-val fin-det-green';}
   else{document.getElementById('detIntereses').textContent=_fmt(Math.round(inter));document.getElementById('detIntereses').className='fin-det-val';}
 }
-function setPlazo(el,m){_mes=m;document.querySelectorAll('.fin-plazo').forEach(function(p){p.classList.remove('active');});el.classList.add('active');_update();}
+function setPlazo(el,m){_mes=m;document.querySelectorAll('.fin-term-outer .fin-plazo').forEach(function(p){p.classList.remove('active');});el.classList.add('active');_update();}
+function setDuracion(el,cap,label){_cap=cap;document.querySelectorAll('.fin-duracion-outer .fin-plazo').forEach(function(p){p.classList.remove('active');});el.classList.add('active');document.getElementById('finPlazoLabel').textContent='Elige tu plazo · Programa Choice '+label;_update();}
 _update();
 </script>
-<!-- build:20260724-121713 -->
+<!-- build:20260724-143457 -->
 </body>
 </html>
