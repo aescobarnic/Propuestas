@@ -155,7 +155,8 @@
   .link-item:hover { border-color: var(--blue-mid); transform: translateY(-2px); }
   .link-icon { font-size: 16px; flex-shrink: 0; }
   .link-label { font-size: 12.5px; font-weight: 600; color: var(--blue-dark); }
-  @media(max-width:640px) { .links-grid { grid-template-columns: 1fr; } }
+  .link-item:last-child:nth-child(odd) { grid-column: 1 / -1; width: calc(50% - 5px); margin: 0 auto; }
+  @media(max-width:640px) { .links-grid { grid-template-columns: 1fr; } .link-item:last-child:nth-child(odd) { width: 100%; } }
 
   /* SIGUIENTES PASOS */
   .steps-list { counter-reset: step; list-style: none; }
@@ -487,11 +488,11 @@
     <div class="card-body">
       <div class="links-grid">
         <a class="link-item" href="https://drive.google.com/file/d/1jjTrXMO6Yi10fAf-kK-XRMx7zKGc05VC/view?usp=sharing" target="_blank"><span class="link-icon">🗽</span><span class="link-label">Itinerario Orientation Camp NY</span></a>
-        <a class="link-item" href="https://drive.google.com/file/d/1nuY34R2Um103RD8nR0Iv1Vsnr8SQqrs5/view?usp=sharing" target="_blank"><span class="link-icon">👨‍👩‍👧</span><span class="link-label">Curso formativo · Padres</span></a>
-        <a class="link-item" href="https://drive.google.com/file/d/1eJC9fMGKSZU6gCrvJkNgDLUbZ4eiUvB0/view?usp=sharing" target="_blank"><span class="link-icon">🎓</span><span class="link-label">Curso formativo · Estudiante</span></a>
         <a class="link-item" href="https://drive.google.com/file/d/1glpRSfQvCiLEKuuA7kRPaFV-q-B62KJo/view?usp=sharing" target="_blank"><span class="link-icon">🏥</span><span class="link-label">Cobertura seguro médico (inglés)</span></a>
         <a class="link-item" href="https://docs.google.com/document/d/17UUiwXgJt_Yp8yFrXlfurB791gOPiVjr/edit?usp=sharing&ouid=109246213507657110203&rtpof=true&sd=true" target="_blank"><span class="link-icon">📄</span><span class="link-label">Resumen seguro médico (castellano)</span></a>
         <a class="link-item" href="https://drive.google.com/file/d/1h4ir7OKCp7OYRBM2eKNz0NUYdPHXlAh9/view?usp=sharing" target="_blank"><span class="link-icon">🛡️</span><span class="link-label">Seguro de anulación (350 €, opcional)</span></a>
+        <a class="link-item" href="https://drive.google.com/file/d/1nuY34R2Um103RD8nR0Iv1Vsnr8SQqrs5/view?usp=sharing" target="_blank"><span class="link-icon">👨‍👩‍👧</span><span class="link-label">Curso formativo · Padres</span></a>
+        <a class="link-item" href="https://drive.google.com/file/d/1eJC9fMGKSZU6gCrvJkNgDLUbZ4eiUvB0/view?usp=sharing" target="_blank"><span class="link-icon">🎓</span><span class="link-label">Curso formativo · Estudiante</span></a>
         <a class="link-item" href="https://drive.google.com/drive/folders/1QNBe8amc96jVP_dpkc1Xhkz2qCuM4s7f?usp=sharing" target="_blank"><span class="link-icon">📁</span><span class="link-label">Documentos requeridos J1</span></a>
       </div>
     </div>
