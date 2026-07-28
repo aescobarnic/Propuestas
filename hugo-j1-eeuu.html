@@ -78,17 +78,27 @@
   .destaca-icon { font-size: 20px; margin-bottom: 8px; }
   .destaca-title { font-family: 'Josefin Sans', sans-serif; font-size: 12.5px; font-weight: 700; color: var(--text); margin-bottom: 4px; }
   .destaca-desc { font-size: 12px; color: var(--text-mid); line-height: 1.5; }
-  @media(max-width:640px) { .destaca-grid { grid-template-columns: 1fr; } }
+  .destaca-item:last-child:nth-child(odd) { grid-column: 1 / -1; width: calc(50% - 7px); margin: 0 auto; }
+  @media(max-width:640px) { .destaca-grid { grid-template-columns: 1fr; } .destaca-item:last-child:nth-child(odd) { width: 100%; } }
 
-  /* INCLUYE */
-  .incluye-phase { margin-bottom: 22px; }
-  .incluye-phase:last-child { margin-bottom: 0; }
-  .incluye-phase-title { font-family: 'Josefin Sans', sans-serif; font-size: 11px; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; color: var(--green-dark); background: var(--green-light); display: inline-block; padding: 4px 12px; border-radius: 20px; margin-bottom: 12px; }
-  .incluye-list { list-style: none; }
-  .incluye-list li { font-size: 13px; color: var(--text-mid); line-height: 1.8; padding-left: 20px; position: relative; margin-bottom: 2px; }
-  .incluye-list li::before { content: '✓'; color: var(--green); font-weight: 700; position: absolute; left: 0; }
-  .gestor-box { background: var(--blue-light); border-radius: 10px; padding: 14px 18px; margin-top: 10px; }
-  .gestor-box-title { font-size: 12px; font-weight: 700; color: var(--blue-dark); margin-bottom: 8px; }
+  /* INCLUYE / NO INCLUYE */
+  .includes-wrap { background: var(--white); border-radius: 16px; border: 1.5px solid var(--gray-border); box-shadow: 0 2px 16px rgba(0,51,102,0.06); overflow: hidden; margin-bottom: 24px; }
+  .includes-head { background: linear-gradient(135deg, var(--blue-dark), var(--blue)); padding: 20px 32px; }
+  .includes-head h3 { font-family: 'Josefin Sans', sans-serif; font-size: 14px; font-weight: 700; color: var(--white); letter-spacing: 1px; }
+  .includes-body { padding: 28px 32px; }
+  .includes-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 32px; }
+  .col-title { font-family: 'Josefin Sans', sans-serif; font-size: 9px; font-weight: 700; letter-spacing: 2.5px; text-transform: uppercase; color: var(--blue); margin-bottom: 14px; padding-bottom: 8px; border-bottom: 2px solid var(--blue-light); }
+  .inc-list { list-style: none; display: flex; flex-direction: column; gap: 8px; }
+  .inc-list li { font-size: 12px; color: var(--text-mid); display: flex; align-items: flex-start; gap: 8px; line-height: 1.55; }
+  .inc-list li::before { content: '✓'; color: var(--green); font-weight: 700; font-size: 11px; flex-shrink: 0; margin-top: 1px; }
+  .inc-list.no li::before { content: '✗'; color: #c62828; }
+  .inc-list li small { font-size: 10px; color: var(--text-light); display: block; margin-top: 2px; }
+  .gestor-box { background: linear-gradient(135deg, var(--blue-dark), var(--blue-mid)); border-radius: 12px; padding: 20px 24px; margin-top: 20px; }
+  .gestor-box-title { font-family: 'Josefin Sans', sans-serif; font-size: 11px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; color: rgba(255,255,255,0.6); margin-bottom: 14px; }
+  .gestor-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 10px; }
+  .gestor-item { background: rgba(255,255,255,0.08); border: 1px solid rgba(255,255,255,0.12); border-radius: 8px; padding: 10px 12px; font-size: 11px; color: rgba(255,255,255,0.85); line-height: 1.4; }
+  .gestor-item::before { content: '→'; color: #7dd44a; font-weight: 700; margin-right: 5px; }
+  @media(max-width:640px) { .includes-grid { grid-template-columns: 1fr; } .gestor-grid { grid-template-columns: 1fr; } }
 
   /* CONDICIONES */
   .condiciones-list { list-style: none; }
@@ -311,65 +321,72 @@
     <h2>El programa incluye</h2>
     <p>Detalle completo antes, durante y después del intercambio</p>
   </div>
-  <div class="card">
-    <div class="card-body">
-      <div class="incluye-phase">
-        <div class="incluye-phase-title">Antes del viaje</div>
-        <ul class="incluye-list">
-          <li>Reunión inicial en persona, teléfono o videoconferencia con padres o tutores</li>
-          <li>Examen ELTIS y entrevista personal online con el estudiante</li>
-          <li>Provisión de toda la información necesaria sobre el programa J1</li>
-          <li>Inscripción en el programa y matriculación en el centro de secundaria de EE.UU. que asigne el sponsor americano</li>
-          <li>Selección de familia anfitriona voluntaria en régimen de pensión completa</li>
-          <li>Seguro médico y de accidentes</li>
-          <li>Tasas y tramitación del visado J1, y reserva de cita para entrevista en la Embajada</li>
-          <li>Programa formativo y de orientación para el estudiante en los meses previos al viaje (obligatorio)</li>
-          <li>Programa formativo y de orientación para los padres en los meses previos al viaje (no obligatorio)</li>
-          <li>Dossier final detallando la experiencia en Estados Unidos</li>
-          <li>Orientación pre-viaje en Madrid</li>
-          <li>Pack sorpresa de My Language Quest</li>
-        </ul>
-        <div class="gestor-box">
-          <div class="gestor-box-title">Gestor estudiantil asignado a la familia — se encarga de:</div>
-          <ul class="incluye-list">
-            <li>Seguimiento personalizado del desempeño del estudiante</li>
-            <li>Obtención de notas oficiales al final de cada trimestre o semestre</li>
-            <li>Todas las tutorías necesarias con el estudiante</li>
-            <li>Asesoramiento e información a los padres con periodicidad mensual</li>
-            <li>Todas las reuniones necesarias con los padres, o padres + estudiante</li>
-            <li>Apoyo para la matriculación en actividades extraescolares</li>
-            <li>Asesoría para cambio de asignaturas durante el curso, garantizando que siga siendo convalidable</li>
-            <li>Apoyo en la resolución de situaciones en el centro educativo o con la familia anfitriona, incluyendo gestión de cambio de familia si es necesario</li>
+  <div class="includes-wrap">
+    <div class="includes-head"><h3>📋 Todo lo que cubre My Language Quest · Programa J1</h3></div>
+    <div class="includes-body">
+      <div class="includes-grid">
+        <div>
+          <div class="col-title">Antes del viaje</div>
+          <ul class="inc-list">
+            <li>Reunión inicial en persona, teléfono o videoconferencia con padres o tutores</li>
+            <li>Examen ELTIS y entrevista personal online con el estudiante</li>
+            <li>Provisión de toda la información necesaria sobre el programa J1</li>
+            <li>Inscripción en el programa y matriculación en el centro de secundaria que asigne el sponsor americano</li>
+            <li>Selección de familia anfitriona voluntaria en régimen de pensión completa</li>
+            <li>Seguro médico y de accidentes</li>
+            <li>Tasas y tramitación del visado J1, y reserva de cita para entrevista en la Embajada</li>
+            <li>Programa formativo y de orientación para el estudiante (obligatorio)</li>
+            <li>Programa formativo y de orientación para los padres (no obligatorio)</li>
+            <li>Dossier final detallando la experiencia en Estados Unidos</li>
+            <li>Orientación pre-viaje en Madrid</li>
+            <li>Pack sorpresa de My Language Quest</li>
           </ul>
         </div>
-      </div>
-
-      <div class="incluye-phase">
-        <div class="incluye-phase-title">Durante el viaje</div>
-        <ul class="incluye-list">
-          <li>Orientación pre-viaje en Nueva York de 4 días y 3 noches en hotel, habitaciones compartidas por género, con 3 desayunos, 3 cenas, 2 talleres "Life in the USA", transporte en autobús privado, traslados aeropuerto-hotel y acompañamiento de coordinador de USA, su equipo y monitores (incluido solo para programas de año escolar completo)</li>
-          <li>Recibimiento en aeropuerto y traslados en destino al inicio y fin del programa</li>
-          <li>Asesoramiento en elección de asignaturas</li>
-          <li>Libros de las asignaturas obligatorias</li>
-          <li>Transporte escolar</li>
-          <li>Clases de inglés Cambridge y su libro</li>
-          <li>Supervisión local de la organización americana: visitas, tutorías y emergencias 24h</li>
-          <li>Reportes periódicos del gestor estudiantil sobre la evolución familiar, académica y social</li>
-          <li>Acompañamiento psicológico</li>
-          <li>Atención 24 horas en España para emergencias de estudiantes y familias</li>
-          <li>Gestión individualizada de los viajes del estudiante, ajustados a las fechas de inicio y fin escolar, con supervisión del personal MLQ desde España</li>
-        </ul>
-      </div>
-
-      <div class="incluye-phase">
-        <div class="incluye-phase-title">Después del viaje</div>
-        <ul class="incluye-list">
-          <li>Trámites de convalidación del curso escolar en España</li>
-          <li>Recogida de los transcripts finales</li>
-          <li>Coordinación con el centro escolar y notario público</li>
-          <li>Apostilla de La Haya de las calificaciones</li>
-          <li>Presentación y seguimiento del expediente ante el Ministerio de Educación español</li>
-        </ul>
+        <div>
+          <div class="col-title">Durante el viaje</div>
+          <ul class="inc-list">
+            <li>Orientación pre-viaje en Nueva York <small>4 días y 3 noches en hotel, habitaciones compartidas por género · 3 desayunos, 3 cenas, 2 talleres "Life in the USA" · transporte en autobús privado · traslados aeropuerto-hotel · acompañamiento de coordinador USA · solo para año escolar completo</small></li>
+            <li>Recibimiento en aeropuerto y traslados en destino al inicio y fin del programa</li>
+            <li>Asesoramiento en elección de asignaturas</li>
+            <li>Libros de las asignaturas obligatorias</li>
+            <li>Transporte escolar</li>
+            <li>Clases de inglés Cambridge y su libro</li>
+            <li>Supervisión local de la organización americana: visitas, tutorías y emergencias 24h</li>
+            <li>Reportes periódicos del gestor estudiantil</li>
+            <li>Acompañamiento psicológico</li>
+            <li>Atención 24 horas en España para emergencias</li>
+            <li>Gestión individualizada de los viajes del estudiante</li>
+          </ul>
+          <div class="gestor-box">
+            <div class="gestor-box-title">Gestor estudiantil · se encarga de</div>
+            <div class="gestor-grid">
+              <div class="gestor-item">Seguimiento personalizado del desempeño</div>
+              <div class="gestor-item">Información a padres mensualmente</div>
+              <div class="gestor-item">Notas oficiales cada trimestre/semestre</div>
+              <div class="gestor-item">Asesoría en cambio de asignaturas</div>
+              <div class="gestor-item">Todas las tutorías necesarias</div>
+              <div class="gestor-item">Reuniones con padres y/o estudiante</div>
+              <div class="gestor-item">Apoyo en actividades extraescolares</div>
+              <div class="gestor-item">Resolución de situaciones con familia o centro</div>
+            </div>
+          </div>
+        </div>
+        <div>
+          <div class="col-title">Después del viaje</div>
+          <ul class="inc-list">
+            <li>Convalidación del curso escolar en España</li>
+            <li>Recogida de los transcripts finales</li>
+            <li>Coordinación con el centro escolar y notario público</li>
+            <li>Apostilla de La Haya de las calificaciones</li>
+            <li>Presentación y seguimiento del expediente ante el Ministerio de Educación</li>
+          </ul>
+          <div style="margin-top:24px">
+            <div class="col-title">No incluido</div>
+            <ul class="inc-list no">
+              <li><em>Pendiente — pásame la lista de no incluidos y la añado aquí</em></li>
+            </ul>
+          </div>
+        </div>
       </div>
     </div>
   </div>
