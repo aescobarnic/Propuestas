@@ -117,11 +117,12 @@
   .inc-list li::before { content: '✓'; color: var(--green); font-weight: 700; font-size: 11px; flex-shrink: 0; margin-top: 1px; }
   .inc-list.no li::before { content: '✗'; color: #c62828; }
   .inc-list li small { font-size: 10px; color: var(--text-light); display: block; margin-top: 2px; }
-  .gestor-box { background: linear-gradient(135deg, var(--blue-dark), var(--blue-mid)); border-radius: 12px; padding: 20px 24px; margin-top: 20px; }
+  .gestor-box { background: linear-gradient(135deg, var(--blue-dark), var(--blue-mid)); border-radius: 12px; padding: 20px 24px; margin-top: 28px; }
   .gestor-box-title { font-family: 'Josefin Sans', sans-serif; font-size: 11px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; color: rgba(255,255,255,0.6); margin-bottom: 14px; }
-  .gestor-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 10px; }
+  .gestor-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 10px; }
   .gestor-item { background: rgba(255,255,255,0.08); border: 1px solid rgba(255,255,255,0.12); border-radius: 8px; padding: 10px 12px; font-size: 11px; color: rgba(255,255,255,0.85); line-height: 1.4; }
   .gestor-item::before { content: '→'; color: #7dd44a; font-weight: 700; margin-right: 5px; }
+  @media(max-width:900px) { .gestor-grid { grid-template-columns: repeat(2, 1fr); } }
   @media(max-width:640px) { .includes-grid { grid-template-columns: 1fr; } .gestor-grid { grid-template-columns: 1fr; } }
 
   /* CONDICIONES */
@@ -381,19 +382,6 @@
             <li>Atención 24 horas en España para emergencias</li>
             <li>Gestión individualizada de los viajes del estudiante</li>
           </ul>
-          <div class="gestor-box">
-            <div class="gestor-box-title">Gestor estudiantil · se encarga de</div>
-            <div class="gestor-grid">
-              <div class="gestor-item">Seguimiento personalizado del desempeño</div>
-              <div class="gestor-item">Información a padres mensualmente</div>
-              <div class="gestor-item">Notas oficiales cada trimestre/semestre</div>
-              <div class="gestor-item">Asesoría en cambio de asignaturas</div>
-              <div class="gestor-item">Todas las tutorías necesarias</div>
-              <div class="gestor-item">Reuniones con padres y/o estudiante</div>
-              <div class="gestor-item">Apoyo en actividades extraescolares</div>
-              <div class="gestor-item">Resolución de situaciones con familia o centro</div>
-            </div>
-          </div>
         </div>
         <div>
           <div class="col-title">Después del viaje</div>
@@ -417,6 +405,20 @@
               <li>Cualquier servicio o gasto no mencionado explícitamente en "El programa incluye"</li>
             </ul>
           </div>
+        </div>
+      </div>
+
+      <div class="gestor-box">
+        <div class="gestor-box-title">Gestor estudiantil · se encarga de</div>
+        <div class="gestor-grid">
+          <div class="gestor-item">Seguimiento personalizado del desempeño</div>
+          <div class="gestor-item">Información a padres mensualmente</div>
+          <div class="gestor-item">Notas oficiales cada trimestre/semestre</div>
+          <div class="gestor-item">Asesoría en cambio de asignaturas</div>
+          <div class="gestor-item">Todas las tutorías necesarias</div>
+          <div class="gestor-item">Reuniones con padres y/o estudiante</div>
+          <div class="gestor-item">Apoyo en actividades extraescolares</div>
+          <div class="gestor-item">Resolución de situaciones con familia o centro</div>
         </div>
       </div>
     </div>
