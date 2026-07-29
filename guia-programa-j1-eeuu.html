@@ -164,6 +164,49 @@
   .steps-list li::before { content: counter(step); position: absolute; left: 0; top: 0; background: var(--blue); color: white; font-family: 'Josefin Sans', sans-serif; font-weight: 700; font-size: 13px; width: 28px; height: 28px; border-radius: 50%; display: flex; align-items: center; justify-content: center; }
   .steps-list a { color: var(--blue); font-weight: 600; }
 
+  /* FINANCIACION INTERACTIVA */
+  .financing-wrap { background: var(--white); border-radius: 16px; border: 1.5px solid var(--gray-border); box-shadow: 0 2px 16px rgba(0,51,102,0.06); overflow: hidden; margin-bottom: 24px; }
+  .financing-head { background: linear-gradient(135deg, var(--blue-dark), var(--blue)); padding: 22px 32px; display: flex; align-items: center; justify-content: space-between; gap: 16px; }
+  .financing-head-left { display: flex; align-items: center; gap: 16px; }
+  .fin-icon { font-size: 28px; flex-shrink: 0; }
+  .fin-title { font-family: 'Josefin Sans', sans-serif; font-size: 16px; font-weight: 700; color: var(--white); margin-bottom: 3px; }
+  .fin-sub { font-size: 11px; color: rgba(255,255,255,0.5); line-height: 1.4; }
+  .fin-badge { background: rgba(125,212,74,0.2); border: 1px solid rgba(125,212,74,0.4); color: #7dd44a; font-family: 'Josefin Sans', sans-serif; font-size: 11px; font-weight: 700; letter-spacing: 1px; padding: 6px 14px; border-radius: 20px; white-space: nowrap; }
+  .financing-body { padding: 28px 32px; }
+  .fin-plazo-label { font-family: 'Josefin Sans', sans-serif; font-size: 9px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; color: var(--text-light); margin-bottom: 10px; }
+  .fin-plazo-wrap { margin-bottom: 24px; }
+  .fin-plazos { display: grid; grid-template-columns: repeat(4,1fr); gap: 10px; }
+  .fin-plazo { background: var(--gray-card); border: 1.5px solid var(--gray-border); border-radius: 12px; padding: 14px 12px; cursor: pointer; text-align: center; transition: all .2s; }
+  .fin-plazo:hover { border-color: var(--blue-mid); transform: translateY(-2px); }
+  .fin-plazo.active { border-color: var(--green); background: var(--green-light); box-shadow: 0 4px 16px rgba(76,158,12,0.15); }
+  .fin-plazo-meses { font-family: 'Josefin Sans', sans-serif; font-size: 15px; font-weight: 700; color: var(--text); margin-bottom: 6px; }
+  .fin-plazo.active .fin-plazo-meses { color: var(--green-dark); }
+  .fin-plazo-badge { display: inline-block; border-radius: 20px; padding: 2px 8px; font-size: 9px; font-weight: 700; margin-bottom: 4px; }
+  .fin-plazo-badge.sin { background: var(--green-light); color: var(--green-dark); border: 1px solid rgba(76,158,12,0.3); }
+  .fin-plazo-badge.con { background: #E8EAF6; color: #283593; border: 1px solid rgba(40,53,147,0.2); }
+  .fin-plazo-quien { font-size: 9px; color: var(--text-light); line-height: 1.3; }
+  .fin-resultado { display: grid; grid-template-columns: auto 1fr; gap: 24px; background: linear-gradient(135deg, var(--blue-dark), var(--blue)); border-radius: 14px; padding: 24px 28px; margin-bottom: 16px; align-items: center; }
+  .fin-resultado-main { text-align: center; border-right: 1px solid rgba(255,255,255,0.15); padding-right: 24px; }
+  .fin-cuota-label { font-size: 10px; font-weight: 600; letter-spacing: 2px; text-transform: uppercase; color: rgba(255,255,255,0.5); margin-bottom: 6px; }
+  .fin-cuota-valor { font-family: 'Josefin Sans', sans-serif; font-size: 36px; font-weight: 700; color: #7dd44a; line-height: 1; margin-bottom: 4px; }
+  .fin-cuota-sub { font-size: 11px; color: rgba(255,255,255,0.45); }
+  .fin-resultado-detalle { display: flex; flex-direction: column; gap: 10px; }
+  .fin-det-row { display: flex; justify-content: space-between; align-items: center; gap: 12px; }
+  .fin-det-label { font-size: 12px; color: rgba(255,255,255,0.55); }
+  .fin-det-val { font-size: 13px; font-weight: 600; color: var(--white); }
+  .fin-det-green { color: #7dd44a !important; }
+  .fin-det-total { border-top: 1px solid rgba(255,255,255,0.15); padding-top: 10px; margin-top: 2px; }
+  .fin-det-total .fin-det-label { color: rgba(255,255,255,0.7); font-weight: 600; }
+  .fin-det-total .fin-det-val { font-family: 'Josefin Sans', sans-serif; font-size: 16px; color: var(--white); }
+  .fin-nota { font-size: 11px; color: var(--text-light); line-height: 1.6; background: var(--gray-card); border-radius: 8px; padding: 12px 16px; border-left: 3px solid var(--blue-light); }
+  @media(max-width:720px) {
+    .financing-head { flex-direction: column; align-items: flex-start; }
+    .financing-body { padding: 20px 18px; }
+    .fin-plazos { grid-template-columns: repeat(2,1fr); }
+    .fin-resultado { grid-template-columns: 1fr; }
+    .fin-resultado-main { border-right: none; border-bottom: 1px solid rgba(255,255,255,0.15); padding-right: 0; padding-bottom: 20px; }
+  }
+
   .cta-wrap { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-bottom: 24px; }
   .cta-btn { display: flex; align-items: center; gap: 14px; border-radius: 16px; padding: 22px 24px; text-decoration: none; transition: transform .25s ease, box-shadow .25s ease; }
   .cta-btn:hover { transform: translateY(-4px); }
@@ -444,23 +487,75 @@
     <h2>Financiación</h2>
     <p>Si lo necesitáis, el pago del resto del programa (10.100 €) se puede financiar con el Banco Sabadell</p>
   </div>
-  <div class="payment-wrap">
-    <div class="payment-inner">
-      <div class="pay-title">Financiación Banco Sabadell · sin comisión de apertura</div>
-      <div class="pay-subtitle">Aplicable sobre el pago restante de 10.100 €, una vez abonada la reserva y firma de 3.500 €</div>
-      <div class="pay-steps">
-        <div class="pay-step-card">
-          <div class="pay-step-num">12 meses</div>
-          <div class="pay-step-amount">TIN 0%</div>
-          <div class="pay-step-desc">My Language Quest asume los intereses — el cliente no paga nada de más</div>
-        </div>
-        <div class="pay-step-card">
-          <div class="pay-step-num">18 / 24 / 36 meses</div>
-          <div class="pay-step-amount">TIN 10,46%</div>
-          <div class="pay-step-desc">A plazos más largos, con los intereses a cargo del cliente</div>
+  <div class="financing-wrap">
+    <div class="financing-head">
+      <div class="financing-head-left">
+        <div class="fin-icon">💳</div>
+        <div>
+          <div class="fin-title">Paga a tu ritmo, sin preocupaciones</div>
+          <div class="fin-sub">Financiación flexible · Aprobación rápida · 100% online · Sin comisión de apertura</div>
         </div>
       </div>
-      <div class="pay-note">ℹ️ Simula tu cuota mensual en nuestra calculadora interactiva: <a href="https://aescobarnic.github.io/Propuestas/j1-financiacion.html" target="_blank" style="color:#7dd44a; font-weight:600;">aescobarnic.github.io/Propuestas/j1-financiacion.html</a></div>
+      <div class="fin-badge">Hasta 36 meses</div>
+    </div>
+    <div class="financing-body">
+      <div class="fin-plazo-wrap">
+        <div class="fin-plazo-label">Elige tu plazo · Importe a financiar: 10.100 € (precio total 13.600 € − entrada 3.500 €) · Programa J1 Intercambio Cultural</div>
+        <div class="fin-plazos">
+          <div class="fin-plazo active" onclick="setPlazoJ1(this,12)">
+            <div class="fin-plazo-meses">12 meses</div>
+            <div class="fin-plazo-badge sin">TIN 0%</div>
+            <div class="fin-plazo-quien">¡MLQ asume los intereses!</div>
+          </div>
+          <div class="fin-plazo" onclick="setPlazoJ1(this,18)">
+            <div class="fin-plazo-meses">18 meses</div>
+            <div class="fin-plazo-badge con">TIN 10,46%</div>
+            <div class="fin-plazo-quien">Intereses a cargo del cliente</div>
+          </div>
+          <div class="fin-plazo" onclick="setPlazoJ1(this,24)">
+            <div class="fin-plazo-meses">24 meses</div>
+            <div class="fin-plazo-badge con">TIN 10,46%</div>
+            <div class="fin-plazo-quien">Intereses a cargo del cliente</div>
+          </div>
+          <div class="fin-plazo" onclick="setPlazoJ1(this,36)">
+            <div class="fin-plazo-meses">36 meses</div>
+            <div class="fin-plazo-badge con">TIN 10,46%</div>
+            <div class="fin-plazo-quien">Intereses a cargo del cliente</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="fin-resultado">
+        <div class="fin-resultado-main">
+          <div class="fin-cuota-label">Cuota mensual estimada</div>
+          <div class="fin-cuota-valor" id="cuotaValorJ1">841,67 €</div>
+          <div class="fin-cuota-sub" id="cuotaSubJ1">/mes · 12 pagos · TIN 0%</div>
+        </div>
+        <div class="fin-resultado-detalle">
+          <div class="fin-det-row">
+            <span class="fin-det-label">Precio total del programa</span>
+            <span class="fin-det-val">13.600 €</span>
+          </div>
+          <div class="fin-det-row">
+            <span class="fin-det-label">Entrada inicial</span>
+            <span class="fin-det-val">− 3.500 €</span>
+          </div>
+          <div class="fin-det-row">
+            <span class="fin-det-label">Importe financiado</span>
+            <span class="fin-det-val">10.100 €</span>
+          </div>
+          <div class="fin-det-row">
+            <span class="fin-det-label">Intereses totales</span>
+            <span class="fin-det-val fin-det-green" id="detInteresesJ1">0 € · ¡MLQ los asume!</span>
+          </div>
+          <div class="fin-det-row fin-det-total">
+            <span class="fin-det-label">Total a pagar</span>
+            <span class="fin-det-val" id="detTotalJ1">13.600 €</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="fin-nota">ℹ️ Financiación sujeta a aprobación bancaria. Sin comisión de apertura. Las cuotas son orientativas; el banco confirmará el importe exacto. Entrada de 3.500 € no incluida en la financiación.</div>
     </div>
   </div>
 
@@ -508,5 +603,47 @@
   Para más información contacta con tu asesor personal
 </footer>
 
+<script>
+  const PRECIO_TOTAL_J1 = 13600;
+  const ENTRADA_J1 = 3500;
+  const IMPORTE_J1 = PRECIO_TOTAL_J1 - ENTRADA_J1; // 10.100
+  const TIN_J1 = 10.46;
+
+  function calcCuotaJ1(capital, meses, tin) {
+    if (tin === 0) return capital / meses;
+    const r = tin / 100 / 12;
+    return capital * r / (1 - Math.pow(1 + r, -meses));
+  }
+
+  function fmtJ1(n) {
+    // Formateador manual (dos decimales, coma decimal, punto de miles) para asegurar
+    // el mismo resultado en todos los navegadores, sin depender de toLocaleString.
+    const fixed = n.toFixed(2);
+    let [entero, decimales] = fixed.split('.');
+    entero = entero.replace(/\B(?=(\d{3})+(?!\d))/g, '.');
+    return entero + ',' + decimales + ' €';
+  }
+
+  function setPlazoJ1(el, meses) {
+    document.querySelectorAll('.fin-plazo').forEach(p => p.classList.remove('active'));
+    el.classList.add('active');
+
+    const sinIntereses = meses === 12;
+    const tin = sinIntereses ? 0 : TIN_J1;
+    const cuota = calcCuotaJ1(IMPORTE_J1, meses, tin);
+    const totalPagar = sinIntereses ? IMPORTE_J1 : cuota * meses;
+    const intereses = totalPagar - IMPORTE_J1;
+
+    document.getElementById('cuotaValorJ1').textContent = fmtJ1(cuota);
+    document.getElementById('cuotaSubJ1').textContent = `/mes · ${meses} pagos · TIN ${sinIntereses ? '0%' : '10,46%'}`;
+    document.getElementById('detInteresesJ1').textContent = sinIntereses
+      ? '0 € · ¡MLQ los asume!'
+      : fmtJ1(intereses);
+    document.getElementById('detInteresesJ1').className = sinIntereses
+      ? 'fin-det-val fin-det-green'
+      : 'fin-det-val';
+    document.getElementById('detTotalJ1').textContent = fmtJ1(PRECIO_TOTAL_J1 + intereses);
+  }
+</script>
 </body>
 </html>
