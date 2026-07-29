@@ -59,9 +59,17 @@ body{font-family:'Fira Sans',sans-serif;background:var(--gray-bg);color:var(--te
 .includes-head{background:linear-gradient(135deg,var(--green-dark),var(--green));padding:20px 32px;}
 .includes-head h3{font-family:'Josefin Sans',sans-serif;font-size:14px;font-weight:700;color:var(--white);letter-spacing:1px;}
 .includes-body{padding:28px 32px;}
-.inc-list{list-style:none;display:grid;grid-template-columns:repeat(2,1fr);gap:10px 24px;}
+.includes-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:32px;}
+.col-title{font-family:'Josefin Sans',sans-serif;font-size:9px;font-weight:700;letter-spacing:2.5px;text-transform:uppercase;color:var(--green-dark);margin-bottom:14px;padding-bottom:8px;border-bottom:2px solid var(--green-light);}
+.inc-list{list-style:none;display:flex;flex-direction:column;gap:8px;}
 .inc-list li{font-size:12px;color:var(--text-mid);display:flex;align-items:flex-start;gap:8px;line-height:1.55;}
 .inc-list li::before{content:'✓';color:var(--ireland-green);font-weight:700;font-size:11px;flex-shrink:0;margin-top:1px;}
+.inc-list.no li::before{content:'✗';color:var(--red);}
+.gestor-wrap{background:linear-gradient(135deg,var(--green-dark),var(--green-mid));border-radius:12px;padding:20px 24px;margin-top:24px;}
+.gestor-title{font-family:'Josefin Sans',sans-serif;font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:rgba(255,255,255,0.6);margin-bottom:14px;}
+.gestor-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;}
+.gestor-item{background:rgba(255,255,255,0.08);border:1px solid rgba(255,255,255,0.12);border-radius:8px;padding:10px 12px;font-size:11px;color:rgba(255,255,255,0.85);line-height:1.4;}
+.gestor-item::before{content:'→';color:#a5d6a7;font-weight:700;margin-right:5px;}
 
 /* Tabla diferencial */
 .tabla-wrap{background:var(--white);border-radius:16px;border:1.5px solid var(--gray-border);box-shadow:0 2px 16px rgba(0,80,0,0.05);overflow:hidden;margin-bottom:36px;}
@@ -200,22 +208,65 @@ body{font-family:'Fira Sans',sans-serif;background:var(--gray-bg);color:var(--te
   <div class="includes-wrap">
     <div class="includes-head"><h3>☘ Base común · My Language Quest</h3></div>
     <div class="includes-body">
-      <ul class="inc-list">
-        <li>Reunión inicial (presencial, teléfono o videoconferencia) con padres o tutores</li>
-        <li>Entrevista personal online con el estudiante</li>
-        <li>Inscripción en el programa y matriculación en el colegio</li>
-        <li>Seguro médico privado y de responsabilidad civil</li>
-        <li>Gestor estudiantil (seguimiento del desempeño, informes mensuales a las familias, notas oficiales de cada trimestre/semestre, asesoría de asignaturas, tutorías, apoyo en extraescolares)</li>
-        <li>Coordinador local en Irlanda: visitas, tutorías y emergencias 24h</li>
-        <li>Atención 24 horas en España para emergencias</li>
-        <li>Recibimiento en el aeropuerto a la llegada</li>
-        <li>Clases de inglés Cambridge y su libro</li>
-        <li>Apoyo en resolución de situaciones con el colegio o la familia, incluyendo cambio de familia si es necesario</li>
-        <li>Trámites de convalidación / homologación al finalizar el curso</li>
-        <li>Dossier final detallando la experiencia en Irlanda</li>
-        <li>Pack sorpresa de My Language Quest</li>
-        <li>Orientación presencial pre-viaje en Madrid</li>
-      </ul>
+      <div class="includes-grid">
+        <div>
+          <div class="col-title">Antes del viaje</div>
+          <ul class="inc-list">
+            <li>Reunión inicial (presencial, teléfono o videoconferencia) con la madre</li>
+            <li>Entrevista personal online con el estudiante</li>
+            <li>Provisión de información completa sobre el programa en Irlanda</li>
+            <li>Inscripción en el programa y matriculación en colegio irlandés</li>
+            <li>Selección de familia anfitriona en régimen de pensión completa</li>
+            <li>Un único estudiante hispanohablante por familia garantizado</li>
+            <li>Seguro médico privado y de responsabilidad civil</li>
+            <li>Masterclass de cultura irlandesa — 10 horas online en inglés</li>
+            <li>Orientación presencial pre-viaje en Madrid / online</li>
+            <li>Welcome pack sorpresa de My Language Quest</li>
+          </ul>
+        </div>
+        <div>
+          <div class="col-title">Durante el viaje</div>
+          <ul class="inc-list">
+            <li>Recibimiento en aeropuerto y traslados en destino</li>
+            <li>Asesoramiento en elección de asignaturas</li>
+            <li>Clases de inglés Cambridge y libro incluido</li>
+            <li>Coordinador local en Irlanda: visitas, tutorías y emergencias 24h</li>
+            <li>Apoyo para matriculación en actividades extraescolares</li>
+            <li>Gestión de cambio de familia si fuera necesario</li>
+            <li>Atención 24h en España para emergencias</li>
+          </ul>
+        </div>
+        <div>
+          <div class="col-title">Después del viaje</div>
+          <ul class="inc-list">
+            <li>Convalidación ante el Ministerio de Educación</li>
+            <li>Recogida de notas y traducciones juradas</li>
+            <li>Dossier final detallando la experiencia en Irlanda</li>
+          </ul>
+          <div class="col-title" style="margin-top:20px;">No incluido</div>
+          <ul class="inc-list no">
+            <li>Otros vuelos no contemplados en la opción de vuelos elegida — MLQ gestiona la búsqueda, coste a cargo de la familia</li>
+            <li>Actividades extracurriculares de pago</li>
+            <li>Excursiones y viajes escolares</li>
+            <li>Transporte local mensual</li>
+            <li>Todo aquello no especificado expresamente en "El programa incluye"</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="gestor-wrap">
+        <div class="gestor-title">Gestor estudiantil · se encarga de</div>
+        <div class="gestor-grid">
+          <div class="gestor-item">Seguimiento personalizado del desempeño</div>
+          <div class="gestor-item">Información a la madre mensualmente</div>
+          <div class="gestor-item">Notas oficiales cada trimestre</div>
+          <div class="gestor-item">Asesoría en cambio de asignaturas</div>
+          <div class="gestor-item">Todas las tutorías necesarias</div>
+          <div class="gestor-item">Reuniones con madre y/o estudiante</div>
+          <div class="gestor-item">Apoyo en actividades extraescolares</div>
+          <div class="gestor-item">Resolución de situaciones con familia o centro</div>
+        </div>
+      </div>
     </div>
   </div>
 
@@ -270,7 +321,7 @@ body{font-family:'Fira Sans',sans-serif;background:var(--gray-bg);color:var(--te
         </tr>
       </tbody>
     </table>
-    <div class="tabla-nota">Más información sobre la orientación previa en Dublín: consulta el detalle del programa.</div>
+    <div class="tabla-nota">Más información sobre la orientación previa en Dublín: <a href="https://aescobarnic.github.io/Propuestas/welcome-weekend-dublin.html" target="_blank">consulta el detalle del programa</a>.</div>
   </div>
 
   <!-- DETALLE POR MODALIDAD / SUPLEMENTOS -->
