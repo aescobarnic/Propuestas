@@ -110,8 +110,9 @@ body{font-family:'Fira Sans',sans-serif;background:var(--gray-bg);color:var(--te
 .pasos-list{list-style:none;counter-reset:paso;display:flex;flex-direction:column;gap:12px;}
 .pasos-list li{counter-increment:paso;font-size:13px;color:rgba(255,255,255,0.9);line-height:1.6;display:flex;gap:12px;}
 .pasos-list li::before{content:counter(paso);flex-shrink:0;width:22px;height:22px;background:rgba(255,255,255,0.15);border:1px solid rgba(255,255,255,0.3);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:700;color:var(--white);}
-.pasos-cta{display:inline-flex;align-items:center;gap:8px;background:var(--ireland-orange);color:var(--white);font-family:'Josefin Sans',sans-serif;font-size:13px;font-weight:700;letter-spacing:0.5px;text-decoration:none;padding:14px 28px;border-radius:10px;margin-top:22px;transition:background .2s;}
+.pasos-cta{display:inline-flex;align-items:center;gap:8px;background:var(--ireland-orange);color:var(--white);font-family:'Josefin Sans',sans-serif;font-size:13px;font-weight:700;letter-spacing:0.5px;text-decoration:none;padding:14px 28px;border-radius:10px;transition:background .2s;}
 .pasos-cta:hover{background:#ff9c5c;}
+.pasos-cta-wrap{text-align:center;margin-top:22px;}
 </style>
 </head>
 <body>
@@ -395,7 +396,9 @@ body{font-family:'Fira Sans',sans-serif;background:var(--gray-bg);color:var(--te
       <li>Te enviaremos una propuesta personalizada con los colegios seleccionados para el perfil.</li>
       <li>Resolvemos dudas en una llamada o videollamada de asesoramiento gratuito antes de la firma.</li>
     </ul>
-    <a class="pasos-cta" href="https://zfrmz.eu/xXP0Z1BV6f5r2GZz1a2V" target="_blank">☘ Solicita tu asesoramiento gratuito</a>
+    <div class="pasos-cta-wrap">
+      <a class="pasos-cta" href="https://zfrmz.eu/xXP0Z1BV6f5r2GZz1a2V" target="_blank">☘ Solicita tu asesoramiento gratuito</a>
+    </div>
   </div>
 
 </main>
