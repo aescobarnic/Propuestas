@@ -49,6 +49,10 @@ body{font-family:'Fira Sans',sans-serif;background:var(--gray-bg);color:var(--te
 .prog-precio{padding:18px 22px;text-align:center;border-bottom:1px solid var(--gray-border);}
 .prog-precio-val{font-family:'Josefin Sans',sans-serif;font-size:26px;font-weight:700;color:var(--green-dark);line-height:1;}
 .prog-precio-sub{font-size:10px;color:var(--text-light);margin-top:6px;}
+.prog-precio-extra{padding:12px 22px 16px;border-bottom:1px solid var(--gray-border);background:var(--green-pale);}
+.prog-precio-extra-title{font-size:9px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:var(--text-light);margin-bottom:8px;text-align:center;}
+.prog-precio-mini{display:flex;justify-content:space-between;font-size:11.5px;color:var(--text-mid);padding:3px 0;}
+.prog-precio-mini span.val{font-weight:700;color:var(--green-dark);}
 .prog-body{padding:18px 22px;flex:1;}
 .prog-list{list-style:none;display:flex;flex-direction:column;gap:9px;}
 .prog-list li{font-size:12px;color:var(--text-mid);display:flex;align-items:flex-start;gap:8px;line-height:1.5;}
@@ -106,6 +110,8 @@ body{font-family:'Fira Sans',sans-serif;background:var(--gray-bg);color:var(--te
 .pasos-list{list-style:none;counter-reset:paso;display:flex;flex-direction:column;gap:12px;}
 .pasos-list li{counter-increment:paso;font-size:13px;color:rgba(255,255,255,0.9);line-height:1.6;display:flex;gap:12px;}
 .pasos-list li::before{content:counter(paso);flex-shrink:0;width:22px;height:22px;background:rgba(255,255,255,0.15);border:1px solid rgba(255,255,255,0.3);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:700;color:var(--white);}
+.pasos-cta{display:inline-flex;align-items:center;gap:8px;background:var(--ireland-orange);color:var(--white);font-family:'Josefin Sans',sans-serif;font-size:13px;font-weight:700;letter-spacing:0.5px;text-decoration:none;padding:14px 28px;border-radius:10px;margin-top:22px;transition:background .2s;}
+.pasos-cta:hover{background:#ff9c5c;}
 </style>
 </head>
 <body>
@@ -170,6 +176,10 @@ body{font-family:'Fira Sans',sans-serif;background:var(--gray-bg);color:var(--te
         <div class="prog-precio-val">17.450 €</div>
         <div class="prog-precio-sub">año escolar completo</div>
       </div>
+      <div class="prog-precio-extra">
+        <div class="prog-precio-extra-title">Otras duraciones</div>
+        <div class="prog-precio-mini"><span>Trimestre (2 vuelos)</span><span class="val">10.200 €</span></div>
+      </div>
       <div class="prog-body">
         <ul class="prog-list">
           <li>Elección de colegio entre varias opciones seleccionadas para el perfil</li>
@@ -189,6 +199,11 @@ body{font-family:'Fira Sans',sans-serif;background:var(--gray-bg);color:var(--te
       <div class="prog-precio">
         <div class="prog-precio-val">18.200 €</div>
         <div class="prog-precio-sub">año escolar completo</div>
+      </div>
+      <div class="prog-precio-extra">
+        <div class="prog-precio-extra-title">Otras duraciones</div>
+        <div class="prog-precio-mini"><span>Semestre agosto–abril (4 vuelos)</span><span class="val">15.200 €</span></div>
+        <div class="prog-precio-mini"><span>Semestre agosto–enero (4 vuelos)</span><span class="val">11.650 €</span></div>
       </div>
       <div class="prog-body">
         <ul class="prog-list">
@@ -342,16 +357,16 @@ body{font-family:'Fira Sans',sans-serif;background:var(--gray-bg);color:var(--te
     <div class="detalle-card">
       <div class="detalle-title">Choice + 2 vuelos</div>
       <ul class="sup-list">
-        <li>Colegio, habitación individual, libros, uniforme y orientación Dublín ya incluidos en el precio</li>
+        <li>Colegio, habitación individual, libros, uniforme, Tasa de Transition Year y orientación Dublín ya incluidos en el precio</li>
       </ul>
-      <p class="detalle-empty" style="margin-top:10px;">Sin suplementos adicionales, salvo Tasa de Transition Year si el curso elegido lo requiere.</p>
+      <p class="detalle-empty" style="margin-top:10px;">Todo incluido — sin suplementos adicionales.</p>
     </div>
     <div class="detalle-card">
       <div class="detalle-title">Choice + 4 vuelos</div>
       <ul class="sup-list">
-        <li>Colegio, habitación individual, libros, uniforme y orientación Dublín ya incluidos en el precio</li>
+        <li>Colegio, habitación individual, libros, uniforme, Tasa de Transition Year y orientación Dublín ya incluidos en el precio</li>
       </ul>
-      <p class="detalle-empty" style="margin-top:10px;">Sin suplementos adicionales, salvo Tasa de Transition Year si el curso elegido lo requiere.</p>
+      <p class="detalle-empty" style="margin-top:10px;">Todo incluido — sin suplementos adicionales.</p>
     </div>
   </div>
 
@@ -376,10 +391,11 @@ body{font-family:'Fira Sans',sans-serif;background:var(--gray-bg);color:var(--te
   <div class="pasos-wrap">
     <div class="pasos-title">Siguientes pasos</div>
     <ul class="pasos-list">
-      <li>Cuéntanos el perfil del estudiante (curso, intereses, nivel de inglés, preferencias de zona) para recomendarte la modalidad y los colegios que mejor encajan.</li>
+      <li>Completa el formulario con el perfil del estudiante (curso, intereses, nivel de inglés, preferencias de zona) para que podamos recomendarte la modalidad y los colegios que mejor encajan.</li>
       <li>Te enviaremos una propuesta personalizada con los colegios seleccionados para el perfil.</li>
-      <li>Resolvemos dudas en una llamada o videollamada antes de la firma.</li>
+      <li>Resolvemos dudas en una llamada o videollamada de asesoramiento gratuito antes de la firma.</li>
     </ul>
+    <a class="pasos-cta" href="https://zfrmz.eu/xXP0Z1BV6f5r2GZz1a2V" target="_blank">☘ Solicita tu asesoramiento gratuito</a>
   </div>
 
 </main>
