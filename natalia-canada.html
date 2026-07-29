@@ -411,11 +411,9 @@ details[open] summary::before{transform:rotate(90deg);}
             <div class="col-title">No incluido</div>
             <ul class="inc-list no">
               <li>Exceso de vuelos sobre 1.000 € (a cargo de la familia)</li>
-              <li>Actividades extracurriculares de pago: equipos deportivos con licencia, bandas, teatro</li>
               <li>Excursiones y viajes escolares organizados por el colegio</li>
-              <li>Material escolar: cuadernos, calculadora, material de arte, uniforme deportivo</li>
+              <li>Material escolar: cuadernos, calculadora, bolígrafos</li>
               <li>Fotografía escolar y anuario (<em>yearbook</em>)</li>
-              <li>Tasas de exámenes opcionales (AP, Cambridge avanzado)</li>
               <li>Transporte local mensual (autobús, tarjeta de transporte)</li>
               <li>Cualquier otro gasto no especificado en "El programa incluye"</li>
             </ul>
@@ -578,13 +576,21 @@ details[open] summary::before{transform:rotate(90deg);}
       <div class="fin-resultado">
         <div class="fin-resultado-main">
           <div class="fin-cuota-label">Cuota mensual estimada</div>
-          <div class="fin-cuota-valor" id="cuotaValor">1.675,00 €</div>
+          <div class="fin-cuota-valor" id="cuotaValor">1.383,33 €</div>
           <div class="fin-cuota-sub" id="cuotaSub">/mes · 12 pagos · TIN 0%</div>
         </div>
         <div class="fin-resultado-detalle">
           <div class="fin-det-row">
-            <span class="fin-det-label">Importe del programa</span>
-            <span class="fin-det-val" id="detCapital">20.100 €</span>
+            <span class="fin-det-label">Importe total del programa</span>
+            <span class="fin-det-val" id="detTotalPrograma">20.100 €</span>
+          </div>
+          <div class="fin-det-row">
+            <span class="fin-det-label">Entrada a la firma</span>
+            <span class="fin-det-val" id="detEntrada">3.500 €</span>
+          </div>
+          <div class="fin-det-row">
+            <span class="fin-det-label">Importe a financiar</span>
+            <span class="fin-det-val" id="detCapital">16.600 €</span>
           </div>
           <div class="fin-det-row">
             <span class="fin-det-label">Intereses totales</span>
@@ -596,7 +602,7 @@ details[open] summary::before{transform:rotate(90deg);}
           </div>
         </div>
       </div>
-      <div class="fin-nota">ℹ️ Financiación sujeta a aprobación bancaria. Cuota orientativa calculada sobre el importe total del programa. Sin comisión de apertura. Los precios ya incluyen el descuento aplicado a cada opción.</div>
+      <div class="fin-nota">ℹ️ Financiación sujeta a aprobación bancaria. Cuota orientativa calculada sobre el importe a financiar, una vez descontada la entrada de 3.500 € abonada a la firma. Sin comisión de apertura. Los precios ya incluyen el descuento aplicado a cada opción.</div>
     </div>
   </div>
 
@@ -604,17 +610,22 @@ details[open] summary::before{transform:rotate(90deg);}
 
 <script>
 var _cap = 20100, _mes = 12;
+var ENTRADA = 3500;
 function _fmt(n,d){return n.toLocaleString('es-ES',{minimumFractionDigits:d||0,maximumFractionDigits:d||0})+' €';}
 function _cuota(c,t,m){if(t===0)return c/m;var r=(t/100)/12;return c*r/(1-Math.pow(1+r,-m));}
 function _update(){
+  var financiado = _cap - ENTRADA;
   var tin=_mes===12?0:10.46;
-  var q=_cuota(_cap,tin,_mes);
-  var tot=q*_mes;
-  var inter=tot-_cap;
+  var q=_cuota(financiado,tin,_mes);
+  var totFinanciado=q*_mes;
+  var inter=totFinanciado-financiado;
+  var totalPagar=ENTRADA+totFinanciado;
   document.getElementById('cuotaValor').textContent=_fmt(q,2);
   document.getElementById('cuotaSub').textContent='/mes · '+_mes+' pagos · TIN '+(tin===0?'0%':'10,46%');
-  document.getElementById('detCapital').textContent=_fmt(Math.round(_cap));
-  document.getElementById('detTotal').textContent=_fmt(Math.round(tot));
+  document.getElementById('detTotalPrograma').textContent=_fmt(Math.round(_cap));
+  document.getElementById('detEntrada').textContent=_fmt(Math.round(ENTRADA));
+  document.getElementById('detCapital').textContent=_fmt(Math.round(financiado));
+  document.getElementById('detTotal').textContent=_fmt(Math.round(totalPagar));
   if(tin===0){
     document.getElementById('detIntereses').textContent='0 € · ¡MLQ los asume!';
     document.getElementById('detIntereses').className='fin-det-val fin-det-green';
