@@ -202,7 +202,7 @@ details[open] summary::before{transform:rotate(90deg);}
 
   <div class="alert-box">
     <div class="alert-icon">⚡</div>
-<div class="alert-text"><strong>Propuesta para mellizos:</strong> Los 5 distritos han sido seleccionados porque combinan acceso real al esquí (prioridad compartida de Tomás y Rosa), fútbol y entorno al aire libre para Tomás, y una oferta cultural/académica amplia para Rosa — además de garantizar que ambos puedan asistir al mismo colegio. Precios ya incluyen el descuento de 1.500 € por hermano.</div>
+<div class="alert-text"><strong>Propuesta para mellizos:</strong> Los 4 distritos han sido seleccionados porque combinan acceso real al esquí (prioridad compartida de Tomás y Rosa), fútbol y entorno al aire libre para Tomás, y una oferta cultural/académica amplia para Rosa — además de garantizar que ambos puedan asistir al mismo colegio. Precios ya incluyen el descuento de 1.500 € por hermano.</div>
   </div>
 
   <div class="section-title"><h2>Opciones recomendadas</h2></div>
@@ -323,34 +323,6 @@ details[open] summary::before{transform:rotate(90deg);}
         <div class="match-tag">Esquí y snowboard</div>
         <div class="match-tag">Fútbol y rugby</div>
         <div class="match-tag">Comunidad pequeña</div>
-      </div>
-    </div>
-
-    <!-- OPCIÓN 5 -->
-    <div class="opcion-card">
-      <div class="opcion-header">
-        <div class="opcion-num">Opción 05</div>
-        <div class="opcion-distrito">Canadian Rockies School District</div>
-        <div class="opcion-loc">📍 Banff / Canmore · Alberta</div>
-        <div class="precio-chip"><span class="val">25.500,00 €</span><span class="desc">/ estudiante · con desc. hermanos</span><span class="tachado">27.000,00 €</span></div>
-      </div>
-      <div class="opcion-body">
-        <div class="colegios">
-          <div class="colegio">
-            <div class="colegio-top">
-              <div class="colegio-nombre">Canmore Collegiate High School</div>
-              <div class="colegio-meta"><span class="tag pub">Público</span><span class="tag info">Canmore</span><span class="tag info">~500 estudiantes</span></div>
-            </div>
-            <details><summary>Por qué es ideal para Tomás y Rosa</summary>
-            <div class="colegio-razon">Canadian Rockies es el destino más premium de los cinco: entorno de montaña espectacular junto a Banff y Lake Louise, con el programa WILD (Wilderness-Inspired Leadership Development) que conecta perfectamente con el perfil deportivo y aventurero de Tomás. Para Rosa, Canmore Collegiate ofrece programas STEM/STEAM, artes y teatro, además de inmersión en francés y cursos AP para quienes buscan más exigencia académica.</div>
-            </details>
-          </div>
-        </div>
-      </div>
-      <div class="match-bar">
-        <div class="match-tag">Entorno premium</div>
-        <div class="match-tag">Programa WILD</div>
-        <div class="match-tag">STEM · Artes · Teatro</div>
       </div>
     </div>
 
@@ -502,17 +474,13 @@ details[open] summary::before{transform:rotate(90deg);}
             <span class="fin-opcion-nombre">Comox Valley SD71</span>
             <span class="fin-opcion-precio">23.834,56 €</span>
           </button>
-          <button class="fin-opcion-btn" onclick="setOpcion(this, 24470)">
+          <button class="fin-opcion-btn active" onclick="setOpcion(this, 24470)">
             <span class="fin-opcion-nombre">Sea to Sky (Squamish)</span>
             <span class="fin-opcion-precio">24.470 €</span>
           </button>
           <button class="fin-opcion-btn" onclick="setOpcion(this, 23800)">
             <span class="fin-opcion-nombre">Rocky Mountain</span>
             <span class="fin-opcion-precio">23.800 €</span>
-          </button>
-          <button class="fin-opcion-btn active" onclick="setOpcion(this, 25500)">
-            <span class="fin-opcion-nombre">Canadian Rockies</span>
-            <span class="fin-opcion-precio">25.500 €</span>
           </button>
         </div>
       </div>
@@ -569,7 +537,7 @@ details[open] summary::before{transform:rotate(90deg);}
 </main>
 
 <script>
-var _cap = 25500, _mes = 12;
+var _cap = 24470, _mes = 12;
 function _fmt(n,d){return n.toLocaleString('es-ES',{minimumFractionDigits:d||0,maximumFractionDigits:d||0})+' €';}
 function _cuota(c,t,m){if(t===0)return c/m;var r=(t/100)/12;return c*r/(1-Math.pow(1+r,-m));}
 function _update(){
