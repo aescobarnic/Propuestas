@@ -1,0 +1,656 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Propuesta · Miren · My Language Quest</title>
+<link href="https://fonts.googleapis.com/css2?family=Fira+Sans:wght@300;400;500;600;700&family=Josefin+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --blue:#003366;--blue-dark:#001f40;--blue-mid:#0a4a8a;--blue-light:#dce8f5;
+  --red:#B12900;--red-dark:#8A1F00;--red-light:#fdf0ec;
+  --green:#4C9E0C;--green-dark:#3A7A09;--green-light:#eef8e3;
+  --gray-bg:#f0f2f6;--gray-card:#f8f9fb;--gray-border:#dde1ea;
+  --text:#0d1b2a;--text-mid:#3d4f62;--text-light:#7a8a9b;--white:#ffffff;
+}
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box;}
+body{font-family:'Fira Sans',sans-serif;background:var(--gray-bg);color:var(--text);}
+
+.header{background:var(--white);padding:18px 48px;display:flex;align-items:center;justify-content:space-between;box-shadow:0 1px 0 var(--gray-border),0 4px 24px rgba(0,51,102,0.07);position:relative;z-index:10;}
+.header::after{content:'';position:absolute;bottom:0;left:0;right:0;height:3px;background:linear-gradient(90deg,var(--red),var(--blue) 50%,var(--green));}
+.logo-area img{height:46px;width:auto;display:block;}
+.header-right{text-align:right;}
+.header-label{font-family:'Josefin Sans',sans-serif;font-size:9px;letter-spacing:3px;text-transform:uppercase;color:var(--text-light);}
+.header-year{font-family:'Josefin Sans',sans-serif;font-size:26px;font-weight:700;color:var(--blue);line-height:1;margin-top:2px;}
+
+.hero{background:var(--blue);position:relative;overflow:hidden;padding:40px 48px 36px;}
+.hero::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 80% 120% at 110% 50%,rgba(76,158,12,0.18) 0%,transparent 60%),radial-gradient(ellipse 60% 80% at -10% 80%,rgba(177,41,0,0.22) 0%,transparent 55%);}
+.hero-dots{position:absolute;inset:0;pointer-events:none;background-image:radial-gradient(rgba(255,255,255,0.07) 1px,transparent 1px);background-size:28px 28px;}
+.hero-inner{position:relative;z-index:2;display:flex;align-items:flex-end;justify-content:space-between;gap:24px;flex-wrap:wrap;}
+.hero-tag{display:inline-flex;align-items:center;gap:6px;background:rgba(255,255,255,0.1);border:1px solid rgba(255,255,255,0.2);border-radius:20px;padding:4px 12px;font-size:10px;font-weight:600;letter-spacing:2px;text-transform:uppercase;color:rgba(255,255,255,0.7);margin-bottom:12px;}
+.hero-tag::before{content:'✈';font-size:11px;}
+.hero-name{font-family:'Josefin Sans',sans-serif;font-size:38px;font-weight:700;color:var(--white);line-height:1;margin-bottom:8px;}
+.hero-subtitle{font-size:13px;color:rgba(255,255,255,0.55);font-weight:300;}
+.hero-pills{display:flex;flex-wrap:wrap;gap:8px;margin-top:20px;}
+.hero-pill{display:flex;align-items:center;gap:6px;background:rgba(255,255,255,0.1);border:1px solid rgba(255,255,255,0.18);border-radius:8px;padding:6px 12px;font-size:11px;color:var(--white);font-weight:500;}
+.hero-pill.ac{background:rgba(177,41,0,0.25);border-color:rgba(177,41,0,0.6);color:#ffb8a0;}
+
+.main{max-width:1140px;margin:0 auto;padding:40px 24px 64px;}
+.section-title{display:flex;align-items:center;gap:12px;margin-bottom:24px;}
+.section-title h2{font-family:'Josefin Sans',sans-serif;font-size:11px;font-weight:700;letter-spacing:3px;text-transform:uppercase;color:var(--text-light);}
+.section-title::after{content:'';flex:1;height:1px;background:var(--gray-border);}
+
+.alert-box{display:flex;gap:12px;align-items:flex-start;background:#fff4f0;border:1.5px solid rgba(177,41,0,0.3);border-radius:12px;padding:14px 18px;margin-bottom:28px;}
+.alert-icon{font-size:20px;flex-shrink:0;}
+.alert-text{font-size:12px;color:#6b1a00;line-height:1.6;}
+.alert-text strong{color:var(--red-dark);}
+
+.opciones-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:20px;margin-bottom:40px;}
+.opcion-card{background:var(--white);border-radius:16px;border:1.5px solid var(--gray-border);overflow:hidden;box-shadow:0 2px 16px rgba(0,51,102,0.06);position:relative;transition:transform .2s,box-shadow .2s,border-color .2s;}
+.opcion-card:hover{transform:translateY(-4px);box-shadow:0 12px 40px rgba(0,51,102,0.13);border-color:var(--blue-mid);}
+.opcion-card.recomendada{border-color:var(--green);box-shadow:0 4px 24px rgba(76,158,12,0.15);}
+.opcion-card.premium{border-color:#b8860b;box-shadow:0 4px 24px rgba(184,134,11,0.15);}
+.badge-rec{position:absolute;top:14px;right:-32px;background:var(--green);color:var(--white);font-size:8px;font-weight:700;letter-spacing:1.5px;padding:5px 40px;transform:rotate(45deg);width:130px;text-align:center;z-index:10;}
+.badge-rec.premium{background:#b8860b;width:170px;padding:5px 55px;}
+.opcion-header{background:linear-gradient(135deg,var(--blue-dark) 0%,var(--blue) 100%);padding:22px 24px 18px;}
+.opcion-num{font-family:'Josefin Sans',sans-serif;font-size:9px;letter-spacing:3px;text-transform:uppercase;color:rgba(255,255,255,0.38);margin-bottom:8px;}
+.opcion-distrito{font-family:'Josefin Sans',sans-serif;font-size:16px;font-weight:700;color:var(--white);margin-bottom:5px;}
+.opcion-loc{font-size:11px;color:rgba(255,255,255,0.48);margin-bottom:12px;}
+.precio-chip{display:inline-flex;align-items:baseline;gap:4px;background:rgba(255,255,255,0.1);border:1px solid rgba(255,255,255,0.18);border-radius:8px;padding:6px 12px;}
+.precio-chip .val{font-family:'Josefin Sans',sans-serif;font-size:20px;font-weight:700;color:#7dd44a;}
+.precio-chip .desc{font-size:10px;color:rgba(255,255,255,0.5);}
+.precio-chip .tachado{font-size:10px;color:rgba(255,255,255,0.3);text-decoration:line-through;margin-left:6px;}
+.opcion-body{padding:20px 22px;}
+.colegios{display:flex;flex-direction:column;gap:12px;}
+.colegio{border:1.5px solid var(--gray-border);border-radius:12px;overflow:hidden;background:var(--gray-card);transition:border-color .2s;}
+.colegio:hover{border-color:var(--red);}
+.colegio-top{padding:12px 14px 10px;}
+.colegio-nombre{font-family:'Josefin Sans',sans-serif;font-size:13px;font-weight:700;color:var(--blue);margin-bottom:5px;}
+.colegio-meta{display:flex;flex-wrap:wrap;align-items:center;gap:6px;}
+.tag{border-radius:5px;padding:2px 8px;font-size:9px;font-weight:700;text-transform:uppercase;}
+.tag.pub{background:var(--green);color:var(--white);}
+.tag.info{background:var(--blue-light);color:var(--blue);}
+details{border-top:1px solid var(--gray-border);}
+details summary{list-style:none;cursor:pointer;padding:9px 14px;font-size:11px;font-weight:600;color:var(--red);display:flex;align-items:center;gap:6px;user-select:none;-webkit-user-select:none;}
+details summary:hover{background:var(--red-light);}
+details summary::-webkit-details-marker{display:none;}
+details summary::before{content:'▸';font-size:10px;transition:transform .2s;display:inline-block;}
+details[open] summary::before{transform:rotate(90deg);}
+.colegio-razon{padding:10px 14px 13px;font-size:12px;color:var(--text-mid);line-height:1.7;border-left:3px solid var(--red);margin:0 14px 12px;background:var(--red-light);border-radius:0 6px 6px 0;}
+.match-bar{display:flex;gap:6px;flex-wrap:wrap;padding:14px 22px;border-top:1px solid var(--gray-border);background:linear-gradient(to right,var(--gray-card),var(--white));}
+.match-tag{display:flex;align-items:center;gap:4px;font-size:10px;font-weight:600;color:var(--green-dark);background:var(--green-light);border:1px solid rgba(76,158,12,0.25);border-radius:20px;padding:3px 10px;}
+.match-tag::before{content:'✓';font-size:9px;}
+.match-tag.warn{color:#8A5A00;background:#fff7e6;border-color:rgba(184,134,11,0.35);}
+.match-tag.warn::before{content:'⚠';}
+
+/* INCLUDES */
+.includes-wrap{background:var(--white);border-radius:16px;border:1.5px solid var(--gray-border);box-shadow:0 2px 16px rgba(0,51,102,0.05);overflow:hidden;margin-bottom:24px;}
+.includes-head{background:linear-gradient(135deg,var(--blue-dark),var(--blue));padding:20px 32px;}
+.includes-head h3{font-family:'Josefin Sans',sans-serif;font-size:14px;font-weight:700;color:var(--white);letter-spacing:1px;}
+.includes-body{padding:28px 32px;}
+.includes-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:32px;}
+.col-title{font-family:'Josefin Sans',sans-serif;font-size:9px;font-weight:700;letter-spacing:2.5px;text-transform:uppercase;color:var(--red);margin-bottom:14px;padding-bottom:8px;border-bottom:2px solid var(--red-light);}
+.inc-list{list-style:none;display:flex;flex-direction:column;gap:8px;}
+.inc-list li{font-size:12px;color:var(--text-mid);display:flex;align-items:flex-start;gap:8px;line-height:1.55;}
+.inc-list li::before{content:'✓';color:var(--green);font-weight:700;font-size:11px;flex-shrink:0;margin-top:1px;}
+.inc-list.no li::before{content:'✗';color:var(--red);}
+.inc-list li small{font-size:10px;color:var(--text-light);display:block;margin-top:2px;}
+
+/* GESTOR ESTUDIANTIL */
+.gestor-wrap{background:linear-gradient(135deg,var(--blue-dark),var(--blue-mid));border-radius:12px;padding:20px 24px;margin-top:20px;}
+.gestor-title{font-family:'Josefin Sans',sans-serif;font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:rgba(255,255,255,0.6);margin-bottom:14px;}
+.gestor-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;}
+.gestor-item{background:rgba(255,255,255,0.08);border:1px solid rgba(255,255,255,0.12);border-radius:8px;padding:10px 12px;font-size:11px;color:rgba(255,255,255,0.85);line-height:1.4;}
+.gestor-item::before{content:'→';color:#7dd44a;font-weight:700;margin-right:5px;}
+
+/* PAGO */
+.payment-wrap{background:linear-gradient(135deg,var(--blue-dark) 0%,var(--blue) 60%,var(--blue-mid) 100%);border-radius:16px;padding:32px;position:relative;overflow:hidden;margin-bottom:20px;}
+.payment-wrap::before{content:'';position:absolute;inset:0;background-image:radial-gradient(rgba(255,255,255,0.05) 1px,transparent 1px);background-size:22px 22px;}
+.payment-inner{position:relative;z-index:2;}
+.pay-title{font-family:'Josefin Sans',sans-serif;font-size:16px;font-weight:700;color:var(--white);margin-bottom:6px;}
+.pay-subtitle{font-size:12px;color:rgba(255,255,255,0.45);margin-bottom:20px;}
+.pay-cols{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:18px;}
+.pay-col{background:rgba(255,255,255,0.07);border:1px solid rgba(255,255,255,0.12);border-radius:12px;padding:18px 20px;}
+.pay-col-title{font-family:'Josefin Sans',sans-serif;font-size:9px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:#7dd44a;margin-bottom:12px;}
+.pay-step{margin-bottom:10px;}
+.pay-step-num{font-size:9px;font-weight:700;color:rgba(255,255,255,0.4);text-transform:uppercase;letter-spacing:1px;margin-bottom:2px;}
+.pay-step-title{font-size:13px;font-weight:600;color:var(--white);margin-bottom:2px;}
+.pay-step-desc{font-size:11px;color:rgba(255,255,255,0.45);line-height:1.5;}
+.pay-note{font-size:11px;color:rgba(255,255,255,0.3);line-height:1.65;font-style:italic;border-top:1px solid rgba(255,255,255,0.1);padding-top:14px;}
+
+
+/* FINANCIACIÓN */
+.financing-wrap{background:var(--white);border-radius:16px;border:1.5px solid var(--gray-border);box-shadow:0 2px 16px rgba(0,51,102,0.06);overflow:hidden;margin-bottom:24px;}
+.financing-head{background:linear-gradient(135deg,var(--blue-dark),var(--blue));padding:22px 32px;display:flex;align-items:center;justify-content:space-between;gap:16px;}
+.financing-head-left{display:flex;align-items:center;gap:16px;}
+.fin-icon{font-size:28px;flex-shrink:0;}
+.fin-title{font-family:'Josefin Sans',sans-serif;font-size:16px;font-weight:700;color:var(--white);margin-bottom:3px;}
+.fin-sub{font-size:11px;color:rgba(255,255,255,0.5);line-height:1.4;}
+.fin-badge{background:rgba(125,212,74,0.2);border:1px solid rgba(125,212,74,0.4);color:#7dd44a;font-family:'Josefin Sans',sans-serif;font-size:11px;font-weight:700;letter-spacing:1px;padding:6px 14px;border-radius:20px;white-space:nowrap;}
+.financing-body{padding:28px 32px;}
+.fin-opcion-label,.fin-plazo-label{font-family:'Josefin Sans',sans-serif;font-size:9px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--text-light);margin-bottom:10px;}
+.fin-opcion-selector{margin-bottom:24px;}
+.fin-opcion-btns{display:flex;gap:10px;flex-wrap:wrap;}
+.fin-opcion-btn{background:var(--gray-card);border:1.5px solid var(--gray-border);border-radius:10px;padding:10px 16px;cursor:pointer;text-align:left;transition:all .2s;display:flex;flex-direction:column;gap:3px;}
+.fin-opcion-btn:hover{border-color:var(--blue-mid);background:var(--blue-light);}
+.fin-opcion-btn.active{border-color:var(--blue);background:var(--blue-light);}
+.fin-opcion-nombre{font-size:10px;font-weight:700;letter-spacing:1px;text-transform:uppercase;color:var(--text-light);}
+.fin-opcion-btn.active .fin-opcion-nombre{color:var(--blue);}
+.fin-opcion-precio{font-family:'Josefin Sans',sans-serif;font-size:16px;font-weight:700;color:var(--text);}
+.fin-opcion-btn.active .fin-opcion-precio{color:var(--blue);}
+.fin-plazo-wrap{margin-bottom:24px;}
+.fin-plazos{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;}
+.fin-plazo{background:var(--gray-card);border:1.5px solid var(--gray-border);border-radius:12px;padding:14px 12px;cursor:pointer;text-align:center;transition:all .2s;}
+.fin-plazo:hover{border-color:var(--blue-mid);transform:translateY(-2px);}
+.fin-plazo.active{border-color:var(--green);background:var(--green-light);box-shadow:0 4px 16px rgba(76,158,12,0.15);}
+.fin-plazo-meses{font-family:'Josefin Sans',sans-serif;font-size:15px;font-weight:700;color:var(--text);margin-bottom:6px;}
+.fin-plazo.active .fin-plazo-meses{color:var(--green-dark);}
+.fin-plazo-badge{display:inline-block;border-radius:20px;padding:2px 8px;font-size:9px;font-weight:700;letter-spacing:0.5px;margin-bottom:4px;}
+.fin-plazo-badge.sin-intereses{background:var(--green-light);color:var(--green-dark);border:1px solid rgba(76,158,12,0.3);}
+.fin-plazo-badge.con-intereses{background:var(--blue-light);color:var(--blue);border:1px solid rgba(0,51,102,0.2);}
+.fin-plazo-quien{font-size:9px;color:var(--text-light);line-height:1.3;}
+.fin-resultado{display:grid;grid-template-columns:auto 1fr;gap:24px;background:linear-gradient(135deg,var(--blue-dark),var(--blue));border-radius:14px;padding:24px 28px;margin-bottom:16px;align-items:center;}
+.fin-resultado-main{text-align:center;border-right:1px solid rgba(255,255,255,0.15);padding-right:24px;}
+.fin-cuota-label{font-size:10px;font-weight:600;letter-spacing:2px;text-transform:uppercase;color:rgba(255,255,255,0.5);margin-bottom:6px;}
+.fin-cuota-valor{font-family:'Josefin Sans',sans-serif;font-size:36px;font-weight:700;color:#7dd44a;line-height:1;margin-bottom:4px;}
+.fin-cuota-sub{font-size:11px;color:rgba(255,255,255,0.45);}
+.fin-resultado-detalle{display:flex;flex-direction:column;gap:10px;}
+.fin-det-row{display:flex;justify-content:space-between;align-items:center;gap:12px;}
+.fin-det-label{font-size:12px;color:rgba(255,255,255,0.55);}
+.fin-det-val{font-size:13px;font-weight:600;color:var(--white);}
+.fin-det-green{color:#7dd44a !important;}
+.fin-det-total{border-top:1px solid rgba(255,255,255,0.15);padding-top:10px;margin-top:2px;}
+.fin-det-total .fin-det-label{color:rgba(255,255,255,0.7);font-weight:600;}
+.fin-det-total .fin-det-val{font-family:'Josefin Sans',sans-serif;font-size:16px;color:var(--white);}
+.fin-nota{font-size:11px;color:var(--text-light);line-height:1.6;background:var(--gray-card);border-radius:8px;padding:12px 16px;border-left:3px solid var(--blue-light);}
+@media(max-width:720px){.fin-plazos{grid-template-columns:repeat(2,1fr);}.fin-resultado{grid-template-columns:1fr;}.fin-resultado-main{border-right:none;border-bottom:1px solid rgba(255,255,255,0.15);padding-right:0;padding-bottom:20px;}.financing-head{flex-direction:column;align-items:flex-start;}.fin-opcion-btns{flex-direction:column;}}
+
+@media(max-width:720px){
+  .header{padding:16px 20px;}.hero{padding:28px 20px 24px;}.hero-name{font-size:28px;}
+  .main{padding:28px 16px 48px;}.includes-grid{grid-template-columns:1fr;}.opciones-grid{grid-template-columns:1fr;}
+  .pay-cols{grid-template-columns:1fr;}.gestor-grid{grid-template-columns:repeat(2,1fr);}
+}
+</style>
+</head>
+<body>
+
+<header class="header">
+  <div class="logo-area"><img src="data:image/png;base64,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" alt="My Language Quest"></div>
+  <div class="header-right">
+    <div class="header-label">Programa Académico · Canadá</div>
+    <div class="header-year">2027/28</div>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="hero-dots"></div>
+  <div class="hero-inner">
+    <div>
+      <div class="hero-tag">Propuesta personalizada</div>
+      <div class="hero-name">Miren</div>
+      <div class="hero-subtitle">Año escolar completo · Canadá · 1º de Bachillerato (Grade 11) · Sin preferencia de zona</div>
+      <div class="hero-pills">
+        <div class="hero-pill">🎓 Grade 11</div>
+        <div class="hero-pill">🏠 Familia anfitriona</div>
+        <div class="hero-pill">🗣 Inglés avanzado (preparando First Certificate)</div>
+        <div class="hero-pill">📊 Buen expediente (nota media 7–8)</div>
+        <div class="hero-pill">⚽ Fútbol</div>
+        <div class="hero-pill">🏙 Entorno semiurbano · ni muy urbano ni muy rural</div>
+        <div class="hero-pill ac">🎓 Continuidad hacia 2º de Bachillerato en España</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<main class="main">
+
+  <div class="alert-box">
+    <div class="alert-icon">🎯</div>
+    <div class="alert-text"><strong>Qué hemos priorizado para Miren:</strong> entornos semiurbanos o ciudades pequeñas/medianas · colegios mixtos con alojamiento en familia anfitriona · posibilidad real de practicar fútbol · buen acompañamiento al estudiante internacional de 15–16 años · buena oferta académica con margen para estudiar currículos y asignaturas concretas · presupuesto orientativo de 25.000 € · y, muy importante, buena continuidad académica de cara a su regreso a España para cursar 2º de Bachillerato.</div>
+  </div>
+
+  <div class="section-title"><h2>Opciones recomendadas</h2></div>
+  <div class="opciones-grid">
+
+    <!-- OPCIÓN 1 -->
+    <div class="opcion-card recomendada">
+      <div class="opcion-header">
+        <div class="opcion-num">🥇 Recomendación Principal</div>
+        <div class="opcion-distrito">Qualicum School District (SD69)</div>
+        <div class="opcion-loc">📍 Isla de Vancouver · Región de Oceanside, BC</div>
+        <div class="precio-chip"><span class="val">24.800 €</span><span class="desc">/ año · todos los conceptos incl.*</span></div>
+      </div>
+      <div class="opcion-body">
+        <div class="colegios">
+          <div class="colegio">
+            <div class="colegio-top">
+              <div class="colegio-nombre">Ballenas Secondary School</div>
+              <div class="colegio-meta"><span class="tag pub">Público</span><span class="tag info">Parksville</span><span class="tag info">Semiurbana</span><span class="tag info">~14.000 hab.</span></div>
+            </div>
+            <details><summary>Por qué es ideal para Miren</summary>
+            <div class="colegio-razon">Parksville y Qualicum Beach forman, entre las dos, la región de Oceanside (~47.000 hab.): un entorno costero semiurbano, tranquilo y con fuerte identidad comunitaria — exactamente el punto intermedio que pide la familia, ni gran ciudad ni entorno rural aislado. La adaptación de estudiantes internacionales es alta y el tamaño del colegio permite una atención cercana. Miren podría practicar fútbol junto con rugby, baloncesto, voleibol, atletismo, natación, tenis, golf, esquí, snowboard y hockey sobre hierba. El distrito cuenta además con el programa ROAMS (Rivers, Ocean and Mountain School), y disfruta de uno de los inviernos más suaves de todo Canadá, lo que facilita mucho la adaptación de un estudiante español.</div>
+            </details>
+          </div>
+          <div class="colegio">
+            <div class="colegio-top">
+              <div class="colegio-nombre">Kwalikum Secondary School</div>
+              <div class="colegio-meta"><span class="tag pub">Público</span><span class="tag info">Qualicum Beach</span><span class="tag info">Semiurbana</span><span class="tag info">~9.300 hab.</span></div>
+            </div>
+            <details><summary>Por qué es ideal para Miren</summary>
+            <div class="colegio-razon">Localidad algo más pequeña e íntima dentro del mismo distrito, con el mismo acceso a fútbol y al resto de deportes y al programa ROAMS. Buena opción si la familia prefiere el extremo más tranquilo de Oceanside manteniendo todas las ventajas de clima y acompañamiento del distrito.</div>
+            </details>
+          </div>
+        </div>
+      </div>
+      <div class="match-bar">
+        <div class="match-tag">Mejor equilibrio global</div>
+        <div class="match-tag">Fútbol + 9 deportes más</div>
+        <div class="match-tag">Clima más suave de Canadá</div>
+        <div class="match-tag">Entorno semiurbano costero</div>
+      </div>
+    </div>
+
+    <!-- OPCIÓN 2 -->
+    <div class="opcion-card">
+      <div class="opcion-header">
+        <div class="opcion-num">🥈 Recomendación 2</div>
+        <div class="opcion-distrito">Comox Valley School District (SD71)</div>
+        <div class="opcion-loc">📍 Isla de Vancouver · Courtenay / Comox, BC</div>
+        <div class="precio-chip"><span class="val">25.400 €</span><span class="desc">/ año · todos los conceptos incl.*</span></div>
+      </div>
+      <div class="opcion-body">
+        <div class="colegios">
+          <div class="colegio">
+            <div class="colegio-top">
+              <div class="colegio-nombre">Georges P. Vanier Secondary</div>
+              <div class="colegio-meta"><span class="tag pub">Público</span><span class="tag info">Courtenay</span><span class="tag info">Semiurbana</span><span class="tag info">~28.000 hab.</span></div>
+            </div>
+            <details><summary>Por qué es ideal para Miren</summary>
+            <div class="colegio-razon">Courtenay y Comox suman en conjunto unos 78.000 habitantes: algo más grande que Qualicum, con más servicios y variedad, pero sin dejar de ser un entorno manejable y seguro — ideal si la familia prefiere un poco más de movimiento. Comunidad muy acostumbrada a estudiantes internacionales. En deporte, Miren tendría fútbol, voleibol, baloncesto, natación, rugby, atletismo, esquí y snowboard, ciclismo de montaña, golf y ultimate frisbee, además de programas de robótica, ingeniería y diseño, artes creativas, liderazgo y sostenibilidad. El distrito tiene aeropuerto propio (Comox Valley Airport) a solo ~15 minutos.</div>
+            </details>
+          </div>
+          <div class="colegio">
+            <div class="colegio-top">
+              <div class="colegio-nombre">Highland Secondary School</div>
+              <div class="colegio-meta"><span class="tag pub">Público</span><span class="tag info">Comox</span><span class="tag info">Semiurbana</span><span class="tag info">~16.000 hab.</span></div>
+            </div>
+            <details><summary>Por qué es ideal para Miren</summary>
+            <div class="colegio-razon">Dentro del mismo distrito, una localidad ligeramente más recogida junto al mar, con acceso a las mismas actividades deportivas y de naturaleza, y al mismo nivel de acompañamiento internacional que Courtenay.</div>
+            </details>
+          </div>
+        </div>
+      </div>
+      <div class="match-bar">
+        <div class="match-tag">Más servicios y variedad</div>
+        <div class="match-tag">Fútbol + 8 deportes más</div>
+        <div class="match-tag">Aeropuerto propio a 15 min</div>
+        <div class="match-tag">Entorno intermedio</div>
+      </div>
+    </div>
+
+    <!-- OPCIÓN 3 -->
+    <div class="opcion-card">
+      <div class="opcion-header">
+        <div class="opcion-num">🥉 Recomendación 3</div>
+        <div class="opcion-distrito">Prince Edward Island (PEI)</div>
+        <div class="opcion-loc">📍 Charlottetown / Summerside · Este de Canadá</div>
+        <div class="precio-chip"><span class="val">21.200 €</span><span class="desc">/ año · todos los conceptos incl.*</span></div>
+      </div>
+      <div class="opcion-body">
+        <div class="colegios">
+          <div class="colegio">
+            <div class="colegio-top">
+              <div class="colegio-nombre">Charlottetown Rural High School</div>
+              <div class="colegio-meta"><span class="tag pub">Público</span><span class="tag info">Charlottetown</span><span class="tag info">Semiurbana</span><span class="tag info">~40.000 hab.</span></div>
+            </div>
+            <details><summary>Por qué es ideal para Miren</summary>
+            <div class="colegio-razon">Charlottetown y Summerside son dos ciudades pequeñas con servicios y actividades propios de una ciudad, pero sin el ritmo de una gran urbe. PEI es una provincia especialmente acogedora para estudiantes internacionales, con un programa internacional estructurado y una facilidad de adaptación muy alta — algo valioso para un primer año académico completo fuera de España. Miren podría practicar fútbol, voleibol, baloncesto, natación, rugby, atletismo, hockey, cross-country y bádminton. Su gran ventaja es el precio: 21.200 € deja un margen importante respecto al presupuesto de la familia. A valorar: el invierno es sensiblemente más frío que en la Isla de Vancouver.</div>
+            </details>
+          </div>
+          <div class="colegio">
+            <div class="colegio-top">
+              <div class="colegio-nombre">Three Oaks Senior High School</div>
+              <div class="colegio-meta"><span class="tag pub">Público</span><span class="tag info">Summerside</span><span class="tag info">Semiurbana</span><span class="tag info">~17.000 hab.</span></div>
+            </div>
+            <details><summary>Por qué es ideal para Miren</summary>
+            <div class="colegio-razon">Summerside es la ciudad más pequeña y tranquila de las dos opciones en PEI, manteniendo el mismo alto nivel de acompañamiento y la misma oferta deportiva del distrito.</div>
+            </details>
+          </div>
+        </div>
+      </div>
+      <div class="match-bar">
+        <div class="match-tag">Mejor precio</div>
+        <div class="match-tag">Acompañamiento muy alto</div>
+        <div class="match-tag">Fútbol disponible</div>
+        <div class="match-tag warn">Invierno más frío que BC</div>
+      </div>
+    </div>
+
+    <!-- OPCIÓN 4 -->
+    <div class="opcion-card">
+      <div class="opcion-header">
+        <div class="opcion-num">4.º Recomendación 4</div>
+        <div class="opcion-distrito">Avon Maitland District School Board</div>
+        <div class="opcion-loc">📍 Suroeste de Ontario</div>
+        <div class="precio-chip"><span class="val">25.700 €</span><span class="desc">/ año · todos los conceptos incl.*</span></div>
+      </div>
+      <div class="opcion-body">
+        <div class="colegios">
+          <div class="colegio">
+            <div class="colegio-top">
+              <div class="colegio-nombre">Goderich District Collegiate Institute</div>
+              <div class="colegio-meta"><span class="tag pub">Público</span><span class="tag info">Goderich</span><span class="tag info">Semiurbana</span><span class="tag info">~8.000 hab.</span></div>
+            </div>
+            <details><summary>Por qué es ideal para Miren</summary>
+            <div class="colegio-razon">El distrito combina pequeñas ciudades y comunidades semiurbanas (Stratford, Goderich, Listowel, St. Marys, entre otras). Para Miren priorizaríamos precisamente las localidades semiurbanas como Goderich, evitando las opciones más rurales del distrito. Tiene una oferta académica y extracurricular muy variada: salud y bienestar, medioambiente, negocios, robótica, liderazgo, artes y música, tecnología, hostelería y turismo. En deporte: fútbol, natación, voleibol, baloncesto, rugby, atletismo, hockey y golf. El distrito dispone de un número elevado de institutos, lo que permite estudiar con detalle qué colegio ofrece el mejor encaje académico una vez se conozcan más las preferencias de Miren.</div>
+            </details>
+          </div>
+          <div class="colegio">
+            <div class="colegio-top">
+              <div class="colegio-nombre">St. Marys District Collegiate & Vocational Institute</div>
+              <div class="colegio-meta"><span class="tag pub">Público</span><span class="tag info">St. Marys</span><span class="tag info">Semiurbana</span><span class="tag info">Ontario</span></div>
+            </div>
+            <details><summary>Por qué es ideal para Miren</summary>
+            <div class="colegio-razon">Otra localidad semiurbana dentro del mismo distrito, con la misma variedad de programas académicos y deportivos. Es una alternativa especialmente interesante si, al profundizar en el perfil académico de Miren, descubrimos que necesita una combinación concreta de asignaturas.</div>
+            </details>
+          </div>
+        </div>
+      </div>
+      <div class="match-bar">
+        <div class="match-tag">Mayor variedad académica</div>
+        <div class="match-tag">Fútbol disponible</div>
+        <div class="match-tag">Muchos institutos entre los que elegir</div>
+        <div class="match-tag warn">Supera el presupuesto orientativo en 700 €</div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- CONVALIDACIÓN 1º BACHILLERATO -->
+  <div class="section-title"><h2>1º de Bachillerato y la convalidación</h2></div>
+  <div class="includes-wrap">
+    <div class="includes-head"><h3>🎓 Continuidad académica hacia 2º de Bachillerato</h3></div>
+    <div class="includes-body" style="padding:24px 32px;">
+      <p style="font-size:12px;color:var(--text-mid);line-height:1.8;margin-bottom:14px;">Sabemos que una de las principales preocupaciones de la familia es cómo afectará el año académico en Canadá al expediente de Miren, especialmente al tratarse de 1º de Bachillerato, y cómo se tendrán en cuenta posteriormente sus calificaciones. Miren cursará en Canadá el equivalente a 1º de Bachillerato y, a su regreso, se realizará el correspondiente proceso de convalidación para que pueda continuar sus estudios en España.</p>
+      <p style="font-size:12px;color:var(--text-mid);line-height:1.8;margin-bottom:14px;">La convalidación de 1º de Bachillerato no consiste únicamente en indicar que el curso está superado: la credencial oficial de convalidación incorpora una nota media, calculada a partir del expediente académico obtenido durante el curso realizado en el extranjero y conforme al procedimiento oficial de conversión de calificaciones. Esto significa que las notas que Miren obtenga durante su año en Canadá sí son importantes — deberá mantener un buen rendimiento académico y, al finalizar, será fundamental disponer correctamente de la certificación académica oficial con las asignaturas cursadas y sus calificaciones.</p>
+      <p style="font-size:12px;color:var(--text-mid);line-height:1.8;">Desde My Language Quest gestionamos el proceso de convalidación, incluyendo la preparación y revisión de la documentación académica necesaria. Nuestro objetivo no es únicamente que Miren tenga una buena experiencia internacional, sino también que exista una correcta continuidad académica entre su año en Canadá, su incorporación posterior a 2º de Bachillerato y sus futuros estudios universitarios.</p>
+    </div>
+  </div>
+
+
+  <!-- EL PROGRAMA INCLUYE -->
+  <div class="section-title"><h2>El programa incluye</h2></div>
+  <div class="includes-wrap">
+    <div class="includes-head"><h3>📋 Todo lo que cubre My Language Quest</h3></div>
+    <div class="includes-body">
+      <div class="includes-grid">
+        <div>
+          <div class="col-title">Antes del viaje</div>
+          <ul class="inc-list">
+            <li>Reunión inicial (presencial, teléfono o videoconferencia) con padres o tutores</li>
+            <li>Prueba de inglés y entrevista personal online con el estudiante</li>
+            <li>Propuesta personalizada de distrito escolar</li>
+            <li>Inscripción y matriculación en centro escolar de educación secundaria en Canadá</li>
+            <li>Selección de familia anfitriona en régimen de pensión completa, habitación individual o compartida</li>
+            <li>Un único estudiante hispanohablante por familia garantizado</li>
+            <li>Seguro médico y de accidentes</li>
+            <li>Libros (algunas asignaturas)</li>
+            <li>Gestión del visado Study Permit <small>Tasa incluida. Quebec: suplemento de 550 €</small></li>
+            <li>Vuelos de ida y vuelta <small>Coste máximo 1.000 €. Exceso a cargo de la familia</small></li>
+            <li>Orientación pre-viaje en Madrid o online</li>
+            <li>Welcome pack sorpresa de My Language Quest</li>
+          </ul>
+        </div>
+        <div>
+          <div class="col-title">Durante el viaje</div>
+          <ul class="inc-list">
+            <li>Recibimiento en aeropuerto y traslados</li>
+            <li>Asesoramiento en elección de asignaturas (y cambio si es necesario, garantizando convalidación)</li>
+            <li>Clases de inglés Cambridge y libro incluido</li>
+            <li>Supervisión local: visitas, tutorías y emergencias 24h</li>
+            <li>Acompañamiento psicológico</li>
+            <li>Atención 24h en España para emergencias</li>
+            <li>Apoyo para matriculación en actividades extraescolares</li>
+            <li>Gestión de cambio de familia si fuera necesario</li>
+          </ul>
+          <div class="gestor-wrap" style="margin-top:16px;">
+            <div class="gestor-title">Gestor estudiantil · se encarga de</div>
+            <div class="gestor-grid">
+              <div class="gestor-item">Seguimiento personalizado del desempeño</div>
+              <div class="gestor-item">Información a padres mensualmente</div>
+              <div class="gestor-item">Notas oficiales cada trimestre</div>
+              <div class="gestor-item">Asesoría en cambio de asignaturas</div>
+              <div class="gestor-item">Todas las tutorías necesarias</div>
+              <div class="gestor-item">Reuniones con padres y/o estudiante</div>
+              <div class="gestor-item">Apoyo en actividades extraescolares</div>
+              <div class="gestor-item">Resolución de situaciones con familia o centro</div>
+            </div>
+          </div>
+        </div>
+        <div>
+          <div class="col-title">Después del viaje</div>
+          <ul class="inc-list">
+            <li>Trámites de convalidación ante el Ministerio de Educación</li>
+            <li>Validación de notas y apostilla de la Haya</li>
+            <li>Dossier final detallando la experiencia</li>
+          </ul>
+          <div style="margin-top:24px">
+            <div class="col-title">No incluido</div>
+            <ul class="inc-list no">
+              <li>Exceso de vuelos sobre 1.000 € (a cargo de la familia)</li>
+              <li>Actividades extracurriculares de pago: equipos deportivos con licencia, bandas, teatro</li>
+              <li>Excursiones y viajes escolares organizados por el colegio</li>
+              <li>Material escolar: cuadernos, calculadora, material de arte, uniforme deportivo</li>
+              <li>Fotografía escolar y anuario (<em>yearbook</em>)</li>
+              <li>Tasas de exámenes opcionales (AP, Cambridge avanzado)</li>
+              <li>Transporte local mensual (autobús, tarjeta de transporte)</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- VUELOS -->
+  <div class="section-title"><h2>Vuelos</h2></div>
+  <div class="includes-wrap">
+    <div class="includes-head"><h3>✈️ Vuelos incluidos*</h3></div>
+    <div class="includes-body" style="padding:24px 32px;">
+      <p style="font-size:12px;color:var(--text-mid);line-height:1.7;margin-bottom:18px;">Todos nuestros programas incluyen la gestión de vuelos en grupo con salidas desde Madrid o Barcelona.</p>
+      <div class="col-title" style="margin-top:0;">Información importante sobre los vuelos</div>
+      <ul class="inc-list" style="margin-bottom:20px;">
+        <li>Incluimos los vuelos con un saldo máximo de 1.000 € por estudiante.</li>
+        <li>Si el importe final de los vuelos supera este límite por razones ajenas a nuestro control (aumento súbito de tarifas aéreas, disponibilidad limitada, fechas específicas requeridas por el distrito, cambios en políticas de aerolíneas), este deberá ser asumido por el cliente.</li>
+        <li>Te informaremos con total transparencia del coste final de los vuelos en cuanto tengamos las tarifas confirmadas.</li>
+      </ul>
+      <div class="gestor-wrap" style="margin-top:4px;">
+        <div class="gestor-title">Monitor acompañante en el vuelo de ida</div>
+        <div style="font-size:12px;color:rgba(255,255,255,0.85);line-height:1.6;padding:0 2px 2px;">En el vuelo de ida, un monitor de My Language Quest acompañará personalmente al grupo de estudiantes desde España hasta el primer aeropuerto canadiense (normalmente Toronto o Vancouver).</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- FORMAS DE PAGO -->
+  <div class="section-title"><h2>Formas de pago</h2></div>
+  <div class="payment-wrap">
+    <div class="payment-inner">
+      <div class="pay-title">💳 Condiciones económicas</div>
+      <div class="pay-subtitle">La cantidad íntegra debe abonarse antes del 10 de abril</div>
+      <div class="pay-cols">
+        <div class="pay-col">
+          <div class="pay-col-title">Distritos con pago fraccionado</div>
+          <div class="pay-step">
+            <div class="pay-step-num">Paso 1</div>
+            <div class="pay-step-title">Firma del contrato</div>
+            <div class="pay-step-desc">3.500 €</div>
+          </div>
+          <div class="pay-step">
+            <div class="pay-step-num">Paso 2 · Aceptación en el programa</div>
+            <div class="pay-step-title">40% del importe restante</div>
+            <div class="pay-step-desc"></div>
+          </div>
+          <div class="pay-step">
+            <div class="pay-step-num">Paso 3</div>
+            <div class="pay-step-title">Resto del importe</div>
+            <div class="pay-step-desc">Antes del 10 de abril</div>
+          </div>
+        </div>
+        <div class="pay-col">
+          <div class="pay-col-title">Distritos con pago completo</div>
+          <div class="pay-step">
+            <div class="pay-step-num">Paso 1</div>
+            <div class="pay-step-title">Firma del contrato</div>
+            <div class="pay-step-desc">3.500 €</div>
+          </div>
+          <div class="pay-step">
+            <div class="pay-step-num">Paso 2 · Aceptación en el programa</div>
+            <div class="pay-step-title">Resto del importe en su totalidad</div>
+            <div class="pay-step-desc"></div>
+          </div>
+        </div>
+      </div>
+      <div class="pay-note">El seguro de anulación e interrupción debe contratarse y abonarse en el momento de la firma del contrato. Su coste varía según el importe del programa y es emitido una vez el estudiante es aceptado por el centro escolar. Su importe no es reembolsable bajo ninguna circunstancia. Las inscripciones tardías deben cumplir con los plazos de pago ya pasados en el momento de la inscripción.</div>
+    </div>
+  </div>
+
+
+  <!-- FINANCIACIÓN -->
+  <div class="section-title"><h2>Financia tu programa</h2></div>
+  <div class="financing-wrap">
+    <div class="financing-head">
+      <div class="financing-head-left">
+        <div class="fin-icon">💳</div>
+        <div>
+          <div class="fin-title">Paga a tu ritmo, sin preocupaciones</div>
+          <div class="fin-sub">Financiación flexible · Aprobación rápida · 100% online · Sin comisión de apertura</div>
+        </div>
+      </div>
+      <div class="fin-badge">Hasta 36 meses</div>
+    </div>
+    <div class="financing-body">
+      <div class="fin-opcion-selector">
+        <div class="fin-opcion-label">Selecciona la opción del programa</div>
+        <div class="fin-opcion-btns">
+          <button class="fin-opcion-btn active" onclick="setOpcion(this, 24800)">
+            <span class="fin-opcion-nombre">🥇 Recomendación Principal · Qualicum SD69</span>
+            <span class="fin-opcion-precio">24.800 €</span>
+          </button>
+          <button class="fin-opcion-btn" onclick="setOpcion(this, 25400)">
+            <span class="fin-opcion-nombre">🥈 Recomendación 2 · Comox Valley SD71</span>
+            <span class="fin-opcion-precio">25.400 €</span>
+          </button>
+          <button class="fin-opcion-btn" onclick="setOpcion(this, 21200)">
+            <span class="fin-opcion-nombre">🥉 Recomendación 3 · Prince Edward Island</span>
+            <span class="fin-opcion-precio">21.200 €</span>
+          </button>
+          <button class="fin-opcion-btn" onclick="setOpcion(this, 25700)">
+            <span class="fin-opcion-nombre">Recomendación 4 · Avon Maitland</span>
+            <span class="fin-opcion-precio">25.700 €</span>
+          </button>
+        </div>
+      </div>
+      <div class="fin-plazo-wrap">
+        <div class="fin-plazo-label">Elige tu plazo de financiación</div>
+        <div class="fin-plazos">
+          <div class="fin-plazo active" onclick="setPlazo(this,12)">
+            <div class="fin-plazo-meses">12 meses</div>
+            <div class="fin-plazo-badge sin-intereses">TIN 0%</div>
+            <div class="fin-plazo-quien">¡MLQ asume los intereses!</div>
+          </div>
+          <div class="fin-plazo" onclick="setPlazo(this,18)">
+            <div class="fin-plazo-meses">18 meses</div>
+            <div class="fin-plazo-badge con-intereses">TIN 10,46%</div>
+            <div class="fin-plazo-quien">Intereses a cargo del cliente</div>
+          </div>
+          <div class="fin-plazo" onclick="setPlazo(this,24)">
+            <div class="fin-plazo-meses">24 meses</div>
+            <div class="fin-plazo-badge con-intereses">TIN 10,46%</div>
+            <div class="fin-plazo-quien">Intereses a cargo del cliente</div>
+          </div>
+          <div class="fin-plazo" onclick="setPlazo(this,36)">
+            <div class="fin-plazo-meses">36 meses</div>
+            <div class="fin-plazo-badge con-intereses">TIN 10,46%</div>
+            <div class="fin-plazo-quien">Intereses a cargo del cliente</div>
+          </div>
+        </div>
+      </div>
+      <div class="fin-resultado">
+        <div class="fin-resultado-main">
+          <div class="fin-cuota-label">Cuota mensual estimada</div>
+          <div class="fin-cuota-valor" id="cuotaValor">1.775,00 €</div>
+          <div class="fin-cuota-sub" id="cuotaSub">/mes · 12 pagos · TIN 0%</div>
+        </div>
+        <div class="fin-resultado-detalle">
+          <div class="fin-det-row">
+            <span class="fin-det-label">Entrada a la firma</span>
+            <span class="fin-det-val" id="detEntrada">3.500 €</span>
+          </div>
+          <div class="fin-det-row">
+            <span class="fin-det-label">Importe a financiar</span>
+            <span class="fin-det-val" id="detCapital">21.300 €</span>
+          </div>
+          <div class="fin-det-row">
+            <span class="fin-det-label">Intereses totales</span>
+            <span class="fin-det-val fin-det-green" id="detIntereses">0 € · ¡MLQ los asume!</span>
+          </div>
+          <div class="fin-det-row fin-det-total">
+            <span class="fin-det-label">Total a pagar</span>
+            <span class="fin-det-val" id="detTotal">24.800 €</span>
+          </div>
+        </div>
+      </div>
+      <div class="fin-nota">ℹ️ Siempre se abonan 3.500 € a la firma del contrato; el resto del importe del programa es lo que se financia en las cuotas. Financiación sujeta a aprobación bancaria. Cuota orientativa calculada sobre el importe a financiar. Sin comisión de apertura ni penalización por cancelación anticipada.</div>
+    </div>
+  </div>
+
+  <!-- SIGUIENTES PASOS -->
+  <div class="section-title"><h2>Nuestro siguiente paso</h2></div>
+  <div class="includes-wrap">
+    <div class="includes-head"><h3>📅 Siguiente paso: videollamada de asesoramiento</h3></div>
+    <div class="includes-body" style="padding:24px 32px;">
+      <p style="font-size:12px;color:var(--text-mid);line-height:1.8;margin-bottom:16px;">Nuestra recomendación inicial sería comenzar valorando especialmente <strong>Qualicum</strong> y <strong>Comox Valley</strong>, ya que consideramos que son las dos opciones que mejor responden al perfil y a las preferencias que nos habéis indicado. Qualicum sería nuestra primera recomendación, por su equilibrio entre entorno, integración, actividades, presupuesto y calidad de vida; Comox Valley sería una excelente alternativa si preferís una localidad algo más grande, con mayor variedad de servicios y colegios.</p>
+      <p style="font-size:12px;color:var(--text-mid);line-height:1.8;margin-bottom:16px;">El primer paso ahora es que podáis revisar con calma las diferentes opciones y ver cuáles os atraen más. A partir de ahí comienza la parte de asesoramiento más personalizada: podemos profundizar en los colegios concretos de los distritos seleccionados, revisar sus currículos académicos, asignaturas, programas y actividades, y valorar cuáles pueden encajar mejor con Miren tanto a nivel personal como académico.</p>
+      <p style="font-size:12px;color:var(--text-mid);line-height:1.8;margin-bottom:16px;">Además, sabemos que para vosotros es especialmente importante todo lo relacionado con 1º de Bachillerato, la convalidación de las notas obtenidas en Canadá y cómo puede repercutir posteriormente en su expediente y acceso a la universidad. Por eso, si queréis, el siguiente paso puede ser una breve videollamada de asesoramiento, en la que podamos comentar estos aspectos con más detalle y resolver todas vuestras dudas.</p>
+      <p style="font-size:12px;color:var(--text-mid);line-height:1.8;margin-bottom:20px;">También será un buen momento para conocer si Miren tiene ya alguna orientación sobre qué le gustaría estudiar después de Bachillerato o si existen determinadas asignaturas que queráis que curse durante su año en Canadá. Esto nos permitirá tenerlo en cuenta a la hora de analizar los colegios y profundizar en sus diferentes opciones académicas.</p>
+      <div class="gestor-wrap" style="margin-top:4px;text-align:center;">
+        <div class="gestor-title" style="text-align:center;">Reserva tu videollamada de asesoramiento</div>
+        <a href="https://zbooking.eu/6uh7x" target="_blank" style="display:inline-block;margin-top:8px;background:#7dd44a;color:var(--blue-dark);font-family:'Josefin Sans',sans-serif;font-weight:700;font-size:14px;letter-spacing:0.5px;padding:12px 28px;border-radius:10px;text-decoration:none;">📅 Reservar videollamada</a>
+      </div>
+      <p style="font-size:12px;color:var(--text-mid);line-height:1.8;margin-top:20px;">A partir de ahí podremos pasar al siguiente nivel del asesoramiento y realizar una selección más específica de colegios y currículos académicos para Miren, buscando no simplemente un buen destino en Canadá, sino el colegio que mejor encaje con ella a nivel personal, académico y de cara a la continuidad de sus estudios en España.</p>
+    </div>
+  </div>
+
+</main>
+
+<script>
+var _cap = 24800, _mes = 12;
+function _fmt(n,d){return n.toLocaleString('es-ES',{minimumFractionDigits:d||0,maximumFractionDigits:d||0})+' €';}
+function _cuota(c,t,m){if(t===0)return c/m;var r=(t/100)/12;return c*r/(1-Math.pow(1+r,-m));}
+var _entrada = 3500;
+function _update(){
+  var tin=_mes===12?0:10.46;
+  var financiado=_cap-_entrada;
+  var q=_cuota(financiado,tin,_mes);
+  var totFinanciado=q*_mes;
+  var inter=totFinanciado-financiado;
+  var totalGeneral=_entrada+totFinanciado;
+  document.getElementById('cuotaValor').textContent=_fmt(q,2);
+  document.getElementById('cuotaSub').textContent='/mes · '+_mes+' pagos · TIN '+(tin===0?'0%':'10,46%');
+  document.getElementById('detEntrada').textContent=_fmt(_entrada);
+  document.getElementById('detCapital').textContent=_fmt(Math.round(financiado));
+  document.getElementById('detTotal').textContent=_fmt(Math.round(totalGeneral));
+  if(tin===0){
+    document.getElementById('detIntereses').textContent='0 € · ¡MLQ los asume!';
+    document.getElementById('detIntereses').className='fin-det-val fin-det-green';
+  } else {
+    document.getElementById('detIntereses').textContent=_fmt(Math.round(inter));
+    document.getElementById('detIntereses').className='fin-det-val';
+  }
+}
+function setOpcion(btn,cap){_cap=cap;document.querySelectorAll('.fin-opcion-btn').forEach(function(b){b.classList.remove('active');});btn.classList.add('active');_update();}
+function setPlazo(el,m){_mes=m;document.querySelectorAll('.fin-plazo').forEach(function(p){p.classList.remove('active');});el.classList.add('active');_update();}
+_update();
+</script>
+
+</body>
+</html>
