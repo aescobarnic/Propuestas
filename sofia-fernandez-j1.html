@@ -1,0 +1,691 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Propuesta · Sofía · Programa J1 EE.UU. · My Language Quest</title>
+<link href="https://fonts.googleapis.com/css2?family=Fira+Sans:wght@300;400;500;600;700&family=Josefin+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --blue:#003366;--blue-dark:#001f40;--blue-mid:#0a4a8a;--blue-light:#dce8f5;
+  --red:#B12900;--red-dark:#8A1F00;--red-light:#fdf0ec;
+  --green:#4C9E0C;--green-dark:#3A7A09;--green-light:#eef8e3;
+  --gray-bg:#f0f2f6;--gray-card:#f8f9fb;--gray-border:#dde1ea;
+  --text:#0d1b2a;--text-mid:#3d4f62;--text-light:#7a8a9b;--white:#ffffff;
+}
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box;}
+body{font-family:'Fira Sans',sans-serif;background:var(--gray-bg);color:var(--text);}
+
+.header{background:var(--white);padding:18px 48px;display:flex;align-items:center;justify-content:space-between;box-shadow:0 1px 0 var(--gray-border),0 4px 24px rgba(0,51,102,0.07);position:relative;z-index:10;}
+.header::after{content:'';position:absolute;bottom:0;left:0;right:0;height:3px;background:linear-gradient(90deg,var(--red),var(--blue) 50%,var(--green));}
+.logo-mark{font-family:'Josefin Sans',sans-serif;font-weight:700;font-size:20px;color:var(--blue);line-height:1;letter-spacing:-0.5px;}
+.logo-mark span{color:var(--red);}
+.logo-sub{font-family:'Josefin Sans',sans-serif;font-size:8px;letter-spacing:3.5px;text-transform:uppercase;color:var(--text-light);margin-top:3px;}
+.header-right{text-align:right;}
+.header-label{font-family:'Josefin Sans',sans-serif;font-size:9px;letter-spacing:3px;text-transform:uppercase;color:var(--text-light);}
+.header-year{font-family:'Josefin Sans',sans-serif;font-size:26px;font-weight:700;color:var(--blue);line-height:1;margin-top:2px;}
+
+.hero{background:var(--blue);position:relative;overflow:hidden;padding:40px 48px 36px;}
+.hero::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 80% 120% at 110% 50%,rgba(76,158,12,0.18) 0%,transparent 60%),radial-gradient(ellipse 60% 80% at -10% 80%,rgba(177,41,0,0.22) 0%,transparent 55%);}
+.hero-dots{position:absolute;inset:0;pointer-events:none;background-image:radial-gradient(rgba(255,255,255,0.07) 1px,transparent 1px);background-size:28px 28px;}
+.hero-inner{position:relative;z-index:2;}
+.hero-tag{display:inline-flex;align-items:center;gap:6px;background:rgba(255,255,255,0.1);border:1px solid rgba(255,255,255,0.2);border-radius:20px;padding:4px 12px;font-size:10px;font-weight:600;letter-spacing:2px;text-transform:uppercase;color:rgba(255,255,255,0.7);margin-bottom:12px;}
+.hero-tag::before{content:'✈';font-size:11px;}
+.hero-name{font-family:'Josefin Sans',sans-serif;font-size:38px;font-weight:700;color:var(--white);line-height:1;margin-bottom:8px;}
+.hero-subtitle{font-size:13px;color:rgba(255,255,255,0.55);font-weight:300;}
+.hero-pills{display:flex;flex-wrap:wrap;gap:8px;margin-top:20px;}
+.hero-pill{display:flex;align-items:center;gap:6px;background:rgba(255,255,255,0.1);border:1px solid rgba(255,255,255,0.18);border-radius:8px;padding:6px 12px;font-size:11px;color:var(--white);font-weight:500;}
+.hero-pill.med{background:rgba(76,158,12,0.25);border-color:rgba(125,212,74,0.55);color:#c8f0a3;}
+
+.main{max-width:1140px;margin:0 auto;padding:40px 24px 64px;}
+.section-title{display:flex;align-items:center;gap:12px;margin-bottom:24px;margin-top:8px;}
+.section-title h2{font-family:'Josefin Sans',sans-serif;font-size:11px;font-weight:700;letter-spacing:3px;text-transform:uppercase;color:var(--text-light);white-space:nowrap;}
+.section-title::after{content:'';flex:1;height:1px;background:var(--gray-border);}
+
+.card{background:var(--white);border-radius:16px;border:1.5px solid var(--gray-border);box-shadow:0 2px 16px rgba(0,51,102,0.05);overflow:hidden;margin-bottom:24px;}
+.card-head{background:linear-gradient(135deg,var(--blue-dark),var(--blue));padding:20px 32px;}
+.card-head h3{font-family:'Josefin Sans',sans-serif;font-size:14px;font-weight:700;color:var(--white);letter-spacing:1px;}
+.card-body{padding:26px 32px;}
+.card-body p{font-size:13px;color:var(--text-mid);line-height:1.75;margin-bottom:12px;}
+.card-body p:last-child{margin-bottom:0;}
+.card-body strong{color:var(--text);}
+
+.alert-box{display:flex;gap:12px;align-items:flex-start;background:var(--green-light);border:1.5px solid rgba(76,158,12,0.35);border-radius:12px;padding:16px 20px;margin-bottom:28px;}
+.alert-icon{font-size:20px;flex-shrink:0;}
+.alert-text{font-size:12.5px;color:#2c5406;line-height:1.65;}
+.alert-text strong{color:var(--green-dark);}
+
+/* PERFIL */
+.perfil-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;}
+.perfil-item{background:var(--gray-card);border:1.5px solid var(--gray-border);border-radius:12px;padding:14px 16px;}
+.perfil-label{font-family:'Josefin Sans',sans-serif;font-size:8.5px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--red);margin-bottom:6px;}
+.perfil-val{font-size:12.5px;color:var(--text-mid);line-height:1.6;}
+.perfil-val b{color:var(--text);}
+
+/* PRECIO */
+.precio-wrap{background:linear-gradient(135deg,var(--blue-dark) 0%,var(--blue) 60%,var(--blue-mid) 100%);border-radius:16px;padding:32px;position:relative;overflow:hidden;margin-bottom:24px;}
+.precio-wrap::before{content:'';position:absolute;inset:0;background-image:radial-gradient(rgba(255,255,255,0.05) 1px,transparent 1px);background-size:22px 22px;}
+.precio-inner{position:relative;z-index:2;}
+.precio-title{font-family:'Josefin Sans',sans-serif;font-size:16px;font-weight:700;color:var(--white);margin-bottom:4px;}
+.precio-sub{font-size:12px;color:rgba(255,255,255,0.45);margin-bottom:22px;}
+.precio-rows{display:flex;flex-direction:column;gap:0;background:rgba(255,255,255,0.07);border:1px solid rgba(255,255,255,0.12);border-radius:12px;padding:6px 20px;margin-bottom:18px;}
+.precio-row{display:flex;justify-content:space-between;align-items:baseline;gap:16px;padding:12px 0;border-bottom:1px solid rgba(255,255,255,0.09);}
+.precio-row:last-child{border-bottom:none;}
+.precio-row .lbl{font-size:12.5px;color:rgba(255,255,255,0.6);}
+.precio-row .lbl small{display:block;font-size:10.5px;color:rgba(255,255,255,0.35);margin-top:2px;}
+.precio-row .amt{font-family:'Josefin Sans',sans-serif;font-size:17px;font-weight:700;color:var(--white);white-space:nowrap;}
+.precio-row.total{border-top:2px solid rgba(255,255,255,0.18);padding-top:14px;}
+.precio-row.total .lbl{color:var(--white);font-weight:600;font-size:13px;}
+.precio-row.total .amt{font-size:30px;color:#7dd44a;}
+.dto-box{display:flex;gap:12px;flex-wrap:wrap;}
+.dto-card{flex:1;min-width:220px;background:rgba(125,212,74,0.13);border:1.5px solid rgba(125,212,74,0.45);border-radius:12px;padding:14px 18px;}
+.dto-card .dto-t{font-family:'Josefin Sans',sans-serif;font-size:9px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:#7dd44a;margin-bottom:6px;}
+.dto-card .dto-d{font-size:12px;color:rgba(255,255,255,0.75);line-height:1.55;}
+.precio-note{font-size:11px;color:rgba(255,255,255,0.32);line-height:1.65;font-style:italic;margin-top:16px;}
+
+/* INCLUDES */
+.includes-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:32px;}
+.col-title{font-family:'Josefin Sans',sans-serif;font-size:9px;font-weight:700;letter-spacing:2.5px;text-transform:uppercase;color:var(--red);margin-bottom:14px;padding-bottom:8px;border-bottom:2px solid var(--red-light);}
+.inc-list{list-style:none;display:flex;flex-direction:column;gap:8px;}
+.inc-list li{font-size:12px;color:var(--text-mid);display:flex;align-items:flex-start;gap:8px;line-height:1.55;}
+.inc-list li::before{content:'✓';color:var(--green);font-weight:700;font-size:11px;flex-shrink:0;margin-top:1px;}
+.inc-list.no li::before{content:'✗';color:var(--red);}
+.inc-list li small{font-size:10px;color:var(--text-light);display:block;margin-top:2px;}
+
+.gestor-wrap{background:linear-gradient(135deg,var(--blue-dark),var(--blue-mid));border-radius:12px;padding:20px 24px;margin-top:20px;}
+.gestor-title{font-family:'Josefin Sans',sans-serif;font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:rgba(255,255,255,0.6);margin-bottom:14px;}
+.gestor-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;}
+.gestor-item{background:rgba(255,255,255,0.08);border:1px solid rgba(255,255,255,0.12);border-radius:8px;padding:10px 12px;font-size:11px;color:rgba(255,255,255,0.85);line-height:1.4;}
+.gestor-item::before{content:'→';color:#7dd44a;font-weight:700;margin-right:5px;}
+
+/* CONDICIONES */
+.cond-list{list-style:none;display:flex;flex-direction:column;gap:14px;}
+.cond-list li{font-size:12.5px;color:var(--text-mid);line-height:1.7;padding-left:16px;border-left:3px solid var(--blue-light);}
+.cond-list li b{color:var(--text);}
+
+/* SUPLEMENTOS */
+.sup-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:12px;}
+.sup-item{background:var(--gray-card);border:1.5px solid var(--gray-border);border-radius:12px;padding:14px 16px;display:flex;flex-direction:column;gap:6px;}
+.sup-nom{font-size:12px;font-weight:600;color:var(--blue);line-height:1.4;}
+.sup-desc{font-size:10.5px;color:var(--text-light);line-height:1.5;flex:1;}
+.sup-precio{font-family:'Josefin Sans',sans-serif;font-size:16px;font-weight:700;color:var(--text);}
+
+/* PAGO */
+.pay-cols{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:18px;}
+.pay-col{background:rgba(255,255,255,0.07);border:1px solid rgba(255,255,255,0.12);border-radius:12px;padding:18px 20px;}
+.pay-col-title{font-family:'Josefin Sans',sans-serif;font-size:9px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:#7dd44a;margin-bottom:12px;}
+.pay-step{margin-bottom:12px;}
+.pay-step:last-child{margin-bottom:0;}
+.pay-step-num{font-size:9px;font-weight:700;color:rgba(255,255,255,0.4);text-transform:uppercase;letter-spacing:1px;margin-bottom:2px;}
+.pay-step-title{font-size:13px;font-weight:600;color:var(--white);margin-bottom:2px;}
+.pay-step-desc{font-size:11px;color:rgba(255,255,255,0.45);line-height:1.5;}
+.pay-note{font-size:11px;color:rgba(255,255,255,0.32);line-height:1.65;font-style:italic;border-top:1px solid rgba(255,255,255,0.1);padding-top:14px;}
+
+/* FINANCIACIÓN */
+.financing-head{background:linear-gradient(135deg,var(--blue-dark),var(--blue));padding:22px 32px;display:flex;align-items:center;justify-content:space-between;gap:16px;}
+.financing-head-left{display:flex;align-items:center;gap:16px;}
+.fin-icon{font-size:28px;flex-shrink:0;}
+.fin-title{font-family:'Josefin Sans',sans-serif;font-size:16px;font-weight:700;color:var(--white);margin-bottom:3px;}
+.fin-sub{font-size:11px;color:rgba(255,255,255,0.5);line-height:1.4;}
+.fin-badge{background:rgba(125,212,74,0.2);border:1px solid rgba(125,212,74,0.4);color:#7dd44a;font-family:'Josefin Sans',sans-serif;font-size:11px;font-weight:700;letter-spacing:1px;padding:6px 14px;border-radius:20px;white-space:nowrap;}
+.fin-opcion-label,.fin-plazo-label{font-family:'Josefin Sans',sans-serif;font-size:9px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--text-light);margin-bottom:10px;}
+.fin-opcion-selector{margin-bottom:24px;}
+.fin-opcion-btns{display:flex;gap:10px;flex-wrap:wrap;}
+.fin-opcion-btn{background:var(--gray-card);border:1.5px solid var(--gray-border);border-radius:10px;padding:10px 16px;cursor:pointer;text-align:left;transition:all .2s;display:flex;flex-direction:column;gap:3px;font-family:'Fira Sans',sans-serif;}
+.fin-opcion-btn:hover{border-color:var(--blue-mid);background:var(--blue-light);}
+.fin-opcion-btn.active{border-color:var(--blue);background:var(--blue-light);}
+.fin-opcion-nombre{font-size:10px;font-weight:700;letter-spacing:1px;text-transform:uppercase;color:var(--text-light);}
+.fin-opcion-btn.active .fin-opcion-nombre{color:var(--blue);}
+.fin-opcion-precio{font-family:'Josefin Sans',sans-serif;font-size:16px;font-weight:700;color:var(--text);}
+.fin-opcion-btn.active .fin-opcion-precio{color:var(--blue);}
+.fin-plazo-wrap{margin-bottom:24px;}
+.fin-plazos{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;}
+.fin-plazo{background:var(--gray-card);border:1.5px solid var(--gray-border);border-radius:12px;padding:14px 12px;cursor:pointer;text-align:center;transition:all .2s;}
+.fin-plazo:hover{border-color:var(--blue-mid);transform:translateY(-2px);}
+.fin-plazo.active{border-color:var(--green);background:var(--green-light);box-shadow:0 4px 16px rgba(76,158,12,0.15);}
+.fin-plazo-meses{font-family:'Josefin Sans',sans-serif;font-size:15px;font-weight:700;color:var(--text);margin-bottom:6px;}
+.fin-plazo.active .fin-plazo-meses{color:var(--green-dark);}
+.fin-plazo-badge{display:inline-block;border-radius:20px;padding:2px 8px;font-size:9px;font-weight:700;letter-spacing:0.5px;margin-bottom:4px;}
+.fin-plazo-badge.sin-intereses{background:var(--green-light);color:var(--green-dark);border:1px solid rgba(76,158,12,0.3);}
+.fin-plazo-badge.con-intereses{background:var(--blue-light);color:var(--blue);border:1px solid rgba(0,51,102,0.2);}
+.fin-plazo-quien{font-size:9px;color:var(--text-light);line-height:1.3;}
+.fin-resultado{display:grid;grid-template-columns:auto 1fr;gap:24px;background:linear-gradient(135deg,var(--blue-dark),var(--blue));border-radius:14px;padding:24px 28px;margin-bottom:16px;align-items:center;}
+.fin-resultado-main{text-align:center;border-right:1px solid rgba(255,255,255,0.15);padding-right:24px;}
+.fin-cuota-label{font-size:10px;font-weight:600;letter-spacing:2px;text-transform:uppercase;color:rgba(255,255,255,0.5);margin-bottom:6px;}
+.fin-cuota-valor{font-family:'Josefin Sans',sans-serif;font-size:36px;font-weight:700;color:#7dd44a;line-height:1;margin-bottom:4px;}
+.fin-cuota-sub{font-size:11px;color:rgba(255,255,255,0.45);}
+.fin-resultado-detalle{display:flex;flex-direction:column;gap:10px;}
+.fin-det-row{display:flex;justify-content:space-between;align-items:center;gap:12px;}
+.fin-det-label{font-size:12px;color:rgba(255,255,255,0.55);}
+.fin-det-val{font-size:13px;font-weight:600;color:var(--white);}
+.fin-det-green{color:#7dd44a !important;}
+.fin-det-total{border-top:1px solid rgba(255,255,255,0.15);padding-top:10px;margin-top:2px;}
+.fin-det-total .fin-det-label{color:rgba(255,255,255,0.7);font-weight:600;}
+.fin-det-total .fin-det-val{font-family:'Josefin Sans',sans-serif;font-size:16px;color:var(--white);}
+.fin-nota{font-size:11px;color:var(--text-light);line-height:1.6;background:var(--gray-card);border-radius:8px;padding:12px 16px;border-left:3px solid var(--blue-light);}
+.entrada-box{display:flex;gap:12px;align-items:center;background:var(--blue-light);border:1.5px solid rgba(0,51,102,0.18);border-radius:12px;padding:14px 18px;margin-bottom:24px;}
+.entrada-ico{font-size:20px;flex-shrink:0;}
+.entrada-txt{font-size:12.5px;color:var(--blue);line-height:1.6;}
+
+/* ENLACES */
+.links-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:14px;}
+.link-item{display:flex;align-items:center;gap:14px;background:var(--gray-card);border:1.5px solid var(--gray-border);border-radius:12px;padding:16px 18px;text-decoration:none;transition:all .2s;}
+.link-item:hover{border-color:var(--blue-mid);background:var(--blue-light);transform:translateY(-2px);}
+.link-ico{font-size:22px;flex-shrink:0;}
+.link-t{font-size:12.5px;font-weight:600;color:var(--blue);margin-bottom:2px;}
+.link-d{font-size:10.5px;color:var(--text-light);line-height:1.45;}
+
+/* CTA */
+.cta-wrap{background:linear-gradient(135deg,var(--blue-dark) 0%,var(--blue) 55%,var(--blue-mid) 100%);border-radius:16px;padding:36px 32px;position:relative;overflow:hidden;}
+.cta-wrap::before{content:'';position:absolute;inset:0;background-image:radial-gradient(rgba(255,255,255,0.05) 1px,transparent 1px);background-size:22px 22px;}
+.cta-inner{position:relative;z-index:2;}
+.cta-title{font-family:'Josefin Sans',sans-serif;font-size:20px;font-weight:700;color:var(--white);margin-bottom:6px;}
+.cta-sub{font-size:12.5px;color:rgba(255,255,255,0.5);margin-bottom:26px;line-height:1.6;}
+.cta-btns{display:grid;grid-template-columns:1fr 1fr;gap:16px;}
+.cta-btn{display:flex;align-items:center;gap:16px;background:var(--white);border-radius:12px;padding:20px 22px;text-decoration:none;transition:all .2s;border:2px solid transparent;}
+.cta-btn:hover{transform:translateY(-3px);box-shadow:0 12px 32px rgba(0,0,0,0.22);}
+.cta-btn.primary{border-color:var(--green);}
+.cta-btn-ico{font-size:26px;flex-shrink:0;}
+.cta-btn-t{font-family:'Josefin Sans',sans-serif;font-size:14px;font-weight:700;color:var(--blue);margin-bottom:3px;}
+.cta-btn-d{font-size:11px;color:var(--text-light);line-height:1.45;}
+
+.footer{text-align:center;padding:28px 24px 40px;font-size:11px;color:var(--text-light);line-height:1.7;}
+.footer strong{color:var(--blue);}
+
+@media(max-width:900px){.includes-grid{grid-template-columns:1fr;}.gestor-grid{grid-template-columns:repeat(2,1fr);}.perfil-grid{grid-template-columns:repeat(2,1fr);}}
+@media(max-width:600px){.perfil-grid{grid-template-columns:1fr;}}
+@media(max-width:720px){
+  .header{padding:16px 20px;}.hero{padding:28px 20px 24px;}.hero-name{font-size:28px;}
+  .main{padding:28px 16px 48px;}.card-body{padding:22px 20px;}.card-head{padding:18px 20px;}
+  .pay-cols,.cta-btns{grid-template-columns:1fr;}
+  .fin-plazos{grid-template-columns:repeat(2,1fr);}.fin-resultado{grid-template-columns:1fr;}
+  .fin-resultado-main{border-right:none;border-bottom:1px solid rgba(255,255,255,0.15);padding-right:0;padding-bottom:20px;}
+  .financing-head{flex-direction:column;align-items:flex-start;}.fin-opcion-btns{flex-direction:column;}
+  .precio-wrap,.cta-wrap{padding:24px 20px;}
+}
+</style>
+</head>
+<body>
+
+<header class="header">
+  <div class="logo-area">
+    <div class="logo-mark">My Language <span>Quest</span></div>
+    <div class="logo-sub">Programas académicos en el extranjero</div>
+  </div>
+  <div class="header-right">
+    <div class="header-label">Programa J1 · Estados Unidos</div>
+    <div class="header-year">2027/28</div>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="hero-dots"></div>
+  <div class="hero-inner">
+    <div class="hero-tag">Propuesta personalizada</div>
+    <div class="hero-name">Sofía</div>
+    <div class="hero-subtitle">Año escolar completo · Programa J1 de Intercambio Cultural · Estados Unidos</div>
+    <div class="hero-pills">
+      <div class="hero-pill">🎓 4º ESO · Grade 10</div>
+      <div class="hero-pill">🎂 15 años (25 oct.)</div>
+      <div class="hero-pill">🏠 Familia anfitriona voluntaria</div>
+      <div class="hero-pill">🗣 Inglés B1 (examinada de A2, obtuvo B1)</div>
+      <div class="hero-pill">📚 Media de notable</div>
+      <div class="hero-pill">🎭 Teatro e interpretación ante cámara</div>
+      <div class="hero-pill">🐴 Hípica</div>
+      <div class="hero-pill med">💚 Diabetes tipo 1 · Autogestionada</div>
+    </div>
+  </div>
+</section>
+
+<main class="main">
+
+  <div class="alert-box">
+    <div class="alert-icon">💚</div>
+    <div class="alert-text"><strong>Sobre la diabetes tipo 1 de Sofía:</strong> el programa J1 admite estudiantes con condiciones médicas controladas, y el perfil de Sofía es exactamente el que mejor encaja: total autonomía en el manejo de su bomba de insulina inalámbrica y su sensor continuo, sin episodios de hipoglucemia grave ni hospitalizaciones, y con un seguimiento endocrinológico que se realiza de forma telemática. Declaramos la condición desde el primer momento ante el sponsor americano para que la familia anfitriona y el centro escolar estén informados y preparados, y para garantizar que la ubicación cuente con los servicios médicos adecuados.</div>
+  </div>
+
+  <!-- PERFIL -->
+  <div class="section-title"><h2>El perfil de Sofía</h2></div>
+  <div class="card">
+    <div class="card-head"><h3>👤 Por qué el J1 encaja con ella</h3></div>
+    <div class="card-body">
+      <div class="perfil-grid">
+        <div class="perfil-item">
+          <div class="perfil-label">Curso y edad</div>
+          <div class="perfil-val"><b>4º de ESO → Grade 10</b><br>Cumple 15 años el 25 de octubre. Edad perfecta para el J1, que admite estudiantes de 15 a 18 años.</div>
+        </div>
+        <div class="perfil-item">
+          <div class="perfil-label">Nivel de inglés</div>
+          <div class="perfil-val"><b>B1 consolidado.</b> Se examinó de A2 y obtuvo directamente el B1. Trabaja el idioma en academia y en el instituto, por encima del nivel de su curso.</div>
+        </div>
+        <div class="perfil-item">
+          <div class="perfil-label">Expediente académico</div>
+          <div class="perfil-val"><b>Media de notable</b>, entre notables y sobresalientes. Supera con holgura el mínimo de 6/10 que exige el programa.</div>
+        </div>
+        <div class="perfil-item">
+          <div class="perfil-label">Intereses</div>
+          <div class="perfil-val"><b>Teatro, interpretación ante cámara e hípica.</b> El sistema americano es el mejor del mundo en <em>drama</em> y artes escénicas dentro del propio instituto.</div>
+        </div>
+        <div class="perfil-item">
+          <div class="perfil-label">Zona</div>
+          <div class="perfil-val"><b>Abiertos a cualquier destino.</b> Vive en un pueblo de Pontevedra, con Vigo cerca, y se mueve con soltura en ciudad (su madre es de Barcelona).</div>
+        </div>
+        <div class="perfil-item">
+          <div class="perfil-label">Duración</div>
+          <div class="perfil-val"><b>Año escolar completo</b> 2027/28, con la orientación previa de 4 días en Nueva York incluida.</div>
+        </div>
+      </div>
+      <p style="margin-top:22px"><strong>Nuestra lectura del perfil:</strong> Sofía reúne las tres cosas que el J1 valora — nivel de inglés por encima del exigido, buen expediente y una madurez personal poco habitual a los 15 años, demostrada en la gestión autónoma de su diabetes. Que estén abiertos a cualquier destino juega a su favor: amplía las opciones de colocación y permite priorizar una comunidad con buena cobertura sanitaria y un instituto con programa de artes escénicas.</p>
+    </div>
+  </div>
+
+  <!-- QUÉ ES EL J1 -->
+  <div class="section-title"><h2>Qué es el programa J1</h2></div>
+  <div class="card">
+    <div class="card-head"><h3>🇺🇸 Intercambio cultural en un instituto público americano</h3></div>
+    <div class="card-body">
+      <p>El J1 es el programa de intercambio cultural del Departamento de Estado de EE.UU. Sofía convivirá con una <strong>familia anfitriona voluntaria</strong> — familias que acogen por vocación cultural, no por contraprestación económica — y asistirá a un <strong>instituto público americano</strong> como una alumna más, participando en su vida académica, deportiva y social.</p>
+      <p>Es la vía más auténtica y económica de vivir un año escolar en Estados Unidos. Su contrapartida es que <strong>no se elige la familia ni el destino concreto</strong>: los asigna el sponsor americano. Se desarrolla habitualmente en <strong>localidades pequeñas y semirrurales</strong>, donde el instituto es el centro de la vida comunitaria y el estudiante internacional se integra de forma real y rápida.</p>
+      <p>Para Sofía esto significa un año de inmersión total: su B1 se convertirá en un inglés funcional y natural, con la experiencia añadida del <em>drama club</em>, los equipos y las tradiciones del instituto americano.</p>
+    </div>
+  </div>
+
+  <!-- PRECIO -->
+  <div class="section-title"><h2>Inversión del programa</h2></div>
+  <div class="precio-wrap">
+    <div class="precio-inner">
+      <div class="precio-title">💳 Programa J1 · Año académico completo 2027/28</div>
+      <div class="precio-sub">Todo lo detallado en el apartado «El programa incluye»</div>
+      <div class="precio-rows">
+        <div class="precio-row">
+          <div class="lbl">Programa J1 · Año académico completo</div>
+          <div class="amt">13.600 €</div>
+        </div>
+        <div class="precio-row">
+          <div class="lbl">Suplemento por condición médica<small>Gestión, declaración ante el sponsor y colocación adaptada · Diabetes tipo 1</small></div>
+          <div class="amt">800 €</div>
+        </div>
+        <div class="precio-row total">
+          <div class="lbl">Total del programa</div>
+          <div class="amt">14.400 €</div>
+        </div>
+      </div>
+      <div class="dto-box">
+        <div class="dto-card">
+          <div class="dto-t">✔ Ventaja A · Descuento directo</div>
+          <div class="dto-d"><strong>–350 €</strong> sobre el precio del programa.<br>Total: <strong>14.050 €</strong></div>
+        </div>
+        <div class="dto-card">
+          <div class="dto-t">✔ Ventaja B · Seguro gratis</div>
+          <div class="dto-d"><strong>Seguro de anulación e interrupción sin coste.</strong><br>Póliza «Anulación Idiomas 100x100» de Intermundial. <a href="https://drive.google.com/file/d/1jidlTYbqb49o_4alTzs2RbVYOXAm53Kr/view?usp=sharing" target="_blank" rel="noopener" style="color:#7dd44a;font-weight:600;text-decoration:underline;">Consultar coberturas y límites →</a></div>
+        </div>
+      </div>
+      <div class="precio-note">Elegís una de las dos ventajas, la que más os convenga. El seguro se rige por sus propias condiciones generales y límites de indemnización: podéis consultar el resumen de coberturas en el enlace anterior antes de decidir. Precios válidos para el año académico 2027/28.</div>
+    </div>
+  </div>
+
+  <!-- INCLUYE -->
+  <div class="section-title"><h2>El programa incluye</h2></div>
+  <div class="card">
+    <div class="card-head"><h3>📋 Todo lo que cubre My Language Quest</h3></div>
+    <div class="card-body">
+      <div class="includes-grid">
+        <div>
+          <div class="col-title">Antes del viaje</div>
+          <ul class="inc-list">
+            <li>Reunión inicial con los padres (presencial, teléfono o videoconferencia)</li>
+            <li>Examen ELTIS y entrevista personal online con Sofía</li>
+            <li>Información completa y detallada sobre el programa J1</li>
+            <li>Inscripción en el programa y matriculación en el centro de educación secundaria que asigne el sponsor americano</li>
+            <li>Selección de familia anfitriona voluntaria en régimen de pensión completa</li>
+            <li>Declaración y gestión de la condición médica ante el sponsor americano <small>Incluido en el suplemento de 800 €</small></li>
+            <li>Seguro médico y de accidentes</li>
+            <li>Tasas y tramitación del visado J1, y reserva de la cita en la Embajada de EE.UU.</li>
+            <li>Programa formativo y de orientación para Sofía en los meses previos <small>Obligatorio</small></li>
+            <li>Programa formativo y de orientación para los padres <small>No obligatorio</small></li>
+            <li>Orientación pre-viaje en Madrid</li>
+            <li>Pack sorpresa de bienvenida de My Language Quest</li>
+          </ul>
+        </div>
+        <div>
+          <div class="col-title">Durante el viaje</div>
+          <ul class="inc-list">
+            <li><strong>Orientación pre-viaje en Nueva York</strong> · 4 días y 3 noches de hotel en habitaciones compartidas por género, 3 desayunos, 3 cenas, 2 talleres «Life in the USA», autobús privado, traslados aeropuerto-hotel y acompañamiento del coordinador USA y su equipo de monitores <small>Incluido solo en programas de año escolar completo</small></li>
+            <li>Recibimiento en aeropuerto y traslados en destino al inicio y fin del programa</li>
+            <li>Asesoramiento en la elección de asignaturas</li>
+            <li>Libros de las asignaturas obligatorias</li>
+            <li>Transporte escolar</li>
+            <li>Clases de inglés Cambridge y su libro</li>
+            <li>Supervisión local de la organización americana: visitas, tutorías y emergencias 24h</li>
+            <li>Acompañamiento psicológico</li>
+            <li>Atención 24 horas en España para emergencias de estudiantes y familias</li>
+            <li>Gestión individualizada de los viajes, ajustados al calendario escolar y supervisados por MLQ desde España</li>
+          </ul>
+          <div class="gestor-wrap">
+            <div class="gestor-title">Gestor estudiantil · se encarga de</div>
+            <div class="gestor-grid">
+              <div class="gestor-item">Seguimiento personalizado del desempeño</div>
+              <div class="gestor-item">Información a los padres con periodicidad mensual</div>
+              <div class="gestor-item">Notas oficiales al final de cada trimestre o semestre</div>
+              <div class="gestor-item">Asesoría en cambio de asignaturas garantizando la convalidación</div>
+              <div class="gestor-item">Todas las tutorías necesarias con la estudiante</div>
+              <div class="gestor-item">Todas las reuniones necesarias con los padres</div>
+              <div class="gestor-item">Apoyo en la matriculación en actividades extraescolares</div>
+              <div class="gestor-item">Resolución de situaciones con el centro o la familia, incluido cambio de familia</div>
+            </div>
+          </div>
+        </div>
+        <div>
+          <div class="col-title">Después del viaje</div>
+          <ul class="inc-list">
+            <li>Recogida de los <em>transcripts</em> finales</li>
+            <li>Coordinación con el centro escolar y notario público</li>
+            <li>Apostilla de La Haya de las calificaciones</li>
+            <li>Presentación y seguimiento del expediente ante el Ministerio de Educación español</li>
+            <li>Dossier final detallando la experiencia en Estados Unidos</li>
+          </ul>
+          <div style="margin-top:24px">
+            <div class="col-title">No incluido</div>
+            <ul class="inc-list no">
+              <li>Vuelos internacionales <small>MLQ gestiona la búsqueda y la reserva; el coste va a cargo de la familia</small></li>
+              <li>Material y suministros para el control de la diabetes (insulina, sensores, cánulas, tiras)</li>
+              <li>Actividades extracurriculares de pago y equipos deportivos con licencia</li>
+              <li>Excursiones y viajes escolares organizados por el centro</li>
+              <li>Material escolar</li>
+              <li>Fotografía escolar y anuario (<em>yearbook</em>)</li>
+              <li>Transporte local</li>
+              <li>Gastos de ocio personal</li>
+              <li>Medicamentos y gastos médicos no cubiertos por el seguro</li>
+              <li>Tratamientos dentales y de visión</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- CONDICIONES -->
+  <div class="section-title"><h2>Condiciones particulares del J1</h2></div>
+  <div class="card">
+    <div class="card-head"><h3>📌 Lo que conviene saber desde el principio</h3></div>
+    <div class="card-body">
+      <ul class="cond-list">
+        <li><b>Destino y familia los asigna el sponsor americano.</b> El programa se desarrolla habitualmente en localidades pequeñas o rurales de Estados Unidos, sin posibilidad de seleccionar familia ni destino. Sofía permanecerá en su destino durante todo el programa. Es posible que en el mismo domicilio resida otro estudiante de distinta lengua materna.</li>
+        <li><b>Requisitos de acceso.</b> Nota media mínima aproximada de 6/10 y examen online de nivel de inglés, con un mínimo de 690 puntos en ELTIS o 70 en iTEP. <em>Sofía cumple ambos con margen.</em></li>
+        <li><b>Entrevista en la Embajada.</b> Para obtener el visado, Sofía deberá pasar una entrevista en la Embajada de Estados Unidos en Madrid. MLQ gestiona la fecha y hora según la disponibilidad de la Embajada.</li>
+        <li><b>Elección de asignaturas.</b> Se realiza siguiendo las preferencias de Sofía y los requisitos de convalidación, siempre supeditada a la oferta, el espacio en los grupos y la organización de horarios del centro americano.</li>
+        <li><b>Primer contacto con la familia anfitriona.</b> Una vez conocidos el destino y la familia — lo cual puede demorarse hasta finales de agosto — Sofía deberá ponerse en contacto con ellos por email o teléfono en un plazo máximo de 24 a 72 horas. Este primer contacto es importante: marca el tono de la convivencia y ayuda a que la familia la reciba con confianza. Desde MLQ la acompañamos y la orientamos sobre cómo y con qué frecuencia comunicarse.</li>
+        <li><b>Visitas de familiares.</b> Los padres y familiares que deseen visitar a estudiantes de año académico completo no deben programar su visita antes del 15 de abril, y deberán coordinarla previamente con la familia anfitriona y contar con su aprobación.</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- SUPLEMENTOS -->
+  <div class="section-title"><h2>Suplementos opcionales</h2></div>
+  <div class="card">
+    <div class="card-head"><h3>📍 Si queréis condicionar la zona o el tipo de destino</h3></div>
+    <div class="card-body">
+      <p style="margin-bottom:20px">Estos suplementos son <strong>opcionales y están supeditados a disponibilidad</strong>. Como estáis abiertos a cualquier destino, no son necesarios: el programa base ya cubre todo. Os los detallamos por transparencia, por si os interesara acotar la ubicación.</p>
+      <div class="sup-grid">
+        <div class="sup-item">
+          <div class="sup-nom">Estados generales</div>
+          <div class="sup-desc">Se solicitan hasta 3 estados, pudiendo ser ubicada en cualquier punto de ellos. Excepto Hawaii, California, Florida, New York y Alaska.</div>
+          <div class="sup-precio">900 €</div>
+        </div>
+        <div class="sup-item">
+          <div class="sup-nom">Hawaii · California · Florida · New York · Alaska</div>
+          <div class="sup-desc">Cualquiera de estos estados puede escogerse por separado.</div>
+          <div class="sup-precio">2.000 €</div>
+        </div>
+        <div class="sup-item">
+          <div class="sup-nom">Estados cálidos</div>
+          <div class="sup-desc">Florida, Alabama, Georgia, Mississippi, Louisiana, Texas, Arkansas, New Mexico, Arizona, California, Nevada.</div>
+          <div class="sup-precio">750 €</div>
+        </div>
+        <div class="sup-item">
+          <div class="sup-nom">Región Este u Oeste</div>
+          <div class="sup-desc">Ubicación en cualquier punto de los estados que componen la región escogida.</div>
+          <div class="sup-precio">500 €</div>
+        </div>
+        <div class="sup-item">
+          <div class="sup-nom">Entorno metropolitano</div>
+          <div class="sup-desc">Área metropolitana de Indianapolis, Oklahoma City, Kansas City, Houston, St. Louis, Las Vegas o Tulsa.</div>
+          <div class="sup-precio">1.750 €</div>
+        </div>
+        <div class="sup-item">
+          <div class="sup-nom">Entorno urbano</div>
+          <div class="sup-desc">Localidad de más de 30.000 habitantes, en cualquier estado del país.</div>
+          <div class="sup-precio">900 €</div>
+        </div>
+        <div class="sup-item">
+          <div class="sup-nom">Top Schools</div>
+          <div class="sup-desc">Instituto situado en el top 10% del ranking US NEWS. Exige ELTIS +710 puntos y expediente académico excelente.</div>
+          <div class="sup-precio">2.000 €</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- FORMAS DE PAGO -->
+  <div class="section-title"><h2>Formas de pago</h2></div>
+  <div class="precio-wrap">
+    <div class="precio-inner">
+      <div class="precio-title">💳 Condiciones económicas</div>
+      <div class="precio-sub">Programa J1 año completo · Total 14.400 € (14.050 € con la Ventaja A)</div>
+      <div class="pay-cols">
+        <div class="pay-col">
+          <div class="pay-col-title">Paso 1 · Reserva de plaza</div>
+          <div class="pay-step">
+            <div class="pay-step-num">A la firma del contrato</div>
+            <div class="pay-step-title">3.500 €</div>
+            <div class="pay-step-desc">Con este importe se reserva la plaza y arrancan la inscripción, el examen ELTIS y la declaración de la condición médica ante el sponsor.</div>
+          </div>
+        </div>
+        <div class="pay-col">
+          <div class="pay-col-title">Paso 2 · Resto del programa</div>
+          <div class="pay-step">
+            <div class="pay-step-num">Antes del 1 de marzo de 2027</div>
+            <div class="pay-step-title">10.900 €</div>
+            <div class="pay-step-desc">10.550 € si escogéis la Ventaja A (descuento de 350 €). Financiable en 12, 18, 24 o 36 meses.</div>
+          </div>
+        </div>
+      </div>
+      <div class="pay-note">El seguro de anulación e interrupción debe contratarse en el momento de la firma del contrato (gratuito si escogéis la Ventaja B). Su importe no es reembolsable bajo ninguna circunstancia. Las inscripciones tardías deben cumplir con los plazos de pago ya vencidos en el momento de la inscripción.</div>
+    </div>
+  </div>
+
+  <!-- FINANCIACIÓN -->
+  <div class="section-title"><h2>Financia el programa</h2></div>
+  <div class="card">
+    <div class="financing-head">
+      <div class="financing-head-left">
+        <div class="fin-icon">💳</div>
+        <div>
+          <div class="fin-title">Paga a tu ritmo, sin preocupaciones</div>
+          <div class="fin-sub">Financiación flexible · Aprobación rápida · 100% online · Sin comisión de apertura ni penalización por cancelación anticipada</div>
+        </div>
+      </div>
+      <div class="fin-badge">Hasta 36 meses</div>
+    </div>
+    <div class="card-body">
+      <div class="entrada-box">
+        <div class="entrada-ico">🔒</div>
+        <div class="entrada-txt"><strong>Entrada fija de 3.500 €</strong> a la firma del contrato. Lo que se financia es siempre el importe restante del programa.</div>
+      </div>
+      <div class="fin-opcion-selector">
+        <div class="fin-opcion-label">Selecciona la ventaja escogida</div>
+        <div class="fin-opcion-btns">
+          <button class="fin-opcion-btn active" onclick="setOpcion(this, 14400)">
+            <span class="fin-opcion-nombre">Con seguro gratis · Ventaja B</span>
+            <span class="fin-opcion-precio">14.400 €</span>
+          </button>
+          <button class="fin-opcion-btn" onclick="setOpcion(this, 14050)">
+            <span class="fin-opcion-nombre">Con descuento · Ventaja A</span>
+            <span class="fin-opcion-precio">14.050 €</span>
+          </button>
+        </div>
+      </div>
+      <div class="fin-plazo-wrap">
+        <div class="fin-plazo-label">Elige tu plazo de financiación</div>
+        <div class="fin-plazos">
+          <div class="fin-plazo active" onclick="setPlazo(this,12)">
+            <div class="fin-plazo-meses">12 meses</div>
+            <div class="fin-plazo-badge sin-intereses">TIN 0%</div>
+            <div class="fin-plazo-quien">¡MLQ asume los intereses!</div>
+          </div>
+          <div class="fin-plazo" onclick="setPlazo(this,18)">
+            <div class="fin-plazo-meses">18 meses</div>
+            <div class="fin-plazo-badge con-intereses">TIN 10,46%</div>
+            <div class="fin-plazo-quien">Intereses a cargo del cliente</div>
+          </div>
+          <div class="fin-plazo" onclick="setPlazo(this,24)">
+            <div class="fin-plazo-meses">24 meses</div>
+            <div class="fin-plazo-badge con-intereses">TIN 10,46%</div>
+            <div class="fin-plazo-quien">Intereses a cargo del cliente</div>
+          </div>
+          <div class="fin-plazo" onclick="setPlazo(this,36)">
+            <div class="fin-plazo-meses">36 meses</div>
+            <div class="fin-plazo-badge con-intereses">TIN 10,46%</div>
+            <div class="fin-plazo-quien">Intereses a cargo del cliente</div>
+          </div>
+        </div>
+      </div>
+      <div class="fin-resultado">
+        <div class="fin-resultado-main">
+          <div class="fin-cuota-label">Cuota mensual estimada</div>
+          <div class="fin-cuota-valor" id="cuotaValor">1.200,00 €</div>
+          <div class="fin-cuota-sub" id="cuotaSub">/mes · 12 pagos · TIN 0%</div>
+        </div>
+        <div class="fin-resultado-detalle">
+          <div class="fin-det-row">
+            <span class="fin-det-label">Total del programa</span>
+            <span class="fin-det-val" id="detTotalPrograma">14.400 €</span>
+          </div>
+          <div class="fin-det-row">
+            <span class="fin-det-label">Entrada a la firma</span>
+            <span class="fin-det-val">– 3.500 €</span>
+          </div>
+          <div class="fin-det-row">
+            <span class="fin-det-label">Importe financiado</span>
+            <span class="fin-det-val" id="detCapital">10.900 €</span>
+          </div>
+          <div class="fin-det-row">
+            <span class="fin-det-label">Intereses totales</span>
+            <span class="fin-det-val fin-det-green" id="detIntereses">0 € · ¡MLQ los asume!</span>
+          </div>
+          <div class="fin-det-row fin-det-total">
+            <span class="fin-det-label">Total a pagar (entrada + cuotas)</span>
+            <span class="fin-det-val" id="detTotal">14.400 €</span>
+          </div>
+        </div>
+      </div>
+      <div class="fin-nota">ℹ️ Financiación con Banco Sabadell, sujeta a aprobación bancaria. La entrada de 3.500 € se abona a la firma del contrato y no se financia. Cuota orientativa calculada sobre el importe restante. Sin comisión de apertura ni penalización por cancelación anticipada.</div>
+    </div>
+  </div>
+
+  <!-- ENLACES -->
+  <div class="section-title"><h2>Enlaces de interés</h2></div>
+  <div class="card">
+    <div class="card-body">
+      <div class="links-grid">
+        <a class="link-item" href="https://drive.google.com/drive/folders/1QNBe8amc96jVP_dpkc1Xhkz2qCuM4s7f?usp=drive_link" target="_blank" rel="noopener">
+          <div class="link-ico">📁</div>
+          <div>
+            <div class="link-t">Documentos importantes J1</div>
+            <div class="link-d">Carpeta con toda la documentación del programa J1 en Estados Unidos</div>
+          </div>
+        </a>
+        <a class="link-item" href="https://drive.google.com/file/d/1jjTrXMO6Yi10fAf-kK-XRMx7zKGc05VC/view?usp=sharing" target="_blank" rel="noopener">
+          <div class="link-ico">🗽</div>
+          <div>
+            <div class="link-t">Itinerario Orientation Camp NY</div>
+            <div class="link-d">Los 4 días de orientación en Nueva York, día a día</div>
+          </div>
+        </a>
+        <a class="link-item" href="https://drive.google.com/file/d/1nuY34R2Um103RD8nR0Iv1Vsnr8SQqrs5/view?usp=sharing" target="_blank" rel="noopener">
+          <div class="link-ico">👨‍👩‍👧</div>
+          <div>
+            <div class="link-t">Curso formativo · Padres</div>
+            <div class="link-d">Programa de formación y orientación para las familias</div>
+          </div>
+        </a>
+        <a class="link-item" href="https://drive.google.com/file/d/1eJC9fMGKSZU6gCrvJkNgDLUbZ4eiUvB0/view?usp=sharing" target="_blank" rel="noopener">
+          <div class="link-ico">🎓</div>
+          <div>
+            <div class="link-t">Curso formativo · Estudiante</div>
+            <div class="link-d">Programa de formación y orientación para Sofía</div>
+          </div>
+        </a>
+        <a class="link-item" href="https://drive.google.com/file/d/1jidlTYbqb49o_4alTzs2RbVYOXAm53Kr/view?usp=sharing" target="_blank" rel="noopener">
+          <div class="link-ico">🛡️</div>
+          <div>
+            <div class="link-t">Seguro de anulación · Coberturas</div>
+            <div class="link-d">Resumen de coberturas y límites máximos de indemnización</div>
+          </div>
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- SIGUIENTES PASOS -->
+  <div class="section-title"><h2>Siguientes pasos</h2></div>
+  <div class="cta-wrap">
+    <div class="cta-inner">
+      <div class="cta-title">¿Damos el siguiente paso con Sofía?</div>
+      <div class="cta-sub">El primer paso es la prueba de nivel de inglés. Con su resultado confirmamos el acceso al programa y podemos avanzar con la inscripción.</div>
+      <div class="cta-btns">
+        <a class="cta-btn primary" href="https://form.jotform.com/243533134406348" target="_blank" rel="noopener">
+          <div class="cta-btn-ico">📝</div>
+          <div>
+            <div class="cta-btn-t">Prueba de nivel de inglés</div>
+            <div class="cta-btn-d">Gramática, vocabulario y comprensión. Online y sin coste.</div>
+          </div>
+        </a>
+        <a class="cta-btn" href="https://zbooking.eu/6uh7x" target="_blank" rel="noopener">
+          <div class="cta-btn-ico">📞</div>
+          <div>
+            <div class="cta-btn-t">Agendar asesoramiento gratuito</div>
+            <div class="cta-btn-d">Reserva una videollamada para resolver todas vuestras dudas.</div>
+          </div>
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <div class="footer">
+    <strong>My Language Quest</strong> · Programa J1 de Intercambio Cultural · Estados Unidos 2027/28<br>
+    Propuesta personalizada para Sofía. Precios y condiciones sujetos a disponibilidad de plazas y a la aceptación del sponsor americano.
+  </div>
+
+</main>
+
+<script>
+var _total = 14400, _entrada = 3500, _mes = 12;
+function _fmt(n,d){return n.toLocaleString('es-ES',{minimumFractionDigits:d||0,maximumFractionDigits:d||0})+' €';}
+function _cuota(c,t,m){if(t===0)return c/m;var r=(t/100)/12;return c*r/(1-Math.pow(1+r,-m));}
+function _update(){
+  var _cap=_total-_entrada;
+  var tin=_mes===12?0:10.46;
+  var q=_cuota(_cap,tin,_mes);
+  var tot=q*_mes;
+  var inter=tot-_cap;
+  document.getElementById('cuotaValor').textContent=_fmt(q,2);
+  document.getElementById('cuotaSub').textContent='/mes · '+_mes+' pagos · TIN '+(tin===0?'0%':'10,46%');
+  document.getElementById('detTotalPrograma').textContent=_fmt(Math.round(_total));
+  document.getElementById('detCapital').textContent=_fmt(Math.round(_cap));
+  document.getElementById('detTotal').textContent=_fmt(Math.round(tot+_entrada));
+  if(tin===0){
+    document.getElementById('detIntereses').textContent='0 € · ¡MLQ los asume!';
+    document.getElementById('detIntereses').className='fin-det-val fin-det-green';
+  } else {
+    document.getElementById('detIntereses').textContent=_fmt(Math.round(inter));
+    document.getElementById('detIntereses').className='fin-det-val';
+  }
+}
+function setOpcion(btn,cap){_total=cap;document.querySelectorAll('.fin-opcion-btn').forEach(function(b){b.classList.remove('active');});btn.classList.add('active');_update();}
+function setPlazo(el,m){_mes=m;document.querySelectorAll('.fin-plazo').forEach(function(p){p.classList.remove('active');});el.classList.add('active');_update();}
+_update();
+</script>
+
+</body>
+</html>
