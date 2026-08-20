@@ -1,0 +1,587 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Propuesta · Sonia Fajardo Mínguez · My Language Quest</title>
+<link href="https://fonts.googleapis.com/css2?family=Fira+Sans:wght@300;400;500;600;700&family=Josefin+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --blue:#003366;--blue-dark:#001f40;--blue-mid:#0a4a8a;--blue-light:#dce8f5;
+  --red:#B12900;--red-dark:#8A1F00;--red-light:#fdf0ec;
+  --green:#4C9E0C;--green-dark:#3A7A09;--green-light:#eef8e3;
+  --gray-bg:#f0f2f6;--gray-card:#f8f9fb;--gray-border:#dde1ea;
+  --text:#0d1b2a;--text-mid:#3d4f62;--text-light:#7a8a9b;--white:#ffffff;
+}
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box;}
+body{font-family:'Fira Sans',sans-serif;background:var(--gray-bg);color:var(--text);}
+
+.header{background:var(--white);padding:18px 48px;display:flex;align-items:center;justify-content:space-between;box-shadow:0 1px 0 var(--gray-border),0 4px 24px rgba(0,51,102,0.07);position:relative;z-index:10;}
+.header::after{content:'';position:absolute;bottom:0;left:0;right:0;height:3px;background:linear-gradient(90deg,var(--red),var(--blue) 50%,var(--green));}
+.logo-area img{height:46px;width:auto;display:block;}
+.logo-text{font-family:'Josefin Sans',sans-serif;font-weight:700;font-size:20px;color:var(--blue);letter-spacing:-0.5px;line-height:1;}
+.logo-text span{color:var(--red);}
+.logo-tagline{font-family:'Josefin Sans',sans-serif;font-size:8px;letter-spacing:2.5px;text-transform:uppercase;color:var(--text-light);margin-top:3px;}
+.header-right{text-align:right;}
+.header-label{font-family:'Josefin Sans',sans-serif;font-size:9px;letter-spacing:3px;text-transform:uppercase;color:var(--text-light);}
+.header-year{font-family:'Josefin Sans',sans-serif;font-size:26px;font-weight:700;color:var(--blue);line-height:1;margin-top:2px;}
+
+.hero{background:var(--blue);position:relative;overflow:hidden;padding:40px 48px 36px;}
+.hero::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 80% 120% at 110% 50%,rgba(76,158,12,0.18) 0%,transparent 60%),radial-gradient(ellipse 60% 80% at -10% 80%,rgba(177,41,0,0.22) 0%,transparent 55%);}
+.hero-dots{position:absolute;inset:0;pointer-events:none;background-image:radial-gradient(rgba(255,255,255,0.07) 1px,transparent 1px);background-size:28px 28px;}
+.hero-inner{position:relative;z-index:2;display:flex;align-items:flex-end;justify-content:space-between;gap:24px;flex-wrap:wrap;}
+.hero-tag{display:inline-flex;align-items:center;gap:6px;background:rgba(255,255,255,0.1);border:1px solid rgba(255,255,255,0.2);border-radius:20px;padding:4px 12px;font-size:10px;font-weight:600;letter-spacing:2px;text-transform:uppercase;color:rgba(255,255,255,0.7);margin-bottom:12px;}
+.hero-tag::before{content:'✈';font-size:11px;}
+.hero-name{font-family:'Josefin Sans',sans-serif;font-size:38px;font-weight:700;color:var(--white);line-height:1;margin-bottom:8px;}
+.hero-subtitle{font-size:13px;color:rgba(255,255,255,0.55);font-weight:300;}
+.hero-pills{display:flex;flex-wrap:wrap;gap:8px;margin-top:20px;}
+.hero-pill{display:flex;align-items:center;gap:6px;background:rgba(255,255,255,0.1);border:1px solid rgba(255,255,255,0.18);border-radius:8px;padding:6px 12px;font-size:11px;color:var(--white);font-weight:500;}
+.hero-pill.ac{background:rgba(76,158,12,0.25);border-color:rgba(76,158,12,0.6);color:#a9e87a;}
+
+.main{max-width:1140px;margin:0 auto;padding:40px 24px 64px;}
+.section-title{display:flex;align-items:center;gap:12px;margin-bottom:24px;}
+.section-title h2{font-family:'Josefin Sans',sans-serif;font-size:11px;font-weight:700;letter-spacing:3px;text-transform:uppercase;color:var(--text-light);}
+.section-title::after{content:'';flex:1;height:1px;background:var(--gray-border);}
+
+.alert-box{display:flex;gap:12px;align-items:flex-start;background:#fff4f0;border:1.5px solid rgba(177,41,0,0.3);border-radius:12px;padding:14px 18px;margin-bottom:28px;}
+.alert-icon{font-size:20px;flex-shrink:0;}
+.alert-text{font-size:12px;color:#6b1a00;line-height:1.6;}
+.alert-text strong{color:var(--red-dark);}
+.alert-box.info{background:var(--blue-light);border-color:rgba(0,51,102,0.25);}
+.alert-box.info .alert-text{color:#0b2c4d;}
+.alert-box.info .alert-text strong{color:var(--blue);}
+
+.opciones-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(330px,1fr));gap:20px;margin-bottom:40px;}
+.opcion-card{background:var(--white);border-radius:16px;border:1.5px solid var(--gray-border);overflow:hidden;box-shadow:0 2px 16px rgba(0,51,102,0.06);position:relative;transition:transform .2s,box-shadow .2s,border-color .2s;}
+.opcion-card:hover{transform:translateY(-4px);box-shadow:0 12px 40px rgba(0,51,102,0.13);border-color:var(--blue-mid);}
+.opcion-card.recomendada{border-color:var(--green);box-shadow:0 4px 24px rgba(76,158,12,0.15);}
+.badge-rec{position:absolute;top:14px;right:-32px;background:var(--green);color:var(--white);font-size:8px;font-weight:700;letter-spacing:1.5px;padding:5px 40px;transform:rotate(45deg);width:130px;text-align:center;z-index:10;}
+.opcion-header{background:linear-gradient(135deg,var(--blue-dark) 0%,var(--blue) 100%);padding:22px 24px 18px;}
+.opcion-num{font-family:'Josefin Sans',sans-serif;font-size:9px;letter-spacing:3px;text-transform:uppercase;color:rgba(255,255,255,0.38);margin-bottom:8px;}
+.opcion-distrito{font-family:'Josefin Sans',sans-serif;font-size:16px;font-weight:700;color:var(--white);margin-bottom:5px;}
+.opcion-loc{font-size:11px;color:rgba(255,255,255,0.48);margin-bottom:12px;}
+.precio-chip{display:inline-flex;align-items:baseline;gap:4px;background:rgba(255,255,255,0.1);border:1px solid rgba(255,255,255,0.18);border-radius:8px;padding:6px 12px;}
+.precio-chip .val{font-family:'Josefin Sans',sans-serif;font-size:20px;font-weight:700;color:#7dd44a;}
+.precio-chip .desc{font-size:10px;color:rgba(255,255,255,0.5);}
+.opcion-body{padding:20px 22px;}
+.colegios{display:flex;flex-direction:column;gap:12px;}
+.colegio{border:1.5px solid var(--gray-border);border-radius:12px;overflow:hidden;background:var(--gray-card);transition:border-color .2s;}
+.colegio:hover{border-color:var(--red);}
+.colegio-top{padding:12px 14px 10px;}
+.colegio-nombre{font-family:'Josefin Sans',sans-serif;font-size:13px;font-weight:700;color:var(--blue);margin-bottom:5px;}
+.colegio-meta{display:flex;flex-wrap:wrap;align-items:center;gap:6px;}
+.tag{border-radius:5px;padding:2px 8px;font-size:9px;font-weight:700;text-transform:uppercase;}
+.tag.pub{background:var(--green);color:var(--white);}
+.tag.priv{background:var(--red);color:var(--white);}
+.tag.info{background:var(--blue-light);color:var(--blue);}
+details{border-top:1px solid var(--gray-border);}
+details summary{list-style:none;cursor:pointer;padding:9px 14px;font-size:11px;font-weight:600;color:var(--red);display:flex;align-items:center;gap:6px;user-select:none;-webkit-user-select:none;}
+details summary:hover{background:var(--red-light);}
+details summary::-webkit-details-marker{display:none;}
+details summary::before{content:'▸';font-size:10px;transition:transform .2s;display:inline-block;}
+details[open] summary::before{transform:rotate(90deg);}
+.colegio-razon{padding:10px 14px 13px;font-size:12px;color:var(--text-mid);line-height:1.7;border-left:3px solid var(--red);margin:0 14px 12px;background:var(--red-light);border-radius:0 6px 6px 0;}
+.colegio-razon strong{color:var(--red-dark);}
+.match-bar{display:flex;gap:6px;flex-wrap:wrap;padding:14px 22px;border-top:1px solid var(--gray-border);background:linear-gradient(to right,var(--gray-card),var(--white));}
+.match-tag{display:flex;align-items:center;gap:4px;font-size:10px;font-weight:600;color:var(--green-dark);background:var(--green-light);border:1px solid rgba(76,158,12,0.25);border-radius:20px;padding:3px 10px;}
+.match-tag::before{content:'✓';font-size:9px;}
+.nota-card{padding:10px 22px 14px;font-size:10.5px;color:var(--text-light);line-height:1.6;background:var(--white);border-top:1px dashed var(--gray-border);}
+.nota-card strong{color:var(--text-mid);}
+
+/* COMPARATIVA */
+.tabla-wrap{background:var(--white);border-radius:16px;border:1.5px solid var(--gray-border);box-shadow:0 2px 16px rgba(0,51,102,0.05);overflow:hidden;margin-bottom:40px;}
+.tabla-scroll{overflow-x:auto;}
+table{width:100%;border-collapse:collapse;min-width:620px;}
+th,td{padding:11px 14px;text-align:left;font-size:12px;border-bottom:1px solid var(--gray-border);}
+thead th{background:linear-gradient(135deg,var(--blue-dark),var(--blue));color:var(--white);font-family:'Josefin Sans',sans-serif;font-size:10px;letter-spacing:1.5px;text-transform:uppercase;font-weight:700;}
+tbody th{font-weight:600;color:var(--text-mid);background:var(--gray-card);font-size:11px;width:170px;}
+tbody td{color:var(--text-mid);}
+tbody tr:last-child th,tbody tr:last-child td{border-bottom:none;}
+td.hi{color:var(--green-dark);font-weight:600;}
+
+/* INCLUDES */
+.includes-wrap{background:var(--white);border-radius:16px;border:1.5px solid var(--gray-border);box-shadow:0 2px 16px rgba(0,51,102,0.05);overflow:hidden;margin-bottom:24px;}
+.includes-head{background:linear-gradient(135deg,var(--blue-dark),var(--blue));padding:20px 32px;}
+.includes-head h3{font-family:'Josefin Sans',sans-serif;font-size:14px;font-weight:700;color:var(--white);letter-spacing:1px;}
+.includes-body{padding:28px 32px;}
+.includes-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:32px;}
+.col-title{font-family:'Josefin Sans',sans-serif;font-size:9px;font-weight:700;letter-spacing:2.5px;text-transform:uppercase;color:var(--red);margin-bottom:14px;padding-bottom:8px;border-bottom:2px solid var(--red-light);}
+.inc-list{list-style:none;display:flex;flex-direction:column;gap:8px;}
+.inc-list li{font-size:12px;color:var(--text-mid);display:flex;align-items:flex-start;gap:8px;line-height:1.55;}
+.inc-list li::before{content:'✓';color:var(--green);font-weight:700;font-size:11px;flex-shrink:0;margin-top:1px;}
+.inc-list.no li::before{content:'✗';color:var(--red);}
+.inc-list li small{font-size:10px;color:var(--text-light);display:block;margin-top:2px;}
+
+/* GESTOR ESTUDIANTIL */
+.gestor-wrap{background:linear-gradient(135deg,var(--blue-dark),var(--blue-mid));border-radius:12px;padding:20px 24px;margin-top:24px;}
+.gestor-title{font-family:'Josefin Sans',sans-serif;font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:rgba(255,255,255,0.6);margin-bottom:14px;}
+.gestor-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;}
+.gestor-item{background:rgba(255,255,255,0.08);border:1px solid rgba(255,255,255,0.12);border-radius:8px;padding:10px 12px;font-size:11px;color:rgba(255,255,255,0.85);line-height:1.4;}
+.gestor-item::before{content:'\2192';color:#7dd44a;font-weight:700;margin-right:5px;}
+@media(max-width:720px){.gestor-grid{grid-template-columns:repeat(2,1fr);}}
+
+/* PAGO */
+.payment-wrap{background:linear-gradient(135deg,var(--blue-dark) 0%,var(--blue) 60%,var(--blue-mid) 100%);border-radius:16px;padding:32px;position:relative;overflow:hidden;margin-bottom:24px;}
+.payment-wrap::before{content:'';position:absolute;inset:0;background-image:radial-gradient(rgba(255,255,255,0.05) 1px,transparent 1px);background-size:22px 22px;}
+.payment-inner{position:relative;z-index:2;}
+.pay-title{font-family:'Josefin Sans',sans-serif;font-size:16px;font-weight:700;color:var(--white);margin-bottom:6px;}
+.pay-subtitle{font-size:12px;color:rgba(255,255,255,0.45);margin-bottom:20px;}
+.pay-steps{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:18px;}
+.pay-col{background:rgba(255,255,255,0.07);border:1px solid rgba(255,255,255,0.12);border-radius:12px;padding:18px 20px;}
+.pay-step-num{font-size:9px;font-weight:700;color:#7dd44a;text-transform:uppercase;letter-spacing:1.5px;margin-bottom:6px;}
+.pay-step-title{font-family:'Josefin Sans',sans-serif;font-size:22px;font-weight:700;color:var(--white);margin-bottom:4px;}
+.pay-step-desc{font-size:11.5px;color:rgba(255,255,255,0.5);line-height:1.5;}
+.pay-note{font-size:11px;color:rgba(255,255,255,0.32);line-height:1.65;font-style:italic;border-top:1px solid rgba(255,255,255,0.1);padding-top:14px;}
+@media(max-width:720px){.pay-steps{grid-template-columns:1fr;}}
+
+/* FINANCIACIÓN */
+.financing-wrap{background:var(--white);border-radius:16px;border:1.5px solid var(--gray-border);box-shadow:0 2px 16px rgba(0,51,102,0.06);overflow:hidden;margin-bottom:24px;}
+.financing-head{background:linear-gradient(135deg,var(--blue-dark),var(--blue));padding:22px 32px;display:flex;align-items:center;justify-content:space-between;gap:16px;}
+.financing-head-left{display:flex;align-items:center;gap:16px;}
+.fin-icon{font-size:28px;flex-shrink:0;}
+.fin-title{font-family:'Josefin Sans',sans-serif;font-size:16px;font-weight:700;color:var(--white);margin-bottom:3px;}
+.fin-sub{font-size:11px;color:rgba(255,255,255,0.5);line-height:1.4;}
+.fin-badge{background:rgba(125,212,74,0.2);border:1px solid rgba(125,212,74,0.4);color:#7dd44a;font-family:'Josefin Sans',sans-serif;font-size:11px;font-weight:700;letter-spacing:1px;padding:6px 14px;border-radius:20px;white-space:nowrap;}
+.financing-body{padding:28px 32px;}
+.fin-opcion-label,.fin-plazo-label{font-family:'Josefin Sans',sans-serif;font-size:9px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--text-light);margin-bottom:10px;}
+.fin-opcion-selector{margin-bottom:24px;}
+.fin-opcion-btns{display:flex;gap:10px;flex-wrap:wrap;}
+.fin-opcion-btn{background:var(--gray-card);border:1.5px solid var(--gray-border);border-radius:10px;padding:10px 16px;cursor:pointer;text-align:left;transition:all .2s;display:flex;flex-direction:column;gap:3px;}
+.fin-opcion-btn:hover{border-color:var(--blue-mid);background:var(--blue-light);}
+.fin-opcion-btn.active{border-color:var(--blue);background:var(--blue-light);}
+.fin-opcion-nombre{font-size:10px;font-weight:700;letter-spacing:1px;text-transform:uppercase;color:var(--text-light);}
+.fin-opcion-btn.active .fin-opcion-nombre{color:var(--blue);}
+.fin-opcion-precio{font-family:'Josefin Sans',sans-serif;font-size:16px;font-weight:700;color:var(--text);}
+.fin-opcion-btn.active .fin-opcion-precio{color:var(--blue);}
+.fin-plazo-wrap{margin-bottom:24px;}
+.fin-plazos{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;}
+.fin-plazo{background:var(--gray-card);border:1.5px solid var(--gray-border);border-radius:12px;padding:14px 12px;cursor:pointer;text-align:center;transition:all .2s;}
+.fin-plazo:hover{border-color:var(--blue-mid);transform:translateY(-2px);}
+.fin-plazo.active{border-color:var(--green);background:var(--green-light);box-shadow:0 4px 16px rgba(76,158,12,0.15);}
+.fin-plazo-meses{font-family:'Josefin Sans',sans-serif;font-size:15px;font-weight:700;color:var(--text);margin-bottom:6px;}
+.fin-plazo.active .fin-plazo-meses{color:var(--green-dark);}
+.fin-plazo-badge{display:inline-block;border-radius:20px;padding:2px 8px;font-size:9px;font-weight:700;letter-spacing:0.5px;margin-bottom:4px;}
+.fin-plazo-badge.sin-intereses{background:var(--green-light);color:var(--green-dark);border:1px solid rgba(76,158,12,0.3);}
+.fin-plazo-badge.con-intereses{background:var(--blue-light);color:var(--blue);border:1px solid rgba(0,51,102,0.2);}
+.fin-plazo-quien{font-size:9px;color:var(--text-light);line-height:1.3;}
+.fin-resultado{display:grid;grid-template-columns:auto 1fr;gap:24px;background:linear-gradient(135deg,var(--blue-dark),var(--blue));border-radius:14px;padding:24px 28px;margin-bottom:16px;align-items:center;}
+.fin-resultado-main{text-align:center;border-right:1px solid rgba(255,255,255,0.15);padding-right:24px;}
+.fin-cuota-label{font-size:10px;font-weight:600;letter-spacing:2px;text-transform:uppercase;color:rgba(255,255,255,0.5);margin-bottom:6px;}
+.fin-cuota-valor{font-family:'Josefin Sans',sans-serif;font-size:36px;font-weight:700;color:#7dd44a;line-height:1;margin-bottom:4px;}
+.fin-cuota-sub{font-size:11px;color:rgba(255,255,255,0.45);}
+.fin-resultado-detalle{display:flex;flex-direction:column;gap:10px;}
+.fin-det-row{display:flex;justify-content:space-between;align-items:center;gap:12px;}
+.fin-det-label{font-size:12px;color:rgba(255,255,255,0.55);}
+.fin-det-val{font-size:13px;font-weight:600;color:var(--white);}
+.fin-det-green{color:#7dd44a !important;}
+.fin-det-total{border-top:1px solid rgba(255,255,255,0.15);padding-top:10px;margin-top:2px;}
+.fin-det-total .fin-det-label{color:rgba(255,255,255,0.7);font-weight:600;}
+.fin-det-total .fin-det-val{font-family:'Josefin Sans',sans-serif;font-size:16px;color:var(--white);}
+.fin-nota{font-size:11px;color:var(--text-light);line-height:1.6;background:var(--gray-card);border-radius:8px;padding:12px 16px;border-left:3px solid var(--blue-light);}
+
+.footer-note{text-align:center;font-size:11px;color:var(--text-light);margin-top:32px;line-height:1.7;}
+
+@media(max-width:720px){.fin-plazos{grid-template-columns:repeat(2,1fr);}.fin-resultado{grid-template-columns:1fr;}.fin-resultado-main{border-right:none;border-bottom:1px solid rgba(255,255,255,0.15);padding-right:0;padding-bottom:20px;}.financing-head{flex-direction:column;align-items:flex-start;}.fin-opcion-btns{flex-direction:column;}}
+@media(max-width:720px){
+  .header{padding:16px 20px;}.hero{padding:28px 20px 24px;}.hero-name{font-size:28px;}
+  .main{padding:28px 16px 48px;}.includes-grid{grid-template-columns:1fr;}.opciones-grid{grid-template-columns:1fr;}
+}
+</style>
+</head>
+<body>
+
+<header class="header">
+  <div class="logo-area">
+    <img src="data:image/png;base64,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" alt="My Language Quest">
+  </div>
+  <div class="header-right">
+    <div class="header-label">Programa F1 · Estados Unidos</div>
+    <div class="header-year">2026/27</div>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="hero-dots"></div>
+  <div class="hero-inner">
+    <div>
+      <div class="hero-tag">Propuesta personalizada</div>
+      <div class="hero-name">Sonia Fajardo Mínguez</div>
+      <div class="hero-subtitle">Semestre de primavera · Estados Unidos · Programa F1 Premium</div>
+      <div class="hero-pills">
+        <div class="hero-pill">📅 Enero – mayo/junio 2027</div>
+        <div class="hero-pill">🎓 Grade 9 · 3º ESO</div>
+        <div class="hero-pill">🎂 15 años</div>
+        <div class="hero-pill">🏠 Familia anfitriona</div>
+        <div class="hero-pill">🛂 Visado F1</div>
+        <div class="hero-pill ac">📊 Media 8,01</div>
+        <div class="hero-pill ac">🗣 Inglés 8,5</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<main class="main">
+
+  <div class="alert-box">
+    <div class="alert-icon">🎯</div>
+    <div class="alert-text"><strong>Perfil académico sólido:</strong> con una media de 8,01 y un nivel de inglés de 8,5 el estudiante cumple con holgura los requisitos de admisión de los tres centros. Los tres han sido seleccionados por ofrecer <strong>semestre de primavera</strong>, itinerario AP y buena integración de alumnos internacionales.</div>
+  </div>
+
+  <div class="section-title"><h2>Opciones recomendadas</h2></div>
+  <div class="opciones-grid">
+
+    <!-- OPCIÓN 1 · RECOMENDADA -->
+    <div class="opcion-card recomendada">
+      <div class="badge-rec">★ RECOMENDADA</div>
+      <div class="opcion-header">
+        <div class="opcion-num">Opción 01</div>
+        <div class="opcion-distrito">Bonneville High School</div>
+        <div class="opcion-loc">📍 Idaho Falls · Idaho · Montañas Rocosas</div>
+        <div class="precio-chip"><span class="val">16.200 €</span><span class="desc">/ semestre</span></div>
+      </div>
+      <div class="opcion-body">
+        <div class="colegios">
+          <div class="colegio">
+            <div class="colegio-top">
+              <div class="colegio-nombre">Bonneville High School</div>
+              <div class="colegio-meta"><span class="tag pub">Público</span><span class="tag info">Grade 9–12</span><span class="tag info">1.092 alumnos</span><span class="tag info">Clase de 25</span><span class="tag info">91% graduación</span></div>
+            </div>
+            <details><summary>Por qué es nuestra recomendación</summary>
+            <div class="colegio-razon"><strong>Es la opción más equilibrada de las tres y la más económica.</strong> Con un nivel de inglés de 8,5 el estudiante podrá seguir las clases desde el primer día, sin necesidad de apoyo lingüístico. Bonneville ofrece un itinerario AP extenso más <em>College Prep</em> y STEM, con clases de 25 alumnos —suficientemente grande para tener opciones, suficientemente pequeño para no perderse— y una tasa de graduación del 91%.<br><br>Llegando en enero entra de lleno en la temporada de invierno (baloncesto, lucha) y encadena con la de primavera: <strong>béisbol, softball, tenis y atletismo</strong>. Se ofrecen español, alemán y francés, y un programa de artes muy completo: coro, banda, guitarra, teatro, cerámica, fotografía digital y pintura. Entre los destinos universitarios habituales de sus egresados están BYU-Idaho, Utah State y la Universidad de Utah.<br><br>Idaho Falls (66.898 hab.) es una ciudad tranquila y muy segura a orillas del río Snake, con el Museo de Idaho, zoo, senderos y cascada en el propio centro. A un paso quedan el <strong>Parque Nacional de las Montañas Rocosas</strong> y Harriman State Park: naturaleza real, no un parque urbano. Los inviernos son nevados —enero a marzo con nieve garantizada— y la primavera abre paso al aire libre.<br><br>Añade una garantía que agradecerás: <strong>reembolso íntegro si se deniega el visado</strong>.</div>
+            </details>
+          </div>
+        </div>
+      </div>
+      <div class="match-bar">
+        <div class="match-tag">Mejor precio</div>
+        <div class="match-tag">AP + College Prep + STEM</div>
+        <div class="match-tag">Semestre de primavera</div>
+        <div class="match-tag">Naturaleza · Rocosas</div>
+        <div class="match-tag">Reembolso si deniegan visado</div>
+      </div>
+      <div class="nota-card"><strong>Aeropuerto más cercano:</strong> Idaho Falls Regional Airport (IDA).</div>
+    </div>
+
+    <!-- OPCIÓN 2 -->
+    <div class="opcion-card">
+      <div class="opcion-header">
+        <div class="opcion-num">Opción 02</div>
+        <div class="opcion-distrito">Higley Unified School District</div>
+        <div class="opcion-loc">📍 Gilbert & Queen Creek · Arizona · Área de Phoenix</div>
+        <div class="precio-chip"><span class="val">17.650 €</span><span class="desc">/ semestre</span></div>
+      </div>
+      <div class="opcion-body">
+        <div class="colegios">
+          <div class="colegio">
+            <div class="colegio-top">
+              <div class="colegio-nombre">Higley High School</div>
+              <div class="colegio-meta"><span class="tag pub">Público</span><span class="tag info">~2.000 alumnos</span><span class="tag info">Clase de 22</span><span class="tag info">Distrito «A»</span></div>
+            </div>
+            <details><summary>Por qué encaja con el perfil</summary>
+            <div class="colegio-razon">Higley es la opción con <strong>la oferta académica más ambiciosa de las tres</strong>: 19 asignaturas AP, entre ellas Cálculo AB y BC, Estadística, Biología, Química, tres niveles de Física, Historia Universal, Geografía Humana y Macroeconomía. Con una media de 8,01 el estudiante puede aspirar a un itinerario exigente que refuerce su expediente. El distrito está calificado como «A» por el Departamento de Educación de Arizona.<br><br>En idiomas ofrece francés, mandarín I–IV y español hasta <em>AP Spanish Literature and Culture</em>: una vía para que un hispanohablante convierta su lengua materna en una nota AP.</div>
+            </details>
+          </div>
+          <div class="colegio">
+            <div class="colegio-top">
+              <div class="colegio-nombre">Williams Field High School</div>
+              <div class="colegio-meta"><span class="tag pub">Público</span><span class="tag info">~2.000 alumnos</span><span class="tag info">Clase de 22</span><span class="tag info">50 actividades</span></div>
+            </div>
+            <details><summary>Por qué encaja con el perfil</summary>
+            <div class="colegio-razon">El segundo instituto del distrito, con la misma oferta académica y un catálogo de <strong>unas 50 actividades extraescolares</strong>. Es la opción más fuerte en artes escénicas de las tres: cinco coros, banda sinfónica, <em>marching band</em>, <em>winter drumline</em>, orquesta de cuerda, jazz, seis niveles de danza incluida Advanced Elite, teatro musical, AP Music Theory y AP Studio Art.<br><br>Empezar en enero es un acierto en Arizona: el estudiante <strong>se salta el calor extremo del verano</strong> y vive los meses más agradables del año, con casi 300 días de sol. Además, la temporada de invierno arranca justo con su llegada — <strong>fútbol masculino y femenino</strong>, baloncesto y lucha — y la de primavera trae lacrosse, atletismo, tenis, softball y voleibol playa. También hay esquí alpino en otoño.</div>
+            </details>
+          </div>
+        </div>
+      </div>
+      <div class="match-bar">
+        <div class="match-tag">19 asignaturas AP</div>
+        <div class="match-tag">Fútbol en temporada de invierno</div>
+        <div class="match-tag">Artes y música excepcionales</div>
+        <div class="match-tag">Clima ideal enero–junio</div>
+        <div class="match-tag">50 extraescolares</div>
+        <div class="match-tag">Vuelo cómodo (PHX)</div>
+      </div>
+      <div class="nota-card"><strong>Aeropuerto más cercano:</strong> Phoenix Sky Harbor International (PHX), gran <em>hub</em> con muy buena conexión desde Madrid.</div>
+    </div>
+
+    <!-- OPCIÓN 3 -->
+    <div class="opcion-card">
+      <div class="opcion-header">
+        <div class="opcion-num">Opción 03</div>
+        <div class="opcion-distrito">Roncalli Catholic High School</div>
+        <div class="opcion-loc">📍 Manitowoc · Wisconsin · Orillas del lago Michigan</div>
+        <div class="precio-chip"><span class="val">19.000 €</span><span class="desc">/ semestre</span></div>
+      </div>
+      <div class="opcion-body">
+        <div class="colegios">
+          <div class="colegio">
+            <div class="colegio-top">
+              <div class="colegio-nombre">Roncalli Catholic High School</div>
+              <div class="colegio-meta"><span class="tag priv">Privado católico</span><span class="tag info">Grade 9–12</span><span class="tag info">226 alumnos</span><span class="tag info">Clase de 16</span><span class="tag info">96% graduación</span></div>
+            </div>
+            <details><summary>Por qué encaja con el perfil</summary>
+            <div class="colegio-razon"><strong>La opción más personalizada y la de mejores resultados académicos.</strong> Con 226 alumnos en total y clases de 16, el estudiante no es un número: cada profesor le conoce por su nombre desde la primera semana. La tasa de graduación es del <strong>96%</strong> y entre los destinos universitarios de sus egresados figuran <strong>MIT, Purdue, Penn State y UW-Madison</strong> — poco habitual en un centro de este tamaño.<br><br>Es también la opción con <strong>mejor situación deportiva para un alumno internacional</strong>: en Roncalli, el primer año en Estados Unidos <em>sí</em> permite competir, sin el año de espera que imponen otros centros. Llegando en enero entra en baloncesto, bolos, hockey masculino, gimnasia, natación y danza, y en primavera atletismo, softball, fútbol femenino, golf, tenis y béisbol.<br><br>La oferta de música y artes escénicas es desproporcionadamente buena para su tamaño: coro de cámara, Wind Ensemble, dos niveles de Jazz Ensemble, orquesta, música de cámara, composición, teatro técnico (iluminación y sonido), teatro musical, tropa de improvisación y producción audiovisual. En asignaturas avanzadas: Computer Science Principles, Cálculo, Química, Física, Inglés e Historia de EE.UU. Español I–V, con nivel específico para hablantes nativos.<br><br>Como colegio lasaliano, la vida del centro gira en torno a una comunidad muy cohesionada: <em>Lasallian Youth Groups</em>, National Honor Society, Mock Trial, gobierno estudiantil y un <strong>International Club</strong> pensado precisamente para acoger a estudiantes como él. Manitowoc está a orillas del lago Michigan, entre Milwaukee y Green Bay.</div>
+            </details>
+          </div>
+        </div>
+      </div>
+      <div class="match-bar">
+        <div class="match-tag">Clases de 16 alumnos</div>
+        <div class="match-tag">96% graduación</div>
+        <div class="match-tag">Puede competir el 1er año</div>
+        <div class="match-tag">Destinos MIT · Purdue</div>
+        <div class="match-tag">Música y teatro de primer nivel</div>
+        <div class="match-tag">International Club</div>
+      </div>
+      <div class="nota-card"><strong>A tener en cuenta:</strong> es la opción más costosa y suma una <strong>cuota de matrícula de 1.250 $</strong> no incluida en el precio del programa. <strong>Aeropuerto más cercano:</strong> Green Bay Austin Straubel International (GRB).</div>
+    </div>
+
+  </div>
+
+  <!-- COMPARATIVA -->
+  <div class="section-title"><h2>Comparativa rápida</h2></div>
+  <div class="tabla-wrap">
+    <div class="tabla-scroll">
+      <table>
+        <thead>
+          <tr><th></th><th>★ Bonneville</th><th>Higley USD</th><th>Roncalli</th></tr>
+        </thead>
+        <tbody>
+          <tr><th>Precio semestre</th><td class="hi">16.200 €</td><td>17.650 €</td><td>19.000 €</td></tr>
+          <tr><th>Ubicación</th><td>Idaho Falls, ID</td><td>Gilbert, AZ</td><td>Manitowoc, WI</td></tr>
+          <tr><th>Tipo</th><td>Público</td><td>Público</td><td>Privado católico</td></tr>
+          <tr><th>Alumnos</th><td>1.092</td><td>~2.000 / campus</td><td class="hi">226</td></tr>
+          <tr><th>Tamaño de clase</th><td>25</td><td>22</td><td class="hi">16</td></tr>
+          <tr><th>Tasa de graduación</th><td>91%</td><td>91%</td><td class="hi">96%</td></tr>
+          <tr><th>Clima enero–junio</th><td>Invierno nevado → primavera</td><td class="hi">Suave y soleado (~300 días sol)</td><td>Invierno frío → primavera</td></tr>
+          <tr><th>Aeropuerto</th><td>Idaho Falls (IDA)</td><td class="hi">Phoenix (PHX)</td><td>Green Bay (GRB)</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <!-- EL PROGRAMA INCLUYE -->
+  <div class="section-title"><h2>El programa incluye</h2></div>
+  <div class="includes-wrap">
+    <div class="includes-head"><h3>📋 Todo lo que cubre My Language Quest · Programas F1</h3></div>
+    <div class="includes-body">
+      <div class="includes-grid">
+        <div>
+          <div class="col-title">Antes del viaje</div>
+          <ul class="inc-list">
+            <li>Reunión inicial en persona, teléfono o videoconferencia con padres o tutores</li>
+            <li>Examen ELTIS y entrevista personal online con el estudiante</li>
+            <li>Provisión de la información necesaria sobre el programa F1</li>
+            <li>Inscripción en el programa y matriculación en centro de secundaria en EE.UU.</li>
+            <li>Selección de familia anfitriona/internado en pensión completa, habitación individual o compartida</li>
+            <li>Seguro médico y de accidentes</li>
+            <li>Tasas y tramitación del visado F1, y reserva de cita en la Embajada</li>
+            <li>Programa formativo y de orientación para el estudiante <small>Obligatorio</small></li>
+            <li>Programa formativo y de orientación para los padres <small>No obligatorio</small></li>
+            <li>Dossier final detallando la experiencia en Estados Unidos</li>
+            <li>Pack sorpresa de My Language Quest</li>
+          </ul>
+        </div>
+        <div>
+          <div class="col-title">Durante el viaje</div>
+          <ul class="inc-list">
+            <li>Recibimiento en aeropuerto y traslados en destino al inicio y fin del programa</li>
+            <li>Asesoramiento en elección de asignaturas</li>
+            <li>Clases de inglés Cambridge y su libro</li>
+            <li>Libros de las asignaturas obligatorias</li>
+            <li>Transporte escolar</li>
+            <li>Taller de 3 sesiones con el docente de MIT, Óscar Corominas</li>
+            <li>Supervisión local de la organización americana: visitas, tutorías y emergencias 24h</li>
+            <li>Reportes periódicos del gestor estudiantil</li>
+            <li>Acompañamiento psicológico</li>
+            <li>Atención 24 horas en España para emergencias</li>
+            <li>Asesoramiento gratuito para acceso a universidades americanas — MLQ Pathways</li>
+            <li>Gestión individualizada de los viajes del estudiante</li>
+          </ul>
+        </div>
+        <div>
+          <div class="col-title">Después del viaje</div>
+          <ul class="inc-list">
+            <li>Recogida de los <em>transcripts</em> finales</li>
+            <li>Coordinación con el centro escolar y notario público</li>
+            <li>Apostilla de La Haya de las calificaciones</li>
+            <li>Presentación y seguimiento del expediente ante el Ministerio de Educación</li>
+          </ul>
+          <div style="margin-top:24px">
+            <div class="col-title">No incluido</div>
+            <ul class="inc-list no">
+              <li>Vuelos <small>MLQ puede gestionar la búsqueda, coste a cargo de la familia</small></li>
+              <li>Actividades extracurriculares de pago</li>
+              <li>Excursiones y viajes escolares</li>
+              <li>Material escolar adicional, uniformes y libros extra</li>
+              <li>Fotografía escolar y anuario</li>
+              <li>Transporte local mensual</li>
+              <li>Gastos de ocio personal</li>
+              <li>Cualquier gasto no mencionado explícitamente en «El programa incluye»</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="gestor-wrap">
+        <div class="gestor-title">Gestor estudiantil · se encarga de</div>
+        <div class="gestor-grid">
+          <div class="gestor-item">Seguimiento personalizado del desempeño</div>
+          <div class="gestor-item">Información a padres mensualmente</div>
+          <div class="gestor-item">Notas oficiales cada trimestre/semestre</div>
+          <div class="gestor-item">Asesoría en cambio de asignaturas</div>
+          <div class="gestor-item">Todas las tutorías necesarias</div>
+          <div class="gestor-item">Reuniones con padres y/o estudiante</div>
+          <div class="gestor-item">Apoyo en actividades extraescolares</div>
+          <div class="gestor-item">Resolución de situaciones con familia o centro</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- FORMAS DE PAGO -->
+  <div class="section-title"><h2>Formas de pago</h2></div>
+  <div class="payment-wrap">
+    <div class="payment-inner">
+      <div class="pay-title">💳 Condiciones económicas</div>
+      <div class="pay-subtitle">Semestre de primavera 2027 · el importe íntegro debe estar abonado antes del 1 de diciembre de 2026</div>
+      <div class="pay-steps">
+        <div class="pay-col">
+          <div class="pay-step-num">Paso 1 · Reserva de plaza</div>
+          <div class="pay-step-title">3.500 €</div>
+          <div class="pay-step-desc">A la firma del contrato. Con este pago se inicia la matriculación en el centro y la tramitación del visado F1.</div>
+        </div>
+        <div class="pay-col">
+          <div class="pay-step-num">Paso 2 · Resto del importe</div>
+          <div class="pay-step-title">Antes del 1 dic. 2026</div>
+          <div class="pay-step-desc">Importe restante según la opción elegida: 12.700 € (Bonneville) · 14.150 € (Higley) · 15.500 € (Roncalli). Este importe es el que se puede financiar.</div>
+        </div>
+      </div>
+      <div class="pay-note">Las inscripciones tardías deben cumplir con los plazos de pago ya vencidos en el momento de la inscripción. En la opción 3 (Roncalli Catholic) la cuota de matrícula del centro de 1.250 $ se abona aparte y no está incluida en el precio del programa. Bonneville School District ofrece reembolso íntegro en caso de denegación del visado.</div>
+    </div>
+  </div>
+
+  <!-- FINANCIACIÓN -->
+  <div class="section-title"><h2>Financia tu programa</h2></div>
+  <div class="financing-wrap">
+    <div class="financing-head">
+      <div class="financing-head-left">
+        <div class="fin-icon">💳</div>
+        <div>
+          <div class="fin-title">Paga a tu ritmo, sin preocupaciones</div>
+          <div class="fin-sub">Entrada de 3.500 € a la firma y el resto financiado · Aprobación rápida · 100% online · Sin comisión de apertura</div>
+        </div>
+      </div>
+      <div class="fin-badge">Hasta 36 meses</div>
+    </div>
+    <div class="financing-body">
+      <div class="fin-opcion-selector">
+        <div class="fin-opcion-label">Selecciona la opción del programa</div>
+        <div class="fin-opcion-btns">
+          <button class="fin-opcion-btn active" onclick="setOpcion(this, 16200)">
+            <span class="fin-opcion-nombre">⭐ Opción 1 · Bonneville HS</span>
+            <span class="fin-opcion-precio">16.200 €</span>
+          </button>
+          <button class="fin-opcion-btn" onclick="setOpcion(this, 17650)">
+            <span class="fin-opcion-nombre">Opción 2 · Higley USD</span>
+            <span class="fin-opcion-precio">17.650 €</span>
+          </button>
+          <button class="fin-opcion-btn" onclick="setOpcion(this, 19000)">
+            <span class="fin-opcion-nombre">Opción 3 · Roncalli Catholic</span>
+            <span class="fin-opcion-precio">19.000 €</span>
+          </button>
+        </div>
+      </div>
+      <div class="fin-plazo-wrap">
+        <div class="fin-plazo-label">Elige tu plazo de financiación</div>
+        <div class="fin-plazos">
+          <div class="fin-plazo active" onclick="setPlazo(this,12)">
+            <div class="fin-plazo-meses">12 meses</div>
+            <div class="fin-plazo-badge sin-intereses">TIN 0%</div>
+            <div class="fin-plazo-quien">¡MLQ asume los intereses!</div>
+          </div>
+          <div class="fin-plazo" onclick="setPlazo(this,18)">
+            <div class="fin-plazo-meses">18 meses</div>
+            <div class="fin-plazo-badge con-intereses">TIN 10,46%</div>
+            <div class="fin-plazo-quien">Intereses a cargo del cliente</div>
+          </div>
+          <div class="fin-plazo" onclick="setPlazo(this,24)">
+            <div class="fin-plazo-meses">24 meses</div>
+            <div class="fin-plazo-badge con-intereses">TIN 10,46%</div>
+            <div class="fin-plazo-quien">Intereses a cargo del cliente</div>
+          </div>
+          <div class="fin-plazo" onclick="setPlazo(this,36)">
+            <div class="fin-plazo-meses">36 meses</div>
+            <div class="fin-plazo-badge con-intereses">TIN 10,46%</div>
+            <div class="fin-plazo-quien">Intereses a cargo del cliente</div>
+          </div>
+        </div>
+      </div>
+      <div class="fin-resultado">
+        <div class="fin-resultado-main">
+          <div class="fin-cuota-label">Cuota mensual estimada</div>
+          <div class="fin-cuota-valor" id="cuotaValor">1.058,33 €</div>
+          <div class="fin-cuota-sub" id="cuotaSub">/mes · 12 pagos · TIN 0%</div>
+        </div>
+        <div class="fin-resultado-detalle">
+          <div class="fin-det-row">
+            <span class="fin-det-label">Importe del programa</span>
+            <span class="fin-det-val" id="detCapital">16.200 €</span>
+          </div>
+          <div class="fin-det-row">
+            <span class="fin-det-label">Entrada a la firma del contrato</span>
+            <span class="fin-det-val">− 3.500 €</span>
+          </div>
+          <div class="fin-det-row">
+            <span class="fin-det-label">Importe financiado</span>
+            <span class="fin-det-val" id="detFinanciado">12.700 €</span>
+          </div>
+          <div class="fin-det-row">
+            <span class="fin-det-label">Intereses totales</span>
+            <span class="fin-det-val fin-det-green" id="detIntereses">0 € · ¡MLQ los asume!</span>
+          </div>
+          <div class="fin-det-row fin-det-total">
+            <span class="fin-det-label">Total a pagar</span>
+            <span class="fin-det-val" id="detTotal">16.200 €</span>
+          </div>
+        </div>
+      </div>
+      <div class="fin-nota">ℹ️ Financiación sujeta a aprobación bancaria. La entrada de <strong>3.500 €</strong> se abona a la firma del contrato y el importe restante es el que se financia. Cuota orientativa. Sin comisión de apertura ni penalización por cancelación anticipada.</div>
+    </div>
+  </div>
+
+  <div class="footer-note">
+    My Language Quest · Programa F1 Premium · Semestre de primavera 2027<br>
+    Propuesta elaborada a partir de las fichas oficiales de los centros. Plazas sujetas a disponibilidad y a la aceptación del estudiante por parte del colegio.
+  </div>
+
+</main>
+
+<script>
+var _cap = 16200, _mes = 12, _ENTRADA = 3500;
+function _fmt(n,d){return n.toLocaleString('es-ES',{minimumFractionDigits:d||0,maximumFractionDigits:d||0})+' €';}
+function _cuota(c,t,m){if(t===0)return c/m;var r=(t/100)/12;return c*r/(1-Math.pow(1+r,-m));}
+function _update(){
+  var tin=_mes===12?0:10.46;
+  var fin=_cap-_ENTRADA;
+  var q=_cuota(fin,tin,_mes);
+  var tot=_ENTRADA+q*_mes;
+  var inter=q*_mes-fin;
+  document.getElementById('cuotaValor').textContent=_fmt(q,2);
+  document.getElementById('cuotaSub').textContent='/mes · '+_mes+' pagos · TIN '+(tin===0?'0%':'10,46%');
+  document.getElementById('detCapital').textContent=_fmt(Math.round(_cap));
+  document.getElementById('detFinanciado').textContent=_fmt(Math.round(fin));
+  document.getElementById('detTotal').textContent=_fmt(Math.round(tot));
+  if(tin===0){
+    document.getElementById('detIntereses').textContent='0 € · ¡MLQ los asume!';
+    document.getElementById('detIntereses').className='fin-det-val fin-det-green';
+  } else {
+    document.getElementById('detIntereses').textContent=_fmt(Math.round(inter));
+    document.getElementById('detIntereses').className='fin-det-val';
+  }
+}
+function setOpcion(btn,cap){_cap=cap;document.querySelectorAll('.fin-opcion-btn').forEach(function(b){b.classList.remove('active');});btn.classList.add('active');_update();}
+function setPlazo(el,m){_mes=m;document.querySelectorAll('.fin-plazo').forEach(function(p){p.classList.remove('active');});el.classList.add('active');_update();}
+_update();
+</script>
+
+</body>
+</html>
