@@ -1,0 +1,838 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Propuesta · Gustavo · Irlanda · My Language Quest</title>
+<link href="https://fonts.googleapis.com/css2?family=Fira+Sans:wght@300;400;500;600;700&family=Josefin+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --green:#2E7D32;--green-dark:#1B5E20;--green-mid:#388E3C;--green-light:#E8F5E9;--green-pale:#F1F8F1;
+  --gray-bg:#f0f4f0;--gray-card:#f8faf8;--gray-border:#d8e4d8;
+  --text:#0d1f0d;--text-mid:#3d5c3d;--text-light:#7a9a7a;--white:#ffffff;
+  --ireland-green:#169B62;--ireland-orange:#FF883E;
+}
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box;}
+body{font-family:'Fira Sans',sans-serif;background:var(--gray-bg);color:var(--text);}
+.header{background:var(--white);padding:18px 48px;display:flex;align-items:center;justify-content:space-between;position:relative;z-index:10;box-shadow:0 1px 0 var(--gray-border),0 4px 24px rgba(0,80,0,0.07);}
+.header::after{content:'';position:absolute;bottom:0;left:0;right:0;height:3px;background:linear-gradient(90deg,var(--ireland-orange),var(--white) 33%,var(--ireland-green));}
+.logo-area img{height:46px;width:auto;display:block;}
+.logo-texto{display:none;}
+.logo-texto-main{font-family:'Josefin Sans',sans-serif;font-size:22px;font-weight:700;letter-spacing:1px;color:var(--green-dark);line-height:1;}
+.logo-texto-main span{color:var(--ireland-orange);}
+.logo-texto-sub{font-family:'Josefin Sans',sans-serif;font-size:8px;letter-spacing:2.5px;text-transform:uppercase;color:var(--text-light);margin-top:4px;}
+.header-right{text-align:right;}
+.header-label{font-family:'Josefin Sans',sans-serif;font-size:9px;letter-spacing:3px;text-transform:uppercase;color:var(--text-light);}
+.header-year{font-family:'Josefin Sans',sans-serif;font-size:26px;font-weight:700;color:var(--green-dark);line-height:1;margin-top:2px;}
+.hero{background:linear-gradient(135deg,var(--green-dark) 0%,var(--green) 60%,var(--green-mid) 100%);position:relative;overflow:hidden;padding:44px 48px 38px;}
+.hero::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 70% 100% at 110% 50%,rgba(255,136,62,0.15) 0%,transparent 60%),radial-gradient(ellipse 50% 70% at -10% 80%,rgba(0,0,0,0.2) 0%,transparent 55%);}
+.hero-dots{position:absolute;inset:0;pointer-events:none;background-image:radial-gradient(rgba(255,255,255,0.06) 1px,transparent 1px);background-size:28px 28px;}
+.hero-flag{position:absolute;top:0;right:0;bottom:0;width:8px;background:linear-gradient(180deg,var(--ireland-orange) 33%,var(--white) 33%,var(--white) 66%,var(--ireland-green) 66%);opacity:0.25;}
+.hero-inner{position:relative;z-index:2;display:flex;align-items:flex-end;justify-content:space-between;gap:24px;flex-wrap:wrap;}
+.hero-tag{display:inline-flex;align-items:center;gap:8px;background:rgba(255,255,255,0.12);border:1px solid rgba(255,255,255,0.22);border-radius:20px;padding:4px 14px;font-size:10px;font-weight:600;letter-spacing:2px;text-transform:uppercase;color:rgba(255,255,255,0.75);margin-bottom:12px;}
+.hero-tag::before{content:'☘';font-size:12px;}
+.hero-name{font-family:'Josefin Sans',sans-serif;font-size:38px;font-weight:700;color:var(--white);line-height:1;margin-bottom:8px;}
+.hero-subtitle{font-size:13px;color:rgba(255,255,255,0.55);font-weight:300;}
+.hero-pills{display:flex;flex-wrap:wrap;gap:8px;margin-top:20px;}
+.hero-pill{display:flex;align-items:center;gap:6px;background:rgba(255,255,255,0.12);border:1px solid rgba(255,255,255,0.2);border-radius:8px;padding:6px 12px;font-size:11px;color:var(--white);font-weight:500;}
+.hero-precio{flex-shrink:0;background:rgba(0,0,0,0.2);border:1px solid rgba(255,255,255,0.15);border-radius:16px;padding:20px 28px;text-align:center;}
+.hero-precio-label{font-size:9px;letter-spacing:2px;text-transform:uppercase;color:rgba(255,255,255,0.5);margin-bottom:6px;font-weight:600;}
+.hero-precio-val{font-family:'Josefin Sans',sans-serif;font-size:32px;font-weight:700;color:#a5d6a7;line-height:1;}
+.hero-precio-sub{font-size:10px;color:rgba(255,255,255,0.4);margin-top:4px;}
+.hero-precio-badge{display:inline-block;background:rgba(255,136,62,0.3);border:1px solid rgba(255,136,62,0.5);color:#ffcc80;font-size:9px;font-weight:700;letter-spacing:1px;padding:3px 10px;border-radius:20px;margin-top:8px;text-transform:uppercase;}
+.main{max-width:1100px;margin:0 auto;padding:40px 24px 64px;}
+.section-title{display:flex;align-items:center;gap:12px;margin-bottom:24px;}
+.section-title h2{font-family:'Josefin Sans',sans-serif;font-size:11px;font-weight:700;letter-spacing:3px;text-transform:uppercase;color:var(--text-light);}
+.section-title::after{content:'';flex:1;height:1px;background:var(--gray-border);}
+.promo-wrap{position:relative;overflow:hidden;background:linear-gradient(135deg,#E65100 0%,var(--ireland-orange) 55%,#FFA726 100%);border-radius:16px;padding:24px 28px;margin-bottom:28px;box-shadow:0 6px 28px rgba(230,81,0,0.22);}
+.promo-wrap::before{content:'';position:absolute;inset:0;background-image:radial-gradient(rgba(255,255,255,0.10) 1px,transparent 1px);background-size:20px 20px;}
+.promo-inner{position:relative;z-index:2;}
+.promo-tag{display:inline-flex;align-items:center;gap:7px;background:rgba(0,0,0,0.22);border:1px solid rgba(255,255,255,0.35);border-radius:20px;padding:4px 13px;font-family:'Josefin Sans',sans-serif;font-size:9px;font-weight:700;letter-spacing:2.5px;text-transform:uppercase;color:#fff;margin-bottom:12px;}
+.promo-title{font-family:'Josefin Sans',sans-serif;font-size:21px;font-weight:700;color:#fff;line-height:1.2;margin-bottom:4px;}
+.promo-sub{font-size:12px;color:rgba(255,255,255,0.85);margin-bottom:18px;}
+.promo-opts{display:grid;grid-template-columns:1fr 1fr;gap:14px;}
+.promo-opt{background:rgba(255,255,255,0.95);border-radius:12px;padding:16px 18px;}
+.promo-opt-label{font-family:'Josefin Sans',sans-serif;font-size:8px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:#E65100;margin-bottom:6px;}
+.promo-opt-main{font-family:'Josefin Sans',sans-serif;font-size:22px;font-weight:700;color:var(--green-dark);line-height:1.1;margin-bottom:5px;}
+.promo-opt-desc{font-size:11px;color:var(--text-mid);line-height:1.5;}
+.promo-nota{font-size:11px;color:rgba(255,255,255,0.8);line-height:1.6;margin-top:16px;border-top:1px solid rgba(255,255,255,0.25);padding-top:13px;}
+.fin-desc-toggle{display:flex;align-items:center;gap:12px;background:#FFF3E0;border:1.5px solid var(--ireland-orange);border-radius:12px;padding:13px 16px;margin-bottom:22px;cursor:pointer;transition:all .2s;}
+.fin-desc-toggle:hover{box-shadow:0 4px 16px rgba(255,136,62,0.2);}
+.fin-desc-box{width:20px;height:20px;border-radius:5px;border:2px solid var(--ireland-orange);flex-shrink:0;display:flex;align-items:center;justify-content:center;font-size:13px;font-weight:700;color:#fff;background:#fff;}
+.fin-desc-toggle.on .fin-desc-box{background:var(--ireland-orange);}
+.fin-desc-txt{font-size:12px;color:#8a3b00;font-weight:600;line-height:1.4;}
+.fin-desc-txt small{display:block;font-weight:400;font-size:10.5px;color:#a55a1e;margin-top:2px;}
+.opcion-antes{font-size:11px;color:var(--text-light);text-decoration:line-through;}
+.opcion-promo{font-size:11px;font-weight:700;color:#E65100;}
+.colegio-topbar{display:flex;align-items:flex-start;justify-content:space-between;gap:12px;}
+.colegio-nota{flex-shrink:0;text-align:center;background:rgba(255,255,255,0.14);border:1px solid rgba(255,255,255,0.28);border-radius:10px;padding:6px 10px;}
+.colegio-nota-val{font-family:'Josefin Sans',sans-serif;font-size:16px;font-weight:700;color:#a5d6a7;line-height:1;}
+.colegio-nota-lbl{font-size:7px;letter-spacing:1.2px;text-transform:uppercase;color:rgba(255,255,255,0.55);margin-top:3px;font-weight:600;}
+.colegio-card.recomendado .colegio-nota{margin-top:30px;}
+.colegio-web{display:inline-flex;align-items:center;gap:6px;margin-top:12px;font-size:10.5px;font-weight:700;color:#fff;text-decoration:none;background:rgba(255,255,255,0.16);border:1px solid rgba(255,255,255,0.35);border-radius:20px;padding:5px 12px;transition:all .2s;}
+.colegio-web:hover{background:#fff;color:var(--green-dark);border-color:#fff;}
+.choice-box{display:flex;gap:14px;align-items:flex-start;background:var(--green-light);border:1.5px solid rgba(46,125,50,0.25);border-radius:12px;padding:16px 20px;margin-bottom:28px;}
+.choice-icon{font-size:22px;flex-shrink:0;}
+.choice-text{font-size:12px;color:var(--green-dark);line-height:1.6;}
+.choice-text strong{color:var(--green-dark);}
+.opciones-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(232px,1fr));gap:16px;margin-bottom:20px;}
+.opcion-card{background:var(--white);border-radius:14px;border:1.5px solid var(--gray-border);padding:20px 20px 18px;box-shadow:0 2px 16px rgba(0,80,0,0.06);display:flex;flex-direction:column;gap:8px;transition:transform .2s,box-shadow .2s,border-color .2s;}
+.opcion-card:hover{transform:translateY(-4px);box-shadow:0 12px 40px rgba(0,80,0,0.12);border-color:var(--green-mid);}
+.opcion-etiqueta{display:inline-block;align-self:flex-start;background:var(--green-light);border:1px solid rgba(46,125,50,0.3);color:var(--green-dark);font-family:'Josefin Sans',sans-serif;font-size:8px;font-weight:700;letter-spacing:2px;text-transform:uppercase;padding:3px 9px;border-radius:20px;}
+.opcion-dur{font-family:'Josefin Sans',sans-serif;font-size:17px;font-weight:700;color:var(--green-dark);line-height:1.2;}
+.opcion-fechas{font-size:12px;color:var(--text-mid);line-height:1.5;}
+.opcion-precio{font-family:'Josefin Sans',sans-serif;font-size:28px;font-weight:700;color:var(--green);line-height:1;margin-top:4px;}
+.opcion-meta{display:flex;flex-wrap:wrap;gap:5px;margin-top:6px;}
+.opcion-tag{background:var(--green-pale);border:1px solid var(--gray-border);border-radius:5px;padding:2px 8px;font-size:10px;color:var(--green-dark);font-weight:500;}
+.colegios-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:20px;margin-bottom:40px;}
+.colegio-card{background:var(--white);border-radius:16px;border:1.5px solid var(--gray-border);overflow:hidden;box-shadow:0 2px 16px rgba(0,80,0,0.06);position:relative;transition:transform .2s,box-shadow .2s,border-color .2s;}
+.colegio-card:hover{transform:translateY(-4px);box-shadow:0 12px 40px rgba(0,80,0,0.12);border-color:var(--green-mid);}
+.colegio-card.recomendado{border-color:var(--ireland-green);box-shadow:0 4px 24px rgba(22,155,98,0.15);}
+.badge-rec{position:absolute;top:14px;right:-32px;background:var(--ireland-green);color:var(--white);font-size:8px;font-weight:700;letter-spacing:1.5px;padding:5px 40px;transform:rotate(45deg);width:130px;text-align:center;z-index:10;}
+.colegio-header{background:linear-gradient(135deg,var(--green-dark),var(--green));padding:20px 22px 16px;}
+.colegio-zona{font-family:'Josefin Sans',sans-serif;font-size:8px;letter-spacing:3px;text-transform:uppercase;color:rgba(255,255,255,0.45);margin-bottom:6px;}
+.colegio-nombre{font-family:'Josefin Sans',sans-serif;font-size:17px;font-weight:700;color:var(--white);margin-bottom:4px;line-height:1.2;}
+.colegio-loc{font-size:11px;color:rgba(255,255,255,0.55);margin-bottom:12px;}
+.colegio-chips{display:flex;gap:6px;flex-wrap:wrap;}
+.chip{background:rgba(255,255,255,0.12);border:1px solid rgba(255,255,255,0.18);border-radius:6px;padding:3px 9px;font-size:9px;color:rgba(255,255,255,0.85);font-weight:600;}
+.chip.gold{background:rgba(255,200,0,0.2);border-color:rgba(255,200,0,0.4);color:#ffe082;}
+.colegio-body{padding:18px 20px;}
+.colegio-desc{font-size:12px;color:var(--text-mid);line-height:1.7;margin-bottom:14px;}
+.colegio-section-title{font-family:'Josefin Sans',sans-serif;font-size:8px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--text-light);margin-bottom:8px;}
+.extra-tags{display:flex;flex-wrap:wrap;gap:5px;margin-bottom:14px;}
+.extra-tag{background:var(--green-pale);border:1px solid var(--gray-border);border-radius:5px;padding:2px 8px;font-size:10px;color:var(--green-dark);font-weight:500;}
+.actividades-ciudad{font-size:11px;color:var(--text-mid);background:var(--gray-card);border-radius:8px;padding:10px 12px;border-left:3px solid var(--ireland-green);line-height:1.55;}
+.por-que{background:var(--green-light);border-left:3px solid var(--ireland-green);border-radius:0 8px 8px 0;padding:12px 14px;margin-top:14px;}
+.por-que-title{font-family:'Josefin Sans',sans-serif;font-size:8px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--green-dark);margin-bottom:8px;}
+.por-que-list{list-style:none;display:flex;flex-direction:column;gap:6px;}
+.por-que-list li{font-size:11px;color:var(--green-dark);line-height:1.6;display:flex;gap:8px;}
+.por-que-list li::before{content:'→';color:var(--ireland-green);font-weight:700;flex-shrink:0;}
+.match-bar{display:flex;gap:6px;flex-wrap:wrap;padding:12px 20px;border-top:1px solid var(--gray-border);background:linear-gradient(to right,var(--green-pale),var(--white));}
+.match-tag{display:flex;align-items:center;gap:4px;font-size:10px;font-weight:600;color:var(--green-dark);background:var(--green-light);border:1px solid rgba(46,125,50,0.25);border-radius:20px;padding:3px 10px;}
+.match-tag::before{content:'✓';font-size:9px;}
+.includes-wrap{background:var(--white);border-radius:16px;border:1.5px solid var(--gray-border);box-shadow:0 2px 16px rgba(0,80,0,0.05);overflow:hidden;margin-bottom:24px;}
+.includes-head{background:linear-gradient(135deg,var(--green-dark),var(--green));padding:20px 32px;}
+.includes-head h3{font-family:'Josefin Sans',sans-serif;font-size:14px;font-weight:700;color:var(--white);letter-spacing:1px;}
+.includes-body{padding:28px 32px;}
+.includes-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:32px;}
+.col-title{font-family:'Josefin Sans',sans-serif;font-size:9px;font-weight:700;letter-spacing:2.5px;text-transform:uppercase;color:var(--green-dark);margin-bottom:14px;padding-bottom:8px;border-bottom:2px solid var(--green-light);}
+.inc-list{list-style:none;display:flex;flex-direction:column;gap:8px;}
+.inc-list li{font-size:12px;color:var(--text-mid);display:flex;align-items:flex-start;gap:8px;line-height:1.55;}
+.inc-list li::before{content:'✓';color:var(--ireland-green);font-weight:700;font-size:11px;flex-shrink:0;margin-top:1px;}
+.inc-list.no li::before{content:'✗';color:#c62828;}
+.inc-list li small{font-size:10px;color:var(--text-light);display:block;margin-top:2px;}
+.gestor-wrap{background:linear-gradient(135deg,var(--green-dark),var(--green-mid));border-radius:12px;padding:20px 24px;margin-top:20px;}
+.gestor-title{font-family:'Josefin Sans',sans-serif;font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:rgba(255,255,255,0.6);margin-bottom:14px;}
+.gestor-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;}
+.gestor-item{background:rgba(255,255,255,0.08);border:1px solid rgba(255,255,255,0.12);border-radius:8px;padding:10px 12px;font-size:11px;color:rgba(255,255,255,0.85);line-height:1.4;}
+.gestor-item::before{content:'→';color:#a5d6a7;font-weight:700;margin-right:5px;}
+.financing-wrap{background:var(--white);border-radius:16px;border:1.5px solid var(--gray-border);box-shadow:0 2px 16px rgba(0,80,0,0.06);overflow:hidden;margin-bottom:24px;}
+.financing-head{background:linear-gradient(135deg,var(--green-dark),var(--green));padding:22px 32px;display:flex;align-items:center;justify-content:space-between;gap:16px;}
+.fin-icon{font-size:28px;flex-shrink:0;}
+.fin-title{font-family:'Josefin Sans',sans-serif;font-size:16px;font-weight:700;color:var(--white);margin-bottom:3px;}
+.fin-sub{font-size:11px;color:rgba(255,255,255,0.5);line-height:1.4;}
+.fin-badge{background:rgba(165,214,167,0.2);border:1px solid rgba(165,214,167,0.4);color:#a5d6a7;font-family:'Josefin Sans',sans-serif;font-size:11px;font-weight:700;letter-spacing:1px;padding:6px 14px;border-radius:20px;white-space:nowrap;}
+.financing-body{padding:28px 32px;}
+.fin-plazo-label{font-family:'Josefin Sans',sans-serif;font-size:9px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--text-light);margin-bottom:10px;}
+.fin-plazo-wrap{margin-bottom:24px;}
+.fin-plazos{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;}
+.fin-plazo{background:var(--gray-card);border:1.5px solid var(--gray-border);border-radius:12px;padding:14px 12px;cursor:pointer;text-align:center;transition:all .2s;}
+.fin-plazo:hover{border-color:var(--green-mid);transform:translateY(-2px);}
+.fin-plazo.active{border-color:var(--ireland-green);background:var(--green-light);box-shadow:0 4px 16px rgba(22,155,98,0.15);}
+.fin-plazo-meses{font-family:'Josefin Sans',sans-serif;font-size:15px;font-weight:700;color:var(--text);margin-bottom:6px;}
+.fin-plazo.active .fin-plazo-meses{color:var(--green-dark);}
+.fin-plazo-badge{display:inline-block;border-radius:20px;padding:2px 8px;font-size:9px;font-weight:700;margin-bottom:4px;}
+.fin-plazo-badge.sin{background:var(--green-light);color:var(--green-dark);border:1px solid rgba(46,125,50,0.3);}
+.fin-plazo-badge.con{background:#E8EAF6;color:#283593;border:1px solid rgba(40,53,147,0.2);}
+.fin-plazo-quien{font-size:9px;color:var(--text-light);line-height:1.3;}
+.fin-prog{background:var(--gray-card);border:1.5px solid var(--gray-border);border-radius:10px;padding:12px 10px;cursor:pointer;text-align:center;transition:all .2s;}
+.fin-prog:hover{border-color:var(--green-mid);}
+.fin-prog.active{border-color:var(--ireland-green);background:var(--green-light);}
+.fin-prog-dur{font-family:'Josefin Sans',sans-serif;font-size:11px;font-weight:700;color:var(--text);line-height:1.2;margin-bottom:4px;}
+.fin-prog.active .fin-prog-dur{color:var(--green-dark);}
+.fin-prog-imp{font-size:12px;font-weight:700;color:var(--green);}
+.fin-resultado{display:grid;grid-template-columns:auto 1fr;gap:24px;background:linear-gradient(135deg,var(--green-dark),var(--green));border-radius:14px;padding:24px 28px;margin-bottom:16px;align-items:center;}
+.fin-resultado-main{text-align:center;border-right:1px solid rgba(255,255,255,0.15);padding-right:24px;}
+.fin-cuota-label{font-size:10px;font-weight:600;letter-spacing:2px;text-transform:uppercase;color:rgba(255,255,255,0.5);margin-bottom:6px;}
+.fin-cuota-valor{font-family:'Josefin Sans',sans-serif;font-size:36px;font-weight:700;color:#a5d6a7;line-height:1;margin-bottom:4px;}
+.fin-cuota-sub{font-size:11px;color:rgba(255,255,255,0.45);}
+.fin-resultado-detalle{display:flex;flex-direction:column;gap:10px;}
+.fin-det-row{display:flex;justify-content:space-between;align-items:center;gap:12px;}
+.fin-det-label{font-size:12px;color:rgba(255,255,255,0.55);}
+.fin-det-val{font-size:13px;font-weight:600;color:var(--white);}
+.fin-det-green{color:#a5d6a7 !important;}
+.fin-det-total{border-top:1px solid rgba(255,255,255,0.15);padding-top:10px;margin-top:2px;}
+.fin-det-total .fin-det-label{color:rgba(255,255,255,0.7);font-weight:600;}
+.fin-det-total .fin-det-val{font-family:'Josefin Sans',sans-serif;font-size:16px;color:var(--white);}
+.fin-nota{font-size:11px;color:var(--text-light);line-height:1.6;background:var(--gray-card);border-radius:8px;padding:12px 16px;border-left:3px solid var(--green-light);}
+.payment-wrap{background:linear-gradient(135deg,var(--green-dark) 0%,var(--green) 60%,var(--green-mid) 100%);border-radius:16px;padding:32px;position:relative;overflow:hidden;margin-bottom:20px;}
+.payment-wrap::before{content:'';position:absolute;inset:0;background-image:radial-gradient(rgba(255,255,255,0.04) 1px,transparent 1px);background-size:22px 22px;}
+.payment-inner{position:relative;z-index:2;}
+.pay-title{font-family:'Josefin Sans',sans-serif;font-size:16px;font-weight:700;color:var(--white);margin-bottom:6px;}
+.pay-subtitle{font-size:12px;color:rgba(255,255,255,0.45);margin-bottom:20px;}
+.pay-steps-row{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-bottom:18px;}
+.pay-step-card{background:rgba(255,255,255,0.07);border:1px solid rgba(255,255,255,0.12);border-radius:12px;padding:18px 20px;}
+.pay-step-num{font-family:'Josefin Sans',sans-serif;font-size:9px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:#a5d6a7;margin-bottom:8px;}
+.pay-step-title{font-size:14px;font-weight:700;color:var(--white);margin-bottom:4px;}
+.pay-step-desc{font-size:11px;color:rgba(255,255,255,0.5);line-height:1.5;}
+.pay-step-amount{font-family:'Josefin Sans',sans-serif;font-size:22px;font-weight:700;color:#a5d6a7;margin-top:8px;}
+.pay-note{font-size:11px;color:rgba(255,255,255,0.3);line-height:1.65;font-style:italic;border-top:1px solid rgba(255,255,255,0.1);padding-top:14px;}
+@media(max-width:720px){
+  .header{padding:16px 20px;}.hero{padding:28px 20px 24px;}.hero-name{font-size:28px;}.hero-precio{display:none;}
+  .main{padding:28px 16px 48px;}.includes-grid{grid-template-columns:1fr;}.colegios-grid{grid-template-columns:1fr;}
+  .pay-steps-row{grid-template-columns:1fr;}.gestor-grid{grid-template-columns:repeat(2,1fr);}
+  .fin-plazos{grid-template-columns:repeat(2,1fr);}.fin-resultado{grid-template-columns:1fr;}
+  .promo-opts{grid-template-columns:1fr;}
+  .fin-resultado-main{border-right:none;border-bottom:1px solid rgba(255,255,255,0.15);padding-right:0;padding-bottom:20px;}
+}
+</style>
+</head>
+<body>
+
+<header class="header">
+  <div class="logo-area">
+    <img src="https://aescobarnic.github.io/Propuestas/logo-mlq.png" alt="My Language Quest" onerror="this.style.display='none';document.getElementById('logoTexto').style.display='block';">
+    <div class="logo-texto" id="logoTexto">
+      <div class="logo-texto-main">MY LANGUAGE <span>QUEST</span></div>
+      <div class="logo-texto-sub">Programas escolares en el extranjero</div>
+    </div>
+  </div>
+  <div class="header-right">
+    <div class="header-label">Programa Choice · Irlanda</div>
+    <div class="header-year">2026/27</div>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="hero-dots"></div>
+  <div class="hero-flag"></div>
+  <div class="hero-inner">
+    <div>
+      <div class="hero-tag">Propuesta personalizada · Irlanda</div>
+      <div class="hero-name">Gustavo</div>
+      <div class="hero-subtitle">Programa Choice · Trimestre o año escolar · Irlanda · 1º Bachillerato</div>
+      <div class="hero-pills">
+        <div class="hero-pill">🎓 1º Bachillerato · 5th Year</div>
+        <div class="hero-pill">💻 Objetivo: Ingeniería Informática</div>
+        <div class="hero-pill">🗣 Inglés muy bueno</div>
+        <div class="hero-pill">📚 Buen rendimiento académico</div>
+        <div class="hero-pill">✈️ Vuelos incluidos</div>
+        <div class="hero-pill">☘ 4 colegios a elegir</div>
+      </div>
+    </div>
+    <div class="hero-precio">
+      <div class="hero-precio-label">Programa Choice</div>
+      <div class="hero-precio-val">desde 9.900 €</div>
+      <div class="hero-precio-sub">trimestre con promo · vuelos incluidos</div>
+      <div class="hero-precio-badge">🔥 Promo últimas plazas</div>
+    </div>
+  </div>
+</section>
+
+<main class="main">
+
+  <div class="promo-wrap">
+    <div class="promo-inner">
+      <div class="promo-tag">🔥 Promoción últimas plazas</div>
+      <div class="promo-title">Descuento por reserva de últimas plazas</div>
+      <div class="promo-sub">Curso 2026/27 · El descuento se aplica sobre el precio del programa</div>
+      <div class="promo-opts">
+        <div class="promo-opt">
+          <div class="promo-opt-label">Trimestre</div>
+          <div class="promo-opt-main">− 300 €</div>
+          <div class="promo-opt-desc"><strong>10.200 € → 9.900 €</strong> · vuelos de ida y vuelta incluidos</div>
+        </div>
+        <div class="promo-opt">
+          <div class="promo-opt-label">Año escolar completo</div>
+          <div class="promo-opt-main">− 800 €</div>
+          <div class="promo-opt-desc"><strong>16.950 € → 16.150 €</strong> con 2 vuelos · <strong>18.200 € → 17.400 €</strong> con 4 vuelos</div>
+        </div>
+      </div>
+      <div class="promo-nota">Promoción válida para la reserva de las últimas plazas del curso 2026/27. El descuento se aplica al último pago del programa.</div>
+    </div>
+  </div>
+
+  <div class="choice-box">
+    <div class="choice-icon">☘</div>
+    <div class="choice-text">
+      <strong>Programa Choice · Todo incluido:</strong> con el Programa Choice la familia elige el colegio y el
+      precio es el mismo para cualquiera de los colegios day school de esta propuesta. En todas las modalidades
+      <strong>los vuelos van incluidos</strong>. Para 1º de Bachillerato el curso equivalente en Irlanda es el
+      <strong>5th Year</strong>, primer año del ciclo de dos del Leaving Certificate: un curso académicamente
+      serio, no un año de experiencia. Por eso los cuatro colegios están <strong>filtrados y ordenados por su
+      oferta STEM</strong> — Matemáticas, Física, Engineering y Computer Science — pensando en que Gustavo quiere
+      orientarse a Ingeniería Informática. Cada uno lleva su valoración de encaje con su perfil.
+    </div>
+  </div>
+
+  <!-- DURACIONES Y PRECIOS -->
+  <div class="section-title"><h2>Duraciones y precios</h2></div>
+  <div class="opciones-grid">
+
+    <div class="opcion-card">
+      <div class="opcion-etiqueta">Opción más corta</div>
+      <div class="opcion-dur">Trimestre</div>
+      <div class="opcion-fechas">📅 Del 2 de septiembre al 19 de diciembre de 2026</div>
+      <div class="opcion-precio">9.900 €</div>
+      <div><span class="opcion-antes">10.200 €</span> <span class="opcion-promo">−300 € promo</span></div>
+      <div class="opcion-meta">
+        <span class="opcion-tag">✈️ 2 vuelos incluidos</span>
+        <span class="opcion-tag">≈ 3,5 meses</span>
+        <span class="opcion-tag">1er trimestre irlandés</span>
+      </div>
+    </div>
+
+    <div class="opcion-card">
+      <div class="opcion-etiqueta">Curso completo</div>
+      <div class="opcion-dur">Año escolar · 2 vuelos</div>
+      <div class="opcion-fechas">📅 Año escolar completo 2026/27</div>
+      <div class="opcion-precio">16.150 €</div>
+      <div><span class="opcion-antes">16.950 €</span> <span class="opcion-promo">−800 € promo</span></div>
+      <div class="opcion-meta">
+        <span class="opcion-tag">✈️ 2 vuelos incluidos</span>
+        <span class="opcion-tag">Ida y vuelta</span>
+        <span class="opcion-tag">Máximo avance académico</span>
+      </div>
+    </div>
+
+    <div class="opcion-card">
+      <div class="opcion-etiqueta">Curso completo · con Navidad</div>
+      <div class="opcion-dur">Año escolar · 4 vuelos</div>
+      <div class="opcion-fechas">📅 Año escolar completo 2026/27</div>
+      <div class="opcion-precio">17.400 €</div>
+      <div><span class="opcion-antes">18.200 €</span> <span class="opcion-promo">−800 € promo</span></div>
+      <div class="opcion-meta">
+        <span class="opcion-tag">✈️ 4 vuelos incluidos</span>
+        <span class="opcion-tag">Navidad en casa</span>
+        <span class="opcion-tag">Sin coste extra de vuelos</span>
+      </div>
+    </div>
+
+  </div>
+  <div class="choice-box" style="margin-bottom:36px;">
+    <div class="choice-icon">✈️</div>
+    <div class="choice-text">
+      <strong>¿Qué significa 2 o 4 vuelos?</strong> Con <strong>2 vuelos</strong> se incluye el trayecto de ida
+      al inicio del programa y el de vuelta al final. Con <strong>4 vuelos</strong> se incluyen además la vuelta
+      a casa por Navidad y el regreso a Irlanda en enero. En todos los casos MLQ gestiona la reserva y el
+      acompañamiento en aeropuerto, y el coste del vuelo va incluido en el precio del programa.
+    </div>
+  </div>
+
+  <!-- COLEGIOS -->
+  <div class="section-title"><h2>Colegios a elegir</h2></div>
+  <div class="colegios-grid">
+
+    <div class="colegio-card recomendado">
+      <div class="badge-rec">★ RECOMENDADO</div>
+      <div class="colegio-header">
+        <div class="colegio-topbar">
+          <div>
+            <div class="colegio-zona">Condado de Monaghan · Ciudad pequeña</div>
+            <div class="colegio-nombre">Beech Hill College</div>
+            <div class="colegio-loc">📍 Monaghan ciudad · Carretera N2 Dublín–Derry · Monaghan</div>
+          </div>
+          <div class="colegio-nota">
+            <div class="colegio-nota-val">9/10</div>
+            <div class="colegio-nota-lbl">Encaje STEM</div>
+          </div>
+        </div>
+        <div class="colegio-chips">
+          <div class="chip">Mixto</div>
+          <div class="chip">Público</div>
+          <div class="chip">900 alumnos</div>
+          <div class="chip">8.000 habitantes</div>
+          <div class="chip gold">☘ Identidad STEM</div>
+        </div>
+        <a class="colegio-web" href="https://www.bhc.ie/virtual-tour" target="_blank" rel="noopener">🔗 Tour virtual · www.bhc.ie</a>
+      </div>
+      <div class="colegio-body">
+        <div class="colegio-desc">
+          De los cuatro, el colegio con la identidad STEM más clara y el que mejor encaja con el perfil de Gustavo.
+          Cuenta con departamentos propios de <strong>Computers/Coding, Mathematics, Metalwork/Engineering,
+          Science, Graphics y STEAM</strong>, y su oferta de Senior Cycle recoge Matemáticas, Física, Engineering
+          y otras materias científico-técnicas. Es además el mayor de la selección (900 alumnos), lo que se
+          traduce en más combinaciones posibles de asignaturas.
+        </div>
+        <div class="colegio-section-title">Asignaturas y actividades destacadas</div>
+        <div class="extra-tags">
+          <span class="extra-tag">💻 Computers · Coding</span>
+          <span class="extra-tag">🧮 Mathematics</span>
+          <span class="extra-tag">🧪 Física · Ciencias</span>
+          <span class="extra-tag">🔧 Metalwork · Engineering</span>
+          <span class="extra-tag">📐 Graphics</span>
+          <span class="extra-tag">🧬 STEAM</span>
+          <span class="extra-tag">🤖 Robótica · Programación</span>
+          <span class="extra-tag">🔬 BT Young Scientist</span>
+          <span class="extra-tag">🏆 Microsoft Dreamspace</span>
+          <span class="extra-tag">🎓 Acceso anticipado DCU</span>
+          <span class="extra-tag">🎭 Teatro · Musical</span>
+          <span class="extra-tag">🏉 Rugby · Baloncesto</span>
+        </div>
+        <div class="colegio-section-title" style="margin-top:12px;">Actividades en la zona</div>
+        <div class="actividades-ciudad">
+          Lough Muckno Leisure Park — vela, kayak, escalada, arquería, orienteering, pesca, senderismo y golf ·
+          Íontas Arts &amp; Community Theatre · gimnasios y clubes de fútbol, baloncesto y ciclismo · centros
+          ecuestres · park run · karts, bolera y campo de césped artificial · biblioteca, clases de música y danza.
+        </div>
+        <div class="por-que">
+          <div class="por-que-title">Por qué encaja con Gustavo</div>
+          <ul class="por-que-list">
+            <li>Departamentos propios de Computers/Coding, Engineering, Graphics y STEAM: el entorno más alineado con Ingeniería Informática</li>
+            <li>Senior Cycle con Matemáticas, Física y Engineering — exactamente la base que necesita para su itinerario</li>
+            <li>900 alumnos: el abanico de asignaturas más amplio de los cuatro, clave para montar un 5th Year coherente</li>
+            <li>Programa de acceso anticipado a la Dublin City University para alumnos de alto rendimiento académico</li>
+          </ul>
+        </div>
+      </div>
+      <div class="match-bar">
+        <div class="match-tag">Computers · Coding</div>
+        <div class="match-tag">Maths · Física</div>
+        <div class="match-tag">Engineering</div>
+        <div class="match-tag">Oferta más amplia</div>
+      </div>
+    </div>
+
+    <div class="colegio-card">
+      
+      <div class="colegio-header">
+        <div class="colegio-topbar">
+          <div>
+            <div class="colegio-zona">Condado de Dublín · Suburbio</div>
+            <div class="colegio-nombre">Blakestown Community School</div>
+            <div class="colegio-loc">📍 Blanchardstown, Dublín · A 10 km del centro · Junto al aeropuerto</div>
+          </div>
+          <div class="colegio-nota">
+            <div class="colegio-nota-val">8,5/10</div>
+            <div class="colegio-nota-lbl">Encaje STEM</div>
+          </div>
+        </div>
+        <div class="colegio-chips">
+          <div class="chip">Mixto</div>
+          <div class="chip">Público</div>
+          <div class="chip">487 alumnos</div>
+          <div class="chip">Área de 110.000 hab.</div>
+          <div class="chip gold">☘ Computer Science</div>
+        </div>
+        <a class="colegio-web" href="https://blakestowncs.ie/leaving-certificate/" target="_blank" rel="noopener">🔗 Leaving Certificate · blakestowncs.ie</a>
+      </div>
+      <div class="colegio-body">
+        <div class="colegio-desc">
+          Su programa de Leaving Certificate lleva <strong>Matemáticas</strong> como materia troncal y, entre las
+          optativas, <strong>Física/Química, Engineering y Technical Drawing</strong>, además de Biología. El colegio
+          incorpora también <strong>Computer Science</strong> entre sus asignaturas, lo que lo convierte en una
+          opción muy interesante para Gustavo. A ello se suma la comodidad de Dublín: junto al aeropuerto y con
+          transporte público en la puerta.
+        </div>
+        <div class="colegio-section-title">Asignaturas y actividades destacadas</div>
+        <div class="extra-tags">
+          <span class="extra-tag">💻 Computer Science</span>
+          <span class="extra-tag">🧮 Matemáticas (troncal)</span>
+          <span class="extra-tag">🧪 Física · Química</span>
+          <span class="extra-tag">🔧 Engineering</span>
+          <span class="extra-tag">📐 Technical Drawing</span>
+          <span class="extra-tag">🧬 Biología</span>
+          <span class="extra-tag">🔬 Club de ciencia</span>
+          <span class="extra-tag">♟ Ajedrez</span>
+          <span class="extra-tag">🏀 Baloncesto</span>
+          <span class="extra-tag">🏃 Atletismo · Cross</span>
+          <span class="extra-tag">🏋️ Sala de fitness</span>
+          <span class="extra-tag">🌿 Escuela Verde</span>
+        </div>
+        <div class="colegio-section-title" style="margin-top:12px;">Actividades en la zona</div>
+        <div class="actividades-ciudad">
+          Toda la oferta de Dublín: centros de ocio con piscina y gimnasio · Phoenix Park, parques y playas ·
+          fútbol, rugby, baloncesto y tenis · kickboxing y gimnasia · clubes de golf y de vela · Croke Park,
+          Aviva Stadium y RDS · clubes de atletismo de alto nivel · cines, teatros y museos · transporte
+          público en toda la ciudad.
+        </div>
+        <div class="por-que">
+          <div class="por-que-title">Por qué encaja con Gustavo</div>
+          <ul class="por-que-list">
+            <li>Computer Science entre las asignaturas del colegio — coincidencia directa con lo que quiere estudiar</li>
+            <li>Matemáticas como materia troncal, con Física/Química, Engineering y Technical Drawing como optativas</li>
+            <li>Junto al aeropuerto de Dublín: traslados mínimos y visitas de la familia mucho más sencillas</li>
+            <li>Transporte público en la puerta y toda la oferta científica y cultural de la capital</li>
+          </ul>
+        </div>
+      </div>
+      <div class="match-bar">
+        <div class="match-tag">Computer Science</div>
+        <div class="match-tag">Maths troncal</div>
+        <div class="match-tag">Engineering</div>
+        <div class="match-tag">Dublín · Aeropuerto</div>
+      </div>
+    </div>
+
+    <div class="colegio-card">
+      
+      <div class="colegio-header">
+        <div class="colegio-topbar">
+          <div>
+            <div class="colegio-zona">Condado de Dublín · Suburbio</div>
+            <div class="colegio-nombre">Árdscoil La Salle</div>
+            <div class="colegio-loc">📍 Raheny, Dublín Northside · A 7 km del centro · Cerca del aeropuerto y de la costa</div>
+          </div>
+          <div class="colegio-nota">
+            <div class="colegio-nota-val">8,5/10</div>
+            <div class="colegio-nota-lbl">Encaje STEM</div>
+          </div>
+        </div>
+        <div class="colegio-chips">
+          <div class="chip">Mixto</div>
+          <div class="chip">Público</div>
+          <div class="chip">177 alumnos</div>
+          <div class="chip">Suburbio de Dublín</div>
+          <div class="chip gold">☘ Grupos muy reducidos</div>
+        </div>
+        <a class="colegio-web" href="https://www.ardscoillasalle.ie/principals-welcome" target="_blank" rel="noopener">🔗 Bienvenida del director · www.ardscoillasalle.ie</a>
+      </div>
+      <div class="colegio-body">
+        <div class="colegio-desc">
+          Colegio pequeño en Raheny, en el Northside de Dublín, cerca del aeropuerto y no lejos de la costa. Su
+          Senior Cycle ofrece <strong>Matemáticas, Física, Química y Engineering</strong>, además de Construction
+          Studies, y cuenta con <strong>laboratorios de ciencias y aulas específicas de Engineering y Technical
+          Drawing</strong>. Con 177 alumnos la atención es prácticamente individual — una ventaja notable en un
+          curso académicamente exigente como 5th Year.
+        </div>
+        <div class="colegio-section-title">Asignaturas y actividades destacadas</div>
+        <div class="extra-tags">
+          <span class="extra-tag">🧮 Matemáticas</span>
+          <span class="extra-tag">🧪 Física · Química</span>
+          <span class="extra-tag">🔧 Engineering</span>
+          <span class="extra-tag">📐 Technical Drawing</span>
+          <span class="extra-tag">🏗 Construction Studies</span>
+          <span class="extra-tag">🔬 Laboratorios de ciencias</span>
+          <span class="extra-tag">♟ Club de ajedrez</span>
+          <span class="extra-tag">🎨 Club de arte</span>
+          <span class="extra-tag">🎭 Musical escolar</span>
+          <span class="extra-tag">📖 Club de deberes</span>
+          <span class="extra-tag">🚴 Salidas en bicicleta</span>
+          <span class="extra-tag">🏀 Baloncesto · Bádminton</span>
+        </div>
+        <div class="colegio-section-title" style="margin-top:12px;">Actividades en la zona</div>
+        <div class="actividades-ciudad">
+          Toda la oferta de Dublín: centros de ocio con piscina y gimnasio · Phoenix Park, parques y playas
+          cercanas · fútbol, rugby, baloncesto y tenis · gimnasia y kickboxing · clubes de golf y de vela ·
+          Croke Park, Aviva Stadium y RDS · clubes de atletismo de alto nivel · cines, teatros y museos ·
+          transporte público en toda la ciudad.
+        </div>
+        <div class="por-que">
+          <div class="por-que-title">Por qué encaja con Gustavo</div>
+          <ul class="por-que-list">
+            <li>Senior Cycle con Matemáticas, Física, Química y Engineering: el itinerario científico-técnico completo</li>
+            <li>Laboratorios de ciencias y aulas propias de Engineering y Technical Drawing</li>
+            <li>Solo 177 alumnos: seguimiento casi individual en el primer año del Leaving Certificate</li>
+            <li>Dublín Northside, cerca del aeropuerto y de la costa, con todo el transporte público de la ciudad</li>
+          </ul>
+        </div>
+      </div>
+      <div class="match-bar">
+        <div class="match-tag">Física · Química</div>
+        <div class="match-tag">Engineering</div>
+        <div class="match-tag">Grupos reducidos</div>
+        <div class="match-tag">Dublín · Costa</div>
+      </div>
+    </div>
+
+    <div class="colegio-card">
+      
+      <div class="colegio-header">
+        <div class="colegio-topbar">
+          <div>
+            <div class="colegio-zona">Condado de Meath · Ciudad pequeña</div>
+            <div class="colegio-nombre">St. Ciaran's Community School</div>
+            <div class="colegio-loc">📍 Kells · A 16 km de Navan · A 35 min de Dublín · Meath</div>
+          </div>
+          <div class="colegio-nota">
+            <div class="colegio-nota-val">7,5–8/10</div>
+            <div class="colegio-nota-lbl">Encaje STEM</div>
+          </div>
+        </div>
+        <div class="colegio-chips">
+          <div class="chip">Mixto</div>
+          <div class="chip">Público</div>
+          <div class="chip">592 alumnos</div>
+          <div class="chip">6.300 habitantes</div>
+          <div class="chip gold">☘ Abanico académico amplio</div>
+        </div>
+        <a class="colegio-web" href="https://www.stciaranscs.ie" target="_blank" rel="noopener">🔗 Web del colegio · www.stciaranscs.ie</a>
+      </div>
+      <div class="colegio-body">
+        <div class="colegio-desc">
+          Un colegio sólido, con un abanico académico amplio y un claustro que incluye especialistas en
+          <strong>Matemáticas, Ciencias, Engineering, Graphics y Construction Studies</strong>. Combina asignaturas
+          académicas y prácticas, y da mucha importancia a los resultados académicos. Todo ello en un entorno de
+          pueblo irlandés auténtico a 35 minutos de Dublín — la inmersión lingüística más intensa de los cuatro.
+        </div>
+        <div class="colegio-section-title">Asignaturas y actividades destacadas</div>
+        <div class="extra-tags">
+          <span class="extra-tag">🧮 Matemáticas</span>
+          <span class="extra-tag">🔬 Ciencias</span>
+          <span class="extra-tag">🔧 Engineering</span>
+          <span class="extra-tag">📐 Graphics</span>
+          <span class="extra-tag">🏗 Construction Studies</span>
+          <span class="extra-tag">🗣 Debate · Oratoria</span>
+          <span class="extra-tag">⚽ Fútbol · Gaélico</span>
+          <span class="extra-tag">🏀 Baloncesto</span>
+          <span class="extra-tag">🏉 Rugby</span>
+          <span class="extra-tag">🏃 Atletismo · Cross</span>
+          <span class="extra-tag">⛳ Golf</span>
+          <span class="extra-tag">🐴 Equitación</span>
+        </div>
+        <div class="colegio-section-title" style="margin-top:12px;">Actividades en la zona</div>
+        <div class="actividades-ciudad">
+          Centro de ocio con piscina y gimnasio · parques forestales y Spire of Lloyd · club de golf de primer
+          nivel · centros ecuestres de nivel internacional · club de atletismo y de balonmano · tenis, arquería
+          y pesca · artes marciales y gimnasia · clases de arte, música y danza · museo y teatro · biblioteca,
+          scouts y clubes juveniles.
+        </div>
+        <div class="por-que">
+          <div class="por-que-title">Por qué encaja con Gustavo</div>
+          <ul class="por-que-list">
+            <li>Claustro con especialistas en Matemáticas, Ciencias, Engineering, Graphics y Construction Studies</li>
+            <li>Abanico académico amplio y foco declarado en los resultados académicos</li>
+            <li>Entorno de pueblo a 35 minutos de Dublín: la inmersión en inglés más intensa, con logística sencilla</li>
+            <li>Oferta deportiva muy variada: atletas campeones de All-Ireland y finalistas de Leinster en oratoria</li>
+          </ul>
+        </div>
+      </div>
+      <div class="match-bar">
+        <div class="match-tag">Engineering · Graphics</div>
+        <div class="match-tag">Inmersión total</div>
+        <div class="match-tag">35 min de Dublín</div>
+        <div class="match-tag">Deporte variado</div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- EL PROGRAMA INCLUYE -->
+  <div class="section-title"><h2>El programa incluye</h2></div>
+  <div class="includes-wrap">
+    <div class="includes-head"><h3>☘ Todo lo que cubre My Language Quest · Programa Choice</h3></div>
+    <div class="includes-body">
+      <div class="includes-grid">
+        <div>
+          <div class="col-title">Antes del viaje</div>
+          <ul class="inc-list">
+            <li>Reunión inicial (presencial, teléfono o videoconferencia) con padres o tutores</li>
+            <li>Entrevista personal online con el estudiante</li>
+            <li>Provisión de información completa sobre el programa en Irlanda</li>
+            <li>Inscripción en el programa y matriculación en el colegio elegido</li>
+            <li>Selección de familia anfitriona en régimen de pensión completa y habitación individual</li>
+            <li>Un único estudiante hispanohablante por familia garantizado</li>
+            <li>Seguro médico privado y de responsabilidad civil</li>
+            <li>Libros de asignaturas obligatorias</li>
+            <li>Uniforme escolar</li>
+            <li>Masterclass de cultura irlandesa — 10 horas online en inglés</li>
+            <li>Orientación presencial pre-viaje en Madrid</li>
+            <li>Welcome pack sorpresa de My Language Quest</li>
+          </ul>
+        </div>
+        <div>
+          <div class="col-title">Durante el viaje</div>
+          <ul class="inc-list">
+            <li>Vuelos incluidos <small>2 trayectos (ida y vuelta) o 4 trayectos (con ida y vuelta en Navidad), según la duración elegida</small></li>
+            <li>Recibimiento en aeropuerto y traslados en destino <small>Uno por cada trayecto de la opción elegida</small></li>
+            <li>Asesoramiento en elección de asignaturas</li>
+            <li>Clases de inglés Cambridge y libro incluido</li>
+            <li>Taller de 3 sesiones con docente del MIT (Oscar Corominas)</li>
+            <li>Coordinador local en Irlanda: visitas, tutorías y emergencias 24h</li>
+            <li>Acompañamiento psicológico</li>
+            <li>Atención 24h en España para emergencias</li>
+            <li>Apoyo para matriculación en actividades extraescolares</li>
+            <li>Gestión de cambio de familia si fuera necesario</li>
+          </ul>
+          <div class="gestor-wrap" style="margin-top:16px;">
+            <div class="gestor-title">Gestor estudiantil · se encarga de</div>
+            <div class="gestor-grid">
+              <div class="gestor-item">Seguimiento personalizado del desempeño</div>
+              <div class="gestor-item">Información a padres mensualmente</div>
+              <div class="gestor-item">Notas oficiales cada trimestre</div>
+              <div class="gestor-item">Asesoría en cambio de asignaturas</div>
+              <div class="gestor-item">Todas las tutorías necesarias</div>
+              <div class="gestor-item">Reuniones con padres y/o estudiante</div>
+              <div class="gestor-item">Apoyo en actividades extraescolares</div>
+              <div class="gestor-item">Resolución de situaciones con familia o centro</div>
+            </div>
+          </div>
+        </div>
+        <div>
+          <div class="col-title">Después del viaje</div>
+          <ul class="inc-list">
+            <li>Convalidación ante el Ministerio de Educación</li>
+            <li>Recogida de notas y traducciones juradas</li>
+            <li>Dossier final detallando la experiencia en Irlanda</li>
+          </ul>
+          <div style="margin-top:24px">
+            <div class="col-title">No incluido</div>
+            <ul class="inc-list no">
+              <li>Vuelos adicionales a los incluidos en la opción elegida <small>MLQ gestiona la búsqueda; el coste corre a cargo de la familia</small></li>
+              <li>Actividades extracurriculares de pago</li>
+              <li>Excursiones y viajes escolares</li>
+              <li>Material escolar adicional</li>
+              <li>Fotografía escolar y anuario</li>
+              <li>Transporte local mensual</li>
+              <li>Y todo aquello que no esté recogido en el apartado «El programa incluye»</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- FINANCIACIÓN -->
+  <div class="section-title"><h2>Financia tu programa</h2></div>
+  <div class="financing-wrap">
+    <div class="financing-head">
+      <div style="display:flex;align-items:center;gap:16px;">
+        <div class="fin-icon">💳</div>
+        <div>
+          <div class="fin-title">Paga a tu ritmo, sin preocupaciones</div>
+          <div class="fin-sub">Entrada de 3.500 € y el resto financiado · Aprobación rápida · 100% online · Sin comisión de apertura</div>
+        </div>
+      </div>
+      <div class="fin-badge">Hasta 36 meses</div>
+    </div>
+    <div class="financing-body">
+      <div class="fin-plazo-wrap">
+        <div class="fin-plazo-label">1 · Elige la duración del programa</div>
+        <div class="fin-plazos" style="grid-template-columns:repeat(3,1fr);">
+          <div class="fin-prog active" onclick="setPrograma(this,10200,300,'Trimestre · sept–dic')">
+            <div class="fin-prog-dur">Trimestre<br>sept–dic</div>
+            <div class="fin-prog-imp">10.200 €</div>
+          </div>
+          <div class="fin-prog" onclick="setPrograma(this,16950,800,'Año escolar · 2 vuelos')">
+            <div class="fin-prog-dur">Año escolar<br>2 vuelos</div>
+            <div class="fin-prog-imp">16.950 €</div>
+          </div>
+          <div class="fin-prog" onclick="setPrograma(this,18200,800,'Año escolar · 4 vuelos')">
+            <div class="fin-prog-dur">Año escolar<br>4 vuelos</div>
+            <div class="fin-prog-imp">18.200 €</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="fin-plazo-wrap">
+        <div class="fin-desc-toggle" id="descToggle" onclick="toggleDesc()">
+          <div class="fin-desc-box" id="descBox"></div>
+          <div class="fin-desc-txt" id="descTxt">Aplicar la promo de 300 € de descuento
+            <small>Descuento por reserva de últimas plazas del curso 2026/27</small>
+          </div>
+        </div>
+        <div class="fin-plazo-label">2 · Elige tu plazo · <span id="progLabel">Trimestre · sept–dic · 10.200 €</span> · entrada 3.500 € + <span id="progFin">6.700 €</span> financiados</div>
+        <div class="fin-plazos">
+          <div class="fin-plazo active" onclick="setPlazo(this,12)">
+            <div class="fin-plazo-meses">12 meses</div>
+            <div class="fin-plazo-badge sin">TIN 0%</div>
+            <div class="fin-plazo-quien">¡MLQ asume los intereses!</div>
+          </div>
+          <div class="fin-plazo" onclick="setPlazo(this,18)">
+            <div class="fin-plazo-meses">18 meses</div>
+            <div class="fin-plazo-badge con">TIN 10,46%</div>
+            <div class="fin-plazo-quien">Intereses a cargo del cliente</div>
+          </div>
+          <div class="fin-plazo" onclick="setPlazo(this,24)">
+            <div class="fin-plazo-meses">24 meses</div>
+            <div class="fin-plazo-badge con">TIN 10,46%</div>
+            <div class="fin-plazo-quien">Intereses a cargo del cliente</div>
+          </div>
+          <div class="fin-plazo" onclick="setPlazo(this,36)">
+            <div class="fin-plazo-meses">36 meses</div>
+            <div class="fin-plazo-badge con">TIN 10,46%</div>
+            <div class="fin-plazo-quien">Intereses a cargo del cliente</div>
+          </div>
+        </div>
+      </div>
+      <div class="fin-resultado">
+        <div class="fin-resultado-main">
+          <div class="fin-cuota-label">Cuota mensual estimada</div>
+          <div class="fin-cuota-valor" id="cuotaValor">558,33 €</div>
+          <div class="fin-cuota-sub" id="cuotaSub">/mes · 12 pagos · TIN 0%</div>
+        </div>
+        <div class="fin-resultado-detalle">
+          <div class="fin-det-row">
+            <span class="fin-det-label">Importe del programa</span>
+            <span class="fin-det-val" id="detImporte">10.200 €</span>
+          </div>
+          <div class="fin-det-row">
+            <span class="fin-det-label">Entrada a la firma del contrato</span>
+            <span class="fin-det-val">− 3.500 €</span>
+          </div>
+          <div class="fin-det-row">
+            <span class="fin-det-label">Importe financiado</span>
+            <span class="fin-det-val" id="detFinanciado">6.700 €</span>
+          </div>
+          <div class="fin-det-row">
+            <span class="fin-det-label">Intereses totales</span>
+            <span class="fin-det-val fin-det-green" id="detIntereses">0 € · ¡MLQ los asume!</span>
+          </div>
+          <div class="fin-det-row fin-det-total">
+            <span class="fin-det-label">Total a pagar (entrada + cuotas)</span>
+            <span class="fin-det-val" id="detTotal">10.200 €</span>
+          </div>
+        </div>
+      </div>
+      <div class="fin-nota">ℹ️ En todos los casos se abona una <strong>entrada de 3.500 €</strong> a la firma del contrato y el importe restante se financia en el plazo elegido. Financiación sujeta a aprobación bancaria. Sin comisión de apertura ni penalización por cancelación anticipada.</div>
+    </div>
+  </div>
+
+  <!-- FORMAS DE PAGO -->
+  <div class="section-title"><h2>Formas de pago</h2></div>
+  <div class="payment-wrap">
+    <div class="payment-inner">
+      <div class="pay-title">💳 Condiciones económicas · Programa Choice</div>
+      <div class="pay-subtitle">Irlanda 2026/27 · Trimestre o año escolar completo</div>
+      <div class="pay-steps-row">
+        <div class="pay-step-card">
+          <div class="pay-step-num">Paso 1 · Firma del contrato</div>
+          <div class="pay-step-title">Inicio de aplicación y matriculación</div>
+          <div class="pay-step-amount">3.500 €</div>
+          <div class="pay-step-desc" style="margin-top:6px;">El seguro de cancelación (500 €) debe contratarse y abonarse en este momento si se desea</div>
+        </div>
+        <div class="pay-step-card">
+          <div class="pay-step-num">Paso 2 · Confirmación de plaza</div>
+          <div class="pay-step-title">A la confirmación en el colegio</div>
+          <div class="pay-step-amount">4.000 €</div>
+          <div class="pay-step-desc" style="margin-top:6px;">Una vez el colegio confirma la plaza del estudiante</div>
+        </div>
+        <div class="pay-step-card">
+          <div class="pay-step-num">Paso 3 · Fecha límite</div>
+          <div class="pay-step-title">Resto del importe</div>
+          <div class="pay-step-amount">Antes del 1 de junio</div>
+          <div class="pay-step-desc" style="margin-top:6px;">En inscripciones fuera de plazo, los importes ya vencidos se abonan en la firma y la confirmación, y el resto antes de la salida</div>
+        </div>
+      </div>
+      <div class="pay-note">El seguro de anulación e interrupción cubre gastos de cancelación por diferentes causas. Su coste es de 500 € y se emite a los 15 días de la firma del contrato. Su importe no es reembolsable bajo ninguna circunstancia. Los importes de los pasos 1 y 2 son los mismos para todas las duraciones; el resto varía según la opción elegida.</div>
+    </div>
+  </div>
+
+</main>
+
+<script>
+var _mes=12,_base=10200,_descMax=300,_desc=0,_prog='Trimestre · sept–dic',_entrada=3500;
+function _fmt(n,d){d=d||0;var neg=n<0;n=Math.abs(n);var s=n.toFixed(d);var pe=s.split('.');var ent=pe[0].replace(/\B(?=(\d{3})+(?!\d))/g,'.');return (neg?'−':'')+ent+(d?','+pe[1]:'')+' €';}
+function _cuota(c,t,m){if(t===0)return c/m;var r=(t/100)/12;return c*r/(1-Math.pow(1+r,-m));}
+function _update(){
+  var _cap=_base-_desc;
+  var fin=_cap-_entrada;
+  var tin=_mes===12?0:10.46;var q=_cuota(fin,tin,_mes);var tot=q*_mes;var inter=tot-fin;
+  document.getElementById('cuotaValor').textContent=_fmt(q,2);
+  document.getElementById('cuotaSub').textContent='/mes · '+_mes+' pagos · TIN '+(tin===0?'0%':'10,46%');
+  document.getElementById('detImporte').textContent=_fmt(_cap);
+  document.getElementById('detFinanciado').textContent=_fmt(fin);
+  document.getElementById('detTotal').textContent=_fmt(Math.round(_entrada+tot));
+  document.getElementById('progLabel').textContent=_prog+' · '+_fmt(_cap);
+  document.getElementById('descTxt').innerHTML='Aplicar la promo de '+_fmt(_descMax)+' de descuento<small>Descuento por reserva de \u00faltimas plazas del curso 2026/27</small>';
+  document.getElementById('progFin').textContent=_fmt(fin);
+  if(tin===0){document.getElementById('detIntereses').textContent='0 € · ¡MLQ los asume!';document.getElementById('detIntereses').className='fin-det-val fin-det-green';}
+  else{document.getElementById('detIntereses').textContent=_fmt(Math.round(inter));document.getElementById('detIntereses').className='fin-det-val';}
+}
+function setPlazo(el,m){_mes=m;document.querySelectorAll('.fin-plazo').forEach(function(p){p.classList.remove('active');});el.classList.add('active');_update();}
+function toggleDesc(){_desc=_desc?0:_descMax;var t=document.getElementById('descToggle');t.classList.toggle('on',_desc>0);document.getElementById('descBox').textContent=_desc?'\u2713':'';_update();}
+function setPrograma(el,c,dmax,label){_base=c;_descMax=dmax;_prog=label;if(_desc>0){_desc=dmax;}document.querySelectorAll('.fin-prog').forEach(function(p){p.classList.remove('active');});el.classList.add('active');_update();}
+_update();
+</script>
+</body>
+</html>
