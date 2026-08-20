@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-<!-- build:20260820-104826 -->
+<!-- build:20260820-105044 -->
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Propuesta · Jeru · My Language Quest</title>
@@ -432,108 +432,9 @@ details[open] summary::before{transform:rotate(90deg);}
     </div>
   </div>
 
-  <!-- FINANCIACIÓN -->
-  <div class="section-title"><h2>Financia tu programa</h2></div>
-  <div class="financing-wrap">
-    <div class="financing-head">
-      <div class="financing-head-left">
-        <div class="fin-icon">💳</div>
-        <div>
-          <div class="fin-title">Paga a tu ritmo, sin preocupaciones</div>
-          <div class="fin-sub">Financiación flexible · Aprobación rápida · 100% online · Sin comisión de apertura</div>
-        </div>
-      </div>
-      <div class="fin-badge">Hasta 36 meses</div>
-    </div>
-    <div class="financing-body">
-      <div class="fin-plazo-wrap">
-        <div class="fin-plazo-label">Elige tu plazo de financiación</div>
-        <div class="fin-plazos">
-          <div class="fin-plazo active" onclick="setPlazo(this,12)">
-            <div class="fin-plazo-meses">12 meses</div>
-            <div class="fin-plazo-badge sin-intereses">TIN 0%</div>
-            <div class="fin-plazo-quien">¡MLQ asume los intereses!</div>
-          </div>
-          <div class="fin-plazo" onclick="setPlazo(this,18)">
-            <div class="fin-plazo-meses">18 meses</div>
-            <div class="fin-plazo-badge con-intereses">TIN 10,46%</div>
-            <div class="fin-plazo-quien">Intereses a cargo del cliente</div>
-          </div>
-          <div class="fin-plazo" onclick="setPlazo(this,24)">
-            <div class="fin-plazo-meses">24 meses</div>
-            <div class="fin-plazo-badge con-intereses">TIN 10,46%</div>
-            <div class="fin-plazo-quien">Intereses a cargo del cliente</div>
-          </div>
-          <div class="fin-plazo" onclick="setPlazo(this,36)">
-            <div class="fin-plazo-meses">36 meses</div>
-            <div class="fin-plazo-badge con-intereses">TIN 10,46%</div>
-            <div class="fin-plazo-quien">Intereses a cargo del cliente</div>
-          </div>
-        </div>
-      </div>
-      <div class="fin-resultado">
-        <div class="fin-resultado-main">
-          <div class="fin-cuota-label">Cuota mensual estimada</div>
-          <div class="fin-cuota-valor" id="cuotaValor">229,17 €</div>
-          <div class="fin-cuota-sub" id="cuotaSub">/mes · 12 pagos · TIN 0%</div>
-        </div>
-        <div class="fin-resultado-detalle">
-          <div class="fin-det-row">
-            <span class="fin-det-label">Honorarios MLQ</span>
-            <span class="fin-det-val" id="detCapital">5.500 €</span>
-          </div>
-          <div class="fin-det-row">
-            <span class="fin-det-label">Entrada requerida (50%)</span>
-            <span class="fin-det-val" id="detEntrada">2.750 €</span>
-          </div>
-          <div class="fin-det-row">
-            <span class="fin-det-label">Importe financiado (50% restante)</span>
-            <span class="fin-det-val" id="detFinanciado">2.750 €</span>
-          </div>
-          <div class="fin-det-row">
-            <span class="fin-det-label">Intereses totales</span>
-            <span class="fin-det-val fin-det-green" id="detIntereses">0 € · ¡MLQ los asume!</span>
-          </div>
-          <div class="fin-det-row fin-det-total">
-            <span class="fin-det-label">Total a pagar (financiado)</span>
-            <span class="fin-det-val" id="detTotal">2.750 €</span>
-          </div>
-        </div>
-      </div>
-      <div class="fin-nota">ℹ️ Simulación calculada sobre los <strong>honorarios de My Language Quest (5.500 €)</strong>, único importe facturado por MLQ. La matrícula del colegio queda fuera de esta financiación. La familia debe aportar un <strong>50% de entrada</strong> sobre el importe del programa; el <strong>50% restante</strong> es el importe financiable con Sabadell Consumer Finance. Financiación sujeta a aprobación bancaria. Cuota orientativa. Sin comisión de apertura ni penalización por cancelación anticipada.</div>
-    </div>
-  </div>
 
 </main>
 
-<script>
-var _cap = 5500, _mes = 12;
-function _fmt(n,d){return n.toLocaleString('es-ES',{minimumFractionDigits:d||0,maximumFractionDigits:d||0})+' €';}
-function _cuota(c,t,m){if(t===0)return c/m;var r=(t/100)/12;return c*r/(1-Math.pow(1+r,-m));}
-function _update(){
-  var tin=_mes===12?0:10.46;
-  var entrada=_cap*0.5;
-  var financiado=_cap-entrada;
-  var q=_cuota(financiado,tin,_mes);
-  var tot=q*_mes;
-  var inter=tot-financiado;
-  document.getElementById('cuotaValor').textContent=_fmt(q,2);
-  document.getElementById('cuotaSub').textContent='/mes · '+_mes+' pagos · TIN '+(tin===0?'0%':'10,46%');
-  document.getElementById('detCapital').textContent=_fmt(Math.round(_cap));
-  document.getElementById('detEntrada').textContent=_fmt(Math.round(entrada));
-  document.getElementById('detFinanciado').textContent=_fmt(Math.round(financiado));
-  document.getElementById('detTotal').textContent=_fmt(Math.round(tot));
-  if(tin===0){
-    document.getElementById('detIntereses').textContent='0 € · ¡MLQ los asume!';
-    document.getElementById('detIntereses').className='fin-det-val fin-det-green';
-  } else {
-    document.getElementById('detIntereses').textContent=_fmt(Math.round(inter));
-    document.getElementById('detIntereses').className='fin-det-val';
-  }
-}
-function setPlazo(el,m){_mes=m;document.querySelectorAll('.fin-plazo').forEach(function(p){p.classList.remove('active');});el.classList.add('active');_update();}
-_update();
-</script>
 
 </body>
 </html>
