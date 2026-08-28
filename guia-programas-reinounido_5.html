@@ -1,0 +1,722 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Programas · Reino Unido 2027/28 · My Language Quest</title>
+<link href="https://fonts.googleapis.com/css2?family=Fira+Sans:wght@300;400;500;600;700&family=Josefin+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --navy:#0B2D5B;--navy-dark:#071F40;--navy-mid:#12437E;--navy-light:#E8EFF8;--navy-pale:#F4F7FC;
+  --gray-bg:#eff2f7;--gray-card:#f8fafd;--gray-border:#d6dfec;
+  --text:#0a1628;--text-mid:#3c516e;--text-light:#7b8ca6;--white:#ffffff;
+  --uk-red:#C8102E;--uk-blue:#012169;--accent:#9DC1F0;
+}
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box;}
+body{font-family:'Fira Sans',sans-serif;background:var(--gray-bg);color:var(--text);}
+.header{background:var(--white);padding:18px 48px;display:flex;align-items:center;justify-content:space-between;position:relative;z-index:10;box-shadow:0 1px 0 var(--gray-border),0 4px 24px rgba(0,30,80,0.07);}
+.header::after{content:'';position:absolute;bottom:0;left:0;right:0;height:3px;background:linear-gradient(90deg,var(--uk-blue),var(--white) 50%,var(--uk-red));}
+.logo-area img{height:46px;width:auto;display:block;}
+.header-right{text-align:right;}
+.header-label{font-family:'Josefin Sans',sans-serif;font-size:9px;letter-spacing:3px;text-transform:uppercase;color:var(--text-light);}
+.header-year{font-family:'Josefin Sans',sans-serif;font-size:26px;font-weight:700;color:var(--navy);line-height:1;margin-top:2px;}
+.hero{background:linear-gradient(135deg,var(--navy-dark) 0%,var(--navy) 60%,var(--navy-mid) 100%);position:relative;overflow:hidden;padding:44px 48px 38px;}
+.hero::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 70% 100% at 110% 50%,rgba(200,16,46,0.18) 0%,transparent 60%),radial-gradient(ellipse 50% 70% at -10% 80%,rgba(0,0,0,0.25) 0%,transparent 55%);}
+.hero-dots{position:absolute;inset:0;pointer-events:none;background-image:radial-gradient(rgba(255,255,255,0.06) 1px,transparent 1px);background-size:28px 28px;}
+.hero-flag{position:absolute;top:0;right:0;bottom:0;width:8px;background:linear-gradient(180deg,var(--uk-blue) 33%,var(--white) 33%,var(--white) 66%,var(--uk-red) 66%);opacity:0.35;}
+.hero-inner{position:relative;z-index:2;display:flex;align-items:flex-end;justify-content:space-between;gap:24px;flex-wrap:wrap;}
+.hero-tag{display:inline-flex;align-items:center;gap:8px;background:rgba(255,255,255,0.12);border:1px solid rgba(255,255,255,0.22);border-radius:20px;padding:4px 14px;font-size:10px;font-weight:600;letter-spacing:2px;text-transform:uppercase;color:rgba(255,255,255,0.78);margin-bottom:12px;}
+.hero-tag::before{content:'';width:14px;height:9px;border-radius:1px;background:linear-gradient(180deg,var(--uk-blue) 33%,var(--white) 33%,var(--white) 66%,var(--uk-red) 66%);flex-shrink:0;}
+.hero-name{font-family:'Josefin Sans',sans-serif;font-size:38px;font-weight:700;color:var(--white);line-height:1;margin-bottom:8px;}
+.hero-subtitle{font-size:13px;color:rgba(255,255,255,0.6);font-weight:300;}
+.hero-pills{display:flex;flex-wrap:wrap;gap:8px;margin-top:20px;}
+.hero-pill{display:flex;align-items:center;gap:6px;background:rgba(255,255,255,0.12);border:1px solid rgba(255,255,255,0.2);border-radius:8px;padding:6px 12px;font-size:11px;color:var(--white);font-weight:500;}
+.hero-precio{flex-shrink:0;background:rgba(0,0,0,0.22);border:1px solid rgba(255,255,255,0.15);border-radius:16px;padding:20px 28px;text-align:center;}
+.hero-precio-label{font-size:9px;letter-spacing:2px;text-transform:uppercase;color:rgba(255,255,255,0.55);margin-bottom:6px;font-weight:600;}
+.hero-precio-val{font-family:'Josefin Sans',sans-serif;font-size:32px;font-weight:700;color:var(--accent);line-height:1;}
+.hero-precio-sub{font-size:10px;color:rgba(255,255,255,0.45);margin-top:4px;}
+.hero-precio-badge{display:inline-block;background:rgba(200,16,46,0.35);border:1px solid rgba(200,16,46,0.6);color:#ffc9d1;font-size:9px;font-weight:700;letter-spacing:1px;padding:3px 10px;border-radius:20px;margin-top:8px;text-transform:uppercase;}
+.main{max-width:1100px;margin:0 auto;padding:40px 24px 64px;}
+.section-title{display:flex;align-items:center;gap:12px;margin-bottom:24px;margin-top:8px;}
+.section-title h2{font-family:'Josefin Sans',sans-serif;font-size:11px;font-weight:700;letter-spacing:3px;text-transform:uppercase;color:var(--text-light);white-space:nowrap;}
+.section-title::after{content:'';flex:1;height:1px;background:var(--gray-border);}
+
+/* PROMO */
+.promo{display:flex;gap:16px;align-items:center;background:linear-gradient(135deg,var(--uk-red),#9c0c24);border-radius:14px;padding:18px 24px;margin-bottom:28px;box-shadow:0 4px 20px rgba(200,16,46,0.2);}
+.promo-icon{font-size:26px;flex-shrink:0;}
+.promo-text{font-size:13px;color:rgba(255,255,255,0.95);line-height:1.6;}
+.promo-text strong{color:var(--white);}
+.promo-text small{display:block;font-size:10.5px;color:rgba(255,255,255,0.7);margin-top:4px;}
+
+/* INTRO BOX */
+.choice-box{display:flex;gap:14px;align-items:flex-start;background:var(--navy-light);border:1.5px solid rgba(11,45,91,0.2);border-radius:12px;padding:16px 20px;margin-bottom:28px;}
+.choice-icon{font-size:22px;flex-shrink:0;}
+.choice-text{font-size:12.5px;color:var(--navy-dark);line-height:1.7;}
+
+/* PRECIOS */
+.precios-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-bottom:16px;}
+.precio-card{background:var(--white);border-radius:16px;border:1.5px solid var(--gray-border);overflow:hidden;box-shadow:0 2px 16px rgba(0,30,80,0.06);position:relative;transition:transform .2s,box-shadow .2s;}
+.precio-card:hover{transform:translateY(-4px);box-shadow:0 12px 40px rgba(0,30,80,0.12);}
+.precio-card.destacada{border-color:var(--navy);box-shadow:0 4px 24px rgba(11,45,91,0.16);}
+.badge-rec{position:absolute;top:14px;right:-32px;background:var(--uk-red);color:var(--white);font-size:8px;font-weight:700;letter-spacing:1.5px;padding:5px 40px;transform:rotate(45deg);width:130px;text-align:center;z-index:10;}
+.precio-head{background:linear-gradient(135deg,var(--navy-dark),var(--navy));padding:20px 22px 18px;}
+.precio-dur{font-family:'Josefin Sans',sans-serif;font-size:8px;letter-spacing:3px;text-transform:uppercase;color:rgba(255,255,255,0.5);margin-bottom:6px;}
+.precio-nombre{font-family:'Josefin Sans',sans-serif;font-size:19px;font-weight:700;color:var(--white);margin-bottom:10px;line-height:1.2;}
+.precio-val{font-family:'Josefin Sans',sans-serif;font-size:30px;font-weight:700;color:var(--accent);line-height:1;}
+.precio-desde{font-size:10px;color:rgba(255,255,255,0.45);margin-top:5px;}
+.precio-body{padding:16px 20px 18px;}
+.precio-row{display:flex;justify-content:space-between;gap:10px;font-size:11.5px;padding:7px 0;border-bottom:1px dashed var(--gray-border);}
+.precio-row:last-child{border-bottom:none;}
+.precio-row span:first-child{color:var(--text-light);}
+.precio-row span:last-child{color:var(--text-mid);font-weight:600;text-align:right;}
+.visa-chip{display:inline-block;background:var(--navy-light);border:1px solid rgba(11,45,91,0.2);color:var(--navy-dark);border-radius:6px;padding:3px 9px;font-size:10px;font-weight:600;}
+.precio-nota{display:flex;gap:9px;align-items:flex-start;background:#FDECEF;border:1px solid rgba(200,16,46,0.25);border-radius:9px;padding:10px 12px;margin-top:14px;font-size:11px;color:#8c0c20;line-height:1.55;}
+.precio-nota span{flex-shrink:0;font-size:13px;line-height:1.2;}
+.nota-precios{font-size:11px;color:var(--text-light);line-height:1.65;background:var(--white);border-radius:10px;padding:14px 18px;border-left:3px solid var(--uk-red);margin-bottom:40px;box-shadow:0 2px 12px rgba(0,30,80,0.04);}
+
+/* GENERIC CARD */
+.card{background:var(--white);border-radius:16px;border:1.5px solid var(--gray-border);box-shadow:0 2px 16px rgba(0,30,80,0.05);overflow:hidden;margin-bottom:24px;}
+.card-head{background:linear-gradient(135deg,var(--navy-dark),var(--navy));padding:20px 32px;}
+.card-head h3{font-family:'Josefin Sans',sans-serif;font-size:14px;font-weight:700;color:var(--white);letter-spacing:1px;}
+.card-head p{font-size:11px;color:rgba(255,255,255,0.5);margin-top:4px;}
+.card-body{padding:28px 32px;}
+
+/* FICHA */
+.ficha-grid{column-count:2;column-gap:40px;}
+.ficha-row{display:flex;gap:14px;padding:12px 0;border-bottom:1px dashed var(--gray-border);align-items:flex-start;break-inside:avoid;-webkit-column-break-inside:avoid;}
+.ficha-ico{font-size:16px;flex-shrink:0;width:22px;text-align:center;}
+.ficha-label{font-family:'Josefin Sans',sans-serif;font-size:8.5px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--text-light);margin-bottom:3px;}
+.ficha-val{font-size:12px;color:var(--text-mid);line-height:1.6;}
+
+/* TABLA */
+table{width:100%;border-collapse:collapse;font-size:12px;}
+th{background:var(--navy-pale);font-family:'Josefin Sans',sans-serif;font-size:9px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--navy-dark);text-align:left;padding:12px 16px;border-bottom:2px solid var(--gray-border);}
+td{padding:12px 16px;border-bottom:1px solid var(--gray-border);color:var(--text-mid);vertical-align:top;}
+tr:last-child td{border-bottom:none;}
+td.num{text-align:right;font-weight:600;white-space:nowrap;color:var(--text);}
+tr.sin-sup td.num{color:#1B7A3D;}
+.table-wrap{overflow-x:auto;}
+
+/* LISTAS */
+.includes-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:32px;}
+.col-title{font-family:'Josefin Sans',sans-serif;font-size:9px;font-weight:700;letter-spacing:2.5px;text-transform:uppercase;color:var(--navy-dark);margin-bottom:14px;padding-bottom:8px;border-bottom:2px solid var(--navy-light);}
+.inc-list{list-style:none;display:flex;flex-direction:column;gap:8px;}
+.inc-list li{font-size:12px;color:var(--text-mid);line-height:1.55;position:relative;padding-left:18px;}
+.inc-list li::before{content:'✓';color:var(--navy);font-weight:700;font-size:11px;position:absolute;left:0;top:0;line-height:1.55;}
+.inc-list.no li::before{content:'✗';color:var(--uk-red);}
+.inc-list li small{font-size:10px;color:var(--text-light);display:block;margin-top:2px;}
+.gestor-wrap{background:linear-gradient(135deg,var(--navy-dark),var(--navy-mid));border-radius:12px;padding:20px 24px;margin-top:20px;}
+.gestor-title{font-family:'Josefin Sans',sans-serif;font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:rgba(255,255,255,0.6);margin-bottom:14px;}
+.gestor-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;}
+.gestor-item{background:rgba(255,255,255,0.08);border:1px solid rgba(255,255,255,0.12);border-radius:8px;padding:10px 12px;font-size:11px;color:rgba(255,255,255,0.85);line-height:1.4;}
+.gestor-item::before{content:'→';color:var(--accent);font-weight:700;margin-right:5px;}
+
+/* PERFIL / CUESTIONARIO */
+.perfil-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;}
+.perfil-item{background:var(--gray-card);border:1.5px solid var(--gray-border);border-radius:12px;padding:16px 18px;}
+.perfil-ico{font-size:20px;margin-bottom:8px;display:block;}
+.perfil-t{font-size:12.5px;font-weight:700;color:var(--navy-dark);margin-bottom:4px;}
+.perfil-d{font-size:11px;color:var(--text-light);line-height:1.55;}
+.test-box{display:flex;gap:16px;align-items:center;flex-wrap:wrap;justify-content:space-between;background:var(--navy-light);border:1.5px solid rgba(11,45,91,0.2);border-radius:12px;padding:18px 22px;margin-top:18px;}
+.test-text{font-size:12.5px;color:var(--navy-dark);line-height:1.6;max-width:640px;}
+.btn{display:inline-block;background:var(--uk-red);color:var(--white);text-decoration:none;font-family:'Josefin Sans',sans-serif;font-size:12px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;padding:12px 22px;border-radius:8px;white-space:nowrap;transition:background .2s,transform .2s;}
+.btn:hover{background:#a00c24;transform:translateY(-2px);}
+.btn.navy{background:var(--navy);}
+.btn.navy:hover{background:var(--navy-dark);}
+.btn.ghost{background:transparent;border:1.5px solid rgba(255,255,255,0.35);color:rgba(255,255,255,0.9);}
+.btn.ghost:hover{background:rgba(255,255,255,0.12);border-color:rgba(255,255,255,0.6);}
+.cta-btns{display:flex;gap:12px;justify-content:center;flex-wrap:wrap;}
+
+/* FINANCIACION */
+.financing-head{background:linear-gradient(135deg,var(--navy-dark),var(--navy));padding:22px 32px;display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap;}
+.fin-icon{font-size:28px;flex-shrink:0;}
+.fin-title{font-family:'Josefin Sans',sans-serif;font-size:16px;font-weight:700;color:var(--white);margin-bottom:3px;}
+.fin-sub{font-size:11px;color:rgba(255,255,255,0.5);line-height:1.4;}
+.fin-badge{background:rgba(157,193,240,0.2);border:1px solid rgba(157,193,240,0.4);color:var(--accent);font-family:'Josefin Sans',sans-serif;font-size:11px;font-weight:700;letter-spacing:1px;padding:6px 14px;border-radius:20px;white-space:nowrap;}
+.fin-plazo-label{font-family:'Josefin Sans',sans-serif;font-size:9px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--text-light);margin-bottom:10px;}
+.fin-plazo-wrap{margin-bottom:24px;}
+.fin-plazos{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;}
+.fin-plazos.tres{grid-template-columns:repeat(3,1fr);}
+.fin-plazo{background:var(--gray-card);border:1.5px solid var(--gray-border);border-radius:12px;padding:14px 12px;cursor:pointer;text-align:center;transition:all .2s;}
+.fin-plazo:hover{border-color:var(--navy-mid);transform:translateY(-2px);}
+.fin-plazo.active{border-color:var(--navy);background:var(--navy-light);box-shadow:0 4px 16px rgba(11,45,91,0.15);}
+.fin-plazo-meses{font-family:'Josefin Sans',sans-serif;font-size:15px;font-weight:700;color:var(--text);margin-bottom:6px;}
+.fin-plazo.active .fin-plazo-meses{color:var(--navy-dark);}
+.fin-plazo-badge{display:inline-block;border-radius:20px;padding:2px 8px;font-size:9px;font-weight:700;margin-bottom:4px;}
+.fin-plazo-badge.sin{background:#E4F3E9;color:#1B7A3D;border:1px solid rgba(27,122,61,0.3);}
+.fin-plazo-badge.con{background:var(--navy-light);color:var(--navy);border:1px solid rgba(11,45,91,0.2);}
+.fin-plazo-quien{font-size:9px;color:var(--text-light);line-height:1.3;}
+.fin-resultado{display:grid;grid-template-columns:auto 1fr;gap:24px;background:linear-gradient(135deg,var(--navy-dark),var(--navy));border-radius:14px;padding:24px 28px;margin-bottom:16px;align-items:center;}
+.fin-resultado-main{text-align:center;border-right:1px solid rgba(255,255,255,0.15);padding-right:24px;}
+.fin-cuota-label{font-size:10px;font-weight:600;letter-spacing:2px;text-transform:uppercase;color:rgba(255,255,255,0.5);margin-bottom:6px;}
+.fin-cuota-valor{font-family:'Josefin Sans',sans-serif;font-size:36px;font-weight:700;color:var(--accent);line-height:1;margin-bottom:4px;}
+.fin-cuota-sub{font-size:11px;color:rgba(255,255,255,0.45);}
+.fin-resultado-detalle{display:flex;flex-direction:column;gap:10px;}
+.fin-det-row{display:flex;justify-content:space-between;align-items:center;gap:12px;}
+.fin-det-label{font-size:12px;color:rgba(255,255,255,0.55);}
+.fin-det-val{font-size:13px;font-weight:600;color:var(--white);}
+.fin-det-green{color:#A8E6BC !important;}
+.fin-det-total{border-top:1px solid rgba(255,255,255,0.15);padding-top:10px;margin-top:2px;}
+.fin-det-total .fin-det-label{color:rgba(255,255,255,0.7);font-weight:600;}
+.fin-det-total .fin-det-val{font-family:'Josefin Sans',sans-serif;font-size:16px;color:var(--white);}
+.fin-nota{font-size:11px;color:var(--text-light);line-height:1.6;background:var(--gray-card);border-radius:8px;padding:12px 16px;border-left:3px solid var(--navy-light);}
+
+/* PAGO */
+.payment-wrap{background:linear-gradient(135deg,var(--navy-dark) 0%,var(--navy) 60%,var(--navy-mid) 100%);border-radius:16px;padding:32px;position:relative;overflow:hidden;margin-bottom:24px;}
+.payment-wrap::before{content:'';position:absolute;inset:0;background-image:radial-gradient(rgba(255,255,255,0.04) 1px,transparent 1px);background-size:22px 22px;}
+.payment-inner{position:relative;z-index:2;}
+.pay-title{font-family:'Josefin Sans',sans-serif;font-size:16px;font-weight:700;color:var(--white);margin-bottom:6px;}
+.pay-subtitle{font-size:12px;color:rgba(255,255,255,0.45);margin-bottom:20px;}
+.pay-steps-row{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-bottom:18px;}
+.pay-step-card{background:rgba(255,255,255,0.07);border:1px solid rgba(255,255,255,0.12);border-radius:12px;padding:18px 20px;}
+.pay-step-num{font-family:'Josefin Sans',sans-serif;font-size:9px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--accent);margin-bottom:8px;}
+.pay-step-title{font-size:14px;font-weight:700;color:var(--white);margin-bottom:4px;}
+.pay-step-desc{font-size:11px;color:rgba(255,255,255,0.5);line-height:1.5;}
+.pay-step-amount{font-family:'Josefin Sans',sans-serif;font-size:22px;font-weight:700;color:var(--accent);margin-top:8px;}
+.pay-note{font-size:11px;color:rgba(255,255,255,0.35);line-height:1.65;font-style:italic;border-top:1px solid rgba(255,255,255,0.1);padding-top:14px;}
+
+/* PASOS */
+.pasos-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;}
+.paso{background:var(--white);border:1.5px solid var(--gray-border);border-radius:14px;padding:20px;position:relative;box-shadow:0 2px 12px rgba(0,30,80,0.05);}
+.paso-num{font-family:'Josefin Sans',sans-serif;font-size:26px;font-weight:700;color:var(--navy-light);line-height:1;margin-bottom:8px;}
+.paso-t{font-size:13px;font-weight:700;color:var(--navy-dark);margin-bottom:5px;}
+.paso-d{font-size:11px;color:var(--text-light);line-height:1.6;}
+
+/* CTA */
+.cta{background:linear-gradient(135deg,var(--navy-dark),var(--navy-mid));border-radius:16px;padding:36px;text-align:center;position:relative;overflow:hidden;}
+.cta::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 60% 100% at 50% 0%,rgba(200,16,46,0.2),transparent 65%);}
+.cta-inner{position:relative;z-index:2;}
+.cta h3{font-family:'Josefin Sans',sans-serif;font-size:24px;font-weight:700;color:var(--white);margin-bottom:10px;}
+.cta p{font-size:13px;color:rgba(255,255,255,0.6);max-width:620px;margin:0 auto 22px;line-height:1.7;}
+.footer{text-align:center;padding:28px 24px 40px;font-size:11px;color:var(--text-light);line-height:1.7;}
+
+@media(max-width:900px){
+  .precios-grid{grid-template-columns:1fr;}.includes-grid{grid-template-columns:1fr;}
+  .ficha-grid{column-count:1;}.perfil-grid{grid-template-columns:1fr 1fr;}
+  .pasos-grid{grid-template-columns:1fr 1fr;}.gestor-grid{grid-template-columns:repeat(2,1fr);}
+}
+@media(max-width:720px){
+  .header{padding:16px 20px;}.hero{padding:28px 20px 24px;}.hero-name{font-size:26px;}.hero-precio{display:none;}
+  .main{padding:28px 16px 48px;}.card-body,.financing-body{padding:22px 20px;}.card-head,.financing-head{padding:18px 20px;}
+  .pay-steps-row{grid-template-columns:1fr;}.perfil-grid{grid-template-columns:1fr;}.pasos-grid{grid-template-columns:1fr;}
+  .fin-plazos{grid-template-columns:repeat(2,1fr);}.fin-resultado{grid-template-columns:1fr;}
+  .fin-resultado-main{border-right:none;border-bottom:1px solid rgba(255,255,255,0.15);padding-right:0;padding-bottom:20px;}
+  .payment-wrap{padding:22px;}.cta{padding:26px 20px;}
+}
+</style>
+</head>
+<body>
+
+<header class="header">
+  <div class="logo-area"><img src="https://mylanguagequest.com/wp-content/uploads/2026/02/Logo-DY_J5B-1-1.png" alt="My Language Quest"></div>
+  <div class="header-right">
+    <div class="header-label">Guía de programas · Reino Unido</div>
+    <div class="header-year">2027/28</div>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="hero-dots"></div>
+  <div class="hero-flag"></div>
+  <div class="hero-inner">
+    <div>
+      <div class="hero-tag">Guía de programas · Reino Unido</div>
+      <div class="hero-name">Año escolar en Reino Unido</div>
+      <div class="hero-subtitle">Programa Classic · Colegio público + familia anfitriona · Curso 2027/28</div>
+      <div class="hero-pills">
+        <div class="hero-pill">🎓 Trimestre · Semestre · Año completo</div>
+        <div class="hero-pill">🏠 Familia anfitriona</div>
+        <div class="hero-pill">📍 Inglaterra y Escocia</div>
+        <div class="hero-pill">🗓 Llegadas en agosto/septiembre o enero</div>
+        <div class="hero-pill">👤 De 14 a 18 años</div>
+      </div>
+    </div>
+    <div class="hero-precio">
+      <div class="hero-precio-label">Año académico</div>
+      <div class="hero-precio-val">26.250 €</div>
+      <div class="hero-precio-sub">desde · curso completo</div>
+      <div class="hero-precio-badge">−500 € reserva anticipada</div>
+    </div>
+  </div>
+</section>
+
+<main class="main">
+
+  <div class="promo">
+    <div class="promo-icon">🏷️</div>
+    <div class="promo-text">
+      <strong>Reserva tu plaza para el curso 27/28 y obtén 500 € de descuento</strong> en programas de año escolar — hasta el 30 de septiembre de 2026.
+      <small>No acumulable con otras promociones.</small>
+    </div>
+  </div>
+
+  <div class="choice-box">
+    <div class="choice-icon">🎒</div>
+    <div class="choice-text">
+      <strong>Programa Classic · Colegio público + familia anfitriona.</strong> Es la alternativa más económica para vivir un curso escolar en Reino Unido y funciona mediante un
+      <strong>sistema de asignación</strong>: la familia no elige una zona o un colegio concreto, sino que buscamos la colocación más adecuada para el estudiante teniendo en cuenta su
+      <strong>edad, nivel académico, nivel de inglés, intereses y perfil personal</strong>. Es el programa de intercambio más tradicional y consolidado, con más de 20 años de experiencia
+      de nuestro partner en destino.
+    </div>
+  </div>
+
+  <!-- PRECIOS -->
+  <div class="section-title"><h2>Precios · Curso 2027/28</h2></div>
+  <div class="precios-grid">
+
+    <div class="precio-card">
+      <div class="precio-head">
+        <div class="precio-dur">Curso completo · Sept a junio</div>
+        <div class="precio-nombre">Año académico</div>
+        <div class="precio-val">26.250 €</div>
+        <div class="precio-desde">desde · precio por estudiante</div>
+      </div>
+      <div class="precio-body">
+        <div class="precio-row"><span>Edad</span><span>16 – 18 años</span></div>
+        <div class="precio-row"><span>Visado</span><span><span class="visa-chip">Student visa</span></span></div>
+        <div class="precio-row"><span>Gastos de visado</span><span>No incluidos · aprox. 1.600 €</span></div>
+        <div class="precio-row"><span>Colegio</span><span>College / sixth form (AS y A Levels)</span></div>
+        <div class="precio-row"><span>Convalidación</span><span>Ministerio de Educación</span></div>
+        <div class="precio-row"><span>Promoción</span><span>−500 € hasta el 30/09/2026</span></div>
+        <div class="precio-nota"><span>⚠️</span><div>Para <strong>estudiantes menores de 16 años no es posible la ubicación en año escolar completo</strong>. El año completo requiere Student visa y plaza en college, disponible únicamente de 16 a 18 años. Los menores de 16 pueden realizar trimestre o semestre.</div></div>
+      </div>
+    </div>
+
+    <div class="precio-card">
+      <div class="precio-head">
+        <div class="precio-dur">Medio curso · 2 trimestres</div>
+        <div class="precio-nombre">Semestre académico</div>
+        <div class="precio-val">12.680 €</div>
+        <div class="precio-desde">desde · precio por estudiante</div>
+      </div>
+      <div class="precio-body">
+        <div class="precio-row"><span>Edad</span><span>14 – 18 años</span></div>
+        <div class="precio-row"><span>Visado</span><span><span class="visa-chip">ETA</span></span></div>
+        <div class="precio-row"><span>Gastos de visado</span><span>Coste reducido de la ETA</span></div>
+        <div class="precio-row"><span>Colegio</span><span>High school o college</span></div>
+        <div class="precio-row"><span>Convalidación</span><span>El centro español reconoce el expediente</span></div>
+        <div class="precio-row"><span>Llegadas</span><span>Agosto/septiembre o enero</span></div>
+      </div>
+    </div>
+
+    <div class="precio-card">
+      <div class="precio-head">
+        <div class="precio-dur">Un trimestre escolar</div>
+        <div class="precio-nombre">Trimestre académico</div>
+        <div class="precio-val">10.866 €</div>
+        <div class="precio-desde">desde · precio por estudiante</div>
+      </div>
+      <div class="precio-body">
+        <div class="precio-row"><span>Edad</span><span>14 – 18 años</span></div>
+        <div class="precio-row"><span>Visado</span><span><span class="visa-chip">ETA</span></span></div>
+        <div class="precio-row"><span>Gastos de visado</span><span>Coste reducido de la ETA</span></div>
+        <div class="precio-row"><span>Colegio</span><span>High school</span></div>
+        <div class="precio-row"><span>Convalidación</span><span>El centro español reconoce el expediente</span></div>
+        <div class="precio-row"><span>Llegadas</span><span>Agosto/septiembre o enero</span></div>
+      </div>
+    </div>
+
+  </div>
+  <div class="nota-precios">
+    <strong>ℹ️ Sobre los precios.</strong> Son precios «desde», por estudiante y para el curso 2027/28. El <strong>año académico requiere Student visa</strong> y sus
+    <strong>gastos oficiales de visado no están incluidos</strong> en el precio del programa (aproximadamente 1.600 €). El semestre y el trimestre se realizan con
+    <strong>ETA</strong> (autorización electrónica de viaje), de coste muy inferior. En todos los casos <strong>My Language Quest ayuda en la tramitación</strong>.
+    <strong>Para estudiantes menores de 16 años no es posible la ubicación en año escolar completo</strong>: esa modalidad está disponible únicamente de 16 a 18 años.
+    Los <strong>vuelos no están incluidos</strong>. La solicitud de una zona concreta tiene un suplemento (ver más abajo).
+  </div>
+
+  <!-- FICHA DEL PROGRAMA -->
+  <div class="section-title"><h2>Cómo funciona el programa</h2></div>
+  <div class="card">
+    <div class="card-head">
+      <h3>📋 Programa Classic · Reino Unido 2027/28</h3>
+      <p>Colegio público + familia anfitriona · Sistema de asignación</p>
+    </div>
+    <div class="card-body">
+      <div class="ficha-grid">
+        <div class="ficha-row"><div class="ficha-ico">👤</div><div><div class="ficha-label">Edad</div><div class="ficha-val"><strong>De 16 a 18 años</strong> al inicio del curso académico para cualquier duración, incluido el año completo. Para el año completo con llegada en septiembre, el estudiante debe haber cumplido 16 antes del 1 de junio para poder obtener el visado a tiempo.<br><strong>De 14 a 16 años</strong>: modalidad <strong>High School Junior</strong>, disponible en trimestre o semestre (ver recuadro más abajo).</div></div></div>
+        <div class="ficha-row"><div class="ficha-ico">🗓</div><div><div class="ficha-label">Duración y llegadas</div><div class="ficha-val">Trimestre, semestre o año académico completo. Llegadas en agosto/septiembre (Escocia agosto · Inglaterra septiembre) o en enero.</div></div></div>
+        <div class="ficha-row"><div class="ficha-ico">📍</div><div><div class="ficha-label">Ubicación</div><div class="ficha-val">La plaza puede asignarse en cualquier punto de <strong>Inglaterra o Escocia</strong>. Si la familia desea una región concreta, existe un suplemento de zona sujeto a disponibilidad.</div></div></div>
+        <div class="ficha-row"><div class="ficha-ico">🏠</div><div><div class="ficha-label">Alojamiento</div><div class="ficha-val">Familia anfitriona en <strong>pensión completa</strong> (3 comidas diarias, con opción de comida para llevar al colegio), habitación individual o compartida. Se garantiza <strong>un único estudiante hispanohablante por familia</strong>. Todas las familias son visitadas y verificadas por un coordinador local.</div></div></div>
+        <div class="ficha-row"><div class="ficha-ico">🏫</div><div><div class="ficha-label">Colegio</div><div class="ficha-val">Centro público, asignado a una distancia razonable de la familia anfitriona. En programas de <strong>menos de 6 meses</strong> el estudiante se incorpora normalmente a un <strong>high school</strong>; en programas de <strong>6 meses o más</strong> (16–18 años) a un <strong>college o sixth form</strong>, estudiando 3 o 4 asignaturas de AS/A Level. La asignación de curso y asignaturas es competencia del centro.</div></div></div>
+        <div class="ficha-row"><div class="ficha-ico">📚</div><div><div class="ficha-label">Requisitos académicos</div><div class="ficha-val">Buen expediente, con una media equivalente a <strong>C o superior</strong>. Para acceder a un centro público se requiere como mínimo una nota equivalente a C en <strong>inglés y matemáticas</strong>. Las necesidades educativas especiales deben declararse en el momento de la solicitud.</div></div></div>
+        <div class="ficha-row"><div class="ficha-ico">🗣</div><div><div class="ficha-label">Nivel de inglés</div><div class="ficha-val">Nivel suficiente para seguir las clases, entregar trabajos y desenvolverse en el día a día. Se realiza <strong>prueba de inglés y entrevista personal</strong>. En el año completo puede requerirse además una prueba de inglés adicional como parte del trámite del visado.</div></div></div>
+        <div class="ficha-row"><div class="ficha-ico">🛂</div><div><div class="ficha-label">Visado</div><div class="ficha-val"><strong>Año completo:</strong> Student visa (gastos oficiales no incluidos, aprox. 1.600 €). <strong>Trimestre y semestre:</strong> ETA — autorización electrónica de viaje. Pasaporte en vigor hasta al menos 3 meses después del fin del programa.</div></div></div>
+        <div class="ficha-row"><div class="ficha-ico">👕</div><div><div class="ficha-label">Uniforme y libros</div><div class="ficha-val">El uniforme escolar y los libros de las asignaturas obligatorias están incluidos. El material adicional, el uniforme deportivo y los libros extra corren a cargo de la familia.</div></div></div>
+        <div class="ficha-row"><div class="ficha-ico">🎄</div><div><div class="ficha-label">Navidad</div><div class="ficha-val">En el <strong>año completo</strong>, el estudiante regresa a casa durante las dos semanas de vacaciones de Navidad. En el semestre iniciado en verano, la estancia en Navidad está cubierta.</div></div></div>
+        <div class="ficha-row"><div class="ficha-ico">🤝</div><div><div class="ficha-label">Supervisión</div><div class="ficha-val">Coordinador local en destino con visitas y tutorías, emergencias 24 h, acompañamiento psicológico, atención 24 h en España y un <strong>gestor estudiantil</strong> asignado a la familia durante todo el programa.</div></div></div>
+      </div>
+
+      <div class="choice-box" style="margin:26px 0 0;">
+        <div class="choice-icon">🧒</div>
+        <div class="choice-text">
+          <strong>Modalidad High School Junior · de 14 a 16 años.</strong> Los estudiantes más jóvenes también pueden vivir la experiencia británica, con estas particularidades:
+          se ofrece en <strong>trimestre o semestre</strong> (no en año completo), con llegadas en agosto/septiembre o enero, alojamiento en familia anfitriona y
+          <strong>ETA</strong> como autorización de viaje. El estudiante se incorpora a un <strong>high school</strong> junto a alumnos locales, con amplia oferta de asignaturas,
+          extraescolares y equipos deportivos, y cuenta con un seguimiento reforzado por parte del coordinador local.
+          <strong>Las plazas del programa junior son limitadas y se asignan por orden de solicitud</strong>, por lo que conviene reservar con la mayor antelación posible.
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- CALENDARIO Y SISTEMA ESCOLAR -->
+  <div class="card">
+    <div class="card-head">
+      <h3>📅 Calendario escolar y sistema educativo británico</h3>
+      <p>Para entender cómo encaja el curso británico con el curso español</p>
+    </div>
+    <div class="card-body">
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th>Trimestre</th><th>Comienza</th><th>Termina</th></tr></thead>
+          <tbody>
+            <tr><td>1.º trimestre · Escocia</td><td>Agosto</td><td>Justo antes de Navidad</td></tr>
+            <tr><td>1.º trimestre · Inglaterra</td><td>Septiembre</td><td>Justo antes de Navidad</td></tr>
+            <tr><td>2.º trimestre · Reino Unido</td><td>Mediados de enero</td><td>Pascua</td></tr>
+            <tr><td>3.º trimestre · Reino Unido</td><td>Después de Pascua</td><td>Junio</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="includes-grid" style="margin-top:26px;">
+        <div>
+          <div class="col-title">Inglaterra</div>
+          <ul class="inc-list">
+            <li>Educación secundaria de los 11 a los 16 años</li>
+            <li>Exámenes <strong>GCSE</strong> a los 16 años, con entre nueve y once asignaturas</li>
+            <li>A partir de los 16: <strong>AS y A Levels</strong> en colegio o college, sin asignaturas obligatorias</li>
+          </ul>
+        </div>
+        <div>
+          <div class="col-title">Escocia</div>
+          <ul class="inc-list">
+            <li>Sistema similar al inglés</li>
+            <li><strong>National 4 y 5</strong> hasta los 16 años</li>
+            <li>A partir de los 16: <strong>Highers y Advanced Highers</strong>, normalmente cuatro o cinco asignaturas</li>
+          </ul>
+        </div>
+        <div>
+          <div class="col-title">¿Qué es un «college»?</div>
+          <ul class="inc-list">
+            <li>Centro público equivalente al bachillerato británico, específico para estudiantes de <strong>16 a 18 años</strong></li>
+            <li>Amplia oferta de asignaturas a elegir, con tutores especializados</li>
+            <li>Ambiente algo más adulto e informal que el high school, con excelentes instalaciones, clubes y equipos deportivos</li>
+            <li>Los estudiantes de <strong>año completo de 16 a 18 años</strong> se incorporan normalmente a un college</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- SUPLEMENTOS DE ZONA -->
+  <div class="section-title"><h2>Suplementos de zona</h2></div>
+  <div class="card">
+    <div class="card-head">
+      <h3>📍 ¿Y si queremos una región concreta?</h3>
+      <p>Solicitud de zona · Reino Unido 2027/28</p>
+    </div>
+    <div class="card-body">
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th>Zona</th><th style="text-align:right">Suplemento</th></tr></thead>
+          <tbody>
+            <tr class="sin-sup"><td><strong>Asignación estándar</strong> — toda Inglaterra y Escocia</td><td class="num">Sin suplemento</td></tr>
+            <tr><td>Solicitud de zona: Inglaterra (general)</td><td class="num">+1.150 €</td></tr>
+            <tr><td>Solicitud de zona: Costa Sur de Inglaterra <em>(England South Coast)</em></td><td class="num">+1.150 €</td></tr>
+            <tr><td>Solicitud de zona: Escocia</td><td class="num">+3.000 €</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <ul class="inc-list" style="margin-top:20px;">
+        <li>El suplemento <strong>solo se aplica si la familia solicita expresamente una región concreta</strong>. Sin preferencia, la plaza se asigna en cualquier punto de Inglaterra o Escocia sin cargo.</li>
+        <li>La solicitud de zona está <strong>sujeta a disponibilidad</strong> de familias y colegios; no garantiza la asignación.</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- VUELOS -->
+  <div class="card">
+    <div class="card-head">
+      <h3>✈️ Vuelos</h3>
+      <p>No incluidos en el precio del programa</p>
+    </div>
+    <div class="card-body">
+      <ul class="inc-list no">
+        <li>Los <strong>vuelos de ida y vuelta no están incluidos</strong> en el precio del programa.</li>
+      </ul>
+      <ul class="inc-list" style="margin-top:10px;">
+        <li>Se asignará una <strong>fecha de viaje concreta</strong> facilitada por el proveedor en destino, coordinada con el calendario escolar y con la llegada al Welcome Camp.</li>
+        <li>My Language Quest puede gestionar la <strong>reserva del vuelo</strong>, o la familia puede organizarlo de forma independiente respetando la fecha y el aeropuerto asignados.</li>
+        <li><strong>Monitor acompañante</strong> en el vuelo disponible para grupos de 10 estudiantes o más.</li>
+        <li>Los <strong>traslados aeropuerto – Welcome Camp – familia anfitriona</strong> están incluidos para quienes asisten al Welcome Camp (2 traslados). Si el estudiante no asiste, los traslados se gestionan con el gestor estudiantil y tienen coste adicional, tanto al inicio del programa como en los viajes durante las vacaciones (hasta 4 traslados en total).</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- EL PROGRAMA INCLUYE -->
+  <div class="section-title"><h2>El programa incluye</h2></div>
+  <div class="card">
+    <div class="card-head"><h3>✅ Todo lo que cubre My Language Quest · Programa Classic</h3></div>
+    <div class="card-body">
+      <div class="includes-grid">
+        <div>
+          <div class="col-title">Antes del viaje</div>
+          <ul class="inc-list">
+            <li>Reunión inicial con padres o tutores <small>Presencial, por teléfono o videoconferencia</small></li>
+            <li>Prueba de inglés y entrevista personal online con el estudiante</li>
+            <li>Provisión de toda la información necesaria sobre el programa en Reino Unido</li>
+            <li>Inscripción en el programa y matriculación en el centro asignado</li>
+            <li>Selección de familia anfitriona <small>Un único estudiante hispanohablante por familia garantizado</small></li>
+            <li>Pensión completa · habitación individual o compartida</li>
+            <li>Seguro médico, de accidentes, responsabilidad civil, repatriación, viaje y pertenencias</li>
+            <li>Libros de asignaturas obligatorias y uniforme escolar</li>
+            <li>Ayuda en la tramitación del <strong>Student visa</strong> (curso completo) o de la <strong>ETA</strong> (trimestre y semestre) <small>Gastos oficiales del visado no incluidos</small></li>
+            <li>Asignación de un gestor estudiantil para padres y estudiante</li>
+            <li>Orientación pre-viaje <small>La orientación presencial en Madrid se confirmará según el número de familias inscritas; si no se alcanza el mínimo, se realizará en formato online</small></li>
+            <li>Welcome pack sorpresa de My Language Quest</li>
+          </ul>
+        </div>
+        <div>
+          <div class="col-title">Durante el viaje</div>
+          <ul class="inc-list">
+            <li>Monitor acompañante en el vuelo <small>Disponible para grupos de 10 estudiantes o más</small></li>
+            <li><strong>Welcome Camp</strong>: aterrizaje suave en Reino Unido</li>
+            <li>Traslados aeropuerto – Welcome Camp – familia anfitriona <small>2 traslados incluidos para quienes asisten al Welcome Camp</small></li>
+            <li>Asesoramiento en la elección de asignaturas</li>
+            <li>Clases de inglés Cambridge y su libro</li>
+            <li>Taller con docente del MIT</li>
+            <li>Supervisión local: visitas, tutorías y emergencias 24 h</li>
+            <li>Acompañamiento psicológico</li>
+            <li>Atención 24 horas en España para emergencias de estudiantes y familias</li>
+            <li>Apoyo para la matriculación en actividades extraescolares</li>
+            <li>Gestión de cambio de familia si fuera necesario</li>
+          </ul>
+        </div>
+        <div>
+          <div class="col-title">Después del viaje</div>
+          <ul class="inc-list">
+            <li>Trámites de convalidación ante el Ministerio de Educación o la Consejería de Educación correspondiente <small>Curso completo. En trimestre y semestre, el centro español reconoce el expediente al regreso</small></li>
+            <li>Validación de notas y apostilla de La Haya</li>
+            <li>Dossier final detallando la experiencia en Reino Unido</li>
+          </ul>
+          <div style="margin-top:24px">
+            <div class="col-title">No incluido</div>
+            <ul class="inc-list no">
+              <li>Gastos oficiales del visado <small>Aprox. 1.600 € en el curso completo con Student visa</small></li>
+              <li>Vuelos de ida y vuelta</li>
+              <li>Traslados distintos a los indicados</li>
+              <li>Actividades extracurriculares de pago</li>
+              <li>Excursiones y viajes escolares</li>
+              <li>Transporte local al colegio <small>Abono de autobús donde sea necesario</small></li>
+              <li>Gastos de ocio personal</li>
+              <li>Requisitos dietéticos especiales <small>Pueden conllevar suplemento en el curso completo</small></li>
+              <li>Pasaporte si no está vigente</li>
+              <li>Cualquier aspecto no indicado en «El programa incluye»</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="gestor-wrap">
+        <div class="gestor-title">Gestor estudiantil · se encarga de</div>
+        <div class="gestor-grid">
+          <div class="gestor-item">Seguimiento personalizado del desempeño del estudiante</div>
+          <div class="gestor-item">Todas las tutorías necesarias con el estudiante</div>
+          <div class="gestor-item">Asesoramiento e información a los padres con periodicidad mensual</div>
+          <div class="gestor-item">Todas las reuniones necesarias con los padres y/o el estudiante</div>
+          <div class="gestor-item">Notas oficiales al final de cada trimestre o semestre</div>
+          <div class="gestor-item">Asesoría para cambio de asignaturas, garantizando que siga siendo convalidable</div>
+          <div class="gestor-item">Apoyo para la matriculación en actividades extraescolares</div>
+          <div class="gestor-item">Resolución de situaciones en el centro o con la familia, incluido el cambio de familia</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- QUE NECESITAMOS SABER -->
+  <div class="section-title"><h2>Qué necesitamos saber del estudiante</h2></div>
+  <div class="card">
+    <div class="card-head">
+      <h3>📝 En Reino Unido, la edad y el nivel de inglés son determinantes</h3>
+      <p>Ambos condicionan qué colegios y qué modalidades de programa son viables</p>
+    </div>
+    <div class="card-body">
+      <div class="perfil-grid">
+        <div class="perfil-item"><span class="perfil-ico">🎂</span><div class="perfil-t">Edad y fecha de nacimiento</div><div class="perfil-d">Determina si el estudiante puede acceder al programa y si irá a high school o a college.</div></div>
+        <div class="perfil-item"><span class="perfil-ico">👦👧</span><div class="perfil-t">Chico o chica</div><div class="perfil-d">Necesario para la búsqueda de familia anfitriona y de plaza escolar.</div></div>
+        <div class="perfil-item"><span class="perfil-ico">🗣</span><div class="perfil-t">Nivel aproximado de inglés</div><div class="perfil-d">Aunque sea básico, y si ha realizado alguna prueba de nivel. Si no, puede hacer nuestra prueba gratuita.</div></div>
+        <div class="perfil-item"><span class="perfil-ico">📚</span><div class="perfil-t">Rendimiento académico</div><div class="perfil-d">Una idea aproximada de sus notas: los centros públicos piden una media equivalente a C o superior.</div></div>
+        <div class="perfil-item"><span class="perfil-ico">⚽</span><div class="perfil-t">Intereses y actividades</div><div class="perfil-d">Deportes, música, arte o cualquier actividad que practique: nos ayuda a buscar el mejor encaje.</div></div>
+        <div class="perfil-item"><span class="perfil-ico">🩺</span><div class="perfil-t">Alergias y necesidades</div><div class="perfil-d">Cualquier alergia, necesidad médica o educativa que debamos tener en cuenta desde el principio.</div></div>
+      </div>
+      <div class="test-box">
+        <div class="test-text">
+          <strong>¿No sabéis el nivel de inglés?</strong> Vuestro hijo o hija puede hacer nuestra prueba de nivel gratuita y lo averiguamos juntos.
+          Es online, no tiene coste y nos permite orientar mejor la propuesta de colegios.
+        </div>
+        <a class="btn" href="https://sender3.zohoinsights-crm.eu/ck1/13ef.4aba358de/74752990-a096-11f1-8dbe-76699466976f/9537778171e48dd1bb00aea7fc988109ac05ad3b/2?e=ey7UiYICb5Sfj5yrTh%2B9%2BxB0HexzPTaZxTOeu0IEhUWUia4vGo7qVFm48%2FRPNIAw" target="_blank" rel="noopener">Prueba de inglés gratuita</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- FINANCIACION -->
+  <div class="section-title"><h2>Financia tu programa</h2></div>
+  <div class="card">
+    <div class="financing-head">
+      <div style="display:flex;align-items:center;gap:16px;">
+        <div class="fin-icon">💳</div>
+        <div>
+          <div class="fin-title">Paga a tu ritmo, sin preocupaciones</div>
+          <div class="fin-sub">Financiación flexible · Aprobación rápida · 100% online · Sin comisión de apertura</div>
+        </div>
+      </div>
+      <div class="fin-badge">Hasta 36 meses</div>
+    </div>
+    <div class="card-body">
+      <div class="fin-plazo-wrap">
+        <div class="fin-plazo-label">1 · Elige el programa</div>
+        <div class="fin-plazos tres">
+          <div class="fin-plazo active" onclick="setImporte(this,26250)">
+            <div class="fin-plazo-meses">Año académico</div>
+            <div class="fin-plazo-badge con">26.250 €</div>
+            <div class="fin-plazo-quien">Curso completo</div>
+          </div>
+          <div class="fin-plazo" onclick="setImporte(this,12680)">
+            <div class="fin-plazo-meses">Semestre</div>
+            <div class="fin-plazo-badge con">12.680 €</div>
+            <div class="fin-plazo-quien">Medio curso</div>
+          </div>
+          <div class="fin-plazo" onclick="setImporte(this,10866)">
+            <div class="fin-plazo-meses">Trimestre</div>
+            <div class="fin-plazo-badge con">10.866 €</div>
+            <div class="fin-plazo-quien">Un trimestre</div>
+          </div>
+        </div>
+      </div>
+      <div class="fin-plazo-wrap">
+        <div class="fin-plazo-label">2 · Elige tu plazo</div>
+        <div class="fin-plazos">
+          <div class="fin-plazo active" onclick="setPlazo(this,12)">
+            <div class="fin-plazo-meses">12 meses</div>
+            <div class="fin-plazo-badge sin">TIN 0%</div>
+            <div class="fin-plazo-quien">¡MLQ asume los intereses!</div>
+          </div>
+          <div class="fin-plazo" onclick="setPlazo(this,18)">
+            <div class="fin-plazo-meses">18 meses</div>
+            <div class="fin-plazo-badge con">TIN 10,46%</div>
+            <div class="fin-plazo-quien">Intereses a cargo del cliente</div>
+          </div>
+          <div class="fin-plazo" onclick="setPlazo(this,24)">
+            <div class="fin-plazo-meses">24 meses</div>
+            <div class="fin-plazo-badge con">TIN 10,46%</div>
+            <div class="fin-plazo-quien">Intereses a cargo del cliente</div>
+          </div>
+          <div class="fin-plazo" onclick="setPlazo(this,36)">
+            <div class="fin-plazo-meses">36 meses</div>
+            <div class="fin-plazo-badge con">TIN 10,46%</div>
+            <div class="fin-plazo-quien">Intereses a cargo del cliente</div>
+          </div>
+        </div>
+      </div>
+      <div class="fin-resultado">
+        <div class="fin-resultado-main">
+          <div class="fin-cuota-label">Cuota mensual estimada</div>
+          <div class="fin-cuota-valor" id="cuotaValor">2.187,50 €</div>
+          <div class="fin-cuota-sub" id="cuotaSub">/mes · 12 pagos · TIN 0%</div>
+        </div>
+        <div class="fin-resultado-detalle">
+          <div class="fin-det-row">
+            <span class="fin-det-label">Importe del programa</span>
+            <span class="fin-det-val" id="detImporte">26.250 €</span>
+          </div>
+          <div class="fin-det-row">
+            <span class="fin-det-label">Intereses totales</span>
+            <span class="fin-det-val fin-det-green" id="detIntereses">0 € · ¡MLQ los asume!</span>
+          </div>
+          <div class="fin-det-row fin-det-total">
+            <span class="fin-det-label">Total a pagar</span>
+            <span class="fin-det-val" id="detTotal">26.250 €</span>
+          </div>
+        </div>
+      </div>
+      <div class="fin-nota">ℹ️ Financiación con Banco Sabadell, sujeta a aprobación bancaria. Sin comisión de apertura ni penalización por cancelación anticipada. Cálculo orientativo sobre el precio «desde» del programa, sin suplementos ni gastos de visado.</div>
+    </div>
+  </div>
+
+  <!-- FORMAS DE PAGO -->
+  <div class="section-title"><h2>Formas de pago</h2></div>
+  <div class="payment-wrap">
+    <div class="payment-inner">
+      <div class="pay-title">💳 Condiciones económicas · Programa Classic</div>
+      <div class="pay-subtitle">Reino Unido 2027/28</div>
+      <div class="pay-steps-row">
+        <div class="pay-step-card">
+          <div class="pay-step-num">Paso 1 · Firma del contrato</div>
+          <div class="pay-step-title">Inicio de aplicación y matriculación</div>
+          <div class="pay-step-amount">3.500 €</div>
+          <div class="pay-step-desc" style="margin-top:6px;">Arranca la búsqueda de plaza escolar y de familia anfitriona</div>
+        </div>
+        <div class="pay-step-card">
+          <div class="pay-step-num">Paso 2 · Aceptación en el colegio</div>
+          <div class="pay-step-title">20 % del importe restante</div>
+          <div class="pay-step-amount">20 %</div>
+          <div class="pay-step-desc" style="margin-top:6px;">Una vez el centro confirma la plaza del estudiante</div>
+        </div>
+        <div class="pay-step-card">
+          <div class="pay-step-num">Paso 3 · Fecha límite</div>
+          <div class="pay-step-title">Resto del importe</div>
+          <div class="pay-step-amount">Antes del 31 de mayo</div>
+          <div class="pay-step-desc" style="margin-top:6px;">Antes del inicio del programa y de la emisión de la documentación de viaje</div>
+        </div>
+      </div>
+      <div class="pay-note">Las inscripciones realizadas fuera de plazo deberán ajustarse al calendario de pagos vigente en el momento de la inscripción. Los gastos oficiales del visado y los vuelos no están incluidos en el precio del programa.</div>
+    </div>
+  </div>
+
+  <!-- PROXIMOS PASOS -->
+  <div class="section-title"><h2>Próximos pasos</h2></div>
+  <div class="pasos-grid" style="margin-bottom:32px;">
+    <div class="paso"><div class="paso-num">01</div><div class="paso-t">Cuéntanos el perfil</div><div class="paso-d">Edad y fecha de nacimiento, chico o chica, nivel de inglés, notas, intereses y cualquier necesidad médica o educativa.</div></div>
+    <div class="paso"><div class="paso-num">02</div><div class="paso-t">Prueba de nivel y entrevista</div><div class="paso-d">Prueba de inglés gratuita y entrevista personal online con el estudiante para confirmar el encaje del programa.</div></div>
+    <div class="paso"><div class="paso-num">03</div><div class="paso-t">Reserva de plaza</div><div class="paso-d">Firma del contrato y 3.500 € para iniciar la solicitud. Reservando antes del 30 de septiembre de 2026, 500 € de descuento en año escolar.</div></div>
+    <div class="paso"><div class="paso-num">04</div><div class="paso-t">Asignación y preparación</div><div class="paso-d">Colegio y familia anfitriona confirmados, tramitación del visado o la ETA, orientación pre-viaje y Welcome Camp.</div></div>
+  </div>
+
+  <div class="cta">
+    <div class="cta-inner">
+      <h3>Solicita tu asesoramiento gratuito</h3>
+      <p>Cada estudiante es distinto y en Reino Unido los detalles importan. Reserva una cita con nosotros, cuéntanos el perfil de vuestro hijo o hija y os diremos con claridad qué opciones son realmente viables, sin compromiso.</p>
+      <div class="cta-btns">
+        <a class="btn" href="https://asesoramientosmlq.zohobookings.eu/#/230825000000039052" target="_blank" rel="noopener">Reservar asesoramiento gratuito</a>
+        <a class="btn ghost" href="https://sender3.zohoinsights-crm.eu/ck1/13ef.4aba358de/74752990-a096-11f1-8dbe-76699466976f/9537778171e48dd1bb00aea7fc988109ac05ad3b/2?e=ey7UiYICb5Sfj5yrTh%2B9%2BxB0HexzPTaZxTOeu0IEhUWUia4vGo7qVFm48%2FRPNIAw" target="_blank" rel="noopener">Hacer la prueba de inglés</a>
+      </div>
+    </div>
+  </div>
+
+</main>
+
+<div class="footer">
+  My Language Quest · Guía de programas · Reino Unido 2027/28<br>
+  Precios «desde», por estudiante, sujetos a disponibilidad de plazas y a posibles cambios por parte de los centros. Los suplementos de zona, los vuelos y los gastos oficiales de visado no están incluidos en el precio del programa.
+</div>
+
+<script>
+var _mes=12,_cap=26250;
+function _fmt(n,d){return n.toLocaleString('es-ES',{minimumFractionDigits:d||0,maximumFractionDigits:d||0})+' €';}
+function _cuota(c,t,m){if(t===0)return c/m;var r=(t/100)/12;return c*r/(1-Math.pow(1+r,-m));}
+function _update(){
+  var tin=_mes===12?0:10.46;var q=_cuota(_cap,tin,_mes);var tot=q*_mes;var inter=tot-_cap;
+  document.getElementById('cuotaValor').textContent=_fmt(q,2);
+  document.getElementById('cuotaSub').textContent='/mes · '+_mes+' pagos · TIN '+(tin===0?'0%':'10,46%');
+  document.getElementById('detImporte').textContent=_fmt(_cap);
+  document.getElementById('detTotal').textContent=_fmt(Math.round(tot));
+  var el=document.getElementById('detIntereses');
+  if(tin===0){el.textContent='0 € · ¡MLQ los asume!';el.className='fin-det-val fin-det-green';}
+  else{el.textContent=_fmt(Math.round(inter));el.className='fin-det-val';}
+}
+function setPlazo(el,m){_mes=m;el.parentNode.querySelectorAll('.fin-plazo').forEach(function(p){p.classList.remove('active');});el.classList.add('active');_update();}
+function setImporte(el,c){_cap=c;el.parentNode.querySelectorAll('.fin-plazo').forEach(function(p){p.classList.remove('active');});el.classList.add('active');_update();}
+_update();
+</script>
+</body>
+</html>
