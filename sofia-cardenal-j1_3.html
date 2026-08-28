@@ -1,0 +1,679 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Propuesta · Sofía · Programa J1 Estados Unidos · My Language Quest</title>
+<link href="https://fonts.googleapis.com/css2?family=Fira+Sans:wght@300;400;500;600;700&family=Josefin+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --blue:#003366;--blue-dark:#001f40;--blue-mid:#0a4a8a;--blue-light:#dce8f5;
+  --red:#B12900;--red-dark:#8A1F00;--red-light:#fdf0ec;
+  --green:#4C9E0C;--green-dark:#3A7A09;--green-light:#eef8e3;
+  --gray-bg:#f0f2f6;--gray-card:#f8f9fb;--gray-border:#dde1ea;
+  --text:#0d1b2a;--text-mid:#3d4f62;--text-light:#7a8a9b;--white:#ffffff;
+}
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box;}
+body{font-family:'Fira Sans',sans-serif;background:var(--gray-bg);color:var(--text);}
+
+.header{background:var(--white);padding:18px 48px;display:flex;align-items:center;justify-content:space-between;box-shadow:0 1px 0 var(--gray-border),0 4px 24px rgba(0,51,102,0.07);position:relative;z-index:10;}
+.header::after{content:'';position:absolute;bottom:0;left:0;right:0;height:3px;background:linear-gradient(90deg,var(--red),var(--blue) 50%,var(--green));}
+.logo-area img{height:46px;width:auto;display:block;}
+.header-right{text-align:right;}
+.header-label{font-family:'Josefin Sans',sans-serif;font-size:9px;letter-spacing:3px;text-transform:uppercase;color:var(--text-light);}
+.header-year{font-family:'Josefin Sans',sans-serif;font-size:26px;font-weight:700;color:var(--blue);line-height:1;margin-top:2px;}
+
+.hero{background:var(--blue);position:relative;overflow:hidden;padding:40px 48px 36px;}
+.hero::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 80% 120% at 110% 50%,rgba(76,158,12,0.18) 0%,transparent 60%),radial-gradient(ellipse 60% 80% at -10% 80%,rgba(177,41,0,0.22) 0%,transparent 55%);}
+.hero-dots{position:absolute;inset:0;pointer-events:none;background-image:radial-gradient(rgba(255,255,255,0.07) 1px,transparent 1px);background-size:28px 28px;}
+.hero-inner{position:relative;z-index:2;display:flex;align-items:flex-end;justify-content:space-between;gap:24px;flex-wrap:wrap;}
+.hero-tag{display:inline-flex;align-items:center;gap:6px;background:rgba(255,255,255,0.1);border:1px solid rgba(255,255,255,0.2);border-radius:20px;padding:4px 12px;font-size:10px;font-weight:600;letter-spacing:2px;text-transform:uppercase;color:rgba(255,255,255,0.7);margin-bottom:12px;}
+.hero-tag::before{content:'✈';font-size:11px;}
+.hero-name{font-family:'Josefin Sans',sans-serif;font-size:38px;font-weight:700;color:var(--white);line-height:1;margin-bottom:8px;}
+.hero-subtitle{font-size:13px;color:rgba(255,255,255,0.55);font-weight:300;}
+.hero-pills{display:flex;flex-wrap:wrap;gap:8px;margin-top:20px;}
+.hero-pill{display:flex;align-items:center;gap:6px;background:rgba(255,255,255,0.1);border:1px solid rgba(255,255,255,0.18);border-radius:8px;padding:6px 12px;font-size:11px;color:var(--white);font-weight:500;}
+.hero-pill.ac{background:rgba(177,41,0,0.25);border-color:rgba(177,41,0,0.6);color:#ffb8a0;}
+
+.main{max-width:1140px;margin:0 auto;padding:40px 24px 64px;}
+.section-title{display:flex;align-items:center;gap:12px;margin-bottom:24px;margin-top:8px;}
+.section-title h2{font-family:'Josefin Sans',sans-serif;font-size:11px;font-weight:700;letter-spacing:3px;text-transform:uppercase;color:var(--text-light);white-space:nowrap;}
+.section-title::after{content:'';flex:1;height:1px;background:var(--gray-border);}
+
+.alert-box{display:flex;gap:12px;align-items:flex-start;background:#fff4f0;border:1.5px solid rgba(177,41,0,0.3);border-radius:12px;padding:14px 18px;margin-bottom:28px;}
+.alert-icon{font-size:20px;flex-shrink:0;}
+.alert-text{font-size:12px;color:#6b1a00;line-height:1.6;}
+.alert-text strong{color:var(--red-dark);}
+
+/* CARD BASE */
+.card{background:var(--white);border-radius:16px;border:1.5px solid var(--gray-border);box-shadow:0 2px 16px rgba(0,51,102,0.05);overflow:hidden;margin-bottom:24px;}
+.card-head{background:linear-gradient(135deg,var(--blue-dark),var(--blue));padding:20px 32px;}
+.card-head h3{font-family:'Josefin Sans',sans-serif;font-size:14px;font-weight:700;color:var(--white);letter-spacing:1px;}
+.card-head p{font-size:11px;color:rgba(255,255,255,0.5);margin-top:4px;}
+.card-body{padding:28px 32px;}
+.card-body p{font-size:13px;color:var(--text-mid);line-height:1.75;margin-bottom:12px;}
+.card-body p:last-child{margin-bottom:0;}
+.card-body strong{color:var(--text);}
+
+/* FICHA */
+.ficha{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-bottom:24px;}
+.ficha-item{background:var(--gray-card);border:1px solid var(--gray-border);border-radius:10px;padding:12px 14px;}
+.ficha-label{font-family:'Josefin Sans',sans-serif;font-size:8.5px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--text-light);margin-bottom:5px;}
+.ficha-val{font-size:13px;font-weight:600;color:var(--blue);line-height:1.35;}
+
+/* LISTAS */
+.inc-list{list-style:none;display:flex;flex-direction:column;gap:8px;}
+.inc-list li{font-size:12px;color:var(--text-mid);line-height:1.6;position:relative;padding-left:18px;}
+.inc-list li::before{content:'✓';color:var(--green);font-weight:700;font-size:11px;position:absolute;left:0;top:0;line-height:1.6;}
+.inc-list.no li::before{content:'✗';color:var(--red);}
+.inc-list.dot li::before{content:'•';color:var(--blue);}
+.inc-list li small{font-size:10px;color:var(--text-light);display:block;margin-top:2px;}
+.col-title{font-family:'Josefin Sans',sans-serif;font-size:9px;font-weight:700;letter-spacing:2.5px;text-transform:uppercase;color:var(--red);margin-bottom:14px;padding-bottom:8px;border-bottom:2px solid var(--red-light);}
+.includes-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:32px;}
+.two-col{display:grid;grid-template-columns:1fr 1fr;gap:32px;}
+
+/* DESTACADOS */
+.feat-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;}
+.feat{background:var(--gray-card);border:1.5px solid var(--gray-border);border-radius:12px;padding:16px 18px;transition:border-color .2s,transform .2s;}
+.feat:hover{border-color:var(--blue-mid);transform:translateY(-2px);}
+.feat-ico{font-size:22px;margin-bottom:8px;}
+.feat-t{font-family:'Josefin Sans',sans-serif;font-size:13px;font-weight:700;color:var(--blue);margin-bottom:5px;}
+.feat-d{font-size:11.5px;color:var(--text-mid);line-height:1.55;}
+
+/* OPCIONES SUPLEMENTO */
+.opciones-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(330px,1fr));gap:20px;margin-bottom:28px;}
+.opcion-card{background:var(--white);border-radius:16px;border:1.5px solid var(--gray-border);overflow:hidden;box-shadow:0 2px 16px rgba(0,51,102,0.06);position:relative;transition:transform .2s,box-shadow .2s,border-color .2s;}
+.opcion-card:hover{transform:translateY(-4px);box-shadow:0 12px 40px rgba(0,51,102,0.13);border-color:var(--blue-mid);}
+.opcion-card.recomendada{border-color:var(--green);box-shadow:0 4px 24px rgba(76,158,12,0.15);}
+.badge-rec{position:absolute;top:14px;right:-32px;background:var(--green);color:var(--white);font-size:8px;font-weight:700;letter-spacing:1.5px;padding:5px 40px;transform:rotate(45deg);width:130px;text-align:center;z-index:10;}
+.opcion-header{background:linear-gradient(135deg,var(--blue-dark) 0%,var(--blue) 100%);padding:22px 24px 18px;}
+.opcion-num{font-family:'Josefin Sans',sans-serif;font-size:9px;letter-spacing:3px;text-transform:uppercase;color:rgba(255,255,255,0.38);margin-bottom:8px;}
+.opcion-distrito{font-family:'Josefin Sans',sans-serif;font-size:16px;font-weight:700;color:var(--white);margin-bottom:5px;}
+.opcion-loc{font-size:11px;color:rgba(255,255,255,0.48);margin-bottom:12px;}
+.precio-chip{display:inline-flex;align-items:baseline;gap:4px;background:rgba(255,255,255,0.1);border:1px solid rgba(255,255,255,0.18);border-radius:8px;padding:6px 12px;}
+.precio-chip .val{font-family:'Josefin Sans',sans-serif;font-size:20px;font-weight:700;color:#7dd44a;}
+.precio-chip .desc{font-size:10px;color:rgba(255,255,255,0.5);}
+.opcion-body{padding:20px 22px;}
+.opcion-body p{font-size:12.5px;color:var(--text-mid);line-height:1.7;margin-bottom:12px;}
+.desglose{border:1.5px solid var(--gray-border);border-radius:12px;background:var(--gray-card);overflow:hidden;}
+.desglose-row{display:flex;justify-content:space-between;align-items:center;gap:12px;padding:9px 14px;font-size:12px;color:var(--text-mid);border-bottom:1px solid var(--gray-border);}
+.desglose-row:last-child{border-bottom:none;}
+.desglose-row .v{font-weight:600;color:var(--text);white-space:nowrap;}
+.desglose-row.total{background:var(--blue-light);}
+.desglose-row.total .l{font-weight:600;color:var(--blue);}
+.desglose-row.total .v{font-family:'Josefin Sans',sans-serif;font-size:15px;color:var(--blue);}
+.match-bar{display:flex;gap:6px;flex-wrap:wrap;padding:14px 22px;border-top:1px solid var(--gray-border);background:linear-gradient(to right,var(--gray-card),var(--white));}
+.match-tag{display:flex;align-items:center;gap:4px;font-size:10px;font-weight:600;color:var(--green-dark);background:var(--green-light);border:1px solid rgba(76,158,12,0.25);border-radius:20px;padding:3px 10px;}
+.match-tag::before{content:'✓';font-size:9px;}
+
+/* STEPS */
+.steps{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-top:22px;}
+.step{background:var(--gray-card);border:1.5px solid var(--gray-border);border-radius:12px;padding:16px 18px;position:relative;}
+.step-n{font-family:'Josefin Sans',sans-serif;font-size:11px;font-weight:700;color:var(--white);background:var(--blue);width:26px;height:26px;border-radius:50%;display:flex;align-items:center;justify-content:center;margin-bottom:10px;}
+.step-t{font-family:'Josefin Sans',sans-serif;font-size:13px;font-weight:700;color:var(--blue);margin-bottom:6px;line-height:1.3;}
+.step-d{font-size:11.5px;color:var(--text-mid);line-height:1.6;}
+.step.ok{border-color:rgba(76,158,12,0.45);background:var(--green-light);}
+.step.ok .step-n{background:var(--green);}
+.step.ok .step-t{color:var(--green-dark);}
+.step.ok .step-d{color:#2f4d1a;}
+.step.ko{border-color:rgba(177,41,0,0.35);background:var(--red-light);}
+.step.ko .step-n{background:var(--red);}
+.step.ko .step-t{color:var(--red-dark);}
+.step.ko .step-d{color:#6b1a00;}
+
+/* RECOMENDACIÓN */
+.rec-wrap{background:linear-gradient(135deg,#2f6b0a,var(--green));border-radius:16px;padding:28px 32px;margin-bottom:24px;position:relative;overflow:hidden;}
+.rec-wrap::before{content:'';position:absolute;inset:0;background-image:radial-gradient(rgba(255,255,255,0.07) 1px,transparent 1px);background-size:22px 22px;}
+.rec-inner{position:relative;z-index:2;}
+.rec-tag{display:inline-block;background:rgba(255,255,255,0.16);border:1px solid rgba(255,255,255,0.3);border-radius:20px;padding:4px 12px;font-size:9px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--white);margin-bottom:12px;}
+.rec-title{font-family:'Josefin Sans',sans-serif;font-size:22px;font-weight:700;color:var(--white);margin-bottom:10px;}
+.rec-wrap p{font-size:13px;color:rgba(255,255,255,0.9);line-height:1.75;margin-bottom:10px;}
+.rec-wrap p:last-child{margin-bottom:0;}
+
+/* PRECIO / PAGOS */
+.payment-wrap{background:linear-gradient(135deg,var(--blue-dark) 0%,var(--blue) 60%,var(--blue-mid) 100%);border-radius:16px;padding:32px;position:relative;overflow:hidden;margin-bottom:24px;}
+.payment-wrap::before{content:'';position:absolute;inset:0;background-image:radial-gradient(rgba(255,255,255,0.05) 1px,transparent 1px);background-size:22px 22px;}
+.payment-inner{position:relative;z-index:2;}
+.pay-title{font-family:'Josefin Sans',sans-serif;font-size:16px;font-weight:700;color:var(--white);margin-bottom:6px;}
+.pay-subtitle{font-size:12px;color:rgba(255,255,255,0.45);margin-bottom:20px;}
+.big-price{display:flex;align-items:baseline;gap:10px;flex-wrap:wrap;margin-bottom:20px;}
+.big-price .n{font-family:'Josefin Sans',sans-serif;font-size:46px;font-weight:700;color:#7dd44a;line-height:1;}
+.big-price .u{font-size:12px;color:rgba(255,255,255,0.5);}
+.pay-cols{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:18px;}
+.pay-col{background:rgba(255,255,255,0.07);border:1px solid rgba(255,255,255,0.12);border-radius:12px;padding:18px 20px;}
+.pay-col-title{font-family:'Josefin Sans',sans-serif;font-size:9px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:#7dd44a;margin-bottom:12px;}
+.pay-step{margin-bottom:12px;}
+.pay-step:last-child{margin-bottom:0;}
+.pay-step-num{font-size:9px;font-weight:700;color:rgba(255,255,255,0.4);text-transform:uppercase;letter-spacing:1px;margin-bottom:2px;}
+.pay-step-title{font-size:15px;font-weight:600;color:var(--white);margin-bottom:3px;}
+.pay-step-desc{font-size:11.5px;color:rgba(255,255,255,0.5);line-height:1.55;}
+.pay-note{font-size:11px;color:rgba(255,255,255,0.35);line-height:1.65;font-style:italic;border-top:1px solid rgba(255,255,255,0.1);padding-top:14px;}
+.sup-chips{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:18px;}
+.sup-chip{background:rgba(255,255,255,0.07);border:1px solid rgba(255,255,255,0.14);border-radius:10px;padding:10px 14px;}
+.sup-chip .t{font-size:10px;color:rgba(255,255,255,0.5);letter-spacing:1px;text-transform:uppercase;margin-bottom:3px;}
+.sup-chip .v{font-family:'Josefin Sans',sans-serif;font-size:16px;font-weight:700;color:var(--white);}
+
+/* GESTOR */
+.gestor-wrap{background:linear-gradient(135deg,var(--blue-dark),var(--blue-mid));border-radius:12px;padding:20px 24px;margin-top:20px;}
+.gestor-title{font-family:'Josefin Sans',sans-serif;font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:rgba(255,255,255,0.6);margin-bottom:14px;}
+.gestor-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;}
+.gestor-item{background:rgba(255,255,255,0.08);border:1px solid rgba(255,255,255,0.12);border-radius:8px;padding:10px 12px;font-size:11px;color:rgba(255,255,255,0.85);line-height:1.4;}
+.gestor-item::before{content:'→';color:#7dd44a;font-weight:700;margin-right:5px;}
+
+/* GARANTÍA */
+.guarantee{background:var(--green-light);border:1.5px solid rgba(76,158,12,0.35);border-radius:16px;padding:26px 30px;margin-bottom:24px;}
+.guarantee h3{font-family:'Josefin Sans',sans-serif;font-size:15px;font-weight:700;color:var(--green-dark);margin-bottom:10px;}
+.guarantee p{font-size:12.5px;color:#2f4d1a;line-height:1.7;margin-bottom:14px;}
+.guarantee .inc-list li{color:#2f4d1a;}
+
+/* NOTA */
+.nota{font-size:11.5px;color:var(--text-mid);line-height:1.7;background:var(--gray-card);border-radius:8px;padding:14px 18px;border-left:3px solid var(--blue-light);margin-top:16px;}
+
+/* ENLACES */
+.links-grid{display:flex;flex-wrap:wrap;gap:12px;}
+.link-btn{display:flex;align-items:center;gap:10px;text-decoration:none;background:var(--gray-card);border:1.5px solid var(--gray-border);border-radius:12px;padding:14px 18px;transition:all .2s;flex:1 1 240px;}
+.link-btn:hover{border-color:var(--blue-mid);background:var(--blue-light);transform:translateY(-2px);}
+.link-btn .i{font-size:20px;}
+.link-btn .t{font-size:12.5px;font-weight:600;color:var(--blue);line-height:1.35;}
+
+/* CTA */
+.cta{background:linear-gradient(135deg,var(--red-dark),var(--red));border-radius:16px;padding:32px;text-align:center;}
+.cta h3{font-family:'Josefin Sans',sans-serif;font-size:20px;font-weight:700;color:var(--white);margin-bottom:8px;}
+.cta p{font-size:12.5px;color:rgba(255,255,255,0.75);margin-bottom:20px;}
+.cta a{display:inline-block;background:var(--white);color:var(--red-dark);text-decoration:none;font-family:'Josefin Sans',sans-serif;font-size:14px;font-weight:700;letter-spacing:0.5px;padding:14px 32px;border-radius:30px;transition:transform .2s,box-shadow .2s;}
+.cta a:hover{transform:translateY(-2px);box-shadow:0 10px 30px rgba(0,0,0,0.2);}
+
+.footer{text-align:center;padding:28px 24px 40px;font-size:11px;color:var(--text-light);line-height:1.7;}
+
+@media(max-width:980px){
+  .ficha,.feat-grid,.steps{grid-template-columns:repeat(2,1fr);}
+}
+@media(max-width:720px){
+  .ficha,.feat-grid,.steps{grid-template-columns:repeat(2,1fr);}
+  .header{padding:16px 20px;}.hero{padding:28px 20px 24px;}.hero-name{font-size:28px;}
+  .main{padding:28px 16px 48px;}
+  .includes-grid,.two-col{grid-template-columns:1fr;}
+  .opciones-grid{grid-template-columns:1fr;}
+  .pay-cols{grid-template-columns:1fr;}.gestor-grid{grid-template-columns:repeat(2,1fr);}
+  .card-body,.card-head{padding-left:20px;padding-right:20px;}
+  .payment-wrap,.rec-wrap,.guarantee{padding:24px 20px;}
+  .big-price .n{font-size:36px;}
+}
+</style>
+</head>
+<body>
+
+<header class="header">
+  <div class="logo-area"><img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjEuNzQ3NTAwMDAwMDAwMDAyMyAxNTQuODg2IDU0MS4xMTU0ODc3OTI5Njg3IDI1Ny4yMjg3MjQ3NDg1MTk0Ij4gPHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA4MC4wMTExMDA3NjkwNDI5NyA4MCIgZmlsbD0ibm9uZSIgaGVpZ2h0PSIxMTcuMjI4NzI0NzQ4NTE5NCIgd2lkdGg9IjExNy4yNDUwMDA5NjAxNDQxMSIgeT0iMjI0Ljg4NiIgeD0iNzEuNzQ3NSIgcHJlc2VydmVBc3BlY3RSYXRpbz0ieE1pbllNaW4iIHN0eWxlPSJvdmVyZmxvdzogdmlzaWJsZTsiPjxwYXRoIGQ9Ik0zOS4zMjgxIDcwLjc0TDcyLjM5ODEgNzIuM0w3MS44NzgxIDcyLjgzTDcyLjM5ODEgNjEuNzFMNzIuOTI4MSA3Mi44M0w3Mi45NDgxIDczLjMyTDcyLjM5ODEgNzMuMzVMMzkuMzI4MSA3NC45MVY3MC43NFoiIGZpbGw9IiM1NkJDQzkiIHN0eWxlPSJmaWxsOiAjMDAzMzY2OyBmaWxsLW9wYWNpdHk6IDE7Ij48L3BhdGg+PHBhdGggZD0iTTMxLjQ1MDkgNy42Mjk5M0w3LjM4MDk0IDguMDY5OTNMNy44MzA5MyA3LjYyOTkzTDkuMDIwOTQgNzIuODI5OUw3LjM4MDk0IDcxLjE3OTlMMzEuNDUwOSA3MC43Mzk5Vjc0LjkwOTlMNy4zODA5NCA3NC40Njk5TDUuNzEwOTQgNzQuNDM5OUw1Ljc0MDk0IDcyLjgyOTlMNi45NDA5MyA3LjYyOTkzTDYuOTUwOTMgNy4xNjk5Mkw3LjM4MDk0IDcuMTc5OTNMMzEuNDUwOSA3LjYyOTkzWiIgZmlsbD0iI0UyNTA2RCIgc3R5bGU9ImZpbGw6ICNCMTI5MDA7IGZpbGwtb3BhY2l0eTogMTsiPjwvcGF0aD48cGF0aCBkPSJNNzAuMzIwMyAxOC43NEw3MC44NDAzIDcuNjNMNzIuNDAwMyA5LjE5TDM5LjMyMDMgNy42M0w3Mi40MDAzIDYuMDcwMDFMNzMuODgwMyA2QzczLjkxMDMgNi42IDc0LjQzMDMgMTcuNzYgNzQuNDgwMyAxOC43NUg3MC4zMTAzTDcwLjMyMDMgMTguNzRaIiBmaWxsPSIjQTBBMERGIiBzdHlsZT0iZmlsbDogIzRDOUUwQzsgZmlsbC1vcGFjaXR5OiAxOyI+PC9wYXRoPjxwYXRoIGQ9Ik0yNC4xMjExIDc4LjM2TDc3LjkyMTEgNzYuNzZMNzYuMzMxMSA3OC4zNkw3NS44NDExIDYxLjcxSDgwLjAxMTFDODAuMDAxMSA2Mi41NyA3OS40NzExIDc5LjY0IDc5LjQ3MTEgODBMNzcuOTMxMSA3OS45NUwyNC4xMzExIDc4LjM1TDI0LjEyMTEgNzguMzZaIiBmaWxsPSIjNTZCQ0M5IiBzdHlsZT0iZmlsbDogIzAwMzM2NjsgZmlsbC1vcGFjaXR5OiAxOyI+PC9wYXRoPjxwYXRoIGQ9Ik0xNC43NSA0LjE3OTc4TDEuODYgMy45MTk3N0wzLjY4MDAxIDIuMDk5NzhMMi4xMiA3OC4zNjk4TDEuODYgNzguMTA5OEwxNC43NSA3OC4zNjk4TDEuODYgNzguNjI5OEgxLjYwMDAxQzEuNTgwMDEgNzguNTM5OCAwLjA1MDAwODUgMi4yNDk3OCAwLjA0MDAwODUgMi4wOTk3OEwwIDAuMzA5NzY5TDEuODYgMC4yNjk3NzVMMTQuNzUgMC4wMDk3NjU2MlY0LjE4OTc3VjQuMTc5NzhaIiBmaWxsPSIjRTI1MDZEIiBzdHlsZT0iZmlsbDogI0IxMjkwMDsgZmlsbC1vcGFjaXR5OiAxOyI+PC9wYXRoPjxwYXRoIGQ9Ik03Ny45MjExIDE4Ljc0TDc3LjQzMTEgMi4wOUw3Ny45MjExIDIuNThMMjQuMTIxMSA0LjE4MDAxVjBMNzcuOTIxMSAxLjYwMDAxTDc4LjQzMTEgMS42MUw3OC40MjExIDIuMDlMNzcuOTIxMSAxOC43NFoiIGZpbGw9IiNBMEEwREYiIHN0eWxlPSJmaWxsOiAjNEM5RTBDOyBmaWxsLW9wYWNpdHk6IDE7Ij48L3BhdGg+PC9zdmc+IDxzdmcgeT0iMzE5LjAzNzkzNTU0NDE3MjA2IiB2aWV3Qm94PSIxLjIyMDAwMDAyODYxMDIyOTUgLTAuMDQwMDAwMDAyODMxMjIwNjMgMTg4LjAyMDAwNDI3MjQ2MDk0IDEwLjIyOTk5OTU0MjIzNjMyOCIgeD0iMjAwLjIwMzQ2NjM3Mjc3MjQzIiBoZWlnaHQ9IjEwLjIyOTk5OTU0MjIzNjMyOCIgd2lkdGg9IjE4OC4wMjAwMDQyNzI0NjA5NCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiBzdHlsZT0ib3ZlcmZsb3c6IHZpc2libGU7Ij48ZyBmaWxsPSIjMDAwIiBmaWxsLW9wYWNpdHk9IjAuNiIgc3R5bGU9IiI+PHBhdGggZD0iTTEuMjIgOC43OEwxLjIyIDAuMzJMNi43MiAwLjMyTDYuNzIgMS40MEwyLjM1IDEuNDBMMi4zNSAzLjk4TDYuMjUgMy45OEw2LjI1IDUuMDdMMi4zNSA1LjA3TDIuMzUgNy42OUw2Ljg4IDcuNjlMNi44OCA4Ljc4TDEuMjIgOC43OFpNMTUuOTkgOC43OEwxMC40OSAwLjMyTDExLjkzIDAuMzJMMTcuNDQgOC43OEwxNS45OSA4Ljc4Wk0xMS43NyA4Ljc4TDEwLjM3IDguNzhMMTMuMzEgNC4xOEwxMy44NiA1LjI4TDExLjc3IDguNzhaTTE0LjUwIDQuNzJMMTMuODkgMy43N0wxNS45NSAwLjMyTDE3LjMyIDAuMzJMMTQuNTAgNC43MlpNMjEuMzkgMC4zMkwyMy42NSAwLjMyUTI0LjU4IDAuMzIgMjUuMjMgMC42M1EyNS44OSAwLjk0IDI2LjI0IDEuNTJRMjYuNjAgMi4xMSAyNi42MCAyLjk0TDI2LjYwIDIuOTRRMjYuNjAgMy40NCAyNi40NSAzLjkzUTI2LjMwIDQuNDEgMjUuOTYgNC44MFEyNS42MyA1LjIwIDI1LjA5IDUuNDNRMjQuNTUgNS42NiAyMy43OCA1LjY2TDIzLjc4IDUuNjZMMjIuNTMgNS42NkwyMi41MyA4Ljc4TDIxLjM5IDguNzhMMjEuMzkgMC4zMlpNMjIuNTMgNC41OEwyMy43NyA0LjU4UTI0LjI3IDQuNTggMjQuNjAgNC40MVEyNC45MyA0LjI1IDI1LjExIDQuMDBRMjUuMzAgMy43NCAyNS4zOCAzLjQ2UTI1LjQ3IDMuMTggMjUuNDcgMi45NkwyNS40NyAyLjk2UTI1LjQ3IDIuNzAgMjUuMzggMi40M1EyNS4zMCAyLjE1IDI1LjExIDEuOTNRMjQuOTIgMS43MCAyNC42MSAxLjU1UTI0LjMwIDEuNDAgMjMuODQgMS40MEwyMy44NCAxLjQwTDIyLjUzIDEuNDBMMjIuNTMgNC41OFpNMzAuNzAgOC43OEwzMC43MCAwLjMyTDMxLjgzIDAuMzJMMzEuODMgNy42OUwzNi4xMyA3LjY5TDM2LjEzIDguNzhMMzAuNzAgOC43OFpNMzkuNjQgNC41NUwzOS42NCA0LjU1UTM5LjY0IDMuNjcgMzkuOTcgMi45MFE0MC4zMSAyLjEyIDQwLjkwIDEuNTJRNDEuNTAgMC45MSA0Mi4yOCAwLjU3UTQzLjA2IDAuMjIgNDMuOTYgMC4yMkw0My45NiAwLjIyUTQ0Ljg1IDAuMjIgNDUuNjIgMC41N1E0Ni40MCAwLjkxIDQ3LjAxIDEuNTJRNDcuNjEgMi4xMiA0Ny45NSAyLjkwUTQ4LjI5IDMuNjcgNDguMjkgNC41NUw0OC4yOSA0LjU1UTQ4LjI5IDUuNDUgNDcuOTUgNi4yNFE0Ny42MSA3LjAyIDQ3LjAxIDcuNjFRNDYuNDEgOC4yMCA0NS42MyA4LjU0UTQ0Ljg1IDguODcgNDMuOTYgOC44N0w0My45NiA4Ljg3UTQzLjA2IDguODcgNDIuMjggOC41NFE0MS41MCA4LjIyIDQwLjkwIDcuNjNRNDAuMzEgNy4wNSAzOS45NyA2LjI2UTM5LjY0IDUuNDggMzkuNjQgNC41NVpNNDAuODEgNC41Nkw0MC44MSA0LjU2UTQwLjgxIDUuMjMgNDEuMDUgNS44MVE0MS4zMCA2LjM5IDQxLjczIDYuODNRNDIuMTcgNy4yOCA0Mi43NCA3LjUzUTQzLjMxIDcuNzggNDMuOTggNy43OEw0My45OCA3Ljc4UTQ0LjY0IDcuNzggNDUuMjEgNy41M1E0NS43OCA3LjI4IDQ2LjIwIDYuODNRNDYuNjIgNi4zOSA0Ni44NyA1LjgxUTQ3LjEyIDUuMjMgNDcuMTIgNC41NUw0Ny4xMiA0LjU1UTQ3LjEyIDMuODkgNDYuODcgMy4yOVE0Ni42MiAyLjcwIDQ2LjE5IDIuMjZRNDUuNzYgMS44MSA0NS4xOSAxLjU2UTQ0LjYxIDEuMzEgNDMuOTYgMS4zMUw0My45NiAxLjMxUTQzLjI5IDEuMzEgNDIuNzIgMS41N1E0Mi4xNCAxLjgzIDQxLjcxIDIuMjdRNDEuMjggMi43MiA0MS4wNCAzLjMxUTQwLjgxIDMuOTAgNDAuODEgNC41NlpNNTIuNTMgMC4zMkw1NC43OCAwLjMyUTU1LjQzIDAuMzIgNTUuOTcgMC40OVE1Ni41MSAwLjY2IDU2LjkyIDAuOTlRNTcuMzIgMS4zMiA1Ny41NSAxLjgxUTU3Ljc4IDIuMjkgNTcuNzggMi45NEw1Ny43OCAyLjk0UTU3Ljc4IDMuNDQgNTcuNjMgMy45MlE1Ny40OSA0LjQwIDU3LjE1IDQuNzlRNTYuODEgNS4xOCA1Ni4yNiA1LjQyUTU1LjcyIDUuNjYgNTQuOTIgNS42Nkw1NC45MiA1LjY2TDUzLjY3IDUuNjZMNTMuNjcgOC43OEw1Mi41MyA4Ljc4TDUyLjUzIDAuMzJaTTUzLjY3IDQuNThMNTQuOTAgNC41OFE1NS40MCA0LjU4IDU1Ljc0IDQuNDJRNTYuMDcgNC4yNyA1Ni4yNiA0LjAzUTU2LjQ0IDMuNzkgNTYuNTMgMy41MVE1Ni42MSAzLjIzIDU2LjYxIDIuOThMNTYuNjEgMi45OFE1Ni42MSAyLjczIDU2LjUyIDIuNDVRNTYuNDMgMi4xOCA1Ni4yNCAxLjk0UTU2LjA1IDEuNzEgNTUuNzQgMS41NlE1NS40MyAxLjQwIDU0Ljk4IDEuNDBMNTQuOTggMS40MEw1My42NyAxLjQwTDUzLjY3IDQuNThaTTU0Ljk1IDUuMjVMNTYuMjkgNS4yMkw1OC41MCA4Ljc4TDU3LjE5IDguNzhMNTQuOTUgNS4yNVpNNjIuNTkgOC43OEw2Mi41OSAwLjMyTDY4LjA5IDAuMzJMNjguMDkgMS40MEw2My43MiAxLjQwTDYzLjcyIDMuOThMNjcuNjIgMy45OEw2Ny42MiA1LjA3TDYzLjcyIDUuMDdMNjMuNzIgNy42OUw2OC4yNSA3LjY5TDY4LjI1IDguNzhMNjIuNTkgOC43OFpNNzIuMjkgNy43Nkw3My4yNyA3Ljc2UTczLjAyIDguMzcgNzIuNzYgOC45N1E3Mi41MSA5LjU3IDcyLjI1IDEwLjE5TDcyLjI1IDEwLjE5TDcxLjM4IDEwLjE5UTcxLjYxIDkuNTcgNzEuODMgOC45N1E3Mi4wNiA4LjM3IDcyLjI5IDcuNzZMNzIuMjkgNy43NlpNODMuMzEgOC43OEw4My4zMSAwLjMyTDg0LjQ1IDAuMzJMODQuNDUgNy42OUw4OC43NCA3LjY5TDg4Ljc0IDguNzhMODMuMzEgOC43OFpNOTIuOTMgOC43OEw5Mi45MyAwLjMyTDk4LjQzIDAuMzJMOTguNDMgMS40MEw5NC4wNyAxLjQwTDk0LjA3IDMuOThMOTcuOTcgMy45OEw5Ny45NyA1LjA3TDk0LjA3IDUuMDdMOTQuMDcgNy42OUw5OC42MCA3LjY5TDk4LjYwIDguNzhMOTIuOTMgOC43OFpNMTAzLjE3IDguNzhMMTAyLjA2IDguNzhMMTA1Ljc2LTAuMDRMMTA1LjgzLTAuMDRMMTA5LjUyIDguNzhMMTA4LjIyIDguNzhMMTA1LjQ2IDEuNzRMMTA2LjI2IDEuMjJMMTAzLjE3IDguNzhaTTEwMy45MCA2LjU1TDEwNC4yMyA1LjU3TDEwNy4zOCA1LjU3TDEwNy43NSA2LjU1TDEwMy45MCA2LjU1Wk0xMTMuNDUgMC4zMkwxMTUuNzAgMC4zMlExMTYuMzQgMC4zMiAxMTYuODggMC40OVExMTcuNDMgMC42NiAxMTcuODMgMC45OVExMTguMjQgMS4zMiAxMTguNDYgMS44MVExMTguNjkgMi4yOSAxMTguNjkgMi45NEwxMTguNjkgMi45NFExMTguNjkgMy40NCAxMTguNTUgMy45MlExMTguNDAgNC40MCAxMTguMDYgNC43OVExMTcuNzIgNS4xOCAxMTcuMTggNS40MlExMTYuNjMgNS42NiAxMTUuODQgNS42NkwxMTUuODQgNS42NkwxMTQuNTggNS42NkwxMTQuNTggOC43OEwxMTMuNDUgOC43OEwxMTMuNDUgMC4zMlpNMTE0LjU4IDQuNThMMTE1LjgxIDQuNThRMTE2LjMyIDQuNTggMTE2LjY1IDQuNDJRMTE2Ljk4IDQuMjcgMTE3LjE3IDQuMDNRMTE3LjM2IDMuNzkgMTE3LjQ0IDMuNTFRMTE3LjUyIDMuMjMgMTE3LjUyIDIuOThMMTE3LjUyIDIuOThRMTE3LjUyIDIuNzMgMTE3LjQzIDIuNDVRMTE3LjM1IDIuMTggMTE3LjE1IDEuOTRRMTE2Ljk2IDEuNzEgMTE2LjY1IDEuNTZRMTE2LjM0IDEuNDAgMTE1Ljg5IDEuNDBMMTE1Ljg5IDEuNDBMMTE0LjU4IDEuNDBMMTE0LjU4IDQuNThaTTExNS44NiA1LjI1TDExNy4yMSA1LjIyTDExOS40MiA4Ljc4TDExOC4xMSA4Ljc4TDExNS44NiA1LjI1Wk0xMzAuODYgOS4wNUwxMzAuODMgOS4wNUwxMjQuMjkgMi40MUwxMjQuNjEgMi40OUwxMjQuNjQgOC43OEwxMjMuNTAgOC43OEwxMjMuNTAgMC4wNkwxMjMuNTYgMC4wNkwxMzAuMDMgNi43MkwxMjkuNzYgNi42NkwxMjkuNzQgMC4zMkwxMzAuODYgMC4zMkwxMzAuODYgOS4wNVpNMTM1LjM3IDcuNzZMMTM2LjM1IDcuNzZRMTM2LjA5IDguMzcgMTM1Ljg0IDguOTdRMTM1LjU5IDkuNTcgMTM1LjMzIDEwLjE5TDEzNS4zMyAxMC4xOUwxMzQuNDYgMTAuMTlRMTM0LjY5IDkuNTcgMTM0LjkxIDguOTdRMTM1LjEzIDguMzcgMTM1LjM3IDcuNzZMMTM1LjM3IDcuNzZaTTE1My4wMiA0LjYzTDE1My4wMiA4LjA1UTE1Mi44NCA4LjIwIDE1Mi41MyA4LjM1UTE1Mi4yMSA4LjUwIDE1MS44MyA4LjYxUTE1MS40NSA4LjczIDE1MS4wNSA4LjgwUTE1MC42NCA4Ljg3IDE1MC4yOSA4Ljg3TDE1MC4yOSA4Ljg3UTE0OS4yNyA4Ljg3IDE0OC40NiA4LjU1UTE0Ny42NSA4LjI0IDE0Ny4wNyA3LjY4UTE0Ni40OSA3LjEyIDE0Ni4xOCA2LjM1UTE0NS44NyA1LjU5IDE0NS44NyA0LjcwTDE0NS44NyA0LjcwUTE0NS44NyAzLjY1IDE0Ni4yMSAyLjgxUTE0Ni41NiAxLjk4IDE0Ny4xNiAxLjQwUTE0Ny43NiAwLjgyIDE0OC41NSAwLjUyUTE0OS4zMyAwLjIyIDE1MC4yMSAwLjIyTDE1MC4yMSAwLjIyUTE1MC45NSAwLjIyIDE1MS41OCAwLjQwUTE1Mi4yMSAwLjU3IDE1Mi42OSAwLjg0TDE1Mi42OSAwLjg0TDE1Mi4zMCAxLjg4UTE1Mi4wNyAxLjc0IDE1MS43MiAxLjYzUTE1MS4zOCAxLjUxIDE1MS4wMiAxLjQzUTE1MC42NSAxLjM2IDE1MC4zNCAxLjM2TDE1MC4zNCAxLjM2UTE0OS41OSAxLjM2IDE0OC45OCAxLjU5UTE0OC4zNyAxLjgxIDE0Ny45NCAyLjI0UTE0Ny41MCAyLjY3IDE0Ny4yNyAzLjI3UTE0Ny4wNCAzLjg3IDE0Ny4wNCA0LjYyTDE0Ny4wNCA0LjYyUTE0Ny4wNCA1LjMxIDE0Ny4yNyA1Ljg5UTE0Ny41MCA2LjQ2IDE0Ny45NCA2Ljg4UTE0OC4zNyA3LjI5IDE0OC45NyA3LjUyUTE0OS41OCA3Ljc1IDE1MC4zMCA3Ljc1TDE1MC4zMCA3Ljc1UTE1MC43MyA3Ljc1IDE1MS4xNiA3LjY2UTE1MS41OCA3LjU3IDE1MS44OCA3LjQxTDE1MS44OCA3LjQxTDE1MS44OCA1LjcyTDE1MC4yMCA1LjcyTDE1MC4yMCA0LjYzTDE1My4wMiA0LjYzWk0xNTcuNTIgMC4zMkwxNTkuNzcgMC4zMlExNjAuNDEgMC4zMiAxNjAuOTYgMC40OVExNjEuNTAgMC42NiAxNjEuOTEgMC45OVExNjIuMzEgMS4zMiAxNjIuNTQgMS44MVExNjIuNzcgMi4yOSAxNjIuNzcgMi45NEwxNjIuNzcgMi45NFExNjIuNzcgMy40NCAxNjIuNjIgMy45MlExNjIuNDcgNC40MCAxNjIuMTMgNC43OVExNjEuNzkgNS4xOCAxNjEuMjUgNS40MlExNjAuNzEgNS42NiAxNTkuOTEgNS42NkwxNTkuOTEgNS42NkwxNTguNjYgNS42NkwxNTguNjYgOC43OEwxNTcuNTIgOC43OEwxNTcuNTIgMC4zMlpNMTU4LjY2IDQuNThMMTU5Ljg5IDQuNThRMTYwLjM5IDQuNTggMTYwLjcyIDQuNDJRMTYxLjA2IDQuMjcgMTYxLjI0IDQuMDNRMTYxLjQzIDMuNzkgMTYxLjUxIDMuNTFRMTYxLjYwIDMuMjMgMTYxLjYwIDIuOThMMTYxLjYwIDIuOThRMTYxLjYwIDIuNzMgMTYxLjUxIDIuNDVRMTYxLjQyIDIuMTggMTYxLjIzIDEuOTRRMTYxLjAzIDEuNzEgMTYwLjcyIDEuNTZRMTYwLjQxIDEuNDAgMTU5Ljk3IDEuNDBMMTU5Ljk3IDEuNDBMMTU4LjY2IDEuNDBMMTU4LjY2IDQuNThaTTE1OS45MyA1LjI1TDE2MS4yOCA1LjIyTDE2My40OSA4Ljc4TDE2Mi4xOCA4Ljc4TDE1OS45MyA1LjI1Wk0xNjYuODYgNC41NUwxNjYuODYgNC41NVExNjYuODYgMy42NyAxNjcuMjAgMi45MFExNjcuNTMgMi4xMiAxNjguMTMgMS41MlExNjguNzIgMC45MSAxNjkuNTAgMC41N1ExNzAuMjggMC4yMiAxNzEuMTggMC4yMkwxNzEuMTggMC4yMlExNzIuMDcgMC4yMiAxNzIuODUgMC41N1ExNzMuNjMgMC45MSAxNzQuMjMgMS41MlExNzQuODMgMi4xMiAxNzUuMTcgMi45MFExNzUuNTEgMy42NyAxNzUuNTEgNC41NUwxNzUuNTEgNC41NVExNzUuNTEgNS40NSAxNzUuMTcgNi4yNFExNzQuODMgNy4wMiAxNzQuMjMgNy42MVExNzMuNjQgOC4yMCAxNzIuODUgOC41NFExNzIuMDcgOC44NyAxNzEuMTggOC44N0wxNzEuMTggOC44N1ExNzAuMjggOC44NyAxNjkuNTAgOC41NFExNjguNzIgOC4yMiAxNjguMTMgNy42M1ExNjcuNTMgNy4wNSAxNjcuMjAgNi4yNlExNjYuODYgNS40OCAxNjYuODYgNC41NVpNMTY4LjAzIDQuNTZMMTY4LjAzIDQuNTZRMTY4LjAzIDUuMjMgMTY4LjI4IDUuODFRMTY4LjUyIDYuMzkgMTY4Ljk2IDYuODNRMTY5LjM5IDcuMjggMTY5Ljk2IDcuNTNRMTcwLjU0IDcuNzggMTcxLjIwIDcuNzhMMTcxLjIwIDcuNzhRMTcxLjg2IDcuNzggMTcyLjQzIDcuNTNRMTczLjAxIDcuMjggMTczLjQzIDYuODNRMTczLjg1IDYuMzkgMTc0LjA5IDUuODFRMTc0LjM0IDUuMjMgMTc0LjM0IDQuNTVMMTc0LjM0IDQuNTVRMTc0LjM0IDMuODkgMTc0LjA5IDMuMjlRMTczLjg1IDIuNzAgMTczLjQyIDIuMjZRMTcyLjk4IDEuODEgMTcyLjQxIDEuNTZRMTcxLjg0IDEuMzEgMTcxLjE4IDEuMzFMMTcxLjE4IDEuMzFRMTcwLjUxIDEuMzEgMTY5Ljk0IDEuNTdRMTY5LjM3IDEuODMgMTY4LjkzIDIuMjdRMTY4LjUwIDIuNzIgMTY4LjI3IDMuMzFRMTY4LjAzIDMuOTAgMTY4LjAzIDQuNTZaTTE4MS43NyA5LjE2TDE3OC40MCAwLjM2TDE3OS43MSAwLjM2TDE4Mi4wMSA2LjgyTDE4MS44MSA2Ljc0TDE4My40OCAyLjQxTDE4NC4wMSAzLjk0TDE4MS43NyA5LjE2Wk0xODUuOTEgOS4xNUwxODIuNDYgMC4zNkwxODMuNjAgMC4zNkwxODYuMDggNi43M0wxODUuODQgNi42OEwxODguMDMgMC4zNkwxODkuMjQgMC4zNkwxODUuOTEgOS4xNVoiIHRyYW5zZm9ybT0idHJhbnNsYXRlKDAsIDApIj48L3BhdGg+PC9nPjwvc3ZnPiA8c3ZnIHk9IjI2OC43OCIgdmlld0JveD0iMi41Mzk5OTk5NjE4NTMwMjczIDkuNTc5OTk5OTIzNzA2MDU1IDM1Ny4yOTk5ODc3OTI5Njg3NSAzNy40NDAwMDYyNTYxMDM1MTYiIHg9IjExNS41NjMiIGhlaWdodD0iMzcuNDQwMDA2MjU2MTAzNTE2IiB3aWR0aD0iMzU3LjI5OTk4Nzc5Mjk2ODc1IiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHN0eWxlPSJvdmVyZmxvdzogdmlzaWJsZTsiPjxnIGZpbGw9IiMwMDAiIHN0eWxlPSIiPjxwYXRoIGQ9Ik0yNi45OSAxMC4wOEwyOS4zMyAzOC4zMEwyNS41NiAzOC4zMEwyNC41OCAyNS41NlEyMy45NiAxOC4wNiAyMy44OCAxNC4wNUwyMy44OCAxNC4wNUwxNy43OCAzNS4xMEwxNC4xMyAzNS4xMEw3LjcwIDE0LjAxUTcuNzAgMTkuMTMgNy4xNyAyNS44NUw3LjE3IDI1Ljg1TDYuMjMgMzguMzBMMi41NCAzOC4zMEw0Ljg3IDEwLjA4TDEwLjEyIDEwLjA4TDE2LjA2IDMwLjYwTDIxLjcxIDEwLjA4TDI2Ljk5IDEwLjA4Wk01MS42MSAxNi43MUw0NC40MCAzOC40MlE0My4xMyA0Mi4xOSA0MC44NiA0NC4zOFEzOC41OCA0Ni41NyAzNC4zNyA0Ny4wMkwzNC4zNyA0Ny4wMkwzMy45NiA0NC4wN1EzNi4wOSA0My43MCAzNy4zNiA0My4wMVEzOC42MyA0Mi4zMSAzOS4zOCA0MS4yM1E0MC4xNCA0MC4xNCA0MC44MCAzOC4zMEw0MC44MCAzOC4zMEwzOS41MyAzOC4zMEwzMi4yOCAxNi43MUwzNi4yOSAxNi43MUw0Mi4wNyAzNS41NUw0Ny43MiAxNi43MUw1MS42MSAxNi43MVpNNjYuOTcgMTAuMDhMNzAuODYgMTAuMDhMNzAuODYgMzQuOTBMODIuNDUgMzQuOTBMODIuMDAgMzguMzBMNjYuOTcgMzguMzBMNjYuOTcgMTAuMDhaTTEwMS43MSAzMy4yNlExMDEuNzEgMzQuNTcgMTAyLjE2IDM1LjIxUTEwMi42MSAzNS44NCAxMDMuNTEgMzYuMTdMMTAzLjUxIDM2LjE3TDEwMi42NSAzOC43OVExMDAuOTcgMzguNTggOTkuOTQgMzcuODVROTguOTIgMzcuMTEgOTguNDMgMzUuNTVMOTguNDMgMzUuNTVROTYuMjYgMzguNzkgOTIuMDAgMzguNzlMOTIuMDAgMzguNzlRODguODAgMzguNzkgODYuOTYgMzYuOTlRODUuMTIgMzUuMTkgODUuMTIgMzIuMjhMODUuMTIgMzIuMjhRODUuMTIgMjguODQgODcuNTkgMjYuOTlROTAuMDcgMjUuMTUgOTQuNjIgMjUuMTVMOTQuNjIgMjUuMTVMOTcuOTQgMjUuMTVMOTcuOTQgMjMuNTVROTcuOTQgMjEuMjYgOTYuODMgMjAuMjhROTUuNzIgMTkuMjkgOTMuNDMgMTkuMjlMOTMuNDMgMTkuMjlROTEuMDYgMTkuMjkgODcuNjEgMjAuNDRMODcuNjEgMjAuNDRMODYuNjcgMTcuNjlROTAuNjkgMTYuMjIgOTQuMTMgMTYuMjJMOTQuMTMgMTYuMjJROTcuOTQgMTYuMjIgOTkuODIgMTguMDhRMTAxLjcxIDE5Ljk1IDEwMS43MSAyMy4zOUwxMDEuNzEgMjMuMzlMMTAxLjcxIDMzLjI2Wk05Mi44NiAzNS45NlE5Ni4wOSAzNS45NiA5Ny45NCAzMi42MEw5Ny45NCAzMi42MEw5Ny45NCAyNy42NUw5NS4xMSAyNy42NVE4OS4xMyAyNy42NSA4OS4xMyAzMi4wN0w4OS4xMyAzMi4wN1E4OS4xMyAzNC4wMCA5MC4wNyAzNC45OFE5MS4wMSAzNS45NiA5Mi44NiAzNS45Nkw5Mi44NiAzNS45NlpNMTE5LjYwIDE2LjIyUTEyMi41NSAxNi4yMiAxMjQuMjEgMTcuOThRMTI1Ljg3IDE5Ljc0IDEyNS44NyAyMi44MkwxMjUuODcgMjIuODJMMTI1Ljg3IDM4LjMwTDEyMi4xMCAzOC4zMEwxMjIuMTAgMjMuMzVRMTIyLjEwIDIxLjA1IDEyMS4yNCAyMC4xMVExMjAuMzggMTkuMTcgMTE4LjcwIDE5LjE3TDExOC43MCAxOS4xN1ExMTYuOTggMTkuMTcgMTE1LjY3IDIwLjE1UTExNC4zNiAyMS4xNCAxMTMuMjIgMjIuOThMMTEzLjIyIDIyLjk4TDExMy4yMiAzOC4zMEwxMDkuNDUgMzguMzBMMTA5LjQ1IDE2LjcxTDExMi42OCAxNi43MUwxMTMuMDEgMTkuOTFRMTE0LjE2IDE4LjE5IDExNS44NiAxNy4yMFExMTcuNTYgMTYuMjIgMTE5LjYwIDE2LjIyTDExOS42MCAxNi4yMlpNMTQ5Ljc1IDE0LjMwTDE1MC44NiAxNy42OVExNDkuNjMgMTguMTAgMTQ4LjE1IDE4LjIzUTE0Ni42OCAxOC4zNSAxNDQuNTUgMTguMzVMMTQ0LjU1IDE4LjM1UTE0OC4zNiAyMC4wNyAxNDguMzYgMjMuODBMMTQ4LjM2IDIzLjgwUTE0OC4zNiAyNy4wMyAxNDYuMTUgMjkuMDhRMTQzLjk0IDMxLjEzIDE0MC4xMyAzMS4xM0wxNDAuMTMgMzEuMTNRMTM4LjY1IDMxLjEzIDEzNy4zOCAzMC43MkwxMzcuMzggMzAuNzJRMTM2Ljg5IDMxLjA1IDEzNi42MCAzMS42MFExMzYuMzIgMzIuMTUgMTM2LjMyIDMyLjczTDEzNi4zMiAzMi43M1ExMzYuMzIgMzQuNDkgMTM5LjE0IDM0LjQ5TDEzOS4xNCAzNC40OUwxNDIuNTggMzQuNDlRMTQ0Ljc1IDM0LjQ5IDE0Ni40MyAzNS4yN1ExNDguMTEgMzYuMDUgMTQ5LjA0IDM3LjQwUTE0OS45NiAzOC43NSAxNDkuOTYgNDAuNDdMMTQ5Ljk2IDQwLjQ3UTE0OS45NiA0My42MiAxNDcuMzggNDUuMzJRMTQ0LjgwIDQ3LjAyIDEzOS44NCA0Ny4wMkwxMzkuODQgNDcuMDJRMTM2LjM2IDQ3LjAyIDEzNC4zMyA0Ni4zMVExMzIuMzAgNDUuNTkgMTMxLjQ0IDQ0LjE2UTEzMC41OCA0Mi43MiAxMzAuNTggNDAuNDdMMTMwLjU4IDQwLjQ3TDEzMy45OCA0MC40N1ExMzMuOTggNDEuNzggMTM0LjQ3IDQyLjU0UTEzNC45NyA0My4zMCAxMzYuMjMgNDMuNjhRMTM3LjUwIDQ0LjA3IDEzOS44NCA0NC4wN0wxMzkuODQgNDQuMDdRMTQzLjI0IDQ0LjA3IDE0NC42OSA0My4yM1ExNDYuMTUgNDIuMzkgMTQ2LjE1IDQwLjcxTDE0Ni4xNSA0MC43MVExNDYuMTUgMzkuMjAgMTQ1LjAwIDM4LjQyUTE0My44NSAzNy42NCAxNDEuODEgMzcuNjRMMTQxLjgxIDM3LjY0TDEzOC40MSAzNy42NFExMzUuNjYgMzcuNjQgMTM0LjI1IDM2LjQ4UTEzMi44NCAzNS4zMSAxMzIuODQgMzMuNTVMMTMyLjg0IDMzLjU1UTEzMi44NCAzMi40OCAxMzMuNDUgMzEuNTBRMTM0LjA2IDMwLjUyIDEzNS4yMSAyOS43NEwxMzUuMjEgMjkuNzRRMTMzLjMzIDI4Ljc1IDEzMi40NSAyNy4zMFExMzEuNTcgMjUuODUgMTMxLjU3IDIzLjc2TDEzMS41NyAyMy43NlExMzEuNTcgMjEuNTkgMTMyLjY1IDE5Ljg3UTEzMy43NCAxOC4xNSAxMzUuNjQgMTcuMThRMTM3LjU1IDE2LjIyIDEzOS44OCAxNi4yMkwxMzkuODggMTYuMjJRMTQyLjQyIDE2LjI2IDE0NC4xNCAxNi4wNFExNDUuODYgMTUuODEgMTQ2Ljk5IDE1LjQyUTE0OC4xMSAxNS4wMyAxNDkuNzUgMTQuMzBMMTQ5Ljc1IDE0LjMwWk0xMzkuODggMTguOTJRMTM3Ljc1IDE4LjkyIDEzNi41OCAyMC4yNVExMzUuNDIgMjEuNTkgMTM1LjQyIDIzLjc2TDEzNS40MiAyMy43NlExMzUuNDIgMjUuOTcgMTM2LjYwIDI3LjMwUTEzNy43OSAyOC42MyAxMzkuOTYgMjguNjNMMTM5Ljk2IDI4LjYzUTE0Mi4xNyAyOC42MyAxNDMuMzQgMjcuMzRRMTQ0LjUxIDI2LjA1IDE0NC41MSAyMy43MkwxNDQuNTEgMjMuNzJRMTQ0LjUxIDE4LjkyIDEzOS44OCAxOC45MkwxMzkuODggMTguOTJaTTE3MC44MSAxNi43MUwxNzAuODEgMzguMzBMMTY3LjU3IDM4LjMwTDE2Ny4yOCAzNC45NFExNjYuMDUgMzYuOTUgMTY0LjQ2IDM3Ljg3UTE2Mi44NiAzOC43OSAxNjAuNTcgMzguNzlMMTYwLjU3IDM4Ljc5UTE1Ny43NCAzOC43OSAxNTYuMTQgMzcuMDdRMTU0LjU0IDM1LjM1IDE1NC41NCAzMi4yMEwxNTQuNTQgMzIuMjBMMTU0LjU0IDE2LjcxTDE1OC4zMSAxNi43MUwxNTguMzEgMzEuNzlRMTU4LjMxIDM0LjAwIDE1OS4wOSAzNC45MlExNTkuODcgMzUuODQgMTYxLjYzIDM1Ljg0TDE2MS42MyAzNS44NFExNjQuNzggMzUuODQgMTY3LjA0IDMyLjExTDE2Ny4wNCAzMi4xMUwxNjcuMDQgMTYuNzFMMTcwLjgxIDE2LjcxWk0xOTMuMTMgMzMuMjZRMTkzLjEzIDM0LjU3IDE5My41OCAzNS4yMVExOTQuMDMgMzUuODQgMTk0LjkzIDM2LjE3TDE5NC45MyAzNi4xN0wxOTQuMDcgMzguNzlRMTkyLjM5IDM4LjU4IDE5MS4zNyAzNy44NVExOTAuMzQgMzcuMTEgMTg5Ljg1IDM1LjU1TDE4OS44NSAzNS41NVExODcuNjggMzguNzkgMTgzLjQyIDM4Ljc5TDE4My40MiAzOC43OVExODAuMjMgMzguNzkgMTc4LjM4IDM2Ljk5UTE3Ni41NCAzNS4xOSAxNzYuNTQgMzIuMjhMMTc2LjU0IDMyLjI4UTE3Ni41NCAyOC44NCAxNzkuMDIgMjYuOTlRMTgxLjUwIDI1LjE1IDE4Ni4wNCAyNS4xNUwxODYuMDQgMjUuMTVMMTg5LjM2IDI1LjE1TDE4OS4zNiAyMy41NVExODkuMzYgMjEuMjYgMTg4LjI1IDIwLjI4UTE4Ny4xNSAxOS4yOSAxODQuODYgMTkuMjlMMTg0Ljg2IDE5LjI5UTE4Mi40OCAxOS4yOSAxNzkuMDQgMjAuNDRMMTc5LjA0IDIwLjQ0TDE3OC4xMCAxNy42OVExODIuMTEgMTYuMjIgMTg1LjU1IDE2LjIyTDE4NS41NSAxNi4yMlExODkuMzYgMTYuMjIgMTkxLjI0IDE4LjA4UTE5My4xMyAxOS45NSAxOTMuMTMgMjMuMzlMMTkzLjEzIDIzLjM5TDE5My4xMyAzMy4yNlpNMTg0LjI4IDM1Ljk2UTE4Ny41MiAzNS45NiAxODkuMzYgMzIuNjBMMTg5LjM2IDMyLjYwTDE4OS4zNiAyNy42NUwxODYuNTMgMjcuNjVRMTgwLjU1IDI3LjY1IDE4MC41NSAzMi4wN0wxODAuNTUgMzIuMDdRMTgwLjU1IDM0LjAwIDE4MS41MCAzNC45OFExODIuNDQgMzUuOTYgMTg0LjI4IDM1Ljk2TDE4NC4yOCAzNS45NlpNMjE3LjE3IDE0LjMwTDIxOC4yOCAxNy42OVEyMTcuMDUgMTguMTAgMjE1LjU4IDE4LjIzUTIxNC4xMCAxOC4zNSAyMTEuOTcgMTguMzVMMjExLjk3IDE4LjM1UTIxNS43OCAyMC4wNyAyMTUuNzggMjMuODBMMjE1Ljc4IDIzLjgwUTIxNS43OCAyNy4wMyAyMTMuNTcgMjkuMDhRMjExLjM2IDMxLjEzIDIwNy41NSAzMS4xM0wyMDcuNTUgMzEuMTNRMjA2LjA3IDMxLjEzIDIwNC44MCAzMC43MkwyMDQuODAgMzAuNzJRMjA0LjMxIDMxLjA1IDIwNC4wMiAzMS42MFEyMDMuNzQgMzIuMTUgMjAzLjc0IDMyLjczTDIwMy43NCAzMi43M1EyMDMuNzQgMzQuNDkgMjA2LjU2IDM0LjQ5TDIwNi41NiAzNC40OUwyMTAuMDAgMzQuNDlRMjEyLjE4IDM0LjQ5IDIxMy44NiAzNS4yN1EyMTUuNTMgMzYuMDUgMjE2LjQ2IDM3LjQwUTIxNy4zOCAzOC43NSAyMTcuMzggNDAuNDdMMjE3LjM4IDQwLjQ3UTIxNy4zOCA0My42MiAyMTQuODAgNDUuMzJRMjEyLjIyIDQ3LjAyIDIwNy4yNiA0Ny4wMkwyMDcuMjYgNDcuMDJRMjAzLjc4IDQ3LjAyIDIwMS43NSA0Ni4zMVExOTkuNzIgNDUuNTkgMTk4Ljg2IDQ0LjE2UTE5OC4wMCA0Mi43MiAxOTguMDAgNDAuNDdMMTk4LjAwIDQwLjQ3TDIwMS40MCA0MC40N1EyMDEuNDAgNDEuNzggMjAxLjg5IDQyLjU0UTIwMi4zOSA0My4zMCAyMDMuNjYgNDMuNjhRMjA0LjkzIDQ0LjA3IDIwNy4yNiA0NC4wN0wyMDcuMjYgNDQuMDdRMjEwLjY2IDQ0LjA3IDIxMi4xMSA0My4yM1EyMTMuNTcgNDIuMzkgMjEzLjU3IDQwLjcxTDIxMy41NyA0MC43MVEyMTMuNTcgMzkuMjAgMjEyLjQyIDM4LjQyUTIxMS4yNyAzNy42NCAyMDkuMjMgMzcuNjRMMjA5LjIzIDM3LjY0TDIwNS44MyAzNy42NFEyMDMuMDggMzcuNjQgMjAxLjY3IDM2LjQ4UTIwMC4yNiAzNS4zMSAyMDAuMjYgMzMuNTVMMjAwLjI2IDMzLjU1UTIwMC4yNiAzMi40OCAyMDAuODcgMzEuNTBRMjAxLjQ5IDMwLjUyIDIwMi42MyAyOS43NEwyMDIuNjMgMjkuNzRRMjAwLjc1IDI4Ljc1IDE5OS44NyAyNy4zMFExOTguOTkgMjUuODUgMTk4Ljk5IDIzLjc2TDE5OC45OSAyMy43NlExOTguOTkgMjEuNTkgMjAwLjA3IDE5Ljg3UTIwMS4xNiAxOC4xNSAyMDMuMDYgMTcuMThRMjA0Ljk3IDE2LjIyIDIwNy4zMCAxNi4yMkwyMDcuMzAgMTYuMjJRMjA5Ljg0IDE2LjI2IDIxMS41NiAxNi4wNFEyMTMuMjggMTUuODEgMjE0LjQxIDE1LjQyUTIxNS41MyAxNS4wMyAyMTcuMTcgMTQuMzBMMjE3LjE3IDE0LjMwWk0yMDcuMzAgMTguOTJRMjA1LjE3IDE4LjkyIDIwNC4wMCAyMC4yNVEyMDIuODQgMjEuNTkgMjAyLjg0IDIzLjc2TDIwMi44NCAyMy43NlEyMDIuODQgMjUuOTcgMjA0LjAyIDI3LjMwUTIwNS4yMSAyOC42MyAyMDcuMzggMjguNjNMMjA3LjM4IDI4LjYzUTIwOS42MCAyOC42MyAyMTAuNzYgMjcuMzRRMjExLjkzIDI2LjA1IDIxMS45MyAyMy43MkwyMTEuOTMgMjMuNzJRMjExLjkzIDE4LjkyIDIwNy4zMCAxOC45MkwyMDcuMzAgMTguOTJaTTIzOC40NyAyNi44N1EyMzguNDcgMjcuODEgMjM4LjM5IDI4LjgwTDIzOC4zOSAyOC44MEwyMjQuNjMgMjguODBRMjI0Ljg3IDMyLjM2IDIyNi40MyAzNC4wNFEyMjcuOTkgMzUuNzIgMjMwLjQ0IDM1LjcyTDIzMC40NCAzNS43MlEyMzIuMDAgMzUuNzIgMjMzLjMxIDM1LjI3UTIzNC42MiAzNC44MiAyMzYuMDYgMzMuODNMMjM2LjA2IDMzLjgzTDIzNy42OSAzNi4wOVEyMzQuMjUgMzguNzkgMjMwLjE2IDM4Ljc5TDIzMC4xNiAzOC43OVEyMjUuNjUgMzguNzkgMjIzLjEzIDM1Ljg0UTIyMC42MSAzMi44OSAyMjAuNjEgMjcuNzNMMjIwLjYxIDI3LjczUTIyMC42MSAyNC4zNyAyMjEuNzAgMjEuNzdRMjIyLjc4IDE5LjE3IDIyNC44MSAxNy42OVEyMjYuODQgMTYuMjIgMjI5LjU4IDE2LjIyTDIyOS41OCAxNi4yMlEyMzMuODggMTYuMjIgMjM2LjE4IDE5LjA1UTIzOC40NyAyMS44NyAyMzguNDcgMjYuODdMMjM4LjQ3IDI2Ljg3Wk0yMzQuNzUgMjYuMDFMMjM0Ljc1IDI1Ljc2UTIzNC43NSAyMi41NyAyMzMuNDggMjAuODlRMjMyLjIxIDE5LjIxIDIyOS42NyAxOS4yMUwyMjkuNjcgMTkuMjFRMjI1LjA0IDE5LjIxIDIyNC42MyAyNi4wMUwyMjQuNjMgMjYuMDFMMjM0Ljc1IDI2LjAxWk0yNzEuMDggMzYuNzBRMjczLjMzIDM2LjcwIDI3NS4xNyAzNy4zOFEyNzcuMDIgMzguMDUgMjc4Ljc0IDM5LjI0TDI3OC43NCAzOS4yNEwyNzYuMjAgNDIuNTJRMjczLjc0IDQwLjM1IDI3MS41MyAzOS41M1EyNjkuMzIgMzguNzEgMjY1LjU1IDM4LjcxTDI2NS41NSAzOC43MVEyNjIuMDIgMzguNzEgMjU5LjM2IDM3LjA1UTI1Ni43MCAzNS4zOSAyNTUuMjAgMzIuMTNRMjUzLjcxIDI4Ljg4IDI1My43MSAyNC4yNUwyNTMuNzEgMjQuMjVRMjUzLjcxIDE5LjcwIDI1NS4yMCAxNi4zOFEyNTYuNzAgMTMuMDcgMjU5LjQwIDExLjMzUTI2Mi4xMSA5LjU4IDI2NS42MyA5LjU4TDI2NS42MyA5LjU4UTI2OS4xOSA5LjU4IDI3MS44OCAxMS4yOFEyNzQuNTYgMTIuOTggMjc2LjA1IDE2LjI2UTI3Ny41NSAxOS41NCAyNzcuNTUgMjQuMjFMMjc3LjU1IDI0LjIxUTI3Ny41NSAyOS4xNiAyNzUuOTEgMzIuMDlRMjc0LjI3IDM1LjAyIDI3MS4wOCAzNi43MEwyNzEuMDggMzYuNzBaTTI1Ny44NSAyNC4yNVEyNTcuODUgMzAuMTEgMjU5LjkyIDMyLjg1UTI2MS45OCAzNS41OSAyNjUuNjMgMzUuNTlMMjY1LjYzIDM1LjU5UTI3My40MSAzNS41OSAyNzMuNDEgMjQuMjFMMjczLjQxIDI0LjIxUTI3My40MSAxMi43OCAyNjUuNjMgMTIuNzhMMjY1LjYzIDEyLjc4UTI2MS45NCAxMi43OCAyNTkuODkgMTUuNTdRMjU3Ljg1IDE4LjM1IDI1Ny44NSAyNC4yNUwyNTcuODUgMjQuMjVaTTI5OS43MSAxNi43MUwyOTkuNzEgMzguMzBMMjk2LjQ3IDM4LjMwTDI5Ni4xOSAzNC45NFEyOTQuOTYgMzYuOTUgMjkzLjM2IDM3Ljg3UTI5MS43NiAzOC43OSAyODkuNDcgMzguNzlMMjg5LjQ3IDM4Ljc5UTI4Ni42NCAzOC43OSAyODUuMDQgMzcuMDdRMjgzLjQ1IDM1LjM1IDI4My40NSAzMi4yMEwyODMuNDUgMzIuMjBMMjgzLjQ1IDE2LjcxTDI4Ny4yMiAxNi43MUwyODcuMjIgMzEuNzlRMjg3LjIyIDM0LjAwIDI4Ny45OSAzNC45MlEyODguNzcgMzUuODQgMjkwLjUzIDM1Ljg0TDI5MC41MyAzNS44NFEyOTMuNjkgMzUuODQgMjk1Ljk0IDMyLjExTDI5NS45NCAzMi4xMUwyOTUuOTQgMTYuNzFMMjk5LjcxIDE2LjcxWk0zMjMuNzkgMjYuODdRMzIzLjc5IDI3LjgxIDMyMy43MSAyOC44MEwzMjMuNzEgMjguODBMMzA5Ljk1IDI4LjgwUTMxMC4xOSAzMi4zNiAzMTEuNzUgMzQuMDRRMzEzLjMxIDM1LjcyIDMxNS43NyAzNS43MkwzMTUuNzcgMzUuNzJRMzE3LjMyIDM1LjcyIDMxOC42MyAzNS4yN1EzMTkuOTQgMzQuODIgMzIxLjM4IDMzLjgzTDMyMS4zOCAzMy44M0wzMjMuMDIgMzYuMDlRMzE5LjU3IDM4Ljc5IDMxNS40OCAzOC43OUwzMTUuNDggMzguNzlRMzEwLjk3IDM4Ljc5IDMwOC40NSAzNS44NFEzMDUuOTMgMzIuODkgMzA1LjkzIDI3LjczTDMwNS45MyAyNy43M1EzMDUuOTMgMjQuMzcgMzA3LjAyIDIxLjc3UTMwOC4xMSAxOS4xNyAzMTAuMTMgMTcuNjlRMzEyLjE2IDE2LjIyIDMxNC45MCAxNi4yMkwzMTQuOTAgMTYuMjJRMzE5LjIxIDE2LjIyIDMyMS41MCAxOS4wNVEzMjMuNzkgMjEuODcgMzIzLjc5IDI2Ljg3TDMyMy43OSAyNi44N1pNMzIwLjA3IDI2LjAxTDMyMC4wNyAyNS43NlEzMjAuMDcgMjIuNTcgMzE4LjgwIDIwLjg5UTMxNy41MyAxOS4yMSAzMTQuOTkgMTkuMjFMMzE0Ljk5IDE5LjIxUTMxMC4zNiAxOS4yMSAzMDkuOTUgMjYuMDFMMzA5Ljk1IDI2LjAxTDMyMC4wNyAyNi4wMVpNMzM1LjY3IDE2LjIyUTMzNy44OCAxNi4yMiAzMzkuNjUgMTYuODNRMzQxLjQxIDE3LjQ1IDM0My4wMCAxOC42OEwzNDMuMDAgMTguNjhMMzQxLjQxIDIxLjA1UTMzOS45MyAyMC4xMSAzMzguNjAgMTkuNjZRMzM3LjI3IDE5LjIxIDMzNS43OSAxOS4yMUwzMzUuNzkgMTkuMjFRMzMzLjk1IDE5LjIxIDMzMi44OSAxOS45N1EzMzEuODIgMjAuNzMgMzMxLjgyIDIyLjA0TDMzMS44MiAyMi4wNFEzMzEuODIgMjMuMzUgMzMyLjgzIDI0LjA4UTMzMy44MyAyNC44MiAzMzYuNDUgMjUuNTJMMzM2LjQ1IDI1LjUyUTM0MC4wNSAyNi40MiAzNDEuODQgMjcuOThRMzQzLjYyIDI5LjUzIDM0My42MiAzMi4yNEwzNDMuNjIgMzIuMjRRMzQzLjYyIDM1LjQzIDM0MS4xNCAzNy4xMVEzMzguNjYgMzguNzkgMzM1LjEwIDM4Ljc5TDMzNS4xMCAzOC43OVEzMzAuMTggMzguNzkgMzI2Ljk1IDM1Ljk2TDMyNi45NSAzNS45NkwzMjguOTUgMzMuNjdRMzMxLjcwIDM1Ljc2IDMzNS4wMiAzNS43NkwzMzUuMDIgMzUuNzZRMzM3LjE1IDM1Ljc2IDMzOC40MCAzNC44OFEzMzkuNjUgMzQuMDAgMzM5LjY1IDMyLjQ4TDMzOS42NSAzMi40OFEzMzkuNjUgMzEuMzggMzM5LjE5IDMwLjcwUTMzOC43NCAzMC4wMiAzMzcuNjQgMjkuNTFRMzM2LjUzIDI5LjAwIDMzNC40MCAyOC40M0wzMzQuNDAgMjguNDNRMzMwLjk2IDI3LjUzIDMyOS40MyAyNi4wMVEzMjcuODkgMjQuNDkgMzI3Ljg5IDIyLjE2TDMyNy44OSAyMi4xNlEzMjcuODkgMjAuNDggMzI4Ljg5IDE5LjExUTMyOS45MCAxNy43NCAzMzEuNjggMTYuOThRMzMzLjQ2IDE2LjIyIDMzNS42NyAxNi4yMkwzMzUuNjcgMTYuMjJaTTM1OC40MCAzNC44MkwzNTkuODQgMzcuMzJRMzU3LjcxIDM4Ljc5IDM1NS4wMSAzOC43OUwzNTUuMDEgMzguNzlRMzUyLjI2IDM4Ljc5IDM1MC43MiAzNy4yMVEzNDkuMTkgMzUuNjQgMzQ5LjE5IDMyLjY1TDM0OS4xOSAzMi42NUwzNDkuMTkgMTkuNjJMMzQ1LjQyIDE5LjYyTDM0NS40MiAxNi43MUwzNDkuMTkgMTYuNzFMMzQ5LjE5IDExLjg0TDM1Mi45NiAxMS4zOUwzNTIuOTYgMTYuNzFMMzU4LjA4IDE2LjcxTDM1Ny42NyAxOS42MkwzNTIuOTYgMTkuNjJMMzUyLjk2IDMyLjQ4UTM1Mi45NiAzNC4xNiAzNTMuNTUgMzQuOTJRMzU0LjE1IDM1LjY4IDM1NS41NCAzNS42OEwzNTUuNTQgMzUuNjhRMzU2LjgxIDM1LjY4IDM1OC40MCAzNC44MkwzNTguNDAgMzQuODJaIiB0cmFuc2Zvcm09InRyYW5zbGF0ZSgwLCAwKSI+PC9wYXRoPjwvZz48L3N2Zz48L3N2Zz4=" alt="My Language Quest"></div>
+  <div class="header-right">
+    <div class="header-label">Programa J1 · Estados Unidos</div>
+    <div class="header-year">2028/29</div>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="hero-dots"></div>
+  <div class="hero-inner">
+    <div>
+      <div class="hero-tag">Propuesta personalizada</div>
+      <div class="hero-name">Sofía</div>
+      <div class="hero-subtitle">Año escolar completo · Estados Unidos · Programa J1 · Curso 2028/2029</div>
+      <div class="hero-pills">
+        <div class="hero-pill">🎓 4º ESO</div>
+        <div class="hero-pill">📅 17/03/2013</div>
+        <div class="hero-pill">🏆 Expediente sobresaliente</div>
+        <div class="hero-pill">🗣 Inglés alto</div>
+        <div class="hero-pill">🎨 Pintura</div>
+        <div class="hero-pill">🐕 Le encantan los perros</div>
+        <div class="hero-pill ac">⛸ Patinaje sincronizado · Federada</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<main class="main">
+
+  <!-- CONOCIENDO A SOFÍA -->
+  <div class="section-title"><h2>Conociendo a Sofía</h2></div>
+  <div class="card">
+    <div class="card-head">
+      <h3>👤 Perfil de la estudiante</h3>
+      <p>Datos y rasgos que han guiado esta propuesta</p>
+    </div>
+    <div class="card-body">
+      <div class="ficha">
+        <div class="ficha-item"><div class="ficha-label">Estudiante</div><div class="ficha-val">Sofía</div></div>
+        <div class="ficha-item"><div class="ficha-label">Madre</div><div class="ficha-val">Verónica Cardenal</div></div>
+        <div class="ficha-item"><div class="ficha-label">Curso previsto</div><div class="ficha-val">4º ESO · 2028/2029</div></div>
+        <div class="ficha-item"><div class="ficha-label">Fecha de nacimiento</div><div class="ficha-val">17/03/2013</div></div>
+        <div class="ficha-item"><div class="ficha-label">Rendimiento académico</div><div class="ficha-val">Sobresaliente</div></div>
+        <div class="ficha-item"><div class="ficha-label">Nivel de inglés</div><div class="ficha-val">Alto</div></div>
+        <div class="ficha-item"><div class="ficha-label">Deporte</div><div class="ficha-val">Patinaje sobre hielo sincronizado · Federada</div></div>
+        <div class="ficha-item"><div class="ficha-label">Otros intereses</div><div class="ficha-val">Pintura · Le gustan los perros</div></div>
+      </div>
+      <p>Sofía tiene un perfil que consideramos <strong>especialmente adecuado</strong> para realizar un año escolar J1 en Estados Unidos. Es una estudiante con un expediente académico excelente y un nivel alto de inglés, pero hay otro aspecto que para nosotros resulta especialmente positivo: <strong>la iniciativa de estudiar en Estados Unidos ha partido de ella misma</strong>.</p>
+      <p>Sofía está encantada con la idea de vivir esta experiencia y tiene muchas ganas de descubrir cómo es estudiar y convivir en Estados Unidos. Aunque será su primera vez en el país, ya está acostumbrada a viajar internacionalmente y ha visitado destinos como México y Francia.</p>
+      <p>Además, su personalidad puede ayudar muchísimo en una experiencia de intercambio: es extrovertida, alegre, familiar y disfruta compartiendo tiempo con otras personas. Le encantan también los perros, algo que puede ser especialmente positivo teniendo en cuenta que muchas familias anfitrionas americanas tienen mascotas.</p>
+      <p>A todo ello se suma un elemento muy especial de su perfil: <strong>Sofía practica patinaje sobre hielo sincronizado a nivel federado.</strong></p>
+    </div>
+  </div>
+
+  <!-- QUÉ ES EL J1 -->
+  <div class="section-title"><h2>El Programa J1</h2></div>
+  <div class="card">
+    <div class="card-head">
+      <h3>🇺🇸 ¿Qué es el Programa J1?</h3>
+      <p>Intercambio cultural parcialmente subvencionado por el Gobierno americano</p>
+    </div>
+    <div class="card-body">
+      <p>El programa J1 es una experiencia de intercambio cultural parcialmente subvencionada por el Gobierno americano. Los estudiantes conviven con una <strong>familia anfitriona voluntaria</strong> y estudian en un <strong>colegio público estadounidense</strong> durante un año escolar completo. Es la opción más económica para realizar un Año Escolar en Estados Unidos.</p>
+      <div class="two-col" style="margin-top:22px;">
+        <div>
+          <div class="col-title">📚 Características principales</div>
+          <ul class="inc-list dot">
+            <li>Colegios públicos estadounidenses</li>
+            <li>Familias anfitrionas voluntarias</li>
+            <li>No se puede elegir estado, ciudad o colegio concreto</li>
+            <li>Duración mínima: año escolar completo</li>
+          </ul>
+        </div>
+        <div>
+          <div class="col-title">📋 Requisitos generales</div>
+          <ul class="inc-list dot">
+            <li>Tener entre 15 y 18 años (14 años, consultar)</li>
+            <li>Expediente académico mínimo equivalente a "Suficiente"</li>
+            <li>Nivel de inglés aproximado B1 (prueba de nivel previa)</li>
+            <li>Idealmente sin alergias ni condiciones médicas severas</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- POR QUÉ ENCAJA -->
+  <div class="card">
+    <div class="card-head">
+      <h3>✨ ¿Por qué creemos que el J1 encaja con Sofía?</h3>
+      <p>Una de las experiencias de inmersión más auténticas que existen</p>
+    </div>
+    <div class="card-body">
+      <p>El programa J1 permite vivir una de las experiencias de inmersión más auténticas que existen en Estados Unidos. Sofía estudiará durante un curso académico en un <em>High School</em> americano y convivirá con una familia anfitriona voluntaria, formando parte de su día a día, sus costumbres y su comunidad.</p>
+      <p>No se trata únicamente de estudiar en otro país. <strong>El objetivo es que durante ese año Estados Unidos se convierta en su segunda casa.</strong></p>
+      <div class="col-title" style="margin-top:22px;">El perfil de Sofía reúne lo que buscamos en una buena candidata J1</div>
+      <div class="two-col">
+        <ul class="inc-list">
+          <li>Expediente académico sobresaliente</li>
+          <li>Nivel alto de inglés</li>
+          <li>Motivación propia para realizar el programa</li>
+          <li>Personalidad extrovertida y alegre</li>
+        </ul>
+        <ul class="inc-list">
+          <li>Buena predisposición hacia la convivencia familiar</li>
+          <li>Experiencia viajando fuera de España</li>
+          <li>Intereses artísticos y deportivos definidos</li>
+          <li>Un deporte muy característico y diferenciador dentro de su perfil</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <!-- EL HIELO -->
+  <div class="section-title"><h2>Un objetivo adicional: el hielo</h2></div>
+  <div class="card">
+    <div class="card-head">
+      <h3>⛸ Que Sofía pueda seguir vinculada al patinaje</h3>
+      <p>Qué podemos hacer, y qué no podemos garantizar</p>
+    </div>
+    <div class="card-body">
+      <p>Sabemos que el patinaje sobre hielo no es simplemente una actividad ocasional para Sofía: es deportista federada y practica patinaje sincronizado. Por eso queremos tener este aspecto presente desde el principio.</p>
+      <p>Al tratarse de un programa J1, <strong>no podemos garantizar previamente</strong> una ciudad determinada, una pista de hielo concreta, un club o un número determinado de horas de entrenamiento. Sin embargo, sí podemos diseñar una estrategia para aumentar las posibilidades. Nuestra propuesta sería trabajar en dos fases:</p>
+      <div class="two-col" style="margin-top:22px;">
+        <div>
+          <div class="col-title">1 · Antes de la asignación</div>
+          <p style="font-size:12.5px;">Orientar la solicitud hacia zonas favorables. Podemos añadir un <strong>suplemento de localización</strong> para solicitar un estado o una agrupación de estados donde los deportes de hielo tengan una presencia especialmente importante. Para Sofía hemos seleccionado dos alternativas concretas.</p>
+        </div>
+        <div>
+          <div class="col-title">2 · Después de la asignación</div>
+          <p style="font-size:12.5px;">Buscar opciones reales para Sofía. Una vez confirmados su familia anfitriona, su <em>High School</em> y la localidad exacta, estudiaremos su entorno real:</p>
+          <ul class="inc-list dot">
+            <li>Pistas de hielo cercanas y distancias desde su familia anfitriona</li>
+            <li>Clubes de patinaje artístico y programas de <em>synchronized skating</em></li>
+            <li>Sesiones y horarios de entrenamiento disponibles</li>
+            <li>Actividades del <em>High School</em> o de la comunidad</li>
+          </ul>
+        </div>
+      </div>
+      <div class="nota">Es importante mantener esta diferencia: <strong>podemos buscar y ayudar a localizar alternativas, pero no garantizar previamente la continuidad deportiva dentro del J1.</strong></div>
+    </div>
+  </div>
+
+  <!-- OPCIONES DE LOCALIZACIÓN -->
+  <div class="section-title"><h2>Suplementos de localización para Sofía</h2></div>
+  <div class="opciones-grid">
+
+    <div class="opcion-card recomendada">
+      <div class="badge-rec">★ RECOMENDADA</div>
+      <div class="opcion-header">
+        <div class="opcion-num">Opción 01 · Estado específico</div>
+        <div class="opcion-distrito">Minnesota</div>
+        <div class="opcion-loc">📍 MN · Uno de los grandes estados del hielo en EE.UU.</div>
+        <div class="precio-chip"><span class="val">+900 €</span><span class="desc">suplemento de localización</span></div>
+      </div>
+      <div class="opcion-body">
+        <p>Si para Sofía es importante aumentar las posibilidades de continuar vinculada al patinaje, <strong>Minnesota sería nuestra primera recomendación</strong>. Solicitando el suplemento de Estado Específico, concentramos toda la solicitud de localización en Minnesota. Para un perfil como el suyo nos parece especialmente interesante por la fuerte presencia que tienen los deportes de hielo en el estado.</p>
+        <div class="desglose">
+          <div class="desglose-row"><span class="l">Programa J1 · año escolar completo</span><span class="v">13.900 €</span></div>
+          <div class="desglose-row"><span class="l">Suplemento Minnesota</span><span class="v">+900 €</span></div>
+          <div class="desglose-row total"><span class="l">Inversión total si se consigue la localización</span><span class="v">14.800 €</span></div>
+        </div>
+        <div class="nota" style="margin-top:14px;">Minnesota es <strong>nuestra recomendación, no una imposición</strong>: la hemos elegido por el interés de Sofía por el patinaje sobre hielo. Si preferís otro destino, con este mismo suplemento podéis solicitar <strong>el estado de vuestra preferencia</strong>.</div>
+      </div>
+      <div class="match-bar">
+        <div class="match-tag">Máxima concentración en el estado del hielo</div>
+        <div class="match-tag">Mejor encaje con su perfil deportivo</div>
+      </div>
+    </div>
+
+    <div class="opcion-card">
+      <div class="opcion-header">
+        <div class="opcion-num">Opción 02 · Agrupación de estados</div>
+        <div class="opcion-distrito">Este Select</div>
+        <div class="opcion-loc">📍 Minnesota · Wisconsin · Illinois · Iowa</div>
+        <div class="precio-chip"><span class="val">+750 €</span><span class="desc">suplemento de localización</span></div>
+      </div>
+      <div class="opcion-body">
+        <p>Nuestra segunda recomendación sería ampliar ligeramente la zona para proporcionar al <em>sponsor</em> mayor flexibilidad en la búsqueda de familia anfitriona. Minnesota y Wisconsin son especialmente interesantes por su vinculación con los deportes de hielo, mientras que Illinois también ofrece numerosas posibilidades de patinaje en distintas zonas.</p>
+        <p>El beneficio de esta alternativa es que <strong>ampliamos las posibilidades de encontrar una buena familia anfitriona</strong> sin renunciar a orientar geográficamente la solicitud de Sofía.</p>
+        <div class="desglose">
+          <div class="desglose-row"><span class="l">Programa J1 · año escolar completo</span><span class="v">13.900 €</span></div>
+          <div class="desglose-row"><span class="l">Suplemento Este Select</span><span class="v">+750 €</span></div>
+          <div class="desglose-row total"><span class="l">Inversión total si se consigue la localización</span><span class="v">14.650 €</span></div>
+        </div>
+      </div>
+      <div class="match-bar">
+        <div class="match-tag">Mayor flexibilidad para el sponsor</div>
+        <div class="match-tag">Cuatro estados con opciones de hielo</div>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="rec-wrap">
+    <div class="rec-inner">
+      <div class="rec-tag">⭐ Recomendación MLQ</div>
+      <div class="rec-title">Minnesota · Estado específico</div>
+      <p>Si el patinaje tiene un peso importante para Sofía, nuestra primera opción sería solicitar Minnesota como estado específico. La diferencia respecto a Este Select es únicamente de <strong>150 €</strong>, y a cambio concentramos la solicitud en el estado que consideramos más interesante para su perfil deportivo.</p>
+      <p>Si Verónica prefiere proporcionar mayor flexibilidad al <em>sponsor</em> para localizar una buena familia anfitriona, escogeríamos <strong>Este Select</strong>: Minnesota, Wisconsin, Illinois e Iowa.</p>
+      <p>En cualquiera de las dos alternativas, el objetivo no sería prometer la continuidad deportiva, sino aumentar las probabilidades de situar a Sofía en un entorno favorable y, posteriormente, estudiar las posibilidades reales que existan alrededor de su asignación.</p>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-head">
+      <h3>🗓 Cómo funciona el suplemento: solo se paga si se cumple</h3>
+      <p>Sin riesgo para la familia · Nada se abona en el momento de la inscripción</p>
+    </div>
+    <div class="card-body">
+      <p>Queremos que este punto quede muy claro, porque es una de las mayores tranquilidades de este planteamiento: <strong>el suplemento de localización no se abona al inscribirse</strong>. La inscripción inicial se realiza únicamente sobre el precio del programa J1 (13.900 €).</p>
+      <div class="steps">
+        <div class="step">
+          <div class="step-n">1</div>
+          <div class="step-t">Se solicita la preferencia</div>
+          <div class="step-d">Al preparar la <em>application</em> de Sofía indicamos el estado o la agrupación elegida. En ese momento <strong>no se paga nada</strong> por el suplemento.</div>
+        </div>
+        <div class="step">
+          <div class="step-n">2</div>
+          <div class="step-t">La organización americana trabaja la preferencia</div>
+          <div class="step-d">El <em>sponsor</em> realiza los esfuerzos correspondientes para localizar familia anfitriona y <em>High School</em> dentro de la zona solicitada.</div>
+        </div>
+        <div class="step ok">
+          <div class="step-n">3a</div>
+          <div class="step-t">Si se cumple → se abona</div>
+          <div class="step-d">Una vez confirmados colegio y familia anfitriona <strong>dentro de la zona solicitada</strong>, se abona el suplemento (900 € o 750 €).</div>
+        </div>
+        <div class="step ko">
+          <div class="step-n">3b</div>
+          <div class="step-t">Si no se cumple → no se cobra</div>
+          <div class="step-d">Si finalmente no fuera posible conseguir la zona solicitada, <strong>no se cobra el suplemento</strong>; y si por cualquier motivo ya se hubiera abonado, se reembolsa íntegramente.</div>
+        </div>
+      </div>
+      <div class="nota">En resumen: solicitar el suplemento <strong>no supone una garantía absoluta</strong> de asignación en el destino elegido, pero tampoco supone ningún coste si no se consigue. Solo se paga por un resultado conseguido.</div>
+    </div>
+  </div>
+
+  <!-- QUÉ DESTACA -->
+  <div class="section-title"><h2>¿Qué destaca en nuestro programa J1?</h2></div>
+  <div class="card">
+    <div class="card-head">
+      <h3>⭐ Lo que aporta My Language Quest</h3>
+      <p>Todos los J1 comparten una estructura oficial similar — esto es lo que nos diferencia</p>
+    </div>
+    <div class="card-body">
+      <div class="feat-grid">
+        <div class="feat"><div class="feat-ico">👤</div><div class="feat-t">Gestor estudiantil personalizado</div><div class="feat-d">Una única persona asignada a vuestra familia, que realiza todos los trámites y es vuestro contacto principal durante todo el proceso y el año escolar.</div></div>
+        <div class="feat"><div class="feat-ico">📘</div><div class="feat-t">Clases Cambridge incluidas</div><div class="feat-d">30 horas de clases online con profesor en vivo.</div></div>
+        <div class="feat"><div class="feat-ico">🛂</div><div class="feat-t">Visado J1 completo</div><div class="feat-d">Tasa SEVIS, tramitación del visado J1 y cita en la embajada incluidos — vuestra familia solo tiene que presentarse.</div></div>
+        <div class="feat"><div class="feat-ico">🗽</div><div class="feat-t">Orientación en Nueva York</div><div class="feat-d">4 días y 3 noches incluidos en el precio, antes de comenzar el programa.</div></div>
+        <div class="feat"><div class="feat-ico">💬</div><div class="feat-t">Apoyo emocional y psicológico</div><div class="feat-d">Disponible para la estudiante durante todo el programa si lo necesita.</div></div>
+        <div class="feat"><div class="feat-ico">📜</div><div class="feat-t">Legalización de notas en EE.UU.</div><div class="feat-d">Recogida de notas, firma de notario y Apostilla de La Haya.</div></div>
+        <div class="feat"><div class="feat-ico">📑</div><div class="feat-t">Convalidación en España incluida</div><div class="feat-d">Nos encargamos de todo el expediente y del pago de tasas ante el Ministerio de Educación.</div></div>
+        <div class="feat"><div class="feat-ico">📞</div><div class="feat-t">Atención 24 h desde España</div><div class="feat-d">Un teléfono en España, en vuestro idioma y horario, disponible para emergencias durante todo el año escolar.</div></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- EL PROGRAMA INCLUYE -->
+  <div class="section-title"><h2>El programa incluye</h2></div>
+  <div class="card">
+    <div class="card-head">
+      <h3>📋 Todo lo que cubre My Language Quest · Programa J1</h3>
+      <p>Detalle completo antes, durante y después del intercambio</p>
+    </div>
+    <div class="card-body">
+      <div class="includes-grid">
+        <div>
+          <div class="col-title">Antes del viaje</div>
+          <ul class="inc-list">
+            <li>Reunión inicial en persona, teléfono o videoconferencia con padres o tutores</li>
+            <li>Examen ELTIS y entrevista personal online con la estudiante</li>
+            <li>Provisión de toda la información necesaria sobre el programa J1</li>
+            <li>Inscripción en el programa y matriculación en el centro de secundaria que asigne el <em>sponsor</em> americano</li>
+            <li>Selección de familia anfitriona voluntaria en régimen de pensión completa</li>
+            <li>Seguro médico y de accidentes</li>
+            <li>Tasas y tramitación del visado J1, y reserva de cita para entrevista en la Embajada</li>
+            <li>Programa formativo y de orientación para la estudiante <small>Obligatorio</small></li>
+            <li>Programa formativo y de orientación para los padres <small>No obligatorio</small></li>
+            <li>Orientación pre-viaje en Madrid</li>
+            <li>Pack sorpresa de My Language Quest</li>
+            <li>Dossier final detallando la experiencia en Estados Unidos</li>
+          </ul>
+        </div>
+        <div>
+          <div class="col-title">Durante el viaje</div>
+          <ul class="inc-list">
+            <li>Orientación pre-viaje en Nueva York <small>4 días y 3 noches en hotel, habitaciones compartidas por género · 3 desayunos y 3 cenas · 2 talleres "Life in the USA" · transporte en autobús privado · traslados aeropuerto-hotel · acompañamiento de coordinador USA · solo para año escolar completo</small></li>
+            <li>Recibimiento en aeropuerto y traslados en destino al inicio y fin del programa</li>
+            <li>Asesoramiento en elección de asignaturas</li>
+            <li>Libros de las asignaturas obligatorias</li>
+            <li>Transporte escolar</li>
+            <li>Clases de inglés Cambridge y su libro</li>
+            <li>Supervisión local de la organización americana: visitas, tutorías y emergencias 24h</li>
+            <li>Reportes periódicos del gestor estudiantil</li>
+            <li>Acompañamiento psicológico</li>
+            <li>Atención 24 horas en España para emergencias</li>
+            <li>Gestión individualizada de los viajes de la estudiante</li>
+          </ul>
+        </div>
+        <div>
+          <div class="col-title">Después del viaje</div>
+          <ul class="inc-list">
+            <li>Convalidación del curso escolar en España</li>
+            <li>Recogida de los <em>transcripts</em> finales</li>
+            <li>Coordinación con el centro escolar y notario público</li>
+            <li>Apostilla de La Haya de las calificaciones</li>
+            <li>Presentación y seguimiento del expediente ante el Ministerio de Educación</li>
+          </ul>
+          <div style="margin-top:24px">
+            <div class="col-title">No incluido</div>
+            <ul class="inc-list no">
+              <li>Vuelos <small>MLQ puede gestionar la búsqueda, coste a cargo de la familia</small></li>
+              <li>Actividades extracurriculares de pago</li>
+              <li>Excursiones y viajes escolares</li>
+              <li>Material escolar adicional</li>
+              <li>Fotografía escolar y anuario</li>
+              <li>Transporte local mensual</li>
+              <li>Gastos de ocio personal</li>
+              <li>Cualquier servicio o gasto no mencionado explícitamente en "El programa incluye"</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="gestor-wrap">
+        <div class="gestor-title">Gestor estudiantil · se encarga de</div>
+        <div class="gestor-grid">
+          <div class="gestor-item">Seguimiento personalizado del desempeño</div>
+          <div class="gestor-item">Información a padres mensualmente</div>
+          <div class="gestor-item">Notas oficiales cada trimestre/semestre</div>
+          <div class="gestor-item">Asesoría en cambio de asignaturas</div>
+          <div class="gestor-item">Todas las tutorías necesarias</div>
+          <div class="gestor-item">Reuniones con padres y/o estudiante</div>
+          <div class="gestor-item">Apoyo en actividades extraescolares</div>
+          <div class="gestor-item">Resolución de situaciones con familia o centro</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- PRECIO Y PAGOS -->
+  <div class="section-title"><h2>Precio y calendario de pagos</h2></div>
+  <div class="payment-wrap">
+    <div class="payment-inner">
+      <div class="pay-title">💳 Año escolar J1 Estados Unidos 2028/2029</div>
+      <div class="pay-subtitle">Incluye todo lo detallado en este documento</div>
+      <div class="big-price"><span class="n">13.900 €</span><span class="u">año escolar completo</span></div>
+
+      <div class="pay-col-title">Suplementos opcionales recomendados para Sofía</div>
+      <div class="sup-chips">
+        <div class="sup-chip"><div class="t">Minnesota · Estado específico</div><div class="v">+900 €</div></div>
+        <div class="sup-chip"><div class="t">Este Select · MN / WI / IL / IA</div><div class="v">+750 €</div></div>
+      </div>
+
+      <div class="pay-cols">
+        <div class="pay-col">
+          <div class="pay-col-title">Primer pago</div>
+          <div class="pay-step">
+            <div class="pay-step-num">Inscripción · cierre de precio · inicio de application</div>
+            <div class="pay-step-title">3.500 €</div>
+            <div class="pay-step-desc">Con este primer pago formalizamos la inscripción de Sofía, cerramos el precio del programa en 13.900 € e iniciamos la preparación y tramitación de su expediente para Estados Unidos.</div>
+          </div>
+        </div>
+        <div class="pay-col">
+          <div class="pay-col-title">Importe restante</div>
+          <div class="pay-step">
+            <div class="pay-step-num">Fecha límite · 1 de marzo de 2028</div>
+            <div class="pay-step-title">10.400 €</div>
+            <div class="pay-step-desc">La familia dispondrá de tiempo para completar el importe restante del programa. El importe pendiente podrá distribuirse mediante pagos parciales hasta esa fecha.</div>
+          </div>
+        </div>
+      </div>
+      <div class="pay-note">El suplemento de localización no está incluido en estos pagos y se abonará posteriormente, una vez confirmada la asignación de colegio y familia anfitriona.</div>
+    </div>
+  </div>
+
+  <!-- CONDICIONES PARTICULARES -->
+  <div class="section-title"><h2>Condiciones particulares del Programa J1</h2></div>
+  <div class="card">
+    <div class="card-head">
+      <h3>📌 Aspectos importantes a tener en cuenta antes de inscribirse</h3>
+    </div>
+    <div class="card-body">
+      <ul class="inc-list dot">
+        <li>El programa se desarrolla habitualmente en <strong>pequeñas localidades rurales</strong> de Estados Unidos, sin posibilidad de selección de familia ni destino. Es posible que en el mismo domicilio resida otro estudiante de distinta lengua materna.</li>
+        <li>La estudiante debe permanecer en el destino durante todo el programa. Las visitas de padres o familiares durante el año académico completo <strong>no deben programarse antes del 15 de abril</strong>, y deben coordinarse previamente con la familia anfitriona y contar con su aprobación.</li>
+        <li>Para ser aceptada en el programa J1, la estudiante deberá tener una nota media mínima aproximada de <strong>6/10</strong> y realizar un examen online de nivel de inglés, alcanzando la nota mínima de acceso de <strong>690 puntos (ELTIS)</strong> o <strong>70 puntos (iTEP)</strong>.</li>
+        <li>Para la obtención del visado, la estudiante deberá pasar una <strong>entrevista en la Embajada de Estados Unidos en Madrid</strong>, cuya fecha y hora serán gestionadas por MLQ según disponibilidad.</li>
+        <li>La selección de asignaturas se realizará según las preferencias de la estudiante y los requisitos de convalidación, siempre supeditada a la oferta, espacio en grupos y organización de horarios del centro escolar americano.</li>
+        <li>Una vez conocido el destino y la familia (lo cual <strong>puede demorarse hasta el 31 de agosto</strong>), la estudiante deberá contactar con la familia por email o teléfono en un plazo máximo de 24-72 horas.</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- GARANTÍA -->
+  <div class="guarantee">
+    <h3>🛡️ Garantía de Plaza — Programa J1 Estados Unidos</h3>
+    <p>La asignación de plazas es competencia exclusiva del <em>sponsor</em> americano. Suele comenzar en mayo y puede prolongarse hasta el 31 de agosto. <strong>Todos nuestros estudiantes J1, sin excepción, viajan.</strong> En el caso excepcional de que un estudiante no pudiera ser ubicado en el programa J1, su familia podrá elegir entre:</p>
+    <ul class="inc-list">
+      <li>Reembolso del 100% de las cantidades abonadas hasta ese momento.</li>
+      <li>Trasladar la matrícula a otro Programa de Año Escolar con visado F1, <strong>sin coste adicional</strong>.</li>
+      <li>Aplazar la matrícula al siguiente curso escolar para participar en el Programa J1, manteniendo las cantidades abonadas.</li>
+    </ul>
+  </div>
+
+  <!-- APPLICATION -->
+  <div class="section-title"><h2>Nuestro trabajo con Sofía</h2></div>
+  <div class="two-col">
+    <div class="card">
+      <div class="card-head"><h3>📝 Una application especialmente cuidada</h3></div>
+      <div class="card-body">
+        <p>En un programa J1 la <em>application</em> tiene una importancia enorme, porque será la presentación de Sofía ante la organización americana y las potenciales familias anfitrionas. En su caso queremos aprovechar especialmente su perfil. Daremos protagonismo a:</p>
+        <ul class="inc-list">
+          <li>Su excelente expediente académico</li>
+          <li>Su nivel alto de inglés</li>
+          <li>Su personalidad extrovertida y familiar</li>
+          <li>Su pasión por los animales y la pintura</li>
+          <li>Y, especialmente, su trayectoria como patinadora federada de patinaje sincronizado</li>
+        </ul>
+        <p style="margin-top:14px;">Nos interesará mostrar no solo que practica este deporte, sino <strong>qué significa para ella</strong>. Fotografías, trayectoria deportiva, entrenamientos, competiciones y otros elementos de su experiencia pueden ayudarnos a transmitir mucho mejor quién es Sofía. Eso puede hacer que su perfil resulte especialmente atractivo para una familia que comparta intereses deportivos o que valore recibir a una estudiante con una afición tan definida.</p>
+        <div class="nota">Hay una limitación normativa importante: <strong>una colocación J1 no puede realizarse basándose en la capacidad deportiva del estudiante</strong>. Por eso presentaremos el patinaje como una parte importante de quién es Sofía y de sus intereses, pero nunca como condición para seleccionar un determinado colegio o familia.</div>
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-head"><h3>🤝 Una vez en Estados Unidos, seguiremos acompañándola</h3></div>
+      <div class="card-body">
+        <p>La asignación de familia y colegio no supone el final de nuestro trabajo. Cuando sepamos exactamente dónde vivirá Sofía, podremos investigar las posibilidades de patinaje existentes en su nueva comunidad y ayudar a la familia a valorar cuáles son viables.</p>
+        <p>En Estados Unidos los estudiantes J1 pueden participar en actividades extracurriculares y deportivas, aunque la participación en deportes escolares está sujeta a las normas del distrito y a las reglas de elegibilidad deportiva correspondientes.</p>
+        <p>Además, como Sofía no podrá conducir, habrá que estudiar también cómo podría desplazarse hasta los entrenamientos. Las propias orientaciones oficiales del programa contemplan que los estudiantes puedan desplazarse con la <em>host family</em>, transporte público, bicicleta u otras alternativas disponibles en la comunidad.</p>
+        <div class="col-title" style="margin-top:20px;">Una vez tengamos la asignación, analizaremos</div>
+        <ul class="inc-list dot">
+          <li>¿Qué pistas hay y a qué distancia?</li>
+          <li>¿Hay clubes de <em>synchronized skating</em> o <em>figure skating</em>?</li>
+          <li>¿Qué horarios ofrecen?</li>
+          <li>¿Cómo podría desplazarse?</li>
+          <li>¿Es compatible con el <em>High School</em> y la dinámica de su <em>host family</em>?</li>
+        </ul>
+        <p style="margin-top:14px;">Así podremos pasar de una preferencia general por una zona favorable para el hielo a <strong>opciones concretas y reales para Sofía</strong>.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- ENLACES -->
+  <div class="section-title"><h2>Enlaces de interés</h2></div>
+  <div class="card">
+    <div class="card-head">
+      <h3>🔗 Documentación e información complementaria</h3>
+    </div>
+    <div class="card-body">
+      <div class="links-grid">
+        <a class="link-btn" href="https://drive.google.com/file/d/1jjTrXMO6Yi10fAf-kK-XRMx7zKGc05VC/view?usp=sharing" target="_blank" rel="noopener"><span class="i">🗽</span><span class="t">Itinerario Orientation Camp Nueva York</span></a>
+        <a class="link-btn" href="https://drive.google.com/file/d/1nuY34R2Um103RD8nR0Iv1Vsnr8SQqrs5/view?usp=sharing" target="_blank" rel="noopener"><span class="i">👨‍👩‍👧</span><span class="t">Curso formativo · Padres</span></a>
+        <a class="link-btn" href="https://drive.google.com/file/d/1eJC9fMGKSZU6gCrvJkNgDLUbZ4eiUvB0/view?usp=sharing" target="_blank" rel="noopener"><span class="i">🎓</span><span class="t">Curso formativo · Estudiante</span></a>
+      </div>
+    </div>
+  </div>
+
+  <!-- CTA -->
+  <div class="cta">
+    <h3>Siguientes pasos</h3>
+    <p>Así podéis continuar si os interesa el Programa J1</p>
+    <a href="https://asesoramientosmlq.zohobookings.eu/#/230825000000039052" target="_blank" rel="noopener">Reservar una cita con MLQ →</a>
+  </div>
+
+  <div class="footer">
+    My Language Quest · Propuesta personalizada para Sofía · Programa J1 Estados Unidos · Curso 2028/2029<br>
+    Documento informativo. Precios y condiciones sujetos a las condiciones particulares del programa.
+  </div>
+
+</main>
+
+</body>
+</html>
