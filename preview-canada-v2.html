@@ -82,7 +82,7 @@ body{font-family:'Fira Sans',sans-serif;background:var(--gray-bg);color:var(--te
 .qs-chapter{background:var(--white);border:1.5px solid var(--gray-border);border-radius:16px;overflow:hidden;box-shadow:0 2px 16px rgba(0,51,102,0.06);display:flex;flex-direction:column;transition:transform .2s,box-shadow .2s;}
 .qs-chapter:hover{transform:translateY(-4px);box-shadow:0 14px 38px rgba(0,51,102,0.13);}
 .qs-chapter-media{position:relative;aspect-ratio:4/3;overflow:hidden;background:var(--blue-light);}
-.qs-chapter-media img{width:100%;height:100%;object-fit:cover;display:block;}
+.qs-chapter-media img{width:100%;height:100%;object-fit:cover;object-position:center 15%;display:block;}
 .qs-chapter-step{position:absolute;top:12px;left:12px;background:rgba(0,31,64,0.82);backdrop-filter:blur(4px);color:#7dd44a;font-family:'Josefin Sans',sans-serif;font-size:9px;font-weight:700;letter-spacing:2px;text-transform:uppercase;padding:5px 11px;border-radius:20px;}
 .qs-chapter-body{padding:18px 20px 20px;}
 .qs-chapter-title{font-family:'Josefin Sans',sans-serif;font-size:15px;font-weight:700;color:var(--blue);margin-bottom:7px;}
@@ -334,8 +334,8 @@ details[open] summary::before{transform:rotate(90deg);}
 
   <div class="qs-hero">
     <div class="qs-media">
-      <img src="https://aescobarnic.github.io/Propuestas/img/mlq-grupo-aeropuerto.jpg" alt="Grupo de estudiantes de My Language Quest en el aeropuerto con su coordinadora" loading="lazy">
-      <div class="qs-media-inset"><img src="https://aescobarnic.github.io/Propuestas/img/mlq-despedida-familia.jpg" alt="Estudiante despidiéndose de su familia antes de salir" loading="lazy"></div>
+      <img src="https://aescobarnic.github.io/Propuestas/img/mlq-grupo-aeropuerto.jpg" style="object-position:center 30%;" alt="Grupo de estudiantes de My Language Quest en el aeropuerto con su coordinadora" loading="lazy">
+      <div class="qs-media-inset"><img src="https://aescobarnic.github.io/Propuestas/img/mlq-despedida-familia.jpg" style="object-position:center 25%;" alt="Estudiante despidiéndose de su familia antes de salir" loading="lazy"></div>
     </div>
     <div class="qs-panel">
       <div class="qs-panel-inner">
@@ -375,7 +375,7 @@ details[open] summary::before{transform:rotate(90deg);}
   <div class="qs-chapters">
     <div class="qs-chapter">
       <div class="qs-chapter-media">
-        <img src="https://aescobarnic.github.io/Propuestas/img/mlq-equipaje-salida.jpg" alt="Estudiante con su equipaje el día de la salida" loading="lazy">
+        <img src="https://aescobarnic.github.io/Propuestas/img/mlq-equipaje-salida.jpg" style="object-position:center 12%;" alt="Estudiante con su equipaje el día de la salida" loading="lazy">
         <div class="qs-chapter-step">Antes de salir</div>
       </div>
       <div class="qs-chapter-body">
@@ -385,7 +385,7 @@ details[open] summary::before{transform:rotate(90deg);}
     </div>
     <div class="qs-chapter">
       <div class="qs-chapter-media">
-        <img src="https://aescobarnic.github.io/Propuestas/img/mlq-salida-pista.jpg" alt="Estudiantes de My Language Quest el día de la salida" loading="lazy">
+        <img src="https://aescobarnic.github.io/Propuestas/img/mlq-salida-pista.jpg" style="object-position:center 8%;" alt="Estudiantes de My Language Quest el día de la salida" loading="lazy">
         <div class="qs-chapter-step">El día de la salida</div>
       </div>
       <div class="qs-chapter-body">
@@ -395,7 +395,7 @@ details[open] summary::before{transform:rotate(90deg);}
     </div>
     <div class="qs-chapter">
       <div class="qs-chapter-media">
-        <img src="https://aescobarnic.github.io/Propuestas/img/mlq-vida-social.jpg" alt="Estudiante con sus nuevas amigas en un partido del instituto" loading="lazy">
+        <img src="https://aescobarnic.github.io/Propuestas/img/mlq-vida-social.jpg" style="object-position:center 22%;" alt="Estudiante con sus nuevas amigas en un partido del instituto" loading="lazy">
         <div class="qs-chapter-step">La vida allí</div>
       </div>
       <div class="qs-chapter-body">
@@ -750,6 +750,6 @@ details[open] summary::before{transform:rotate(90deg);}
   calc();
 })();
 </script>
-<!-- build:20260831-083313 -->
+<!-- build:20260831-083443 -->
 </body>
 </html>
