@@ -305,9 +305,15 @@ details[open] summary::before{transform:rotate(90deg);}
       <div class="hero-pill">⚽ Fútbol</div>
       <div class="hero-pill ac">⚡ Altas Capacidades</div>
     </div>
-    <!-- BLOQUE PROMO: incluir SOLO si el comercial lo indica expresamente -->
+    <!-- ===== BLOQUE PROMO · DESACTIVADO POR DEFECTO =====
+         Los precios de la tabla son la TARIFA REAL (sin descuento).
+         Activar SOLO si el comercial pide aplicar el descuento. Al activarlo hay que:
+           1. Descontar 1.000 € del precio de cada tarjeta (.precio-chip .val)
+           2. Añadir la tarifa original tachada: <span class="tachado">20.430 €</span>
+           3. Actualizar data-precio de la calculadora con el precio ya rebajado
+         Descomentar la línea siguiente para mostrarlo:
     <div class="hero-promo">🍁 Reserva antes del 30 de septiembre de 2026 y obtén <strong>1.000 € de descuento</strong> — no acumulable con otras promociones.</div>
-    <!-- FIN BLOQUE PROMO -->
+    ===== FIN BLOQUE PROMO ===== -->
   </div>
 </div>
 
@@ -419,7 +425,7 @@ details[open] summary::before{transform:rotate(90deg);}
         <div class="opcion-num">Opción 01</div>
         <div class="opcion-distrito">Battle River School Division</div>
         <div class="opcion-loc">📍 Alberta · Corazón de las Praderas canadienses</div>
-        <div class="precio-chip"><span class="val">19.430 €</span><span class="desc">/ año · vuelos incl.*</span><span class="tachado">20.430 €</span></div>
+        <div class="precio-chip"><span class="val">19.430 €</span><span class="desc">/ año · vuelos incl.*</span></div>
       </div>
       <div class="opcion-body"><div class="colegios">
         <div class="colegio">
@@ -439,7 +445,7 @@ details[open] summary::before{transform:rotate(90deg);}
         <div class="opcion-num">Opción 02</div>
         <div class="opcion-distrito">New Brunswick ISP</div>
         <div class="opcion-loc">📍 Fredericton / Saint John · Este de Canadá</div>
-        <div class="precio-chip"><span class="val">20.550 €</span><span class="desc">/ año · vuelos incl.*</span><span class="tachado">21.550 €</span></div>
+        <div class="precio-chip"><span class="val">20.550 €</span><span class="desc">/ año · vuelos incl.*</span></div>
       </div>
       <div class="opcion-body"><div class="colegios">
         <div class="colegio">
@@ -459,7 +465,7 @@ details[open] summary::before{transform:rotate(90deg);}
         <div class="opcion-num">Opción 03</div>
         <div class="opcion-distrito">Peace River North School District</div>
         <div class="opcion-loc">📍 Fort St. John · Norte de British Columbia</div>
-        <div class="precio-chip"><span class="val">23.000 €</span><span class="desc">/ año · vuelos incl.*</span><span class="tachado">24.000 €</span></div>
+        <div class="precio-chip"><span class="val">23.000 €</span><span class="desc">/ año · vuelos incl.*</span></div>
       </div>
       <div class="opcion-body"><div class="colegios">
         <div class="colegio">
@@ -750,6 +756,6 @@ details[open] summary::before{transform:rotate(90deg);}
   calc();
 })();
 </script>
-<!-- build:20260831-084938 -->
+<!-- build:20260831-090722 -->
 </body>
 </html>
