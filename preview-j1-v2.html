@@ -247,6 +247,9 @@ details[open] summary::before{transform:rotate(90deg);}
 .steps-title{font-family:'Josefin Sans',sans-serif;font-size:18px;font-weight:700;color:var(--white);margin-bottom:6px;}
 .steps-sub{font-size:12px;color:rgba(255,255,255,0.5);margin-bottom:26px;}
 .steps-list{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;}
+.steps-list.steps-5{grid-template-columns:repeat(5,1fr);gap:13px;}
+@media(max-width:1000px){.steps-list.steps-5{grid-template-columns:repeat(2,1fr);}}
+@media(max-width:720px){.steps-list.steps-5{grid-template-columns:1fr;}}
 .step-item{background:rgba(255,255,255,0.07);border:1px solid rgba(255,255,255,0.12);border-radius:12px;padding:18px;}
 .step-num{font-family:'Josefin Sans',sans-serif;font-size:20px;font-weight:700;color:#7dd44a;margin-bottom:8px;}
 .step-title{font-size:13px;font-weight:600;color:var(--white);margin-bottom:4px;}
@@ -524,11 +527,13 @@ details[open] summary::before{transform:rotate(90deg);}
     <div class="qs-panel">
       <div class="qs-panel-inner">
         <div class="qs-eyebrow">My Language Quest</div>
-        <div class="qs-title">Todos los J1 son parecidos.<br>La diferencia es quién te acompaña</div>
+        <div class="qs-title">El programa lo marca<br>el Gobierno americano.<br>El acompañamiento, nosotros</div>
         <p class="qs-lead">
-          La estructura oficial del programa J1 es la misma en todas las agencias: la fija el Gobierno
-          americano y el sponsor. <strong>Lo que cambia es lo que cada agencia añade encima</strong>, y ahí es
-          donde está nuestra diferencia.
+          Si estáis comparando agencias, veréis que el J1 es prácticamente igual en todas: las normas las fija
+          el Gobierno de Estados Unidos y el sponsor americano, y ahí nadie puede cambiar nada. La diferencia
+          está en quién coge el teléfono cuando vuestro hijo lleva dos semanas fuera y os llama un domingo por
+          la noche. <strong>En My Language Quest sabréis siempre con quién habláis, y esa persona conocerá a
+          vuestro hijo por su nombre.</strong>
         </p>
         <div class="qs-pilares">
           <div class="qs-pilar"><div class="qs-pilar-icon">👩‍💼</div><div><div class="qs-pilar-title">Una asesora asignada en España</div><div class="qs-pilar-desc">La misma persona de principio a fin: nada de tickets ni centralitas.</div></div></div>
@@ -851,11 +856,12 @@ details[open] summary::before{transform:rotate(90deg);}
     <div class="steps-inner">
       <div class="steps-title">¿Cómo seguimos?</div>
       <div class="steps-sub">Del sí a la salida hacia Estados Unidos, paso a paso</div>
-      <div class="steps-list">
-        <div class="step-item"><div class="step-num">1</div><div class="step-title">Prueba de nivel</div><div class="step-desc">Examen ELTIS y entrevista personal online con el estudiante.</div></div>
-        <div class="step-item"><div class="step-num">2</div><div class="step-title">Firma y reserva</div><div class="step-desc">Firma del contrato y primer pago antes del 1 de septiembre de 2026.</div></div>
-        <div class="step-item"><div class="step-num">3</div><div class="step-title">Visado y formación</div><div class="step-desc">Tramitamos el visado J1 y la cita en la Embajada, más los cursos formativos.</div></div>
-        <div class="step-item"><div class="step-num">4</div><div class="step-title">Destino y salida</div><div class="step-desc">El sponsor asigna familia y colegio. Salida hacia Nueva York.</div></div>
+      <div class="steps-list steps-5">
+        <div class="step-item"><div class="step-num">1</div><div class="step-title">Entrevista</div><div class="step-desc">Reunión con los padres y entrevista personal con el estudiante para conocerle y resolver dudas.</div></div>
+        <div class="step-item"><div class="step-num">2</div><div class="step-title">Firma y reserva</div><div class="step-desc">Firma del contrato y pago de reserva. Cuanto antes se firme, más margen para la asignación.</div></div>
+        <div class="step-item"><div class="step-num">3</div><div class="step-title">Solicitud y documentación</div><div class="step-desc">Rellenamos juntos la aplicación y recopilamos toda la documentación que pide el sponsor.</div></div>
+        <div class="step-item"><div class="step-num">4</div><div class="step-title">Visado y formación</div><div class="step-desc">Tramitamos el visado J1 y la cita en la Embajada, más los cursos formativos.</div></div>
+        <div class="step-item"><div class="step-num">5</div><div class="step-title">Destino y salida</div><div class="step-desc">El sponsor asigna familia y colegio. Salida hacia Nueva York.</div></div>
       </div>
       <div class="cta-line">¿Dudas sobre el programa o los requisitos? Tu asesora las resuelve contigo.</div>
       <div class="pasos-cta-wrap">
@@ -975,6 +981,6 @@ details[open] summary::before{transform:rotate(90deg);}
   }
 })();
 </script>
-<!-- build:20260831-102225 -->
+<!-- build:20260831-103016 -->
 </body>
 </html>
