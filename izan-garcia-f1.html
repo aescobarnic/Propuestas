@@ -1,0 +1,1344 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<script>document.documentElement.className+=" js-anim";</script>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Propuesta F-1 · Izan García · My Language Quest</title>
+<link href="https://fonts.googleapis.com/css2?family=Fira+Sans:wght@300;400;500;600;700&family=Josefin+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --blue:#003366;--blue-dark:#001f40;--blue-mid:#0a4a8a;--blue-light:#dce8f5;
+  --red:#B12900;--red-dark:#8A1F00;--red-light:#fdf0ec;--red-deep:#6E1600;
+  --green:#4C9E0C;--green-dark:#3A7A09;--green-light:#eef8e3;
+  --gold:#E8B04B;--amber:#B57A00;--amber-light:#fff6e3;
+  --gray-bg:#eef1f6;--gray-card:#f8fafc;--gray-border:#dbe1ea;
+  --text:#0d1b2a;--text-mid:#3d4f62;--text-light:#7a8a9b;--white:#ffffff;
+}
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box;}
+body{font-family:'Fira Sans',sans-serif;background:var(--gray-bg);color:var(--text);}
+
+/* HEADER */
+.header{background:var(--white);padding:18px 48px;display:flex;align-items:center;justify-content:space-between;box-shadow:0 1px 0 var(--gray-border),0 4px 24px rgba(0,51,102,0.07);position:relative;z-index:10;}
+.header::after{content:'';position:absolute;bottom:0;left:0;right:0;height:4px;background:linear-gradient(90deg,var(--red) 0%,var(--red) 34%,var(--white) 34%,var(--white) 66%,var(--blue) 66%,var(--blue) 100%);}
+.logo-area img{height:46px;width:auto;display:block;}
+.header-right{text-align:right;}
+.header-label{font-family:'Josefin Sans',sans-serif;font-size:9px;letter-spacing:3px;text-transform:uppercase;color:var(--text-light);}
+.header-year{font-family:'Josefin Sans',sans-serif;font-size:26px;font-weight:700;color:var(--blue);line-height:1;margin-top:2px;}
+
+/* HERO */
+.hero{background:linear-gradient(135deg,var(--blue-dark) 0%,var(--blue) 55%,var(--blue-mid) 100%);position:relative;overflow:hidden;padding:40px 48px 36px;}
+.hero::after{content:'🏀';position:absolute;right:3%;top:50%;transform:translateY(-50%) rotate(-12deg);font-size:210px;line-height:1;opacity:0.10;pointer-events:none;z-index:1;}
+.hero::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 70% 110% at 100% 40%,rgba(255,255,255,0.12) 0%,transparent 60%),radial-gradient(ellipse 60% 80% at -10% 90%,rgba(0,31,64,0.28) 0%,transparent 60%);}
+.hero-dots{position:absolute;inset:0;pointer-events:none;background-image:radial-gradient(rgba(255,255,255,0.07) 1px,transparent 1px);background-size:28px 28px;}
+.hero-inner{position:relative;z-index:2;}
+.hero-tag{display:inline-flex;align-items:center;gap:6px;background:rgba(255,255,255,0.1);border:1px solid rgba(255,255,255,0.2);border-radius:20px;padding:4px 12px;font-size:10px;font-weight:600;letter-spacing:2px;text-transform:uppercase;color:rgba(255,255,255,0.7);margin-bottom:12px;}
+.hero-tag::before{content:'🇺🇸';font-size:11px;}
+.hero-name{font-family:'Josefin Sans',sans-serif;font-size:38px;font-weight:700;color:var(--white);line-height:1.05;margin-bottom:8px;}
+.hero-subtitle{font-size:13px;color:rgba(255,255,255,0.55);font-weight:300;}
+.hero-pills{display:flex;flex-wrap:wrap;gap:8px;margin-top:20px;}
+.hero-pill{display:flex;align-items:center;gap:6px;background:rgba(255,255,255,0.1);border:1px solid rgba(255,255,255,0.18);border-radius:8px;padding:6px 12px;font-size:11px;color:var(--white);font-weight:500;}
+.hero-pill.ac{background:rgba(0,31,64,0.35);border-color:rgba(255,255,255,0.4);}
+
+/* LAYOUT */
+.main{max-width:1140px;margin:0 auto;padding:40px 24px 20px;}
+.section-title{display:flex;align-items:center;gap:12px;margin:44px 0 24px;}
+.section-title:first-of-type{margin-top:0;}
+.section-title h2{font-family:'Josefin Sans',sans-serif;font-size:11px;font-weight:700;letter-spacing:3px;text-transform:uppercase;color:var(--red-deep);white-space:nowrap;}
+.section-title::before{content:'';width:22px;height:3px;border-radius:3px;background:var(--red);flex-shrink:0;}
+.section-title::after{content:'';flex:1;height:1px;background:var(--gray-border);}
+.intro-text{font-size:14px;color:var(--text-mid);line-height:1.75;max-width:900px;margin-bottom:20px;}
+.intro-text strong{color:var(--blue);font-weight:600;}
+
+/* PROMO */
+.promo-banner{display:flex;align-items:center;gap:20px;background:linear-gradient(135deg,var(--green-dark),#5FB515);border-radius:16px;padding:22px 26px;margin-bottom:8px;box-shadow:0 6px 24px rgba(60,122,9,0.22);}
+.promo-icon{font-size:30px;flex-shrink:0;}
+.promo-body{flex:1;}
+.promo-title{font-family:'Josefin Sans',sans-serif;font-size:19px;font-weight:700;color:var(--white);line-height:1.25;margin-bottom:4px;}
+.promo-sub{font-size:12px;color:rgba(255,255,255,0.78);}
+.promo-chip{background:var(--white);border-radius:12px;padding:12px 22px;text-align:center;flex-shrink:0;}
+.promo-chip-num{font-family:'Josefin Sans',sans-serif;font-size:24px;font-weight:700;color:var(--green-dark);line-height:1;}
+.promo-chip-lab{font-family:'Josefin Sans',sans-serif;font-size:9px;letter-spacing:2px;text-transform:uppercase;color:var(--text-light);margin-top:4px;}
+
+/* CRITERIOS */
+.criterios{display:grid;grid-template-columns:repeat(auto-fit,minmax(192px,1fr));gap:14px;margin-top:22px;}
+.criterio{background:var(--white);border:1.5px solid var(--gray-border);border-top:4px solid var(--blue);border-radius:12px;padding:18px 18px;text-align:center;}
+.criterio-icon{font-size:26px;margin-bottom:8px;}
+.criterio-title{font-family:'Josefin Sans',sans-serif;font-size:13px;font-weight:700;color:var(--blue);margin-bottom:5px;}
+.criterio-desc{font-size:11.5px;color:var(--text-mid);line-height:1.55;}
+
+/* EXPLICATIVO JV / VARSITY */
+.jv-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-bottom:16px;}
+.jv-card{background:var(--white);border:1.5px solid var(--gray-border);border-radius:14px;padding:20px 22px;box-shadow:0 2px 14px rgba(0,51,102,0.05);}
+.jv-step{font-family:'Josefin Sans',sans-serif;font-size:9px;font-weight:700;letter-spacing:2.5px;text-transform:uppercase;color:var(--red);margin-bottom:8px;}
+.jv-title{font-family:'Josefin Sans',sans-serif;font-size:17px;font-weight:700;color:var(--text);margin-bottom:8px;}
+.jv-desc{font-size:12.5px;color:var(--text-mid);line-height:1.7;}
+.jv-alert{display:flex;gap:14px;align-items:flex-start;background:var(--amber-light);border:1.5px solid rgba(181,122,0,0.3);border-left:4px solid var(--gold);border-radius:12px;padding:18px 22px;}
+.jv-alert-icon{font-size:24px;flex-shrink:0;}
+.jv-alert-title{font-family:'Josefin Sans',sans-serif;font-size:15px;font-weight:700;color:#7a5200;margin-bottom:6px;}
+.jv-alert-text{font-size:12.5px;color:#6b4a00;line-height:1.7;}
+.jv-alert-text strong{color:#4d3500;}
+
+/* SEMÁFORO DEPORTIVO */
+.semaforo{border-top:1px solid var(--gray-border);background:linear-gradient(to right,var(--gray-card),var(--white));padding:14px 22px;}
+.semaforo-lab{font-family:'Josefin Sans',sans-serif;font-size:8.5px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--text-light);margin-bottom:9px;}
+.semaforo-row{display:flex;gap:8px;flex-wrap:wrap;}
+.luz{display:flex;align-items:center;gap:7px;border-radius:8px;padding:7px 11px;font-size:10.5px;font-weight:600;border:1.5px solid;flex:1 1 150px;min-width:150px;line-height:1.35;}
+.luz .ico{font-size:12px;line-height:1;flex-shrink:0;}
+.luz.si{background:var(--green-light);border-color:rgba(76,158,12,0.4);color:var(--green-dark);}
+.luz.no{background:#fdecec;border-color:rgba(190,30,30,0.35);color:#a51b1b;}
+.semaforo-nota{font-size:11px;color:var(--text-mid);line-height:1.6;margin-top:10px;padding-top:9px;border-top:1px dashed var(--gray-border);}
+.semaforo-nota strong{color:var(--text);}
+.asoc{display:inline-block;background:var(--blue-light);color:var(--blue);border-radius:5px;padding:2px 8px;font-size:9.5px;font-weight:700;letter-spacing:0.5px;}
+/* Aviso genérico · se usa para el disclaimer de normativa y la advertencia de FLEX */
+.aviso{display:flex;gap:14px;align-items:flex-start;background:#fff4f0;border:1.5px solid rgba(177,41,0,0.3);border-left:4px solid var(--red);border-radius:12px;padding:16px 20px;}
+.aviso.neutro{background:var(--gray-card);border-color:var(--gray-border);border-left-color:var(--blue);}
+.aviso-icon{font-size:20px;flex-shrink:0;line-height:1.2;}
+.aviso-txt{font-size:12.5px;color:#6b1a00;line-height:1.7;}
+.aviso.neutro .aviso-txt{color:var(--text-mid);}
+.aviso-txt strong{color:var(--red-dark);}
+.aviso.neutro .aviso-txt strong{color:var(--text);}
+</style>
+<style>
+/* MODALIDADES */
+.mod-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;}
+.mod-card{background:var(--white);border:1.5px solid var(--gray-border);border-radius:16px;overflow:hidden;box-shadow:0 2px 16px rgba(0,51,102,0.06);display:flex;flex-direction:column;transition:transform .3s cubic-bezier(.22,.61,.36,1),box-shadow .3s ease;}
+.mod-card:hover{transform:translateY(-4px);box-shadow:0 14px 38px rgba(0,51,102,0.13);}
+.mod-card.destacada{border-color:var(--blue);box-shadow:0 6px 28px rgba(0,51,102,0.2);}
+.mod-head{background:linear-gradient(135deg,var(--blue-dark),var(--blue-mid));padding:20px 22px 18px;position:relative;overflow:hidden;}
+.mod-head::after{content:'🇺🇸';position:absolute;right:-8px;bottom:-20px;font-size:76px;opacity:0.1;line-height:1;transform:rotate(-12deg);}
+.mod-head > *{position:relative;z-index:2;}
+.mod-kicker{font-family:'Josefin Sans',sans-serif;font-size:9px;letter-spacing:3px;text-transform:uppercase;color:rgba(255,255,255,0.4);margin-bottom:7px;}
+.mod-name{font-family:'Josefin Sans',sans-serif;font-size:20px;font-weight:700;color:var(--white);margin-bottom:4px;}
+.mod-claim{font-size:11.5px;color:rgba(255,255,255,0.55);line-height:1.5;}
+.mod-precio{display:flex;align-items:baseline;gap:8px;margin-top:14px;flex-wrap:wrap;}
+.mod-precio .neto{font-family:'Josefin Sans',sans-serif;font-size:24px;font-weight:700;color:#7dd44a;line-height:1;}
+.mod-precio .bruto{font-size:11px;color:rgba(255,255,255,0.4);text-decoration:line-through;}
+.mod-precio .desde{font-size:10px;color:rgba(255,255,255,0.45);}
+.mod-body{padding:18px 22px 20px;flex:1;}
+.mod-row{display:flex;gap:10px;align-items:flex-start;font-size:12.5px;color:var(--text-mid);line-height:1.6;margin-bottom:11px;}
+.mod-row:last-child{margin-bottom:0;}
+.mod-row b{color:var(--text);font-weight:600;}
+.mod-row .k{font-family:'Josefin Sans',sans-serif;font-size:9px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:var(--red);min-width:74px;flex-shrink:0;padding-top:2px;}
+.mod-foot{padding:13px 22px;background:var(--gray-card);border-top:1px solid var(--gray-border);font-size:11.5px;color:var(--text-mid);line-height:1.6;}
+.mod-foot b{color:var(--blue);}
+
+/* FICHAS DE COLEGIO */
+.bloque-mod{background:var(--white);border:1.5px solid var(--gray-border);border-radius:16px;padding:22px 24px;margin-bottom:18px;display:flex;gap:18px;align-items:center;flex-wrap:wrap;box-shadow:0 2px 14px rgba(0,51,102,0.05);}
+.bloque-mod-num{font-family:'Josefin Sans',sans-serif;font-size:28px;font-weight:700;color:var(--white);background:var(--red);width:52px;height:52px;border-radius:14px;display:flex;align-items:center;justify-content:center;flex-shrink:0;}
+.bloque-mod-txt{flex:1;min-width:260px;}
+.bloque-mod-title{font-family:'Josefin Sans',sans-serif;font-size:19px;font-weight:700;color:var(--red-deep);margin-bottom:4px;}
+.bloque-mod-desc{font-size:12.5px;color:var(--text-mid);line-height:1.65;}
+.bloque-mod-precio{text-align:right;flex-shrink:0;}
+.bloque-mod-precio .neto{font-family:'Josefin Sans',sans-serif;font-size:26px;font-weight:700;color:var(--green-dark);line-height:1;}
+.bloque-mod-precio .bruto{font-size:11px;color:var(--text-light);text-decoration:line-through;margin-top:3px;}
+
+.opciones-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:20px;}
+.opcion-card{background:var(--white);border-radius:16px;border:1.5px solid var(--gray-border);overflow:hidden;box-shadow:0 2px 16px rgba(0,51,102,0.06);position:relative;display:flex;flex-direction:column;transition:transform .35s cubic-bezier(.22,.61,.36,1),box-shadow .35s ease,border-color .3s ease;}
+.opcion-card:hover{transform:translateY(-4px);box-shadow:0 12px 40px rgba(110,22,0,0.16);border-color:var(--red);}
+.opcion-card.recomendada{border-color:var(--blue);box-shadow:0 6px 28px rgba(0,51,102,0.2);}
+.badge-rec{position:absolute;top:14px;right:-32px;background:var(--blue);color:var(--white);font-size:8px;font-weight:700;letter-spacing:1.5px;padding:5px 40px;transform:rotate(45deg);width:130px;text-align:center;z-index:10;}
+.opcion-header{background:linear-gradient(135deg,var(--red-deep) 0%,var(--red) 100%);padding:20px 22px 16px;position:relative;overflow:hidden;}
+.opcion-header::after{content:'🏀';position:absolute;right:-10px;bottom:-20px;font-size:78px;opacity:0.12;line-height:1;transform:rotate(-14deg);}
+.opcion-header > *{position:relative;z-index:2;}
+.opcion-num{font-family:'Josefin Sans',sans-serif;font-size:9px;letter-spacing:3px;text-transform:uppercase;color:rgba(255,255,255,0.38);margin-bottom:7px;}
+.opcion-distrito{font-family:'Josefin Sans',sans-serif;font-size:17px;font-weight:700;color:var(--white);margin-bottom:4px;line-height:1.25;}
+.opcion-loc{font-size:11px;color:rgba(255,255,255,0.5);margin-bottom:12px;}
+.precio-chip{display:inline-flex;align-items:baseline;gap:6px;background:rgba(255,255,255,0.1);border:1px solid rgba(255,255,255,0.18);border-radius:8px;padding:6px 12px;flex-wrap:wrap;}
+.precio-chip .val{font-family:'Josefin Sans',sans-serif;font-size:20px;font-weight:700;color:var(--white);}
+.precio-chip .tachado{font-size:10px;color:rgba(255,255,255,0.35);text-decoration:line-through;}
+.precio-chip .desc{font-size:9.5px;color:#9ee06a;font-weight:600;width:100%;}
+.opcion-body{padding:18px 22px;flex:1;}
+.razon-title{font-family:'Josefin Sans',sans-serif;font-size:9px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--red);margin-bottom:9px;}
+.razon{font-size:12.5px;color:var(--text-mid);line-height:1.7;}
+.razon strong{color:var(--text);font-weight:600;}
+.match-bar{display:flex;gap:6px;flex-wrap:wrap;padding:13px 22px;border-top:1px solid var(--gray-border);background:var(--gray-card);}
+.match-tag{display:flex;align-items:center;gap:4px;font-size:10px;font-weight:600;border-radius:20px;padding:3px 10px;border:1px solid;}
+.match-tag.ok{color:var(--green-dark);background:var(--green-light);border-color:rgba(76,158,12,0.25);}
+.match-tag.mid{color:var(--amber);background:var(--amber-light);border-color:rgba(181,122,0,0.28);}
+
+/* COMPARATIVA */
+.tabla-wrap{background:var(--white);border:1.5px solid var(--gray-border);border-radius:16px;overflow-x:auto;box-shadow:0 2px 16px rgba(0,51,102,0.05);}
+table.comp{width:100%;border-collapse:collapse;min-width:840px;}
+table.comp th{background:var(--blue-dark);color:var(--white);font-family:'Josefin Sans',sans-serif;font-size:9.5px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;padding:13px 12px;text-align:left;white-space:nowrap;}
+table.comp td{padding:12px;font-size:12px;color:var(--text-mid);border-bottom:1px solid var(--gray-border);vertical-align:middle;}
+table.comp tr:last-child td{border-bottom:none;}
+table.comp tr.rec td{background:var(--blue-light);}
+table.comp td.col{font-weight:600;color:var(--text);}
+table.comp td.pr{font-family:'Josefin Sans',sans-serif;font-weight:700;color:var(--green-dark);white-space:nowrap;}
+.si-tag{color:var(--green-dark);font-weight:700;}
+.no-tag{color:#a51b1b;font-weight:700;}
+
+/* PODIO */
+.podio{display:flex;flex-direction:column;gap:16px;}
+.podio-item{background:var(--white);border:1.5px solid var(--gray-border);border-radius:16px;padding:22px 26px;display:flex;gap:20px;align-items:flex-start;box-shadow:0 2px 16px rgba(0,51,102,0.05);}
+.podio-item.oro{border-color:var(--gold);border-left:6px solid var(--gold);box-shadow:0 6px 26px rgba(232,176,75,0.22);}
+.podio-medal{font-size:32px;flex-shrink:0;line-height:1;}
+.podio-body{flex:1;}
+.podio-head{display:flex;justify-content:space-between;align-items:baseline;gap:16px;flex-wrap:wrap;margin-bottom:8px;}
+.podio-title{font-family:'Josefin Sans',sans-serif;font-size:18px;font-weight:700;color:var(--red-deep);}
+.podio-precio{font-family:'Josefin Sans',sans-serif;font-size:20px;font-weight:700;color:var(--green-dark);white-space:nowrap;}
+.podio-precio small{display:block;font-size:10px;color:var(--text-light);text-decoration:line-through;font-weight:400;text-align:right;}
+.podio-text{font-size:12.5px;color:var(--text-mid);line-height:1.75;}
+.podio-text strong{color:var(--text);font-weight:600;}
+.podio-pros{display:flex;gap:6px;flex-wrap:wrap;margin-top:12px;}
+.podio-contra{margin-top:12px;background:var(--red-light);border-left:3px solid var(--red);border-radius:0 8px 8px 0;padding:11px 14px;font-size:12px;color:#6b1a00;line-height:1.65;}
+.podio-contra b{color:var(--red-dark);}
+
+/* ESCENARIOS */
+.esc-grid{display:grid;grid-template-columns:1fr 1fr;gap:18px;}
+.esc{background:var(--white);border:1.5px solid var(--gray-border);border-radius:16px;padding:22px 24px;box-shadow:0 2px 14px rgba(0,51,102,0.05);}
+.esc-q{font-size:12.5px;color:var(--text-light);font-style:italic;line-height:1.6;margin-bottom:12px;padding-bottom:12px;border-bottom:1px dashed var(--gray-border);}
+.esc-a-lab{font-family:'Josefin Sans',sans-serif;font-size:9px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--red);margin-bottom:6px;}
+.esc-a{font-family:'Josefin Sans',sans-serif;font-size:17px;font-weight:700;color:var(--blue);margin-bottom:8px;}
+.esc-txt{font-size:12.5px;color:var(--text-mid);line-height:1.7;}
+
+/* INCLUDES */
+.includes-wrap{background:var(--white);border-radius:16px;border:1.5px solid var(--gray-border);box-shadow:0 2px 16px rgba(0,51,102,0.05);overflow:hidden;}
+.includes-head{background:linear-gradient(135deg,var(--red-deep),var(--red));padding:20px 32px;}
+.includes-head h3{font-family:'Josefin Sans',sans-serif;font-size:14px;font-weight:700;color:var(--white);letter-spacing:1px;}
+.includes-body{padding:28px 32px;}
+.includes-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:32px;}
+.col-title{font-family:'Josefin Sans',sans-serif;font-size:9px;font-weight:700;letter-spacing:2.5px;text-transform:uppercase;color:var(--red);margin-bottom:14px;padding-bottom:8px;border-bottom:2px solid var(--red-light);}
+.inc-list{list-style:none;display:flex;flex-direction:column;gap:8px;}
+.inc-list li{font-size:12px;color:var(--text-mid);display:flex;align-items:flex-start;gap:8px;line-height:1.55;}
+.inc-list li::before{content:'✓';color:var(--green);font-weight:700;font-size:11px;flex-shrink:0;margin-top:1px;}
+.inc-list.no li::before{content:'✗';color:var(--red);}
+.inc-list li small{font-size:10px;color:var(--text-light);display:block;margin-top:2px;}
+.gestor-wrap{background:linear-gradient(135deg,var(--blue-dark),var(--blue-mid));border-radius:12px;padding:20px 24px;margin-top:22px;}
+.gestor-title{font-family:'Josefin Sans',sans-serif;font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:rgba(255,255,255,0.6);margin-bottom:14px;}
+.gestor-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;}
+.gestor-item{background:rgba(255,255,255,0.08);border:1px solid rgba(255,255,255,0.12);border-radius:8px;padding:10px 12px;font-size:11px;color:rgba(255,255,255,0.85);line-height:1.4;}
+.gestor-item::before{content:'→';color:#7dd44a;font-weight:700;margin-right:5px;}
+
+/* PAGOS */
+.payment-wrap{background:linear-gradient(135deg,var(--blue-dark) 0%,var(--blue) 60%,var(--blue-mid) 100%);border-radius:16px;padding:32px;position:relative;overflow:hidden;}
+.payment-wrap::before{content:'';position:absolute;inset:0;background-image:radial-gradient(rgba(255,255,255,0.05) 1px,transparent 1px);background-size:22px 22px;}
+.payment-inner{position:relative;z-index:2;}
+.pay-title{font-family:'Josefin Sans',sans-serif;font-size:16px;font-weight:700;color:var(--white);margin-bottom:6px;}
+.pay-subtitle{font-size:12px;color:rgba(255,255,255,0.45);margin-bottom:22px;}
+.pay-cols{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;}
+.pay-col{background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.12);border-radius:12px;padding:18px 20px;}
+.pay-col-title{font-family:'Josefin Sans',sans-serif;font-size:9px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:#7dd44a;margin-bottom:10px;}
+.pay-step-title{font-family:'Josefin Sans',sans-serif;font-size:19px;font-weight:700;color:var(--white);margin-bottom:4px;}
+.pay-step-desc{font-size:11.5px;color:rgba(255,255,255,0.5);line-height:1.55;}
+.pay-note{font-size:11px;color:rgba(255,255,255,0.35);line-height:1.65;font-style:italic;border-top:1px solid rgba(255,255,255,0.1);padding-top:14px;margin-top:18px;}
+
+/* FINANCIACIÓN */
+.financing-wrap{background:var(--white);border-radius:16px;border:1.5px solid var(--gray-border);box-shadow:0 2px 16px rgba(0,51,102,0.06);overflow:hidden;}
+.financing-head{background:linear-gradient(135deg,var(--blue-dark),var(--blue));padding:22px 32px;display:flex;align-items:center;justify-content:space-between;gap:16px;}
+.financing-head-left{display:flex;align-items:center;gap:16px;}
+.fin-icon{font-size:28px;flex-shrink:0;}
+.fin-title{font-family:'Josefin Sans',sans-serif;font-size:16px;font-weight:700;color:var(--white);margin-bottom:3px;}
+.fin-sub{font-size:11px;color:rgba(255,255,255,0.5);line-height:1.4;}
+.fin-badge{background:rgba(125,212,74,0.2);border:1px solid rgba(125,212,74,0.4);color:#7dd44a;font-family:'Josefin Sans',sans-serif;font-size:11px;font-weight:700;letter-spacing:1px;padding:6px 14px;border-radius:20px;white-space:nowrap;}
+.financing-body{padding:28px 32px;}
+.fin-opcion-label,.fin-plazo-label{font-family:'Josefin Sans',sans-serif;font-size:9px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--text-light);margin-bottom:10px;}
+.fin-opcion-selector{margin-bottom:22px;}
+.fin-opcion-btns{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;}
+.fin-opcion-btn{background:var(--gray-card);border:1.5px solid var(--gray-border);border-radius:10px;padding:11px 14px;cursor:pointer;text-align:left;transition:all .2s;display:flex;flex-direction:column;gap:3px;font-family:'Fira Sans',sans-serif;}
+.fin-opcion-btn:hover{border-color:var(--blue-mid);background:var(--blue-light);}
+.fin-opcion-btn.active{border-color:var(--blue);background:var(--blue-light);}
+.fin-opcion-nombre{font-size:9.5px;font-weight:700;letter-spacing:1px;text-transform:uppercase;color:var(--text-light);}
+.fin-opcion-btn.active .fin-opcion-nombre{color:var(--blue);}
+.fin-opcion-precio{font-family:'Josefin Sans',sans-serif;font-size:16px;font-weight:700;color:var(--text);}
+.fin-opcion-btn.active .fin-opcion-precio{color:var(--blue);}
+.fin-opcion-tachado{font-size:9.5px;color:var(--text-light);text-decoration:line-through;}
+.fin-opcion-tachado:empty{display:none;}
+.fin-toggle{display:flex;align-items:center;gap:16px;background:var(--green-light);border:1.5px solid rgba(76,158,12,0.35);border-radius:12px;padding:14px 18px;margin-bottom:18px;cursor:pointer;user-select:none;-webkit-user-select:none;}
+.fin-switch{width:52px;height:28px;border-radius:20px;background:var(--green);position:relative;flex-shrink:0;transition:background .25s;}
+.fin-switch::after{content:'';position:absolute;top:3px;left:3px;width:22px;height:22px;border-radius:50%;background:var(--white);transition:transform .25s;box-shadow:0 2px 5px rgba(0,0,0,0.2);}
+.fin-toggle.off .fin-switch{background:#c3ccd6;}
+.fin-toggle.off .fin-switch::after{transform:translateX(0);}
+.fin-toggle .fin-switch::after{transform:translateX(24px);}
+.fin-toggle-title{font-family:'Josefin Sans',sans-serif;font-size:14px;font-weight:700;color:var(--green-dark);margin-bottom:3px;}
+.fin-toggle-sub{font-size:11.5px;color:var(--text-mid);line-height:1.5;}
+.fin-entrada-fija{display:flex;align-items:center;gap:14px;background:var(--blue-light);border:1.5px solid rgba(0,51,102,0.2);border-radius:12px;padding:14px 18px;margin-bottom:22px;}
+.fin-entrada-fija-num{font-family:'Josefin Sans',sans-serif;font-size:22px;font-weight:700;color:var(--blue);line-height:1;white-space:nowrap;}
+.fin-entrada-fija-txt{font-size:12px;color:var(--text-mid);line-height:1.55;}
+.fin-entrada-fija-txt strong{color:var(--text);font-weight:600;}
+.fin-plazo-wrap{margin-bottom:22px;}
+.fin-plazos{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;}
+.fin-plazo{background:var(--gray-card);border:1.5px solid var(--gray-border);border-radius:12px;padding:14px 12px;cursor:pointer;text-align:center;transition:all .25s;font-family:'Fira Sans',sans-serif;}
+.fin-plazo:hover{border-color:var(--blue-mid);transform:translateY(-2px);}
+.fin-plazo.active{border-color:var(--green);background:var(--green-light);box-shadow:0 4px 16px rgba(76,158,12,0.15);}
+.fin-plazo-meses{font-family:'Josefin Sans',sans-serif;font-size:15px;font-weight:700;color:var(--text);margin-bottom:6px;}
+.fin-plazo.active .fin-plazo-meses{color:var(--green-dark);}
+.fin-plazo-badge{display:inline-block;border-radius:20px;padding:2px 8px;font-size:9px;font-weight:700;background:var(--blue-light);color:var(--blue);border:1px solid rgba(0,51,102,0.2);margin-bottom:4px;}
+.fin-plazo-quien{font-size:9px;color:var(--text-light);line-height:1.3;}
+.fin-resultado{display:grid;grid-template-columns:auto 1fr;gap:24px;background:linear-gradient(135deg,var(--blue-dark),var(--blue));border-radius:14px;padding:24px 28px;margin-bottom:16px;align-items:center;}
+.fin-resultado-main{text-align:center;border-right:1px solid rgba(255,255,255,0.15);padding-right:24px;}
+.fin-cuota-label{font-size:10px;font-weight:600;letter-spacing:2px;text-transform:uppercase;color:rgba(255,255,255,0.5);margin-bottom:6px;}
+.fin-cuota-valor{font-family:'Josefin Sans',sans-serif;font-size:36px;font-weight:700;color:#7dd44a;line-height:1;margin-bottom:4px;transition:color .3s;}
+.fin-cuota-sub{font-size:11px;color:rgba(255,255,255,0.45);}
+.fin-resultado-detalle{display:flex;flex-direction:column;gap:9px;}
+.fin-det-row{display:flex;justify-content:space-between;align-items:center;gap:12px;}
+.fin-det-label{font-size:12px;color:rgba(255,255,255,0.55);}
+.fin-det-val{font-size:13px;font-weight:600;color:var(--white);}
+.fin-det-green{color:#7dd44a !important;}
+.fin-det-total{border-top:1px solid rgba(255,255,255,0.15);padding-top:10px;margin-top:2px;}
+.fin-det-total .fin-det-label{color:rgba(255,255,255,0.7);font-weight:600;}
+.fin-det-total .fin-det-val{font-family:'Josefin Sans',sans-serif;font-size:16px;}
+.fin-nota{font-size:11px;color:var(--text-light);line-height:1.6;background:var(--gray-card);border-radius:8px;padding:12px 16px;border-left:3px solid var(--blue-light);}
+
+/* NOTA DEPORTIVA */
+.nota-dep{background:var(--white);border:1.5px solid var(--gray-border);border-left:5px solid var(--blue);border-radius:14px;padding:24px 28px;box-shadow:0 2px 14px rgba(0,51,102,0.05);}
+.nota-dep-title{font-family:'Josefin Sans',sans-serif;font-size:15px;font-weight:700;color:var(--blue);margin-bottom:10px;}
+.nota-dep-txt{font-size:12.5px;color:var(--text-mid);line-height:1.8;}
+.nota-dep-txt strong{color:var(--text);font-weight:600;}
+
+/* PASOS */
+.steps-wrap{background:linear-gradient(135deg,var(--blue-dark) 0%,var(--blue) 60%,var(--blue-mid) 100%);border-radius:16px;padding:34px 36px;position:relative;overflow:hidden;}
+.steps-wrap::before{content:'';position:absolute;inset:0;background-image:radial-gradient(rgba(255,255,255,0.05) 1px,transparent 1px);background-size:22px 22px;}
+.steps-inner{position:relative;z-index:2;}
+.steps-title{font-family:'Josefin Sans',sans-serif;font-size:18px;font-weight:700;color:var(--white);margin-bottom:6px;}
+.steps-sub{font-size:12px;color:rgba(255,255,255,0.5);margin-bottom:26px;}
+.steps-list{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;}
+.step-item{background:rgba(255,255,255,0.07);border:1px solid rgba(255,255,255,0.12);border-radius:12px;padding:18px;transition:transform .3s cubic-bezier(.22,.61,.36,1),background .3s ease;}
+.step-item:hover{transform:translateY(-4px);background:rgba(255,255,255,0.11);}
+.step-num{font-family:'Josefin Sans',sans-serif;font-size:20px;font-weight:700;color:#7dd44a;margin-bottom:8px;}
+.step-title{font-size:13px;font-weight:600;color:var(--white);margin-bottom:4px;}
+.step-desc{font-size:11px;color:rgba(255,255,255,0.5);line-height:1.5;}
+.cta-line{margin-top:26px;text-align:center;font-size:12.5px;color:rgba(255,255,255,0.75);}
+.pasos-cta-wrap{text-align:center;margin-top:16px;display:flex;gap:12px;justify-content:center;flex-wrap:wrap;}
+.pasos-cta{display:inline-flex;align-items:center;gap:8px;background:#7dd44a;color:var(--blue-dark);font-family:'Josefin Sans',sans-serif;font-size:13px;font-weight:700;padding:12px 26px;border-radius:10px;text-decoration:none;transition:transform .15s,box-shadow .15s;position:relative;overflow:hidden;}
+.pasos-cta:hover{transform:translateY(-2px);box-shadow:0 8px 20px rgba(125,212,74,0.35);}
+.pasos-cta-alt{background:rgba(255,255,255,0.12);color:var(--white);border:1.5px solid rgba(255,255,255,0.35);}
+.pasos-cta::after{content:'';position:absolute;top:0;left:-120%;width:60%;height:100%;background:linear-gradient(100deg,transparent,rgba(255,255,255,.55),transparent);transform:skewX(-18deg);}
+.pasos-cta:hover::after{animation:shine .85s ease;}
+@keyframes shine{to{left:140%;}}
+
+/* FOOTER */
+.footer{background:var(--blue-dark);padding:30px 48px;margin-top:56px;text-align:center;position:relative;}
+.footer::before{content:'';position:absolute;top:0;left:0;right:0;height:4px;background:linear-gradient(90deg,var(--red) 0%,var(--red) 34%,var(--white) 34%,var(--white) 66%,var(--blue) 66%,var(--blue) 100%);}
+.footer-logo{font-family:'Josefin Sans',sans-serif;font-size:15px;font-weight:700;color:var(--white);letter-spacing:1px;margin-bottom:6px;}
+.footer-tag{font-family:'Josefin Sans',sans-serif;font-size:10px;letter-spacing:4px;text-transform:uppercase;color:#ff9c7a;margin-bottom:14px;}
+.footer-meta{font-size:11px;color:rgba(255,255,255,0.4);line-height:1.7;}
+
+/* RESPONSIVE */
+@media(max-width:1000px){
+  .criterios{grid-template-columns:repeat(2,1fr);}
+  .mod-grid{grid-template-columns:1fr;}
+  .jv-grid{grid-template-columns:1fr;}
+  .steps-list{grid-template-columns:repeat(2,1fr);}
+  .esc-grid{grid-template-columns:1fr;}
+  .pay-cols{grid-template-columns:1fr;}
+  .fin-opcion-btns{grid-template-columns:1fr;}
+  .gestor-grid{grid-template-columns:repeat(2,1fr);}
+}
+@media(max-width:720px){
+  .header{padding:16px 20px;}.hero{padding:28px 20px 24px;}.hero-name{font-size:28px;}
+  .main{padding:28px 16px 20px;}
+  .includes-grid{grid-template-columns:1fr;}.opciones-grid{grid-template-columns:1fr;}
+  .criterios{grid-template-columns:1fr;}
+  .steps-list{grid-template-columns:1fr;}
+  .fin-plazos{grid-template-columns:1fr;}
+  .fin-resultado{grid-template-columns:1fr;}
+  .fin-resultado-main{border-right:none;border-bottom:1px solid rgba(255,255,255,0.15);padding-right:0;padding-bottom:20px;}
+  .financing-head{flex-direction:column;align-items:flex-start;}
+  .promo-banner{flex-direction:column;text-align:center;}
+  .podio-item{flex-direction:column;}
+  .footer{padding:26px 20px;}
+}
+
+/* ANIMACIONES */
+.js-anim .reveal{opacity:0;transform:translateY(20px);will-change:opacity,transform;transition:opacity .75s cubic-bezier(.22,.61,.36,1),transform .75s cubic-bezier(.22,.61,.36,1);}
+.js-anim .reveal.in{opacity:1;transform:none;}
+.js-anim .reveal-zoom{opacity:0;transform:scale(.975);transition:opacity .8s ease,transform .8s cubic-bezier(.22,.61,.36,1);}
+.js-anim .reveal-zoom.in{opacity:1;transform:none;}
+@keyframes heroUp{from{opacity:0;transform:translateY(16px);}to{opacity:1;transform:none;}}
+@keyframes ballIn{from{opacity:0;transform:translateY(-50%) rotate(-40deg) scale(.85);}to{opacity:.10;transform:translateY(-50%) rotate(-12deg) scale(1);}}
+.js-anim .hero::after{animation:ballIn 1.4s cubic-bezier(.22,.61,.36,1) .15s both;}
+.js-anim .hero-tag{animation:heroUp .7s cubic-bezier(.22,.61,.36,1) .05s both;}
+.js-anim .hero-name{animation:heroUp .7s cubic-bezier(.22,.61,.36,1) .16s both;}
+.js-anim .hero-subtitle{animation:heroUp .7s cubic-bezier(.22,.61,.36,1) .26s both;}
+.js-anim .hero-pill{animation:heroUp .55s cubic-bezier(.22,.61,.36,1) both;}
+.progress-bar{position:fixed;top:0;left:0;height:3px;width:100%;transform:scaleX(0);transform-origin:0 50%;background:linear-gradient(90deg,var(--red),var(--blue) 60%,var(--blue-mid));z-index:999;transition:transform .1s linear;}
+@keyframes cuotaPop{0%{opacity:.35;transform:translateY(6px);}100%{opacity:1;transform:none;}}
+.fin-cuota-valor.pop{animation:cuotaPop .42s cubic-bezier(.22,.61,.36,1);}
+@media(prefers-reduced-motion:reduce){
+  .js-anim .reveal,.js-anim .reveal-zoom{opacity:1!important;transform:none!important;transition:none!important;}
+  .js-anim .hero::after,.js-anim .hero-tag,.js-anim .hero-name,.js-anim .hero-subtitle,.js-anim .hero-pill{animation:none!important;opacity:1;}
+  .js-anim .hero::after{opacity:.10;}
+  .progress-bar{display:none;}
+  *{transition-duration:.01ms!important;}
+}
+</style>
+</head>
+<body>
+
+<div class="header">
+  <!-- LOGO · si existe img/logo.png en el repo se muestra el logo real; si no, cae al wordmark de reserva -->
+  <div class="logo-area">
+    <img src="https://aescobarnic.github.io/Propuestas/img/logo.png" alt="My Language Quest"
+         onerror="this.style.display='none';this.nextElementSibling.style.display='block';">
+    <div class="logo-fallback" style="display:none;font-family:'Josefin Sans',sans-serif;line-height:1.05;">
+      <div style="font-size:19px;font-weight:700;letter-spacing:1.5px;color:#003366;">MY LANGUAGE QUEST</div>
+      <div style="font-size:8.5px;letter-spacing:3.5px;text-transform:uppercase;color:#B12900;margin-top:3px;">Explore · Learn · Grow</div>
+    </div>
+  </div>
+  <div class="header-right">
+    <div class="header-label">Curso académico</div>
+    <div class="header-year">2027/28</div>
+  </div>
+</div>
+
+<div class="hero">
+  <div class="hero-dots"></div>
+  <div class="hero-inner">
+    <div class="hero-tag">Propuesta personalizada · Programa F-1</div>
+    <div class="hero-name">Izan García</div>
+    <div class="hero-subtitle">Año escolar en Estados Unidos · Visado F-1 · 3 modalidades personalizadas</div>
+    <div class="hero-pills">
+      <div class="hero-pill">🎓 1.º Bachillerato · Grade 11</div>
+      <div class="hero-pill">🏀 Baloncesto federado · 3–4 días/semana</div>
+      <div class="hero-pill">🏠 Familia anfitriona</div>
+      <div class="hero-pill">🗣 Nivel de inglés · pendiente de prueba inicial</div>
+      <div class="hero-pill ac">🇺🇸 3 modalidades a elegir</div>
+    </div>
+  </div>
+</div>
+
+<div class="main">
+  <div class="promo-banner">
+    <div class="promo-icon">🗽</div>
+    <div class="promo-body">
+      <div class="promo-title">Reserva tu plaza para el curso 27/28 y obtén 1.000 € de descuento</div>
+      <div class="promo-sub">Válido hasta el 30 de septiembre de 2026 · Aplicable a las tres modalidades F-1 · No acumulable con otras promociones.</div>
+    </div>
+    <div class="promo-chip">
+      <div class="promo-chip-num">−1.000 €</div>
+      <div class="promo-chip-lab">Reserva anticipada</div>
+    </div>
+  </div>
+
+  <!-- ============ QUÉ BUSCA IZAN ============ -->
+  <div class="section-title"><h2>Qué buscamos para Izan</h2></div>
+  <p class="intro-text">
+    Izan quiere hacer un año escolar en Estados Unidos para <strong>consolidar su inglés, vivir el sistema
+    educativo americano desde dentro y tener una experiencia cultural real</strong>. Académicamente va bien;
+    su nivel exacto de inglés lo confirmaremos con una prueba inicial antes de avanzar.
+    Pero hay un elemento que marca toda esta propuesta: <strong>el baloncesto</strong>. Izan juega federado en
+    Madrid y entrena 3–4 días por semana, así que no buscamos un colegio que «tenga basketball», sino uno donde
+    pueda seguir entrenando, integrarse en el programa deportivo y, cuando la normativa lo permita, presentarse
+    al proceso de selección del equipo.
+  </p>
+  <p class="intro-text">
+    Por eso hemos evaluado <strong>cada colegio contra los mismos cinco criterios</strong>. Los verás repetidos
+    en todas las fichas, para que la comparación sea directa.
+  </p>
+  <div class="criterios">
+    <div class="criterio">
+      <div class="criterio-icon">🏀</div>
+      <div class="criterio-title">Baloncesto real</div>
+      <div class="criterio-desc">Programa masculino con equipos, entrenador y temporada oficial. Y que el visado F-1 no le cierre puertas de entrada.</div>
+    </div>
+    <div class="criterio">
+      <div class="criterio-icon">☀️</div>
+      <div class="criterio-title">Clima templado</div>
+      <div class="criterio-desc">Evitar en lo posible inviernos duros y zonas con mucha nieve. Es una petición explícita de la familia.</div>
+    </div>
+    <div class="criterio">
+      <div class="criterio-icon">🏘️</div>
+      <div class="criterio-title">Localidad intermedia</div>
+      <div class="criterio-desc">Ni una gran metrópoli ni un entorno tan pequeño que un adolescente pueda sentirse aislado.</div>
+    </div>
+    <div class="criterio">
+      <div class="criterio-icon">🎉</div>
+      <div class="criterio-title">Vida de high school</div>
+      <div class="criterio-desc">Ambiente estudiantil activo: deportes, actividades, eventos y <em>school spirit</em>. La experiencia americana auténtica.</div>
+    </div>
+    <div class="criterio" style="border-top-color:var(--green);">
+      <div class="criterio-icon">💶</div>
+      <div class="criterio-title" style="color:var(--green-dark);">Presupuesto y valor</div>
+      <div class="criterio-desc">Presupuesto orientativo hasta 25.200 €. Hemos incluido alguna alternativa ligeramente superior únicamente cuando el encaje global justifica la diferencia.</div>
+    </div>
+  </div>
+
+  <!-- ============ TRYOUTS / JV / VARSITY ============ -->
+  <div class="section-title"><h2>Antes de comparar · Tryouts, JV y Varsity</h2></div>
+  <p class="intro-text">
+    Esto es fundamental para entender el resto de la propuesta, porque en el deporte de instituto americano
+    <strong>no basta con que el colegio tenga equipo de baloncesto</strong>. Hay tres conceptos que conviene
+    tener claros antes de mirar ningún colegio.
+  </p>
+  <div class="jv-grid">
+    <div class="jv-card">
+      <div class="jv-step">Concepto 1</div>
+      <div class="jv-title">🎯 Tryouts</div>
+      <div class="jv-desc">Son las pruebas de selección. <strong>Presentarse no significa entrar en el equipo</strong>: es el entrenador quien decide qué jugadores forman el <em>roster</em> final. Para poder presentarse hace falta estar matriculado, tener la documentación médica en regla y ser declarado elegible.</div>
+    </div>
+    <div class="jv-card">
+      <div class="jv-step">Concepto 2</div>
+      <div class="jv-title">🏀 Junior Varsity (JV)</div>
+      <div class="jv-desc">Es un <strong>equipo competitivo real</strong> del instituto, normalmente orientado a jugadores en desarrollo. Tiene entrenamientos, entrenador propio, partidos contra otros colegios y temporada oficial. No es un equipo recreativo.</div>
+    </div>
+    <div class="jv-card">
+      <div class="jv-step">Concepto 3</div>
+      <div class="jv-title">⭐ Varsity</div>
+      <div class="jv-desc">Es el <strong>equipo principal del instituto</strong> y compite al máximo nivel interescolar del centro. Es donde juegan los alumnos con más nivel del colegio.</div>
+    </div>
+  </div>
+  <p class="intro-text" style="margin-top:14px;margin-bottom:16px;">
+    Conviene aclarar que <strong>JV y Varsity no son etapas sucesivas por las que haya que pasar</strong>:
+    son dos niveles de equipo distintos dentro del mismo colegio.
+  </p>
+  <div class="jv-alert">
+    <div class="jv-alert-icon">⚠️</div>
+    <div>
+      <div class="jv-alert-title">Y para Izan hay una cuarta variable: la elegibilidad del estudiante internacional</div>
+      <div class="jv-alert-text">
+        Aunque un entrenador considerase que Izan tiene nivel de Varsity, <strong>algunos estados prohíben
+        expresamente que un estudiante con visado F-1 compita en Varsity</strong>. En otros estados sí puede
+        hacerlo, siempre que cumpla los requisitos correspondientes. No depende del colegio ni de MLQ: depende
+        de la asociación deportiva que regula cada estado.<br><br>
+        Por eso, en cada colegio de esta propuesta encontrarás <strong>un semáforo con tres preguntas</strong>:
+        ¿puede presentarse al proceso de selección? · ¿puede optar a JV? · ¿puede optar a Varsity?
+      </div>
+    </div>
+  </div>
+  <div class="aviso neutro" style="margin-top:16px;">
+    <div class="aviso-icon">📅</div>
+    <div class="aviso-txt">
+      La normativa deportiva indicada en esta propuesta corresponde a la actualmente publicada para 2026/27 y
+      <strong>será reconfirmada para Izan antes del curso 2027/28</strong>.
+    </div>
+  </div>
+
+  <!-- ============ LAS 3 MODALIDADES ============ -->
+  <div class="section-title"><h2>Las tres modalidades del programa F-1</h2></div>
+  <p class="intro-text">
+    Dentro del programa F-1 existen distintas modalidades que ofrecen
+    <strong>diferentes grados de elección sobre el colegio o el destino</strong> — y ahí está la diferencia de
+    precio. Todos los precios ya incluyen el descuento de reserva anticipada de 1.000 €.
+  </p>
+  <div class="mod-grid">
+    <div class="mod-card destacada">
+      <div class="mod-head">
+        <div class="mod-kicker">Opción 1</div>
+        <div class="mod-name">F-1 Premium</div>
+        <div class="mod-claim">Elección directa del colegio</div>
+        <div class="mod-precio"><span class="neto">desde 23.750 €</span><span class="bruto">24.750 €</span></div>
+      </div>
+      <div class="mod-body">
+        <div class="mod-row"><span class="k">Colegio</span><span>Lo elegís <b>vosotros</b>, uno concreto y por su nombre.</span></div>
+        <div class="mod-row"><span class="k">Ventaja</span><span>Podemos estudiar de antemano el programa de baloncesto, la normativa deportiva del estado, el entorno y el clima.</span></div>
+        <div class="mod-row"><span class="k">Para quién</span><span>Perfiles con criterios muy definidos. <b>El caso de Izan.</b></span></div>
+      </div>
+      <div class="mod-foot"><b>Máximo control.</b> Sabéis exactamente dónde va Izan antes de firmar.</div>
+    </div>
+
+    <div class="mod-card">
+      <div class="mod-head">
+        <div class="mod-kicker">Opción 2</div>
+        <div class="mod-name">F-1 FLEX</div>
+        <div class="mod-claim">Tres opciones de destino · asignación posterior</div>
+        <div class="mod-precio"><span class="neto">24.000 €</span><span class="bruto">25.000 €</span></div>
+      </div>
+      <div class="mod-body">
+        <div class="mod-row"><span class="k">Destino</span><span>Elegís <b>tres opciones</b> del catálogo FLEX y después se asigna una de esas tres.</span></div>
+        <div class="mod-row"><span class="k">Ventaja</span><span>Precio más ajustado manteniendo influencia sobre la zona y el tipo de centro.</span></div>
+        <div class="mod-row"><span class="k">A tener en cuenta</span><span>No sabéis de antemano cuál de las tres será.</span></div>
+      </div>
+      <div class="mod-foot"><b>Control medio.</b> Elegís el conjunto, no el destino final.</div>
+    </div>
+
+    <div class="mod-card">
+      <div class="mod-head">
+        <div class="mod-kicker">Opción 3</div>
+        <div class="mod-name">F-1 Basic Plus</div>
+        <div class="mod-claim">Dos preferencias sobre una selección</div>
+        <div class="mod-precio"><span class="neto">24.200 €</span><span class="bruto">25.200 €</span></div>
+      </div>
+      <div class="mod-body">
+        <div class="mod-row"><span class="k">Colegio</span><span>Revisáis una selección de centros y señaláis vuestras <b>dos preferencias</b> principales.</span></div>
+        <div class="mod-row"><span class="k">Ventaja</span><span>Se trabaja para colocar al alumno en la primera cuando hay disponibilidad.</span></div>
+        <div class="mod-row"><span class="k">A tener en cuenta</span><span>Una vez realizada la colocación, <b>es definitiva</b> y no puede rechazarse para exigir otro colegio.</span></div>
+      </div>
+      <div class="mod-foot"><b>Control limitado.</b> Marcáis preferencias, no elegís.</div>
+    </div>
+  </div>
+
+  <!-- ============ PREMIUM ============ -->
+  <div class="section-title"><h2>Opción 1 · F-1 Premium · elección directa del colegio</h2></div>
+  <div class="bloque-mod">
+    <div class="bloque-mod-num">1</div>
+    <div class="bloque-mod-txt">
+      <div class="bloque-mod-title">F-1 Premium</div>
+      <div class="bloque-mod-desc">Sergio y Marian eligen directamente el colegio concreto al que asistirá Izan. Para un perfil con un criterio deportivo tan definido, esto permite estudiar previamente el programa de baloncesto, la normativa del estado, el entorno y el clima antes de decidir.</div>
+    </div>
+    <div class="bloque-mod-precio">
+      <div class="neto" style="font-size:15px;color:var(--blue);">Precio por colegio</div>
+      <div class="bruto" style="text-decoration:none;color:var(--text-light);max-width:170px;">Cada centro tiene su propia tarifa</div>
+    </div>
+  </div>
+
+  <div class="opciones-grid">
+
+    <div class="opcion-card recomendada">
+      <div class="badge-rec">RECOMENDADA</div>
+      <div class="opcion-header">
+        <div class="opcion-num">Premium · Opción A</div>
+        <div class="opcion-distrito">Lafayette Christian School</div>
+        <div class="opcion-loc">LaGrange · Georgia</div>
+        <div class="precio-chip"><span class="val">25.800 €</span><span class="tachado">26.800 €</span><span class="desc">Descuento de reserva anticipada aplicado</span></div>
+      </div>
+      <div class="opcion-body">
+        <div class="razon-title">Por qué la recomendamos para Izan</div>
+        <div class="razon">
+          Es probablemente <strong>la opción más equilibrada de toda la propuesta</strong>. LaGrange responde
+          muy bien al entorno que buscáis: tiene vida y servicios propios, pero no es una gran metrópoli.
+          Georgia ofrece además un clima considerablemente más favorable que Illinois, Idaho o Kansas.<br><br>
+          El componente deportivo es importante: dos gimnasios, un complejo deportivo de unos 50 acres y
+          <strong>Boys Basketball dentro de su programa atlético oficial</strong>, con niveles JV y Varsity.
+        </div>
+      </div>
+      <div class="semaforo">
+        <div class="semaforo-lab">🏀 ¿Qué podría hacer Izan?</div>
+        <div class="semaforo-row">
+          <div class="luz si"><span class="ico">✓</span> Puede optar a tryouts</div>
+          <div class="luz si"><span class="ico">✓</span> Puede optar a JV</div>
+          <div class="luz si"><span class="ico">✓</span> Puede optar a Varsity</div>
+        </div>
+        <div class="semaforo-nota"><strong>Normativa deportiva de Georgia: posibilidad de JV o Varsity sujeta a elegibilidad.</strong> Según la normativa actualmente vigente (GAPPS), no existe una prohibición que impida a un estudiante F-1 competir en Varsity. Requiere aprobación previa de elegibilidad, documentación médica y ser seleccionado por el entrenador. <em>Varsity nunca se garantiza.</em></div>
+      </div>
+      <div class="match-bar">
+        <div class="match-tag ok">🏀 Baloncesto</div>
+        <div class="match-tag ok">☀️ Clima</div>
+        <div class="match-tag ok">🏘️ Localidad</div>
+        <div class="match-tag ok">🎉 Vida escolar</div>
+      </div>
+    </div>
+
+    <div class="opcion-card">
+      <div class="opcion-header">
+        <div class="opcion-num">Premium · Opción B</div>
+        <div class="opcion-distrito">Cactus Shadows High School</div>
+        <div class="opcion-loc">Cave Creek · Arizona</div>
+        <div class="precio-chip"><span class="val">25.600 €</span><span class="tachado">26.600 €</span><span class="desc">Descuento de reserva anticipada aplicado</span></div>
+      </div>
+      <div class="opcion-body">
+        <div class="razon-title">Por qué la incluimos</div>
+        <div class="razon">
+          Por clima, vida de high school y deporte es <strong>una opción fantástica</strong>. Cave Creek ofrece
+          un entorno residencial y manejable, con acceso al área de Scottsdale/Phoenix, y el clima cálido y seco
+          responde perfectamente a una de vuestras peticiones principales.<br><br>
+          Tiene un programa de baloncesto estructurado, con <strong>un proceso formal de tryouts</strong> y
+          diferentes niveles de equipo.
+        </div>
+      </div>
+      <div class="semaforo">
+        <div class="semaforo-lab">🏀 ¿Qué podría hacer Izan?</div>
+        <div class="semaforo-row">
+          <div class="luz si"><span class="ico">✓</span> Puede optar a tryouts</div>
+          <div class="luz si"><span class="ico">✓</span> Puede optar a JV</div>
+          <div class="luz no"><span class="ico">✕</span> Varsity no permitido para F-1</div>
+        </div>
+        <div class="semaforo-nota"><strong>El techo deportivo de Izan aquí sería JV.</strong> La normativa AIA considera <em>international student</em> al alumno con visado distinto del J-1 y le permite competir únicamente en <em>non-varsity</em>, y solo en Grades 9–11. Conviene recordar que <strong>JV es competición escolar real</strong>: entrenador, temporada oficial y partidos contra otros institutos. La experiencia de baloncesto sigue siendo muy buena; lo que no existe es la vía a Varsity.</div>
+      </div>
+      <div class="match-bar">
+        <div class="match-tag mid">🏀 Baloncesto · solo JV</div>
+        <div class="match-tag ok">☀️ Clima</div>
+        <div class="match-tag ok">🏘️ Localidad</div>
+        <div class="match-tag ok">🎉 Vida escolar</div>
+      </div>
+    </div>
+
+    <div class="opcion-card">
+      <div class="opcion-header">
+        <div class="opcion-num">Premium · Opción C</div>
+        <div class="opcion-distrito">Althoff Catholic High School</div>
+        <div class="opcion-loc">Belleville · Illinois</div>
+        <div class="precio-chip"><span class="val">23.750 €</span><span class="tachado">24.750 €</span><span class="desc">La opción Premium más económica</span></div>
+      </div>
+      <div class="opcion-body">
+        <div class="razon-title">Por qué la incluimos</div>
+        <div class="razon">
+          Althoff tiene una <strong>cultura deportiva muy importante</strong>, con Boys Basketball en su programa
+          oficial y equipos JV y Varsity masculinos. Belleville es una localidad muy manejable y está muy cerca
+          de St. Louis.<br><br>
+          Es además <strong>la única opción Premium que queda por debajo del presupuesto orientativo</strong>.
+          El compromiso principal frente a vuestro perfil es el clima: Illinois tiene inviernos fríos y nieve.
+        </div>
+      </div>
+      <div class="semaforo">
+        <div class="semaforo-lab">🏀 ¿Qué podría hacer Izan?</div>
+        <div class="semaforo-row">
+          <div class="luz si"><span class="ico">✓</span> Puede optar a tryouts</div>
+          <div class="luz si"><span class="ico">✓</span> Puede optar a JV</div>
+          <div class="luz si"><span class="ico">✓</span> Puede optar a Varsity</div>
+        </div>
+        <div class="semaforo-nota"><strong>Illinois no limita automáticamente a los estudiantes F-1 a JV</strong>, por lo que Izan podría optar a JV o a Varsity. La normativa de playoffs puede incluir restricciones adicionales según el tipo de colocación, algo que confirmaríamos con el colegio antes de formalizar la plaza.</div>
+      </div>
+      <div class="match-bar">
+        <div class="match-tag ok">🏀 Baloncesto</div>
+        <div class="match-tag mid">☀️ Clima · frío y nieve</div>
+        <div class="match-tag ok">🏘️ Localidad</div>
+        <div class="match-tag ok">🎉 Vida escolar</div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- ============ FLEX ============ -->
+  <div class="section-title"><h2>Opción 2 · F-1 FLEX · tres opciones de destino</h2></div>
+  <div class="bloque-mod">
+    <div class="bloque-mod-num">2</div>
+    <div class="bloque-mod-txt">
+      <div class="bloque-mod-title">F-1 FLEX · tres opciones de destino en Arizona</div>
+      <div class="bloque-mod-desc">La familia selecciona <strong>tres opciones del catálogo FLEX</strong> y posteriormente el programa asigna una de esas tres. Hemos escogido las tres en Arizona de forma deliberada: así, sea cual sea la asignación, <strong>se mantiene el requisito de clima cálido</strong>. Ahora bien, las tres no se rigen por la misma normativa deportiva — y eso cambia lo que Izan puede hacer en cada una.</div>
+    </div>
+    <div class="bloque-mod-precio">
+      <div class="neto">24.000 €</div>
+      <div class="bruto">25.000 €</div>
+    </div>
+  </div>
+
+  <div class="opciones-grid">
+
+    <div class="opcion-card recomendada">
+      <div class="badge-rec">1.ª PREFERENCIA</div>
+      <div class="opcion-header">
+        <div class="opcion-num">FLEX · Preferencia 1</div>
+        <div class="opcion-distrito">Sequoia Pathfinder Academy<br>at Verrado Way</div>
+        <div class="opcion-loc">Buckeye · Arizona</div>
+        <div class="precio-chip"><span class="val">24.000 €</span><span class="tachado">25.000 €</span><span class="desc">Precio único FLEX</span></div>
+      </div>
+      <div class="opcion-body">
+        <div class="razon-title">Por qué va primera</div>
+        <div class="razon">
+          De las tres alternativas FLEX, es <strong>la más interesante para Izan</strong>. Centro relativamente
+          pequeño, entorno residencial en Buckeye y el clima cálido de Arizona. Ofrece Boys Basketball y el
+          programa FLEX contempla <strong>participación en JV y Varsity</strong>.
+        </div>
+      </div>
+      <div class="semaforo">
+        <div class="semaforo-lab">🏀 ¿Qué podría hacer Izan?</div>
+        <div class="semaforo-row">
+          <div class="luz si"><span class="ico">✓</span> Puede optar a tryouts</div>
+          <div class="luz si"><span class="ico">✓</span> Puede optar a JV</div>
+          <div class="luz si"><span class="ico">✓</span> Puede optar a Varsity</div>
+        </div>
+        <div class="semaforo-nota"><strong>Diferencia clave frente a Cactus Shadows:</strong> aquí la normativa aplicable (CAA) no obliga a un estudiante F-1 a competir exclusivamente en JV. Eso significa que <strong>no existe una prohibición reglamentaria</strong>, no que la elegibilidad para Varsity esté ya confirmada: dependerá de la aprobación previa, del examen físico exigido y de la decisión del entrenador.</div>
+      </div>
+      <div class="match-bar">
+        <div class="match-tag ok">🏀 Baloncesto</div>
+        <div class="match-tag ok">☀️ Clima</div>
+        <div class="match-tag ok">🏘️ Localidad</div>
+        <div class="match-tag ok">🎉 Vida escolar</div>
+      </div>
+    </div>
+
+    <div class="opcion-card">
+      <div class="opcion-header">
+        <div class="opcion-num">FLEX · Preferencia 2</div>
+        <div class="opcion-distrito">Sequoia Charter High School</div>
+        <div class="opcion-loc">Mesa · Arizona</div>
+        <div class="precio-chip"><span class="val">24.000 €</span><span class="tachado">25.000 €</span><span class="desc">Precio único FLEX</span></div>
+      </div>
+      <div class="opcion-body">
+        <div class="razon-title">Por qué va segunda</div>
+        <div class="razon">
+          Muy interesante deportivamente: su documentación escolar enumera específicamente
+          <strong>Varsity Boys Basketball y JV Boys Basketball</strong>. También pertenece a CAA, así que se
+          aplica la misma normativa internacional favorable.<br><br>
+          El punto menos perfecto es Mesa: <strong>el entorno es más grande y urbano</strong> de lo que
+          describisteis inicialmente. Por eso va detrás de Pathfinder.
+        </div>
+      </div>
+      <div class="semaforo">
+        <div class="semaforo-lab">🏀 ¿Qué podría hacer Izan?</div>
+        <div class="semaforo-row">
+          <div class="luz si"><span class="ico">✓</span> Puede optar a tryouts</div>
+          <div class="luz si"><span class="ico">✓</span> Puede optar a JV</div>
+          <div class="luz si"><span class="ico">✓</span> Puede optar a Varsity</div>
+        </div>
+        <div class="semaforo-nota"><strong>Sin prohibición reglamentaria F-1 → Varsity</strong>, igual que Pathfinder. Queda sujeto a la elegibilidad ordinaria, a las reglas de domicilio y a la selección del entrenador; no es una plaza confirmada de antemano.</div>
+      </div>
+      <div class="match-bar">
+        <div class="match-tag ok">🏀 Baloncesto</div>
+        <div class="match-tag ok">☀️ Clima</div>
+        <div class="match-tag mid">🏘️ Localidad · entorno grande</div>
+        <div class="match-tag ok">🎉 Vida escolar</div>
+      </div>
+    </div>
+
+    <div class="opcion-card">
+      <div class="opcion-header">
+        <div class="opcion-num">FLEX · Preferencia 3</div>
+        <div class="opcion-distrito">Odyssey Institute for Advanced<br>and International Studies</div>
+        <div class="opcion-loc">Buckeye · Arizona</div>
+        <div class="precio-chip"><span class="val">24.000 €</span><span class="tachado">25.000 €</span><span class="desc">Precio único FLEX</span></div>
+      </div>
+      <div class="opcion-body">
+        <div class="razon-title">Por qué va tercera</div>
+        <div class="razon">
+          El programa deportivo es <strong>muy completo</strong>: 30 deportes interescolares y más de 500
+          <em>student-athletes</em>. El ambiente es excelente y el clima, el mismo de Arizona.<br><br>
+          Pero pertenece a AIA, y aquí vuelve la restricción de Cactus Shadows. El propio catálogo FLEX lo marca
+          como <strong>«JV only — 10th to 11th grade»</strong>.
+        </div>
+      </div>
+      <div class="semaforo">
+        <div class="semaforo-lab">🏀 ¿Qué podría hacer Izan?</div>
+        <div class="semaforo-row">
+          <div class="luz si"><span class="ico">✓</span> Puede optar a tryouts</div>
+          <div class="luz si"><span class="ico">✓</span> Puede optar a JV</div>
+          <div class="luz no"><span class="ico">✕</span> Varsity no permitido para F-1</div>
+        </div>
+        <div class="semaforo-nota"><strong>La normativa deportiva de Arizona aplicable a este centro (AIA) no permite a un estudiante F-1 competir en Varsity:</strong> únicamente competición <em>non-varsity</em>, en Grades 9–11. Es el motivo por el que la situamos en tercera preferencia dentro de FLEX.</div>
+      </div>
+      <div class="match-bar">
+        <div class="match-tag mid">🏀 Baloncesto · solo JV</div>
+        <div class="match-tag ok">☀️ Clima</div>
+        <div class="match-tag ok">🏘️ Localidad</div>
+        <div class="match-tag ok">🎉 Vida escolar</div>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="aviso" style="margin-top:20px;">
+    <div class="aviso-icon">⚠️</div>
+    <div class="aviso-txt">
+      <strong>Importante:</strong> FLEX solo tiene sentido si las tres opciones seleccionadas os resultan
+      aceptables. Una vez hecha la asignación <strong>no podemos elegir entre las tres según cuál ofrezca mejor
+      resultado deportivo</strong>. En este caso concreto: si la asignación fuese Odyssey, Izan competiría
+      únicamente en JV.
+    </div>
+  </div>
+
+  <!-- ============ BASIC PLUS ============ -->
+  <div class="section-title"><h2>Opción 3 · F-1 Basic Plus · dos preferencias</h2></div>
+  <div class="bloque-mod">
+    <div class="bloque-mod-num">3</div>
+    <div class="bloque-mod-txt">
+      <div class="bloque-mod-title">F-1 Basic Plus · nuestras dos preferencias para Izan</div>
+      <div class="bloque-mod-desc">Revisáis una selección de colegios y señaláis vuestras dos preferencias principales. De los 11 colegios disponibles, estas son las dos que mejor encajan con el perfil de Izan — y el orden lo marca la normativa deportiva de cada estado.<br><br><strong>La primera preferencia no está garantizada:</strong> se trabaja para colocar al alumno en ella cuando hay disponibilidad, y una vez realizada la colocación es definitiva.</div>
+    </div>
+    <div class="bloque-mod-precio">
+      <div class="neto">24.200 €</div>
+      <div class="bruto">25.200 €</div>
+    </div>
+  </div>
+
+  <div class="opciones-grid">
+
+    <div class="opcion-card recomendada">
+      <div class="badge-rec">1.ª PREFERENCIA</div>
+      <div class="opcion-header">
+        <div class="opcion-num">Basic Plus · Preferencia 1</div>
+        <div class="opcion-distrito">Cair Paravel Latin School</div>
+        <div class="opcion-loc">Topeka · Kansas</div>
+        <div class="precio-chip"><span class="val">24.200 €</span><span class="tachado">25.200 €</span><span class="desc">Precio único Basic Plus</span></div>
+      </div>
+      <div class="opcion-body">
+        <div class="razon-title">Por qué va primera</div>
+        <div class="razon">
+          Colegio pequeño y de ambiente cercano, en Topeka, una ciudad que encaja razonablemente bien con la
+          idea de entorno intermedio. Clases reducidas, atención personalizada y un programa fuerte de artes y
+          <em>athletics</em>.<br><br>
+          Deportivamente es muy interesante: el colegio confirma <strong>Boys Basketball con equipos JV y
+          Varsity y entrenadores distintos para cada uno</strong>. Y Kansas tiene una normativa especialmente
+          favorable para el F-1.<br><br>
+          A tener en cuenta: es una <em>Christian Classical School</em>, por lo que
+          <strong>su enfoque curricular no es el de un high school público convencional</strong>. Es un modelo
+          que conviene querer deliberadamente, no solo aceptar.
+        </div>
+      </div>
+      <div class="semaforo">
+        <div class="semaforo-lab">🏀 ¿Qué podría hacer Izan?</div>
+        <div class="semaforo-row">
+          <div class="luz si"><span class="ico">✓</span> Puede optar a tryouts</div>
+          <div class="luz si"><span class="ico">✓</span> Puede optar a JV</div>
+          <div class="luz si"><span class="ico">✓</span> Puede optar a Varsity</div>
+        </div>
+        <div class="semaforo-nota"><strong>Baloncesto y posibilidad de Varsity:</strong> Kansas tiene una normativa especialmente favorable para estudiantes internacionales. Durante su primer año, un estudiante con visado F-1 puede ser autorizado para competir tanto en Junior Varsity como en Varsity, siempre que el programa internacional y su elegibilidad sean aprobados previamente por la asociación deportiva del estado. Esto significa que <strong>Izan no estaría limitado a JV por su visado</strong>: si supera los tryouts y el entrenador considera que tiene nivel suficiente, podría llegar a competir en Varsity.</div>
+      </div>
+      <div class="match-bar">
+        <div class="match-tag ok">🏀 Baloncesto</div>
+        <div class="match-tag mid">☀️ Clima · invierno y nieve</div>
+        <div class="match-tag ok">🏘️ Localidad</div>
+        <div class="match-tag mid">🎉 Colegio pequeño</div>
+      </div>
+    </div>
+
+    <div class="opcion-card">
+      <div class="opcion-header">
+        <div class="opcion-num">Basic Plus · Preferencia 2</div>
+        <div class="opcion-distrito">Capital High School</div>
+        <div class="opcion-loc">Boise · Idaho</div>
+        <div class="precio-chip"><span class="val">24.200 €</span><span class="tachado">25.200 €</span><span class="desc">Precio único Basic Plus</span></div>
+      </div>
+      <div class="opcion-body">
+        <div class="razon-title">Por qué va segunda</div>
+        <div class="razon">
+          En cuanto a experiencia escolar global es <strong>posiblemente el mejor high school de Basic Plus</strong>:
+          campus diverso y acogedor, buen nivel académico, <em>athletics</em> y una amplia oferta extracurricular.
+          Tamaño ideal para vivir la experiencia de un high school americano grande y activo. El distrito confirma
+          basketball con clasificaciones Sophomore, JV y Varsity.<br><br>
+          Los dos inconvenientes: <strong>el clima de Idaho</strong> y, sobre todo, la limitación deportiva.
+        </div>
+      </div>
+      <div class="semaforo">
+        <div class="semaforo-lab">🏀 ¿Qué podría hacer Izan?</div>
+        <div class="semaforo-row">
+          <div class="luz si"><span class="ico">✓</span> Puede optar a tryouts</div>
+          <div class="luz si"><span class="ico">✓</span> Puede optar a JV</div>
+          <div class="luz no"><span class="ico">✕</span> Varsity no permitido para F-1</div>
+        </div>
+        <div class="semaforo-nota"><strong>La normativa deportiva de Idaho es muy explícita:</strong> un estudiante F-1 puede obtener elegibilidad a nivel <em>Junior Varsity</em> durante un año. Aunque el entrenador considerase que tiene nivel de Varsity, no podría competir en él. Y ser elegible para JV no equivale a tener plaza: sigue habiendo proceso de selección.</div>
+      </div>
+      <div class="match-bar">
+        <div class="match-tag mid">🏀 Baloncesto · solo JV</div>
+        <div class="match-tag mid">☀️ Clima · frío y nieve</div>
+        <div class="match-tag mid">🏘️ Localidad · Boise es mayor</div>
+        <div class="match-tag ok">🎉 Vida escolar</div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- ============ COMPARATIVA ============ -->
+  <div class="section-title"><h2>Comparativa · todas las opciones de un vistazo</h2></div>
+  <p class="intro-text">
+    Los precios son los finales, <strong>con el descuento de reserva anticipada ya aplicado</strong>. El detalle
+    deportivo completo de cada centro está en su ficha; aquí resumimos lo que realmente decide.
+  </p>
+  <div class="tabla-wrap">
+    <table class="comp">
+      <thead>
+        <tr>
+          <th>Opción</th><th>Precio</th><th>Clima</th><th>Localidad</th>
+          <th>Baloncesto para Izan</th><th>Elección del destino</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr class="rec">
+          <td class="col">Lafayette Christian<br><small style="color:var(--text-light);font-weight:400;">Premium · Georgia</small></td>
+          <td class="pr">25.800 €</td>
+          <td><span class="si-tag">Muy favorable</span></td>
+          <td>Muy buen encaje</td>
+          <td>JV · posible Varsity</td>
+          <td>Directa</td>
+        </tr>
+        <tr>
+          <td class="col">Cactus Shadows<br><small style="color:var(--text-light);font-weight:400;">Premium · Arizona</small></td>
+          <td class="pr">25.600 €</td>
+          <td><span class="si-tag">Excelente</span></td>
+          <td>Muy buen encaje</td>
+          <td><span class="no-tag">JV únicamente</span></td>
+          <td>Directa</td>
+        </tr>
+        <tr>
+          <td class="col">Althoff Catholic<br><small style="color:var(--text-light);font-weight:400;">Premium · Illinois</small></td>
+          <td class="pr">23.750 €</td>
+          <td>Frío y nieve</td>
+          <td>Buen encaje</td>
+          <td>JV · posible Varsity</td>
+          <td>Directa</td>
+        </tr>
+        <tr>
+          <td class="col">F-1 FLEX Arizona<br><small style="color:var(--text-light);font-weight:400;">Tres opciones de destino</small></td>
+          <td class="pr">24.000 €</td>
+          <td><span class="si-tag">Excelente</span></td>
+          <td>Variable</td>
+          <td>Depende de la asignación</td>
+          <td>3 opciones</td>
+        </tr>
+        <tr>
+          <td class="col">F-1 Basic Plus<br><small style="color:var(--text-light);font-weight:400;">Kansas o Idaho</small></td>
+          <td class="pr">24.200 €</td>
+          <td>Menos favorable</td>
+          <td>Variable</td>
+          <td>Depende de la asignación</td>
+          <td>2 preferencias</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- ============ RECOMENDACIÓN ============ -->
+  <div class="section-title"><h2>Nuestra recomendación para Izan</h2></div>
+  <p class="intro-text">
+    Con el descuento de 1.000 € aplicado a todas las modalidades, las diferencias económicas entre unas y otras
+    son pequeñas frente a lo que Izan gana o pierde en cada caso. Teniendo en cuenta todo lo que nos habéis
+    contado, esta es nuestra posición.
+  </p>
+
+  <div class="podio">
+    <div class="podio-item oro">
+      <div class="podio-medal">🥇</div>
+      <div class="podio-body">
+        <div class="podio-head">
+          <div class="podio-title">Lafayette Christian · F-1 Premium</div>
+          <div class="podio-precio">25.800 €<small>26.800 €</small></div>
+        </div>
+        <div class="podio-text">
+          Es <strong>la opción con mejor equilibrio global para Izan</strong>, y la que exige menos concesiones:
+          mantiene el clima, el tipo de localidad, la elección directa del colegio y la posibilidad deportiva de
+          JV o Varsity.<br><br>
+          <strong>Baloncesto.</strong> Tiene Boys Basketball con JV y Varsity, y la normativa deportiva de
+          Georgia no limita automáticamente a un estudiante F-1 a jugar solo en JV, a diferencia de lo que
+          ocurre en Arizona-AIA o en Idaho. Izan podría presentarse al proceso de selección, entrar en JV si ese
+          es su nivel, o llegar a competir en Varsity si obtiene la elegibilidad y el entrenador lo selecciona.
+          No garantizamos Varsity —eso depende siempre del entrenador— pero <strong>no se le cierra la puerta de
+          entrada por el tipo de visado</strong>. Para un chico que juega federado y entrena 3–4 días por semana,
+          eso tiene mucho valor.<br><br>
+          <strong>Clima.</strong> Georgia evita los inviernos especialmente duros que preferíais descartar, a
+          diferencia de Illinois, Idaho o Kansas.<br><br>
+          <strong>Localidad.</strong> LaGrange es de los mejores encajes de todo lo que hemos analizado: no es
+          Phoenix ni Mesa, pero tampoco un entorno tan pequeño que un adolescente pueda sentirse aislado. Tiene
+          servicios, deporte y vida propia.<br><br>
+          <strong>Experiencia americana.</strong> Colegio pequeño/medio, deporte con peso, comunidad y eventos
+          escolares: una inmersión bastante completa.
+        </div>
+        <div class="podio-pros">
+          <div class="match-tag ok">🏀 Baloncesto</div>
+          <div class="match-tag ok">☀️ Clima</div>
+          <div class="match-tag ok">🏘️ Localidad</div>
+          <div class="match-tag ok">🎉 Vida escolar</div>
+          <div class="match-tag ok">🎯 Elección directa</div>
+        </div>
+        <div class="podio-contra">
+          <b>La única desviación respecto al perfil inicial es económica:</b> Lafayette queda 600 € por encima
+          del presupuesto orientativo de 25.200 €. Frente a FLEX, la diferencia es de 1.800 € en todo el año
+          escolar, y a cambio pasáis de «elegimos tres opciones y después nos asignan una» a «elegimos
+          exactamente Lafayette Christian School», sabiendo de antemano qué ciudad es, qué programa deportivo
+          tiene y que el visado F-1 no excluye la vía a Varsity.
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <p class="intro-text" style="margin-top:26px;">
+    Si alguna de vuestras prioridades pesa más que el equilibrio global, estas serían las dos alternativas:
+  </p>
+  <div class="esc-grid">
+    <div class="esc">
+      <div class="esc-q">Si priorizáis elección directa del colegio y precio</div>
+      <div class="esc-a-lab">Nuestra alternativa</div>
+      <div class="esc-a">Althoff Catholic · 23.750 €</div>
+      <div class="esc-txt">
+        Unos 2.000 € menos que Lafayette y sigue siendo Premium, así que mantenéis la elección directa del
+        colegio. Boys Basketball con JV y Varsity, cultura deportiva fuerte, y el F-1 no queda automáticamente
+        limitado a JV en Illinois. Belleville tiene un tamaño razonable y está cerca de St. Louis.<br><br>
+        <strong>Lo que se sacrifica es el clima:</strong> Illinois tiene invierno, frío y nieve, algo que
+        dijisteis expresamente que preferíais evitar. Si el frío resulta no ser determinante,
+        <strong>Althoff se convierte en una opción especialmente competitiva en relación calidad-precio</strong>.
+      </div>
+    </div>
+    <div class="esc">
+      <div class="esc-q">Si priorizáis presupuesto y clima cálido</div>
+      <div class="esc-a-lab">Nuestra alternativa</div>
+      <div class="esc-a">F-1 FLEX Arizona · 24.000 €</div>
+      <div class="esc-txt">
+        1.800 € menos que Lafayette manteniendo las tres opciones en Arizona, con lo que protegemos clima,
+        baloncesto, entorno americano y actividades.<br><br>
+        <strong>Lo que se sacrifica es saber a qué centro irá Izan.</strong> Las tres no son iguales
+        deportivamente: Sequoia Pathfinder y Sequoia Charter dejan abierta la vía a JV o Varsity, mientras que
+        en Odyssey Izan competiría únicamente en JV. Solo tiene sentido si os resultan aceptables las tres.
+      </div>
+    </div>
+  </div>
+
+  <div class="aviso neutro" style="margin-top:18px;">
+    <div class="aviso-icon">💬</div>
+    <div class="aviso-txt">
+      <strong>Cactus Shadows y Basic Plus siguen siendo alternativas perfectamente válidas</strong> si sus
+      características concretas encajan mejor con vuestra decisión final. En el caso de Cactus, la única razón
+      por la que no la situamos por delante es deportiva: por solo 200 € adicionales, Lafayette mantiene abierta
+      también la posibilidad reglamentaria de Varsity, por lo que consideramos que ofrece mayor valor para el
+      perfil deportivo de Izan.
+    </div>
+  </div>
+
+  <!-- ============ EL PROGRAMA INCLUYE ============ -->
+  <div class="section-title"><h2>El programa incluye</h2></div>
+  <div class="includes-wrap">
+    <div class="includes-head"><h3>📋 Todo lo que cubre My Language Quest · Programa F-1</h3></div>
+    <div class="includes-body">
+      <div class="includes-grid">
+        <div>
+          <div class="col-title">Antes del viaje</div>
+          <ul class="inc-list">
+            <li>Reunión inicial con padres o tutores<small>Presencial, teléfono o videoconferencia</small></li>
+            <li>Prueba inicial de inglés y entrevista personal online con el estudiante</li>
+            <li>Información completa y adecuada sobre el programa F-1</li>
+            <li>Inscripción en el programa y matriculación en el centro escolar elegido</li>
+            <li>Selección de familia anfitriona o internado<small>Pensión completa y habitación individual o compartida</small></li>
+            <li>Seguro médico y de accidentes</li>
+            <li>Tasas y tramitación del visado F-1 y reserva de cita en la Embajada</li>
+            <li>Programa formativo y de orientación para el estudiante<small>Obligatorio</small></li>
+            <li>Programa formativo y de orientación para los padres<small>No obligatorio</small></li>
+            <li>Orientación pre-viaje en Madrid</li>
+            <li>Pack sorpresa de My Language Quest</li>
+          </ul>
+        </div>
+        <div>
+          <div class="col-title">Durante el viaje</div>
+          <ul class="inc-list">
+            <li>Recibimiento en aeropuerto y traslados en destino al inicio y fin del programa</li>
+            <li>Asesoramiento en elección de asignaturas</li>
+            <li>Clases de inglés Cambridge y su libro</li>
+            <li>Libros de las asignaturas obligatorias</li>
+            <li>Transporte escolar</li>
+            <li>Taller de 3 sesiones con el docente del MIT, Óscar Corominas</li>
+            <li>Supervisión local de la organización americana<small>Visitas, tutorías y emergencias 24 h</small></li>
+            <li>Reportes periódicos del gestor estudiantil<small>Evolución familiar, académica y social</small></li>
+            <li>Acompañamiento psicológico</li>
+            <li>Atención 24 h en España para emergencias de estudiantes y familias</li>
+            <li>Asesoramiento gratuito para acceso a universidades americanas<small>MLQ Pathways</small></li>
+            <li>Gestión individualizada de los viajes del estudiante, con supervisión de MLQ desde España</li>
+          </ul>
+        </div>
+        <div>
+          <div class="col-title">Después del viaje</div>
+          <ul class="inc-list">
+            <li>Dossier final detallando la experiencia en Estados Unidos</li>
+            <li>Recogida de los <em>transcripts</em> finales</li>
+            <li>Coordinación con el centro escolar y notario público</li>
+            <li>Apostilla de La Haya de las calificaciones</li>
+            <li>Presentación y seguimiento del expediente ante el Ministerio de Educación español</li>
+          </ul>
+          <div class="col-title" style="margin-top:24px;">No incluido</div>
+          <ul class="inc-list no">
+            <li>Vuelos internacionales<small>MLQ gestiona la búsqueda; el coste corre a cargo de la familia</small></li>
+            <li>Cuotas deportivas, equipación, uniformes y otros gastos específicos del equipo<small>Cuando el colegio los aplique. Es habitual en los programas de baloncesto.</small></li>
+            <li>Actividades extracurriculares de pago</li>
+            <li>Comidas en la cafetería escolar<small>Las comidas de la familia anfitriona sí están incluidas; las compras opcionales en la cafetería del colegio, no.</small></li>
+            <li>Gastos personales y de ocio</li>
+            <li>Material escolar adicional</li>
+            <li>Fotografía y anuario escolar</li>
+            <li>Cualquier aspecto no indicado específicamente en «El programa incluye»</li>
+          </ul>
+        </div>
+      </div>
+      <div class="gestor-wrap">
+        <div class="gestor-title">Gestor estudiantil · se encarga de</div>
+        <div class="gestor-grid">
+          <div class="gestor-item">Seguimiento personalizado del desempeño</div>
+          <div class="gestor-item">Información a padres mensualmente</div>
+          <div class="gestor-item">Notas oficiales cada trimestre o semestre</div>
+          <div class="gestor-item">Asesoría en cambio de asignaturas</div>
+          <div class="gestor-item">Todas las tutorías necesarias con el estudiante</div>
+          <div class="gestor-item">Reuniones con padres y/o estudiante</div>
+          <div class="gestor-item">Apoyo en matriculación de extraescolares</div>
+          <div class="gestor-item">Resolución de situaciones con familia o centro</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ============ FORMAS DE PAGO ============ -->
+  <div class="section-title"><h2>Formas de pago</h2></div>
+  <div class="payment-wrap">
+    <div class="payment-inner">
+      <div class="pay-title">💳 Calendario de pago regular</div>
+      <div class="pay-subtitle">Aplica por igual a las tres modalidades F-1: Premium, FLEX y Basic Plus.</div>
+      <div class="pay-cols">
+        <div class="pay-col">
+          <div class="pay-col-title">Paso 1 · Entrada</div>
+          <div class="pay-step-title">3.500 €</div>
+          <div class="pay-step-desc">A la firma del contrato. Activa la solicitud del programa.</div>
+        </div>
+        <div class="pay-col">
+          <div class="pay-col-title">Paso 2 · Confirmación de plaza</div>
+          <div class="pay-step-title">50 %</div>
+          <div class="pay-step-desc">Del importe total, a la confirmación de la plaza en el colegio elegido.</div>
+        </div>
+        <div class="pay-col">
+          <div class="pay-col-title">Paso 3 · Resto del importe</div>
+          <div class="pay-step-title">Antes del 1 de abril</div>
+          <div class="pay-step-desc">Liquidación del importe restante del programa.</div>
+        </div>
+      </div>
+      <div class="pay-note">Si el programa se financia con Banco Sabadell, la entrada a la firma del contrato es de 5.000 € y el resto del importe se financia en cuotas mensuales, tal y como se detalla en el simulador de la sección siguiente. Las inscripciones tardías deben cumplir con los plazos de pago ya vencidos en el momento de la inscripción.</div>
+    </div>
+  </div>
+
+  <!-- ============ FINANCIACIÓN ============ -->
+  <div class="section-title"><h2>Financia tu programa</h2></div>
+  <div class="financing-wrap">
+    <div class="financing-head">
+      <div class="financing-head-left">
+        <div class="fin-icon">💳</div>
+        <div>
+          <div class="fin-title">Paga a tu ritmo, sin preocupaciones</div>
+          <div class="fin-sub">Banco Sabadell · Aprobación rápida · 100 % online · Sin comisión de apertura</div>
+        </div>
+      </div>
+      <div class="fin-badge">Hasta 36 meses</div>
+    </div>
+    <div class="financing-body">
+      <div class="fin-opcion-selector">
+        <div class="fin-opcion-label">Elige la opción que quieres simular</div>
+        <div class="fin-opcion-btns" id="finOpciones" style="grid-template-columns:repeat(auto-fit,minmax(165px,1fr));">
+          <button class="fin-opcion-btn active" data-precio="26800"><span class="fin-opcion-nombre">🥇 Premium · Lafayette</span><span class="fin-opcion-precio">25.800 €</span><span class="fin-opcion-tachado">26.800 € sin promoción</span></button>
+          <button class="fin-opcion-btn" data-precio="26600"><span class="fin-opcion-nombre">Premium · Cactus Shadows</span><span class="fin-opcion-precio">25.600 €</span><span class="fin-opcion-tachado">26.600 € sin promoción</span></button>
+          <button class="fin-opcion-btn" data-precio="24750"><span class="fin-opcion-nombre">Premium · Althoff</span><span class="fin-opcion-precio">23.750 €</span><span class="fin-opcion-tachado">24.750 € sin promoción</span></button>
+          <button class="fin-opcion-btn" data-precio="25000"><span class="fin-opcion-nombre">FLEX · Arizona</span><span class="fin-opcion-precio">24.000 €</span><span class="fin-opcion-tachado">25.000 € sin promoción</span></button>
+          <button class="fin-opcion-btn" data-precio="25200"><span class="fin-opcion-nombre">Basic Plus</span><span class="fin-opcion-precio">24.200 €</span><span class="fin-opcion-tachado">25.200 € sin promoción</span></button>
+        </div>
+      </div>
+
+      <div class="fin-toggle" id="finToggle" role="button" tabindex="0" aria-pressed="true">
+        <div class="fin-switch"></div>
+        <div>
+          <div class="fin-toggle-title">🗽 Aplicar descuento de reserva anticipada · −1.000 €</div>
+          <div class="fin-toggle-sub">Reservando antes del 30 de septiembre de 2026. No acumulable con otras promociones.</div>
+        </div>
+      </div>
+
+      <div class="fin-entrada-fija">
+        <div class="fin-entrada-fija-num">5.000 €</div>
+        <div class="fin-entrada-fija-txt"><strong>Entrada a la firma del contrato al financiar.</strong> Se descuenta del precio del programa; el resto es el capital que se financia.</div>
+      </div>
+
+      <div class="fin-plazo-wrap">
+        <div class="fin-plazo-label">Elige tu plazo de financiación</div>
+        <div class="fin-plazos" id="finPlazos">
+          <button class="fin-plazo active" data-meses="18" data-tin="10.46"><div class="fin-plazo-meses">18 meses</div><div class="fin-plazo-badge">TIN 10,46 %</div><div class="fin-plazo-quien">Sin comisión de apertura</div></button>
+          <button class="fin-plazo" data-meses="24" data-tin="10.46"><div class="fin-plazo-meses">24 meses</div><div class="fin-plazo-badge">TIN 10,46 %</div><div class="fin-plazo-quien">Sin comisión de apertura</div></button>
+          <button class="fin-plazo" data-meses="36" data-tin="10.46"><div class="fin-plazo-meses">36 meses</div><div class="fin-plazo-badge">TIN 10,46 %</div><div class="fin-plazo-quien">Sin comisión de apertura</div></button>
+        </div>
+      </div>
+
+      <div class="fin-resultado">
+        <div class="fin-resultado-main">
+          <div class="fin-cuota-label">Cuota mensual estimada</div>
+          <div class="fin-cuota-valor" id="cuotaValor">—</div>
+          <div class="fin-cuota-sub" id="cuotaSub">—</div>
+        </div>
+        <div class="fin-resultado-detalle">
+          <div class="fin-det-row"><span class="fin-det-label">Precio del programa</span><span class="fin-det-val" id="detPrecio">—</span></div>
+          <div class="fin-det-row"><span class="fin-det-label">Descuento reserva anticipada</span><span class="fin-det-val fin-det-green" id="detDesc">—</span></div>
+          <div class="fin-det-row"><span class="fin-det-label">Entrada a la firma</span><span class="fin-det-val" id="detEntrada">—</span></div>
+          <div class="fin-det-row"><span class="fin-det-label">Importe financiado</span><span class="fin-det-val" id="detCapital">—</span></div>
+          <div class="fin-det-row"><span class="fin-det-label">Intereses totales</span><span class="fin-det-val" id="detIntereses">—</span></div>
+          <div class="fin-det-row fin-det-total"><span class="fin-det-label">Total a pagar (entrada + cuotas)</span><span class="fin-det-val" id="detTotal">—</span></div>
+        </div>
+      </div>
+
+      <div class="fin-nota">ℹ️ Financiación sujeta a aprobación por parte de Banco Sabadell. La entrada de 5.000 € se abona a la firma del contrato y no se financia. Cuota orientativa calculada sobre el importe financiado. Sin comisión de apertura ni penalización por cancelación anticipada. El descuento de reserva anticipada es de 1.000 €, válido hasta el 30 de septiembre de 2026 y no acumulable con otras promociones.</div>
+    </div>
+  </div>
+
+  <!-- ============ SIGUIENTES PASOS ============ -->
+  <div class="section-title"><h2>Siguientes pasos</h2></div>
+  <div class="steps-wrap">
+    <div class="steps-inner">
+      <div class="steps-title">¿Cómo seguimos?</div>
+      <div class="steps-sub">Del sí a la salida hacia Estados Unidos, paso a paso</div>
+      <div class="steps-list">
+        <div class="step-item"><div class="step-num">1</div><div class="step-title">Prueba inicial de inglés</div><div class="step-desc">Prueba de inglés y entrevista personal con Izan para confirmar su nivel antes de avanzar.</div></div>
+        <div class="step-item"><div class="step-num">2</div><div class="step-title">Elección de modalidad</div><div class="step-desc">Decidimos juntos entre Premium, FLEX o Basic Plus y confirmamos el colegio o las preferencias.</div></div>
+        <div class="step-item"><div class="step-num">3</div><div class="step-title">Firma y reserva</div><div class="step-desc">Firma del contrato y entrada. Reservando antes del 30/09/2026 se aplica el descuento de 1.000 €.</div></div>
+        <div class="step-item"><div class="step-num">4</div><div class="step-title">Aplicación y visado</div><div class="step-desc">Documentación del colegio, confirmación de plaza, tramitación del visado F-1 y cita en la Embajada.</div></div>
+      </div>
+      <div class="cta-line">¿Dudas sobre alguna de las modalidades? Vuestra asesora las resuelve con vosotros.</div>
+      <div class="pasos-cta-wrap">
+        <a class="pasos-cta" href="https://form.jotform.com/262422713899062" target="_blank" rel="noopener">📝 Hacer la prueba inicial de inglés</a>
+        <a class="pasos-cta pasos-cta-alt" href="https://asesoramientosmlq.zohobookings.eu/mylanguagequest" target="_blank" rel="noopener">📅 Agendar llamada con mi asesora</a>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<div class="footer">
+  <div class="footer-logo">MY LANGUAGE QUEST</div>
+  <div class="footer-tag">Explore · Learn · Grow</div>
+  <div class="footer-meta">
+    Propuesta personalizada para Izan García · Programa F-1 · Curso 2027/28<br>
+    La participación en equipos deportivos depende de la elegibilidad concedida por la asociación deportiva de cada estado y de la decisión del entrenador. La normativa citada corresponde a 2026/27 y será reconfirmada para 2027/28.
+  </div>
+</div>
+
+<script>
+(function(){
+  var precio=26800, meses=18, tin=10.46, ENTRADA=5000, DESCUENTO=1000, aplicaDesc=true;
+  // es-ES no agrupa los números de 4 cifras por defecto (1000 en vez de 1.000): agrupamos a mano.
+  function grp(s){return s.replace(/\B(?=(\d{3})+(?!\d))/g,'.');}
+  function fmt(n){
+    var p=Math.abs(n).toFixed(2).split('.');
+    return (n<0?'−':'')+grp(p[0])+','+p[1]+' €';
+  }
+  function fmt0(n){
+    return (n<0?'−':'')+grp(Math.abs(Math.round(n)).toString())+' €';
+  }
+  function calc(){
+    var desc = aplicaDesc?DESCUENTO:0;
+    var neto = precio - desc;
+    var capital = Math.max(neto-ENTRADA,0);
+    var i = tin/100/12;
+    var cuota = capital*i/(1-Math.pow(1+i,-meses));
+    var total = cuota*meses;
+    var intereses = total-capital;
+    document.getElementById('cuotaValor').textContent=fmt(cuota);
+    document.getElementById('cuotaSub').textContent='/mes · '+meses+' pagos · TIN 10,46 %';
+    document.getElementById('detPrecio').textContent=fmt0(precio);
+    document.getElementById('detDesc').textContent=aplicaDesc?('−'+fmt0(DESCUENTO)):'No aplicado';
+    document.getElementById('detEntrada').textContent='−'+fmt0(ENTRADA);
+    document.getElementById('detCapital').textContent=fmt0(capital);
+    document.getElementById('detIntereses').textContent=fmt(intereses);
+    document.getElementById('detTotal').textContent=fmt(ENTRADA+total);
+    // Los botones muestran siempre el precio coherente con el estado del descuento
+    document.querySelectorAll('#finOpciones .fin-opcion-btn').forEach(function(b){
+      var bruto=parseFloat(b.dataset.precio);
+      b.querySelector('.fin-opcion-precio').textContent = fmt0(aplicaDesc?bruto-DESCUENTO:bruto);
+      b.querySelector('.fin-opcion-tachado').textContent = aplicaDesc?(fmt0(bruto)+' sin promoción'):'';
+    });
+  }
+  document.querySelectorAll('#finOpciones .fin-opcion-btn').forEach(function(b){
+    b.addEventListener('click',function(){
+      document.querySelectorAll('#finOpciones .fin-opcion-btn').forEach(function(x){x.classList.remove('active');});
+      b.classList.add('active'); precio=parseFloat(b.dataset.precio); calc();
+    });
+  });
+  document.querySelectorAll('#finPlazos .fin-plazo').forEach(function(b){
+    b.addEventListener('click',function(){
+      document.querySelectorAll('#finPlazos .fin-plazo').forEach(function(x){x.classList.remove('active');});
+      b.classList.add('active'); meses=parseInt(b.dataset.meses); tin=parseFloat(b.dataset.tin); calc();
+    });
+  });
+  var tg=document.getElementById('finToggle');
+  function toggle(){ aplicaDesc=!aplicaDesc; tg.classList.toggle('off',!aplicaDesc); tg.setAttribute('aria-pressed',String(aplicaDesc)); calc(); }
+  tg.addEventListener('click',toggle);
+  tg.addEventListener('keydown',function(e){ if(e.key===' '||e.key==='Enter'){ e.preventDefault(); toggle(); } });
+  calc();
+})();
+</script>
+
+<script>
+(function(){
+  var d=document, root=d.documentElement;
+  if(!('IntersectionObserver' in window)){root.className=root.className.replace(' js-anim','');return;}
+  var bar=d.createElement('div'); bar.className='progress-bar'; d.body.appendChild(bar);
+  var ticking=false;
+  function progress(){
+    var h=d.documentElement.scrollHeight-window.innerHeight;
+    bar.style.transform='scaleX('+(h>0?Math.min(window.scrollY/h,1):0)+')';
+    ticking=false;
+  }
+  window.addEventListener('scroll',function(){if(!ticking){ticking=true;requestAnimationFrame(progress);}},{passive:true});
+  progress();
+  Array.prototype.forEach.call(d.querySelectorAll('.hero-pill'),function(el,i){el.style.animationDelay=(0.36+i*0.06)+'s';});
+  var groups=[['.section-title','reveal'],['.intro-text','reveal'],['.promo-banner','reveal-zoom'],['.criterio','reveal'],['.jv-card','reveal'],['.jv-alert','reveal'],['.mod-card','reveal'],['.bloque-mod','reveal'],['.opcion-card','reveal'],['.tabla-wrap','reveal-zoom'],['.podio-item','reveal'],['.esc','reveal'],['.nota-dep','reveal'],['.includes-wrap','reveal-zoom'],['.payment-wrap','reveal-zoom'],['.financing-wrap','reveal-zoom'],['.steps-wrap','reveal-zoom']];
+  groups.forEach(function(g){
+    Array.prototype.forEach.call(d.querySelectorAll(g[0]),function(el,i){
+      el.classList.add(g[1]); el.style.transitionDelay=Math.min(i*0.09,0.36)+'s';
+    });
+  });
+  var io=new IntersectionObserver(function(entries){
+    entries.forEach(function(e){ if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);} });
+  },{threshold:0.1,rootMargin:'0px 0px -6% 0px'});
+  Array.prototype.forEach.call(d.querySelectorAll('.reveal,.reveal-zoom'),function(el){io.observe(el);});
+  var cuota=d.getElementById('cuotaValor');
+  if(cuota&&'MutationObserver' in window){
+    new MutationObserver(function(){ cuota.classList.remove('pop'); void cuota.offsetWidth; cuota.classList.add('pop'); }).observe(cuota,{childList:true,characterData:true,subtree:true});
+  }
+})();
+</script>
+</body>
+</html>
