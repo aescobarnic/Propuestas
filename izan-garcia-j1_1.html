@@ -1,0 +1,873 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<script>document.documentElement.className+=" js-anim";</script>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Propuesta J1 · Izan García · My Language Quest</title>
+<link href="https://fonts.googleapis.com/css2?family=Fira+Sans:wght@300;400;500;600;700&family=Josefin+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --blue:#003366;--blue-dark:#001f40;--blue-mid:#0a4a8a;--blue-light:#dce8f5;
+  --red:#B12900;--red-dark:#8A1F00;--red-light:#fdf0ec;
+  --red-deep:#6E1600;--red-warm:#C8380C;--cream:#FFF6F2;--sand:#F7EDE6;--gold:#E8B04B;
+  --green:#4C9E0C;--green-dark:#3A7A09;--green-light:#eef8e3;
+  --gray-bg:#eef1f6;--gray-card:#f8fafc;--gray-border:#dbe1ea;
+  --text:#0d1b2a;--text-mid:#3d4f62;--text-light:#7a8a9b;--white:#ffffff;
+}
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box;}
+body{font-family:'Fira Sans',sans-serif;background:var(--gray-bg);color:var(--text);}
+
+/* HEADER */
+.header{background:var(--white);padding:18px 48px;display:flex;align-items:center;justify-content:space-between;box-shadow:0 1px 0 var(--gray-border),0 4px 24px rgba(0,51,102,0.07);position:relative;z-index:10;}
+.header::after{content:'';position:absolute;bottom:0;left:0;right:0;height:4px;background:linear-gradient(90deg,var(--red) 0%,var(--red) 34%,var(--white) 34%,var(--white) 66%,var(--blue) 66%,var(--blue) 100%);}
+.logo-area img{height:46px;width:auto;display:block;}
+.header-right{text-align:right;}
+.header-label{font-family:'Josefin Sans',sans-serif;font-size:9px;letter-spacing:3px;text-transform:uppercase;color:var(--text-light);}
+.header-year{font-family:'Josefin Sans',sans-serif;font-size:26px;font-weight:700;color:var(--blue);line-height:1;margin-top:2px;}
+
+/* HERO */
+.hero{background:linear-gradient(135deg,var(--blue-dark) 0%,var(--blue) 55%,var(--blue-mid) 100%);position:relative;overflow:hidden;padding:40px 48px 36px;}
+.hero::after{content:'🗽';position:absolute;right:2%;top:50%;transform:translateY(-50%) rotate(-12deg);font-size:230px;line-height:1;opacity:0.09;pointer-events:none;z-index:1;}
+.hero::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 70% 110% at 100% 40%,rgba(255,255,255,0.12) 0%,transparent 60%),radial-gradient(ellipse 60% 80% at -10% 90%,rgba(0,31,64,0.28) 0%,transparent 60%);}
+.hero-dots{position:absolute;inset:0;pointer-events:none;background-image:radial-gradient(rgba(255,255,255,0.07) 1px,transparent 1px);background-size:28px 28px;}
+.hero-inner{position:relative;z-index:2;}
+.hero-tag{display:inline-flex;align-items:center;gap:6px;background:rgba(255,255,255,0.1);border:1px solid rgba(255,255,255,0.2);border-radius:20px;padding:4px 12px;font-size:10px;font-weight:600;letter-spacing:2px;text-transform:uppercase;color:rgba(255,255,255,0.7);margin-bottom:12px;}
+.hero-tag::before{content:'🇺🇸';font-size:11px;}
+.hero-name{font-family:'Josefin Sans',sans-serif;font-size:38px;font-weight:700;color:var(--white);line-height:1.05;margin-bottom:8px;}
+.hero-subtitle{font-size:13px;color:rgba(255,255,255,0.55);font-weight:300;}
+.hero-pills{display:flex;flex-wrap:wrap;gap:8px;margin-top:20px;}
+.hero-pill{display:flex;align-items:center;gap:6px;background:rgba(255,255,255,0.1);border:1px solid rgba(255,255,255,0.18);border-radius:8px;padding:6px 12px;font-size:11px;color:var(--white);font-weight:500;}
+.hero-pill.ac{background:rgba(0,31,64,0.35);border-color:rgba(255,255,255,0.4);color:#ffffff;}
+
+/* LAYOUT */
+.main{max-width:1140px;margin:0 auto;padding:40px 24px 20px;}
+.section-title{display:flex;align-items:center;gap:12px;margin:44px 0 24px;}
+.section-title:first-of-type{margin-top:0;}
+.section-title h2{font-family:'Josefin Sans',sans-serif;font-size:11px;font-weight:700;letter-spacing:3px;text-transform:uppercase;color:var(--red-deep);white-space:nowrap;}
+.section-title::before{content:'';width:22px;height:3px;border-radius:3px;background:var(--red);flex-shrink:0;}
+.section-title::after{content:'';flex:1;height:1px;background:var(--gray-border);}
+
+/* INTRO / CONTEXTO */
+.intro-text{font-size:14px;color:var(--text-mid);line-height:1.75;max-width:860px;margin-bottom:20px;}
+.intro-text strong{color:var(--blue);font-weight:600;}
+.intro-points{display:grid;grid-template-columns:repeat(2,1fr);gap:14px;margin-top:20px;}
+.intro-point{background:var(--white);border:1.5px solid var(--gray-border);border-radius:12px;padding:16px 18px;display:flex;gap:12px;align-items:flex-start;}
+.intro-point-icon{font-size:20px;flex-shrink:0;}
+.intro-point-title{font-family:'Josefin Sans',sans-serif;font-size:13px;font-weight:700;color:var(--red-deep);margin-bottom:4px;}
+.intro-point-desc{font-size:12px;color:var(--text-mid);line-height:1.55;}
+
+/* QUIÉNES SOMOS */
+.qs-hero{display:grid;grid-template-columns:1fr 1fr;gap:0;background:var(--white);border-radius:18px;overflow:hidden;border:1.5px solid var(--gray-border);box-shadow:0 4px 28px rgba(0,51,102,0.08);}
+.qs-media{position:relative;background:var(--blue-dark);min-height:440px;}
+.qs-media img{width:100%;height:100%;object-fit:cover;display:block;}
+.qs-media-inset{position:absolute;right:-1px;bottom:-1px;width:44%;aspect-ratio:3/4;border-radius:14px 0 0 0;overflow:hidden;border-top:4px solid var(--white);border-left:4px solid var(--white);box-shadow:-8px -8px 28px rgba(0,31,64,0.28);}
+.qs-media-inset img{width:100%;height:100%;object-fit:cover;}
+.qs-panel{background:linear-gradient(155deg,var(--blue-dark) 0%,var(--blue) 55%,var(--blue-mid) 100%);padding:38px 40px;position:relative;overflow:hidden;display:flex;flex-direction:column;justify-content:center;}
+.qs-panel::before{content:'';position:absolute;inset:0;background-image:radial-gradient(rgba(255,255,255,0.055) 1px,transparent 1px);background-size:22px 22px;}
+.qs-panel-inner{position:relative;z-index:2;}
+.qs-eyebrow{font-family:'Josefin Sans',sans-serif;font-size:9px;font-weight:700;letter-spacing:3px;text-transform:uppercase;color:#7dd44a;margin-bottom:12px;}
+.qs-title{font-family:'Josefin Sans',sans-serif;font-size:26px;font-weight:700;color:var(--white);line-height:1.2;margin-bottom:14px;}
+.qs-lead{font-size:13.5px;color:rgba(255,255,255,0.62);line-height:1.75;margin-bottom:26px;}
+.qs-lead strong{color:var(--white);font-weight:600;}
+.qs-pilares{display:flex;flex-direction:column;gap:14px;}
+.qs-pilar{display:flex;gap:14px;align-items:flex-start;padding-top:14px;border-top:1px solid rgba(255,255,255,0.13);transition:transform .3s ease;}
+.qs-pilar:first-child{border-top:none;padding-top:0;}
+.qs-pilar:hover{transform:translateX(4px);}
+.qs-pilar-icon{font-size:19px;flex-shrink:0;line-height:1.3;}
+.qs-pilar-title{font-family:'Josefin Sans',sans-serif;font-size:13px;font-weight:700;color:var(--white);margin-bottom:3px;}
+.qs-pilar-desc{font-size:11.5px;color:rgba(255,255,255,0.5);line-height:1.55;}
+
+/* INFO BLOCKS */
+.info-blocks{display:grid;grid-template-columns:1fr 1fr;gap:20px;}
+.info-block{background:var(--white);border-radius:16px;border:1.5px solid var(--gray-border);padding:24px 26px;box-shadow:0 2px 16px rgba(0,51,102,0.05);}
+.info-block-icon{font-size:24px;margin-bottom:10px;}
+.info-block-title{font-family:'Josefin Sans',sans-serif;font-size:14px;font-weight:700;color:var(--red-deep);margin-bottom:10px;}
+.info-block-text{font-size:12.5px;color:var(--text-mid);line-height:1.7;}
+.info-block-text strong{color:var(--text);}
+.info-block ul{margin-top:10px;padding-left:0;list-style:none;}
+.info-block ul li{font-size:12px;color:var(--text-mid);display:flex;gap:8px;align-items:flex-start;margin-bottom:7px;line-height:1.5;}
+.info-block ul li::before{content:'✓';color:var(--green);font-weight:700;flex-shrink:0;}
+
+/* INCLUDES */
+.includes-wrap{background:var(--white);border-radius:16px;border:1.5px solid var(--gray-border);box-shadow:0 2px 16px rgba(0,51,102,0.05);overflow:hidden;}
+.includes-head{background:linear-gradient(135deg,var(--red-deep),var(--red));padding:20px 32px;}
+.includes-head h3{font-family:'Josefin Sans',sans-serif;font-size:14px;font-weight:700;color:var(--white);letter-spacing:1px;}
+.includes-body{padding:28px 32px;}
+.includes-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:32px;}
+.col-title{font-family:'Josefin Sans',sans-serif;font-size:9px;font-weight:700;letter-spacing:2.5px;text-transform:uppercase;color:var(--red);margin-bottom:14px;padding-bottom:8px;border-bottom:2px solid var(--red-light);}
+.inc-list{list-style:none;display:flex;flex-direction:column;gap:8px;}
+.inc-list li{font-size:12px;color:var(--text-mid);display:flex;align-items:flex-start;gap:8px;line-height:1.55;}
+.inc-list li::before{content:'✓';color:var(--green);font-weight:700;font-size:11px;flex-shrink:0;margin-top:1px;}
+.inc-list.no li::before{content:'✗';color:var(--red);}
+.inc-list li small{font-size:10px;color:var(--text-light);display:block;margin-top:2px;}
+
+/* GESTOR */
+.gestor-wrap{background:linear-gradient(135deg,var(--blue-dark),var(--blue-mid));border-radius:12px;padding:20px 24px;margin-top:20px;}
+.gestor-title{font-family:'Josefin Sans',sans-serif;font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:rgba(255,255,255,0.6);margin-bottom:14px;}
+.gestor-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;}
+.gestor-item{background:rgba(255,255,255,0.08);border:1px solid rgba(255,255,255,0.12);border-radius:8px;padding:10px 12px;font-size:11px;color:rgba(255,255,255,0.85);line-height:1.4;}
+.gestor-item::before{content:'→';color:#7dd44a;font-weight:700;margin-right:5px;}
+</style>
+<style>
+/* FORMAS DE PAGO */
+.payment-wrap{background:linear-gradient(135deg,var(--blue-dark) 0%,var(--blue) 60%,var(--blue-mid) 100%);border-radius:16px;padding:32px;position:relative;overflow:hidden;}
+.payment-wrap::before{content:'';position:absolute;inset:0;background-image:radial-gradient(rgba(255,255,255,0.05) 1px,transparent 1px);background-size:22px 22px;}
+.payment-inner{position:relative;z-index:2;}
+.pay-title{font-family:'Josefin Sans',sans-serif;font-size:16px;font-weight:700;color:var(--white);margin-bottom:6px;}
+.pay-subtitle{font-size:12px;color:rgba(255,255,255,0.45);margin-bottom:22px;}
+.pay-route{background:rgba(255,255,255,0.07);border:1px solid rgba(255,255,255,0.14);border-radius:14px;padding:20px 22px;margin-bottom:16px;}
+.pay-route-head{display:flex;align-items:center;gap:10px;margin-bottom:6px;}
+.pay-route-icon{font-size:20px;}
+.pay-route-title{font-family:'Josefin Sans',sans-serif;font-size:14px;font-weight:700;color:var(--white);}
+.pay-route-sub{font-size:11.5px;color:rgba(255,255,255,0.45);margin-bottom:16px;line-height:1.5;}
+.pay-entrada{display:flex;align-items:center;gap:14px;background:rgba(125,212,74,0.13);border:1px solid rgba(125,212,74,0.35);border-radius:10px;padding:14px 18px;margin-bottom:16px;}
+.pay-entrada-num{font-family:'Josefin Sans',sans-serif;font-size:26px;font-weight:700;color:#7dd44a;line-height:1;white-space:nowrap;}
+.pay-entrada-txt{font-size:11.5px;color:rgba(255,255,255,0.72);line-height:1.5;}
+.pay-entrada-txt strong{color:var(--white);font-weight:600;}
+.pay-cols{display:grid;grid-template-columns:1fr 1fr;gap:16px;}
+.pay-col{background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.12);border-radius:12px;padding:16px 18px;}
+.pay-col-title{font-family:'Josefin Sans',sans-serif;font-size:9px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:#7dd44a;margin-bottom:12px;}
+.pay-step{margin-bottom:11px;}
+.pay-step:last-child{margin-bottom:0;}
+.pay-step-title{font-size:13px;font-weight:600;color:var(--white);margin-bottom:2px;}
+.pay-step-desc{font-size:11px;color:rgba(255,255,255,0.45);line-height:1.5;}
+.pay-note{font-size:11px;color:rgba(255,255,255,0.32);line-height:1.65;font-style:italic;border-top:1px solid rgba(255,255,255,0.1);padding-top:14px;margin-top:4px;}
+
+/* FINANCIACIÓN */
+.financing-wrap{background:var(--white);border-radius:16px;border:1.5px solid var(--gray-border);box-shadow:0 2px 16px rgba(0,51,102,0.06);overflow:hidden;}
+.financing-head{background:linear-gradient(135deg,var(--blue-dark),var(--blue));padding:22px 32px;display:flex;align-items:center;justify-content:space-between;gap:16px;}
+.financing-head-left{display:flex;align-items:center;gap:16px;}
+.fin-icon{font-size:28px;flex-shrink:0;}
+.fin-title{font-family:'Josefin Sans',sans-serif;font-size:16px;font-weight:700;color:var(--white);margin-bottom:3px;}
+.fin-sub{font-size:11px;color:rgba(255,255,255,0.5);line-height:1.4;}
+.fin-badge{background:rgba(125,212,74,0.2);border:1px solid rgba(125,212,74,0.4);color:#7dd44a;font-family:'Josefin Sans',sans-serif;font-size:11px;font-weight:700;letter-spacing:1px;padding:6px 14px;border-radius:20px;white-space:nowrap;}
+.financing-body{padding:28px 32px;}
+.fin-plazo-label{font-family:'Josefin Sans',sans-serif;font-size:9px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--text-light);margin-bottom:10px;}
+.fin-entrada-fija{display:flex;align-items:center;gap:14px;background:var(--green-light);border:1.5px solid rgba(76,158,12,0.3);border-radius:12px;padding:14px 18px;margin-bottom:24px;}
+.fin-entrada-fija-num{font-family:'Josefin Sans',sans-serif;font-size:24px;font-weight:700;color:var(--green-dark);line-height:1;white-space:nowrap;}
+.fin-entrada-fija-txt{font-size:12px;color:var(--text-mid);line-height:1.55;}
+.fin-entrada-fija-txt strong{color:var(--text);font-weight:600;}
+.fin-plazo-wrap{margin-bottom:24px;}
+.fin-plazos{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;}
+.fin-plazo{background:var(--gray-card);border:1.5px solid var(--gray-border);border-radius:12px;padding:14px 12px;cursor:pointer;text-align:center;transition:transform .25s cubic-bezier(.22,.61,.36,1),border-color .25s ease,background .25s ease,box-shadow .25s ease;font-family:'Fira Sans',sans-serif;}
+.fin-plazo:hover{border-color:var(--blue-mid);transform:translateY(-2px);}
+.fin-plazo.active{border-color:var(--green);background:var(--green-light);box-shadow:0 4px 16px rgba(76,158,12,0.15);}
+.fin-plazo-meses{font-family:'Josefin Sans',sans-serif;font-size:15px;font-weight:700;color:var(--text);margin-bottom:6px;}
+.fin-plazo.active .fin-plazo-meses{color:var(--green-dark);}
+.fin-plazo-badge{display:inline-block;border-radius:20px;padding:2px 8px;font-size:9px;font-weight:700;letter-spacing:0.5px;margin-bottom:4px;}
+.fin-plazo-badge.sin-intereses{background:var(--green-light);color:var(--green-dark);border:1px solid rgba(76,158,12,0.3);}
+.fin-plazo-badge.con-intereses{background:var(--blue-light);color:var(--blue);border:1px solid rgba(0,51,102,0.2);}
+.fin-plazo-quien{font-size:9px;color:var(--text-light);line-height:1.3;}
+.fin-resultado{display:grid;grid-template-columns:auto 1fr;gap:24px;background:linear-gradient(135deg,var(--blue-dark),var(--blue));border-radius:14px;padding:24px 28px;margin-bottom:16px;align-items:center;}
+.fin-resultado-main{text-align:center;border-right:1px solid rgba(255,255,255,0.15);padding-right:24px;}
+.fin-cuota-label{font-size:10px;font-weight:600;letter-spacing:2px;text-transform:uppercase;color:rgba(255,255,255,0.5);margin-bottom:6px;}
+.fin-cuota-valor{font-family:'Josefin Sans',sans-serif;font-size:36px;font-weight:700;color:#7dd44a;line-height:1;margin-bottom:4px;transition:color .3s ease;}
+.fin-cuota-sub{font-size:11px;color:rgba(255,255,255,0.45);}
+.fin-resultado-detalle{display:flex;flex-direction:column;gap:10px;}
+.fin-det-row{display:flex;justify-content:space-between;align-items:center;gap:12px;}
+.fin-det-label{font-size:12px;color:rgba(255,255,255,0.55);}
+.fin-det-val{font-size:13px;font-weight:600;color:var(--white);}
+.fin-det-green{color:#7dd44a !important;}
+.fin-det-total{border-top:1px solid rgba(255,255,255,0.15);padding-top:10px;margin-top:2px;}
+.fin-det-total .fin-det-label{color:rgba(255,255,255,0.7);font-weight:600;}
+.fin-det-total .fin-det-val{font-family:'Josefin Sans',sans-serif;font-size:16px;color:var(--white);}
+.fin-nota{font-size:11px;color:var(--text-light);line-height:1.6;background:var(--gray-card);border-radius:8px;padding:12px 16px;border-left:3px solid var(--blue-light);}
+
+/* SIGUIENTES PASOS */
+.steps-wrap{background:linear-gradient(135deg,var(--blue-dark) 0%,var(--blue) 60%,var(--blue-mid) 100%);border-radius:16px;padding:34px 36px;position:relative;overflow:hidden;}
+.steps-wrap::before{content:'';position:absolute;inset:0;background-image:radial-gradient(rgba(255,255,255,0.05) 1px,transparent 1px);background-size:22px 22px;}
+.steps-inner{position:relative;z-index:2;}
+.steps-title{font-family:'Josefin Sans',sans-serif;font-size:18px;font-weight:700;color:var(--white);margin-bottom:6px;}
+.steps-sub{font-size:12px;color:rgba(255,255,255,0.5);margin-bottom:26px;}
+.steps-list{display:grid;grid-template-columns:repeat(5,1fr);gap:13px;}
+@media(max-width:1000px){.steps-list{grid-template-columns:repeat(2,1fr);}}
+@media(max-width:720px){.steps-list{grid-template-columns:1fr;}}
+.step-item{background:rgba(255,255,255,0.07);border:1px solid rgba(255,255,255,0.12);border-radius:12px;padding:18px;transition:transform .3s cubic-bezier(.22,.61,.36,1),background .3s ease;}
+.step-item:hover{transform:translateY(-4px);background:rgba(255,255,255,0.11);}
+.step-num{font-family:'Josefin Sans',sans-serif;font-size:20px;font-weight:700;color:#7dd44a;margin-bottom:8px;}
+.step-title{font-size:13px;font-weight:600;color:var(--white);margin-bottom:4px;}
+.step-desc{font-size:11px;color:rgba(255,255,255,0.5);line-height:1.5;}
+.cta-line{margin-top:26px;text-align:center;font-size:12.5px;color:rgba(255,255,255,0.75);}
+.pasos-cta-wrap{text-align:center;margin-top:16px;display:flex;gap:12px;justify-content:center;flex-wrap:wrap;}
+.pasos-cta{display:inline-flex;align-items:center;gap:8px;background:#7dd44a;color:var(--blue-dark);font-family:'Josefin Sans',sans-serif;font-size:13px;font-weight:700;padding:12px 26px;border-radius:10px;text-decoration:none;transition:transform .15s,box-shadow .15s;position:relative;overflow:hidden;}
+.pasos-cta:hover{transform:translateY(-2px);box-shadow:0 8px 20px rgba(125,212,74,0.35);}
+.pasos-cta-alt{background:rgba(255,255,255,0.12);color:var(--white);border:1.5px solid rgba(255,255,255,0.35);}
+.pasos-cta-alt:hover{box-shadow:0 8px 20px rgba(255,255,255,0.15);}
+.pasos-cta::after{content:'';position:absolute;top:0;left:-120%;width:60%;height:100%;background:linear-gradient(100deg,transparent,rgba(255,255,255,.55),transparent);transform:skewX(-18deg);}
+.pasos-cta:hover::after{animation:shine .85s ease;}
+@keyframes shine{to{left:140%;}}
+
+/* FOOTER */
+.footer{background:var(--blue-dark);padding:30px 48px;margin-top:56px;text-align:center;position:relative;}
+.footer::before{content:'';position:absolute;top:0;left:0;right:0;height:4px;background:linear-gradient(90deg,var(--red) 0%,var(--red) 34%,var(--white) 34%,var(--white) 66%,var(--blue) 66%,var(--blue) 100%);}
+.footer-logo{font-family:'Josefin Sans',sans-serif;font-size:15px;font-weight:700;color:var(--white);letter-spacing:1px;margin-bottom:6px;}
+.footer-tag{font-family:'Josefin Sans',sans-serif;font-size:10px;letter-spacing:4px;text-transform:uppercase;color:#ff9c7a;margin-bottom:14px;}
+.footer-meta{font-size:11px;color:rgba(255,255,255,0.4);line-height:1.7;}
+
+/* ============ J1 · bloques propios ============ */
+.ny-wrap{position:relative;border-radius:20px;overflow:hidden;background:linear-gradient(160deg,#06172e 0%,var(--blue-dark) 45%,#0b3566 100%);box-shadow:0 12px 48px rgba(0,20,45,0.28);}
+.ny-wrap::before{content:'';position:absolute;inset:0;background-image:radial-gradient(rgba(255,255,255,0.06) 1px,transparent 1px);background-size:26px 26px;}
+.ny-glow{position:absolute;inset:0;background:radial-gradient(ellipse 70% 90% at 85% 10%,rgba(232,176,75,0.20) 0%,transparent 60%),radial-gradient(ellipse 60% 70% at 5% 95%,rgba(177,41,0,0.22) 0%,transparent 60%);pointer-events:none;}
+.ny-skyline{position:absolute;left:0;right:0;bottom:0;height:150px;opacity:.20;pointer-events:none;}
+.ny-skyline svg{width:100%;height:100%;display:block;}
+.ny-inner{position:relative;z-index:3;padding:42px 44px 40px;}
+.ny-badge{display:inline-flex;align-items:center;gap:8px;background:rgba(232,176,75,0.16);border:1px solid rgba(232,176,75,0.45);color:#F5C976;font-family:'Josefin Sans',sans-serif;font-size:9.5px;font-weight:700;letter-spacing:2.5px;text-transform:uppercase;padding:6px 14px;border-radius:20px;margin-bottom:16px;}
+.ny-title{font-family:'Josefin Sans',sans-serif;font-size:34px;font-weight:700;color:var(--white);line-height:1.1;margin-bottom:12px;}
+.ny-title span{color:#F5C976;}
+.ny-lead{font-size:14px;color:rgba(255,255,255,0.66);line-height:1.75;max-width:620px;margin-bottom:26px;}
+.ny-lead strong{color:var(--white);font-weight:600;}
+.ny-stats{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-bottom:28px;}
+.ny-stat{background:rgba(255,255,255,0.07);border:1px solid rgba(255,255,255,0.15);border-radius:12px;padding:16px 16px;text-align:center;transition:transform .3s cubic-bezier(.22,.61,.36,1),background .3s ease;}
+.ny-stat:hover{transform:translateY(-4px);background:rgba(255,255,255,0.11);}
+.ny-stat-num{font-family:'Josefin Sans',sans-serif;font-size:26px;font-weight:700;color:#F5C976;line-height:1;margin-bottom:5px;}
+.ny-stat-lab{font-size:10.5px;color:rgba(255,255,255,0.55);line-height:1.4;}
+.ny-cols{display:grid;grid-template-columns:1fr 1fr;gap:16px;}
+.ny-col{background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.13);border-radius:14px;padding:20px 22px;}
+.ny-col-title{font-family:'Josefin Sans',sans-serif;font-size:9px;font-weight:700;letter-spacing:2.5px;text-transform:uppercase;color:#F5C976;margin-bottom:13px;}
+.ny-list{list-style:none;display:flex;flex-direction:column;gap:9px;}
+.ny-list li{font-size:12.5px;color:rgba(255,255,255,0.72);line-height:1.55;display:flex;gap:9px;align-items:flex-start;}
+.ny-list li::before{content:'★';color:#F5C976;flex-shrink:0;font-size:10px;margin-top:2px;}
+.ny-nota{margin-top:20px;font-size:11.5px;color:rgba(255,255,255,0.42);line-height:1.65;font-style:italic;border-top:1px solid rgba(255,255,255,0.12);padding-top:16px;}
+
+.destaca-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;}
+.destaca-item{background:var(--white);border:1.5px solid var(--gray-border);border-radius:14px;padding:20px 20px;box-shadow:0 2px 14px rgba(0,51,102,0.05);transition:transform .3s cubic-bezier(.22,.61,.36,1),box-shadow .3s ease,border-color .3s ease;}
+.destaca-item:hover{transform:translateY(-4px);box-shadow:0 12px 32px rgba(0,51,102,0.13);border-color:var(--blue-mid);}
+.destaca-icon{font-size:24px;margin-bottom:10px;}
+.destaca-title{font-family:'Josefin Sans',sans-serif;font-size:13.5px;font-weight:700;color:var(--blue);margin-bottom:6px;line-height:1.3;}
+.destaca-desc{font-size:12px;color:var(--text-mid);line-height:1.6;}
+
+.precio-hero{display:grid;grid-template-columns:auto 1fr;gap:28px;align-items:center;background:var(--white);border:1.5px solid var(--gray-border);border-left:5px solid var(--red);border-radius:16px;padding:26px 30px;box-shadow:0 2px 16px rgba(0,51,102,0.06);}
+.precio-hero-num{font-family:'Josefin Sans',sans-serif;font-size:44px;font-weight:700;color:var(--red);line-height:1;white-space:nowrap;}
+.precio-hero-sub{font-size:10.5px;letter-spacing:2px;text-transform:uppercase;color:var(--text-light);margin-top:6px;}
+.precio-hero-txt{font-size:13px;color:var(--text-mid);line-height:1.7;}
+.precio-hero-txt strong{color:var(--blue);font-weight:600;}
+
+.cond-list{display:flex;flex-direction:column;gap:12px;}
+.cond-item{background:var(--white);border:1.5px solid var(--gray-border);border-radius:12px;padding:15px 20px;font-size:12.5px;color:var(--text-mid);line-height:1.7;display:flex;gap:14px;align-items:flex-start;}
+.cond-num{font-family:'Josefin Sans',sans-serif;font-weight:700;background:var(--blue);width:26px;height:26px;border-radius:50%;display:flex;align-items:center;justify-content:center;flex-shrink:0;color:#fff;font-size:11px;}
+.cond-alert{background:#fff4f0;border:1.5px solid rgba(177,41,0,0.32);border-left:4px solid var(--red);border-radius:12px;padding:15px 20px;font-size:12.5px;color:#6b1a00;line-height:1.7;margin-top:4px;}
+.cond-alert strong{color:var(--red-dark);}
+
+.garantia-wrap{background:linear-gradient(135deg,var(--green-dark),#5FB515);border-radius:16px;padding:28px 32px;position:relative;overflow:hidden;}
+.garantia-wrap::before{content:'🛡';position:absolute;right:-8px;bottom:-26px;font-size:130px;opacity:.12;line-height:1;}
+.garantia-inner{position:relative;z-index:2;}
+.garantia-title{font-family:'Josefin Sans',sans-serif;font-size:17px;font-weight:700;color:var(--white);margin-bottom:8px;}
+.garantia-text{font-size:12.5px;color:rgba(255,255,255,0.78);line-height:1.7;margin-bottom:18px;max-width:700px;}
+.garantia-opts{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;}
+.garantia-opt{background:rgba(255,255,255,0.14);border:1px solid rgba(255,255,255,0.28);border-radius:10px;padding:14px 16px;font-size:12px;color:rgba(255,255,255,0.82);line-height:1.55;}
+.garantia-opt strong{color:var(--white);font-family:'Josefin Sans',sans-serif;font-size:13px;}
+.garantia-nota{margin-top:16px;padding-top:14px;border-top:1px solid rgba(255,255,255,0.22);font-size:11.5px;color:rgba(255,255,255,0.65);line-height:1.65;font-style:italic;}
+
+/* Bloque perfil · específico del estudiante */
+.perfil-grid{display:grid;grid-template-columns:1fr 1fr;gap:18px;}
+.perfil-card{background:var(--white);border:1.5px solid var(--gray-border);border-radius:16px;padding:22px 24px;box-shadow:0 2px 14px rgba(0,51,102,0.05);}
+.perfil-card.si{border-top:4px solid var(--green);}
+.perfil-card.no{border-top:4px solid var(--red);}
+.perfil-lab{font-family:'Josefin Sans',sans-serif;font-size:9px;font-weight:700;letter-spacing:2px;text-transform:uppercase;margin-bottom:9px;}
+.perfil-card.si .perfil-lab{color:var(--green-dark);}
+.perfil-card.no .perfil-lab{color:var(--red);}
+.perfil-title{font-family:'Josefin Sans',sans-serif;font-size:16px;font-weight:700;color:var(--text);margin-bottom:10px;}
+.perfil-txt{font-size:12.5px;color:var(--text-mid);line-height:1.75;}
+.perfil-txt strong{color:var(--text);font-weight:600;}
+
+@media(max-width:900px){
+  .qs-hero{grid-template-columns:1fr;}
+  .qs-media{min-height:320px;aspect-ratio:4/3;}
+  .ny-stats{grid-template-columns:repeat(2,1fr);}
+  .ny-cols{grid-template-columns:1fr;}
+  .destaca-grid{grid-template-columns:repeat(2,1fr);}
+  .garantia-opts{grid-template-columns:1fr;}
+  .perfil-grid{grid-template-columns:1fr;}
+}
+@media(max-width:720px){
+  .header{padding:16px 20px;}.hero{padding:28px 20px 24px;}.hero-name{font-size:28px;}
+  .main{padding:28px 16px 20px;}
+  .includes-grid{grid-template-columns:1fr;}
+  .intro-points{grid-template-columns:1fr;}.info-blocks{grid-template-columns:1fr;}
+  .pay-cols{grid-template-columns:1fr;}.gestor-grid{grid-template-columns:repeat(2,1fr);}
+  .qs-panel{padding:28px 22px;}.qs-title{font-size:22px;}
+  .fin-plazos{grid-template-columns:repeat(2,1fr);}
+  .fin-resultado{grid-template-columns:1fr;}
+  .fin-resultado-main{border-right:none;border-bottom:1px solid rgba(255,255,255,0.15);padding-right:0;padding-bottom:20px;}
+  .financing-head{flex-direction:column;align-items:flex-start;}
+  .ny-inner{padding:28px 22px;}
+  .ny-title{font-size:25px;}
+  .destaca-grid{grid-template-columns:1fr;}
+  .precio-hero{grid-template-columns:1fr;gap:14px;}
+  .precio-hero-num{font-size:36px;}
+  .footer{padding:26px 20px;}
+}
+
+/* ANIMACIONES */
+.js-anim .reveal{opacity:0;transform:translateY(20px);will-change:opacity,transform;transition:opacity .75s cubic-bezier(.22,.61,.36,1),transform .75s cubic-bezier(.22,.61,.36,1);}
+.js-anim .reveal.in{opacity:1;transform:none;}
+.js-anim .reveal-zoom{opacity:0;transform:scale(.975);transition:opacity .8s ease,transform .8s cubic-bezier(.22,.61,.36,1);}
+.js-anim .reveal-zoom.in{opacity:1;transform:none;}
+@keyframes heroUp{from{opacity:0;transform:translateY(16px);}to{opacity:1;transform:none;}}
+@keyframes leafIn{from{opacity:0;transform:translateY(-50%) rotate(-30deg) scale(.85);}to{opacity:.09;transform:translateY(-50%) rotate(-12deg) scale(1);}}
+.js-anim .hero::after{animation:leafIn 1.4s cubic-bezier(.22,.61,.36,1) .15s both;}
+.js-anim .hero-tag{animation:heroUp .7s cubic-bezier(.22,.61,.36,1) .05s both;}
+.js-anim .hero-name{animation:heroUp .7s cubic-bezier(.22,.61,.36,1) .16s both;}
+.js-anim .hero-subtitle{animation:heroUp .7s cubic-bezier(.22,.61,.36,1) .26s both;}
+.js-anim .hero-pill{animation:heroUp .55s cubic-bezier(.22,.61,.36,1) both;}
+.progress-bar{position:fixed;top:0;left:0;height:3px;width:100%;transform:scaleX(0);transform-origin:0 50%;background:linear-gradient(90deg,var(--red),var(--blue) 60%,var(--blue-mid));z-index:999;transition:transform .1s linear;}
+.qs-chapter-media img,.qs-media img,.qs-media-inset img{transition:transform .7s cubic-bezier(.22,.61,.36,1);}
+.qs-hero:hover .qs-media > img{transform:scale(1.03);}
+.qs-media-inset{transition:transform .45s cubic-bezier(.22,.61,.36,1),box-shadow .45s ease;}
+.qs-hero:hover .qs-media-inset{transform:translateY(-6px);box-shadow:-10px -10px 34px rgba(0,31,64,0.34);}
+@keyframes cuotaPop{0%{opacity:.35;transform:translateY(6px);}100%{opacity:1;transform:none;}}
+.fin-cuota-valor.pop{animation:cuotaPop .42s cubic-bezier(.22,.61,.36,1);}
+@media(prefers-reduced-motion:reduce){
+  .js-anim .reveal,.js-anim .reveal-zoom{opacity:1!important;transform:none!important;transition:none!important;}
+  .js-anim .hero::after,.js-anim .hero-tag,.js-anim .hero-name,.js-anim .hero-subtitle,.js-anim .hero-pill{animation:none!important;opacity:1;}
+  .js-anim .hero::after{opacity:.09;}
+  .progress-bar{display:none;}
+  *{transition-duration:.01ms!important;}
+}
+</style>
+</head>
+<body>
+
+<!-- ============ 1. HEADER ============ -->
+<div class="header">
+  <!-- LOGO · si existe img/logo.png en el repo se muestra el logo real; si no, cae al wordmark de reserva -->
+  <div class="logo-area">
+    <img src="https://aescobarnic.github.io/Propuestas/img/logo.png" alt="My Language Quest"
+         onerror="this.style.display='none';this.nextElementSibling.style.display='block';">
+    <div class="logo-fallback" style="display:none;font-family:'Josefin Sans',sans-serif;line-height:1.05;">
+      <div style="font-size:19px;font-weight:700;letter-spacing:1.5px;color:#003366;">MY LANGUAGE QUEST</div>
+      <div style="font-size:8.5px;letter-spacing:3.5px;text-transform:uppercase;color:#B12900;margin-top:3px;">Explore · Learn · Grow</div>
+    </div>
+  </div>
+  <div class="header-right">
+    <div class="header-label">Curso académico</div>
+    <div class="header-year">2027/28</div>
+  </div>
+</div>
+
+<!-- ============ 2. HERO ============ -->
+<div class="hero">
+  <div class="hero-dots"></div>
+  <div class="hero-inner">
+    <div class="hero-tag">Propuesta personalizada · Programa J1</div>
+    <div class="hero-name">Izan García</div>
+    <div class="hero-subtitle">Intercambio cultural · Año escolar completo · Estados Unidos</div>
+    <div class="hero-pills">
+      <div class="hero-pill">🎓 1.º Bachillerato · Grade 11</div>
+      <div class="hero-pill">🏠 Familia anfitriona voluntaria</div>
+      <div class="hero-pill">🗣 Nivel de inglés · pendiente de prueba</div>
+      <div class="hero-pill">🏫 Colegio público</div>
+      <div class="hero-pill ac">🗽 Orientación en Nueva York incluida</div>
+    </div>
+  </div>
+</div>
+
+<div class="main">
+  <!-- ============ 3. QUÉ ES EL J1 ============ -->
+  <div class="section-title"><h2>¿Qué es el Programa J1?</h2></div>
+  <p class="intro-text">
+    El J1 es una experiencia de intercambio cultural <strong>parcialmente subvencionada por el Gobierno
+    americano</strong>. El estudiante convive con una familia anfitriona voluntaria y estudia en un colegio
+    público estadounidense durante un año escolar completo. Esa subvención es lo que lo convierte en
+    <strong>la vía más económica para hacer un año escolar en Estados Unidos</strong>, y también lo que marca
+    su principal condición: el destino lo asigna el sponsor americano, no se elige.
+  </p>
+  <div class="intro-points">
+    <div class="intro-point"><div class="intro-point-icon">🏫</div><div><div class="intro-point-title">Colegio público americano</div><div class="intro-point-desc">Matrícula en el centro de secundaria que asigne el sponsor, con transporte escolar incluido.</div></div></div>
+    <div class="intro-point"><div class="intro-point-icon">🏠</div><div><div class="intro-point-title">Familia anfitriona voluntaria</div><div class="intro-point-desc">Familias que acogen por convicción cultural, no por remuneración. Pensión completa.</div></div></div>
+    <div class="intro-point"><div class="intro-point-icon">📍</div><div><div class="intro-point-title">El destino no se elige</div><div class="intro-point-desc">Ni estado, ni ciudad, ni colegio. Suelen ser localidades pequeñas del interior del país.</div></div></div>
+    <div class="intro-point"><div class="intro-point-icon">📅</div><div><div class="intro-point-title">Año escolar completo</div><div class="intro-point-desc">Duración mínima obligatoria. El J1 no admite trimestres ni semestres sueltos.</div></div></div>
+  </div>
+
+  <!-- ============ 4. EL J1 Y EL PERFIL DE IZAN ============ -->
+  <div class="section-title"><h2>Qué significa el J1 para Izan</h2></div>
+  <p class="intro-text">
+    Izan juega al baloncesto federado en Madrid y entrena 3–4 días por semana, así que es la primera pregunta
+    que hay que responder con honestidad: <strong>¿podrá seguir jugando?</strong> La respuesta tiene dos caras y
+    conviene conocer las dos antes de decidir.
+  </p>
+  <div class="perfil-grid">
+    <div class="perfil-card no">
+      <div class="perfil-lab">Lo que el J1 no puede prometer</div>
+      <div class="perfil-title">🎯 El destino, y con él el programa deportivo</div>
+      <div class="perfil-txt">
+        Como el sponsor americano asigna estado, localidad y colegio, <strong>no podemos elegir un centro por su
+        programa de baloncesto</strong>, ni garantizar el clima ni el tamaño de la localidad. La mayoría de
+        destinos J1 son poblaciones pequeñas del interior, que pueden tener inviernos fríos.<br><br>
+        Tampoco sabremos el destino con antelación: puede conocerse hasta el 31 de agosto. Si para vosotros es
+        determinante saber de antemano dónde estudiará Izan y qué equipo tiene ese colegio,
+        <strong>el J1 no es la vía adecuada</strong> y así os lo decimos.
+      </div>
+    </div>
+    <div class="perfil-card si">
+      <div class="perfil-lab">Lo que juega a su favor</div>
+      <div class="perfil-title">🏀 El visado J-1 abre más puertas deportivas</div>
+      <div class="perfil-txt">
+        Este punto sorprende a muchas familias: en bastantes estados,
+        <strong>las asociaciones deportivas son más favorables con el visado J-1 que con el F-1</strong>. Donde
+        un estudiante F-1 queda limitado a Junior Varsity, un J-1 de intercambio puede obtener elegibilidad de
+        Varsity durante su año de programa.<br><br>
+        Además, los institutos públicos de localidades pequeñas suelen tener
+        <strong>equipos más accesibles y una vida deportiva muy presente</strong> en la comunidad. La entrada en
+        un equipo nunca se garantiza —depende de la elegibilidad y del entrenador— pero el visado, en sí mismo,
+        no es un obstáculo.
+      </div>
+    </div>
+  </div>
+
+  <!-- ============ 5. REQUISITOS ============ -->
+  <div class="section-title"><h2>Requisitos de acceso</h2></div>
+  <div class="info-blocks">
+    <div class="info-block">
+      <div class="info-block-icon">📋</div>
+      <div class="info-block-title">Requisitos del estudiante</div>
+      <div class="info-block-text">
+        <ul>
+          <li>Tener entre <strong>15 y 18 años</strong> (14 años, consultar)</li>
+          <li>Expediente académico con nota media aproximada de <strong>6/10</strong></li>
+          <li>Nivel de inglés aproximado <strong>B1</strong></li>
+          <li>Idealmente sin alergias ni condiciones médicas severas</li>
+        </ul>
+      </div>
+    </div>
+    <div class="info-block">
+      <div class="info-block-icon">📝</div>
+      <div class="info-block-title">Pruebas y visado</div>
+      <div class="info-block-text">
+        <ul>
+          <li>Examen de nivel <strong>ELTIS (mín. 690 puntos)</strong> o iTEP (mín. 70)</li>
+          <li>Entrevista personal online con el estudiante</li>
+          <li>Entrevista en la Embajada de EE.UU. en Madrid, gestionada por MLQ</li>
+          <li>Tasa SEVIS y tramitación del visado J1 <strong>incluidas en el precio</strong></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <!-- ============ 6. QUIÉNES SOMOS ============ -->
+  <div class="section-title"><h2>Quiénes somos</h2></div>
+  <div class="qs-hero">
+    <div class="qs-media">
+      <img src="https://aescobarnic.github.io/Propuestas/img/mlq-grupo-aeropuerto.jpg" style="object-position:center 30%;" alt="Grupo de estudiantes de My Language Quest en el aeropuerto con su coordinadora" loading="lazy">
+      <div class="qs-media-inset"><img src="https://aescobarnic.github.io/Propuestas/img/mlq-despedida-familia.jpg" style="object-position:center 25%;" alt="Estudiante despidiéndose de su familia antes de salir" loading="lazy"></div>
+    </div>
+    <div class="qs-panel">
+      <div class="qs-panel-inner">
+        <div class="qs-eyebrow">My Language Quest</div>
+        <div class="qs-title">El programa lo marca<br>el Gobierno americano.<br>El acompañamiento, nosotros</div>
+        <p class="qs-lead">
+          Si estáis comparando agencias, veréis que el J1 es prácticamente igual en todas: las normas las fija
+          el Gobierno de Estados Unidos y el sponsor americano, y ahí nadie puede cambiar nada. La diferencia
+          está en quién coge el teléfono cuando vuestro hijo lleva dos semanas fuera y os llama un domingo por
+          la noche. <strong>En My Language Quest sabréis siempre con quién habláis, y esa persona conocerá a
+          Izan por su nombre.</strong>
+        </p>
+        <div class="qs-pilares">
+          <div class="qs-pilar"><div class="qs-pilar-icon">👩‍💼</div><div><div class="qs-pilar-title">Una asesora asignada en España</div><div class="qs-pilar-desc">La misma persona de principio a fin: nada de tickets ni centralitas.</div></div></div>
+          <div class="qs-pilar"><div class="qs-pilar-icon">🧭</div><div><div class="qs-pilar-title">Gestor estudiantil personalizado</div><div class="qs-pilar-desc">Hace todos los trámites y es vuestro contacto único durante el año.</div></div></div>
+          <div class="qs-pilar"><div class="qs-pilar-icon">📞</div><div><div class="qs-pilar-title">Atención 24 h, aquí y allí</div><div class="qs-pilar-desc">Supervisión local del sponsor americano y emergencias desde España.</div></div></div>
+          <div class="qs-pilar"><div class="qs-pilar-icon">💬</div><div><div class="qs-pilar-title">Apoyo psicológico durante todo el curso</div><div class="qs-pilar-desc">Disponible para el estudiante siempre que lo necesite.</div></div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ============ 7. NUEVA YORK ============ -->
+  <div class="section-title"><h2>El programa empieza en Nueva York</h2></div>
+  <div class="ny-wrap">
+    <div class="ny-glow"></div>
+    <div class="ny-skyline">
+      <svg viewBox="0 0 1200 150" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+        <g fill="#ffffff">
+          <rect x="0" y="96" width="46" height="54"/><rect x="50" y="74" width="34" height="76"/>
+          <rect x="88" y="108" width="52" height="42"/><rect x="146" y="60" width="30" height="90"/>
+          <rect x="152" y="40" width="18" height="22"/><rect x="158" y="20" width="6" height="22"/>
+          <rect x="182" y="88" width="44" height="62"/><rect x="232" y="102" width="38" height="48"/>
+          <rect x="276" y="66" width="40" height="84"/><rect x="322" y="94" width="30" height="56"/>
+          <polygon points="358,150 358,52 378,28 398,52 398,150"/><rect x="374" y="10" width="8" height="20"/>
+          <rect x="406" y="86" width="48" height="64"/><rect x="460" y="106" width="34" height="44"/>
+          <rect x="500" y="70" width="42" height="80"/><rect x="548" y="98" width="28" height="52"/>
+          <rect x="582" y="46" width="36" height="104"/><rect x="592" y="26" width="16" height="22"/>
+          <rect x="624" y="90" width="50" height="60"/><rect x="680" y="112" width="32" height="38"/>
+          <rect x="718" y="64" width="38" height="86"/><rect x="762" y="96" width="44" height="54"/>
+          <rect x="812" y="80" width="30" height="70"/><polygon points="848,150 848,58 866,34 884,58 884,150"/>
+          <rect x="892" y="100" width="46" height="50"/><rect x="944" y="72" width="34" height="78"/>
+          <rect x="984" y="104" width="40" height="46"/><rect x="1030" y="84" width="30" height="66"/>
+          <rect x="1066" y="98" width="48" height="52"/><rect x="1120" y="76" width="36" height="74"/>
+          <rect x="1162" y="106" width="38" height="44"/>
+        </g>
+      </svg>
+    </div>
+    <div class="ny-inner">
+      <div class="ny-badge">🗽 Incluido en el precio</div>
+      <div class="ny-title">Orientation Camp<br><span>4 días y 3 noches en Nueva York</span></div>
+      <p class="ny-lead">
+        Antes de conocer a su familia anfitriona, Izan aterriza en Nueva York junto al resto de estudiantes
+        internacionales. Cuatro días para adaptarse al horario, entender cómo funciona la vida en Estados
+        Unidos y llegar a su destino <strong>habiendo hecho amigos y perdido el miedo</strong>. No es una
+        excursión turística: es la transición que convierte un salto al vacío en un aterrizaje suave.
+      </p>
+      <div class="ny-stats">
+        <div class="ny-stat"><div class="ny-stat-num">4</div><div class="ny-stat-lab">Días en Nueva York</div></div>
+        <div class="ny-stat"><div class="ny-stat-num">3</div><div class="ny-stat-lab">Noches de hotel</div></div>
+        <div class="ny-stat"><div class="ny-stat-num">2</div><div class="ny-stat-lab">Talleres<br>«Life in the USA»</div></div>
+        <div class="ny-stat"><div class="ny-stat-num">0 €</div><div class="ny-stat-lab">Coste adicional:<br>va en el precio</div></div>
+      </div>
+      <div class="ny-cols">
+        <div class="ny-col">
+          <div class="ny-col-title">Qué incluye la estancia</div>
+          <ul class="ny-list">
+            <li>Hotel 3 noches, habitaciones compartidas por género</li>
+            <li>3 desayunos y 3 cenas</li>
+            <li>Transporte en autobús privado durante toda la estancia</li>
+            <li>Traslados aeropuerto–hotel y hotel–aeropuerto</li>
+            <li>Coordinador de MLQ acompañando al grupo</li>
+          </ul>
+        </div>
+        <div class="ny-col">
+          <div class="ny-col-title">Para qué sirve de verdad</div>
+          <ul class="ny-list">
+            <li>Superar el jet lag antes del primer día de clase</li>
+            <li>Talleres prácticos sobre convivencia, normas y cultura americana</li>
+            <li>Conocer a estudiantes de todo el mundo que viven lo mismo</li>
+            <li>Resolver dudas con el coordinador antes de llegar al destino</li>
+            <li>Empezar el año con una experiencia que se recuerda siempre</li>
+          </ul>
+        </div>
+      </div>
+      <div class="ny-nota">La orientación en Nueva York está reservada al programa de año escolar completo y se realiza antes de que el estudiante viaje a su destino final. El itinerario detallado se entrega junto con la documentación del programa.</div>
+    </div>
+  </div>
+
+  <!-- ============ 8. QUÉ DESTACA ============ -->
+  <div class="section-title"><h2>Qué añade My Language Quest</h2></div>
+  <div class="destaca-grid">
+    <div class="destaca-item"><div class="destaca-icon">👤</div><div class="destaca-title">Gestor estudiantil personalizado</div><div class="destaca-desc">Una única persona asignada a la familia, que realiza todos los trámites y es el contacto principal durante el proceso y el año escolar.</div></div>
+    <div class="destaca-item"><div class="destaca-icon">🗽</div><div class="destaca-title">Orientación en Nueva York</div><div class="destaca-desc">4 días y 3 noches incluidos en el precio, antes de comenzar el programa.</div></div>
+    <div class="destaca-item"><div class="destaca-icon">📘</div><div class="destaca-title">Clases Cambridge incluidas</div><div class="destaca-desc">30 horas de clases online con profesor en vivo, más el libro.</div></div>
+    <div class="destaca-item"><div class="destaca-icon">🛂</div><div class="destaca-title">Visado J1 completo</div><div class="destaca-desc">Tasa SEVIS, tramitación del visado y cita en la embajada incluidos. La familia solo tiene que presentarse.</div></div>
+    <div class="destaca-item"><div class="destaca-icon">💬</div><div class="destaca-title">Apoyo emocional y psicológico</div><div class="destaca-desc">Disponible para el estudiante durante todo el programa si lo necesita.</div></div>
+    <div class="destaca-item"><div class="destaca-icon">📜</div><div class="destaca-title">Legalización de notas en EE.UU.</div><div class="destaca-desc">Recogida de transcripts, firma de notario y Apostilla de La Haya.</div></div>
+    <div class="destaca-item"><div class="destaca-icon">📑</div><div class="destaca-title">Convalidación en España incluida</div><div class="destaca-desc">Nos encargamos del expediente completo y del pago de tasas ante el Ministerio de Educación.</div></div>
+    <div class="destaca-item"><div class="destaca-icon">🛡</div><div class="destaca-title">Plaza garantizada</div><div class="destaca-desc">Público, privado o privado con boarding. Si hay sobrecoste de matriculación, lo asume MLQ.</div></div>
+  </div>
+
+  <!-- ============ 9. EL PROGRAMA INCLUYE ============ -->
+  <div class="section-title"><h2>El programa incluye</h2></div>
+  <div class="includes-wrap">
+    <div class="includes-head"><h3>📋 Todo lo que cubre My Language Quest · Programa J1</h3></div>
+    <div class="includes-body">
+      <div class="includes-grid">
+        <div>
+          <div class="col-title">Antes del viaje</div>
+          <ul class="inc-list">
+            <li>Reunión inicial con padres o tutores</li>
+            <li>Examen ELTIS y entrevista personal online</li>
+            <li>Información completa sobre el programa J1</li>
+            <li>Inscripción y matriculación en el centro que asigne el sponsor</li>
+            <li>Selección de familia anfitriona voluntaria en pensión completa</li>
+            <li>Seguro médico y de accidentes</li>
+            <li>Tasas y tramitación del visado J1, y cita en la Embajada</li>
+            <li>Programa formativo y de orientación para el estudiante<small>Obligatorio</small></li>
+            <li>Programa formativo y de orientación para los padres<small>No obligatorio</small></li>
+            <li>Orientación pre-viaje en Madrid</li>
+            <li>Pack sorpresa de My Language Quest</li>
+          </ul>
+        </div>
+        <div>
+          <div class="col-title">Durante el viaje</div>
+          <ul class="inc-list">
+            <li>Orientación en Nueva York<small>4 días y 3 noches. Solo año escolar completo</small></li>
+            <li>Recibimiento en aeropuerto y traslados al inicio y fin del programa</li>
+            <li>Asesoramiento en elección de asignaturas</li>
+            <li>Libros de las asignaturas obligatorias</li>
+            <li>Transporte escolar</li>
+            <li>Clases de inglés Cambridge y su libro</li>
+            <li>Supervisión local del sponsor: visitas, tutorías y emergencias 24 h</li>
+            <li>Reportes periódicos del gestor estudiantil</li>
+            <li>Acompañamiento psicológico</li>
+            <li>Atención 24 h en España para emergencias</li>
+            <li>Gestión individualizada de los viajes del estudiante</li>
+          </ul>
+        </div>
+        <div>
+          <div class="col-title">Después del viaje</div>
+          <ul class="inc-list">
+            <li>Recogida de los transcripts finales</li>
+            <li>Coordinación con el centro escolar y notario público</li>
+            <li>Apostilla de La Haya de las calificaciones</li>
+            <li>Presentación y seguimiento del expediente ante el Ministerio de Educación</li>
+            <li>Dossier final detallando la experiencia</li>
+          </ul>
+          <div class="col-title" style="margin-top:24px;">No incluido</div>
+          <ul class="inc-list no">
+            <li>Vuelos<small>MLQ gestiona la búsqueda, coste a cargo de la familia</small></li>
+            <li>Cuotas deportivas, equipación y otros gastos específicos del equipo<small>Cuando el colegio los aplique</small></li>
+            <li>Actividades extracurriculares de pago</li>
+            <li>Excursiones y viajes escolares</li>
+            <li>Material escolar adicional</li>
+            <li>Fotografía escolar y anuario</li>
+            <li>Transporte local mensual</li>
+            <li>Todo aquello que no esté especificado expresamente en el apartado &laquo;El programa incluye&raquo;</li>
+          </ul>
+        </div>
+      </div>
+      <div class="gestor-wrap">
+        <div class="gestor-title">Gestor estudiantil · se encarga de</div>
+        <div class="gestor-grid">
+          <div class="gestor-item">Seguimiento personalizado del desempeño</div>
+          <div class="gestor-item">Información a padres mensualmente</div>
+          <div class="gestor-item">Notas oficiales cada trimestre</div>
+          <div class="gestor-item">Asesoría en cambio de asignaturas</div>
+          <div class="gestor-item">Todas las tutorías necesarias</div>
+          <div class="gestor-item">Reuniones con padres y/o estudiante</div>
+          <div class="gestor-item">Apoyo en actividades extraescolares</div>
+          <div class="gestor-item">Resolución de situaciones con familia o centro</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ============ 10. PRECIO Y FORMAS DE PAGO ============ -->
+  <div class="section-title"><h2>Precio y formas de pago</h2></div>
+  <div class="precio-hero">
+    <div>
+      <div class="precio-hero-num">13.900 €</div>
+      <div class="precio-hero-sub">Año escolar completo</div>
+    </div>
+    <div class="precio-hero-txt">
+      Precio cerrado del programa J1 para el curso 2027/28. Incluye <strong>matrícula, familia anfitriona en
+      pensión completa, seguro médico, visado J1 con tasa SEVIS, orientación en Nueva York, clases Cambridge,
+      transporte escolar y la convalidación completa en España</strong>. Los vuelos internacionales no están
+      incluidos: MLQ gestiona la búsqueda y el coste corre a cargo de la familia.
+    </div>
+  </div>
+
+  <div class="payment-wrap" style="margin-top:20px;">
+    <div class="payment-inner">
+      <div class="pay-title">💳 Condiciones económicas</div>
+      <div class="pay-subtitle">Dos vías: pago directo o financiación. El importe de la reserva cambia según cuál elijáis.</div>
+
+      <div class="pay-route">
+        <div class="pay-route-head"><span class="pay-route-icon">🏦</span><span class="pay-route-title">Opción A · Pago sin financiación</span></div>
+        <div class="pay-route-sub">El importe íntegro debe estar abonado como máximo el 1 de marzo de 2027.</div>
+        <div class="pay-entrada">
+          <div class="pay-entrada-num">3.500 €</div>
+          <div class="pay-entrada-txt"><strong>Reserva y firma de contrato</strong>, antes del 1 de septiembre de 2026. Activa la solicitud ante el sponsor americano.</div>
+        </div>
+        <div class="pay-cols">
+          <div class="pay-col">
+            <div class="pay-col-title">Paso 2 · Resto del programa</div>
+            <div class="pay-step"><div class="pay-step-title">10.400 €</div><div class="pay-step-desc">Como máximo el 1 de marzo de 2027</div></div>
+          </div>
+          <div class="pay-col">
+            <div class="pay-col-title">Seguro de anulación</div>
+            <div class="pay-step"><div class="pay-step-title">350 € · opcional</div><div class="pay-step-desc">A abonar en el momento de la firma</div></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="pay-route">
+        <div class="pay-route-head"><span class="pay-route-icon">📆</span><span class="pay-route-title">Opción B · Con financiación Banco Sabadell</span></div>
+        <div class="pay-route-sub">Si se financia el programa, la entrada es siempre de 5.000 € y el resto se financia en cuotas mensuales.</div>
+        <div class="pay-entrada">
+          <div class="pay-entrada-num">5.000 €</div>
+          <div class="pay-entrada-txt"><strong>Entrada fija a la firma del contrato</strong> en todos los casos de financiación. El capital restante se financia en 12, 18, 24 o 36 meses.</div>
+        </div>
+        <div class="pay-cols">
+          <div class="pay-col">
+            <div class="pay-col-title">Capital financiado</div>
+            <div class="pay-step"><div class="pay-step-title">13.900 € − 5.000 € = 8.900 €</div><div class="pay-step-desc">Calculad vuestra cuota exacta en el simulador de la sección siguiente.</div></div>
+          </div>
+          <div class="pay-col">
+            <div class="pay-col-title">Condiciones</div>
+            <div class="pay-step"><div class="pay-step-title">12 meses · TIN 0 %</div><div class="pay-step-desc">MLQ asume los intereses</div></div>
+            <div class="pay-step"><div class="pay-step-title">18 / 24 / 36 meses · TIN 10,46 %</div><div class="pay-step-desc">Intereses a cargo del cliente</div></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="pay-note">El seguro de anulación e interrupción es opcional, cuesta 350 € y debe contratarse y abonarse en el momento de la firma del contrato. Su importe no es reembolsable bajo ninguna circunstancia. Las inscripciones tardías deben cumplir con los plazos de pago ya pasados en el momento de la inscripción.</div>
+    </div>
+  </div>
+
+  <!-- ============ 11. FINANCIACIÓN ============ -->
+  <div class="section-title"><h2>Financia tu programa</h2></div>
+  <div class="financing-wrap">
+    <div class="financing-head">
+      <div class="financing-head-left">
+        <div class="fin-icon">💳</div>
+        <div>
+          <div class="fin-title">Paga a tu ritmo, sin preocupaciones</div>
+          <div class="fin-sub">Entrada fija de 5.000 € · Aprobación rápida · 100 % online · Sin comisión de apertura</div>
+        </div>
+      </div>
+      <div class="fin-badge">Hasta 36 meses</div>
+    </div>
+    <div class="financing-body">
+      <div class="fin-entrada-fija">
+        <div class="fin-entrada-fija-num">5.000 €</div>
+        <div class="fin-entrada-fija-txt"><strong>Entrada a la firma del contrato.</strong> Se descuenta del precio del programa; el resto es el capital que se financia: 8.900 €.</div>
+      </div>
+
+      <div class="fin-plazo-wrap">
+        <div class="fin-plazo-label">Elegid vuestro plazo de financiación</div>
+        <div class="fin-plazos" id="finPlazos">
+          <button class="fin-plazo active" data-meses="12" data-tin="0"><div class="fin-plazo-meses">12 meses</div><div class="fin-plazo-badge sin-intereses">TIN 0%</div><div class="fin-plazo-quien">¡MLQ asume los intereses!</div></button>
+          <button class="fin-plazo" data-meses="18" data-tin="10.46"><div class="fin-plazo-meses">18 meses</div><div class="fin-plazo-badge con-intereses">TIN 10,46%</div><div class="fin-plazo-quien">Intereses a cargo del cliente</div></button>
+          <button class="fin-plazo" data-meses="24" data-tin="10.46"><div class="fin-plazo-meses">24 meses</div><div class="fin-plazo-badge con-intereses">TIN 10,46%</div><div class="fin-plazo-quien">Intereses a cargo del cliente</div></button>
+          <button class="fin-plazo" data-meses="36" data-tin="10.46"><div class="fin-plazo-meses">36 meses</div><div class="fin-plazo-badge con-intereses">TIN 10,46%</div><div class="fin-plazo-quien">Intereses a cargo del cliente</div></button>
+        </div>
+      </div>
+
+      <div class="fin-resultado">
+        <div class="fin-resultado-main">
+          <div class="fin-cuota-label">Cuota mensual estimada</div>
+          <div class="fin-cuota-valor" id="cuotaValor">—</div>
+          <div class="fin-cuota-sub" id="cuotaSub">—</div>
+        </div>
+        <div class="fin-resultado-detalle">
+          <div class="fin-det-row"><span class="fin-det-label">Importe del programa</span><span class="fin-det-val" id="detPrecio">—</span></div>
+          <div class="fin-det-row"><span class="fin-det-label">Entrada a la firma</span><span class="fin-det-val" id="detEntrada">—</span></div>
+          <div class="fin-det-row"><span class="fin-det-label">Capital financiado</span><span class="fin-det-val" id="detCapital">—</span></div>
+          <div class="fin-det-row"><span class="fin-det-label">Intereses totales</span><span class="fin-det-val" id="detIntereses">—</span></div>
+          <div class="fin-det-row fin-det-total"><span class="fin-det-label">Total a pagar</span><span class="fin-det-val" id="detTotal">—</span></div>
+        </div>
+      </div>
+
+      <div class="fin-nota">ℹ️ Financiación sujeta a aprobación bancaria. La entrada de 5.000 € se abona a la firma del contrato y no se financia. Cuota orientativa calculada sobre el capital financiado. Sin comisión de apertura ni penalización por cancelación anticipada.</div>
+    </div>
+  </div>
+
+  <!-- ============ 12. CONDICIONES PARTICULARES ============ -->
+  <div class="section-title"><h2>Condiciones particulares del J1</h2></div>
+  <p class="intro-text">Aspectos importantes que conviene entender antes de inscribirse. El J1 es un programa oficial con reglas propias que no dependen de MLQ.</p>
+  <div class="cond-list">
+    <div class="cond-item"><div class="cond-num">1</div><div>El programa se desarrolla habitualmente en <strong>pequeñas localidades rurales</strong> de Estados Unidos, sin posibilidad de selección de familia ni destino. Es posible que en el mismo domicilio resida otro estudiante de distinta lengua materna.</div></div>
+    <div class="cond-item"><div class="cond-num">2</div><div>El estudiante debe permanecer en el destino durante todo el programa. Las <strong>visitas de familiares no deben programarse antes del 15 de abril</strong>, y deben coordinarse previamente con la familia anfitriona y contar con su aprobación.</div></div>
+    <div class="cond-item"><div class="cond-num">3</div><div>La selección de asignaturas se realiza según las preferencias del estudiante y los requisitos de convalidación, siempre supeditada a la oferta, el espacio en los grupos y la organización de horarios del centro americano.</div></div>
+    <div class="cond-item"><div class="cond-num">4</div><div>El destino y la familia <strong>pueden conocerse hasta el 31 de agosto</strong>. Una vez asignados, el estudiante debe contactar con la familia por email o teléfono en un plazo máximo de 24-72 horas.</div></div>
+  </div>
+  <div class="cond-alert">⚠️ <strong>Importante:</strong> la falta de comunicación, o una comunicación inadecuada en forma o frecuencia con la familia anfitriona asignada, puede suponer el rechazo de la familia, una penalización de 1.000 € o incluso la expulsión del programa.</div>
+
+  <!-- ============ 13. GARANTÍA DE PLAZA ============ -->
+  <div class="section-title"><h2>Garantía de plaza</h2></div>
+  <div class="garantia-wrap">
+    <div class="garantia-inner">
+      <div class="garantia-title">🛡 La plaza está garantizada</div>
+      <div class="garantia-text">
+        La asignación la realiza el sponsor americano y suele comenzar en mayo, pudiendo prolongarse hasta el
+        31 de agosto. La espera puede hacerse larga, pero el resultado no está en duda:
+        <strong>My Language Quest garantiza la plaza del estudiante</strong>. Si no hubiera disponibilidad en
+        un colegio público, se ubica en un centro privado, incluso en régimen de boarding, y
+        <strong>MLQ asume la diferencia de matriculación</strong>. La familia no paga más de lo firmado.
+      </div>
+      <div class="garantia-opts">
+        <div class="garantia-opt"><strong>Colegio público</strong><br>Vía habitual del programa J1, con familia anfitriona voluntaria.</div>
+        <div class="garantia-opt"><strong>Colegio privado</strong><br>Alternativa si no hay disponibilidad pública en el momento de la asignación.</div>
+        <div class="garantia-opt"><strong>Privado con boarding</strong><br>Última alternativa, en régimen de internado, si fuera la única vía disponible.</div>
+      </div>
+      <div class="garantia-nota">El sobrecoste de matriculación de las alternativas privadas corre a cargo de My Language Quest. El precio del programa firmado por la familia no varía en ningún caso.</div>
+    </div>
+  </div>
+
+  <!-- ============ 14. SIGUIENTES PASOS ============ -->
+  <div class="section-title"><h2>Siguientes pasos</h2></div>
+  <div class="steps-wrap">
+    <div class="steps-inner">
+      <div class="steps-title">¿Cómo seguimos?</div>
+      <div class="steps-sub">Del sí a la salida hacia Estados Unidos, paso a paso</div>
+      <div class="steps-list">
+        <div class="step-item"><div class="step-num">1</div><div class="step-title">Entrevista</div><div class="step-desc">Reunión con los padres y entrevista personal con Izan para conocerle y resolver dudas.</div></div>
+        <div class="step-item"><div class="step-num">2</div><div class="step-title">Firma y reserva</div><div class="step-desc">Firma del contrato y pago de reserva. Cuanto antes se firme, más margen para la asignación.</div></div>
+        <div class="step-item"><div class="step-num">3</div><div class="step-title">Solicitud y documentación</div><div class="step-desc">Rellenamos juntos la aplicación y recopilamos toda la documentación que pide el sponsor.</div></div>
+        <div class="step-item"><div class="step-num">4</div><div class="step-title">Visado y formación</div><div class="step-desc">Tramitamos el visado J1 y la cita en la Embajada, más los cursos formativos.</div></div>
+        <div class="step-item"><div class="step-num">5</div><div class="step-title">Destino y salida</div><div class="step-desc">El sponsor asigna familia y colegio. Salida hacia Nueva York.</div></div>
+      </div>
+      <div class="cta-line">¿Dudas sobre el programa o los requisitos? Vuestra asesora las resuelve con vosotros.</div>
+      <div class="pasos-cta-wrap">
+        <a class="pasos-cta" href="https://form.jotform.com/262422713899062" target="_blank" rel="noopener">📝 Hacer la prueba inicial de inglés</a>
+        <a class="pasos-cta pasos-cta-alt" href="https://asesoramientosmlq.zohobookings.eu/mylanguagequest" target="_blank" rel="noopener">📅 Agendar llamada con mi asesora</a>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<!-- ============ 15. FOOTER ============ -->
+<div class="footer">
+  <div class="footer-logo">MY LANGUAGE QUEST</div>
+  <div class="footer-tag">Explore · Learn · Grow</div>
+  <div class="footer-meta">
+    Propuesta personalizada para Izan García · Programa J1 · Curso 2027/28<br>
+    La asignación de destino, colegio y familia anfitriona es competencia exclusiva del sponsor americano.
+  </div>
+</div>
+
+<script>
+(function(){
+  var PRECIO=13900, ENTRADA=5000, meses=12, tin=0;
+  function grp(s){return s.replace(/\B(?=(\d{3})+(?!\d))/g,'.');}
+  function fmt(n){var p=Math.abs(n).toFixed(2).split('.');return (n<0?'−':'')+grp(p[0])+','+p[1]+' €';}
+  function fmt0(n){return (n<0?'−':'')+grp(Math.abs(Math.round(n)).toString())+' €';}
+  function calc(){
+    var capital=Math.max(PRECIO-ENTRADA,0), cuota, total;
+    if(tin===0){ cuota=capital/meses; total=capital; }
+    else{ var i=tin/100/12; cuota=capital*i/(1-Math.pow(1+i,-meses)); total=cuota*meses; }
+    var intereses=total-capital;
+    document.getElementById('cuotaValor').textContent=fmt(cuota);
+    document.getElementById('cuotaSub').textContent='/mes · '+meses+' pagos · TIN '+(tin===0?'0 %':'10,46 %');
+    document.getElementById('detPrecio').textContent=fmt0(PRECIO);
+    document.getElementById('detEntrada').textContent='−'+fmt0(ENTRADA);
+    document.getElementById('detCapital').textContent=fmt0(capital);
+    var ei=document.getElementById('detIntereses');
+    if(tin===0){ ei.textContent='0 € · ¡MLQ los asume!'; ei.classList.add('fin-det-green'); }
+    else{ ei.textContent=fmt(intereses); ei.classList.remove('fin-det-green'); }
+    document.getElementById('detTotal').textContent=fmt(ENTRADA+total);
+  }
+  document.querySelectorAll('#finPlazos .fin-plazo').forEach(function(b){
+    b.addEventListener('click',function(){
+      document.querySelectorAll('#finPlazos .fin-plazo').forEach(function(x){x.classList.remove('active');});
+      b.classList.add('active'); meses=parseInt(b.dataset.meses); tin=parseFloat(b.dataset.tin); calc();
+    });
+  });
+  calc();
+})();
+</script>
+
+<script>
+(function(){
+  var d=document, root=d.documentElement;
+  if(!('IntersectionObserver' in window)){root.className=root.className.replace(' js-anim','');return;}
+  var bar=d.createElement('div'); bar.className='progress-bar'; d.body.appendChild(bar);
+  var ticking=false;
+  function progress(){
+    var h=d.documentElement.scrollHeight-window.innerHeight;
+    bar.style.transform='scaleX('+(h>0?Math.min(window.scrollY/h,1):0)+')';
+    ticking=false;
+  }
+  window.addEventListener('scroll',function(){if(!ticking){ticking=true;requestAnimationFrame(progress);}},{passive:true});
+  progress();
+  Array.prototype.forEach.call(d.querySelectorAll('.hero-pill'),function(el,i){el.style.animationDelay=(0.36+i*0.06)+'s';});
+  var groups=[['.section-title','reveal'],['.intro-text','reveal'],['.intro-point','reveal'],['.perfil-card','reveal'],
+    ['.info-block','reveal'],['.qs-hero','reveal-zoom'],['.ny-wrap','reveal-zoom'],['.destaca-item','reveal'],
+    ['.includes-wrap','reveal-zoom'],['.precio-hero','reveal-zoom'],['.payment-wrap','reveal-zoom'],
+    ['.financing-wrap','reveal-zoom'],['.cond-item','reveal'],['.cond-alert','reveal'],['.garantia-wrap','reveal-zoom'],['.steps-wrap','reveal-zoom']];
+  groups.forEach(function(g){
+    Array.prototype.forEach.call(d.querySelectorAll(g[0]),function(el,i){
+      el.classList.add(g[1]); el.style.transitionDelay=Math.min(i*0.09,0.36)+'s';
+    });
+  });
+  var io=new IntersectionObserver(function(entries){
+    entries.forEach(function(e){ if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);} });
+  },{threshold:0.1,rootMargin:'0px 0px -6% 0px'});
+  Array.prototype.forEach.call(d.querySelectorAll('.reveal,.reveal-zoom'),function(el){io.observe(el);});
+  var cuota=d.getElementById('cuotaValor');
+  if(cuota&&'MutationObserver' in window){
+    new MutationObserver(function(){ cuota.classList.remove('pop'); void cuota.offsetWidth; cuota.classList.add('pop'); }).observe(cuota,{childList:true,characterData:true,subtree:true});
+  }
+})();
+</script>
+</body>
+</html>
