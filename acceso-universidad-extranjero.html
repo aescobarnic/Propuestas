@@ -113,7 +113,18 @@ details.faq .faq-body{padding:0 18px 16px;font-size:12px;color:var(--text-mid);l
   .main{padding:28px 16px 48px;}.gestor-grid{grid-template-columns:repeat(2,1fr);}
   .dur-grid{grid-template-columns:1fr;}.includes-body{padding:22px 20px;}
 }
+
+.nota-flow{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin:16px 0 0;}
+.nota-box{background:rgba(255,255,255,0.08);border:1px solid rgba(255,255,255,0.14);border-radius:10px;padding:14px 16px;}
+.nota-pct{font-family:'Josefin Sans',sans-serif;font-size:26px;font-weight:700;color:#7dd44a;line-height:1;margin-bottom:6px;}
+.nota-lbl{font-size:11px;color:rgba(255,255,255,0.85);line-height:1.5;}
+.pill-row{display:flex;flex-wrap:wrap;gap:6px;margin-top:10px;}
+.pill{background:var(--blue-light);color:var(--blue);border-radius:20px;padding:3px 11px;font-size:10px;font-weight:600;}
+.pill.g{background:var(--green-light);color:var(--green-dark);}
+.pill.r{background:var(--red-light);color:var(--red-dark);}
+@media(max-width:720px){.nota-flow{grid-template-columns:1fr;}}
 </style>
+</head>
 <body>
 
 <header class="header">
@@ -130,7 +141,7 @@ details.faq .faq-body{padding:0 18px 16px;font-size:12px;color:var(--text-mid);l
     <div>
       <div class="hero-tag">Documento informativo</div>
       <div class="hero-name">Cómo funciona el acceso a la universidad<br>después de estudiar en el extranjero</div>
-      <div class="hero-subtitle">Homologación del Bachillerato, acreditación UNEDasiss y Pruebas de Competencias Específicas (PCE). Qué trámites existen, cuándo se hacen, cuánto cuestan y en qué casos son necesarios.</div>
+      <div class="hero-subtitle">Homologación del Bachillerato, acreditación UNEDasiss y Pruebas de Competencias Específicas (PCE). Qué trámites existen, cuándo son obligatorios, cómo se calcula la nota de acceso y cuánto cuesta cada paso.</div>
       <div class="hero-pills">
         <div class="hero-pill">&#127470;&#127466; Irlanda</div>
         <div class="hero-pill">&#127464;&#127462; Canadá</div>
@@ -145,7 +156,7 @@ details.faq .faq-body{padding:0 18px 16px;font-size:12px;color:var(--text-mid);l
 
   <div class="alert-box">
     <div class="alert-icon">&#128161;</div>
-    <div class="alert-text"><strong>La pregunta corta primero:</strong> estudiar un curso fuera de España no complica el acceso a la universidad. En la mayoría de los casos el estudiante vuelve, se incorpora a su curso en España y hace la PAU con normalidad. Solo cuando el curso realizado fuera es el <strong>último de Bachillerato</strong> cambia la vía de acceso, y es entonces cuando aparecen la homologación y UNEDasiss.</div>
+    <div class="alert-text"><strong>La pregunta corta primero:</strong> estudiar un curso fuera de España no complica el acceso a la universidad. En la mayoría de los casos el estudiante vuelve, se incorpora a su curso en España y hace la PAU con normalidad. Solo cuando el curso realizado fuera es el <strong>último de Bachillerato</strong> cambia la vía de acceso, y es entonces cuando aparecen la homologación, UNEDasiss y, si va a universidad pública, las PCE.</div>
   </div>
 
   <div class="section-title"><h2>Todo depende de qué curso se estudie fuera</h2></div>
@@ -164,52 +175,48 @@ details.faq .faq-body{padding:0 18px 16px;font-size:12px;color:var(--text-mid);l
       <ol class="dur-list">
         <li><strong>No hay PAU tradicional</strong><span>Al haber terminado el Bachillerato fuera del sistema español, el acceso no se hace por la vía de la selectividad ordinaria.</span></li>
         <li><strong>Homologación del Bachillerato</strong><span>Reconocimiento oficial en España del título cursado en el extranjero. Incluido en el precio del programa.</span></li>
-        <li><strong>Acreditación UNEDasiss</strong><span>Documento que las universidades usan para calcular la nota de acceso. Puede requerir PCE según el grado y la universidad.</span></li>
+        <li><strong>Acreditación UNEDasiss, con o sin PCE</strong><span>Documento que las universidades usan para calcular la nota de acceso. Si el destino es una universidad pública, incluye obligatoriamente las PCE.</span></li>
       </ol>
       <div class="dur-note">Es una ruta perfectamente transitada y con calendario propio. La clave es <strong>planificarla desde el primer día del programa</strong>, no al volver.</div>
     </div>
   </div>
 
-  <div class="section-title"><h2>Los dos trámites de acceso</h2></div>
+  <div class="section-title"><h2>La pregunta que lo decide todo: pública o privada</h2></div>
   <div class="includes-wrap">
-    <div class="includes-head"><h3>&#127891; Qué hay que hacer al terminar 2.&ordm; de Bachillerato fuera</h3></div>
+    <div class="includes-head"><h3>&#127979; De esto depende si hay que hacer las PCE o no</h3></div>
     <div class="includes-body">
-      <p class="vv-lead">El acceso a la universidad española desde un Bachillerato extranjero se gestiona mediante dos trámites independientes que conviven en el mismo calendario. Uno reconoce el título; el otro calcula la nota.</p>
+      <p class="vv-lead">Antes de hablar de asignaturas, fechas o costes hay una única pregunta que ordena todo lo demás: <strong>&iquest;a qué tipo de universidad quiere ir el estudiante?</strong> La respuesta cambia por completo el proceso.</p>
       <div class="uni-grid">
         <div class="uni-card destacada">
-          <div class="uni-tag">Incluido en el programa</div>
-          <div class="uni-title">&#127466;&#127480; Trámite 1 &middot; Homologación del Bachillerato</div>
+          <div class="uni-tag">Obligatorio</div>
+          <div class="uni-title">&#127963; Universidad pública</div>
           <div class="uni-step">
-            <div class="uni-step-num">Qué es</div>
-            <div class="uni-step-title">Reconocimiento oficial del título</div>
-            <div class="uni-step-txt">Es el documento por el que el Ministerio de Educación reconoce en España el Bachillerato cursado en el extranjero. Sin él, el título extranjero no tiene efectos académicos en España.</div>
+            <div class="uni-step-num">Regla</div>
+            <div class="uni-step-title">Las PCE son siempre obligatorias</div>
+            <div class="uni-step-txt">Para acceder a una universidad pública española con un Bachillerato extranjero <strong>hay que hacer las PCE, sin excepción</strong>. La única salvedad son los estudiantes que proceden de sistemas educativos de la Unión Europea. Un Bachillerato cursado en Canadá o en Estados Unidos, por tanto, sí exige PCE.</div>
           </div>
           <div class="uni-step">
-            <div class="uni-step-num">Cómo se gestiona</div>
-            <div class="uni-step-title">Lo hacemos nosotros, de principio a fin</div>
-            <div class="uni-step-txt"><strong>My Language Quest lo gestiona íntegramente y está incluido en el precio del programa</strong>: documentación, solicitud, pago de tasas, seguimiento y entrega final. Lo trabajamos en colaboración con CES Numen.</div>
+            <div class="uni-step-num">Requisito adicional en algunas comunidades</div>
+            <div class="uni-step-title">Obtener modalidad</div>
+            <div class="uni-step-txt">En la Comunidad de Madrid, además de examinarse, el estudiante debe <strong>obtener modalidad</strong>, lo que se consigue aprobando inglés, matemáticas y una de las dos asignaturas de opción.</div>
           </div>
         </div>
         <div class="uni-card">
-          <div class="uni-tag alt">Coste aparte</div>
-          <div class="uni-title">&#128221; Trámite 2 &middot; Acreditación UNEDasiss</div>
+          <div class="uni-tag alt">Depende de cada centro</div>
+          <div class="uni-title">&#127970; Universidad privada</div>
           <div class="uni-step">
-            <div class="uni-step-num">Qué es</div>
-            <div class="uni-step-title">El documento que fija la nota de acceso</div>
-            <div class="uni-step-txt">Es la acreditación que las universidades españolas utilizan para calcular la nota con la que el estudiante compite por plaza. Se solicita a la UNED y cada universidad decide qué modalidad de acreditación admite.</div>
+            <div class="uni-step-num">Regla</div>
+            <div class="uni-step-title">Las PCE son opcionales</div>
+            <div class="uni-step-txt">En las universidades privadas las PCE <strong>no son un requisito general</strong>. Cada universidad decide si las pide o no, y <strong>la mayoría no las exige</strong>. Muchas aplican su propio proceso de admisión.</div>
           </div>
           <div class="uni-step">
-            <div class="uni-step-num">Qué incluye</div>
-            <div class="uni-step-title">Expediente y, si procede, PCE</div>
-            <div class="uni-step-txt">Puede incluir solo la nota media del expediente extranjero o, si la universidad lo exige, también las <strong>Pruebas de Competencias Específicas (PCE)</strong>. Depende del grado y de las asignaturas cursadas fuera, por lo que se revisa caso por caso.</div>
+            <div class="uni-step-num">Qué hacer</div>
+            <div class="uni-step-title">Preguntar directamente al centro</div>
+            <div class="uni-step-txt">Si el estudiante tiene claro que quiere una universidad privada concreta, el paso correcto es <strong>consultar a esa universidad si pide PCE</strong> antes de matricularse en nada. Es una llamada que puede ahorrar meses de preparación y varios cientos de euros.</div>
           </div>
         </div>
       </div>
-
-      <div class="alert-box" style="margin:24px 0 0">
-        <div class="alert-icon">&#129513;</div>
-        <div class="alert-text"><strong>No hace falta tener decidida la carrera desde el principio.</strong> Lo importante durante el curso es mantener abiertas las opciones, eligiendo asignaturas en destino que no cierren puertas. Cuando el grado y la universidad estén claros, se concreta si hacen falta PCE, de qué asignaturas y en qué convocatoria.</div>
-      </div>
+      <div class="seg-nota">Si aún no está decidido el tipo de universidad, la recomendación es preparar el escenario más exigente: planificar como si fuera a pública y ajustar después. Renunciar a las PCE y cambiar de idea más tarde sí cierra puertas ese año.</div>
     </div>
   </div>
 
@@ -217,110 +224,182 @@ details.faq .faq-body{padding:0 18px 16px;font-size:12px;color:var(--text-mid);l
   <div class="includes-wrap">
     <div class="includes-head"><h3>&#128218; Pruebas de Competencias Específicas</h3></div>
     <div class="includes-body">
-      <p class="vv-lead">Las PCE son exámenes por asignatura que organiza la UNED y que permiten subir la nota de acceso o cumplir requisitos concretos de admisión. <strong>No son obligatorias por defecto:</strong> dependen del grado universitario elegido, de la universidad y de las asignaturas cursadas en el extranjero.</p>
+      <p class="vv-lead">Las PCE son exámenes por asignatura que organiza la UNED. Su particularidad es que <strong>no son iguales para todos</strong>: ni el número de asignaturas ni cuáles son están fijados de antemano. Dependen de dos variables.</p>
 
-      <div class="uni-grid" style="margin-bottom:22px">
-        <div class="uni-card">
-          <div class="uni-title">&#10067; Cuándo SÍ hacen falta</div>
-          <ul class="inc-list">
-            <li>El grado tiene nota de corte alta y hay que competir por décimas</li>
-            <li>La universidad exige acreditación con PCE para admitir al estudiante</li>
-            <li>El grado requiere materias específicas que ponderan (Matemáticas II, Física, Química, Biología)</li>
-            <li>Las asignaturas cursadas fuera no cubren el perfil de la rama de conocimiento</li>
-          </ul>
+      <div class="dur-grid" style="margin-bottom:22px">
+        <div class="dur-card">
+          <div class="dur-title">&#128205; Variable 1 &middot; La comunidad autónoma</div>
+          <p class="vv-lead" style="margin-bottom:12px">Determina <strong>cuántas asignaturas</strong> hay que preparar. Y ojo con esto, porque es el error más repetido: <strong>no cuenta dónde vive el estudiante, sino dónde quiere estudiar</strong>.</p>
+          <table class="seg-table">
+            <thead><tr><th>Comunidad de destino</th><th>Asignaturas</th></tr></thead>
+            <tbody>
+              <tr><td>Comunidad Valenciana</td><td>4</td></tr>
+              <tr><td>Cataluña</td><td>6</td></tr>
+              <tr><td>Andalucía</td><td>6</td></tr>
+              <tr class="hl"><td>Resto de comunidades</td><td>Varía</td></tr>
+            </tbody>
+          </table>
+          <div class="dur-note">Cada comunidad fija sus propias condiciones. Antes de empezar a preparar nada hay que confirmar la comunidad de destino.</div>
         </div>
-        <div class="uni-card destacada">
-          <div class="uni-title">&#128077; Cuándo NO hacen falta</div>
+        <div class="dur-card">
+          <div class="dur-title">&#127891; Variable 2 &middot; La carrera</div>
+          <p class="vv-lead" style="margin-bottom:12px">Determina <strong>qué asignaturas concretas</strong> hay que preparar. La lógica es siempre la misma: unas materias troncales más dos de opción, elegidas entre las que <strong>más ponderan</strong> en el grado al que se aspira.</p>
+          <div class="col-title" style="margin-top:16px">Ejemplo: Ingeniería en la Comunidad de Madrid</div>
           <ul class="inc-list">
-            <li>La universidad admite acreditación solo con nota de expediente</li>
-            <li>El grado tiene nota de corte accesible con la media del expediente</li>
-            <li>El estudiante se decanta finalmente por una universidad privada con proceso propio</li>
-            <li>El estudiante continúa sus estudios superiores en el extranjero</li>
+            <li><strong>Inglés</strong> y <strong>Matemáticas</strong> como base</li>
+            <li>Dos asignaturas de opción, según la ingeniería elegida</li>
           </ul>
+          <div class="pill-row">
+            <span class="pill">Biología</span><span class="pill">Física</span><span class="pill">Dibujo técnico</span><span class="pill">Química</span>
+          </div>
+          <div class="dur-note">La elección de las dos de opción no es libre: se consulta la <strong>tabla de ponderaciones</strong> de la comunidad de destino, se localiza el grado y se eligen las que más puntúan en él.</div>
         </div>
       </div>
 
-      <div class="col-title">Preparación de las PCE, solo si fueran necesarias</div>
-      <p class="vv-lead">Cuando hacen falta, la preparación se realiza con <strong>CES Numen</strong>, centro con más de 40 años de experiencia con estudiantes que vuelven del extranjero y que trabaja en convenio con la UNED. CES Numen se encarga de la preparación, las correcciones, las tutorías y la gestión académica; My Language Quest acompaña, coordina y guía todo el proceso.</p>
-      <div class="pce-grid">
-        <div class="pce-card">
-          <div class="pce-title">&#128197; Cuándo</div>
-          <ul class="inc-list">
-            <li>Curso de preparación: de noviembre a junio</li>
-            <li>Acreditación UNEDasiss: desde febrero</li>
-            <li>Exámenes: finales de mayo en España, principios de junio en Europa y EE. UU., septiembre para plazas sobrantes</li>
-          </ul>
-        </div>
-        <div class="pce-card">
-          <div class="pce-title">&#128187; Cómo</div>
-          <ul class="inc-list">
-            <li>Curso 100% online, con acceso 24/7 al campus virtual</li>
-            <li>9 unidades por asignatura (teoría y práctica) y videoclases grabadas</li>
-            <li>Ejercicios corregidos por profesores</li>
-            <li>Clases online en directo en Matemáticas y Física</li>
-            <li>Soporte continuo por plataforma, foros y correo</li>
-            <li>Informes para las familias en enero y en abril</li>
-          </ul>
-        </div>
-        <div class="pce-card">
-          <div class="pce-title">&#128176; Coste</div>
-          <ul class="inc-list">
-            <li>300 &euro; por asignatura</li>
-            <li>375 &euro; en Matemáticas II, Matemáticas Aplicadas y Física</li>
-            <li>Gestión UNEDasiss: 200 &euro; + tasas (250 a 300 &euro;)</li>
-            <li>Pago único o fraccionado</li>
-          </ul>
-        </div>
-        <div class="pce-card">
-          <div class="pce-title">&#129309; Apoyo adicional de MLQ</div>
-          <ul class="inc-list">
-            <li>Aviso de todas las fechas oficiales y de la documentación necesaria</li>
-            <li>Coordinación con CES Numen para determinar exactamente qué asignaturas se necesitan</li>
-            <li>Si el examen se realiza fuera de España (Lisboa, París, Oporto, Nueva York, Seattle o Vancouver), organizamos toda la logística: vuelos, alojamiento, traslados y supervisión durante los 3 o 4 días de exámenes</li>
-          </ul>
-        </div>
+      <div class="alert-box" style="margin:0">
+        <div class="alert-icon">&#129513;</div>
+        <div class="alert-text"><strong>Con dos datos podemos concretarlo todo.</strong> En cuanto el estudiante nos diga <strong>en qué comunidad autónoma quiere estudiar</strong> y <strong>qué carrera o carreras le interesan</strong>, nuestra responsable de convalidaciones puede indicar exactamente de qué asignaturas debe examinarse. Hasta entonces, cualquier plan de preparación es provisional.</div>
       </div>
-      <div class="seg-nota">Las PCE y la gestión de UNEDasiss son costes ajenos al programa escolar y solo se abonan si finalmente son necesarias. La homologación del Bachillerato, en cambio, sí está incluida en el precio del programa.</div>
     </div>
   </div>
 
-  <div class="section-title"><h2>Calendario orientativo</h2></div>
+  <div class="section-title"><h2>Cómo se calcula la nota de acceso</h2></div>
   <div class="includes-wrap">
-    <div class="includes-head"><h3>&#128198; Cómo se reparte el año</h3></div>
+    <div class="includes-head"><h3>&#128202; De la nota media a la nota de admisión</h3></div>
+    <div class="includes-body">
+      <p class="vv-lead">La nota con la que el estudiante compite por plaza se construye en dos fases. Primero se obtiene una nota sobre 10 y después, en función del grado, puede subir hasta 14.</p>
+
+      <div class="gestor-wrap" style="margin-top:0">
+        <div class="gestor-title">&#49;&#65039;&#8419; Fase 1 &middot; Nota de acceso sobre 10</div>
+        <div class="nota-flow">
+          <div class="nota-box">
+            <div class="nota-pct">60%</div>
+            <div class="nota-lbl">Nota media del Bachillerato, calculada entre <strong>1.&ordm; de Bachillerato en España</strong> y el <strong>curso realizado en el extranjero</strong></div>
+          </div>
+          <div class="nota-box">
+            <div class="nota-pct">40%</div>
+            <div class="nota-lbl">Calificación obtenida en las <strong>PCE</strong></div>
+          </div>
+        </div>
+        <div class="vv-monitor" style="margin-top:14px">La suma de ambas partes da la nota de acceso, <strong style="color:#7dd44a">con un máximo de 10 puntos</strong>.</div>
+      </div>
+
+      <div class="gestor-wrap">
+        <div class="gestor-title">&#50;&#65039;&#8419; Fase 2 &middot; Ponderaciones, hasta 14</div>
+        <div class="vv-monitor" style="margin-bottom:14px">Al presentar la preinscripción, cada universidad aplica sus propias ponderaciones sobre la nota ya obtenida:</div>
+        <div class="gestor-grid">
+          <div class="gestor-item">Se identifican las dos asignaturas de las PCE que más ponderan en ese grado</div>
+          <div class="gestor-item">Cada una de esas dos notas se multiplica por 0,2</div>
+          <div class="gestor-item">El resultado se suma a la nota de acceso sobre 10</div>
+          <div class="gestor-item">La nota de admisión final puede alcanzar los 14 puntos</div>
+        </div>
+        <div class="vv-monitor" style="margin-top:14px">Por eso la elección de las dos asignaturas de opción no es un detalle menor: <strong style="color:#7dd44a">son las que pueden aportar hasta 4 puntos adicionales</strong> en el grado al que se aspira.</div>
+      </div>
+
+      <div class="seg-nota">Cada universidad publica su propia tabla de ponderaciones por grado, y pueden diferir entre centros de la misma comunidad. Al preparar la preinscripción revisamos las tablas de las universidades concretas a las que el estudiante quiere optar.</div>
+    </div>
+  </div>
+
+  <div class="section-title"><h2>Calendario y matriculación</h2></div>
+  <div class="includes-wrap">
+    <div class="includes-head"><h3>&#128198; Los hitos del año, y por qué importan las fechas</h3></div>
     <div class="includes-body">
       <table class="seg-table">
-        <thead><tr><th>Momento</th><th>Qué ocurre</th><th>Quién lo lleva</th></tr></thead>
+        <thead><tr><th>Momento</th><th>Qué ocurre</th></tr></thead>
         <tbody>
-          <tr><td><strong>Antes de salir</strong></td><td>Revisión del expediente, orientación sobre la ruta de acceso y elección preliminar de asignaturas en destino</td><td>MLQ</td></tr>
-          <tr><td><strong>Septiembre a octubre</strong></td><td>Confirmación definitiva de asignaturas en el colegio de destino, evitando combinaciones que dificulten la convalidación</td><td>Student Advisor</td></tr>
-          <tr class="hl"><td><strong>Noviembre</strong></td><td>Arranca el curso de preparación de PCE, si se ha determinado que son necesarias</td><td>CES Numen</td></tr>
-          <tr><td><strong>Enero</strong></td><td>Primer informe de seguimiento para la familia</td><td>CES Numen</td></tr>
-          <tr><td><strong>Febrero</strong></td><td>Se abre la solicitud de acreditación UNEDasiss</td><td>MLQ + CES Numen</td></tr>
-          <tr><td><strong>Abril</strong></td><td>Segundo informe de seguimiento y cierre de logística de exámenes</td><td>CES Numen + MLQ</td></tr>
-          <tr class="hl"><td><strong>Mayo y junio</strong></td><td>Convocatoria ordinaria de PCE. Finales de mayo en España, principios de junio en Europa y EE. UU.</td><td>UNED</td></tr>
-          <tr><td><strong>Junio y julio</strong></td><td>Resolución de la homologación del Bachillerato y solicitud de plaza universitaria</td><td>MLQ</td></tr>
-          <tr><td><strong>Septiembre</strong></td><td>Convocatoria extraordinaria de PCE para plazas sobrantes</td><td>UNED</td></tr>
+          <tr><td><strong>Antes de salir</strong></td><td>Revisión del expediente, orientación sobre la ruta de acceso y elección preliminar de asignaturas en el colegio de destino</td></tr>
+          <tr><td><strong>Septiembre a octubre</strong></td><td>Confirmación definitiva de asignaturas en destino, evitando combinaciones que dificulten la convalidación</td></tr>
+          <tr><td><strong>Enero y febrero</strong></td><td>La UNED comunica la <strong>semana</strong> en la que se celebrarán los exámenes. Todavía no hay días concretos</td></tr>
+          <tr class="hl"><td><strong>Marzo</strong></td><td>Se abre la <strong>matriculación en las PCE</strong>. Es el momento en el que se inicia el trámite con la UNED y en el que se publican los <strong>días definitivos</strong> de examen</td></tr>
+          <tr><td><strong>23 a 25 de mayo (aprox.)</strong></td><td>Convocatoria en España. La mayoría de los estudiantes <strong>aún no han vuelto</strong> del programa, por lo que no suelen poder examinarse aquí</td></tr>
+          <tr class="hl"><td><strong>Principios de junio</strong></td><td>Convocatoria en sedes del extranjero. La última edición se celebró del <strong>8 al 13 de junio</strong>. Son <strong>3 o 4 días de examen</strong></td></tr>
+          <tr><td><strong>Junio y julio</strong></td><td>Resolución de la homologación del Bachillerato y preinscripción universitaria</td></tr>
         </tbody>
       </table>
-      <div class="seg-nota">Las fechas oficiales las publica cada año la UNED y pueden variar ligeramente. Avisamos a la familia de cada hito con antelación suficiente.</div>
+
+      <div class="alert-box" style="margin:24px 0 0">
+        <div class="alert-icon">&#9888;</div>
+        <div class="alert-text"><strong>El punto crítico: cuándo acaba el colegio.</strong> Como la convocatoria española cae a finales de mayo, lo habitual es examinarse en una sede del extranjero a principios de junio. Eso obliga a comprobar la fecha de fin de curso del colegio de destino y a organizar un desplazamiento de 3 o 4 días. <strong>En el caso de los estudiantes con visado J1 en Estados Unidos, la normativa del programa no les permite viajar solos por el país</strong>, por lo que la fecha de finalización del colegio y la logística del examen deben planificarse con especial cuidado.</div>
+      </div>
+
+      <div class="col-title" style="margin-top:28px">Sedes de examen fuera de España</div>
+      <div class="pill-row">
+        <span class="pill g">Estados Unidos</span><span class="pill g">Canadá &middot; Toronto</span><span class="pill g">Canadá &middot; Vancouver</span><span class="pill g">Portugal</span><span class="pill g">Otras sedes internacionales</span>
+      </div>
+      <div class="seg-nota">Las sedes disponibles varían cada convocatoria y se confirman en el momento de la matriculación, en marzo. Elegimos la sede en función de dónde esté el estudiante y de cuándo termine su curso escolar.</div>
     </div>
   </div>
 
-  <div class="section-title"><h2>Quién acompaña el proceso</h2></div>
+  <div class="section-title"><h2>Costes del proceso</h2></div>
   <div class="includes-wrap">
-    <div class="includes-head"><h3>&#129517; Student Advisor</h3></div>
+    <div class="includes-head"><h3>&#128176; Qué está incluido y qué va aparte</h3></div>
     <div class="includes-body">
-      <div class="gestor-wrap" style="margin-top:0">
-        <div class="gestor-title">&#129517; Acompañamiento académico durante todo el curso</div>
-        <div class="vv-monitor" style="margin-bottom:14px">A cada estudiante se le asigna un <strong style="color:#7dd44a">Student Advisor</strong> desde el inicio del programa, que acompaña a la familia en todo el proceso y, muy concretamente, en:</div>
-        <div class="gestor-grid">
-          <div class="gestor-item">Elegir correctamente las asignaturas en destino</div>
-          <div class="gestor-item">Evitar combinaciones que dificulten la convalidación</div>
-          <div class="gestor-item">Orientar las materias según sus intereses universitarios</div>
-          <div class="gestor-item">Mantener una ruta académica adecuada para la vuelta a España</div>
+      <div class="pce-grid">
+        <div class="pce-card">
+          <div class="pce-title">&#9989; Homologación del Bachillerato</div>
+          <ul class="inc-list">
+            <li><strong>Incluida en el precio del programa</strong></li>
+            <li>Documentación, solicitud, pago de tasas, seguimiento y entrega final</li>
+            <li>Gestionada íntegramente por My Language Quest</li>
+          </ul>
         </div>
-        <div class="vv-monitor" style="margin-top:14px">Esta planificación es especialmente importante en estudiantes que cursan <strong style="color:#7dd44a">2.&ordm; de Bachillerato fuera</strong>, porque de la elección de asignaturas depende buena parte del resultado de la homologación y de si hará falta o no preparar PCE.</div>
+        <div class="pce-card">
+          <div class="pce-title">&#128221; Gestión y matrícula UNEDasiss y PCE</div>
+          <ul class="inc-list">
+            <li><strong>180 &euro; (IVA incluido)</strong></li>
+            <li>Incluye la gestión completa del trámite y la matriculación en las pruebas</li>
+            <li>La realiza nuestra responsable de convalidaciones</li>
+          </ul>
+        </div>
+        <div class="pce-card">
+          <div class="pce-title">&#127963; Tasas oficiales de la UNED</div>
+          <ul class="inc-list">
+            <li><strong>Desde 115,45 &euro; hasta más de 300 &euro;</strong></li>
+            <li>Varían según los servicios contratados: solo acreditación, acreditación con PCE, número de asignaturas...</li>
+            <li>Se abonan directamente a la UNED</li>
+          </ul>
+        </div>
+        <div class="pce-card">
+          <div class="pce-title">&#128218; Preparación de los exámenes</div>
+          <ul class="inc-list">
+            <li><strong>No incluida en la gestión</strong></li>
+            <li>My Language Quest no imparte el curso de preparación</li>
+            <li>Recomendamos academias online especializadas en PCE, con las que la familia contrata directamente</li>
+          </ul>
+        </div>
       </div>
+      <div class="seg-nota">La gestión de UNEDasiss, las tasas de la UNED y la preparación de los exámenes son costes ajenos al programa escolar. Si el estudiante finalmente accede a una universidad privada que no exige PCE, gran parte de estos costes desaparece. La homologación del Bachillerato, en cambio, sí está incluida en el precio del programa.</div>
+    </div>
+  </div>
+
+  <div class="section-title"><h2>Qué hace My Language Quest</h2></div>
+  <div class="includes-wrap">
+    <div class="includes-head"><h3>&#129517; Acompañamiento de principio a fin</h3></div>
+    <div class="includes-body">
+      <div class="uni-grid">
+        <div class="uni-card destacada">
+          <div class="uni-tag">Durante el curso</div>
+          <div class="uni-title">&#129517; Student Advisor</div>
+          <ul class="inc-list">
+            <li>Elegir correctamente las asignaturas en el colegio de destino</li>
+            <li>Evitar combinaciones que dificulten la convalidación</li>
+            <li>Orientar las materias según los intereses universitarios del estudiante</li>
+            <li>Mantener una ruta académica coherente con la vuelta a España</li>
+          </ul>
+        </div>
+        <div class="uni-card">
+          <div class="uni-tag alt">Acceso a la universidad</div>
+          <div class="uni-title">&#128221; Responsable de convalidaciones</div>
+          <ul class="inc-list">
+            <li>Determinar, según comunidad y carrera, de qué asignaturas debe examinarse</li>
+            <li>Gestión completa del trámite UNEDasiss y matriculación en las PCE</li>
+            <li>Aviso de todas las fechas oficiales y de la documentación necesaria</li>
+            <li>Recomendación de academia online para la preparación</li>
+            <li>Organización de la logística de los días de examen si son en el extranjero</li>
+          </ul>
+        </div>
+      </div>
+      <div class="seg-nota">La familia tiene un único interlocutor durante todo el proceso. No hay que perseguir plazos, formularios ni tablas de ponderaciones: avisamos de cada hito con antelación suficiente.</div>
     </div>
   </div>
 
@@ -351,43 +430,49 @@ details.faq .faq-body{padding:0 18px 16px;font-size:12px;color:var(--text-mid);l
           </ul>
         </div>
       </div>
-      <div class="seg-nota">MLQ Pathways es un servicio independiente del programa escolar. Se puede activar durante el curso o al terminarlo, y no es incompatible con preparar en paralelo el acceso a la universidad española.</div>
+      <div class="seg-nota">MLQ Pathways es un servicio independiente del programa escolar. Se puede activar durante el curso o al terminarlo, y es compatible con preparar en paralelo el acceso a la universidad española.</div>
     </div>
   </div>
 
   <div class="section-title"><h2>Preguntas frecuentes</h2></div>
 
   <details class="faq"><summary>Si mi hijo estudia 4.&ordm; de la ESO o 1.&ordm; de Bachillerato fuera, &iquest;pierde el curso?</summary>
-    <div class="faq-body">No. El curso realizado en el extranjero se convalida ante el Ministerio de Educación y el estudiante se incorpora al curso siguiente en España con normalidad. La gestión de la convalidación está incluida en el precio del programa.</div></details>
+    <div class="faq-body">No. El curso realizado en el extranjero se convalida ante el Ministerio de Educación y el estudiante se incorpora al curso siguiente en España con normalidad. La gestión de la convalidación está incluida en el precio del programa, y no hay UNEDasiss ni PCE.</div></details>
 
-  <details class="faq"><summary>&iquest;Las PCE son obligatorias siempre que se estudia 2.&ordm; de Bachillerato fuera?</summary>
-    <div class="faq-body">No. Dependen del grado universitario y de la universidad concreta. Hay universidades y grados que admiten la acreditación UNEDasiss solo con la nota del expediente. Las PCE se convierten en necesarias sobre todo cuando la nota de corte es alta o cuando el grado exige materias específicas que ponderan.</div></details>
+  <details class="faq"><summary>&iquest;Las PCE son obligatorias?</summary>
+    <div class="faq-body">Para <strong>universidad pública, sí, siempre</strong>, salvo que el estudiante proceda de un sistema educativo de la Unión Europea. Un Bachillerato cursado en Canadá o Estados Unidos exige PCE para acceder a la pública. Para <strong>universidad privada son opcionales</strong>: cada centro decide, y la mayoría no las pide, pero hay que consultarlo con la universidad concreta.</div></details>
 
-  <details class="faq"><summary>&iquest;Cuánto cuesta todo el proceso de acceso?</summary>
-    <div class="faq-body">La homologación del Bachillerato está incluida en el precio del programa. Aparte quedan la gestión de UNEDasiss (200 &euro; más tasas de 250 a 300 &euro;) y, solo si son necesarias, las PCE: 300 &euro; por asignatura, o 375 &euro; en Matemáticas II, Matemáticas Aplicadas y Física. Si no hacen falta PCE, no se abona nada por ellas.</div></details>
+  <details class="faq"><summary>&iquest;De cuántas asignaturas hay que examinarse?</summary>
+    <div class="faq-body">Depende de la comunidad autónoma en la que quiera estudiar, no de dónde viva. En la Comunidad Valenciana son 4 asignaturas; en Cataluña y Andalucía, 6. Cada comunidad fija sus propias condiciones, por lo que el primer dato que necesitamos es la comunidad de destino.</div></details>
 
-  <details class="faq"><summary>&iquest;Se pueden preparar las PCE mientras se está fuera?</summary>
-    <div class="faq-body">Sí. El curso de CES Numen es 100% online con acceso 24/7 al campus virtual, videoclases grabadas y clases en directo en Matemáticas y Física. Está diseñado precisamente para estudiantes que están cursando el año en el extranjero, con la diferencia horaria contemplada.</div></details>
+  <details class="faq"><summary>&iquest;Y qué asignaturas concretas?</summary>
+    <div class="faq-body">Dependen de la carrera. Se parte de unas materias base, habitualmente inglés y matemáticas, y se añaden dos de opción elegidas entre las que más ponderan en ese grado según la tabla de ponderaciones de la comunidad de destino. En cuanto sepamos comunidad y carrera, nuestra responsable de convalidaciones indica exactamente cuáles son.</div></details>
 
-  <details class="faq"><summary>&iquest;Y si los exámenes coinciden con el estudiante todavía fuera de España?</summary>
-    <div class="faq-body">Hay sedes de examen fuera de España: Lisboa, París, Oporto, Nueva York, Seattle y Vancouver. My Language Quest organiza toda la logística de esos días: vuelos, alojamiento, traslados y supervisión durante las jornadas de examen.</div></details>
+  <details class="faq"><summary>&iquest;Cuánto cuesta todo el proceso?</summary>
+    <div class="faq-body">La homologación del Bachillerato está incluida en el programa. Aparte quedan la gestión y matrícula de UNEDasiss y PCE (180 &euro; IVA incluido), las tasas oficiales de la UNED (desde 115,45 &euro; hasta más de 300 &euro; según los servicios contratados) y la preparación de los exámenes, que se contrata directamente con una academia especializada.</div></details>
+
+  <details class="faq"><summary>&iquest;Cuándo se sabe la fecha exacta de los exámenes?</summary>
+    <div class="faq-body">No se puede saber con mucha antelación. Hasta enero o febrero la UNED no comunica la semana, y los días definitivos no se publican hasta la matriculación, en marzo. En España la convocatoria cae en torno al 23 a 25 de mayo; en las sedes del extranjero, a principios de junio.</div></details>
+
+  <details class="faq"><summary>Si aún está fuera en mayo, &iquest;dónde se examina?</summary>
+    <div class="faq-body">En una sede internacional. Hay sedes en Estados Unidos, Canadá (Toronto y Vancouver), Portugal y otros países, con convocatoria a principios de junio. Son 3 o 4 días de examen y hay que desplazarse a la ciudad de la sede. En el caso de estudiantes con visado J1 en Estados Unidos, la normativa no les permite viajar solos por el país, por lo que la planificación debe hacerse con especial cuidado.</div></details>
+
+  <details class="faq"><summary>&iquest;Cómo se calcula la nota final?</summary>
+    <div class="faq-body">La nota media del Bachillerato, calculada entre 1.&ordm; de Bachillerato en España y el curso realizado en el extranjero, aporta el 60%. Las PCE aportan el 40%. Eso da una nota sobre 10. Después, cada universidad toma las dos notas de PCE que más ponderan en el grado solicitado, las multiplica por 0,2 y las suma, con lo que la nota de admisión puede llegar hasta 14.</div></details>
 
   <details class="faq"><summary>&iquest;Hay que tener decidida la carrera antes de salir?</summary>
-    <div class="faq-body">No. Durante el curso lo que se hace es mantener abiertas las opciones, eligiendo asignaturas en destino que no cierren puertas. Cuando el grado y la universidad estén claros, se concreta si hacen falta PCE, de qué asignaturas y en qué convocatoria. El Student Advisor acompaña esa decisión.</div></details>
-
-  <details class="faq"><summary>&iquest;Se puede optar a universidad española e internacional a la vez?</summary>
-    <div class="faq-body">Sí. Son procesos independientes y compatibles. Se puede preparar la acreditación UNEDasiss para España y, en paralelo, trabajar las aplicaciones internacionales con MLQ Pathways. Muchas familias mantienen ambas vías abiertas hasta el último momento.</div></details>
+    <div class="faq-body">No, pero conviene decidirla durante el curso. Mientras no esté clara, el trabajo consiste en mantener abiertas las opciones eligiendo asignaturas en destino que no cierren puertas. Como la matriculación en las PCE es en marzo, ese es el plazo real para haber concretado comunidad y carrera.</div></details>
 
   <div class="resumen-frase" style="margin-top:28px">
-    Resumiendo: si el estudiante cursa fuera cualquier año <strong>anterior a 2.&ordm; de Bachillerato</strong>, vuelve, convalida y hace la PAU con normalidad. Si cursa <strong>2.&ordm; de Bachillerato fuera</strong>, accede mediante <strong>homologación</strong> (incluida en el programa) y <strong>UNEDasiss</strong>, con PCE solo si el grado elegido lo exige. En ambos casos el proceso está planificado desde el primer día y acompañado por un Student Advisor.
+    Resumiendo: si el estudiante cursa fuera cualquier año <strong>anterior a 2.&ordm; de Bachillerato</strong>, vuelve, convalida y hace la PAU con normalidad. Si cursa <strong>2.&ordm; de Bachillerato fuera</strong>, accede mediante <strong>homologación</strong> (incluida en el programa) y <strong>acreditación UNEDasiss</strong>. Las <strong>PCE son obligatorias para universidad pública</strong> y opcionales en la privada, con el número y tipo de asignaturas determinados por la <strong>comunidad de destino</strong> y por la <strong>carrera elegida</strong>. La matriculación se abre en <strong>marzo</strong>, y ese es el plazo real para tenerlo todo decidido.
   </div>
 
   <div class="footer-note">
     Documento informativo de carácter general elaborado por My Language Quest.<br>
-    Las fechas, tasas e importes de UNEDasiss y de las PCE los fija cada año la UNED y pueden variar. Consulta siempre con tu asesor para el detalle actualizado de tu caso.
+    Las fechas, tasas, sedes e importes de UNEDasiss y de las PCE los fija cada año la UNED y pueden variar. Las condiciones de acceso dependen de cada comunidad autónoma y de cada universidad. Consulta siempre con tu asesor para el detalle actualizado de tu caso.
   </div>
 
 </main>
 
-<!-- build:20260825-163829 -->
+<!-- build:20260903-102038 -->
 </body></html>
