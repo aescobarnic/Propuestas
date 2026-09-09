@@ -1,0 +1,1485 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<script>document.documentElement.className+=" js-anim";</script>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Propuesta Canadá · Luis · My Language Quest</title>
+<link href="https://fonts.googleapis.com/css2?family=Fira+Sans:wght@300;400;500;600;700&family=Josefin+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --blue:#003366;--blue-dark:#001f40;--blue-mid:#0a4a8a;--blue-light:#dce8f5;
+  --red:#B12900;--red-dark:#8A1F00;--red-light:#fdf0ec;
+  --red-deep:#6E1600;--red-warm:#C8380C;--cream:#FFF6F2;--sand:#F7EDE6;--gold:#E8B04B;
+  --green:#4C9E0C;--green-dark:#3A7A09;--green-light:#eef8e3;
+  --gray-bg:#f4eeea;--gray-card:#fbf7f4;--gray-border:#e4d9d2;
+  --text:#0d1b2a;--text-mid:#3d4f62;--text-light:#7a8a9b;--white:#ffffff;
+}
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box;}
+body{font-family:'Fira Sans',sans-serif;background:var(--gray-bg);color:var(--text);}
+
+/* HEADER */
+.header{background:var(--white);padding:18px 48px;display:flex;align-items:center;justify-content:space-between;box-shadow:0 1px 0 var(--gray-border),0 4px 24px rgba(0,51,102,0.07);position:relative;z-index:10;}
+.header::after{content:'';position:absolute;bottom:0;left:0;right:0;height:4px;background:linear-gradient(90deg,var(--red) 0%,var(--red) 22%,var(--white) 22%,var(--white) 78%,var(--red) 78%,var(--red) 100%);}
+.logo-area img{height:46px;width:auto;display:block;}
+.header-right{text-align:right;}
+.header-label{font-family:'Josefin Sans',sans-serif;font-size:9px;letter-spacing:3px;text-transform:uppercase;color:var(--text-light);}
+.header-year{font-family:'Josefin Sans',sans-serif;font-size:26px;font-weight:700;color:var(--red);line-height:1;margin-top:2px;}
+
+/* HERO */
+.hero{background:linear-gradient(135deg,var(--red-deep) 0%,var(--red) 55%,var(--red-warm) 100%);position:relative;overflow:hidden;padding:40px 48px 36px;}
+.hero::after{content:'🍁';position:absolute;right:2%;top:50%;transform:translateY(-50%) rotate(-12deg);font-size:230px;line-height:1;opacity:0.09;pointer-events:none;z-index:1;}
+.hero::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 70% 110% at 100% 40%,rgba(255,255,255,0.12) 0%,transparent 60%),radial-gradient(ellipse 60% 80% at -10% 90%,rgba(0,31,64,0.28) 0%,transparent 60%);}
+.hero-dots{position:absolute;inset:0;pointer-events:none;background-image:radial-gradient(rgba(255,255,255,0.07) 1px,transparent 1px);background-size:28px 28px;}
+.hero-inner{position:relative;z-index:2;}
+.hero-tag{display:inline-flex;align-items:center;gap:6px;background:rgba(255,255,255,0.1);border:1px solid rgba(255,255,255,0.2);border-radius:20px;padding:4px 12px;font-size:10px;font-weight:600;letter-spacing:2px;text-transform:uppercase;color:rgba(255,255,255,0.7);margin-bottom:12px;}
+.hero-tag::before{content:'🍁';font-size:11px;}
+.hero-name{font-family:'Josefin Sans',sans-serif;font-size:38px;font-weight:700;color:var(--white);line-height:1.05;margin-bottom:8px;}
+.hero-subtitle{font-size:13px;color:rgba(255,255,255,0.55);font-weight:300;}
+.hero-pills{display:flex;flex-wrap:wrap;gap:8px;margin-top:20px;}
+.hero-pill{display:flex;align-items:center;gap:6px;background:rgba(255,255,255,0.1);border:1px solid rgba(255,255,255,0.18);border-radius:8px;padding:6px 12px;font-size:11px;color:var(--white);font-weight:500;}
+.hero-pill.ac{background:rgba(0,31,64,0.35);border-color:rgba(255,255,255,0.4);color:#ffffff;}
+.hero-promo{display:block;background:rgba(0,31,64,0.4);border:1px solid rgba(255,255,255,0.35);border-radius:10px;padding:13px 18px;font-size:12.5px;font-weight:500;color:#ffffff;margin-top:18px;max-width:700px;line-height:1.65;}
+.hero-promo strong{font-weight:700;}
+
+/* LAYOUT */
+.main{max-width:1140px;margin:0 auto;padding:40px 24px 20px;}
+.section-title{display:flex;align-items:center;gap:12px;margin:44px 0 24px;}
+.section-title:first-of-type{margin-top:0;}
+.section-title h2{font-family:'Josefin Sans',sans-serif;font-size:11px;font-weight:700;letter-spacing:3px;text-transform:uppercase;color:var(--red-deep);white-space:nowrap;}
+.section-title::before{content:'';width:22px;height:3px;border-radius:3px;background:var(--red);flex-shrink:0;}
+.section-title::after{content:'';flex:1;height:1px;background:var(--gray-border);}
+
+/* INTRO / CONTEXTO */
+.intro-text{font-size:14px;color:var(--text-mid);line-height:1.75;max-width:860px;margin-bottom:20px;}
+.intro-text strong{color:var(--blue);font-weight:600;}
+.intro-points{display:grid;grid-template-columns:repeat(2,1fr);gap:14px;margin-top:20px;}
+.intro-point{background:var(--white);border:1.5px solid var(--gray-border);border-radius:12px;padding:16px 18px;display:flex;gap:12px;align-items:flex-start;}
+.intro-point-icon{font-size:20px;flex-shrink:0;}
+.intro-point-title{font-family:'Josefin Sans',sans-serif;font-size:13px;font-weight:700;color:var(--red-deep);margin-bottom:4px;}
+.intro-point-desc{font-size:12px;color:var(--text-mid);line-height:1.55;}
+
+/* CÓMO SE VIVE EL CURSO */
+.qs-chapters-head{display:flex;align-items:baseline;gap:14px;margin:38px 0 18px;flex-wrap:wrap;}
+.qs-chapters-title{font-family:'Josefin Sans',sans-serif;font-size:19px;font-weight:700;color:var(--red-deep);}
+.qs-chapters-sub{font-size:12.5px;color:var(--text-light);}
+.qs-chapters{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;}
+.qs-chapter{background:var(--white);border:1.5px solid var(--gray-border);border-radius:16px;overflow:hidden;box-shadow:0 2px 16px rgba(0,51,102,0.06);display:flex;flex-direction:column;transition:transform .2s,box-shadow .2s;}
+.qs-chapter:hover{transform:translateY(-4px);box-shadow:0 14px 38px rgba(0,51,102,0.13);}
+.qs-chapter-media{position:relative;aspect-ratio:4/3;overflow:hidden;background:var(--blue-light);}
+.qs-chapter-media img{width:100%;height:100%;object-fit:cover;object-position:center 15%;display:block;}
+.qs-chapter-step{position:absolute;top:12px;left:12px;background:rgba(0,31,64,0.82);backdrop-filter:blur(4px);color:#7dd44a;font-family:'Josefin Sans',sans-serif;font-size:9px;font-weight:700;letter-spacing:2px;text-transform:uppercase;padding:5px 11px;border-radius:20px;}
+.qs-chapter-body{padding:18px 20px 20px;}
+.qs-chapter-title{font-family:'Josefin Sans',sans-serif;font-size:15px;font-weight:700;color:var(--red-deep);margin-bottom:7px;}
+.qs-chapter-text{font-size:12.5px;color:var(--text-mid);line-height:1.65;}
+
+/* OPCIONES */
+.alert-box{display:flex;gap:12px;align-items:flex-start;background:#fff4f0;border:1.5px solid rgba(177,41,0,0.3);border-radius:12px;padding:14px 18px;margin-bottom:22px;}
+.alert-icon{font-size:20px;flex-shrink:0;}
+.alert-text{font-size:12px;color:#6b1a00;line-height:1.6;}
+.alert-text strong{color:var(--red-dark);}
+.opciones-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:20px;align-items:start;}
+.opcion-card{background:var(--white);border-radius:16px;border:1.5px solid var(--gray-border);overflow:hidden;box-shadow:0 2px 16px rgba(0,51,102,0.06);position:relative;transition:transform .2s,box-shadow .2s,border-color .2s;}
+.opcion-card:hover{transform:translateY(-4px);box-shadow:0 12px 40px rgba(110,22,0,0.16);border-color:var(--red);}
+.opcion-card.recomendada{border-color:var(--blue);box-shadow:0 6px 28px rgba(0,51,102,0.20);}
+.badge-rec{position:absolute;top:14px;right:-32px;background:var(--blue);color:var(--white);font-size:8px;font-weight:700;letter-spacing:1.5px;padding:5px 40px;transform:rotate(45deg);width:130px;text-align:center;z-index:10;}
+.opcion-header{background:linear-gradient(135deg,var(--red-deep) 0%,var(--red) 100%);padding:22px 24px 18px;position:relative;overflow:hidden;}
+.opcion-header::after{content:'🍁';position:absolute;right:-10px;bottom:-22px;font-size:82px;opacity:0.11;line-height:1;transform:rotate(-14deg);}
+.opcion-header > *{position:relative;z-index:2;}
+.opcion-num{font-family:'Josefin Sans',sans-serif;font-size:9px;letter-spacing:3px;text-transform:uppercase;color:rgba(255,255,255,0.38);margin-bottom:8px;}
+.opcion-distrito{font-family:'Josefin Sans',sans-serif;font-size:16px;font-weight:700;color:var(--white);margin-bottom:5px;}
+.opcion-loc{font-size:11px;color:rgba(255,255,255,0.48);margin-bottom:12px;}
+.precio-chip{display:inline-flex;align-items:baseline;gap:4px;background:rgba(255,255,255,0.1);border:1px solid rgba(255,255,255,0.18);border-radius:8px;padding:6px 12px;flex-wrap:wrap;}
+.precio-chip .val{font-family:'Josefin Sans',sans-serif;font-size:20px;font-weight:700;color:var(--white);}
+.precio-chip .desc{font-size:10px;color:rgba(255,255,255,0.5);}
+.precio-chip .tachado{font-size:10px;color:rgba(255,255,255,0.3);text-decoration:line-through;margin-left:6px;}
+.opcion-body{padding:20px 22px;}
+.colegios{display:flex;flex-direction:column;gap:12px;}
+.colegio{border:1.5px solid var(--gray-border);border-radius:12px;overflow:hidden;background:var(--gray-card);transition:border-color .2s;}
+.colegio:hover{border-color:var(--red);}
+.colegio-top{padding:12px 14px 10px;}
+.colegio-nombre{font-family:'Josefin Sans',sans-serif;font-size:13px;font-weight:700;color:var(--red-deep);margin-bottom:5px;}
+.colegio-meta{display:flex;flex-wrap:wrap;align-items:center;gap:6px;}
+.tag{border-radius:5px;padding:2px 8px;font-size:9px;font-weight:700;text-transform:uppercase;}
+.tag.pub{background:var(--green);color:var(--white);}
+.tag.info{background:var(--blue-light);color:var(--blue);}
+details{border-top:1px solid var(--gray-border);}
+details summary{list-style:none;cursor:pointer;padding:9px 14px;font-size:11px;font-weight:600;color:var(--red);display:flex;align-items:center;gap:6px;user-select:none;-webkit-user-select:none;}
+details summary:hover{background:var(--red-light);}
+details summary::-webkit-details-marker{display:none;}
+details summary::before{content:'▸';font-size:10px;transition:transform .2s;display:inline-block;}
+details[open] summary::before{transform:rotate(90deg);}
+.colegio-razon{padding:10px 14px 13px;font-size:12px;color:var(--text-mid);line-height:1.7;border-left:3px solid var(--red);margin:0 14px 12px;background:var(--red-light);border-radius:0 6px 6px 0;}
+.match-bar{display:flex;gap:6px;flex-wrap:wrap;padding:14px 22px;border-top:1px solid var(--gray-border);background:linear-gradient(to right,var(--gray-card),var(--white));}
+.match-tag{display:flex;align-items:center;gap:4px;font-size:10px;font-weight:600;color:var(--green-dark);background:var(--green-light);border:1px solid rgba(76,158,12,0.25);border-radius:20px;padding:3px 10px;}
+.match-tag::before{content:'✓';font-size:9px;}
+
+/* TABLA COMPARATIVA */
+.tabla-wrap{background:var(--white);border-radius:16px;border:1.5px solid var(--gray-border);box-shadow:0 2px 16px rgba(0,51,102,0.05);overflow-x:auto;}
+table.comp{width:100%;border-collapse:collapse;min-width:760px;}
+table.comp thead th{background:linear-gradient(135deg,var(--red-deep),var(--red));color:#fff;font-family:'Josefin Sans',sans-serif;font-size:9.5px;font-weight:700;letter-spacing:1.6px;text-transform:uppercase;padding:13px 14px;text-align:left;white-space:nowrap;}
+table.comp td{padding:13px 14px;font-size:12px;color:var(--text-mid);border-top:1px solid var(--gray-border);vertical-align:top;line-height:1.5;}
+table.comp tbody tr:nth-child(even){background:var(--gray-card);}
+table.comp td.op{font-family:'Josefin Sans',sans-serif;font-size:12.5px;font-weight:700;color:var(--red-deep);}
+table.comp td.pr{white-space:nowrap;font-weight:600;color:var(--text);}
+table.comp td.pr s{display:block;font-weight:400;font-size:10.5px;color:var(--text-light);}
+table.comp td.pr small{display:block;font-weight:400;font-size:10px;color:var(--text-light);}
+.badge-int{display:inline-block;border-radius:20px;padding:2px 9px;font-size:10px;font-weight:700;white-space:nowrap;}
+.int-alta{background:var(--red-light);color:var(--red-dark);border:1px solid rgba(177,41,0,0.25);}
+.int-media{background:var(--blue-light);color:var(--blue);border:1px solid rgba(0,51,102,0.2);}
+.int-baja{background:var(--gray-bg);color:var(--text-light);border:1px solid var(--gray-border);}
+.int-ok{background:var(--green-light);color:var(--green-dark);border:1px solid rgba(76,158,12,0.3);}
+table.comp.comp6{min-width:1000px;}
+table.comp.comp6 td{font-size:11.5px;padding:12px 12px;line-height:1.5;}
+table.comp.comp6 thead th{padding:12px;font-size:9px;}
+table.comp.comp6 td.op{font-size:12px;}
+.honest-cols{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:14px;}
+.honest-item{border-radius:12px;padding:14px 16px;border:1.5px solid var(--gray-border);background:var(--gray-card);}
+.honest-item.honest-si{border-color:rgba(76,158,12,0.35);background:var(--green-light);}
+.honest-item.honest-no{border-color:rgba(0,51,102,0.2);background:var(--blue-light);}
+.honest-h{margin-bottom:8px;}
+.honest-item p{font-size:12.5px;line-height:1.65;color:var(--text-mid);margin-bottom:0;}
+.tabla-nota{font-size:11px;color:var(--text-light);line-height:1.65;margin-top:12px;font-style:italic;}
+
+/* DETALLE POR OPCIÓN */
+.det-list{display:flex;flex-direction:column;gap:16px;}
+details.det{background:var(--white);border:1.5px solid var(--gray-border);border-radius:16px;box-shadow:0 2px 16px rgba(0,51,102,0.05);overflow:hidden;border-top-width:1.5px;}
+details.det.top{border-color:var(--blue);box-shadow:0 6px 24px rgba(0,51,102,0.13);}
+details.det > summary{padding:18px 24px;font-size:inherit;color:inherit;display:flex;align-items:center;gap:14px;flex-wrap:wrap;}
+details.det > summary:hover{background:var(--gray-card);}
+details.det > summary::before{color:var(--red);font-size:12px;}
+.det-num{font-family:'Josefin Sans',sans-serif;font-size:20px;font-weight:700;color:var(--red);line-height:1;}
+.det-head{flex:1;min-width:180px;}
+.det-tit{font-family:'Josefin Sans',sans-serif;font-size:15px;font-weight:700;color:var(--red-deep);margin-bottom:3px;}
+.det-sub{font-size:11.5px;color:var(--text-light);line-height:1.4;}
+.det-pr{font-family:'Josefin Sans',sans-serif;font-size:16px;font-weight:700;color:var(--blue);white-space:nowrap;}
+.det-pr s{display:block;font-family:'Fira Sans',sans-serif;font-size:10.5px;font-weight:400;color:var(--text-light);text-align:right;}
+.det-body{padding:2px 26px 26px;}
+.det-body h4{font-family:'Josefin Sans',sans-serif;font-size:12.5px;font-weight:700;letter-spacing:0.4px;color:var(--red-deep);margin:20px 0 8px;text-transform:none;}
+.det-body h4:first-child{margin-top:8px;}
+.det-body p{font-size:12.5px;color:var(--text-mid);line-height:1.75;margin-bottom:10px;}
+.det-body p strong{color:var(--text);font-weight:600;}
+.det-body ul{list-style:none;margin:0 0 12px;}
+.det-body ul li{font-size:12.5px;color:var(--text-mid);line-height:1.65;position:relative;padding-left:16px;margin-bottom:6px;}
+.det-body ul li::before{content:'▪';color:var(--red);position:absolute;left:0;top:0;}
+.callout{background:var(--red-light);border-left:3px solid var(--red);border-radius:0 8px 8px 0;padding:13px 17px;font-size:12px;color:#6b1a00;line-height:1.7;margin:14px 0;}
+.callout strong{color:var(--red-dark);}
+.callout.blue{background:var(--blue-light);border-left-color:var(--blue);color:var(--blue-dark);}
+.callout.blue strong{color:var(--blue-dark);}
+.callout.green{background:var(--green-light);border-left-color:var(--green);color:var(--green-dark);}
+.callout.green strong{color:var(--green-dark);}
+.det-cols{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin:14px 0;}
+.det-mini{background:var(--gray-card);border:1.5px solid var(--gray-border);border-radius:12px;padding:14px 16px;}
+.det-mini-tit{font-family:'Josefin Sans',sans-serif;font-size:11px;font-weight:700;letter-spacing:1.2px;text-transform:uppercase;color:var(--red);margin-bottom:8px;}
+.det-mini p,.det-mini ul{margin-bottom:0;}
+
+/* COLEGIOS DENTRO DEL DETALLE */
+.det-tags{display:flex;flex-wrap:wrap;gap:6px;margin:0 0 11px;}
+.ficha{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin:0 0 13px;}
+.ficha > div{background:var(--gray-card);border:1.5px solid var(--gray-border);border-radius:10px;padding:9px 12px;}
+.ficha span{display:block;font-family:'Josefin Sans',sans-serif;font-size:8.5px;font-weight:700;letter-spacing:1.4px;text-transform:uppercase;color:var(--red);margin-bottom:3px;}
+.ficha strong{display:block;font-size:12px;font-weight:600;color:var(--text);line-height:1.4;}
+.det-colegio{border-top:1px solid var(--gray-border);padding-top:18px;margin-top:18px;}
+.det-colegio:first-of-type{border-top:none;padding-top:0;margin-top:10px;}
+.det-colegio-h{display:flex;align-items:baseline;gap:10px;flex-wrap:wrap;margin-bottom:7px;}
+.det-colegio-n{font-family:'Josefin Sans',sans-serif;font-size:14.5px;font-weight:700;color:var(--red-deep);}
+.det-colegio-r{font-size:9px;font-weight:700;letter-spacing:1.2px;text-transform:uppercase;color:var(--blue);background:var(--blue-light);border:1px solid rgba(0,51,102,0.18);border-radius:20px;padding:3px 10px;}
+.ski-badge{display:inline-flex;align-items:center;gap:6px;border-radius:8px;padding:5px 11px;font-size:10.5px;font-weight:700;letter-spacing:0.3px;margin-bottom:10px;}
+.ski-colegio{background:var(--green-light);color:var(--green-dark);border:1px solid rgba(76,158,12,0.35);}
+.ski-distrito{background:var(--blue-light);color:var(--blue);border:1px solid rgba(0,51,102,0.22);}
+
+/* INFO BLOCKS */
+.info-blocks{display:grid;grid-template-columns:1fr 1fr;gap:20px;}
+.info-block{background:var(--white);border-radius:16px;border:1.5px solid var(--gray-border);padding:24px 26px;box-shadow:0 2px 16px rgba(0,51,102,0.05);}
+.info-block-icon{font-size:24px;margin-bottom:10px;}
+.info-block-title{font-family:'Josefin Sans',sans-serif;font-size:14px;font-weight:700;color:var(--red-deep);margin-bottom:10px;}
+.info-block-text{font-size:12.5px;color:var(--text-mid);line-height:1.7;}
+.info-block-text strong{color:var(--text);}
+.info-block-text p{margin-bottom:0;}
+.info-block ul{margin-top:10px;padding-left:0;list-style:none;}
+.info-block ul li{font-size:12px;color:var(--text-mid);position:relative;padding-left:18px;margin-bottom:7px;line-height:1.55;}
+.info-block ul li::before{content:'✓';color:var(--green);font-weight:700;position:absolute;left:0;top:0;}
+.test-btn{display:flex;width:fit-content;align-items:center;gap:8px;background:var(--red);color:var(--white);font-family:'Josefin Sans',sans-serif;font-size:12.5px;font-weight:700;padding:11px 22px;border-radius:10px;text-decoration:none;margin-top:16px;transition:transform .15s,box-shadow .15s;}
+.test-btn:hover{transform:translateY(-2px);box-shadow:0 8px 20px rgba(177,41,0,0.28);}
+
+/* RANKING FINAL */
+.rank{display:flex;flex-direction:column;gap:12px;}
+.rank-item{display:flex;gap:16px;background:var(--white);border:1.5px solid var(--gray-border);border-radius:12px;padding:16px 20px;align-items:flex-start;}
+.rank-item.top{border-color:var(--blue);box-shadow:0 4px 20px rgba(0,51,102,0.12);}
+.rank-num{font-family:'Josefin Sans',sans-serif;font-size:22px;font-weight:700;color:var(--red);line-height:1;flex-shrink:0;width:26px;}
+.rank-item.top .rank-num{color:var(--blue);}
+.rank-tit{font-family:'Josefin Sans',sans-serif;font-size:14px;font-weight:700;color:var(--red-deep);margin-bottom:4px;}
+.rank-txt{font-size:12.5px;color:var(--text-mid);line-height:1.65;}
+
+/* INCLUDES */
+.includes-wrap{background:var(--white);border-radius:16px;border:1.5px solid var(--gray-border);box-shadow:0 2px 16px rgba(0,51,102,0.05);overflow:hidden;}
+.includes-head{background:linear-gradient(135deg,var(--red-deep),var(--red));padding:20px 32px;}
+.includes-head h3{font-family:'Josefin Sans',sans-serif;font-size:14px;font-weight:700;color:var(--white);letter-spacing:1px;}
+.includes-body{padding:28px 32px;}
+.includes-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:32px;}
+.col-title{font-family:'Josefin Sans',sans-serif;font-size:9px;font-weight:700;letter-spacing:2.5px;text-transform:uppercase;color:var(--red);margin-bottom:14px;padding-bottom:8px;border-bottom:2px solid var(--red-light);}
+.inc-list{list-style:none;display:flex;flex-direction:column;gap:8px;}
+.inc-list li{font-size:12px;color:var(--text-mid);line-height:1.55;position:relative;padding-left:18px;}
+.inc-list li::before{content:'✓';color:var(--green);font-weight:700;font-size:11px;position:absolute;left:0;top:1px;}
+.inc-list.no li::before{content:'✗';color:var(--red);}
+.inc-list li small{font-size:10px;color:var(--text-light);display:block;margin-top:2px;}
+
+/* GESTOR */
+.gestor-wrap{background:linear-gradient(135deg,var(--blue-dark),var(--blue-mid));border-radius:12px;padding:20px 24px;margin-top:20px;}
+.gestor-title{font-family:'Josefin Sans',sans-serif;font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:rgba(255,255,255,0.6);margin-bottom:14px;}
+.gestor-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;}
+.gestor-item{background:rgba(255,255,255,0.08);border:1px solid rgba(255,255,255,0.12);border-radius:8px;padding:10px 12px;font-size:11px;color:rgba(255,255,255,0.85);line-height:1.4;}
+.gestor-item::before{content:'→';color:#7dd44a;font-weight:700;margin-right:5px;}
+
+/* FORMAS DE PAGO */
+.payment-wrap{background:linear-gradient(135deg,var(--blue-dark) 0%,var(--blue) 60%,var(--blue-mid) 100%);border-radius:16px;padding:32px;position:relative;overflow:hidden;}
+.payment-wrap::before{content:'';position:absolute;inset:0;background-image:radial-gradient(rgba(255,255,255,0.05) 1px,transparent 1px);background-size:22px 22px;}
+.payment-inner{position:relative;z-index:2;}
+.pay-title{font-family:'Josefin Sans',sans-serif;font-size:16px;font-weight:700;color:var(--white);margin-bottom:6px;}
+.pay-subtitle{font-size:12px;color:rgba(255,255,255,0.45);margin-bottom:22px;}
+.pay-route{background:rgba(255,255,255,0.07);border:1px solid rgba(255,255,255,0.14);border-radius:14px;padding:20px 22px;margin-bottom:16px;}
+.pay-route-head{display:flex;align-items:center;gap:10px;margin-bottom:6px;}
+.pay-route-icon{font-size:20px;}
+.pay-route-title{font-family:'Josefin Sans',sans-serif;font-size:14px;font-weight:700;color:var(--white);}
+.pay-route-sub{font-size:11.5px;color:rgba(255,255,255,0.45);margin-bottom:16px;line-height:1.5;}
+.pay-entrada{display:flex;align-items:center;gap:14px;background:rgba(125,212,74,0.13);border:1px solid rgba(125,212,74,0.35);border-radius:10px;padding:14px 18px;margin-bottom:16px;}
+.pay-entrada-num{font-family:'Josefin Sans',sans-serif;font-size:26px;font-weight:700;color:#7dd44a;line-height:1;white-space:nowrap;}
+.pay-entrada-txt{font-size:11.5px;color:rgba(255,255,255,0.72);line-height:1.5;}
+.pay-entrada-txt strong{color:var(--white);font-weight:600;}
+.pay-cols{display:grid;grid-template-columns:1fr 1fr;gap:16px;}
+.pay-col{background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.12);border-radius:12px;padding:16px 18px;}
+.pay-col-title{font-family:'Josefin Sans',sans-serif;font-size:9px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:#7dd44a;margin-bottom:12px;}
+.pay-step{margin-bottom:11px;}
+.pay-step:last-child{margin-bottom:0;}
+.pay-step-num{font-size:9px;font-weight:700;color:rgba(255,255,255,0.4);text-transform:uppercase;letter-spacing:1px;margin-bottom:2px;}
+.pay-step-title{font-size:13px;font-weight:600;color:var(--white);margin-bottom:2px;}
+.pay-step-desc{font-size:11px;color:rgba(255,255,255,0.45);line-height:1.5;}
+.pay-note{font-size:11px;color:rgba(255,255,255,0.32);line-height:1.65;font-style:italic;border-top:1px solid rgba(255,255,255,0.1);padding-top:14px;margin-top:4px;}
+
+/* FINANCIACIÓN */
+.financing-wrap{background:var(--white);border-radius:16px;border:1.5px solid var(--gray-border);box-shadow:0 2px 16px rgba(0,51,102,0.06);overflow:hidden;}
+.financing-head{background:linear-gradient(135deg,var(--blue-dark),var(--blue));padding:22px 32px;display:flex;align-items:center;justify-content:space-between;gap:16px;}
+.financing-head-left{display:flex;align-items:center;gap:16px;}
+.fin-icon{font-size:28px;flex-shrink:0;}
+.fin-title{font-family:'Josefin Sans',sans-serif;font-size:16px;font-weight:700;color:var(--white);margin-bottom:3px;}
+.fin-sub{font-size:11px;color:rgba(255,255,255,0.5);line-height:1.4;}
+.fin-badge{background:rgba(125,212,74,0.2);border:1px solid rgba(125,212,74,0.4);color:#7dd44a;font-family:'Josefin Sans',sans-serif;font-size:11px;font-weight:700;letter-spacing:1px;padding:6px 14px;border-radius:20px;white-space:nowrap;}
+.financing-body{padding:28px 32px;}
+.fin-opcion-label,.fin-plazo-label{font-family:'Josefin Sans',sans-serif;font-size:9px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--text-light);margin-bottom:10px;}
+.fin-opcion-selector{margin-bottom:24px;}
+.fin-opcion-btns{display:flex;gap:10px;flex-wrap:wrap;}
+.fin-opcion-btn{background:var(--gray-card);border:1.5px solid var(--gray-border);border-radius:10px;padding:10px 16px;cursor:pointer;text-align:left;transition:all .2s;display:flex;flex-direction:column;gap:3px;font-family:'Fira Sans',sans-serif;}
+.fin-opcion-btn:hover{border-color:var(--blue-mid);background:var(--blue-light);}
+.fin-opcion-btn.active{border-color:var(--blue);background:var(--blue-light);}
+.fin-opcion-nombre{font-size:10px;font-weight:700;letter-spacing:1px;text-transform:uppercase;color:var(--text-light);}
+.fin-opcion-btn.active .fin-opcion-nombre{color:var(--blue);}
+.fin-opcion-precio{font-family:'Josefin Sans',sans-serif;font-size:16px;font-weight:700;color:var(--text);}
+.fin-opcion-btn.active .fin-opcion-precio{color:var(--blue);}
+.fin-entrada-fija{display:flex;align-items:center;gap:14px;background:var(--green-light);border:1.5px solid rgba(76,158,12,0.3);border-radius:12px;padding:14px 18px;margin-bottom:24px;}
+.fin-entrada-fija-num{font-family:'Josefin Sans',sans-serif;font-size:24px;font-weight:700;color:var(--green-dark);line-height:1;white-space:nowrap;}
+.fin-entrada-fija-txt{font-size:12px;color:var(--text-mid);line-height:1.55;}
+.fin-entrada-fija-txt strong{color:var(--text);font-weight:600;}
+.fin-plazo-wrap{margin-bottom:24px;}
+.fin-plazos{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;}
+.fin-plazo{background:var(--gray-card);border:1.5px solid var(--gray-border);border-radius:12px;padding:14px 12px;cursor:pointer;text-align:center;transition:all .2s;font-family:'Fira Sans',sans-serif;}
+.fin-plazo:hover{border-color:var(--blue-mid);transform:translateY(-2px);}
+.fin-plazo.active{border-color:var(--green);background:var(--green-light);box-shadow:0 4px 16px rgba(76,158,12,0.15);}
+.fin-plazo-meses{font-family:'Josefin Sans',sans-serif;font-size:15px;font-weight:700;color:var(--text);margin-bottom:6px;}
+.fin-plazo.active .fin-plazo-meses{color:var(--green-dark);}
+.fin-plazo-badge{display:inline-block;border-radius:20px;padding:2px 8px;font-size:9px;font-weight:700;letter-spacing:0.5px;margin-bottom:4px;}
+.fin-plazo-badge.sin-intereses{background:var(--green-light);color:var(--green-dark);border:1px solid rgba(76,158,12,0.3);}
+.fin-plazo-badge.con-intereses{background:var(--blue-light);color:var(--blue);border:1px solid rgba(0,51,102,0.2);}
+.fin-plazo-quien{font-size:9px;color:var(--text-light);line-height:1.3;}
+.fin-resultado{display:grid;grid-template-columns:auto 1fr;gap:24px;background:linear-gradient(135deg,var(--blue-dark),var(--blue));border-radius:14px;padding:24px 28px;margin-bottom:16px;align-items:center;}
+.fin-resultado-main{text-align:center;border-right:1px solid rgba(255,255,255,0.15);padding-right:24px;}
+.fin-cuota-label{font-size:10px;font-weight:600;letter-spacing:2px;text-transform:uppercase;color:rgba(255,255,255,0.5);margin-bottom:6px;}
+.fin-cuota-valor{font-family:'Josefin Sans',sans-serif;font-size:36px;font-weight:700;color:#7dd44a;line-height:1;margin-bottom:4px;}
+.fin-cuota-sub{font-size:11px;color:rgba(255,255,255,0.45);}
+.fin-resultado-detalle{display:flex;flex-direction:column;gap:10px;}
+.fin-det-row{display:flex;justify-content:space-between;align-items:center;gap:12px;}
+.fin-det-label{font-size:12px;color:rgba(255,255,255,0.55);}
+.fin-det-val{font-size:13px;font-weight:600;color:var(--white);}
+.fin-det-green{color:#7dd44a !important;}
+.fin-det-total{border-top:1px solid rgba(255,255,255,0.15);padding-top:10px;margin-top:2px;}
+.fin-det-total .fin-det-label{color:rgba(255,255,255,0.7);font-weight:600;}
+.fin-det-total .fin-det-val{font-family:'Josefin Sans',sans-serif;font-size:16px;color:var(--white);}
+.fin-nota{font-size:11px;color:var(--text-light);line-height:1.6;background:var(--gray-card);border-radius:8px;padding:12px 16px;border-left:3px solid var(--blue-light);}
+
+/* SIGUIENTES PASOS */
+.steps-wrap{background:linear-gradient(135deg,var(--blue-dark) 0%,var(--blue) 60%,var(--blue-mid) 100%);border-radius:16px;padding:34px 36px;position:relative;overflow:hidden;}
+.steps-wrap::before{content:'';position:absolute;inset:0;background-image:radial-gradient(rgba(255,255,255,0.05) 1px,transparent 1px);background-size:22px 22px;}
+.steps-inner{position:relative;z-index:2;}
+.steps-title{font-family:'Josefin Sans',sans-serif;font-size:18px;font-weight:700;color:var(--white);margin-bottom:6px;}
+.steps-sub{font-size:12px;color:rgba(255,255,255,0.5);margin-bottom:26px;}
+.steps-list{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;}
+.step-item{background:rgba(255,255,255,0.07);border:1px solid rgba(255,255,255,0.12);border-radius:12px;padding:18px;}
+.step-num{font-family:'Josefin Sans',sans-serif;font-size:20px;font-weight:700;color:#7dd44a;margin-bottom:8px;}
+.step-title{font-size:13px;font-weight:600;color:var(--white);margin-bottom:4px;}
+.step-desc{font-size:11px;color:rgba(255,255,255,0.5);line-height:1.5;}
+/* FOOTER */
+.footer{background:var(--blue-dark);padding:30px 48px;margin-top:56px;text-align:center;position:relative;}
+.footer::before{content:'';position:absolute;top:0;left:0;right:0;height:4px;background:linear-gradient(90deg,var(--red) 0%,var(--red) 22%,var(--white) 22%,var(--white) 78%,var(--red) 78%,var(--red) 100%);}
+.footer-logo{font-family:'Josefin Sans',sans-serif;font-size:15px;font-weight:700;color:var(--white);letter-spacing:1px;margin-bottom:6px;}
+.footer-tag{font-family:'Josefin Sans',sans-serif;font-size:10px;letter-spacing:4px;text-transform:uppercase;color:#ff9c7a;margin-bottom:14px;}
+.footer-meta{font-size:11px;color:rgba(255,255,255,0.4);line-height:1.7;}
+.footer-meta a{color:rgba(255,255,255,0.65);text-decoration:none;}
+
+@media(max-width:900px){
+  .qs-chapters{grid-template-columns:1fr;}
+  .det-cols{grid-template-columns:1fr;}
+  .honest-cols{grid-template-columns:1fr;}
+  .ficha{grid-template-columns:repeat(2,1fr);}
+}
+@media(max-width:720px){
+  .header{padding:16px 20px;}.hero{padding:28px 20px 24px;}.hero-name{font-size:28px;}
+  .main{padding:28px 16px 20px;}
+  .includes-grid{grid-template-columns:1fr;}.opciones-grid{grid-template-columns:1fr;}
+  .intro-points{grid-template-columns:1fr;}.info-blocks{grid-template-columns:1fr;}
+  .pay-cols{grid-template-columns:1fr;}.gestor-grid{grid-template-columns:repeat(2,1fr);}
+  .steps-list{grid-template-columns:1fr;}
+  .fin-plazos{grid-template-columns:repeat(2,1fr);}
+  .fin-resultado{grid-template-columns:1fr;}
+  .fin-resultado-main{border-right:none;border-bottom:1px solid rgba(255,255,255,0.15);padding-right:0;padding-bottom:20px;}
+  .financing-head{flex-direction:column;align-items:flex-start;}
+  .fin-opcion-btns{flex-direction:column;}
+  .det-body{padding:2px 18px 20px;}
+  details.det > summary{padding:16px 18px;}
+  .footer{padding:26px 20px;}
+}
+
+/* ================= ANIMACIONES ================= */
+.js-anim .reveal{opacity:0;transform:translateY(20px);will-change:opacity,transform;
+  transition:opacity .75s cubic-bezier(.22,.61,.36,1),transform .75s cubic-bezier(.22,.61,.36,1);}
+.js-anim .reveal.in{opacity:1;transform:none;}
+.js-anim .reveal-zoom{opacity:0;transform:scale(.975);transition:opacity .8s ease,transform .8s cubic-bezier(.22,.61,.36,1);}
+.js-anim .reveal-zoom.in{opacity:1;transform:none;}
+
+@keyframes heroUp{from{opacity:0;transform:translateY(16px);}to{opacity:1;transform:none;}}
+@keyframes leafIn{from{opacity:0;transform:translateY(-50%) rotate(-30deg) scale(.85);}to{opacity:.09;transform:translateY(-50%) rotate(-12deg) scale(1);}}
+.js-anim .hero::after{animation:leafIn 1.4s cubic-bezier(.22,.61,.36,1) .15s both;}
+.js-anim .hero-tag{animation:heroUp .7s cubic-bezier(.22,.61,.36,1) .05s both;}
+.js-anim .hero-name{animation:heroUp .7s cubic-bezier(.22,.61,.36,1) .16s both;}
+.js-anim .hero-subtitle{animation:heroUp .7s cubic-bezier(.22,.61,.36,1) .26s both;}
+.js-anim .hero-pill{animation:heroUp .55s cubic-bezier(.22,.61,.36,1) both;}
+.js-anim .hero-promo{animation:heroUp .7s cubic-bezier(.22,.61,.36,1) .7s both;}
+
+.progress-bar{position:fixed;top:0;left:0;height:3px;width:100%;transform:scaleX(0);transform-origin:0 50%;
+  background:linear-gradient(90deg,var(--red),var(--red-warm));z-index:999;transition:transform .1s linear;}
+
+.qs-chapter-media img{transition:transform .7s cubic-bezier(.22,.61,.36,1);}
+.qs-chapter:hover .qs-chapter-media img{transform:scale(1.06);}
+
+.opcion-card{transition:transform .35s cubic-bezier(.22,.61,.36,1),box-shadow .35s ease,border-color .3s ease;}
+.opcion-header::after{transition:transform .6s cubic-bezier(.22,.61,.36,1),opacity .4s ease;}
+.opcion-card:hover .opcion-header::after{transform:rotate(-4deg) scale(1.14);opacity:.17;}
+
+@keyframes razonIn{from{opacity:0;transform:translateY(-6px);}to{opacity:1;transform:none;}}
+.js-anim details[open] .colegio-razon{animation:razonIn .38s ease both;}
+.js-anim details.det[open] .det-body{animation:razonIn .38s ease both;}
+
+.fin-plazo,.fin-opcion-btn{transition:transform .25s cubic-bezier(.22,.61,.36,1),border-color .25s ease,background .25s ease,box-shadow .25s ease;}
+.fin-cuota-valor{transition:color .3s ease;}
+@keyframes cuotaPop{0%{opacity:.35;transform:translateY(6px);}100%{opacity:1;transform:none;}}
+.fin-cuota-valor.pop{animation:cuotaPop .42s cubic-bezier(.22,.61,.36,1);}
+
+.step-item{transition:transform .3s cubic-bezier(.22,.61,.36,1),background .3s ease;}
+.step-item:hover{transform:translateY(-4px);background:rgba(255,255,255,0.11);}
+
+@media(prefers-reduced-motion:reduce){
+  .js-anim .reveal,.js-anim .reveal-zoom{opacity:1!important;transform:none!important;transition:none!important;}
+  .js-anim .hero::after,.js-anim .hero-tag,.js-anim .hero-name,.js-anim .hero-subtitle,
+  .js-anim .hero-pill,.js-anim .hero-promo{animation:none!important;opacity:1;}
+  .js-anim .hero::after{opacity:.09;}
+  .progress-bar{display:none;}
+  *{transition-duration:.01ms!important;}
+}
+</style>
+</head>
+<body>
+
+<!-- ============ 1. HEADER ============ -->
+<div class="header">
+  <div class="logo-area"><img src="https://mylanguagequest.com/wp-content/uploads/2026/02/Logo-DY_J5B-1-1.png" alt="My Language Quest"></div>
+  <div class="header-right">
+    <div class="header-label">Curso académico</div>
+    <div class="header-year">2027/28</div>
+  </div>
+</div>
+
+<!-- ============ 2. HERO ============ -->
+<div class="hero">
+  <div class="hero-dots"></div>
+  <div class="hero-inner">
+    <div class="hero-tag">Propuesta personalizada · Canadá</div>
+    <div class="hero-name">Luis</div>
+    <div class="hero-subtitle">Año escolar completo · British Columbia · Programa académico sólido con el esquí como complemento</div>
+    <div class="hero-pills">
+      <div class="hero-pill">🎓 4.º ESO · Grade 10</div>
+      <div class="hero-pill">📅 Año escolar completo</div>
+      <div class="hero-pill">🏠 Familia anfitriona</div>
+      <div class="hero-pill ac">📚 Prioridad: programa académico</div>
+      <div class="hero-pill">🎿 Esquí alpino como complemento</div>
+      <div class="hero-pill">🗣 Inglés · pendiente de valoración</div>
+    </div>
+    <div class="hero-promo">🍁 Reserva antes del 30 de septiembre de 2026 y obtén <strong>1.000 € de descuento</strong> — ya aplicado en todos los precios de esta propuesta. No acumulable con otras promociones.</div>
+  </div>
+</div>
+
+<div class="main">
+
+  <!-- ============ 3. CONTEXTO ============ -->
+  <div class="section-title"><h2>¿Qué es el programa de Canadá?</h2></div>
+  <p class="intro-text">
+    El programa de Canadá de My Language Quest permite cursar un trimestre, un semestre o un año escolar completo
+    dentro del <strong>sistema público canadiense</strong>, conviviendo con una familia anfitriona o, si se prefiere,
+    en régimen de residencia. A diferencia de otros destinos, en Canadá no se elige colegio de forma directa:
+    se selecciona un <strong>distrito escolar</strong> según el perfil, los intereses y la disponibilidad del estudiante,
+    y es el propio distrito quien asigna el centro más adecuado dentro de su red de colegios públicos.
+  </p>
+  <p class="intro-text">
+    Dicho esto, en esta propuesta hemos ido un paso más allá: <strong>no os recomendamos «Kelowna» o «Kamloops» en abstracto</strong>,
+    sino que hemos bajado hasta los colegios concretos de cada distrito que nos gustan para Luis, y os explicamos por qué.
+  </p>
+  <div class="intro-points">
+    <div class="intro-point"><div class="intro-point-icon">🏫</div><div><div class="intro-point-title">Sistema de distritos</div><div class="intro-point-desc">Cada distrito agrupa varios colegios públicos. MLQ propone el distrito y prioriza los colegios; la asignación final depende de disponibilidad.</div></div></div>
+    <div class="intro-point"><div class="intro-point-icon">📐</div><div><div class="intro-point-title">Planificación académica</div><div class="intro-point-desc">Grade 10 se organiza por semestres. Elegimos las asignaturas con los requisitos de homologación españoles delante desde el primer día.</div></div></div>
+    <div class="intro-point"><div class="intro-point-icon">🏠</div><div><div class="intro-point-title">Familia anfitriona</div><div class="intro-point-desc">Pensión completa, habitación individual o compartida, con un único estudiante hispanohablante por familia.</div></div></div>
+    <div class="intro-point"><div class="intro-point-icon">🎿</div><div><div class="intro-point-title">El esquí, como complemento</div><div class="intro-point-desc">En unos distritos es un deporte del propio instituto; en otros, una actividad del programa internacional. Os decimos siempre cuál de las dos cosas es.</div></div></div>
+  </div>
+
+  <!-- ============ 4. PERFIL DE LUIS ============ -->
+  <div class="section-title"><h2>El perfil de Luis</h2></div>
+  <p class="intro-text">
+    Luis cursará <strong>4.º de ESO</strong> durante el curso 2027/28, curso que en Canadá equivale a <strong>Grade 10</strong>,
+    en régimen de <strong>año escolar completo</strong>. Tendrá 15 años durante buena parte de la experiencia y afronta el proyecto
+    con mucha motivación: conoce a otros estudiantes que han hecho un año escolar fuera y tiene muchas ganas de vivir algo similar.
+  </p>
+  <p class="intro-text">
+    Su <strong>rendimiento académico general es bueno</strong> y no presenta dificultades de aprendizaje significativas, aunque
+    necesita cierta estructura, seguimiento y constancia para mantener las tareas y el estudio al día. A nivel personal es
+    <strong>extrovertido y sociable</strong>, con facilidad para hacer amistades, por lo que no esperamos que la integración social
+    sea uno de los retos de la experiencia.
+  </p>
+  <p class="intro-text">
+    Por eso, en la selección de familia anfitriona buscaremos un <strong>entorno estable, con rutinas y buena comunicación</strong>,
+    que favorezca su organización durante el curso. Y en la selección de colegio hemos priorizado <strong>institutos de tamaño medio
+    o grande</strong>, con oferta académica amplia y vida escolar activa.
+  </p>
+  <div class="det-cols">
+    <div class="det-mini">
+      <div class="det-mini-tit">📚 Prioridad nº 1</div>
+      <p><strong>Un programa académico sólido y una correcta planificación de Grade 10</strong> para la posterior homologación de 4.º de ESO en España. Es el criterio que ha ordenado toda esta selección: ningún destino entra en la propuesta si compromete las asignaturas que Luis necesita.</p>
+    </div>
+    <div class="det-mini">
+      <div class="det-mini-tit">🎿 El esquí, en su sitio</div>
+      <p><strong>Esquí alpino como complemento importante de la experiencia</strong>, a través de equipos escolares, excursiones, actividades del programa internacional, clubes o estaciones cercanas con transporte organizado. No buscamos un programa profesional, de alto rendimiento ni intensivo.</p>
+    </div>
+  </div>
+
+  <!-- ============ 5. CÓMO HEMOS SELECCIONADO ============ -->
+  <div class="section-title"><h2>¿Cómo hemos seleccionado estas opciones?</h2></div>
+  <p class="intro-text">
+    Después de nuestra reunión hemos podido afinar mucho más el objetivo, y eso ha cambiado la selección inicial.
+  </p>
+  <p class="intro-text">
+    La prioridad ahora es encontrar para Luis un <strong>buen programa académico de Grade 10</strong>, en institutos de tamaño medio
+    o grande y en localidades con suficientes servicios y vida social, donde además pueda seguir disfrutando del
+    <strong>ski alpino como complemento</strong> de su experiencia en Canadá.
+  </p>
+  <p class="intro-text">
+    No buscamos un programa de alto rendimiento ni una academia que ocupe parte importante de su horario lectivo. Queremos
+    justamente lo contrario: que Luis pueda <strong>mantener un horario académico completo</strong>, seleccionar correctamente las
+    asignaturas necesarias para la posterior homologación de 4.º ESO en España y practicar ski durante el invierno
+    <strong>sin que el deporte interfiera en sus estudios</strong>.
+  </p>
+  <p class="intro-text">
+    También hemos priorizado destinos con <strong>inviernos razonables dentro del contexto canadiense</strong>, evitando zonas
+    especialmente extremas, pero manteniendo acceso real a buenas estaciones de montaña.
+  </p>
+  <p class="intro-text">
+    Las cuatro opciones seleccionadas entran en el presupuesto orientativo de la familia con la promoción actual aplicada.
+  </p>
+
+  <div class="info-block" style="max-width:none;margin-top:24px;">
+    <div class="info-block-icon">🤝</div>
+    <div class="info-block-title">Un punto de honestidad que nos parece importante</div>
+    <div class="info-block-text">
+      <p>No todos los institutos de un mismo distrito ofrecen exactamente las mismas actividades deportivas. Por eso hemos diferenciado claramente dos situaciones:</p>
+      <div class="honest-cols">
+        <div class="honest-item honest-si">
+          <div class="honest-h"><span class="ski-badge ski-colegio">🎿 Depende del colegio</span></div>
+          <p>En <strong>Comox Valley</strong>, el Ski/Snowboard Team sí pertenece al propio instituto, por lo que hemos seleccionado específicamente colegios donde esta actividad está disponible.</p>
+        </div>
+        <div class="honest-item honest-no">
+          <div class="honest-h"><span class="ski-badge ski-distrito">🎿 No depende del colegio</span></div>
+          <p>En <strong>Vernon, Central Okanagan y Kamloops</strong>, el acceso al ski que recomendamos a Luis no depende del instituto concreto. Se realiza principalmente mediante actividades del International Student Program, transporte organizado o acceso a estaciones cercanas.</p>
+        </div>
+      </div>
+      <p style="margin-top:14px;">Esto nos permite escoger en esos tres distritos el colegio que <strong>mejor encaje con Luis</strong> por su tamaño, ambiente, oferta académica, apoyo al estudiante y actividades, sin tener que sacrificar esas prioridades únicamente para encontrar un Ski Team.</p>
+    </div>
+  </div>
+
+  <div class="qs-chapters-head" style="margin-bottom:14px;">
+    <div class="qs-chapters-title">Las cuatro opciones seleccionadas</div>
+    <div class="qs-chapters-sub">Localidad, cómo esquía Luis en cada una y qué depende del colegio</div>
+  </div>
+  <div class="tabla-wrap">
+    <table class="comp comp6">
+      <thead>
+        <tr>
+          <th>Distrito</th>
+          <th>Localidad y clima</th>
+          <th>¿Cómo puede esquiar Luis?</th>
+          <th>¿Depende del colegio?</th>
+          <th>Impacto académico</th>
+          <th>Precio MLQ</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="op">1 · Comox Valley</td>
+          <td>Courtenay / Comox, Isla de Vancouver. Entorno semiurbano costero, rodeado de océano, montaña y naturaleza. Invierno especialmente suave para Canadá en el valle; la nieve se concentra principalmente en Mount Washington.</td>
+          <td><strong>Ski del propio colegio.</strong> Ski/Snowboard Team durante la temporada de invierno + posibilidad de ski adicional en Mount Washington.</td>
+          <td><span class="badge-int int-ok">Sí</span><br>Por eso recomendamos institutos concretos que ofrecen Skiing &amp; Snowboarding.</td>
+          <td><strong>Ninguno.</strong> Es extracurricular y no sustituye asignaturas.</td>
+          <td class="pr">24.330 €<s>25.330 €</s></td>
+        </tr>
+        <tr>
+          <td class="op">2 · Vernon SD22</td>
+          <td>Vernon, norte del Okanagan. Ciudad mediana rodeada de lagos y montaña. Invierno frío pero relativamente moderado y seco; SilverStar concentra condiciones de nieve mucho más intensas en altura.</td>
+          <td><strong>International Program + acceso local.</strong> Actividades de Vernon International en SilverStar y posibilidad de ski adicional mediante forfait, familia anfitriona, amigos, clases o transporte disponible.</td>
+          <td><span class="badge-int int-media">No</span><br>El colegio puede seleccionarse fundamentalmente por su encaje académico y personal.</td>
+          <td><strong>Ninguno.</strong> Nuestra recomendación es mantener Grade 10 convencional, sin Alpine Academy.</td>
+          <td class="pr">25.000 €<s>26.000 €</s></td>
+        </tr>
+        <tr>
+          <td class="op">3 · Central Okanagan SD23</td>
+          <td>Kelowna, Okanagan Valley. Ciudad mediana, dinámica y muy orientada a actividades outdoor. Invierno frío moderado y relativamente seco; Big White ofrece condiciones de ski de montaña a aproximadamente una hora de la ciudad.</td>
+          <td><strong>Ski Shuttle del International Program.</strong> Transporte opcional y organizado para estudiantes internacionales a Big White durante determinadas fechas de invierno, fines de semana y vacaciones.</td>
+          <td><span class="badge-int int-media">No</span><br>El Ski Shuttle está vinculado al programa internacional, no a un único instituto.</td>
+          <td><strong>Ninguno.</strong> El ski se realiza completamente fuera de los bloques académicos.</td>
+          <td class="pr">24.200 €<s>25.200 €</s></td>
+        </tr>
+        <tr>
+          <td class="op">4 · Kamloops-Thompson SD73</td>
+          <td>Kamloops. Ciudad mediana del interior de British Columbia, con clima seco, mucha naturaleza y fuerte cultura deportiva. Invierno frío pero generalmente menos extremo que otros destinos del interior canadiense.</td>
+          <td><strong>Salidas del International Student Program.</strong> Actividades específicas de ski/snowboard a Sun Peaks + posibilidad de ski adicional de forma independiente.</td>
+          <td><span class="badge-int int-media">No</span><br>Las actividades internacionales están abiertas a estudiantes del programa independientemente del high school elegido.</td>
+          <td><strong>Ninguno.</strong> Las salidas se realizan como complemento al programa académico.</td>
+          <td class="pr">24.400 €<s>25.400 €</s></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <p class="tabla-nota">
+    Precios con el descuento de 1.000 € ya aplicado. La tarifa tachada corresponde al precio habitual sin promoción.
+    🍁 Reserva antes del <strong>30 de septiembre de 2026</strong> y obtén 1.000 € de descuento — ya aplicado en todos los precios de esta propuesta. No acumulable con otras promociones.
+  </p>
+
+  <!-- ============ 6. HOMOLOGACIÓN ============ -->
+  <div class="section-title"><h2>4.º de ESO y homologación en España</h2></div>
+  <div class="alert-box">
+    <div class="alert-icon">⚠️</div>
+    <div class="alert-text"><strong>El punto que ha ordenado toda esta propuesta.</strong> Luis cursará Grade 10, que posteriormente habrá que homologar al título español de Graduado en ESO. La normativa española vigente exige que el estudiante curse y apruebe <strong>en cada semestre un mínimo de cuatro asignaturas</strong> pertenecientes a determinadas áreas: Literatura, Historia, Geografía, Latín, Griego, Filosofía, Ciencias Naturales, Matemáticas, Física y Química.</div>
+  </div>
+  <div class="info-blocks">
+    <div class="info-block">
+      <div class="info-block-icon">✅</div>
+      <div class="info-block-title">Por qué estos cuatro distritos</div>
+      <div class="info-block-text">
+        En los cuatro, el esquí se practica <strong>fuera del horario académico</strong>: como deporte extracurricular del instituto o como actividad del programa internacional.
+        <ul>
+          <li>No hay riesgo de homologación por no completar las asignaturas exigidas por el Ministerio de Educación</li>
+          <li>Los cuatro bloques lectivos del semestre quedan libres para las materias que Luis necesita</li>
+          <li>Grade 10 funciona por semestres en los cuatro distritos, lo que facilita el encaje</li>
+          <li>Sin asignaturas online complementarias ni costes académicos añadidos</li>
+        </ul>
+      </div>
+    </div>
+    <div class="info-block">
+      <div class="info-block-icon">📐</div>
+      <div class="info-block-title">Cómo lo planificamos</div>
+      <div class="info-block-text">
+        La elección de asignaturas no se deja al azar ni al criterio del colegio.
+        <ul>
+          <li>MLQ revisa las asignaturas <strong>antes</strong> de formalizar el horario definitivo</li>
+          <li>Construimos las cuatro materias válidas de cada semestre: Matemáticas, Ciencias, Historia/Geografía y Literatura o equivalentes</li>
+          <li>El gestor estudiantil en destino vigila cualquier cambio de asignatura durante el curso</li>
+          <li>A la vuelta gestionamos la convalidación ante el Ministerio y la apostilla de La Haya</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <!-- ============ 8. OPCIONES RECOMENDADAS ============ -->
+  <div class="section-title"><h2>Las cuatro opciones</h2></div>
+  <div class="opciones-grid">
+
+    <div class="opcion-card recomendada">
+      <div class="badge-rec">★ RECOMENDADA</div>
+      <div class="opcion-header">
+        <div class="opcion-num">Opción 01</div>
+        <div class="opcion-distrito">Comox Valley School District</div>
+        <div class="opcion-loc">📍 British Columbia · Isla de Vancouver · Courtenay</div>
+        <div class="precio-chip"><span class="val">24.330 €</span><span class="desc">/ año</span><span class="tachado">25.330 €</span></div>
+      </div>
+      <div class="opcion-body">
+        <div class="ski-badge ski-colegio">🎿 El esquí es un deporte del propio instituto</div>
+        <div class="colegios">
+        <div class="colegio">
+          <div class="colegio-top"><div class="colegio-nombre">G.P. Vanier Secondary School</div><div class="colegio-meta"><span class="tag pub">Público</span><span class="tag info">~1.100 alumnos</span><span class="tag info">Courtenay · 28.420 hab.</span><span class="tag info">1.ª preferencia</span></div></div>
+          <details><summary>Por qué es ideal para Luis</summary><div class="colegio-razon">Es el que mejor encaja de toda la propuesta: instituto de buen tamaño, oferta académica amplia y <strong>Grade 10 con sistema semestral</strong>, que nos permite organizar bien las asignaturas. Ofrece <strong>Skiing &amp; Snowboarding como deporte escolar de invierno</strong> y Mountain Biking en primavera, además de rugby, golf, badminton y track &amp; field. Tiene <strong>International Support Teacher</strong> específico y está junto al complejo deportivo regional de Comox Valley, con piscina, pistas de hielo, campo artificial y gimnasio.</div></details>
+        </div>
+        <div class="colegio">
+          <div class="colegio-top"><div class="colegio-nombre">Mark R. Isfeld Secondary School</div><div class="colegio-meta"><span class="tag pub">Público</span><span class="tag info">~900–1.100 alumnos</span><span class="tag info">Courtenay · 28.420 hab.</span><span class="tag info">2.ª preferencia</span></div></div>
+          <details><summary>Por qué es ideal para Luis</summary><div class="colegio-razon">Otra opción especialmente interesante dentro de Comox Valley. También cuenta con <strong>Ski/Snowboard Team propio</strong> durante el invierno y una oferta deportiva amplia durante el resto del curso: en primavera Mountain Biking, tenis, rugby, atletismo y golf. Excelente alternativa a Vanier si queremos mantener exactamente el mismo planteamiento: programa académico convencional + ski como deporte escolar extracurricular.</div></details>
+        </div>
+        <div class="colegio">
+          <div class="colegio-top"><div class="colegio-nombre">Highland Secondary School</div><div class="colegio-meta"><span class="tag pub">Público</span><span class="tag info">~650 alumnos</span><span class="tag info">Comox · 14.806 hab.</span><span class="tag info">3.ª preferencia</span></div></div>
+          <details><summary>Por qué es ideal para Luis</summary><div class="colegio-razon">La alternativa más cercana y comunitaria. Más pequeño que Vanier, pero con unos <strong>650 alumnos</strong>, suficiente variedad académica y extracurricular, International Support Teacher y <strong>Skiing &amp; Snowboarding como deporte escolar</strong>. Su ambiente de <em>neighbourhood school</em> puede facilitar bastante la integración y la autonomía cotidiana.</div></details>
+        </div>
+      </div></div>
+      <div class="match-bar"><span class="match-tag">Esquí del propio colegio</span><span class="match-tag">Apoyo internacional</span><span class="match-tag">Grade 10 semestral</span><span class="match-tag">Complejo deportivo regional</span></div>
+    </div>
+
+    <div class="opcion-card">
+      <div class="opcion-header">
+        <div class="opcion-num">Opción 02</div>
+        <div class="opcion-distrito">Vernon School District 22</div>
+        <div class="opcion-loc">📍 British Columbia · Norte del Okanagan · Vernon</div>
+        <div class="precio-chip"><span class="val">25.000 €</span><span class="desc">/ año</span><span class="tachado">26.000 €</span></div>
+      </div>
+      <div class="opcion-body">
+        <div class="ski-badge ski-distrito">🎿 El esquí es del destino: SilverStar + Vernon International</div>
+        <div class="colegios">
+        <div class="colegio">
+          <div class="colegio-top"><div class="colegio-nombre">Vernon Secondary School</div><div class="colegio-meta"><span class="tag pub">Público</span><span class="tag info">~1.100 alumnos</span><span class="tag info">Vernon · 44.519 hab.</span><span class="tag info">1.ª preferencia</span></div></div>
+          <details><summary>Por qué es ideal para Luis</summary><div class="colegio-razon">El instituto más grande del distrito. Vernon International lo describe como uno de sus colegios más completos, con oferta en prácticamente todas las disciplinas y una tradición sólida en <em>academics, athletics</em> y <em>fine arts</em>. Tiene <strong>International Teacher propio</strong> asignado al colegio. Para un estudiante extrovertido como Luis puede resultar especialmente atractivo por la variedad de alumnos, actividades y oportunidades para integrarse.</div></details>
+        </div>
+        <div class="colegio">
+          <div class="colegio-top"><div class="colegio-nombre">Clarence Fulton Secondary School</div><div class="colegio-meta"><span class="tag pub">Público</span><span class="tag info">~650 alumnos</span><span class="tag info">Vernon · 44.519 hab.</span><span class="tag info">2.ª preferencia</span></div></div>
+          <details><summary>Por qué es ideal para Luis</summary><div class="colegio-razon">Vernon International destaca su amplia oferta académica, sus buenas instalaciones, sus <em>outstanding athletics programs</em> y sus programas de arts y trades. Es además el colegio con la <strong>población internacional más grande y diversa de Vernon</strong>: para Luis, cuyo inglés puede necesitar adaptación al principio, ese entorno es un plus. También tiene International Teacher propio.</div></details>
+        </div>
+        <div class="colegio">
+          <div class="colegio-top"><div class="colegio-nombre">Kalamalka Secondary School</div><div class="colegio-meta"><span class="tag pub">Público</span><span class="tag info">~700 alumnos</span><span class="tag info">Coldstream · 11.171 hab.</span><span class="tag info">3.ª preferencia</span></div></div>
+          <details><summary>Por qué es ideal para Luis</summary><div class="colegio-razon">Más pequeño que los anteriores, pero muy lejos de los institutos de 300 alumnos que no os convencieron. Está en <strong>Coldstream, un municipio pegado a Vernon</strong> dentro del área de Greater Vernon, así que los servicios y la vida social de la ciudad quedan a pocos minutos. Destaca por su <strong>alto nivel académico</strong>, buenos programas deportivos y extracurriculares, y su ubicación en Coldstream, junto a Kalamalka Lake y el Provincial Park. Ofrece Outdoor Education, fitness, fotografía, psicología, teatro, woodworking y band, entre otras opciones. También con International Teacher propio.</div></details>
+        </div>
+      </div></div>
+      <div class="match-bar"><span class="match-tag">SilverStar muy cerca</span><span class="match-tag">Institutos grandes</span><span class="match-tag">International Teacher por colegio</span></div>
+    </div>
+
+    <div class="opcion-card">
+      <div class="opcion-header">
+        <div class="opcion-num">Opción 03</div>
+        <div class="opcion-distrito">Central Okanagan School District 23</div>
+        <div class="opcion-loc">📍 British Columbia · Valle del Okanagan · Kelowna</div>
+        <div class="precio-chip"><span class="val">24.200 €</span><span class="desc">/ año</span><span class="tachado">25.200 €</span></div>
+      </div>
+      <div class="opcion-body">
+        <div class="ski-badge ski-distrito">🎿 El esquí es del distrito: Ski Shuttle del ISP a Big White</div>
+        <div class="colegios">
+        <div class="colegio">
+          <div class="colegio-top"><div class="colegio-nombre">Okanagan Mission Secondary</div><div class="colegio-meta"><span class="tag pub">Público</span><span class="tag info">~1.500 alumnos</span><span class="tag info">Kelowna · 144.576 hab.</span><span class="tag info">1.ª preferencia</span></div></div>
+          <details><summary>Por qué es ideal para Luis</summary><div class="colegio-razon">Nuestra primera recomendación académica y deportiva del distrito. Oferta muy completa —Matemáticas, Ciencias, Historia, Literatura, idiomas, Outdoor Education, robotics, electronics, photography y tecnología— junto a muchísima actividad deportiva: basketball, cross-country, golf, hockey, soccer, swimming, tennis, athletics y volleyball. Mantiene además Mountain Biking Club, Weightlifting, STEM, Model UN y Creative Writing. Tamaño importante y ambiente muy activo.</div></details>
+        </div>
+        <div class="colegio">
+          <div class="colegio-top"><div class="colegio-nombre">Kelowna Secondary School</div><div class="colegio-meta"><span class="tag pub">Público</span><span class="tag info">~1.700–1.900 alumnos</span><span class="tag info">Kelowna · 144.576 hab.</span><span class="tag info">2.ª preferencia</span></div></div>
+          <details><summary>Por qué es ideal para Luis</summary><div class="colegio-razon">Uno de los grandes <em>secondary schools</em> del distrito, en la zona central de Kelowna, con una enorme variedad de programas académicos y extracurriculares; el propio colegio destaca sus programas de athletics, music, drama y visual arts, además de una red importante de apoyo académico. Un detalle que nos gusta especialmente: al empezar precisamente en Grade 10, <strong>Luis entraría directamente en el rango de edad del instituto</strong>.</div></details>
+        </div>
+        <div class="colegio">
+          <div class="colegio-top"><div class="colegio-nombre">Mount Boucherie Secondary</div><div class="colegio-meta"><span class="tag pub">Público</span><span class="tag info">~1.800 alumnos</span><span class="tag info">West Kelowna · 36.078 hab.</span><span class="tag info">3.ª preferencia</span></div></div>
+          <details><summary>Por qué es ideal para Luis</summary><div class="colegio-razon">En West Kelowna, y nos gusta sobre todo por su <strong>estructura de apoyo</strong>: counsellors asignados por grupos de alumnos, Learning Assistance, Learning Centre y Social-Emotional Learning. Tiene además una presencia internacional importante —más de 140 alumnos internacionales de unos 25 países— y extracurriculares como climbing/bouldering, badminton, robotics, Biology, Physics Olympics, art, chess y liderazgo.</div></details>
+        </div>
+      </div></div>
+      <div class="match-bar"><span class="match-tag">Ski Shuttle a Big White</span><span class="match-tag">Institutos de 1.500+</span><span class="match-tag">Elegimos colegio por Luis</span></div>
+    </div>
+
+    <div class="opcion-card">
+      <div class="opcion-header">
+        <div class="opcion-num">Opción 04</div>
+        <div class="opcion-distrito">Kamloops-Thompson School District 73</div>
+        <div class="opcion-loc">📍 British Columbia · Interior · Kamloops</div>
+        <div class="precio-chip"><span class="val">24.400 €</span><span class="desc">/ año</span><span class="tachado">25.400 €</span></div>
+      </div>
+      <div class="opcion-body">
+        <div class="ski-badge ski-distrito">🎿 El esquí es del distrito: actividades del ISP + Sun Peaks</div>
+        <div class="colegios">
+        <div class="colegio">
+          <div class="colegio-top"><div class="colegio-nombre">South Kamloops Secondary</div><div class="colegio-meta"><span class="tag pub">Público</span><span class="tag info">~1.150 alumnos</span><span class="tag info">Kamloops · 97.902 hab.</span><span class="tag info">1.ª preferencia</span></div></div>
+          <details><summary>Por qué es ideal para Luis</summary><div class="colegio-razon">Suficientemente grande para tener mucha vida escolar, pero con una <strong>proporción de alumnos internacionales muy baja</strong>: unos 20 sobre 1.150. Eso significa una experiencia mucho más canadiense. Programa académico completo con Science, Environmental Sciences, robotics, japonés, photography, theatre, music, automotive, leadership y practical arts; y en extracurricular soccer, volleyball, football, basketball, rugby, tenis, ultimate, golf y más de 20 clubs.</div></details>
+        </div>
+        <div class="colegio">
+          <div class="colegio-top"><div class="colegio-nombre">Sa-Hali Secondary</div><div class="colegio-meta"><span class="tag pub">Público</span><span class="tag info">~900 alumnos</span><span class="tag info">Kamloops · 97.902 hab.</span><span class="tag info">2.ª preferencia</span></div></div>
+          <details><summary>Por qué es ideal para Luis</summary><div class="colegio-razon">Tiene algo que nos gusta mucho para este caso: está cerca de la Thompson Rivers University, de instalaciones deportivas, centros comerciales, cine y restaurantes, así que <strong>no da sensación de pueblo pequeño</strong>. Ofrece academics, music, drama, art, woodwork, metalwork, food studies, textiles y una Outdoor Education con rock climbing, kayaking, camping y hiking, además de deportes y numerosos clubs.</div></details>
+        </div>
+        <div class="colegio">
+          <div class="colegio-top"><div class="colegio-nombre">Valleyview Secondary</div><div class="colegio-meta"><span class="tag pub">Público</span><span class="tag info">~1.200 alumnos</span><span class="tag info">Kamloops · 97.902 hab.</span><span class="tag info">3.ª preferencia</span></div></div>
+          <details><summary>Por qué es ideal para Luis</summary><div class="colegio-razon">Un <em>high school</em> amplio y culturalmente diverso, con una oferta fuerte de academic courses, applied skills, physical education, idiomas y fine and performing arts, además de deportes, música, drama, arte y leadership. Buena alternativa si buscamos un instituto grande y variado manteniendo un programa académico convencional.</div></details>
+        </div>
+      </div></div>
+      <div class="match-bar"><span class="match-tag">Sun Peaks</span><span class="match-tag">Pocos internacionales</span><span class="match-tag">Invierno muy seco</span></div>
+    </div>
+
+  </div>
+
+  <!-- ============ 9. DETALLE POR DISTRITO ============ -->
+  <div class="section-title"><h2>Cada distrito, en detalle</h2></div>
+  <div class="det-list">
+
+    <details class="det top" open>
+      <summary>
+        <span class="det-num">01</span>
+        <span class="det-head">
+          <span class="det-tit">Comox Valley School District</span>
+          <span class="det-sub">El único de los cuatro donde el esquí pertenece al propio instituto</span>
+        </span>
+        <span class="det-pr">24.330 €<s>25.330 €</s></span>
+      </summary>
+      <div class="det-body">
+        <h4>Por qué lo hemos seleccionado</h4>
+        <p>Porque reúne las dos prioridades sin tener que elegir entre ellas: <strong>un instituto grande con oferta académica completa</strong> y, al mismo tiempo, <strong>Skiing &amp; Snowboarding como deporte escolar de invierno del propio colegio</strong>. Luis no dependería de una excursión ni de un club externo para esquiar con regularidad, y a la vez sus cuatro bloques lectivos quedan intactos. Es también el distrito con el apoyo más definido al alumno internacional, con un International Support Teacher específico en los colegios que proponemos.</p>
+
+        <h4>Localidad y clima</h4>
+        <p>Courtenay y Comox, en la <strong>Isla de Vancouver</strong>. El valle tiene un invierno suave y húmedo, con temperaturas rara vez muy bajas; la nieve está en la montaña, en <strong>Mount Washington Alpine Resort</strong>, la gran estación de la zona. Es un entorno tranquilo, de ciudad media, con mar y montaña a la vez.</p>
+
+        <h4>Cómo funciona aquí el ski</h4>
+        <div class="ski-badge ski-colegio">🎿 Sí depende del colegio que seleccionemos</div>
+        <p>En Comox <strong>sí importa qué colegio seleccionemos</strong>. Luis tendría que estar matriculado en un instituto que ofrezca <strong>Skiing &amp; Snowboarding</strong> y, una vez allí, podrá solicitar su incorporación al equipo cuando se abra la temporada. El distrito sitúa la temporada aproximadamente entre finales de noviembre y mediados de marzo.</p>
+        <p>El calendario de entrenamientos y competiciones lo establece cada colegio anualmente, por lo que <strong>no prometemos desde ahora un número fijo de días de ski por semana</strong>.</p>
+        <div class="callout">
+          Es una actividad <strong>extracurricular</strong>, y eso es precisamente su ventaja: no sustituye ninguna asignatura. El distrito informa de que los deportes extracurriculares tienen normalmente un coste de entre <strong>C$200 (≈ 125 €) y C$1.000 (≈ 623 €)</strong> según competiciones y torneos; confirmaríamos el importe concreto del Ski/Snowboard Team antes de la participación.
+        </div>
+
+        <h4>Colegios que recomendamos para Luis</h4>
+        <div class="det-colegio">
+          <div class="det-colegio-h"><span class="det-colegio-n">G.P. Vanier Secondary School</span><span class="det-colegio-r">Nuestra primera elección</span></div>
+          <div class="ficha"><div><span>Alumnos</span><strong>~1.100</strong></div><div><span>Localidad</span><strong>Courtenay</strong></div><div><span>Entorno</span><strong>Semiurbana · ciudad pequeña-media</strong></div><div><span>Habitantes</span><strong>28.420</strong></div></div>
+          <div class="det-tags"><span class="tag pub">Público</span><span class="tag info">Grades 8–12</span><span class="tag info">Skiing &amp; Snowboarding</span><span class="tag info">International Support Teacher</span></div>
+          <ul>
+            <li>Instituto suficientemente grande, con una oferta académica amplia</li>
+            <li>Grade 10 funciona con <strong>sistema semestral</strong>, que nos permite organizar bien las asignaturas</li>
+            <li><strong>Skiing &amp; Snowboarding</strong> como deporte escolar de invierno</li>
+            <li>En primavera, Mountain Biking; además rugby, golf, badminton y track &amp; field</li>
+            <li><strong>International Support Teacher</strong> específico</li>
+            <li>Junto al complejo deportivo regional de Comox Valley: piscina, pistas de hielo, campo artificial y gimnasio</li>
+          </ul>
+          <div class="callout green">
+            <strong>Por qué lo recomendamos para Luis.</strong> Es nuestra primera recomendación dentro de Comox Valley porque combina un instituto de buen tamaño, una oferta académica completa y la posibilidad de participar directamente en Skiing &amp; Snowboarding como deporte del propio colegio durante el invierno. Esto permite mantener el esquí dentro de su vida escolar sin modificar las asignaturas necesarias para Grade 10.
+          </div>
+        </div>
+        <div class="det-colegio">
+          <div class="det-colegio-h"><span class="det-colegio-n">Mark R. Isfeld Secondary School</span><span class="det-colegio-r">Alternativa recomendada</span></div>
+          <div class="ficha"><div><span>Alumnos</span><strong>~900–1.100</strong></div><div><span>Localidad</span><strong>Courtenay</strong></div><div><span>Entorno</span><strong>Semiurbana · residencial</strong></div><div><span>Habitantes</span><strong>28.420</strong></div></div>
+          <div class="det-tags"><span class="tag pub">Público</span><span class="tag info">Grades 8–12</span><span class="tag info">Ski/Snowboard Team</span><span class="tag info">International Support Teacher</span></div>
+          <ul>
+            <li><strong>Ski/Snowboard Team propio</strong> confirmado para la temporada de invierno</li>
+            <li>Oferta deportiva muy amplia durante todo el curso</li>
+            <li>En primavera, Mountain Biking, tenis, rugby, atletismo y golf</li>
+            <li>International Support Teacher para el alumnado internacional</li>
+          </ul>
+          <div class="callout green">
+            <strong>Por qué lo recomendamos para Luis.</strong> Mark R. Isfeld es otra alternativa especialmente interesante si queremos que Luis pueda integrar el esquí dentro de las actividades deportivas del propio instituto. Su Ski/Snowboard Team permite practicar el deporte de manera complementaria sin ocupar bloques lectivos.
+          </div>
+        </div>
+        <div class="det-colegio">
+          <div class="det-colegio-h"><span class="det-colegio-n">Highland Secondary School</span><span class="det-colegio-r">Tercera opción</span></div>
+          <div class="ficha"><div><span>Alumnos</span><strong>~650</strong></div><div><span>Localidad</span><strong>Comox</strong></div><div><span>Entorno</span><strong>Semiurbana · residencial</strong></div><div><span>Habitantes</span><strong>14.806</strong></div></div>
+          <div class="det-tags"><span class="tag pub">Público</span><span class="tag info">Skiing &amp; Snowboarding</span><span class="tag info">International Support Teacher</span><span class="tag info">Neighbourhood school</span></div>
+          <ul>
+            <li>La alternativa más cercana y comunitaria de las tres</li>
+            <li>Más pequeño que Vanier, pero con unos <strong>650 alumnos</strong> y suficiente variedad académica y extracurricular</li>
+            <li><strong>International Support Teacher</strong></li>
+            <li><strong>Skiing &amp; Snowboarding</strong> como deporte escolar</li>
+            <li>Ambiente de <em>neighbourhood school</em>, que puede facilitar la integración y la autonomía cotidiana</li>
+          </ul>
+          <div class="callout green">
+            <strong>Por qué lo recomendamos.</strong> Para Luis, 650 alumnos no nos parece «demasiado pequeño» en el sentido que os preocupaba con los institutos de montaña: no estamos hablando de un instituto de 300 alumnos en una localidad de 4.000 habitantes. Highland está en Comox y forma parte del área del Comox Valley, así que el contexto es completamente distinto.
+          </div>
+        </div>
+
+        <h4>Parte académica y homologación</h4>
+        <p>Es una de sus grandes ventajas. Al tratarse de una actividad extracurricular, el horario escolar queda íntegramente disponible para construir el programa académico compatible con los requisitos españoles. Con Grade 10 en <strong>sistema semestral</strong>, organizamos las cuatro materias válidas de cada semestre sin interferencias.</p>
+
+        <h4>Valoración MLQ</h4>
+        <p>Nuestra <strong>primera recomendación</strong>. Es el mejor equilibrio de la propuesta entre programa académico protegido, esquí realmente integrado en la vida escolar, apoyo específico al estudiante internacional y precio.</p>
+      </div>
+    </details>
+
+    <details class="det">
+      <summary>
+        <span class="det-num">02</span>
+        <span class="det-head">
+          <span class="det-tit">Vernon School District 22</span>
+          <span class="det-sub">SilverStar muy cerca y tres institutos grandes con apoyo internacional propio</span>
+        </span>
+        <span class="det-pr">25.000 €<s>26.000 €</s></span>
+      </summary>
+      <div class="det-body">
+        <h4>Por qué lo hemos seleccionado</h4>
+        <p>Por la combinación de <strong>institutos amplios con buena oferta académica</strong> y la cercanía real de una estación de esquí importante. Los tres colegios que proponemos tienen <strong>International Teacher propio asignado al centro</strong>, algo que valoramos mucho para un estudiante que agradece seguimiento y estructura.</p>
+
+        <div class="callout blue">
+          <strong>Una aclaración importante.</strong> En Vernon, nuestra recomendación de esquí <strong>no depende del instituto elegido</strong>. El principal atractivo deportivo es la cercanía de <strong>SilverStar Mountain Resort</strong> y las actividades organizadas por Vernon International. Por ello, la selección del colegio la hacemos fundamentalmente según tamaño, oferta académica, actividades y apoyo al estudiante.
+        </div>
+
+        <h4>Localidad y clima</h4>
+        <p>Vernon, en el <strong>norte del valle del Okanagan</strong>. Invierno frío y seco, con nieve abundante en cota y un ambiente claramente invernal, pero sin la humedad de la costa. Ciudad media con lagos alrededor y mucha vida al aire libre.</p>
+
+        <h4>Cómo funciona aquí el ski</h4>
+        <div class="ski-badge ski-distrito">🎿 El ski NO determina qué colegio elegimos</div>
+        <p>Vernon International organiza actividades de invierno en <strong>SilverStar</strong>, incluida actualmente alguna jornada específica de ski. Además, SilverStar está muy cerca de Vernon, por lo que Luis puede complementar esas actividades con ski durante fines de semana o vacaciones.</p>
+        <div class="callout">
+          Queremos dejar claro que <strong>no existe un Ski Shuttle recurrente equivalente al de Central Okanagan</strong>. Para practicar ski adicional dependerá de la logística disponible: familia anfitriona, amigos, transporte, clases o actividades organizadas.
+        </div>
+        <div class="callout blue">
+          La <strong>Alpine Ski Academy de SD22 no forma parte de nuestra recomendación</strong> para Luis, ya que está orientada a racing y entrenamiento competitivo y puede ocupar parte del horario académico.
+        </div>
+
+        <h4>Colegios que recomendamos para Luis</h4>
+        <div class="det-colegio">
+          <div class="det-colegio-h"><span class="det-colegio-n">Vernon Secondary School</span><span class="det-colegio-r">Nuestra primera elección</span></div>
+          <div class="ficha"><div><span>Alumnos</span><strong>~1.100</strong></div><div><span>Localidad</span><strong>Vernon</strong></div><div><span>Entorno</span><strong>Urbana pequeña · ciudad mediana</strong></div><div><span>Habitantes</span><strong>44.519</strong></div></div>
+          <div class="det-tags"><span class="tag pub">Público</span><span class="tag info">Grades 8–12</span><span class="tag info">El más grande del distrito</span><span class="tag info">International Teacher propio</span></div>
+          <ul>
+            <li>El <strong>instituto más grande del distrito</strong></li>
+            <li>Vernon International lo describe como uno de sus colegios más completos</li>
+            <li>Oferta en prácticamente todas las disciplinas</li>
+            <li>Tradición sólida en <em>academics</em>, <em>athletics</em> y <em>fine arts</em></li>
+          </ul>
+          <div class="callout green">
+            <strong>Por qué lo recomendamos.</strong> Es nuestra primera recomendación en Vernon porque ofrece un entorno escolar amplio y dinámico, con muchas posibilidades académicas, deportivas y sociales. Para un estudiante extrovertido como Luis puede resultar especialmente atractivo por la variedad de alumnos, actividades y oportunidades para integrarse.
+          </div>
+        </div>
+        <div class="det-colegio">
+          <div class="det-colegio-h"><span class="det-colegio-n">Clarence Fulton Secondary School</span><span class="det-colegio-r">Alternativa recomendada</span></div>
+          <div class="ficha"><div><span>Alumnos</span><strong>~650</strong></div><div><span>Localidad</span><strong>Vernon</strong></div><div><span>Entorno</span><strong>Semiurbana · residencial</strong></div><div><span>Habitantes</span><strong>44.519</strong></div></div>
+          <div class="det-tags"><span class="tag pub">Público</span><span class="tag info">Grades 8–12</span><span class="tag info">Mayor comunidad internacional</span><span class="tag info">International Teacher propio</span></div>
+          <ul>
+            <li>Amplia oferta académica y buenas instalaciones</li>
+            <li><em>Outstanding athletics programs</em> destacados por el propio programa internacional</li>
+            <li>Programas de arts y trades</li>
+            <li>Es el colegio con la <strong>población internacional más grande y diversa de Vernon</strong></li>
+          </ul>
+          <div class="callout green">
+            <strong>Por qué lo recomendamos.</strong> Clarence Fulton puede ser especialmente interesante si buscamos una combinación entre integración sencilla, deportes, buen acompañamiento al estudiante internacional y un colegio de tamaño medio. Para Luis, cuyo inglés inicialmente puede necesitar adaptación, ese entorno internacional es un pequeño plus.
+          </div>
+        </div>
+        <div class="det-colegio">
+          <div class="det-colegio-h"><span class="det-colegio-n">Kalamalka Secondary School</span><span class="det-colegio-r">Tercera opción</span></div>
+          <div class="ficha"><div><span>Alumnos</span><strong>~700</strong></div><div><span>Localidad</span><strong>Coldstream</strong></div><div><span>Entorno</span><strong>Semiurbana · residencial</strong></div><div><span>Habitantes</span><strong>11.171 <em style="font-style:normal;font-weight:400;color:var(--text-light);">· área de Vernon</em></strong></div></div>
+          <div class="det-tags"><span class="tag pub">Público</span><span class="tag info">Grades 8–12</span><span class="tag info">Outdoor Education</span><span class="tag info">International Teacher propio</span></div>
+          <ul>
+            <li>Más pequeño que los anteriores, pero <strong>nada comparable con los institutos de 300 alumnos</strong> que no os convencieron</li>
+            <li>Destaca por su alto nivel académico</li>
+            <li>Buenos programas deportivos y extracurriculares</li>
+            <li>Ubicación en Coldstream, junto a Kalamalka Lake y el Provincial Park</li>
+            <li>Outdoor Education, fitness, fotografía, psicología, teatro, woodworking y band, entre otras opciones</li>
+          </ul>
+          <div class="callout green">
+            <strong>Por qué lo recomendamos.</strong> Kalamalka puede encajar muy bien si buscamos un ambiente algo más cercano que Vernon Secondary, manteniendo una buena oferta académica y una clara conexión con deporte y naturaleza. Sobre la cifra de habitantes, la misma aclaración que hacíamos con Highland: <strong>Coldstream no es una localidad aislada</strong>, sino un municipio pegado a Vernon dentro del área de Greater Vernon. Luis viviría en un entorno residencial tranquilo, con los servicios, el comercio y la vida social de Vernon a pocos minutos, y con SilverStar igual de accesible que desde el resto del distrito.
+          </div>
+        </div>
+
+        <h4>Parte académica y homologación</h4>
+        <p>Al ser el esquí una actividad del destino y del programa internacional, <strong>no interfiere en ningún momento con el horario lectivo</strong>. Los tres colegios ofrecen una oferta académica suficiente para construir las cuatro materias válidas de cada semestre, y el International Teacher del centro es un apoyo directo para vigilar que la elección de asignaturas se mantenga durante el curso.</p>
+
+        <h4>Valoración MLQ</h4>
+        <p>Una opción muy sólida. Es la más cara de las cuatro, y su gran argumento es la <strong>cercanía de SilverStar</strong> combinada con institutos grandes y apoyo internacional asignado a cada colegio.</p>
+      </div>
+    </details>
+
+    <details class="det">
+      <summary>
+        <span class="det-num">03</span>
+        <span class="det-head">
+          <span class="det-tit">Central Okanagan School District 23 · Kelowna</span>
+          <span class="det-sub">Ski Shuttle a Big White del programa internacional: elegimos el colegio por Luis</span>
+        </span>
+        <span class="det-pr">24.200 €<s>25.200 €</s></span>
+      </summary>
+      <div class="det-body">
+        <h4>Por qué lo hemos seleccionado</h4>
+        <p>Porque aquí ocurre algo muy cómodo: el esquí está garantizado por el distrito, así que <strong>podemos escoger el colegio pensando solo en Luis</strong>. Y los tres institutos que proponemos son grandes, con oferta académica muy completa y mucha vida escolar. Es además la opción más económica de las cuatro.</p>
+
+        <div class="callout blue">
+          <strong>Una aclaración importante.</strong> El acceso a <strong>Big White mediante el Ski Shuttle pertenece al International Student Program</strong> de Central Okanagan, no a un único instituto. Por tanto, Luis puede mantener el esquí como actividad complementaria independientemente de que escojamos Okanagan Mission, Kelowna Secondary o Mount Boucherie. El propio programa internacional publica el Ski Shuttle, sus puntos de recogida y sus normas específicas para estudiantes.
+        </div>
+
+        <h4>Localidad y clima</h4>
+        <p><strong>Kelowna</strong>, la ciudad principal del valle del Okanagan y una de las más agradables del interior de British Columbia. Invierno frío moderado y un valle muy soleado, con lago, viñedos y montaña alrededor. Ciudad con servicios completos y ambiente universitario.</p>
+
+        <h4>Cómo funciona aquí el ski</h4>
+        <div class="ski-badge ski-distrito">🎿 Aquí el ski tampoco depende del colegio</div>
+        <p>Esta es probablemente la opción donde <strong>la logística de ski es más sencilla y estructurada</strong>. El International Student Program dispone de un <strong>District Ski Shuttle</strong> específico para estudiantes internacionales a Big White. Luis puede contratar opcionalmente este servicio durante la temporada y utilizarlo en las fechas establecidas para subir a la estación.</p>
+        <p>El <strong>Ski Shuttle y el Big White Season Pass son opcionales y tienen coste adicional</strong>. Esto permite una combinación muy limpia: colegio normal durante la semana + ski durante fines de semana y vacaciones sin tocar el horario académico.</p>
+
+        <h4>Colegios que recomendamos para Luis</h4>
+        <div class="det-colegio">
+          <div class="det-colegio-h"><span class="det-colegio-n">Okanagan Mission Secondary</span><span class="det-colegio-r">Nuestra primera elección</span></div>
+          <div class="ficha"><div><span>Alumnos</span><strong>~1.500</strong></div><div><span>Localidad</span><strong>Kelowna</strong></div><div><span>Entorno</span><strong>Urbana · residencial</strong></div><div><span>Habitantes</span><strong>144.576</strong></div></div>
+          <div class="det-tags"><span class="tag pub">Público</span><span class="tag info">Grades 9–12</span><span class="tag info">Outdoor Education</span><span class="tag info">Ski Shuttle del distrito</span></div>
+          <ul>
+            <li>Académico: Matemáticas, Ciencias, Historia, Literatura e idiomas</li>
+            <li>Outdoor Education, robotics, electronics, photography y tecnología</li>
+            <li>Deportes: basketball, cross-country, golf, hockey, soccer, swimming, tennis, athletics y volleyball</li>
+            <li>Clubes actuales: Mountain Biking Club, Weightlifting, STEM, Model UN y Creative Writing</li>
+          </ul>
+          <div class="callout green">
+            <strong>Por qué lo recomendamos para Luis.</strong> Okanagan Mission es probablemente nuestra primera recomendación académica y deportiva dentro de Central Okanagan. Tiene un tamaño importante, una oferta muy completa y un ambiente muy activo, incluyendo Outdoor Education y numerosas actividades deportivas. El esquí seguiría realizándose de forma complementaria mediante el Ski Shuttle del programa internacional a Big White.
+          </div>
+        </div>
+        <div class="det-colegio">
+          <div class="det-colegio-h"><span class="det-colegio-n">Kelowna Secondary School</span><span class="det-colegio-r">Alternativa recomendada</span></div>
+          <div class="ficha"><div><span>Alumnos</span><strong>~1.700–1.900</strong></div><div><span>Localidad</span><strong>Kelowna</strong></div><div><span>Entorno</span><strong>Urbana</strong></div><div><span>Habitantes</span><strong>144.576</strong></div></div>
+          <div class="det-tags"><span class="tag pub">Público</span><span class="tag info">Grades 10–12</span><span class="tag info">El más grande de la propuesta</span><span class="tag info">Ski Shuttle del distrito</span></div>
+          <ul>
+            <li>Uno de los grandes <em>secondary schools</em> del distrito, en la zona central de Kelowna</li>
+            <li>Enorme variedad de programas académicos y extracurriculares</li>
+            <li>Programas destacados de athletics, music, drama y visual arts</li>
+            <li>Red importante de apoyo académico</li>
+            <li>Al ser un centro de <strong>Grades 10–12</strong>, Luis entraría directamente en el rango de edad del instituto</li>
+          </ul>
+          <div class="callout green">
+            <strong>Por qué lo recomendamos.</strong> Es una muy buena alternativa para Luis si valoráis especialmente un colegio grande, dinámico y con muchas posibilidades académicas y sociales. Al comenzar precisamente en Grade 10, entra desde el primer día en el curso de entrada del centro.
+          </div>
+        </div>
+        <div class="det-colegio">
+          <div class="det-colegio-h"><span class="det-colegio-n">Mount Boucherie Secondary</span><span class="det-colegio-r">Tercera opción</span></div>
+          <div class="ficha"><div><span>Alumnos</span><strong>~1.800</strong></div><div><span>Localidad</span><strong>West Kelowna</strong></div><div><span>Entorno</span><strong>Semiurbana · suburbana</strong></div><div><span>Habitantes</span><strong>36.078</strong></div></div>
+          <div class="det-tags"><span class="tag pub">Público</span><span class="tag info">Grades 9–12</span><span class="tag info">Estructura de apoyo definida</span><span class="tag info">Ski Shuttle del distrito</span></div>
+          <ul>
+            <li>Estructura de apoyo muy definida: counsellors por grupos de alumnos, Learning Assistance, Learning Centre y Social-Emotional Learning</li>
+            <li>Presencia internacional importante: más de 140 alumnos internacionales de unos 25 países</li>
+            <li>Extracurricular: climbing/bouldering, badminton, robotics, Biology, Physics Olympics, art, chess y liderazgo</li>
+          </ul>
+          <div class="callout green">
+            <strong>Por qué lo recomendamos.</strong> Mount Boucherie nos gusta especialmente si queremos priorizar un colegio grande pero con una estructura de apoyo académico y personal muy definida. Para Luis puede ser interesante por la combinación entre vida social, actividades y seguimiento.
+          </div>
+        </div>
+
+        <h4>Parte académica y homologación</h4>
+        <p>Los tres institutos tienen oferta suficiente para cubrir con holgura las cuatro materias válidas por semestre. Como el esquí es una actividad del programa internacional fuera del horario lectivo, <strong>la planificación académica no compite en ningún momento con el deporte</strong>.</p>
+
+        <h4>Valoración MLQ</h4>
+        <p>La opción con mejor relación entre precio, tamaño de instituto y comodidad para esquiar. Si lo que más pesa es <strong>un instituto grande y muy completo con el esquí resuelto por el distrito</strong>, esta es la candidata más fuerte después de Comox Valley.</p>
+      </div>
+    </details>
+
+    <details class="det">
+      <summary>
+        <span class="det-num">04</span>
+        <span class="det-head">
+          <span class="det-tit">Kamloops-Thompson School District 73</span>
+          <span class="det-sub">Sun Peaks y una experiencia canadiense con muy pocos estudiantes internacionales</span>
+        </span>
+        <span class="det-pr">24.400 €<s>25.400 €</s></span>
+      </summary>
+      <div class="det-body">
+        <h4>Por qué lo hemos seleccionado</h4>
+        <p>Por dos motivos que nos parecen valiosos para Luis: el acceso a <strong>Sun Peaks</strong>, una de las estaciones grandes de British Columbia, y la posibilidad de estar en un instituto amplio con una <strong>proporción de alumnos internacionales muy baja</strong>. Eso empuja mucho la inmersión, tanto lingüística como social.</p>
+
+        <div class="callout blue">
+          <strong>Una aclaración importante.</strong> Las actividades de esquí y snowboard que recomendamos en Kamloops se realizan principalmente <strong>a través del International Student Program y del acceso a Sun Peaks</strong>, por lo que no elegimos el instituto por tener un Ski Team específico. SD73 trabaja con siete <em>secondary schools</em> dentro de Kamloops; para Luis hemos reducido a tres.
+        </div>
+
+        <h4>Localidad y clima</h4>
+        <p><strong>Kamloops</strong>, en el interior de British Columbia, en el encuentro de los dos brazos del río Thompson. Invierno frío y <strong>muy seco</strong>, con un paisaje semiárido de colinas que sorprende a quien llega esperando el bosque húmedo de la costa. Ciudad media con servicios completos y universidad propia.</p>
+
+        <h4>Cómo funciona aquí el ski</h4>
+        <div class="ski-badge ski-distrito">🎿 El colegio también se selecciona independientemente del ski</div>
+        <p>SD73 organiza actividades para sus estudiantes internacionales y entre ellas incluye <strong>salidas específicas de ski/snowboard a Sun Peaks</strong>.</p>
+        <div class="callout">
+          Estas actividades <strong>pueden tener suplemento y no equivalen a un transporte semanal</strong> durante toda la temporada. Si Luis quisiera esquiar más veces además de las actividades programadas, tendría que hacerlo mediante la logística disponible en destino: familia anfitriona, amigos, transporte o actividades adicionales.
+        </div>
+
+        <h4>Colegios que recomendamos para Luis</h4>
+        <div class="det-colegio">
+          <div class="det-colegio-h"><span class="det-colegio-n">South Kamloops Secondary</span><span class="det-colegio-r">Nuestra primera elección</span></div>
+          <div class="ficha"><div><span>Alumnos</span><strong>~1.150</strong></div><div><span>Localidad</span><strong>Kamloops</strong></div><div><span>Entorno</span><strong>Urbana · ciudad mediana</strong></div><div><span>Habitantes</span><strong>97.902</strong></div></div>
+          <div class="det-tags"><span class="tag pub">Público</span><span class="tag info">~20 internacionales</span><span class="tag info">Más de 20 clubs</span><span class="tag info">Salidas a Sun Peaks</span></div>
+          <ul>
+            <li>Suficientemente grande para tener mucha vida escolar, con un volumen de internacionales muy reducido</li>
+            <li>Programa académico completo: Science, Environmental Sciences, robotics, japonés, photography, theatre, music, automotive, leadership y practical arts</li>
+            <li>Extracurricular: soccer, volleyball, football, basketball, rugby, tenis, ultimate y golf</li>
+            <li><strong>Más de 20 clubs</strong> distintos</li>
+          </ul>
+          <div class="callout green">
+            <strong>Por qué lo recomendamos.</strong> South Kamloops es nuestra primera recomendación dentro del distrito por su tamaño, su amplia oferta académica y extracurricular y su baja proporción de alumnos internacionales. Para Luis puede ofrecer una experiencia muy canadiense y socialmente activa sin renunciar a un entorno escolar grande y completo.
+          </div>
+        </div>
+        <div class="det-colegio">
+          <div class="det-colegio-h"><span class="det-colegio-n">Sa-Hali Secondary</span><span class="det-colegio-r">Alternativa recomendada</span></div>
+          <div class="ficha"><div><span>Alumnos</span><strong>~900</strong></div><div><span>Localidad</span><strong>Kamloops</strong></div><div><span>Entorno</span><strong>Urbana · residencial</strong></div><div><span>Habitantes</span><strong>97.902</strong></div></div>
+          <div class="det-tags"><span class="tag pub">Público</span><span class="tag info">~30 internacionales</span><span class="tag info">Junto a la universidad</span><span class="tag info">Outdoor Education</span></div>
+          <ul>
+            <li>Cerca de la Thompson Rivers University, instalaciones deportivas, centros comerciales, cine, restaurantes y servicios: <strong>no da sensación de pueblo pequeño</strong></li>
+            <li>Academics, music, drama, art, woodwork, metalwork, food studies y textiles</li>
+            <li><strong>Outdoor Education</strong> con rock climbing, kayaking, camping y hiking</li>
+            <li>Deportes y numerosos clubs</li>
+          </ul>
+          <div class="callout green">
+            <strong>Por qué lo recomendamos.</strong> Sa-Hali puede ser una opción especialmente atractiva para Luis por su ubicación, su tamaño medio y la combinación entre estudios, deporte, Outdoor Education y vida social. Es un entorno muy cómodo para un estudiante internacional que quiere sentirse activo también fuera del aula.
+          </div>
+        </div>
+        <div class="det-colegio">
+          <div class="det-colegio-h"><span class="det-colegio-n">Valleyview Secondary</span><span class="det-colegio-r">Tercera opción</span></div>
+          <div class="ficha"><div><span>Alumnos</span><strong>~1.200</strong></div><div><span>Localidad</span><strong>Kamloops</strong></div><div><span>Entorno</span><strong>Urbana · residencial</strong></div><div><span>Habitantes</span><strong>97.902</strong></div></div>
+          <div class="det-tags"><span class="tag pub">Público</span><span class="tag info">Culturalmente diverso</span><span class="tag info">Fine &amp; performing arts</span><span class="tag info">Salidas a Sun Peaks</span></div>
+          <ul>
+            <li><em>High school</em> amplio y culturalmente diverso</li>
+            <li>Fuerte oferta de academic courses, applied skills, physical education e idiomas</li>
+            <li>Fine and performing arts: música, drama y arte</li>
+            <li>Deportes y programas de leadership</li>
+          </ul>
+          <div class="callout green">
+            <strong>Por qué lo recomendamos.</strong> Valleyview es una buena alternativa para Luis si buscamos un instituto grande y variado, con muchas posibilidades para integrarse en actividades y deportes mientras mantiene un programa académico convencional.
+          </div>
+        </div>
+
+        <h4>Parte académica y homologación</h4>
+        <p>Los tres institutos tienen programa académico convencional y completo, con el esquí siempre fuera del horario. La baja proporción de estudiantes internacionales de South Kamloops es una ventaja lingüística clara, aunque implica menos red de compañeros en la misma situación: es algo a valorar según cómo veáis a Luis en sus primeras semanas.</p>
+
+        <h4>Valoración MLQ</h4>
+        <p>La opción más «canadiense» de las cuatro y la que más empuja la inmersión. Excelente si lo que buscáis es que Luis salga del entorno hispanohablante desde el primer día, con Sun Peaks como gran atractivo de invierno.</p>
+      </div>
+    </details>
+
+  </div>
+
+  <!-- ============ 10. PRUEBA DE INGLÉS ============ -->
+  <div class="section-title"><h2>La prueba de inglés</h2></div>
+  <p class="intro-text">
+    Antes de decidir definitivamente entre estas opciones, Luis realizará una <strong>prueba de nivel de inglés incluida en nuestro proceso</strong>.
+    No queremos utilizarla únicamente para asignarle una etiqueta como A2, B1 o B2.
+  </p>
+  <div class="info-blocks">
+    <div class="info-block">
+      <div class="info-block-icon">🎧</div>
+      <div class="info-block-title">Qué queremos comprobar</div>
+      <div class="info-block-text">
+        <ul>
+          <li>Comprensión oral</li>
+          <li>Capacidad para seguir instrucciones</li>
+          <li>Lectura</li>
+          <li>Expresión escrita</li>
+          <li>Capacidad para seguir una clase académica en inglés</li>
+        </ul>
+        <p>Los distritos canadienses piden un nivel suficiente para seguir las clases con normalidad, así que esta prueba nos dice tanto qué opción encaja mejor como qué preparación conviene antes de la salida.</p>
+        <a class="test-btn" href="https://form.jotform.com/262422713899062" target="_blank" rel="noopener">📝 Hacer la prueba de nivel de inglés</a>
+      </div>
+    </div>
+    <div class="info-block">
+      <div class="info-block-icon">⏳</div>
+      <div class="info-block-title">Si necesita mejorar, tenemos tiempo</div>
+      <div class="info-block-text">
+        Luis tiene prácticamente un curso completo antes de su llegada a Canadá.
+        <ul>
+          <li>Clases individuales con profesor a <strong>20 €/hora</strong> si la valoración muestra que conviene reforzar</li>
+          <li>Refuerzo diseñado a medida: conversación, comprensión oral, seguimiento de instrucciones, vocabulario académico, gramática o expresión escrita</li>
+          <li>Durante el propio Año Escolar tendrá incluida <strong>1 hora semanal de inglés Cambridge</strong> con profesor</li>
+        </ul>
+        Por ello, el nivel actual de Luis no tiene por qué ser un motivo para descartar de entrada una opción. Primero queremos conocer su punto de partida y después establecer, si fuera necesario, un plan de preparación.
+      </div>
+    </div>
+  </div>
+
+  <!-- ============ 11. VALORACIÓN FINAL ============ -->
+  <div class="section-title"><h2>Nuestra valoración final para Luis</h2></div>
+  <div class="rank">
+    <div class="rank-item top">
+      <div class="rank-num">1</div>
+      <div>
+        <div class="rank-tit">Comox Valley · G.P. Vanier</div>
+        <div class="rank-txt">La opción que más nos gusta. Es la única en la que el esquí es un deporte del propio instituto, con Grade 10 semestral, International Support Teacher y el complejo deportivo regional al lado. Programa académico protegido y esquí dentro de la vida escolar.</div>
+      </div>
+    </div>
+    <div class="rank-item">
+      <div class="rank-num">2</div>
+      <div>
+        <div class="rank-tit">Vernon SD22 · Vernon Secondary</div>
+        <div class="rank-txt">Tres institutos grandes con International Teacher propio y SilverStar muy cerca. El esquí llega por el programa internacional, no por el colegio. Es la más cara de las cuatro.</div>
+      </div>
+    </div>
+    <div class="rank-item">
+      <div class="rank-num">3</div>
+      <div>
+        <div class="rank-tit">Central Okanagan SD23 · Okanagan Mission</div>
+        <div class="rank-txt">La mejor relación entre precio e instituto grande. El Ski Shuttle a Big White es del distrito, así que elegimos el colegio pensando solo en Luis. Muy buena candidata si pesa el tamaño y la variedad del centro.</div>
+      </div>
+    </div>
+    <div class="rank-item">
+      <div class="rank-num">4</div>
+      <div>
+        <div class="rank-tit">Kamloops-Thompson SD73 · South Kamloops</div>
+        <div class="rank-txt">La más inmersiva: instituto grande con muy pocos estudiantes internacionales y Sun Peaks como atractivo de invierno. Ideal si el objetivo es salir del entorno hispanohablante desde el primer día.</div>
+      </div>
+    </div>
+  </div>
+  <div class="callout blue" style="max-width:none;">
+    <strong>Las cuatro son opciones válidas académicamente.</strong> La diferencia entre ellas no está en el nivel del programa, sino en
+    si preferís que el esquí forme parte del propio instituto (Comox Valley) o que llegue a través del programa internacional con
+    una gran estación detrás (Vernon, Kelowna y Kamloops).
+  </div>
+
+
+  <!-- ============ CÓMO SE VIVE EL CURSO ============ -->
+  <div class="qs-chapters-head">
+    <div class="qs-chapters-title">Cómo se vive el curso</div>
+    <div class="qs-chapters-sub">De la maleta en casa a la vida de instituto al otro lado del mundo</div>
+  </div>
+  <div class="qs-chapters">
+    <div class="qs-chapter">
+      <div class="qs-chapter-media">
+        <img src="https://aescobarnic.github.io/Propuestas/img/mlq-equipaje-salida.jpg" style="object-position:center 12%;" alt="Estudiante con su equipaje el día de la salida" loading="lazy">
+        <div class="qs-chapter-step">Antes de salir</div>
+      </div>
+      <div class="qs-chapter-body">
+        <div class="qs-chapter-title">Todo resuelto antes de la maleta</div>
+        <div class="qs-chapter-text">Entrevista, elección de distrito, matrícula, familia anfitriona, visado y vuelos. La familia solo se ocupa de preparar el equipaje.</div>
+      </div>
+    </div>
+    <div class="qs-chapter">
+      <div class="qs-chapter-media">
+        <img src="https://aescobarnic.github.io/Propuestas/img/mlq-salida-pista.jpg" style="object-position:center 8%;" alt="Estudiantes de My Language Quest el día de la salida" loading="lazy">
+        <div class="qs-chapter-step">El día de la salida</div>
+      </div>
+      <div class="qs-chapter-body">
+        <div class="qs-chapter-title">Salida acompañada</div>
+        <div class="qs-chapter-text">Orientación previa en Madrid o online, coordinación en el aeropuerto de salida y recibimiento en destino el día de la llegada.</div>
+      </div>
+    </div>
+    <div class="qs-chapter">
+      <div class="qs-chapter-media">
+        <img src="https://aescobarnic.github.io/Propuestas/img/mlq-vida-social.jpg" style="object-position:center 22%;" alt="Estudiante con sus nuevos amigos en un partido del instituto" loading="lazy">
+        <div class="qs-chapter-step">La vida allí</div>
+      </div>
+      <div class="qs-chapter-body">
+        <div class="qs-chapter-title">Un curso, no unas vacaciones</div>
+        <div class="qs-chapter-text">Instituto, extraescolares, partidos, amigos nuevos. Con supervisión local, acompañamiento psicológico y cambio de familia si hiciera falta.</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ============ 13. VISADO Y VUELOS ============ -->
+  <div class="section-title"><h2>Visado y vuelos</h2></div>
+  <div class="info-blocks">
+    <div class="info-block">
+      <div class="info-block-icon">🛂</div>
+      <div class="info-block-title">Visado — Study Permit</div>
+      <div class="info-block-text">La gestión y la tasa del <strong>Study Permit</strong> están incluidas en el programa.
+        <ul><li>Tramitación completa gestionada por MLQ</li><li>Tasa del visado incluida en el precio</li><li>Todas las opciones de esta propuesta están en British Columbia y Ontario, sin suplementos provinciales</li></ul>
+      </div>
+    </div>
+    <div class="info-block">
+      <div class="info-block-icon">✈</div>
+      <div class="info-block-title">Vuelos</div>
+      <div class="info-block-text">Los vuelos de ida y vuelta están incluidos, con un <strong>coste máximo reconocido de 1.000 €</strong>.
+        <ul><li>MLQ gestiona la búsqueda y reserva de los vuelos</li><li>Ajustados a las fechas de inicio y fin escolar</li><li>El exceso sobre 1.000 € corre a cargo de la familia</li></ul>
+      </div>
+    </div>
+  </div>
+
+  <!-- ============ 14. EL PROGRAMA INCLUYE ============ -->
+  <div class="section-title"><h2>El programa incluye</h2></div>
+  <div class="includes-wrap">
+    <div class="includes-head"><h3>📋 Todo lo que cubre My Language Quest</h3></div>
+    <div class="includes-body">
+      <div class="includes-grid">
+        <div>
+          <div class="col-title">Antes del viaje</div>
+          <ul class="inc-list">
+            <li>Reunión inicial con padres o tutores</li>
+            <li>Prueba de inglés y entrevista personal online</li>
+            <li>Propuesta personalizada de distrito y colegios</li>
+            <li>Inscripción y matriculación en el centro</li>
+            <li>Familia anfitriona en pensión completa, habitación individual o compartida</li>
+            <li>Un único estudiante hispanohablante por familia</li>
+            <li>Seguro médico y de accidentes</li>
+            <li>Libros (algunas asignaturas)</li>
+            <li>Gestión del visado Study Permit<small>Tasa incluida</small></li>
+            <li>Vuelos de ida y vuelta<small>Coste máximo 1.000 €. Exceso a cargo de la familia</small></li>
+            <li>Orientación pre-viaje en Madrid o online</li>
+            <li>Welcome pack sorpresa de My Language Quest</li>
+          </ul>
+        </div>
+        <div>
+          <div class="col-title">Durante el viaje</div>
+          <ul class="inc-list">
+            <li>Recibimiento en aeropuerto y traslados</li>
+            <li>Asesoramiento en elección de asignaturas, garantizando convalidación</li>
+            <li>Clases de inglés Cambridge y libro incluido</li>
+            <li>Taller MIT · 3 sesiones</li>
+            <li>Supervisión local: visitas, tutorías y emergencias 24 h</li>
+            <li>Acompañamiento psicológico</li>
+            <li>Atención 24 h en España para emergencias</li>
+            <li>Apoyo para matriculación en extraescolares</li>
+            <li>Gestión de cambio de familia si fuera necesario</li>
+          </ul>
+          <div class="col-title" style="margin-top:24px;">Después del viaje</div>
+          <ul class="inc-list">
+            <li>Convalidación ante el Ministerio de Educación</li>
+            <li>Validación de notas y apostilla de la Haya</li>
+            <li>Dossier final detallando la experiencia</li>
+          </ul>
+        </div>
+        <div>
+          <div class="col-title">No incluido</div>
+          <ul class="inc-list no">
+            <li>Exceso de vuelos sobre 1.000 €</li>
+            <li>Costes propios del esquí<small>Forfait, alquiler o compra de material, transporte a estación y cuota del equipo escolar</small></li>
+            <li>Transporte local mensual</li>
+            <li>Todo aquello que no esté especificado expresamente en el apartado &laquo;El programa incluye&raquo;</li>
+          </ul>
+        </div>
+      </div>
+      <div class="gestor-wrap">
+        <div class="gestor-title">Gestor estudiantil · se encarga de</div>
+        <div class="gestor-grid">
+          <div class="gestor-item">Seguimiento personalizado del desempeño</div>
+          <div class="gestor-item">Información a padres mensualmente</div>
+          <div class="gestor-item">Notas oficiales cada trimestre</div>
+          <div class="gestor-item">Asesoría en cambio de asignaturas</div>
+          <div class="gestor-item">Todas las tutorías necesarias</div>
+          <div class="gestor-item">Reuniones con padres y/o estudiante</div>
+          <div class="gestor-item">Apoyo en actividades extraescolares</div>
+          <div class="gestor-item">Resolución de situaciones con familia o centro</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ============ 15. FORMAS DE PAGO ============ -->
+  <div class="section-title"><h2>Formas de pago</h2></div>
+  <div class="payment-wrap">
+    <div class="payment-inner">
+      <div class="pay-title">💳 Condiciones económicas</div>
+      <div class="pay-subtitle">Dos vías: pago directo o financiación. El importe de la reserva cambia según cuál elijas.</div>
+
+      <div class="pay-route">
+        <div class="pay-route-head"><span class="pay-route-icon">🏦</span><span class="pay-route-title">Opción A · Pago sin financiación</span></div>
+        <div class="pay-route-sub">La cantidad íntegra debe abonarse antes del 10 de abril de 2027.</div>
+        <div class="pay-entrada">
+          <div class="pay-entrada-num">3.500 €</div>
+          <div class="pay-entrada-txt"><strong>Primer pago a la firma del contrato.</strong> Reserva la plaza e inicia la tramitación de matrícula, familia y visado.</div>
+        </div>
+        <div class="pay-cols">
+          <div class="pay-col">
+            <div class="pay-col-title">Distritos con pago fraccionado</div>
+            <div class="pay-step"><div class="pay-step-num">Paso 2 · Aceptación en el programa</div><div class="pay-step-title">40 % del importe restante</div></div>
+            <div class="pay-step"><div class="pay-step-num">Paso 3</div><div class="pay-step-title">Resto del importe</div><div class="pay-step-desc">Antes del 10 de abril de 2027</div></div>
+          </div>
+          <div class="pay-col">
+            <div class="pay-col-title">Distritos con pago completo</div>
+            <div class="pay-step"><div class="pay-step-num">Paso 2 · Aceptación en el programa</div><div class="pay-step-title">Resto del importe en su totalidad</div></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="pay-route">
+        <div class="pay-route-head"><span class="pay-route-icon">📆</span><span class="pay-route-title">Opción B · Con financiación Banco Sabadell</span></div>
+        <div class="pay-route-sub">Si se financia el programa, la entrada es siempre de 5.000 € y el resto se financia en cuotas mensuales.</div>
+        <div class="pay-entrada">
+          <div class="pay-entrada-num">5.000 €</div>
+          <div class="pay-entrada-txt"><strong>Entrada fija a la firma del contrato</strong> en todos los casos de financiación. El capital restante se financia en 12, 18, 24 o 36 meses.</div>
+        </div>
+        <div class="pay-cols">
+          <div class="pay-col">
+            <div class="pay-col-title">Capital financiado</div>
+            <div class="pay-step"><div class="pay-step-title">Precio del programa − 5.000 €</div><div class="pay-step-desc">Calcula tu cuota exacta en el simulador de la sección siguiente.</div></div>
+          </div>
+          <div class="pay-col">
+            <div class="pay-col-title">Condiciones</div>
+            <div class="pay-step"><div class="pay-step-title">12 meses · TIN 0 %</div><div class="pay-step-desc">MLQ asume los intereses</div></div>
+            <div class="pay-step"><div class="pay-step-title">18 / 24 / 36 meses · TIN 10,46 %</div><div class="pay-step-desc">Intereses a cargo del cliente</div></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="pay-note">Los costes propios del esquí (forfait, material, transporte a estación o cuota del equipo escolar del instituto) se abonan directamente al centro o al proveedor según su propio calendario y no forman parte del importe MLQ ni del capital financiado. El seguro de anulación e interrupción debe contratarse y abonarse en el momento de la firma del contrato. Su coste varía según el importe del programa y es emitido una vez el estudiante es aceptado por el centro escolar. Su importe no es reembolsable bajo ninguna circunstancia. Las inscripciones tardías deben cumplir con los plazos de pago ya pasados en el momento de la inscripción.</div>
+    </div>
+  </div>
+
+  <!-- ============ 16. FINANCIACIÓN — SIMULADOR ============ -->
+  <div class="section-title"><h2>Financia tu programa</h2></div>
+  <div class="financing-wrap">
+    <div class="financing-head">
+      <div class="financing-head-left">
+        <div class="fin-icon">💳</div>
+        <div>
+          <div class="fin-title">Paga a tu ritmo, sin preocupaciones</div>
+          <div class="fin-sub">Entrada fija de 5.000 € · Aprobación rápida · 100 % online · Sin comisión de apertura</div>
+        </div>
+      </div>
+      <div class="fin-badge">Hasta 36 meses</div>
+    </div>
+    <div class="financing-body">
+
+      <div class="fin-opcion-selector">
+        <div class="fin-opcion-label">Selecciona el distrito · precios con descuento aplicado</div>
+        <div class="fin-opcion-btns" id="finOpciones">
+          <button class="fin-opcion-btn active" data-precio="24330" data-nombre="⭐ Opción 1 · Comox Valley"><span class="fin-opcion-nombre">⭐ Op. 1 · Comox Valley</span><span class="fin-opcion-precio">24.330 €</span></button>
+          <button class="fin-opcion-btn" data-precio="25000" data-nombre="Opción 2 · Vernon SD22"><span class="fin-opcion-nombre">Op. 2 · Vernon SD22</span><span class="fin-opcion-precio">25.000 €</span></button>
+          <button class="fin-opcion-btn" data-precio="24200" data-nombre="Opción 3 · Central Okanagan"><span class="fin-opcion-nombre">Op. 3 · Central Okanagan</span><span class="fin-opcion-precio">24.200 €</span></button>
+          <button class="fin-opcion-btn" data-precio="24400" data-nombre="Opción 4 · Kamloops-Thompson"><span class="fin-opcion-nombre">Op. 4 · Kamloops-Thompson</span><span class="fin-opcion-precio">24.400 €</span></button>
+        </div>
+      </div>
+
+      <div class="fin-entrada-fija">
+        <div class="fin-entrada-fija-num">5.000 €</div>
+        <div class="fin-entrada-fija-txt"><strong>Entrada a la firma del contrato.</strong> Se descuenta del precio del programa; el resto es el capital que se financia.</div>
+      </div>
+
+      <div class="fin-plazo-wrap">
+        <div class="fin-plazo-label">Elige tu plazo de financiación</div>
+        <div class="fin-plazos" id="finPlazos">
+          <button class="fin-plazo active" data-meses="12" data-tin="0"><div class="fin-plazo-meses">12 meses</div><div class="fin-plazo-badge sin-intereses">TIN 0%</div><div class="fin-plazo-quien">¡MLQ asume los intereses!</div></button>
+          <button class="fin-plazo" data-meses="18" data-tin="10.46"><div class="fin-plazo-meses">18 meses</div><div class="fin-plazo-badge con-intereses">TIN 10,46%</div><div class="fin-plazo-quien">Intereses a cargo del cliente</div></button>
+          <button class="fin-plazo" data-meses="24" data-tin="10.46"><div class="fin-plazo-meses">24 meses</div><div class="fin-plazo-badge con-intereses">TIN 10,46%</div><div class="fin-plazo-quien">Intereses a cargo del cliente</div></button>
+          <button class="fin-plazo" data-meses="36" data-tin="10.46"><div class="fin-plazo-meses">36 meses</div><div class="fin-plazo-badge con-intereses">TIN 10,46%</div><div class="fin-plazo-quien">Intereses a cargo del cliente</div></button>
+        </div>
+      </div>
+
+      <div class="fin-resultado">
+        <div class="fin-resultado-main">
+          <div class="fin-cuota-label">Cuota mensual estimada</div>
+          <div class="fin-cuota-valor" id="cuotaValor">1.610,83 €</div>
+          <div class="fin-cuota-sub" id="cuotaSub">/mes · 12 pagos · TIN 0%</div>
+        </div>
+        <div class="fin-resultado-detalle">
+          <div class="fin-det-row"><span class="fin-det-label">Importe del programa</span><span class="fin-det-val" id="detPrecio">24.330 €</span></div>
+          <div class="fin-det-row"><span class="fin-det-label">Entrada a la firma</span><span class="fin-det-val" id="detEntrada">5.000 €</span></div>
+          <div class="fin-det-row"><span class="fin-det-label">Capital financiado</span><span class="fin-det-val" id="detCapital">19.330 €</span></div>
+          <div class="fin-det-row"><span class="fin-det-label">Intereses totales</span><span class="fin-det-val fin-det-green" id="detIntereses">0 € · ¡MLQ los asume!</span></div>
+          <div class="fin-det-row fin-det-total"><span class="fin-det-label">Total a pagar</span><span class="fin-det-val" id="detTotal">24.330 €</span></div>
+        </div>
+      </div>
+
+      <div class="fin-nota">ℹ️ Financiación sujeta a aprobación bancaria. La entrada de 5.000 € se abona a la firma del contrato y no se financia. Cuota orientativa calculada sobre el capital financiado. Sin comisión de apertura ni penalización por cancelación anticipada. Los costes propios del esquí (forfait, material, transporte a estación o cuota de equipo escolar) no están incluidos en el importe simulado.</div>
+    </div>
+  </div>
+
+  <!-- ============ 17. SIGUIENTES PASOS ============ -->
+  <div class="section-title"><h2>Siguientes pasos</h2></div>
+  <div class="steps-wrap">
+    <div class="steps-inner">
+      <div class="steps-title">¿Cómo seguimos?</div>
+      <div class="steps-sub">Del sí a la salida hacia Canadá, paso a paso</div>
+      <div class="steps-list">
+        <div class="step-item"><div class="step-num">1</div><div class="step-title">Prueba de nivel y vuestras preguntas</div><div class="step-desc">Luis realiza el test de nivel de inglés y, en familia, anotad vuestras preguntas para comentarlas en la videollamada que tenemos agendada.</div></div>
+        <div class="step-item"><div class="step-num">2</div><div class="step-title">Elegimos la opción</div><div class="step-desc">Con esos dos datos cerramos el distrito y validamos la carga académica.</div></div>
+        <div class="step-item"><div class="step-num">3</div><div class="step-title">Firma y reserva</div><div class="step-desc">Firma del contrato y primer pago. Se bloquea la plaza.</div></div>
+        <div class="step-item"><div class="step-num">4</div><div class="step-title">Matrícula, familia y visado</div><div class="step-desc">Gestionamos matrícula, colegio, familia anfitriona, Study Permit y vuelos.</div></div>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<!-- ============ 18. FOOTER ============ -->
+<div class="footer">
+  <div class="footer-logo">MY LANGUAGE QUEST</div>
+  <div class="footer-tag">Explore · Learn · Grow</div>
+  <div class="footer-meta">
+    Propuesta personalizada para Luis · Curso 2027/28<br>
+    Descuento de 1.000 € aplicado por reserva antes del 30 de septiembre de 2026, no acumulable con otras promociones.<br>
+    Precios orientativos sujetos a disponibilidad de plaza y confirmación del distrito escolar. Los colegios indicados son nuestras preferencias: la asignación final la realiza el distrito según disponibilidad.
+  </div>
+</div>
+
+<script>
+(function(){
+  var precio=24330, meses=12, tin=0, ENTRADA=5000;
+  function fmt(n){return n.toLocaleString('es-ES',{minimumFractionDigits:2,maximumFractionDigits:2})+' €';}
+  function fmt0(n){return n.toLocaleString('es-ES',{maximumFractionDigits:0})+' €';}
+  function calc(){
+    var capital=Math.max(precio-ENTRADA,0);
+    var cuota, total;
+    if(tin===0){ cuota=capital/meses; total=capital; }
+    else{ var i=tin/100/12; cuota=capital*i/(1-Math.pow(1+i,-meses)); total=cuota*meses; }
+    var intereses=total-capital;
+    document.getElementById('cuotaValor').textContent=fmt(cuota);
+    document.getElementById('cuotaSub').textContent='/mes · '+meses+' pagos · TIN '+(tin===0?'0%':'10,46%');
+    document.getElementById('detPrecio').textContent=fmt0(precio);
+    document.getElementById('detEntrada').textContent=fmt0(ENTRADA);
+    document.getElementById('detCapital').textContent=fmt0(capital);
+    var ei=document.getElementById('detIntereses');
+    if(tin===0){ ei.textContent='0 € · ¡MLQ los asume!'; ei.classList.add('fin-det-green'); }
+    else{ ei.textContent=fmt0(intereses); ei.classList.remove('fin-det-green'); }
+    document.getElementById('detTotal').textContent=fmt0(ENTRADA+total);
+  }
+  document.querySelectorAll('#finOpciones .fin-opcion-btn').forEach(function(b){
+    b.addEventListener('click',function(){
+      document.querySelectorAll('#finOpciones .fin-opcion-btn').forEach(function(x){x.classList.remove('active');});
+      b.classList.add('active'); precio=parseFloat(b.dataset.precio); calc();
+    });
+  });
+  document.querySelectorAll('#finPlazos .fin-plazo').forEach(function(b){
+    b.addEventListener('click',function(){
+      document.querySelectorAll('#finPlazos .fin-plazo').forEach(function(x){x.classList.remove('active');});
+      b.classList.add('active'); meses=parseInt(b.dataset.meses); tin=parseFloat(b.dataset.tin); calc();
+    });
+  });
+  calc();
+})();
+</script>
+
+<script>
+(function(){
+  var d=document, root=d.documentElement;
+  if(!('IntersectionObserver' in window)){root.className=root.className.replace(' js-anim','');return;}
+
+  var bar=d.createElement('div'); bar.className='progress-bar'; d.body.appendChild(bar);
+  var ticking=false;
+  function progress(){
+    var h=d.documentElement.scrollHeight-window.innerHeight;
+    bar.style.transform='scaleX('+(h>0?Math.min(window.scrollY/h,1):0)+')';
+    ticking=false;
+  }
+  window.addEventListener('scroll',function(){if(!ticking){ticking=true;requestAnimationFrame(progress);}},{passive:true});
+  progress();
+
+  Array.prototype.forEach.call(d.querySelectorAll('.hero-pill'),function(el,i){
+    el.style.animationDelay=(0.36+i*0.06)+'s';
+  });
+
+  var groups=[
+    ['.section-title','reveal'],
+    ['.intro-text','reveal'],
+    ['.intro-point','reveal'],
+    ['.qs-chapters-head','reveal'],
+    ['.qs-chapter','reveal'],
+    ['.alert-box','reveal'],
+    ['.tabla-wrap','reveal-zoom'],
+    ['.opcion-card','reveal'],
+    ['.det-list > details','reveal'],
+    ['.rank-item','reveal'],
+    ['.det-colegio','reveal'],
+    ['.info-block','reveal'],
+    ['.includes-wrap','reveal-zoom'],
+    ['.payment-wrap','reveal-zoom'],
+    ['.financing-wrap','reveal-zoom'],
+    ['.steps-wrap','reveal-zoom']
+  ];
+  groups.forEach(function(g){
+    Array.prototype.forEach.call(d.querySelectorAll(g[0]),function(el,i){
+      el.classList.add(g[1]);
+      el.style.transitionDelay=Math.min(i*0.09,0.36)+'s';
+    });
+  });
+
+  var io=new IntersectionObserver(function(entries){
+    entries.forEach(function(e){
+      if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}
+    });
+  },{threshold:0.12,rootMargin:'0px 0px -8% 0px'});
+  Array.prototype.forEach.call(d.querySelectorAll('.reveal,.reveal-zoom'),function(el){io.observe(el);});
+
+  var cuota=d.getElementById('cuotaValor');
+  if(cuota&&'MutationObserver' in window){
+    new MutationObserver(function(){
+      cuota.classList.remove('pop'); void cuota.offsetWidth; cuota.classList.add('pop');
+    }).observe(cuota,{childList:true,characterData:true,subtree:true});
+  }
+})();
+</script>
+</body>
+</html>
