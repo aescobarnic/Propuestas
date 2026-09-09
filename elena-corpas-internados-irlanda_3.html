@@ -1,0 +1,1072 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<script>document.documentElement.className+=" js-anim";</script>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Propuesta Internados Irlanda · Elena Corpas Gómez · My Language Quest</title>
+<link href="https://fonts.googleapis.com/css2?family=Fira+Sans:wght@300;400;500;600;700&family=Josefin+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --blue:#003366;--blue-dark:#001f40;--blue-mid:#0a4a8a;--blue-light:#dce8f5;
+  --red:#B12900;--red-dark:#8A1F00;--red-light:#fdf0ec;
+  --red-deep:#6E1600;--red-warm:#C8380C;--cream:#FFF6F2;--sand:#F7EDE6;--gold:#E8B04B;
+  --ie:#3A7A09;--ie-deep:#1F4A05;--ie-warm:#5FB515;--ie-light:#eef8e3;
+  --green:#4C9E0C;--green-dark:#3A7A09;--green-light:#eef8e3;
+  --gray-bg:#eef3ea;--gray-card:#f8fbf5;--gray-border:#d9e3d2;
+  --text:#0d1b2a;--text-mid:#3d4f62;--text-light:#7a8a9b;--white:#ffffff;
+}
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box;}
+body{font-family:'Fira Sans',sans-serif;background:var(--gray-bg);color:var(--text);}
+
+/* HEADER */
+.header{background:var(--white);padding:18px 48px;display:flex;align-items:center;justify-content:space-between;box-shadow:0 1px 0 var(--gray-border),0 4px 24px rgba(0,51,102,0.07);position:relative;z-index:10;}
+.header::after{content:'';position:absolute;bottom:0;left:0;right:0;height:4px;background:linear-gradient(90deg,var(--ie) 0%,var(--ie) 33%,var(--white) 33%,var(--white) 67%,#FF8200 67%,#FF8200 100%);}
+.logo-area img{height:46px;width:auto;display:block;}
+.header-right{text-align:right;}
+.header-label{font-family:'Josefin Sans',sans-serif;font-size:9px;letter-spacing:3px;text-transform:uppercase;color:var(--text-light);}
+.header-year{font-family:'Josefin Sans',sans-serif;font-size:26px;font-weight:700;color:var(--ie-deep);line-height:1;margin-top:2px;}
+
+/* HERO */
+.hero{background:linear-gradient(135deg,var(--ie-deep) 0%,var(--ie) 55%,var(--ie-warm) 100%);position:relative;overflow:hidden;padding:40px 48px 36px;}
+.hero::after{content:'\2618';position:absolute;right:2%;top:50%;transform:translateY(-50%) rotate(-12deg);font-size:230px;line-height:1;opacity:0.09;pointer-events:none;z-index:1;}
+.hero::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 70% 110% at 100% 40%,rgba(255,255,255,0.12) 0%,transparent 60%),radial-gradient(ellipse 60% 80% at -10% 90%,rgba(0,31,64,0.28) 0%,transparent 60%);}
+.hero-dots{position:absolute;inset:0;pointer-events:none;background-image:radial-gradient(rgba(255,255,255,0.07) 1px,transparent 1px);background-size:28px 28px;}
+.hero-inner{position:relative;z-index:2;}
+.hero-tag{display:inline-flex;align-items:center;gap:6px;background:rgba(255,255,255,0.1);border:1px solid rgba(255,255,255,0.2);border-radius:20px;padding:4px 12px;font-size:10px;font-weight:600;letter-spacing:2px;text-transform:uppercase;color:rgba(255,255,255,0.7);margin-bottom:12px;}
+.hero-tag::before{content:'\2618';font-size:12px;}
+.hero-name{font-family:'Josefin Sans',sans-serif;font-size:38px;font-weight:700;color:var(--white);line-height:1.05;margin-bottom:8px;}
+.hero-subtitle{font-size:13px;color:rgba(255,255,255,0.55);font-weight:300;}
+.hero-pills{display:flex;flex-wrap:wrap;gap:8px;margin-top:20px;}
+.hero-pill{display:flex;align-items:center;gap:6px;background:rgba(255,255,255,0.1);border:1px solid rgba(255,255,255,0.18);border-radius:8px;padding:6px 12px;font-size:11px;color:var(--white);font-weight:500;}
+.hero-pill.ac{background:rgba(0,31,64,0.35);border-color:rgba(255,255,255,0.4);color:#ffffff;}
+.hero-promo{display:inline-block;background:rgba(0,31,64,0.4);border:1px solid rgba(255,255,255,0.35);border-radius:10px;padding:10px 16px;font-size:12.5px;font-weight:600;color:#ffffff;margin-top:18px;max-width:640px;line-height:1.5;}
+
+/* LAYOUT */
+.main{max-width:1140px;margin:0 auto;padding:40px 24px 20px;}
+.section-title{display:flex;align-items:center;gap:12px;margin:44px 0 24px;}
+.section-title:first-of-type{margin-top:0;}
+.section-title h2{font-family:'Josefin Sans',sans-serif;font-size:11px;font-weight:700;letter-spacing:3px;text-transform:uppercase;color:var(--ie-deep);white-space:nowrap;}
+.section-title::before{content:'';width:22px;height:3px;border-radius:3px;background:var(--ie);flex-shrink:0;}
+.section-title::after{content:'';flex:1;height:1px;background:var(--gray-border);}
+
+/* INTRO / CONTEXTO */
+.intro-text{font-size:14px;color:var(--text-mid);line-height:1.75;max-width:860px;margin-bottom:20px;}
+.intro-text strong{color:var(--blue);font-weight:600;}
+.intro-points{display:grid;grid-template-columns:repeat(2,1fr);gap:14px;margin-top:20px;}
+.intro-point{background:var(--white);border:1.5px solid var(--gray-border);border-radius:12px;padding:16px 18px;display:flex;gap:12px;align-items:flex-start;}
+.intro-point-icon{font-size:20px;flex-shrink:0;}
+.intro-point-title{font-family:'Josefin Sans',sans-serif;font-size:13px;font-weight:700;color:var(--ie-deep);margin-bottom:4px;}
+.intro-point-desc{font-size:12px;color:var(--text-mid);line-height:1.55;}
+
+/* QUIÉNES SOMOS */
+.qs-hero{display:grid;grid-template-columns:1fr 1fr;gap:0;background:var(--white);border-radius:18px;overflow:hidden;border:1.5px solid var(--gray-border);box-shadow:0 4px 28px rgba(0,51,102,0.08);}
+.qs-media{position:relative;background:var(--blue-dark);min-height:440px;}
+.qs-media img{width:100%;height:100%;object-fit:cover;display:block;}
+.qs-media-inset{position:absolute;right:-1px;bottom:-1px;width:44%;aspect-ratio:3/4;border-radius:14px 0 0 0;overflow:hidden;border-top:4px solid var(--white);border-left:4px solid var(--white);box-shadow:-8px -8px 28px rgba(0,31,64,0.28);}
+.qs-media-inset img{width:100%;height:100%;object-fit:cover;}
+.qs-panel{background:linear-gradient(155deg,var(--blue-dark) 0%,var(--blue) 55%,var(--blue-mid) 100%);padding:38px 40px;position:relative;overflow:hidden;display:flex;flex-direction:column;justify-content:center;}
+.qs-panel::before{content:'';position:absolute;inset:0;background-image:radial-gradient(rgba(255,255,255,0.055) 1px,transparent 1px);background-size:22px 22px;}
+.qs-panel-inner{position:relative;z-index:2;}
+.qs-eyebrow{font-family:'Josefin Sans',sans-serif;font-size:9px;font-weight:700;letter-spacing:3px;text-transform:uppercase;color:#7dd44a;margin-bottom:12px;}
+.qs-title{font-family:'Josefin Sans',sans-serif;font-size:26px;font-weight:700;color:var(--white);line-height:1.2;margin-bottom:14px;}
+.qs-lead{font-size:13.5px;color:rgba(255,255,255,0.62);line-height:1.75;margin-bottom:26px;}
+.qs-lead strong{color:var(--white);font-weight:600;}
+.qs-pilares{display:flex;flex-direction:column;gap:14px;}
+.qs-pilar{display:flex;gap:14px;align-items:flex-start;padding-top:14px;border-top:1px solid rgba(255,255,255,0.13);}
+.qs-pilar:first-child{border-top:none;padding-top:0;}
+.qs-pilar-icon{font-size:19px;flex-shrink:0;line-height:1.3;}
+.qs-pilar-title{font-family:'Josefin Sans',sans-serif;font-size:13px;font-weight:700;color:var(--white);margin-bottom:3px;}
+.qs-pilar-desc{font-size:11.5px;color:rgba(255,255,255,0.5);line-height:1.55;}
+
+/* Capítulos del viaje */
+.qs-chapters-head{display:flex;align-items:baseline;gap:14px;margin:38px 0 18px;flex-wrap:wrap;}
+.qs-chapters-title{font-family:'Josefin Sans',sans-serif;font-size:19px;font-weight:700;color:var(--ie-deep);}
+.qs-chapters-sub{font-size:12.5px;color:var(--text-light);}
+.qs-chapters{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;}
+.qs-chapter{background:var(--white);border:1.5px solid var(--gray-border);border-radius:16px;overflow:hidden;box-shadow:0 2px 16px rgba(0,51,102,0.06);display:flex;flex-direction:column;transition:transform .2s,box-shadow .2s;}
+.qs-chapter:hover{transform:translateY(-4px);box-shadow:0 14px 38px rgba(0,51,102,0.13);}
+.qs-chapter-media{position:relative;aspect-ratio:4/3;overflow:hidden;background:var(--blue-light);}
+.qs-chapter-media img{width:100%;height:100%;object-fit:cover;object-position:center 15%;display:block;}
+.qs-chapter-step{position:absolute;top:12px;left:12px;background:rgba(0,31,64,0.82);backdrop-filter:blur(4px);color:#7dd44a;font-family:'Josefin Sans',sans-serif;font-size:9px;font-weight:700;letter-spacing:2px;text-transform:uppercase;padding:5px 11px;border-radius:20px;}
+.qs-chapter-body{padding:18px 20px 20px;}
+.qs-chapter-title{font-family:'Josefin Sans',sans-serif;font-size:15px;font-weight:700;color:var(--ie-deep);margin-bottom:7px;}
+.qs-chapter-text{font-size:12.5px;color:var(--text-mid);line-height:1.65;}
+
+/* OPCIONES */
+.alert-box{display:flex;gap:12px;align-items:flex-start;background:#fff4f0;border:1.5px solid rgba(177,41,0,0.3);border-radius:12px;padding:14px 18px;margin-bottom:22px;}
+.alert-icon{font-size:20px;flex-shrink:0;}
+.alert-text{font-size:12px;color:#6b1a00;line-height:1.6;}
+.alert-text strong{color:var(--red-dark);}
+.opciones-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(330px,1fr));gap:20px;}
+.opciones-grid.cuatro{grid-template-columns:repeat(2,1fr);}
+.opcion-card{background:var(--white);border-radius:16px;border:1.5px solid var(--gray-border);overflow:hidden;box-shadow:0 2px 16px rgba(0,51,102,0.06);position:relative;transition:transform .2s,box-shadow .2s,border-color .2s;}
+.opcion-card:hover{transform:translateY(-4px);box-shadow:0 12px 40px rgba(31,74,5,0.18);border-color:var(--ie);}
+.opcion-card.recomendada{border-color:var(--blue);box-shadow:0 6px 28px rgba(0,51,102,0.20);}
+.badge-rec{position:absolute;top:14px;right:-32px;background:var(--blue);color:var(--white);font-size:8px;font-weight:700;letter-spacing:1.5px;padding:5px 40px;transform:rotate(45deg);width:130px;text-align:center;z-index:10;}
+.opcion-header{background:linear-gradient(135deg,var(--ie-deep) 0%,var(--ie) 100%);padding:22px 24px 18px;position:relative;overflow:hidden;}
+.opcion-header::after{content:'\2618';position:absolute;right:-10px;bottom:-22px;font-size:82px;opacity:0.11;line-height:1;transform:rotate(-14deg);}
+.opcion-header > *{position:relative;z-index:2;}
+.opcion-distrito{font-family:'Josefin Sans',sans-serif;font-size:16px;font-weight:700;color:var(--white);margin-bottom:5px;}
+.opcion-loc{font-size:11px;color:rgba(255,255,255,0.48);margin-bottom:12px;}
+.precio-chip{display:inline-flex;align-items:baseline;gap:4px;background:rgba(255,255,255,0.1);border:1px solid rgba(255,255,255,0.18);border-radius:8px;padding:6px 12px;}
+.precio-chip .val{font-family:'Josefin Sans',sans-serif;font-size:20px;font-weight:700;color:var(--white);}
+.precio-chip .desc{font-size:10px;color:rgba(255,255,255,0.5);}
+.precio-chip .tachado{font-size:10px;color:rgba(255,255,255,0.3);text-decoration:line-through;margin-left:6px;}
+.opcion-body{padding:20px 22px;}
+.match-bar{display:flex;gap:6px;flex-wrap:wrap;padding:14px 22px;border-top:1px solid var(--gray-border);background:linear-gradient(to right,var(--gray-card),var(--white));}
+.match-tag{display:flex;align-items:center;gap:4px;font-size:10px;font-weight:600;color:var(--green-dark);background:var(--green-light);border:1px solid rgba(76,158,12,0.25);border-radius:20px;padding:3px 10px;}
+.match-tag::before{content:'\2713';font-size:9px;}
+
+/* INCLUDES */
+.includes-wrap{background:var(--white);border-radius:16px;border:1.5px solid var(--gray-border);box-shadow:0 2px 16px rgba(0,51,102,0.05);overflow:hidden;}
+.includes-head{background:linear-gradient(135deg,var(--ie-deep),var(--ie));padding:20px 32px;}
+.includes-head h3{font-family:'Josefin Sans',sans-serif;font-size:14px;font-weight:700;color:var(--white);letter-spacing:1px;}
+.includes-body{padding:28px 32px;}
+.includes-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:32px;}
+.col-title{font-family:'Josefin Sans',sans-serif;font-size:9px;font-weight:700;letter-spacing:2.5px;text-transform:uppercase;color:var(--red);margin-bottom:14px;padding-bottom:8px;border-bottom:2px solid var(--red-light);}
+.inc-list{list-style:none;display:flex;flex-direction:column;gap:8px;}
+.inc-list li{font-size:12px;color:var(--text-mid);display:block;position:relative;padding-left:17px;line-height:1.55;}
+.inc-list li::before{content:'\2713';color:var(--green);font-weight:700;font-size:11px;position:absolute;left:0;top:0;}
+.inc-list.no li::before{content:'\2717';color:var(--red);}
+.inc-list li small{font-size:10px;color:var(--text-light);display:block;margin-top:2px;}
+
+/* GESTOR */
+.gestor-wrap{background:linear-gradient(135deg,var(--blue-dark),var(--blue-mid));border-radius:12px;padding:20px 24px;margin-top:20px;}
+.gestor-title{font-family:'Josefin Sans',sans-serif;font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:rgba(255,255,255,0.6);margin-bottom:14px;}
+.gestor-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;}
+.gestor-item{background:rgba(255,255,255,0.08);border:1px solid rgba(255,255,255,0.12);border-radius:8px;padding:10px 12px;font-size:11px;color:rgba(255,255,255,0.85);line-height:1.4;}
+.gestor-item::before{content:'\2192';color:#7dd44a;font-weight:700;margin-right:5px;}
+
+/* FORMAS DE PAGO */
+.payment-wrap{background:linear-gradient(135deg,var(--blue-dark) 0%,var(--blue) 60%,var(--blue-mid) 100%);border-radius:16px;padding:32px;position:relative;overflow:hidden;}
+.payment-wrap::before{content:'';position:absolute;inset:0;background-image:radial-gradient(rgba(255,255,255,0.05) 1px,transparent 1px);background-size:22px 22px;}
+.payment-inner{position:relative;z-index:2;}
+.pay-title{font-family:'Josefin Sans',sans-serif;font-size:16px;font-weight:700;color:var(--white);margin-bottom:6px;}
+.pay-subtitle{font-size:12px;color:rgba(255,255,255,0.45);margin-bottom:22px;}
+.pay-route{background:rgba(255,255,255,0.07);border:1px solid rgba(255,255,255,0.14);border-radius:14px;padding:20px 22px;margin-bottom:16px;}
+.pay-route-head{display:flex;align-items:center;gap:10px;margin-bottom:6px;}
+.pay-route-icon{font-size:20px;}
+.pay-route-title{font-family:'Josefin Sans',sans-serif;font-size:14px;font-weight:700;color:var(--white);}
+.pay-route-sub{font-size:11.5px;color:rgba(255,255,255,0.45);margin-bottom:16px;line-height:1.5;}
+.pay-entrada{display:flex;align-items:center;gap:14px;background:rgba(125,212,74,0.13);border:1px solid rgba(125,212,74,0.35);border-radius:10px;padding:14px 18px;margin-bottom:16px;}
+.pay-entrada-num{font-family:'Josefin Sans',sans-serif;font-size:26px;font-weight:700;color:#7dd44a;line-height:1;white-space:nowrap;}
+.pay-entrada-txt{font-size:11.5px;color:rgba(255,255,255,0.72);line-height:1.5;}
+.pay-entrada-txt strong{color:var(--white);font-weight:600;}
+.pay-cols{display:grid;grid-template-columns:1fr 1fr;gap:16px;}
+.pay-col{background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.12);border-radius:12px;padding:16px 18px;}
+.pay-col-title{font-family:'Josefin Sans',sans-serif;font-size:9px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:#7dd44a;margin-bottom:12px;}
+.pay-step{margin-bottom:11px;}
+.pay-step:last-child{margin-bottom:0;}
+.pay-step-title{font-size:13px;font-weight:600;color:var(--white);margin-bottom:2px;}
+.pay-step-desc{font-size:11px;color:rgba(255,255,255,0.45);line-height:1.5;}
+.pay-note{font-size:11px;color:rgba(255,255,255,0.32);line-height:1.65;font-style:italic;border-top:1px solid rgba(255,255,255,0.1);padding-top:14px;margin-top:4px;}
+
+/* FINANCIACIÓN · simulador */
+.financing-wrap{background:var(--white);border-radius:16px;border:1.5px solid var(--gray-border);box-shadow:0 2px 16px rgba(0,51,102,0.06);overflow:hidden;}
+.financing-head{background:linear-gradient(135deg,var(--blue-dark),var(--blue));padding:22px 32px;display:flex;align-items:center;justify-content:space-between;gap:16px;}
+.financing-head-left{display:flex;align-items:center;gap:16px;}
+.fin-icon{font-size:28px;flex-shrink:0;}
+.fin-title{font-family:'Josefin Sans',sans-serif;font-size:16px;font-weight:700;color:var(--white);margin-bottom:3px;}
+.fin-sub{font-size:11px;color:rgba(255,255,255,0.5);line-height:1.4;}
+.fin-badge{background:rgba(125,212,74,0.2);border:1px solid rgba(125,212,74,0.4);color:#7dd44a;font-family:'Josefin Sans',sans-serif;font-size:11px;font-weight:700;letter-spacing:1px;padding:6px 14px;border-radius:20px;white-space:nowrap;}
+.financing-body{padding:28px 32px;}
+.fin-opcion-label,.fin-plazo-label{font-family:'Josefin Sans',sans-serif;font-size:9px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--text-light);margin-bottom:10px;}
+.fin-opcion-selector{margin-bottom:24px;}
+.fin-opcion-btns{display:flex;gap:10px;flex-wrap:wrap;}
+.fin-opcion-btn{background:var(--gray-card);border:1.5px solid var(--gray-border);border-radius:10px;padding:10px 16px;cursor:pointer;text-align:left;display:flex;flex-direction:column;gap:3px;font-family:'Fira Sans',sans-serif;
+  transition:transform .25s cubic-bezier(.22,.61,.36,1),border-color .25s ease,background .25s ease,box-shadow .25s ease;}
+.fin-opcion-btn:hover{border-color:var(--blue-mid);background:var(--blue-light);}
+.fin-opcion-btn.active{border-color:var(--blue);background:var(--blue-light);}
+.fin-opcion-nombre{font-size:10px;font-weight:700;letter-spacing:1px;text-transform:uppercase;color:var(--text-light);}
+.fin-opcion-btn.active .fin-opcion-nombre{color:var(--blue);}
+.fin-opcion-precio{font-family:'Josefin Sans',sans-serif;font-size:16px;font-weight:700;color:var(--text);}
+.fin-opcion-btn.active .fin-opcion-precio{color:var(--blue);}
+.fin-entrada-fija{display:flex;align-items:center;gap:14px;background:var(--green-light);border:1.5px solid rgba(76,158,12,0.3);border-radius:12px;padding:14px 18px;margin-bottom:24px;}
+.fin-entrada-fija-num{font-family:'Josefin Sans',sans-serif;font-size:24px;font-weight:700;color:var(--green-dark);line-height:1;white-space:nowrap;}
+.fin-entrada-fija-txt{font-size:12px;color:var(--text-mid);line-height:1.55;}
+.fin-entrada-fija-txt strong{color:var(--text);font-weight:600;}
+.fin-plazo-wrap{margin-bottom:24px;}
+.fin-plazos{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;}
+.fin-plazo{background:var(--gray-card);border:1.5px solid var(--gray-border);border-radius:12px;padding:14px 12px;cursor:pointer;text-align:center;font-family:'Fira Sans',sans-serif;
+  transition:transform .25s cubic-bezier(.22,.61,.36,1),border-color .25s ease,background .25s ease,box-shadow .25s ease;}
+.fin-plazo:hover{border-color:var(--blue-mid);transform:translateY(-2px);}
+.fin-plazo.active{border-color:var(--green);background:var(--green-light);box-shadow:0 4px 16px rgba(76,158,12,0.15);}
+.fin-plazo-meses{font-family:'Josefin Sans',sans-serif;font-size:15px;font-weight:700;color:var(--text);margin-bottom:6px;}
+.fin-plazo.active .fin-plazo-meses{color:var(--green-dark);}
+.fin-plazo-badge{display:inline-block;border-radius:20px;padding:2px 8px;font-size:9px;font-weight:700;letter-spacing:0.5px;margin-bottom:4px;background:var(--blue-light);color:var(--blue);border:1px solid rgba(0,51,102,0.2);}
+.fin-plazo-quien{font-size:9px;color:var(--text-light);line-height:1.3;}
+.fin-resultado{display:grid;grid-template-columns:auto 1fr;gap:24px;background:linear-gradient(135deg,var(--blue-dark),var(--blue));border-radius:14px;padding:24px 28px;margin-bottom:16px;align-items:center;}
+.fin-resultado-main{text-align:center;border-right:1px solid rgba(255,255,255,0.15);padding-right:24px;}
+.fin-cuota-label{font-size:10px;font-weight:600;letter-spacing:2px;text-transform:uppercase;color:rgba(255,255,255,0.5);margin-bottom:6px;}
+.fin-cuota-valor{font-family:'Josefin Sans',sans-serif;font-size:36px;font-weight:700;color:#7dd44a;line-height:1;margin-bottom:4px;transition:color .3s ease;}
+.fin-cuota-sub{font-size:11px;color:rgba(255,255,255,0.45);}
+.fin-resultado-detalle{display:flex;flex-direction:column;gap:10px;}
+.fin-det-row{display:flex;justify-content:space-between;align-items:center;gap:12px;}
+.fin-det-label{font-size:12px;color:rgba(255,255,255,0.55);}
+.fin-det-val{font-size:13px;font-weight:600;color:var(--white);}
+.fin-det-total{border-top:1px solid rgba(255,255,255,0.15);padding-top:10px;margin-top:2px;}
+.fin-det-total .fin-det-label{color:rgba(255,255,255,0.7);font-weight:600;}
+.fin-det-total .fin-det-val{font-family:'Josefin Sans',sans-serif;font-size:16px;color:var(--white);}
+.fin-nota{font-size:11px;color:var(--text-light);line-height:1.6;background:var(--gray-card);border-radius:8px;padding:12px 16px;border-left:3px solid var(--blue-light);}
+@keyframes cuotaPop{0%{opacity:.35;transform:translateY(6px);}100%{opacity:1;transform:none;}}
+.fin-cuota-valor.pop{animation:cuotaPop .42s cubic-bezier(.22,.61,.36,1);}
+@media(max-width:720px){
+  .fin-plazos{grid-template-columns:1fr;}
+  .fin-resultado{grid-template-columns:1fr;}
+  .fin-resultado-main{border-right:none;border-bottom:1px solid rgba(255,255,255,0.15);padding-right:0;padding-bottom:20px;}
+  .financing-head{flex-direction:column;align-items:flex-start;}
+  .fin-opcion-btns{flex-direction:column;}
+  .financing-body{padding:22px 20px;}
+}
+
+/* SIGUIENTES PASOS */
+.steps-wrap{background:linear-gradient(135deg,var(--blue-dark) 0%,var(--blue) 60%,var(--blue-mid) 100%);border-radius:16px;padding:34px 36px;position:relative;overflow:hidden;}
+.steps-wrap::before{content:'';position:absolute;inset:0;background-image:radial-gradient(rgba(255,255,255,0.05) 1px,transparent 1px);background-size:22px 22px;}
+.steps-inner{position:relative;z-index:2;}
+.steps-title{font-family:'Josefin Sans',sans-serif;font-size:18px;font-weight:700;color:var(--white);margin-bottom:6px;}
+.steps-sub{font-size:12px;color:rgba(255,255,255,0.5);margin-bottom:26px;}
+.steps-list{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;}
+.step-item{background:rgba(255,255,255,0.07);border:1px solid rgba(255,255,255,0.12);border-radius:12px;padding:18px;}
+.step-num{font-family:'Josefin Sans',sans-serif;font-size:20px;font-weight:700;color:#7dd44a;margin-bottom:8px;}
+.step-title{font-size:13px;font-weight:600;color:var(--white);margin-bottom:4px;}
+.step-desc{font-size:11px;color:rgba(255,255,255,0.5);line-height:1.5;}
+.cta-line{margin-top:26px;text-align:center;font-size:12.5px;color:rgba(255,255,255,0.75);}
+.pasos-cta-wrap{text-align:center;margin-top:16px;display:flex;gap:12px;justify-content:center;flex-wrap:wrap;}
+.pasos-cta{display:inline-flex;align-items:center;gap:8px;background:#7dd44a;color:var(--blue-dark);font-family:'Josefin Sans',sans-serif;font-size:13px;font-weight:700;padding:12px 26px;border-radius:10px;text-decoration:none;transition:transform .15s,box-shadow .15s;}
+.pasos-cta:hover{transform:translateY(-2px);box-shadow:0 8px 20px rgba(125,212,74,0.35);}
+.pasos-cta-alt{background:rgba(255,255,255,0.12);color:var(--white);border:1.5px solid rgba(255,255,255,0.35);}
+.pasos-cta-alt:hover{box-shadow:0 8px 20px rgba(255,255,255,0.15);}
+
+/* FOOTER */
+.footer{background:var(--blue-dark);padding:30px 48px;margin-top:56px;text-align:center;position:relative;}
+.footer::before{content:'';position:absolute;top:0;left:0;right:0;height:4px;background:linear-gradient(90deg,var(--ie) 0%,var(--ie) 33%,var(--white) 33%,var(--white) 67%,#FF8200 67%,#FF8200 100%);}
+.footer-logo{font-family:'Josefin Sans',sans-serif;font-size:15px;font-weight:700;color:var(--white);letter-spacing:1px;margin-bottom:6px;}
+.footer-tag{font-family:'Josefin Sans',sans-serif;font-size:10px;letter-spacing:4px;text-transform:uppercase;color:#9ee06a;margin-bottom:14px;}
+.footer-meta{font-size:11px;color:rgba(255,255,255,0.4);line-height:1.7;}
+
+@media(max-width:900px){
+  .qs-hero{grid-template-columns:1fr;}
+  .qs-media{min-height:320px;aspect-ratio:4/3;}
+  .qs-chapters{grid-template-columns:1fr;}
+  .opciones-grid.cuatro{grid-template-columns:1fr;}
+}
+@media(max-width:720px){
+  .header{padding:16px 20px;}.hero{padding:28px 20px 24px;}.hero-name{font-size:28px;}
+  .main{padding:28px 16px 20px;}
+  .includes-grid{grid-template-columns:1fr;}.opciones-grid{grid-template-columns:1fr;}
+  .intro-points{grid-template-columns:1fr;}
+  .pay-cols{grid-template-columns:1fr;}.gestor-grid{grid-template-columns:repeat(2,1fr);}
+  .steps-list{grid-template-columns:1fr;}
+  .qs-panel{padding:28px 22px;}.qs-title{font-size:22px;}
+  .footer{padding:26px 20px;}
+}
+
+/* ================= ANIMACIONES ================= */
+.js-anim .reveal{opacity:0;transform:translateY(20px);will-change:opacity,transform;
+  transition:opacity .75s cubic-bezier(.22,.61,.36,1),transform .75s cubic-bezier(.22,.61,.36,1);}
+.js-anim .reveal.in{opacity:1;transform:none;}
+.js-anim .reveal-zoom{opacity:0;transform:scale(.975);transition:opacity .8s ease,transform .8s cubic-bezier(.22,.61,.36,1);}
+.js-anim .reveal-zoom.in{opacity:1;transform:none;}
+
+@keyframes heroUp{from{opacity:0;transform:translateY(16px);}to{opacity:1;transform:none;}}
+@keyframes leafIn{from{opacity:0;transform:translateY(-50%) rotate(-30deg) scale(.85);}to{opacity:.09;transform:translateY(-50%) rotate(-12deg) scale(1);}}
+.js-anim .hero::after{animation:leafIn 1.4s cubic-bezier(.22,.61,.36,1) .15s both;}
+.js-anim .hero-tag{animation:heroUp .7s cubic-bezier(.22,.61,.36,1) .05s both;}
+.js-anim .hero-name{animation:heroUp .7s cubic-bezier(.22,.61,.36,1) .16s both;}
+.js-anim .hero-subtitle{animation:heroUp .7s cubic-bezier(.22,.61,.36,1) .26s both;}
+.js-anim .hero-pill{animation:heroUp .55s cubic-bezier(.22,.61,.36,1) both;}
+.js-anim .hero-promo{animation:heroUp .7s cubic-bezier(.22,.61,.36,1) .7s both;}
+
+.progress-bar{position:fixed;top:0;left:0;height:3px;width:100%;transform:scaleX(0);transform-origin:0 50%;
+  background:linear-gradient(90deg,var(--ie),var(--ie-warm));z-index:999;transition:transform .1s linear;}
+
+.qs-chapter-media img,.qs-media img,.qs-media-inset img{transition:transform .7s cubic-bezier(.22,.61,.36,1);}
+.qs-chapter:hover .qs-chapter-media img{transform:scale(1.06);}
+.qs-hero:hover .qs-media > img{transform:scale(1.03);}
+.qs-media-inset{transition:transform .45s cubic-bezier(.22,.61,.36,1),box-shadow .45s ease;}
+.qs-hero:hover .qs-media-inset{transform:translateY(-6px);box-shadow:-10px -10px 34px rgba(0,31,64,0.34);}
+
+.opcion-card{transition:transform .35s cubic-bezier(.22,.61,.36,1),box-shadow .35s ease,border-color .3s ease;}
+.opcion-header::after{transition:transform .6s cubic-bezier(.22,.61,.36,1),opacity .4s ease;}
+.opcion-card:hover .opcion-header::after{transform:rotate(-4deg) scale(1.14);opacity:.17;}
+
+.pasos-cta{position:relative;overflow:hidden;}
+.pasos-cta::after{content:'';position:absolute;top:0;left:-120%;width:60%;height:100%;
+  background:linear-gradient(100deg,transparent,rgba(255,255,255,.55),transparent);transform:skewX(-18deg);}
+.pasos-cta:hover::after{animation:shine .85s ease;}
+@keyframes shine{to{left:140%;}}
+
+.step-item{transition:transform .3s cubic-bezier(.22,.61,.36,1),background .3s ease;}
+.step-item:hover{transform:translateY(-4px);background:rgba(255,255,255,0.11);}
+.qs-pilar{transition:transform .3s ease;}
+.qs-pilar:hover{transform:translateX(4px);}
+
+@media(prefers-reduced-motion:reduce){
+  .js-anim .reveal,.js-anim .reveal-zoom{opacity:1!important;transform:none!important;transition:none!important;}
+  .js-anim .hero::after,.js-anim .hero-tag,.js-anim .hero-name,.js-anim .hero-subtitle,
+  .js-anim .hero-pill,.js-anim .hero-promo{animation:none!important;opacity:1;}
+  .js-anim .hero::after{opacity:.09;}
+  .progress-bar{display:none;}
+  *{transition-duration:.01ms!important;}
+}
+
+/* ============ IRLANDA · bloques propios ============ */
+.colegio-chips{display:flex;flex-wrap:wrap;gap:6px;margin-top:10px;}
+.chip{border-radius:6px;padding:3px 9px;font-size:9.5px;font-weight:700;text-transform:uppercase;letter-spacing:.5px;background:rgba(255,255,255,0.14);color:rgba(255,255,255,0.9);border:1px solid rgba(255,255,255,0.2);}
+.chip.gold{background:rgba(232,176,75,0.22);border-color:rgba(232,176,75,0.5);color:#ffdda0;}
+.colegio-zona{font-family:'Josefin Sans',sans-serif;font-size:9px;letter-spacing:2.5px;text-transform:uppercase;color:rgba(255,255,255,0.42);margin-bottom:8px;}
+.colegio-desc{font-size:12.5px;color:var(--text-mid);line-height:1.7;margin-bottom:16px;}
+.colegio-section-title{font-family:'Josefin Sans',sans-serif;font-size:9px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--ie);margin:0 0 9px;padding-bottom:6px;border-bottom:1.5px solid var(--ie-light);}
+.extra-tags{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:16px;}
+.extra-tag{font-size:10.5px;color:var(--text-mid);background:var(--gray-card);border:1px solid var(--gray-border);border-radius:20px;padding:3px 10px;}
+.actividades-ciudad{font-size:11.5px;color:var(--text-mid);line-height:1.65;background:var(--ie-light);border-left:3px solid var(--ie);border-radius:0 8px 8px 0;padding:10px 14px;margin-bottom:16px;}
+.por-que-list{list-style:none;display:flex;flex-direction:column;gap:7px;}
+.por-que-list li{font-size:12px;color:var(--text-mid);line-height:1.55;display:flex;gap:8px;align-items:flex-start;}
+.por-que-list li::before{content:'\2618';color:var(--ie);flex-shrink:0;font-size:11px;}
+
+/* Tabla comparativa */
+.tabla-wrap{background:var(--white);border:1.5px solid var(--gray-border);border-radius:16px;overflow:hidden;box-shadow:0 2px 16px rgba(31,74,5,0.05);}
+.tabla-diff{width:100%;border-collapse:collapse;}
+.tabla-diff th,.tabla-diff td{padding:13px 14px;text-align:center;font-size:12.5px;border-bottom:1px solid var(--gray-border);}
+.tabla-diff thead th{background:linear-gradient(135deg,var(--ie-deep),var(--ie));color:var(--white);font-family:'Josefin Sans',sans-serif;font-size:11.5px;font-weight:700;letter-spacing:.5px;}
+.tabla-diff tbody th{text-align:left;font-weight:600;color:var(--text);background:var(--gray-card);font-size:12px;}
+.tabla-diff tr:last-child td,.tabla-diff tr:last-child th{border-bottom:none;}
+.tabla-diff .si{color:var(--ie);font-weight:700;font-size:15px;}
+.tabla-diff .no{color:var(--text-light);font-size:15px;}
+.tabla-diff .sup{color:var(--red);font-size:10px;display:block;margin-top:2px;font-weight:600;}
+.tabla-diff .precio-fila td{font-family:'Josefin Sans',sans-serif;font-weight:700;font-size:15px;color:var(--ie-deep);}
+.tabla-diff .pc{color:var(--text-light);font-size:10.5px;font-style:italic;}
+.tabla-diff .stars{color:var(--gold);font-size:13px;letter-spacing:1px;white-space:nowrap;}
+.tabla-diff .tachado{display:block;font-size:10px;color:var(--text-light);text-decoration:line-through;font-weight:400;margin-top:2px;font-family:'Fira Sans',sans-serif;}
+.tabla-diff tbody td.rec-col{background:var(--ie-light);}
+.tabla-diff thead th.rec-col{background:linear-gradient(135deg,#0c2601,#2f6606);box-shadow:inset 0 -3px 0 #7dd44a;}
+.tabla-diff .sup.ok{color:var(--ie);}
+.tabla-nota{font-size:11px;color:var(--text-light);margin-top:12px;line-height:1.6;font-style:italic;}
+
+/* ¿Qué internado elegir? */
+.decision-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:18px;}
+.decision-card{background:var(--white);border:1.5px solid var(--gray-border);border-left:4px solid var(--ie);border-radius:12px;padding:20px 22px;transition:transform .3s ease,box-shadow .3s ease;}
+.decision-card:hover{transform:translateY(-3px);box-shadow:0 10px 28px rgba(31,74,5,0.12);}
+.decision-title{font-family:'Josefin Sans',sans-serif;font-size:14px;font-weight:700;color:var(--ie-deep);margin-bottom:8px;}
+.decision-text{font-size:12.5px;color:var(--text-mid);line-height:1.7;}
+
+@media(max-width:900px){
+  .decision-grid{grid-template-columns:1fr;}
+  .tabla-wrap{overflow-x:auto;}
+  .tabla-diff{min-width:860px;}
+}
+
+/* ============ BOARDING · calendario de admisiones ============ */
+.timing-wrap{background:linear-gradient(135deg,var(--ie-deep) 0%,var(--ie) 58%,var(--ie-warm) 100%);border-radius:16px;padding:34px 36px;position:relative;overflow:hidden;}
+.timing-wrap::before{content:'';position:absolute;inset:0;background-image:radial-gradient(rgba(255,255,255,0.06) 1px,transparent 1px);background-size:22px 22px;}
+.timing-wrap::after{content:'\2618';position:absolute;right:-24px;bottom:-58px;font-size:190px;line-height:1;opacity:0.08;transform:rotate(-14deg);pointer-events:none;}
+.timing-inner{position:relative;z-index:2;}
+.timing-badge{display:inline-flex;align-items:center;gap:8px;background:rgba(125,212,74,0.16);border:1px solid rgba(125,212,74,0.42);border-radius:20px;padding:5px 14px;font-family:'Josefin Sans',sans-serif;font-size:10px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:#b6f086;margin-bottom:14px;}
+.timing-title{font-family:'Josefin Sans',sans-serif;font-size:22px;font-weight:700;color:var(--white);line-height:1.2;margin-bottom:12px;}
+.timing-lead{font-size:13.5px;color:rgba(255,255,255,0.68);line-height:1.8;max-width:820px;}
+.timing-lead strong{color:var(--white);font-weight:600;}
+.timing-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:26px;}
+.timing-card{background:rgba(255,255,255,0.08);border:1px solid rgba(255,255,255,0.16);border-radius:12px;padding:18px 20px;transition:transform .3s cubic-bezier(.22,.61,.36,1),background .3s ease;}
+.timing-card:hover{transform:translateY(-3px);background:rgba(255,255,255,0.12);}
+.timing-card.ahora{background:rgba(125,212,74,0.15);border-color:rgba(125,212,74,0.48);box-shadow:0 6px 26px rgba(125,212,74,0.18);}
+.timing-mes{font-family:'Josefin Sans',sans-serif;font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:rgba(255,255,255,0.5);margin-bottom:9px;}
+.timing-card.ahora .timing-mes{color:#b6f086;}
+.timing-estado{font-size:14px;font-weight:600;color:var(--white);margin-bottom:5px;}
+.timing-desc{font-size:11.5px;color:rgba(255,255,255,0.55);line-height:1.6;}
+.timing-card.ahora .timing-desc{color:rgba(255,255,255,0.72);}
+.timing-note{margin-top:24px;padding-top:16px;border-top:1px solid rgba(255,255,255,0.14);font-size:12px;color:rgba(255,255,255,0.6);line-height:1.75;}
+
+.promo-strip{display:flex;align-items:center;gap:16px;background:rgba(255,255,255,0.1);border:1px solid rgba(255,255,255,0.2);border-left:4px solid #7dd44a;border-radius:12px;padding:16px 20px;margin-top:16px;}
+.promo-strip-num{font-family:'Josefin Sans',sans-serif;font-size:26px;font-weight:700;color:#b6f086;line-height:1;white-space:nowrap;}
+.promo-strip-txt{font-size:12.5px;color:rgba(255,255,255,0.7);line-height:1.6;}
+.promo-strip-txt strong{color:var(--white);font-weight:600;}
+
+@media(max-width:900px){
+  .timing-grid{grid-template-columns:1fr;}
+  .promo-strip{flex-direction:column;align-items:flex-start;gap:8px;}
+  .timing-wrap{padding:26px 22px;}
+  .timing-title{font-size:19px;}
+}
+
+/* ============ NUEVO · ranking y ficha de boarding ============ */
+.rank-pill{display:inline-flex;align-items:center;gap:6px;background:rgba(0,31,64,0.42);border:1px solid rgba(255,255,255,0.34);border-radius:20px;padding:3px 11px;font-family:'Josefin Sans',sans-serif;font-size:9px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:#ffffff;margin-bottom:10px;}
+.board-box{background:linear-gradient(135deg,#f2f8ec,#ffffff);border:1.5px solid rgba(76,158,12,0.32);border-left:4px solid var(--ie);border-radius:0 12px 12px 0;padding:14px 16px;margin-bottom:18px;}
+.board-box-title{font-family:'Josefin Sans',sans-serif;font-size:9px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--ie-deep);margin-bottom:8px;}
+.board-row{display:flex;gap:8px;align-items:flex-start;font-size:12px;color:var(--text-mid);line-height:1.6;margin-bottom:6px;}
+.board-row:last-child{margin-bottom:0;}
+.board-row b{color:var(--text);font-weight:600;}
+.board-row-ico{flex-shrink:0;font-size:13px;line-height:1.4;}
+.nota-ty{display:flex;gap:10px;align-items:flex-start;background:#fff4f0;border:1.5px solid rgba(177,41,0,0.3);border-radius:10px;padding:12px 14px;margin-bottom:16px;font-size:11.5px;color:#6b1a00;line-height:1.6;}
+.nota-ty strong{color:var(--red-dark);}
+.perfil-wrap{background:var(--white);border:1.5px solid var(--gray-border);border-radius:16px;padding:24px 26px;box-shadow:0 2px 16px rgba(31,74,5,0.05);}
+.perfil-title{font-family:'Josefin Sans',sans-serif;font-size:16px;font-weight:700;color:var(--ie-deep);margin-bottom:6px;}
+.perfil-sub{font-size:12.5px;color:var(--text-light);margin-bottom:18px;line-height:1.6;}
+.perfil-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:14px;}
+.perfil-item{display:flex;gap:12px;align-items:flex-start;background:var(--gray-card);border:1px solid var(--gray-border);border-radius:12px;padding:14px 16px;}
+.perfil-ico{font-size:20px;flex-shrink:0;line-height:1.2;}
+.perfil-item-title{font-family:'Josefin Sans',sans-serif;font-size:12.5px;font-weight:700;color:var(--ie-deep);margin-bottom:3px;}
+.perfil-item-desc{font-size:11.5px;color:var(--text-mid);line-height:1.6;}
+@media(max-width:900px){.perfil-grid{grid-template-columns:1fr;}}
+</style>
+</head>
+<body>
+
+<!-- ============ 1. HEADER ============ -->
+<div class="header">
+  <div class="logo-area"><img src="data:image/jpeg;base64,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" alt="My Language Quest"></div>
+  <div class="header-right">
+    <div class="header-label">Curso académico</div>
+    <div class="header-year">2027/28</div>
+  </div>
+</div>
+
+<!-- ============ 2. HERO ============ -->
+<div class="hero">
+  <div class="hero-dots"></div>
+  <div class="hero-inner">
+    <div class="hero-tag">Propuesta personalizada · Internados en Irlanda</div>
+    <div class="hero-name">Elena Corpas Gómez</div>
+    <div class="hero-subtitle">Programa de internado · Boarding 7 días · Año escolar completo · 4º ESO hacia Transition Year</div>
+    <div class="hero-pills">
+      <div class="hero-pill">🎓 4º ESO · Transition Year</div>
+      <div class="hero-pill">🏫 Internado 7 días</div>
+      <div class="hero-pill">👭 Habitación compartida</div>
+      <div class="hero-pill">🗣 Inglés B2</div>
+      <div class="hero-pill">🎾 Tenis · 🏐 Vóley · 🏉 Rugby</div>
+      <div class="hero-pill">📚 Buen rendimiento académico</div>
+      <div class="hero-pill ac">☘ 4 internados · Fuera de Dublín</div>
+    </div>
+    <div class="hero-promo">☘ Descuento de <strong>1.000 €</strong> ya aplicado en los cuatro internados, válido hasta el <strong>30 de septiembre de 2026</strong>.</div>
+  </div>
+</div>
+
+<div class="main">
+
+  <!-- ============ 3. CONTEXTO ============ -->
+  <div class="section-title"><h2>Cómo funciona un internado en Irlanda</h2></div>
+  <p class="intro-text">
+    En un internado Elena vive en la residencia del <strong>propio colegio</strong>, con comidas,
+    estudio supervisado y actividades organizadas dentro del campus. Los cuatro centros de esta propuesta
+    funcionan en régimen de <strong>7 días</strong>, es decir, también el fin de semana, de modo que la
+    comunidad de internas se mantiene unida todo el curso: es justo la experiencia de convivencia que
+    Elena nos ha descrito. Los internados irlandeses exigen además que toda alumna internacional cuente
+    con un <strong>tutor local</strong>: esa figura, el custodianship, la asume My Language Quest y es
+    quien habla con el colegio en nombre de la familia durante todo el año.
+  </p>
+  <div class="intro-points">
+    <div class="intro-point"><div class="intro-point-icon">🏫</div><div><div class="intro-point-title">Vive en el colegio</div><div class="intro-point-desc">Residencia en el campus, comidas, estudio supervisado y actividades de fin de semana dentro del régimen de 7 días.</div></div></div>
+    <div class="intro-point"><div class="intro-point-icon">🤝</div><div><div class="intro-point-title">Custodianship incluido</div><div class="intro-point-desc">Actuamos como tutor local ante el colegio, requisito de los internados irlandeses para estudiantes internacionales.</div></div></div>
+    <div class="intro-point"><div class="intro-point-icon">📘</div><div><div class="intro-point-title">Transition Year</div><div class="intro-point-desc">Curso de proyectos, prácticas y desarrollo personal: el encaje natural al llegar desde 4º de ESO, y sin la presión de los exámenes oficiales.</div></div></div>
+    <div class="intro-point"><div class="intro-point-icon">👕</div><div><div class="intro-point-title">Uniforme y libros resueltos</div><div class="intro-point-desc">Uniforme completo (excepto calzado), libros de las asignaturas obligatorias, ropa de cama y artículos etiquetados con su nombre.</div></div></div>
+  </div>
+
+  <!-- ============ 4. CALENDARIO DE ADMISIONES ============ -->
+  <div class="section-title"><h2>Calendario de admisiones</h2></div>
+  <div class="timing-wrap">
+    <div class="timing-inner">
+      <div class="timing-badge">☘ Solicitudes abiertas para el curso 2027/28</div>
+      <div class="timing-title">Las plazas se asignan por orden de llegada</div>
+      <p class="timing-lead">
+        Los internados irlandeses no reservan cupo para estudiantes internacionales: revisan las solicitudes
+        <strong>en el orden en que llegan</strong> y cierran cada curso y cada residencia a medida que se completan.
+        A eso se suma que cada centro limita el número de alumnas de una misma lengua para proteger la inmersión,
+        de modo que las plazas disponibles para una alumna española de un mismo curso son pocas.
+        Por eso la inscripción en boarding se recomienda <strong>entre septiembre y octubre</strong>.
+      </p>
+      <div class="timing-grid">
+        <div class="timing-card ahora">
+          <div class="timing-mes">Septiembre · Octubre</div>
+          <div class="timing-estado">Ventana recomendada</div>
+          <div class="timing-desc">Es cuando se abren las solicitudes del curso 2027/28. Presentar ahora significa elegir entre los cuatro internados, y no entre los que sigan libres más adelante.</div>
+        </div>
+        <div class="timing-card">
+          <div class="timing-mes">Noviembre · Enero</div>
+          <div class="timing-estado">Disponibilidad parcial</div>
+          <div class="timing-desc">Los cursos con más demanda, Transition Year entre ellos, empiezan a cerrarse. Sigue siendo posible, con menos margen para elegir centro.</div>
+        </div>
+        <div class="timing-card">
+          <div class="timing-mes">Febrero en adelante</div>
+          <div class="timing-estado">Plazas muy limitadas</div>
+          <div class="timing-desc">La elección depende de lo que continúe abierto y en los centros más solicitados suele haber lista de espera.</div>
+        </div>
+      </div>
+      <div class="promo-strip">
+        <div class="promo-strip-num">−1.000 €</div>
+        <div class="promo-strip-txt"><strong>Descuento aplicado en los cuatro internados.</strong> Se mantiene para las inscripciones formalizadas hasta el 30 de septiembre de 2026 y no es acumulable con otras promociones.</div>
+      </div>
+      <div class="timing-note">
+        El proceso de admisión de un internado incluye solicitud formal, expediente académico y, en algunos centros,
+        entrevista o prueba de nivel de inglés; entre la solicitud y la confirmación de plaza pueden pasar varias semanas.
+        Iniciarlo en octubre deja tiempo de sobra para completarlo con calma y para organizar después vuelos, uniforme
+        y documentación sin prisas.
+      </div>
+    </div>
+  </div>
+
+  <!-- ============ 5. QUIÉNES SOMOS ============ -->
+  <div class="section-title"><h2>Quiénes somos</h2></div>
+  <div class="qs-hero">
+    <div class="qs-media">
+      <img src="https://aescobarnic.github.io/Propuestas/img/mlq-grupo-aeropuerto.jpg" style="object-position:center 30%;" alt="Grupo de estudiantes de My Language Quest en el aeropuerto con su coordinadora" loading="lazy">
+      <div class="qs-media-inset"><img src="https://aescobarnic.github.io/Propuestas/img/mlq-despedida-familia.jpg" style="object-position:center 25%;" alt="Estudiante despidiéndose de su familia antes de salir" loading="lazy"></div>
+    </div>
+    <div class="qs-panel">
+      <div class="qs-panel-inner">
+        <div class="qs-eyebrow">My Language Quest</div>
+        <div class="qs-title">Nadie hace este viaje solo</div>
+        <p class="qs-lead">
+          Acompañamos a familias españolas en la experiencia de estudiar un año escolar en el extranjero.
+          No somos una plataforma de reservas: <strong>hay personas con nombre y apellido detrás de cada
+          estudiante</strong>, desde la primera reunión hasta la convalidación de las notas a la vuelta.
+        </p>
+        <div class="qs-pilares">
+          <div class="qs-pilar"><div class="qs-pilar-icon">👩‍💼</div><div><div class="qs-pilar-title">Una asesora asignada en España</div><div class="qs-pilar-desc">La misma persona de principio a fin: nada de tickets ni centralitas.</div></div></div>
+          <div class="qs-pilar"><div class="qs-pilar-icon">🤝</div><div><div class="qs-pilar-title">Custodianship: tutor local ante el colegio</div><div class="qs-pilar-desc">Interlocución directa con el centro, asistencia a las reuniones de padres y profesores e informes periódicos.</div></div></div>
+          <div class="qs-pilar"><div class="qs-pilar-icon">🧭</div><div><div class="qs-pilar-title">Coordinador local en Irlanda</div><div class="qs-pilar-desc">Visitas, tutorías y emergencias 24 h sobre el terreno.</div></div></div>
+          <div class="qs-pilar"><div class="qs-pilar-icon">📞</div><div><div class="qs-pilar-title">Atención 24 h, aquí y allí</div><div class="qs-pilar-desc">Teléfono de emergencias cubierto en España y en destino, todo el curso.</div></div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="qs-chapters-head">
+    <div class="qs-chapters-title">Cómo se vive el curso</div>
+    <div class="qs-chapters-sub">De la maleta en casa a la vida de internado al otro lado del mar</div>
+  </div>
+  <div class="qs-chapters">
+    <div class="qs-chapter">
+      <div class="qs-chapter-media"><img src="https://aescobarnic.github.io/Propuestas/img/mlq-equipaje-salida.jpg" style="object-position:center 12%;" alt="Estudiante con su equipaje el día de la salida" loading="lazy"><div class="qs-chapter-step">Antes de salir</div></div>
+      <div class="qs-chapter-body"><div class="qs-chapter-title">Todo resuelto antes de la maleta</div><div class="qs-chapter-text">Solicitud y admisión en el internado elegido, uniforme y libros, ropa de cama etiquetada con su nombre, orientación pre-viaje en Madrid y en línea y la masterclass de cultura irlandesa, 10 horas antes de salir.</div></div>
+    </div>
+    <div class="qs-chapter">
+      <div class="qs-chapter-media"><img src="https://aescobarnic.github.io/Propuestas/img/mlq-salida-pista.jpg" style="object-position:center 8%;" alt="Estudiantes de My Language Quest el día de la salida" loading="lazy"><div class="qs-chapter-step">El día de la salida</div></div>
+      <div class="qs-chapter-body"><div class="qs-chapter-title">Salida acompañada</div><div class="qs-chapter-text">Traslado desde el aeropuerto hasta el colegio y presentación con el equipo de boarding. Los traslados de Navidad, ida y vuelta, y el de fin de curso también van incluidos.</div></div>
+    </div>
+    <div class="qs-chapter">
+      <div class="qs-chapter-media"><img src="https://aescobarnic.github.io/Propuestas/img/mlq-vida-social.jpg" style="object-position:center 22%;" alt="Estudiante con sus nuevas amigas" loading="lazy"><div class="qs-chapter-step">La vida allí</div></div>
+      <div class="qs-chapter-body"><div class="qs-chapter-title">Un curso, no unas vacaciones</div><div class="qs-chapter-text">Clases, uniforme, estudio supervisado, deportes y planes de fin de semana con el resto de internas. Con clases Cambridge en grupos de 5 a 7 alumnas, dos excursiones al año y apoyo 24/7.</div></div>
+    </div>
+  </div>
+
+  <!-- ============ 6. EL ENCARGO DE ELENA ============ -->
+  <div class="section-title"><h2>Lo que nos ha pedido Elena</h2></div>
+  <div class="perfil-wrap">
+    <div class="perfil-title">No es solo estudiar en Irlanda: es vivir un internado</div>
+    <div class="perfil-sub">Elena tiene muy claro qué busca, y eso ha marcado tanto la selección de centros como el orden en que os los presentamos. Estos son los cuatro criterios que hemos usado para ordenarlos.</div>
+    <div class="perfil-grid">
+      <div class="perfil-item"><div class="perfil-ico">👭</div><div><div class="perfil-item-title">Compartir habitación con otras chicas</div><div class="perfil-item-desc">Es su motivación principal: convivir, hacer amigas rápido y formar parte de una comunidad, no tener una habitación individual. Por eso el tipo de dormitorio pesa tanto en nuestro orden.</div></div></div>
+      <div class="perfil-item"><div class="perfil-ico">🌍</div><div><div class="perfil-item-title">Ambiente internacional</div><div class="perfil-item-desc">Quiere conocer estudiantes de distintos países y culturas. Los cuatro centros tienen comunidad internacional, y lo señalamos colegio a colegio.</div></div></div>
+      <div class="perfil-item"><div class="perfil-ico">🎾</div><div><div class="perfil-item-title">Tenis, voleibol y rugby</div><div class="perfil-item-desc">Marcamos deporte por deporte lo que cada colegio ofrece de forma confirmada y lo que queda pendiente de verificar, para no prometer nada de más.</div></div></div>
+      <div class="perfil-item"><div class="perfil-ico">📍</div><div><div class="perfil-item-title">Fuera de Dublín, y con B2</div><div class="perfil-item-desc">Los cuatro están fuera de Dublín, en Waterford, Cork, Tipperary y Westmeath. Con un B2 y buen rendimiento académico, el Transition Year es un curso muy asumible en los cuatro.</div></div></div>
+    </div>
+  </div>
+
+  <!-- ============ 7. LOS CUATRO INTERNADOS ============ -->
+  <div class="section-title"><h2>Los cuatro internados seleccionados</h2></div>
+  <div class="alert-box">
+    <div class="alert-icon">☘</div>
+    <div class="alert-text"><strong>En internado el precio sí depende del colegio:</strong> cada centro fija sus propias tasas de escolaridad y de residencia. Los cuatro son <strong>colegios mixtos con 7-Day Boarding fuera de Dublín</strong> y admiten alumnas internacionales en Transition Year. El precio de cada tarjeta es el precio final del programa completo de My Language Quest, con el descuento de 1.000 € ya aplicado. <strong>No los presentamos como cuatro opciones equivalentes:</strong> van ordenados por encaje con lo que Elena nos ha pedido.</div>
+  </div>
+  <div class="opciones-grid cuatro">
+
+    <!-- 1. NEWTOWN -->
+    <div class="opcion-card recomendada">
+      <div class="badge-rec">★ RECOMENDADO</div>
+      <div class="opcion-header">
+        <div class="rank-pill">1ª opción</div>
+        <div class="colegio-zona">Condado de Waterford · Ciudad mediana</div>
+        <div class="opcion-distrito">Newtown School</div>
+        <div class="opcion-loc">📍 Newtown Road, Waterford · Costa sureste · A 2 h de Dublín</div>
+        <div class="colegio-chips"><span class="chip">Mixto</span><span class="chip">Público</span><span class="chip">7-Day Boarding</span><span class="chip gold">☘ Tasa TY incluida</span></div>
+        <div class="precio-chip" style="margin-top:12px;"><span class="val">29.700 €</span><span class="desc">/año completo</span><span class="tachado">30.700 €</span></div>
+      </div>
+      <div class="opcion-body">
+        <div class="colegio-desc">El colegio que mejor reúne todo lo que Elena nos ha pedido: experiencia real de internado, sus deportes, un Transition Year variado, presupuesto holgado y una ciudad irlandesa con vida propia sin ser Dublín. Newtown es coeducativo, de enfoque educativo progresivo y con un campus a las afueras de Waterford City.</div>
+        <div class="board-box">
+          <div class="board-box-title">La vida en la residencia</div>
+          <div class="board-row"><span class="board-row-ico">🏠</span><span>Residencia específica de chicas: <b>Annamaur</b></span></div>
+          <div class="board-row"><span class="board-row-ico">🛏</span><span>Alojamiento <b>principalmente en dormitorios compartidos</b>, con habitaciones dobles e individuales también disponibles</span></div>
+          <div class="board-row"><span class="board-row-ico">👥</span><span>Personal residencial propio, actividades después de clase y convivencia continuada de lunes a domingo</span></div>
+        </div>
+        <div class="colegio-section-title">Deportes que le interesan</div>
+        <div class="extra-tags"><span class="extra-tag">🎾 Tenis ✅ todo el año, competición Munster</span><span class="extra-tag">🏐 Voleibol ✅ femenino</span></div>
+        <div class="colegio-section-title">Instalaciones y otras actividades</div>
+        <div class="extra-tags"><span class="extra-tag">🏊 Piscina cubierta</span><span class="extra-tag">🏋️ Gimnasio</span><span class="extra-tag">🎾 Pistas de tenis</span><span class="extra-tag">🏉 Campos de rugby</span><span class="extra-tag">🏟 Pabellón deportivo</span><span class="extra-tag">🏑 Hockey</span><span class="extra-tag">🏸 Bádminton</span><span class="extra-tag">🎵 Orquesta y coro</span><span class="extra-tag">🎭 Teatro</span></div>
+        <div class="colegio-section-title">Actividades en la zona</div>
+        <div class="actividades-ciudad">Waterford Greenway (46 km de vía verde) · playas y surf en Tramore · barrio vikingo y museos · Waterford Crystal · clubes deportivos de ciudad · buena conexión con Dublín y Cork.</div>
+        <div class="colegio-section-title">Por qué lo recomendamos para Elena</div>
+        <ul class="por-que-list">
+          <li>La residencia femenina ofrece una auténtica experiencia de convivencia, principalmente en dormitorios compartidos: exactamente lo que Elena busca</li>
+          <li>Es el que mejor cubre sus deportes: tenis todo el año con competición en Munster y voleibol femenino con entrenamiento y competición</li>
+          <li>Transition Year muy completo: materias académicas junto a módulos de Sports Psychology, fitness, lifesaving, danza, emprendimiento, tecnología y orientación</li>
+          <li>Waterford City permite disfrutar de una ciudad irlandesa con vida y servicios, evitando el entorno de Dublín</li>
+          <li>El precio más ajustado de los cuatro, con un margen amplio dentro del presupuesto</li>
+        </ul>
+      </div>
+      <div class="match-bar"><span class="match-tag">Dormitorios compartidos</span><span class="match-tag">Tenis y vóley</span><span class="match-tag">TY muy variado</span><span class="match-tag">Mejor precio</span></div>
+    </div>
+
+    <!-- 2. BANDON -->
+    <div class="opcion-card">
+      <div class="opcion-header">
+        <div class="rank-pill">2ª opción</div>
+        <div class="colegio-zona">Condado de Cork · Pueblo con vida</div>
+        <div class="opcion-distrito">Bandon Grammar School</div>
+        <div class="opcion-loc">📍 Bandon, Co. Cork · A 30 km de Cork ciudad · Sur de Irlanda</div>
+        <div class="colegio-chips"><span class="chip">Mixto</span><span class="chip">Privado</span><span class="chip">7-Day Boarding</span><span class="chip gold">☘ Tasa TY incluida</span></div>
+        <div class="precio-chip" style="margin-top:12px;"><span class="val">32.260 €</span><span class="desc">/año completo</span><span class="tachado">33.260 €</span></div>
+      </div>
+      <div class="opcion-body">
+        <div class="colegio-desc">Si lo primero para la familia es una experiencia auténtica de internado y compartir habitación con varias chicas, Bandon podría ser incluso la primera opción: es el centro del que tenemos la información más concreta y más alineada con lo que Elena pide. Unos 150 internos dentro de una comunidad escolar de alrededor de 730 alumnos, con presencia expresa de estudiantes de distintos países y culturas.</div>
+        <div class="board-box">
+          <div class="board-box-title">La vida en la residencia</div>
+          <div class="board-row"><span class="board-row-ico">🏠</span><span>Residencia de chicas: <b>Richmount House</b></span></div>
+          <div class="board-row"><span class="board-row-ico">🛏</span><span>Pequeños dormitorios de <b>2 a 6 alumnas</b>: convivencia real, sin habitaciones individuales</span></div>
+          <div class="board-row"><span class="board-row-ico">🗺</span><span>Las internas de 7 días siguen en el programa el fin de semana: excursiones y salidas a Cork, Killarney, Cliffs of Moher, surf, bowling o karting</span></div>
+        </div>
+        <div class="colegio-section-title">Deportes que le interesan</div>
+        <div class="extra-tags"><span class="extra-tag">🎾 Tenis ✅ extraescolar</span><span class="extra-tag">🏉 Rugby ✅</span></div>
+        <div class="colegio-section-title">Transition Year</div>
+        <div class="actividades-ciudad">TY obligatorio en 4th Year, no un programa residual para unos pocos: asignaturas habituales más una oferta amplísima de exploración — Sports Massage, LCPE, Ball Games, artes marciales, robótica, criminología, fotografía, cocina y liderazgo.</div>
+        <div class="colegio-section-title">Por qué encaja con Elena</div>
+        <ul class="por-que-list">
+          <li>Es el internado que reproduce con más exactitud la imagen que Elena tiene en la cabeza: dormitorios compartidos de 2 a 6 chicas en la residencia femenina</li>
+          <li>Comunidad residencial suficiente para hacer vida de internado, pero sin ser una residencia enorme e impersonal</li>
+          <li>Presencia expresa de alumnas de diferentes países: integración e intercambio cultural desde el primer día</li>
+          <li>Tenis y rugby dentro de la oferta deportiva del colegio</li>
+          <li>Fines de semana activos con excursiones por el sur de Irlanda</li>
+        </ul>
+      </div>
+      <div class="match-bar"><span class="match-tag">Dormitorios de 2 a 6</span><span class="match-tag">Comunidad internacional</span><span class="match-tag">Fines de semana activos</span><span class="match-tag">TY obligatorio y amplio</span></div>
+    </div>
+
+    <!-- 3. ROCKWELL -->
+    <div class="opcion-card">
+      <div class="opcion-header">
+        <div class="rank-pill">3ª opción</div>
+        <div class="colegio-zona">Condado de Tipperary · Campus rural</div>
+        <div class="opcion-distrito">Rockwell College</div>
+        <div class="opcion-loc">📍 Cashel, Co. Tipperary · Campus de gran extensión · Sur de Irlanda</div>
+        <div class="colegio-chips"><span class="chip">Mixto</span><span class="chip">Privado</span><span class="chip">7-Day Boarding</span><span class="chip gold">☘ Tasa TY incluida</span></div>
+        <div class="precio-chip" style="margin-top:12px;"><span class="val">33.600 €</span><span class="desc">/año completo</span><span class="tachado">34.600 €</span></div>
+      </div>
+      <div class="opcion-body">
+        <div class="colegio-desc">Un campus enorme, gran tradición deportiva y una comunidad internacional muy marcada: Rockwell recibe alumnado de España, Francia, Alemania, Reino Unido, Estados Unidos, Japón, Corea o Dubái, así que el componente multicultural que busca Elena está muy presente. Fuera de Dublín, con piscina interior y tres pistas de tenis propias.</div>
+        <div class="board-box">
+          <div class="board-box-title">La vida en la residencia</div>
+          <div class="board-row"><span class="board-row-ico">🏠</span><span>Boarding femenino <b>residencial confirmado</b> en <b>Shanahan Hall</b></span></div>
+          <div class="board-row"><span class="board-row-ico">🛏</span><span>Alojamiento en <b>habitaciones dobles para chicas</b> en Transition Year</span></div>
+          <div class="board-row"><span class="board-row-ico">🌍</span><span>Residencia mixta por edificios con alumnado de una decena de nacionalidades</span></div>
+        </div>
+        <div class="colegio-section-title">Deportes que le interesan</div>
+        <div class="extra-tags"><span class="extra-tag">🎾 Tenis ✅ tres pistas</span><span class="extra-tag">🏉 Rugby ✅ tradición muy fuerte</span></div>
+        <div class="colegio-section-title">Instalaciones y entorno</div>
+        <div class="actividades-ciudad">Campus de gran extensión con piscina interior, pistas de tenis y campos de rugby · Rock of Cashel y patrimonio medieval · montañas Galtee y Knockmealdown para senderismo · Cork y Limerick a una hora.</div>
+        <div class="colegio-section-title">Por qué encaja con Elena</div>
+        <ul class="por-que-list">
+          <li>Cubre dos de sus tres deportes: tenis, con tres pistas propias, y rugby, con una tradición muy sólida en el colegio</li>
+          <li>Comunidad internacional muy amplia y explícita: es probablemente el centro con más nacionalidades de los cuatro</li>
+          <li>Habitación doble: comparte espacio con otra alumna, aunque en grupos más reducidos que en Newtown, Bandon o Wilson's</li>
+          <li>Campus grande y autosuficiente, con instalaciones deportivas de nivel dentro del propio recinto</li>
+          <li>Tasa de Transition Year ya incluida en el precio</li>
+        </ul>
+      </div>
+      <div class="match-bar"><span class="match-tag">Tenis y rugby</span><span class="match-tag">Muy internacional</span><span class="match-tag">Campus e instalaciones</span><span class="match-tag">Residencia femenina propia</span></div>
+    </div>
+
+    <!-- 4. WILSON'S -->
+    <div class="opcion-card">
+      <div class="opcion-header">
+        <div class="rank-pill">4ª opción</div>
+        <div class="colegio-zona">Condado de Westmeath · Entorno rural</div>
+        <div class="opcion-distrito">Wilson's Hospital School</div>
+        <div class="opcion-loc">📍 Multyfarnham, Co. Westmeath · Centro de Irlanda · A 1 h 15 de Dublín</div>
+        <div class="colegio-chips"><span class="chip">Mixto</span><span class="chip">Público</span><span class="chip">7-Day Boarding</span><span class="chip gold">☘ Rugby femenino</span></div>
+        <div class="precio-chip" style="margin-top:12px;"><span class="val">33.600 €</span><span class="desc">/año completo</span><span class="tachado">34.600 €</span></div>
+      </div>
+      <div class="opcion-body">
+        <div class="nota-ty"><span>⚠️</span><span><strong>Tasa de Transition Year no incluida.</strong> El colegio confirmará el importe correspondiente una vez iniciado el curso académico. Es el único de los cuatro que no publica esta tasa con antelación.</span></div>
+        <div class="colegio-desc">La cultura de internado más tradicional de los cuatro y, en cuanto a habitaciones, la que más se acerca a la idea de dormitorio compartido: la mayoría son de 3 o 4 camas y algunos dormitorios femeninos llegan hasta 8 alumnas, agrupadas por curso para facilitar la adaptación. Boarding estructurado, con supervised prep y actividades después de clase.</div>
+        <div class="board-box">
+          <div class="board-box-title">La vida en la residencia</div>
+          <div class="board-row"><span class="board-row-ico">🏠</span><span>Chicos y chicas en <b>edificios separados</b>, con instalaciones femeninas diferenciadas y modernizadas</span></div>
+          <div class="board-row"><span class="board-row-ico">🛏</span><span>La mayoría de habitaciones son de <b>3 o 4 camas</b>; algunos dormitorios femeninos llegan <b>hasta 8 alumnas</b></span></div>
+          <div class="board-row"><span class="board-row-ico">🎓</span><span>Las alumnas se agrupan <b>por curso</b>, lo que facilita la adaptación y hacer grupo desde la primera semana</span></div>
+        </div>
+        <div class="colegio-section-title">Deportes que le interesan</div>
+        <div class="extra-tags"><span class="extra-tag">🏉 Rugby ✅ equipos femeninos Junior y Senior</span></div>
+        <div class="colegio-section-title">Otros deportes del colegio</div>
+        <div class="extra-tags"><span class="extra-tag">🏑 Hockey</span><span class="extra-tag">🏏 Cricket</span><span class="extra-tag">🏀 Baloncesto</span><span class="extra-tag">🏸 Bádminton</span><span class="extra-tag">🏃 Atletismo</span></div>
+        <div class="colegio-section-title">Por qué encaja con Elena</div>
+        <ul class="por-que-list">
+          <li>El modelo de convivencia que más se ajusta a lo que pide: habitaciones de 3 o 4 alumnas, y hasta 8 en algunos dormitorios femeninos</li>
+          <li>Es el único de los cuatro con rugby femenino en categorías Junior y Senior</li>
+          <li>Cultura de boarding consolidada y estructurada, con supervised prep y actividades después de las clases</li>
+          <li>Transition Year que combina continuidad académica, materias nuevas y experiencias orientadas a la autonomía y la madurez personal</li>
+          <li>Queda en cuarta posición por dos motivos: su oferta deportiva no cubre tenis ni voleibol, y la tasa de Transition Year no está incluida en el precio</li>
+        </ul>
+      </div>
+      <div class="match-bar"><span class="match-tag">Habitaciones de 3-4</span><span class="match-tag">Rugby femenino</span><span class="match-tag">Boarding tradicional</span></div>
+    </div>
+
+  </div>
+
+  <!-- ============ 8. TABLA COMPARATIVA ============ -->
+  <div class="section-title"><h2>Comparativa de los cuatro internados</h2></div>
+  <div class="tabla-wrap">
+    <table class="tabla-diff">
+      <thead><tr>
+        <th style="text-align:left;">&nbsp;</th>
+        <th class="rec-col">Newtown School<br><span style="font-weight:400;font-size:10px;opacity:.85;">1ª opción · Recomendado</span></th>
+        <th>Bandon Grammar<br><span style="font-weight:400;font-size:10px;opacity:.85;">2ª opción</span></th>
+        <th>Rockwell College<br><span style="font-weight:400;font-size:10px;opacity:.85;">3ª opción</span></th>
+        <th>Wilson's Hospital<br><span style="font-weight:400;font-size:10px;opacity:.85;">4ª opción</span></th>
+      </tr></thead>
+      <tbody>
+        <tr><th>Ubicación</th><td class="rec-col">Waterford</td><td>Cork</td><td>Tipperary</td><td>Westmeath</td></tr>
+        <tr><th>Tipo de colegio</th><td class="rec-col">Público</td><td>Privado</td><td>Privado</td><td>Público</td></tr>
+        <tr><th>Boarding</th><td class="rec-col">7-Day Boarding</td><td>7-Day Boarding</td><td>7-Day Boarding</td><td>7-Day Boarding</td></tr>
+        <tr><th>Mixto / Girls</th><td class="rec-col">Mixto</td><td>Mixto</td><td>Mixto</td><td>Mixto</td></tr>
+        <tr><th>Habitación para Elena</th><td class="rec-col">Residencia de chicas Annamaur · dormitorios compartidos</td><td>Richmount House · dormitorios de 2 a 6 alumnas</td><td>Shanahan Hall · habitaciones dobles</td><td>Edificio femenino · habitaciones de 3-4, algunas hasta 8</td></tr>
+        <tr class="precio-fila"><th>Precio MLQ 27/28</th><td class="rec-col">29.700 €<span class="tachado">30.700 €</span></td><td>32.260 €<span class="tachado">33.260 €</span></td><td>33.600 €<span class="tachado">34.600 €</span></td><td>33.600 €<span class="tachado">34.600 €</span></td></tr>
+        <tr><th>Tasa de Transition Year</th><td class="rec-col"><span class="si">✓</span><span class="sup ok">incluida</span></td><td><span class="si">✓</span><span class="sup ok">incluida</span></td><td><span class="si">✓</span><span class="sup ok">incluida</span></td><td><span class="no">✗</span><span class="sup">no incluida</span></td></tr>
+        <tr><th>🎾 Tenis</th><td class="rec-col"><span class="si">✓</span></td><td><span class="si">✓</span></td><td><span class="si">✓</span></td><td><span class="no">✗</span></td></tr>
+        <tr><th>🏐 Voleibol</th><td class="rec-col"><span class="si">✓</span></td><td><span class="no">✗</span></td><td><span class="no">✗</span></td><td><span class="no">✗</span></td></tr>
+        <tr><th>🏉 Rugby</th><td class="rec-col"><span class="no">✗</span></td><td><span class="si">✓</span></td><td><span class="si">✓</span></td><td><span class="si">✓</span><span class="sup ok">femenino</span></td></tr>
+        <tr><th>Ajuste para Elena</th><td class="rec-col"><span class="stars">★★★★★</span></td><td><span class="stars">★★★★★</span></td><td><span class="stars">★★★★½</span></td><td><span class="stars">★★★★</span></td></tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="tabla-nota">Los cuatro colegios son mixtos, ofrecen programa de Transition Year y disponen de opción de 7-Day Boarding fuera de Dublín, por lo que cumplen con los principales criterios de búsqueda de Elena. Comparten además la misma base de servicios de My Language Quest: plaza escolar, tasas de escolaridad y residencia, uniforme y libros, ropa de cama etiquetada, custodianship, cuatro traslados de aeropuerto, dos excursiones, clases Cambridge, seguro médico y convalidación en España. Lo que cambia entre ellos es el tipo de habitación, la oferta deportiva y el precio.</div>
+
+  <!-- ============ 9. QUÉ INTERNADO ELEGIR ============ -->
+  <div class="section-title"><h2>¿Qué internado elegir?</h2></div>
+  <div class="decision-grid">
+    <div class="decision-card">
+      <div class="decision-title">🥇 Newtown School · 29.700 €</div>
+      <div class="decision-text">El más equilibrado para lo que Elena pide: vida de internado en dormitorios compartidos, tenis y voleibol, un Transition Year muy variado, ubicación en una ciudad con vida fuera de Dublín y el precio más bajo de los cuatro. Es nuestra recomendación.</div>
+    </div>
+    <div class="decision-card">
+      <div class="decision-title">🥈 Bandon Grammar · 32.260 €</div>
+      <div class="decision-text">Probablemente el que mejor reproduce la imagen de internado que Elena tiene en mente: residencia femenina con dormitorios de 2 a 6 alumnas, comunidad internacional y mucha vida de boarding también en fin de semana. Si lo prioritario es compartir habitación con varias chicas, este sube al primer puesto.</div>
+    </div>
+    <div class="decision-card">
+      <div class="decision-title">🥉 Rockwell College · 33.600 €</div>
+      <div class="decision-text">Muy buena opción académica y deportiva, con tenis y rugby confirmados, campus enorme y la comunidad internacional más amplia de los cuatro. Su boarding femenino está en Shanahan Hall y la habitación es doble: algo menos de vida en común que en las otras tres.</div>
+    </div>
+    <div class="decision-card">
+      <div class="decision-title">4º Wilson's Hospital · 33.600 € + tasa TY</div>
+      <div class="decision-text">Excelente para convivencia en dormitorios, integración y rugby femenino, con la cultura de boarding más tradicional. Queda cuarto porque su oferta deportiva no cubre tenis ni voleibol y porque la tasa de Transition Year no está incluida en el precio.</div>
+    </div>
+  </div>
+
+  <!-- ============ 10. EL PROGRAMA INCLUYE ============ -->
+  <div class="section-title"><h2>El programa incluye</h2></div>
+  <div class="includes-wrap">
+    <div class="includes-head"><h3>☘ Programa de internado My Language Quest</h3></div>
+    <div class="includes-body">
+      <div class="includes-grid">
+        <div>
+          <div class="col-title">Colegio y alojamiento</div>
+          <ul class="inc-list">
+            <li>Asignación de plaza en el internado elegido</li>
+            <li>Tasas escolares del curso completo</li>
+            <li>Tasas de internado en régimen de 7 días<small>Alojamiento y comidas en la residencia</small></li>
+            <li>Tasa de Transition Year<small>Incluida en Newtown, Bandon y Rockwell. En Wilson's Hospital el colegio confirmará el importe una vez iniciado el curso</small></li>
+            <li>Uniforme escolar completo<small>Excepto calzado</small></li>
+            <li>Libros de las asignaturas obligatorias</li>
+            <li>Ropa de cama y artículos personalizados<small>Edredón, toallas y etiquetas con su nombre en cada prenda</small></li>
+            <li>Alojamiento en Semana Santa y en las 2 vacaciones de mitad de trimestre<small>1 semana en octubre y 1 semana en febrero</small></li>
+            <li>Seguro médico privado y de responsabilidad civil</li>
+          </ul>
+          <div class="col-title" style="margin-top:24px;">Antes de salir</div>
+          <ul class="inc-list">
+            <li>Masterclass de cultura irlandesa<small>10 horas</small></li>
+            <li>Orientación pre-viaje en Madrid y en línea</li>
+            <li>Welcome pack de My Language Quest</li>
+          </ul>
+        </div>
+        <div>
+          <div class="col-title">Durante el curso</div>
+          <ul class="inc-list">
+            <li>Custodianship MLQ en Irlanda: actuamos como tutor local ante el colegio</li>
+            <li>Apoyo 24/7 y tutoría personalizada</li>
+            <li>Contacto directo con el centro y asistencia a las reuniones de padres y profesores</li>
+            <li>Teléfono de emergencias 24/7</li>
+            <li>4 traslados de aeropuerto<small>Inicio de curso, Navidad ida y vuelta, y final de curso</small></li>
+            <li>2 excursiones<small>1 por semestre</small></li>
+            <li>Curso de inglés Cambridge<small>En grupos reducidos de 5 a 7 estudiantes</small></li>
+            <li>Taller de competencias de 3 sesiones<small>Programa para potenciar competencias clave del futuro académico y profesional, impartido por Óscar Corominas, docente del MIT</small></li>
+          </ul>
+          <div class="col-title" style="margin-top:24px;">Después del curso</div>
+          <ul class="inc-list">
+            <li>Convalidación ante el Ministerio de Educación</li>
+            <li>Recogida de notas y traducciones juradas</li>
+            <li>Dossier final detallando la experiencia en Irlanda</li>
+          </ul>
+        </div>
+        <div>
+          <div class="col-title">No incluido</div>
+          <ul class="inc-list no">
+            <li>Vuelos<small>MLQ se encarga de la búsqueda y la gestión; el coste va a cargo de la familia</small></li>
+            <li>Tasa de Transition Year en Wilson's Hospital School<small>El colegio confirmará el importe al inicio del curso</small></li>
+            <li>Calzado del uniforme</li>
+            <li>Clases o tutorías adicionales dentro del colegio</li>
+            <li>Actividades extracurriculares de pago y excursiones organizadas directamente por el colegio</li>
+            <li>Material escolar adicional, fotografía escolar y anuario</li>
+            <li>Traslados adicionales al aeropuerto<small>Coste por cada llegada o salida extra</small></li>
+            <li>Transporte local</li>
+            <li>Seguro de anulación e interrupción<small>1.050 €, opcional, cobertura hasta 30.000 €</small></li>
+            <li>Todo aquello que no esté especificado expresamente en el apartado &laquo;El programa incluye&raquo;</li>
+          </ul>
+        </div>
+      </div>
+      <div class="gestor-wrap">
+        <div class="gestor-title">Custodianship y tutoría · nos encargamos de</div>
+        <div class="gestor-grid">
+          <div class="gestor-item">Interlocución con el colegio como tutor local</div>
+          <div class="gestor-item">Asistencia a reuniones de padres y profesores</div>
+          <div class="gestor-item">Informes periódicos a la familia</div>
+          <div class="gestor-item">Seguimiento del desempeño académico</div>
+          <div class="gestor-item">Notas oficiales de cada trimestre</div>
+          <div class="gestor-item">Apoyo en la elección de asignaturas</div>
+          <div class="gestor-item">Inscripción en las actividades del centro</div>
+          <div class="gestor-item">Resolución de cualquier situación con el colegio</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ============ 11. FORMAS DE PAGO ============ -->
+  <div class="section-title"><h2>Formas de pago</h2></div>
+  <div class="payment-wrap">
+    <div class="payment-inner">
+      <div class="pay-title">💳 Condiciones económicas</div>
+      <div class="pay-subtitle">Dos vías: pago directo o financiación. El importe de la reserva cambia según cuál elijáis.</div>
+
+      <div class="pay-route">
+        <div class="pay-route-head"><span class="pay-route-icon">🏦</span><span class="pay-route-title">Opción A · Pago sin financiación</span></div>
+        <div class="pay-route-sub">La cantidad íntegra debe quedar abonada antes del 1 de junio de 2027.</div>
+        <div class="pay-entrada">
+          <div class="pay-entrada-num">3.500 €</div>
+          <div class="pay-entrada-txt"><strong>Primer pago a la firma del contrato.</strong> Da entrada a la solicitud en el internado elegido e inicia la tramitación de admisión y custodianship.</div>
+        </div>
+        <div class="pay-cols">
+          <div class="pay-col">
+            <div class="pay-col-title">Paso 2 · Confirmación de plaza</div>
+            <div class="pay-step"><div class="pay-step-title">4.000 €</div><div class="pay-step-desc">Cuando el internado confirma la admisión</div></div>
+          </div>
+          <div class="pay-col">
+            <div class="pay-col-title">Paso 3 · Resto del importe</div>
+            <div class="pay-step"><div class="pay-step-title">Antes del 1 de junio de 2027</div><div class="pay-step-desc">Importe restante hasta completar el precio del programa</div></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="pay-route">
+        <div class="pay-route-head"><span class="pay-route-icon">📆</span><span class="pay-route-title">Opción B · Con financiación Banco Sabadell</span></div>
+        <div class="pay-route-sub">Si se financia el programa, la entrada es siempre de 5.000 € y el resto se reparte en cuotas mensuales.</div>
+        <div class="pay-entrada">
+          <div class="pay-entrada-num">5.000 €</div>
+          <div class="pay-entrada-txt"><strong>Entrada fija a la firma del contrato</strong> en todos los casos de financiación. El capital restante se financia en 18, 24 o 36 meses.</div>
+        </div>
+        <div class="pay-cols">
+          <div class="pay-col">
+            <div class="pay-col-title">Capital financiado</div>
+            <div class="pay-step"><div class="pay-step-title">Precio del programa − 5.000 €</div><div class="pay-step-desc">Calculad la cuota exacta en el simulador de la sección siguiente.</div></div>
+          </div>
+          <div class="pay-col">
+            <div class="pay-col-title">Condiciones</div>
+            <div class="pay-step"><div class="pay-step-title">18 / 24 / 36 meses · TIN 10,46 %</div><div class="pay-step-desc">Intereses a cargo del cliente</div></div>
+            <div class="pay-step"><div class="pay-step-title">Sin comisión de apertura</div><div class="pay-step-desc">Y sin penalización por cancelación anticipada</div></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="pay-note">Sin comisión de apertura ni penalización por cancelación anticipada. El seguro de anulación e interrupción es opcional, cuesta 1.050 €, cubre hasta 30.000 € y debe contratarse y abonarse en el momento de la firma del contrato. Su importe no es reembolsable bajo ninguna circunstancia. Las inscripciones tardías deben cumplir con los plazos de pago ya vencidos en el momento de la inscripción.</div>
+    </div>
+  </div>
+
+  <!-- ============ 12. FINANCIACIÓN · SIMULADOR ============ -->
+  <div class="section-title"><h2>Calculad vuestra cuota</h2></div>
+  <div class="financing-wrap">
+    <div class="financing-head">
+      <div class="financing-head-left">
+        <div class="fin-icon">💳</div>
+        <div>
+          <div class="fin-title">Pagad a vuestro ritmo</div>
+          <div class="fin-sub">Entrada fija de 5.000 € · Aprobación rápida · 100 % online · Sin comisión de apertura</div>
+        </div>
+      </div>
+      <div class="fin-badge">Hasta 36 meses</div>
+    </div>
+    <div class="financing-body">
+      <div class="fin-opcion-selector">
+        <div class="fin-opcion-label">1 · Elegid el internado</div>
+        <div class="fin-opcion-btns" id="finOpciones">
+          <button type="button" class="fin-opcion-btn active" data-precio="29700"><span class="fin-opcion-nombre">☘ Newtown School</span><span class="fin-opcion-precio">29.700 €</span></button>
+          <button type="button" class="fin-opcion-btn" data-precio="32260"><span class="fin-opcion-nombre">Bandon Grammar</span><span class="fin-opcion-precio">32.260 €</span></button>
+          <button type="button" class="fin-opcion-btn" data-precio="33600"><span class="fin-opcion-nombre">Rockwell / Wilson's</span><span class="fin-opcion-precio">33.600 €</span></button>
+        </div>
+      </div>
+
+      <div class="fin-entrada-fija">
+        <div class="fin-entrada-fija-num">5.000 €</div>
+        <div class="fin-entrada-fija-txt"><strong>Entrada a la firma del contrato.</strong> Se descuenta del precio del programa; el resto es el capital que se financia.</div>
+      </div>
+
+      <div class="fin-plazo-wrap">
+        <div class="fin-plazo-label">2 · Elegid el plazo</div>
+        <div class="fin-plazos" id="finPlazos">
+          <button type="button" class="fin-plazo active" data-meses="18" data-tin="10.46"><div class="fin-plazo-meses">18 meses</div><div class="fin-plazo-badge">TIN 10,46 %</div><div class="fin-plazo-quien">Intereses a cargo del cliente</div></button>
+          <button type="button" class="fin-plazo" data-meses="24" data-tin="10.46"><div class="fin-plazo-meses">24 meses</div><div class="fin-plazo-badge">TIN 10,46 %</div><div class="fin-plazo-quien">Intereses a cargo del cliente</div></button>
+          <button type="button" class="fin-plazo" data-meses="36" data-tin="10.46"><div class="fin-plazo-meses">36 meses</div><div class="fin-plazo-badge">TIN 10,46 %</div><div class="fin-plazo-quien">Intereses a cargo del cliente</div></button>
+        </div>
+      </div>
+
+      <div class="fin-resultado">
+        <div class="fin-resultado-main">
+          <div class="fin-cuota-label">Cuota mensual estimada</div>
+          <div class="fin-cuota-valor" id="cuotaValor">1.488,65 €</div>
+          <div class="fin-cuota-sub" id="cuotaSub">/mes · 18 pagos · TIN 10,46 %</div>
+        </div>
+        <div class="fin-resultado-detalle">
+          <div class="fin-det-row"><span class="fin-det-label">Importe del programa</span><span class="fin-det-val" id="detPrecio">29.700 €</span></div>
+          <div class="fin-det-row"><span class="fin-det-label">Entrada a la firma</span><span class="fin-det-val" id="detEntrada">5.000 €</span></div>
+          <div class="fin-det-row"><span class="fin-det-label">Capital financiado</span><span class="fin-det-val" id="detCapital">24.700 €</span></div>
+          <div class="fin-det-row"><span class="fin-det-label">Intereses totales</span><span class="fin-det-val" id="detIntereses">2.095,64 €</span></div>
+          <div class="fin-det-row fin-det-total"><span class="fin-det-label">Total a pagar</span><span class="fin-det-val" id="detTotal">31.795,64 €</span></div>
+        </div>
+      </div>
+
+      <div class="fin-nota">ℹ️ Financiación de Banco Sabadell sujeta a aprobación bancaria. La entrada de 5.000 € se abona a la firma del contrato y no se financia. Cuota orientativa calculada sobre el capital financiado a TIN 10,46 %. Sin comisión de apertura ni penalización por cancelación anticipada. En Wilson's Hospital School el simulador no contempla la tasa de Transition Year, que el colegio confirmará al inicio del curso.</div>
+    </div>
+  </div>
+
+  <!-- ============ 13. SIGUIENTES PASOS ============ -->
+  <div class="section-title"><h2>Siguientes pasos</h2></div>
+  <div class="steps-wrap">
+    <div class="steps-inner">
+      <div class="steps-title">¿Cómo seguimos?</div>
+      <div class="steps-sub">Del sí a la salida hacia Irlanda, paso a paso</div>
+      <div class="steps-list">
+        <div class="step-item"><div class="step-num">1</div><div class="step-title">Elegís el internado</div><div class="step-desc">Nos confirmáis cuál de los cuatro centros preferís, con una segunda opción por si acaso.</div></div>
+        <div class="step-item"><div class="step-num">2</div><div class="step-title">Firma y reserva</div><div class="step-desc">Firma del contrato y primer pago de 3.500 €. Es el paso que nos permite presentar la solicitud en vuestro nombre.</div></div>
+        <div class="step-item"><div class="step-num">3</div><div class="step-title">Solicitud y admisión</div><div class="step-desc">Preparamos el expediente y lo presentamos al colegio. Algún centro puede pedir entrevista o prueba de nivel de inglés.</div></div>
+        <div class="step-item"><div class="step-num">4</div><div class="step-title">Uniforme y viaje</div><div class="step-desc">Custodianship, uniforme y libros, ropa de cama etiquetada, vuelos y traslados.</div></div>
+      </div>
+      <div class="cta-line">Cuanto antes entre la solicitud, más margen para elegir centro. Si queda alguna duda entre los cuatro, vuestra asesora la resuelve con vosotros.</div>
+      <div class="pasos-cta-wrap">
+        <a class="pasos-cta" href="mailto:aescobar@mylanguagequest.com,gespinoza@mylanguagequest.com?subject=Confirmaci%C3%B3n%20de%20internado%20%C2%B7%20Elena%20Corpas%20G%C3%B3mez%20%C2%B7%20Irlanda%202027%2F28&amp;body=Hola%2C%0A%0AHemos%20revisado%20la%20propuesta%20de%20internados%20en%20Irlanda%20para%20Elena%20y%20queremos%20iniciar%20la%20solicitud%20en%3A%0A%0APrimera%20opci%C3%B3n%3A%20%0ASegunda%20opci%C3%B3n%3A%20%0A%0AGracias.">☘ Iniciar mi solicitud</a>
+        <a class="pasos-cta pasos-cta-alt" href="https://asesoramientosmlq.zohobookings.eu/mylanguagequest" target="_blank" rel="noopener">📅 Agendar llamada con mi asesora</a>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<!-- ============ 13. FOOTER ============ -->
+<div class="footer">
+  <div class="footer-logo">MY LANGUAGE QUEST</div>
+  <div class="footer-tag">Explore · Learn · Grow</div>
+  <div class="footer-meta">
+    Propuesta personalizada para Elena Corpas Gómez · Internados en Irlanda · Curso 2027/28<br>
+    Precios sujetos a disponibilidad de plaza y confirmación del centro escolar.<br>
+    Descuento de 1.000 € aplicable a inscripciones formalizadas hasta el 30 de septiembre de 2026, no acumulable con otras promociones.
+  </div>
+</div>
+
+<script>
+(function(){
+  var precio=29700, meses=18, tin=10.46, ENTRADA=5000;
+  function grp(s){return s.replace(/\B(?=(\d{3})+(?!\d))/g,'.');}
+  function fmt(n){var v=(Math.round(n*100)/100).toFixed(2).split('.');return grp(v[0])+','+v[1]+' \u20ac';}
+  function fmt0(n){return grp(String(Math.round(n)))+' \u20ac';}
+  function calc(){
+    var capital=Math.max(precio-ENTRADA,0), i=tin/100/12;
+    var cuota=i===0?capital/meses:capital*i/(1-Math.pow(1+i,-meses));
+    var total=cuota*meses, intereses=total-capital;
+    document.getElementById('cuotaValor').textContent=fmt(cuota);
+    document.getElementById('cuotaSub').textContent='/mes \u00b7 '+meses+' pagos \u00b7 TIN 10,46 %';
+    document.getElementById('detPrecio').textContent=fmt0(precio);
+    document.getElementById('detEntrada').textContent=fmt0(ENTRADA);
+    document.getElementById('detCapital').textContent=fmt0(capital);
+    document.getElementById('detIntereses').textContent=fmt(intereses);
+    document.getElementById('detTotal').textContent=fmt(ENTRADA+total);
+  }
+  function bind(sel,fn){
+    var els=document.querySelectorAll(sel);
+    Array.prototype.forEach.call(els,function(b){
+      b.addEventListener('click',function(){
+        Array.prototype.forEach.call(els,function(x){x.classList.remove('active');});
+        b.classList.add('active'); fn(b); calc();
+      });
+    });
+  }
+  bind('#finOpciones .fin-opcion-btn',function(b){precio=parseFloat(b.getAttribute('data-precio'));});
+  bind('#finPlazos .fin-plazo',function(b){meses=parseInt(b.getAttribute('data-meses'),10);tin=parseFloat(b.getAttribute('data-tin'));});
+  calc();
+  var cv=document.getElementById('cuotaValor');
+  if(cv&&'MutationObserver' in window){
+    new MutationObserver(function(){cv.classList.remove('pop');void cv.offsetWidth;cv.classList.add('pop');})
+      .observe(cv,{childList:true,characterData:true,subtree:true});
+  }
+})();
+</script>
+<script>
+(function(){
+  var d=document, root=d.documentElement;
+  if(!('IntersectionObserver' in window)){root.className=root.className.replace(' js-anim','');return;}
+
+  var bar=d.createElement('div'); bar.className='progress-bar'; d.body.appendChild(bar);
+  var ticking=false;
+  function progress(){
+    var h=d.documentElement.scrollHeight-window.innerHeight;
+    bar.style.transform='scaleX('+(h>0?Math.min(window.scrollY/h,1):0)+')';
+    ticking=false;
+  }
+  window.addEventListener('scroll',function(){if(!ticking){ticking=true;requestAnimationFrame(progress);}},{passive:true});
+  progress();
+
+  Array.prototype.forEach.call(d.querySelectorAll('.hero-pill'),function(el,i){
+    el.style.animationDelay=(0.36+i*0.06)+'s';
+  });
+
+  var groups=[
+    ['.section-title','reveal'],
+    ['.intro-text','reveal'],
+    ['.intro-point','reveal'],
+    ['.timing-wrap','reveal-zoom'],
+    ['.qs-hero','reveal-zoom'],
+    ['.qs-chapters-head','reveal'],
+    ['.qs-chapter','reveal'],
+    ['.perfil-wrap','reveal-zoom'],
+    ['.alert-box','reveal'],
+    ['.opcion-card','reveal'],
+    ['.tabla-wrap','reveal-zoom'],
+    ['.decision-card','reveal'],
+    ['.includes-wrap','reveal-zoom'],
+    ['.payment-wrap','reveal-zoom'],
+    ['.financing-wrap','reveal-zoom'],
+    ['.steps-wrap','reveal-zoom']
+  ];
+  groups.forEach(function(g){
+    Array.prototype.forEach.call(d.querySelectorAll(g[0]),function(el,i){
+      el.classList.add(g[1]);
+      el.style.transitionDelay=Math.min(i*0.09,0.36)+'s';
+    });
+  });
+
+  var io=new IntersectionObserver(function(entries){
+    entries.forEach(function(e){
+      if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}
+    });
+  },{threshold:0.12,rootMargin:'0px 0px -8% 0px'});
+  Array.prototype.forEach.call(d.querySelectorAll('.reveal,.reveal-zoom'),function(el){io.observe(el);});
+
+})();
+</script>
+<!-- build: elena-corpas-internados-irlanda -->
+</body>
+</html>
