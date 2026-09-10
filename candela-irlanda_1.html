@@ -1,0 +1,1143 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<script>document.documentElement.className+=" js-anim";</script>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Propuesta Irlanda · Candela · My Language Quest</title>
+<link href="https://fonts.googleapis.com/css2?family=Fira+Sans:wght@300;400;500;600;700&family=Josefin+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --blue:#003366;--blue-dark:#001f40;--blue-mid:#0a4a8a;--blue-light:#dce8f5;
+  --red:#B12900;--red-dark:#8A1F00;--red-light:#fdf0ec;
+  --red-deep:#6E1600;--red-warm:#C8380C;--cream:#FFF6F2;--sand:#F7EDE6;--gold:#E8B04B;
+  --ie:#3A7A09;--ie-deep:#1F4A05;--ie-warm:#5FB515;--ie-light:#eef8e3;
+  --green:#4C9E0C;--green-dark:#3A7A09;--green-light:#eef8e3;
+  --gray-bg:#eef3ea;--gray-card:#f8fbf5;--gray-border:#d9e3d2;
+  --text:#0d1b2a;--text-mid:#3d4f62;--text-light:#7a8a9b;--white:#ffffff;
+}
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box;}
+body{font-family:'Fira Sans',sans-serif;background:var(--gray-bg);color:var(--text);}
+
+/* HEADER */
+.header{background:var(--white);padding:18px 48px;display:flex;align-items:center;justify-content:space-between;box-shadow:0 1px 0 var(--gray-border),0 4px 24px rgba(0,51,102,0.07);position:relative;z-index:10;}
+.header::after{content:'';position:absolute;bottom:0;left:0;right:0;height:4px;background:linear-gradient(90deg,var(--ie) 0%,var(--ie) 33%,var(--white) 33%,var(--white) 67%,#FF8200 67%,#FF8200 100%);}
+.logo-area img{height:46px;width:auto;display:block;}
+.header-right{text-align:right;}
+.header-label{font-family:'Josefin Sans',sans-serif;font-size:9px;letter-spacing:3px;text-transform:uppercase;color:var(--text-light);}
+.header-year{font-family:'Josefin Sans',sans-serif;font-size:26px;font-weight:700;color:var(--ie-deep);line-height:1;margin-top:2px;}
+
+/* HERO */
+.hero{background:linear-gradient(135deg,var(--ie-deep) 0%,var(--ie) 55%,var(--ie-warm) 100%);position:relative;overflow:hidden;padding:40px 48px 36px;}
+.hero::after{content:'☘';position:absolute;right:2%;top:50%;transform:translateY(-50%) rotate(-12deg);font-size:230px;line-height:1;opacity:0.09;pointer-events:none;z-index:1;}
+.hero::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 70% 110% at 100% 40%,rgba(255,255,255,0.12) 0%,transparent 60%),radial-gradient(ellipse 60% 80% at -10% 90%,rgba(0,31,64,0.28) 0%,transparent 60%);}
+.hero-dots{position:absolute;inset:0;pointer-events:none;background-image:radial-gradient(rgba(255,255,255,0.07) 1px,transparent 1px);background-size:28px 28px;}
+.hero-inner{position:relative;z-index:2;}
+.hero-tag{display:inline-flex;align-items:center;gap:6px;background:rgba(255,255,255,0.1);border:1px solid rgba(255,255,255,0.2);border-radius:20px;padding:4px 12px;font-size:10px;font-weight:600;letter-spacing:2px;text-transform:uppercase;color:rgba(255,255,255,0.7);margin-bottom:12px;}
+.hero-tag::before{content:'☘';font-size:12px;}
+.hero-name{font-family:'Josefin Sans',sans-serif;font-size:38px;font-weight:700;color:var(--white);line-height:1.05;margin-bottom:8px;}
+.hero-subtitle{font-size:13px;color:rgba(255,255,255,0.55);font-weight:300;}
+.hero-pills{display:flex;flex-wrap:wrap;gap:8px;margin-top:20px;}
+.hero-pill{display:flex;align-items:center;gap:6px;background:rgba(255,255,255,0.1);border:1px solid rgba(255,255,255,0.18);border-radius:8px;padding:6px 12px;font-size:11px;color:var(--white);font-weight:500;}
+.hero-pill.ac{background:rgba(0,31,64,0.35);border-color:rgba(255,255,255,0.4);color:#ffffff;}
+.hero-promo{display:block;background:rgba(0,31,64,0.42);border:1px solid rgba(255,255,255,0.35);border-radius:10px;padding:13px 18px;font-size:13px;font-weight:400;color:rgba(255,255,255,0.92);margin-top:18px;max-width:660px;line-height:1.65;}
+.hero-promo strong{color:#ffffff;font-weight:700;}
+.hero-promo b{display:block;font-family:'Josefin Sans',sans-serif;font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:#b6f28a;margin-bottom:5px;}
+
+/* LAYOUT */
+.main{max-width:1140px;margin:0 auto;padding:40px 24px 20px;}
+.section-title{display:flex;align-items:center;gap:12px;margin:44px 0 24px;}
+.section-title:first-of-type{margin-top:0;}
+.section-title h2{font-family:'Josefin Sans',sans-serif;font-size:11px;font-weight:700;letter-spacing:3px;text-transform:uppercase;color:var(--ie-deep);white-space:nowrap;}
+.section-title::before{content:'';width:22px;height:3px;border-radius:3px;background:var(--ie);flex-shrink:0;}
+.section-title::after{content:'';flex:1;height:1px;background:var(--gray-border);}
+
+/* INTRO / CONTEXTO */
+.intro-text{font-size:14px;color:var(--text-mid);line-height:1.75;max-width:860px;margin-bottom:20px;}
+.intro-text strong{color:var(--blue);font-weight:600;}
+.intro-points{display:grid;grid-template-columns:repeat(2,1fr);gap:14px;margin-top:20px;}
+.intro-point{background:var(--white);border:1.5px solid var(--gray-border);border-radius:12px;padding:16px 18px;display:flex;gap:12px;align-items:flex-start;}
+.intro-point-icon{font-size:20px;flex-shrink:0;}
+.intro-point-title{font-family:'Josefin Sans',sans-serif;font-size:13px;font-weight:700;color:var(--ie-deep);margin-bottom:4px;}
+.intro-point-desc{font-size:12px;color:var(--text-mid);line-height:1.55;}
+
+/* QUIÉNES SOMOS — bloque editorial */
+.qs-hero{display:grid;grid-template-columns:1fr 1fr;gap:0;background:var(--white);border-radius:18px;overflow:hidden;border:1.5px solid var(--gray-border);box-shadow:0 4px 28px rgba(0,51,102,0.08);}
+.qs-media{position:relative;background:var(--blue-dark);min-height:440px;}
+.qs-media img{width:100%;height:100%;object-fit:cover;display:block;}
+.qs-media-inset{position:absolute;right:-1px;bottom:-1px;width:44%;aspect-ratio:3/4;border-radius:14px 0 0 0;overflow:hidden;border-top:4px solid var(--white);border-left:4px solid var(--white);box-shadow:-8px -8px 28px rgba(0,31,64,0.28);}
+.qs-media-inset img{width:100%;height:100%;object-fit:cover;}
+.qs-panel{background:linear-gradient(155deg,var(--blue-dark) 0%,var(--blue) 55%,var(--blue-mid) 100%);padding:38px 40px;position:relative;overflow:hidden;display:flex;flex-direction:column;justify-content:center;}
+.qs-panel::before{content:'';position:absolute;inset:0;background-image:radial-gradient(rgba(255,255,255,0.055) 1px,transparent 1px);background-size:22px 22px;}
+.qs-panel-inner{position:relative;z-index:2;}
+.qs-eyebrow{font-family:'Josefin Sans',sans-serif;font-size:9px;font-weight:700;letter-spacing:3px;text-transform:uppercase;color:#7dd44a;margin-bottom:12px;}
+.qs-title{font-family:'Josefin Sans',sans-serif;font-size:26px;font-weight:700;color:var(--white);line-height:1.2;margin-bottom:14px;}
+.qs-lead{font-size:13.5px;color:rgba(255,255,255,0.62);line-height:1.75;margin-bottom:26px;}
+.qs-lead strong{color:var(--white);font-weight:600;}
+.qs-pilares{display:flex;flex-direction:column;gap:14px;}
+.qs-pilar{display:flex;gap:14px;align-items:flex-start;padding-top:14px;border-top:1px solid rgba(255,255,255,0.13);}
+.qs-pilar:first-child{border-top:none;padding-top:0;}
+.qs-pilar-icon{font-size:19px;flex-shrink:0;line-height:1.3;}
+.qs-pilar-title{font-family:'Josefin Sans',sans-serif;font-size:13px;font-weight:700;color:var(--white);margin-bottom:3px;}
+.qs-pilar-desc{font-size:11.5px;color:rgba(255,255,255,0.5);line-height:1.55;}
+
+/* Capítulos del viaje */
+.qs-chapters-head{display:flex;align-items:baseline;gap:14px;margin:38px 0 18px;flex-wrap:wrap;}
+.qs-chapters-title{font-family:'Josefin Sans',sans-serif;font-size:19px;font-weight:700;color:var(--ie-deep);}
+.qs-chapters-sub{font-size:12.5px;color:var(--text-light);}
+.qs-chapters{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;}
+.qs-chapter{background:var(--white);border:1.5px solid var(--gray-border);border-radius:16px;overflow:hidden;box-shadow:0 2px 16px rgba(0,51,102,0.06);display:flex;flex-direction:column;transition:transform .2s,box-shadow .2s;}
+.qs-chapter:hover{transform:translateY(-4px);box-shadow:0 14px 38px rgba(0,51,102,0.13);}
+.qs-chapter-media{position:relative;aspect-ratio:4/3;overflow:hidden;background:var(--blue-light);}
+.qs-chapter-media img{width:100%;height:100%;object-fit:cover;object-position:center 15%;display:block;}
+.qs-chapter-step{position:absolute;top:12px;left:12px;background:rgba(0,31,64,0.82);backdrop-filter:blur(4px);color:#7dd44a;font-family:'Josefin Sans',sans-serif;font-size:9px;font-weight:700;letter-spacing:2px;text-transform:uppercase;padding:5px 11px;border-radius:20px;}
+.qs-chapter-body{padding:18px 20px 20px;}
+.qs-chapter-title{font-family:'Josefin Sans',sans-serif;font-size:15px;font-weight:700;color:var(--ie-deep);margin-bottom:7px;}
+.qs-chapter-text{font-size:12.5px;color:var(--text-mid);line-height:1.65;}
+
+/* OPCIONES */
+.alert-box{display:flex;gap:12px;align-items:flex-start;background:#fff4f0;border:1.5px solid rgba(177,41,0,0.3);border-radius:12px;padding:14px 18px;margin-bottom:22px;}
+.alert-icon{font-size:20px;flex-shrink:0;}
+.alert-text{font-size:12px;color:#6b1a00;line-height:1.6;}
+.alert-text strong{color:var(--red-dark);}
+.opciones-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(330px,1fr));gap:20px;}
+.opcion-card{background:var(--white);border-radius:16px;border:1.5px solid var(--gray-border);overflow:hidden;box-shadow:0 2px 16px rgba(0,51,102,0.06);position:relative;transition:transform .2s,box-shadow .2s,border-color .2s;}
+.opcion-card:hover{transform:translateY(-4px);box-shadow:0 12px 40px rgba(31,74,5,0.18);border-color:var(--ie);}
+.opcion-card.recomendada{border-color:var(--blue);box-shadow:0 6px 28px rgba(0,51,102,0.20);}
+.badge-rec{position:absolute;top:14px;right:-32px;background:var(--blue);color:var(--white);font-size:8px;font-weight:700;letter-spacing:1.5px;padding:5px 40px;transform:rotate(45deg);width:130px;text-align:center;z-index:10;}
+.opcion-header{background:linear-gradient(135deg,var(--ie-deep) 0%,var(--ie) 100%);padding:22px 24px 18px;position:relative;overflow:hidden;}
+.opcion-header::after{content:'☘';position:absolute;right:-10px;bottom:-22px;font-size:82px;opacity:0.11;line-height:1;transform:rotate(-14deg);}
+.opcion-header > *{position:relative;z-index:2;}
+.opcion-num{font-family:'Josefin Sans',sans-serif;font-size:9px;letter-spacing:3px;text-transform:uppercase;color:rgba(255,255,255,0.38);margin-bottom:8px;}
+.opcion-distrito{font-family:'Josefin Sans',sans-serif;font-size:16px;font-weight:700;color:var(--white);margin-bottom:5px;}
+.opcion-loc{font-size:11px;color:rgba(255,255,255,0.48);margin-bottom:12px;}
+.precio-chip{display:inline-flex;align-items:baseline;gap:4px;background:rgba(255,255,255,0.1);border:1px solid rgba(255,255,255,0.18);border-radius:8px;padding:6px 12px;}
+.precio-chip .val{font-family:'Josefin Sans',sans-serif;font-size:20px;font-weight:700;color:var(--white);}
+.precio-chip .desc{font-size:10px;color:rgba(255,255,255,0.5);}
+.precio-chip .tachado{font-size:10px;color:rgba(255,255,255,0.3);text-decoration:line-through;margin-left:6px;}
+.opcion-body{padding:20px 22px;}
+.colegios{display:flex;flex-direction:column;gap:12px;}
+.colegio{border:1.5px solid var(--gray-border);border-radius:12px;overflow:hidden;background:var(--gray-card);transition:border-color .2s;}
+.colegio:hover{border-color:var(--red);}
+.colegio-top{padding:12px 14px 10px;}
+.colegio-nombre{font-family:'Josefin Sans',sans-serif;font-size:13px;font-weight:700;color:var(--ie-deep);margin-bottom:5px;}
+.colegio-meta{display:flex;flex-wrap:wrap;align-items:center;gap:6px;}
+.tag{border-radius:5px;padding:2px 8px;font-size:9px;font-weight:700;text-transform:uppercase;}
+.tag.pub{background:var(--green);color:var(--white);}
+.tag.info{background:var(--blue-light);color:var(--blue);}
+details{border-top:1px solid var(--gray-border);}
+details summary{list-style:none;cursor:pointer;padding:9px 14px;font-size:11px;font-weight:600;color:var(--red);display:flex;align-items:center;gap:6px;user-select:none;-webkit-user-select:none;}
+details summary:hover{background:var(--red-light);}
+details summary::-webkit-details-marker{display:none;}
+details summary::before{content:'▸';font-size:10px;transition:transform .2s;display:inline-block;}
+details[open] summary::before{transform:rotate(90deg);}
+.colegio-razon{padding:10px 14px 13px;font-size:12px;color:var(--text-mid);line-height:1.7;border-left:3px solid var(--red);margin:0 14px 12px;background:var(--red-light);border-radius:0 6px 6px 0;}
+.match-bar{display:flex;gap:6px;flex-wrap:wrap;padding:14px 22px;border-top:1px solid var(--gray-border);background:linear-gradient(to right,var(--gray-card),var(--white));}
+.match-tag{display:flex;align-items:center;gap:4px;font-size:10px;font-weight:600;color:var(--green-dark);background:var(--green-light);border:1px solid rgba(76,158,12,0.25);border-radius:20px;padding:3px 10px;}
+.match-tag::before{content:'✓';font-size:9px;}
+
+/* INFO BLOCKS */
+.info-blocks{display:grid;grid-template-columns:1fr 1fr;gap:20px;}
+.info-block{background:var(--white);border-radius:16px;border:1.5px solid var(--gray-border);padding:24px 26px;box-shadow:0 2px 16px rgba(0,51,102,0.05);}
+.info-block-icon{font-size:24px;margin-bottom:10px;}
+.info-block-title{font-family:'Josefin Sans',sans-serif;font-size:14px;font-weight:700;color:var(--ie-deep);margin-bottom:10px;}
+.info-block-text{font-size:12.5px;color:var(--text-mid);line-height:1.7;}
+.info-block-text strong{color:var(--text);}
+.info-block ul{margin-top:10px;padding-left:0;list-style:none;}
+.info-block ul li{font-size:12px;color:var(--text-mid);display:flex;gap:8px;align-items:flex-start;margin-bottom:7px;line-height:1.5;}
+.info-block ul li::before{content:'✓';color:var(--green);font-weight:700;flex-shrink:0;}
+
+/* INCLUDES */
+.includes-wrap{background:var(--white);border-radius:16px;border:1.5px solid var(--gray-border);box-shadow:0 2px 16px rgba(0,51,102,0.05);overflow:hidden;}
+.includes-head{background:linear-gradient(135deg,var(--ie-deep),var(--ie));padding:20px 32px;}
+.includes-head h3{font-family:'Josefin Sans',sans-serif;font-size:14px;font-weight:700;color:var(--white);letter-spacing:1px;}
+.includes-body{padding:28px 32px;}
+.includes-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:32px;}
+.col-title{font-family:'Josefin Sans',sans-serif;font-size:9px;font-weight:700;letter-spacing:2.5px;text-transform:uppercase;color:var(--red);margin-bottom:14px;padding-bottom:8px;border-bottom:2px solid var(--red-light);}
+.inc-list{list-style:none;display:flex;flex-direction:column;gap:8px;}
+.inc-list li{font-size:12px;color:var(--text-mid);display:flex;align-items:flex-start;gap:8px;line-height:1.55;}
+.inc-list li::before{content:'✓';color:var(--green);font-weight:700;font-size:11px;flex-shrink:0;margin-top:1px;}
+.inc-list.no li::before{content:'✗';color:var(--red);}
+.inc-list li small{font-size:10px;color:var(--text-light);display:block;margin-top:2px;}
+
+/* GESTOR */
+.gestor-wrap{background:linear-gradient(135deg,var(--blue-dark),var(--blue-mid));border-radius:12px;padding:20px 24px;margin-top:20px;}
+.gestor-title{font-family:'Josefin Sans',sans-serif;font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:rgba(255,255,255,0.6);margin-bottom:14px;}
+.gestor-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;}
+.gestor-item{background:rgba(255,255,255,0.08);border:1px solid rgba(255,255,255,0.12);border-radius:8px;padding:10px 12px;font-size:11px;color:rgba(255,255,255,0.85);line-height:1.4;}
+.gestor-item::before{content:'→';color:#7dd44a;font-weight:700;margin-right:5px;}
+
+/* FORMAS DE PAGO */
+.payment-wrap{background:linear-gradient(135deg,var(--blue-dark) 0%,var(--blue) 60%,var(--blue-mid) 100%);border-radius:16px;padding:32px;position:relative;overflow:hidden;}
+.payment-wrap::before{content:'';position:absolute;inset:0;background-image:radial-gradient(rgba(255,255,255,0.05) 1px,transparent 1px);background-size:22px 22px;}
+.payment-inner{position:relative;z-index:2;}
+.pay-title{font-family:'Josefin Sans',sans-serif;font-size:16px;font-weight:700;color:var(--white);margin-bottom:6px;}
+.pay-subtitle{font-size:12px;color:rgba(255,255,255,0.45);margin-bottom:22px;}
+.pay-route{background:rgba(255,255,255,0.07);border:1px solid rgba(255,255,255,0.14);border-radius:14px;padding:20px 22px;margin-bottom:16px;}
+.pay-route-head{display:flex;align-items:center;gap:10px;margin-bottom:6px;}
+.pay-route-icon{font-size:20px;}
+.pay-route-title{font-family:'Josefin Sans',sans-serif;font-size:14px;font-weight:700;color:var(--white);}
+.pay-route-sub{font-size:11.5px;color:rgba(255,255,255,0.45);margin-bottom:16px;line-height:1.5;}
+.pay-entrada{display:flex;align-items:center;gap:14px;background:rgba(125,212,74,0.13);border:1px solid rgba(125,212,74,0.35);border-radius:10px;padding:14px 18px;margin-bottom:16px;}
+.pay-entrada-num{font-family:'Josefin Sans',sans-serif;font-size:26px;font-weight:700;color:#7dd44a;line-height:1;white-space:nowrap;}
+.pay-entrada-txt{font-size:11.5px;color:rgba(255,255,255,0.72);line-height:1.5;}
+.pay-entrada-txt strong{color:var(--white);font-weight:600;}
+.pay-cols{display:grid;grid-template-columns:1fr 1fr;gap:16px;}
+.pay-col{background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.12);border-radius:12px;padding:16px 18px;}
+.pay-col-title{font-family:'Josefin Sans',sans-serif;font-size:9px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:#7dd44a;margin-bottom:12px;}
+.pay-step{margin-bottom:11px;}
+.pay-step:last-child{margin-bottom:0;}
+.pay-step-num{font-size:9px;font-weight:700;color:rgba(255,255,255,0.4);text-transform:uppercase;letter-spacing:1px;margin-bottom:2px;}
+.pay-step-title{font-size:13px;font-weight:600;color:var(--white);margin-bottom:2px;}
+.pay-step-desc{font-size:11px;color:rgba(255,255,255,0.45);line-height:1.5;}
+.pay-note{font-size:11px;color:rgba(255,255,255,0.32);line-height:1.65;font-style:italic;border-top:1px solid rgba(255,255,255,0.1);padding-top:14px;margin-top:4px;}
+
+/* FINANCIACIÓN */
+.financing-wrap{background:var(--white);border-radius:16px;border:1.5px solid var(--gray-border);box-shadow:0 2px 16px rgba(0,51,102,0.06);overflow:hidden;}
+.financing-head{background:linear-gradient(135deg,var(--blue-dark),var(--blue));padding:22px 32px;display:flex;align-items:center;justify-content:space-between;gap:16px;}
+.financing-head-left{display:flex;align-items:center;gap:16px;}
+.fin-icon{font-size:28px;flex-shrink:0;}
+.fin-title{font-family:'Josefin Sans',sans-serif;font-size:16px;font-weight:700;color:var(--white);margin-bottom:3px;}
+.fin-sub{font-size:11px;color:rgba(255,255,255,0.5);line-height:1.4;}
+.fin-badge{background:rgba(125,212,74,0.2);border:1px solid rgba(125,212,74,0.4);color:#7dd44a;font-family:'Josefin Sans',sans-serif;font-size:11px;font-weight:700;letter-spacing:1px;padding:6px 14px;border-radius:20px;white-space:nowrap;}
+.financing-body{padding:28px 32px;}
+.fin-opcion-label,.fin-plazo-label{font-family:'Josefin Sans',sans-serif;font-size:9px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--text-light);margin-bottom:10px;}
+.fin-opcion-selector{margin-bottom:24px;}
+.fin-opcion-btns{display:flex;gap:10px;flex-wrap:wrap;}
+.fin-opcion-btn{background:var(--gray-card);border:1.5px solid var(--gray-border);border-radius:10px;padding:10px 16px;cursor:pointer;text-align:left;transition:all .2s;display:flex;flex-direction:column;gap:3px;font-family:'Fira Sans',sans-serif;}
+.fin-opcion-btn:hover{border-color:var(--blue-mid);background:var(--blue-light);}
+.fin-opcion-btn.active{border-color:var(--blue);background:var(--blue-light);}
+.fin-opcion-nombre{font-size:10px;font-weight:700;letter-spacing:1px;text-transform:uppercase;color:var(--text-light);}
+.fin-opcion-btn.active .fin-opcion-nombre{color:var(--blue);}
+.fin-opcion-precio{font-family:'Josefin Sans',sans-serif;font-size:16px;font-weight:700;color:var(--text);}
+.fin-opcion-btn.active .fin-opcion-precio{color:var(--blue);}
+.fin-entrada-fija{display:flex;align-items:center;gap:14px;background:var(--green-light);border:1.5px solid rgba(76,158,12,0.3);border-radius:12px;padding:14px 18px;margin-bottom:24px;}
+.fin-entrada-fija-num{font-family:'Josefin Sans',sans-serif;font-size:24px;font-weight:700;color:var(--green-dark);line-height:1;white-space:nowrap;}
+.fin-entrada-fija-txt{font-size:12px;color:var(--text-mid);line-height:1.55;}
+.fin-entrada-fija-txt strong{color:var(--text);font-weight:600;}
+.fin-plazo-wrap{margin-bottom:24px;}
+.fin-plazos{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;}
+.fin-plazo{background:var(--gray-card);border:1.5px solid var(--gray-border);border-radius:12px;padding:14px 12px;cursor:pointer;text-align:center;transition:all .2s;font-family:'Fira Sans',sans-serif;}
+.fin-plazo:hover{border-color:var(--blue-mid);transform:translateY(-2px);}
+.fin-plazo.active{border-color:var(--green);background:var(--green-light);box-shadow:0 4px 16px rgba(76,158,12,0.15);}
+.fin-plazo-meses{font-family:'Josefin Sans',sans-serif;font-size:15px;font-weight:700;color:var(--text);margin-bottom:6px;}
+.fin-plazo.active .fin-plazo-meses{color:var(--green-dark);}
+.fin-plazo-badge{display:inline-block;border-radius:20px;padding:2px 8px;font-size:9px;font-weight:700;letter-spacing:0.5px;margin-bottom:4px;}
+.fin-plazo-badge.sin-intereses{background:var(--green-light);color:var(--green-dark);border:1px solid rgba(76,158,12,0.3);}
+.fin-plazo-badge.con-intereses{background:var(--blue-light);color:var(--blue);border:1px solid rgba(0,51,102,0.2);}
+.fin-plazo-quien{font-size:9px;color:var(--text-light);line-height:1.3;}
+.fin-resultado{display:grid;grid-template-columns:auto 1fr;gap:24px;background:linear-gradient(135deg,var(--blue-dark),var(--blue));border-radius:14px;padding:24px 28px;margin-bottom:16px;align-items:center;}
+.fin-resultado-main{text-align:center;border-right:1px solid rgba(255,255,255,0.15);padding-right:24px;}
+.fin-cuota-label{font-size:10px;font-weight:600;letter-spacing:2px;text-transform:uppercase;color:rgba(255,255,255,0.5);margin-bottom:6px;}
+.fin-cuota-valor{font-family:'Josefin Sans',sans-serif;font-size:36px;font-weight:700;color:#7dd44a;line-height:1;margin-bottom:4px;}
+.fin-cuota-sub{font-size:11px;color:rgba(255,255,255,0.45);}
+.fin-resultado-detalle{display:flex;flex-direction:column;gap:10px;}
+.fin-det-row{display:flex;justify-content:space-between;align-items:center;gap:12px;}
+.fin-det-label{font-size:12px;color:rgba(255,255,255,0.55);}
+.fin-det-val{font-size:13px;font-weight:600;color:var(--white);}
+.fin-det-green{color:#7dd44a !important;}
+.fin-det-total{border-top:1px solid rgba(255,255,255,0.15);padding-top:10px;margin-top:2px;}
+.fin-det-total .fin-det-label{color:rgba(255,255,255,0.7);font-weight:600;}
+.fin-det-total .fin-det-val{font-family:'Josefin Sans',sans-serif;font-size:16px;color:var(--white);}
+.fin-nota{font-size:11px;color:var(--text-light);line-height:1.6;background:var(--gray-card);border-radius:8px;padding:12px 16px;border-left:3px solid var(--blue-light);}
+
+/* SIGUIENTES PASOS */
+.steps-wrap{background:linear-gradient(135deg,var(--blue-dark) 0%,var(--blue) 60%,var(--blue-mid) 100%);border-radius:16px;padding:34px 36px;position:relative;overflow:hidden;}
+.steps-wrap::before{content:'';position:absolute;inset:0;background-image:radial-gradient(rgba(255,255,255,0.05) 1px,transparent 1px);background-size:22px 22px;}
+.steps-inner{position:relative;z-index:2;}
+.steps-title{font-family:'Josefin Sans',sans-serif;font-size:18px;font-weight:700;color:var(--white);margin-bottom:6px;}
+.steps-sub{font-size:12px;color:rgba(255,255,255,0.5);margin-bottom:26px;}
+.steps-list{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;}
+.step-item{background:rgba(255,255,255,0.07);border:1px solid rgba(255,255,255,0.12);border-radius:12px;padding:18px;}
+.step-num{font-family:'Josefin Sans',sans-serif;font-size:20px;font-weight:700;color:#7dd44a;margin-bottom:8px;}
+.step-title{font-size:13px;font-weight:600;color:var(--white);margin-bottom:4px;}
+.step-desc{font-size:11px;color:rgba(255,255,255,0.5);line-height:1.5;}
+.cta-line{margin-top:26px;text-align:center;font-size:12.5px;color:rgba(255,255,255,0.75);}
+.pasos-cta-wrap{text-align:center;margin-top:16px;display:flex;gap:12px;justify-content:center;flex-wrap:wrap;}
+.pasos-cta{display:inline-flex;align-items:center;gap:8px;background:#7dd44a;color:var(--blue-dark);font-family:'Josefin Sans',sans-serif;font-size:13px;font-weight:700;padding:12px 26px;border-radius:10px;text-decoration:none;transition:transform .15s,box-shadow .15s;}
+.pasos-cta:hover{transform:translateY(-2px);box-shadow:0 8px 20px rgba(125,212,74,0.35);}
+.pasos-cta-alt{background:rgba(255,255,255,0.12);color:var(--white);border:1.5px solid rgba(255,255,255,0.35);}
+.pasos-cta-alt:hover{box-shadow:0 8px 20px rgba(255,255,255,0.15);}
+
+/* FOOTER */
+.footer{background:var(--blue-dark);padding:30px 48px;margin-top:56px;text-align:center;position:relative;}
+.footer::before{content:'';position:absolute;top:0;left:0;right:0;height:4px;background:linear-gradient(90deg,var(--ie) 0%,var(--ie) 33%,var(--white) 33%,var(--white) 67%,#FF8200 67%,#FF8200 100%);}
+.footer-logo{font-family:'Josefin Sans',sans-serif;font-size:15px;font-weight:700;color:var(--white);letter-spacing:1px;margin-bottom:6px;}
+.footer-tag{font-family:'Josefin Sans',sans-serif;font-size:10px;letter-spacing:4px;text-transform:uppercase;color:#9ee06a;margin-bottom:14px;}
+.footer-meta{font-size:11px;color:rgba(255,255,255,0.4);line-height:1.7;}
+.footer-meta a{color:rgba(255,255,255,0.65);text-decoration:none;}
+
+@media(max-width:900px){
+  .qs-hero{grid-template-columns:1fr;}
+  .qs-media{min-height:320px;aspect-ratio:4/3;}
+  .qs-chapters{grid-template-columns:1fr;}
+}
+@media(max-width:720px){
+  .header{padding:16px 20px;}.hero{padding:28px 20px 24px;}.hero-name{font-size:28px;}
+  .main{padding:28px 16px 20px;}
+  .includes-grid{grid-template-columns:1fr;}.opciones-grid{grid-template-columns:1fr;}
+  .intro-points{grid-template-columns:1fr;}.info-blocks{grid-template-columns:1fr;}
+  .pay-cols{grid-template-columns:1fr;}.gestor-grid{grid-template-columns:repeat(2,1fr);}
+  .steps-list{grid-template-columns:1fr;}
+  .qs-panel{padding:28px 22px;}.qs-title{font-size:22px;}
+  .fin-plazos{grid-template-columns:repeat(2,1fr);}
+  .fin-resultado{grid-template-columns:1fr;}
+  .fin-resultado-main{border-right:none;border-bottom:1px solid rgba(255,255,255,0.15);padding-right:0;padding-bottom:20px;}
+  .financing-head{flex-direction:column;align-items:flex-start;}
+  .fin-opcion-btns{flex-direction:column;}
+  .footer{padding:26px 20px;}
+}
+
+/* ================= ANIMACIONES ================= */
+.js-anim .reveal{opacity:0;transform:translateY(20px);will-change:opacity,transform;
+  transition:opacity .75s cubic-bezier(.22,.61,.36,1),transform .75s cubic-bezier(.22,.61,.36,1);}
+.js-anim .reveal.in{opacity:1;transform:none;}
+.js-anim .reveal-zoom{opacity:0;transform:scale(.975);transition:opacity .8s ease,transform .8s cubic-bezier(.22,.61,.36,1);}
+.js-anim .reveal-zoom.in{opacity:1;transform:none;}
+
+@keyframes heroUp{from{opacity:0;transform:translateY(16px);}to{opacity:1;transform:none;}}
+@keyframes leafIn{from{opacity:0;transform:translateY(-50%) rotate(-30deg) scale(.85);}to{opacity:.09;transform:translateY(-50%) rotate(-12deg) scale(1);}}
+.js-anim .hero::after{animation:leafIn 1.4s cubic-bezier(.22,.61,.36,1) .15s both;}
+.js-anim .hero-tag{animation:heroUp .7s cubic-bezier(.22,.61,.36,1) .05s both;}
+.js-anim .hero-name{animation:heroUp .7s cubic-bezier(.22,.61,.36,1) .16s both;}
+.js-anim .hero-subtitle{animation:heroUp .7s cubic-bezier(.22,.61,.36,1) .26s both;}
+.js-anim .hero-pill{animation:heroUp .55s cubic-bezier(.22,.61,.36,1) both;}
+.js-anim .hero-promo{animation:heroUp .7s cubic-bezier(.22,.61,.36,1) .7s both;}
+
+.progress-bar{position:fixed;top:0;left:0;height:3px;width:100%;transform:scaleX(0);transform-origin:0 50%;
+  background:linear-gradient(90deg,var(--ie),var(--ie-warm));z-index:999;transition:transform .1s linear;}
+
+.qs-chapter-media img,.qs-media img,.qs-media-inset img{transition:transform .7s cubic-bezier(.22,.61,.36,1);}
+.qs-chapter:hover .qs-chapter-media img{transform:scale(1.06);}
+.qs-hero:hover .qs-media > img{transform:scale(1.03);}
+.qs-media-inset{transition:transform .45s cubic-bezier(.22,.61,.36,1),box-shadow .45s ease;}
+.qs-hero:hover .qs-media-inset{transform:translateY(-6px);box-shadow:-10px -10px 34px rgba(0,31,64,0.34);}
+
+.opcion-card{transition:transform .35s cubic-bezier(.22,.61,.36,1),box-shadow .35s ease,border-color .3s ease;}
+.opcion-header::after{transition:transform .6s cubic-bezier(.22,.61,.36,1),opacity .4s ease;}
+.opcion-card:hover .opcion-header::after{transform:rotate(-4deg) scale(1.14);opacity:.17;}
+
+@keyframes razonIn{from{opacity:0;transform:translateY(-6px);}to{opacity:1;transform:none;}}
+.js-anim details[open] .colegio-razon{animation:razonIn .38s ease both;}
+
+.pasos-cta{position:relative;overflow:hidden;}
+.pasos-cta::after{content:'';position:absolute;top:0;left:-120%;width:60%;height:100%;
+  background:linear-gradient(100deg,transparent,rgba(255,255,255,.55),transparent);transform:skewX(-18deg);}
+.pasos-cta:hover::after{animation:shine .85s ease;}
+@keyframes shine{to{left:140%;}}
+
+.fin-plazo,.fin-opcion-btn{transition:transform .25s cubic-bezier(.22,.61,.36,1),border-color .25s ease,background .25s ease,box-shadow .25s ease;}
+.fin-cuota-valor{transition:color .3s ease;}
+@keyframes cuotaPop{0%{opacity:.35;transform:translateY(6px);}100%{opacity:1;transform:none;}}
+.fin-cuota-valor.pop{animation:cuotaPop .42s cubic-bezier(.22,.61,.36,1);}
+
+.step-item{transition:transform .3s cubic-bezier(.22,.61,.36,1),background .3s ease;}
+.step-item:hover{transform:translateY(-4px);background:rgba(255,255,255,0.11);}
+.qs-pilar{transition:transform .3s ease;}
+.qs-pilar:hover{transform:translateX(4px);}
+
+@media(prefers-reduced-motion:reduce){
+  .js-anim .reveal,.js-anim .reveal-zoom{opacity:1!important;transform:none!important;transition:none!important;}
+  .js-anim .hero::after,.js-anim .hero-tag,.js-anim .hero-name,.js-anim .hero-subtitle,
+  .js-anim .hero-pill,.js-anim .hero-promo{animation:none!important;opacity:1;}
+  .js-anim .hero::after{opacity:.09;}
+  .progress-bar{display:none;}
+  *{transition-duration:.01ms!important;}
+}
+
+/* ============ IRLANDA · bloques propios ============ */
+.colegio-chips{display:flex;flex-wrap:wrap;gap:6px;margin-top:10px;}
+.chip{border-radius:6px;padding:3px 9px;font-size:9.5px;font-weight:700;text-transform:uppercase;letter-spacing:.5px;background:rgba(255,255,255,0.14);color:rgba(255,255,255,0.9);border:1px solid rgba(255,255,255,0.2);}
+.chip.gold{background:rgba(232,176,75,0.22);border-color:rgba(232,176,75,0.5);color:#ffdda0;}
+.colegio-zona{font-family:'Josefin Sans',sans-serif;font-size:9px;letter-spacing:2.5px;text-transform:uppercase;color:rgba(255,255,255,0.42);margin-bottom:8px;}
+.colegio-desc{font-size:12.5px;color:var(--text-mid);line-height:1.7;margin-bottom:16px;}
+.colegio-section-title{font-family:'Josefin Sans',sans-serif;font-size:9px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--ie);margin:0 0 9px;padding-bottom:6px;border-bottom:1.5px solid var(--ie-light);}
+.extra-tags{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:16px;}
+.extra-tag{font-size:10.5px;color:var(--text-mid);background:var(--gray-card);border:1px solid var(--gray-border);border-radius:20px;padding:3px 10px;}
+.actividades-ciudad{font-size:11.5px;color:var(--text-mid);line-height:1.65;background:var(--ie-light);border-left:3px solid var(--ie);border-radius:0 8px 8px 0;padding:10px 14px;margin-bottom:16px;}
+.por-que-list{list-style:none;display:flex;flex-direction:column;gap:7px;}
+.por-que-list li{font-size:12px;color:var(--text-mid);line-height:1.55;display:flex;gap:8px;align-items:flex-start;}
+.por-que-list li::before{content:'☘';color:var(--ie);flex-shrink:0;font-size:11px;}
+
+.mod-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;}
+.mod-card{background:var(--white);border:1.5px solid var(--gray-border);border-radius:16px;overflow:hidden;box-shadow:0 2px 16px rgba(31,74,5,0.06);display:flex;flex-direction:column;position:relative;transition:transform .3s cubic-bezier(.22,.61,.36,1),box-shadow .3s ease;}
+.mod-card:hover{transform:translateY(-4px);box-shadow:0 12px 34px rgba(31,74,5,0.14);}
+.mod-card.destacado{border-color:var(--ie);box-shadow:0 6px 28px rgba(76,158,12,0.20);}
+.mod-head{padding:20px 22px 16px;background:var(--gray-card);border-bottom:1.5px solid var(--gray-border);}
+.mod-card.destacado .mod-head{background:linear-gradient(135deg,var(--ie-deep),var(--ie));border-bottom-color:transparent;}
+.mod-nombre{font-family:'Josefin Sans',sans-serif;font-size:15px;font-weight:700;color:var(--ie-deep);margin-bottom:4px;}
+.mod-card.destacado .mod-nombre{color:var(--white);}
+.mod-desc-head{font-size:11.5px;color:var(--text-light);line-height:1.5;margin-bottom:14px;}
+.mod-card.destacado .mod-desc-head{color:rgba(255,255,255,0.6);}
+.mod-precio-val{font-family:'Josefin Sans',sans-serif;font-size:27px;font-weight:700;color:var(--ie-deep);line-height:1;}
+.mod-card.destacado .mod-precio-val{color:var(--white);}
+.mod-precio-sub{font-size:10.5px;color:var(--text-light);text-transform:uppercase;letter-spacing:1px;margin-top:4px;}
+.mod-card.destacado .mod-precio-sub{color:rgba(255,255,255,0.55);}
+.mod-precio-tachado{font-family:'Josefin Sans',sans-serif;font-size:14px;font-weight:600;color:var(--text-light);text-decoration:line-through;margin-left:8px;}
+.mod-card.destacado .mod-precio-tachado{color:rgba(255,255,255,0.45);}
+.mod-body{padding:18px 22px 20px;flex:1;}
+.mod-extra{background:var(--ie-light);border:1px solid rgba(76,158,12,0.22);border-radius:10px;padding:11px 14px;margin-bottom:14px;}
+.mod-extra-title{font-family:'Josefin Sans',sans-serif;font-size:8.5px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--ie);margin-bottom:7px;}
+.mod-mini{display:flex;justify-content:space-between;gap:10px;font-size:11.5px;color:var(--text-mid);margin-bottom:4px;}
+.mod-mini:last-child{margin-bottom:0;}
+.mod-mini b{color:var(--ie-deep);font-weight:600;white-space:nowrap;}
+.mod-list{list-style:none;display:flex;flex-direction:column;gap:8px;}
+.mod-list li{font-size:12px;color:var(--text-mid);line-height:1.55;display:flex;gap:8px;align-items:flex-start;}
+.mod-list li::before{content:'✓';color:var(--ie);font-weight:700;flex-shrink:0;}
+.badge-rec-mod{position:absolute;top:0;right:0;background:var(--ie);color:var(--white);font-family:'Josefin Sans',sans-serif;font-size:8.5px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;padding:5px 14px;border-radius:0 0 0 10px;z-index:3;}
+
+.tabla-wrap{background:var(--white);border:1.5px solid var(--gray-border);border-radius:16px;overflow:hidden;box-shadow:0 2px 16px rgba(31,74,5,0.05);}
+.tabla-diff{width:100%;border-collapse:collapse;}
+.tabla-diff th,.tabla-diff td{padding:13px 16px;text-align:center;font-size:12.5px;border-bottom:1px solid var(--gray-border);}
+.tabla-diff thead th{background:linear-gradient(135deg,var(--ie-deep),var(--ie));color:var(--white);font-family:'Josefin Sans',sans-serif;font-size:11.5px;font-weight:700;letter-spacing:.5px;}
+.tabla-diff tbody th{text-align:left;font-weight:600;color:var(--text);background:var(--gray-card);font-size:12px;}
+.tabla-diff tr:last-child td,.tabla-diff tr:last-child th{border-bottom:none;}
+.tabla-diff .si{color:var(--ie);font-weight:700;font-size:15px;}
+.tabla-diff .no{color:var(--text-light);font-size:15px;}
+.tabla-diff .sup{color:var(--red);font-size:10px;display:block;margin-top:2px;font-weight:600;}
+.tabla-diff .precio-fila td{font-family:'Josefin Sans',sans-serif;font-weight:700;font-size:15px;color:var(--ie-deep);}
+.tabla-nota{font-size:11px;color:var(--text-light);margin-top:12px;line-height:1.6;font-style:italic;}
+
+/* ELECCIÓN DE COLEGIOS · 3 de 6 */
+.eleccion-box{background:var(--white);border:1.5px solid var(--gray-border);border-left:4px solid var(--ie);border-radius:14px;padding:22px 26px;margin-bottom:24px;box-shadow:0 2px 16px rgba(31,74,5,0.05);}
+.eleccion-title{font-family:'Josefin Sans',sans-serif;font-size:15px;font-weight:700;color:var(--ie-deep);margin-bottom:10px;}
+.eleccion-text{font-size:13px;color:var(--text-mid);line-height:1.75;margin-bottom:18px;}
+.eleccion-text strong{color:var(--blue);font-weight:600;}
+.eleccion-pasos{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;}
+.eleccion-paso{background:var(--ie-light);border:1px solid rgba(76,158,12,0.22);border-radius:10px;padding:14px 16px;}
+.eleccion-paso-num{font-family:'Josefin Sans',sans-serif;font-size:12px;font-weight:700;letter-spacing:1px;text-transform:uppercase;color:var(--ie-deep);margin-bottom:5px;}
+.eleccion-paso-desc{font-size:11.5px;color:var(--text-mid);line-height:1.55;}
+.eleccion-nota{font-size:11.5px;color:var(--text-light);line-height:1.65;font-style:italic;margin-top:16px;}
+@media(max-width:720px){.eleccion-pasos{grid-template-columns:1fr;}}
+
+/* PRECIO DESTACADO · descuentos */
+.precio-wrap{background:linear-gradient(135deg,var(--ie-deep) 0%,var(--ie) 60%,var(--ie-warm) 100%);border-radius:16px;padding:32px;position:relative;overflow:hidden;}
+.precio-wrap::before{content:'';position:absolute;inset:0;background-image:radial-gradient(rgba(255,255,255,0.06) 1px,transparent 1px);background-size:22px 22px;}
+.precio-wrap::after{content:'☘';position:absolute;right:2%;bottom:-40px;font-size:180px;line-height:1;opacity:0.09;transform:rotate(-12deg);}
+.precio-inner{position:relative;z-index:2;}
+.precio-title{font-family:'Josefin Sans',sans-serif;font-size:16px;font-weight:700;color:var(--white);margin-bottom:6px;}
+.precio-sub{font-size:12px;color:rgba(255,255,255,0.5);margin-bottom:22px;}
+.precio-cols{display:grid;grid-template-columns:1fr 1fr;gap:18px;}
+.precio-card{background:rgba(255,255,255,0.08);border:1px solid rgba(255,255,255,0.18);border-radius:14px;padding:20px 22px;position:relative;}
+.precio-card.destacada{background:rgba(0,31,64,0.34);border-color:rgba(255,255,255,0.42);}
+.precio-card-tag{font-family:'Josefin Sans',sans-serif;font-size:9px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:#d9f3bd;margin-bottom:8px;}
+.precio-card-nombre{font-family:'Josefin Sans',sans-serif;font-size:15px;font-weight:700;color:var(--white);margin-bottom:14px;}
+.precio-lineas{display:flex;flex-direction:column;gap:8px;margin-bottom:16px;}
+.precio-linea{display:flex;justify-content:space-between;gap:12px;font-size:12px;color:rgba(255,255,255,0.62);}
+.precio-linea b{color:var(--white);font-weight:600;white-space:nowrap;}
+.precio-linea.desc b{color:#b6f28a;}
+.precio-final{border-top:1px solid rgba(255,255,255,0.2);padding-top:14px;display:flex;align-items:baseline;justify-content:space-between;gap:12px;flex-wrap:wrap;}
+.precio-final-label{font-size:11px;font-weight:600;letter-spacing:1.5px;text-transform:uppercase;color:rgba(255,255,255,0.6);}
+.precio-final-val{font-family:'Josefin Sans',sans-serif;font-size:32px;font-weight:700;color:#ffffff;line-height:1;}
+.precio-ahorro{display:inline-block;margin-top:12px;background:rgba(125,212,74,0.18);border:1px solid rgba(125,212,74,0.45);border-radius:20px;padding:4px 12px;font-size:11px;font-weight:700;color:#d9f3bd;}
+.precio-note{font-size:11px;color:rgba(255,255,255,0.4);line-height:1.65;font-style:italic;border-top:1px solid rgba(255,255,255,0.12);padding-top:14px;margin-top:20px;}
+
+/* VUELOS */
+.vuelos-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;}
+.vuelo-card{background:var(--white);border:1.5px solid var(--gray-border);border-left:4px solid var(--ie);border-radius:12px;padding:16px 18px;}
+.vuelo-num{font-family:'Josefin Sans',sans-serif;font-size:9px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--ie);margin-bottom:6px;}
+.vuelo-ruta{font-family:'Josefin Sans',sans-serif;font-size:14px;font-weight:700;color:var(--ie-deep);margin-bottom:4px;}
+.vuelo-desc{font-size:11.5px;color:var(--text-mid);line-height:1.5;}
+
+.decision-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;}
+.decision-card{background:var(--white);border:1.5px solid var(--gray-border);border-left:4px solid var(--ie);border-radius:12px;padding:20px 22px;transition:transform .3s ease,box-shadow .3s ease;}
+.decision-card:hover{transform:translateY(-3px);box-shadow:0 10px 28px rgba(31,74,5,0.12);}
+.decision-title{font-family:'Josefin Sans',sans-serif;font-size:14px;font-weight:700;color:var(--ie-deep);margin-bottom:8px;}
+.decision-text{font-size:12.5px;color:var(--text-mid);line-height:1.7;}
+
+/* RANKING */
+.ranking-wrap{background:var(--white);border:1.5px solid var(--gray-border);border-radius:16px;padding:24px 26px;box-shadow:0 2px 16px rgba(31,74,5,0.05);}
+.ranking-list{list-style:none;display:flex;flex-direction:column;gap:0;}
+.ranking-item{display:flex;gap:16px;align-items:flex-start;padding:14px 0;border-bottom:1px dashed var(--gray-border);}
+.ranking-item:last-child{border-bottom:none;}
+.ranking-num{font-family:'Josefin Sans',sans-serif;font-size:20px;font-weight:700;color:var(--ie);line-height:1;min-width:26px;}
+.ranking-nombre{font-family:'Josefin Sans',sans-serif;font-size:14px;font-weight:700;color:var(--ie-deep);margin-bottom:3px;}
+.ranking-desc{font-size:12px;color:var(--text-mid);line-height:1.6;}
+
+@media(max-width:900px){
+  .mod-grid{grid-template-columns:1fr;}
+  .decision-grid{grid-template-columns:1fr;}
+  .precio-cols{grid-template-columns:1fr;}
+  .vuelos-grid{grid-template-columns:repeat(2,1fr);}
+  .tabla-wrap{overflow-x:auto;}
+  .tabla-diff{min-width:600px;}
+}
+@media(max-width:720px){
+  .vuelos-grid{grid-template-columns:1fr;}
+  .precio-wrap{padding:24px 20px;}
+}
+</style>
+</head>
+<body>
+
+<!-- ============ 1. HEADER ============ -->
+<div class="header">
+  <div class="logo-area">
+    <img src="https://aescobarnic.github.io/Propuestas/img/mlq-logo.png" alt="My Language Quest" onerror="this.style.display='none';document.getElementById('logoTexto').style.display='block';">
+    <div id="logoTexto" style="display:none;font-family:'Josefin Sans',sans-serif;font-size:17px;font-weight:700;letter-spacing:1.5px;color:#003366;line-height:1.15;">MY LANGUAGE QUEST<span style="display:block;font-size:8px;letter-spacing:3.5px;color:#3A7A09;font-weight:600;">EXPLORE · LEARN · GROW</span></div>
+  </div>
+  <div class="header-right">
+    <div class="header-label">Curso académico</div>
+    <div class="header-year">2027/28</div>
+  </div>
+</div>
+
+<!-- ============ 2. HERO ============ -->
+<div class="hero">
+  <div class="hero-dots"></div>
+  <div class="hero-inner">
+    <div class="hero-tag">Propuesta personalizada · Irlanda</div>
+    <div class="hero-name">Candela</div>
+    <div class="hero-subtitle">Programa Choice · Año escolar completo 2027/28 · Irlanda · 4º ESO / Transition Year</div>
+    <div class="hero-pills">
+      <div class="hero-pill">🎓 4º ESO · Transition Year</div>
+      <div class="hero-pill">🏠 Familia anfitriona</div>
+      <div class="hero-pill">🗣 Inglés B1–B2</div>
+      <div class="hero-pill">🏫 Colegios mixtos</div>
+      <div class="hero-pill">🏃 Atletismo · Baloncesto</div>
+      <div class="hero-pill">📚 Muy buen rendimiento académico</div>
+      <div class="hero-pill ac">🌿 Localidad pequeña-mediana · Inmersión real</div>
+    </div>
+    <div class="hero-promo"><b>☘ Precio especial para Candela</b><strong>1.000 € de descuento:</strong> 500 € por reserva antes del 31 de octubre de 2026 y 500 € por recomendación de una familia My Language Quest.</div>
+  </div>
+</div>
+
+<div class="main">
+
+  <!-- ============ 3. CONTEXTO ============ -->
+  <div class="section-title"><h2>Cómo funciona el año escolar en Irlanda</h2></div>
+  <p class="intro-text">
+    En Irlanda el estudiante se integra en un <strong>colegio irlandés</strong> conviviendo con una familia
+    anfitriona en pensión completa. Con el Programa Choice <strong>la familia elige el colegio</strong> entre
+    las opciones seleccionadas para el perfil del estudiante.
+    En el caso de Candela, que cursará 4º de la ESO, el equivalente irlandés es el
+    <strong>Transition Year</strong>: un curso orientado a proyectos, prácticas, actividades y desarrollo
+    personal, ideal para ganar autonomía y probar disciplinas nuevas sin la presión de los exámenes.
+  </p>
+  <div class="intro-points">
+    <div class="intro-point"><div class="intro-point-icon">🏫</div><div><div class="intro-point-title">Vosotros elegís el colegio</div><div class="intro-point-desc">Hemos preseleccionado seis centros que encajan con el perfil de Candela y la familia decide entre ellos.</div></div></div>
+    <div class="intro-point"><div class="intro-point-icon">🏠</div><div><div class="intro-point-title">Familia anfitriona</div><div class="intro-point-desc">Pensión completa y habitación individual garantizada, con un único hispanohablante por familia.</div></div></div>
+    <div class="intro-point"><div class="intro-point-icon">📘</div><div><div class="intro-point-title">Transition Year</div><div class="intro-point-desc">Curso de proyectos, prácticas y actividades. La tasa va incluida en los programas Choice.</div></div></div>
+    <div class="intro-point"><div class="intro-point-icon">✈</div><div><div class="intro-point-title">Vuelos incluidos</div><div class="intro-point-desc">2 vuelos (inicio y fin de curso) o 4 vuelos añadiendo la ida y vuelta de Navidad.</div></div></div>
+  </div>
+
+  <!-- ============ 4. QUIÉNES SOMOS ============ -->
+  <div class="section-title"><h2>Quiénes somos</h2></div>
+  <div class="qs-hero">
+    <div class="qs-media">
+      <img src="https://aescobarnic.github.io/Propuestas/img/mlq-grupo-aeropuerto.jpg" style="object-position:center 30%;" alt="Grupo de estudiantes de My Language Quest en el aeropuerto con su coordinadora" loading="lazy">
+      <div class="qs-media-inset"><img src="https://aescobarnic.github.io/Propuestas/img/mlq-despedida-familia.jpg" style="object-position:center 25%;" alt="Estudiante despidiéndose de su familia antes de salir" loading="lazy"></div>
+    </div>
+    <div class="qs-panel">
+      <div class="qs-panel-inner">
+        <div class="qs-eyebrow">My Language Quest</div>
+        <div class="qs-title">Nadie hace este viaje solo</div>
+        <p class="qs-lead">
+          Acompañamos a familias españolas en la experiencia de estudiar un año escolar en el extranjero.
+          No somos una plataforma de reservas: <strong>hay personas con nombre y apellido detrás de cada
+          estudiante</strong>, desde la primera reunión hasta la convalidación de las notas a la vuelta.
+        </p>
+        <div class="qs-pilares">
+          <div class="qs-pilar"><div class="qs-pilar-icon">👩‍💼</div><div><div class="qs-pilar-title">Una asesora asignada en España</div><div class="qs-pilar-desc">La misma persona de principio a fin: nada de tickets ni centralitas.</div></div></div>
+          <div class="qs-pilar"><div class="qs-pilar-icon">🧭</div><div><div class="qs-pilar-title">Coordinador local en Irlanda</div><div class="qs-pilar-desc">Visitas, tutorías y emergencias 24 h sobre el terreno.</div></div></div>
+          <div class="qs-pilar"><div class="qs-pilar-icon">🏠</div><div><div class="qs-pilar-title">Un solo hispanohablante por familia</div><div class="qs-pilar-desc">Garantizado, para que la inmersión sea real desde el primer día.</div></div></div>
+          <div class="qs-pilar"><div class="qs-pilar-icon">📞</div><div><div class="qs-pilar-title">Atención 24 h, aquí y allí</div><div class="qs-pilar-desc">Emergencias cubiertas en España y en destino, todo el curso.</div></div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="qs-chapters-head">
+    <div class="qs-chapters-title">Cómo se vive el curso</div>
+    <div class="qs-chapters-sub">De la maleta en casa a la vida de instituto al otro lado del mar</div>
+  </div>
+  <div class="qs-chapters">
+    <div class="qs-chapter">
+      <div class="qs-chapter-media"><img src="https://aescobarnic.github.io/Propuestas/img/mlq-equipaje-salida.jpg" style="object-position:center 12%;" alt="Estudiante con su equipaje el día de la salida" loading="lazy"><div class="qs-chapter-step">Antes de salir</div></div>
+      <div class="qs-chapter-body"><div class="qs-chapter-title">Todo resuelto antes de la maleta</div><div class="qs-chapter-text">Prueba de nivel de inglés, entrevista, elección de colegio, matrícula, familia anfitriona y vuelos. Más la masterclass de cultura irlandesa, 10 horas online antes de salir.</div></div>
+    </div>
+    <div class="qs-chapter">
+      <div class="qs-chapter-media"><img src="https://aescobarnic.github.io/Propuestas/img/mlq-salida-pista.jpg" style="object-position:center 8%;" alt="Estudiantes de My Language Quest el día de la salida" loading="lazy"><div class="qs-chapter-step">El día de la salida</div></div>
+      <div class="qs-chapter-body"><div class="qs-chapter-title">Salida acompañada</div><div class="qs-chapter-text">Orientación previa en Madrid u online, orientación de 2 días en Dublín al llegar y recibimiento en el aeropuerto.</div></div>
+    </div>
+    <div class="qs-chapter">
+      <div class="qs-chapter-media"><img src="https://aescobarnic.github.io/Propuestas/img/mlq-vida-social.jpg" style="object-position:center 22%;" alt="Estudiante con sus nuevas amigas" loading="lazy"><div class="qs-chapter-step">La vida allí</div></div>
+      <div class="qs-chapter-body"><div class="qs-chapter-title">Un curso, no unas vacaciones</div><div class="qs-chapter-text">Colegio, uniforme, extraescolares y amigos nuevos. Con coordinador local, tutorías y cambio de familia si hiciera falta.</div></div>
+    </div>
+  </div>
+
+  <!-- ============ 5. CRITERIOS DE SELECCIÓN ============ -->
+  <div class="section-title"><h2>Qué hemos buscado para Candela</h2></div>
+  <p class="intro-text">
+    Candela es una estudiante con muy buen rendimiento académico que cursa actualmente en un colegio bilingüe.
+    Su nivel de inglés se sitúa aproximadamente entre <strong>B1 y B2</strong>, aunque antes del inicio del
+    programa realizaremos una prueba de nivel para conocer exactamente su punto de partida. El objetivo
+    principal de este año escolar es conseguir una <strong>inmersión lingüística real</strong> que le permita
+    consolidar definitivamente el inglés después de varios años en un entorno bilingüe.
+  </p>
+  <p class="intro-text">
+    A nivel personal, es una chica <strong>tímida inicialmente</strong> ante situaciones nuevas, aunque una vez
+    que entra en confianza se relaciona bien y se desenvuelve con normalidad. Por eso hemos priorizado colegios
+    con una vida escolar muy activa, muchas actividades y oportunidades suficientes para que pueda conocer a
+    otros estudiantes e integrarse progresivamente. Ha practicado atletismo y baloncesto, pero no tiene hoy un
+    deporte concreto que quiera continuar de manera prioritaria: eso hace especialmente interesante el
+    <strong>Transition Year</strong>, porque podrá probar deportes, clubes y actividades artísticas,
+    tecnológicas, sociales y académicas a lo largo del curso.
+  </p>
+  <div class="intro-points">
+    <div class="intro-point"><div class="intro-point-icon">🗣</div><div><div class="intro-point-title">Inmersión real en inglés</div><div class="intro-point-desc">Evitando grandes concentraciones de estudiantes españoles o internacionales.</div></div></div>
+    <div class="intro-point"><div class="intro-point-icon">🏫</div><div><div class="intro-point-title">Colegios principalmente mixtos</div><div class="intro-point-desc">Cinco opciones mixtas y una alternativa femenina, por si queréis compararla.</div></div></div>
+    <div class="intro-point"><div class="intro-point-icon">🏘</div><div><div class="intro-point-title">Localidades pequeñas o medianas, pero con vida</div><div class="intro-point-desc">Sin grandes ciudades y sin pueblos excesivamente aislados.</div></div></div>
+    <div class="intro-point"><div class="intro-point-icon">🎯</div><div><div class="intro-point-title">Buen Transition Year y muchas extraescolares</div><div class="intro-point-desc">Un entorno seguro y manejable donde Candela gane autonomía progresivamente.</div></div></div>
+  </div>
+
+  <!-- ============ 6. COLEGIOS RECOMENDADOS ============ -->
+  <div class="section-title"><h2>Colegios recomendados</h2></div>
+  <div class="alert-box">
+    <div class="alert-icon">☘</div>
+    <div class="alert-text"><strong>Programa Choice · precio único:</strong> el precio no varía según el colegio elegido, así que la decisión se toma solo por encaje con el perfil. Hemos seleccionado <strong>seis centros</strong> —cinco mixtos y una alternativa femenina— en localidades pequeñas y medianas con servicios y vida propia, todos con Transition Year y una oferta amplia de actividades.</div>
+  </div>
+  <div class="eleccion-box">
+    <div class="eleccion-title">☘ Cómo se elige: tres colegios por orden de preferencia</div>
+    <div class="eleccion-text">
+      De estos seis colegios necesitamos que nos indiquéis <strong>tres, ordenados por preferencia</strong>.
+      Solicitamos la plaza en la primera opción y, si en el momento de la solicitud no hubiera
+      disponibilidad para estudiantes internacionales en ese centro, pasamos directamente a la segunda y,
+      si fuera necesario, a la tercera.
+    </div>
+    <div class="eleccion-pasos">
+      <div class="eleccion-paso"><div class="eleccion-paso-num">1ª opción</div><div class="eleccion-paso-desc">El colegio que más os gusta. Es donde solicitamos la plaza en primer lugar.</div></div>
+      <div class="eleccion-paso"><div class="eleccion-paso-num">2ª opción</div><div class="eleccion-paso-desc">La alternativa si no hubiera plaza en la primera. Sin trámites nuevos ni esperas.</div></div>
+      <div class="eleccion-paso"><div class="eleccion-paso-num">3ª opción</div><div class="eleccion-paso-desc">Respaldo final, para asegurar la plaza de Candela en cualquier caso.</div></div>
+    </div>
+    <div class="eleccion-nota">Las plazas para estudiantes internacionales son limitadas y se asignan por orden de solicitud, así que darnos tres opciones evita perder tiempo y asegura que Candela tenga colegio confirmado cuanto antes. El precio es el mismo en los seis centros, sea cual sea el que finalmente se confirme.</div>
+  </div>
+  <div class="opciones-grid">
+
+    <div class="opcion-card recomendada">
+      <div class="badge-rec">★ RECOMENDADO</div>
+      <div class="opcion-header">
+        <div class="colegio-zona">Condado de Monaghan · Pequeña ciudad</div>
+        <div class="opcion-distrito">Beech Hill College</div>
+        <div class="opcion-loc">📍 Monaghan · Capital del condado · Monaghan</div>
+        <div class="colegio-chips"><span class="chip">Mixto</span><span class="chip">Público · ETB</span><span class="chip">891 alumnos</span><span class="chip">Transition Year</span><span class="chip gold">☘ Mejor equilibrio global</span></div>
+      </div>
+      <div class="opcion-body">
+        <div class="colegio-desc">Monaghan es la capital del condado y una de las localidades más completas de la selección: unos <strong>7.900 habitantes</strong>, ambiente de pequeña ciudad irlandesa y servicios de sobra para un año completo sin sentirse aislada. Comercios, supermercados, cafeterías, restaurantes, instalaciones deportivas, biblioteca, servicios sanitarios y opciones de ocio. Excelente alternativa para quien quiere evitar Dublín o Cork sin irse a una localidad excesivamente pequeña.<br><br>El colegio es mixto y muy equilibrado, con prácticamente el mismo número de chicos (439) que de chicas (452). Con cerca de 900 estudiantes, Candela podrá conocer distintos grupos y encontrar progresivamente su propio círculo social.</div>
+        <div class="colegio-section-title">Transition Year · módulos</div>
+        <div class="extra-tags"><span class="extra-tag">💻 Informática</span><span class="extra-tag">💼 Experiencia laboral</span><span class="extra-tag">🎭 Drama y teatro</span><span class="extra-tag">🎵 Música</span><span class="extra-tag">🗣 Debate</span><span class="extra-tag">⚽ Deportes</span><span class="extra-tag">🛠 Proyectos prácticos</span><span class="extra-tag">🎨 Actividades culturales</span><span class="extra-tag">🌱 Desarrollo personal</span></div>
+        <div class="colegio-section-title">Vida extracurricular</div>
+        <div class="actividades-ciudad">Deportes · música · teatro · actividades STEM · variedad de clubes escolares. En la localidad: instalaciones deportivas, biblioteca, comercio, cafeterías y opciones de ocio propias de una capital de condado.</div>
+        <div class="colegio-section-title">Por qué lo recomendamos para Candela</div>
+        <ul class="por-que-list">
+          <li>Colegio mixto y equilibrado, con muy buen tamaño de centro</li>
+          <li>Localidad pequeña-media con todos los servicios: ni gran ciudad ni pueblo aislado</li>
+          <li>Amplia variedad de actividades y buen programa de Transition Year</li>
+          <li>Muchas oportunidades para integrarse socialmente a su ritmo</li>
+          <li>Entorno especialmente adecuado para favorecer la inmersión lingüística</li>
+        </ul>
+      </div>
+      <div class="match-bar"><span class="match-tag">Mejor equilibrio global</span><span class="match-tag">Vida social</span><span class="match-tag">Servicios y actividades</span><span class="match-tag">Inmersión</span></div>
+    </div>
+
+    <div class="opcion-card">
+      <div class="opcion-header">
+        <div class="colegio-zona">Condado de Leitrim · Localidad pequeña</div>
+        <div class="opcion-distrito">Carrick Community School</div>
+        <div class="opcion-loc">📍 Carrick-on-Shannon · Leitrim</div>
+        <div class="colegio-chips"><span class="chip">Mixto</span><span class="chip">Community School</span><span class="chip">676 alumnos</span><span class="chip">Transition Year</span><span class="chip gold">☘ Pequeña pero con vida</span></div>
+      </div>
+      <div class="opcion-body">
+        <div class="colegio-desc">Carrick-on-Shannon tiene unos <strong>4.700 habitantes</strong>, pero funciona como uno de los principales núcleos comerciales y de servicios de County Leitrim. Es exactamente el tipo de localidad que buscamos: pequeña, manejable y auténticamente irlandesa, pero con vida. Cuenta además con <strong>estación de tren</strong> y conexiones hacia Dublín y Sligo.<br><br>El colegio es mixto, de unos 676 estudiantes, con distribución muy equilibrada (347 chicos y 329 chicas), y promueve especialmente el desarrollo académico, social y personal de sus alumnos.</div>
+        <div class="colegio-section-title">Deporte y extracurriculares</div>
+        <div class="extra-tags"><span class="extra-tag">⚽ Fútbol</span><span class="extra-tag">🏐 Gaelic Football</span><span class="extra-tag">🏉 Rugby</span><span class="extra-tag">🏀 Baloncesto</span><span class="extra-tag">🏃 Atletismo</span><span class="extra-tag">⛳ Golf</span><span class="extra-tag">🎨 Culturales y sociales</span></div>
+        <div class="colegio-section-title">Actividades en la zona</div>
+        <div class="actividades-ciudad">Tiendas y supermercados · restaurantes y cafeterías · instalaciones deportivas · gimnasios · actividades acuáticas · biblioteca · actividades culturales · servicios para jóvenes · conexiones de tren y autobús.</div>
+        <div class="colegio-section-title">Por qué lo recomendamos para Candela</div>
+        <ul class="por-que-list">
+          <li>Uno de los mejores equilibrios de la selección entre inmersión y vida social</li>
+          <li>Comunidad pequeña donde integrarse con estudiantes locales y usar el inglés a diario</li>
+          <li>Opciones de ocio y actividades también fuera del colegio</li>
+          <li>Buena conexión ferroviaria con Dublín y Sligo</li>
+        </ul>
+      </div>
+      <div class="match-bar"><span class="match-tag">Inmersión + vida social</span><span class="match-tag">Localidad manejable</span><span class="match-tag">Bien conectada</span></div>
+    </div>
+
+    <div class="opcion-card">
+      <div class="opcion-header">
+        <div class="colegio-zona">Condado de Carlow · Localidad pequeña</div>
+        <div class="opcion-distrito">Tullow Community School</div>
+        <div class="opcion-loc">📍 Tullow · A 16 km de Carlow Town · Carlow</div>
+        <div class="colegio-chips"><span class="chip">Mixto</span><span class="chip">Community School</span><span class="chip">871 alumnos</span><span class="chip">Transition Year</span><span class="chip gold">☘ TY más completo</span></div>
+      </div>
+      <div class="opcion-body">
+        <div class="colegio-desc">Tullow cuenta con unos <strong>5.100 habitantes</strong>: localidad pequeña, tranquila y manejable, situada a unos 16 km de Carlow Town, con buenas conexiones y acceso a una ciudad mayor cuando haga falta. Dispone de supermercados, restaurantes, cafeterías, farmacias, comercios, instalaciones deportivas y servicios locales.<br><br>El colegio es mixto y grande, con unos 871 alumnos y una distribución prácticamente 50/50 (444 chicos y 427 chicas). Su principal atractivo es un programa de Transition Year especialmente completo.</div>
+        <div class="colegio-section-title">Transition Year · módulos</div>
+        <div class="extra-tags"><span class="extra-tag">🎨 Arte</span><span class="extra-tag">🎵 Música</span><span class="extra-tag">💻 Informática y Coding</span><span class="extra-tag">⚙️ Ingeniería</span><span class="extra-tag">🏗 Construcción</span><span class="extra-tag">✏️ Diseño</span><span class="extra-tag">🚀 Emprendimiento</span><span class="extra-tag">🔬 Ciencias · Física · Química · Biología</span><span class="extra-tag">🗣 Public Speaking</span><span class="extra-tag">🌍 Idiomas</span><span class="extra-tag">💼 Experiencia laboral</span><span class="extra-tag">🧭 Orientación académica</span></div>
+        <div class="colegio-section-title">Deporte y extracurriculares</div>
+        <div class="actividades-ciudad">Baloncesto · rugby · fútbol · Gaelic Football · atletismo · golf · equitación · voleibol · hockey · natación y actividades outdoor dentro de determinados programas.</div>
+        <div class="colegio-section-title">Por qué lo recomendamos para Candela</div>
+        <ul class="por-que-list">
+          <li>Ideal porque hoy no tiene una actividad concreta que quiera continuar</li>
+          <li>El Transition Year le permite descubrir nuevos intereses: deporte, ciencia, tecnología, arte y ámbito social</li>
+          <li>Colegio grande con mucha oferta, en una localidad tranquila</li>
+          <li>Carlow Town a 16 km para lo que necesite de una ciudad mayor</li>
+        </ul>
+      </div>
+      <div class="match-bar"><span class="match-tag">Transition Year variado</span><span class="match-tag">Descubrir intereses</span><span class="match-tag">Colegio grande</span></div>
+    </div>
+
+    <div class="opcion-card">
+      <div class="opcion-header">
+        <div class="colegio-zona">Condado de Cavan · Localidad pequeña</div>
+        <div class="opcion-distrito">Bailieborough Community School</div>
+        <div class="opcion-loc">📍 Bailieborough · A 32 km de Cavan Town · Cavan</div>
+        <div class="colegio-chips"><span class="chip">Mixto</span><span class="chip">Community School</span><span class="chip">751 alumnos</span><span class="chip">Transition Year</span><span class="chip gold">☘ Inmersión alta</span></div>
+      </div>
+      <div class="opcion-body">
+        <div class="colegio-desc">Bailieborough cuenta con unos <strong>3.000 habitantes</strong>. Es más pequeña que Monaghan o Carrick-on-Shannon, así que ofrece una experiencia especialmente interesante si se prioriza la inmersión lingüística y cultural. Aun así actúa como centro comercial y de servicios de su entorno: comercios, servicios básicos, instalaciones deportivas y espacios naturales. Está a unos 32 km de Cavan Town y 90 km de Dublín.<br><br>Lo importante: aunque la localidad sea pequeña, el colegio tiene <strong>más de 750 estudiantes</strong>, así que la vida escolar sigue siendo muy activa.</div>
+        <div class="colegio-section-title">Transition Year · módulos</div>
+        <div class="extra-tags"><span class="extra-tag">🎭 Drama</span><span class="extra-tag">🎵 Música</span><span class="extra-tag">🔬 Ciencias</span><span class="extra-tag">🚀 Emprendimiento</span><span class="extra-tag">🥗 Healthy Living</span><span class="extra-tag">⛑ Primeros auxilios</span><span class="extra-tag">🛶 Kayak</span><span class="extra-tag">🏊 Life Saving</span><span class="extra-tag">💻 Informática</span><span class="extra-tag">💼 Experiencia laboral</span><span class="extra-tag">🏅 Gaisce</span><span class="extra-tag">🌲 Outdoor</span></div>
+        <div class="colegio-section-title">Vida extracurricular</div>
+        <div class="actividades-ciudad">Atletismo · baloncesto · fútbol · Gaelic Football · rugby · natación · bádminton · tenis de mesa · drama · coro · musical · coding · Young Scientist · debate.</div>
+        <div class="colegio-section-title">Por qué lo recomendamos para Candela</div>
+        <ul class="por-que-list">
+          <li>Mucha inmersión, manteniendo un colegio grande y con extensa oferta de actividades</li>
+          <li>Las experiencias grupales del Transition Year ayudan mucho las primeras semanas</li>
+          <li>Entorno cercano y seguro para ganar autonomía</li>
+        </ul>
+      </div>
+      <div class="match-bar"><span class="match-tag">Inmersión alta</span><span class="match-tag">Colegio grande</span><span class="match-tag">TY muy práctico</span></div>
+    </div>
+
+    <div class="opcion-card">
+      <div class="opcion-header">
+        <div class="colegio-zona">Condado de Meath · Localidad pequeña</div>
+        <div class="opcion-distrito">Athboy Community School</div>
+        <div class="opcion-loc">📍 Athboy · A 17 km de Navan y 11 km de Trim · Meath</div>
+        <div class="colegio-chips"><span class="chip">Mixto</span><span class="chip">Community School</span><span class="chip">653 alumnos</span><span class="chip">Transition Year</span><span class="chip gold">☘ Integración social</span></div>
+      </div>
+      <div class="opcion-body">
+        <div class="colegio-desc">Athboy es una pequeña localidad de County Meath de unos <strong>2.600 habitantes</strong>. Es la más pequeña de la selección, pero está bien situada: a unos 17 km de Navan y 11 km de Trim. Dispone de servicios locales, biblioteca, centro de salud, farmacias, comercios e instalaciones deportivas, así que mantiene el ambiente cercano y seguro de una comunidad irlandesa pequeña sin estar completamente aislada.<br><br>El colegio cuenta con unos 653 estudiantes y una oferta deportiva y extracurricular muy extensa.</div>
+        <div class="colegio-section-title">Deporte, artes y tecnología</div>
+        <div class="extra-tags"><span class="extra-tag">🏀 Baloncesto</span><span class="extra-tag">⚽ Fútbol</span><span class="extra-tag">🏐 Gaelic Football</span><span class="extra-tag">🏃 Atletismo</span><span class="extra-tag">🏐 Voleibol</span><span class="extra-tag">🏉 Rugby</span><span class="extra-tag">🏸 Bádminton</span><span class="extra-tag">🤸 Gimnasia</span><span class="extra-tag">🎨 Arte</span><span class="extra-tag">🎶 Coro · Musical</span><span class="extra-tag">💃 Baile</span><span class="extra-tag">🎸 Guitarra</span><span class="extra-tag">🤖 Robótica · Coding</span><span class="extra-tag">🔬 Ciencia</span><span class="extra-tag">🗣 Debate · Public Speaking</span><span class="extra-tag">⚙️ Tecnología e Ingeniería</span></div>
+        <div class="colegio-section-title">Un detalle importante</div>
+        <div class="actividades-ciudad">Existen actividades sociales y deportivas abiertas también a estudiantes que empiezan desde cero, así que Candela puede probar disciplinas nuevas y conocer compañeros sin necesidad de tener experiencia previa.</div>
+        <div class="colegio-section-title">Por qué lo recomendamos para Candela</div>
+        <ul class="por-que-list">
+          <li>Por su perfil personal: al ser tímida inicialmente, valoramos centros con muchas oportunidades de participación</li>
+          <li>No necesita ser experta previamente en ninguna actividad para apuntarse</li>
+          <li>Ambiente cercano donde resulta relativamente sencillo conocer a otros estudiantes</li>
+        </ul>
+      </div>
+      <div class="match-bar"><span class="match-tag">Integración social</span><span class="match-tag">Participación desde cero</span><span class="match-tag">Ambiente cercano</span></div>
+    </div>
+
+    <div class="opcion-card">
+      <div class="opcion-header">
+        <div class="colegio-zona">Condado de Monaghan · Alternativa femenina</div>
+        <div class="opcion-distrito">St. Louis Secondary School</div>
+        <div class="opcion-loc">📍 Carrickmacross · A 80 km de Dublín · Monaghan</div>
+        <div class="colegio-chips"><span class="chip">Femenino</span><span class="chip">Voluntary Secondary</span><span class="chip">409 alumnas</span><span class="chip">Transition Year</span><span class="chip gold">☘ Sexta opción · a comparar</span></div>
+      </div>
+      <div class="opcion-body">
+        <div class="colegio-desc">Carrickmacross tiene unos <strong>5.700 habitantes</strong> y es una de las principales localidades de County Monaghan: a 80 km al norte de Dublín, 35 km al sur de Monaghan y 21 km de Dundalk. Mantiene el ambiente de una pequeña localidad irlandesa con buena oferta de comercio, servicios, educación y actividades: suficientemente pequeña para favorecer la inmersión y con suficiente actividad para un año completo.<br><br>Es la única alternativa exclusivamente femenina de la selección. Aunque la preferencia principal de Candela es un colegio mixto, hemos querido incluir una sexta opción diferente por su buen encaje en el resto de criterios. Centro financiado por el Estado (no fee-paying), de ethos católico.</div>
+        <div class="colegio-section-title">En qué trabaja especialmente el colegio</div>
+        <div class="extra-tags"><span class="extra-tag">💚 Bienestar</span><span class="extra-tag">💪 Confianza</span><span class="extra-tag">🌱 Desarrollo personal</span><span class="extra-tag">📚 Desarrollo académico</span><span class="extra-tag">🧭 Autonomía</span><span class="extra-tag">🧠 Pensamiento crítico</span><span class="extra-tag">🙋 Participación</span><span class="extra-tag">🎯 Orientación vocacional</span></div>
+        <div class="colegio-section-title">Deporte y extracurriculares</div>
+        <div class="actividades-ciudad">Baloncesto · rugby · atletismo · Gaelic Football · natación · equitación · danza · fútbol sala · actividades de aventura.</div>
+        <div class="colegio-section-title">Por qué la incluimos</div>
+        <ul class="por-que-list">
+          <li>Permite comparar los colegios mixtos con una alternativa femenina más recogida</li>
+          <li>Buen programa de Transition Year y localidad de tamaño adecuado</li>
+          <li>Fuerte orientación al bienestar, la confianza y el desarrollo personal</li>
+          <li>Si preferís exclusivamente colegios mixtos, centramos la selección en las cinco anteriores</li>
+        </ul>
+      </div>
+      <div class="match-bar"><span class="match-tag">Ambiente cercano</span><span class="match-tag">Bienestar y confianza</span><span class="match-tag">Buena ubicación</span></div>
+    </div>
+
+  </div>
+
+  <!-- ============ 7. NUESTRA SELECCIÓN · ORDEN ============ -->
+  <div class="section-title"><h2>Nuestra selección para Candela</h2></div>
+  <div class="ranking-wrap">
+    <ul class="ranking-list">
+      <li class="ranking-item"><div class="ranking-num">1</div><div><div class="ranking-nombre">Beech Hill College · Monaghan</div><div class="ranking-desc">Mejor equilibrio global entre localidad, tamaño del colegio, actividades e inmersión.</div></div></li>
+      <li class="ranking-item"><div class="ranking-num">2</div><div><div class="ranking-nombre">Carrick Community School · Carrick-on-Shannon</div><div class="ranking-desc">Especialmente interesante por encontrarse en una localidad pequeña pero muy dinámica y con vida social.</div></div></li>
+      <li class="ranking-item"><div class="ranking-num">3</div><div><div class="ranking-nombre">Tullow Community School · Tullow</div><div class="ranking-desc">Destaca por la amplitud y variedad de su programa de Transition Year.</div></div></li>
+      <li class="ranking-item"><div class="ranking-num">4</div><div><div class="ranking-nombre">Bailieborough Community School · Bailieborough</div><div class="ranking-desc">Una alternativa especialmente inmersiva, manteniendo un colegio grande y con muchísimas actividades.</div></div></li>
+      <li class="ranking-item"><div class="ranking-num">5</div><div><div class="ranking-nombre">Athboy Community School · Athboy</div><div class="ranking-desc">Muy recomendable para integración social, participación y desarrollo de confianza.</div></div></li>
+      <li class="ranking-item"><div class="ranking-num">6</div><div><div class="ranking-nombre">St. Louis Secondary School · Carrickmacross</div><div class="ranking-desc">Nuestra única alternativa femenina, seleccionada por su buen TY, ambiente cercano y excelente ubicación.</div></div></li>
+    </ul>
+  </div>
+
+  <!-- ============ 8. PRECIO PERSONALIZADO ============ -->
+  <div class="section-title"><h2>Precio año escolar 2027/28</h2></div>
+  <div class="precio-wrap">
+    <div class="precio-inner">
+      <div class="precio-title">☘ Precio especial para Candela</div>
+      <div class="precio-sub">Programa Choice con dos opciones de vuelos. En ambas aplicamos los 1.000 € de descuento.</div>
+      <div class="precio-cols">
+
+        <div class="precio-card destacada">
+          <div class="precio-card-tag">★ Nuestra recomendación</div>
+          <div class="precio-card-nombre">Programa Choice + 4 vuelos</div>
+          <div class="precio-lineas">
+            <div class="precio-linea"><span>Precio del programa</span><b>18.200 €</b></div>
+            <div class="precio-linea desc"><span>Descuento por reserva anticipada<br><small>antes del 31 de octubre de 2026</small></span><b>–500 €</b></div>
+            <div class="precio-linea desc"><span>Descuento especial por recomendación<br><small>familia o antiguo estudiante MLQ</small></span><b>–500 €</b></div>
+          </div>
+          <div class="precio-final">
+            <span class="precio-final-label">Precio final</span>
+            <span class="precio-final-val">17.200 €</span>
+          </div>
+          <div class="precio-ahorro">Ahorro total: 1.000 €</div>
+        </div>
+
+        <div class="precio-card">
+          <div class="precio-card-tag">Alternativa</div>
+          <div class="precio-card-nombre">Programa Choice + 2 vuelos</div>
+          <div class="precio-lineas">
+            <div class="precio-linea"><span>Precio del programa</span><b>17.450 €</b></div>
+            <div class="precio-linea desc"><span>Descuento por reserva anticipada<br><small>antes del 31 de octubre de 2026</small></span><b>–500 €</b></div>
+            <div class="precio-linea desc"><span>Descuento especial por recomendación<br><small>familia o antiguo estudiante MLQ</small></span><b>–500 €</b></div>
+          </div>
+          <div class="precio-final">
+            <span class="precio-final-label">Precio final</span>
+            <span class="precio-final-val">16.450 €</span>
+          </div>
+          <div class="precio-ahorro">Ahorro total: 1.000 €</div>
+        </div>
+
+      </div>
+      <div class="precio-note">Ambas modalidades incluyen la elección personalizada de colegio, alojamiento con familia anfitriona en habitación individual y pensión completa, libros de asignaturas obligatorias y uniforme, tasa de Transition Year, orientación en Dublín, seguimiento durante todo el año, gestión académica y de convalidación y apoyo desde España e Irlanda. La diferencia entre ellas es únicamente el número de vuelos incluidos. Descuentos no acumulables con otras promociones y sujetos a la formalización de la reserva en los plazos indicados.</div>
+    </div>
+  </div>
+
+  <!-- ============ 9. LOS 4 VUELOS ============ -->
+  <div class="section-title"><h2>Por qué recomendamos los 4 vuelos</h2></div>
+  <p class="intro-text">
+    Como nos habéis indicado que queréis que Candela <strong>regrese a España durante las vacaciones de
+    Navidad</strong>, recomendamos el Programa Choice con 4 vuelos incluidos. Los cuatro trayectos serían:
+  </p>
+  <div class="vuelos-grid">
+    <div class="vuelo-card"><div class="vuelo-num">Vuelo 1</div><div class="vuelo-ruta">España → Irlanda</div><div class="vuelo-desc">Inicio del año escolar.</div></div>
+    <div class="vuelo-card"><div class="vuelo-num">Vuelo 2</div><div class="vuelo-ruta">Irlanda → España</div><div class="vuelo-desc">Regreso durante las vacaciones de Navidad.</div></div>
+    <div class="vuelo-card"><div class="vuelo-num">Vuelo 3</div><div class="vuelo-ruta">España → Irlanda</div><div class="vuelo-desc">Vuelta a Irlanda después de Navidad.</div></div>
+    <div class="vuelo-card"><div class="vuelo-num">Vuelo 4</div><div class="vuelo-ruta">Irlanda → España</div><div class="vuelo-desc">Regreso definitivo al finalizar el año académico.</div></div>
+  </div>
+  <div class="tabla-nota">Con la modalidad de 2 vuelos se incluyen únicamente los trayectos de inicio y fin de curso; los vuelos de Navidad se gestionarían aparte y su coste iría a cargo de la familia.</div>
+
+  <!-- ============ 10. EL PROGRAMA INCLUYE ============ -->
+  <div class="section-title"><h2>El programa incluye</h2></div>
+  <div class="includes-wrap">
+    <div class="includes-head"><h3>☘ Programa Choice · año escolar completo en Irlanda</h3></div>
+    <div class="includes-body">
+      <div class="includes-grid">
+        <div>
+          <div class="col-title">Antes del viaje</div>
+          <ul class="inc-list">
+            <li>Reunión inicial con padres o tutores</li>
+            <li>Entrevista personal online con la estudiante</li>
+            <li>Prueba de nivel de inglés antes del inicio del programa</li>
+            <li>Información completa sobre el programa en Irlanda</li>
+            <li>Inscripción y matriculación en el colegio elegido</li>
+            <li>Familia anfitriona en régimen de pensión completa<small>habitación individual garantizada</small></li>
+            <li>Un único estudiante hispanohablante por familia</li>
+            <li>Seguro médico privado y de responsabilidad civil</li>
+            <li>Libros de asignaturas obligatorias y uniforme escolar</li>
+            <li>Masterclass de cultura irlandesa<small>10 horas online en inglés</small></li>
+            <li>Orientación pre-viaje en Madrid u online</li>
+            <li>Welcome pack sorpresa de My Language Quest</li>
+          </ul>
+        </div>
+        <div>
+          <div class="col-title">Durante el viaje</div>
+          <ul class="inc-list">
+            <li>Recibimiento en aeropuerto y traslados en destino</li>
+            <li>Orientación previa en Dublín · 2 días</li>
+            <li>Asesoramiento en elección de asignaturas</li>
+            <li>Clases de inglés Cambridge y libro incluido</li>
+            <li>Taller MIT · 3 sesiones</li>
+            <li>Tasa de Transition Year</li>
+            <li>Coordinador local en Irlanda: visitas, tutorías y emergencias 24 h</li>
+            <li>Acompañamiento psicológico</li>
+            <li>Apoyo para matriculación en extraescolares</li>
+            <li>Gestión de cambio de familia si fuera necesario</li>
+            <li>Atención 24 h en España para emergencias</li>
+          </ul>
+          <div class="col-title" style="margin-top:24px;">Después del viaje</div>
+          <ul class="inc-list">
+            <li>Convalidación ante el Ministerio de Educación</li>
+            <li>Recogida de notas y traducciones juradas</li>
+            <li>Dossier final detallando la experiencia</li>
+          </ul>
+        </div>
+        <div>
+          <div class="col-title">No incluido</div>
+          <ul class="inc-list no">
+            <li>Vuelos no contemplados en la modalidad elegida<small>MLQ gestiona la búsqueda, coste a cargo de la familia</small></li>
+            <li>Actividades extracurriculares de pago</li>
+            <li>Excursiones y viajes escolares</li>
+            <li>Material escolar adicional</li>
+            <li>Transporte local mensual</li>
+            <li>Ocio personal</li>
+            <li>Todo aquello que no esté especificado expresamente en el apartado &laquo;El programa incluye&raquo;</li>
+          </ul>
+        </div>
+      </div>
+      <div class="gestor-wrap">
+        <div class="gestor-title">Gestor estudiantil · se encarga de</div>
+        <div class="gestor-grid">
+          <div class="gestor-item">Seguimiento personalizado del desempeño</div>
+          <div class="gestor-item">Información a padres mensualmente</div>
+          <div class="gestor-item">Notas oficiales cada trimestre</div>
+          <div class="gestor-item">Asesoría en cambio de asignaturas</div>
+          <div class="gestor-item">Todas las tutorías necesarias</div>
+          <div class="gestor-item">Reuniones con padres y/o estudiante</div>
+          <div class="gestor-item">Apoyo en actividades extraescolares</div>
+          <div class="gestor-item">Resolución de situaciones con familia o centro</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ============ 13. FORMAS DE PAGO ============ -->
+  <div class="section-title"><h2>Formas de pago</h2></div>
+  <div class="payment-wrap">
+    <div class="payment-inner">
+      <div class="pay-title">💳 Condiciones económicas</div>
+      <div class="pay-subtitle">Dos vías: pago directo o financiación. El importe de la reserva cambia según cuál elijáis.</div>
+
+      <div class="pay-route">
+        <div class="pay-route-head"><span class="pay-route-icon">🏦</span><span class="pay-route-title">Opción A · Pago sin financiación</span></div>
+        <div class="pay-route-sub">La cantidad íntegra debe abonarse antes del 1 de junio de 2027.</div>
+        <div class="pay-entrada">
+          <div class="pay-entrada-num">3.500 €</div>
+          <div class="pay-entrada-txt"><strong>Primer pago a la firma del contrato.</strong> Reserva la plaza e inicia la tramitación de matrícula y familia anfitriona.</div>
+        </div>
+        <div class="pay-cols">
+          <div class="pay-col">
+            <div class="pay-col-title">Paso 2 · Confirmación de plaza</div>
+            <div class="pay-step"><div class="pay-step-title">4.000 €</div><div class="pay-step-desc">Al confirmarse la plaza en el colegio elegido</div></div>
+          </div>
+          <div class="pay-col">
+            <div class="pay-col-title">Paso 3 · Resto del importe</div>
+            <div class="pay-step"><div class="pay-step-title">Antes del 1 de junio de 2027</div><div class="pay-step-desc">Importe restante hasta completar el precio del programa</div></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="pay-route">
+        <div class="pay-route-head"><span class="pay-route-icon">📆</span><span class="pay-route-title">Opción B · Con financiación Banco Sabadell</span></div>
+        <div class="pay-route-sub">Si se financia el programa, la entrada es siempre de 5.000 € y el resto se financia en cuotas mensuales a 18, 24 o 36 meses.</div>
+        <div class="pay-entrada">
+          <div class="pay-entrada-num">5.000 €</div>
+          <div class="pay-entrada-txt"><strong>Entrada fija a la firma del contrato</strong> en todos los casos de financiación. El capital restante se financia en 18, 24 o 36 meses.</div>
+        </div>
+        <div class="pay-cols">
+          <div class="pay-col">
+            <div class="pay-col-title">Capital financiado</div>
+            <div class="pay-step"><div class="pay-step-title">Precio del programa − 5.000 €</div><div class="pay-step-desc">Calculad la cuota exacta en el simulador de la sección siguiente.</div></div>
+          </div>
+          <div class="pay-col">
+            <div class="pay-col-title">Condiciones</div>
+            <div class="pay-step"><div class="pay-step-title">18 / 24 / 36 meses · TIN 10,46 %</div><div class="pay-step-desc">Sin comisión de apertura y sin penalización por cancelación anticipada</div></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="pay-note">El seguro de anulación e interrupción es opcional, cuesta 500 € y debe contratarse y abonarse en el momento de la firma del contrato. Su importe no es reembolsable bajo ninguna circunstancia. Las inscripciones tardías deben cumplir con los plazos de pago ya pasados en el momento de la inscripción.</div>
+    </div>
+  </div>
+
+  <!-- ============ 14. FINANCIACIÓN ============ -->
+  <div class="section-title"><h2>Financia tu programa</h2></div>
+  <div class="financing-wrap">
+    <div class="financing-head">
+      <div class="financing-head-left">
+        <div class="fin-icon">💳</div>
+        <div>
+          <div class="fin-title">Paga a tu ritmo, sin preocupaciones</div>
+          <div class="fin-sub">Entrada fija de 5.000 € · Aprobación rápida · 100 % online · Sin comisión de apertura</div>
+        </div>
+      </div>
+      <div class="fin-badge">Hasta 36 meses</div>
+    </div>
+    <div class="financing-body">
+      <div class="fin-opcion-selector">
+        <div class="fin-opcion-label">Selecciona la modalidad · precios con descuento aplicado</div>
+        <div class="fin-opcion-btns" id="finOpciones">
+          <button class="fin-opcion-btn active" data-precio="17200"><span class="fin-opcion-nombre">☘ Choice + 4 vuelos</span><span class="fin-opcion-precio">17.200 €</span></button>
+          <button class="fin-opcion-btn" data-precio="16450"><span class="fin-opcion-nombre">Choice + 2 vuelos</span><span class="fin-opcion-precio">16.450 €</span></button>
+        </div>
+      </div>
+
+      <div class="fin-entrada-fija">
+        <div class="fin-entrada-fija-num">5.000 €</div>
+        <div class="fin-entrada-fija-txt"><strong>Entrada a la firma del contrato.</strong> Se descuenta del precio del programa; el resto es el capital que se financia.</div>
+      </div>
+
+      <div class="fin-plazo-wrap">
+        <div class="fin-plazo-label">Elige tu plazo de financiación</div>
+        <div class="fin-plazos" id="finPlazos">
+          <button class="fin-plazo active" data-meses="18" data-tin="10.46"><div class="fin-plazo-meses">18 meses</div><div class="fin-plazo-badge con-intereses">TIN 10,46%</div><div class="fin-plazo-quien">Intereses a cargo del cliente</div></button>
+          <button class="fin-plazo" data-meses="24" data-tin="10.46"><div class="fin-plazo-meses">24 meses</div><div class="fin-plazo-badge con-intereses">TIN 10,46%</div><div class="fin-plazo-quien">Intereses a cargo del cliente</div></button>
+          <button class="fin-plazo" data-meses="36" data-tin="10.46"><div class="fin-plazo-meses">36 meses</div><div class="fin-plazo-badge con-intereses">TIN 10,46%</div><div class="fin-plazo-quien">Intereses a cargo del cliente</div></button>
+        </div>
+      </div>
+
+      <div class="fin-resultado">
+        <div class="fin-resultado-main">
+          <div class="fin-cuota-label">Cuota mensual estimada</div>
+          <div class="fin-cuota-valor" id="cuotaValor">735,28 €</div>
+          <div class="fin-cuota-sub" id="cuotaSub">/mes · 18 pagos · TIN 10,46%</div>
+        </div>
+        <div class="fin-resultado-detalle">
+          <div class="fin-det-row"><span class="fin-det-label">Importe del programa</span><span class="fin-det-val" id="detPrecio">17.200 €</span></div>
+          <div class="fin-det-row"><span class="fin-det-label">Entrada a la firma</span><span class="fin-det-val" id="detEntrada">5.000 €</span></div>
+          <div class="fin-det-row"><span class="fin-det-label">Capital financiado</span><span class="fin-det-val" id="detCapital">12.200 €</span></div>
+          <div class="fin-det-row"><span class="fin-det-label">Intereses totales</span><span class="fin-det-val" id="detIntereses">1.035,09 €</span></div>
+          <div class="fin-det-row fin-det-total"><span class="fin-det-label">Total a pagar</span><span class="fin-det-val" id="detTotal">18.235,09 €</span></div>
+        </div>
+      </div>
+
+      <div class="fin-nota">ℹ️ Financiación sujeta a aprobación bancaria. La entrada de 5.000 € se abona a la firma del contrato y no se financia. Cuota orientativa calculada sobre el capital financiado. Sin comisión de apertura ni penalización por cancelación anticipada.</div>
+    </div>
+  </div>
+
+  <!-- ============ 15. SIGUIENTES PASOS ============ -->
+  <div class="section-title"><h2>Siguientes pasos</h2></div>
+  <div class="steps-wrap">
+    <div class="steps-inner">
+      <div class="steps-title">¿Cómo seguimos?</div>
+      <div class="steps-sub">Del sí a la salida hacia Irlanda, paso a paso</div>
+      <div class="steps-list">
+        <div class="step-item"><div class="step-num">1</div><div class="step-title">Elegís tres colegios y la modalidad</div><div class="step-desc">Nos indicáis tres de los seis centros por orden de preferencia y si queréis 2 o 4 vuelos.</div></div>
+        <div class="step-item"><div class="step-num">2</div><div class="step-title">Firma y reserva</div><div class="step-desc">Firma del contrato y primer pago. Se bloquea la plaza.</div></div>
+        <div class="step-item"><div class="step-num">3</div><div class="step-title">Matrícula y familia</div><div class="step-desc">Solicitamos plaza por orden de preferencia y gestionamos familia anfitriona, uniforme y libros.</div></div>
+        <div class="step-item"><div class="step-num">4</div><div class="step-title">Vuelos y orientación</div><div class="step-desc">Reservamos los vuelos y organizamos la orientación en Dublín.</div></div>
+      </div>
+      <div class="cta-line">¿Dudas con alguno de los colegios? Tu asesora las resuelve contigo antes de decidir el orden.</div>
+      <div class="pasos-cta-wrap">
+        <a class="pasos-cta" href="mailto:gespinoza@mylanguagequest.com?subject=Colegios%20por%20orden%20de%20preferencia%20%C2%B7%20Candela%20%C2%B7%20Irlanda%202027%2F28&amp;body=Hola%2C%0A%0AHemos%20revisado%20la%20propuesta%20de%20Irlanda%20para%20Candela%20y%20estos%20son%20nuestros%20tres%20colegios%20por%20orden%20de%20preferencia%3A%0A%0A1%C2%AA%20opci%C3%B3n%3A%20%0A2%C2%AA%20opci%C3%B3n%3A%20%0A3%C2%AA%20opci%C3%B3n%3A%20%0A%0AModalidad%20(Choice%202%20o%204%20vuelos)%3A%20%0A%0AGracias.">☘ Enviar mis tres opciones</a>
+        <a class="pasos-cta pasos-cta-alt" href="https://asesoramientosmlq.zohobookings.eu/mylanguagequest" target="_blank" rel="noopener">📅 Agendar llamada con mi asesora</a>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<!-- ============ 16. FOOTER ============ -->
+<div class="footer">
+  <div class="footer-logo">MY LANGUAGE QUEST</div>
+  <div class="footer-tag">Explore · Learn · Grow</div>
+  <div class="footer-meta">
+    Propuesta personalizada para Candela · Curso 2027/28<br>
+    Precios sujetos a disponibilidad de plaza y confirmación del centro escolar.
+  </div>
+</div>
+
+<script>
+(function(){
+  var precio=17200, meses=18, tin=10.46, ENTRADA=5000;
+  function fmt(n){return n.toLocaleString('es-ES',{minimumFractionDigits:2,maximumFractionDigits:2})+' €';}
+  function fmt0(n){return n.toLocaleString('es-ES',{maximumFractionDigits:0})+' €';}
+  function calc(){
+    var capital=Math.max(precio-ENTRADA,0);
+    var cuota, total;
+    if(tin===0){ cuota=capital/meses; total=capital; }
+    else{ var i=tin/100/12; cuota=capital*i/(1-Math.pow(1+i,-meses)); total=cuota*meses; }
+    var intereses=total-capital;
+    document.getElementById('cuotaValor').textContent=fmt(cuota);
+    document.getElementById('cuotaSub').textContent='/mes · '+meses+' pagos · TIN '+(tin===0?'0%':'10,46%');
+    document.getElementById('detPrecio').textContent=fmt0(precio);
+    document.getElementById('detEntrada').textContent=fmt0(ENTRADA);
+    document.getElementById('detCapital').textContent=fmt0(capital);
+    var ei=document.getElementById('detIntereses');
+    if(tin===0){ ei.textContent='0 € · ¡MLQ los asume!'; ei.classList.add('fin-det-green'); }
+    else{ ei.textContent=fmt(intereses); ei.classList.remove('fin-det-green'); }
+    document.getElementById('detTotal').textContent=fmt(ENTRADA+total);
+  }
+  document.querySelectorAll('#finOpciones .fin-opcion-btn').forEach(function(b){
+    b.addEventListener('click',function(){
+      document.querySelectorAll('#finOpciones .fin-opcion-btn').forEach(function(x){x.classList.remove('active');});
+      b.classList.add('active'); precio=parseFloat(b.dataset.precio); calc();
+    });
+  });
+  document.querySelectorAll('#finPlazos .fin-plazo').forEach(function(b){
+    b.addEventListener('click',function(){
+      document.querySelectorAll('#finPlazos .fin-plazo').forEach(function(x){x.classList.remove('active');});
+      b.classList.add('active'); meses=parseInt(b.dataset.meses); tin=parseFloat(b.dataset.tin); calc();
+    });
+  });
+  calc();
+})();
+</script>
+
+<script>
+(function(){
+  var d=document, root=d.documentElement;
+  if(!('IntersectionObserver' in window)){root.className=root.className.replace(' js-anim','');return;}
+
+  var bar=d.createElement('div'); bar.className='progress-bar'; d.body.appendChild(bar);
+  var ticking=false;
+  function progress(){
+    var h=d.documentElement.scrollHeight-window.innerHeight;
+    bar.style.transform='scaleX('+(h>0?Math.min(window.scrollY/h,1):0)+')';
+    ticking=false;
+  }
+  window.addEventListener('scroll',function(){if(!ticking){ticking=true;requestAnimationFrame(progress);}},{passive:true});
+  progress();
+
+  Array.prototype.forEach.call(d.querySelectorAll('.hero-pill'),function(el,i){
+    el.style.animationDelay=(0.36+i*0.06)+'s';
+  });
+
+  var groups=[
+    ['.section-title','reveal'],
+    ['.intro-text','reveal'],
+    ['.intro-point','reveal'],
+    ['.qs-hero','reveal-zoom'],
+    ['.qs-chapters-head','reveal'],
+    ['.qs-chapter','reveal'],
+    ['.alert-box','reveal'],
+    ['.eleccion-box','reveal'],
+    ['.opcion-card','reveal'],
+    ['.ranking-wrap','reveal-zoom'],
+    ['.precio-wrap','reveal-zoom'],
+    ['.vuelo-card','reveal'],
+    ['.tabla-wrap','reveal-zoom'],
+    ['.decision-card','reveal'],
+    ['.info-block','reveal'],
+    ['.includes-wrap','reveal-zoom'],
+    ['.payment-wrap','reveal-zoom'],
+    ['.financing-wrap','reveal-zoom'],
+    ['.steps-wrap','reveal-zoom']
+  ];
+  groups.forEach(function(g){
+    Array.prototype.forEach.call(d.querySelectorAll(g[0]),function(el,i){
+      el.classList.add(g[1]);
+      el.style.transitionDelay=Math.min(i*0.09,0.36)+'s';
+    });
+  });
+
+  var io=new IntersectionObserver(function(entries){
+    entries.forEach(function(e){
+      if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}
+    });
+  },{threshold:0.12,rootMargin:'0px 0px -8% 0px'});
+  Array.prototype.forEach.call(d.querySelectorAll('.reveal,.reveal-zoom'),function(el){io.observe(el);});
+
+  var cuota=d.getElementById('cuotaValor');
+  if(cuota&&'MutationObserver' in window){
+    new MutationObserver(function(){
+      cuota.classList.remove('pop'); void cuota.offsetWidth; cuota.classList.add('pop');
+    }).observe(cuota,{childList:true,characterData:true,subtree:true});
+  }
+})();
+</script>
+</body>
+</html>
