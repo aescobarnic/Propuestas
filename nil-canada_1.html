@@ -1,0 +1,1041 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<script>document.documentElement.className+=" js-anim";</script>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Propuesta Canadá · Nil · My Language Quest</title>
+<link href="https://fonts.googleapis.com/css2?family=Fira+Sans:wght@300;400;500;600;700&family=Josefin+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --blue:#003366;--blue-dark:#001f40;--blue-mid:#0a4a8a;--blue-light:#dce8f5;
+  --red:#B12900;--red-dark:#8A1F00;--red-light:#fdf0ec;
+  --red-deep:#6E1600;--red-warm:#C8380C;--cream:#FFF6F2;--sand:#F7EDE6;--gold:#E8B04B;
+  --green:#4C9E0C;--green-dark:#3A7A09;--green-light:#eef8e3;
+  --gray-bg:#f4eeea;--gray-card:#fbf7f4;--gray-border:#e4d9d2;
+  --text:#0d1b2a;--text-mid:#3d4f62;--text-light:#7a8a9b;--white:#ffffff;
+}
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box;}
+body{font-family:'Fira Sans',sans-serif;background:var(--gray-bg);color:var(--text);}
+
+/* HEADER */
+.header{background:var(--white);padding:18px 48px;display:flex;align-items:center;justify-content:space-between;box-shadow:0 1px 0 var(--gray-border),0 4px 24px rgba(0,51,102,0.07);position:relative;z-index:10;}
+.header::after{content:'';position:absolute;bottom:0;left:0;right:0;height:4px;background:linear-gradient(90deg,var(--red) 0%,var(--red) 22%,var(--white) 22%,var(--white) 78%,var(--red) 78%,var(--red) 100%);}
+.logo-area img{height:46px;width:auto;display:block;}
+.header-right{text-align:right;}
+.header-label{font-family:'Josefin Sans',sans-serif;font-size:9px;letter-spacing:3px;text-transform:uppercase;color:var(--text-light);}
+.header-year{font-family:'Josefin Sans',sans-serif;font-size:26px;font-weight:700;color:var(--red);line-height:1;margin-top:2px;}
+
+/* HERO */
+.hero{background:linear-gradient(135deg,var(--red-deep) 0%,var(--red) 55%,var(--red-warm) 100%);position:relative;overflow:hidden;padding:40px 48px 36px;}
+.hero::after{content:'🍁';position:absolute;right:2%;top:50%;transform:translateY(-50%) rotate(-12deg);font-size:230px;line-height:1;opacity:0.09;pointer-events:none;z-index:1;}
+.hero::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 70% 110% at 100% 40%,rgba(255,255,255,0.12) 0%,transparent 60%),radial-gradient(ellipse 60% 80% at -10% 90%,rgba(0,31,64,0.28) 0%,transparent 60%);}
+.hero-dots{position:absolute;inset:0;pointer-events:none;background-image:radial-gradient(rgba(255,255,255,0.07) 1px,transparent 1px);background-size:28px 28px;}
+.hero-inner{position:relative;z-index:2;}
+.hero-tag{display:inline-flex;align-items:center;gap:6px;background:rgba(255,255,255,0.1);border:1px solid rgba(255,255,255,0.2);border-radius:20px;padding:4px 12px;font-size:10px;font-weight:600;letter-spacing:2px;text-transform:uppercase;color:rgba(255,255,255,0.7);margin-bottom:12px;}
+.hero-tag::before{content:'🍁';font-size:11px;}
+.hero-name{font-family:'Josefin Sans',sans-serif;font-size:38px;font-weight:700;color:var(--white);line-height:1.05;margin-bottom:8px;}
+.hero-subtitle{font-size:13px;color:rgba(255,255,255,0.55);font-weight:300;}
+.hero-pills{display:flex;flex-wrap:wrap;gap:8px;margin-top:20px;}
+.hero-pill{display:flex;align-items:center;gap:6px;background:rgba(255,255,255,0.1);border:1px solid rgba(255,255,255,0.18);border-radius:8px;padding:6px 12px;font-size:11px;color:var(--white);font-weight:500;}
+.hero-pill.ac{background:rgba(0,31,64,0.35);border-color:rgba(255,255,255,0.4);color:#ffffff;}
+.hero-promo{display:inline-flex;align-items:center;gap:8px;background:rgba(0,31,64,0.4);border:1px solid rgba(255,255,255,0.35);border-radius:10px;padding:10px 16px;font-size:12.5px;font-weight:600;color:#ffffff;margin-top:18px;max-width:640px;line-height:1.5;}
+
+/* LAYOUT */
+.main{max-width:1140px;margin:0 auto;padding:40px 24px 20px;}
+.section-title{display:flex;align-items:center;gap:12px;margin:44px 0 24px;}
+.section-title:first-of-type{margin-top:0;}
+.section-title h2{font-family:'Josefin Sans',sans-serif;font-size:11px;font-weight:700;letter-spacing:3px;text-transform:uppercase;color:var(--red-deep);white-space:nowrap;}
+.section-title::before{content:'';width:22px;height:3px;border-radius:3px;background:var(--red);flex-shrink:0;}
+.section-title::after{content:'';flex:1;height:1px;background:var(--gray-border);}
+
+/* INTRO / CONTEXTO */
+.intro-text{font-size:14px;color:var(--text-mid);line-height:1.75;max-width:860px;margin-bottom:20px;}
+.intro-text strong{color:var(--blue);font-weight:600;}
+.intro-points{display:grid;grid-template-columns:repeat(2,1fr);gap:14px;margin-top:20px;}
+.intro-point{background:var(--white);border:1.5px solid var(--gray-border);border-radius:12px;padding:16px 18px;display:flex;gap:12px;align-items:flex-start;}
+.intro-point-icon{font-size:20px;flex-shrink:0;}
+.intro-point-title{font-family:'Josefin Sans',sans-serif;font-size:13px;font-weight:700;color:var(--red-deep);margin-bottom:4px;}
+.intro-point-desc{font-size:12px;color:var(--text-mid);line-height:1.55;}
+
+/* QUIÉNES SOMOS — bloque editorial */
+.qs-hero{display:grid;grid-template-columns:1fr 1fr;gap:0;background:var(--white);border-radius:18px;overflow:hidden;border:1.5px solid var(--gray-border);box-shadow:0 4px 28px rgba(0,51,102,0.08);}
+.qs-media{position:relative;background:var(--blue-dark);min-height:440px;}
+.qs-media img{width:100%;height:100%;object-fit:cover;display:block;}
+.qs-media-inset{position:absolute;right:-1px;bottom:-1px;width:44%;aspect-ratio:3/4;border-radius:14px 0 0 0;overflow:hidden;border-top:4px solid var(--white);border-left:4px solid var(--white);box-shadow:-8px -8px 28px rgba(0,31,64,0.28);}
+.qs-media-inset img{width:100%;height:100%;object-fit:cover;}
+.qs-panel{background:linear-gradient(155deg,var(--blue-dark) 0%,var(--blue) 55%,var(--blue-mid) 100%);padding:38px 40px;position:relative;overflow:hidden;display:flex;flex-direction:column;justify-content:center;}
+.qs-panel::before{content:'';position:absolute;inset:0;background-image:radial-gradient(rgba(255,255,255,0.055) 1px,transparent 1px);background-size:22px 22px;}
+.qs-panel-inner{position:relative;z-index:2;}
+.qs-eyebrow{font-family:'Josefin Sans',sans-serif;font-size:9px;font-weight:700;letter-spacing:3px;text-transform:uppercase;color:#7dd44a;margin-bottom:12px;}
+.qs-title{font-family:'Josefin Sans',sans-serif;font-size:26px;font-weight:700;color:var(--white);line-height:1.2;margin-bottom:14px;}
+.qs-lead{font-size:13.5px;color:rgba(255,255,255,0.62);line-height:1.75;margin-bottom:26px;}
+.qs-lead strong{color:var(--white);font-weight:600;}
+.qs-pilares{display:flex;flex-direction:column;gap:14px;}
+.qs-pilar{display:flex;gap:14px;align-items:flex-start;padding-top:14px;border-top:1px solid rgba(255,255,255,0.13);}
+.qs-pilar:first-child{border-top:none;padding-top:0;}
+.qs-pilar-icon{font-size:19px;flex-shrink:0;line-height:1.3;}
+.qs-pilar-title{font-family:'Josefin Sans',sans-serif;font-size:13px;font-weight:700;color:var(--white);margin-bottom:3px;}
+.qs-pilar-desc{font-size:11.5px;color:rgba(255,255,255,0.5);line-height:1.55;}
+
+/* Capítulos del viaje */
+.qs-chapters-head{display:flex;align-items:baseline;gap:14px;margin:38px 0 18px;flex-wrap:wrap;}
+.qs-chapters-title{font-family:'Josefin Sans',sans-serif;font-size:19px;font-weight:700;color:var(--red-deep);}
+.qs-chapters-sub{font-size:12.5px;color:var(--text-light);}
+.qs-chapters{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;}
+.qs-chapter{background:var(--white);border:1.5px solid var(--gray-border);border-radius:16px;overflow:hidden;box-shadow:0 2px 16px rgba(0,51,102,0.06);display:flex;flex-direction:column;transition:transform .2s,box-shadow .2s;}
+.qs-chapter:hover{transform:translateY(-4px);box-shadow:0 14px 38px rgba(0,51,102,0.13);}
+.qs-chapter-media{position:relative;aspect-ratio:4/3;overflow:hidden;background:var(--blue-light);}
+.qs-chapter-media img{width:100%;height:100%;object-fit:cover;object-position:center 15%;display:block;}
+.qs-chapter-step{position:absolute;top:12px;left:12px;background:rgba(0,31,64,0.82);backdrop-filter:blur(4px);color:#7dd44a;font-family:'Josefin Sans',sans-serif;font-size:9px;font-weight:700;letter-spacing:2px;text-transform:uppercase;padding:5px 11px;border-radius:20px;}
+.qs-chapter-body{padding:18px 20px 20px;}
+.qs-chapter-title{font-family:'Josefin Sans',sans-serif;font-size:15px;font-weight:700;color:var(--red-deep);margin-bottom:7px;}
+.qs-chapter-text{font-size:12.5px;color:var(--text-mid);line-height:1.65;}
+
+/* OPCIONES */
+.alert-box{display:flex;gap:12px;align-items:flex-start;background:#fff4f0;border:1.5px solid rgba(177,41,0,0.3);border-radius:12px;padding:14px 18px;margin-bottom:22px;}
+.alert-icon{font-size:20px;flex-shrink:0;}
+.alert-text{font-size:12px;color:#6b1a00;line-height:1.6;}
+.alert-text strong{color:var(--red-dark);}
+.opciones-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(330px,1fr));gap:20px;}
+.opcion-card{background:var(--white);border-radius:16px;border:1.5px solid var(--gray-border);overflow:hidden;box-shadow:0 2px 16px rgba(0,51,102,0.06);position:relative;transition:transform .2s,box-shadow .2s,border-color .2s;}
+.opcion-card:hover{transform:translateY(-4px);box-shadow:0 12px 40px rgba(110,22,0,0.16);border-color:var(--red);}
+.opcion-card.recomendada{border-color:var(--blue);box-shadow:0 6px 28px rgba(0,51,102,0.20);}
+.badge-rec{position:absolute;top:14px;right:-32px;background:var(--blue);color:var(--white);font-size:8px;font-weight:700;letter-spacing:1.5px;padding:5px 40px;transform:rotate(45deg);width:130px;text-align:center;z-index:10;}
+.opcion-header{background:linear-gradient(135deg,var(--red-deep) 0%,var(--red) 100%);padding:22px 24px 18px;position:relative;overflow:hidden;}
+.opcion-header::after{content:'🍁';position:absolute;right:-10px;bottom:-22px;font-size:82px;opacity:0.11;line-height:1;transform:rotate(-14deg);}
+.opcion-header > *{position:relative;z-index:2;}
+.opcion-num{font-family:'Josefin Sans',sans-serif;font-size:9px;letter-spacing:3px;text-transform:uppercase;color:rgba(255,255,255,0.38);margin-bottom:8px;}
+.opcion-distrito{font-family:'Josefin Sans',sans-serif;font-size:16px;font-weight:700;color:var(--white);margin-bottom:5px;}
+.opcion-loc{font-size:11px;color:rgba(255,255,255,0.48);margin-bottom:12px;}
+.precio-chip{display:inline-flex;align-items:baseline;gap:4px;background:rgba(255,255,255,0.1);border:1px solid rgba(255,255,255,0.18);border-radius:8px;padding:6px 12px;}
+.precio-chip .val{font-family:'Josefin Sans',sans-serif;font-size:20px;font-weight:700;color:var(--white);}
+.precio-chip .desc{font-size:10px;color:rgba(255,255,255,0.5);}
+.precio-chip .tachado{font-size:10px;color:rgba(255,255,255,0.3);text-decoration:line-through;margin-left:6px;}
+.precio-sem{display:block;margin-top:8px;font-size:10.5px;color:rgba(255,255,255,0.55);letter-spacing:.3px;}
+.precio-sem strong{color:rgba(255,255,255,0.9);font-weight:600;}
+.opcion-body{padding:20px 22px;}
+.colegios{display:flex;flex-direction:column;gap:12px;}
+.colegio{border:1.5px solid var(--gray-border);border-radius:12px;overflow:hidden;background:var(--gray-card);transition:border-color .2s;}
+.colegio:hover{border-color:var(--red);}
+.colegio-top{padding:12px 14px 10px;}
+.colegio-nombre{font-family:'Josefin Sans',sans-serif;font-size:13px;font-weight:700;color:var(--red-deep);margin-bottom:5px;}
+.colegio-meta{display:flex;flex-wrap:wrap;align-items:center;gap:6px;}
+.tag{border-radius:5px;padding:2px 8px;font-size:9px;font-weight:700;text-transform:uppercase;}
+.tag.pub{background:var(--green);color:var(--white);}
+.tag.info{background:var(--blue-light);color:var(--blue);}
+details{border-top:1px solid var(--gray-border);}
+details summary{list-style:none;cursor:pointer;padding:9px 14px;font-size:11px;font-weight:600;color:var(--red);display:flex;align-items:center;gap:6px;user-select:none;-webkit-user-select:none;}
+details summary:hover{background:var(--red-light);}
+details summary::-webkit-details-marker{display:none;}
+details summary::before{content:'▸';font-size:10px;transition:transform .2s;display:inline-block;}
+details[open] summary::before{transform:rotate(90deg);}
+.colegio-razon{padding:10px 14px 13px;font-size:12px;color:var(--text-mid);line-height:1.7;border-left:3px solid var(--red);margin:0 14px 12px;background:var(--red-light);border-radius:0 6px 6px 0;}
+.match-bar{display:flex;gap:6px;flex-wrap:wrap;padding:14px 22px;border-top:1px solid var(--gray-border);background:linear-gradient(to right,var(--gray-card),var(--white));}
+.match-tag{display:flex;align-items:center;gap:4px;font-size:10px;font-weight:600;color:var(--green-dark);background:var(--green-light);border:1px solid rgba(76,158,12,0.25);border-radius:20px;padding:3px 10px;}
+.match-tag::before{content:'✓';font-size:9px;}
+
+/* INFO BLOCKS */
+.info-blocks{display:grid;grid-template-columns:1fr 1fr;gap:20px;}
+.info-block{background:var(--white);border-radius:16px;border:1.5px solid var(--gray-border);padding:24px 26px;box-shadow:0 2px 16px rgba(0,51,102,0.05);}
+.info-block-icon{font-size:24px;margin-bottom:10px;}
+.info-block-title{font-family:'Josefin Sans',sans-serif;font-size:14px;font-weight:700;color:var(--red-deep);margin-bottom:10px;}
+.info-block-text{font-size:12.5px;color:var(--text-mid);line-height:1.7;}
+.info-block-text strong{color:var(--text);}
+.info-block ul{margin-top:10px;padding-left:0;list-style:none;}
+.info-block ul li{font-size:12px;color:var(--text-mid);display:flex;gap:8px;align-items:flex-start;margin-bottom:7px;line-height:1.5;}
+.info-block ul li::before{content:'✓';color:var(--green);font-weight:700;flex-shrink:0;}
+
+/* HOMOLOGACIÓN */
+.homo-wrap{background:var(--white);border-radius:16px;border:1.5px solid var(--gray-border);box-shadow:0 2px 16px rgba(0,51,102,0.05);overflow:hidden;}
+.homo-head{background:linear-gradient(135deg,var(--blue-dark),var(--blue));padding:20px 32px;}
+.homo-head h3{font-family:'Josefin Sans',sans-serif;font-size:14px;font-weight:700;color:var(--white);letter-spacing:1px;}
+.homo-head p{font-size:11.5px;color:rgba(255,255,255,0.5);margin-top:4px;}
+.homo-body{padding:28px 32px;}
+.homo-cols{display:grid;grid-template-columns:1fr 1fr;gap:24px;}
+.homo-col{border:1.5px solid var(--gray-border);border-radius:12px;padding:20px 22px;background:var(--gray-card);}
+.homo-col.full{border-color:rgba(0,51,102,0.25);background:var(--blue-light);}
+.homo-col-eyebrow{font-family:'Josefin Sans',sans-serif;font-size:9px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--red);margin-bottom:8px;}
+.homo-col-title{font-family:'Josefin Sans',sans-serif;font-size:15px;font-weight:700;color:var(--red-deep);margin-bottom:10px;}
+.homo-col-text{font-size:12.5px;color:var(--text-mid);line-height:1.7;}
+.homo-col-text strong{color:var(--text);font-weight:600;}
+.homo-col-text p+p{margin-top:10px;}
+.homo-sem{margin-top:24px;border-top:1px solid var(--gray-border);padding-top:22px;}
+.homo-sem-title{font-family:'Josefin Sans',sans-serif;font-size:15px;font-weight:700;color:var(--red-deep);margin-bottom:6px;}
+.homo-sem-sub{font-size:12.5px;color:var(--text-mid);line-height:1.7;margin-bottom:16px;}
+.homo-sem-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px;}
+.homo-sem-card{border:1.5px solid var(--gray-border);border-radius:12px;padding:16px 18px;background:var(--white);}
+.homo-sem-card-title{font-family:'Josefin Sans',sans-serif;font-size:13px;font-weight:700;color:var(--blue);margin-bottom:6px;}
+.homo-sem-card-text{font-size:12px;color:var(--text-mid);line-height:1.6;}
+.homo-nota{margin-top:20px;font-size:11.5px;color:var(--text-light);line-height:1.65;background:var(--gray-card);border-radius:8px;padding:12px 16px;border-left:3px solid var(--blue-light);}
+
+/* INCLUDES */
+.includes-wrap{background:var(--white);border-radius:16px;border:1.5px solid var(--gray-border);box-shadow:0 2px 16px rgba(0,51,102,0.05);overflow:hidden;}
+.includes-head{background:linear-gradient(135deg,var(--red-deep),var(--red));padding:20px 32px;}
+.includes-head h3{font-family:'Josefin Sans',sans-serif;font-size:14px;font-weight:700;color:var(--white);letter-spacing:1px;}
+.includes-body{padding:28px 32px;}
+.includes-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:32px;}
+.col-title{font-family:'Josefin Sans',sans-serif;font-size:9px;font-weight:700;letter-spacing:2.5px;text-transform:uppercase;color:var(--red);margin-bottom:14px;padding-bottom:8px;border-bottom:2px solid var(--red-light);}
+.inc-list{list-style:none;display:flex;flex-direction:column;gap:8px;}
+.inc-list li{font-size:12px;color:var(--text-mid);display:flex;align-items:flex-start;gap:8px;line-height:1.55;}
+.inc-list li::before{content:'✓';color:var(--green);font-weight:700;font-size:11px;flex-shrink:0;margin-top:1px;}
+.inc-list.no li::before{content:'✗';color:var(--red);}
+.inc-list li small{font-size:10px;color:var(--text-light);display:block;margin-top:2px;}
+
+/* GESTOR */
+.gestor-wrap{background:linear-gradient(135deg,var(--blue-dark),var(--blue-mid));border-radius:12px;padding:20px 24px;margin-top:20px;}
+.gestor-title{font-family:'Josefin Sans',sans-serif;font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:rgba(255,255,255,0.6);margin-bottom:14px;}
+.gestor-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;}
+.gestor-item{background:rgba(255,255,255,0.08);border:1px solid rgba(255,255,255,0.12);border-radius:8px;padding:10px 12px;font-size:11px;color:rgba(255,255,255,0.85);line-height:1.4;}
+.gestor-item::before{content:'→';color:#7dd44a;font-weight:700;margin-right:5px;}
+
+/* FORMAS DE PAGO */
+.payment-wrap{background:linear-gradient(135deg,var(--blue-dark) 0%,var(--blue) 60%,var(--blue-mid) 100%);border-radius:16px;padding:32px;position:relative;overflow:hidden;}
+.payment-wrap::before{content:'';position:absolute;inset:0;background-image:radial-gradient(rgba(255,255,255,0.05) 1px,transparent 1px);background-size:22px 22px;}
+.payment-inner{position:relative;z-index:2;}
+.pay-title{font-family:'Josefin Sans',sans-serif;font-size:16px;font-weight:700;color:var(--white);margin-bottom:6px;}
+.pay-subtitle{font-size:12px;color:rgba(255,255,255,0.45);margin-bottom:22px;}
+.pay-route{background:rgba(255,255,255,0.07);border:1px solid rgba(255,255,255,0.14);border-radius:14px;padding:20px 22px;margin-bottom:16px;}
+.pay-route-head{display:flex;align-items:center;gap:10px;margin-bottom:6px;}
+.pay-route-icon{font-size:20px;}
+.pay-route-title{font-family:'Josefin Sans',sans-serif;font-size:14px;font-weight:700;color:var(--white);}
+.pay-route-sub{font-size:11.5px;color:rgba(255,255,255,0.45);margin-bottom:16px;line-height:1.5;}
+.pay-entrada{display:flex;align-items:center;gap:14px;background:rgba(125,212,74,0.13);border:1px solid rgba(125,212,74,0.35);border-radius:10px;padding:14px 18px;margin-bottom:16px;}
+.pay-entrada-num{font-family:'Josefin Sans',sans-serif;font-size:26px;font-weight:700;color:#7dd44a;line-height:1;white-space:nowrap;}
+.pay-entrada-txt{font-size:11.5px;color:rgba(255,255,255,0.72);line-height:1.5;}
+.pay-entrada-txt strong{color:var(--white);font-weight:600;}
+.pay-cols{display:grid;grid-template-columns:1fr 1fr;gap:16px;}
+.pay-col{background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.12);border-radius:12px;padding:16px 18px;}
+.pay-col-title{font-family:'Josefin Sans',sans-serif;font-size:9px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:#7dd44a;margin-bottom:12px;}
+.pay-step{margin-bottom:11px;}
+.pay-step:last-child{margin-bottom:0;}
+.pay-step-num{font-size:9px;font-weight:700;color:rgba(255,255,255,0.4);text-transform:uppercase;letter-spacing:1px;margin-bottom:2px;}
+.pay-step-title{font-size:13px;font-weight:600;color:var(--white);margin-bottom:2px;}
+.pay-step-desc{font-size:11px;color:rgba(255,255,255,0.45);line-height:1.5;}
+.pay-note{font-size:11px;color:rgba(255,255,255,0.32);line-height:1.65;font-style:italic;border-top:1px solid rgba(255,255,255,0.1);padding-top:14px;margin-top:4px;}
+
+/* FINANCIACIÓN */
+.financing-wrap{background:var(--white);border-radius:16px;border:1.5px solid var(--gray-border);box-shadow:0 2px 16px rgba(0,51,102,0.06);overflow:hidden;}
+.financing-head{background:linear-gradient(135deg,var(--blue-dark),var(--blue));padding:22px 32px;display:flex;align-items:center;justify-content:space-between;gap:16px;}
+.financing-head-left{display:flex;align-items:center;gap:16px;}
+.fin-icon{font-size:28px;flex-shrink:0;}
+.fin-title{font-family:'Josefin Sans',sans-serif;font-size:16px;font-weight:700;color:var(--white);margin-bottom:3px;}
+.fin-sub{font-size:11px;color:rgba(255,255,255,0.5);line-height:1.4;}
+.fin-badge{background:rgba(125,212,74,0.2);border:1px solid rgba(125,212,74,0.4);color:#7dd44a;font-family:'Josefin Sans',sans-serif;font-size:11px;font-weight:700;letter-spacing:1px;padding:6px 14px;border-radius:20px;white-space:nowrap;}
+.financing-body{padding:28px 32px;}
+.fin-opcion-label,.fin-plazo-label{font-family:'Josefin Sans',sans-serif;font-size:9px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--text-light);margin-bottom:10px;}
+.fin-opcion-selector{margin-bottom:24px;}
+.fin-opcion-btns{display:flex;gap:10px;flex-wrap:wrap;}
+.fin-opcion-btn{background:var(--gray-card);border:1.5px solid var(--gray-border);border-radius:10px;padding:10px 16px;cursor:pointer;text-align:left;transition:all .2s;display:flex;flex-direction:column;gap:3px;font-family:'Fira Sans',sans-serif;}
+.fin-opcion-btn:hover{border-color:var(--blue-mid);background:var(--blue-light);}
+.fin-opcion-btn.active{border-color:var(--blue);background:var(--blue-light);}
+.fin-opcion-nombre{font-size:10px;font-weight:700;letter-spacing:1px;text-transform:uppercase;color:var(--text-light);}
+.fin-opcion-btn.active .fin-opcion-nombre{color:var(--blue);}
+.fin-opcion-precio{font-family:'Josefin Sans',sans-serif;font-size:16px;font-weight:700;color:var(--text);}
+.fin-opcion-btn.active .fin-opcion-precio{color:var(--blue);}
+.fin-entrada-fija{display:flex;align-items:center;gap:14px;background:var(--green-light);border:1.5px solid rgba(76,158,12,0.3);border-radius:12px;padding:14px 18px;margin-bottom:24px;}
+.fin-entrada-fija-num{font-family:'Josefin Sans',sans-serif;font-size:24px;font-weight:700;color:var(--green-dark);line-height:1;white-space:nowrap;}
+.fin-entrada-fija-txt{font-size:12px;color:var(--text-mid);line-height:1.55;}
+.fin-entrada-fija-txt strong{color:var(--text);font-weight:600;}
+.fin-plazo-wrap{margin-bottom:24px;}
+.fin-plazos{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;}
+.fin-plazo{background:var(--gray-card);border:1.5px solid var(--gray-border);border-radius:12px;padding:14px 12px;cursor:pointer;text-align:center;transition:all .2s;font-family:'Fira Sans',sans-serif;}
+.fin-plazo:hover{border-color:var(--blue-mid);transform:translateY(-2px);}
+.fin-plazo.active{border-color:var(--green);background:var(--green-light);box-shadow:0 4px 16px rgba(76,158,12,0.15);}
+.fin-plazo-meses{font-family:'Josefin Sans',sans-serif;font-size:15px;font-weight:700;color:var(--text);margin-bottom:6px;}
+.fin-plazo.active .fin-plazo-meses{color:var(--green-dark);}
+.fin-plazo-badge{display:inline-block;border-radius:20px;padding:2px 8px;font-size:9px;font-weight:700;letter-spacing:0.5px;margin-bottom:4px;}
+.fin-plazo-badge.sin-intereses{background:var(--green-light);color:var(--green-dark);border:1px solid rgba(76,158,12,0.3);}
+.fin-plazo-badge.con-intereses{background:var(--blue-light);color:var(--blue);border:1px solid rgba(0,51,102,0.2);}
+.fin-plazo-quien{font-size:9px;color:var(--text-light);line-height:1.3;}
+.fin-resultado{display:grid;grid-template-columns:auto 1fr;gap:24px;background:linear-gradient(135deg,var(--blue-dark),var(--blue));border-radius:14px;padding:24px 28px;margin-bottom:16px;align-items:center;}
+.fin-resultado-main{text-align:center;border-right:1px solid rgba(255,255,255,0.15);padding-right:24px;}
+.fin-cuota-label{font-size:10px;font-weight:600;letter-spacing:2px;text-transform:uppercase;color:rgba(255,255,255,0.5);margin-bottom:6px;}
+.fin-cuota-valor{font-family:'Josefin Sans',sans-serif;font-size:36px;font-weight:700;color:#7dd44a;line-height:1;margin-bottom:4px;}
+.fin-cuota-sub{font-size:11px;color:rgba(255,255,255,0.45);}
+.fin-resultado-detalle{display:flex;flex-direction:column;gap:10px;}
+.fin-det-row{display:flex;justify-content:space-between;align-items:center;gap:12px;}
+.fin-det-label{font-size:12px;color:rgba(255,255,255,0.55);}
+.fin-det-val{font-size:13px;font-weight:600;color:var(--white);}
+.fin-det-green{color:#7dd44a !important;}
+.fin-det-total{border-top:1px solid rgba(255,255,255,0.15);padding-top:10px;margin-top:2px;}
+.fin-det-total .fin-det-label{color:rgba(255,255,255,0.7);font-weight:600;}
+.fin-det-total .fin-det-val{font-family:'Josefin Sans',sans-serif;font-size:16px;color:var(--white);}
+.fin-nota{font-size:11px;color:var(--text-light);line-height:1.6;background:var(--gray-card);border-radius:8px;padding:12px 16px;border-left:3px solid var(--blue-light);}
+
+/* SIGUIENTES PASOS */
+.steps-wrap{background:linear-gradient(135deg,var(--blue-dark) 0%,var(--blue) 60%,var(--blue-mid) 100%);border-radius:16px;padding:34px 36px;position:relative;overflow:hidden;}
+.steps-wrap::before{content:'';position:absolute;inset:0;background-image:radial-gradient(rgba(255,255,255,0.05) 1px,transparent 1px);background-size:22px 22px;}
+.steps-inner{position:relative;z-index:2;}
+.steps-title{font-family:'Josefin Sans',sans-serif;font-size:18px;font-weight:700;color:var(--white);margin-bottom:6px;}
+.steps-sub{font-size:12px;color:rgba(255,255,255,0.5);margin-bottom:26px;}
+.steps-list{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;}
+.step-item{background:rgba(255,255,255,0.07);border:1px solid rgba(255,255,255,0.12);border-radius:12px;padding:18px;}
+.step-num{font-family:'Josefin Sans',sans-serif;font-size:20px;font-weight:700;color:#7dd44a;margin-bottom:8px;}
+.step-title{font-size:13px;font-weight:600;color:var(--white);margin-bottom:4px;}
+.step-desc{font-size:11px;color:rgba(255,255,255,0.5);line-height:1.5;}
+.cta-line{margin-top:26px;text-align:center;font-size:12.5px;color:rgba(255,255,255,0.75);}
+.pasos-cta-wrap{text-align:center;margin-top:16px;display:flex;gap:12px;justify-content:center;flex-wrap:wrap;}
+.pasos-cta{display:inline-flex;align-items:center;gap:8px;background:#7dd44a;color:var(--blue-dark);font-family:'Josefin Sans',sans-serif;font-size:13px;font-weight:700;padding:12px 26px;border-radius:10px;text-decoration:none;transition:transform .15s,box-shadow .15s;}
+.pasos-cta:hover{transform:translateY(-2px);box-shadow:0 8px 20px rgba(125,212,74,0.35);}
+.pasos-cta-alt{background:rgba(255,255,255,0.12);color:var(--white);border:1.5px solid rgba(255,255,255,0.35);}
+.pasos-cta-alt:hover{box-shadow:0 8px 20px rgba(255,255,255,0.15);}
+
+/* FOOTER */
+.footer{background:var(--blue-dark);padding:30px 48px;margin-top:56px;text-align:center;position:relative;}
+.footer::before{content:'';position:absolute;top:0;left:0;right:0;height:4px;background:linear-gradient(90deg,var(--red) 0%,var(--red) 22%,var(--white) 22%,var(--white) 78%,var(--red) 78%,var(--red) 100%);}
+.footer-logo{font-family:'Josefin Sans',sans-serif;font-size:15px;font-weight:700;color:var(--white);letter-spacing:1px;margin-bottom:6px;}
+.footer-tag{font-family:'Josefin Sans',sans-serif;font-size:10px;letter-spacing:4px;text-transform:uppercase;color:#ff9c7a;margin-bottom:14px;}
+.footer-meta{font-size:11px;color:rgba(255,255,255,0.4);line-height:1.7;}
+.footer-meta a{color:rgba(255,255,255,0.65);text-decoration:none;}
+
+@media(max-width:900px){
+  .qs-hero{grid-template-columns:1fr;}
+  .qs-media{min-height:320px;aspect-ratio:4/3;}
+  .qs-chapters{grid-template-columns:1fr;}
+  .homo-cols{grid-template-columns:1fr;}
+  .homo-sem-grid{grid-template-columns:1fr;}
+}
+@media(max-width:720px){
+  .header{padding:16px 20px;}.hero{padding:28px 20px 24px;}.hero-name{font-size:28px;}
+  .main{padding:28px 16px 20px;}
+  .includes-grid{grid-template-columns:1fr;}.opciones-grid{grid-template-columns:1fr;}
+  .intro-points{grid-template-columns:1fr;}.info-blocks{grid-template-columns:1fr;}
+  .pay-cols{grid-template-columns:1fr;}.gestor-grid{grid-template-columns:repeat(2,1fr);}
+  .steps-list{grid-template-columns:1fr;}
+  .qs-panel{padding:28px 22px;}.qs-title{font-size:22px;}
+  .fin-plazos{grid-template-columns:repeat(2,1fr);}
+  .fin-resultado{grid-template-columns:1fr;}
+  .fin-resultado-main{border-right:none;border-bottom:1px solid rgba(255,255,255,0.15);padding-right:0;padding-bottom:20px;}
+  .financing-head{flex-direction:column;align-items:flex-start;}
+  .fin-opcion-btns{flex-direction:column;}
+  .homo-body{padding:22px 20px;}
+  .footer{padding:26px 20px;}
+}
+
+/* ================= ANIMACIONES ================= */
+.js-anim .reveal{opacity:0;transform:translateY(20px);will-change:opacity,transform;
+  transition:opacity .75s cubic-bezier(.22,.61,.36,1),transform .75s cubic-bezier(.22,.61,.36,1);}
+.js-anim .reveal.in{opacity:1;transform:none;}
+.js-anim .reveal-zoom{opacity:0;transform:scale(.975);transition:opacity .8s ease,transform .8s cubic-bezier(.22,.61,.36,1);}
+.js-anim .reveal-zoom.in{opacity:1;transform:none;}
+
+@keyframes heroUp{from{opacity:0;transform:translateY(16px);}to{opacity:1;transform:none;}}
+@keyframes leafIn{from{opacity:0;transform:translateY(-50%) rotate(-30deg) scale(.85);}to{opacity:.09;transform:translateY(-50%) rotate(-12deg) scale(1);}}
+.js-anim .hero::after{animation:leafIn 1.4s cubic-bezier(.22,.61,.36,1) .15s both;}
+.js-anim .hero-tag{animation:heroUp .7s cubic-bezier(.22,.61,.36,1) .05s both;}
+.js-anim .hero-name{animation:heroUp .7s cubic-bezier(.22,.61,.36,1) .16s both;}
+.js-anim .hero-subtitle{animation:heroUp .7s cubic-bezier(.22,.61,.36,1) .26s both;}
+.js-anim .hero-pill{animation:heroUp .55s cubic-bezier(.22,.61,.36,1) both;}
+.js-anim .hero-promo{animation:heroUp .7s cubic-bezier(.22,.61,.36,1) .7s both;}
+
+.progress-bar{position:fixed;top:0;left:0;height:3px;width:100%;transform:scaleX(0);transform-origin:0 50%;
+  background:linear-gradient(90deg,var(--red),var(--red-warm));z-index:999;transition:transform .1s linear;}
+
+.qs-chapter-media img,.qs-media img,.qs-media-inset img{transition:transform .7s cubic-bezier(.22,.61,.36,1);}
+.qs-chapter:hover .qs-chapter-media img{transform:scale(1.06);}
+.qs-hero:hover .qs-media > img{transform:scale(1.03);}
+.qs-media-inset{transition:transform .45s cubic-bezier(.22,.61,.36,1),box-shadow .45s ease;}
+.qs-hero:hover .qs-media-inset{transform:translateY(-6px);box-shadow:-10px -10px 34px rgba(0,31,64,0.34);}
+
+.opcion-card{transition:transform .35s cubic-bezier(.22,.61,.36,1),box-shadow .35s ease,border-color .3s ease;}
+.opcion-header::after{transition:transform .6s cubic-bezier(.22,.61,.36,1),opacity .4s ease;}
+.opcion-card:hover .opcion-header::after{transform:rotate(-4deg) scale(1.14);opacity:.17;}
+
+@keyframes razonIn{from{opacity:0;transform:translateY(-6px);}to{opacity:1;transform:none;}}
+.js-anim details[open] .colegio-razon{animation:razonIn .38s ease both;}
+
+.pasos-cta{position:relative;overflow:hidden;}
+.pasos-cta::after{content:'';position:absolute;top:0;left:-120%;width:60%;height:100%;
+  background:linear-gradient(100deg,transparent,rgba(255,255,255,.55),transparent);transform:skewX(-18deg);}
+.pasos-cta:hover::after{animation:shine .85s ease;}
+@keyframes shine{to{left:140%;}}
+
+.fin-plazo,.fin-opcion-btn{transition:transform .25s cubic-bezier(.22,.61,.36,1),border-color .25s ease,background .25s ease,box-shadow .25s ease;}
+.fin-cuota-valor{transition:color .3s ease;}
+@keyframes cuotaPop{0%{opacity:.35;transform:translateY(6px);}100%{opacity:1;transform:none;}}
+.fin-cuota-valor.pop{animation:cuotaPop .42s cubic-bezier(.22,.61,.36,1);}
+
+.step-item{transition:transform .3s cubic-bezier(.22,.61,.36,1),background .3s ease;}
+.step-item:hover{transform:translateY(-4px);background:rgba(255,255,255,0.11);}
+.qs-pilar{transition:transform .3s ease;}
+.qs-pilar:hover{transform:translateX(4px);}
+
+@media(prefers-reduced-motion:reduce){
+  .js-anim .reveal,.js-anim .reveal-zoom{opacity:1!important;transform:none!important;transition:none!important;}
+  .js-anim .hero::after,.js-anim .hero-tag,.js-anim .hero-name,.js-anim .hero-subtitle,
+  .js-anim .hero-pill,.js-anim .hero-promo{animation:none!important;opacity:1;}
+  .js-anim .hero::after{opacity:.09;}
+  .progress-bar{display:none;}
+  *{transition-duration:.01ms!important;}
+}
+</style>
+</head>
+<body>
+
+<!-- ============ 1. HEADER ============ -->
+<div class="header">
+  <div class="logo-area"><img src="data:image/jpeg;base64,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" alt="My Language Quest"></div>
+  <div class="header-right">
+    <div class="header-label">Curso académico</div>
+    <div class="header-year">2027/28</div>
+  </div>
+</div>
+
+<!-- ============ 2. HERO ============ -->
+<div class="hero">
+  <div class="hero-dots"></div>
+  <div class="hero-inner">
+    <div class="hero-tag">Propuesta personalizada · Canadá</div>
+    <div class="hero-name">Nil</div>
+    <div class="hero-subtitle">Año escolar completo o semestre · Canadá · British Columbia</div>
+    <div class="hero-pills">
+      <div class="hero-pill">🎓 4.º ESO · Grade 10</div>
+      <div class="hero-pill">🏠 Familia anfitriona</div>
+      <div class="hero-pill">🗣 Cambridge First</div>
+      <div class="hero-pill">⛷ Esquí recreativo</div>
+      <div class="hero-pill">❄️ Le gusta la nieve</div>
+      <div class="hero-pill ac">📚 Buen rendimiento académico</div>
+    </div>
+  </div>
+</div>
+
+<div class="main">
+
+  <!-- ============ 3. CONTEXTO ============ -->
+  <div class="section-title"><h2>¿Qué es el programa de Canadá?</h2></div>
+  <p class="intro-text">
+    El programa de Canadá de My Language Quest permite cursar un trimestre, un semestre o un año escolar completo
+    dentro del <strong>sistema público canadiense</strong>, conviviendo con una familia anfitriona o, si se prefiere,
+    en régimen de residencia. A diferencia de otros destinos, en Canadá no se elige colegio de forma directa:
+    se selecciona un <strong>distrito escolar</strong> según el perfil, los intereses y la disponibilidad del estudiante,
+    y es el propio distrito quien asigna el centro más adecuado dentro de su red de colegios públicos.
+  </p>
+  <p class="intro-text">
+    En el caso de Nil, hemos partido de tres ideas: su <strong>buen rendimiento académico</strong>, su
+    <strong>nivel Cambridge First</strong> —que le permite integrarse desde el primer día tanto en clase como en la vida
+    social— y su <strong>interés por el esquí</strong>. La familia no busca un programa deportivo intensivo ni una academia
+    de alto rendimiento, sino que Nil pueda seguir esquiando de forma natural: a través de clubes, actividades del colegio
+    o del programa internacional, salidas organizadas o acceso sencillo a una estación. Todos los distritos que verás a
+    continuación responden a ese criterio.
+  </p>
+  <div class="intro-points">
+    <div class="intro-point"><div class="intro-point-icon">🏫</div><div><div class="intro-point-title">Sistema de distritos</div><div class="intro-point-desc">Cada distrito agrupa varios colegios públicos. MLQ propone el distrito según el perfil; el colegio final se asigna según disponibilidad.</div></div></div>
+    <div class="intro-point"><div class="intro-point-icon">📅</div><div><div class="intro-point-title">Año completo o semestre</div><div class="intro-point-desc">Todos los distritos propuestos admiten ambas fórmulas, salvo Whistler, que solo acepta internacionales de año completo.</div></div></div>
+    <div class="intro-point"><div class="intro-point-icon">🏠</div><div><div class="intro-point-title">Familia anfitriona</div><div class="intro-point-desc">Pensión completa, habitación individual o compartida, con un único estudiante hispanohablante por familia.</div></div></div>
+    <div class="intro-point"><div class="intro-point-icon">⛷</div><div><div class="intro-point-title">Esquí sin academia</div><div class="intro-point-desc">Buscamos distritos donde esquiar sea parte de la vida del curso, sin necesidad de contratar una academia deportiva de pago.</div></div></div>
+  </div>
+
+  <!-- ============ 4. QUIÉNES SOMOS ============ -->
+  <div class="section-title"><h2>Quiénes somos</h2></div>
+
+  <div class="qs-hero">
+    <div class="qs-media">
+      <img src="https://aescobarnic.github.io/Propuestas/img/mlq-grupo-aeropuerto.jpg" style="object-position:center 30%;" alt="Grupo de estudiantes de My Language Quest en el aeropuerto con su coordinadora" loading="lazy">
+      <div class="qs-media-inset"><img src="https://aescobarnic.github.io/Propuestas/img/mlq-despedida-familia.jpg" style="object-position:center 25%;" alt="Estudiante despidiéndose de su familia antes de salir" loading="lazy"></div>
+    </div>
+    <div class="qs-panel">
+      <div class="qs-panel-inner">
+        <div class="qs-eyebrow">My Language Quest</div>
+        <div class="qs-title">Nadie hace este viaje solo</div>
+        <p class="qs-lead">
+          Acompañamos a familias españolas en la experiencia de estudiar un año escolar en el extranjero.
+          No somos una plataforma de reservas: <strong>hay personas con nombre y apellido detrás de cada
+          estudiante</strong>, desde la primera reunión hasta la convalidación de las notas a la vuelta.
+        </p>
+        <div class="qs-pilares">
+          <div class="qs-pilar">
+            <div class="qs-pilar-icon">👩‍💼</div>
+            <div><div class="qs-pilar-title">Una asesora asignada en España</div><div class="qs-pilar-desc">La misma persona de principio a fin: nada de tickets ni centralitas.</div></div>
+          </div>
+          <div class="qs-pilar">
+            <div class="qs-pilar-icon">🧭</div>
+            <div><div class="qs-pilar-title">Un gestor estudiantil en destino</div><div class="qs-pilar-desc">Tutorías, notas oficiales cada trimestre e informe mensual a los padres.</div></div>
+          </div>
+          <div class="qs-pilar">
+            <div class="qs-pilar-icon">🏠</div>
+            <div><div class="qs-pilar-title">Un solo hispanohablante por familia</div><div class="qs-pilar-desc">Garantizado, para que la inmersión sea real desde el primer día.</div></div>
+          </div>
+          <div class="qs-pilar">
+            <div class="qs-pilar-icon">📞</div>
+            <div><div class="qs-pilar-title">Atención 24 h, aquí y allí</div><div class="qs-pilar-desc">Emergencias cubiertas en España y en destino, todo el curso.</div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="qs-chapters-head">
+    <div class="qs-chapters-title">Cómo se vive el curso</div>
+    <div class="qs-chapters-sub">De la maleta en casa a la vida de instituto al otro lado del mundo</div>
+  </div>
+  <div class="qs-chapters">
+    <div class="qs-chapter">
+      <div class="qs-chapter-media">
+        <img src="https://aescobarnic.github.io/Propuestas/img/mlq-equipaje-salida.jpg" style="object-position:center 12%;" alt="Estudiante con su equipaje el día de la salida" loading="lazy">
+        <div class="qs-chapter-step">Antes de salir</div>
+      </div>
+      <div class="qs-chapter-body">
+        <div class="qs-chapter-title">Todo resuelto antes de la maleta</div>
+        <div class="qs-chapter-text">Entrevista, elección de distrito, matrícula, familia anfitriona, visado y vuelos. La familia solo se ocupa de preparar el equipaje.</div>
+      </div>
+    </div>
+    <div class="qs-chapter">
+      <div class="qs-chapter-media">
+        <img src="https://aescobarnic.github.io/Propuestas/img/mlq-salida-pista.jpg" style="object-position:center 8%;" alt="Estudiantes de My Language Quest el día de la salida" loading="lazy">
+        <div class="qs-chapter-step">El día de la salida</div>
+      </div>
+      <div class="qs-chapter-body">
+        <div class="qs-chapter-title">Salida acompañada</div>
+        <div class="qs-chapter-text">Orientación previa en Madrid o online, coordinación en el aeropuerto de salida y recibimiento en destino el día de la llegada.</div>
+      </div>
+    </div>
+    <div class="qs-chapter">
+      <div class="qs-chapter-media">
+        <img src="https://aescobarnic.github.io/Propuestas/img/mlq-vida-social.jpg" style="object-position:center 22%;" alt="Estudiante con sus nuevas amigas en un partido del instituto" loading="lazy">
+        <div class="qs-chapter-step">La vida allí</div>
+      </div>
+      <div class="qs-chapter-body">
+        <div class="qs-chapter-title">Un curso, no unas vacaciones</div>
+        <div class="qs-chapter-text">Instituto, extraescolares, partidos, amigos nuevos. Con supervisión local, acompañamiento psicológico y cambio de familia si hiciera falta.</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ============ 5. OPCIONES ============ -->
+  <div class="section-title"><h2>Distritos seleccionados para Nil</h2></div>
+  <div class="alert-box">
+    <div class="alert-icon">⛷</div>
+    <div class="alert-text"><strong>Selección orientada al esquí recreativo:</strong> los seis distritos permiten esquiar durante la estancia sin matricularse en una academia deportiva de pago, a través del programa internacional, del propio colegio o de estaciones muy cercanas. Los precios de tarjeta corresponden al <strong>año escolar completo</strong>; bajo cada uno indicamos también el precio de semestre.</div>
+  </div>
+  <div class="opciones-grid">
+
+    <div class="opcion-card">
+      <div class="opcion-header">
+        <div class="opcion-num">Opción 01</div>
+        <div class="opcion-distrito">Central Okanagan SD23</div>
+        <div class="opcion-loc">📍 Kelowna / West Kelowna · British Columbia</div>
+        <div class="precio-chip"><span class="val">25.200 €</span><span class="desc">/ año · vuelos incl.*</span></div>
+        <span class="precio-sem">Semestre: <strong>13.600 €</strong> · Esquí: excelente</span>
+      </div>
+      <div class="opcion-body"><div class="colegios">
+        <div class="colegio">
+          <div class="colegio-top"><div class="colegio-nombre">Kelowna Secondary School</div><div class="colegio-meta"><span class="tag pub">Público</span><span class="tag info">~1.900 alumnos</span><span class="tag info">Kelowna centro</span></div></div>
+          <details><summary>Por qué encaja con Nil</summary><div class="colegio-razon">Uno de los institutos más grandes y completos del distrito, muy cerca del centro de Kelowna. Amplísima oferta de asignaturas: ciencias, matemáticas, informática, electrónica y robótica, business, fotografía, diseño, música, teatro y Outdoor Education. En deportes: baloncesto, cross-country, fútbol, rugby, golf, atletismo, voleibol y fitness. Con su buen perfil académico y su inglés First, Nil puede aprovechar muy bien un centro grande y variado; además, vivir en Kelowna le da autonomía y vida social, y el <strong>Ski Shuttle del distrito a Big White</strong> le resuelve el acceso a la nieve.</div></details>
+        </div>
+        <div class="colegio">
+          <div class="colegio-top"><div class="colegio-nombre">Mount Boucherie Secondary</div><div class="colegio-meta"><span class="tag pub">Público</span><span class="tag info">Grades 9–12</span><span class="tag info">~1.500 alumnos</span><span class="tag info">West Kelowna</span></div></div>
+          <details><summary>Por qué encaja con Nil</summary><div class="colegio-razon">Oferta especialmente interesante para perfiles activos: Outdoor Education, Mountain Biking, Human Kinetics, fútbol, rugby, tenis, voleibol, atletismo y varias academias deportivas. En lo académico, ciencias, informática, programación, electrónica y robótica, psicología, business, fotografía, vídeo, diseño y asignaturas Advanced Placement. Muy buena alternativa a Kelowna Secondary si queremos combinar nivel académico con un colegio claramente orientado a deporte y outdoor.</div></details>
+        </div>
+        <div class="colegio">
+          <div class="colegio-top"><div class="colegio-nombre">Okanagan Mission Secondary</div><div class="colegio-meta"><span class="tag pub">Público</span><span class="tag info">Grade 10</span><span class="tag info">Kelowna</span></div></div>
+          <details><summary>Por qué encaja con Nil</summary><div class="colegio-razon">Equilibrio entre estudios, deporte y naturaleza. Ofrece ciencias, matemáticas, química, física, Marine Biology, Outdoor Education, Fitness &amp; Conditioning y numerosos cursos académicos y deportivos. Alternativa muy completa para un estudiante con buen rendimiento que quiera una experiencia activa y acceso sencillo a las actividades de montaña del distrito.</div></details>
+        </div>
+      </div></div>
+      <div class="match-bar"><span class="match-tag">Ski Shuttle a Big White</span><span class="match-tag">Ciudad con vida social</span><span class="match-tag">Oferta académica amplia</span><span class="match-tag">Encaje 9,5/10</span></div>
+    </div>
+
+    <div class="opcion-card">
+      <div class="opcion-header">
+        <div class="opcion-num">Opción 02</div>
+        <div class="opcion-distrito">Vernon SD22</div>
+        <div class="opcion-loc">📍 Vernon · Valle de Okanagan · British Columbia</div>
+        <div class="precio-chip"><span class="val">26.000 €</span><span class="desc">/ año · vuelos incl.*</span></div>
+        <span class="precio-sem">Semestre: <strong>14.000 €</strong> · Esquí: excelente</span>
+      </div>
+      <div class="opcion-body"><div class="colegios">
+        <div class="colegio">
+          <div class="colegio-top"><div class="colegio-nombre">Vernon Secondary School</div><div class="colegio-meta"><span class="tag pub">Público</span><span class="tag info">Grades 8–12</span><span class="tag info">~1.100 alumnos</span></div></div>
+          <details><summary>Por qué encaja con Nil</summary><div class="colegio-razon">El instituto más grande del distrito y también uno de los más completos: buen nivel académico, instalaciones modernas, deportes, Fine Arts y una gama muy amplia de asignaturas y actividades. El propio distrito lo define como su colegio más completo y destaca su tradición en <em>academics, athletics y fine arts</em>. Sería nuestra primera opción dentro de Vernon: población escolar grande —muy positivo para la integración social de Nil— y toda la experiencia de montaña y nieve de la zona, con <strong>SilverStar a unos 30 minutos</strong>.</div></details>
+        </div>
+        <div class="colegio">
+          <div class="colegio-top"><div class="colegio-nombre">Kalamalka Secondary School</div><div class="colegio-meta"><span class="tag pub">Público</span><span class="tag info">Grades 8–12</span><span class="tag info">~650 alumnos</span><span class="tag info">Coldstream</span></div></div>
+          <details><summary>Por qué encaja con Nil</summary><div class="colegio-razon">Centro más pequeño y manejable, con buen ambiente académico, actividades deportivas y extraescolares y asignaturas como Outdoor Education, música, teatro y woodworking. La elegiríamos si la familia prefiere un instituto más cercano, con ambiente más comunitario que Vernon Secondary pero actividades suficientes.</div></details>
+        </div>
+        <div class="colegio">
+          <div class="colegio-top"><div class="colegio-nombre">Clarence Fulton Secondary</div><div class="colegio-meta"><span class="tag pub">Público</span><span class="tag info">~775 alumnos</span><span class="tag info">Vernon</span></div></div>
+          <details><summary>Por qué encaja con Nil</summary><div class="colegio-razon">Instituto de tamaño intermedio con fuerte oferta deportiva, asignaturas académicas, artes y formación práctica. Es además uno de los colegios de Vernon con mayor experiencia recibiendo alumnado internacional. Muy buena tercera alternativa: ni tan grande como Vernon Secondary ni tan pequeño como otras opciones.</div></details>
+        </div>
+      </div></div>
+      <div class="match-bar"><span class="match-tag">SilverStar a 30 min</span><span class="match-tag">Comunidad muy deportiva</span><span class="match-tag">Academias de esquí opcionales</span><span class="match-tag">Encaje 9/10</span></div>
+    </div>
+
+    <div class="opcion-card">
+      <div class="opcion-header">
+        <div class="opcion-num">Opción 03</div>
+        <div class="opcion-distrito">Rocky Mountain International</div>
+        <div class="opcion-loc">📍 Cranbrook / Kimberley · British Columbia</div>
+        <div class="precio-chip"><span class="val">26.600 €</span><span class="desc">/ año · vuelos incl.*</span></div>
+        <span class="precio-sem">Semestre: <strong>14.700 €</strong> · Esquí: excelente</span>
+      </div>
+      <div class="opcion-body"><div class="colegios">
+        <div class="colegio">
+          <div class="colegio-top"><div class="colegio-nombre">Mount Baker Secondary School</div><div class="colegio-meta"><span class="tag pub">Público</span><span class="tag info">Grades 10–12</span><span class="tag info">~1.000 alumnos</span><span class="tag info">Cranbrook</span></div></div>
+          <details><summary>Por qué encaja con Nil</summary><div class="colegio-razon">Nuestra elección dentro de Rocky Mountain. Sistema semestral y una oferta muy alineada con Nil: Outdoor Education, Computer Programming, Anatomy &amp; Physiology, Business y Entrepreneurship; en invierno <strong>skiing, snowboarding</strong>, curling, basketball y badminton, y en otoño y primavera mountain biking, fútbol, rugby, golf y atletismo. Aquí el esquí no es una excursión ocasional: forma parte del entorno y de la oferta deportiva escolar. Cranbrook (unos 21.000 habitantes, centro regional de unas 50.000 personas) tiene aeropuerto, centros comerciales, cine, gimnasios, piscina cubierta e instalaciones deportivas, así que Nil mantiene vida social y servicios. <strong>Kimberley Alpine Resort está a unos 32 km del instituto.</strong></div></details>
+        </div>
+        <div class="colegio">
+          <div class="colegio-top"><div class="colegio-nombre">Selkirk Secondary School</div><div class="colegio-meta"><span class="tag pub">Público</span><span class="tag info">~540 alumnos</span><span class="tag info">Kimberley</span></div></div>
+          <details><summary>Por qué encaja con Nil</summary><div class="colegio-razon">Kimberley tiene unos 8.500 habitantes y su estación de esquí está a apenas <strong>4 km del colegio</strong>: el acceso a la nieve es extraordinario. La contrapartida frente a Cranbrook es que tanto la comunidad como el colegio son considerablemente más pequeños. La mantenemos como alternativa si la familia quiere maximizar todavía más la experiencia de montaña.</div></details>
+        </div>
+      </div></div>
+      <div class="match-bar"><span class="match-tag">Esquí en la oferta escolar</span><span class="match-tag">Montañas Rocosas</span><span class="match-tag">Cranbrook: servicios completos</span><span class="match-tag">Encaje 9/10</span></div>
+    </div>
+
+    <div class="opcion-card">
+      <div class="opcion-header">
+        <div class="opcion-num">Opción 04</div>
+        <div class="opcion-distrito">Kamloops-Thompson SD73</div>
+        <div class="opcion-loc">📍 Kamloops · British Columbia</div>
+        <div class="precio-chip"><span class="val">25.400 €</span><span class="desc">/ año · vuelos incl.*</span></div>
+        <span class="precio-sem">Semestre: <strong>13.700 €</strong> · Esquí: muy bueno</span>
+      </div>
+      <div class="opcion-body"><div class="colegios">
+        <div class="colegio">
+          <div class="colegio-top"><div class="colegio-nombre">South Kamloops Secondary</div><div class="colegio-meta"><span class="tag pub">Público</span><span class="tag info">~1.150 alumnos</span><span class="tag info">~20 internacionales</span></div></div>
+          <details><summary>Por qué encaja con Nil</summary><div class="colegio-razon">Probablemente nuestra primera elección dentro de Kamloops: tamaño del centro, baja proporción de internacionales y enorme oferta académica y social. Asignaturas de ciencias, robótica, environmental sciences, fotografía, música, liderazgo, automoción y artes; en deportes fútbol, voleibol, football, baloncesto, rugby, tenis, ultimate frisbee y golf, además de más de 20 clubes escolares. El programa internacional organiza <strong>esquí y snowboard en Sun Peaks</strong> (en 2025/26, salidas en diciembre y marzo, además de snowshoeing, ice fishing y tubing).</div></details>
+        </div>
+        <div class="colegio">
+          <div class="colegio-top"><div class="colegio-nombre">Sa-Hali Secondary School</div><div class="colegio-meta"><span class="tag pub">Público</span><span class="tag info">~900 alumnos</span><span class="tag info">~30 internacionales</span></div></div>
+          <details><summary>Por qué encaja con Nil</summary><div class="colegio-razon">Posiblemente el colegio más alineado con su perfil outdoor dentro de Kamloops: programa de Outdoor Education con escalada, kayak, camping y hiking, además de baloncesto, voleibol, fútbol, rugby, golf, bádminton, cross-country, wrestling y natación. Está cerca de Thompson Rivers University y de instalaciones deportivas, tiendas, cine y restaurantes.</div></details>
+        </div>
+        <div class="colegio">
+          <div class="colegio-top"><div class="colegio-nombre">Valleyview Secondary School</div><div class="colegio-meta"><span class="tag pub">Público</span><span class="tag info">~1.200 alumnos</span><span class="tag info">~40 internacionales</span></div></div>
+          <details><summary>Por qué encaja con Nil</summary><div class="colegio-razon">Centro grande y moderno, con inversión reciente en instalaciones para tecnología, fotografía digital y culinary arts. Buena alternativa si priorizamos tamaño, diversidad de asignaturas y ambiente social.</div></details>
+        </div>
+      </div></div>
+      <div class="match-bar"><span class="match-tag">Esquí en Sun Peaks</span><span class="match-tag">Ciudad de ~98.000 hab.</span><span class="match-tag">Ambiente universitario</span><span class="match-tag">Encaje 8,5/10</span></div>
+    </div>
+
+    <div class="opcion-card">
+      <div class="opcion-header">
+        <div class="opcion-num">Opción 05</div>
+        <div class="opcion-distrito">Comox Valley SD71</div>
+        <div class="opcion-loc">📍 Courtenay / Comox · Isla de Vancouver</div>
+        <div class="precio-chip"><span class="val">25.300 €</span><span class="desc">/ año · vuelos incl.*</span></div>
+        <span class="precio-sem">Semestre: <strong>13.700 €</strong> · Esquí: muy bueno</span>
+      </div>
+      <div class="opcion-body"><div class="colegios">
+        <div class="colegio">
+          <div class="colegio-top"><div class="colegio-nombre">Georges P. Vanier Secondary</div><div class="colegio-meta"><span class="tag pub">Público</span><span class="tag info">~75 internacionales</span><span class="tag info">Courtenay</span></div></div>
+          <details><summary>Por qué encaja con Nil</summary><div class="colegio-razon">Nuestra primera opción del distrito. Comunidad internacional consolidada —unos 75 estudiantes de 12 países— que participa en equipos deportivos, clubes y actividades escolares. El programa organiza excursiones a Victoria, Tofino y <strong>esquí en Mount Washington</strong>, y el propio colegio ha tenido Ski/Snowboard Team. Hay comunidad escolar grande, mucha actividad y el esquí está integrado de forma muy natural en la vida estudiantil.</div></details>
+        </div>
+        <div class="colegio">
+          <div class="colegio-top"><div class="colegio-nombre">Mark R. Isfeld Secondary</div><div class="colegio-meta"><span class="tag pub">Público</span><span class="tag info">30+ equipos deportivos</span><span class="tag info">Courtenay</span></div></div>
+          <details><summary>Por qué encaja con Nil</summary><div class="colegio-razon">Sólida trayectoria académica, Fine Arts, Applied Skills y más de 30 equipos deportivos competitivos. Es además el instituto que alberga el programa de French Immersion de secundaria del distrito. Muy buen equilibrio entre estudios y deporte para un alumno de buen nivel académico.</div></details>
+        </div>
+        <div class="colegio">
+          <div class="colegio-top"><div class="colegio-nombre">Highland Secondary School</div><div class="colegio-meta"><span class="tag pub">Público</span><span class="tag info">Grades 8–12</span><span class="tag info">~650 alumnos</span><span class="tag info">Comox</span></div></div>
+          <details><summary>Por qué encaja con Nil</summary><div class="colegio-razon">Colegio más pequeño, con numerosos equipos, clubes y actividades extraescolares y unos 64 internacionales de 14 países. También participa en las actividades de hiking y esquí en Mount Washington del programa internacional. Excelente opción si la familia prefiere un centro más cercano y manejable.</div></details>
+        </div>
+      </div></div>
+      <div class="match-bar"><span class="match-tag">Mount Washington</span><span class="match-tag">Mar y montaña</span><span class="match-tag">Adaptación fácil</span><span class="match-tag">Encaje 8,5/10</span></div>
+    </div>
+
+    <div class="opcion-card">
+      <div class="opcion-header">
+        <div class="opcion-num">Opción 06</div>
+        <div class="opcion-distrito">Sea to Sky SD48</div>
+        <div class="opcion-loc">📍 Squamish · Pemberton · Whistler · British Columbia</div>
+        <div class="precio-chip"><span class="val">27.000 €</span><span class="desc">/ año · Squamish y Pemberton</span></div>
+        <span class="precio-sem">Semestre: <strong>14.900 €</strong> · Whistler: <strong>28.500 €</strong> solo año completo</span>
+      </div>
+      <div class="opcion-body"><div class="colegios">
+        <div class="colegio">
+          <div class="colegio-top"><div class="colegio-nombre">Howe Sound Secondary School</div><div class="colegio-meta"><span class="tag pub">Público</span><span class="tag info">Squamish</span><span class="tag info">~25.000 hab.</span></div></div>
+          <details><summary>Por qué encaja con Nil</summary><div class="colegio-razon">Squamish es una ciudad pequeña pero muy activa, situada entre Vancouver y Whistler. Sería nuestra recomendación dentro de Sea to Sky si queremos disfrutar del corredor de montaña sin vivir directamente en un destino tan turístico como Whistler: buena combinación de comunidad, deporte, montaña y acceso a actividades de esquí y snowboard sin que todo el programa gire exclusivamente alrededor de ellas.</div></details>
+        </div>
+        <div class="colegio">
+          <div class="colegio-top"><div class="colegio-nombre">Pemberton Secondary School</div><div class="colegio-meta"><span class="tag pub">Público</span><span class="tag info">Pemberton</span><span class="tag info">~3.000 hab.</span></div></div>
+          <details><summary>Por qué encaja con Nil</summary><div class="colegio-razon">Localidad considerablemente más pequeña, con acceso excepcional a la montaña. Ofrece incluso la <strong>Ski, Board &amp; Bike Academy</strong>, aunque el distrito confirma que esta academia se tarifa aparte y supone un coste adicional. Para Nil no la consideramos imprescindible, ya que busca esquí recreativo y no intensivo.</div></details>
+        </div>
+        <div class="colegio">
+          <div class="colegio-top"><div class="colegio-nombre">Whistler Secondary School</div><div class="colegio-meta"><span class="tag pub">Público</span><span class="tag info">Solo año completo</span><span class="tag info">Grades 10–12</span></div></div>
+          <details><summary>Por qué encaja con Nil</summary><div class="colegio-razon">La opción especial si Nil hace el año completo y el esquí pasa a ser prioridad absoluta: Whistler es uno de los destinos de montaña más conocidos de Norteamérica y la vida de la localidad gira en gran medida alrededor del esquí, el snowboard y el outdoor. Para 2027/28, Whistler Secondary solo admite internacionales de Grades 10, 11 y 12 <strong>de año completo</strong>: Nil cumple el requisito académico de Grade 10, pero no sería posible si finalmente opta por semestre.</div></details>
+        </div>
+      </div></div>
+      <div class="match-bar"><span class="match-tag">Corredor Sea to Sky</span><span class="match-tag">Máximo nivel de esquí</span><span class="match-tag">Squamish 8,5/10</span><span class="match-tag">Whistler 9/10 (año)</span></div>
+    </div>
+
+  </div>
+
+  <!-- ============ 6. AÑO COMPLETO O SEMESTRE ============ -->
+  <div class="section-title"><h2>Año completo o semestre en 4.º ESO</h2></div>
+  <div class="homo-wrap">
+    <div class="homo-head">
+      <h3>🎓 Qué implica cada opción a efectos académicos</h3>
+      <p>Este punto es especialmente importante en el caso de Nil, porque la decisión condiciona el reconocimiento oficial de los estudios en España.</p>
+    </div>
+    <div class="homo-body">
+      <div class="homo-cols">
+        <div class="homo-col full">
+          <div class="homo-col-eyebrow">Opción A</div>
+          <div class="homo-col-title">Año escolar completo</div>
+          <div class="homo-col-text">
+            <p>Si Nil cursa 4.º de ESO completo en Canadá, al finalizar corresponde solicitar en España la <strong>homologación al Título de Graduado en Educación Secundaria Obligatoria</strong>. Homologar significa que los estudios extranjeros realizados se reconocen como equivalentes al título español correspondiente.</p>
+            <p>El Ministerio establece que, para estudiantes procedentes previamente del sistema educativo español, deben haberse superado tantos cursos correlativos y completos como les quedasen pendientes para terminar la ESO. Nil viajaría tras haber superado 1.º, 2.º y 3.º de ESO y cursaría completamente el equivalente a 4.º, por lo que el objetivo sería la homologación al Título de Graduado en ESO. Para este procedimiento se solicitan los <strong>certificados académicos de los cuatro últimos cursos</strong>.</p>
+            <p>El recorrido académico es mucho más claro: Nil completa su curso en Canadá y después se gestiona el reconocimiento oficial de esos estudios en España para poder continuar con Bachillerato.</p>
+          </div>
+        </div>
+        <div class="homo-col">
+          <div class="homo-col-eyebrow">Opción B</div>
+          <div class="homo-col-title">Solo un semestre</div>
+          <div class="homo-col-text">
+            <p>Aquí existe una diferencia muy importante: el Ministerio establece que <strong>no se homologan asignaturas sueltas ni periodos formativos inferiores a un curso escolar completo</strong>. Por tanto, un semestre en Canadá no puede homologarse como «medio 4.º de ESO».</p>
+            <p>En este caso, antes de viajar es necesario <strong>coordinar la estancia con el colegio español de Nil</strong> y acordar cómo realizará la incorporación, la evaluación y la finalización de 4.º de ESO.</p>
+            <p>La incorporación a los cursos de Educación Secundaria Obligatoria se realiza directamente a través del centro escolar y, hasta 4.º de ESO, no requiere un procedimiento ministerial de convalidación.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="homo-sem">
+        <div class="homo-sem-title">Si finalmente es un semestre: ¿primero o segundo?</div>
+        <div class="homo-sem-sub">Ambas fórmulas son viables, pero responden a prioridades distintas.</div>
+        <div class="homo-sem-grid">
+          <div class="homo-sem-card">
+            <div class="homo-sem-card-title">Septiembre – enero</div>
+            <div class="homo-sem-card-text">Académicamente suele ser más sencillo para organizar el regreso a España y completar la segunda parte del curso en su colegio.</div>
+          </div>
+          <div class="homo-sem-card">
+            <div class="homo-sem-card-title">Finales de enero – junio</div>
+            <div class="homo-sem-card-text">Para Nil tiene un atractivo evidente: coincide de lleno con la temporada de esquí canadiense, especialmente febrero y marzo.</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="homo-nota">ℹ️ Antes de decidir cualquiera de las dos fórmulas, nuestra recomendación es hablar con su centro escolar en España para confirmar cómo plantearía la evaluación y la finalización de 4.º de ESO.</div>
+    </div>
+  </div>
+
+  <!-- ============ 7. VISADO Y VUELOS ============ -->
+  <div class="section-title"><h2>Visado y vuelos</h2></div>
+  <div class="info-blocks">
+    <div class="info-block">
+      <div class="info-block-icon">🛂</div>
+      <div class="info-block-title">Visado — Study Permit</div>
+      <div class="info-block-text">La gestión y la tasa del <strong>Study Permit</strong> están incluidas en el programa.
+        <ul><li>Tramitación completa gestionada por MLQ</li><li>Tasa del visado incluida en el precio</li><li>Suplemento de <strong>550 €</strong> para programas en la provincia de Quebec</li></ul>
+      </div>
+    </div>
+    <div class="info-block">
+      <div class="info-block-icon">✈</div>
+      <div class="info-block-title">Vuelos</div>
+      <div class="info-block-text">Los vuelos de ida y vuelta están incluidos, con un <strong>coste máximo reconocido de 1.000 €</strong>.
+        <ul><li>MLQ gestiona la búsqueda y reserva de los vuelos</li><li>Ajustados a las fechas de inicio y fin escolar</li><li>El exceso sobre 1.000 € corre a cargo de la familia</li></ul>
+      </div>
+    </div>
+  </div>
+
+  <!-- ============ 8. EL PROGRAMA INCLUYE ============ -->
+  <div class="section-title"><h2>El programa incluye</h2></div>
+  <div class="includes-wrap">
+    <div class="includes-head"><h3>📋 Todo lo que cubre My Language Quest</h3></div>
+    <div class="includes-body">
+      <div class="includes-grid">
+        <div>
+          <div class="col-title">Antes del viaje</div>
+          <ul class="inc-list">
+            <li>Reunión inicial con padres o tutores</li>
+            <li>Prueba de inglés y entrevista personal online</li>
+            <li>Propuesta personalizada de distrito y colegios</li>
+            <li>Inscripción y matriculación en el centro</li>
+            <li>Familia anfitriona en pensión completa, habitación individual o compartida</li>
+            <li>Un único estudiante hispanohablante por familia</li>
+            <li>Seguro médico y de accidentes</li>
+            <li>Libros (algunas asignaturas)</li>
+            <li>Gestión del visado Study Permit<small>Tasa incluida. Quebec: suplemento de 550 €</small></li>
+            <li>Vuelos de ida y vuelta<small>Coste máximo 1.000 €. Exceso a cargo de la familia</small></li>
+            <li>Orientación pre-viaje en Madrid o online</li>
+            <li>Welcome pack sorpresa de My Language Quest</li>
+          </ul>
+        </div>
+        <div>
+          <div class="col-title">Durante el viaje</div>
+          <ul class="inc-list">
+            <li>Recibimiento en aeropuerto y traslados</li>
+            <li>Asesoramiento en elección de asignaturas, garantizando convalidación</li>
+            <li>Clases de inglés Cambridge y libro incluido</li>
+            <li>Taller de 3 sesiones con docente del MIT</li>
+            <li>Supervisión local: visitas, tutorías y emergencias 24 h</li>
+            <li>Acompañamiento psicológico</li>
+            <li>Atención 24 h en España para emergencias</li>
+            <li>Apoyo para matriculación en extraescolares</li>
+            <li>Gestión de cambio de familia si fuera necesario</li>
+          </ul>
+          <div class="col-title" style="margin-top:24px;">Después del viaje</div>
+          <ul class="inc-list">
+            <li>Convalidación ante el Ministerio de Educación</li>
+            <li>Validación de notas y apostilla de la Haya</li>
+            <li>Dossier final detallando la experiencia</li>
+          </ul>
+        </div>
+        <div>
+          <div class="col-title">No incluido</div>
+          <ul class="inc-list no">
+            <li>Exceso de vuelos sobre 1.000 €</li>
+            <li>Extracurriculares de pago: equipos con licencia, bandas, teatro y academias deportivas (p. ej. la Ski, Board &amp; Bike Academy de Pemberton)</li>
+            <li>Forfait y alquiler de material de esquí</li>
+            <li>Excursiones y viajes escolares</li>
+            <li>Material escolar y uniforme deportivo</li>
+            <li>Transporte local mensual</li>
+            <li>Ocio personal</li>
+            <li>Todo aquello que no esté especificado expresamente en el apartado &laquo;El programa incluye&raquo;</li>
+          </ul>
+        </div>
+      </div>
+      <div class="gestor-wrap">
+        <div class="gestor-title">Gestor estudiantil · se encarga de</div>
+        <div class="gestor-grid">
+          <div class="gestor-item">Seguimiento personalizado del desempeño</div>
+          <div class="gestor-item">Información a padres mensualmente</div>
+          <div class="gestor-item">Notas oficiales cada trimestre</div>
+          <div class="gestor-item">Asesoría en cambio de asignaturas</div>
+          <div class="gestor-item">Todas las tutorías necesarias</div>
+          <div class="gestor-item">Reuniones con padres y/o estudiante</div>
+          <div class="gestor-item">Apoyo en actividades extraescolares</div>
+          <div class="gestor-item">Resolución de situaciones con familia o centro</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ============ 9. FORMAS DE PAGO ============ -->
+  <div class="section-title"><h2>Formas de pago</h2></div>
+  <div class="payment-wrap">
+    <div class="payment-inner">
+      <div class="pay-title">💳 Condiciones económicas</div>
+      <div class="pay-subtitle">Dos vías: pago directo o financiación. El importe de la reserva cambia según cuál elijas.</div>
+
+      <div class="pay-route">
+        <div class="pay-route-head"><span class="pay-route-icon">🏦</span><span class="pay-route-title">Opción A · Pago sin financiación</span></div>
+        <div class="pay-route-sub">La cantidad íntegra debe abonarse antes del 10 de abril de 2027.</div>
+        <div class="pay-entrada">
+          <div class="pay-entrada-num">3.500 €</div>
+          <div class="pay-entrada-txt"><strong>Primer pago a la firma del contrato.</strong> Reserva la plaza e inicia la tramitación de matrícula, familia y visado.</div>
+        </div>
+        <div class="pay-cols">
+          <div class="pay-col">
+            <div class="pay-col-title">Distritos con pago fraccionado</div>
+            <div class="pay-step"><div class="pay-step-num">Paso 2 · Aceptación en el programa</div><div class="pay-step-title">40 % del importe restante</div></div>
+            <div class="pay-step"><div class="pay-step-num">Paso 3</div><div class="pay-step-title">Resto del importe</div><div class="pay-step-desc">Antes del 10 de abril de 2027</div></div>
+          </div>
+          <div class="pay-col">
+            <div class="pay-col-title">Distritos con pago completo</div>
+            <div class="pay-step"><div class="pay-step-num">Paso 2 · Aceptación en el programa</div><div class="pay-step-title">Resto del importe en su totalidad</div></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="pay-route">
+        <div class="pay-route-head"><span class="pay-route-icon">📆</span><span class="pay-route-title">Opción B · Con financiación Banco Sabadell</span></div>
+        <div class="pay-route-sub">Si se financia el programa, la entrada es siempre de 5.000 € y el resto se financia en cuotas mensuales.</div>
+        <div class="pay-entrada">
+          <div class="pay-entrada-num">5.000 €</div>
+          <div class="pay-entrada-txt"><strong>Entrada fija a la firma del contrato</strong> en todos los casos de financiación. El capital restante se financia en 12, 18, 24 o 36 meses.</div>
+        </div>
+        <div class="pay-cols">
+          <div class="pay-col">
+            <div class="pay-col-title">Capital financiado</div>
+            <div class="pay-step"><div class="pay-step-title">Precio del programa − 5.000 €</div><div class="pay-step-desc">Calcula tu cuota exacta en el simulador de la sección siguiente.</div></div>
+          </div>
+          <div class="pay-col">
+            <div class="pay-col-title">Condiciones</div>
+            <div class="pay-step"><div class="pay-step-title">12 meses · TIN 0 %</div><div class="pay-step-desc">MLQ asume los intereses</div></div>
+            <div class="pay-step"><div class="pay-step-title">18 / 24 / 36 meses · TIN 10,46 %</div><div class="pay-step-desc">Intereses a cargo del cliente</div></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="pay-note">El seguro de anulación e interrupción debe contratarse y abonarse en el momento de la firma del contrato. Su coste varía según el importe del programa y es emitido una vez el estudiante es aceptado por el centro escolar. Su importe no es reembolsable bajo ninguna circunstancia. Las inscripciones tardías deben cumplir con los plazos de pago ya pasados en el momento de la inscripción.</div>
+    </div>
+  </div>
+
+  <!-- ============ 10. FINANCIACIÓN — SIMULADOR ============ -->
+  <div class="section-title"><h2>Financia tu programa</h2></div>
+  <div class="financing-wrap">
+    <div class="financing-head">
+      <div class="financing-head-left">
+        <div class="fin-icon">💳</div>
+        <div>
+          <div class="fin-title">Paga a tu ritmo, sin preocupaciones</div>
+          <div class="fin-sub">Entrada fija de 5.000 € · Aprobación rápida · 100 % online · Sin comisión de apertura</div>
+        </div>
+      </div>
+      <div class="fin-badge">Hasta 36 meses</div>
+    </div>
+    <div class="financing-body">
+
+      <div class="fin-opcion-selector">
+        <div class="fin-opcion-label">Selecciona el distrito · precios de año escolar completo</div>
+        <div class="fin-opcion-btns" id="finOpciones">
+          <button class="fin-opcion-btn active" data-precio="25200"><span class="fin-opcion-nombre">Opción 1 · Central Okanagan</span><span class="fin-opcion-precio">25.200 €</span></button>
+          <button class="fin-opcion-btn" data-precio="26000"><span class="fin-opcion-nombre">Opción 2 · Vernon</span><span class="fin-opcion-precio">26.000 €</span></button>
+          <button class="fin-opcion-btn" data-precio="26600"><span class="fin-opcion-nombre">Opción 3 · Rocky Mountain</span><span class="fin-opcion-precio">26.600 €</span></button>
+          <button class="fin-opcion-btn" data-precio="25400"><span class="fin-opcion-nombre">Opción 4 · Kamloops</span><span class="fin-opcion-precio">25.400 €</span></button>
+          <button class="fin-opcion-btn" data-precio="25300"><span class="fin-opcion-nombre">Opción 5 · Comox Valley</span><span class="fin-opcion-precio">25.300 €</span></button>
+          <button class="fin-opcion-btn" data-precio="27000"><span class="fin-opcion-nombre">Opción 6 · Sea to Sky</span><span class="fin-opcion-precio">27.000 €</span></button>
+          <button class="fin-opcion-btn" data-precio="28500"><span class="fin-opcion-nombre">Sea to Sky · Whistler</span><span class="fin-opcion-precio">28.500 €</span></button>
+        </div>
+      </div>
+
+      <div class="fin-entrada-fija">
+        <div class="fin-entrada-fija-num">5.000 €</div>
+        <div class="fin-entrada-fija-txt"><strong>Entrada a la firma del contrato.</strong> Se descuenta del precio del programa; el resto es el capital que se financia.</div>
+      </div>
+
+      <div class="fin-plazo-wrap">
+        <div class="fin-plazo-label">Elige tu plazo de financiación</div>
+        <div class="fin-plazos" id="finPlazos">
+          <button class="fin-plazo active" data-meses="12" data-tin="0"><div class="fin-plazo-meses">12 meses</div><div class="fin-plazo-badge sin-intereses">TIN 0%</div><div class="fin-plazo-quien">¡MLQ asume los intereses!</div></button>
+          <button class="fin-plazo" data-meses="18" data-tin="10.46"><div class="fin-plazo-meses">18 meses</div><div class="fin-plazo-badge con-intereses">TIN 10,46%</div><div class="fin-plazo-quien">Intereses a cargo del cliente</div></button>
+          <button class="fin-plazo" data-meses="24" data-tin="10.46"><div class="fin-plazo-meses">24 meses</div><div class="fin-plazo-badge con-intereses">TIN 10,46%</div><div class="fin-plazo-quien">Intereses a cargo del cliente</div></button>
+          <button class="fin-plazo" data-meses="36" data-tin="10.46"><div class="fin-plazo-meses">36 meses</div><div class="fin-plazo-badge con-intereses">TIN 10,46%</div><div class="fin-plazo-quien">Intereses a cargo del cliente</div></button>
+        </div>
+      </div>
+
+      <div class="fin-resultado">
+        <div class="fin-resultado-main">
+          <div class="fin-cuota-label">Cuota mensual estimada</div>
+          <div class="fin-cuota-valor" id="cuotaValor">1.683,33 €</div>
+          <div class="fin-cuota-sub" id="cuotaSub">/mes · 12 pagos · TIN 0%</div>
+        </div>
+        <div class="fin-resultado-detalle">
+          <div class="fin-det-row"><span class="fin-det-label">Importe del programa</span><span class="fin-det-val" id="detPrecio">25.200 €</span></div>
+          <div class="fin-det-row"><span class="fin-det-label">Entrada a la firma</span><span class="fin-det-val" id="detEntrada">5.000 €</span></div>
+          <div class="fin-det-row"><span class="fin-det-label">Capital financiado</span><span class="fin-det-val" id="detCapital">20.200 €</span></div>
+          <div class="fin-det-row"><span class="fin-det-label">Intereses totales</span><span class="fin-det-val fin-det-green" id="detIntereses">0 € · ¡MLQ los asume!</span></div>
+          <div class="fin-det-row fin-det-total"><span class="fin-det-label">Total a pagar</span><span class="fin-det-val" id="detTotal">25.200 €</span></div>
+        </div>
+      </div>
+
+      <div class="fin-nota">ℹ️ Financiación sujeta a aprobación bancaria. La entrada de 5.000 € se abona a la firma del contrato y no se financia. Cuota orientativa calculada sobre el capital financiado. Sin comisión de apertura ni penalización por cancelación anticipada. El simulador trabaja con los precios de año escolar completo.</div>
+    </div>
+  </div>
+
+  <!-- ============ 11. SIGUIENTES PASOS ============ -->
+  <div class="section-title"><h2>Siguientes pasos</h2></div>
+  <div class="steps-wrap">
+    <div class="steps-inner">
+      <div class="steps-title">¿Cómo seguimos?</div>
+      <div class="steps-sub">Del sí a la salida hacia Canadá, paso a paso</div>
+      <div class="steps-list">
+        <div class="step-item"><div class="step-num">1</div><div class="step-title">Año o semestre</div><div class="step-desc">Decidís la duración y, si es semestre, lo habláis con el colegio de Nil en España.</div></div>
+        <div class="step-item"><div class="step-num">2</div><div class="step-title">Elegís distrito</div><div class="step-desc">Nos confirmáis cuál de los seis encaja mejor con lo que buscáis.</div></div>
+        <div class="step-item"><div class="step-num">3</div><div class="step-title">Firma y reserva</div><div class="step-desc">Firma del contrato y primer pago. Se bloquea la plaza.</div></div>
+        <div class="step-item"><div class="step-num">4</div><div class="step-title">Matrícula, visado y vuelos</div><div class="step-desc">Gestionamos colegio, familia anfitriona, Study Permit y vuelos.</div></div>
+      </div>
+      <div class="cta-line">¿Dudas con alguna de las opciones? Tu asesora las resuelve contigo.</div>
+      <div class="pasos-cta-wrap">
+        <a class="pasos-cta" href="mailto:gespinoza@mylanguagequest.com?subject=Confirmaci%C3%B3n%20de%20opci%C3%B3n%20%C2%B7%20Nil%20%C2%B7%20Canad%C3%A1%202027%2F28&amp;body=Hola%2C%0A%0AHemos%20revisado%20la%20propuesta%20de%20Canad%C3%A1%20para%20Nil%20y%20queremos%20confirmar%20lo%20siguiente%3A%0A%0ADuraci%C3%B3n%20(a%C3%B1o%20completo%20o%20semestre)%3A%20%0ADistrito%20elegido%3A%20%0A%0AGracias.">🍁 Confirmar nuestra opción</a>
+        <a class="pasos-cta pasos-cta-alt" href="https://asesoramientosmlq.zohobookings.eu/mylanguagequest" target="_blank" rel="noopener">📅 Agendar llamada con mi asesora</a>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<!-- ============ 12. FOOTER ============ -->
+<div class="footer">
+  <div class="footer-logo">MY LANGUAGE QUEST</div>
+  <div class="footer-tag">Explore · Learn · Grow</div>
+  <div class="footer-meta">
+    Propuesta personalizada para Nil · Curso 2027/28<br>
+    Precios orientativos sujetos a disponibilidad de plaza y confirmación del distrito escolar.
+  </div>
+</div>
+
+<script>
+(function(){
+  var precio=25200, meses=12, tin=0, ENTRADA=5000;
+  function fmt(n){return n.toLocaleString('es-ES',{minimumFractionDigits:2,maximumFractionDigits:2})+' €';}
+  function fmt0(n){return n.toLocaleString('es-ES',{maximumFractionDigits:0})+' €';}
+  function calc(){
+    var capital=Math.max(precio-ENTRADA,0);
+    var cuota, total;
+    if(tin===0){ cuota=capital/meses; total=capital; }
+    else{ var i=tin/100/12; cuota=capital*i/(1-Math.pow(1+i,-meses)); total=cuota*meses; }
+    var intereses=total-capital;
+    document.getElementById('cuotaValor').textContent=fmt(cuota);
+    document.getElementById('cuotaSub').textContent='/mes · '+meses+' pagos · TIN '+(tin===0?'0%':'10,46%');
+    document.getElementById('detPrecio').textContent=fmt0(precio);
+    document.getElementById('detEntrada').textContent=fmt0(ENTRADA);
+    document.getElementById('detCapital').textContent=fmt0(capital);
+    var ei=document.getElementById('detIntereses');
+    if(tin===0){ ei.textContent='0 € · ¡MLQ los asume!'; ei.classList.add('fin-det-green'); }
+    else{ ei.textContent=fmt(intereses); ei.classList.remove('fin-det-green'); }
+    document.getElementById('detTotal').textContent=fmt(ENTRADA+total);
+  }
+  document.querySelectorAll('#finOpciones .fin-opcion-btn').forEach(function(b){
+    b.addEventListener('click',function(){
+      document.querySelectorAll('#finOpciones .fin-opcion-btn').forEach(function(x){x.classList.remove('active');});
+      b.classList.add('active'); precio=parseFloat(b.dataset.precio); calc();
+    });
+  });
+  document.querySelectorAll('#finPlazos .fin-plazo').forEach(function(b){
+    b.addEventListener('click',function(){
+      document.querySelectorAll('#finPlazos .fin-plazo').forEach(function(x){x.classList.remove('active');});
+      b.classList.add('active'); meses=parseInt(b.dataset.meses); tin=parseFloat(b.dataset.tin); calc();
+    });
+  });
+  calc();
+})();
+</script>
+
+<script>
+(function(){
+  var d=document, root=d.documentElement;
+  if(!('IntersectionObserver' in window)){root.className=root.className.replace(' js-anim','');return;}
+
+  var bar=d.createElement('div'); bar.className='progress-bar'; d.body.appendChild(bar);
+  var ticking=false;
+  function progress(){
+    var h=d.documentElement.scrollHeight-window.innerHeight;
+    bar.style.transform='scaleX('+(h>0?Math.min(window.scrollY/h,1):0)+')';
+    ticking=false;
+  }
+  window.addEventListener('scroll',function(){if(!ticking){ticking=true;requestAnimationFrame(progress);}},{passive:true});
+  progress();
+
+  Array.prototype.forEach.call(d.querySelectorAll('.hero-pill'),function(el,i){
+    el.style.animationDelay=(0.36+i*0.06)+'s';
+  });
+
+  var groups=[
+    ['.section-title','reveal'],
+    ['.intro-text','reveal'],
+    ['.intro-point','reveal'],
+    ['.qs-hero','reveal-zoom'],
+    ['.qs-chapters-head','reveal'],
+    ['.qs-chapter','reveal'],
+    ['.alert-box','reveal'],
+    ['.opcion-card','reveal'],
+    ['.homo-wrap','reveal-zoom'],
+    ['.info-block','reveal'],
+    ['.includes-wrap','reveal-zoom'],
+    ['.payment-wrap','reveal-zoom'],
+    ['.financing-wrap','reveal-zoom'],
+    ['.steps-wrap','reveal-zoom']
+  ];
+  groups.forEach(function(g){
+    Array.prototype.forEach.call(d.querySelectorAll(g[0]),function(el,i){
+      el.classList.add(g[1]);
+      el.style.transitionDelay=Math.min(i*0.09,0.36)+'s';
+    });
+  });
+
+  var io=new IntersectionObserver(function(entries){
+    entries.forEach(function(e){
+      if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}
+    });
+  },{threshold:0.12,rootMargin:'0px 0px -8% 0px'});
+  Array.prototype.forEach.call(d.querySelectorAll('.reveal,.reveal-zoom'),function(el){io.observe(el);});
+
+  var cuota=d.getElementById('cuotaValor');
+  if(cuota&&'MutationObserver' in window){
+    new MutationObserver(function(){
+      cuota.classList.remove('pop'); void cuota.offsetWidth; cuota.classList.add('pop');
+    }).observe(cuota,{childList:true,characterData:true,subtree:true});
+  }
+})();
+</script>
+</body>
+</html>
