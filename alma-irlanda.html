@@ -116,9 +116,11 @@ body{font-family:'Fira Sans',sans-serif;background:var(--gray-bg);color:var(--te
 .precio-chip .val{font-family:'Josefin Sans',sans-serif;font-size:20px;font-weight:700;color:var(--white);}
 .precio-chip .desc{font-size:10px;color:rgba(255,255,255,0.5);}
 .precio-chip .tachado{font-size:10px;color:rgba(255,255,255,0.3);text-decoration:line-through;margin-left:6px;}
-.mod-precio-antes{font-size:12px;font-weight:500;color:rgba(255,255,255,0.7);margin-top:7px;letter-spacing:.2px;}
-.mod-precio-antes s{text-decoration:line-through;text-decoration-thickness:1.5px;opacity:.75;}
-.mod-precio-antes b{font-weight:700;color:#ffffff;}
+.precio-stack{display:flex;align-items:center;gap:14px;flex-wrap:wrap;}
+.precio-aside{display:flex;flex-direction:column;align-items:flex-start;gap:6px;}
+.precio-tachado{font-family:'Josefin Sans',sans-serif;font-size:16px;font-weight:600;color:rgba(255,255,255,0.55);line-height:1;position:relative;}
+.precio-tachado::after{content:'';position:absolute;left:-3px;right:-3px;top:52%;height:2px;background:var(--gold);transform:rotate(-7deg);border-radius:2px;}
+.precio-ahorro{display:inline-flex;align-items:center;gap:5px;background:var(--gold);color:var(--ie-deep);font-size:10px;font-weight:800;letter-spacing:.6px;text-transform:uppercase;padding:5px 10px;border-radius:999px;line-height:1;white-space:nowrap;}
 .opcion-body{padding:20px 22px;}
 .colegios{display:flex;flex-direction:column;gap:12px;}
 .colegio{border:1.5px solid var(--gray-border);border-radius:12px;overflow:hidden;background:var(--gray-card);transition:border-color .2s;}
@@ -640,9 +642,14 @@ details[open] summary::before{transform:rotate(90deg);}
       <div class="mod-head">
         <div class="mod-nombre">Programa Choice + 2 vuelos</div>
         <div class="mod-desc-head">Elección de colegio con vuelos de ida y vuelta incluidos</div>
-        <div class="mod-precio-val">16.700 €</div>
-        <div class="mod-precio-sub">Año escolar completo</div>
-        <div class="mod-precio-antes">Tarifa <s>17.450 €</s> · <b>ahorras 750 €</b></div>
+        <div class="precio-stack">
+          <div class="mod-precio-val">16.700 €</div>
+          <div class="precio-aside">
+            <div class="precio-tachado">17.450 €</div>
+            <div class="precio-ahorro">☘ Ahorras 750 €</div>
+          </div>
+        </div>
+        <div class="mod-precio-sub">Año escolar completo · promo aplicada</div>
       </div>
       <div class="mod-body">
         <div class="mod-extra">
@@ -1036,6 +1043,6 @@ details[open] summary::before{transform:rotate(90deg);}
   }
 })();
 </script>
-<!-- build:20260911-110600 -->
+<!-- build:20260911-165108 -->
 </body>
 </html>
