@@ -1,0 +1,1185 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<script>document.documentElement.className+=" js-anim";</script>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Propuesta Canadá · Bruna Gaspar · My Language Quest</title>
+<link href="https://fonts.googleapis.com/css2?family=Fira+Sans:wght@300;400;500;600;700&family=Josefin+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --blue:#003366;--blue-dark:#001f40;--blue-mid:#0a4a8a;--blue-light:#dce8f5;
+  --red:#B12900;--red-dark:#8A1F00;--red-light:#fdf0ec;
+  --red-deep:#6E1600;--red-warm:#C8380C;--cream:#FFF6F2;--sand:#F7EDE6;--gold:#E8B04B;
+  --green:#4C9E0C;--green-dark:#3A7A09;--green-light:#eef8e3;
+  --gray-bg:#f4eeea;--gray-card:#fbf7f4;--gray-border:#e4d9d2;
+  --text:#0d1b2a;--text-mid:#3d4f62;--text-light:#7a8a9b;--white:#ffffff;
+}
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box;}
+body{font-family:'Fira Sans',sans-serif;background:var(--gray-bg);color:var(--text);}
+
+/* HEADER */
+.header{background:var(--white);padding:18px 48px;display:flex;align-items:center;justify-content:space-between;box-shadow:0 1px 0 var(--gray-border),0 4px 24px rgba(0,51,102,0.07);position:relative;z-index:10;}
+.header::after{content:'';position:absolute;bottom:0;left:0;right:0;height:4px;background:linear-gradient(90deg,var(--red) 0%,var(--red) 22%,var(--white) 22%,var(--white) 78%,var(--red) 78%,var(--red) 100%);}
+.logo-area img{height:46px;width:auto;display:block;}
+.header-right{text-align:right;}
+.header-label{font-family:'Josefin Sans',sans-serif;font-size:9px;letter-spacing:3px;text-transform:uppercase;color:var(--text-light);}
+.header-year{font-family:'Josefin Sans',sans-serif;font-size:26px;font-weight:700;color:var(--red);line-height:1;margin-top:2px;}
+
+/* HERO */
+.hero{background:linear-gradient(135deg,var(--red-deep) 0%,var(--red) 55%,var(--red-warm) 100%);position:relative;overflow:hidden;padding:40px 48px 36px;}
+.hero::after{content:'🍁';position:absolute;right:2%;top:50%;transform:translateY(-50%) rotate(-12deg);font-size:230px;line-height:1;opacity:0.09;pointer-events:none;z-index:1;}
+.hero::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 70% 110% at 100% 40%,rgba(255,255,255,0.12) 0%,transparent 60%),radial-gradient(ellipse 60% 80% at -10% 90%,rgba(0,31,64,0.28) 0%,transparent 60%);}
+.hero-dots{position:absolute;inset:0;pointer-events:none;background-image:radial-gradient(rgba(255,255,255,0.07) 1px,transparent 1px);background-size:28px 28px;}
+.hero-inner{position:relative;z-index:2;}
+.hero-tag{display:inline-flex;align-items:center;gap:6px;background:rgba(255,255,255,0.1);border:1px solid rgba(255,255,255,0.2);border-radius:20px;padding:4px 12px;font-size:10px;font-weight:600;letter-spacing:2px;text-transform:uppercase;color:rgba(255,255,255,0.7);margin-bottom:12px;}
+.hero-tag::before{content:'🍁';font-size:11px;}
+.hero-name{font-family:'Josefin Sans',sans-serif;font-size:38px;font-weight:700;color:var(--white);line-height:1.05;margin-bottom:8px;}
+.hero-subtitle{font-size:13px;color:rgba(255,255,255,0.55);font-weight:300;}
+.hero-pills{display:flex;flex-wrap:wrap;gap:8px;margin-top:20px;}
+.hero-pill{display:flex;align-items:center;gap:6px;background:rgba(255,255,255,0.1);border:1px solid rgba(255,255,255,0.18);border-radius:8px;padding:6px 12px;font-size:11px;color:var(--white);font-weight:500;}
+.hero-pill.ac{background:rgba(0,31,64,0.35);border-color:rgba(255,255,255,0.4);color:#ffffff;}
+.hero-promo{display:block;background:rgba(0,31,64,0.4);border:1px solid rgba(255,255,255,0.35);border-radius:10px;padding:10px 16px;font-size:12.5px;font-weight:600;color:#ffffff;margin-top:18px;max-width:640px;line-height:1.5;}
+
+/* LAYOUT */
+.main{max-width:1140px;margin:0 auto;padding:40px 24px 20px;}
+.section-title{display:flex;align-items:center;gap:12px;margin:44px 0 24px;}
+.section-title:first-of-type{margin-top:0;}
+.section-title h2{font-family:'Josefin Sans',sans-serif;font-size:11px;font-weight:700;letter-spacing:3px;text-transform:uppercase;color:var(--red-deep);white-space:nowrap;}
+.section-title::before{content:'';width:22px;height:3px;border-radius:3px;background:var(--red);flex-shrink:0;}
+.section-title::after{content:'';flex:1;height:1px;background:var(--gray-border);}
+
+/* INTRO / CONTEXTO */
+.intro-text{font-size:14px;color:var(--text-mid);line-height:1.75;max-width:860px;margin-bottom:20px;}
+.intro-text strong{color:var(--blue);font-weight:600;}
+.intro-points{display:grid;grid-template-columns:repeat(2,1fr);gap:14px;margin-top:20px;}
+.intro-point{background:var(--white);border:1.5px solid var(--gray-border);border-radius:12px;padding:16px 18px;display:flex;gap:12px;align-items:flex-start;}
+.intro-point-icon{font-size:20px;flex-shrink:0;}
+.intro-point-title{font-family:'Josefin Sans',sans-serif;font-size:13px;font-weight:700;color:var(--red-deep);margin-bottom:4px;}
+.intro-point-desc{font-size:12px;color:var(--text-mid);line-height:1.55;}
+
+/* QUIÉNES SOMOS */
+.qs-hero{display:grid;grid-template-columns:1fr 1fr;gap:0;background:var(--white);border-radius:18px;overflow:hidden;border:1.5px solid var(--gray-border);box-shadow:0 4px 28px rgba(0,51,102,0.08);}
+.qs-media{position:relative;background:var(--blue-dark);min-height:440px;}
+.qs-media img{width:100%;height:100%;object-fit:cover;display:block;}
+.qs-media-inset{position:absolute;right:-1px;bottom:-1px;width:44%;aspect-ratio:3/4;border-radius:14px 0 0 0;overflow:hidden;border-top:4px solid var(--white);border-left:4px solid var(--white);box-shadow:-8px -8px 28px rgba(0,31,64,0.28);}
+.qs-media-inset img{width:100%;height:100%;object-fit:cover;}
+.qs-panel{background:linear-gradient(155deg,var(--blue-dark) 0%,var(--blue) 55%,var(--blue-mid) 100%);padding:38px 40px;position:relative;overflow:hidden;display:flex;flex-direction:column;justify-content:center;}
+.qs-panel::before{content:'';position:absolute;inset:0;background-image:radial-gradient(rgba(255,255,255,0.055) 1px,transparent 1px);background-size:22px 22px;}
+.qs-panel-inner{position:relative;z-index:2;}
+.qs-eyebrow{font-family:'Josefin Sans',sans-serif;font-size:9px;font-weight:700;letter-spacing:3px;text-transform:uppercase;color:#7dd44a;margin-bottom:12px;}
+.qs-title{font-family:'Josefin Sans',sans-serif;font-size:26px;font-weight:700;color:var(--white);line-height:1.2;margin-bottom:14px;}
+.qs-lead{font-size:13.5px;color:rgba(255,255,255,0.62);line-height:1.75;margin-bottom:26px;}
+.qs-lead strong{color:var(--white);font-weight:600;}
+.qs-pilares{display:flex;flex-direction:column;gap:14px;}
+.qs-pilar{display:flex;gap:14px;align-items:flex-start;padding-top:14px;border-top:1px solid rgba(255,255,255,0.13);}
+.qs-pilar:first-child{border-top:none;padding-top:0;}
+.qs-pilar-icon{font-size:19px;flex-shrink:0;line-height:1.3;}
+.qs-pilar-title{font-family:'Josefin Sans',sans-serif;font-size:13px;font-weight:700;color:var(--white);margin-bottom:3px;}
+.qs-pilar-desc{font-size:11.5px;color:rgba(255,255,255,0.5);line-height:1.55;}
+.qs-chapters-head{display:flex;align-items:baseline;gap:14px;margin:38px 0 18px;flex-wrap:wrap;}
+.qs-chapters-title{font-family:'Josefin Sans',sans-serif;font-size:19px;font-weight:700;color:var(--red-deep);}
+.qs-chapters-sub{font-size:12.5px;color:var(--text-light);}
+.qs-chapters{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;}
+.qs-chapter{background:var(--white);border:1.5px solid var(--gray-border);border-radius:16px;overflow:hidden;box-shadow:0 2px 16px rgba(0,51,102,0.06);display:flex;flex-direction:column;transition:transform .2s,box-shadow .2s;}
+.qs-chapter:hover{transform:translateY(-4px);box-shadow:0 14px 38px rgba(0,51,102,0.13);}
+.qs-chapter-media{position:relative;aspect-ratio:4/3;overflow:hidden;background:var(--blue-light);}
+.qs-chapter-media img{width:100%;height:100%;object-fit:cover;object-position:center 15%;display:block;}
+.qs-chapter-step{position:absolute;top:12px;left:12px;background:rgba(0,31,64,0.82);backdrop-filter:blur(4px);color:#7dd44a;font-family:'Josefin Sans',sans-serif;font-size:9px;font-weight:700;letter-spacing:2px;text-transform:uppercase;padding:5px 11px;border-radius:20px;}
+.qs-chapter-body{padding:18px 20px 20px;}
+.qs-chapter-title{font-family:'Josefin Sans',sans-serif;font-size:15px;font-weight:700;color:var(--red-deep);margin-bottom:7px;}
+.qs-chapter-text{font-size:12.5px;color:var(--text-mid);line-height:1.65;}
+
+/* OPCIONES */
+.alert-box{display:flex;gap:12px;align-items:flex-start;background:#fff4f0;border:1.5px solid rgba(177,41,0,0.3);border-radius:12px;padding:14px 18px;margin-bottom:22px;}
+.alert-icon{font-size:20px;flex-shrink:0;}
+.alert-text{font-size:12px;color:#6b1a00;line-height:1.6;}
+.alert-text strong{color:var(--red-dark);}
+.opciones-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(330px,1fr));gap:20px;}
+.opcion-card{background:var(--white);border-radius:16px;border:1.5px solid var(--gray-border);overflow:hidden;box-shadow:0 2px 16px rgba(0,51,102,0.06);position:relative;transition:transform .2s,box-shadow .2s,border-color .2s;}
+.opcion-card:hover{transform:translateY(-4px);box-shadow:0 12px 40px rgba(110,22,0,0.16);border-color:var(--red);}
+.opcion-card.recomendada{border-color:var(--blue);box-shadow:0 6px 28px rgba(0,51,102,0.20);}
+.badge-rec{position:absolute;top:14px;right:-32px;background:var(--blue);color:var(--white);font-size:8px;font-weight:700;letter-spacing:1.5px;padding:5px 40px;transform:rotate(45deg);width:130px;text-align:center;z-index:10;}
+.opcion-header{background:linear-gradient(135deg,var(--red-deep) 0%,var(--red) 100%);padding:22px 24px 18px;position:relative;overflow:hidden;}
+.opcion-header::after{content:'🍁';position:absolute;right:-10px;bottom:-22px;font-size:82px;opacity:0.11;line-height:1;transform:rotate(-14deg);}
+.opcion-header > *{position:relative;z-index:2;}
+.opcion-num{font-family:'Josefin Sans',sans-serif;font-size:9px;letter-spacing:3px;text-transform:uppercase;color:rgba(255,255,255,0.38);margin-bottom:8px;}
+.opcion-distrito{font-family:'Josefin Sans',sans-serif;font-size:16px;font-weight:700;color:var(--white);margin-bottom:5px;}
+.opcion-loc{font-size:11px;color:rgba(255,255,255,0.48);margin-bottom:12px;}
+.precio-chip{display:inline-flex;align-items:baseline;gap:4px;background:rgba(255,255,255,0.1);border:1px solid rgba(255,255,255,0.18);border-radius:8px;padding:6px 12px;}
+.precio-chip .val{font-family:'Josefin Sans',sans-serif;font-size:20px;font-weight:700;color:var(--white);}
+.precio-chip .desc{font-size:10px;color:rgba(255,255,255,0.5);}
+.precio-chip .tachado{font-size:10px;color:rgba(255,255,255,0.35);text-decoration:line-through;margin-left:6px;}
+.opcion-body{padding:20px 22px;}
+.colegio-chips{display:flex;flex-wrap:wrap;gap:6px;margin-top:10px;}
+.chip{border-radius:6px;padding:3px 9px;font-size:9.5px;font-weight:700;text-transform:uppercase;letter-spacing:.5px;background:rgba(255,255,255,0.14);color:rgba(255,255,255,0.9);border:1px solid rgba(255,255,255,0.2);}
+.chip.gold{background:rgba(232,176,75,0.22);border-color:rgba(232,176,75,0.5);color:#ffdda0;}
+.colegio-zona{font-family:'Josefin Sans',sans-serif;font-size:9px;letter-spacing:2.5px;text-transform:uppercase;color:rgba(255,255,255,0.42);margin-bottom:8px;}
+.colegio-desc{font-size:12.5px;color:var(--text-mid);line-height:1.7;margin-bottom:16px;}
+.colegio-section-title{font-family:'Josefin Sans',sans-serif;font-size:9px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--red);margin:0 0 9px;padding-bottom:6px;border-bottom:1.5px solid var(--red-light);}
+.extra-tags{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:16px;}
+.extra-tag{font-size:10.5px;color:var(--text-mid);background:var(--gray-card);border:1px solid var(--gray-border);border-radius:20px;padding:3px 10px;}
+.actividades-ciudad{font-size:11.5px;color:var(--text-mid);line-height:1.65;background:var(--red-light);border-left:3px solid var(--red);border-radius:0 8px 8px 0;padding:10px 14px;margin-bottom:16px;}
+.por-que-list{list-style:none;display:flex;flex-direction:column;gap:7px;}
+.por-que-list li{font-size:12px;color:var(--text-mid);line-height:1.55;display:flex;gap:8px;align-items:flex-start;}
+.por-que-list li::before{content:'🍁';flex-shrink:0;font-size:10px;line-height:1.5;}
+.match-bar{display:flex;gap:6px;flex-wrap:wrap;padding:14px 22px;border-top:1px solid var(--gray-border);background:linear-gradient(to right,var(--gray-card),var(--white));}
+.match-tag{display:flex;align-items:center;gap:4px;font-size:10px;font-weight:600;color:var(--green-dark);background:var(--green-light);border:1px solid rgba(76,158,12,0.25);border-radius:20px;padding:3px 10px;}
+.match-tag::before{content:'✓';font-size:9px;}
+
+/* INFO BLOCKS */
+.info-blocks{display:grid;grid-template-columns:1fr 1fr;gap:20px;}
+.info-blocks.tres{grid-template-columns:repeat(3,1fr);}
+.info-block{background:var(--white);border-radius:16px;border:1.5px solid var(--gray-border);padding:24px 26px;box-shadow:0 2px 16px rgba(0,51,102,0.05);}
+.info-block-icon{font-size:24px;margin-bottom:10px;}
+.info-block-title{font-family:'Josefin Sans',sans-serif;font-size:14px;font-weight:700;color:var(--red-deep);margin-bottom:10px;}
+.info-block-text{font-size:12.5px;color:var(--text-mid);line-height:1.7;}
+.info-block-text strong{color:var(--text);}
+.info-block-text a{color:var(--red);font-weight:600;text-decoration:underline;text-underline-offset:2px;}
+.info-block-text a:hover{color:var(--red-deep);}
+.info-block ul{margin-top:10px;padding-left:0;list-style:none;}
+.info-block ul li{font-size:12px;color:var(--text-mid);display:flex;gap:8px;align-items:flex-start;margin-bottom:7px;line-height:1.5;}
+.info-block ul li::before{content:'✓';color:var(--green);font-weight:700;flex-shrink:0;}
+.info-block ul.mes-list li::before{content:'●';color:var(--red);font-size:8px;line-height:1.9;}
+.info-block ul.mes-list li b{color:var(--text);font-weight:600;}
+
+/* INCLUDES */
+.includes-wrap{background:var(--white);border-radius:16px;border:1.5px solid var(--gray-border);box-shadow:0 2px 16px rgba(0,51,102,0.05);overflow:hidden;}
+.includes-head{background:linear-gradient(135deg,var(--red-deep),var(--red));padding:20px 32px;}
+.includes-head h3{font-family:'Josefin Sans',sans-serif;font-size:14px;font-weight:700;color:var(--white);letter-spacing:1px;}
+.includes-body{padding:28px 32px;}
+.includes-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:32px;}
+.col-title{font-family:'Josefin Sans',sans-serif;font-size:9px;font-weight:700;letter-spacing:2.5px;text-transform:uppercase;color:var(--red);margin-bottom:14px;padding-bottom:8px;border-bottom:2px solid var(--red-light);}
+.inc-list{list-style:none;display:flex;flex-direction:column;gap:8px;}
+.inc-list li{font-size:12px;color:var(--text-mid);display:flex;align-items:flex-start;gap:8px;line-height:1.55;}
+.inc-list li::before{content:'✓';color:var(--green);font-weight:700;font-size:11px;flex-shrink:0;margin-top:1px;}
+.inc-list.no li::before{content:'✗';color:var(--red);}
+.inc-list li small{font-size:10px;color:var(--text-light);display:block;margin-top:2px;}
+
+/* GESTOR */
+.gestor-wrap{background:linear-gradient(135deg,var(--blue-dark),var(--blue-mid));border-radius:12px;padding:20px 24px;margin-top:20px;}
+.gestor-title{font-family:'Josefin Sans',sans-serif;font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:rgba(255,255,255,0.6);margin-bottom:14px;}
+.gestor-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;}
+.gestor-item{background:rgba(255,255,255,0.08);border:1px solid rgba(255,255,255,0.12);border-radius:8px;padding:10px 12px;font-size:11px;color:rgba(255,255,255,0.85);line-height:1.4;}
+.gestor-item::before{content:'→';color:#7dd44a;font-weight:700;margin-right:5px;}
+
+/* SEMESTRES */
+.sem-grid{display:grid;grid-template-columns:1fr 1fr;gap:20px;margin-bottom:18px;}
+.sem-card{background:var(--white);border:1.5px solid var(--gray-border);border-left:4px solid var(--red);border-radius:12px;padding:20px 22px;}
+.sem-card-num{font-family:'Josefin Sans',sans-serif;font-size:9px;font-weight:700;letter-spacing:2.5px;text-transform:uppercase;color:var(--text-light);margin-bottom:6px;}
+.sem-card-title{font-family:'Josefin Sans',sans-serif;font-size:17px;font-weight:700;color:var(--red-deep);margin-bottom:6px;}
+.sem-card-text{font-size:12.5px;color:var(--text-mid);line-height:1.7;}
+.sem-card-text b{color:var(--text);}
+
+/* PRECIO */
+.precio-wrap{background:linear-gradient(135deg,var(--red-deep) 0%,var(--red) 60%,var(--red-warm) 100%);border-radius:16px;padding:32px;position:relative;overflow:hidden;}
+.precio-wrap::before{content:'';position:absolute;inset:0;background-image:radial-gradient(rgba(255,255,255,0.06) 1px,transparent 1px);background-size:22px 22px;}
+.precio-inner{position:relative;z-index:2;}
+.precio-eyebrow{font-family:'Josefin Sans',sans-serif;font-size:9px;font-weight:700;letter-spacing:3px;text-transform:uppercase;color:rgba(255,255,255,0.55);margin-bottom:10px;}
+.precio-main{display:flex;align-items:flex-end;gap:18px;flex-wrap:wrap;margin-bottom:8px;}
+.precio-big{font-family:'Josefin Sans',sans-serif;font-size:48px;font-weight:700;color:var(--white);line-height:1;}
+.precio-old{font-family:'Josefin Sans',sans-serif;font-size:20px;color:rgba(255,255,255,0.45);text-decoration:line-through;padding-bottom:6px;}
+.precio-badge{background:rgba(0,31,64,0.45);border:1px solid rgba(255,255,255,0.4);border-radius:20px;padding:6px 14px;font-size:11px;font-weight:700;color:#fff;letter-spacing:.5px;margin-bottom:8px;}
+.precio-sub{font-size:12.5px;color:rgba(255,255,255,0.6);line-height:1.6;max-width:760px;}
+.precio-sub strong{color:#fff;}
+.precio-nota{margin-top:20px;background:rgba(0,31,64,0.28);border:1px solid rgba(255,255,255,0.22);border-radius:12px;padding:16px 20px;font-size:12.5px;color:rgba(255,255,255,0.85);line-height:1.7;}
+.precio-nota strong{color:#fff;}
+
+/* FORMAS DE PAGO */
+.payment-wrap{background:linear-gradient(135deg,var(--blue-dark) 0%,var(--blue) 60%,var(--blue-mid) 100%);border-radius:16px;padding:32px;position:relative;overflow:hidden;}
+.payment-wrap::before{content:'';position:absolute;inset:0;background-image:radial-gradient(rgba(255,255,255,0.05) 1px,transparent 1px);background-size:22px 22px;}
+.payment-inner{position:relative;z-index:2;}
+.pay-title{font-family:'Josefin Sans',sans-serif;font-size:16px;font-weight:700;color:var(--white);margin-bottom:6px;}
+.pay-subtitle{font-size:12px;color:rgba(255,255,255,0.45);margin-bottom:22px;}
+.pay-route{background:rgba(255,255,255,0.07);border:1px solid rgba(255,255,255,0.14);border-radius:14px;padding:20px 22px;margin-bottom:16px;}
+.pay-route-head{display:flex;align-items:center;gap:10px;margin-bottom:6px;}
+.pay-route-icon{font-size:20px;}
+.pay-route-title{font-family:'Josefin Sans',sans-serif;font-size:14px;font-weight:700;color:var(--white);}
+.pay-route-sub{font-size:11.5px;color:rgba(255,255,255,0.45);margin-bottom:16px;line-height:1.5;}
+.pay-entrada{display:flex;align-items:center;gap:14px;background:rgba(125,212,74,0.13);border:1px solid rgba(125,212,74,0.35);border-radius:10px;padding:14px 18px;margin-bottom:16px;}
+.pay-entrada-num{font-family:'Josefin Sans',sans-serif;font-size:26px;font-weight:700;color:#7dd44a;line-height:1;white-space:nowrap;}
+.pay-entrada-txt{font-size:11.5px;color:rgba(255,255,255,0.72);line-height:1.5;}
+.pay-entrada-txt strong{color:var(--white);font-weight:600;}
+.pay-cols{display:grid;grid-template-columns:1fr 1fr;gap:16px;}
+.pay-col{background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.12);border-radius:12px;padding:16px 18px;}
+.pay-col-title{font-family:'Josefin Sans',sans-serif;font-size:9px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:#7dd44a;margin-bottom:12px;}
+.pay-step{margin-bottom:11px;}
+.pay-step:last-child{margin-bottom:0;}
+.pay-step-num{font-size:9px;font-weight:700;color:rgba(255,255,255,0.4);text-transform:uppercase;letter-spacing:1px;margin-bottom:2px;}
+.pay-step-title{font-size:13px;font-weight:600;color:var(--white);margin-bottom:2px;}
+.pay-step-desc{font-size:11px;color:rgba(255,255,255,0.45);line-height:1.5;}
+.pay-note{font-size:11px;color:rgba(255,255,255,0.32);line-height:1.65;font-style:italic;border-top:1px solid rgba(255,255,255,0.1);padding-top:14px;margin-top:4px;}
+
+/* FINANCIACIÓN */
+.financing-wrap{background:var(--white);border-radius:16px;border:1.5px solid var(--gray-border);box-shadow:0 2px 16px rgba(0,51,102,0.06);overflow:hidden;}
+.financing-head{background:linear-gradient(135deg,var(--blue-dark),var(--blue));padding:22px 32px;display:flex;align-items:center;justify-content:space-between;gap:16px;}
+.financing-head-left{display:flex;align-items:center;gap:16px;}
+.fin-icon{font-size:28px;flex-shrink:0;}
+.fin-title{font-family:'Josefin Sans',sans-serif;font-size:16px;font-weight:700;color:var(--white);margin-bottom:3px;}
+.fin-sub{font-size:11px;color:rgba(255,255,255,0.5);line-height:1.4;}
+.fin-badge{background:rgba(125,212,74,0.2);border:1px solid rgba(125,212,74,0.4);color:#7dd44a;font-family:'Josefin Sans',sans-serif;font-size:11px;font-weight:700;letter-spacing:1px;padding:6px 14px;border-radius:20px;white-space:nowrap;}
+.financing-body{padding:28px 32px;}
+.fin-opcion-label{font-family:'Josefin Sans',sans-serif;font-size:9px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--text-light);margin-bottom:10px;}
+.fin-opcion-selector{margin-bottom:24px;}
+.fin-opcion-btns{display:flex;gap:10px;flex-wrap:wrap;}
+.fin-opcion-btn{background:var(--gray-card);border:1.5px solid var(--gray-border);border-radius:10px;padding:10px 16px;cursor:pointer;text-align:left;transition:all .2s;display:flex;flex-direction:column;gap:3px;font-family:'Fira Sans',sans-serif;}
+.fin-opcion-btn:hover{border-color:var(--blue-mid);background:var(--blue-light);}
+.fin-opcion-btn.active{border-color:var(--blue);background:var(--blue-light);}
+.fin-opcion-nombre{font-size:10px;font-weight:700;letter-spacing:1px;text-transform:uppercase;color:var(--text-light);}
+.fin-opcion-btn.active .fin-opcion-nombre{color:var(--blue);}
+.fin-opcion-precio{font-family:'Josefin Sans',sans-serif;font-size:16px;font-weight:700;color:var(--text);}
+.fin-opcion-btn.active .fin-opcion-precio{color:var(--blue);}
+.fin-plazo-wrap{margin-bottom:24px;}
+.fin-plazo-label{font-family:'Josefin Sans',sans-serif;font-size:9px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--text-light);margin-bottom:10px;}
+.fin-plazos{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;}
+.fin-plazo{background:var(--gray-card);border:1.5px solid var(--gray-border);border-radius:12px;padding:14px 12px;cursor:pointer;text-align:center;font-family:'Fira Sans',sans-serif;transition:transform .25s cubic-bezier(.22,.61,.36,1),border-color .25s ease,background .25s ease,box-shadow .25s ease;}
+.fin-plazo:hover{border-color:var(--blue-mid);transform:translateY(-2px);}
+.fin-plazo.active{border-color:var(--green);background:var(--green-light);box-shadow:0 4px 16px rgba(76,158,12,0.15);}
+.fin-plazo-meses{font-family:'Josefin Sans',sans-serif;font-size:15px;font-weight:700;color:var(--text);margin-bottom:6px;}
+.fin-plazo.active .fin-plazo-meses{color:var(--green-dark);}
+.fin-plazo-cuota{font-size:11px;color:var(--text-light);line-height:1.3;}
+.fin-aviso{background:var(--blue-light);border:1.5px solid rgba(0,51,102,0.18);border-radius:12px;padding:16px 20px;margin-bottom:24px;font-size:12.5px;color:var(--text-mid);line-height:1.75;}
+.fin-aviso strong{color:var(--blue);}
+@media(max-width:720px){.fin-plazos{grid-template-columns:1fr;}}
+.fin-entrada-fija{display:flex;align-items:center;gap:14px;background:var(--green-light);border:1.5px solid rgba(76,158,12,0.3);border-radius:12px;padding:14px 18px;margin-bottom:24px;}
+.fin-entrada-fija-num{font-family:'Josefin Sans',sans-serif;font-size:24px;font-weight:700;color:var(--green-dark);line-height:1;white-space:nowrap;}
+.fin-entrada-fija-txt{font-size:12px;color:var(--text-mid);line-height:1.55;}
+.fin-entrada-fija-txt strong{color:var(--text);font-weight:600;}
+.fin-resultado{display:grid;grid-template-columns:auto 1fr;gap:24px;background:linear-gradient(135deg,var(--blue-dark),var(--blue));border-radius:14px;padding:24px 28px;margin-bottom:16px;align-items:center;}
+.fin-resultado-main{text-align:center;border-right:1px solid rgba(255,255,255,0.15);padding-right:24px;}
+.fin-cuota-label{font-size:10px;font-weight:600;letter-spacing:2px;text-transform:uppercase;color:rgba(255,255,255,0.5);margin-bottom:6px;}
+.fin-cuota-valor{font-family:'Josefin Sans',sans-serif;font-size:36px;font-weight:700;color:#7dd44a;line-height:1;margin-bottom:4px;}
+.fin-cuota-sub{font-size:11px;color:rgba(255,255,255,0.45);}
+.fin-resultado-detalle{display:flex;flex-direction:column;gap:10px;}
+.fin-det-row{display:flex;justify-content:space-between;align-items:center;gap:12px;}
+.fin-det-label{font-size:12px;color:rgba(255,255,255,0.55);}
+.fin-det-val{font-size:13px;font-weight:600;color:var(--white);}
+.fin-det-green{color:#7dd44a !important;}
+.fin-det-total{border-top:1px solid rgba(255,255,255,0.15);padding-top:10px;margin-top:2px;}
+.fin-det-total .fin-det-label{color:rgba(255,255,255,0.7);font-weight:600;}
+.fin-det-total .fin-det-val{font-family:'Josefin Sans',sans-serif;font-size:16px;color:var(--white);}
+.excluido-nota{margin-top:12px;font-size:11.5px;color:#6b1a00;line-height:1.6;background:var(--red-light);border-left:3px solid var(--red);border-radius:0 8px 8px 0;padding:10px 14px;}
+.excluido-nota strong{color:var(--red-dark);}
+.fin-nota{font-size:11px;color:var(--text-light);line-height:1.6;background:var(--gray-card);border-radius:8px;padding:12px 16px;border-left:3px solid var(--blue-light);}
+
+/* SIGUIENTES PASOS */
+.steps-wrap{background:linear-gradient(135deg,var(--blue-dark) 0%,var(--blue) 60%,var(--blue-mid) 100%);border-radius:16px;padding:34px 36px;position:relative;overflow:hidden;}
+.steps-wrap::before{content:'';position:absolute;inset:0;background-image:radial-gradient(rgba(255,255,255,0.05) 1px,transparent 1px);background-size:22px 22px;}
+.steps-inner{position:relative;z-index:2;}
+.steps-title{font-family:'Josefin Sans',sans-serif;font-size:18px;font-weight:700;color:var(--white);margin-bottom:6px;}
+.steps-sub{font-size:12px;color:rgba(255,255,255,0.5);margin-bottom:26px;}
+.steps-list{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;}
+.step-item{background:rgba(255,255,255,0.07);border:1px solid rgba(255,255,255,0.12);border-radius:12px;padding:18px;}
+.step-num{font-family:'Josefin Sans',sans-serif;font-size:20px;font-weight:700;color:#7dd44a;margin-bottom:8px;}
+.step-title{font-size:13px;font-weight:600;color:var(--white);margin-bottom:4px;}
+.step-desc{font-size:11px;color:rgba(255,255,255,0.5);line-height:1.5;}
+.cta-line{margin-top:26px;text-align:center;font-size:12.5px;color:rgba(255,255,255,0.75);}
+.pasos-cta-wrap{text-align:center;margin-top:16px;display:flex;gap:12px;justify-content:center;flex-wrap:wrap;}
+.pasos-cta{display:inline-flex;align-items:center;gap:8px;background:#7dd44a;color:var(--blue-dark);font-family:'Josefin Sans',sans-serif;font-size:13px;font-weight:700;padding:12px 26px;border-radius:10px;text-decoration:none;transition:transform .15s,box-shadow .15s;}
+.pasos-cta:hover{transform:translateY(-2px);box-shadow:0 8px 20px rgba(125,212,74,0.35);}
+.pasos-cta-alt{background:rgba(255,255,255,0.12);color:var(--white);border:1.5px solid rgba(255,255,255,0.35);}
+.pasos-cta-alt:hover{box-shadow:0 8px 20px rgba(255,255,255,0.15);}
+
+/* FOOTER */
+.footer{background:var(--blue-dark);padding:30px 48px;margin-top:56px;text-align:center;position:relative;}
+.footer::before{content:'';position:absolute;top:0;left:0;right:0;height:4px;background:linear-gradient(90deg,var(--red) 0%,var(--red) 22%,var(--white) 22%,var(--white) 78%,var(--red) 78%,var(--red) 100%);}
+.footer-logo{font-family:'Josefin Sans',sans-serif;font-size:15px;font-weight:700;color:var(--white);letter-spacing:1px;margin-bottom:6px;}
+.footer-tag{font-family:'Josefin Sans',sans-serif;font-size:10px;letter-spacing:4px;text-transform:uppercase;color:#ff9c7a;margin-bottom:14px;}
+.footer-meta{font-size:11px;color:rgba(255,255,255,0.4);line-height:1.7;}
+
+@media(max-width:900px){
+  .qs-hero{grid-template-columns:1fr;}
+  .qs-media{min-height:320px;aspect-ratio:4/3;}
+  .qs-chapters{grid-template-columns:1fr;}
+  .info-blocks.tres{grid-template-columns:1fr;}
+}
+@media(max-width:720px){
+  .header{padding:16px 20px;}.hero{padding:28px 20px 24px;}.hero-name{font-size:28px;}
+  .main{padding:28px 16px 20px;}
+  .includes-grid{grid-template-columns:1fr;}.opciones-grid{grid-template-columns:1fr;}
+  .intro-points{grid-template-columns:1fr;}.info-blocks{grid-template-columns:1fr;}
+  .sem-grid{grid-template-columns:1fr;}
+  .pay-cols{grid-template-columns:1fr;}.gestor-grid{grid-template-columns:repeat(2,1fr);}
+  .steps-list{grid-template-columns:1fr;}
+  .qs-panel{padding:28px 22px;}.qs-title{font-size:22px;}
+  .precio-big{font-size:36px;}
+  .fin-resultado{grid-template-columns:1fr;}
+  .fin-resultado-main{border-right:none;border-bottom:1px solid rgba(255,255,255,0.15);padding-right:0;padding-bottom:20px;}
+  .financing-head{flex-direction:column;align-items:flex-start;}
+  .fin-opcion-btns{flex-direction:column;}
+  .footer{padding:26px 20px;}
+}
+
+/* ================= ANIMACIONES ================= */
+.js-anim .reveal{opacity:0;transform:translateY(20px);will-change:opacity,transform;
+  transition:opacity .75s cubic-bezier(.22,.61,.36,1),transform .75s cubic-bezier(.22,.61,.36,1);}
+.js-anim .reveal.in{opacity:1;transform:none;}
+.js-anim .reveal-zoom{opacity:0;transform:scale(.975);transition:opacity .8s ease,transform .8s cubic-bezier(.22,.61,.36,1);}
+.js-anim .reveal-zoom.in{opacity:1;transform:none;}
+@keyframes heroUp{from{opacity:0;transform:translateY(16px);}to{opacity:1;transform:none;}}
+@keyframes leafIn{from{opacity:0;transform:translateY(-50%) rotate(-30deg) scale(.85);}to{opacity:.09;transform:translateY(-50%) rotate(-12deg) scale(1);}}
+.js-anim .hero::after{animation:leafIn 1.4s cubic-bezier(.22,.61,.36,1) .15s both;}
+.js-anim .hero-tag{animation:heroUp .7s cubic-bezier(.22,.61,.36,1) .05s both;}
+.js-anim .hero-name{animation:heroUp .7s cubic-bezier(.22,.61,.36,1) .16s both;}
+.js-anim .hero-subtitle{animation:heroUp .7s cubic-bezier(.22,.61,.36,1) .26s both;}
+.js-anim .hero-pill{animation:heroUp .55s cubic-bezier(.22,.61,.36,1) both;}
+.js-anim .hero-promo{animation:heroUp .7s cubic-bezier(.22,.61,.36,1) .7s both;}
+.progress-bar{position:fixed;top:0;left:0;height:3px;width:100%;transform:scaleX(0);transform-origin:0 50%;
+  background:linear-gradient(90deg,var(--red),var(--red-warm));z-index:999;transition:transform .1s linear;}
+.qs-chapter-media img,.qs-media img,.qs-media-inset img{transition:transform .7s cubic-bezier(.22,.61,.36,1);}
+.qs-chapter:hover .qs-chapter-media img{transform:scale(1.06);}
+.qs-hero:hover .qs-media > img{transform:scale(1.03);}
+.qs-media-inset{transition:transform .45s cubic-bezier(.22,.61,.36,1),box-shadow .45s ease;}
+.qs-hero:hover .qs-media-inset{transform:translateY(-6px);box-shadow:-10px -10px 34px rgba(0,31,64,0.34);}
+.opcion-card{transition:transform .35s cubic-bezier(.22,.61,.36,1),box-shadow .35s ease,border-color .3s ease;}
+.opcion-header::after{transition:transform .6s cubic-bezier(.22,.61,.36,1),opacity .4s ease;}
+.opcion-card:hover .opcion-header::after{transform:rotate(-4deg) scale(1.14);opacity:.17;}
+.pasos-cta{position:relative;overflow:hidden;}
+.pasos-cta::after{content:'';position:absolute;top:0;left:-120%;width:60%;height:100%;
+  background:linear-gradient(100deg,transparent,rgba(255,255,255,.55),transparent);transform:skewX(-18deg);}
+.pasos-cta:hover::after{animation:shine .85s ease;}
+@keyframes shine{to{left:140%;}}
+.fin-opcion-btn{transition:transform .25s cubic-bezier(.22,.61,.36,1),border-color .25s ease,background .25s ease,box-shadow .25s ease;}
+.fin-cuota-valor{transition:color .3s ease;}
+@keyframes cuotaPop{0%{opacity:.35;transform:translateY(6px);}100%{opacity:1;transform:none;}}
+.fin-cuota-valor.pop{animation:cuotaPop .42s cubic-bezier(.22,.61,.36,1);}
+.step-item{transition:transform .3s cubic-bezier(.22,.61,.36,1),background .3s ease;}
+.step-item:hover{transform:translateY(-4px);background:rgba(255,255,255,0.11);}
+.qs-pilar{transition:transform .3s ease;}
+.qs-pilar:hover{transform:translateX(4px);}
+@media(prefers-reduced-motion:reduce){
+  .js-anim .reveal,.js-anim .reveal-zoom{opacity:1!important;transform:none!important;transition:none!important;}
+  .js-anim .hero::after,.js-anim .hero-tag,.js-anim .hero-name,.js-anim .hero-subtitle,
+  .js-anim .hero-pill,.js-anim .hero-promo{animation:none!important;opacity:1;}
+  .js-anim .hero::after{opacity:.09;}
+  .progress-bar{display:none;}
+  *{transition-duration:.01ms!important;}
+}
+</style>
+</head>
+<body>
+
+<!-- ============ 1. HEADER ============ -->
+<div class="header">
+  <!-- LOGO PROVISIONAL: sustituir esta línea por el <div class="logo-area">...</div> con el logo base64 de cualquier propuesta anterior -->
+  <div class="logo-area"><img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIzMDAiIGhlaWdodD0iNDYiIHZpZXdCb3g9IjAgMCAzMDAgNDYiPgo8cmVjdCB4PSIwIiB5PSI2IiB3aWR0aD0iNSIgaGVpZ2h0PSIzNCIgcng9IjIuNSIgZmlsbD0iI0IxMjkwMCIvPgo8dGV4dCB4PSIxNiIgeT0iMjQiIGZvbnQtZmFtaWx5PSJIZWx2ZXRpY2EsQXJpYWwsc2Fucy1zZXJpZiIgZm9udC1zaXplPSIxOSIgZm9udC13ZWlnaHQ9IjcwMCIgZmlsbD0iIzAwMzM2NiIgbGV0dGVyLXNwYWNpbmc9IjAuNSI+TVkgTEFOR1VBR0UgUVVFU1Q8L3RleHQ+Cjx0ZXh0IHg9IjE3IiB5PSIzOCIgZm9udC1mYW1pbHk9IkhlbHZldGljYSxBcmlhbCxzYW5zLXNlcmlmIiBmb250LXNpemU9IjguNSIgZm9udC13ZWlnaHQ9IjYwMCIgZmlsbD0iI0IxMjkwMCIgbGV0dGVyLXNwYWNpbmc9IjMuNCI+RVhQTE9SRSDCtyBMRUFSTiDCtyBHUk9XPC90ZXh0Pgo8L3N2Zz4=" alt="My Language Quest"></div>
+  <div class="header-right">
+    <div class="header-label">Curso académico</div>
+    <div class="header-year">2027/28</div>
+  </div>
+</div>
+
+<!-- ============ 2. HERO ============ -->
+<div class="hero">
+  <div class="hero-dots"></div>
+  <div class="hero-inner">
+    <div class="hero-tag">Propuesta personalizada · Canadá</div>
+    <div class="hero-name">Bruna Gaspar</div>
+    <div class="hero-subtitle">Año escolar completo · Canadá · Prince Edward Island</div>
+    <div class="hero-pills">
+      <div class="hero-pill">🎓 4.º ESO · Grade 10</div>
+      <div class="hero-pill">🏠 Familia anfitriona</div>
+      <div class="hero-pill">📣 Cheerleading</div>
+      <div class="hero-pill">🏘 Localidad pequeña-media</div>
+      <div class="hero-pill">✈ Vuelos incluidos</div>
+      <div class="hero-pill ac">🌍 Experiencia previa en Malta</div>
+    </div>
+    <div class="hero-promo">🍁 <strong>Early Application:</strong> reservando antes del 15 de octubre de 2026, <strong>1.000 € de descuento</strong> — no acumulable con la financiación a 12 meses.</div>
+  </div>
+</div>
+
+<div class="main">
+
+  <!-- ============ 3. PERFIL DE BRUNA ============ -->
+  <div class="section-title"><h2>Perfil de Bruna</h2></div>
+  <p class="intro-text">
+    Bruna está valorando realizar <strong>4.º de ESO durante el curso académico 2027/28 en Canadá</strong>,
+    equivalente aproximadamente a Grade 10 dentro del sistema educativo canadiense.
+  </p>
+  <p class="intro-text">
+    Hay un aspecto de su perfil que consideramos especialmente positivo: <strong>la iniciativa de vivir una
+    experiencia internacional parte de ella misma</strong>. Este verano ya ha participado en una inmersión en
+    Malta, por lo que ha tenido una primera experiencia desenvolviéndose fuera de España y en un entorno
+    internacional. Para el curso 2027/28 la familia está todavía en una fase inicial de valoración y está
+    comparando diferentes alternativas y agencias antes de tomar una decisión.
+  </p>
+  <div class="intro-points">
+    <div class="intro-point"><div class="intro-point-icon">💶</div><div><div class="intro-point-title">Presupuesto</div><div class="intro-point-desc">Referencia inicial de 15.000–20.000 € al año, un criterio determinante en la selección.</div></div></div>
+    <div class="intro-point"><div class="intro-point-icon">🏘</div><div><div class="intro-point-title">Tamaño de la localidad</div><div class="intro-point-desc">Prefiere una población pequeña-media o media: ni una gran ciudad, ni un entorno excesivamente rural.</div></div></div>
+    <div class="intro-point"><div class="intro-point-icon">📣</div><div><div class="intro-point-title">Cheerleading</div><div class="intro-point-desc">Quiere poder seguir practicando cheerleading como actividad extraescolar durante el curso.</div></div></div>
+    <div class="intro-point"><div class="intro-point-icon">❄️</div><div><div class="intro-point-title">Clima</div><div class="intro-point-desc">Prefiere evitar, dentro de lo posible, las zonas de Canadá con un invierno extremadamente severo.</div></div></div>
+    <div class="intro-point"><div class="intro-point-icon">👨‍👩‍👧</div><div><div class="intro-point-title">Vínculo familiar en Canadá</div><div class="intro-point-desc">La familia tiene amigos viviendo en Montreal, algo que aporta tranquilidad adicional.</div></div></div>
+    <div class="intro-point"><div class="intro-point-icon">🌍</div><div><div class="intro-point-title">Motivación propia</div><div class="intro-point-desc">La idea nace de la propia Bruna y viene reforzada por su reciente estancia en Malta.</div></div></div>
+  </div>
+
+  <!-- ============ 4. QUIÉNES SOMOS ============ -->
+  <div class="section-title"><h2>Quiénes somos</h2></div>
+  <div class="qs-hero">
+    <div class="qs-media">
+      <img src="https://aescobarnic.github.io/Propuestas/img/mlq-grupo-aeropuerto.jpg" style="object-position:center 30%;" alt="Grupo de estudiantes de My Language Quest en el aeropuerto con su coordinadora" loading="lazy">
+      <div class="qs-media-inset"><img src="https://aescobarnic.github.io/Propuestas/img/mlq-despedida-familia.jpg" style="object-position:center 25%;" alt="Estudiante despidiéndose de su familia antes de salir" loading="lazy"></div>
+    </div>
+    <div class="qs-panel">
+      <div class="qs-panel-inner">
+        <div class="qs-eyebrow">My Language Quest</div>
+        <div class="qs-title">Nadie hace este viaje solo</div>
+        <p class="qs-lead">
+          Acompañamos a familias españolas en la experiencia de estudiar un año escolar en el extranjero.
+          No somos una plataforma de reservas: <strong>hay personas con nombre y apellido detrás de cada
+          estudiante</strong>, desde la primera reunión hasta la convalidación de las notas a la vuelta.
+        </p>
+        <div class="qs-pilares">
+          <div class="qs-pilar"><div class="qs-pilar-icon">👩‍💼</div><div><div class="qs-pilar-title">Una asesora asignada en España</div><div class="qs-pilar-desc">La misma persona de principio a fin: nada de tickets ni centralitas.</div></div></div>
+          <div class="qs-pilar"><div class="qs-pilar-icon">🧭</div><div><div class="qs-pilar-title">Un gestor estudiantil en destino</div><div class="qs-pilar-desc">Tutorías, notas oficiales cada trimestre e informe mensual a los padres.</div></div></div>
+          <div class="qs-pilar"><div class="qs-pilar-icon">🏠</div><div><div class="qs-pilar-title">Un solo hispanohablante por familia</div><div class="qs-pilar-desc">Garantizado, para que la inmersión sea real desde el primer día.</div></div></div>
+          <div class="qs-pilar"><div class="qs-pilar-icon">📞</div><div><div class="qs-pilar-title">Atención 24 h, aquí y allí</div><div class="qs-pilar-desc">Emergencias cubiertas en España y en destino, todo el curso.</div></div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="qs-chapters-head">
+    <div class="qs-chapters-title">Cómo se vive el curso</div>
+    <div class="qs-chapters-sub">De la maleta en casa a la vida de instituto al otro lado del mundo</div>
+  </div>
+  <div class="qs-chapters">
+    <div class="qs-chapter">
+      <div class="qs-chapter-media"><img src="https://aescobarnic.github.io/Propuestas/img/mlq-equipaje-salida.jpg" style="object-position:center 12%;" alt="Estudiante con su equipaje el día de la salida" loading="lazy"><div class="qs-chapter-step">Antes de salir</div></div>
+      <div class="qs-chapter-body"><div class="qs-chapter-title">Todo resuelto antes de la maleta</div><div class="qs-chapter-text">Entrevista, elección de destino, matrícula, familia anfitriona, visado y vuelos. La familia solo se ocupa de preparar el equipaje.</div></div>
+    </div>
+    <div class="qs-chapter">
+      <div class="qs-chapter-media"><img src="https://aescobarnic.github.io/Propuestas/img/mlq-salida-pista.jpg" style="object-position:center 8%;" alt="Estudiantes de My Language Quest el día de la salida" loading="lazy"><div class="qs-chapter-step">El día de la salida</div></div>
+      <div class="qs-chapter-body"><div class="qs-chapter-title">Salida acompañada</div><div class="qs-chapter-text">Orientación previa en Madrid u online, coordinación en el aeropuerto de salida y recibimiento en destino el día de la llegada.</div></div>
+    </div>
+    <div class="qs-chapter">
+      <div class="qs-chapter-media"><img src="https://aescobarnic.github.io/Propuestas/img/mlq-vida-social.jpg" style="object-position:center 22%;" alt="Estudiante con sus nuevas amigas en un partido del instituto" loading="lazy"><div class="qs-chapter-step">La vida allí</div></div>
+      <div class="qs-chapter-body"><div class="qs-chapter-title">Un curso, no unas vacaciones</div><div class="qs-chapter-text">Instituto, extraescolares, partidos, amigos nuevos. Con supervisión local, acompañamiento psicológico y cambio de familia si hiciera falta.</div></div>
+    </div>
+  </div>
+
+  <!-- ============ 5. POR QUÉ PEI ============ -->
+  <div class="section-title"><h2>¿Por qué Prince Edward Island?</h2></div>
+  <p class="intro-text">
+    Teniendo en cuenta todo lo anterior, nuestra propuesta se centra en <strong>Prince Edward Island (PEI)</strong>,
+    la provincia más pequeña de Canadá, que ofrece una experiencia muy diferente a la de grandes áreas
+    metropolitanas como Toronto o Vancouver. El <strong>Prince Edward Island International Student Program
+    (PEIISP)</strong> forma parte del sistema público de educación de la provincia y permite que estudiantes
+    internacionales estudien desde Kindergarten hasta Grade 12. La provincia cuenta con 62 colegios públicos,
+    una oferta académica amplia y apoyo específico para estudiantes internacionales.
+  </p>
+  <div class="info-blocks tres">
+    <div class="info-block">
+      <div class="info-block-icon">🏘</div>
+      <div class="info-block-title">Un entorno manejable</div>
+      <div class="info-block-text">
+        PEI encaja muy bien con su preferencia por evitar tanto una gran ciudad como una población excesivamente pequeña.
+        <ul>
+          <li><strong>Charlottetown:</strong> aprox. 38.800 habitantes</li>
+          <li><strong>Summerside:</strong> aprox. 16.000 habitantes</li>
+        </ul>
+        <span style="display:block;margin-top:8px;">Permite disfrutar de servicios, actividades, instalaciones deportivas y vida social conservando una experiencia mucho más cercana y tranquila que en una gran metrópolis canadiense.</span>
+      </div>
+    </div>
+    <div class="info-block">
+      <div class="info-block-icon">🤝</div>
+      <div class="info-block-title">Buena inmersión</div>
+      <div class="info-block-text">
+        PEI favorece una experiencia muy integrada en la comunidad canadiense. El programa internacional está
+        pensado precisamente para que el estudiante no viva únicamente una experiencia académica, sino que
+        <strong>participe en la vida de su colegio, familia anfitriona y comunidad</strong>.
+      </div>
+    </div>
+    <div class="info-block">
+      <div class="info-block-icon">❄️</div>
+      <div class="info-block-title">Clima</div>
+      <div class="info-block-text">
+        Charlottetown tiene un <strong>clima continental húmedo suavizado por el golfo de San Lorenzo</strong>.
+        PEI tiene un auténtico invierno canadiense y Bruna tendrá nieve, pero ese efecto atlántico hace que no
+        estemos planteando una de las regiones interiores más extremas del país.
+        <ul class="mes-list">
+          <li><b>Septiembre y octubre:</b> otoño templado, máximas medias de 19 °C a 12 °C</li>
+          <li><b>Noviembre y diciembre:</b> transición al invierno, de 7 °C a 1 °C</li>
+          <li><b>Enero y febrero:</b> el tramo más frío, media diaria de −7 °C y máximas cercanas a −3 °C</li>
+          <li><b>Marzo y abril:</b> deshielo y vuelta a temperaturas positivas</li>
+          <li><b>Mayo y junio:</b> primavera y verano suave, máximas de 14 °C a 19 °C</li>
+        </ul>
+        <span style="display:block;margin-top:8px;">De los diez meses de curso, solo dos o tres son de frío intenso. No lo describiríamos como un clima suave, pero sí como un invierno canadiense asumible para una estudiante a la que no le preocupa experimentar nieve y frío durante su año escolar.</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- ============ 6. COLEGIOS RECOMENDADOS ============ -->
+  <div class="section-title"><h2>Colegios recomendados</h2></div>
+  <div class="alert-box">
+    <div class="alert-icon">📍</div>
+    <div class="alert-text"><strong>Nuestra prioridad sería orientar la colocación hacia Charlottetown,</strong> porque creemos que es la localidad que mejor equilibra el tipo de entorno que busca Bruna y las posibilidades de realizar actividades fuera del colegio, incluido el cheerleading.</div>
+  </div>
+  <div class="opciones-grid">
+
+    <div class="opcion-card recomendada">
+      <div class="badge-rec">★ RECOMENDADO</div>
+      <div class="opcion-header">
+        <div class="colegio-zona">Opción 01 · Charlottetown</div>
+        <div class="opcion-distrito">Charlottetown Rural High School</div>
+        <div class="opcion-loc">📍 Charlottetown · Prince Edward Island</div>
+        <div class="precio-chip"><span class="val">20.250 €</span><span class="desc">/ año · vuelos incl.</span><span class="tachado">21.250 €</span></div>
+        <div class="colegio-chips"><span class="chip">Público</span><span class="chip">Grades 10–12</span><span class="chip">~1.080 alumnos</span><span class="chip gold">🍁 International Baccalaureate</span></div>
+      </div>
+      <div class="opcion-body">
+        <div class="colegio-desc">Conocido localmente como <em>«The Rural»</em>, es uno de los institutos más grandes de Prince Edward Island. Con aproximadamente 1.080 alumnos de Grades 10–12, Bruna entraría directamente en el grupo de edad y etapa académica correspondiente. Es además uno de los dos institutos públicos de PEI que ofrecen International Baccalaureate.</div>
+        <div class="colegio-section-title">Oferta académica</div>
+        <div class="extra-tags"><span class="extra-tag">English</span><span class="extra-tag">Mathematics</span><span class="extra-tag">Science</span><span class="extra-tag">French / French Immersion</span><span class="extra-tag">History</span><span class="extra-tag">Geography</span><span class="extra-tag">Economics</span><span class="extra-tag">Law / Political Studies</span><span class="extra-tag">Business</span><span class="extra-tag">Robotics</span><span class="extra-tag">Communication &amp; IT</span><span class="extra-tag">Photography</span><span class="extra-tag">Drama</span><span class="extra-tag">Visual Arts</span><span class="extra-tag">Music</span><span class="extra-tag">Foods &amp; Nutrition</span><span class="extra-tag">Hospitality &amp; Tourism</span><span class="extra-tag">Automotive</span><span class="extra-tag">Carpentry</span><span class="extra-tag">Welding</span><span class="extra-tag">Culinary</span></div>
+        <div class="colegio-section-title">Actividades en la zona</div>
+        <div class="actividades-ciudad">Waterfront y centro histórico de Charlottetown · Confederation Centre of the Arts · parques y rutas del Confederation Trail · polideportivo y piscina municipales · clubes deportivos y escuelas de danza, incluido Passion Elite Cheerleading · comercios, restaurantes y zonas de ocio · playas de la isla a corta distancia.</div>
+        <div class="colegio-section-title">Por qué para Bruna</div>
+        <ul class="por-que-list">
+          <li>Un instituto de alrededor de mil alumnos le da mayor vida social y más posibilidades de conocer estudiantes diferentes</li>
+          <li>Más clubes, actividades y variedad académica: más facilidad para encontrar su grupo y sus intereses</li>
+          <li>Bruna no quiere una escuela extremadamente pequeña, y al mismo tiempo Charlottetown sigue siendo una ciudad manejable</li>
+          <li>Para su perfil, probablemente el mejor equilibrio entre autonomía, integración y tranquilidad</li>
+        </ul>
+      </div>
+      <div class="match-bar"><span class="match-tag">Tamaño y vida social</span><span class="match-tag">Charlottetown</span><span class="match-tag">Acceso a cheerleading</span><span class="match-tag">Variedad académica</span></div>
+    </div>
+
+    <div class="opcion-card">
+      <div class="opcion-header">
+        <div class="colegio-zona">Opción 02 · Charlottetown</div>
+        <div class="opcion-distrito">Colonel Gray High School</div>
+        <div class="opcion-loc">📍 Charlottetown · Prince Edward Island</div>
+        <div class="precio-chip"><span class="val">20.250 €</span><span class="desc">/ año · vuelos incl.</span><span class="tachado">21.250 €</span></div>
+        <div class="colegio-chips"><span class="chip">Público</span><span class="chip">Grades 10–12</span><span class="chip">~865 alumnos</span><span class="chip gold">🌍 +50 nacionalidades</span></div>
+      </div>
+      <div class="opcion-body">
+        <div class="colegio-desc">Con aproximadamente 865 estudiantes, Colonel Gray destaca por tener una comunidad muy multicultural, con alumnado procedente de más de 50 países. Su filosofía educativa se apoya especialmente en tres áreas: <strong>Academics · Arts · Athletics</strong>. También ofrece International Baccalaureate y French Immersion.</div>
+        <div class="colegio-section-title">Oferta académica</div>
+        <div class="extra-tags"><span class="extra-tag">English</span><span class="extra-tag">Mathematics</span><span class="extra-tag">Science</span><span class="extra-tag">French / French Immersion</span><span class="extra-tag">History</span><span class="extra-tag">Geography</span><span class="extra-tag">Economics</span><span class="extra-tag">Law / Political Studies</span><span class="extra-tag">Business</span><span class="extra-tag">Robotics</span><span class="extra-tag">Communication &amp; IT</span><span class="extra-tag">Drama</span><span class="extra-tag">Visual Arts</span><span class="extra-tag">Music</span><span class="extra-tag">Automotive</span><span class="extra-tag">Carpentry</span><span class="extra-tag">Welding</span><span class="extra-tag">Culinary</span><span class="extra-tag">Hospitality &amp; Tourism</span></div>
+        <div class="colegio-section-title">Actividades en la zona</div>
+        <div class="actividades-ciudad">Waterfront y centro histórico de Charlottetown · Confederation Centre of the Arts · parques y rutas del Confederation Trail · polideportivo y piscina municipales · clubes deportivos y escuelas de danza, incluido Passion Elite Cheerleading · comercios, restaurantes y zonas de ocio · playas de la isla a corta distancia.</div>
+        <div class="colegio-section-title">Por qué para Bruna</div>
+        <ul class="por-que-list">
+          <li>Un tamaño que nos gusta mucho para ella: grande lo suficiente para tener actividad y opciones, sin resultar despersonalizado</li>
+          <li>Ambiente internacional muy marcado, con alumnado de más de 50 países</li>
+          <li>Excelente alternativa si buscamos buena vida escolar + actividades + entorno urbano manejable</li>
+        </ul>
+      </div>
+      <div class="match-bar"><span class="match-tag">Ambiente internacional</span><span class="match-tag">Artes y deporte</span><span class="match-tag">Charlottetown</span></div>
+    </div>
+
+    <div class="opcion-card">
+      <div class="opcion-header">
+        <div class="colegio-zona">Opción 03 · Summerside</div>
+        <div class="opcion-distrito">Three Oaks Senior High School</div>
+        <div class="opcion-loc">📍 Summerside · Prince Edward Island</div>
+        <div class="precio-chip"><span class="val">20.250 €</span><span class="desc">/ año · vuelos incl.</span><span class="tachado">21.250 €</span></div>
+        <div class="colegio-chips"><span class="chip">Público</span><span class="chip">Grades 10–12</span><span class="chip">~760 alumnos</span><span class="chip gold">🛩 Aerospace · Marine Biology</span></div>
+      </div>
+      <div class="opcion-body">
+        <div class="colegio-desc">Situado en Summerside, la segunda ciudad de Prince Edward Island (aprox. 16.000 habitantes), ofrece una experiencia todavía más pequeña y tranquila que Charlottetown, pero sin ser una comunidad rural aislada. Cuenta además con programas especializados vinculados a <strong>Aerospace &amp; Aviation</strong> y <strong>Marine Biology</strong>. Dentro del propio instituto la oferta deportiva y de clubes es muy amplia: Volleyball, Basketball, Soccer, Rugby, Field Hockey, Badminton, Cross-country, Track &amp; Field, Golf, Powerlifting y Baseball/Softball, además de Photography, Drama, Band, Choir, Art Club, Environmental Club, Computer Club y Student Council.</div>
+        <div class="colegio-section-title">Oferta académica</div>
+        <div class="extra-tags"><span class="extra-tag">English</span><span class="extra-tag">Mathematics</span><span class="extra-tag">Science</span><span class="extra-tag">French / French Immersion</span><span class="extra-tag">History</span><span class="extra-tag">Geography</span><span class="extra-tag">Economics</span><span class="extra-tag">Law / Political Studies</span><span class="extra-tag">Robotics</span><span class="extra-tag">Business</span><span class="extra-tag">Drama</span><span class="extra-tag">Visual Arts</span><span class="extra-tag">Music</span><span class="extra-tag">Automotive</span><span class="extra-tag">Carpentry</span><span class="extra-tag">Welding</span><span class="extra-tag">Culinary</span><span class="extra-tag">Communication &amp; IT</span><span class="extra-tag">Hospitality &amp; Tourism</span></div>
+        <div class="colegio-section-title">Actividades en la zona</div>
+        <div class="actividades-ciudad">Credit Union Place: polideportivo con piscina y pista de hielo · Harbourfront Theatre · paseo marítimo de Summerside · Confederation Trail para bicicleta · playas del norte de la isla · clubes deportivos locales · comercios y restaurantes del centro.</div>
+        <div class="colegio-section-title">Por qué para Bruna</div>
+        <ul class="por-que-list">
+          <li>Sería nuestra alternativa si, al avanzar en el proceso, Bruna y su familia prefieren una experiencia algo más pequeña y tranquila que Charlottetown</li>
+          <li>Suficiente tamaño para ofrecer vida escolar y actividades, dentro de una ciudad mucho más reducida</li>
+          <li>Oferta deportiva muy amplia dentro del propio instituto</li>
+        </ul>
+      </div>
+      <div class="match-bar"><span class="match-tag">Ciudad más pequeña</span><span class="match-tag">Amplia oferta deportiva</span><span class="match-tag">Entorno tranquilo</span></div>
+    </div>
+
+  </div>
+
+  <!-- ============ 7. CHEERLEADING ============ -->
+  <div class="section-title"><h2>Cheerleading para Bruna</h2></div>
+  <div class="info-blocks">
+    <div class="info-block">
+      <div class="info-block-icon">📣</div>
+      <div class="info-block-title">Passion Elite Cheerleading · Charlottetown</div>
+      <div class="info-block-text">
+        Este es uno de los aspectos que hemos estudiado específicamente para su perfil. En Charlottetown se
+        encuentra <strong><a href="https://www.instagram.com/passionelite/" target="_blank" rel="noopener">Passion Elite Cheerleading</a></strong>, un club especializado que ofrece diferentes
+        modalidades de cheer para distintas edades y niveles. Su programa <strong>Recreational Cheer</strong>
+        está diseñado para estudiantes que quieren practicar cheerleading, aprender técnica y mantenerse
+        activas sin asumir el nivel de compromiso de un equipo competitivo.
+        <ul>
+          <li>Jumps</li>
+          <li>Motions</li>
+          <li>Stunts</li>
+          <li>Tumbling</li>
+          <li>Trabajo en equipo</li>
+          <li>Performance</li>
+        </ul>
+        <span style="display:block;margin-top:8px;">La web del club confirma que el programa recreativo está dirigido a diferentes edades y niveles, con clases normalmente una vez por semana y grupos que varían según edad y temporada. También existe una modalidad <strong>Prep &amp; Novice</strong>, con un entrenamiento semanal y una primera aproximación a la competición, y una modalidad <strong>All-Star</strong> competitiva para quienes quieran un compromiso mayor.</span>
+      </div>
+    </div>
+    <div class="info-block">
+      <div class="info-block-icon">💰</div>
+      <div class="info-block-title">Coste orientativo</div>
+      <div class="info-block-text">
+        Como referencia actual, Passion Elite ha publicado sesiones recreativas alrededor de
+        <strong>250–300 CAD por bloque</strong>. Por ejemplo, una de sus sesiones recreativas actuales aparece
+        anunciada por 260 CAD por 12 semanas. El precio exacto para Bruna dependerá de:
+        <ul>
+          <li>Su edad en el momento de incorporarse</li>
+          <li>Categoría y modalidad</li>
+          <li>Duración del bloque</li>
+          <li>Temporada 2027/28</li>
+          <li>Disponibilidad de plazas</li>
+        </ul>
+        <span style="display:block;margin-top:10px;padding:10px 14px;background:var(--red-light);border-left:3px solid var(--red);border-radius:0 6px 6px 0;"><strong>Cheerleading desde aproximadamente 250–300 CAD por bloque.</strong> Actividad externa al colegio y <strong>no incluida</strong> en el precio del programa. La ventaja de intentar una colocación en Charlottetown es precisamente que Bruna tendría mucho más fácil explorar este tipo de actividad externa.</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- ============ 8. CURSO ACADÉMICO ============ -->
+  <div class="section-title"><h2>¿Cómo funciona el curso académico?</h2></div>
+  <p class="intro-text">
+    En Prince Edward Island el curso se divide en <strong>dos semestres</strong> y Bruna cursará
+    <strong>4 asignaturas por semestre, 8 en total durante el año</strong>. Cada asignatura ocupa un periodo
+    largo de aproximadamente 76 minutos y equivale a 1 crédito (110 horas lectivas), lo que permite trabajarla
+    con mucha más profundidad que repartiéndola a lo largo de todo el curso. No significa, por tanto, que
+    estudie solo cuatro materias en el año.
+  </p>
+  <div class="sem-grid">
+    <div class="sem-card">
+      <div class="sem-card-num">Semestre 1</div>
+      <div class="sem-card-title">Septiembre – enero</div>
+      <div class="sem-card-text"><b>4 asignaturas</b>, una por cada periodo de la jornada.</div>
+    </div>
+    <div class="sem-card">
+      <div class="sem-card-num">Semestre 2</div>
+      <div class="sem-card-title">Febrero – junio</div>
+      <div class="sem-card-text"><b>Otras 4 asignaturas</b> distintas, hasta completar 8 en el curso.</div>
+    </div>
+  </div>
+  <p class="intro-text">
+    <strong>¿Cuáles son troncales y cuáles optativas?</strong> Para graduarse en el sistema de PEI, a lo largo
+    de Grades 10–12, hacen falta <strong>20 créditos</strong>: 11 son obligatorios y los 9 restantes, optativas.
+  </p>
+  <div class="info-blocks">
+    <div class="info-block">
+      <div class="info-block-icon">📗</div>
+      <div class="info-block-title">Troncales · 11 créditos obligatorios</div>
+      <div class="info-block-text">
+        <ul>
+          <li><strong>English</strong> — 3 créditos</li>
+          <li><strong>Mathematics</strong> — 2 créditos</li>
+          <li><strong>Science</strong> — 2 créditos</li>
+          <li><strong>Social Studies</strong> — 2 créditos, uno de ellos con contenido canadiense</li>
+          <li><strong>Physical Education</strong> — 1 crédito</li>
+          <li><strong>Career Education</strong> y desarrollo personal — 1 crédito</li>
+        </ul>
+      </div>
+    </div>
+    <div class="info-block">
+      <div class="info-block-icon">📘</div>
+      <div class="info-block-title">Optativas · 9 créditos</div>
+      <div class="info-block-text">
+        Se eligen del catálogo propio de cada instituto, que es amplio y varía de un centro a otro. En los tres
+        colegios propuestos encontramos, entre otras:
+        <ul>
+          <li>Business · Economics · Law &amp; Political Studies</li>
+          <li>Robotics · Communication &amp; IT · Photography</li>
+          <li>Drama · Visual Arts · Music</li>
+          <li>Culinary · Hospitality &amp; Tourism · Foods &amp; Nutrition</li>
+          <li>French / French Immersion</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <p class="intro-text">
+    Como Bruna cursará <strong>un único año</strong>, su horario se construye tomando las troncales que le
+    corresponden por nivel —<strong>English, Mathematics, Science y Social Studies</strong>— y completando el
+    resto de periodos con optativas del centro. My Language Quest supervisa esa elección para que el itinerario
+    resulte compatible con la homologación española.
+  </p>
+
+  <!-- ============ 9. HOMOLOGACIÓN ============ -->
+  <div class="section-title"><h2>Homologación de 4.º ESO en España</h2></div>
+  <div class="info-blocks">
+    <div class="info-block">
+      <div class="info-block-icon">📜</div>
+      <div class="info-block-title">Homologación al Título de Graduado en ESO</div>
+      <div class="info-block-text">
+        Como Bruna realizará 4.º ESO / Grade 10 durante un curso completo en Canadá, al finalizar deberá
+        tramitarse el reconocimiento académico correspondiente en España.
+        <strong>My Language Quest supervisará la selección de asignaturas</strong> para que su itinerario
+        académico sea compatible con los requisitos establecidos para la homologación, y realizará el
+        seguimiento de la elección académica y de la documentación necesaria.
+      </div>
+    </div>
+    <div class="info-block">
+      <div class="info-block-icon">📐</div>
+      <div class="info-block-title">El sistema de PEI no supone ningún problema</div>
+      <div class="info-block-text">
+        En Canadá deben cursarse y aprobarse <strong>al menos cinco asignaturas académicas a lo largo de los dos
+        semestres</strong>, requisito que los sistemas por bloques como el de PEI cumplen sin dificultad. Bruna
+        realizará cuatro materias durante el primer semestre y otras cuatro durante el segundo, hasta ocho en el año.
+        <ul>
+          <li>Las materias que cuentan para el itinerario son las académicas: Matemáticas, Ciencias, Historia, Geografía y Literatura, entre otras</li>
+          <li>El programa no puede estar formado únicamente por optativas</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <!-- ============ 10. ALOJAMIENTO ============ -->
+  <div class="section-title"><h2>Alojamiento en familia anfitriona</h2></div>
+  <p class="intro-text">
+    Durante su estancia, Bruna convivirá con una <strong>familia anfitriona canadiense</strong>, lo que forma
+    una parte fundamental de la experiencia. PEIISP permite que los estudiantes internacionales de Grades 9–12
+    participen en el programa de homestay. Para una estudiante como Bruna, que ya ha demostrado iniciativa para
+    realizar una inmersión internacional, creemos que esta convivencia puede ser uno de los componentes que más
+    le ayuden a avanzar tanto personalmente como en inglés.
+  </p>
+  <div class="intro-points">
+    <div class="intro-point"><div class="intro-point-icon">🗣</div><div><div class="intro-point-title">Inglés a diario</div><div class="intro-point-desc">Practica el idioma en un contexto real todos los días, dentro y fuera del colegio.</div></div></div>
+    <div class="intro-point"><div class="intro-point-icon">🏡</div><div><div class="intro-point-title">Vida canadiense</div><div class="intro-point-desc">Se integra en las rutinas, costumbres y actividades familiares del día a día.</div></div></div>
+    <div class="intro-point"><div class="intro-point-icon">🤝</div><div><div class="intro-point-title">Apoyo local</div><div class="intro-point-desc">Dispone de referentes adultos en destino durante toda la estancia.</div></div></div>
+    <div class="intro-point"><div class="intro-point-icon">🛏</div><div><div class="intro-point-title">Pensión completa</div><div class="intro-point-desc">Habitación individual o compartida y un único estudiante hispanohablante por familia.</div></div></div>
+  </div>
+
+  <!-- ============ 11. VISADO Y VUELOS ============ -->
+  <div class="section-title"><h2>Visado y vuelos</h2></div>
+  <div class="info-blocks">
+    <div class="info-block">
+      <div class="info-block-icon">🛂</div>
+      <div class="info-block-title">Visado — Study Permit</div>
+      <div class="info-block-text">La gestión y la tasa del <strong>Study Permit</strong> están incluidas en el programa.
+        <ul><li>Tramitación completa gestionada por MLQ</li><li>Tasa del visado incluida en el precio</li></ul>
+        <div class="excluido-nota"><strong>* No incluido:</strong> traducciones juradas de documentos a inglés o francés.</div>
+      </div>
+    </div>
+    <div class="info-block">
+      <div class="info-block-icon">✈</div>
+      <div class="info-block-title">Vuelos incluidos</div>
+      <div class="info-block-text">Los vuelos de ida y vuelta están incluidos, con un <strong>coste máximo reconocido de 1.000 €</strong>.
+        <ul><li>MLQ gestiona la búsqueda y reserva de los vuelos</li><li>Ajustados a las fechas de inicio y fin escolar</li><li>El exceso sobre 1.000 € corre a cargo de la familia</li></ul>
+      </div>
+    </div>
+  </div>
+
+  <!-- ============ 12. EL PROGRAMA INCLUYE ============ -->
+  <div class="section-title"><h2>El programa incluye</h2></div>
+  <div class="includes-wrap">
+    <div class="includes-head"><h3>📋 Todo lo que cubre My Language Quest</h3></div>
+    <div class="includes-body">
+      <div class="includes-grid">
+        <div>
+          <div class="col-title">Antes del viaje</div>
+          <ul class="inc-list">
+            <li>Reunión inicial con padres o tutores</li>
+            <li>Prueba de inglés y entrevista personal online</li>
+            <li>Propuesta personalizada de destino y colegios</li>
+            <li>Inscripción y matriculación en el centro</li>
+            <li>Familia anfitriona en pensión completa, habitación individual o compartida</li>
+            <li>Un único estudiante hispanohablante por familia</li>
+            <li>Seguro médico y de accidentes</li>
+            <li>Libros (algunas asignaturas)</li>
+            <li>Gestión del visado Study Permit<small>Tasa incluida</small></li>
+            <li>Vuelos de ida y vuelta<small>Coste máximo 1.000 €. Exceso a cargo de la familia</small></li>
+            <li>Orientación pre-viaje en Madrid u online</li>
+            <li>Welcome pack sorpresa de My Language Quest</li>
+          </ul>
+        </div>
+        <div>
+          <div class="col-title">Durante el viaje</div>
+          <ul class="inc-list">
+            <li>Recibimiento en aeropuerto y traslados</li>
+            <li>Orientación inicial en destino</li>
+            <li>Transporte escolar</li>
+            <li>Asesoramiento en elección de asignaturas, garantizando convalidación</li>
+            <li>Clases de inglés Cambridge y libro incluido</li>
+            <li>Taller MIT · 3 sesiones</li>
+            <li>Supervisión local: visitas, tutorías y emergencias 24 h</li>
+            <li>Acompañamiento psicológico</li>
+            <li>Atención 24 h en España para emergencias</li>
+            <li>Apoyo para matriculación en extraescolares</li>
+            <li>Clubs, deportes y eventos del colegio</li>
+            <li>Excursiones gratuitas ofrecidas por el distrito</li>
+            <li>Gestión de cambio de familia si fuera necesario</li>
+          </ul>
+          <div class="col-title" style="margin-top:24px;">Después del viaje</div>
+          <ul class="inc-list">
+            <li>Convalidación ante el Ministerio de Educación</li>
+            <li>Validación de notas y apostilla de la Haya</li>
+            <li>Dossier final detallando la experiencia</li>
+          </ul>
+        </div>
+        <div>
+          <div class="col-title">No incluido</div>
+          <ul class="inc-list no">
+            <li>Exceso de vuelos sobre 1.000 €</li>
+            <li>Extracurriculares de pago: cheerleading, equipos con licencia, bandas, teatro</li>
+            <li>Excursiones y viajes escolares de pago</li>
+            <li>Material escolar y uniforme deportivo</li>
+            <li>Fotografía escolar y anuario</li>
+            <li>Tasas de exámenes AP opcionales</li>
+            <li>Transporte público local, al margen del transporte escolar</li>
+            <li>Traducciones juradas de documentos a inglés o francés</li>
+            <li>Todo aquello que no esté especificado expresamente en el apartado &laquo;El programa incluye&raquo;</li>
+          </ul>
+        </div>
+      </div>
+      <div class="gestor-wrap">
+        <div class="gestor-title">Gestor estudiantil · se encarga de</div>
+        <div class="gestor-grid">
+          <div class="gestor-item">Seguimiento personalizado del desempeño</div>
+          <div class="gestor-item">Información a padres mensualmente</div>
+          <div class="gestor-item">Notas oficiales cada trimestre</div>
+          <div class="gestor-item">Asesoría en cambio de asignaturas</div>
+          <div class="gestor-item">Todas las tutorías necesarias</div>
+          <div class="gestor-item">Reuniones con padres y/o estudiante</div>
+          <div class="gestor-item">Apoyo en actividades extraescolares</div>
+          <div class="gestor-item">Resolución de situaciones con familia o centro</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ============ 13. INVERSIÓN ============ -->
+  <div class="section-title"><h2>Inversión del programa</h2></div>
+  <div class="precio-wrap">
+    <div class="precio-inner">
+      <div class="precio-eyebrow">Año escolar completo 2027/28 · Prince Edward Island</div>
+      <div class="precio-main">
+        <div class="precio-big">20.250 €</div>
+        <div class="precio-old">21.250 €</div>
+        <div class="precio-badge">🍁 EARLY APPLICATION · −1.000 €</div>
+      </div>
+      <div class="precio-sub">
+        Precio del programa: <strong>21.250 €</strong>. Reservando <strong>antes del 15 de octubre de 2026</strong>
+        se aplica el descuento Early Application de 1.000 €, dejando el precio final promocional en
+        <strong>20.250 €</strong>. Este precio resulta especialmente interesante teniendo en cuenta que el
+        programa incluye también <strong>los vuelos de ida y vuelta</strong>, evitando que la familia tenga que
+        añadir posteriormente ese coste al presupuesto.
+      </div>
+      <div class="precio-nota">
+        Sabemos que inicialmente nos habéis indicado un presupuesto aproximado de <strong>15.000–20.000 €</strong>.
+        Por este motivo hemos buscado una alternativa que se mantuviera lo más próxima posible a ese límite: con
+        la promoción actual, PEI queda en <strong>20.250 €</strong>, únicamente <strong>250 € por encima</strong>
+        de la referencia máxima que nos habíais indicado y con los vuelos incluidos. Por relación entre precio,
+        alojamiento, experiencia académica, acompañamiento y vuelos, consideramos que merece especialmente la
+        pena que conozcáis esta opción antes de descartarla por presupuesto.
+      </div>
+    </div>
+  </div>
+
+  <!-- ============ 14. FORMAS DE PAGO ============ -->
+  <div class="section-title"><h2>Formas de pago</h2></div>
+  <div class="payment-wrap">
+    <div class="payment-inner">
+      <div class="pay-title">💳 Condiciones económicas</div>
+      <div class="pay-subtitle">Dos vías: Early Application con pago directo, o financiación a 12 meses. No son acumulables.</div>
+
+      <div class="pay-route">
+        <div class="pay-route-head"><span class="pay-route-icon">🍁</span><span class="pay-route-title">Opción 1 · Early Application · 20.250 €</span></div>
+        <div class="pay-route-sub">Precio del programa 21.250 € − 1.000 € de descuento. La cantidad íntegra debe abonarse antes del 10 de abril de 2027.</div>
+        <div class="pay-entrada">
+          <div class="pay-entrada-num">3.500 €</div>
+          <div class="pay-entrada-txt"><strong>Primer pago a la firma del contrato.</strong> Reserva la plaza e inicia la tramitación de matrícula, familia y visado.</div>
+        </div>
+        <div class="pay-cols">
+          <div class="pay-col">
+            <div class="pay-col-title">Paso 2 · Aceptación en el programa</div>
+            <div class="pay-step"><div class="pay-step-title">6.700 €</div><div class="pay-step-desc">40 % del importe restante tras la firma</div></div>
+          </div>
+          <div class="pay-col">
+            <div class="pay-col-title">Paso 3 · Resto del importe</div>
+            <div class="pay-step"><div class="pay-step-title">10.050 €</div><div class="pay-step-desc">Antes del 10 de abril de 2027</div></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="pay-route">
+        <div class="pay-route-head"><span class="pay-route-icon">📆</span><span class="pay-route-title">Opción 2 · Con financiación Banco Sabadell</span></div>
+        <div class="pay-route-sub">En todos los casos de financiación la entrada es de 5.000 € a la firma y el resto se financia en cuotas mensuales. El plazo elegido determina si se mantiene o no el descuento Early Application.</div>
+        <div class="pay-entrada">
+          <div class="pay-entrada-num">5.000 €</div>
+          <div class="pay-entrada-txt"><strong>Entrada fija a la firma del contrato</strong> en todos los casos de financiación. El capital restante se reparte en 12, 18, 24 o 36 cuotas mensuales.</div>
+        </div>
+        <div class="pay-cols">
+          <div class="pay-col">
+            <div class="pay-col-title">12 meses · TIN 0 %</div>
+            <div class="pay-step"><div class="pay-step-num">Base de cálculo</div><div class="pay-step-title">21.250 €</div><div class="pay-step-desc">Sin descuento Early Application</div></div>
+            <div class="pay-step"><div class="pay-step-num">Capital financiado</div><div class="pay-step-title">16.250 €</div><div class="pay-step-desc">MLQ asume íntegramente los intereses</div></div>
+          </div>
+          <div class="pay-col">
+            <div class="pay-col-title">18 / 24 / 36 meses · TIN 10,46 %</div>
+            <div class="pay-step"><div class="pay-step-num">Base de cálculo</div><div class="pay-step-title">20.250 €</div><div class="pay-step-desc">Con descuento Early Application aplicado</div></div>
+            <div class="pay-step"><div class="pay-step-num">Capital financiado</div><div class="pay-step-title">15.250 €</div><div class="pay-step-desc">Intereses a cargo del cliente</div></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="pay-note">Financiación sujeta a condiciones y aprobación bancaria. El seguro de anulación e interrupción debe contratarse y abonarse en el momento de la firma del contrato; su coste varía según el importe del programa, se emite una vez el estudiante es aceptado por el centro escolar y su importe no es reembolsable bajo ninguna circunstancia. Las inscripciones tardías deben cumplir con los plazos de pago ya pasados en el momento de la inscripción.</div>
+    </div>
+  </div>
+
+  <!-- ============ 15. SIMULADOR ============ -->
+  <div class="section-title"><h2>Compara las opciones de pago</h2></div>
+  <div class="financing-wrap">
+    <div class="financing-head">
+      <div class="financing-head-left">
+        <div class="fin-icon">💳</div>
+        <div>
+          <div class="fin-title">Elige cómo pagar el programa</div>
+          <div class="fin-sub">Early Application con pago directo · Financiación a 12 meses sin intereses · Financiación a 18, 24 o 36 meses</div>
+        </div>
+      </div>
+      <div class="fin-badge">Hasta 36 meses</div>
+    </div>
+    <div class="financing-body">
+
+      <div class="fin-aviso">
+        <strong>¿Por qué la financiación a 12 meses no lleva el descuento?</strong> En el plazo de 12 meses es
+        My Language Quest quien asume íntegramente los intereses del préstamo, de modo que la familia paga
+        exactamente el precio del programa sin ningún coste financiero añadido. Ese esfuerzo sustituye al
+        descuento Early Application y por eso ambas ventajas no son acumulables. En los plazos de 18, 24 y 36
+        meses los intereses corren a cargo del cliente, por lo que <strong>sí se mantiene el descuento de
+        1.000 €</strong> y la base de cálculo es de 20.250 €.
+      </div>
+
+      <div class="fin-opcion-selector">
+        <div class="fin-opcion-label">Selecciona la opción</div>
+        <div class="fin-opcion-btns" id="finOpciones">
+          <button class="fin-opcion-btn active" data-modo="directo"><span class="fin-opcion-nombre">🍁 Early Application · pago directo</span><span class="fin-opcion-precio">20.250 €</span></button>
+          <button class="fin-opcion-btn" data-modo="fin12"><span class="fin-opcion-nombre">📆 Financiación 12 meses · TIN 0 %</span><span class="fin-opcion-precio">21.250 €</span></button>
+          <button class="fin-opcion-btn" data-modo="finLargo"><span class="fin-opcion-nombre">📆 Financiación 18/24/36 · TIN 10,46 %</span><span class="fin-opcion-precio">20.250 €</span></button>
+        </div>
+      </div>
+
+      <div class="fin-plazo-wrap" id="plazoWrap" hidden>
+        <div class="fin-plazo-label">Elige tu plazo</div>
+        <div class="fin-plazos" id="finPlazos">
+          <button class="fin-plazo active" data-meses="18"><div class="fin-plazo-meses">18 meses</div><div class="fin-plazo-cuota" data-cuota="18"></div></button>
+          <button class="fin-plazo" data-meses="24"><div class="fin-plazo-meses">24 meses</div><div class="fin-plazo-cuota" data-cuota="24"></div></button>
+          <button class="fin-plazo" data-meses="36"><div class="fin-plazo-meses">36 meses</div><div class="fin-plazo-cuota" data-cuota="36"></div></button>
+        </div>
+      </div>
+
+      <div class="fin-entrada-fija">
+        <div class="fin-entrada-fija-num" id="entradaNum">3.500 €</div>
+        <div class="fin-entrada-fija-txt" id="entradaTxt"><strong>Primer pago a la firma del contrato.</strong> Reserva la plaza e inicia la tramitación de matrícula, familia anfitriona y visado.</div>
+      </div>
+
+      <div class="fin-resultado">
+        <div class="fin-resultado-main">
+          <div class="fin-cuota-label" id="cuotaLabel">Precio final del programa</div>
+          <div class="fin-cuota-valor" id="cuotaValor">20.250 €</div>
+          <div class="fin-cuota-sub" id="cuotaSub">Con descuento Early Application</div>
+        </div>
+        <div class="fin-resultado-detalle" id="detalle"></div>
+      </div>
+
+      <div class="fin-nota" id="finNota">ℹ️ Descuento Early Application válido reservando antes del 15 de octubre de 2026. El importe íntegro debe abonarse antes del 10 de abril de 2027.</div>
+    </div>
+  </div>
+
+  <!-- ============ 16. RECOMENDACIÓN ============ -->
+  <div class="section-title"><h2>Nuestra recomendación para Bruna</h2></div>
+  <p class="intro-text">
+    Teniendo en cuenta todo lo que nos habéis contado, creemos que <strong>Prince Edward Island</strong> es una
+    alternativa que merece mucho la pena valorar para Bruna. No solamente por el precio: nos gusta especialmente
+    porque responde bastante bien al tipo de experiencia que ella está imaginando, <strong>una experiencia
+    canadiense auténtica, pero sin vivir en una gran metrópolis</strong>. Además, el hecho de que la iniciativa
+    de estudiar fuera haya partido de la propia Bruna y que ya haya dado un primer paso realizando una inmersión
+    en Malta nos parece un indicador muy positivo de cara a afrontar un año académico completo.
+  </p>
+  <div class="intro-points">
+    <div class="intro-point"><div class="intro-point-icon">1️⃣</div><div><div class="intro-point-title">Charlottetown Rural High School</div><div class="intro-point-desc">Nuestra primera recomendación por tamaño, variedad académica, vida escolar y ubicación.</div></div></div>
+    <div class="intro-point"><div class="intro-point-icon">2️⃣</div><div><div class="intro-point-title">Colonel Gray High School</div><div class="intro-point-desc">Excelente alternativa en Charlottetown, con un entorno multicultural y una oferta muy completa de académicos, artes y deporte.</div></div></div>
+    <div class="intro-point"><div class="intro-point-icon">3️⃣</div><div><div class="intro-point-title">Three Oaks Senior High School</div><div class="intro-point-desc">Una opción muy interesante en Summerside si Bruna prefiere finalmente una ciudad todavía más pequeña y tranquila.</div></div></div>
+    <div class="intro-point"><div class="intro-point-icon">📣</div><div><div class="intro-point-title">Ventaja de Charlottetown</div><div class="intro-point-desc">En las dos primeras opciones podríamos estudiar la incorporación de Bruna a un programa externo de cheerleading.</div></div></div>
+  </div>
+
+  <!-- ============ 17. SIGUIENTES PASOS ============ -->
+  <div class="section-title"><h2>Siguientes pasos</h2></div>
+  <div class="steps-wrap">
+    <div class="steps-inner">
+      <div class="steps-title">¿Cómo seguimos?</div>
+      <div class="steps-sub">Del sí a la salida hacia Canadá, paso a paso</div>
+      <div class="steps-list">
+        <div class="step-item"><div class="step-num">1</div><div class="step-title">Eliges tu opción</div><div class="step-desc">Nos confirmas cuál de los tres colegios propuestos preferís como primera opción.</div></div>
+        <div class="step-item"><div class="step-num">2</div><div class="step-title">Firma y reserva</div><div class="step-desc">Firma del contrato y primer pago. Se bloquea la plaza y se aplica el Early Application.</div></div>
+        <div class="step-item"><div class="step-num">3</div><div class="step-title">Matrícula y familia</div><div class="step-desc">Gestionamos matrícula, asignación de colegio y familia anfitriona en PEI.</div></div>
+        <div class="step-item"><div class="step-num">4</div><div class="step-title">Visado y vuelos</div><div class="step-desc">Tramitamos el Study Permit y reservamos los vuelos de ida y vuelta.</div></div>
+      </div>
+      <div class="cta-line">¿Dudas con alguna de las opciones? Tu asesora las resuelve contigo.</div>
+      <div class="pasos-cta-wrap">
+        <a class="pasos-cta" href="mailto:gespinoza@mylanguagequest.com?subject=Confirmaci%C3%B3n%20de%20opci%C3%B3n%20%C2%B7%20Bruna%20Gaspar%20%C2%B7%20Canad%C3%A1%202027%2F28&amp;body=Hola%2C%0A%0AHemos%20revisado%20la%20propuesta%20de%20Prince%20Edward%20Island%20para%20Bruna%20y%20queremos%20confirmar%20la%20siguiente%20opci%C3%B3n%3A%0A%0AColegio%20elegido%3A%20%0AForma%20de%20pago%20(Early%20Application%20o%20financiaci%C3%B3n)%3A%20%0A%0AGracias.">🍁 Confirmar mi opción</a>
+        <a class="pasos-cta pasos-cta-alt" href="https://asesoramientosmlq.zohobookings.eu/mylanguagequest" target="_blank" rel="noopener">📅 Agendar llamada con mi asesora</a>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<!-- ============ 18. FOOTER ============ -->
+<div class="footer">
+  <div class="footer-logo">MY LANGUAGE QUEST</div>
+  <div class="footer-tag">Explore · Learn · Grow</div>
+  <div class="footer-meta">
+    Propuesta personalizada para Bruna Gaspar · Curso 2027/28<br>
+    Precios orientativos sujetos a disponibilidad de plaza y confirmación del programa PEIISP.
+  </div>
+</div>
+
+<script>
+(function(){
+  var TARIFA=21250, DESCUENTO=1000, EARLY=TARIFA-DESCUENTO;
+  var FIRMA=3500, ENTRADA_FIN=5000, TIN=10.46;
+  var modo='directo', meses=18;
+
+  function fmt(n){return n.toLocaleString('es-ES',{minimumFractionDigits:2,maximumFractionDigits:2})+' €';}
+  function fmt0(n){return n.toLocaleString('es-ES',{maximumFractionDigits:0})+' €';}
+  function cuotaDe(capital,m,tin){
+    if(tin===0) return capital/m;
+    var i=tin/100/12;
+    return capital*i/(1-Math.pow(1+i,-m));
+  }
+  function row(label,val,green,total){
+    return '<div class="fin-det-row'+(total?' fin-det-total':'')+'">'+
+      '<span class="fin-det-label">'+label+'</span>'+
+      '<span class="fin-det-val'+(green?' fin-det-green':'')+'">'+val+'</span></div>';
+  }
+  function set(id,txt){document.getElementById(id).textContent=txt;}
+
+  function render(){
+    var det=document.getElementById('detalle');
+    var wrap=document.getElementById('plazoWrap');
+    wrap.hidden=(modo!=='finLargo');
+
+    if(modo==='directo'){
+      var resto=EARLY-FIRMA, segundo=Math.round(resto*0.40), tercero=resto-segundo;
+      set('cuotaLabel','Precio final del programa');
+      set('cuotaValor',fmt0(EARLY));
+      set('cuotaSub','Con descuento Early Application');
+      set('entradaNum',fmt0(FIRMA));
+      document.getElementById('entradaTxt').innerHTML='<strong>Primer pago a la firma del contrato.</strong> Reserva la plaza e inicia la tramitación de matrícula, familia anfitriona y visado.';
+      det.innerHTML=
+        row('Precio del programa',fmt0(TARIFA))+
+        row('Descuento Early Application','− '+fmt0(DESCUENTO),true)+
+        row('1 · A la firma del contrato',fmt0(FIRMA))+
+        row('2 · A la aceptación (40 % del resto)',fmt0(segundo))+
+        row('3 · Antes del 10 de abril de 2027',fmt0(tercero))+
+        row('Total a pagar',fmt0(EARLY),false,true);
+      set('finNota','ℹ️ Descuento Early Application válido reservando antes del 15 de octubre de 2026. El importe íntegro debe abonarse antes del 10 de abril de 2027.');
+
+    } else if(modo==='fin12'){
+      var capital=TARIFA-ENTRADA_FIN, cuota=cuotaDe(capital,12,0);
+      set('cuotaLabel','Cuota mensual estimada');
+      set('cuotaValor',fmt(cuota));
+      set('cuotaSub','/mes · 12 pagos · TIN 0 %');
+      set('entradaNum',fmt0(ENTRADA_FIN));
+      document.getElementById('entradaTxt').innerHTML='<strong>Entrada fija a la firma del contrato.</strong> Se descuenta del precio del programa; el resto es el capital que se financia en 12 cuotas.';
+      det.innerHTML=
+        row('Precio del programa',fmt0(TARIFA))+
+        row('Descuento Early Application','No aplicable en 12 meses')+
+        row('Entrada a la firma',fmt0(ENTRADA_FIN))+
+        row('Capital financiado',fmt0(capital))+
+        row('Intereses totales','0 € · ¡MLQ los asume!',true)+
+        row('Total a pagar',fmt0(TARIFA),false,true);
+      set('finNota','ℹ️ En el plazo de 12 meses MLQ asume los intereses, por lo que no se aplica el descuento Early Application. Financiación sujeta a aprobación bancaria. Sin comisión de apertura ni penalización por cancelación anticipada.');
+
+    } else {
+      var cap=EARLY-ENTRADA_FIN;
+      Array.prototype.forEach.call(document.querySelectorAll('[data-cuota]'),function(el){
+        el.textContent=fmt(cuotaDe(cap,parseInt(el.dataset.cuota,10),TIN))+'/mes';
+      });
+      var c=cuotaDe(cap,meses,TIN), total=c*meses, intereses=total-cap;
+      set('cuotaLabel','Cuota mensual estimada');
+      set('cuotaValor',fmt(c));
+      set('cuotaSub','/mes · '+meses+' pagos · TIN 10,46 %');
+      set('entradaNum',fmt0(ENTRADA_FIN));
+      document.getElementById('entradaTxt').innerHTML='<strong>Entrada fija a la firma del contrato.</strong> Se descuenta del precio ya rebajado; el resto es el capital que se financia.';
+      det.innerHTML=
+        row('Precio del programa',fmt0(TARIFA))+
+        row('Descuento Early Application','− '+fmt0(DESCUENTO),true)+
+        row('Entrada a la firma',fmt0(ENTRADA_FIN))+
+        row('Capital financiado',fmt0(cap))+
+        row('Intereses totales ('+meses+' meses)',fmt(intereses))+
+        row('Total a pagar',fmt(ENTRADA_FIN+total),false,true);
+      set('finNota','ℹ️ En los plazos de 18, 24 y 36 meses los intereses corren a cargo del cliente, por lo que sí se mantiene el descuento Early Application. Cuota orientativa calculada sobre el capital financiado. Financiación sujeta a aprobación bancaria, sin comisión de apertura ni penalización por cancelación anticipada.');
+    }
+  }
+
+  document.querySelectorAll('#finOpciones .fin-opcion-btn').forEach(function(b){
+    b.addEventListener('click',function(){
+      document.querySelectorAll('#finOpciones .fin-opcion-btn').forEach(function(x){x.classList.remove('active');});
+      b.classList.add('active'); modo=b.dataset.modo; render();
+    });
+  });
+  document.querySelectorAll('#finPlazos .fin-plazo').forEach(function(b){
+    b.addEventListener('click',function(){
+      document.querySelectorAll('#finPlazos .fin-plazo').forEach(function(x){x.classList.remove('active');});
+      b.classList.add('active'); meses=parseInt(b.dataset.meses,10); render();
+    });
+  });
+  render();
+})();
+</script>
+
+<script>
+(function(){
+  var d=document, root=d.documentElement;
+  if(!('IntersectionObserver' in window)){root.className=root.className.replace(' js-anim','');return;}
+
+  var bar=d.createElement('div'); bar.className='progress-bar'; d.body.appendChild(bar);
+  var ticking=false;
+  function progress(){
+    var h=d.documentElement.scrollHeight-window.innerHeight;
+    bar.style.transform='scaleX('+(h>0?Math.min(window.scrollY/h,1):0)+')';
+    ticking=false;
+  }
+  window.addEventListener('scroll',function(){if(!ticking){ticking=true;requestAnimationFrame(progress);}},{passive:true});
+  progress();
+
+  Array.prototype.forEach.call(d.querySelectorAll('.hero-pill'),function(el,i){
+    el.style.animationDelay=(0.36+i*0.06)+'s';
+  });
+
+  var groups=[
+    ['.section-title','reveal'],
+    ['.intro-text','reveal'],
+    ['.intro-point','reveal'],
+    ['.qs-hero','reveal-zoom'],
+    ['.qs-chapters-head','reveal'],
+    ['.qs-chapter','reveal'],
+    ['.alert-box','reveal'],
+    ['.opcion-card','reveal'],
+    ['.info-block','reveal'],
+    ['.sem-card','reveal'],
+    ['.includes-wrap','reveal-zoom'],
+    ['.precio-wrap','reveal-zoom'],
+    ['.payment-wrap','reveal-zoom'],
+    ['.financing-wrap','reveal-zoom'],
+    ['.steps-wrap','reveal-zoom']
+  ];
+  groups.forEach(function(g){
+    Array.prototype.forEach.call(d.querySelectorAll(g[0]),function(el,i){
+      el.classList.add(g[1]);
+      el.style.transitionDelay=Math.min(i*0.09,0.36)+'s';
+    });
+  });
+
+  var io=new IntersectionObserver(function(entries){
+    entries.forEach(function(e){
+      if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}
+    });
+  },{threshold:0.12,rootMargin:'0px 0px -8% 0px'});
+  Array.prototype.forEach.call(d.querySelectorAll('.reveal,.reveal-zoom'),function(el){io.observe(el);});
+
+  var cuota=d.getElementById('cuotaValor');
+  if(cuota&&'MutationObserver' in window){
+    new MutationObserver(function(){
+      cuota.classList.remove('pop'); void cuota.offsetWidth; cuota.classList.add('pop');
+    }).observe(cuota,{childList:true,characterData:true,subtree:true});
+  }
+})();
+</script>
+</body>
+</html>
