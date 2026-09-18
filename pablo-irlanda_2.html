@@ -1,0 +1,1168 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<script>document.documentElement.className+=" js-anim";</script>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Propuesta Irlanda · Pablo · My Language Quest</title>
+<link href="https://fonts.googleapis.com/css2?family=Fira+Sans:wght@300;400;500;600;700&family=Josefin+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --blue:#003366;--blue-dark:#001f40;--blue-mid:#0a4a8a;--blue-light:#dce8f5;
+  --red:#B12900;--red-dark:#8A1F00;--red-light:#fdf0ec;
+  --red-deep:#6E1600;--red-warm:#C8380C;--cream:#FFF6F2;--sand:#F7EDE6;--gold:#E8B04B;
+  --ie:#3A7A09;--ie-deep:#1F4A05;--ie-warm:#5FB515;--ie-light:#eef8e3;
+  --green:#4C9E0C;--green-dark:#3A7A09;--green-light:#eef8e3;
+  --gray-bg:#eef3ea;--gray-card:#f8fbf5;--gray-border:#d9e3d2;
+  --text:#0d1b2a;--text-mid:#3d4f62;--text-light:#7a8a9b;--white:#ffffff;
+}
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box;}
+body{font-family:'Fira Sans',sans-serif;background:var(--gray-bg);color:var(--text);}
+
+/* HEADER */
+.header{background:var(--white);padding:18px 48px;display:flex;align-items:center;justify-content:space-between;box-shadow:0 1px 0 var(--gray-border),0 4px 24px rgba(0,51,102,0.07);position:relative;z-index:10;}
+.header::after{content:'';position:absolute;bottom:0;left:0;right:0;height:4px;background:linear-gradient(90deg,var(--ie) 0%,var(--ie) 33%,var(--white) 33%,var(--white) 67%,#FF8200 67%,#FF8200 100%);}
+.logo-area img{height:46px;width:auto;display:block;}
+.logo-text{font-family:'Josefin Sans',sans-serif;font-size:19px;font-weight:700;letter-spacing:2px;color:var(--blue);line-height:1.1;}
+.logo-text span{display:block;font-size:8.5px;font-weight:600;letter-spacing:3.5px;color:var(--ie);margin-top:3px;}
+.header-right{text-align:right;}
+.header-label{font-family:'Josefin Sans',sans-serif;font-size:9px;letter-spacing:3px;text-transform:uppercase;color:var(--text-light);}
+.header-year{font-family:'Josefin Sans',sans-serif;font-size:26px;font-weight:700;color:var(--ie-deep);line-height:1;margin-top:2px;}
+
+/* HERO */
+.hero{background:linear-gradient(135deg,var(--ie-deep) 0%,var(--ie) 55%,var(--ie-warm) 100%);position:relative;overflow:hidden;padding:40px 48px 36px;}
+.hero::after{content:'☘';position:absolute;right:2%;top:50%;transform:translateY(-50%) rotate(-12deg);font-size:230px;line-height:1;opacity:0.09;pointer-events:none;z-index:1;}
+.hero::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 70% 110% at 100% 40%,rgba(255,255,255,0.12) 0%,transparent 60%),radial-gradient(ellipse 60% 80% at -10% 90%,rgba(0,31,64,0.28) 0%,transparent 60%);}
+.hero-dots{position:absolute;inset:0;pointer-events:none;background-image:radial-gradient(rgba(255,255,255,0.07) 1px,transparent 1px);background-size:28px 28px;}
+.hero-inner{position:relative;z-index:2;}
+.hero-tag{display:inline-flex;align-items:center;gap:6px;background:rgba(255,255,255,0.1);border:1px solid rgba(255,255,255,0.2);border-radius:20px;padding:4px 12px;font-size:10px;font-weight:600;letter-spacing:2px;text-transform:uppercase;color:rgba(255,255,255,0.7);margin-bottom:12px;}
+.hero-tag::before{content:'☘';font-size:12px;}
+.hero-name{font-family:'Josefin Sans',sans-serif;font-size:38px;font-weight:700;color:var(--white);line-height:1.05;margin-bottom:8px;}
+.hero-subtitle{font-size:13px;color:rgba(255,255,255,0.55);font-weight:300;}
+.hero-pills{display:flex;flex-wrap:wrap;gap:8px;margin-top:20px;}
+.hero-pill{display:flex;align-items:center;gap:6px;background:rgba(255,255,255,0.1);border:1px solid rgba(255,255,255,0.18);border-radius:8px;padding:6px 12px;font-size:11px;color:var(--white);font-weight:500;}
+.hero-pill.ac{background:rgba(0,31,64,0.35);border-color:rgba(255,255,255,0.4);color:#ffffff;}
+.hero-promo{display:inline-flex;align-items:center;gap:8px;background:rgba(0,31,64,0.4);border:1px solid rgba(255,255,255,0.35);border-radius:10px;padding:10px 16px;font-size:12.5px;font-weight:600;color:#ffffff;margin-top:18px;max-width:640px;line-height:1.5;}
+
+/* LAYOUT */
+.main{max-width:1140px;margin:0 auto;padding:40px 24px 20px;}
+.section-title{display:flex;align-items:center;gap:12px;margin:44px 0 24px;}
+.section-title:first-of-type{margin-top:0;}
+.section-title h2{font-family:'Josefin Sans',sans-serif;font-size:11px;font-weight:700;letter-spacing:3px;text-transform:uppercase;color:var(--ie-deep);white-space:nowrap;}
+.section-title::before{content:'';width:22px;height:3px;border-radius:3px;background:var(--ie);flex-shrink:0;}
+.section-title::after{content:'';flex:1;height:1px;background:var(--gray-border);}
+
+/* INTRO / CONTEXTO */
+.intro-text{font-size:14px;color:var(--text-mid);line-height:1.75;max-width:860px;margin-bottom:20px;}
+.intro-text strong{color:var(--blue);font-weight:600;}
+.intro-points{display:grid;grid-template-columns:repeat(2,1fr);gap:14px;margin-top:20px;}
+.intro-point{background:var(--white);border:1.5px solid var(--gray-border);border-radius:12px;padding:16px 18px;display:flex;gap:12px;align-items:flex-start;}
+.intro-point-icon{font-size:20px;flex-shrink:0;}
+.intro-point-title{font-family:'Josefin Sans',sans-serif;font-size:13px;font-weight:700;color:var(--ie-deep);margin-bottom:4px;}
+.intro-point-desc{font-size:12px;color:var(--text-mid);line-height:1.55;}
+
+/* QUIÉNES SOMOS */
+.qs-hero{display:grid;grid-template-columns:1fr 1fr;gap:0;background:var(--white);border-radius:18px;overflow:hidden;border:1.5px solid var(--gray-border);box-shadow:0 4px 28px rgba(0,51,102,0.08);}
+.qs-media{position:relative;background:var(--blue-dark);min-height:440px;}
+.qs-media img{width:100%;height:100%;object-fit:cover;display:block;}
+.qs-media-inset{position:absolute;right:-1px;bottom:-1px;width:44%;aspect-ratio:3/4;border-radius:14px 0 0 0;overflow:hidden;border-top:4px solid var(--white);border-left:4px solid var(--white);box-shadow:-8px -8px 28px rgba(0,31,64,0.28);}
+.qs-media-inset img{width:100%;height:100%;object-fit:cover;}
+.qs-panel{background:linear-gradient(155deg,var(--blue-dark) 0%,var(--blue) 55%,var(--blue-mid) 100%);padding:38px 40px;position:relative;overflow:hidden;display:flex;flex-direction:column;justify-content:center;}
+.qs-panel::before{content:'';position:absolute;inset:0;background-image:radial-gradient(rgba(255,255,255,0.055) 1px,transparent 1px);background-size:22px 22px;}
+.qs-panel-inner{position:relative;z-index:2;}
+.qs-eyebrow{font-family:'Josefin Sans',sans-serif;font-size:9px;font-weight:700;letter-spacing:3px;text-transform:uppercase;color:#7dd44a;margin-bottom:12px;}
+.qs-title{font-family:'Josefin Sans',sans-serif;font-size:26px;font-weight:700;color:var(--white);line-height:1.2;margin-bottom:14px;}
+.qs-lead{font-size:13.5px;color:rgba(255,255,255,0.62);line-height:1.75;margin-bottom:26px;}
+.qs-lead strong{color:var(--white);font-weight:600;}
+.qs-pilares{display:flex;flex-direction:column;gap:14px;}
+.qs-pilar{display:flex;gap:14px;align-items:flex-start;padding-top:14px;border-top:1px solid rgba(255,255,255,0.13);}
+.qs-pilar:first-child{border-top:none;padding-top:0;}
+.qs-pilar-icon{font-size:19px;flex-shrink:0;line-height:1.3;}
+.qs-pilar-title{font-family:'Josefin Sans',sans-serif;font-size:13px;font-weight:700;color:var(--white);margin-bottom:3px;}
+.qs-pilar-desc{font-size:11.5px;color:rgba(255,255,255,0.5);line-height:1.55;}
+
+/* Capítulos del viaje */
+.qs-chapters-head{display:flex;align-items:baseline;gap:14px;margin:38px 0 18px;flex-wrap:wrap;}
+.qs-chapters-title{font-family:'Josefin Sans',sans-serif;font-size:19px;font-weight:700;color:var(--ie-deep);}
+.qs-chapters-sub{font-size:12.5px;color:var(--text-light);}
+.qs-chapters{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;}
+.qs-chapter{background:var(--white);border:1.5px solid var(--gray-border);border-radius:16px;overflow:hidden;box-shadow:0 2px 16px rgba(0,51,102,0.06);display:flex;flex-direction:column;transition:transform .2s,box-shadow .2s;}
+.qs-chapter:hover{transform:translateY(-4px);box-shadow:0 14px 38px rgba(0,51,102,0.13);}
+.qs-chapter-media{position:relative;aspect-ratio:4/3;overflow:hidden;background:var(--blue-light);}
+.qs-chapter-media img{width:100%;height:100%;object-fit:cover;object-position:center 15%;display:block;}
+.qs-chapter-step{position:absolute;top:12px;left:12px;background:rgba(0,31,64,0.82);backdrop-filter:blur(4px);color:#7dd44a;font-family:'Josefin Sans',sans-serif;font-size:9px;font-weight:700;letter-spacing:2px;text-transform:uppercase;padding:5px 11px;border-radius:20px;}
+.qs-chapter-body{padding:18px 20px 20px;}
+.qs-chapter-title{font-family:'Josefin Sans',sans-serif;font-size:15px;font-weight:700;color:var(--ie-deep);margin-bottom:7px;}
+.qs-chapter-text{font-size:12.5px;color:var(--text-mid);line-height:1.65;}
+
+/* OPCIONES */
+.alert-box{display:flex;gap:12px;align-items:flex-start;background:#fff4f0;border:1.5px solid rgba(177,41,0,0.3);border-radius:12px;padding:14px 18px;margin-bottom:22px;}
+.alert-icon{font-size:20px;flex-shrink:0;}
+.alert-text{font-size:12px;color:#6b1a00;line-height:1.6;}
+.alert-text strong{color:var(--red-dark);}
+.opciones-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(330px,1fr));gap:20px;}
+.opcion-card{background:var(--white);border-radius:16px;border:1.5px solid var(--gray-border);overflow:hidden;box-shadow:0 2px 16px rgba(0,51,102,0.06);position:relative;transition:transform .2s,box-shadow .2s,border-color .2s;}
+.opcion-card:hover{transform:translateY(-4px);box-shadow:0 12px 40px rgba(31,74,5,0.18);border-color:var(--ie);}
+.opcion-card.recomendada{border-color:var(--blue);box-shadow:0 6px 28px rgba(0,51,102,0.20);}
+.badge-rec{position:absolute;top:14px;right:-32px;background:var(--blue);color:var(--white);font-size:8px;font-weight:700;letter-spacing:1.5px;padding:5px 40px;transform:rotate(45deg);width:130px;text-align:center;z-index:10;}
+.opcion-header{background:linear-gradient(135deg,var(--ie-deep) 0%,var(--ie) 100%);padding:22px 24px 18px;position:relative;overflow:hidden;}
+.opcion-header::after{content:'☘';position:absolute;right:-10px;bottom:-22px;font-size:82px;opacity:0.11;line-height:1;transform:rotate(-14deg);}
+.opcion-header > *{position:relative;z-index:2;}
+.opcion-num{font-family:'Josefin Sans',sans-serif;font-size:9px;letter-spacing:3px;text-transform:uppercase;color:rgba(255,255,255,0.38);margin-bottom:8px;}
+.opcion-distrito{font-family:'Josefin Sans',sans-serif;font-size:16px;font-weight:700;color:var(--white);margin-bottom:5px;}
+.opcion-loc{font-size:11px;color:rgba(255,255,255,0.48);margin-bottom:12px;}
+.opcion-body{padding:20px 22px;}
+.match-bar{display:flex;gap:6px;flex-wrap:wrap;padding:14px 22px;border-top:1px solid var(--gray-border);background:linear-gradient(to right,var(--gray-card),var(--white));}
+.match-tag{display:flex;align-items:center;gap:4px;font-size:10px;font-weight:600;color:var(--green-dark);background:var(--green-light);border:1px solid rgba(76,158,12,0.25);border-radius:20px;padding:3px 10px;}
+.match-tag::before{content:'✓';font-size:9px;}
+
+/* INFO BLOCKS */
+.info-blocks{display:grid;grid-template-columns:1fr 1fr;gap:20px;}
+.info-block{background:var(--white);border-radius:16px;border:1.5px solid var(--gray-border);padding:24px 26px;box-shadow:0 2px 16px rgba(0,51,102,0.05);}
+.info-block-icon{font-size:24px;margin-bottom:10px;}
+.info-block-title{font-family:'Josefin Sans',sans-serif;font-size:14px;font-weight:700;color:var(--ie-deep);margin-bottom:10px;}
+.info-block-text{font-size:12.5px;color:var(--text-mid);line-height:1.7;}
+.info-block-text strong{color:var(--text);}
+.info-block ul{margin-top:10px;padding-left:0;list-style:none;}
+.info-block ul li{font-size:12px;color:var(--text-mid);display:flex;gap:8px;align-items:flex-start;margin-bottom:7px;line-height:1.5;}
+.info-block ul li::before{content:'✓';color:var(--green);font-weight:700;flex-shrink:0;}
+
+/* INCLUDES */
+.includes-wrap{background:var(--white);border-radius:16px;border:1.5px solid var(--gray-border);box-shadow:0 2px 16px rgba(0,51,102,0.05);overflow:hidden;}
+.includes-head{background:linear-gradient(135deg,var(--ie-deep),var(--ie));padding:20px 32px;}
+.includes-head h3{font-family:'Josefin Sans',sans-serif;font-size:14px;font-weight:700;color:var(--white);letter-spacing:1px;}
+.includes-body{padding:28px 32px;}
+.includes-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:32px;}
+.col-title{font-family:'Josefin Sans',sans-serif;font-size:9px;font-weight:700;letter-spacing:2.5px;text-transform:uppercase;color:var(--red);margin-bottom:14px;padding-bottom:8px;border-bottom:2px solid var(--red-light);}
+.inc-list{list-style:none;display:flex;flex-direction:column;gap:8px;}
+.inc-list li{font-size:12px;color:var(--text-mid);display:flex;align-items:flex-start;gap:8px;line-height:1.55;}
+.inc-list li::before{content:'✓';color:var(--green);font-weight:700;font-size:11px;flex-shrink:0;margin-top:1px;}
+.inc-list.no li::before{content:'✗';color:var(--red);}
+.inc-list li small{font-size:10px;color:var(--text-light);display:block;margin-top:2px;}
+
+/* GESTOR */
+.gestor-wrap{background:linear-gradient(135deg,var(--blue-dark),var(--blue-mid));border-radius:12px;padding:20px 24px;margin-top:20px;}
+.gestor-title{font-family:'Josefin Sans',sans-serif;font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:rgba(255,255,255,0.6);margin-bottom:14px;}
+.gestor-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;}
+.gestor-item{background:rgba(255,255,255,0.08);border:1px solid rgba(255,255,255,0.12);border-radius:8px;padding:10px 12px;font-size:11px;color:rgba(255,255,255,0.85);line-height:1.4;}
+.gestor-item::before{content:'→';color:#7dd44a;font-weight:700;margin-right:5px;}
+
+/* FORMAS DE PAGO */
+.payment-wrap{background:linear-gradient(135deg,var(--blue-dark) 0%,var(--blue) 60%,var(--blue-mid) 100%);border-radius:16px;padding:32px;position:relative;overflow:hidden;}
+.payment-wrap::before{content:'';position:absolute;inset:0;background-image:radial-gradient(rgba(255,255,255,0.05) 1px,transparent 1px);background-size:22px 22px;}
+.payment-inner{position:relative;z-index:2;}
+.pay-title{font-family:'Josefin Sans',sans-serif;font-size:16px;font-weight:700;color:var(--white);margin-bottom:6px;}
+.pay-subtitle{font-size:12px;color:rgba(255,255,255,0.45);margin-bottom:22px;}
+.pay-route{background:rgba(255,255,255,0.07);border:1px solid rgba(255,255,255,0.14);border-radius:14px;padding:20px 22px;margin-bottom:16px;}
+.pay-route-head{display:flex;align-items:center;gap:10px;margin-bottom:6px;}
+.pay-route-icon{font-size:20px;}
+.pay-route-title{font-family:'Josefin Sans',sans-serif;font-size:14px;font-weight:700;color:var(--white);}
+.pay-route-sub{font-size:11.5px;color:rgba(255,255,255,0.45);margin-bottom:16px;line-height:1.5;}
+.pay-entrada{display:flex;align-items:center;gap:14px;background:rgba(125,212,74,0.13);border:1px solid rgba(125,212,74,0.35);border-radius:10px;padding:14px 18px;margin-bottom:16px;}
+.pay-entrada-num{font-family:'Josefin Sans',sans-serif;font-size:26px;font-weight:700;color:#7dd44a;line-height:1;white-space:nowrap;}
+.pay-entrada-txt{font-size:11.5px;color:rgba(255,255,255,0.72);line-height:1.5;}
+.pay-entrada-txt strong{color:var(--white);font-weight:600;}
+.pay-cols{display:grid;grid-template-columns:1fr 1fr;gap:16px;}
+.pay-col{background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.12);border-radius:12px;padding:16px 18px;}
+.pay-col-title{font-family:'Josefin Sans',sans-serif;font-size:9px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:#7dd44a;margin-bottom:12px;}
+.pay-step{margin-bottom:11px;}
+.pay-step:last-child{margin-bottom:0;}
+.pay-step-num{font-size:9px;font-weight:700;color:rgba(255,255,255,0.4);text-transform:uppercase;letter-spacing:1px;margin-bottom:2px;}
+.pay-step-title{font-size:13px;font-weight:600;color:var(--white);margin-bottom:2px;}
+.pay-step-desc{font-size:11px;color:rgba(255,255,255,0.45);line-height:1.5;}
+.pay-note{font-size:11px;color:rgba(255,255,255,0.32);line-height:1.65;font-style:italic;border-top:1px solid rgba(255,255,255,0.1);padding-top:14px;margin-top:4px;}
+
+/* FINANCIACIÓN */
+.financing-wrap{background:var(--white);border-radius:16px;border:1.5px solid var(--gray-border);box-shadow:0 2px 16px rgba(0,51,102,0.06);overflow:hidden;}
+.financing-head{background:linear-gradient(135deg,var(--blue-dark),var(--blue));padding:22px 32px;display:flex;align-items:center;justify-content:space-between;gap:16px;}
+.financing-head-left{display:flex;align-items:center;gap:16px;}
+.fin-icon{font-size:28px;flex-shrink:0;}
+.fin-title{font-family:'Josefin Sans',sans-serif;font-size:16px;font-weight:700;color:var(--white);margin-bottom:3px;}
+.fin-sub{font-size:11px;color:rgba(255,255,255,0.5);line-height:1.4;}
+.fin-badge{background:rgba(125,212,74,0.2);border:1px solid rgba(125,212,74,0.4);color:#7dd44a;font-family:'Josefin Sans',sans-serif;font-size:11px;font-weight:700;letter-spacing:1px;padding:6px 14px;border-radius:20px;white-space:nowrap;}
+.financing-body{padding:28px 32px;}
+.fin-opcion-label,.fin-plazo-label{font-family:'Josefin Sans',sans-serif;font-size:9px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--text-light);margin-bottom:10px;}
+.fin-opcion-selector{margin-bottom:24px;}
+.fin-opcion-btns{display:flex;gap:10px;flex-wrap:wrap;}
+.fin-opcion-btn{background:var(--gray-card);border:1.5px solid var(--gray-border);border-radius:10px;padding:10px 16px;cursor:pointer;text-align:left;transition:all .2s;display:flex;flex-direction:column;gap:3px;font-family:'Fira Sans',sans-serif;}
+.fin-opcion-btn:hover{border-color:var(--blue-mid);background:var(--blue-light);}
+.fin-opcion-btn.active{border-color:var(--blue);background:var(--blue-light);}
+.fin-opcion-nombre{font-size:10px;font-weight:700;letter-spacing:1px;text-transform:uppercase;color:var(--text-light);}
+.fin-opcion-btn.active .fin-opcion-nombre{color:var(--blue);}
+.fin-opcion-precio{font-family:'Josefin Sans',sans-serif;font-size:16px;font-weight:700;color:var(--text);}
+.fin-opcion-btn.active .fin-opcion-precio{color:var(--blue);}
+.fin-entrada-fija{display:flex;align-items:center;gap:14px;background:var(--green-light);border:1.5px solid rgba(76,158,12,0.3);border-radius:12px;padding:14px 18px;margin-bottom:24px;}
+.fin-entrada-fija-num{font-family:'Josefin Sans',sans-serif;font-size:24px;font-weight:700;color:var(--green-dark);line-height:1;white-space:nowrap;}
+.fin-entrada-fija-txt{font-size:12px;color:var(--text-mid);line-height:1.55;}
+.fin-entrada-fija-txt strong{color:var(--text);font-weight:600;}
+.fin-plazo-wrap{margin-bottom:24px;}
+.fin-plazos{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;}
+.fin-plazo{background:var(--gray-card);border:1.5px solid var(--gray-border);border-radius:12px;padding:14px 12px;cursor:pointer;text-align:center;transition:all .2s;font-family:'Fira Sans',sans-serif;}
+.fin-plazo:hover{border-color:var(--blue-mid);transform:translateY(-2px);}
+.fin-plazo.active{border-color:var(--green);background:var(--green-light);box-shadow:0 4px 16px rgba(76,158,12,0.15);}
+.fin-plazo-meses{font-family:'Josefin Sans',sans-serif;font-size:15px;font-weight:700;color:var(--text);margin-bottom:6px;}
+.fin-plazo.active .fin-plazo-meses{color:var(--green-dark);}
+.fin-plazo-badge{display:inline-block;border-radius:20px;padding:2px 8px;font-size:9px;font-weight:700;letter-spacing:0.5px;margin-bottom:4px;}
+.fin-plazo-badge.sin-intereses{background:var(--green-light);color:var(--green-dark);border:1px solid rgba(76,158,12,0.3);}
+.fin-plazo-badge.con-intereses{background:var(--blue-light);color:var(--blue);border:1px solid rgba(0,51,102,0.2);}
+.fin-plazo-quien{font-size:9px;color:var(--text-light);line-height:1.3;}
+.fin-resultado{display:grid;grid-template-columns:auto 1fr;gap:24px;background:linear-gradient(135deg,var(--blue-dark),var(--blue));border-radius:14px;padding:24px 28px;margin-bottom:16px;align-items:center;}
+.fin-resultado-main{text-align:center;border-right:1px solid rgba(255,255,255,0.15);padding-right:24px;}
+.fin-cuota-label{font-size:10px;font-weight:600;letter-spacing:2px;text-transform:uppercase;color:rgba(255,255,255,0.5);margin-bottom:6px;}
+.fin-cuota-valor{font-family:'Josefin Sans',sans-serif;font-size:36px;font-weight:700;color:#7dd44a;line-height:1;margin-bottom:4px;}
+.fin-cuota-sub{font-size:11px;color:rgba(255,255,255,0.45);}
+.fin-resultado-detalle{display:flex;flex-direction:column;gap:10px;}
+.fin-det-row{display:flex;justify-content:space-between;align-items:center;gap:12px;}
+.fin-det-label{font-size:12px;color:rgba(255,255,255,0.55);}
+.fin-det-val{font-size:13px;font-weight:600;color:var(--white);}
+.fin-det-green{color:#7dd44a !important;}
+.fin-det-total{border-top:1px solid rgba(255,255,255,0.15);padding-top:10px;margin-top:2px;}
+.fin-det-total .fin-det-label{color:rgba(255,255,255,0.7);font-weight:600;}
+.fin-det-total .fin-det-val{font-family:'Josefin Sans',sans-serif;font-size:16px;color:var(--white);}
+.fin-nota{font-size:11px;color:var(--text-light);line-height:1.6;background:var(--gray-card);border-radius:8px;padding:12px 16px;border-left:3px solid var(--blue-light);}
+
+/* SIGUIENTES PASOS */
+.steps-wrap{background:linear-gradient(135deg,var(--blue-dark) 0%,var(--blue) 60%,var(--blue-mid) 100%);border-radius:16px;padding:34px 36px;position:relative;overflow:hidden;}
+.steps-wrap::before{content:'';position:absolute;inset:0;background-image:radial-gradient(rgba(255,255,255,0.05) 1px,transparent 1px);background-size:22px 22px;}
+.steps-inner{position:relative;z-index:2;}
+.steps-title{font-family:'Josefin Sans',sans-serif;font-size:18px;font-weight:700;color:var(--white);margin-bottom:6px;}
+.steps-sub{font-size:12px;color:rgba(255,255,255,0.5);margin-bottom:26px;}
+.steps-list{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;}
+.step-item{background:rgba(255,255,255,0.07);border:1px solid rgba(255,255,255,0.12);border-radius:12px;padding:18px;}
+.step-num{font-family:'Josefin Sans',sans-serif;font-size:20px;font-weight:700;color:#7dd44a;margin-bottom:8px;}
+.step-title{font-size:13px;font-weight:600;color:var(--white);margin-bottom:4px;}
+.step-desc{font-size:11px;color:rgba(255,255,255,0.5);line-height:1.5;}
+.cta-line{margin-top:26px;text-align:center;font-size:12.5px;color:rgba(255,255,255,0.75);}
+.pasos-cta-wrap{text-align:center;margin-top:16px;display:flex;gap:12px;justify-content:center;flex-wrap:wrap;}
+.pasos-cta{display:inline-flex;align-items:center;gap:8px;background:#7dd44a;color:var(--blue-dark);font-family:'Josefin Sans',sans-serif;font-size:13px;font-weight:700;padding:12px 26px;border-radius:10px;text-decoration:none;transition:transform .15s,box-shadow .15s;}
+.pasos-cta:hover{transform:translateY(-2px);box-shadow:0 8px 20px rgba(125,212,74,0.35);}
+.pasos-cta-alt{background:rgba(255,255,255,0.12);color:var(--white);border:1.5px solid rgba(255,255,255,0.35);}
+.pasos-cta-alt:hover{box-shadow:0 8px 20px rgba(255,255,255,0.15);}
+
+/* FOOTER */
+.footer{background:var(--blue-dark);padding:30px 48px;margin-top:56px;text-align:center;position:relative;}
+.footer::before{content:'';position:absolute;top:0;left:0;right:0;height:4px;background:linear-gradient(90deg,var(--ie) 0%,var(--ie) 33%,var(--white) 33%,var(--white) 67%,#FF8200 67%,#FF8200 100%);}
+.footer-logo{font-family:'Josefin Sans',sans-serif;font-size:15px;font-weight:700;color:var(--white);letter-spacing:1px;margin-bottom:6px;}
+.footer-tag{font-family:'Josefin Sans',sans-serif;font-size:10px;letter-spacing:4px;text-transform:uppercase;color:#9ee06a;margin-bottom:14px;}
+.footer-meta{font-size:11px;color:rgba(255,255,255,0.4);line-height:1.7;}
+.footer-meta a{color:rgba(255,255,255,0.65);text-decoration:none;}
+
+@media(max-width:900px){
+  .qs-hero{grid-template-columns:1fr;}
+  .qs-media{min-height:320px;aspect-ratio:4/3;}
+  .qs-chapters{grid-template-columns:1fr;}
+}
+@media(max-width:720px){
+  .header{padding:16px 20px;}.hero{padding:28px 20px 24px;}.hero-name{font-size:28px;}
+  .main{padding:28px 16px 20px;}
+  .includes-grid{grid-template-columns:1fr;}.opciones-grid{grid-template-columns:1fr;}
+  .intro-points{grid-template-columns:1fr;}.info-blocks{grid-template-columns:1fr;}
+  .pay-cols{grid-template-columns:1fr;}.gestor-grid{grid-template-columns:repeat(2,1fr);}
+  .steps-list{grid-template-columns:1fr;}
+  .qs-panel{padding:28px 22px;}.qs-title{font-size:22px;}
+  .fin-plazos{grid-template-columns:repeat(2,1fr);}
+  .fin-resultado{grid-template-columns:1fr;}
+  .fin-resultado-main{border-right:none;border-bottom:1px solid rgba(255,255,255,0.15);padding-right:0;padding-bottom:20px;}
+  .financing-head{flex-direction:column;align-items:flex-start;}
+  .fin-opcion-btns{flex-direction:column;}
+  .footer{padding:26px 20px;}
+}
+
+/* ================= ANIMACIONES ================= */
+.js-anim .reveal{opacity:0;transform:translateY(20px);will-change:opacity,transform;
+  transition:opacity .75s cubic-bezier(.22,.61,.36,1),transform .75s cubic-bezier(.22,.61,.36,1);}
+.js-anim .reveal.in{opacity:1;transform:none;}
+.js-anim .reveal-zoom{opacity:0;transform:scale(.975);transition:opacity .8s ease,transform .8s cubic-bezier(.22,.61,.36,1);}
+.js-anim .reveal-zoom.in{opacity:1;transform:none;}
+
+@keyframes heroUp{from{opacity:0;transform:translateY(16px);}to{opacity:1;transform:none;}}
+@keyframes leafIn{from{opacity:0;transform:translateY(-50%) rotate(-30deg) scale(.85);}to{opacity:.09;transform:translateY(-50%) rotate(-12deg) scale(1);}}
+.js-anim .hero::after{animation:leafIn 1.4s cubic-bezier(.22,.61,.36,1) .15s both;}
+.js-anim .hero-tag{animation:heroUp .7s cubic-bezier(.22,.61,.36,1) .05s both;}
+.js-anim .hero-name{animation:heroUp .7s cubic-bezier(.22,.61,.36,1) .16s both;}
+.js-anim .hero-subtitle{animation:heroUp .7s cubic-bezier(.22,.61,.36,1) .26s both;}
+.js-anim .hero-pill{animation:heroUp .55s cubic-bezier(.22,.61,.36,1) both;}
+.js-anim .hero-promo{animation:heroUp .7s cubic-bezier(.22,.61,.36,1) .7s both;}
+
+.progress-bar{position:fixed;top:0;left:0;height:3px;width:100%;transform:scaleX(0);transform-origin:0 50%;
+  background:linear-gradient(90deg,var(--ie),var(--ie-warm));z-index:999;transition:transform .1s linear;}
+
+.qs-chapter-media img,.qs-media img,.qs-media-inset img{transition:transform .7s cubic-bezier(.22,.61,.36,1);}
+.qs-chapter:hover .qs-chapter-media img{transform:scale(1.06);}
+.qs-hero:hover .qs-media > img{transform:scale(1.03);}
+.qs-media-inset{transition:transform .45s cubic-bezier(.22,.61,.36,1),box-shadow .45s ease;}
+.qs-hero:hover .qs-media-inset{transform:translateY(-6px);box-shadow:-10px -10px 34px rgba(0,31,64,0.34);}
+
+.opcion-card{transition:transform .35s cubic-bezier(.22,.61,.36,1),box-shadow .35s ease,border-color .3s ease;}
+.opcion-header::after{transition:transform .6s cubic-bezier(.22,.61,.36,1),opacity .4s ease;}
+.opcion-card:hover .opcion-header::after{transform:rotate(-4deg) scale(1.14);opacity:.17;}
+
+@keyframes razonIn{from{opacity:0;transform:translateY(-6px);}to{opacity:1;transform:none;}}
+.js-anim details[open] .colegio-razon{animation:razonIn .38s ease both;}
+
+.pasos-cta{position:relative;overflow:hidden;}
+.pasos-cta::after{content:'';position:absolute;top:0;left:-120%;width:60%;height:100%;
+  background:linear-gradient(100deg,transparent,rgba(255,255,255,.55),transparent);transform:skewX(-18deg);}
+.pasos-cta:hover::after{animation:shine .85s ease;}
+@keyframes shine{to{left:140%;}}
+
+.fin-plazo,.fin-opcion-btn{transition:transform .25s cubic-bezier(.22,.61,.36,1),border-color .25s ease,background .25s ease,box-shadow .25s ease;}
+.fin-cuota-valor{transition:color .3s ease;}
+@keyframes cuotaPop{0%{opacity:.35;transform:translateY(6px);}100%{opacity:1;transform:none;}}
+.fin-cuota-valor.pop{animation:cuotaPop .42s cubic-bezier(.22,.61,.36,1);}
+
+.step-item{transition:transform .3s cubic-bezier(.22,.61,.36,1),background .3s ease;}
+.step-item:hover{transform:translateY(-4px);background:rgba(255,255,255,0.11);}
+.qs-pilar{transition:transform .3s ease;}
+.qs-pilar:hover{transform:translateX(4px);}
+
+@media(prefers-reduced-motion:reduce){
+  .js-anim .reveal,.js-anim .reveal-zoom{opacity:1!important;transform:none!important;transition:none!important;}
+  .js-anim .hero::after,.js-anim .hero-tag,.js-anim .hero-name,.js-anim .hero-subtitle,
+  .js-anim .hero-pill,.js-anim .hero-promo{animation:none!important;opacity:1;}
+  .js-anim .hero::after{opacity:.09;}
+  .progress-bar{display:none;}
+  *{transition-duration:.01ms!important;}
+}
+
+/* ============ IRLANDA · bloques propios ============ */
+.colegio-chips{display:flex;flex-wrap:wrap;gap:6px;margin-top:10px;}
+.chip{border-radius:6px;padding:3px 9px;font-size:9.5px;font-weight:700;text-transform:uppercase;letter-spacing:.5px;background:rgba(255,255,255,0.14);color:rgba(255,255,255,0.9);border:1px solid rgba(255,255,255,0.2);}
+.chip.gold{background:rgba(232,176,75,0.22);border-color:rgba(232,176,75,0.5);color:#ffdda0;}
+.colegio-zona{font-family:'Josefin Sans',sans-serif;font-size:9px;letter-spacing:2.5px;text-transform:uppercase;color:rgba(255,255,255,0.42);margin-bottom:8px;}
+.colegio-desc{font-size:12.5px;color:var(--text-mid);line-height:1.7;margin-bottom:16px;}
+.colegio-section-title{font-family:'Josefin Sans',sans-serif;font-size:9px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--ie);margin:0 0 9px;padding-bottom:6px;border-bottom:1.5px solid var(--ie-light);}
+.extra-tags{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:16px;}
+.extra-tag{font-size:10.5px;color:var(--text-mid);background:var(--gray-card);border:1px solid var(--gray-border);border-radius:20px;padding:3px 10px;}
+.actividades-ciudad{font-size:11.5px;color:var(--text-mid);line-height:1.65;background:var(--ie-light);border-left:3px solid var(--ie);border-radius:0 8px 8px 0;padding:10px 14px;margin-bottom:16px;}
+.por-que-list{list-style:none;display:flex;flex-direction:column;gap:7px;}
+.por-que-list li{font-size:12px;color:var(--text-mid);line-height:1.55;display:flex;gap:8px;align-items:flex-start;}
+.por-que-list li::before{content:'☘';color:var(--ie);flex-shrink:0;font-size:11px;}
+.web-btn{display:flex;align-items:center;justify-content:center;gap:8px;margin-top:18px;padding:11px 16px;
+  background:var(--ie-light);border:1.5px solid var(--ie);border-radius:10px;text-decoration:none;
+  font-family:'Josefin Sans',sans-serif;font-size:12px;font-weight:700;letter-spacing:1px;text-transform:uppercase;
+  color:var(--ie-deep);transition:background .2s,color .2s,transform .15s,box-shadow .2s;}
+.web-btn:hover{background:var(--ie);color:var(--white);transform:translateY(-2px);box-shadow:0 8px 20px rgba(58,122,9,0.28);}
+.web-btn .web-btn-ico{font-size:14px;}
+.web-btn .web-btn-dom{font-family:'Fira Sans',sans-serif;font-size:11px;font-weight:500;letter-spacing:0;text-transform:none;opacity:.8;white-space:nowrap;}
+
+.mod-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;}
+.mod-card{background:var(--white);border:1.5px solid var(--gray-border);border-radius:16px;overflow:hidden;box-shadow:0 2px 16px rgba(31,74,5,0.06);display:flex;flex-direction:column;position:relative;transition:transform .3s cubic-bezier(.22,.61,.36,1),box-shadow .3s ease;}
+.mod-card:hover{transform:translateY(-4px);box-shadow:0 12px 34px rgba(31,74,5,0.14);}
+.mod-card.destacado{border-color:var(--ie);box-shadow:0 6px 28px rgba(76,158,12,0.20);}
+.mod-head{padding:20px 22px 16px;background:var(--gray-card);border-bottom:1.5px solid var(--gray-border);}
+.mod-card.destacado .mod-head{background:linear-gradient(135deg,var(--ie-deep),var(--ie));border-bottom-color:transparent;}
+.mod-nombre{font-family:'Josefin Sans',sans-serif;font-size:15px;font-weight:700;color:var(--ie-deep);margin-bottom:4px;}
+.mod-card.destacado .mod-nombre{color:var(--white);}
+.mod-desc-head{font-size:11.5px;color:var(--text-light);line-height:1.5;margin-bottom:14px;}
+.mod-card.destacado .mod-desc-head{color:rgba(255,255,255,0.6);}
+.mod-precio-val{font-family:'Josefin Sans',sans-serif;font-size:27px;font-weight:700;color:var(--ie-deep);line-height:1;}
+.mod-card.destacado .mod-precio-val{color:var(--white);}
+.mod-precio-sub{font-size:10.5px;color:var(--text-light);text-transform:uppercase;letter-spacing:1px;margin-top:4px;}
+.mod-card.destacado .mod-precio-sub{color:rgba(255,255,255,0.55);}
+.mod-body{padding:18px 22px 20px;flex:1;}
+.mod-extra{background:var(--ie-light);border:1px solid rgba(76,158,12,0.22);border-radius:10px;padding:11px 14px;margin-bottom:14px;}
+.mod-extra-title{font-family:'Josefin Sans',sans-serif;font-size:8.5px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--ie);margin-bottom:7px;}
+.mod-mini{display:flex;justify-content:space-between;gap:10px;font-size:11.5px;color:var(--text-mid);margin-bottom:4px;}
+.mod-mini:last-child{margin-bottom:0;}
+.mod-mini b{color:var(--ie-deep);font-weight:600;white-space:nowrap;}
+.mod-list{list-style:none;display:flex;flex-direction:column;gap:8px;}
+.mod-list li{font-size:12px;color:var(--text-mid);line-height:1.55;display:flex;gap:8px;align-items:flex-start;}
+.mod-list li::before{content:'✓';color:var(--ie);font-weight:700;flex-shrink:0;}
+.badge-rec-mod{position:absolute;top:0;right:0;background:var(--ie);color:var(--white);font-family:'Josefin Sans',sans-serif;font-size:8.5px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;padding:5px 14px;border-radius:0 0 0 10px;z-index:3;}
+
+.tabla-wrap{background:var(--white);border:1.5px solid var(--gray-border);border-radius:16px;overflow:hidden;box-shadow:0 2px 16px rgba(31,74,5,0.05);}
+.tabla-diff{width:100%;border-collapse:collapse;}
+.tabla-diff th,.tabla-diff td{padding:13px 16px;text-align:center;font-size:12.5px;border-bottom:1px solid var(--gray-border);}
+.tabla-diff thead th{background:linear-gradient(135deg,var(--ie-deep),var(--ie));color:var(--white);font-family:'Josefin Sans',sans-serif;font-size:11.5px;font-weight:700;letter-spacing:.5px;}
+.tabla-diff tbody th{text-align:left;font-weight:600;color:var(--text);background:var(--gray-card);font-size:12px;}
+.tabla-diff tr:last-child td,.tabla-diff tr:last-child th{border-bottom:none;}
+.tabla-diff .si{color:var(--ie);font-weight:700;font-size:15px;}
+.tabla-diff .no{color:var(--text-light);font-size:15px;}
+.tabla-diff .sup{color:var(--red);font-size:10px;display:block;margin-top:2px;font-weight:600;}
+.tabla-diff .precio-fila td{font-family:'Josefin Sans',sans-serif;font-weight:700;font-size:15px;color:var(--ie-deep);}
+.tabla-nota{font-size:11px;color:var(--text-light);margin-top:12px;line-height:1.6;font-style:italic;}
+
+.sup-wrap{background:var(--white);border:1.5px solid var(--gray-border);border-radius:16px;padding:22px 26px;box-shadow:0 2px 16px rgba(31,74,5,0.05);}
+.sup-title{font-family:'Josefin Sans',sans-serif;font-size:14px;font-weight:700;color:var(--ie-deep);margin-bottom:14px;}
+.sup-rows{display:grid;grid-template-columns:repeat(2,1fr);gap:0 26px;}
+.sup-row{display:flex;justify-content:space-between;align-items:baseline;gap:12px;padding:9px 0;border-bottom:1px dashed var(--gray-border);font-size:12.5px;color:var(--text-mid);}
+.sup-row b{font-family:'Josefin Sans',sans-serif;color:var(--red);font-size:13px;white-space:nowrap;}
+
+.decision-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;}
+.decision-card{background:var(--white);border:1.5px solid var(--gray-border);border-left:4px solid var(--ie);border-radius:12px;padding:20px 22px;transition:transform .3s ease,box-shadow .3s ease;}
+.decision-card:hover{transform:translateY(-3px);box-shadow:0 10px 28px rgba(31,74,5,0.12);}
+.decision-title{font-family:'Josefin Sans',sans-serif;font-size:14px;font-weight:700;color:var(--ie-deep);margin-bottom:8px;}
+.decision-text{font-size:12.5px;color:var(--text-mid);line-height:1.7;}
+
+@media(max-width:900px){
+  .mod-grid{grid-template-columns:1fr;}
+  .decision-grid{grid-template-columns:1fr;}
+  .sup-rows{grid-template-columns:1fr;}
+  .tabla-wrap{overflow-x:auto;}
+  .tabla-diff{min-width:600px;}
+}
+</style>
+</head>
+<body>
+
+<!-- ============ 1. HEADER ============ -->
+<div class="header">
+  <div class="logo-area">
+    <img src="data:image/png;base64,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" alt="My Language Quest">
+    
+  </div>
+  <div class="header-right">
+    <div class="header-label">Curso académico</div>
+    <div class="header-year">2027/28</div>
+  </div>
+</div>
+
+<!-- ============ 2. HERO ============ -->
+<div class="hero">
+  <div class="hero-dots"></div>
+  <div class="hero-inner">
+    <div class="hero-tag">Propuesta personalizada · Irlanda</div>
+    <div class="hero-name">Pablo</div>
+    <div class="hero-subtitle">Programa Choice · Primer trimestre escolar (septiembre – diciembre) · Irlanda · 4º ESO</div>
+    <div class="hero-pills">
+      <div class="hero-pill">🎓 4º ESO</div>
+      <div class="hero-pill">🏠 Familia anfitriona</div>
+      <div class="hero-pill">🗣 Inglés muy sólido</div>
+      <div class="hero-pill">⚽ Fútbol · deporte de equipo</div>
+      <div class="hero-pill">📚 Buen expediente académico</div>
+      <div class="hero-pill ac">📍 Condado de Meath</div>
+    </div>
+  </div>
+</div>
+
+<div class="main">
+
+  <!-- ============ 3. CONTEXTO ============ -->
+  <div class="section-title"><h2>Cómo funciona un trimestre escolar en Irlanda</h2></div>
+  <p class="intro-text">
+    Pablo se incorpora a un <strong>colegio irlandés</strong> desde el primer día del curso, con su clase y su grupo,
+    y convive con una familia anfitriona en pensión completa. Con el <strong>Programa Choice sois vosotros quienes
+    elegís el colegio</strong> entre las opciones que hemos preseleccionado para su perfil. El trimestre empieza a
+    finales de agosto o principios de septiembre y termina a mediados de diciembre, con las vacaciones de Navidad.
+    Pablo cursa ahora 3º de la ESO en España, así que en Irlanda se incorporará al curso equivalente a <strong>4º de la ESO</strong>. Al ser una estancia corta, el criterio de selección ha sido claro:
+    <strong>colegios estructurados, con tutoría cercana y con deporte de equipo fuerte</strong>, porque el fútbol es la vía
+    más rápida para que un chico algo reservado entre en el grupo desde la primera semana.
+  </p>
+  <div class="intro-points">
+    <div class="intro-point"><div class="intro-point-icon">🏫</div><div><div class="intro-point-title">Vosotros elegís el colegio</div><div class="intro-point-desc">Seis centros públicos del condado de Meath. Elegís dos en orden de preferencia.</div></div></div>
+    <div class="intro-point"><div class="intro-point-icon">🏠</div><div><div class="intro-point-title">Familia anfitriona</div><div class="intro-point-desc">Pensión completa y habitación individual garantizada, con un único hispanohablante por familia.</div></div></div>
+    <div class="intro-point"><div class="intro-point-icon">⚽</div><div><div class="intro-point-title">Deporte desde el día 1</div><div class="intro-point-desc">Fútbol, fútbol gaélico y rugby dentro del colegio: el atajo natural para hacer grupo.</div></div></div>
+    <div class="intro-point"><div class="intro-point-icon">📄</div><div><div class="intro-point-title">Homologación del trimestre</div><div class="intro-point-desc">Nos encargamos de la recogida de notas y las traducciones juradas a la vuelta.</div></div></div>
+  </div>
+
+  <!-- ============ 4. QUIÉNES SOMOS ============ -->
+  <div class="section-title"><h2>Quiénes somos</h2></div>
+  <div class="qs-hero">
+    <div class="qs-media">
+      <img src="https://aescobarnic.github.io/Propuestas/img/mlq-grupo-aeropuerto.jpg" style="object-position:center 30%;" alt="Grupo de estudiantes de My Language Quest en el aeropuerto con su coordinadora" loading="lazy">
+      <div class="qs-media-inset"><img src="https://aescobarnic.github.io/Propuestas/img/mlq-despedida-familia.jpg" style="object-position:center 25%;" alt="Estudiante despidiéndose de su familia antes de salir" loading="lazy"></div>
+    </div>
+    <div class="qs-panel">
+      <div class="qs-panel-inner">
+        <div class="qs-eyebrow">My Language Quest</div>
+        <div class="qs-title">Nadie hace este viaje solo</div>
+        <p class="qs-lead">
+          Acompañamos a familias españolas en la experiencia de estudiar en el extranjero.
+          No somos una plataforma de reservas: <strong>hay personas con nombre y apellido detrás de cada
+          estudiante</strong>, desde la primera reunión hasta la homologación de las notas a la vuelta.
+        </p>
+        <div class="qs-pilares">
+          <div class="qs-pilar"><div class="qs-pilar-icon">👩‍💼</div><div><div class="qs-pilar-title">Una asesora asignada en España</div><div class="qs-pilar-desc">La misma persona de principio a fin: nada de tickets ni centralitas.</div></div></div>
+          <div class="qs-pilar"><div class="qs-pilar-icon">🧭</div><div><div class="qs-pilar-title">Coordinador local en Irlanda</div><div class="qs-pilar-desc">Visitas, tutorías y emergencias 24 h sobre el terreno.</div></div></div>
+          <div class="qs-pilar"><div class="qs-pilar-icon">🏠</div><div><div class="qs-pilar-title">Un solo hispanohablante por familia</div><div class="qs-pilar-desc">Garantizado, para que la inmersión sea real desde el primer día.</div></div></div>
+          <div class="qs-pilar"><div class="qs-pilar-icon">📞</div><div><div class="qs-pilar-title">Atención 24 h, aquí y allí</div><div class="qs-pilar-desc">Emergencias cubiertas en España y en destino, todo el trimestre.</div></div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="qs-chapters-head">
+    <div class="qs-chapters-title">Cómo se vive el trimestre</div>
+    <div class="qs-chapters-sub">De la maleta en casa a la vida de instituto al otro lado del mar</div>
+  </div>
+  <div class="qs-chapters">
+    <div class="qs-chapter">
+      <div class="qs-chapter-media"><img src="https://aescobarnic.github.io/Propuestas/img/mlq-equipaje-salida.jpg" style="object-position:center 12%;" alt="Estudiante con su equipaje el día de la salida" loading="lazy"><div class="qs-chapter-step">Antes de salir</div></div>
+      <div class="qs-chapter-body"><div class="qs-chapter-title">Todo resuelto antes de la maleta</div><div class="qs-chapter-text">Entrevista, elección de colegio, matrícula, familia anfitriona y vuelos. Más la masterclass de cultura irlandesa, 10 horas online antes de salir.</div></div>
+    </div>
+    <div class="qs-chapter">
+      <div class="qs-chapter-media"><img src="https://aescobarnic.github.io/Propuestas/img/mlq-salida-pista.jpg" style="object-position:center 8%;" alt="Estudiantes de My Language Quest el día de la salida" loading="lazy"><div class="qs-chapter-step">El día de la salida</div></div>
+      <div class="qs-chapter-body"><div class="qs-chapter-title">Salida acompañada</div><div class="qs-chapter-text">Orientación previa en Madrid u online, orientación de 2 días en Dublín al llegar y recibimiento en el aeropuerto.</div></div>
+    </div>
+    <div class="qs-chapter">
+      <div class="qs-chapter-media"><img src="https://aescobarnic.github.io/Propuestas/img/mlq-vida-social.jpg" style="object-position:center 22%;" alt="Estudiante con sus nuevos amigos" loading="lazy"><div class="qs-chapter-step">La vida allí</div></div>
+      <div class="qs-chapter-body"><div class="qs-chapter-title">Un trimestre, no unas vacaciones</div><div class="qs-chapter-text">Colegio, uniforme, entrenamientos y amigos nuevos. Con coordinador local, tutorías y cambio de familia si hiciera falta.</div></div>
+    </div>
+  </div>
+
+  <!-- ============ 5. COLEGIOS RECOMENDADOS ============ -->
+  <div class="section-title"><h2>Colegios recomendados · Condado de Meath</h2></div>
+  <div class="alert-box">
+    <div class="alert-icon">☘</div>
+    <div class="alert-text"><strong>Programa Choice · precio único:</strong> el precio no varía según el colegio elegido. Os presentamos los <strong>seis centros del condado de Meath</strong> que encajan con el perfil de Pablo: todos públicos, mixtos, con equipos de fútbol y fútbol gaélico activos y con plazas disponibles para el curso 2027/28. <strong>Solo tenéis que elegir dos en orden de preferencia</strong> —1ª y 2ª opción—: tramitamos la primera y, si hubiera cualquier incidencia con el cupo de internacionales, pasamos automáticamente a la segunda sin perder tiempo. Los cuatro primeros están mejor conectados con Navan y Dublín; O’Carolan y St. Oliver quedan en zonas más aisladas, por eso los situamos como últimas opciones.</div>
+  </div>
+  <div class="opciones-grid">
+
+    <div class="opcion-card">
+      <div class="opcion-header">
+        <div class="colegio-zona">Condado de Meath · Ciudad pequeña</div>
+        <div class="opcion-distrito">St. Ciaran’s Community School</div>
+        <div class="opcion-loc">📍 Kells · A 16 km de Navan · 35 min de Dublín</div>
+        <div class="colegio-chips"><span class="chip">Mixto</span><span class="chip">Público</span><span class="chip">592 alumnos</span><span class="chip gold">☘ Deporte de alto nivel</span></div>
+      </div>
+      <div class="opcion-body">
+        <div class="colegio-desc">Kells es una localidad con vida propia (6.300 habitantes), junto a la M3 y a diez minutos de Navan. El colegio es grande, muy deportivo y con un palmarés reciente que demuestra hasta qué punto los equipos están vivos: victoria del equipo sub-19 en la final del norte de Leinster, atletas campeones de Irlanda y finalistas de oratoria en Leinster.</div>
+        <div class="colegio-section-title">Extracurriculares destacados</div>
+        <div class="extra-tags"><span class="extra-tag">⚽ Fútbol</span><span class="extra-tag">🏐 Fútbol gaélico</span><span class="extra-tag">🏀 Baloncesto</span><span class="extra-tag">🏉 Rugby</span><span class="extra-tag">🏃 Atletismo · Campo a través</span><span class="extra-tag">🐴 Equitación</span><span class="extra-tag">⛳ Golf</span></div>
+        <div class="colegio-section-title">Actividades en la zona</div>
+        <div class="actividades-ciudad">Centro de ocio con piscina y gimnasio · club de atletismo · centros ecuestres de primer nivel · club de fútbol y rugby · tenis · artes marciales · parques forestales y Spire of Lloyd · teatro y museo.</div>
+        <div class="colegio-section-title">Por qué encaja con Pablo</div>
+        <ul class="por-que-list">
+          <li>Fútbol y fútbol gaélico con equipos competitivos: entrar en un equipo es la vía más rápida para hacer grupo en un trimestre corto</li>
+          <li>Centro grande y estructurado, con tutorías y seguimiento muy marcados</li>
+          <li>Centros ecuestres de primer nivel en Kells, para las tardes que quiera dedicar a los caballos</li>
+          <li>Kells tiene tamaño suficiente para tener plan entre semana sin perder la inmersión</li>
+        </ul>
+        <a class="web-btn" href="https://www.stciaranscs.ie" target="_blank" rel="noopener"><span class="web-btn-ico">🔗</span> Web del colegio <span class="web-btn-dom">· stciaranscs.ie</span></a>
+      </div>
+      <div class="match-bar"><span class="match-tag">Fútbol competitivo</span><span class="match-tag">Colegio estructurado</span><span class="match-tag">Equitación</span></div>
+    </div>
+
+    <div class="opcion-card">
+      <div class="opcion-header">
+        <div class="colegio-zona">Condado de Meath · Pueblo pequeño</div>
+        <div class="opcion-distrito">Athboy Community School</div>
+        <div class="opcion-loc">📍 Athboy · A 15 km de Navan · Menos de 1 h de Dublín</div>
+        <div class="colegio-chips"><span class="chip">Mixto</span><span class="chip">Público</span><span class="chip">613 alumnos</span><span class="chip gold">☘ One Good School · Oro</span></div>
+      </div>
+      <div class="opcion-body">
+        <div class="colegio-desc">Athboy es un pueblo agrícola de 3.000 habitantes a orillas del río Yellow Ford, cerca de Trim y Kells. El colegio tiene el nivel Oro del programa «One Good School» por su trabajo en bienestar y acompañamiento del alumno, junto con Jigsaw Navan: es el centro con el seguimiento más cuidado de la selección.</div>
+        <div class="colegio-section-title">Extracurriculares destacados</div>
+        <div class="extra-tags"><span class="extra-tag">⚽ Fútbol</span><span class="extra-tag">🏐 Fútbol gaélico · Hurling</span><span class="extra-tag">🏉 Rugby</span><span class="extra-tag">🏀 Baloncesto</span><span class="extra-tag">🏃 Atletismo</span><span class="extra-tag">🎭 Teatro · Coro · Debate</span><span class="extra-tag">🏅 Premios Gaisce</span></div>
+        <div class="colegio-section-title">Actividades en la zona</div>
+        <div class="actividades-ciudad">Fitness Academy · club de boxeo y kárate · fútbol, rugby, hurling y camogie · bádminton y tenis · clases de música y baile · club de atletismo · equitación · clubes juveniles y biblioteca.</div>
+        <div class="colegio-section-title">Por qué encaja con Pablo</div>
+        <ul class="por-que-list">
+          <li>El acompañamiento está acreditado, no es una promesa: nivel Oro en bienestar del alumnado. Muy a favor para un chico que tarda un poco en soltarse</li>
+          <li>Fútbol, rugby y gaélico activos todo el curso, con equipos que llegan a finales nacionales</li>
+          <li>Pueblo pequeño: inmersión total en inglés desde el primer día</li>
+          <li>Equitación y club juvenil en el propio pueblo, a pie desde casa de la familia</li>
+        </ul>
+        <a class="web-btn" href="https://www.athboycs.ie" target="_blank" rel="noopener"><span class="web-btn-ico">🔗</span> Web del colegio <span class="web-btn-dom">· athboycs.ie</span></a>
+      </div>
+      <div class="match-bar"><span class="match-tag">Bienestar acreditado</span><span class="match-tag">Fútbol y rugby</span><span class="match-tag">Inmersión total</span></div>
+    </div>
+
+    <div class="opcion-card">
+      <div class="opcion-header">
+        <div class="colegio-zona">Condado de Meath · Ciudad pequeña</div>
+        <div class="opcion-distrito">Dunshaughlin Community College</div>
+        <div class="opcion-loc">📍 Dunshaughlin · A 29 km de Navan · Buena conexión con Dublín</div>
+        <div class="colegio-chips"><span class="chip">Mixto</span><span class="chip">Público</span><span class="chip">700 alumnos</span><span class="chip gold">☘ Tutoría y bienestar</span></div>
+      </div>
+      <div class="opcion-body">
+        <div class="colegio-desc">Dunshaughlin es una localidad moderna y en expansión, tranquila y muy bien conectada con Dublín. Es el mayor de los seis centros (700 alumnos), con una organización interna muy marcada: consejo de estudiantes, programa de bienestar y una oferta de clubes amplia.</div>
+        <div class="colegio-section-title">Extracurriculares destacados</div>
+        <div class="extra-tags"><span class="extra-tag">⚽ Fútbol chicos</span><span class="extra-tag">🏐 Fútbol gaélico chicos</span><span class="extra-tag">🏀 Baloncesto</span><span class="extra-tag">🏃 Atletismo</span><span class="extra-tag">🐴 Equitación</span><span class="extra-tag">♟ Ajedrez</span><span class="extra-tag">➗ Club de matemáticas</span><span class="extra-tag">🎸 Música moderna</span></div>
+        <div class="colegio-section-title">Actividades en la zona</div>
+        <div class="actividades-ciudad">Centro de fitness y gimnasio · fútbol, hurling y camogie · baloncesto y bádminton · pitch &amp; putt · clases de arte, música y baile · club de atletismo · equitación · clubes juveniles, biblioteca y museo.</div>
+        <div class="colegio-section-title">Por qué encaja con Pablo</div>
+        <ul class="por-que-list">
+          <li>Es el más «estructurado» en el día a día: consejo de estudiantes, tutoría y programa de bienestar propios</li>
+          <li>Fútbol y fútbol gaélico masculinos como actividad principal del centro</li>
+          <li>Equitación ofertada como extraescolar del propio colegio</li>
+          <li>700 alumnos: más equipos y más clubes donde encajar, útil cuando solo hay un trimestre por delante</li>
+        </ul>
+        <a class="web-btn" href="https://dunshaughlincc.ie" target="_blank" rel="noopener"><span class="web-btn-ico">🔗</span> Web del colegio <span class="web-btn-dom">· dunshaughlincc.ie</span></a>
+      </div>
+      <div class="match-bar"><span class="match-tag">Máxima estructura</span><span class="match-tag">Fútbol</span><span class="match-tag">Equitación</span></div>
+    </div>
+
+    <div class="opcion-card">
+      <div class="opcion-header">
+        <div class="colegio-zona">Condado de Meath · Ciudad pequeña</div>
+        <div class="opcion-distrito">Coláiste Ríoga</div>
+        <div class="opcion-loc">📍 Dunshaughlin · A 29 km de Navan · Buena conexión con Dublín</div>
+        <div class="colegio-chips"><span class="chip">Mixto</span><span class="chip">Público</span><span class="chip">500 alumnos</span><span class="chip gold">☘ Oferta de clubes muy amplia</span></div>
+      </div>
+      <div class="opcion-body">
+        <div class="colegio-desc">El segundo centro de Dunshaughlin, más pequeño que su vecino (500 alumnos) y con una lista de clubes y actividades difícil de igualar: desde mathletes y jóvenes científicos hasta radio escolar, musicales y natación. Mismo entorno tranquilo y misma conexión con Dublín.</div>
+        <div class="colegio-section-title">Extracurriculares destacados</div>
+        <div class="extra-tags"><span class="extra-tag">⚽ Fútbol</span><span class="extra-tag">🏐 Fútbol gaélico</span><span class="extra-tag">🏉 Rugby</span><span class="extra-tag">🏀 Baloncesto</span><span class="extra-tag">🏃 Atletismo</span><span class="extra-tag">🏊 Natación</span><span class="extra-tag">🎸 Guitarra · Coro · Musicales</span><span class="extra-tag">🧠 Mathletes · Jóvenes científicos</span></div>
+        <div class="colegio-section-title">Actividades en la zona</div>
+        <div class="actividades-ciudad">Centro de fitness y gimnasio · fútbol, hurling y camogie · baloncesto y bádminton · pitch &amp; putt · clases de arte, música y baile · club de atletismo · equitación · clubes juveniles, biblioteca y museo.</div>
+        <div class="colegio-section-title">Por qué encaja con Pablo</div>
+        <ul class="por-que-list">
+          <li>Centro de tamaño medio (500 alumnos): grupos más reducidos, más fácil hacerse visible siendo algo reservado</li>
+          <li>Fútbol, gaélico y rugby, con una oferta extraescolar amplísima si quiere probar algo más</li>
+          <li>Perfil académico dinámico —jóvenes científicos, mathletes, mini empresa— acorde con su buen expediente</li>
+          <li>Excursiones locales, regionales y nacionales durante el curso</li>
+        </ul>
+        <a class="web-btn" href="https://colaisterioga.ie" target="_blank" rel="noopener"><span class="web-btn-ico">🔗</span> Web del colegio <span class="web-btn-dom">· colaisterioga.ie</span></a>
+      </div>
+      <div class="match-bar"><span class="match-tag">Grupos reducidos</span><span class="match-tag">Fútbol</span><span class="match-tag">Muchos clubes</span></div>
+    </div>
+
+    <div class="opcion-card">
+      <div class="opcion-header">
+        <div class="colegio-zona">Condado de Meath · Pueblo pequeño</div>
+        <div class="opcion-distrito">O’Carolan College</div>
+        <div class="opcion-loc">📍 Nobber · A 16 km al norte de Navan · 10 min de Kells</div>
+        <div class="colegio-chips"><span class="chip">Mixto</span><span class="chip">Público</span><span class="chip">611 alumnos</span><span class="chip gold">☘ Zona más aislada</span></div>
+      </div>
+      <div class="opcion-body">
+        <div class="colegio-desc">Nobber es una localidad del norte de Meath, en la carretera que une Navan con Kingscourt. Pueblo muy pequeño (unos 900 habitantes) con un colegio sorprendentemente grande y activo: robótica, radio escolar, musicales y una lista larga de deportes.</div>
+        <div class="colegio-section-title">Extracurriculares destacados</div>
+        <div class="extra-tags"><span class="extra-tag">⚽ Fútbol</span><span class="extra-tag">🏐 Fútbol gaélico</span><span class="extra-tag">🏉 Rugby</span><span class="extra-tag">🏀 Baloncesto</span><span class="extra-tag">🏸 Bádminton</span><span class="extra-tag">🏃 Atletismo</span><span class="extra-tag">🐴 Equitación</span><span class="extra-tag">🤖 Robótica · Jóvenes científicos</span></div>
+        <div class="colegio-section-title">Actividades en la zona</div>
+        <div class="actividades-ciudad">Centro de fitness · club de ciclismo Nobber Dee Railers · fútbol y hurling · clases de arte, música y baile · clubes de running · equitación · clubes juveniles y cafeterías.</div>
+        <div class="colegio-section-title">A tener en cuenta</div>
+        <ul class="por-que-list">
+          <li>Deporte y extraescolares muy completos dentro del colegio, con equitación incluida</li>
+          <li>Inmersión lingüística máxima: prácticamente no hay estudiantes españoles en la zona</li>
+          <li>Nobber es un pueblo muy pequeño: la vida social fuera del colegio depende casi por completo de los clubes y de la familia anfitriona</li>
+          <li>Por eso lo situamos como una de las últimas opciones para una estancia de un solo trimestre</li>
+        </ul>
+        <a class="web-btn" href="https://www.ocarolancollege.ie" target="_blank" rel="noopener"><span class="web-btn-ico">🔗</span> Web del colegio <span class="web-btn-dom">· ocarolancollege.ie</span></a>
+      </div>
+      <div class="match-bar"><span class="match-tag">Inmersión máxima</span><span class="match-tag">Fútbol y equitación</span><span class="match-tag">Entorno rural</span></div>
+    </div>
+
+    <div class="opcion-card">
+      <div class="opcion-header">
+        <div class="colegio-zona">Condado de Meath · Pueblo pequeño</div>
+        <div class="opcion-distrito">St. Oliver Post Primary</div>
+        <div class="opcion-loc">📍 Oldcastle · A 25 min de Navan · 10 min de Kells y Virginia</div>
+        <div class="colegio-chips"><span class="chip">Mixto</span><span class="chip">Público</span><span class="chip">583 alumnos</span><span class="chip gold">☘ Zona más aislada</span></div>
+      </div>
+      <div class="opcion-body">
+        <div class="colegio-desc">Oldcastle está en el noroeste del condado, junto a la frontera con Cavan y al lado de los túmulos de Loughcrew. Pueblo de 1.400 habitantes, con un colegio de tamaño medio y un ambiente muy de comunidad.</div>
+        <div class="colegio-section-title">Extracurriculares destacados</div>
+        <div class="extra-tags"><span class="extra-tag">⚽ Fútbol</span><span class="extra-tag">🏐 Fútbol gaélico</span><span class="extra-tag">🏉 Rugby</span><span class="extra-tag">🏀 Baloncesto</span><span class="extra-tag">🏐 Voleibol</span><span class="extra-tag">🏃 Atletismo</span><span class="extra-tag">🧘 Club de mindfulness</span><span class="extra-tag">🌱 Ciencias agrícolas</span></div>
+        <div class="colegio-section-title">Actividades en la zona</div>
+        <div class="actividades-ciudad">Centro de fitness y gimnasio · Loughcrew Cairns and Gardens · Fore Abbey y Lough Lene · fútbol, hurling y camogie · baloncesto y pesca · kickboxing · pitch &amp; putt · arte, música y baile · equitación · clubes juveniles, biblioteca y museo.</div>
+        <div class="colegio-section-title">A tener en cuenta</div>
+        <ul class="por-que-list">
+          <li>Fútbol, gaélico, rugby y voleibol: deporte de equipo garantizado</li>
+          <li>Club de mindfulness y ambiente de comunidad pequeña, cómodo para un perfil reservado</li>
+          <li>Naturaleza y equitación a la puerta de casa</li>
+          <li>Oldcastle queda en el extremo noroeste del condado, más lejos de Navan y Dublín: por eso lo situamos también como última opción</li>
+        </ul>
+        <a class="web-btn" href="https://stoliverpps.ie" target="_blank" rel="noopener"><span class="web-btn-ico">🔗</span> Web del colegio <span class="web-btn-dom">· stoliverpps.ie</span></a>
+      </div>
+      <div class="match-bar"><span class="match-tag">Comunidad pequeña</span><span class="match-tag">Fútbol</span><span class="match-tag">Naturaleza</span></div>
+    </div>
+
+  </div>
+
+  <!-- ============ 5b. DETALLES DEL PERFIL ============ -->
+  <div class="section-title"><h2>Detalles que ya hemos tenido en cuenta</h2></div>
+  <div class="info-blocks">
+    <div class="info-block">
+      <div class="info-block-icon">🐕</div>
+      <div class="info-block-title">Familia anfitriona: sin gatos ni conejos</div>
+      <div class="info-block-text">
+        Trasladamos la condición a nuestro partner en Irlanda <strong>antes de iniciar la búsqueda</strong>, no después:
+        se seleccionará una familia sin gatos ni conejos en el domicilio.
+        <ul>
+          <li>Perros: sin problema, es un plus para Pablo</li>
+          <li>Se verifica en la ficha de la familia antes de confirmarla</li>
+          <li>Si surgiera cualquier incidencia en destino, la gestión de cambio de familia está incluida en el programa</li>
+        </ul>
+      </div>
+    </div>
+    <div class="info-block">
+      <div class="info-block-icon">🌾</div>
+      <div class="info-block-title">Alergia al olivo y calendario</div>
+      <div class="info-block-text">
+        El olivo no forma parte del paisaje irlandés, así que ese polen no está presente en destino.
+        <ul>
+          <li>El trimestre va de finales de agosto a mediados de diciembre, fuera de la temporada alta de polen</li>
+          <li>El seguro médico privado y de responsabilidad civil está incluido en el programa</li>
+          <li>Recogemos el informe alérgico en la ficha del estudiante para la familia y el colegio</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <!-- ============ 6. MODALIDADES Y PRECIOS ============ -->
+  <div class="section-title"><h2>Modalidades y precios</h2></div>
+  <div class="mod-grid">
+    <div class="mod-card destacado">
+      <div class="badge-rec-mod">Propuesto</div>
+      <div class="mod-head">
+        <div class="mod-nombre">Trimestre · Choice + 2 vuelos</div>
+        <div class="mod-desc-head">Inicio a finales de agosto o primeros de septiembre · Fin a mediados de diciembre</div>
+        <div class="mod-precio-val">10.200 €</div>
+        <div class="mod-precio-sub">Primer trimestre escolar</div>
+      </div>
+      <div class="mod-body">
+        <ul class="mod-list">
+          <li>Elección de colegio entre los seis centros propuestos</li>
+          <li>Familia anfitriona en pensión completa con habitación individual garantizada</li>
+          <li>Libros de asignaturas obligatorias y uniforme escolar incluidos</li>
+          <li>Orientación previa en Dublín, 2 días, incluida</li>
+          <li>2 vuelos internacionales incluidos (ida en septiembre y vuelta en diciembre)</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="mod-card">
+      <div class="mod-head">
+        <div class="mod-nombre">Semestre · Choice + 4 vuelos</div>
+        <div class="mod-desc-head">De agosto a enero, con los vuelos de Navidad incluidos</div>
+        <div class="mod-precio-val">11.650 €</div>
+        <div class="mod-precio-sub">Semestre agosto – enero</div>
+      </div>
+      <div class="mod-body">
+        <div class="mod-extra">
+          <div class="mod-extra-title">Si se alargara más</div>
+          <div class="mod-mini"><span>Semestre agosto–abril</span><b>15.200 €</b></div>
+        </div>
+        <ul class="mod-list">
+          <li>Todo lo del trimestre, un mes más de curso</li>
+          <li>4 vuelos: inicio, ida y vuelta de Navidad y fin de programa</li>
+          <li>Opción habitual cuando el estudiante quiere continuar tras las Navidades</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="mod-card">
+      <div class="mod-head">
+        <div class="mod-nombre">Año completo · Choice + 2 vuelos</div>
+        <div class="mod-desc-head">El curso escolar irlandés completo</div>
+        <div class="mod-precio-val">17.450 €</div>
+        <div class="mod-precio-sub">Año escolar completo</div>
+      </div>
+      <div class="mod-body">
+        <div class="mod-extra">
+          <div class="mod-extra-title">Otras opciones</div>
+          <div class="mod-mini"><span>Año completo + 4 vuelos</span><b>18.200 €</b></div>
+        </div>
+        <ul class="mod-list">
+          <li>Curso completo con convalidación ante el Ministerio de Educación</li>
+          <li>Habitación individual, libros, uniforme y tasa de Transition Year incluidos</li>
+          <li>Ampliar desde el trimestre cuesta solo la diferencia de precio, sin gastos añadidos</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <!-- ============ 8. QUÉ PROGRAMA ENCAJA ============ -->
+  <div class="section-title"><h2>¿Y si el trimestre se queda corto?</h2></div>
+  <div class="decision-grid">
+    <div class="decision-card">
+      <div class="decision-title">Un trimestre para probar</div>
+      <div class="decision-text">Es la fórmula que proponemos: septiembre a diciembre, con la vuelta a casa en Navidad. Tiempo suficiente para dar un salto real de inglés y de autonomía, sin comprometer el curso en España.</div>
+    </div>
+    <div class="decision-card">
+      <div class="decision-title">Alargar hasta enero</div>
+      <div class="decision-text">Si en noviembre Pablo está integrado y quiere seguir, el paso natural es el semestre agosto–enero. <strong>Solo se abona la diferencia de precio entre las dos modalidades: no hay gastos de gestión ni de ampliación.</strong></div>
+    </div>
+    <div class="decision-card">
+      <div class="decision-title">Curso completo</div>
+      <div class="decision-text">El año escolar completo es la opción con mayor impacto académico y lingüístico, e incluye la tramitación de convalidación ante el Ministerio de Educación. También aquí <strong>se paga únicamente la diferencia</strong> respecto al trimestre ya contratado.</div>
+    </div>
+  </div>
+
+  <!-- ============ 9. EL PROGRAMA INCLUYE ============ -->
+  <div class="section-title"><h2>El programa incluye</h2></div>
+  <div class="includes-wrap">
+    <div class="includes-head"><h3>☘ Programa Choice · Trimestre escolar en Irlanda</h3></div>
+    <div class="includes-body">
+      <div class="includes-grid">
+        <div>
+          <div class="col-title">Antes del viaje</div>
+          <ul class="inc-list">
+            <li>Reunión inicial con padres o tutores</li>
+            <li>Entrevista personal online con el estudiante</li>
+            <li>Información completa sobre el programa en Irlanda</li>
+            <li>Inscripción y matriculación en el colegio elegido</li>
+            <li>Familia anfitriona en régimen de pensión completa<small>Habitación individual garantizada</small></li>
+            <li>Un único estudiante hispanohablante por familia</li>
+            <li>Seguro médico privado y de responsabilidad civil</li>
+            <li>Libros de asignaturas obligatorias y uniforme escolar</li>
+            <li>Masterclass de cultura irlandesa<small>10 horas online en inglés</small></li>
+            <li>Orientación pre-viaje en Madrid u online</li>
+            <li>Welcome pack sorpresa de My Language Quest</li>
+          </ul>
+        </div>
+        <div>
+          <div class="col-title">Durante el viaje</div>
+          <ul class="inc-list">
+            <li>Recibimiento en aeropuerto y traslados en destino</li>
+            <li>Orientación previa en Dublín, 2 días</li>
+            <li>Asesoramiento en elección de asignaturas</li>
+            <li>Clases de inglés Cambridge y libro incluido</li>
+            <li>Coordinador local en Irlanda: visitas, tutorías y emergencias 24 h</li>
+            <li>Acompañamiento psicológico</li>
+            <li>Apoyo para matriculación en extraescolares</li>
+            <li>Gestión de cambio de familia si fuera necesario</li>
+            <li>Atención 24 h en España para emergencias</li>
+          </ul>
+          <div class="col-title" style="margin-top:24px;">Después del viaje</div>
+          <ul class="inc-list">
+            <li>Recogida de notas del trimestre y traducciones juradas</li>
+            <li>Dossier final detallando la experiencia</li>
+          </ul>
+        </div>
+        <div>
+          <div class="col-title">No incluido</div>
+          <ul class="inc-list no">
+            <li>Actividades extracurriculares de pago</li>
+            <li>Excursiones y viajes escolares</li>
+            <li>Material escolar adicional</li>
+            <li>Transporte local mensual</li>
+            <li>Ocio personal</li>
+            <li>Todo aquello que no esté especificado expresamente en el apartado &laquo;El programa incluye&raquo;</li>
+          </ul>
+        </div>
+      </div>
+      <div class="gestor-wrap">
+        <div class="gestor-title">Gestor estudiantil · se encarga de</div>
+        <div class="gestor-grid">
+          <div class="gestor-item">Seguimiento personalizado del desempeño</div>
+          <div class="gestor-item">Información a padres mensualmente</div>
+          <div class="gestor-item">Notas oficiales del trimestre</div>
+          <div class="gestor-item">Asesoría en cambio de asignaturas</div>
+          <div class="gestor-item">Todas las tutorías necesarias</div>
+          <div class="gestor-item">Reuniones con padres y/o estudiante</div>
+          <div class="gestor-item">Apoyo en actividades extraescolares</div>
+          <div class="gestor-item">Resolución de situaciones con familia o centro</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ============ 10. FORMAS DE PAGO ============ -->
+  <div class="section-title"><h2>Formas de pago</h2></div>
+  <div class="payment-wrap">
+    <div class="payment-inner">
+      <div class="pay-title">💳 Condiciones económicas · Trimestre 10.200 €</div>
+      <div class="pay-subtitle">Dos vías: pago directo o financiación. El importe de la reserva cambia según cuál elijáis.</div>
+
+      <div class="pay-route">
+        <div class="pay-route-head"><span class="pay-route-icon">🏦</span><span class="pay-route-title">Opción A · Pago sin financiación</span></div>
+        <div class="pay-route-sub">La cantidad íntegra debe abonarse antes del 1 de junio de 2027.</div>
+        <div class="pay-entrada">
+          <div class="pay-entrada-num">3.500 €</div>
+          <div class="pay-entrada-txt"><strong>Primer pago a la firma del contrato.</strong> Reserva la plaza e inicia la tramitación de matrícula y familia anfitriona.</div>
+        </div>
+        <div class="pay-cols">
+          <div class="pay-col">
+            <div class="pay-col-title">Paso 2 · Confirmación de plaza</div>
+            <div class="pay-step"><div class="pay-step-title">4.000 €</div><div class="pay-step-desc">Al confirmarse la plaza en el colegio elegido</div></div>
+          </div>
+          <div class="pay-col">
+            <div class="pay-col-title">Paso 3 · Resto del importe</div>
+            <div class="pay-step"><div class="pay-step-title">2.700 €</div><div class="pay-step-desc">Antes del 1 de junio de 2027, hasta completar los 10.200 €</div></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="pay-route">
+        <div class="pay-route-head"><span class="pay-route-icon">📆</span><span class="pay-route-title">Opción B · Con financiación Banco Sabadell</span></div>
+        <div class="pay-route-sub">Si se financia el programa, la entrada es siempre de 5.000 € y el resto se financia en cuotas mensuales.</div>
+        <div class="pay-entrada">
+          <div class="pay-entrada-num">5.000 €</div>
+          <div class="pay-entrada-txt"><strong>Entrada fija a la firma del contrato</strong> en todos los casos de financiación. El capital restante se financia en 12, 18, 24 o 36 meses.</div>
+        </div>
+        <div class="pay-cols">
+          <div class="pay-col">
+            <div class="pay-col-title">Capital financiado</div>
+            <div class="pay-step"><div class="pay-step-title">5.200 € en el trimestre</div><div class="pay-step-desc">Precio del programa − 5.000 € de entrada. Calculad la cuota exacta en el simulador de la sección siguiente.</div></div>
+          </div>
+          <div class="pay-col">
+            <div class="pay-col-title">Condiciones</div>
+            <div class="pay-step"><div class="pay-step-title">12 meses · TIN 0 %</div><div class="pay-step-desc">MLQ asume los intereses</div></div>
+            <div class="pay-step"><div class="pay-step-title">18 / 24 / 36 meses · TIN 10,46 %</div><div class="pay-step-desc">Intereses a cargo del cliente</div></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="pay-note">El seguro de anulación e interrupción es opcional, cuesta 500 € y debe contratarse y abonarse en el momento de la firma del contrato. Su importe no es reembolsable bajo ninguna circunstancia. Las inscripciones tardías deben cumplir con los plazos de pago ya pasados en el momento de la inscripción.</div>
+    </div>
+  </div>
+
+  <!-- ============ 11. FINANCIACIÓN ============ -->
+  <div class="section-title"><h2>Financia el programa</h2></div>
+  <div class="financing-wrap">
+    <div class="financing-head">
+      <div class="financing-head-left">
+        <div class="fin-icon">💳</div>
+        <div>
+          <div class="fin-title">Pagad a vuestro ritmo, sin preocupaciones</div>
+          <div class="fin-sub">Entrada fija de 5.000 € · Aprobación rápida · 100 % online · Sin comisión de apertura</div>
+        </div>
+      </div>
+      <div class="fin-badge">Hasta 36 meses</div>
+    </div>
+    <div class="financing-body">
+      <div class="fin-opcion-selector">
+        <div class="fin-opcion-label">Selecciona la modalidad</div>
+        <div class="fin-opcion-btns" id="finOpciones">
+          <button class="fin-opcion-btn active" data-precio="10200"><span class="fin-opcion-nombre">☘ Trimestre Choice</span><span class="fin-opcion-precio">10.200 €</span></button>
+          <button class="fin-opcion-btn" data-precio="11650"><span class="fin-opcion-nombre">Semestre ago–ene</span><span class="fin-opcion-precio">11.650 €</span></button>
+          <button class="fin-opcion-btn" data-precio="17450"><span class="fin-opcion-nombre">Año completo Choice</span><span class="fin-opcion-precio">17.450 €</span></button>
+        </div>
+      </div>
+
+      <div class="fin-entrada-fija">
+        <div class="fin-entrada-fija-num">5.000 €</div>
+        <div class="fin-entrada-fija-txt"><strong>Entrada a la firma del contrato.</strong> Se descuenta del precio del programa; el resto es el capital que se financia.</div>
+      </div>
+
+      <div class="fin-plazo-wrap">
+        <div class="fin-plazo-label">Elegid el plazo de financiación</div>
+        <div class="fin-plazos" id="finPlazos">
+          <button class="fin-plazo active" data-meses="12" data-tin="0"><div class="fin-plazo-meses">12 meses</div><div class="fin-plazo-badge sin-intereses">TIN 0%</div><div class="fin-plazo-quien">¡MLQ asume los intereses!</div></button>
+          <button class="fin-plazo" data-meses="18" data-tin="10.46"><div class="fin-plazo-meses">18 meses</div><div class="fin-plazo-badge con-intereses">TIN 10,46%</div><div class="fin-plazo-quien">Intereses a cargo del cliente</div></button>
+          <button class="fin-plazo" data-meses="24" data-tin="10.46"><div class="fin-plazo-meses">24 meses</div><div class="fin-plazo-badge con-intereses">TIN 10,46%</div><div class="fin-plazo-quien">Intereses a cargo del cliente</div></button>
+          <button class="fin-plazo" data-meses="36" data-tin="10.46"><div class="fin-plazo-meses">36 meses</div><div class="fin-plazo-badge con-intereses">TIN 10,46%</div><div class="fin-plazo-quien">Intereses a cargo del cliente</div></button>
+        </div>
+      </div>
+
+      <div class="fin-resultado">
+        <div class="fin-resultado-main">
+          <div class="fin-cuota-label">Cuota mensual estimada</div>
+          <div class="fin-cuota-valor" id="cuotaValor">433,33 €</div>
+          <div class="fin-cuota-sub" id="cuotaSub">/mes · 12 pagos · TIN 0%</div>
+        </div>
+        <div class="fin-resultado-detalle">
+          <div class="fin-det-row"><span class="fin-det-label">Importe del programa</span><span class="fin-det-val" id="detPrecio">10.200 €</span></div>
+          <div class="fin-det-row"><span class="fin-det-label">Entrada a la firma</span><span class="fin-det-val" id="detEntrada">5.000 €</span></div>
+          <div class="fin-det-row"><span class="fin-det-label">Capital financiado</span><span class="fin-det-val" id="detCapital">5.200 €</span></div>
+          <div class="fin-det-row"><span class="fin-det-label">Intereses totales</span><span class="fin-det-val fin-det-green" id="detIntereses">0 € · ¡MLQ los asume!</span></div>
+          <div class="fin-det-row fin-det-total"><span class="fin-det-label">Total a pagar</span><span class="fin-det-val" id="detTotal">10.200 €</span></div>
+        </div>
+      </div>
+
+      <div class="fin-nota">ℹ️ Financiación sujeta a aprobación bancaria. La entrada de 5.000 € se abona a la firma del contrato y no se financia. Cuota orientativa calculada sobre el capital financiado. Sin comisión de apertura ni penalización por cancelación anticipada.</div>
+    </div>
+  </div>
+
+  <!-- ============ 12. SIGUIENTES PASOS ============ -->
+  <div class="section-title"><h2>Siguientes pasos</h2></div>
+  <div class="steps-wrap">
+    <div class="steps-inner">
+      <div class="steps-title">¿Cómo seguimos?</div>
+      <div class="steps-sub">Del sí a la salida hacia Irlanda, paso a paso</div>
+      <div class="steps-list">
+        <div class="step-item"><div class="step-num">1</div><div class="step-title">Elegís dos colegios</div><div class="step-desc">Nos confirmáis vuestra 1ª y 2ª opción entre los seis centros de Meath.</div></div>
+        <div class="step-item"><div class="step-num">2</div><div class="step-title">Firma y reserva</div><div class="step-desc">Firma del contrato y primer pago. Se bloquea la plaza.</div></div>
+        <div class="step-item"><div class="step-num">3</div><div class="step-title">Matrícula y familia</div><div class="step-desc">Gestionamos matrícula, familia anfitriona sin gatos ni conejos, uniforme y libros.</div></div>
+        <div class="step-item"><div class="step-num">4</div><div class="step-title">Vuelos y orientación</div><div class="step-desc">Reservamos los vuelos y organizamos la orientación en Dublín.</div></div>
+      </div>
+      <div class="cta-line">¿Dudas entre varios colegios? Vuestra asesora las resuelve con vosotros antes de decidir.</div>
+      <div class="pasos-cta-wrap">
+        <a class="pasos-cta" href="mailto:gespinoza@mylanguagequest.com?subject=Confirmaci%C3%B3n%20de%20colegio%20%C2%B7%20Pablo%20%C2%B7%20Irlanda%20trimestre%202027%2F28&amp;body=Hola%2C%0A%0AHemos%20revisado%20la%20propuesta%20de%20Irlanda%20para%20Pablo%20y%20queremos%20confirmar%20la%20siguiente%20opci%C3%B3n%3A%0A%0A1%C2%AA%20opci%C3%B3n%20de%20colegio%3A%20%0A2%C2%AA%20opci%C3%B3n%20de%20colegio%3A%20%0AModalidad%20(trimestre%20%2F%20semestre%20%2F%20a%C3%B1o)%3A%20%0A%0AGracias.">☘ Confirmar mis dos opciones</a>
+        <a class="pasos-cta pasos-cta-alt" href="https://asesoramientosmlq.zohobookings.eu/mylanguagequest" target="_blank" rel="noopener">📅 Agendar llamada con la asesora</a>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<!-- ============ 13. FOOTER ============ -->
+<div class="footer">
+  <div class="footer-logo">MY LANGUAGE QUEST</div>
+  <div class="footer-tag">Explore · Learn · Grow</div>
+  <div class="footer-meta">
+    Propuesta personalizada para Pablo · Primer trimestre · 4º ESO · Curso 2027/28<br>
+    Precios sujetos a disponibilidad de plaza y confirmación del centro escolar.
+  </div>
+</div>
+
+<script>
+(function(){
+  var precio=10200, meses=12, tin=0, ENTRADA=5000;
+  function fmt(n){return n.toLocaleString('es-ES',{minimumFractionDigits:2,maximumFractionDigits:2})+' €';}
+  function fmt0(n){return n.toLocaleString('es-ES',{maximumFractionDigits:0})+' €';}
+  function calc(){
+    var capital=Math.max(precio-ENTRADA,0);
+    var cuota, total;
+    if(tin===0){ cuota=capital/meses; total=capital; }
+    else{ var i=tin/100/12; cuota=capital*i/(1-Math.pow(1+i,-meses)); total=cuota*meses; }
+    var intereses=total-capital;
+    document.getElementById('cuotaValor').textContent=fmt(cuota);
+    document.getElementById('cuotaSub').textContent='/mes · '+meses+' pagos · TIN '+(tin===0?'0%':'10,46%');
+    document.getElementById('detPrecio').textContent=fmt0(precio);
+    document.getElementById('detEntrada').textContent=fmt0(ENTRADA);
+    document.getElementById('detCapital').textContent=fmt0(capital);
+    var ei=document.getElementById('detIntereses');
+    if(tin===0){ ei.textContent='0 € · ¡MLQ los asume!'; ei.classList.add('fin-det-green'); }
+    else{ ei.textContent=fmt(intereses); ei.classList.remove('fin-det-green'); }
+    document.getElementById('detTotal').textContent=fmt(ENTRADA+total);
+  }
+  document.querySelectorAll('#finOpciones .fin-opcion-btn').forEach(function(b){
+    b.addEventListener('click',function(){
+      document.querySelectorAll('#finOpciones .fin-opcion-btn').forEach(function(x){x.classList.remove('active');});
+      b.classList.add('active'); precio=parseFloat(b.dataset.precio); calc();
+    });
+  });
+  document.querySelectorAll('#finPlazos .fin-plazo').forEach(function(b){
+    b.addEventListener('click',function(){
+      document.querySelectorAll('#finPlazos .fin-plazo').forEach(function(x){x.classList.remove('active');});
+      b.classList.add('active'); meses=parseInt(b.dataset.meses); tin=parseFloat(b.dataset.tin); calc();
+    });
+  });
+  calc();
+})();
+</script>
+
+<script>
+(function(){
+  var d=document, root=d.documentElement;
+  if(!('IntersectionObserver' in window)){root.className=root.className.replace(' js-anim','');return;}
+
+  var bar=d.createElement('div'); bar.className='progress-bar'; d.body.appendChild(bar);
+  var ticking=false;
+  function progress(){
+    var h=d.documentElement.scrollHeight-window.innerHeight;
+    bar.style.transform='scaleX('+(h>0?Math.min(window.scrollY/h,1):0)+')';
+    ticking=false;
+  }
+  window.addEventListener('scroll',function(){if(!ticking){ticking=true;requestAnimationFrame(progress);}},{passive:true});
+  progress();
+
+  Array.prototype.forEach.call(d.querySelectorAll('.hero-pill'),function(el,i){
+    el.style.animationDelay=(0.36+i*0.06)+'s';
+  });
+
+  var groups=[
+    ['.section-title','reveal'],
+    ['.intro-text','reveal'],
+    ['.intro-point','reveal'],
+    ['.qs-hero','reveal-zoom'],
+    ['.qs-chapters-head','reveal'],
+    ['.qs-chapter','reveal'],
+    ['.alert-box','reveal'],
+    ['.opcion-card','reveal'],
+    ['.info-block','reveal'],
+    ['.mod-card','reveal'],
+    ['.decision-card','reveal'],
+    ['.tabla-wrap','reveal-zoom'],
+    ['.sup-wrap','reveal'],
+    ['.includes-wrap','reveal-zoom'],
+    ['.payment-wrap','reveal-zoom'],
+    ['.financing-wrap','reveal-zoom'],
+    ['.steps-wrap','reveal-zoom']
+  ];
+  groups.forEach(function(g){
+    Array.prototype.forEach.call(d.querySelectorAll(g[0]),function(el,i){
+      el.classList.add(g[1]);
+      el.style.transitionDelay=Math.min(i*0.09,0.36)+'s';
+    });
+  });
+
+  var io=new IntersectionObserver(function(entries){
+    entries.forEach(function(e){
+      if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}
+    });
+  },{threshold:0.12,rootMargin:'0px 0px -8% 0px'});
+  Array.prototype.forEach.call(d.querySelectorAll('.reveal,.reveal-zoom'),function(el){io.observe(el);});
+
+  var cuota=d.getElementById('cuotaValor');
+  if(cuota&&'MutationObserver' in window){
+    new MutationObserver(function(){
+      cuota.classList.remove('pop'); void cuota.offsetWidth; cuota.classList.add('pop');
+    }).observe(cuota,{childList:true,characterData:true,subtree:true});
+  }
+})();
+</script>
+<!-- MLQ tracking -->
+<script>
+(function () {
+  var URL_TRACKING = 'https://script.google.com/macros/s/AKfycbygwC8SbNtpdSo9sEEyAOYnZR-7ui1jgk-7wF9gOhM5kJs2qLgBxhQI7MJHutokDSFajA/exec';
+  if (URL_TRACKING.indexOf('http') !== 0) return;
+
+  var archivo    = (location.pathname.split('/').pop() || 'index.html');
+  var estudiante = archivo.replace(/\.html?$/i, '').replace(/-/g, ' ');
+  var programa   = (document.title.split('·')[0] || '').trim();
+  var sesion     = Math.random().toString(36).slice(2, 10);
+
+  function enviar(evento, valor) {
+    var qs = '?evento=' + encodeURIComponent(evento) +
+             '&valor=' + encodeURIComponent(valor || '') +
+             '&archivo=' + encodeURIComponent(archivo) +
+             '&estudiante=' + encodeURIComponent(estudiante) +
+             '&programa=' + encodeURIComponent(programa) +
+             '&sesion=' + sesion +
+             '&referrer=' + encodeURIComponent(document.referrer || '') +
+             '&ua=' + encodeURIComponent(navigator.userAgent) +
+             '&t=' + Date.now();
+    try {
+      if (window.fetch) {
+        fetch(URL_TRACKING + qs, { mode: 'no-cors', keepalive: true });
+      } else {
+        new Image().src = URL_TRACKING + qs;
+      }
+    } catch (e) {}
+  }
+
+  try {
+    if (!sessionStorage.getItem('mlq_open_' + archivo)) {
+      sessionStorage.setItem('mlq_open_' + archivo, '1');
+      enviar('apertura');
+    }
+  } catch (e) { enviar('apertura'); }
+
+  var activo = 0, marca = Date.now(), visible = !document.hidden, hito30 = false;
+
+  function acumular() {
+    if (visible) activo += Date.now() - marca;
+    marca = Date.now();
+  }
+
+  document.addEventListener('visibilitychange', function () {
+    acumular();
+    visible = !document.hidden;
+  });
+
+  setInterval(function () {
+    acumular();
+    if (!hito30 && activo >= 30000) {
+      hito30 = true;
+      enviar('lectura_30s');
+    }
+  }, 1000);
+
+  var hitos = [25, 50, 75, 100], enviados = {};
+
+  function revisarScroll() {
+    var alto = document.documentElement.scrollHeight - window.innerHeight;
+    var pct  = alto <= 0 ? 100 : Math.round((window.pageYOffset / alto) * 100);
+    for (var i = 0; i < hitos.length; i++) {
+      var h = hitos[i];
+      if (pct >= h && !enviados[h]) {
+        enviados[h] = true;
+        enviar('scroll_' + h);
+      }
+    }
+  }
+
+  window.addEventListener('scroll', revisarScroll, { passive: true });
+  window.addEventListener('resize', revisarScroll, { passive: true });
+  setTimeout(revisarScroll, 1500);
+
+  var cerrado = false;
+  function alSalir() {
+    if (cerrado) return;
+    cerrado = true;
+    acumular();
+    enviar('salida', Math.round(activo / 1000));
+  }
+  window.addEventListener('pagehide', alSalir);
+  document.addEventListener('visibilitychange', function () {
+    if (document.hidden) { acumular(); }
+  });
+})();
+</script>
+</body>
+</html>
