@@ -1,0 +1,740 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<script>document.documentElement.className+=" js-anim";</script>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Selección preliminar de colegios · Leo · Irlanda · My Language Quest</title>
+<link href="https://fonts.googleapis.com/css2?family=Fira+Sans:wght@300;400;500;600;700&family=Josefin+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --blue:#003366;--blue-dark:#001f40;--blue-mid:#0a4a8a;--blue-light:#dce8f5;
+  --red:#B12900;--red-dark:#8A1F00;--red-light:#fdf0ec;
+  --ie:#3A7A09;--ie-deep:#1F4A05;--ie-warm:#5FB515;--ie-light:#eef8e3;
+  --green:#4C9E0C;--green-dark:#3A7A09;--green-light:#eef8e3;--gold:#E8B04B;
+  --gray-bg:#eef3ea;--gray-card:#f8fbf5;--gray-border:#d9e3d2;
+  --text:#0d1b2a;--text-mid:#3d4f62;--text-light:#7a8a9b;--white:#ffffff;
+}
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box;}
+body{font-family:'Fira Sans',sans-serif;background:var(--gray-bg);color:var(--text);}
+
+/* HEADER */
+.header{background:var(--white);padding:18px 48px;display:flex;align-items:center;justify-content:space-between;box-shadow:0 1px 0 var(--gray-border),0 4px 24px rgba(0,51,102,0.07);position:relative;z-index:10;}
+.header::after{content:'';position:absolute;bottom:0;left:0;right:0;height:4px;background:linear-gradient(90deg,var(--ie) 0%,var(--ie) 33%,var(--white) 33%,var(--white) 67%,#FF8200 67%,#FF8200 100%);}
+.logo-area img{height:46px;width:auto;display:block;}
+.header-right{text-align:right;}
+.header-label{font-family:'Josefin Sans',sans-serif;font-size:9px;letter-spacing:3px;text-transform:uppercase;color:var(--text-light);}
+.header-year{font-family:'Josefin Sans',sans-serif;font-size:26px;font-weight:700;color:var(--ie-deep);line-height:1;margin-top:2px;}
+
+/* HERO */
+.hero{background:linear-gradient(135deg,var(--ie-deep) 0%,var(--ie) 55%,var(--ie-warm) 100%);position:relative;overflow:hidden;padding:40px 48px 36px;}
+.hero::after{content:'☘';position:absolute;right:2%;top:50%;transform:translateY(-50%) rotate(-12deg);font-size:230px;line-height:1;opacity:0.09;pointer-events:none;z-index:1;}
+.hero::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 70% 110% at 100% 40%,rgba(255,255,255,0.12) 0%,transparent 60%),radial-gradient(ellipse 60% 80% at -10% 90%,rgba(0,31,64,0.28) 0%,transparent 60%);}
+.hero-dots{position:absolute;inset:0;pointer-events:none;background-image:radial-gradient(rgba(255,255,255,0.07) 1px,transparent 1px);background-size:28px 28px;}
+.hero-inner{position:relative;z-index:2;}
+.hero-tag{display:inline-flex;align-items:center;gap:6px;background:rgba(255,255,255,0.1);border:1px solid rgba(255,255,255,0.2);border-radius:20px;padding:4px 12px;font-size:10px;font-weight:600;letter-spacing:2px;text-transform:uppercase;color:rgba(255,255,255,0.7);margin-bottom:12px;}
+.hero-tag::before{content:'☘';font-size:12px;}
+.hero-name{font-family:'Josefin Sans',sans-serif;font-size:38px;font-weight:700;color:var(--white);line-height:1.05;margin-bottom:8px;}
+.hero-subtitle{font-size:13px;color:rgba(255,255,255,0.55);font-weight:300;}
+.hero-pills{display:flex;flex-wrap:wrap;gap:8px;margin-top:20px;}
+.hero-pill{display:flex;align-items:center;gap:6px;background:rgba(255,255,255,0.1);border:1px solid rgba(255,255,255,0.18);border-radius:8px;padding:6px 12px;font-size:11px;color:var(--white);font-weight:500;}
+.hero-pill.ac{background:rgba(0,31,64,0.35);border-color:rgba(255,255,255,0.4);color:#ffffff;}
+
+/* LAYOUT */
+.main{max-width:1140px;margin:0 auto;padding:40px 24px 20px;}
+.section-title{display:flex;align-items:center;gap:12px;margin:44px 0 24px;}
+.section-title:first-of-type{margin-top:0;}
+.section-title h2{font-family:'Josefin Sans',sans-serif;font-size:11px;font-weight:700;letter-spacing:3px;text-transform:uppercase;color:var(--ie-deep);white-space:nowrap;}
+.section-title::before{content:'';width:22px;height:3px;border-radius:3px;background:var(--ie);flex-shrink:0;}
+.section-title::after{content:'';flex:1;height:1px;background:var(--gray-border);}
+
+.intro-text{font-size:14px;color:var(--text-mid);line-height:1.75;max-width:880px;margin-bottom:16px;}
+.intro-text strong{color:var(--blue);font-weight:600;}
+.intro-text:last-child{margin-bottom:0;}
+
+/* AVISO IMPORTANTE */
+.alert-box{display:flex;gap:14px;align-items:flex-start;background:#fff4f0;border:1.5px solid rgba(177,41,0,0.3);border-radius:14px;padding:20px 24px;margin-bottom:8px;}
+.alert-icon{font-size:22px;flex-shrink:0;line-height:1.2;}
+.alert-title{font-family:'Josefin Sans',sans-serif;font-size:15px;font-weight:700;color:var(--red-dark);margin-bottom:8px;}
+.alert-text{font-size:12.5px;color:#6b1a00;line-height:1.75;}
+.alert-text strong{color:var(--red-dark);font-weight:600;}
+.alert-list{list-style:none;margin-top:12px;display:flex;flex-direction:column;gap:8px;}
+.alert-list li{font-size:12.5px;color:#6b1a00;line-height:1.6;display:flex;gap:9px;align-items:flex-start;}
+.alert-list li::before{content:'▪';color:var(--red);font-weight:700;flex-shrink:0;}
+
+/* FICHAS DE COLEGIO */
+.opciones-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(340px,1fr));gap:20px;}
+.opcion-card{background:var(--white);border-radius:16px;border:1.5px solid var(--gray-border);overflow:hidden;box-shadow:0 2px 16px rgba(0,51,102,0.06);position:relative;display:flex;flex-direction:column;transition:transform .35s cubic-bezier(.22,.61,.36,1),box-shadow .35s ease,border-color .3s ease;}
+.opcion-card:hover{transform:translateY(-4px);box-shadow:0 12px 40px rgba(31,74,5,0.18);border-color:var(--ie);}
+.opcion-header{background:linear-gradient(135deg,var(--ie-deep) 0%,var(--ie) 100%);padding:22px 24px 18px;position:relative;overflow:hidden;}
+.opcion-header::after{content:'☘';position:absolute;right:-10px;bottom:-22px;font-size:82px;opacity:0.11;line-height:1;transform:rotate(-14deg);transition:transform .6s cubic-bezier(.22,.61,.36,1),opacity .4s ease;}
+.opcion-card:hover .opcion-header::after{transform:rotate(-4deg) scale(1.14);opacity:.17;}
+.opcion-header > *{position:relative;z-index:2;}
+.colegio-zona{font-family:'Josefin Sans',sans-serif;font-size:9px;letter-spacing:2.5px;text-transform:uppercase;color:rgba(255,255,255,0.42);margin-bottom:8px;}
+.opcion-num{position:absolute;top:0;right:0;background:rgba(0,31,64,0.45);color:rgba(255,255,255,0.85);font-family:'Josefin Sans',sans-serif;font-size:11px;font-weight:700;padding:5px 13px;border-radius:0 0 0 10px;z-index:3;}
+.opcion-distrito{font-family:'Josefin Sans',sans-serif;font-size:17px;font-weight:700;color:var(--white);margin-bottom:5px;line-height:1.25;}
+.opcion-loc{font-size:11px;color:rgba(255,255,255,0.5);margin-bottom:12px;}
+.colegio-chips{display:flex;flex-wrap:wrap;gap:6px;}
+.chip{border-radius:6px;padding:3px 9px;font-size:9.5px;font-weight:700;text-transform:uppercase;letter-spacing:.5px;background:rgba(255,255,255,0.14);color:rgba(255,255,255,0.9);border:1px solid rgba(255,255,255,0.2);}
+.chip.gold{background:rgba(232,176,75,0.22);border-color:rgba(232,176,75,0.5);color:#ffdda0;}
+.opcion-body{padding:20px 22px;flex:1;display:flex;flex-direction:column;}
+.colegio-desc{font-size:12.5px;color:var(--text-mid);line-height:1.75;margin-bottom:18px;}
+.colegio-section-title{font-family:'Josefin Sans',sans-serif;font-size:9px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--ie);margin:0 0 10px;padding-bottom:6px;border-bottom:1.5px solid var(--ie-light);}
+.extra-tags{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:18px;}
+.extra-tag{font-size:10.5px;color:var(--text-mid);background:var(--gray-card);border:1px solid var(--gray-border);border-radius:20px;padding:3px 10px;}
+.extra-tag.hi{background:var(--ie-light);border-color:rgba(76,158,12,0.35);color:var(--ie-deep);font-weight:600;}
+.actividades-ciudad{font-size:11.5px;color:var(--text-mid);line-height:1.7;background:var(--ie-light);border-left:3px solid var(--ie);border-radius:0 8px 8px 0;padding:11px 14px;margin-bottom:18px;}
+.por-que-list{list-style:none;display:flex;flex-direction:column;gap:8px;margin-bottom:18px;}
+.por-que-list li{font-size:12px;color:var(--text-mid);line-height:1.6;display:flex;gap:8px;align-items:flex-start;}
+.por-que-list li::before{content:'☘';color:var(--ie);flex-shrink:0;font-size:11px;}
+.nota-plazas{font-size:11px;color:var(--text-light);line-height:1.6;font-style:italic;background:var(--blue-light);border-radius:8px;padding:9px 13px;margin-bottom:18px;}
+.web-btn{margin-top:auto;display:inline-flex;align-items:center;justify-content:center;gap:8px;background:var(--gray-card);border:1.5px solid var(--gray-border);border-radius:10px;padding:11px 16px;font-family:'Josefin Sans',sans-serif;font-size:12px;font-weight:700;color:var(--ie-deep);text-decoration:none;transition:all .25s;}
+.web-btn:hover{background:var(--ie-light);border-color:var(--ie);transform:translateY(-2px);}
+.web-btn::after{content:'↗';font-size:13px;}
+
+/* TABLA RESUMEN */
+.tabla-wrap{background:var(--white);border:1.5px solid var(--gray-border);border-radius:16px;overflow:hidden;box-shadow:0 2px 16px rgba(31,74,5,0.05);}
+.tabla-diff{width:100%;border-collapse:collapse;}
+.tabla-diff th,.tabla-diff td{padding:12px 14px;text-align:center;font-size:12px;border-bottom:1px solid var(--gray-border);}
+.tabla-diff thead th{background:linear-gradient(135deg,var(--ie-deep),var(--ie));color:var(--white);font-family:'Josefin Sans',sans-serif;font-size:11px;font-weight:700;letter-spacing:.5px;}
+.tabla-diff tbody th{text-align:left;font-weight:600;color:var(--text);background:var(--gray-card);font-size:12px;}
+.tabla-diff tbody th small{display:block;font-weight:400;color:var(--text-light);font-size:10.5px;margin-top:2px;}
+.tabla-diff tr:last-child td,.tabla-diff tr:last-child th{border-bottom:none;}
+.tabla-diff a{color:var(--ie-deep);font-weight:600;text-decoration:none;}
+.tabla-diff a:hover{text-decoration:underline;}
+.tabla-nota{font-size:11px;color:var(--text-light);margin-top:12px;line-height:1.6;font-style:italic;}
+
+/* GRUPOS POR ENTORNO */
+.decision-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;}
+.decision-card{background:var(--white);border:1.5px solid var(--gray-border);border-left:4px solid var(--ie);border-radius:12px;padding:18px 20px;transition:transform .3s ease,box-shadow .3s ease;}
+.decision-card:hover{transform:translateY(-3px);box-shadow:0 10px 28px rgba(31,74,5,0.12);}
+.decision-title{font-family:'Josefin Sans',sans-serif;font-size:13px;font-weight:700;color:var(--ie-deep);margin-bottom:8px;}
+.decision-text{font-size:12px;color:var(--text-mid);line-height:1.7;}
+
+/* PASOS */
+.steps-wrap{background:linear-gradient(135deg,var(--blue-dark) 0%,var(--blue) 60%,var(--blue-mid) 100%);border-radius:16px;padding:34px 36px;position:relative;overflow:hidden;}
+.steps-wrap::before{content:'';position:absolute;inset:0;background-image:radial-gradient(rgba(255,255,255,0.05) 1px,transparent 1px);background-size:22px 22px;}
+.steps-inner{position:relative;z-index:2;}
+.steps-title{font-family:'Josefin Sans',sans-serif;font-size:18px;font-weight:700;color:var(--white);margin-bottom:6px;}
+.steps-sub{font-size:12px;color:rgba(255,255,255,0.5);margin-bottom:26px;}
+.steps-list{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;}
+.step-item{background:rgba(255,255,255,0.07);border:1px solid rgba(255,255,255,0.12);border-radius:12px;padding:18px;transition:transform .3s cubic-bezier(.22,.61,.36,1),background .3s ease;}
+.step-item:hover{transform:translateY(-4px);background:rgba(255,255,255,0.11);}
+.step-num{font-family:'Josefin Sans',sans-serif;font-size:20px;font-weight:700;color:#7dd44a;margin-bottom:8px;}
+.step-title{font-size:13px;font-weight:600;color:var(--white);margin-bottom:4px;}
+.step-desc{font-size:11px;color:rgba(255,255,255,0.5);line-height:1.55;}
+.cta-line{margin-top:26px;text-align:center;font-size:12.5px;color:rgba(255,255,255,0.75);line-height:1.7;}
+
+/* FOOTER */
+.footer{background:var(--blue-dark);padding:30px 48px;margin-top:56px;text-align:center;position:relative;}
+.footer::before{content:'';position:absolute;top:0;left:0;right:0;height:4px;background:linear-gradient(90deg,var(--ie) 0%,var(--ie) 33%,var(--white) 33%,var(--white) 67%,#FF8200 67%,#FF8200 100%);}
+.footer-logo{font-family:'Josefin Sans',sans-serif;font-size:15px;font-weight:700;color:var(--white);letter-spacing:1px;margin-bottom:6px;}
+.footer-tag{font-family:'Josefin Sans',sans-serif;font-size:10px;letter-spacing:4px;text-transform:uppercase;color:#9ee06a;margin-bottom:14px;}
+.footer-meta{font-size:11px;color:rgba(255,255,255,0.4);line-height:1.7;}
+
+@media(max-width:900px){
+  .decision-grid{grid-template-columns:repeat(2,1fr);}
+  .tabla-wrap{overflow-x:auto;}
+  .tabla-diff{min-width:700px;}
+}
+@media(max-width:720px){
+  .header{padding:16px 20px;}.hero{padding:28px 20px 24px;}.hero-name{font-size:26px;}
+  .main{padding:28px 16px 20px;}
+  .opciones-grid{grid-template-columns:1fr;}
+  .decision-grid{grid-template-columns:1fr;}
+  .steps-list{grid-template-columns:1fr;}
+  .footer{padding:26px 20px;}
+}
+
+/* ANIMACIONES */
+.js-anim .reveal{opacity:0;transform:translateY(20px);will-change:opacity,transform;transition:opacity .75s cubic-bezier(.22,.61,.36,1),transform .75s cubic-bezier(.22,.61,.36,1);}
+.js-anim .reveal.in{opacity:1;transform:none;}
+.js-anim .reveal-zoom{opacity:0;transform:scale(.975);transition:opacity .8s ease,transform .8s cubic-bezier(.22,.61,.36,1);}
+.js-anim .reveal-zoom.in{opacity:1;transform:none;}
+@keyframes heroUp{from{opacity:0;transform:translateY(16px);}to{opacity:1;transform:none;}}
+@keyframes leafIn{from{opacity:0;transform:translateY(-50%) rotate(-30deg) scale(.85);}to{opacity:.09;transform:translateY(-50%) rotate(-12deg) scale(1);}}
+.js-anim .hero::after{animation:leafIn 1.4s cubic-bezier(.22,.61,.36,1) .15s both;}
+.js-anim .hero-tag{animation:heroUp .7s cubic-bezier(.22,.61,.36,1) .05s both;}
+.js-anim .hero-name{animation:heroUp .7s cubic-bezier(.22,.61,.36,1) .16s both;}
+.js-anim .hero-subtitle{animation:heroUp .7s cubic-bezier(.22,.61,.36,1) .26s both;}
+.js-anim .hero-pill{animation:heroUp .55s cubic-bezier(.22,.61,.36,1) both;}
+.progress-bar{position:fixed;top:0;left:0;height:3px;width:100%;transform:scaleX(0);transform-origin:0 50%;background:linear-gradient(90deg,var(--ie),var(--ie-warm));z-index:999;transition:transform .1s linear;}
+@media(prefers-reduced-motion:reduce){
+  .js-anim .reveal,.js-anim .reveal-zoom{opacity:1!important;transform:none!important;transition:none!important;}
+  .js-anim .hero::after,.js-anim .hero-tag,.js-anim .hero-name,.js-anim .hero-subtitle,.js-anim .hero-pill{animation:none!important;opacity:1;}
+  .js-anim .hero::after{opacity:.09;}
+  .progress-bar{display:none;}
+  *{transition-duration:.01ms!important;}
+}
+</style>
+</head>
+<body>
+
+<!-- ============ HEADER ============ -->
+<div class="header">
+  <div class="logo-area"><img src="data:image/png;base64,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zc8RdWFZls/ny83N/dOf/vTMM8+88sorWODly5fruj5jxoxu3bppmoaDyLeWSpblv/71rw8//HB1dbXb7e7evbskSY7lFtNMmjQpPj5+8+bNH3300XXXXYeWw5UrV9q2feutt2JWqIE///zzzz//fMRdgsFgMBj0er1tuRQXF4eyru1MjxDS2NjY3NxMCMGx8rye9ZEjR3r16tX2V/QDdevWbcuWLY899tiaNWuee+655557Li0t7V//9V8ffvjhLg/y6mrKMekbKWfb3LbhPEMrsPnCKdevX7++fftu27YNnzcaIaOioqKiourr6xsbG10ul2VZPXr0mDhx4saNG3fv3j158uT169cDQG5u7gVrlYZhzJkz55NPPpk/f/7ixYtxdr558+YpU6acF4HRnLNkyZLGxsa//OUvH3300YABA44dO3bs2LGrr776ueeeO0eniSi8JEmff/753LlzGWOvv/56bm4uEnX+/Pmvv/46lso0zcTExA8//HDWrFlTp04dNWpUVFTU9u3bDcNYtGhRTk6OYRiyLOOkKycnZ+rUqehwc0rrdrtRZ2tbqv79+wPA119/HW47ccpZVlZmmmb37t179erVUaXaPg5JkgghPXv2RINteLuhex2HrV69er3xxhtPP/10fn7+P/7xj9WrVz/yyCMnT578wx/+0JFX40dPOQKAbyNocYVzbnHb4t9QjnfGIx5OOeQYpXTmzJmLFy9++eWX+/fv369fP6RcbGxsWVlZIBBISEjATjNr1qyNGzdu2rRpypQp7777rtvtnjRpUme0SscSjXdHTay4uPiTTz5JSEh44YUXoqOjUW9ElfK8OIx+J6/XSylNTk6eMGHC0aNHBw0a9Mgjj8ybNw+9bRE9xpFXkiTJrQGrmNXq1avRJnT77bfjuOC4lZ1SYagAui68Xm9NTc2CBQtyc3MnTZrkpOnduzchJCMj48EHH+z8UDhhwgQA+Oyzz6qrqxMTE9H55sQ05+XlYZqoqKgIud1RjdDDgcpkBOUi6Iemo9TU1NmzZ8+ePfvNN99csGDBihUrFi1ahDPn8BshsS++9KNdJ+VaFEtAJ8H5dFDsfKdPn8ZpOp688cYbUeFBCWOapizLjpKDVxFCpk6dKsvy5s2bjxw5UlJSkpOTg1rluZueEBITE+PEPTDG0Jhx+vRpQojH4/F6vWjlw0kUIeS8ghuwO27duvXVV1+dNWvWa6+9VlBQ8O677953330+ny981oG1wAJjbw4EAmhWdaji9/uRutggWGA052DvRwI/+uijJSUlL7/88rvvvltQULBixYpJkyY5CjPagTjna9euPXPmDACg1ecctWCM2badlZV1zTXXBAIBtNw6kyhFUSoqKlasWEEIWbRoUfiinrY1Onr0aDg3rrrqqqSkpIqKinfffRcAQqFQuPHDmRwiV9HjBwDTp0+nlDY1NTmmGnzKyOeuWtPQJRZLGVi4Ymlx226xoHSCd9i+hmFgfHp0dDSeHD58+KRJkwYMGIBTEUyWkJAgSRLq+ihJkpOTr7322oMHD/7ud7/rpFaJU+28vLydO3fu2LFj586d+fn527dv9/v9mZmZhJCTJ09u3bpVkiRVVYuKin75y19yzk+dOgVhqxAwBCmCxkhg54yu6+iU/81vfvPMM88sWbLkv//7v3fu3Ik0w0KmpaWhid80TZfLVVFRgVHdyCXMZ8CAAbZtb9mypaGhwe12U0qfe+659evXE0LKy8vDY2IA4K677nryySeXLFnyzDPPrFq1qqSkxImTmjx58tChQysrK++9997q6mpVVRlj+/btu//++0tLS88xX12+fLmqqi+88MKiRYsqKips2w6FQtu3b582bVowGHz99deHDh3qTJ4jalReXn7ddddVVlY6NdJ1PSoqCgMeHnnkkT179rhcLlmWq6urH3/88bfeegtr9Pbbb99xxx0HDhwghKiqqmna0qVLdV1PT09PSUnBcSQuLo4xtnv3bgCorKzsaNb9I/LLWRbnvPH40X+kw8lt6znnRmNgw6jYD69JtnStk6459LGgVolT53DHi3OAOsYNN9wAAKtWrUKfD7qJXnnlFbw2JiampqamI28bqpEHDx7sqOnQ2fDAAw/g10mTJqE3ae7cucOHDweAJ554wnEJYprTp087/qvPPvsMPemOUysYDKJTKwJTpkw5deoUaraVlZWoEKanp+McZsqUKXfeeScAbNy4ESteW1ubmZkJAMnJydOmTcOAjEcffRR5vnfvXnQD7tu3b+DAgRH3UlXVcfpxzvfv35+amoqSYdCgQXiMEQUYQNxRu33wwQc9evRw4jxwyg0Av//97xsaGpyUtm1XVFRg+E6fPn1GjRqFNbrjjjswvMFx1oVCoZtvvhkzyczMxLkDACxc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" alt="My Language Quest"></div>
+  <div class="header-right">
+    <div class="header-label">Curso académico</div>
+    <div class="header-year">2027/28</div>
+  </div>
+</div>
+
+<!-- ============ HERO ============ -->
+<div class="hero">
+  <div class="hero-dots"></div>
+  <div class="hero-inner">
+    <div class="hero-tag">Selección preliminar · Irlanda</div>
+    <div class="hero-name">Colegios para Leo</div>
+    <div class="hero-subtitle">Documento informativo · Irlanda · Curso escolar 2027/28 · Transition Year / 4º ESO</div>
+    <div class="hero-pills">
+      <div class="hero-pill">🎓 4º ESO · Transition Year</div>
+      <div class="hero-pill">🔬 Ciencias y matemáticas</div>
+      <div class="hero-pill">⚽ Fútbol</div>
+      <div class="hero-pill">🌿 Campo y entornos tranquilos</div>
+      <div class="hero-pill">😊 Sociable y curioso</div>
+      <div class="hero-pill ac">📋 Carácter orientativo</div>
+    </div>
+  </div>
+</div>
+
+<div class="main">
+
+  <!-- ============ PERFIL ============ -->
+  <div class="section-title"><h2>El perfil de Leo</h2></div>
+  <p class="intro-text">
+    Leo realizará <strong>4º ESO durante el curso 2027/28</strong>, lo que en Irlanda corresponde al
+    <strong>Transition Year</strong>: un curso orientado a proyectos, prácticas y desarrollo personal,
+    sin la presión de los exámenes oficiales.
+  </p>
+  <p class="intro-text">
+    Es un chico <strong>sociable, extrovertido, cariñoso, activo y muy curioso</strong>. Académicamente obtiene muy
+    buenos resultados y muestra especial facilidad e interés por <strong>ciencias y matemáticas</strong>. Le gusta
+    aprender, preguntar y entender cómo funcionan las cosas.
+  </p>
+  <p class="intro-text">
+    En su tiempo libre practica <strong>fútbol</strong> y también disfruta del campo y de los entornos tranquilos,
+    por lo que consideramos especialmente interesantes <strong>localidades pequeñas y medianas</strong> que le
+    permitan integrarse fácilmente en la vida escolar y local.
+  </p>
+
+  <!-- ============ CONSIDERACIÓN IMPORTANTE ============ -->
+  <div class="section-title"><h2>Una consideración especialmente importante</h2></div>
+  <div class="alert-box">
+    <div class="alert-icon">⚠️</div>
+    <div>
+      <div class="alert-title">Esta selección es orientativa</div>
+      <div class="alert-text">
+        En el caso de Leo, la prioridad será siempre encontrar <strong>un entorno adecuado para su condición
+        médica</strong>. Por este motivo, esta selección de colegios tiene un carácter orientativo y está pensada
+        para que la familia pueda conocer distintos ejemplos de centros que podrían encajar con su perfil.
+        <br><br>
+        Antes de realizar una selección definitiva dentro del programa Choice, nuestro equipo deberá confirmar
+        en Irlanda:
+      </div>
+      <ul class="alert-list">
+        <li>Las zonas en las que podamos contar con una familia anfitriona adecuada.</li>
+        <li>Que la familia conozca previamente la diabetes tipo 1 de Leo y esté dispuesta a recibirle teniendo en cuenta esta circunstancia.</li>
+        <li>La disponibilidad escolar para el curso 2027/28.</li>
+        <li>Los procedimientos necesarios para que tanto el colegio como la familia anfitriona conozcan correctamente su situación.</li>
+      </ul>
+      <div class="alert-text" style="margin-top:12px;">
+        A partir de esas posibilidades reales se realizaría la selección definitiva de colegios.
+      </div>
+    </div>
+  </div>
+
+  <!-- ============ COLEGIOS ============ -->
+  <div class="section-title"><h2>Ocho ejemplos de colegios</h2></div>
+  <p class="intro-text" style="margin-bottom:24px;">
+    Estos ocho centros muestran bastante bien <strong>la variedad de posibilidades que ofrece Irlanda</strong>:
+    desde colegios muy pequeños en pueblos de 3.000 habitantes hasta centros de más de 1.000 alumnos en ciudades
+    con mucha vida. Incluimos la web de cada colegio por si queréis echar un vistazo con calma.
+  </p>
+  <div class="opciones-grid">
+
+    <!-- 1 · KILKENNY -->
+    <div class="opcion-card">
+      <div class="opcion-header">
+        <div class="opcion-num">01</div>
+        <div class="colegio-zona">Condado de Kilkenny · Ciudad mediana</div>
+        <div class="opcion-distrito">Kilkenny City Vocational School</div>
+        <div class="opcion-loc">📍 Kilkenny · ~27.000 habitantes · A 52 km de Waterford</div>
+        <div class="colegio-chips"><span class="chip">Mixto</span><span class="chip">Público</span><span class="chip">215 alumnos</span><span class="chip gold">☘ El más pequeño</span></div>
+      </div>
+      <div class="opcion-body">
+        <div class="colegio-desc">
+          Es el colegio <strong>más pequeño de toda la selección</strong>, y esa es precisamente su gran baza:
+          215 alumnos dentro de una ciudad con servicios y vida propia. Se distingue por su enfoque integral en el
+          desarrollo del estudiante, priorizando tanto el rendimiento académico como el bienestar personal.
+          Ofrece Junior Cycle, Leaving Certificate y Leaving Certificate Vocational Programme, promueve el uso de
+          la tecnología en el aula y mantiene instalaciones modernas. Es conocido por su comunidad inclusiva y por
+          participar activamente en iniciativas de sostenibilidad, bienestar estudiantil y liderazgo.
+        </div>
+        <div class="colegio-section-title">Actividades y deportes en el colegio</div>
+        <div class="extra-tags">
+          <span class="extra-tag hi">🔬 Club de ciencias</span><span class="extra-tag hi">⚽ Fútbol</span>
+          <span class="extra-tag">🏐 Voleibol</span><span class="extra-tag">🏃 Atletismo</span>
+          <span class="extra-tag">🏀 Baloncesto</span><span class="extra-tag">🏉 Rugby</span>
+          <span class="extra-tag">🥅 Fútbol gaélico</span><span class="extra-tag">🎾 Tenis</span>
+          <span class="extra-tag">🏓 Tenis de mesa</span><span class="extra-tag">🏸 Bádminton</span>
+          <span class="extra-tag">🎵 Música</span><span class="extra-tag">🎨 Arte</span>
+          <span class="extra-tag">🗣 Debates</span><span class="extra-tag">📚 Club de lectura</span>
+          <span class="extra-tag">🗳 Consejo estudiantil</span><span class="extra-tag">🌿 Escuelas Verdes</span>
+          <span class="extra-tag">🚌 Excursiones escolares</span>
+        </div>
+        <div class="colegio-section-title">Qué ofrece la ciudad</div>
+        <div class="actividades-ciudad">
+          Kilkenny es una de las ciudades con más encanto de Irlanda: castillo medieval, centro histórico, teatro,
+          museos, cines, comercio y una vida deportiva muy activa. Ciudad de tamaño manejable donde un adolescente
+          se mueve con facilidad y encuentra clubes de casi cualquier deporte.
+        </div>
+        <div class="colegio-section-title">Por qué podría encajar con Leo</div>
+        <ul class="por-que-list">
+          <li>Club de ciencias en el propio colegio, conexión directa con sus intereses.</li>
+          <li>Con 215 alumnos, el ambiente es mucho más cercano y personal que en centros grandes: profesores que conocen a cada estudiante por su nombre.</li>
+          <li>Fútbol y una oferta deportiva muy amplia para integrarse rápido.</li>
+          <li>Combina colegio pequeño con las ventajas de vivir en una ciudad de tamaño medio.</li>
+        </ul>
+        <a class="web-btn" href="https://www.kcvs.ie/" target="_blank" rel="noopener">Ver la web del colegio</a>
+      </div>
+    </div>
+
+    <!-- 2 · MULLINGAR -->
+    <div class="opcion-card">
+      <div class="opcion-header">
+        <div class="opcion-num">02</div>
+        <div class="colegio-zona">Condado de Westmeath · Ciudad mediana</div>
+        <div class="opcion-distrito">Mullingar Community College</div>
+        <div class="opcion-loc">📍 Mullingar · ~22.600 habitantes · A 1 h en coche de Dublín</div>
+        <div class="colegio-chips"><span class="chip">Mixto</span><span class="chip">Público</span><span class="chip">363 alumnos</span><span class="chip gold">☘ Equilibrio ciudad/colegio</span></div>
+      </div>
+      <div class="opcion-body">
+        <div class="colegio-desc">
+          Mullingar es una de las localidades más grandes del condado de Westmeath y la tercera más poblada de los
+          Midlands, a solo una hora en coche de Dublín. El colegio combina un <strong>tamaño reducido (363 alumnos)</strong>
+          con una vida extracurricular muy densa: debate, teatro, musical escolar, premios Gaisce, viajes escolares
+          y varios clubes de apoyo académico.
+        </div>
+        <div class="colegio-section-title">Actividades y deportes en el colegio</div>
+        <div class="extra-tags">
+          <span class="extra-tag hi">⚽ Fútbol</span><span class="extra-tag">🏀 Baloncesto</span>
+          <span class="extra-tag">🥅 Fútbol gaélico</span><span class="extra-tag">🏉 Rugby · Tag rugby</span>
+          <span class="extra-tag">🏓 Tenis de mesa</span><span class="extra-tag">🏐 Voleibol · Spikeball</span>
+          <span class="extra-tag">🏃 Atletismo</span><span class="extra-tag">🏑 Camogie</span>
+          <span class="extra-tag">🗣 Oratoria y debate</span><span class="extra-tag">🎭 Teatro y musical escolar</span>
+          <span class="extra-tag hi">📖 Clases de repaso extraescolares</span><span class="extra-tag">📝 Club de deberes</span>
+          <span class="extra-tag">📚 Club de lectura</span><span class="extra-tag">🏅 Premios Gaisce</span>
+          <span class="extra-tag">💼 Viajes de educación empresarial</span><span class="extra-tag">🎤 Conferenciantes invitados</span>
+          <span class="extra-tag">🚌 Viajes escolares</span><span class="extra-tag">💚 Semana del bienestar</span>
+        </div>
+        <div class="colegio-section-title">Qué ofrece la ciudad</div>
+        <div class="actividades-ciudad">
+          Centro de ocio con piscina y gimnasio · parques forestales y rutas · pesca · fútbol, rugby y squash ·
+          baloncesto, gimnasia, hurling y hockey · bádminton y tenis · artes marciales · club de golf · clases de arte,
+          música y danza · club de atletismo · hípica · cine y museo · clubes juveniles y biblioteca.
+        </div>
+        <div class="colegio-section-title">Por qué podría encajar con Leo</div>
+        <ul class="por-que-list">
+          <li>Alternativa muy equilibrada: ciudad mediana, colegio de tamaño contenido, deporte y mucha vida extracurricular.</li>
+          <li>Le da independencia y una experiencia irlandesa auténtica sin un entorno excesivamente rural.</li>
+          <li>Las clases de repaso extraescolares encajan bien con un alumno de buenos resultados que quiere seguir rindiendo.</li>
+          <li>A una hora de Dublín, con buenas conexiones.</li>
+        </ul>
+        <div class="nota-plazas">📋 Plazas indicadas en nuestro consolidado: 1 plaza de Transition Year y plazas de 5º año (posiblemente otros cursos). Pendiente de confirmar para 2027/28.</div>
+        <a class="web-btn" href="https://www.mullingarcc.ie/" target="_blank" rel="noopener">Ver la web del colegio</a>
+      </div>
+    </div>
+
+    <!-- 3 · ST CIARAN'S -->
+    <div class="opcion-card">
+      <div class="opcion-header">
+        <div class="opcion-num">03</div>
+        <div class="colegio-zona">Condado de Meath · Ciudad pequeña</div>
+        <div class="opcion-distrito">St. Ciaran’s Community School</div>
+        <div class="opcion-loc">📍 Kells · ~6.300 habitantes · A 16 km de Navan · 35 min de Dublín</div>
+        <div class="colegio-chips"><span class="chip">Mixto</span><span class="chip">Público</span><span class="chip">592 alumnos</span><span class="chip gold">☘ Oferta deportiva enorme</span></div>
+      </div>
+      <div class="opcion-body">
+        <div class="colegio-desc">
+          Kells es una localidad tradicional irlandesa situada cerca de la autopista M3, a solo 10 minutos de Navan
+          y <strong>35 minutos de Dublín</strong>. St. Ciaran’s ofrece una de las combinaciones deportivas más
+          completas de esta selección, además de club de juegos, Escuelas Verdes, debate y excursiones.
+        </div>
+        <div class="colegio-section-title">Actividades y deportes en el colegio</div>
+        <div class="extra-tags">
+          <span class="extra-tag hi">⚽ Fútbol</span><span class="extra-tag">🥅 Fútbol gaélico</span>
+          <span class="extra-tag">🏀 Baloncesto</span><span class="extra-tag">🏉 Rugby</span>
+          <span class="extra-tag">🏑 Hurling y camogie</span><span class="extra-tag">🏃 Atletismo y campo a través</span>
+          <span class="extra-tag">🤾 Balonmano</span><span class="extra-tag">🏓 Tenis de mesa</span>
+          <span class="extra-tag">⛳ Competiciones de golf</span><span class="extra-tag">🐴 Equitación</span>
+          <span class="extra-tag">🗣 Equipo de debate</span><span class="extra-tag">🎲 Club de juegos</span>
+          <span class="extra-tag">🏆 Club de concursos</span><span class="extra-tag">🎤 Espectáculo de talentos</span>
+          <span class="extra-tag">🌿 Escuelas Verdes</span><span class="extra-tag">🚌 Excursiones</span>
+        </div>
+        <div class="colegio-section-title">Qué ofrece la localidad</div>
+        <div class="actividades-ciudad">
+          Centro de ocio con piscina y gimnasio · parques forestales y rutas · Spire of Lloyd · fútbol, bádminton,
+          rugby, hurling y camogie · baloncesto, club de tenis, tiro con arco y pesca · kickboxing, artes marciales
+          y gimnasia · club de golf de primer nivel · clases de arte, música y danza · club de atletismo y de
+          balonmano de Kells · centros de equitación de nivel mundial · museo y teatro · clubes juveniles,
+          biblioteca y scouts.
+        </div>
+        <div class="colegio-section-title">Por qué podría encajar con Leo</div>
+        <ul class="por-que-list">
+          <li>Localidad pequeña y tranquila, pero con actividad y muy buenas conexiones con Dublín.</li>
+          <li>Su amplísima oferta deportiva puede facilitar mucho su integración social desde las primeras semanas.</li>
+          <li>Ambiente de pueblo con servicios completos alrededor.</li>
+        </ul>
+        <div class="nota-plazas">📋 Plazas indicadas en nuestro consolidado: Transition Year, 2º año y posiblemente 5º año. Pendiente de confirmar para 2027/28.</div>
+        <a class="web-btn" href="https://www.stciaranscs.ie" target="_blank" rel="noopener">Ver la web del colegio</a>
+      </div>
+    </div>
+
+    <!-- 4 · ST MACARTAN'S -->
+    <div class="opcion-card">
+      <div class="opcion-header">
+        <div class="opcion-num">04</div>
+        <div class="colegio-zona">Condado de Monaghan · Ciudad pequeña</div>
+        <div class="opcion-distrito">St. Macartan’s College</div>
+        <div class="opcion-loc">📍 Monaghan · ~8.000 habitantes · A 90 min de Dublín</div>
+        <div class="colegio-chips"><span class="chip">Solo chicos</span><span class="chip">Público</span><span class="chip">600 alumnos</span><span class="chip gold">☘ Club STEM</span></div>
+      </div>
+      <div class="opcion-body">
+        <div class="colegio-desc">
+          Monaghan es una ciudad mediana y segura, a unos 90 minutos de Dublín por carretera, con vida cultural,
+          tiendas y tradición local. St. Macartan’s destaca por su combinación de <strong>perfil académico,
+          actividades STEM y deporte</strong>. A diferencia del resto de la selección, se trata de un
+          <strong>colegio exclusivamente masculino</strong>.
+        </div>
+        <div class="colegio-section-title">Actividades y deportes en el colegio</div>
+        <div class="extra-tags">
+          <span class="extra-tag hi">🔬 Club STEM</span><span class="extra-tag hi">🧱 Competición de LEGO</span>
+          <span class="extra-tag hi">⚽ Fútbol</span><span class="extra-tag">🥅 Fútbol gaélico</span>
+          <span class="extra-tag">🏑 Hurling</span><span class="extra-tag">🤾 Balonmano</span>
+          <span class="extra-tag">🏀 Baloncesto</span><span class="extra-tag">🏉 Rugby</span>
+          <span class="extra-tag">⛳ Golf</span><span class="extra-tag">🗣 Debate</span>
+          <span class="extra-tag">🎵 Música y coro</span><span class="extra-tag">🎭 Musical escolar</span>
+          <span class="extra-tag">🥩 Finalistas del Concurso de Carne de Angus de toda Irlanda</span>
+        </div>
+        <div class="colegio-section-title">Qué ofrece la ciudad</div>
+        <div class="actividades-ciudad">
+          Gimnasio y fitness · fútbol, camogie y hurling · club ciclista, baloncesto y club de tenis · voleibol y
+          club de boxeo · galería del encaje de Carrickmacross · biblioteca, clases de música y danza · club de golf
+          y centros de equitación · club de running · clubes juveniles · rutas de senderismo de Carrickmacross.
+        </div>
+        <div class="colegio-section-title">Por qué podría encajar con Leo</div>
+        <ul class="por-que-list">
+          <li>Su interés por las ciencias y las matemáticas conecta directamente con el club STEM y la competición de LEGO.</li>
+          <li>Monaghan tiene un tamaño que permite combinar una vida local tranquila con suficientes actividades fuera del colegio.</li>
+          <li>Fútbol y una oferta deportiva muy variada.</li>
+          <li>A tener en cuenta: es un colegio solo de chicos, algo que conviene valorar en familia.</li>
+        </ul>
+        <div class="nota-plazas">📋 Plazas indicadas en nuestro consolidado: Transition Year y 5º año. Pendiente de confirmar para 2027/28.</div>
+        <a class="web-btn" href="https://www.stmacartanscollege.ie" target="_blank" rel="noopener">Ver la web del colegio</a>
+      </div>
+    </div>
+
+    <!-- 5 · BALLYMAKENNY -->
+    <div class="opcion-card">
+      <div class="opcion-header">
+        <div class="opcion-num">05</div>
+        <div class="colegio-zona">Condado de Louth · Ciudad mediana</div>
+        <div class="opcion-distrito">Ballymakenny College</div>
+        <div class="opcion-loc">📍 Drogheda · ~44.100 habitantes · 35 min de Dublín · 90 min de Belfast</div>
+        <div class="colegio-chips"><span class="chip">Mixto</span><span class="chip">Público</span><span class="chip">1.004 alumnos</span><span class="chip gold">☘ El más grande</span></div>
+      </div>
+      <div class="opcion-body">
+        <div class="colegio-desc">
+          Ballymakenny representa una alternativa <strong>claramente distinta</strong> a los centros anteriores.
+          Está en Drogheda, una ciudad con bastante más población y actividad, situada entre Dublín y Belfast y
+          puerta de entrada al Antiguo Este de Irlanda. Es también, con más de 1.000 estudiantes, el colegio más
+          grande de esta selección.
+        </div>
+        <div class="colegio-section-title">Actividades y deportes en el colegio</div>
+        <div class="extra-tags">
+          <span class="extra-tag hi">🔬 Club de ciencias</span><span class="extra-tag hi">⚽ Fútbol</span>
+          <span class="extra-tag">🥅 Fútbol gaélico</span><span class="extra-tag">🏉 Rugby</span>
+          <span class="extra-tag">🏀 Baloncesto</span><span class="extra-tag">🏸 Bádminton</span>
+          <span class="extra-tag">🏑 Camogie</span><span class="extra-tag">🏃 Atletismo</span>
+          <span class="extra-tag">💪 Gimnasio</span><span class="extra-tag">👟 Programa “Couch to 5K”</span>
+          <span class="extra-tag">♟ Ajedrez</span><span class="extra-tag">🎵 Coro y conjunto instrumental</span>
+          <span class="extra-tag">🧵 Textiles</span><span class="extra-tag">📰 Boletín escolar</span>
+          <span class="extra-tag hi">💼 Mini-empresas en Transition Year</span>
+        </div>
+        <div class="colegio-section-title">Qué ofrece la ciudad</div>
+        <div class="actividades-ciudad">
+          Centro de ocio con piscina y gimnasio · parques forestales y rutas · fútbol, rugby y bádminton ·
+          baloncesto, tenis, tiro con arco y pesca · kickboxing, artes marciales y gimnasia · club de golf ·
+          clases de arte, música y danza · club de atletismo · centros de equitación · cine y museo · clubes
+          juveniles y biblioteca.
+        </div>
+        <div class="colegio-section-title">Por qué podría encajar con Leo</div>
+        <ul class="por-que-list">
+          <li>Interesante si la familia prefiere para él un entorno con más servicios, actividades y movimiento.</li>
+          <li>Su club de ciencias y su importante oferta deportiva conectan bien con su perfil académico y personal.</li>
+          <li>Las mini-empresas de Transition Year son una experiencia muy formativa para un chico curioso.</li>
+          <li>El principal contraste frente a otras opciones es el tamaño: supera los 1.000 estudiantes.</li>
+        </ul>
+        <a class="web-btn" href="http://www.ballymakennycollege.ie/" target="_blank" rel="noopener">Ver la web del colegio</a>
+      </div>
+    </div>
+
+    <!-- 6 · CASTLEBLAYNEY -->
+    <div class="opcion-card">
+      <div class="opcion-header">
+        <div class="opcion-num">06</div>
+        <div class="colegio-zona">Condado de Monaghan · Ciudad pequeña</div>
+        <div class="opcion-distrito">Castleblayney College</div>
+        <div class="opcion-loc">📍 Castleblayney · ~5.000 habitantes · A 15 min de Monaghan ciudad</div>
+        <div class="colegio-chips"><span class="chip">Mixto</span><span class="chip">Público</span><span class="chip">407 alumnos</span><span class="chip gold">☘ STEM + fútbol + naturaleza</span></div>
+      </div>
+      <div class="opcion-body">
+        <div class="colegio-desc">
+          Castleblayney ofrece un entorno pequeño y muy próximo a la naturaleza, pero a solo 15 minutos de Monaghan
+          ciudad, cuyas actividades también quedan al alcance. Está en la carretera nacional N2 que conecta Dublín
+          con Derry y también comunica con Dundalk. Para el perfil de Leo resulta especialmente interesante por su
+          <strong>combinación de STEM, matemáticas y fútbol</strong>.
+        </div>
+        <div class="colegio-section-title">Actividades y deportes en el colegio</div>
+        <div class="extra-tags">
+          <span class="extra-tag hi">🔬 BT Jóvenes Científicos</span><span class="extra-tag hi">🧪 Pasaporte STEM</span>
+          <span class="extra-tag hi">➗ Competición de matemáticas</span><span class="extra-tag hi">⚽ Fútbol</span>
+          <span class="extra-tag">🥅 Fútbol sala</span><span class="extra-tag">🏀 Baloncesto</span>
+          <span class="extra-tag">🏑 Hockey</span><span class="extra-tag">🏐 Voleibol</span>
+          <span class="extra-tag">🏃 Atletismo y campo a través</span><span class="extra-tag">🏑 Hurling y camogie</span>
+          <span class="extra-tag">🗣 Equipo de debate</span><span class="extra-tag">🎭 Teatro y musicales</span>
+          <span class="extra-tag">👨‍🍳 Concurso de cocina</span>
+        </div>
+        <div class="colegio-section-title">Qué ofrece la localidad</div>
+        <div class="actividades-ciudad">
+          <strong>Lough Muckno Leisure Park</strong>: pesca, deportes acuáticos, senderismo, pícnic, golf y festivales,
+          desde vela y kayak hasta escalada en árboles, tiro con arco y orientación. Además: gimnasio y fitness ·
+          fútbol, camogie y hurling · club ciclista y baloncesto · teatro y centro artístico Íontas · biblioteca,
+          clases de música y danza · club de golf y centros de equitación · Park Run · parque de escalada GR8 ·
+          karts · campo de césped artificial · NERF · bolera de 10 pistas.
+        </div>
+        <div class="colegio-section-title">Por qué podría encajar con Leo</div>
+        <ul class="por-que-list">
+          <li>Probablemente el centro que mejor refleja sus intereses: ciencias, matemáticas y fútbol a la vez.</li>
+          <li>Tamaño manejable (407 alumnos) y entorno pequeño y tranquilo, pero con Monaghan a 15 minutos.</li>
+          <li>El equipo sénior de fútbol ha sido campeón de Cavan-Monaghan y finalista del Ulster durante varios años.</li>
+          <li>Lough Muckno es un auténtico parque de aventura al aire libre para un chico activo que disfruta del campo.</li>
+        </ul>
+        <a class="web-btn" href="https://castleblayneycollege.ie/" target="_blank" rel="noopener">Ver la web del colegio</a>
+      </div>
+    </div>
+
+    <!-- 7 · ATHY -->
+    <div class="opcion-card">
+      <div class="opcion-header">
+        <div class="opcion-num">07</div>
+        <div class="colegio-zona">Condado de Kildare · Ciudad pequeña</div>
+        <div class="opcion-distrito">Athy College</div>
+        <div class="opcion-loc">📍 Athy · ~6.000 habitantes · A 70 km al suroeste de Dublín · 30 km de Naas</div>
+        <div class="colegio-chips"><span class="chip">Mixto</span><span class="chip">Público</span><span class="chip">617 alumnos</span><span class="chip gold">☘ Programación + Young Scientist</span></div>
+      </div>
+      <div class="opcion-body">
+        <div class="colegio-desc">
+          Athy es una localidad comercial del suroeste del condado de Kildare, donde confluyen el <strong>río Barrow
+          y el Gran Canal</strong>, a 70 kilómetros al suroeste de Dublín. Es una alternativa que combina un entorno
+          relativamente tranquilo con una oferta extracurricular bastante variada y, sobre todo, con
+          <strong>programación y BT Jóvenes Científicos</strong>.
+        </div>
+        <div class="colegio-section-title">Actividades y deportes en el colegio</div>
+        <div class="extra-tags">
+          <span class="extra-tag hi">💻 Programación</span><span class="extra-tag hi">🔬 BT Jóvenes Científicos</span>
+          <span class="extra-tag hi">⚽ Fútbol</span><span class="extra-tag">🥅 Fútbol gaélico</span>
+          <span class="extra-tag">🏀 Baloncesto</span><span class="extra-tag">🏉 Rugby</span>
+          <span class="extra-tag">🏸 Bádminton</span><span class="extra-tag">🥾 Club de senderismo</span>
+          <span class="extra-tag">♟ Club de ajedrez</span><span class="extra-tag">📚 Club de lectura</span>
+          <span class="extra-tag">🎸 Clases de guitarra</span><span class="extra-tag">🎶 Banda y coro</span>
+          <span class="extra-tag">✨ Club Glee</span><span class="extra-tag">🎨 Arte</span>
+          <span class="extra-tag">🎤 Micrófono abierto</span>
+        </div>
+        <div class="colegio-section-title">Qué ofrece la localidad</div>
+        <div class="actividades-ciudad">
+          Centro de ocio con piscina y gimnasio · parques forestales y rutas · fútbol, rugby y bádminton ·
+          baloncesto, tenis y tiro con arco · artes marciales · club de golf · clases de arte, música y danza ·
+          club de atletismo y bolos indoor · centros de equitación · cine y museo · clubes juveniles y biblioteca.
+        </div>
+        <div class="colegio-section-title">Por qué podría encajar con Leo</div>
+        <ul class="por-que-list">
+          <li>Destacan especialmente la programación y BT Jóvenes Científicos, además del fútbol y otros deportes.</li>
+          <li>Buen equilibrio entre su faceta académica y la parte más activa y social de la experiencia.</li>
+          <li>Entorno de río y canal, con rutas y naturaleza, para alguien que disfruta del campo.</li>
+        </ul>
+        <a class="web-btn" href="http://www.athycollege.ie/" target="_blank" rel="noopener">Ver la web del colegio</a>
+      </div>
+    </div>
+
+    <!-- 8 · BAILIEBOROUGH -->
+    <div class="opcion-card">
+      <div class="opcion-header">
+        <div class="opcion-num">08</div>
+        <div class="colegio-zona">Condado de Cavan · Pueblo pequeño</div>
+        <div class="opcion-distrito">Bailieborough Community School</div>
+        <div class="opcion-loc">📍 Bailieborough · ~3.000 habitantes · A 32 km de Cavan ciudad</div>
+        <div class="colegio-chips"><span class="chip">Mixto</span><span class="chip">Público</span><span class="chip">742 alumnos</span><span class="chip gold">☘ Colegio grande, pueblo pequeño</span></div>
+      </div>
+      <div class="opcion-body">
+        <div class="colegio-desc">
+          Bailieborough está en el este del condado de Cavan, en el noroeste de Irlanda, y ofrece una experiencia
+          muy vinculada a una <strong>comunidad pequeña y al entorno rural irlandés</strong>. Lo singular es la
+          combinación: un pueblo de unos 3.000 habitantes con un colegio de 742 alumnos y una oferta enorme de
+          actividades. Puede resultar especialmente atractivo para un estudiante activo al que le guste el campo.
+        </div>
+        <div class="colegio-section-title">Actividades y deportes en el colegio</div>
+        <div class="extra-tags">
+          <span class="extra-tag hi">🔬 Jóvenes Científicos</span><span class="extra-tag hi">💻 Programación</span>
+          <span class="extra-tag hi">⚽ Fútbol</span><span class="extra-tag">🥅 Fútbol gaélico</span>
+          <span class="extra-tag">🏉 Rugby y tag rugby</span><span class="extra-tag">🏀 Baloncesto</span>
+          <span class="extra-tag">🏃 Atletismo, campo a través, pista y campo</span><span class="extra-tag">🏸 Bádminton</span>
+          <span class="extra-tag">🏓 Tenis de mesa</span><span class="extra-tag">🏊 Natación</span>
+          <span class="extra-tag">💪 Gimnasio: circuitos, fuerza y acondicionamiento</span>
+          <span class="extra-tag">🗣 Equipos de debate</span><span class="extra-tag">🎭 Teatro y musical escolar</span>
+          <span class="extra-tag">🎵 Grupo coral y producción musical</span><span class="extra-tag">🎨 Arte</span>
+          <span class="extra-tag">✍️ Poesía</span><span class="extra-tag">🏅 Gaisce</span>
+        </div>
+        <div class="colegio-section-title">Qué ofrece la localidad</div>
+        <div class="actividades-ciudad">
+          Centro de ocio con piscina y gimnasio · Forest Walk y Castle Lake · deportes acuáticos como kayak ·
+          fútbol y rugby · camogie y hurling · baloncesto, tenis y pesca · kickboxing y artes marciales ·
+          clases de arte, música y danza · clubes de running y clubes juveniles · equitación · museo, biblioteca
+          y coro.
+        </div>
+        <div class="colegio-section-title">Por qué podría encajar con Leo</div>
+        <ul class="por-que-list">
+          <li>Probablemente la alternativa que más conecta con su gusto por el campo y una vida tranquila, sin renunciar a un colegio grande y activo.</li>
+          <li>Jóvenes Científicos y programación resultan muy interesantes para un estudiante con facilidad para ciencias y matemáticas.</li>
+          <li>Natación y gimnasio dentro del colegio, además de fútbol.</li>
+          <li>Comunidad pequeña donde un estudiante internacional se integra rápido.</li>
+        </ul>
+        <a class="web-btn" href="https://bailieborocs.ie/" target="_blank" rel="noopener">Ver la web del colegio</a>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- ============ TABLA RESUMEN ============ -->
+  <div class="section-title"><h2>Comparativa rápida</h2></div>
+  <div class="tabla-wrap">
+    <table class="tabla-diff">
+      <thead>
+        <tr>
+          <th style="text-align:left;">Colegio</th>
+          <th>Condado</th>
+          <th>Alumnos</th>
+          <th>Entorno</th>
+          <th>Habitantes</th>
+          <th>Género</th>
+          <th>Web</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><th>Kilkenny City Vocational School<small>Kilkenny</small></th><td>Kilkenny</td><td><b>215</b></td><td>Ciudad mediana</td><td>~27.000</td><td>Mixto</td><td><a href="https://www.kcvs.ie/" target="_blank" rel="noopener">kcvs.ie</a></td></tr>
+        <tr><th>Mullingar Community College<small>Mullingar</small></th><td>Westmeath</td><td><b>363</b></td><td>Ciudad mediana</td><td>~22.600</td><td>Mixto</td><td><a href="https://www.mullingarcc.ie/" target="_blank" rel="noopener">mullingarcc.ie</a></td></tr>
+        <tr><th>St. Ciaran’s Community School<small>Kells</small></th><td>Meath</td><td><b>592</b></td><td>Ciudad pequeña</td><td>~6.300</td><td>Mixto</td><td><a href="https://www.stciaranscs.ie" target="_blank" rel="noopener">stciaranscs.ie</a></td></tr>
+        <tr><th>St. Macartan’s College<small>Monaghan</small></th><td>Monaghan</td><td><b>600</b></td><td>Ciudad pequeña</td><td>~8.000</td><td>Solo chicos</td><td><a href="https://www.stmacartanscollege.ie" target="_blank" rel="noopener">stmacartanscollege.ie</a></td></tr>
+        <tr><th>Ballymakenny College<small>Drogheda</small></th><td>Louth</td><td><b>1.004</b></td><td>Ciudad mediana</td><td>~44.100</td><td>Mixto</td><td><a href="http://www.ballymakennycollege.ie/" target="_blank" rel="noopener">ballymakennycollege.ie</a></td></tr>
+        <tr><th>Castleblayney College<small>Castleblayney</small></th><td>Monaghan</td><td><b>407</b></td><td>Ciudad pequeña</td><td>~5.000</td><td>Mixto</td><td><a href="https://castleblayneycollege.ie/" target="_blank" rel="noopener">castleblayneycollege.ie</a></td></tr>
+        <tr><th>Athy College<small>Athy</small></th><td>Kildare</td><td><b>617</b></td><td>Ciudad pequeña</td><td>~6.000</td><td>Mixto</td><td><a href="http://www.athycollege.ie/" target="_blank" rel="noopener">athycollege.ie</a></td></tr>
+        <tr><th>Bailieborough Community School<small>Bailieborough</small></th><td>Cavan</td><td><b>742</b></td><td>Pueblo pequeño</td><td>~3.000</td><td>Mixto</td><td><a href="https://bailieborocs.ie/" target="_blank" rel="noopener">bailieborocs.ie</a></td></tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="tabla-nota">Todos los centros son públicos y mixtos, salvo St. Macartan’s College, que es exclusivamente masculino.</div>
+
+  <!-- ============ AGRUPACIÓN POR ENTORNO ============ -->
+  <div class="section-title"><h2>Cuatro tipos de experiencia</h2></div>
+  <div class="decision-grid">
+    <div class="decision-card">
+      <div class="decision-title">Colegio pequeño y muy cercano</div>
+      <div class="decision-text">Kilkenny City Vocational School: 215 alumnos, el trato más personal de toda la selección, dentro de una ciudad con vida.</div>
+    </div>
+    <div class="decision-card">
+      <div class="decision-title">Localidades medianas con más servicios</div>
+      <div class="decision-text">Kilkenny, Mullingar y Drogheda: más oferta de ocio, transporte y actividades fuera del colegio.</div>
+    </div>
+    <div class="decision-card">
+      <div class="decision-title">Ciudades pequeñas</div>
+      <div class="decision-text">Kells, Monaghan, Castleblayney y Athy: equilibrio entre tranquilidad y actividad, con buenas conexiones.</div>
+    </div>
+    <div class="decision-card">
+      <div class="decision-title">Entorno rural y comunidad pequeña</div>
+      <div class="decision-text">Bailieborough: la inmersión más completa en la vida rural irlandesa, con un colegio grande y muy activo.</div>
+    </div>
+  </div>
+
+  <!-- ============ CÓMO ELEGIRÍAMOS ============ -->
+  <div class="section-title"><h2>¿Cómo elegiríamos finalmente?</h2></div>
+  <p class="intro-text" style="margin-bottom:24px;">
+    En este momento <strong>no creemos que tenga sentido escoger únicamente por el nombre del colegio</strong>.
+    En el caso de Leo, el proceso debería ser el siguiente:
+  </p>
+  <div class="steps-wrap">
+    <div class="steps-inner">
+      <div class="steps-title">El proceso, paso a paso</div>
+      <div class="steps-sub">Primero las posibilidades reales; después, la elección</div>
+      <div class="steps-list">
+        <div class="step-item"><div class="step-num">1</div><div class="step-title">Confirmar las zonas</div><div class="step-desc">Dónde contamos con familias anfitrionas adecuadas para su perfil y plenamente informadas de su diabetes tipo 1.</div></div>
+        <div class="step-item"><div class="step-num">2</div><div class="step-title">Comprobar plazas</div><div class="step-desc">Disponibilidad de Transition Year / curso 2027/28 en esas zonas concretas.</div></div>
+        <div class="step-item"><div class="step-num">3</div><div class="step-title">Presentar opciones reales</div><div class="step-desc">Os trasladamos únicamente las alternativas que existan de verdad, ya verificadas.</div></div>
+        <div class="step-item"><div class="step-num">4</div><div class="step-title">Elegir juntos</div><div class="step-desc">El colegio que mejor combine entorno, oferta académica, deportes y familia anfitriona.</div></div>
+      </div>
+      <div class="cta-line">
+        La prioridad seguirá siendo que Leo pueda disfrutar de la experiencia con la mayor tranquilidad posible
+        para él y para su familia, sin dejar de buscar un colegio estimulante académicamente y acorde con su personalidad.
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<!-- ============ FOOTER ============ -->
+<div class="footer">
+  <div class="footer-logo">MY LANGUAGE QUEST</div>
+  <div class="footer-tag">Explore · Learn · Grow</div>
+  <div class="footer-meta">
+    Documento informativo preparado para la familia de Leo · Irlanda · Curso 2027/28<br>
+    Selección orientativa. Los datos de cada centro proceden de nuestras fichas de colegios en Irlanda.<br>
+    La disponibilidad de plazas y la asignación final de colegio están sujetas a confirmación en destino.
+  </div>
+</div>
+
+<script>
+(function(){
+  var d=document, root=d.documentElement;
+  if(!('IntersectionObserver' in window)){root.className=root.className.replace(' js-anim','');return;}
+  var bar=d.createElement('div'); bar.className='progress-bar'; d.body.appendChild(bar);
+  var ticking=false;
+  function progress(){
+    var h=d.documentElement.scrollHeight-window.innerHeight;
+    bar.style.transform='scaleX('+(h>0?Math.min(window.scrollY/h,1):0)+')';
+    ticking=false;
+  }
+  window.addEventListener('scroll',function(){if(!ticking){ticking=true;requestAnimationFrame(progress);}},{passive:true});
+  progress();
+  Array.prototype.forEach.call(d.querySelectorAll('.hero-pill'),function(el,i){
+    el.style.animationDelay=(0.36+i*0.06)+'s';
+  });
+  var groups=[
+    ['.section-title','reveal'],['.intro-text','reveal'],['.alert-box','reveal'],
+    ['.opcion-card','reveal'],['.tabla-wrap','reveal-zoom'],['.decision-card','reveal'],
+    ['.steps-wrap','reveal-zoom']
+  ];
+  groups.forEach(function(g){
+    Array.prototype.forEach.call(d.querySelectorAll(g[0]),function(el,i){
+      el.classList.add(g[1]);
+      el.style.transitionDelay=Math.min(i*0.09,0.36)+'s';
+    });
+  });
+  var io=new IntersectionObserver(function(entries){
+    entries.forEach(function(e){
+      if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}
+    });
+  },{threshold:0.10,rootMargin:'0px 0px -6% 0px'});
+  Array.prototype.forEach.call(d.querySelectorAll('.reveal,.reveal-zoom'),function(el){io.observe(el);});
+})();
+</script>
+</body>
+</html>
