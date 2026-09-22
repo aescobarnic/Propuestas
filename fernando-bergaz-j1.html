@@ -441,6 +441,24 @@ details[open] summary::before{transform:rotate(90deg);}
   .precio-hero-num{font-size:36px;}
 }
 
+/* --- Banner de promoción del hero (v2) --- */
+.promo-card{display:flex;align-items:center;gap:16px;background:rgba(0,31,64,0.48);border:1px solid rgba(255,255,255,0.30);border-radius:14px;padding:14px 18px;margin-top:22px;max-width:700px;box-shadow:0 6px 22px rgba(0,17,38,0.28);}
+.promo-ico{width:42px;height:42px;flex:0 0 42px;border-radius:12px;background:rgba(232,176,75,0.18);border:1px solid rgba(232,176,75,0.48);display:flex;align-items:center;justify-content:center;font-size:20px;line-height:1;}
+.promo-body{flex:1 1 auto;min-width:0;}
+.promo-title{font-family:'Josefin Sans',sans-serif;font-size:14.5px;font-weight:700;color:#ffffff;line-height:1.3;margin-bottom:4px;letter-spacing:.2px;}
+.promo-title em{font-style:normal;color:var(--gold);}
+.promo-sub{font-size:11.5px;font-weight:400;color:rgba(255,255,255,0.66);line-height:1.55;}
+.promo-sub b{color:#ffffff;font-family:'Josefin Sans',sans-serif;font-size:14px;font-weight:700;}
+.promo-sub s{opacity:.7;}
+.promo-chip{flex:0 0 auto;background:rgba(255,255,255,0.12);border:1px solid rgba(255,255,255,0.30);border-radius:10px;padding:9px 14px;text-align:center;}
+.promo-chip-lab{font-size:8.5px;letter-spacing:1.4px;text-transform:uppercase;color:rgba(255,255,255,0.55);font-weight:700;margin-bottom:3px;}
+.promo-chip-val{font-family:'Josefin Sans',sans-serif;font-size:13px;font-weight:700;color:#ffffff;white-space:nowrap;}
+@media(max-width:760px){
+  .promo-card{flex-wrap:wrap;gap:12px;padding:14px 16px;}
+  .promo-body{flex:1 1 100%;}
+  .promo-chip{width:100%;}
+}
+
 </style>
 </head>
 <body>
@@ -468,7 +486,17 @@ details[open] summary::before{transform:rotate(90deg);}
       <div class="hero-pill">🛂 Visado J1 y tasa SEVIS incluidos</div>
       <div class="hero-pill ac">🗽 Orientación en Nueva York incluida</div>
     </div>
-    <div class="hero-promo">🎁 Descuento self placement de <strong>910 €</strong> aplicado: <strong>12.990 €</strong> en lugar de 13.900 €. Condición válida para contratos firmados <strong>antes del 15 de octubre de 2026</strong>.</div>
+    <div class="hero-promo promo-card">
+      <div class="promo-ico">🎁</div>
+      <div class="promo-body">
+        <div class="promo-title">Descuento self placement aplicado · <em>−910 €</em></div>
+        <div class="promo-sub"><b>12.990 €</b> en lugar de <s>13.900 €</s> · precio final del año escolar completo</div>
+      </div>
+      <div class="promo-chip">
+        <div class="promo-chip-lab">Firma antes del</div>
+        <div class="promo-chip-val">15 octubre 2026</div>
+      </div>
+    </div>
   </div>
 </div>
 
@@ -1102,6 +1130,6 @@ details[open] summary::before{transform:rotate(90deg);}
   });
 })();
 </script>
-<!-- MLQ build 2026-09-22T1905 · fernando-bergaz-j1 v2 -->
+<!-- MLQ build 2026-09-22T1915 · fernando-bergaz-j1 v3 -->
 </body>
 </html>
