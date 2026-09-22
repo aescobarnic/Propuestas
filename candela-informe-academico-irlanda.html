@@ -1,0 +1,1176 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<script>document.documentElement.className+=" js-anim";</script>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Informe académico · Candela · Irlanda 2027/28 · My Language Quest</title>
+<link href="https://fonts.googleapis.com/css2?family=Fira+Sans:wght@300;400;500;600;700&family=Josefin+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --blue:#003366;--blue-dark:#001f40;--blue-mid:#0a4a8a;--blue-light:#dce8f5;
+  --red:#B12900;--red-dark:#8A1F00;--red-light:#fdf0ec;
+  --red-deep:#6E1600;--red-warm:#C8380C;--cream:#FFF6F2;--sand:#F7EDE6;--gold:#E8B04B;
+  --ie:#3A7A09;--ie-deep:#1F4A05;--ie-warm:#5FB515;--ie-light:#eef8e3;
+  --green:#4C9E0C;--green-dark:#3A7A09;--green-light:#eef8e3;
+  --gray-bg:#eef3ea;--gray-card:#f8fbf5;--gray-border:#d9e3d2;
+  --text:#0d1b2a;--text-mid:#3d4f62;--text-light:#7a8a9b;--white:#ffffff;
+}
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box;}
+body{font-family:'Fira Sans',sans-serif;background:var(--gray-bg);color:var(--text);}
+
+/* HEADER */
+.header{background:var(--white);padding:18px 48px;display:flex;align-items:center;justify-content:space-between;box-shadow:0 1px 0 var(--gray-border),0 4px 24px rgba(0,51,102,0.07);position:relative;z-index:10;}
+.header::after{content:'';position:absolute;bottom:0;left:0;right:0;height:4px;background:linear-gradient(90deg,var(--ie) 0%,var(--ie) 33%,var(--white) 33%,var(--white) 67%,#FF8200 67%,#FF8200 100%);}
+.logo-area img{height:46px;width:auto;display:block;}
+.header-right{text-align:right;}
+.header-label{font-family:'Josefin Sans',sans-serif;font-size:9px;letter-spacing:3px;text-transform:uppercase;color:var(--text-light);}
+.header-year{font-family:'Josefin Sans',sans-serif;font-size:26px;font-weight:700;color:var(--ie-deep);line-height:1;margin-top:2px;}
+
+/* HERO */
+.hero{background:linear-gradient(135deg,var(--ie-deep) 0%,var(--ie) 55%,var(--ie-warm) 100%);position:relative;overflow:hidden;padding:40px 48px 36px;}
+.hero::after{content:'☘';position:absolute;right:2%;top:50%;transform:translateY(-50%) rotate(-12deg);font-size:230px;line-height:1;opacity:0.09;pointer-events:none;z-index:1;}
+.hero::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 70% 110% at 100% 40%,rgba(255,255,255,0.12) 0%,transparent 60%),radial-gradient(ellipse 60% 80% at -10% 90%,rgba(0,31,64,0.28) 0%,transparent 60%);}
+.hero-dots{position:absolute;inset:0;pointer-events:none;background-image:radial-gradient(rgba(255,255,255,0.07) 1px,transparent 1px);background-size:28px 28px;}
+.hero-inner{position:relative;z-index:2;}
+.hero-tag{display:inline-flex;align-items:center;gap:6px;background:rgba(255,255,255,0.1);border:1px solid rgba(255,255,255,0.2);border-radius:20px;padding:4px 12px;font-size:10px;font-weight:600;letter-spacing:2px;text-transform:uppercase;color:rgba(255,255,255,0.7);margin-bottom:12px;}
+.hero-tag::before{content:'☘';font-size:12px;}
+.hero-name{font-family:'Josefin Sans',sans-serif;font-size:38px;font-weight:700;color:var(--white);line-height:1.05;margin-bottom:8px;}
+.hero-subtitle{font-size:13px;color:rgba(255,255,255,0.55);font-weight:300;}
+.hero-pills{display:flex;flex-wrap:wrap;gap:8px;margin-top:20px;}
+.hero-pill{display:flex;align-items:center;gap:6px;background:rgba(255,255,255,0.1);border:1px solid rgba(255,255,255,0.18);border-radius:8px;padding:6px 12px;font-size:11px;color:var(--white);font-weight:500;}
+.hero-pill.ac{background:rgba(0,31,64,0.35);border-color:rgba(255,255,255,0.4);color:#ffffff;}
+.hero-promo{display:block;background:rgba(0,31,64,0.42);border:1px solid rgba(255,255,255,0.35);border-radius:10px;padding:13px 18px;font-size:13px;font-weight:400;color:rgba(255,255,255,0.92);margin-top:18px;max-width:660px;line-height:1.65;}
+.hero-promo strong{color:#ffffff;font-weight:700;}
+.hero-promo b{display:block;font-family:'Josefin Sans',sans-serif;font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:#b6f28a;margin-bottom:5px;}
+
+/* LAYOUT */
+.main{max-width:1140px;margin:0 auto;padding:40px 24px 20px;}
+.section-title{display:flex;align-items:center;gap:12px;margin:44px 0 24px;}
+.section-title:first-of-type{margin-top:0;}
+.section-title h2{font-family:'Josefin Sans',sans-serif;font-size:11px;font-weight:700;letter-spacing:3px;text-transform:uppercase;color:var(--ie-deep);white-space:nowrap;}
+.section-title::before{content:'';width:22px;height:3px;border-radius:3px;background:var(--ie);flex-shrink:0;}
+.section-title::after{content:'';flex:1;height:1px;background:var(--gray-border);}
+
+/* INTRO / CONTEXTO */
+.intro-text{font-size:14px;color:var(--text-mid);line-height:1.75;max-width:860px;margin-bottom:20px;}
+.intro-text strong{color:var(--blue);font-weight:600;}
+.intro-points{display:grid;grid-template-columns:repeat(2,1fr);gap:14px;margin-top:20px;}
+.intro-point{background:var(--white);border:1.5px solid var(--gray-border);border-radius:12px;padding:16px 18px;display:flex;gap:12px;align-items:flex-start;}
+.intro-point-icon{font-size:20px;flex-shrink:0;}
+.intro-point-title{font-family:'Josefin Sans',sans-serif;font-size:13px;font-weight:700;color:var(--ie-deep);margin-bottom:4px;}
+.intro-point-desc{font-size:12px;color:var(--text-mid);line-height:1.55;}
+
+/* QUIÉNES SOMOS — bloque editorial */
+.qs-hero{display:grid;grid-template-columns:1fr 1fr;gap:0;background:var(--white);border-radius:18px;overflow:hidden;border:1.5px solid var(--gray-border);box-shadow:0 4px 28px rgba(0,51,102,0.08);}
+.qs-media{position:relative;background:var(--blue-dark);min-height:440px;}
+.qs-media img{width:100%;height:100%;object-fit:cover;display:block;}
+.qs-media-inset{position:absolute;right:-1px;bottom:-1px;width:44%;aspect-ratio:3/4;border-radius:14px 0 0 0;overflow:hidden;border-top:4px solid var(--white);border-left:4px solid var(--white);box-shadow:-8px -8px 28px rgba(0,31,64,0.28);}
+.qs-media-inset img{width:100%;height:100%;object-fit:cover;}
+.qs-panel{background:linear-gradient(155deg,var(--blue-dark) 0%,var(--blue) 55%,var(--blue-mid) 100%);padding:38px 40px;position:relative;overflow:hidden;display:flex;flex-direction:column;justify-content:center;}
+.qs-panel::before{content:'';position:absolute;inset:0;background-image:radial-gradient(rgba(255,255,255,0.055) 1px,transparent 1px);background-size:22px 22px;}
+.qs-panel-inner{position:relative;z-index:2;}
+.qs-eyebrow{font-family:'Josefin Sans',sans-serif;font-size:9px;font-weight:700;letter-spacing:3px;text-transform:uppercase;color:#7dd44a;margin-bottom:12px;}
+.qs-title{font-family:'Josefin Sans',sans-serif;font-size:26px;font-weight:700;color:var(--white);line-height:1.2;margin-bottom:14px;}
+.qs-lead{font-size:13.5px;color:rgba(255,255,255,0.62);line-height:1.75;margin-bottom:26px;}
+.qs-lead strong{color:var(--white);font-weight:600;}
+.qs-pilares{display:flex;flex-direction:column;gap:14px;}
+.qs-pilar{display:flex;gap:14px;align-items:flex-start;padding-top:14px;border-top:1px solid rgba(255,255,255,0.13);}
+.qs-pilar:first-child{border-top:none;padding-top:0;}
+.qs-pilar-icon{font-size:19px;flex-shrink:0;line-height:1.3;}
+.qs-pilar-title{font-family:'Josefin Sans',sans-serif;font-size:13px;font-weight:700;color:var(--white);margin-bottom:3px;}
+.qs-pilar-desc{font-size:11.5px;color:rgba(255,255,255,0.5);line-height:1.55;}
+
+/* Capítulos del viaje */
+.qs-chapters-head{display:flex;align-items:baseline;gap:14px;margin:38px 0 18px;flex-wrap:wrap;}
+.qs-chapters-title{font-family:'Josefin Sans',sans-serif;font-size:19px;font-weight:700;color:var(--ie-deep);}
+.qs-chapters-sub{font-size:12.5px;color:var(--text-light);}
+.qs-chapters{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;}
+.qs-chapter{background:var(--white);border:1.5px solid var(--gray-border);border-radius:16px;overflow:hidden;box-shadow:0 2px 16px rgba(0,51,102,0.06);display:flex;flex-direction:column;transition:transform .2s,box-shadow .2s;}
+.qs-chapter:hover{transform:translateY(-4px);box-shadow:0 14px 38px rgba(0,51,102,0.13);}
+.qs-chapter-media{position:relative;aspect-ratio:4/3;overflow:hidden;background:var(--blue-light);}
+.qs-chapter-media img{width:100%;height:100%;object-fit:cover;object-position:center 15%;display:block;}
+.qs-chapter-step{position:absolute;top:12px;left:12px;background:rgba(0,31,64,0.82);backdrop-filter:blur(4px);color:#7dd44a;font-family:'Josefin Sans',sans-serif;font-size:9px;font-weight:700;letter-spacing:2px;text-transform:uppercase;padding:5px 11px;border-radius:20px;}
+.qs-chapter-body{padding:18px 20px 20px;}
+.qs-chapter-title{font-family:'Josefin Sans',sans-serif;font-size:15px;font-weight:700;color:var(--ie-deep);margin-bottom:7px;}
+.qs-chapter-text{font-size:12.5px;color:var(--text-mid);line-height:1.65;}
+
+/* OPCIONES */
+.alert-box{display:flex;gap:12px;align-items:flex-start;background:#fff4f0;border:1.5px solid rgba(177,41,0,0.3);border-radius:12px;padding:14px 18px;margin-bottom:22px;}
+.alert-icon{font-size:20px;flex-shrink:0;}
+.alert-text{font-size:12px;color:#6b1a00;line-height:1.6;}
+.alert-text strong{color:var(--red-dark);}
+.opciones-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(330px,1fr));gap:20px;}
+.opcion-card{background:var(--white);border-radius:16px;border:1.5px solid var(--gray-border);overflow:hidden;box-shadow:0 2px 16px rgba(0,51,102,0.06);position:relative;transition:transform .2s,box-shadow .2s,border-color .2s;}
+.opcion-card:hover{transform:translateY(-4px);box-shadow:0 12px 40px rgba(31,74,5,0.18);border-color:var(--ie);}
+.opcion-card.recomendada{border-color:var(--blue);box-shadow:0 6px 28px rgba(0,51,102,0.20);}
+.badge-rec{position:absolute;top:14px;right:-32px;background:var(--blue);color:var(--white);font-size:8px;font-weight:700;letter-spacing:1.5px;padding:5px 40px;transform:rotate(45deg);width:130px;text-align:center;z-index:10;}
+.opcion-header{background:linear-gradient(135deg,var(--ie-deep) 0%,var(--ie) 100%);padding:22px 24px 18px;position:relative;overflow:hidden;}
+.opcion-header::after{content:'☘';position:absolute;right:-10px;bottom:-22px;font-size:82px;opacity:0.11;line-height:1;transform:rotate(-14deg);}
+.opcion-header > *{position:relative;z-index:2;}
+.opcion-num{font-family:'Josefin Sans',sans-serif;font-size:9px;letter-spacing:3px;text-transform:uppercase;color:rgba(255,255,255,0.38);margin-bottom:8px;}
+.opcion-distrito{font-family:'Josefin Sans',sans-serif;font-size:16px;font-weight:700;color:var(--white);margin-bottom:5px;}
+.opcion-loc{font-size:11px;color:rgba(255,255,255,0.48);margin-bottom:12px;}
+.precio-chip{display:inline-flex;align-items:baseline;gap:4px;background:rgba(255,255,255,0.1);border:1px solid rgba(255,255,255,0.18);border-radius:8px;padding:6px 12px;}
+.precio-chip .val{font-family:'Josefin Sans',sans-serif;font-size:20px;font-weight:700;color:var(--white);}
+.precio-chip .desc{font-size:10px;color:rgba(255,255,255,0.5);}
+.precio-chip .tachado{font-size:10px;color:rgba(255,255,255,0.3);text-decoration:line-through;margin-left:6px;}
+.opcion-body{padding:20px 22px;}
+.colegios{display:flex;flex-direction:column;gap:12px;}
+.colegio{border:1.5px solid var(--gray-border);border-radius:12px;overflow:hidden;background:var(--gray-card);transition:border-color .2s;}
+.colegio:hover{border-color:var(--red);}
+.colegio-top{padding:12px 14px 10px;}
+.colegio-nombre{font-family:'Josefin Sans',sans-serif;font-size:13px;font-weight:700;color:var(--ie-deep);margin-bottom:5px;}
+.colegio-meta{display:flex;flex-wrap:wrap;align-items:center;gap:6px;}
+.tag{border-radius:5px;padding:2px 8px;font-size:9px;font-weight:700;text-transform:uppercase;}
+.tag.pub{background:var(--green);color:var(--white);}
+.tag.info{background:var(--blue-light);color:var(--blue);}
+details{border-top:1px solid var(--gray-border);}
+details summary{list-style:none;cursor:pointer;padding:9px 14px;font-size:11px;font-weight:600;color:var(--red);display:flex;align-items:center;gap:6px;user-select:none;-webkit-user-select:none;}
+details summary:hover{background:var(--red-light);}
+details summary::-webkit-details-marker{display:none;}
+details summary::before{content:'▸';font-size:10px;transition:transform .2s;display:inline-block;}
+details[open] summary::before{transform:rotate(90deg);}
+.colegio-razon{padding:10px 14px 13px;font-size:12px;color:var(--text-mid);line-height:1.7;border-left:3px solid var(--red);margin:0 14px 12px;background:var(--red-light);border-radius:0 6px 6px 0;}
+.match-bar{display:flex;gap:6px;flex-wrap:wrap;padding:14px 22px;border-top:1px solid var(--gray-border);background:linear-gradient(to right,var(--gray-card),var(--white));}
+.match-tag{display:flex;align-items:center;gap:4px;font-size:10px;font-weight:600;color:var(--green-dark);background:var(--green-light);border:1px solid rgba(76,158,12,0.25);border-radius:20px;padding:3px 10px;}
+.match-tag::before{content:'✓';font-size:9px;}
+
+/* INFO BLOCKS */
+.info-blocks{display:grid;grid-template-columns:1fr 1fr;gap:20px;}
+.info-block{background:var(--white);border-radius:16px;border:1.5px solid var(--gray-border);padding:24px 26px;box-shadow:0 2px 16px rgba(0,51,102,0.05);}
+.info-block-icon{font-size:24px;margin-bottom:10px;}
+.info-block-title{font-family:'Josefin Sans',sans-serif;font-size:14px;font-weight:700;color:var(--ie-deep);margin-bottom:10px;}
+.info-block-text{font-size:12.5px;color:var(--text-mid);line-height:1.7;}
+.info-block-text strong{color:var(--text);}
+.info-block ul{margin-top:10px;padding-left:0;list-style:none;}
+.info-block ul li{font-size:12px;color:var(--text-mid);display:flex;gap:8px;align-items:flex-start;margin-bottom:7px;line-height:1.5;}
+.info-block ul li::before{content:'✓';color:var(--green);font-weight:700;flex-shrink:0;}
+
+/* INCLUDES */
+.includes-wrap{background:var(--white);border-radius:16px;border:1.5px solid var(--gray-border);box-shadow:0 2px 16px rgba(0,51,102,0.05);overflow:hidden;}
+.includes-head{background:linear-gradient(135deg,var(--ie-deep),var(--ie));padding:20px 32px;}
+.includes-head h3{font-family:'Josefin Sans',sans-serif;font-size:14px;font-weight:700;color:var(--white);letter-spacing:1px;}
+.includes-body{padding:28px 32px;}
+.includes-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:32px;}
+.col-title{font-family:'Josefin Sans',sans-serif;font-size:9px;font-weight:700;letter-spacing:2.5px;text-transform:uppercase;color:var(--red);margin-bottom:14px;padding-bottom:8px;border-bottom:2px solid var(--red-light);}
+.inc-list{list-style:none;display:flex;flex-direction:column;gap:8px;}
+.inc-list li{font-size:12px;color:var(--text-mid);display:flex;align-items:flex-start;gap:8px;line-height:1.55;}
+.inc-list li::before{content:'✓';color:var(--green);font-weight:700;font-size:11px;flex-shrink:0;margin-top:1px;}
+.inc-list.no li::before{content:'✗';color:var(--red);}
+.inc-list li small{font-size:10px;color:var(--text-light);display:block;margin-top:2px;}
+
+/* GESTOR */
+.gestor-wrap{background:linear-gradient(135deg,var(--blue-dark),var(--blue-mid));border-radius:12px;padding:20px 24px;margin-top:20px;}
+.gestor-title{font-family:'Josefin Sans',sans-serif;font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:rgba(255,255,255,0.6);margin-bottom:14px;}
+.gestor-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;}
+.gestor-item{background:rgba(255,255,255,0.08);border:1px solid rgba(255,255,255,0.12);border-radius:8px;padding:10px 12px;font-size:11px;color:rgba(255,255,255,0.85);line-height:1.4;}
+.gestor-item::before{content:'→';color:#7dd44a;font-weight:700;margin-right:5px;}
+
+/* FORMAS DE PAGO */
+.payment-wrap{background:linear-gradient(135deg,var(--blue-dark) 0%,var(--blue) 60%,var(--blue-mid) 100%);border-radius:16px;padding:32px;position:relative;overflow:hidden;}
+.payment-wrap::before{content:'';position:absolute;inset:0;background-image:radial-gradient(rgba(255,255,255,0.05) 1px,transparent 1px);background-size:22px 22px;}
+.payment-inner{position:relative;z-index:2;}
+.pay-title{font-family:'Josefin Sans',sans-serif;font-size:16px;font-weight:700;color:var(--white);margin-bottom:6px;}
+.pay-subtitle{font-size:12px;color:rgba(255,255,255,0.45);margin-bottom:22px;}
+.pay-route{background:rgba(255,255,255,0.07);border:1px solid rgba(255,255,255,0.14);border-radius:14px;padding:20px 22px;margin-bottom:16px;}
+.pay-route-head{display:flex;align-items:center;gap:10px;margin-bottom:6px;}
+.pay-route-icon{font-size:20px;}
+.pay-route-title{font-family:'Josefin Sans',sans-serif;font-size:14px;font-weight:700;color:var(--white);}
+.pay-route-sub{font-size:11.5px;color:rgba(255,255,255,0.45);margin-bottom:16px;line-height:1.5;}
+.pay-entrada{display:flex;align-items:center;gap:14px;background:rgba(125,212,74,0.13);border:1px solid rgba(125,212,74,0.35);border-radius:10px;padding:14px 18px;margin-bottom:16px;}
+.pay-entrada-num{font-family:'Josefin Sans',sans-serif;font-size:26px;font-weight:700;color:#7dd44a;line-height:1;white-space:nowrap;}
+.pay-entrada-txt{font-size:11.5px;color:rgba(255,255,255,0.72);line-height:1.5;}
+.pay-entrada-txt strong{color:var(--white);font-weight:600;}
+.pay-cols{display:grid;grid-template-columns:1fr 1fr;gap:16px;}
+.pay-col{background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.12);border-radius:12px;padding:16px 18px;}
+.pay-col-title{font-family:'Josefin Sans',sans-serif;font-size:9px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:#7dd44a;margin-bottom:12px;}
+.pay-step{margin-bottom:11px;}
+.pay-step:last-child{margin-bottom:0;}
+.pay-step-num{font-size:9px;font-weight:700;color:rgba(255,255,255,0.4);text-transform:uppercase;letter-spacing:1px;margin-bottom:2px;}
+.pay-step-title{font-size:13px;font-weight:600;color:var(--white);margin-bottom:2px;}
+.pay-step-desc{font-size:11px;color:rgba(255,255,255,0.45);line-height:1.5;}
+.pay-note{font-size:11px;color:rgba(255,255,255,0.32);line-height:1.65;font-style:italic;border-top:1px solid rgba(255,255,255,0.1);padding-top:14px;margin-top:4px;}
+
+/* FINANCIACIÓN */
+.financing-wrap{background:var(--white);border-radius:16px;border:1.5px solid var(--gray-border);box-shadow:0 2px 16px rgba(0,51,102,0.06);overflow:hidden;}
+.financing-head{background:linear-gradient(135deg,var(--blue-dark),var(--blue));padding:22px 32px;display:flex;align-items:center;justify-content:space-between;gap:16px;}
+.financing-head-left{display:flex;align-items:center;gap:16px;}
+.fin-icon{font-size:28px;flex-shrink:0;}
+.fin-title{font-family:'Josefin Sans',sans-serif;font-size:16px;font-weight:700;color:var(--white);margin-bottom:3px;}
+.fin-sub{font-size:11px;color:rgba(255,255,255,0.5);line-height:1.4;}
+.fin-badge{background:rgba(125,212,74,0.2);border:1px solid rgba(125,212,74,0.4);color:#7dd44a;font-family:'Josefin Sans',sans-serif;font-size:11px;font-weight:700;letter-spacing:1px;padding:6px 14px;border-radius:20px;white-space:nowrap;}
+.financing-body{padding:28px 32px;}
+.fin-opcion-label,.fin-plazo-label{font-family:'Josefin Sans',sans-serif;font-size:9px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--text-light);margin-bottom:10px;}
+.fin-opcion-selector{margin-bottom:24px;}
+.fin-opcion-btns{display:flex;gap:10px;flex-wrap:wrap;}
+.fin-opcion-btn{background:var(--gray-card);border:1.5px solid var(--gray-border);border-radius:10px;padding:10px 16px;cursor:pointer;text-align:left;transition:all .2s;display:flex;flex-direction:column;gap:3px;font-family:'Fira Sans',sans-serif;}
+.fin-opcion-btn:hover{border-color:var(--blue-mid);background:var(--blue-light);}
+.fin-opcion-btn.active{border-color:var(--blue);background:var(--blue-light);}
+.fin-opcion-nombre{font-size:10px;font-weight:700;letter-spacing:1px;text-transform:uppercase;color:var(--text-light);}
+.fin-opcion-btn.active .fin-opcion-nombre{color:var(--blue);}
+.fin-opcion-precio{font-family:'Josefin Sans',sans-serif;font-size:16px;font-weight:700;color:var(--text);}
+.fin-opcion-btn.active .fin-opcion-precio{color:var(--blue);}
+.fin-entrada-fija{display:flex;align-items:center;gap:14px;background:var(--green-light);border:1.5px solid rgba(76,158,12,0.3);border-radius:12px;padding:14px 18px;margin-bottom:24px;}
+.fin-entrada-fija-num{font-family:'Josefin Sans',sans-serif;font-size:24px;font-weight:700;color:var(--green-dark);line-height:1;white-space:nowrap;}
+.fin-entrada-fija-txt{font-size:12px;color:var(--text-mid);line-height:1.55;}
+.fin-entrada-fija-txt strong{color:var(--text);font-weight:600;}
+.fin-plazo-wrap{margin-bottom:24px;}
+.fin-plazos{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;}
+.fin-plazo{background:var(--gray-card);border:1.5px solid var(--gray-border);border-radius:12px;padding:14px 12px;cursor:pointer;text-align:center;transition:all .2s;font-family:'Fira Sans',sans-serif;}
+.fin-plazo:hover{border-color:var(--blue-mid);transform:translateY(-2px);}
+.fin-plazo.active{border-color:var(--green);background:var(--green-light);box-shadow:0 4px 16px rgba(76,158,12,0.15);}
+.fin-plazo-meses{font-family:'Josefin Sans',sans-serif;font-size:15px;font-weight:700;color:var(--text);margin-bottom:6px;}
+.fin-plazo.active .fin-plazo-meses{color:var(--green-dark);}
+.fin-plazo-badge{display:inline-block;border-radius:20px;padding:2px 8px;font-size:9px;font-weight:700;letter-spacing:0.5px;margin-bottom:4px;}
+.fin-plazo-badge.sin-intereses{background:var(--green-light);color:var(--green-dark);border:1px solid rgba(76,158,12,0.3);}
+.fin-plazo-badge.con-intereses{background:var(--blue-light);color:var(--blue);border:1px solid rgba(0,51,102,0.2);}
+.fin-plazo-quien{font-size:9px;color:var(--text-light);line-height:1.3;}
+.fin-resultado{display:grid;grid-template-columns:auto 1fr;gap:24px;background:linear-gradient(135deg,var(--blue-dark),var(--blue));border-radius:14px;padding:24px 28px;margin-bottom:16px;align-items:center;}
+.fin-resultado-main{text-align:center;border-right:1px solid rgba(255,255,255,0.15);padding-right:24px;}
+.fin-cuota-label{font-size:10px;font-weight:600;letter-spacing:2px;text-transform:uppercase;color:rgba(255,255,255,0.5);margin-bottom:6px;}
+.fin-cuota-valor{font-family:'Josefin Sans',sans-serif;font-size:36px;font-weight:700;color:#7dd44a;line-height:1;margin-bottom:4px;}
+.fin-cuota-sub{font-size:11px;color:rgba(255,255,255,0.45);}
+.fin-resultado-detalle{display:flex;flex-direction:column;gap:10px;}
+.fin-det-row{display:flex;justify-content:space-between;align-items:center;gap:12px;}
+.fin-det-label{font-size:12px;color:rgba(255,255,255,0.55);}
+.fin-det-val{font-size:13px;font-weight:600;color:var(--white);}
+.fin-det-green{color:#7dd44a !important;}
+.fin-det-total{border-top:1px solid rgba(255,255,255,0.15);padding-top:10px;margin-top:2px;}
+.fin-det-total .fin-det-label{color:rgba(255,255,255,0.7);font-weight:600;}
+.fin-det-total .fin-det-val{font-family:'Josefin Sans',sans-serif;font-size:16px;color:var(--white);}
+.fin-nota{font-size:11px;color:var(--text-light);line-height:1.6;background:var(--gray-card);border-radius:8px;padding:12px 16px;border-left:3px solid var(--blue-light);}
+
+/* SIGUIENTES PASOS */
+.steps-wrap{background:linear-gradient(135deg,var(--blue-dark) 0%,var(--blue) 60%,var(--blue-mid) 100%);border-radius:16px;padding:34px 36px;position:relative;overflow:hidden;}
+.steps-wrap::before{content:'';position:absolute;inset:0;background-image:radial-gradient(rgba(255,255,255,0.05) 1px,transparent 1px);background-size:22px 22px;}
+.steps-inner{position:relative;z-index:2;}
+.steps-title{font-family:'Josefin Sans',sans-serif;font-size:18px;font-weight:700;color:var(--white);margin-bottom:6px;}
+.steps-sub{font-size:12px;color:rgba(255,255,255,0.5);margin-bottom:26px;}
+.steps-list{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;}
+.step-item{background:rgba(255,255,255,0.07);border:1px solid rgba(255,255,255,0.12);border-radius:12px;padding:18px;}
+.step-num{font-family:'Josefin Sans',sans-serif;font-size:20px;font-weight:700;color:#7dd44a;margin-bottom:8px;}
+.step-title{font-size:13px;font-weight:600;color:var(--white);margin-bottom:4px;}
+.step-desc{font-size:11px;color:rgba(255,255,255,0.5);line-height:1.5;}
+.cta-line{margin-top:26px;text-align:center;font-size:12.5px;color:rgba(255,255,255,0.75);}
+.pasos-cta-wrap{text-align:center;margin-top:16px;display:flex;gap:12px;justify-content:center;flex-wrap:wrap;}
+.pasos-cta{display:inline-flex;align-items:center;gap:8px;background:#7dd44a;color:var(--blue-dark);font-family:'Josefin Sans',sans-serif;font-size:13px;font-weight:700;padding:12px 26px;border-radius:10px;text-decoration:none;transition:transform .15s,box-shadow .15s;}
+.pasos-cta:hover{transform:translateY(-2px);box-shadow:0 8px 20px rgba(125,212,74,0.35);}
+.pasos-cta-alt{background:rgba(255,255,255,0.12);color:var(--white);border:1.5px solid rgba(255,255,255,0.35);}
+.pasos-cta-alt:hover{box-shadow:0 8px 20px rgba(255,255,255,0.15);}
+
+/* FOOTER */
+.footer{background:var(--blue-dark);padding:30px 48px;margin-top:56px;text-align:center;position:relative;}
+.footer::before{content:'';position:absolute;top:0;left:0;right:0;height:4px;background:linear-gradient(90deg,var(--ie) 0%,var(--ie) 33%,var(--white) 33%,var(--white) 67%,#FF8200 67%,#FF8200 100%);}
+.footer-logo{font-family:'Josefin Sans',sans-serif;font-size:15px;font-weight:700;color:var(--white);letter-spacing:1px;margin-bottom:6px;}
+.footer-tag{font-family:'Josefin Sans',sans-serif;font-size:10px;letter-spacing:4px;text-transform:uppercase;color:#9ee06a;margin-bottom:14px;}
+.footer-meta{font-size:11px;color:rgba(255,255,255,0.4);line-height:1.7;}
+.footer-meta a{color:rgba(255,255,255,0.65);text-decoration:none;}
+
+@media(max-width:900px){
+  .qs-hero{grid-template-columns:1fr;}
+  .qs-media{min-height:320px;aspect-ratio:4/3;}
+  .qs-chapters{grid-template-columns:1fr;}
+}
+@media(max-width:720px){
+  .header{padding:16px 20px;}.hero{padding:28px 20px 24px;}.hero-name{font-size:28px;}
+  .main{padding:28px 16px 20px;}
+  .includes-grid{grid-template-columns:1fr;}.opciones-grid{grid-template-columns:1fr;}
+  .intro-points{grid-template-columns:1fr;}.info-blocks{grid-template-columns:1fr;}
+  .pay-cols{grid-template-columns:1fr;}.gestor-grid{grid-template-columns:repeat(2,1fr);}
+  .steps-list{grid-template-columns:1fr;}
+  .qs-panel{padding:28px 22px;}.qs-title{font-size:22px;}
+  .fin-plazos{grid-template-columns:repeat(2,1fr);}
+  .fin-resultado{grid-template-columns:1fr;}
+  .fin-resultado-main{border-right:none;border-bottom:1px solid rgba(255,255,255,0.15);padding-right:0;padding-bottom:20px;}
+  .financing-head{flex-direction:column;align-items:flex-start;}
+  .fin-opcion-btns{flex-direction:column;}
+  .footer{padding:26px 20px;}
+}
+
+/* ================= ANIMACIONES ================= */
+.js-anim .reveal{opacity:0;transform:translateY(20px);will-change:opacity,transform;
+  transition:opacity .75s cubic-bezier(.22,.61,.36,1),transform .75s cubic-bezier(.22,.61,.36,1);}
+.js-anim .reveal.in{opacity:1;transform:none;}
+.js-anim .reveal-zoom{opacity:0;transform:scale(.975);transition:opacity .8s ease,transform .8s cubic-bezier(.22,.61,.36,1);}
+.js-anim .reveal-zoom.in{opacity:1;transform:none;}
+
+@keyframes heroUp{from{opacity:0;transform:translateY(16px);}to{opacity:1;transform:none;}}
+@keyframes leafIn{from{opacity:0;transform:translateY(-50%) rotate(-30deg) scale(.85);}to{opacity:.09;transform:translateY(-50%) rotate(-12deg) scale(1);}}
+.js-anim .hero::after{animation:leafIn 1.4s cubic-bezier(.22,.61,.36,1) .15s both;}
+.js-anim .hero-tag{animation:heroUp .7s cubic-bezier(.22,.61,.36,1) .05s both;}
+.js-anim .hero-name{animation:heroUp .7s cubic-bezier(.22,.61,.36,1) .16s both;}
+.js-anim .hero-subtitle{animation:heroUp .7s cubic-bezier(.22,.61,.36,1) .26s both;}
+.js-anim .hero-pill{animation:heroUp .55s cubic-bezier(.22,.61,.36,1) both;}
+.js-anim .hero-promo{animation:heroUp .7s cubic-bezier(.22,.61,.36,1) .7s both;}
+
+.progress-bar{position:fixed;top:0;left:0;height:3px;width:100%;transform:scaleX(0);transform-origin:0 50%;
+  background:linear-gradient(90deg,var(--ie),var(--ie-warm));z-index:999;transition:transform .1s linear;}
+
+.qs-chapter-media img,.qs-media img,.qs-media-inset img{transition:transform .7s cubic-bezier(.22,.61,.36,1);}
+.qs-chapter:hover .qs-chapter-media img{transform:scale(1.06);}
+.qs-hero:hover .qs-media > img{transform:scale(1.03);}
+.qs-media-inset{transition:transform .45s cubic-bezier(.22,.61,.36,1),box-shadow .45s ease;}
+.qs-hero:hover .qs-media-inset{transform:translateY(-6px);box-shadow:-10px -10px 34px rgba(0,31,64,0.34);}
+
+.opcion-card{transition:transform .35s cubic-bezier(.22,.61,.36,1),box-shadow .35s ease,border-color .3s ease;}
+.opcion-header::after{transition:transform .6s cubic-bezier(.22,.61,.36,1),opacity .4s ease;}
+.opcion-card:hover .opcion-header::after{transform:rotate(-4deg) scale(1.14);opacity:.17;}
+
+@keyframes razonIn{from{opacity:0;transform:translateY(-6px);}to{opacity:1;transform:none;}}
+.js-anim details[open] .colegio-razon{animation:razonIn .38s ease both;}
+
+.pasos-cta{position:relative;overflow:hidden;}
+.pasos-cta::after{content:'';position:absolute;top:0;left:-120%;width:60%;height:100%;
+  background:linear-gradient(100deg,transparent,rgba(255,255,255,.55),transparent);transform:skewX(-18deg);}
+.pasos-cta:hover::after{animation:shine .85s ease;}
+@keyframes shine{to{left:140%;}}
+
+.fin-plazo,.fin-opcion-btn{transition:transform .25s cubic-bezier(.22,.61,.36,1),border-color .25s ease,background .25s ease,box-shadow .25s ease;}
+.fin-cuota-valor{transition:color .3s ease;}
+@keyframes cuotaPop{0%{opacity:.35;transform:translateY(6px);}100%{opacity:1;transform:none;}}
+.fin-cuota-valor.pop{animation:cuotaPop .42s cubic-bezier(.22,.61,.36,1);}
+
+.step-item{transition:transform .3s cubic-bezier(.22,.61,.36,1),background .3s ease;}
+.step-item:hover{transform:translateY(-4px);background:rgba(255,255,255,0.11);}
+.qs-pilar{transition:transform .3s ease;}
+.qs-pilar:hover{transform:translateX(4px);}
+
+@media(prefers-reduced-motion:reduce){
+  .js-anim .reveal,.js-anim .reveal-zoom{opacity:1!important;transform:none!important;transition:none!important;}
+  .js-anim .hero::after,.js-anim .hero-tag,.js-anim .hero-name,.js-anim .hero-subtitle,
+  .js-anim .hero-pill,.js-anim .hero-promo{animation:none!important;opacity:1;}
+  .js-anim .hero::after{opacity:.09;}
+  .progress-bar{display:none;}
+  *{transition-duration:.01ms!important;}
+}
+
+/* ============ IRLANDA · bloques propios ============ */
+.colegio-chips{display:flex;flex-wrap:wrap;gap:6px;margin-top:10px;}
+.chip{border-radius:6px;padding:3px 9px;font-size:9.5px;font-weight:700;text-transform:uppercase;letter-spacing:.5px;background:rgba(255,255,255,0.14);color:rgba(255,255,255,0.9);border:1px solid rgba(255,255,255,0.2);}
+.chip.gold{background:rgba(232,176,75,0.22);border-color:rgba(232,176,75,0.5);color:#ffdda0;}
+.colegio-zona{font-family:'Josefin Sans',sans-serif;font-size:9px;letter-spacing:2.5px;text-transform:uppercase;color:rgba(255,255,255,0.42);margin-bottom:8px;}
+.colegio-desc{font-size:12.5px;color:var(--text-mid);line-height:1.7;margin-bottom:16px;}
+.colegio-section-title{font-family:'Josefin Sans',sans-serif;font-size:9px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--ie);margin:0 0 9px;padding-bottom:6px;border-bottom:1.5px solid var(--ie-light);}
+.extra-tags{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:16px;}
+.extra-tag{font-size:10.5px;color:var(--text-mid);background:var(--gray-card);border:1px solid var(--gray-border);border-radius:20px;padding:3px 10px;}
+.actividades-ciudad{font-size:11.5px;color:var(--text-mid);line-height:1.65;background:var(--ie-light);border-left:3px solid var(--ie);border-radius:0 8px 8px 0;padding:10px 14px;margin-bottom:16px;}
+.por-que-list{list-style:none;display:flex;flex-direction:column;gap:7px;}
+.por-que-list li{font-size:12px;color:var(--text-mid);line-height:1.55;display:flex;gap:8px;align-items:flex-start;}
+.por-que-list li::before{content:'☘';color:var(--ie);flex-shrink:0;font-size:11px;}
+
+.mod-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;}
+.mod-card{background:var(--white);border:1.5px solid var(--gray-border);border-radius:16px;overflow:hidden;box-shadow:0 2px 16px rgba(31,74,5,0.06);display:flex;flex-direction:column;position:relative;transition:transform .3s cubic-bezier(.22,.61,.36,1),box-shadow .3s ease;}
+.mod-card:hover{transform:translateY(-4px);box-shadow:0 12px 34px rgba(31,74,5,0.14);}
+.mod-card.destacado{border-color:var(--ie);box-shadow:0 6px 28px rgba(76,158,12,0.20);}
+.mod-head{padding:20px 22px 16px;background:var(--gray-card);border-bottom:1.5px solid var(--gray-border);}
+.mod-card.destacado .mod-head{background:linear-gradient(135deg,var(--ie-deep),var(--ie));border-bottom-color:transparent;}
+.mod-nombre{font-family:'Josefin Sans',sans-serif;font-size:15px;font-weight:700;color:var(--ie-deep);margin-bottom:4px;}
+.mod-card.destacado .mod-nombre{color:var(--white);}
+.mod-desc-head{font-size:11.5px;color:var(--text-light);line-height:1.5;margin-bottom:14px;}
+.mod-card.destacado .mod-desc-head{color:rgba(255,255,255,0.6);}
+.mod-precio-val{font-family:'Josefin Sans',sans-serif;font-size:27px;font-weight:700;color:var(--ie-deep);line-height:1;}
+.mod-card.destacado .mod-precio-val{color:var(--white);}
+.mod-precio-sub{font-size:10.5px;color:var(--text-light);text-transform:uppercase;letter-spacing:1px;margin-top:4px;}
+.mod-card.destacado .mod-precio-sub{color:rgba(255,255,255,0.55);}
+.mod-precio-tachado{font-family:'Josefin Sans',sans-serif;font-size:14px;font-weight:600;color:var(--text-light);text-decoration:line-through;margin-left:8px;}
+.mod-card.destacado .mod-precio-tachado{color:rgba(255,255,255,0.45);}
+.mod-body{padding:18px 22px 20px;flex:1;}
+.mod-extra{background:var(--ie-light);border:1px solid rgba(76,158,12,0.22);border-radius:10px;padding:11px 14px;margin-bottom:14px;}
+.mod-extra-title{font-family:'Josefin Sans',sans-serif;font-size:8.5px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--ie);margin-bottom:7px;}
+.mod-mini{display:flex;justify-content:space-between;gap:10px;font-size:11.5px;color:var(--text-mid);margin-bottom:4px;}
+.mod-mini:last-child{margin-bottom:0;}
+.mod-mini b{color:var(--ie-deep);font-weight:600;white-space:nowrap;}
+.mod-list{list-style:none;display:flex;flex-direction:column;gap:8px;}
+.mod-list li{font-size:12px;color:var(--text-mid);line-height:1.55;display:flex;gap:8px;align-items:flex-start;}
+.mod-list li::before{content:'✓';color:var(--ie);font-weight:700;flex-shrink:0;}
+.badge-rec-mod{position:absolute;top:0;right:0;background:var(--ie);color:var(--white);font-family:'Josefin Sans',sans-serif;font-size:8.5px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;padding:5px 14px;border-radius:0 0 0 10px;z-index:3;}
+
+.tabla-wrap{background:var(--white);border:1.5px solid var(--gray-border);border-radius:16px;overflow:hidden;box-shadow:0 2px 16px rgba(31,74,5,0.05);}
+.tabla-diff{width:100%;border-collapse:collapse;}
+.tabla-diff th,.tabla-diff td{padding:13px 16px;text-align:center;font-size:12.5px;border-bottom:1px solid var(--gray-border);}
+.tabla-diff thead th{background:linear-gradient(135deg,var(--ie-deep),var(--ie));color:var(--white);font-family:'Josefin Sans',sans-serif;font-size:11.5px;font-weight:700;letter-spacing:.5px;}
+.tabla-diff tbody th{text-align:left;font-weight:600;color:var(--text);background:var(--gray-card);font-size:12px;}
+.tabla-diff tr:last-child td,.tabla-diff tr:last-child th{border-bottom:none;}
+.tabla-diff .si{color:var(--ie);font-weight:700;font-size:15px;}
+.tabla-diff .no{color:var(--text-light);font-size:15px;}
+.tabla-diff .sup{color:var(--red);font-size:10px;display:block;margin-top:2px;font-weight:600;}
+.tabla-diff .precio-fila td{font-family:'Josefin Sans',sans-serif;font-weight:700;font-size:15px;color:var(--ie-deep);}
+.tabla-nota{font-size:11px;color:var(--text-light);margin-top:12px;line-height:1.6;font-style:italic;}
+
+/* ELECCIÓN DE COLEGIOS · 3 de 6 */
+.eleccion-box{background:var(--white);border:1.5px solid var(--gray-border);border-left:4px solid var(--ie);border-radius:14px;padding:22px 26px;margin-bottom:24px;box-shadow:0 2px 16px rgba(31,74,5,0.05);}
+.eleccion-title{font-family:'Josefin Sans',sans-serif;font-size:15px;font-weight:700;color:var(--ie-deep);margin-bottom:10px;}
+.eleccion-text{font-size:13px;color:var(--text-mid);line-height:1.75;margin-bottom:18px;}
+.eleccion-text strong{color:var(--blue);font-weight:600;}
+.eleccion-pasos{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;}
+.eleccion-paso{background:var(--ie-light);border:1px solid rgba(76,158,12,0.22);border-radius:10px;padding:14px 16px;}
+.eleccion-paso-num{font-family:'Josefin Sans',sans-serif;font-size:12px;font-weight:700;letter-spacing:1px;text-transform:uppercase;color:var(--ie-deep);margin-bottom:5px;}
+.eleccion-paso-desc{font-size:11.5px;color:var(--text-mid);line-height:1.55;}
+.eleccion-nota{font-size:11.5px;color:var(--text-light);line-height:1.65;font-style:italic;margin-top:16px;}
+@media(max-width:720px){.eleccion-pasos{grid-template-columns:1fr;}}
+
+/* PRECIO DESTACADO · descuentos */
+.precio-wrap{background:linear-gradient(135deg,var(--ie-deep) 0%,var(--ie) 60%,var(--ie-warm) 100%);border-radius:16px;padding:32px;position:relative;overflow:hidden;}
+.precio-wrap::before{content:'';position:absolute;inset:0;background-image:radial-gradient(rgba(255,255,255,0.06) 1px,transparent 1px);background-size:22px 22px;}
+.precio-wrap::after{content:'☘';position:absolute;right:2%;bottom:-40px;font-size:180px;line-height:1;opacity:0.09;transform:rotate(-12deg);}
+.precio-inner{position:relative;z-index:2;}
+.precio-title{font-family:'Josefin Sans',sans-serif;font-size:16px;font-weight:700;color:var(--white);margin-bottom:6px;}
+.precio-sub{font-size:12px;color:rgba(255,255,255,0.5);margin-bottom:22px;}
+.precio-cols{display:grid;grid-template-columns:1fr 1fr;gap:18px;}
+.precio-card{background:rgba(255,255,255,0.08);border:1px solid rgba(255,255,255,0.18);border-radius:14px;padding:20px 22px;position:relative;}
+.precio-card.destacada{background:rgba(0,31,64,0.34);border-color:rgba(255,255,255,0.42);}
+.precio-card-tag{font-family:'Josefin Sans',sans-serif;font-size:9px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:#d9f3bd;margin-bottom:8px;}
+.precio-card-nombre{font-family:'Josefin Sans',sans-serif;font-size:15px;font-weight:700;color:var(--white);margin-bottom:14px;}
+.precio-lineas{display:flex;flex-direction:column;gap:8px;margin-bottom:16px;}
+.precio-linea{display:flex;justify-content:space-between;gap:12px;font-size:12px;color:rgba(255,255,255,0.62);}
+.precio-linea b{color:var(--white);font-weight:600;white-space:nowrap;}
+.precio-linea.desc b{color:#b6f28a;}
+.precio-final{border-top:1px solid rgba(255,255,255,0.2);padding-top:14px;display:flex;align-items:baseline;justify-content:space-between;gap:12px;flex-wrap:wrap;}
+.precio-final-label{font-size:11px;font-weight:600;letter-spacing:1.5px;text-transform:uppercase;color:rgba(255,255,255,0.6);}
+.precio-final-val{font-family:'Josefin Sans',sans-serif;font-size:32px;font-weight:700;color:#ffffff;line-height:1;}
+.precio-ahorro{display:inline-block;margin-top:12px;background:rgba(125,212,74,0.18);border:1px solid rgba(125,212,74,0.45);border-radius:20px;padding:4px 12px;font-size:11px;font-weight:700;color:#d9f3bd;}
+.precio-note{font-size:11px;color:rgba(255,255,255,0.4);line-height:1.65;font-style:italic;border-top:1px solid rgba(255,255,255,0.12);padding-top:14px;margin-top:20px;}
+
+/* VUELOS */
+.vuelos-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;}
+.vuelo-card{background:var(--white);border:1.5px solid var(--gray-border);border-left:4px solid var(--ie);border-radius:12px;padding:16px 18px;}
+.vuelo-num{font-family:'Josefin Sans',sans-serif;font-size:9px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--ie);margin-bottom:6px;}
+.vuelo-ruta{font-family:'Josefin Sans',sans-serif;font-size:14px;font-weight:700;color:var(--ie-deep);margin-bottom:4px;}
+.vuelo-desc{font-size:11.5px;color:var(--text-mid);line-height:1.5;}
+
+.decision-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;}
+.decision-card{background:var(--white);border:1.5px solid var(--gray-border);border-left:4px solid var(--ie);border-radius:12px;padding:20px 22px;transition:transform .3s ease,box-shadow .3s ease;}
+.decision-card:hover{transform:translateY(-3px);box-shadow:0 10px 28px rgba(31,74,5,0.12);}
+.decision-title{font-family:'Josefin Sans',sans-serif;font-size:14px;font-weight:700;color:var(--ie-deep);margin-bottom:8px;}
+.decision-text{font-size:12.5px;color:var(--text-mid);line-height:1.7;}
+
+/* RANKING */
+.ranking-wrap{background:var(--white);border:1.5px solid var(--gray-border);border-radius:16px;padding:24px 26px;box-shadow:0 2px 16px rgba(31,74,5,0.05);}
+.ranking-list{list-style:none;display:flex;flex-direction:column;gap:0;}
+.ranking-item{display:flex;gap:16px;align-items:flex-start;padding:14px 0;border-bottom:1px dashed var(--gray-border);}
+.ranking-item:last-child{border-bottom:none;}
+.ranking-num{font-family:'Josefin Sans',sans-serif;font-size:20px;font-weight:700;color:var(--ie);line-height:1;min-width:26px;}
+.ranking-nombre{font-family:'Josefin Sans',sans-serif;font-size:14px;font-weight:700;color:var(--ie-deep);margin-bottom:3px;}
+.ranking-desc{font-size:12px;color:var(--text-mid);line-height:1.6;}
+
+@media(max-width:900px){
+  .mod-grid{grid-template-columns:1fr;}
+  .decision-grid{grid-template-columns:1fr;}
+  .precio-cols{grid-template-columns:1fr;}
+  .vuelos-grid{grid-template-columns:repeat(2,1fr);}
+  .tabla-wrap{overflow-x:auto;}
+  .tabla-diff{min-width:600px;}
+}
+@media(max-width:720px){
+  .vuelos-grid{grid-template-columns:1fr;}
+  .precio-wrap{padding:24px 20px;}
+}
+
+/* ============ INFORME · bloques propios ============ */
+.nav-wrap{background:var(--white);border:1.5px solid var(--gray-border);border-radius:14px;padding:18px 22px;margin-bottom:8px;box-shadow:0 2px 16px rgba(31,74,5,0.05);}
+.nav-title{font-family:'Josefin Sans',sans-serif;font-size:9px;font-weight:700;letter-spacing:2.5px;text-transform:uppercase;color:var(--text-light);margin-bottom:12px;}
+.nav-chips{display:flex;flex-wrap:wrap;gap:8px;}
+.nav-chip{display:inline-block;font-size:11.5px;font-weight:600;color:var(--ie-deep);background:var(--ie-light);border:1px solid rgba(76,158,12,0.25);border-radius:20px;padding:5px 13px;text-decoration:none;transition:background .2s,transform .2s;}
+.nav-chip:hover{background:#dff0c8;transform:translateY(-1px);}
+.callout{background:linear-gradient(135deg,var(--blue-dark),var(--blue-mid));border-radius:12px;padding:16px 20px;margin:18px 0;color:rgba(255,255,255,0.82);font-size:13px;line-height:1.7;}
+.callout b{display:block;font-family:'Josefin Sans',sans-serif;font-size:10px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:#7dd44a;margin-bottom:6px;}
+.callout strong{color:#ffffff;font-weight:600;}
+.callout.amber{background:linear-gradient(135deg,#8a6512,#c08a1a);}
+.callout.amber b{color:#ffe9b0;}
+.cole{background:var(--white);border:1.5px solid var(--gray-border);border-radius:16px;overflow:hidden;box-shadow:0 2px 16px rgba(0,51,102,0.06);margin-bottom:22px;}
+.cole-head{background:linear-gradient(135deg,var(--ie-deep) 0%,var(--ie) 100%);padding:22px 28px 20px;position:relative;overflow:hidden;}
+.cole-head::after{content:'\2618';position:absolute;right:-6px;bottom:-26px;font-size:92px;opacity:0.11;line-height:1;transform:rotate(-14deg);}
+.cole-head > *{position:relative;z-index:2;}
+.cole-num{font-family:'Josefin Sans',sans-serif;font-size:9px;letter-spacing:3px;text-transform:uppercase;color:rgba(255,255,255,0.42);margin-bottom:7px;}
+.cole-nombre{font-family:'Josefin Sans',sans-serif;font-size:21px;font-weight:700;color:var(--white);margin-bottom:4px;}
+.cole-loc{font-size:11.5px;color:rgba(255,255,255,0.5);}
+.cole-body{padding:24px 28px 26px;}
+.cole-body > p{font-size:13px;color:var(--text-mid);line-height:1.75;margin-bottom:14px;}
+.cole-body > p strong{color:var(--blue);font-weight:600;}
+.sub-title{font-family:'Josefin Sans',sans-serif;font-size:10px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--ie);margin:24px 0 12px;padding-bottom:7px;border-bottom:1.5px solid var(--ie-light);}
+.cole-body .sub-title:first-child{margin-top:0;}
+.bullets{list-style:none;display:flex;flex-direction:column;gap:9px;margin-bottom:6px;}
+.bullets li{font-size:13px;color:var(--text-mid);line-height:1.65;display:flex;gap:9px;align-items:flex-start;}
+.bullets li::before{content:'\2618';color:var(--ie);flex-shrink:0;font-size:11px;margin-top:2px;}
+.bullets li strong{color:var(--text);font-weight:600;}
+.tabla-left th,.tabla-left td,.tabla-left thead th{text-align:left;}
+.tabla-left tbody th{width:22%;}
+.valoracion{background:var(--ie-light);border-left:3px solid var(--ie);border-radius:0 10px 10px 0;padding:14px 18px;margin-top:20px;font-size:13px;color:var(--text-mid);line-height:1.7;}
+.valoracion b{display:block;font-family:'Josefin Sans',sans-serif;font-size:10px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--ie-deep);margin-bottom:6px;}
+.fuentes{background:var(--white);border:1.5px solid var(--gray-border);border-radius:16px;padding:24px 28px;box-shadow:0 2px 16px rgba(0,51,102,0.05);}
+.fuente-grupo{padding:12px 0;border-bottom:1px dashed var(--gray-border);}
+.fuente-grupo:last-of-type{border-bottom:none;}
+.fuente-cole{font-family:'Josefin Sans',sans-serif;font-size:13px;font-weight:700;color:var(--ie-deep);margin-bottom:8px;}
+.fuente-links{display:flex;flex-wrap:wrap;gap:8px;}
+.fuente-link{font-size:11.5px;color:var(--blue);background:var(--blue-light);border:1px solid rgba(0,51,102,0.15);border-radius:20px;padding:4px 12px;text-decoration:none;}
+.fuente-link:hover{background:#cfe0f2;}
+.nota-final{font-size:12px;color:var(--text-light);line-height:1.7;font-style:italic;margin-top:18px;border-top:1px solid var(--gray-border);padding-top:16px;}
+.dato-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin:18px 0 4px;}
+.dato{background:var(--gray-card);border:1.5px solid var(--gray-border);border-left:4px solid var(--ie);border-radius:12px;padding:16px 18px;}
+.dato-num{font-family:'Josefin Sans',sans-serif;font-size:22px;font-weight:700;color:var(--ie-deep);line-height:1;margin-bottom:6px;}
+.dato-desc{font-size:11.5px;color:var(--text-mid);line-height:1.55;}
+html{scroll-behavior:smooth;}
+@media(max-width:900px){.dato-grid{grid-template-columns:1fr;}.cole-body{padding:20px 18px 22px;}.cole-head{padding:20px 18px 18px;}}
+</style>
+</head>
+<body>
+
+<div class="header">
+  <div class="logo-area">
+    <img src="https://aescobarnic.github.io/Propuestas/img/mlq-logo.png" alt="My Language Quest" onerror="this.style.display='none';document.getElementById('logoTexto').style.display='block';">
+    <div id="logoTexto" style="display:none;font-family:'Josefin Sans',sans-serif;font-size:17px;font-weight:700;letter-spacing:1.5px;color:#003366;line-height:1.15;">MY LANGUAGE QUEST<span style="display:block;font-size:8px;letter-spacing:3.5px;color:#3A7A09;font-weight:600;">EXPLORE · LEARN · GROW</span></div>
+  </div>
+  <div class="header-right">
+    <div class="header-label">Curso académico</div>
+    <div class="header-year">2027/28</div>
+  </div>
+</div>
+
+<!-- ============ HERO ============ -->
+<div class="hero">
+  <div class="hero-dots"></div>
+  <div class="hero-inner">
+    <div class="hero-tag">Informe académico personalizado · Irlanda</div>
+    <div class="hero-name">Candela</div>
+    <div class="hero-subtitle">Análisis del currículo de Transition Year y 5th Year en los colegios seleccionados · Curso 2027/28</div>
+    <div class="hero-pills">
+      <div class="hero-pill">🎓 4º ESO · Transition Year</div>
+      <div class="hero-pill">🗣 Inglés B1–B2</div>
+      <div class="hero-pill">👩‍🏫 Interés: Magisterio</div>
+      <div class="hero-pill">🏫 6 colegios analizados</div>
+      <div class="hero-pill ac">📄 Documentación oficial de los centros</div>
+    </div>
+    <div class="hero-promo"><b>☘ Preparado para la familia de Candela</b>Este documento no es una nueva propuesta de colegios: responde a las dudas sobre <strong>qué asignaturas, bloques, horas y contenidos</strong> tendría Candela en cada uno de los seis centros ya seleccionados.</div>
+  </div>
+</div>
+
+<div class="main">
+
+  <!-- ============ ÍNDICE ============ -->
+  <div class="nav-wrap">
+    <div class="nav-title">Índice del informe</div>
+    <div class="nav-chips">
+      <a class="nav-chip" href="#objetivo">1 · Objetivo</a>
+      <a class="nav-chip" href="#comparativa">2 · Comparativa general</a>
+      <a class="nav-chip" href="#tullow">3 · Tullow</a>
+      <a class="nav-chip" href="#athboy">4 · Athboy</a>
+      <a class="nav-chip" href="#beechhill">5 · Beech Hill</a>
+      <a class="nav-chip" href="#stlouis">6 · St. Louis</a>
+      <a class="nav-chip" href="#bailieborough">7 · Bailieborough</a>
+      <a class="nav-chip" href="#carrick">8 · Carrick</a>
+      <a class="nav-chip" href="#conclusiones">9 · Conclusiones</a>
+      <a class="nav-chip" href="#ty5th">10 · TY frente a 5th Year</a>
+      <a class="nav-chip" href="#fuentes">11 · Fuentes oficiales</a>
+    </div>
+  </div>
+
+  <!-- ============ 1. OBJETIVO ============ -->
+  <div class="section-title" id="objetivo"><h2>1 · Objetivo de este informe</h2></div>
+  <p class="intro-text">
+    Sandra, tras las dudas que nos planteaste sobre el contenido académico que tendría Candela en Irlanda,
+    hemos revisado con más detalle los <strong>currículos, horarios, materias, módulos y sistemas de
+    evaluación</strong> publicados por los seis colegios que seleccionamos para ella.
+  </p>
+  <p class="intro-text">
+    El objetivo es que podáis valorar la experiencia con información concreta: qué asignaturas mantendría
+    Candela, cuánto tiempo dedica cada centro a las materias académicas cuando ese dato está publicado, qué
+    contenidos se trabajan y hasta qué punto el Transition Year mantiene continuidad con el Senior Cycle irlandés.
+  </p>
+  <div class="callout">
+    <b>☘ Idea clave</b>
+    Transition Year <strong>no es un año sin contenido académico</strong>. Su estructura es diferente a la de
+    4.º de la ESO en España: combina materias troncales con proyectos, presentaciones, módulos prácticos,
+    orientación y experiencias laborales. En varios de los colegios seleccionados existe además una
+    <strong>introducción real a contenidos de Leaving Certificate</strong>.
+  </div>
+
+  <div class="section-title"><h2>El perfil de Candela que hemos tenido en cuenta</h2></div>
+  <ul class="bullets">
+    <li><strong>Buen nivel académico:</strong> buscamos que mantenga ritmo de trabajo y continuidad en materias troncales.</li>
+    <li><strong>Interés actual por Magisterio:</strong> Educación Infantil o Educación Primaria.</li>
+    <li><strong>Preferencia por un entorno equilibrado:</strong> localidades medianas o pequeñas, evitando grandes ciudades.</li>
+    <li><strong>Preferencia por colegio mixto:</strong> aunque se contempló una opción femenina si académicamente encajaba bien.</li>
+    <li><strong>Experiencia internacional completa:</strong> no solo estudiar inglés, sino desarrollar autonomía, comunicación, liderazgo y capacidad de trabajar con otras personas.</li>
+  </ul>
+  <div class="valoracion" style="margin-top:22px;">
+    <b>Cómo interpretar las horas</b>
+    Algunos colegios publican el número exacto de periodos o de horas semanales y otros no. Cuando el dato es
+    oficial, lo hemos incluido. Cuando no está publicado, preferimos indicarlo claramente antes que hacer una estimación.
+  </div>
+
+  <!-- ============ 2. COMPARATIVA ============ -->
+  <div class="section-title" id="comparativa"><h2>2 · Comparativa general</h2></div>
+  <div class="tabla-wrap">
+    <table class="tabla-diff tabla-left">
+      <thead>
+        <tr><th>Colegio</th><th>Carga académica visible</th><th>Horas publicadas</th><th>Continuidad con Senior Cycle</th><th>Evaluación</th><th>Punto fuerte para Candela</th></tr>
+      </thead>
+      <tbody>
+        <tr><th>Tullow Community School</th><td>Muy estructurada</td><td>Sí: 13 periodos troncales relevantes para Candela, más módulos y optativas</td><td>Muy clara</td><td>Portfolio, proyectos y materias</td><td>Excelente equilibrio entre troncales y exploración académica.</td></tr>
+        <tr><th>Athboy Community School</th><td>Alta</td><td>Sí: 6 h semanales confirmadas de English + Maths, más electivas y módulos</td><td>Muy clara</td><td>Exámenes + evaluación continua</td><td>Childcare y Reader Leaders conectan muy bien con Educación.</td></tr>
+        <tr><th>Beech Hill College</th><td>Alta</td><td>No publicadas</td><td>Muy clara mediante libros de Leaving Certificate</td><td>No detallada públicamente</td><td>Empieza contenidos de Senior Cycle ya en TY.</td></tr>
+        <tr><th>St. Louis Carrickmacross</th><td>Alta</td><td>50 % del horario académico</td><td>Muy clara</td><td>No cuantificada públicamente</td><td>Cuatro materias académicas elegidas tras 6 semanas.</td></tr>
+        <tr><th>Bailieborough Community School</th><td>Media-alta</td><td>Parcial</td><td>Buena</td><td>Continua, portfolio y proyectos</td><td>Amplio muestreo de ciencias y buen equilibrio práctico.</td></tr>
+        <tr><th>Carrick Community School</th><td>No cuantificable con rigor</td><td>No</td><td>Oferta de 5th Year muy amplia</td><td>No publicada para TY</td><td>Interesante, pero con menos detalle público de TY.</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- ============ 3. TULLOW ============ -->
+  <div class="section-title" id="tullow"><h2>3 · Tullow Community School</h2></div>
+  <div class="cole">
+    <div class="cole-head">
+      <div class="cole-num">Colegio 1</div>
+      <div class="cole-nombre">Tullow Community School</div>
+      <div class="cole-loc">📍 Tullow · County Carlow · Mixto · Community School</div>
+    </div>
+    <div class="cole-body">
+      <p>
+        Tullow es el colegio que publica una de las estructuras de TY más detalladas. Esto permite ver con
+        bastante precisión cuántos periodos mantiene Candela de materias troncales y cómo se distribuyen los
+        módulos de exploración.
+      </p>
+      <div class="callout">
+        <b>☘ Para Candela</b>
+        Es una de las opciones <strong>más tranquilizadoras</strong> si la prioridad de la familia es mantener
+        una rutina académica clara y medible.
+      </div>
+
+      <div class="sub-title">3.1 · Distribución semanal publicada</div>
+      <div class="tabla-wrap">
+        <table class="tabla-diff tabla-left">
+          <thead><tr><th>Bloque</th><th>Materia</th><th>Periodos / semana</th><th>Equivalencia aproximada</th></tr></thead>
+          <tbody>
+            <tr><th>Troncal</th><td>English</td><td>3</td><td>2 h</td></tr>
+            <tr><th>Troncal</th><td>Maths</td><td>3</td><td>2 h</td></tr>
+            <tr><th>Troncal</th><td>Religion</td><td>2</td><td>1 h 20</td></tr>
+            <tr><th>Troncal</th><td>Physical Education</td><td>2</td><td>1 h 20</td></tr>
+            <tr><th>Troncal</th><td>SPHE</td><td>1</td><td>40 min</td></tr>
+            <tr><th>Troncal</th><td>Career Guidance</td><td>1</td><td>40 min</td></tr>
+            <tr><th>Troncal</th><td>Portfolio Development</td><td>1</td><td>40 min</td></tr>
+            <tr><th>Módulos</th><td>World of Science</td><td>2</td><td>1 h 20</td></tr>
+            <tr><th>Módulos</th><td>Computer Applications</td><td>1</td><td>40 min</td></tr>
+            <tr><th>Módulos</th><td>Driver Theory</td><td>1</td><td>40 min</td></tr>
+            <tr><th>Módulos</th><td>Sign Language / Non-Verbal Communication</td><td>1</td><td>40 min</td></tr>
+            <tr><th>Idiomas</th><td>French or German</td><td>2</td><td>1 h 20</td></tr>
+            <tr><th>Rotación</th><td>Construction / DCG / History / Geography / Music / Computer Science</td><td>2 por módulo</td><td>1 h 20</td></tr>
+            <tr><th>Opción anual</th><td>Enterprise / Active Schools / Junk Kouture / Film, Media &amp; Drama / Headstrong</td><td>4</td><td>2 h 40</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p style="margin-top:16px;">
+        Para Candela, las materias troncales aplicables que aparecen en el horario publicado suman
+        <strong>13 periodos semanales</strong>, es decir, aproximadamente <strong>8 horas y 40 minutos</strong>.
+        A esto se añaden idiomas, módulos de exploración y tiempo específico para probar materias de Leaving
+        Certificate. El centro deberá confirmar la distribución definitiva de los periodos restantes en su
+        horario individual.
+      </p>
+
+      <div class="sub-title">3.2 · Qué contenidos se trabajan</div>
+      <ul class="bullets">
+        <li><strong>French:</strong> comunicación práctica, presentaciones personales, restaurante, reservas, números y fechas, geografía de Francia y países francófonos, cultura, cine y presentaciones orales.</li>
+        <li><strong>Computer Applications:</strong> herramientas digitales, Microsoft Suite, presentaciones, seguridad, GDPR, protección infantil y otras competencias de entorno laboral.</li>
+        <li><strong>Enterprise &amp; Mini Company:</strong> emprendimiento, marketing, organización, negociación, comunicación, trabajo en equipo y contabilidad básica de una miniempresa.</li>
+        <li><strong>Science:</strong> introducción a Agricultural Science, Biology, Chemistry y Physics.</li>
+        <li><strong>History y Geography:</strong> módulos de exploración vinculados a materias de Senior Cycle.</li>
+        <li><strong>Construction, DCG y Computer Science:</strong> introducción a áreas técnicas y digitales que pueden continuar después en Leaving Certificate.</li>
+      </ul>
+
+      <div class="valoracion">
+        <b>Valoración para Candela</b>
+        Tullow ofrece una combinación especialmente sólida entre estructura académica y elementos propios de TY.
+        Para Candela, materias como English, Maths, idiomas, Portfolio y Career Guidance mantienen el trabajo
+        académico, mientras que Enterprise, proyectos y comunicación oral aportan competencias muy útiles para
+        una futura profesión educativa.
+      </div>
+    </div>
+  </div>
+
+  <!-- ============ 4. ATHBOY ============ -->
+  <div class="section-title" id="athboy"><h2>4 · Athboy Community School</h2></div>
+  <div class="cole">
+    <div class="cole-head">
+      <div class="cole-num">Colegio 2</div>
+      <div class="cole-nombre">Athboy Community School</div>
+      <div class="cole-loc">📍 Athboy · County Meath · Mixto · Community School</div>
+    </div>
+    <div class="cole-body">
+      <p>
+        Athboy destaca por mantener una base académica clara y, al mismo tiempo, ofrecer algunas actividades
+        particularmente interesantes para una alumna que actualmente se plantea estudiar Educación Infantil o Primaria.
+      </p>
+      <div class="callout">
+        <b>☘ Para Candela</b>
+        Es una de las opciones con <strong>mejor encaje personal</strong> porque combina una base académica clara
+        en English y Maths con <strong>Childcare</strong> y <strong>Reader Leaders</strong>, un programa de lectura
+        con niños de primaria.
+      </div>
+
+      <div class="sub-title">4.1 · Horas semanales publicadas</div>
+      <ul class="bullets">
+        <li><strong>English:</strong> 3 horas semanales.</li>
+        <li><strong>Maths:</strong> 3 horas semanales.</li>
+        <li><strong>English + Maths:</strong> 6 horas semanales confirmadas dentro del bloque troncal relevante para Candela.</li>
+        <li><strong>Electivas:</strong> hasta cuatro, normalmente 1 hora semanal cada una.</li>
+        <li><strong>Work Experience:</strong> dos bloques de 12 semanas, los viernes.</li>
+      </ul>
+
+      <div class="sub-title">4.2 · Contenidos de las materias principales</div>
+      <ul class="bullets">
+        <li><strong>English:</strong> trabajo de narración, persuasión, argumentación, información y lenguaje estético; lectura, análisis crítico y expresión escrita.</li>
+        <li><strong>Maths:</strong> estadística, probabilidad, álgebra, introducción a números complejos, investigación matemática, experimentos y resolución de problemas.</li>
+      </ul>
+
+      <div class="sub-title">4.3 · Materias de prueba de Leaving Certificate</div>
+      <ul class="bullets">
+        <li>Art / Home Economics / Music.</li>
+        <li>Business / Accounting / Economics.</li>
+        <li>DCG / Engineering / Construction.</li>
+        <li>Physics / Chemistry / Biology.</li>
+        <li>Leaving Certificate PE / Computer Science.</li>
+        <li>French / German / Geography / History.</li>
+      </ul>
+      <p style="margin-top:14px;">
+        El colegio indica que, en algunos módulos de prueba, los profesores pueden llegar a cubrir
+        aproximadamente un <strong>10 % del contenido real</strong> de la materia de Leaving Certificate.
+      </p>
+
+      <div class="sub-title">4.4 · Electivas y experiencias especialmente interesantes</div>
+      <ul class="bullets">
+        <li><strong>Childcare:</strong> permite explorar de forma práctica el cuidado y desarrollo infantil.</li>
+        <li><strong>Reader Leaders:</strong> alumnos de TY acuden durante 6–8 semanas a una escuela primaria para leer con niños y apoyar su desarrollo lector.</li>
+        <li><strong>Debating / Public speaking:</strong> desarrollo de expresión oral, argumentación y seguridad al hablar.</li>
+        <li><strong>Coding, Robotics, AI y Digital Media Literacy:</strong> competencias digitales y resolución de problemas.</li>
+        <li><strong>Charity Work, Sustainability y World Affairs:</strong> responsabilidad social, trabajo en equipo y ciudadanía.</li>
+      </ul>
+
+      <div class="sub-title">4.5 · Evaluación</div>
+      <ul class="bullets">
+        <li><strong>Exámenes:</strong> las materias troncales realizan exámenes escritos al final de dos de los periodos académicos.</li>
+        <li><strong>Evaluación continua:</strong> proyectos, presentaciones, portfolio, trabajos de clase y herramientas digitales.</li>
+        <li><strong>Seguimiento familiar:</strong> tres informes académicos a lo largo del curso.</li>
+      </ul>
+
+      <div class="valoracion">
+        <b>Valoración para Candela</b>
+        Athboy combina bien continuidad académica y exploración vocacional. Las 6 horas semanales confirmadas de
+        English y Maths aportan una base académica estable; además, el contacto con niños a través de Reader
+        Leaders y la posibilidad de elegir Childcare pueden ser una forma muy útil de comprobar si realmente
+        disfruta trabajando en un entorno educativo.
+      </div>
+    </div>
+  </div>
+
+  <!-- ============ 5. BEECH HILL ============ -->
+  <div class="section-title" id="beechhill"><h2>5 · Beech Hill College</h2></div>
+  <div class="cole">
+    <div class="cole-head">
+      <div class="cole-num">Colegio 3</div>
+      <div class="cole-nombre">Beech Hill College</div>
+      <div class="cole-loc">📍 Monaghan · County Monaghan · Mixto · Público ETB</div>
+    </div>
+    <div class="cole-body">
+      <p>
+        Beech Hill presenta TY como un año en el que el alumnado puede <strong>comenzar a trabajar contenidos de
+        las asignaturas que posteriormente llevará en Leaving Certificate</strong>. Aunque el colegio no publica
+        cuántas horas semanales dedica a cada materia, sus listas oficiales de libros permiten ver una continuidad
+        curricular muy clara.
+      </p>
+      <div class="callout">
+        <b>☘ Para Candela</b>
+        Es una opción académicamente sólida porque varias materias de TY <strong>utilizan ya los mismos manuales</strong>
+        que después continúan en 5th Year.
+      </div>
+
+      <div class="sub-title">5.1 · Materias que aparecen en TY</div>
+      <ul class="bullets">
+        <li>Maths y English.</li>
+        <li>Geography, Politics &amp; Society y Computer Science.</li>
+        <li>Art, Music, Agricultural Science y Biology.</li>
+        <li>Home Economics, History y Construction.</li>
+        <li>Chemistry, Engineering, French y Business.</li>
+      </ul>
+
+      <div class="sub-title">5.2 · Ejemplos de continuidad real TY → 5th Year</div>
+      <div class="tabla-wrap">
+        <table class="tabla-diff tabla-left">
+          <thead><tr><th>Materia</th><th>Material en TY</th><th>Continuidad posterior</th></tr></thead>
+          <tbody>
+            <tr><th>Geography</th><td>Landscapes Core and Human Elective</td><td>El mismo manual continúa en 5th Year.</td></tr>
+            <tr><th>Politics &amp; Society</th><td>Politics &amp; Society Now</td><td>Continúa como materia de Senior Cycle.</td></tr>
+            <tr><th>Art</th><td>New Appreciating Art – Visual Studies for Leaving Certificate</td><td>Material directamente orientado a Leaving Certificate.</td></tr>
+            <tr><th>Construction</th><td>Get Construction</td><td>El mismo manual se mantiene después.</td></tr>
+            <tr><th>French</th><td>Tout va Bien</td><td>Continúa en 5th Year.</td></tr>
+            <tr><th>Maths</th><td>Material diferenciado Higher / Ordinary Level</td><td>Trabajo ya organizado por nivel.</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="sub-title">5.3 · Qué significa académicamente</div>
+      <p>
+        Beech Hill no permite calcular las horas de cada materia con documentación pública, pero sí demostrar que
+        el contenido académico de TY tiene <strong>continuidad real</strong>. En varias asignaturas no se trata
+        únicamente de una introducción general, sino de comenzar a trabajar con materiales del propio Leaving Certificate.
+      </p>
+
+      <div class="valoracion">
+        <b>Valoración para Candela</b>
+        Sigue siendo una opción muy interesante si buscáis un TY completo sin perder contacto con materias
+        académicas. Su amplitud de asignaturas permite a Candela mantener matemáticas, idiomas, humanidades,
+        ciencias y materias creativas antes de volver a España.
+      </div>
+    </div>
+  </div>
+
+  <!-- ============ 6. ST. LOUIS ============ -->
+  <div class="section-title" id="stlouis"><h2>6 · St. Louis Secondary School, Carrickmacross</h2></div>
+  <div class="cole">
+    <div class="cole-head">
+      <div class="cole-num">Colegio 4</div>
+      <div class="cole-nombre">St. Louis Secondary School</div>
+      <div class="cole-loc">📍 Carrickmacross · County Monaghan · Femenino · Voluntary Secondary</div>
+    </div>
+    <div class="cole-body">
+      <p>
+        St. Louis es especialmente claro respecto a la proporción académica de su TY: el centro indica que
+        <strong>aproximadamente la mitad del horario</strong> está dedicada a materias académicas pensadas para
+        beneficiar a las alumnas posteriormente en Leaving Certificate.
+      </p>
+      <div class="callout">
+        <b>☘ Para Candela</b>
+        Es una alternativa académicamente fuerte. El principal elemento a valorar es que se trata de un
+        <strong>colegio femenino</strong>, frente a vuestra preferencia inicial por centros mixtos.
+      </div>
+
+      <div class="sub-title">6.1 · Cómo se estructura el componente académico</div>
+      <ul class="bullets">
+        <li>Materias base relevantes para Candela: <strong>Religion, English y Maths</strong>.</li>
+        <li><strong>Maths:</strong> utiliza un manual completo de Leaving Certificate, tanto en Ordinary como en Higher Level.</li>
+        <li><strong>Elección posterior:</strong> después de las primeras 6 semanas, las alumnas eligen cuatro materias académicas entre once opciones.</li>
+      </ul>
+
+      <div class="sub-title">6.2 · Materias disponibles</div>
+      <div class="tabla-wrap">
+        <table class="tabla-diff tabla-left">
+          <thead><tr><th>Materia</th><th>Contenido / material visible</th></tr></thead>
+          <tbody>
+            <tr><th>History</th><td>Historia de Irlanda moderna y Europa/mundo.</td></tr>
+            <tr><th>Geography</th><td>Geografía física, humana y técnicas de examen.</td></tr>
+            <tr><th>French</th><td>Lengua, comprensión y expresión con manual de continuidad.</td></tr>
+            <tr><th>Biology</th><td>Contenidos de biología de Senior Cycle.</td></tr>
+            <tr><th>Business</th><td>Empresa y conceptos de negocio.</td></tr>
+            <tr><th>Chemistry</th><td>Manual de Chemistry y materiales de Leaving Certificate.</td></tr>
+            <tr><th>Physics</th><td>Real World Physics y materiales de Leaving Certificate.</td></tr>
+            <tr><th>Home Economics</th><td>Manual completo de Leaving Certificate Home Economics.</td></tr>
+            <tr><th>PE</th><td>Trabajo teórico y práctico.</td></tr>
+            <tr><th>Music</th><td>Repertorio, armonía, melodía y listening.</td></tr>
+            <tr><th>Art / Craft</th><td>Visual Studies orientado al Leaving Certificate.</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="sub-title">6.3 · Parte práctica y de desarrollo personal</div>
+      <p>
+        La otra parte del programa incluye ICT, Mini-Company, Work Experience, Personal Development, Digital
+        Media, Young Social Innovators, Film Studies, Art &amp; Design, actividades culinarias y la producción de
+        un musical completo.
+      </p>
+
+      <div class="valoracion">
+        <b>Valoración para Candela</b>
+        Para una familia preocupada por la carga académica, St. Louis ofrece una garantía bastante clara:
+        alrededor del 50 % del horario está destinado a materias académicas. Además, proyectos como el musical,
+        Mini-Company o Young Social Innovators desarrollan expresión oral, organización, creatividad y trabajo en equipo.
+      </div>
+    </div>
+  </div>
+
+  <!-- ============ 7. BAILIEBOROUGH ============ -->
+  <div class="section-title" id="bailieborough"><h2>7 · Bailieborough Community School</h2></div>
+  <div class="cole">
+    <div class="cole-head">
+      <div class="cole-num">Colegio 5</div>
+      <div class="cole-nombre">Bailieborough Community School</div>
+      <div class="cole-loc">📍 Bailieborough · County Cavan · Mixto · Community School</div>
+    </div>
+    <div class="cole-body">
+      <p>
+        Bailieborough combina continuidad en materias troncales, exploración de asignaturas de Leaving
+        Certificate, módulos prácticos y experiencia laboral.
+      </p>
+
+      <div class="sub-title">7.1 · Materias y tiempos publicados</div>
+      <ul class="bullets">
+        <li><strong>English y Maths:</strong> continúan durante TY; el colegio no publica el número exacto de periodos semanales para estas materias.</li>
+        <li><strong>French / German:</strong> 2 periodos semanales.</li>
+        <li><strong>Sciences:</strong> todos los alumnos prueban Biology, Agricultural Science, Physics y Chemistry.</li>
+        <li><strong>Humanidades y artes:</strong> History, Geography, Art y Music.</li>
+        <li><strong>Otros módulos:</strong> Career Guidance, Drama, Enterprise, PE, Healthy Living, First Aid y competencias digitales.</li>
+        <li><strong>Work Experience:</strong> 1 día a la semana.</li>
+      </ul>
+
+      <div class="sub-title">7.2 · Evaluación</div>
+      <p>
+        El programa se evalúa de forma continua mediante proyectos, portfolio, presentaciones, exposiciones de
+        trabajos y autoevaluación. Es un modelo menos centrado en un examen final y más en el trabajo mantenido
+        durante el curso.
+      </p>
+
+      <div class="valoracion">
+        <b>Valoración para Candela</b>
+        Bailieborough ofrece un TY equilibrado y una exposición bastante amplia a ciencias, idiomas, humanidades
+        y proyectos. Tiene más peso de experiencia práctica que Tullow o Athboy, especialmente por el día semanal
+        de Work Experience.
+      </div>
+    </div>
+  </div>
+
+  <!-- ============ 8. CARRICK ============ -->
+  <div class="section-title" id="carrick"><h2>8 · Carrick Community School</h2></div>
+  <div class="cole">
+    <div class="cole-head">
+      <div class="cole-num">Colegio 6</div>
+      <div class="cole-nombre">Carrick Community School</div>
+      <div class="cole-loc">📍 Carrick-on-Shannon · County Leitrim · Mixto · Community School</div>
+    </div>
+    <div class="cole-body">
+      <p>
+        Carrick mantiene un programa de Transition Year activo, pero actualmente publica menos detalle sobre su
+        horario semanal y sus módulos que otros centros de esta selección. Por eso, preferimos distinguir
+        claramente lo que está confirmado de lo que todavía convendría solicitar al colegio.
+      </p>
+      <div class="callout amber">
+        <b>⚠ Información disponible</b>
+        La oferta de 5th Year es muy amplia, pero <strong>no existe en abierto un timetable de TY suficientemente
+        detallado</strong> para calcular la carga semanal con la misma precisión que en Tullow o Athboy.
+      </div>
+
+      <div class="sub-title">8.1 · Oferta académica confirmada en Senior Cycle</div>
+      <p>
+        En 5th Year, para el perfil académico relevante de Candela, <strong>English y Maths forman parte del
+        núcleo del programa</strong>, junto con RE, PE, Career Guidance, Computer Studies y SPHE. A ello se añaden
+        cuatro materias de elección:
+      </p>
+      <ul class="bullets">
+        <li>German y French.</li>
+        <li>Construction Studies, Engineering y Design &amp; Communication Graphics.</li>
+        <li>Home Economics, Biology, Chemistry y Physics.</li>
+        <li>Art y Music.</li>
+        <li>Geography, History y Politics &amp; Society.</li>
+        <li>Agricultural Science, Business y Accounting.</li>
+      </ul>
+
+      <div class="valoracion">
+        <b>Valoración para Candela</b>
+        Carrick sigue siendo una opción interesante por la amplitud de su oferta académica y por el perfil general
+        del centro. No obstante, si se convierte en una de vuestras opciones finales, recomendamos solicitar antes
+        de la matrícula el timetable y la lista de módulos de TY más reciente para comprobar exactamente cuántas
+        horas tendría Candela de cada área.
+      </div>
+    </div>
+  </div>
+
+  <!-- ============ 9. CONCLUSIONES ============ -->
+  <div class="section-title" id="conclusiones"><h2>9 · Conclusiones para Candela</h2></div>
+
+  <div class="sub-title" style="max-width:none;">9.1 · ¿Puede mantener un buen nivel académico haciendo TY?</div>
+  <p class="intro-text">
+    <strong>Sí.</strong> En los centros mejor documentados vemos continuidad suficiente para que el año no se
+    convierta en una desconexión académica.
+  </p>
+  <div class="dato-grid">
+    <div class="dato"><div class="dato-num">6 h</div><div class="dato-desc"><strong>Athboy</strong> confirma 6 horas semanales de English y Maths, además de electivas y módulos.</div></div>
+    <div class="dato"><div class="dato-num">13 periodos</div><div class="dato-desc"><strong>Tullow</strong> publica 13 periodos troncales relevantes para Candela, más módulos y subject sampling.</div></div>
+    <div class="dato"><div class="dato-num">50 %</div><div class="dato-desc"><strong>St. Louis</strong> destina aproximadamente el 50 % del horario a materias académicas.</div></div>
+  </div>
+  <p class="intro-text" style="margin-top:16px;">
+    Y <strong>Beech Hill</strong> ya utiliza materiales propios de Leaving Certificate en varias asignaturas.
+  </p>
+
+  <div class="sub-title">9.2 · Pensando en su interés por Magisterio</div>
+  <p class="intro-text">
+    El objetivo no debería ser únicamente buscar el colegio con más horas de teoría. Para una futura educadora
+    también son muy valiosas la expresión oral, la lectura, la escritura, el trabajo en equipo, la empatía, la
+    responsabilidad, la capacidad de organizar actividades y el contacto con niños.
+  </p>
+  <p class="intro-text">
+    Por ese motivo, <strong>Athboy</strong> resulta especialmente interesante para Candela: Childcare y Reader
+    Leaders le permitirían acercarse de forma muy práctica a un entorno educativo mientras mantiene una base
+    académica sólida.
+  </p>
+
+  <div class="sub-title">9.3 · Los colegios que recomendamos especialmente</div>
+  <div class="tabla-wrap">
+    <table class="tabla-diff tabla-left">
+      <thead><tr><th>Colegio</th><th>Por qué destaca para Candela</th><th>Aspecto a valorar</th></tr></thead>
+      <tbody>
+        <tr><th>Tullow Community School</th><td>Es la opción con la estructura académica más clara y cuantificable. Mantiene English y Maths de forma estable y combina materias troncales con Science, idiomas, humanidades, tecnología y subject sampling.</td><td>Nuestra principal recomendación si vuestra prioridad es la continuidad académica y mantener un buen ritmo antes de volver a Bachillerato.</td></tr>
+        <tr><th>Athboy Community School</th><td>Confirma 6 horas semanales de English + Maths, añade materias de prueba de Leaving Certificate, evaluación continua y exámenes, además de Childcare y Reader Leaders.</td><td>Especialmente recomendable si queréis combinar una base académica sólida con una primera aproximación práctica a Educación Infantil/Primaria.</td></tr>
+        <tr><th>Beech Hill College</th><td>Presenta una continuidad curricular muy clara con Senior Cycle: en varias asignaturas se trabajan ya durante TY contenidos y materiales que continúan después en 5th Year y Leaving Certificate.</td><td>Muy buena tercera opción académica. El único punto que no podemos cuantificar con la misma precisión es el número de horas semanales por asignatura.</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="sub-title">9.4 · Nuestra recomendación</div>
+  <p class="intro-text">
+    Tras revisar la estructura académica de los centros, nuestra primera recomendación para Candela es
+    <strong>Tullow Community School</strong> si vuestra prioridad principal es que mantenga una carga académica
+    clara, una rutina semanal bien estructurada y continuidad en las materias antes de volver a Bachillerato en
+    España. <strong>Athboy Community School</strong> sería la alternativa que más destacaríamos si, además de esa
+    continuidad académica, queréis que Candela pueda explorar de forma práctica su interés por la educación,
+    gracias a opciones como Childcare y Reader Leaders. <strong>Beech Hill College</strong> completa nuestra
+    selección de tres centros especialmente recomendados por la clara continuidad entre los contenidos trabajados
+    en TY y las materias de Senior Cycle.
+  </p>
+  <p class="intro-text">
+    En cualquiera de estas tres opciones, el objetivo sería que Candela viva una experiencia de TY completa sin
+    renunciar a una base académica sólida que le permita volver a España con seguridad y continuar Bachillerato.
+  </p>
+
+  <!-- ============ 10. TY FRENTE A 5TH YEAR ============ -->
+  <div class="section-title" id="ty5th"><h2>10 · TY frente a 5th Year: qué diferencia hay realmente</h2></div>
+  <p class="intro-text">
+    5th Year es más lineal y está directamente orientado al Leaving Certificate. TY mantiene materias troncales,
+    pero añade más proyectos, presentaciones, rotaciones, experiencias laborales y exploración de nuevas áreas.
+    Por eso, la diferencia no es «estudiar o no estudiar», sino <strong>la forma en la que se aprende</strong>.
+  </p>
+  <p class="intro-text">
+    Para Candela, que quiere vivir una experiencia internacional y después continuar su trayectoria académica, un
+    TY bien estructurado puede ofrecer un buen equilibrio entre continuidad académica, inglés, autonomía y
+    desarrollo personal.
+  </p>
+
+  <!-- ============ 11. FUENTES ============ -->
+  <div class="section-title" id="fuentes"><h2>11 · Fuentes oficiales consultadas</h2></div>
+  <p class="intro-text">
+    Para preparar este informe hemos priorizado información y documentos oficiales publicados por los propios
+    colegios. Cuando un centro no publica horas o un currículo detallado, se ha indicado expresamente.
+  </p>
+  <div class="fuentes">
+    <div class="fuente-grupo">
+      <div class="fuente-cole">Tullow Community School</div>
+      <div class="fuente-links">
+        <a class="fuente-link" href="https://www.tullowcommunityschool.ie/transition-year/" target="_blank" rel="noopener">Transition Year</a>
+        <a class="fuente-link" href="https://www.tullowcommunityschool.ie/wp-content/uploads/2025/09/Tullow-C.S.-Transition-Year-2025-2026-Handbook.pdf" target="_blank" rel="noopener">TY Handbook 2025/26</a>
+      </div>
+    </div>
+    <div class="fuente-grupo">
+      <div class="fuente-cole">Athboy Community School</div>
+      <div class="fuente-links">
+        <a class="fuente-link" href="https://athboycs.ie/ty/" target="_blank" rel="noopener">Transition Year</a>
+        <a class="fuente-link" href="https://athboycs.ie/wp-content/uploads/2024/09/TY-Programme-Outline-2024-25.pdf" target="_blank" rel="noopener">TY Programme Outline 2024/25</a>
+        <a class="fuente-link" href="https://athboycs.ie/wp-content/uploads/2024/09/TY-Programme-2024-25-Intro-for-prospective-students-Feb-2024.pdf" target="_blank" rel="noopener">TY Introduction</a>
+      </div>
+    </div>
+    <div class="fuente-grupo">
+      <div class="fuente-cole">Beech Hill College</div>
+      <div class="fuente-links">
+        <a class="fuente-link" href="https://www.bhc.ie/senior-cycle" target="_blank" rel="noopener">Senior Cycle</a>
+        <a class="fuente-link" href="https://www.bhc.ie/booklists" target="_blank" rel="noopener">Booklists</a>
+        <a class="fuente-link" href="https://www.bhc.ie/_files/ugd/024943_189597b2fbf3430c9547e2ca426f7219.pdf" target="_blank" rel="noopener">TY Booklist 2024/25</a>
+      </div>
+    </div>
+    <div class="fuente-grupo">
+      <div class="fuente-cole">St. Louis Secondary School</div>
+      <div class="fuente-links">
+        <a class="fuente-link" href="https://stlouiscmx.com/index.php/learning-and-teaching/transition-year" target="_blank" rel="noopener">Transition Year</a>
+        <a class="fuente-link" href="https://www.stlouiscmx.com/images/Transition_Year_Booklist_24-25.pdf" target="_blank" rel="noopener">TY Booklist 2024/25</a>
+      </div>
+    </div>
+    <div class="fuente-grupo">
+      <div class="fuente-cole">Bailieborough Community School</div>
+      <div class="fuente-links">
+        <a class="fuente-link" href="https://www.bailieborocs.ie/ty/" target="_blank" rel="noopener">Transition Year</a>
+        <a class="fuente-link" href="https://www.bailieborocs.ie/fifthyearbooklist/" target="_blank" rel="noopener">Fifth Year Book List</a>
+      </div>
+    </div>
+    <div class="fuente-grupo">
+      <div class="fuente-cole">Carrick Community School</div>
+      <div class="fuente-links">
+        <a class="fuente-link" href="https://www.carrickcs.ie/transition-year" target="_blank" rel="noopener">Transition Year</a>
+        <a class="fuente-link" href="https://www.carrickcs.ie/leaving-certificate" target="_blank" rel="noopener">Leaving Certificate</a>
+      </div>
+    </div>
+    <div class="nota-final">
+      <strong>Nota sobre la información disponible.</strong> A fecha de septiembre de 2026, los centros todavía no
+      han publicado todos los detalles específicos del curso 2027/28. El informe utiliza la documentación oficial
+      más reciente disponible de cada colegio. Los módulos concretos de TY pueden variar ligeramente de un curso a
+      otro, por lo que, cuando se acerque el momento de matrícula, podremos confirmar con el centro la versión
+      definitiva del horario y las optativas disponibles.
+    </div>
+  </div>
+
+  <!-- ============ CIERRE ============ -->
+  <div class="section-title"><h2>¿Hablamos?</h2></div>
+  <div class="steps-wrap">
+    <div class="steps-inner">
+      <div class="steps-title">Cualquier duda sobre este informe</div>
+      <div class="steps-sub">Podemos revisarlo juntas y, si lo necesitáis, pedir a los colegios el horario definitivo</div>
+      <div class="pasos-cta-wrap" style="margin-top:4px;">
+        <a class="pasos-cta" href="mailto:gespinoza@mylanguagequest.com?subject=Dudas%20informe%20acad%C3%A9mico%20%C2%B7%20Candela%20%C2%B7%20Irlanda%202027%2F28&amp;body=Hola%20Georgina%2C%0A%0AHemos%20le%C3%ADdo%20el%20informe%20acad%C3%A9mico%20de%20Candela%20y%20nos%20gustar%C3%ADa%20comentar%20lo%20siguiente%3A%0A%0A">✉ Escribir a mi asesora</a>
+        <a class="pasos-cta pasos-cta-alt" href="https://asesoramientosmlq.zohobookings.eu/mylanguagequest" target="_blank" rel="noopener">📅 Agendar una llamada</a>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<!-- ============ FOOTER ============ -->
+<div class="footer">
+  <div class="footer-logo">MY LANGUAGE QUEST</div>
+  <div class="footer-tag">Explore · Learn · Grow</div>
+  <div class="footer-meta">
+    Informe académico personalizado · Candela · Irlanda 2027/28<br>
+    Información basada en documentación oficial publicada por los centros y disponible hasta septiembre de 2026.
+  </div>
+</div>
+
+<script>
+(function(){
+  var d=document, root=d.documentElement;
+  if(!('IntersectionObserver' in window)){root.className=root.className.replace(' js-anim','');return;}
+
+  var bar=d.createElement('div'); bar.className='progress-bar'; d.body.appendChild(bar);
+  var ticking=false;
+  function progress(){
+    var h=d.documentElement.scrollHeight-window.innerHeight;
+    bar.style.transform='scaleX('+(h>0?Math.min(window.scrollY/h,1):0)+')';
+    ticking=false;
+  }
+  window.addEventListener('scroll',function(){if(!ticking){ticking=true;requestAnimationFrame(progress);}},{passive:true});
+  progress();
+
+  Array.prototype.forEach.call(d.querySelectorAll('.hero-pill'),function(el,i){
+    el.style.animationDelay=(0.36+i*0.06)+'s';
+  });
+
+  var groups=[
+    ['.section-title','reveal'],
+    ['.intro-text','reveal'],
+    ['.nav-wrap','reveal'],
+    ['.bullets','reveal'],
+    ['.cole','reveal-zoom'],
+    ['.tabla-wrap','reveal-zoom'],
+    ['.dato','reveal'],
+    ['.fuentes','reveal-zoom'],
+    ['.steps-wrap','reveal-zoom']
+  ];
+  groups.forEach(function(g){
+    Array.prototype.forEach.call(d.querySelectorAll(g[0]),function(el,i){
+      el.classList.add(g[1]);
+      el.style.transitionDelay=Math.min(i*0.09,0.36)+'s';
+    });
+  });
+
+  var io=new IntersectionObserver(function(entries){
+    entries.forEach(function(e){
+      if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}
+    });
+  },{threshold:0.08,rootMargin:'0px 0px -6% 0px'});
+  Array.prototype.forEach.call(d.querySelectorAll('.reveal,.reveal-zoom'),function(el){io.observe(el);});
+})();
+</script>
+
+</body>
+</html>
