@@ -1,0 +1,1559 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<script>document.documentElement.className+=" js-anim";</script>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Propuesta Irlanda · Alberto · My Language Quest</title>
+<link href="https://fonts.googleapis.com/css2?family=Fira+Sans:wght@300;400;500;600;700&family=Josefin+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --blue:#003366;--blue-dark:#001f40;--blue-mid:#0a4a8a;--blue-light:#dce8f5;
+  --red:#B12900;--red-dark:#8A1F00;--red-light:#fdf0ec;
+  --red-deep:#6E1600;--red-warm:#C8380C;--cream:#FFF6F2;--sand:#F7EDE6;--gold:#E8B04B;
+  --ie:#3A7A09;--ie-deep:#1F4A05;--ie-warm:#5FB515;--ie-light:#eef8e3;
+  --green:#4C9E0C;--green-dark:#3A7A09;--green-light:#eef8e3;
+  --gray-bg:#eef3ea;--gray-card:#f8fbf5;--gray-border:#d9e3d2;
+  --text:#0d1b2a;--text-mid:#3d4f62;--text-light:#7a8a9b;--white:#ffffff;
+}
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box;}
+body{font-family:'Fira Sans',sans-serif;background:var(--gray-bg);color:var(--text);}
+
+/* HEADER */
+.header{background:var(--white);padding:18px 48px;display:flex;align-items:center;justify-content:space-between;box-shadow:0 1px 0 var(--gray-border),0 4px 24px rgba(0,51,102,0.07);position:relative;z-index:10;}
+.header::after{content:'';position:absolute;bottom:0;left:0;right:0;height:4px;background:linear-gradient(90deg,var(--ie) 0%,var(--ie) 33%,var(--white) 33%,var(--white) 67%,#FF8200 67%,#FF8200 100%);}
+.logo-area img{height:58px;width:auto;display:block;}
+.logo-word{font-family:'Josefin Sans',sans-serif;font-size:21px;font-weight:700;letter-spacing:2.5px;color:var(--blue);line-height:1;}
+.logo-sub{font-family:'Josefin Sans',sans-serif;font-size:8.5px;font-weight:600;letter-spacing:4px;text-transform:uppercase;color:var(--ie);margin-top:5px;}
+.header-right{text-align:right;}
+.header-label{font-family:'Josefin Sans',sans-serif;font-size:9px;letter-spacing:3px;text-transform:uppercase;color:var(--text-light);}
+.header-year{font-family:'Josefin Sans',sans-serif;font-size:26px;font-weight:700;color:var(--ie-deep);line-height:1;margin-top:2px;}
+
+/* HERO */
+.hero{background:linear-gradient(135deg,var(--ie-deep) 0%,var(--ie) 55%,var(--ie-warm) 100%);position:relative;overflow:hidden;padding:40px 48px 36px;}
+.hero::after{content:'☘';position:absolute;right:2%;top:50%;transform:translateY(-50%) rotate(-12deg);font-size:230px;line-height:1;opacity:0.09;pointer-events:none;z-index:1;}
+.hero::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 70% 110% at 100% 40%,rgba(255,255,255,0.12) 0%,transparent 60%),radial-gradient(ellipse 60% 80% at -10% 90%,rgba(0,31,64,0.28) 0%,transparent 60%);}
+.hero-dots{position:absolute;inset:0;pointer-events:none;background-image:radial-gradient(rgba(255,255,255,0.07) 1px,transparent 1px);background-size:28px 28px;}
+.hero-inner{position:relative;z-index:2;}
+.hero-tag{display:inline-flex;align-items:center;gap:6px;background:rgba(255,255,255,0.1);border:1px solid rgba(255,255,255,0.2);border-radius:20px;padding:4px 12px;font-size:10px;font-weight:600;letter-spacing:2px;text-transform:uppercase;color:rgba(255,255,255,0.7);margin-bottom:12px;}
+.hero-tag::before{content:'☘';font-size:12px;}
+.hero-name{font-family:'Josefin Sans',sans-serif;font-size:38px;font-weight:700;color:var(--white);line-height:1.05;margin-bottom:8px;}
+.hero-subtitle{font-size:13px;color:rgba(255,255,255,0.55);font-weight:300;}
+.hero-pills{display:flex;flex-wrap:wrap;gap:8px;margin-top:20px;}
+.hero-pill{display:flex;align-items:center;gap:6px;background:rgba(255,255,255,0.1);border:1px solid rgba(255,255,255,0.18);border-radius:8px;padding:6px 12px;font-size:11px;color:var(--white);font-weight:500;}
+.hero-pill.ac{background:rgba(0,31,64,0.35);border-color:rgba(255,255,255,0.4);color:#ffffff;}
+.hero-promo{display:inline-flex;align-items:center;gap:8px;background:rgba(0,31,64,0.4);border:1px solid rgba(255,255,255,0.35);border-radius:10px;padding:10px 16px;font-size:12.5px;font-weight:600;color:#ffffff;margin-top:18px;max-width:640px;line-height:1.5;}
+
+/* LAYOUT */
+.main{max-width:1140px;margin:0 auto;padding:40px 24px 20px;}
+.section-title{display:flex;align-items:center;gap:12px;margin:44px 0 24px;}
+.section-title:first-of-type{margin-top:0;}
+.section-title h2{font-family:'Josefin Sans',sans-serif;font-size:11px;font-weight:700;letter-spacing:3px;text-transform:uppercase;color:var(--ie-deep);white-space:nowrap;}
+.section-title::before{content:'';width:22px;height:3px;border-radius:3px;background:var(--ie);flex-shrink:0;}
+.section-title::after{content:'';flex:1;height:1px;background:var(--gray-border);}
+
+/* INTRO */
+.intro-text{font-size:14px;color:var(--text-mid);line-height:1.75;max-width:880px;margin-bottom:20px;}
+.intro-text strong{color:var(--blue);font-weight:600;}
+.intro-points{display:grid;grid-template-columns:repeat(2,1fr);gap:14px;margin-top:20px;}
+.intro-point{background:var(--white);border:1.5px solid var(--gray-border);border-radius:12px;padding:16px 18px;display:flex;gap:12px;align-items:flex-start;}
+.intro-point-icon{font-size:20px;flex-shrink:0;}
+.intro-point-title{font-family:'Josefin Sans',sans-serif;font-size:13px;font-weight:700;color:var(--ie-deep);margin-bottom:4px;}
+.intro-point-desc{font-size:12px;color:var(--text-mid);line-height:1.55;}
+
+/* QUIÉNES SOMOS */
+.qs-hero{display:grid;grid-template-columns:1fr 1fr;gap:0;background:var(--white);border-radius:18px;overflow:hidden;border:1.5px solid var(--gray-border);box-shadow:0 4px 28px rgba(0,51,102,0.08);}
+.qs-media{position:relative;background:var(--blue-dark);min-height:440px;}
+.qs-media img{width:100%;height:100%;object-fit:cover;display:block;}
+.qs-media-inset{position:absolute;right:-1px;bottom:-1px;width:44%;aspect-ratio:3/4;border-radius:14px 0 0 0;overflow:hidden;border-top:4px solid var(--white);border-left:4px solid var(--white);box-shadow:-8px -8px 28px rgba(0,31,64,0.28);}
+.qs-media-inset img{width:100%;height:100%;object-fit:cover;}
+.qs-panel{background:linear-gradient(155deg,var(--blue-dark) 0%,var(--blue) 55%,var(--blue-mid) 100%);padding:38px 40px;position:relative;overflow:hidden;display:flex;flex-direction:column;justify-content:center;}
+.qs-panel::before{content:'';position:absolute;inset:0;background-image:radial-gradient(rgba(255,255,255,0.055) 1px,transparent 1px);background-size:22px 22px;}
+.qs-panel-inner{position:relative;z-index:2;}
+.qs-eyebrow{font-family:'Josefin Sans',sans-serif;font-size:9px;font-weight:700;letter-spacing:3px;text-transform:uppercase;color:#7dd44a;margin-bottom:12px;}
+.qs-title{font-family:'Josefin Sans',sans-serif;font-size:26px;font-weight:700;color:var(--white);line-height:1.2;margin-bottom:14px;}
+.qs-lead{font-size:13.5px;color:rgba(255,255,255,0.62);line-height:1.75;margin-bottom:26px;}
+.qs-lead strong{color:var(--white);font-weight:600;}
+.qs-pilares{display:flex;flex-direction:column;gap:14px;}
+.qs-pilar{display:flex;gap:14px;align-items:flex-start;padding-top:14px;border-top:1px solid rgba(255,255,255,0.13);}
+.qs-pilar:first-child{border-top:none;padding-top:0;}
+.qs-pilar-icon{font-size:19px;flex-shrink:0;line-height:1.3;}
+.qs-pilar-title{font-family:'Josefin Sans',sans-serif;font-size:13px;font-weight:700;color:var(--white);margin-bottom:3px;}
+.qs-pilar-desc{font-size:11.5px;color:rgba(255,255,255,0.5);line-height:1.55;}
+
+.qs-chapters-head{display:flex;align-items:baseline;gap:14px;margin:38px 0 18px;flex-wrap:wrap;}
+.qs-chapters-title{font-family:'Josefin Sans',sans-serif;font-size:19px;font-weight:700;color:var(--ie-deep);}
+.qs-chapters-sub{font-size:12.5px;color:var(--text-light);}
+.qs-chapters{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;}
+.qs-chapter{background:var(--white);border:1.5px solid var(--gray-border);border-radius:16px;overflow:hidden;box-shadow:0 2px 16px rgba(0,51,102,0.06);display:flex;flex-direction:column;transition:transform .2s,box-shadow .2s;}
+.qs-chapter:hover{transform:translateY(-4px);box-shadow:0 14px 38px rgba(0,51,102,0.13);}
+.qs-chapter-media{position:relative;aspect-ratio:4/3;overflow:hidden;background:var(--blue-light);}
+.qs-chapter-media img{width:100%;height:100%;object-fit:cover;object-position:center 15%;display:block;}
+.qs-chapter-step{position:absolute;top:12px;left:12px;background:rgba(0,31,64,0.82);backdrop-filter:blur(4px);color:#7dd44a;font-family:'Josefin Sans',sans-serif;font-size:9px;font-weight:700;letter-spacing:2px;text-transform:uppercase;padding:5px 11px;border-radius:20px;}
+.qs-chapter-body{padding:18px 20px 20px;}
+.qs-chapter-title{font-family:'Josefin Sans',sans-serif;font-size:15px;font-weight:700;color:var(--ie-deep);margin-bottom:7px;}
+.qs-chapter-text{font-size:12.5px;color:var(--text-mid);line-height:1.65;}
+
+/* AVISOS */
+.alert-box{display:flex;gap:12px;align-items:flex-start;background:#fff4f0;border:1.5px solid rgba(177,41,0,0.3);border-radius:12px;padding:14px 18px;margin-bottom:22px;}
+.alert-icon{font-size:20px;flex-shrink:0;}
+.alert-text{font-size:12px;color:#6b1a00;line-height:1.6;}
+.alert-text strong{color:var(--red-dark);}
+.note-box{display:flex;gap:12px;align-items:flex-start;background:var(--ie-light);border:1.5px solid rgba(76,158,12,0.3);border-radius:12px;padding:14px 18px;margin:18px 0;}
+.note-box .alert-text{color:#264d06;}
+.note-box .alert-text strong{color:var(--ie-deep);}
+
+/* FICHA COLEGIO */
+.school-wrap{background:var(--white);border:1.5px solid var(--gray-border);border-radius:18px;overflow:hidden;box-shadow:0 4px 28px rgba(0,51,102,0.08);}
+.school-hero{position:relative;height:320px;overflow:hidden;background:var(--blue-dark);}
+.school-hero img{width:100%;height:100%;object-fit:cover;object-position:center 55%;display:block;}
+.school-hero-overlay{position:absolute;inset:0;background:linear-gradient(to top,rgba(0,31,64,0.88) 0%,rgba(0,31,64,0.28) 45%,transparent 75%);}
+.school-hero-text{position:absolute;left:0;right:0;bottom:0;padding:26px 32px;}
+.school-eyebrow{font-family:'Josefin Sans',sans-serif;font-size:9px;font-weight:700;letter-spacing:3px;text-transform:uppercase;color:#7dd44a;margin-bottom:8px;}
+.school-name{font-family:'Josefin Sans',sans-serif;font-size:30px;font-weight:700;color:var(--white);line-height:1.1;margin-bottom:6px;}
+.school-loc{font-size:12.5px;color:rgba(255,255,255,0.65);margin-bottom:12px;}
+.school-chips{display:flex;flex-wrap:wrap;gap:6px;}
+.chip{border-radius:6px;padding:3px 9px;font-size:9.5px;font-weight:700;text-transform:uppercase;letter-spacing:.5px;background:rgba(255,255,255,0.14);color:rgba(255,255,255,0.92);border:1px solid rgba(255,255,255,0.22);}
+.chip.gold{background:rgba(232,176,75,0.25);border-color:rgba(232,176,75,0.55);color:#ffdda0;}
+.school-body{padding:28px 32px 30px;}
+.school-desc{font-size:13.5px;color:var(--text-mid);line-height:1.8;margin-bottom:22px;}
+.school-desc strong{color:var(--blue);font-weight:600;}
+.school-facts{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-bottom:24px;}
+.fact{background:var(--gray-card);border:1.5px solid var(--gray-border);border-radius:12px;padding:14px 16px;}
+.fact-val{font-family:'Josefin Sans',sans-serif;font-size:19px;font-weight:700;color:var(--ie-deep);line-height:1;margin-bottom:5px;}
+.fact-lab{font-size:10.5px;color:var(--text-light);text-transform:uppercase;letter-spacing:1px;}
+.colegio-section-title{font-family:'Josefin Sans',sans-serif;font-size:9px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--ie);margin:0 0 10px;padding-bottom:6px;border-bottom:1.5px solid var(--ie-light);}
+.por-que-list{list-style:none;display:flex;flex-direction:column;gap:8px;}
+.por-que-list li{font-size:12.5px;color:var(--text-mid);line-height:1.6;display:flex;gap:8px;align-items:flex-start;}
+.por-que-list li::before{content:'☘';color:var(--ie);flex-shrink:0;font-size:11px;margin-top:2px;}
+.por-que-list li strong{color:var(--text);font-weight:600;}
+
+/* GALERÍA */
+.gallery{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-top:8px;}
+.gallery figure{position:relative;border-radius:12px;overflow:hidden;aspect-ratio:4/3;border:1.5px solid var(--gray-border);background:var(--blue-light);}
+.gallery img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .7s cubic-bezier(.22,.61,.36,1);}
+.gallery figure:hover img{transform:scale(1.07);}
+.gallery figcaption{position:absolute;left:0;right:0;bottom:0;padding:16px 12px 8px;font-size:10.5px;color:#fff;font-weight:600;background:linear-gradient(to top,rgba(0,31,64,0.85),transparent);}
+.gallery-credit{font-size:10.5px;color:var(--text-light);margin-top:10px;font-style:italic;}
+
+/* ACADÉMICO */
+.aca-wrap{background:var(--white);border:1.5px solid var(--gray-border);border-radius:16px;box-shadow:0 2px 16px rgba(0,51,102,0.05);overflow:hidden;}
+.aca-head{background:linear-gradient(135deg,var(--blue-dark),var(--blue-mid));padding:26px 32px;}
+.aca-head h3{font-family:'Josefin Sans',sans-serif;font-size:19px;font-weight:700;color:var(--white);margin-bottom:8px;}
+.aca-head p{font-size:12.5px;color:rgba(255,255,255,0.6);line-height:1.7;max-width:760px;}
+.aca-body{padding:28px 32px 32px;}
+.aca-sub{font-family:'Josefin Sans',sans-serif;font-size:15px;font-weight:700;color:var(--ie-deep);margin:30px 0 12px;display:flex;align-items:center;gap:10px;}
+.aca-sub:first-child{margin-top:0;}
+.aca-sub .num{display:inline-flex;align-items:center;justify-content:center;width:24px;height:24px;border-radius:7px;background:var(--ie-light);color:var(--ie-deep);font-size:12px;flex-shrink:0;}
+.aca-p{font-size:13px;color:var(--text-mid);line-height:1.8;margin-bottom:14px;}
+.aca-p strong{color:var(--text);font-weight:600;}
+
+/* Tabla de troncales */
+.tronc-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:14px;}
+.tronc{background:var(--gray-card);border:1.5px solid var(--gray-border);border-left:4px solid var(--ie);border-radius:12px;padding:16px 18px;}
+.tronc-top{display:flex;justify-content:space-between;align-items:baseline;gap:10px;margin-bottom:7px;}
+.tronc-name{font-family:'Josefin Sans',sans-serif;font-size:14px;font-weight:700;color:var(--ie-deep);}
+.tronc-h{font-size:10.5px;font-weight:700;color:var(--red);background:var(--red-light);border-radius:20px;padding:2px 9px;white-space:nowrap;}
+.tronc-desc{font-size:12px;color:var(--text-mid);line-height:1.6;}
+.tronc-desc ul{margin:7px 0 0 0;padding-left:0;list-style:none;}
+.tronc-desc ul li{padding-left:14px;position:relative;margin-bottom:3px;}
+.tronc-desc ul li::before{content:'·';position:absolute;left:5px;color:var(--ie);font-weight:700;}
+
+/* Grupos de optativas */
+.grupos{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;}
+.grupo{background:var(--white);border:1.5px solid var(--gray-border);border-radius:14px;overflow:hidden;display:flex;flex-direction:column;box-shadow:0 2px 14px rgba(31,74,5,0.06);}
+.grupo.dest{border-color:var(--ie);box-shadow:0 6px 24px rgba(76,158,12,0.18);}
+.grupo-head{background:var(--gray-card);padding:14px 18px;border-bottom:1.5px solid var(--gray-border);}
+.grupo.dest .grupo-head{background:linear-gradient(135deg,var(--ie-deep),var(--ie));border-bottom-color:transparent;}
+.grupo-num{font-family:'Josefin Sans',sans-serif;font-size:9px;font-weight:700;letter-spacing:2.5px;text-transform:uppercase;color:var(--text-light);margin-bottom:4px;}
+.grupo.dest .grupo-num{color:rgba(255,255,255,0.6);}
+.grupo-title{font-family:'Josefin Sans',sans-serif;font-size:14px;font-weight:700;color:var(--ie-deep);}
+.grupo.dest .grupo-title{color:var(--white);}
+.grupo-rule{font-size:11px;color:var(--text-light);margin-top:4px;}
+.grupo.dest .grupo-rule{color:rgba(255,255,255,0.6);}
+.grupo-body{padding:16px 18px 18px;flex:1;}
+.asig{margin-bottom:14px;}
+.asig:last-child{margin-bottom:0;}
+.asig-name{font-size:12.5px;font-weight:700;color:var(--text);margin-bottom:3px;display:flex;align-items:center;gap:6px;flex-wrap:wrap;}
+.asig-tag{font-size:8.5px;font-weight:700;letter-spacing:.5px;text-transform:uppercase;background:var(--ie-light);color:var(--ie-deep);border:1px solid rgba(76,158,12,0.3);border-radius:20px;padding:1px 7px;}
+.asig-desc{font-size:11.5px;color:var(--text-mid);line-height:1.6;}
+
+/* Itinerario */
+.itin{background:linear-gradient(135deg,var(--blue-dark),var(--blue));border-radius:14px;padding:26px 30px;color:#fff;}
+.itin-title{font-family:'Josefin Sans',sans-serif;font-size:17px;font-weight:700;margin-bottom:6px;}
+.itin-sub{font-size:12px;color:rgba(255,255,255,0.5);margin-bottom:22px;line-height:1.6;}
+.itin-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-bottom:20px;}
+.itin-col{background:rgba(255,255,255,0.07);border:1px solid rgba(255,255,255,0.14);border-radius:11px;padding:14px 16px;}
+.itin-col-h{font-family:'Josefin Sans',sans-serif;font-size:9px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:#7dd44a;margin-bottom:10px;}
+.itin-col ul{list-style:none;}
+.itin-col li{font-size:12px;color:rgba(255,255,255,0.82);line-height:1.5;margin-bottom:6px;padding-left:14px;position:relative;}
+.itin-col li::before{content:'→';position:absolute;left:0;color:#7dd44a;}
+.itin-col li.opt{color:rgba(255,255,255,0.5);}
+.itin-res{background:rgba(125,212,74,0.14);border:1px solid rgba(125,212,74,0.4);border-radius:11px;padding:16px 18px;}
+.itin-res-h{font-size:10px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:#7dd44a;margin-bottom:8px;}
+.itin-res-txt{font-size:13.5px;color:#fff;line-height:1.7;font-weight:500;}
+
+/* Módulos / experiencias */
+.mod-tags{display:flex;flex-wrap:wrap;gap:7px;}
+.mod-tag{font-size:11.5px;color:var(--text-mid);background:var(--gray-card);border:1px solid var(--gray-border);border-radius:20px;padding:5px 12px;}
+.mod-tag.hi{background:var(--ie-light);border-color:rgba(76,158,12,0.35);color:var(--ie-deep);font-weight:600;}
+
+/* HORARIO / DÍA TÍPICO */
+.day-grid{display:grid;grid-template-columns:1.15fr 1fr;gap:20px;align-items:start;}
+.timeline{background:var(--white);border:1.5px solid var(--gray-border);border-radius:16px;padding:26px 30px;box-shadow:0 2px 16px rgba(0,51,102,0.05);}
+.tl-title{font-family:'Josefin Sans',sans-serif;font-size:15px;font-weight:700;color:var(--ie-deep);margin-bottom:18px;}
+.tl{list-style:none;position:relative;padding-left:78px;}
+.tl::before{content:'';position:absolute;left:64px;top:6px;bottom:6px;width:2px;background:linear-gradient(to bottom,var(--ie),var(--ie-light));}
+.tl li{position:relative;margin-bottom:17px;}
+.tl li:last-child{margin-bottom:0;}
+.tl-time{position:absolute;left:-78px;top:0;width:52px;text-align:right;font-family:'Josefin Sans',sans-serif;font-size:12.5px;font-weight:700;color:var(--ie-deep);}
+.tl li::before{content:'';position:absolute;left:-16px;top:5px;width:9px;height:9px;border-radius:50%;background:var(--white);border:2.5px solid var(--ie);}
+.tl-h{font-size:12.5px;font-weight:600;color:var(--text);margin-bottom:2px;}
+.tl-d{font-size:11.5px;color:var(--text-mid);line-height:1.55;}
+.side-card{background:var(--white);border:1.5px solid var(--gray-border);border-radius:16px;padding:22px 24px;box-shadow:0 2px 16px rgba(0,51,102,0.05);margin-bottom:18px;}
+.side-card:last-child{margin-bottom:0;}
+.side-title{font-family:'Josefin Sans',sans-serif;font-size:13.5px;font-weight:700;color:var(--ie-deep);margin-bottom:10px;display:flex;align-items:center;gap:8px;}
+.side-list{list-style:none;display:flex;flex-direction:column;gap:8px;}
+.side-list li{font-size:12px;color:var(--text-mid);line-height:1.6;display:flex;gap:9px;align-items:flex-start;}
+.side-list li b{color:var(--ie-deep);font-family:'Josefin Sans',sans-serif;font-weight:700;white-space:nowrap;min-width:46px;}
+.side-list li > span{flex:1;}
+.side-list li > span::before{content:'☘';color:var(--ie);margin-right:8px;font-size:10px;}
+
+/* BOARDING */
+.board-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-bottom:20px;}
+.board-card{background:var(--white);border:1.5px solid var(--gray-border);border-left:4px solid var(--blue);border-radius:13px;padding:20px 22px;}
+.board-card.warn{border-left-color:var(--red);}
+.board-num{font-family:'Josefin Sans',sans-serif;font-size:22px;font-weight:700;color:var(--blue);line-height:1;margin-bottom:8px;}
+.board-card.warn .board-num{color:var(--red);}
+.board-title{font-family:'Josefin Sans',sans-serif;font-size:14px;font-weight:700;color:var(--ie-deep);margin-bottom:7px;}
+.board-text{font-size:12.5px;color:var(--text-mid);line-height:1.7;}
+.board-text strong{color:var(--text);font-weight:600;}
+.cycle{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin:18px 0 6px;}
+.cycle-wk{border-radius:12px;padding:16px 18px;border:1.5px solid var(--gray-border);background:var(--white);}
+.cycle-wk.exeat{background:#fff4f0;border-color:rgba(177,41,0,0.35);}
+.cycle-lab{font-family:'Josefin Sans',sans-serif;font-size:9px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--text-light);margin-bottom:7px;}
+.cycle-wk.exeat .cycle-lab{color:var(--red-dark);}
+.cycle-h{font-size:13px;font-weight:700;color:var(--ie-deep);margin-bottom:4px;}
+.cycle-wk.exeat .cycle-h{color:var(--red-dark);}
+.cycle-d{font-size:11.5px;color:var(--text-mid);line-height:1.6;}
+
+/* DEPORTE */
+.sport-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;}
+.sport-card{background:var(--white);border:1.5px solid var(--gray-border);border-radius:14px;overflow:hidden;box-shadow:0 2px 14px rgba(31,74,5,0.06);display:flex;flex-direction:column;}
+.sport-media{aspect-ratio:16/10;overflow:hidden;background:var(--blue-light);}
+.sport-media img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .7s cubic-bezier(.22,.61,.36,1);}
+.sport-card:hover .sport-media img{transform:scale(1.06);}
+.sport-body{padding:16px 18px 18px;flex:1;}
+.sport-title{font-family:'Josefin Sans',sans-serif;font-size:14px;font-weight:700;color:var(--ie-deep);margin-bottom:8px;}
+.sport-text{font-size:12px;color:var(--text-mid);line-height:1.65;margin-bottom:10px;}
+.extra-tags{display:flex;flex-wrap:wrap;gap:6px;}
+.extra-tag{font-size:10.5px;color:var(--text-mid);background:var(--gray-card);border:1px solid var(--gray-border);border-radius:20px;padding:3px 10px;}
+.extra-tag.hi{background:var(--ie-light);border-color:rgba(76,158,12,0.35);color:var(--ie-deep);font-weight:700;}
+
+/* PRECIO */
+.price-wrap{background:var(--white);border:1.5px solid var(--gray-border);border-radius:16px;overflow:hidden;box-shadow:0 4px 24px rgba(0,51,102,0.07);}
+.price-head{background:linear-gradient(135deg,var(--ie-deep),var(--ie));padding:28px 32px;display:flex;align-items:center;justify-content:space-between;gap:20px;flex-wrap:wrap;}
+.price-head-l .price-mod{font-family:'Josefin Sans',sans-serif;font-size:18px;font-weight:700;color:var(--white);margin-bottom:5px;}
+.price-head-l .price-sub{font-size:12px;color:rgba(255,255,255,0.58);line-height:1.6;}
+.price-val{font-family:'Josefin Sans',sans-serif;font-size:40px;font-weight:700;color:var(--white);line-height:1;text-align:right;}
+.price-val small{display:block;font-size:10.5px;font-weight:400;letter-spacing:1.5px;text-transform:uppercase;color:rgba(255,255,255,0.55);margin-top:6px;}
+.includes-body{padding:28px 32px;}
+.includes-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:32px;}
+.col-title{font-family:'Josefin Sans',sans-serif;font-size:9px;font-weight:700;letter-spacing:2.5px;text-transform:uppercase;color:var(--red);margin-bottom:14px;padding-bottom:8px;border-bottom:2px solid var(--red-light);}
+.inc-list{list-style:none;display:flex;flex-direction:column;gap:9px;}
+.inc-list li{font-size:12.5px;color:var(--text);line-height:1.55;position:relative;padding-left:20px;}
+.inc-list li::before{content:'✓';color:var(--green);font-weight:700;font-size:12px;position:absolute;left:0;top:0;line-height:1.55;}
+.inc-list.no li::before{content:'✗';color:var(--red);}
+.inc-list li small{font-size:10.5px;color:var(--text-light);display:block;margin-top:3px;line-height:1.5;}
+
+/* FORMAS DE PAGO */
+.payment-wrap{background:linear-gradient(135deg,var(--blue-dark) 0%,var(--blue) 60%,var(--blue-mid) 100%);border-radius:16px;padding:32px;position:relative;overflow:hidden;}
+.payment-wrap::before{content:'';position:absolute;inset:0;background-image:radial-gradient(rgba(255,255,255,0.05) 1px,transparent 1px);background-size:22px 22px;}
+.payment-inner{position:relative;z-index:2;}
+.pay-title{font-family:'Josefin Sans',sans-serif;font-size:16px;font-weight:700;color:var(--white);margin-bottom:6px;}
+.pay-subtitle{font-size:12px;color:rgba(255,255,255,0.45);margin-bottom:22px;}
+.pay-route{background:rgba(255,255,255,0.07);border:1px solid rgba(255,255,255,0.14);border-radius:14px;padding:20px 22px;margin-bottom:16px;}
+.pay-route-head{display:flex;align-items:center;gap:10px;margin-bottom:6px;}
+.pay-route-icon{font-size:20px;}
+.pay-route-title{font-family:'Josefin Sans',sans-serif;font-size:14px;font-weight:700;color:var(--white);}
+.pay-route-sub{font-size:11.5px;color:rgba(255,255,255,0.45);margin-bottom:16px;line-height:1.5;}
+.pay-entrada{display:flex;align-items:center;gap:14px;background:rgba(125,212,74,0.13);border:1px solid rgba(125,212,74,0.35);border-radius:10px;padding:14px 18px;margin-bottom:16px;}
+.pay-entrada-num{font-family:'Josefin Sans',sans-serif;font-size:26px;font-weight:700;color:#7dd44a;line-height:1;white-space:nowrap;}
+.pay-entrada-txt{font-size:11.5px;color:rgba(255,255,255,0.72);line-height:1.5;}
+.pay-entrada-txt strong{color:var(--white);font-weight:600;}
+.pay-cols{display:grid;grid-template-columns:1fr 1fr;gap:16px;}
+.pay-col{background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.12);border-radius:12px;padding:16px 18px;}
+.pay-col-title{font-family:'Josefin Sans',sans-serif;font-size:9px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:#7dd44a;margin-bottom:12px;}
+.pay-step{margin-bottom:11px;}
+.pay-step:last-child{margin-bottom:0;}
+.pay-step-title{font-size:13px;font-weight:600;color:var(--white);margin-bottom:2px;}
+.pay-step-desc{font-size:11px;color:rgba(255,255,255,0.45);line-height:1.5;}
+.pay-note{font-size:11px;color:rgba(255,255,255,0.32);line-height:1.65;font-style:italic;border-top:1px solid rgba(255,255,255,0.1);padding-top:14px;margin-top:4px;}
+
+/* FINANCIACIÓN */
+.financing-wrap{background:var(--white);border-radius:16px;border:1.5px solid var(--gray-border);box-shadow:0 2px 16px rgba(0,51,102,0.06);overflow:hidden;}
+.financing-head{background:linear-gradient(135deg,var(--blue-dark),var(--blue));padding:22px 32px;display:flex;align-items:center;justify-content:space-between;gap:16px;}
+.financing-head-left{display:flex;align-items:center;gap:16px;}
+.fin-icon{font-size:28px;flex-shrink:0;}
+.fin-title{font-family:'Josefin Sans',sans-serif;font-size:16px;font-weight:700;color:var(--white);margin-bottom:3px;}
+.fin-sub{font-size:11px;color:rgba(255,255,255,0.5);line-height:1.4;}
+.fin-badge{background:rgba(125,212,74,0.2);border:1px solid rgba(125,212,74,0.4);color:#7dd44a;font-family:'Josefin Sans',sans-serif;font-size:11px;font-weight:700;letter-spacing:1px;padding:6px 14px;border-radius:20px;white-space:nowrap;}
+.financing-body{padding:28px 32px;}
+.fin-plazo-label{font-family:'Josefin Sans',sans-serif;font-size:9px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--text-light);margin-bottom:10px;}
+.fin-entrada-fija{display:flex;align-items:center;gap:14px;background:var(--green-light);border:1.5px solid rgba(76,158,12,0.3);border-radius:12px;padding:14px 18px;margin-bottom:24px;}
+.fin-entrada-fija-num{font-family:'Josefin Sans',sans-serif;font-size:24px;font-weight:700;color:var(--green-dark);line-height:1;white-space:nowrap;}
+.fin-entrada-fija-txt{font-size:12px;color:var(--text-mid);line-height:1.55;}
+.fin-entrada-fija-txt strong{color:var(--text);font-weight:600;}
+.fin-plazo-wrap{margin-bottom:24px;}
+.fin-plazos{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;}
+.fin-plazo{background:var(--gray-card);border:1.5px solid var(--gray-border);border-radius:12px;padding:14px 12px;cursor:pointer;text-align:center;transition:all .2s;font-family:'Fira Sans',sans-serif;}
+.fin-plazo:hover{border-color:var(--blue-mid);transform:translateY(-2px);}
+.fin-plazo.active{border-color:var(--green);background:var(--green-light);box-shadow:0 4px 16px rgba(76,158,12,0.15);}
+.fin-plazo-meses{font-family:'Josefin Sans',sans-serif;font-size:15px;font-weight:700;color:var(--text);margin-bottom:6px;}
+.fin-plazo.active .fin-plazo-meses{color:var(--green-dark);}
+.fin-plazo-badge{display:inline-block;border-radius:20px;padding:2px 8px;font-size:9px;font-weight:700;letter-spacing:0.5px;margin-bottom:4px;}
+.fin-plazo-badge.sin-intereses{background:var(--green-light);color:var(--green-dark);border:1px solid rgba(76,158,12,0.3);}
+.fin-plazo-badge.con-intereses{background:var(--blue-light);color:var(--blue);border:1px solid rgba(0,51,102,0.2);}
+.fin-plazo-quien{font-size:9px;color:var(--text-light);line-height:1.3;}
+.fin-resultado{display:grid;grid-template-columns:auto 1fr;gap:24px;background:linear-gradient(135deg,var(--blue-dark),var(--blue));border-radius:14px;padding:24px 28px;margin-bottom:16px;align-items:center;}
+.fin-resultado-main{text-align:center;border-right:1px solid rgba(255,255,255,0.15);padding-right:24px;}
+.fin-cuota-label{font-size:10px;font-weight:600;letter-spacing:2px;text-transform:uppercase;color:rgba(255,255,255,0.5);margin-bottom:6px;}
+.fin-cuota-valor{font-family:'Josefin Sans',sans-serif;font-size:36px;font-weight:700;color:#7dd44a;line-height:1;margin-bottom:4px;}
+.fin-cuota-sub{font-size:11px;color:rgba(255,255,255,0.45);}
+.fin-resultado-detalle{display:flex;flex-direction:column;gap:10px;}
+.fin-det-row{display:flex;justify-content:space-between;align-items:center;gap:12px;}
+.fin-det-label{font-size:12px;color:rgba(255,255,255,0.55);}
+.fin-det-val{font-size:13px;font-weight:600;color:var(--white);}
+.fin-det-green{color:#7dd44a !important;}
+.fin-det-total{border-top:1px solid rgba(255,255,255,0.15);padding-top:10px;margin-top:2px;}
+.fin-det-total .fin-det-label{color:rgba(255,255,255,0.7);font-weight:600;}
+.fin-det-total .fin-det-val{font-family:'Josefin Sans',sans-serif;font-size:16px;color:var(--white);}
+.fin-nota{font-size:11px;color:var(--text-light);line-height:1.6;background:var(--gray-card);border-radius:8px;padding:12px 16px;border-left:3px solid var(--blue-light);}
+
+/* GESTOR */
+.gestor-wrap{background:linear-gradient(135deg,var(--blue-dark),var(--blue-mid));border-radius:12px;padding:20px 24px;margin-top:20px;}
+.gestor-title{font-family:'Josefin Sans',sans-serif;font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:rgba(255,255,255,0.6);margin-bottom:14px;}
+.gestor-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;}
+.gestor-item{background:rgba(255,255,255,0.08);border:1px solid rgba(255,255,255,0.12);border-radius:8px;padding:10px 12px;font-size:11px;color:rgba(255,255,255,0.85);line-height:1.4;}
+.gestor-item::before{content:'→';color:#7dd44a;font-weight:700;margin-right:5px;}
+
+/* SIGUIENTES PASOS */
+.steps-wrap{background:linear-gradient(135deg,var(--blue-dark) 0%,var(--blue) 60%,var(--blue-mid) 100%);border-radius:16px;padding:34px 36px;position:relative;overflow:hidden;}
+.steps-wrap::before{content:'';position:absolute;inset:0;background-image:radial-gradient(rgba(255,255,255,0.05) 1px,transparent 1px);background-size:22px 22px;}
+.steps-inner{position:relative;z-index:2;}
+.steps-title{font-family:'Josefin Sans',sans-serif;font-size:18px;font-weight:700;color:var(--white);margin-bottom:6px;}
+.steps-sub{font-size:12px;color:rgba(255,255,255,0.5);margin-bottom:26px;}
+.steps-list{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;}
+.step-item{background:rgba(255,255,255,0.07);border:1px solid rgba(255,255,255,0.12);border-radius:12px;padding:18px;}
+.step-num{font-family:'Josefin Sans',sans-serif;font-size:20px;font-weight:700;color:#7dd44a;margin-bottom:8px;}
+.step-title{font-size:13px;font-weight:600;color:var(--white);margin-bottom:4px;}
+.step-desc{font-size:11px;color:rgba(255,255,255,0.5);line-height:1.5;}
+.cta-line{margin-top:26px;text-align:center;font-size:12.5px;color:rgba(255,255,255,0.75);}
+.pasos-cta-wrap{text-align:center;margin-top:16px;display:flex;gap:12px;justify-content:center;flex-wrap:wrap;}
+.pasos-cta{display:inline-flex;align-items:center;gap:8px;background:#7dd44a;color:var(--blue-dark);font-family:'Josefin Sans',sans-serif;font-size:13px;font-weight:700;padding:12px 26px;border-radius:10px;text-decoration:none;transition:transform .15s,box-shadow .15s;}
+.pasos-cta:hover{transform:translateY(-2px);box-shadow:0 8px 20px rgba(125,212,74,0.35);}
+.pasos-cta-alt{background:rgba(255,255,255,0.12);color:var(--white);border:1.5px solid rgba(255,255,255,0.35);}
+.pasos-cta-alt:hover{box-shadow:0 8px 20px rgba(255,255,255,0.15);}
+
+/* FOOTER */
+.footer{background:var(--blue-dark);padding:30px 48px;margin-top:56px;text-align:center;position:relative;}
+.footer::before{content:'';position:absolute;top:0;left:0;right:0;height:4px;background:linear-gradient(90deg,var(--ie) 0%,var(--ie) 33%,var(--white) 33%,var(--white) 67%,#FF8200 67%,#FF8200 100%);}
+.footer-logo{font-family:'Josefin Sans',sans-serif;font-size:15px;font-weight:700;color:var(--white);letter-spacing:1px;margin-bottom:6px;}
+.footer-tag{font-family:'Josefin Sans',sans-serif;font-size:10px;letter-spacing:4px;text-transform:uppercase;color:#9ee06a;margin-bottom:14px;}
+.footer-meta{font-size:11px;color:rgba(255,255,255,0.4);line-height:1.7;}
+.footer-meta a{color:rgba(255,255,255,0.65);text-decoration:none;}
+
+@media(max-width:980px){
+  .school-facts{grid-template-columns:repeat(2,1fr);}
+  .gallery{grid-template-columns:repeat(2,1fr);}
+  .grupos{grid-template-columns:1fr;}
+  .itin-grid{grid-template-columns:1fr;}
+  .day-grid{grid-template-columns:1fr;}
+  .board-grid{grid-template-columns:1fr;}
+  .cycle{grid-template-columns:1fr;}
+  .sport-grid{grid-template-columns:1fr;}
+  .tronc-grid{grid-template-columns:1fr;}
+}
+@media(max-width:900px){
+  .qs-hero{grid-template-columns:1fr;}
+  .qs-media{min-height:320px;aspect-ratio:4/3;}
+  .qs-chapters{grid-template-columns:1fr;}
+}
+@media(max-width:720px){
+  .header{padding:16px 20px;}.hero{padding:28px 20px 24px;}.hero-name{font-size:28px;}
+  .main{padding:28px 16px 20px;}
+  .includes-grid{grid-template-columns:1fr;}
+  .intro-points{grid-template-columns:1fr;}
+  .pay-cols{grid-template-columns:1fr;}.gestor-grid{grid-template-columns:repeat(2,1fr);}
+  .steps-list{grid-template-columns:1fr;}
+  .qs-panel{padding:28px 22px;}.qs-title{font-size:22px;}
+  .fin-plazos{grid-template-columns:repeat(2,1fr);}
+  .fin-resultado{grid-template-columns:1fr;}
+  .fin-resultado-main{border-right:none;border-bottom:1px solid rgba(255,255,255,0.15);padding-right:0;padding-bottom:20px;}
+  .financing-head{flex-direction:column;align-items:flex-start;}
+  .aca-body,.school-body,.includes-body{padding-left:20px;padding-right:20px;}
+  .section-title{flex-wrap:wrap;}
+  .section-title h2{white-space:normal;line-height:1.5;}
+  .section-title::after{display:none;}
+  .price-val{font-size:32px;text-align:left;}
+  .tl{padding-left:64px;}.tl::before{left:50px;}.tl-time{left:-64px;width:40px;font-size:11.5px;}
+  .footer{padding:26px 20px;}
+}
+
+/* ================= ANIMACIONES ================= */
+.js-anim .reveal{opacity:0;transform:translateY(20px);will-change:opacity,transform;
+  transition:opacity .75s cubic-bezier(.22,.61,.36,1),transform .75s cubic-bezier(.22,.61,.36,1);}
+.js-anim .reveal.in{opacity:1;transform:none;}
+.js-anim .reveal-zoom{opacity:0;transform:scale(.975);transition:opacity .8s ease,transform .8s cubic-bezier(.22,.61,.36,1);}
+.js-anim .reveal-zoom.in{opacity:1;transform:none;}
+@keyframes heroUp{from{opacity:0;transform:translateY(16px);}to{opacity:1;transform:none;}}
+@keyframes leafIn{from{opacity:0;transform:translateY(-50%) rotate(-30deg) scale(.85);}to{opacity:.09;transform:translateY(-50%) rotate(-12deg) scale(1);}}
+.js-anim .hero::after{animation:leafIn 1.4s cubic-bezier(.22,.61,.36,1) .15s both;}
+.js-anim .hero-tag{animation:heroUp .7s cubic-bezier(.22,.61,.36,1) .05s both;}
+.js-anim .hero-name{animation:heroUp .7s cubic-bezier(.22,.61,.36,1) .16s both;}
+.js-anim .hero-subtitle{animation:heroUp .7s cubic-bezier(.22,.61,.36,1) .26s both;}
+.js-anim .hero-pill{animation:heroUp .55s cubic-bezier(.22,.61,.36,1) both;}
+.js-anim .hero-promo{animation:heroUp .7s cubic-bezier(.22,.61,.36,1) .7s both;}
+.progress-bar{position:fixed;top:0;left:0;height:3px;width:100%;transform:scaleX(0);transform-origin:0 50%;
+  background:linear-gradient(90deg,var(--ie),var(--ie-warm));z-index:999;transition:transform .1s linear;}
+.qs-chapter-media img,.qs-media img,.qs-media-inset img{transition:transform .7s cubic-bezier(.22,.61,.36,1);}
+.qs-chapter:hover .qs-chapter-media img{transform:scale(1.06);}
+.qs-hero:hover .qs-media > img{transform:scale(1.03);}
+.qs-media-inset{transition:transform .45s cubic-bezier(.22,.61,.36,1),box-shadow .45s ease;}
+.qs-hero:hover .qs-media-inset{transform:translateY(-6px);box-shadow:-10px -10px 34px rgba(0,31,64,0.34);}
+.pasos-cta{position:relative;overflow:hidden;}
+.pasos-cta::after{content:'';position:absolute;top:0;left:-120%;width:60%;height:100%;
+  background:linear-gradient(100deg,transparent,rgba(255,255,255,.55),transparent);transform:skewX(-18deg);}
+.pasos-cta:hover::after{animation:shine .85s ease;}
+@keyframes shine{to{left:140%;}}
+.fin-plazo{transition:transform .25s cubic-bezier(.22,.61,.36,1),border-color .25s ease,background .25s ease,box-shadow .25s ease;}
+.fin-cuota-valor{transition:color .3s ease;}
+@keyframes cuotaPop{0%{opacity:.35;transform:translateY(6px);}100%{opacity:1;transform:none;}}
+.fin-cuota-valor.pop{animation:cuotaPop .42s cubic-bezier(.22,.61,.36,1);}
+.step-item{transition:transform .3s cubic-bezier(.22,.61,.36,1),background .3s ease;}
+.step-item:hover{transform:translateY(-4px);background:rgba(255,255,255,0.11);}
+.qs-pilar{transition:transform .3s ease;}
+.qs-pilar:hover{transform:translateX(4px);}
+@media(prefers-reduced-motion:reduce){
+  .js-anim .reveal,.js-anim .reveal-zoom{opacity:1!important;transform:none!important;transition:none!important;}
+  .js-anim .hero::after,.js-anim .hero-tag,.js-anim .hero-name,.js-anim .hero-subtitle,
+  .js-anim .hero-pill,.js-anim .hero-promo{animation:none!important;opacity:1;}
+  .js-anim .hero::after{opacity:.09;}
+  .progress-bar{display:none;}
+  *{transition-duration:.01ms!important;}
+}
+</style>
+</head>
+<body>
+
+<!-- ============ 1. HEADER ============ -->
+<div class="header">
+  <div class="logo-area"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAd4AAACMCAMAAADlcTi5AAAAkFBMVEUAMmVMnAoAMGVLnQtLnQsAMmU1fwBMoAuqVQAA/wAAMmV+fwAAPz89twCmIwB/PwDCLQAAAP/NMQB69AAAY3YAAAAAAAC0KQAAM2gAAAAAAAAAAAAAAAAAAAAAAABLnQtPpQz/AAC+PgCwKACwKACwKACwKAAAOnRTqAKwKACwKACqAAAAVVV/AACwKAAAAH+7m+I0AAAAMHRSTlNcISSgXaAD1QMB0AIEBAgE/wEFAgQA+/z8LZFQb67R+f4BBC4S0E8KBm+wAwMCjwI3R36TAAAR/klEQVR42u2dCV/iOBTABUcFURxnt7g5Z4qAKKLf/9ttzjZnSaGtDr+8PWbokeufl7z3krYXm1chH1zehKylvBVlYcnlDZdLJT+0jJRsR/dFgkxn/2y310zuhVxfb7nMZrMiS/dy8RSTtYv35k9Qfmu5sfA7/LeC//00t/j3xfs7Jn+axe4BXgeQ/LP6flu8idLYBUZFVu2/B2+SOtfj+Z/f24y3B7zro/CeNBj/GNXTsUZ6mbV3ULw/G0yrBHiCHfsnxZa+Zsb05e8Mtz+8r6tnLRsprxv3UtcPGo2ScpjOhOsjXaFr6Qj9wxyh2fV0qpFeM+3NLPrDuzn2/qn0YyW569qL5eym06b7rmczQT3jHQDvfrXf78tyx2UyeVgulxP30m0NT9JL7gFTQXIr9Zfd7915X1ze5Km3T+19YD92y8lkwgGXZbkXUkpJ12Wtk/dSla8jF95vxejOR/ut1N6b4jrT6A/vpKcMpjMBciRnbmmFMYustr9HxUzizXGNHvC+GXiVVfVcy4rLUvxvPp+zP37Nl5Md02o7ldn1aHTPtPYAyaD7lPEOhXf90/Z8xcoCF77ewBceFPvVam5rqGAqaUqUN1o8V9gLf4yKLcd7WWwzjf7w7jjetaGzQmmX89WvZfLcO9tKh8lS4AP6m/EOgPdZ4H1a9zP9Klc5wJzh/SHw/sh4+8ZbPq3LXWkYzC1sZssLUiu6zA9iblTE37lnuP9IvNcSb7ac+8RbFjs/ztyR+nLmymGSC/iCuYP3PtPoHu+HwssU9VdPg3NEfaeXGe+QeFeD4mXmVIV3m/H2jJe5svMvwXup8ea5t1+8THvLL8P7I+PtH+9kuJy3Lt7sGPWGdyXxsj8H09+ZgXeW8faE91XhFabV03w4vFO5u+cPj2fMilHG2y/ePce7LAacfW8M7c14h8A74OBcTCXeG2FmZby9430eFu/od4V3WoxGeUHwnPBOK7zbjPeM8f6+V3jzXqse8G4E3jm3nAfFe13hFWAz3h7xrn8NjpcZy2pNf6vwZukN77IodhLvfji8ar8OX80vtjkk2SPevcL7PBheMf3y//KY3D/e4ivwZsl4s3SBtywmxUYs6+c2OSe8zxnv2eN9Y2NyxnvGeCvt3eU2OUO8u4z3vPE+ZLxnj3eT8Z4l3kmxLF77fM43y5fgXWW8Z4/3I+M9b7wPGu9DbpOMN8vfhXep8S5zm5wv3teM97zwLtcV3o+M9/y0l+N9zXjPFO9DxjuQAAwhxAgMirc4Di9dcMEHj6WlBM+fLVxoofjb4wWypMQ8huSxtqi8dM5RargCMOq3KyHUDd5FoAoZr99adOEI7LcnUR/vhOP9SMSrNHWBvLG5Narzx6t0gUKEEIZ98yUxvG/t8UJfoTPeoJ1SD8jwKBPlWLxvTzJYtWuDF/M0zHSCh74HXtxx6oi0M34FTurpBhgS70M7vLzI2C4k0Ye+E16ASKctCRCkLTUPeEaK0ITe6hzEOynKtnhFy2ETE0V1TYD49zS8gE1VkEDoGppAJ43YWYxCHibhoi0arEsUTMTIjAQyk/mIBKlKkNpZsXtAc3MvUGC4BlZhnLL5FYpU1DkBFF5wEl6eBsImGN5JIaiKDXz7IWJRxPAKPQlamkgd0N4GtVsDeXYq9SxKWQOSkBmrCnHTq8jUp+ID9iIwYSErG3sqBl53wDRcMlQXjCDT/KmrrfHuin1rvIU56sDqCKg7qDcigWS8KNKi6hSxvA3kaktVQ0oJkb2b+HipVTbjLuCW20iPkkrBrVM4bqX456wB+wBeEimZ7Uvz/uXgJR7et8T1XiqKQI2CUFHeumg4VEraYnAOaaCBV1aFev63bAw2YBKnuzdpL4hnhpVTA8VQTwLgaSNfEuzV1tFmvMTOBbh0aQ0TeM61xMv3v5bcRXpL3IwjwUKjAWUGddG80Tnm7cXwEu4ogjqeBy28fBoUI5JUYmhVmoSANg7ObmbYamylM8hueFRdCXDcFl4ErU1LpxvxwsqrApYJrnIXZcbafsRMhPfC/8LPXfBghok3bSOsrA2os0OyiLQuKfVVLtgAMbwAxIxPJ/ppVhpYqVlEG/G6mdGgEWTXwToVcwnBIngCuRWI4bUqhIwrbYsN1IFsx3I+Bq82oWhVQVgfgMG5FsZc4hQnAVppoYWvsCB0odVwjXhjmQG76c2bsI8BRUwIEm5AkoCXeCPQ4kCzBfGWGm+ZjFe7v7r30sLC67RMdGEoBa9dZafJTJ2icfspGa85Bjt9FDdnBYtmNY3Y0w14nUY0Jr9oZDOCt5B4kx7f1v4t0kkBlZnZaFb9QePklIQXR8Z586eTmNHb0/Ga7QvtmRM5tgV2gnYRw/l4vK67UXeiRWw0DOLdH4W3co2wKhJ0Ry/QXPvUqFUbvLBDvCRgQKBgw0f6L47Y1KY10YDXdTfq9qUx9Y3hLdMH5woWUUUhqrDQNXPwobG5V+0l/WkvdC3iXvC6jVNrCVJbA0Aq3vn6KfVTKFUuOnClS2EpKXHMB9AWL4KEBuIGDXid3k5bzL12ZihqH6qfxMEbsa1OG5w979II6utoB3EIO3hf9du6W+CtxghlYyFdQGtNwfgRH5vjeLETXEzBi30bLM1ydjNDIUfL7C5e5DOMN2JagRZ4PfGiVtb2nhjelXpFTmJMsp4CgHaLnJY3CkriK9jxsMaiPd7Cd1oTwxoRUDD2ow3eox2jRrxWcB034y1b44WVukDtFrktXzdhwwJnBK9scLUWkzz3GqEkVXucgpd6mSHrFATV+gEpWuE9LazRjJcHsujC3UURwztPx1sHp4BIuSqr3TTV6IwalvnDeLEdQE/Gq7u0XruDKUFJOzNnFiVWevbIgByJNNUiHDrBaXhJYy4yImnUtAPtdWKP0PYGkeeFw4bdRWG8NB5+asZrr0WgpCUFWyciMX2nt9DEnQsnLSmAJK9RLUuCBLxp7z1yXYeYka8HcdqwZSJYA7deLfDSahWFYFdhwngd+zQQ05c2NYUgFidtdjL8rm0NBAccI5rYh3AQ78bCO2+LF9lDv10ZZTCDpkIG8aJAMC4Nr1o8ASA0Hobxoqagr3YK3ARx6n640JKRbeAfCGskjBFmBw3gnasvZSS+0Bm4Q0s0fCEvxE07P7vFCxpXChyXmARJ+aZVkb4UFFmhgA3K6+BFXlASp/UhEsPLX+fcBq/VoNbAb7aaPokbx+YGvDCiKk14cfNCUBFaF3b6EvRi+lH7Y4FS1Rc1zMd2XRde9vRE7eUzrviUQhu81g8aixZow5oWrfDa1QKLVnjD3d0LgdtzLyl816o6B2KNYG2qa5p9XSPPLCP1LHJ7QdBsnspuBjBiiFvdWOIt2uG197vy/UfhxWTdMxt35S+q3QVagK4lDk7vBwdntSeKb4vCYWsN2inSuC2h/VudHnDUV+9O5xs2UJPhs9B2meOO28OF3kBmryNX/YvbyHXu2O5AXgdn5sLReGmRMsNVXgVoHru88BTSgQa5U9lqkoOm1SLuylCMxK5Iil2/tykzZ8ua3ZMgxpA0VlJvl9I7wJxnyIDKHgkXFhJL17GOLLNcaD1gKN8AVodr2Op6lg49Di+M43U3smNvb9phvMDDBIuFq81Rx4jEtsVZoABwIz1uZsHtkAHNsnYmNplX8ScEiZWIjdfLH4dLBUOZ4QtOdS02ayi8CQu+5ABe4NGDrfGapYSBdYN4WIMv/QhxWx2b+0ltZ41YzWf3UYDt9Oq8rB3QjU91enuvKQzvdSXaHI3cS0Aob39RQV19FF5MCMGxCAoT+9oD/r98oMAQ3RXULm0VTECkXki28xA/gxmobY/IwSHbwq6Dl1lwd59cVzItHbWISMkhG9raKO/1B7VgJVJBXnV03NGKqxgBZxdGnZrAyxfxdxJv9x9TwEc8VlbVAJlbGI94VMhbsAHx50XszBrCsbajBKz7mqvDBOmJ2mkWfq7x1mDBY5nryxXefX94e33aMSk6TjvurKc/kqbUi/Ze/d7xHvPQ4LHizQyNVmBKxMkbJ1FqMCMlllUMhZcPzps+8IIhlTcQYiIn4aUey260V/YTNBhe9a79zr+VgYYZg6ITATrtRQfQc3doZ1oHhuj0veJVlutwb3Iigc3Hp+SPzHBTMOL0zeWCryTwB8c6x1vZ7Wi42uj3MYlgDiSnv6WE6ucDRXpDGUQd4+VP9T5ovLtum3pIuoFgzonvoAlsdvqrXvPC8f6UbwztGG/R9wucksJD5MTe5T6aT3Hxd+GdW3g7/BSKvWAzHOBqOzoluINpn8ckqyUBVBTFX6q9rx3jzfId8eZvZZwV3vk64z1n7V3/fM14zxbvr4z3nPHuHLz5dexnhbfMeM8Zb6Hx8ue488cUMt7u5VPIY8bROd6S4d1k7T1XvPvi7edGfELw6/COpbxkHOeF95MTfSmu/hNyVXxmIB3j3Qm8Ewb4C/DejQXeC433PQPpGO/kK/G+ZLwD4RUfQkl/X3dHeC9svHcZSA94n8Veq2+GF4BqZ7f+ozoRTs08Dqz97+FbQDg3J83UJWPjSvumw5n3iPfhK/H+e8Un4DBe/gkKKDcEALHZGMP6uHoMydwuwD/AWB3A9UXy7zCws8DYwiyvqbaW1NsASH2rfqI2lBQ7yR//A3Vi9XO4sPqFeAoYV38dAC+zmL8O77gJr/kIDuSM6+OKNDYaWtAEmhA/g0jhXWWJsQXSvgbU20zYNUDzVEdD6QGxMQSYmQMjKaT2BIkPHkC3dj3jFRusdhrvw6B4mTH1XuN9ieDlGqN/iz8lGaOhka1a4oy6A6O2eHGtx7BWW6D0OITXKqyZuSqPHH/qM2CgPWgKb1njHXJB8OVqbOC9iONFEMOiCa++GkEfb2vthaDK3MIr9TiQnk3LyFwPOQqz+MkfgcR4YLz7L8F7+xLHa8+G1UTJGgr4gzOsXk+gzwD9cTkxKUPQiBcR4xrWRaqp0RycoaQUQINcvEANztUJdRODjnk+EAyKd6/xvg2I95HhFdo7DuLFxgv2mOWCTBMKHMJLmKlTTYWR9wGa2guNa7ji6XOVeac0mfGN4QVE9UZcW1kuXtYvIcB4qLG5xis+pTAs3k/GdVw8jiN47bm3+jCjcdzEi2sjTCmQvqHt3AuIwZRdg028BX8AImBZif/XMwOAwJxzq1KzUR/y4QAPiXdl4t0Nivel+Pw8jJcbwXryNfEio4GR2Zy8/fQNbfEy5eLvUKmR6oFDO2aB9KTegnrO0Gqru1ulxfxuSMBweF/VGxeCeEstey5luWMymTw4Kn73/n7Eeq3UXhPvnTc4q1efo7qVTbywvgQRzF8tgwxl1qYVrN+jajWrMfwb1yhGajjgIBRq0zPz4hKQJwBNuw5XJ5hWVz1JYEeDPbuh8JYV3smKE9yVDOVxE+o7kxcmDDln3rAI9N6IV1pEMgZgRgIMZURGyEB8DbMKR2BUg0JuQnYOoL4GGteoP6CRpf6CD/KNZZmCyl7cWp1HdkwFVSkMi7dU2mvKfrmaL1dSnrVsuCzt2OIFX67lElPUT4H85U5Cf1R4Lxje98/iRePte0mhQ4MVDvdYayd4dwLv08eblLWWp6AY77+qHBsmt7e3V0IuuIwl9JgCj98vONIB8aJvmdQgeOcRkK3wBiXAnP0ncudIHzXecV4Q7AXvXLzOuTe8cea3cr4dZ7w9a6/8lMKAeP8znKEKb96M0wfeXwPidUdqMQlnvP3h3TxN9Lv2u8UbtLNCGzI+bzPenvDyd2qIV1ntDbeHyauUDymuOb1eWnhvNckLTZKBHL/HvaQ77RnLIxlvX3gnxWbd8p79fG6v+b+Po4Gp9/c7gfK9Ma6V8faPtwo5cnlYmjKZiEAWj0rGYlmPnypYdRcn+fgoHjbhcS2pv/Lyu3eJ96XIj6F0jXfXXnt5JNrhZtCT8O4UPqm2h9K7Uniz9IF3OWca+iBV9JCOSn53dYgxgZ6MXAqRj5tcaJGml3pKIePtBe9bB+n8y4ypsaLnwru64qbX7UGfaZxx9ID3+enjQ1jJwmIW5vNqtZp7b4Z9lMp3HLoUjzjj7R4vc3iVD7Q5iFfEiseebkrCJyO+zXZz93g7S4nR16NzdHxu7AK3mUYfeEthWXHvR9tWcdNKOzbaLtaOUJJH86nWikJDAI+LZBqdy//4EQ7tKC9oQQAAAABJRU5ErkJggg==" alt="My Language Quest"></div>
+  <div class="header-right">
+    <div class="header-label">Curso académico</div>
+    <div class="header-year">2027/28</div>
+  </div>
+</div>
+
+<!-- ============ 2. HERO ============ -->
+<div class="hero">
+  <div class="hero-dots"></div>
+  <div class="hero-inner">
+    <div class="hero-tag">Propuesta personalizada · Internado en Irlanda</div>
+    <div class="hero-name">Alberto</div>
+    <div class="hero-subtitle">Newtown School, Waterford · Transition Year · Año escolar completo · Internado 7 días</div>
+    <div class="hero-pills">
+      <div class="hero-pill">🎓 Transition Year · 4.º ESO</div>
+      <div class="hero-pill">🏰 Internado 7 días</div>
+      <div class="hero-pill">🗣 Inglés B1 · apoyo E.A.L.</div>
+      <div class="hero-pill">⚽ Fútbol</div>
+      <div class="hero-pill">🎾 Tenis</div>
+      <div class="hero-pill">🏀 Baloncesto</div>
+      <div class="hero-pill ac">🔬 Continuidad académica garantizada</div>
+    </div>
+  </div>
+</div>
+
+<div class="main">
+
+  <!-- ============ 3. PLANTEAMIENTO ============ -->
+  <div class="section-title"><h2>El planteamiento de esta propuesta</h2></div>
+  <p class="intro-text">
+    Cuando una familia se plantea un Transition Year en Irlanda, la primera pregunta suele ser la misma:
+    <strong>«¿no será un año perdido académicamente?»</strong> Es una pregunta legítima y merece una respuesta
+    documentada, no un eslogan. Por eso hemos construido esta propuesta alrededor de una sección que no es
+    habitual en un documento comercial: <strong>el currículum académico completo del Transition Year de
+    Newtown School</strong>, asignatura por asignatura, con sus horas lectivas y con el detalle de las
+    materias que el propio alumno puede elegir.
+  </p>
+  <p class="intro-text">
+    La conclusión, adelantada: en Newtown, Alberto mantiene <strong>Matemáticas e Inglés como materias
+    troncales durante todo el curso</strong> y puede orientar su bloque de optativas —el
+    <em>Leaving Certificate Subject Sampling</em>— hacia Física, Química y Biología. No queda desconectado de
+    las ciencias durante el equivalente a su 4.º de ESO. A eso se le suma lo que el sistema español no ofrece
+    a esa edad: prácticas en empresa, proyectos, formación en primeros auxilios, programación y una
+    autonomía personal que se nota al volver.
+  </p>
+  <div class="intro-points">
+    <div class="intro-point"><div class="intro-point-icon">📐</div><div><div class="intro-point-title">Matemáticas e Inglés todo el año</div><div class="intro-point-desc">Materias troncales del TY, 2 horas semanales cada una. Continuidad para un futuro Bachillerato.</div></div></div>
+    <div class="intro-point"><div class="intro-point-icon">🔬</div><div><div class="intro-point-title">Física, Química y Biología disponibles</div><div class="intro-point-desc">Como asignaturas diferenciadas dentro del Leaving Certificate Subject Sampling.</div></div></div>
+    <div class="intro-point"><div class="intro-point-icon">🏰</div><div><div class="intro-point-title">Internado en un colegio de 1798</div><div class="intro-point-desc">Campus de 18 acres en Waterford, estudio supervisado diario y comunidad internacional.</div></div></div>
+    <div class="intro-point"><div class="intro-point-icon">💼</div><div><div class="intro-point-title">Tres periodos de prácticas</div><div class="intro-point-desc">Work Experience en noviembre, febrero y mayo. Nada de esto existe en 4.º de ESO.</div></div></div>
+  </div>
+
+  <!-- ============ 4. EL COLEGIO ============ -->
+  <div class="section-title"><h2>El colegio</h2></div>
+  <div class="school-wrap">
+    <div class="school-hero">
+      <img src="https://newtownschool.ie/app/uploads/2023/07/222-2L5A7544-EXTENDED.jpg" alt="Campus de Newtown School, Waterford" loading="lazy">
+      <div class="school-hero-overlay"></div>
+      <div class="school-hero-text">
+        <div class="school-eyebrow">Fundado en 1798 · Ethos cuáquero</div>
+        <div class="school-name">Newtown School</div>
+        <div class="school-loc">📍 Newtown Road, Waterford · Campus de 18 acres en el centro de la ciudad</div>
+        <div class="school-chips">
+          <span class="chip">Mixto</span>
+          <span class="chip">Concertado</span>
+          <span class="chip">Day &amp; Boarding</span>
+          <span class="chip">Waterford · 53.000 hab.</span>
+          <span class="chip gold">☘ 225 años de historia</span>
+        </div>
+      </div>
+    </div>
+    <div class="school-body">
+      <p class="school-desc">
+        Newtown School es un colegio diurno y de internado fundado en <strong>1798</strong>, situado en un
+        campus arbolado de 18 acres a pocos minutos del centro de Waterford, la ciudad más antigua de Irlanda.
+        Su identidad se apoya en el <strong>ethos cuáquero</strong>: igualdad, respeto, sencillez, honestidad e
+        integridad. En la práctica esto se traduce en <strong>clases reducidas, trato personal con el
+        profesorado y una cultura en la que se valora la participación por encima del resultado</strong>, algo
+        especialmente cómodo para un estudiante internacional que llega con un nivel de inglés B1 y necesita
+        lanzarse a hablar sin miedo a equivocarse.
+      </p>
+      <p class="school-desc">
+        El colegio recibe cada año alumnado internacional de <strong>España, Francia y Alemania</strong>, con un
+        programa específico de un año para estudiantes europeos. El profesorado conoce bien el perfil del
+        estudiante español de intercambio y el centro cuenta con apoyo de <strong>E.A.L. (English as an
+        Additional Language)</strong> para el alumnado internacional.
+      </p>
+      <div class="school-facts">
+        <div class="fact"><div class="fact-val">1798</div><div class="fact-lab">Año de fundación</div></div>
+        <div class="fact"><div class="fact-val">18 acres</div><div class="fact-lab">Campus urbano</div></div>
+        <div class="fact"><div class="fact-val">2</div><div class="fact-lab">Residencias · chicos y chicas</div></div>
+        <div class="fact"><div class="fact-val">24 h</div><div class="fact-lab">Enfermería y supervisión</div></div>
+      </div>
+      <div class="colegio-section-title">Por qué encaja con Alberto</div>
+      <ul class="por-que-list">
+        <li><strong>Rigor académico real en el TY.</strong> Matemáticas e Inglés troncales todo el año y acceso a Física, Química y Biología dentro del subject sampling: la respuesta directa a la preocupación de la familia.</li>
+        <li><strong>Deporte todos los días.</strong> Fútbol y tenis están en la oferta del colegio, y el miércoles es media jornada precisamente para partidos y entrenamientos.</li>
+        <li><strong>Estudio supervisado diario.</strong> De 18:30 a 20:15 con personal de guardia. Para un alumno que viene de un sistema con mucha carga de deberes, el hábito no se pierde.</li>
+        <li><strong>Inmersión con red de seguridad.</strong> Comunidad internacional amplia, pero con residencias donde el personal conoce a cada estudiante por su nombre y hay adultos de guardia 24 h.</li>
+        <li><strong>Waterford.</strong> Ciudad de 53.000 habitantes: suficiente vida para un chico de 15-16 años, lo bastante pequeña para moverse con seguridad. Costa a 15 minutos y buena conexión con Dublín y Cork.</li>
+      </ul>
+      <div class="colegio-section-title" style="margin-top:26px;">El colegio por dentro</div>
+      <div class="gallery">
+        <figure><img src="https://newtownschool.ie/app/uploads/2023/07/187-E25A5271-1024x662.jpg" alt="Estudiantes en el campus de Newtown School" loading="lazy"><figcaption>Campus y jardines</figcaption></figure>
+        <figure><img src="https://newtownschool.ie/app/uploads/2023/07/154-2L5A7261-1024x684.jpg" alt="Vida escolar en Newtown School" loading="lazy"><figcaption>Vida escolar</figcaption></figure>
+        <figure><img src="https://newtownschool.ie/app/uploads/2023/07/82-CB0Q6689-1024x684.jpg" alt="Internado de Newtown School" loading="lazy"><figcaption>Vida de internado</figcaption></figure>
+        <figure><img src="https://newtownschool.ie/app/uploads/2023/07/171-E25A5165-1024x722.jpg" alt="Aula en Newtown School" loading="lazy"><figcaption>Clases reducidas</figcaption></figure>
+        <figure><img src="https://newtownschool.ie/app/uploads/2023/07/228-2L5A7569-1024x684.jpg" alt="Alumnos de Newtown School" loading="lazy"><figcaption>Comunidad internacional</figcaption></figure>
+        <figure><img src="https://newtownschool.ie/app/uploads/2023/07/233-CB0Q6886-700x450.jpg" alt="Actividad en Newtown School" loading="lazy"><figcaption>Transition Year</figcaption></figure>
+        <figure><img src="https://newtownschool.ie/app/uploads/2023/07/260-CB0Q6987-1-1024x684.jpg" alt="Actividades extraescolares" loading="lazy"><figcaption>Extraescolares</figcaption></figure>
+        <figure><img src="https://newtownschool.ie/app/uploads/2023/07/277-CB0Q5311.jpg" alt="Newtown School Waterford" loading="lazy"><figcaption>Newtown School</figcaption></figure>
+      </div>
+      <div class="gallery-credit">Fotografías: Newtown School, Waterford — <a href="https://newtownschool.ie/" target="_blank" rel="noopener" style="color:var(--ie-deep);">newtownschool.ie</a></div>
+    </div>
+  </div>
+
+  <!-- ============ 5. TRANSITION YEAR · CURRÍCULUM ============ -->
+  <div class="section-title"><h2>Transition Year · currículum académico 2027/28</h2></div>
+
+  <div class="note-box">
+    <div class="alert-icon">🔬</div>
+    <div class="alert-text">
+      <strong>Esta es la sección clave de la propuesta.</strong> Está construida sobre la documentación
+      académica que el propio Newtown School facilita para la elección de asignaturas de Transition Year.
+      Detalla qué estudia exactamente un alumno, cuántas horas y con qué evaluación.
+    </div>
+  </div>
+
+  <div class="aca-wrap">
+    <div class="aca-head">
+      <h3>Un Transition Year con estructura académica estable todo el curso</h3>
+      <p>
+        El Transition Year es el 4.º año de la secundaria irlandesa y actúa como puente entre el Junior Cycle
+        y el Senior Cycle. En Newtown combina cuatro componentes: materias troncales, Leaving Certificate
+        Subject Sampling, módulos propios de TY y Work Experience. El enfoque es más práctico y
+        multidisciplinar que un 4.º de ESO español, pero <strong>el programa mantiene una estructura académica
+        estable durante todo el curso</strong> y permite orientar una parte importante de las asignaturas hacia
+        los intereses de cada estudiante.
+      </p>
+    </div>
+    <div class="aca-body">
+
+      <!-- 1. OBLIGATORIAS -->
+      <div class="aca-sub"><span class="num">1</span> Asignaturas obligatorias</div>
+      <p class="aca-p">
+        Para un estudiante internacional, estas son las materias que se cursan sí o sí, todas las semanas,
+        de septiembre a junio:
+      </p>
+      <div class="tronc-grid">
+        <div class="tronc">
+          <div class="tronc-top"><div class="tronc-name">English</div><div class="tronc-h">2 h/semana</div></div>
+          <div class="tronc-desc">
+            Materia troncal durante todo el curso. El objetivo es que Alberto siga desarrollando comprensión,
+            expresión escrita y expresión oral en un entorno de inmersión académica completa en inglés.
+            Partiendo de un B1, es el año en el que el salto se nota más.
+          </div>
+        </div>
+        <div class="tronc">
+          <div class="tronc-top"><div class="tronc-name">Mathematics</div><div class="tronc-h">2 h/semana</div></div>
+          <div class="tronc-desc">
+            Matemáticas se mantiene como troncal durante todo el Transition Year. Esto es
+            <strong>especialmente relevante para quien piensa continuar en un Bachillerato de Ciencias</strong>:
+            permite mantener la continuidad matemática durante la estancia en Irlanda.
+          </div>
+        </div>
+        <div class="tronc">
+          <div class="tronc-top"><div class="tronc-name">Portfolio Development</div><div class="tronc-h">1 clase/semana</div></div>
+          <div class="tronc-desc">
+            Materia dedicada a documentar y reflexionar sobre el aprendizaje, los proyectos y las competencias
+            adquiridas. Se trabaja:
+            <ul>
+              <li>organización del trabajo</li>
+              <li>establecimiento de objetivos</li>
+              <li>reflexión sobre el propio progreso</li>
+              <li>presentación de proyectos</li>
+              <li>registro de experiencias</li>
+              <li>identificación de competencias adquiridas</li>
+            </ul>
+            Es, además, la herramienta con la que se desarrolla la autonomía y la organización académica.
+          </div>
+        </div>
+        <div class="tronc">
+          <div class="tronc-top"><div class="tronc-name">Physical Education</div><div class="tronc-h">80 min/semana</div></div>
+          <div class="tronc-desc">
+            Educación Física forma parte del programa obligatorio de TY, al margen de toda la oferta
+            deportiva extraescolar del colegio.
+          </div>
+        </div>
+        <div class="tronc" style="grid-column:1/-1;">
+          <div class="tronc-top"><div class="tronc-name">SPHE · Social, Personal and Health Education</div><div class="tronc-h">1 clase/semana</div></div>
+          <div class="tronc-desc">
+            Materia orientada al desarrollo personal, social y del bienestar del estudiante.
+          </div>
+        </div>
+      </div>
+
+      <!-- 2. SUBJECT SAMPLING -->
+      <div class="aca-sub"><span class="num">2</span> Optativas y Leaving Certificate Subject Sampling</div>
+      <p class="aca-p">
+        Este es el elemento académico más interesante del TY de Newtown. El <strong>Leaving Certificate
+        Subject Sampling</strong> permite trabajar asignaturas académicas del Senior Cycle antes de
+        incorporarse a él. Según la estructura que utiliza el colegio, <strong>el alumno selecciona dos
+        asignaturas de cada uno de los tres grupos y las mantiene durante todo el curso</strong>. El bloque de
+        optativas supone aproximadamente <strong>3–4 horas semanales</strong>, de modo que Alberto configura
+        una parte importante de su programa en función de sus intereses.
+      </p>
+      <div class="grupos">
+
+        <div class="grupo">
+          <div class="grupo-head">
+            <div class="grupo-num">Grupo 1</div>
+            <div class="grupo-title">Humanidades y economía</div>
+            <div class="grupo-rule">Se eligen 2 de 3</div>
+          </div>
+          <div class="grupo-body">
+            <div class="asig">
+              <div class="asig-name">Economics</div>
+              <div class="asig-desc">Introducción al estudio de la economía y a los conceptos relacionados con la actividad económica, los mercados y el funcionamiento de la economía.</div>
+            </div>
+            <div class="asig">
+              <div class="asig-name">History</div>
+              <div class="asig-desc">Mantiene el contacto con el análisis histórico y familiariza al alumno con una de las materias disponibles después dentro del Leaving Certificate.</div>
+            </div>
+            <div class="asig">
+              <div class="asig-name">Accounting</div>
+              <div class="asig-desc">Introducción a principios y herramientas de contabilidad, organización financiera y registro económico.</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="grupo dest">
+          <div class="grupo-head">
+            <div class="grupo-num">Grupo 2 · El bloque científico</div>
+            <div class="grupo-title">Ciencias experimentales</div>
+            <div class="grupo-rule">Se eligen 2 de 3</div>
+          </div>
+          <div class="grupo-body">
+            <div class="asig">
+              <div class="asig-name">Geography</div>
+              <div class="asig-desc">Geografía forma parte de las materias disponibles dentro del subject sampling de TY.</div>
+            </div>
+            <div class="asig">
+              <div class="asig-name">Chemistry &amp; Agricultural Science <span class="asig-tag">Recomendada</span></div>
+              <div class="asig-desc">
+                Permite mantener el contacto con el área de Química durante el TY. Según la información
+                facilitada por Newtown para la elección de asignaturas, se trabajan principios químicos,
+                la aplicación de la química a la agricultura, el suelo, los cultivos y la producción
+                sostenible. La combinación hace que la Química se trabaje desde una perspectiva a la vez
+                científica y aplicada.
+              </div>
+            </div>
+            <div class="asig">
+              <div class="asig-name">Physics &amp; Applied Maths <span class="asig-tag">Recomendada</span></div>
+              <div class="asig-desc">
+                Mantiene al alumno en contacto con dos áreas especialmente relevantes para un futuro
+                itinerario científico: <strong>Physics</strong> y <strong>Applied Mathematics</strong>.
+                Particularmente interesante para quien, al regresar a España, tiene intención de continuar
+                por la modalidad de Bachillerato de Ciencias.
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="grupo">
+          <div class="grupo-head">
+            <div class="grupo-num">Grupo 3</div>
+            <div class="grupo-title">Ciencias, empresa y técnica</div>
+            <div class="grupo-rule">Se eligen 2 de 3</div>
+          </div>
+          <div class="grupo-body">
+            <div class="asig">
+              <div class="asig-name">Business Studies</div>
+              <div class="asig-desc">Introducción al mundo empresarial: empresa, emprendimiento, marketing y gestión empresarial.</div>
+            </div>
+            <div class="asig">
+              <div class="asig-name">Biology <span class="asig-tag">Recomendada</span></div>
+              <div class="asig-desc">
+                Biología aparece como asignatura específica dentro del Leaving Certificate Subject Sampling
+                de Newtown. Un alumno interesado en mantener su formación científica durante el TY puede
+                escogerla como una de sus asignaturas del curso. La documentación del colegio confirma su
+                presencia entre las opciones académicas de TY, aunque no desarrolla públicamente las
+                unidades concretas del temario.
+              </div>
+            </div>
+            <div class="asig">
+              <div class="asig-name">Woodwork / Architecture</div>
+              <div class="asig-desc">Materia técnica y práctica: diseño, construcción, interpretación de planos, trabajo manual, creatividad y aproximación al área arquitectónica.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 3. ITINERARIO -->
+      <div class="aca-sub"><span class="num">3</span> Itinerario recomendado para Alberto</div>
+      <p class="aca-p">
+        Si la prioridad de la familia es que Alberto <strong>no pierda contacto con Física, Química y
+        Biología</strong> durante el equivalente a su 4.º de ESO, esta es la selección que
+        propondríamos:
+      </p>
+      <div class="itin">
+        <div class="itin-title">Una selección orientada a ciencias</div>
+        <div class="itin-sub">Dos asignaturas por grupo, mantenidas durante todo el curso, sobre la base de las materias obligatorias.</div>
+        <div class="itin-grid">
+          <div class="itin-col">
+            <div class="itin-col-h">Grupo 1 · elegir 2</div>
+            <ul>
+              <li>Economics</li>
+              <li>History</li>
+              <li class="opt">Accounting</li>
+            </ul>
+          </div>
+          <div class="itin-col">
+            <div class="itin-col-h">Grupo 2 · seleccionar</div>
+            <ul>
+              <li>Chemistry &amp; Agricultural Science</li>
+              <li>Physics &amp; Applied Maths</li>
+            </ul>
+          </div>
+          <div class="itin-col">
+            <div class="itin-col-h">Grupo 3 · seleccionar</div>
+            <ul>
+              <li>Biology</li>
+              <li>Business Studies <span style="opacity:.6;">o</span> Woodwork / Architecture</li>
+            </ul>
+          </div>
+        </div>
+        <div class="itin-res">
+          <div class="itin-res-h">Resultado del curso</div>
+          <div class="itin-res-txt">
+            Mathematics + Physics + Applied Maths + Chemistry + Agricultural Science + Biology,
+            además de English y del resto de componentes obligatorios del programa.
+          </div>
+        </div>
+      </div>
+      <p class="aca-p" style="margin-top:16px;">
+        Para una familia preocupada por que el estudiante no pierda contacto con las ciencias durante el
+        equivalente a 4.º de ESO, <strong>esta estructura es uno de los puntos especialmente interesantes del
+        TY de Newtown School</strong>.
+      </p>
+
+      <!-- 4. COMPONENTES TY -->
+      <div class="aca-sub"><span class="num">4</span> Componentes específicos de Transition Year</div>
+      <p class="aca-p">
+        El programa no se limita a las materias académicas tradicionales. Newtown incorpora componentes
+        propios del TY que desarrollan competencias personales, profesionales, digitales y prácticas.
+        Entre las experiencias publicadas para TY se encuentran:
+      </p>
+      <div class="mod-tags">
+        <span class="mod-tag hi">First Aid &amp; CPR</span>
+        <span class="mod-tag hi">Coding Workshops</span>
+        <span class="mod-tag hi">Crime Scene Investigation</span>
+        <span class="mod-tag">Podcasting</span>
+        <span class="mod-tag">Music Technology</span>
+        <span class="mod-tag">Digital Photography</span>
+        <span class="mod-tag">Driving Workshop</span>
+        <span class="mod-tag">Guest Speakers</span>
+        <span class="mod-tag">Theatre Visits</span>
+        <span class="mod-tag">Museum / Gallery Visits</span>
+        <span class="mod-tag">Tour Guiding</span>
+        <span class="mod-tag">Interviews</span>
+        <span class="mod-tag">Hiking</span>
+        <span class="mod-tag">Kayaking</span>
+        <span class="mod-tag">Surfing</span>
+        <span class="mod-tag">Greenway Cycle</span>
+        <span class="mod-tag">Mountaineering</span>
+        <span class="mod-tag">Cooking / Cake Decorating</span>
+        <span class="mod-tag">Coasteering</span>
+        <span class="mod-tag">Camping Skills</span>
+      </div>
+      <p class="aca-p" style="margin-top:16px;">
+        Se contemplan además actividades vinculadas a instituciones de educación superior como
+        <strong>SETU, UCD y WCFE</strong>. Para un perfil con interés científico destacan especialmente los
+        <strong>Coding Workshops</strong> (competencias digitales y pensamiento lógico), la
+        <strong>Crime Scene Investigation</strong> (investigación aplicada: observación, análisis y
+        resolución de problemas) y la formación en <strong>First Aid &amp; CPR</strong>.
+      </p>
+
+      <!-- 5. WORK EXPERIENCE -->
+      <div class="aca-sub"><span class="num">5</span> Work Experience · tres periodos de prácticas</div>
+      <p class="aca-p">
+        La experiencia laboral es otro componente importante del TY. Newtown organiza
+        <strong>tres periodos diferenciados de Work Experience</strong> repartidos a lo largo del curso,
+        de aproximadamente una semana cada uno:
+      </p>
+      <div class="cycle">
+        <div class="cycle-wk">
+          <div class="cycle-lab">Periodo 1</div>
+          <div class="cycle-h">Noviembre</div>
+          <div class="cycle-d">Primer contacto con un entorno profesional, al inicio del curso.</div>
+        </div>
+        <div class="cycle-wk">
+          <div class="cycle-lab">Periodo 2</div>
+          <div class="cycle-h">Febrero</div>
+          <div class="cycle-d">Segundo sector o segunda empresa, con el inglés ya consolidado.</div>
+        </div>
+        <div class="cycle-wk">
+          <div class="cycle-lab">Periodo 3</div>
+          <div class="cycle-h">Mayo</div>
+          <div class="cycle-d">Cierre del curso con una tercera experiencia profesional.</div>
+        </div>
+      </div>
+      <p class="aca-p" style="margin-top:16px;">
+        Estos periodos permiten conocer distintos entornos profesionales y desarrollar responsabilidad,
+        autonomía, puntualidad, comunicación, capacidad de adaptación, trabajo en equipo y conocimiento del
+        mundo laboral. <em>Las fechas exactas de cada periodo las comunica el colegio una vez el estudiante
+        está en destino.</em>
+      </p>
+
+      <!-- 6. OTRAS EXPERIENCIAS + ERASMUS -->
+      <div class="aca-sub"><span class="num">6</span> Otras experiencias, Erasmus+ y recursos</div>
+      <p class="aca-p">
+        Newtown incorpora actividades de desarrollo personal y convivencia —actividades al aire libre,
+        proyectos grupales y jornadas de grupo— orientadas a trabajar autonomía, liderazgo, cooperación,
+        comunicación, confianza personal, convivencia y capacidad para desenvolverse fuera del aula. El
+        propio colegio explica que estas jornadas buscan fomentar las habilidades sociales, el trabajo en
+        equipo y la participación en nuevas experiencias.
+      </p>
+      <div class="tronc-grid">
+        <div class="tronc">
+          <div class="tronc-top"><div class="tronc-name">Erasmus+</div></div>
+          <div class="tronc-desc">
+            Newtown participa en el programa Erasmus+ y contempla movilidades internacionales de distinta
+            duración: movilidad grupal de 1 semana, movilidad corta de 2 semanas y movilidades de mayor
+            duración. Entre los destinos con los que el colegio había desarrollado colaboraciones figuran
+            España, Francia, Austria, Finlandia, Islandia y República Checa.
+          </div>
+        </div>
+        <div class="tronc">
+          <div class="tronc-top"><div class="tronc-name">Recursos académicos</div></div>
+          <div class="tronc-desc">
+            El colegio recomienda que los estudiantes de TY dispongan de:
+            <ul>
+              <li>ordenador portátil o tablet, considerado necesario</li>
+              <li>cámara de fotos, cuando sea posible</li>
+            </ul>
+            El coste general de TY contempla recursos como talleres, ponentes, transporte, materiales,
+            tasas de exámenes y acceso a cursos online.
+          </div>
+        </div>
+      </div>
+
+      <!-- 7. CONCLUSIÓN -->
+      <div class="aca-sub"><span class="num">7</span> Conclusión académica</div>
+      <p class="aca-p">
+        Para un estudiante que quiere realizar Transition Year pero mantener una buena continuidad
+        académica, especialmente en ciencias, <strong>Newtown School ofrece una estructura especialmente
+        interesante</strong>. El alumno mantiene Mathematics y English durante todo el curso y puede orientar
+        su selección de Leaving Certificate Subject Sampling hacia un perfil científico: Chemistry &amp;
+        Agricultural Science, Physics &amp; Applied Maths y Biology, junto con otras materias académicas.
+        Esto significa que <strong>Alberto no queda desconectado de Física, Química y Biología durante su año
+        en Irlanda</strong>.
+      </p>
+      <p class="aca-p">
+        Seamos precisos: el enfoque no es idéntico al currículo español de 4.º de ESO. El Transition Year
+        utiliza una metodología más variada, con proyectos, experiencias prácticas, subject sampling,
+        Portfolio y Work Experience. Pero en Newtown esa metodología se combina con una oferta académica lo
+        bastante amplia como para construir un TY claramente orientado a ciencias, con materias como
+        Physics, Chemistry y Biology cursadas y evaluadas de forma diferenciada.
+      </p>
+    </div>
+  </div>
+
+  <!-- ============ 6. UN DÍA EN NEWTOWN ============ -->
+  <div class="section-title"><h2>Un día en Newtown</h2></div>
+  <div class="day-grid">
+    <div class="timeline">
+      <div class="tl-title">Rutina diaria de un interno</div>
+      <ul class="tl">
+        <li><span class="tl-time">07:30</span><div class="tl-h">Morning Call y desayuno</div><div class="tl-d">Todas las comidas se hacen en el comedor del colegio, con atención a necesidades dietéticas.</div></li>
+        <li><span class="tl-time">08:40</span><div class="tl-h">Morning Collect y clases</div><div class="tl-d">Reunión de la mañana y clases hasta las 13:05.</div></li>
+        <li><span class="tl-time">13:05</span><div class="tl-h">Comida</div><div class="tl-d">Las clases se reanudan a las 14:05.</div></li>
+        <li><span class="tl-time">16:05</span><div class="tl-h">Fin de la jornada lectiva</div><div class="tl-d">Los alumnos vuelven a sus residencias y pueden participar en las actividades abiertas a todo el colegio: teatro, música, deportes de distinto tipo, natación, debate…</div></li>
+        <li><span class="tl-time">17:30</span><div class="tl-h">Cena</div><div class="tl-d">Tras la cena, tiempo libre antes del estudio.</div></li>
+        <li><span class="tl-time">18:30</span><div class="tl-h">Estudio supervisado</div><div class="tl-d">Termina a las 20:15 para los alumnos Junior y a las 21:30 para los Senior, con pausa para merienda de 20:00 a 20:15.</div></li>
+        <li><span class="tl-time">21:30</span><div class="tl-h">Tiempo libre y vuelta a la residencia</div><div class="tl-d">Los alumnos se relajan tras el estudio y regresan a sus Houses para prepararse para dormir.</div></li>
+      </ul>
+      <div class="note-box" style="margin-bottom:0;">
+        <div class="alert-icon">⚽</div>
+        <div class="alert-text">
+          <strong>El miércoles es media jornada.</strong> Se libera la tarde precisamente para deporte y
+          partidos. Los alumnos Senior pueden bajar al centro de Waterford; los Junior, a una tienda local
+          para lo que necesiten.
+        </div>
+      </div>
+    </div>
+    <div>
+      <div class="side-card">
+        <div class="side-title">🗓 Sábado</div>
+        <ul class="side-list">
+          <li><b>09:00</b> Morning call y desayuno</li>
+          <li><b>10:00</b> Reunión de la mañana. Actividades disponibles</li>
+          <li><b>12:30</b> Comida</li>
+          <li><b>14:00</b> Salida al centro de la ciudad: compras, café, tiempo con los amigos</li>
+          <li><b>17:30</b> Cena</li>
+          <li><b>19:00</b> Actividades de tarde-noche</li>
+        </ul>
+      </div>
+      <div class="side-card">
+        <div class="side-title">🌊 Domingo</div>
+        <ul class="side-list">
+          <li><b>08:45</b> Morning call, desayuno y asistencia a la iglesia (opcional)</li>
+          <li><b>10:00</b> Estudio para quienes no asisten</li>
+          <li><b>12:30</b> Comida</li>
+          <li><b>14:00</b> Actividades supervisadas: cine, centro de aventura, rutas de montaña, playa, surf, escalada…</li>
+          <li><b>17:30</b> Cena</li>
+          <li><b>20:00</b> Reunión de tarde y rutina de dormir</li>
+        </ul>
+      </div>
+      <div class="side-card">
+        <div class="side-title">🏥 Salud y bienestar</div>
+        <ul class="side-list">
+          <li><span>Enfermería propia «Nest», atendida de 08:00 a 19:00, con personal de guardia fuera de ese horario</span></li>
+          <li><span>Cobertura médica 24 h dentro del colegio, con clínica local y Hospital Universitario de Waterford a 5 minutos</span></li>
+          <li><span>Toda la medicación se custodia y administra a través de la enfermería</span></li>
+          <li><span>Informes de salud a las familias siempre que sea necesario</span></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <!-- ============ 7. EL INTERNADO ============ -->
+  <div class="section-title"><h2>Cómo funciona el internado de 7 días</h2></div>
+
+  <div class="alert-box">
+    <div class="alert-icon">⚠️</div>
+    <div class="alert-text">
+      <strong>Punto importante que conviene entender antes de firmar.</strong> Alberto sería interno de
+      7 días, pero <strong>Newtown funciona en régimen de internado trienal («three-weekly boarding»):
+      el colegio cierra un fin de semana de cada tres</strong>. Ese fin de semana el estudiante internacional
+      se aloja con su <em>guardian</em> designado o con la familia anfitriona asignada. Es una condición del
+      colegio, no una excepción, y por eso preferimos explicarla aquí y no en la letra pequeña.
+    </div>
+  </div>
+
+  <div class="cycle">
+    <div class="cycle-wk">
+      <div class="cycle-lab">Semana 1</div>
+      <div class="cycle-h">Interno en el colegio</div>
+      <div class="cycle-d">De lunes a domingo en la residencia, con la rutina completa de clases, deporte, estudio supervisado y actividades de fin de semana.</div>
+    </div>
+    <div class="cycle-wk">
+      <div class="cycle-lab">Semana 2</div>
+      <div class="cycle-h">Interno en el colegio</div>
+      <div class="cycle-d">Misma rutina. El fin de semana se organizan salidas supervisadas: cine, playa, surf, escalada, rutas de montaña, centro de aventura.</div>
+    </div>
+    <div class="cycle-wk exeat">
+      <div class="cycle-lab">Semana 3 · Exeat</div>
+      <div class="cycle-h">El colegio cierra el fin de semana</div>
+      <div class="cycle-d">Alberto se aloja con la <strong>familia anfitriona designada</strong>. MLQ, como custodian en Irlanda, organiza y supervisa esa estancia; vuestra asesora os confirma las condiciones exactas.</div>
+    </div>
+  </div>
+
+  <div class="board-grid" style="margin-top:22px;">
+    <div class="board-card">
+      <div class="board-num">01</div>
+      <div class="board-title">Plaza de internado para todo el curso</div>
+      <div class="board-text">
+        Las plazas de internado se conceden <strong>en el entendimiento de que el estudiante permanecerá
+        interno durante toda su estancia en el colegio</strong>. No es un régimen que se pueda alternar a
+        mitad de curso.
+      </div>
+    </div>
+    <div class="board-card warn">
+      <div class="board-num">02</div>
+      <div class="board-title">Legal Guardian obligatorio</div>
+      <div class="board-text">
+        Es <strong>condición del internado</strong> que todo estudiante internacional tenga un
+        <strong>Legal Guardian en Irlanda y una familia anfitriona designada</strong>. La información de
+        guardianship debe presentarse <strong>antes del comienzo del curso escolar</strong>.
+        <strong>MLQ actúa como guardian legal y esto va incluido en el programa.</strong>
+      </div>
+    </div>
+    <div class="board-card">
+      <div class="board-num">03</div>
+      <div class="board-title">Vacaciones: ya resueltas</div>
+      <div class="board-text">
+        El programa <strong>incluye el alojamiento en Semana Santa y en las dos vacaciones de mitad de
+        trimestre</strong> (una semana en octubre y otra en febrero). En Navidad, Alberto vuelve a casa: los
+        <strong>traslados de aeropuerto de ida y vuelta están incluidos</strong>.
+      </div>
+    </div>
+  </div>
+
+  <div class="tronc-grid" style="margin-top:20px;">
+    <div class="tronc">
+      <div class="tronc-top"><div class="tronc-name">Las residencias</div></div>
+      <div class="tronc-desc">
+        Newtown cuenta con dos residencias: <strong>Annamaur</strong> (chicas) y <strong>Arnold Marsh</strong>
+        (chicos). El alojamiento combina dormitorios compartidos de 4 a 6 alumnos, habitaciones dobles e
+        individuales, con zonas comunes. Los dormitorios han sido reformados recientemente y se organizan
+        mezclando cursos para aprovechar al máximo la vida de internado. En palabras del propio colegio,
+        «las residencias son mucho más que el lugar donde el alumno duerme: representan su vida fuera de la
+        parte académica, un hogar lejos de casa, un lugar de seguridad y de camaradería».
+      </div>
+    </div>
+    <div class="tronc">
+      <div class="tronc-top"><div class="tronc-name">El día a día práctico</div></div>
+      <div class="tronc-desc">
+        <ul>
+          <li>Personal residente asignado por cursos, presente 24/7 en el campus</li>
+          <li>Ropa de cama completa proporcionada por el colegio y cambiada cada quince días</li>
+          <li>Lavandería en el colegio, incluida en las tasas — toda la ropa debe ir marcada con el nombre</li>
+          <li>Armario propio con llave para cada alumno; pasaportes y dinero se custodian en la dirección del internado</li>
+          <li>Wi-Fi para estudiantes en el campus (no en los dormitorios); móviles y dispositivos no se permiten después de apagar luces</li>
+          <li>Uniforme de lunes a viernes; por las tardes y los fines de semana, ropa de calle</li>
+          <li>Comedor con opciones vegetarianas, veganas y adaptación a necesidades dietéticas</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <!-- ============ 8. DEPORTE Y EXTRAESCOLARES ============ -->
+  <div class="section-title"><h2>Deporte y extraescolares</h2></div>
+  <p class="intro-text">
+    Newtown se define como «mucho más que un colegio de 9:00 a 16:00» y, fiel a su ethos cuáquero,
+    <strong>prioriza la participación por encima del resultado</strong>. Para un chico al que le gusta el
+    deporte, esto significa que puede entrar en cualquier equipo sin tener que pasar una criba previa.
+  </p>
+  <div class="sport-grid">
+    <div class="sport-card">
+      <div class="sport-media"><img src="https://newtownschool.ie/app/uploads/2024/03/Untitled-design-53-700x450.jpg" alt="Deporte en Newtown School" loading="lazy"></div>
+      <div class="sport-body">
+        <div class="sport-title">Deportes del colegio</div>
+        <div class="sport-text">
+          Programa deportivo repartido a lo largo de la semana por grupos de edad, con el miércoles como
+          media jornada para entrenamientos y partidos.
+        </div>
+        <div class="extra-tags">
+          <span class="extra-tag hi">⚽ Fútbol</span>
+          <span class="extra-tag hi">🎾 Tenis</span>
+          <span class="extra-tag">🏑 Hockey</span>
+          <span class="extra-tag">🏉 Rugby</span>
+          <span class="extra-tag">🏸 Bádminton</span>
+          <span class="extra-tag">🏐 Voleibol</span>
+          <span class="extra-tag">🏊 Natación y salvamento</span>
+          <span class="extra-tag">🏃 Campo a través</span>
+          <span class="extra-tag">🏋️ Sala de musculación</span>
+        </div>
+      </div>
+    </div>
+    <div class="sport-card">
+      <div class="sport-media"><img src="https://newtownschool.ie/app/uploads/2023/07/NSW-Extra-Curric-700x450.jpeg" alt="Actividades extracurriculares en Newtown School" loading="lazy"></div>
+      <div class="sport-body">
+        <div class="sport-title">Clubes y actividades</div>
+        <div class="sport-text">
+          Actividades abiertas a internos y externos, la mayoría a partir de las 16:05 y antes del estudio
+          supervisado.
+        </div>
+        <div class="extra-tags">
+          <span class="extra-tag">🎨 Club de Arte · jueves 16:05</span>
+          <span class="extra-tag">🗣 Club de Debate · martes 16:05</span>
+          <span class="extra-tag">♟ Ajedrez · viernes</span>
+          <span class="extra-tag">🎭 Teatro</span>
+          <span class="extra-tag">🎵 Música, orquesta y coro</span>
+          <span class="extra-tag">📰 Periodismo</span>
+          <span class="extra-tag">🧭 Orientación</span>
+          <span class="extra-tag">📷 Fotografía</span>
+          <span class="extra-tag">🏅 Premios Gaisce</span>
+          <span class="extra-tag">🤝 Trabajo comunitario</span>
+        </div>
+      </div>
+    </div>
+    <div class="sport-card">
+      <div class="sport-media"><img src="https://newtownschool.ie/app/uploads/2025/06/slife-extra-700x450.jpg" alt="Vida escolar en Newtown School" loading="lazy"></div>
+      <div class="sport-body">
+        <div class="sport-title">Una nota honesta sobre el baloncesto</div>
+        <div class="sport-text">
+          Preferimos decirlo claro: <strong>el baloncesto no figura entre los deportes de competición del
+          colegio</strong>. Fútbol y tenis sí, y son dos de los tres que le gustan a Alberto. Si el baloncesto
+          es importante para él, se puede canalizar por dos vías: los clubes deportivos de Waterford fuera del
+          horario escolar, que el gestor estudiantil puede ayudar a localizar, o los deportes de cancha del
+          propio colegio —voleibol y bádminton— que comparten mucho con él.
+        </div>
+        <div class="extra-tags">
+          <span class="extra-tag">🎒 Material recomendado: raqueta y pelotas de tenis</span>
+          <span class="extra-tag">👟 Botas de fútbol propias</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ============ 9. PRECIO Y QUÉ INCLUYE ============ -->
+  <div class="section-title"><h2>Precio y qué incluye</h2></div>
+  <div class="price-wrap">
+    <div class="price-head">
+      <div class="price-head-l">
+        <div class="price-mod">Newtown School · Internado 7 días</div>
+        <div class="price-sub">Transition Year · año escolar completo · curso 2027/28</div>
+      </div>
+      <div class="price-val">29.500 €<small>Año escolar completo</small></div>
+    </div>
+    <div class="includes-body">
+      <div class="includes-grid">
+        <div>
+          <div class="col-title">Colegio y alojamiento</div>
+          <ul class="inc-list">
+            <li>Asignación de plaza en el internado elegido</li>
+            <li>Tasas escolares del curso completo</li>
+            <li>Tasas de internado en régimen de 7 días<small>Alojamiento y comidas en la residencia</small></li>
+            <li>Tasa de Transition Year<small>Incluida en Newtown School</small></li>
+            <li>Uniforme escolar completo<small>Excepto calzado</small></li>
+            <li>Libros de las asignaturas obligatorias</li>
+            <li>Ropa de cama y artículos personalizados<small>Edredón, toallas y etiquetas con su nombre en cada prenda</small></li>
+            <li>Alojamiento en Semana Santa y en las 2 vacaciones de mitad de trimestre<small>1 semana en octubre y 1 semana en febrero</small></li>
+            <li>Seguro médico privado y de responsabilidad civil</li>
+          </ul>
+          <div class="col-title" style="margin-top:28px;">Antes de salir</div>
+          <ul class="inc-list">
+            <li>Masterclass de cultura irlandesa<small>10 horas</small></li>
+            <li>Orientación pre-viaje en Madrid y en línea</li>
+            <li>Welcome pack de My Language Quest</li>
+          </ul>
+        </div>
+        <div>
+          <div class="col-title">Durante el curso</div>
+          <ul class="inc-list">
+            <li>Custodianship MLQ en Irlanda: actuamos como tutor local ante el colegio</li>
+            <li>Apoyo 24/7 y tutoría personalizada</li>
+            <li>Contacto directo con el centro y asistencia a las reuniones de padres y profesores</li>
+            <li>Teléfono de emergencias 24/7</li>
+            <li>4 traslados de aeropuerto<small>Inicio de curso, Navidad ida y vuelta, y final de curso</small></li>
+            <li>2 excursiones<small>1 por semestre</small></li>
+            <li>Curso de inglés Cambridge<small>En grupos reducidos de 5 a 7 estudiantes</small></li>
+            <li>Taller de competencias de 3 sesiones<small>Programa para potenciar competencias clave del futuro académico y profesional, impartido por Óscar Corominas, docente del MIT</small></li>
+          </ul>
+          <div class="col-title" style="margin-top:28px;">Después del curso</div>
+          <ul class="inc-list">
+            <li>Convalidación ante el Ministerio de Educación</li>
+            <li>Recogida de notas y traducciones juradas</li>
+            <li>Dossier final detallando la experiencia en Irlanda</li>
+          </ul>
+        </div>
+        <div>
+          <div class="col-title">No incluido</div>
+          <ul class="inc-list no">
+            <li>Vuelos<small>MLQ se encarga de la búsqueda y la gestión; el coste va a cargo de la familia</small></li>
+            <li>Calzado del uniforme</li>
+            <li>Clases o tutorías adicionales dentro del colegio</li>
+            <li>Actividades extracurriculares de pago y excursiones organizadas directamente por el colegio</li>
+            <li>Material escolar adicional, fotografía escolar y anuario</li>
+            <li>Traslados adicionales al aeropuerto<small>Coste por cada llegada o salida extra</small></li>
+            <li>Transporte local</li>
+            <li>Seguro de anulación e interrupción<small>1.050 €, opcional, cobertura hasta 30.000 €</small></li>
+            <li>Todo aquello que no esté especificado expresamente en el apartado «El programa incluye»</li>
+          </ul>
+        </div>
+      </div>
+      <div class="gestor-wrap">
+        <div class="gestor-title">Gestor estudiantil · se encarga de</div>
+        <div class="gestor-grid">
+          <div class="gestor-item">Seguimiento personalizado del desempeño</div>
+          <div class="gestor-item">Información a los padres mensualmente</div>
+          <div class="gestor-item">Notas oficiales cada trimestre</div>
+          <div class="gestor-item">Asesoría en el cambio de asignaturas</div>
+          <div class="gestor-item">Todas las tutorías necesarias</div>
+          <div class="gestor-item">Reuniones con padres y/o estudiante</div>
+          <div class="gestor-item">Apoyo en actividades extraescolares</div>
+          <div class="gestor-item">Resolución de situaciones con el colegio</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="board-grid" style="margin-top:20px;">
+    <div class="board-card">
+      <div class="board-num">✈</div>
+      <div class="board-title">Desde Almería hasta Waterford</div>
+      <div class="board-text">
+        Vuelo desde Almería, Málaga o Sevilla hasta <strong>Dublín o Cork</strong>, según fechas y horarios.
+        Waterford está a unas <strong>2 h de Dublín</strong> y <strong>1 h 15 de Cork</strong>. MLQ se encarga
+        de la búsqueda y la gestión del vuelo; los <strong>4 traslados de aeropuerto están incluidos</strong>.
+      </div>
+    </div>
+    <div class="board-card">
+      <div class="board-num">🎓</div>
+      <div class="board-title">La tasa de TY va incluida</div>
+      <div class="board-text">
+        En algunos internados irlandeses la <em>Transition Year Fee</em> se factura aparte al inicio del curso.
+        <strong>En Newtown School está incluida en el precio del programa</strong>, sin sorpresas posteriores.
+      </div>
+    </div>
+    <div class="board-card warn">
+      <div class="board-num">📌</div>
+      <div class="board-title">Plazas limitadas</div>
+      <div class="board-text">
+        Los internados irlandeses <strong>limitan el porcentaje de estudiantes hispanohablantes</strong> para
+        garantizar la inmersión y priorizan las estancias de año completo. La disponibilidad se confirma al
+        iniciar la reserva.
+      </div>
+    </div>
+  </div>
+
+  <!-- ============ 10. FORMAS DE PAGO ============ -->
+  <div class="section-title"><h2>Formas de pago</h2></div>
+  <div class="payment-wrap">
+    <div class="payment-inner">
+      <div class="pay-title">💳 Condiciones económicas</div>
+      <div class="pay-subtitle">Dos vías: pago directo o financiación. El importe de la reserva cambia según cuál elijáis.</div>
+
+      <div class="pay-route">
+        <div class="pay-route-head"><span class="pay-route-icon">🏦</span><span class="pay-route-title">Opción A · Pago sin financiación</span></div>
+        <div class="pay-route-sub">La cantidad íntegra debe abonarse antes del 1 de junio de 2027.</div>
+        <div class="pay-entrada">
+          <div class="pay-entrada-num">3.500 €</div>
+          <div class="pay-entrada-txt"><strong>Primer pago a la firma del contrato.</strong> Reserva la plaza e inicia la tramitación de admisión en Newtown School y de la guardianship.</div>
+        </div>
+        <div class="pay-cols">
+          <div class="pay-col">
+            <div class="pay-col-title">Paso 2 · Confirmación de plaza</div>
+            <div class="pay-step"><div class="pay-step-title">4.000 €</div><div class="pay-step-desc">Al confirmarse la plaza de internado en el colegio</div></div>
+          </div>
+          <div class="pay-col">
+            <div class="pay-col-title">Paso 3 · Resto del importe</div>
+            <div class="pay-step"><div class="pay-step-title">Antes del 1 de junio de 2027</div><div class="pay-step-desc">Importe restante hasta completar los 29.500 €</div></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="pay-route">
+        <div class="pay-route-head"><span class="pay-route-icon">📆</span><span class="pay-route-title">Opción B · Con financiación Banco Sabadell</span></div>
+        <div class="pay-route-sub">Si se financia el programa, la entrada es siempre de 5.000 € y el resto se financia en cuotas mensuales.</div>
+        <div class="pay-entrada">
+          <div class="pay-entrada-num">5.000 €</div>
+          <div class="pay-entrada-txt"><strong>Entrada fija a la firma del contrato</strong> en todos los casos de financiación. El capital restante se financia en 12, 18, 24 o 36 meses.</div>
+        </div>
+        <div class="pay-cols">
+          <div class="pay-col">
+            <div class="pay-col-title">Capital financiado</div>
+            <div class="pay-step"><div class="pay-step-title">29.500 € − 5.000 € = 24.500 €</div><div class="pay-step-desc">Calculad la cuota exacta en el simulador de la sección siguiente.</div></div>
+          </div>
+          <div class="pay-col">
+            <div class="pay-col-title">Condiciones</div>
+            <div class="pay-step"><div class="pay-step-title">12 meses · TIN 0 %</div><div class="pay-step-desc">MLQ asume los intereses</div></div>
+            <div class="pay-step"><div class="pay-step-title">18 / 24 / 36 meses · TIN 10,46 %</div><div class="pay-step-desc">Intereses a cargo del cliente</div></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="pay-note">El seguro de anulación e interrupción es opcional, cuesta 1.050 € con cobertura hasta 30.000 € y debe contratarse y abonarse en el momento de la firma del contrato. Su importe no es reembolsable bajo ninguna circunstancia. Las inscripciones tardías deben cumplir con los plazos de pago ya pasados en el momento de la inscripción.</div>
+    </div>
+  </div>
+
+  <!-- ============ 11. FINANCIACIÓN ============ -->
+  <div class="section-title"><h2>Financia el programa</h2></div>
+  <div class="financing-wrap">
+    <div class="financing-head">
+      <div class="financing-head-left">
+        <div class="fin-icon">💳</div>
+        <div>
+          <div class="fin-title">Pagad a vuestro ritmo, sin preocupaciones</div>
+          <div class="fin-sub">Entrada fija de 5.000 € · Aprobación rápida · 100 % online · Sin comisión de apertura</div>
+        </div>
+      </div>
+      <div class="fin-badge">Hasta 36 meses</div>
+    </div>
+    <div class="financing-body">
+
+      <div class="fin-entrada-fija">
+        <div class="fin-entrada-fija-num">5.000 €</div>
+        <div class="fin-entrada-fija-txt"><strong>Entrada a la firma del contrato.</strong> Se descuenta del precio del programa; el resto es el capital que se financia.</div>
+      </div>
+
+      <div class="fin-plazo-wrap">
+        <div class="fin-plazo-label">Elegid el plazo de financiación</div>
+        <div class="fin-plazos" id="finPlazos">
+          <button class="fin-plazo active" data-meses="12" data-tin="0"><div class="fin-plazo-meses">12 meses</div><div class="fin-plazo-badge sin-intereses">TIN 0%</div><div class="fin-plazo-quien">¡MLQ asume los intereses!</div></button>
+          <button class="fin-plazo" data-meses="18" data-tin="10.46"><div class="fin-plazo-meses">18 meses</div><div class="fin-plazo-badge con-intereses">TIN 10,46%</div><div class="fin-plazo-quien">Intereses a cargo del cliente</div></button>
+          <button class="fin-plazo" data-meses="24" data-tin="10.46"><div class="fin-plazo-meses">24 meses</div><div class="fin-plazo-badge con-intereses">TIN 10,46%</div><div class="fin-plazo-quien">Intereses a cargo del cliente</div></button>
+          <button class="fin-plazo" data-meses="36" data-tin="10.46"><div class="fin-plazo-meses">36 meses</div><div class="fin-plazo-badge con-intereses">TIN 10,46%</div><div class="fin-plazo-quien">Intereses a cargo del cliente</div></button>
+        </div>
+      </div>
+
+      <div class="fin-resultado">
+        <div class="fin-resultado-main">
+          <div class="fin-cuota-label">Cuota mensual estimada</div>
+          <div class="fin-cuota-valor" id="cuotaValor">2.041,67 €</div>
+          <div class="fin-cuota-sub" id="cuotaSub">/mes · 12 pagos · TIN 0%</div>
+        </div>
+        <div class="fin-resultado-detalle">
+          <div class="fin-det-row"><span class="fin-det-label">Importe del programa</span><span class="fin-det-val" id="detPrecio">29.500 €</span></div>
+          <div class="fin-det-row"><span class="fin-det-label">Entrada a la firma</span><span class="fin-det-val" id="detEntrada">5.000 €</span></div>
+          <div class="fin-det-row"><span class="fin-det-label">Capital financiado</span><span class="fin-det-val" id="detCapital">24.500 €</span></div>
+          <div class="fin-det-row"><span class="fin-det-label">Intereses totales</span><span class="fin-det-val fin-det-green" id="detIntereses">0 € · ¡MLQ los asume!</span></div>
+          <div class="fin-det-row fin-det-total"><span class="fin-det-label">Total a pagar</span><span class="fin-det-val" id="detTotal">29.500 €</span></div>
+        </div>
+      </div>
+
+      <div class="fin-nota">ℹ️ Financiación sujeta a aprobación bancaria. La entrada de 5.000 € se abona a la firma del contrato y no se financia. Cuota orientativa calculada sobre el capital financiado. Sin comisión de apertura ni penalización por cancelación anticipada.</div>
+    </div>
+  </div>
+
+  <!-- ============ 12. SIGUIENTES PASOS ============ -->
+  <div class="section-title"><h2>Siguientes pasos</h2></div>
+  <div class="steps-wrap">
+    <div class="steps-inner">
+      <div class="steps-title">¿Cómo seguimos?</div>
+      <div class="steps-sub">Del sí a la salida hacia Waterford, paso a paso</div>
+      <div class="steps-list">
+        <div class="step-item"><div class="step-num">1</div><div class="step-title">Confirmamos disponibilidad</div><div class="step-desc">Comprobamos la plaza de internado en Newtown para el curso 2027/28.</div></div>
+        <div class="step-item"><div class="step-num">2</div><div class="step-title">Admisión y firma</div><div class="step-desc">Proceso de admisión del colegio (puede incluir entrevista), firma del contrato y primer pago.</div></div>
+        <div class="step-item"><div class="step-num">3</div><div class="step-title">Elección de asignaturas</div><div class="step-desc">Seleccionamos con Alberto las dos asignaturas de cada grupo del subject sampling.</div></div>
+        <div class="step-item"><div class="step-num">4</div><div class="step-title">Guardianship, vuelos y salida</div><div class="step-desc">Tramitamos la guardianship y la familia anfitriona, reservamos vuelos y preparamos la salida.</div></div>
+      </div>
+      <div class="cta-line">¿Dudas sobre el currículum, el internado o los fines de semana libres? Vuestra asesora las resuelve con vosotros.</div>
+      <div class="pasos-cta-wrap">
+        <a class="pasos-cta" href="mailto:gespinoza@mylanguagequest.com?subject=Newtown%20School%20%C2%B7%20Alberto%20%C2%B7%20Irlanda%202027%2F28&amp;body=Hola%20Georgina%2C%0A%0AHemos%20revisado%20la%20propuesta%20de%20Newtown%20School%20para%20Alberto%20y%20queremos%20avanzar.%0A%0AConsultas%3A%20%0A%0AGracias.">☘ Quiero avanzar con Newtown</a>
+        <a class="pasos-cta pasos-cta-alt" href="https://asesoramientosmlq.zohobookings.eu/mylanguagequest" target="_blank" rel="noopener">📅 Agendar llamada con mi asesora</a>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<!-- ============ 13. FOOTER ============ -->
+<div class="footer">
+  <div class="footer-logo">MY LANGUAGE QUEST</div>
+  <div class="footer-tag">Explore · Learn · Grow</div>
+  <div class="footer-meta">
+    Propuesta personalizada para Alberto · Newtown School, Waterford · Curso 2027/28<br>
+    Información académica elaborada a partir de la documentación de elección de asignaturas de Transition Year
+    y del Boarding Handbook de Newtown School.<br>
+    Precios sujetos a disponibilidad de plaza y confirmación del centro escolar.
+  </div>
+</div>
+
+<script>
+(function(){
+  var PRECIO=29500, ENTRADA=5000, meses=12, tin=0;
+  function fmt(n){return n.toLocaleString('es-ES',{minimumFractionDigits:2,maximumFractionDigits:2})+' €';}
+  function fmt0(n){return n.toLocaleString('es-ES',{maximumFractionDigits:0})+' €';}
+  function calc(){
+    var capital=Math.max(PRECIO-ENTRADA,0);
+    var cuota,total;
+    if(tin===0){ cuota=capital/meses; total=capital; }
+    else{ var i=tin/100/12; cuota=capital*i/(1-Math.pow(1+i,-meses)); total=cuota*meses; }
+    var intereses=total-capital;
+    document.getElementById('cuotaValor').textContent=fmt(cuota);
+    document.getElementById('cuotaSub').textContent='/mes · '+meses+' pagos · TIN '+(tin===0?'0%':'10,46%');
+    document.getElementById('detPrecio').textContent=fmt0(PRECIO);
+    document.getElementById('detEntrada').textContent=fmt0(ENTRADA);
+    document.getElementById('detCapital').textContent=fmt0(capital);
+    var ei=document.getElementById('detIntereses');
+    if(tin===0){ ei.textContent='0 € · ¡MLQ los asume!'; ei.classList.add('fin-det-green'); }
+    else{ ei.textContent=fmt(intereses); ei.classList.remove('fin-det-green'); }
+    document.getElementById('detTotal').textContent=fmt(ENTRADA+total);
+  }
+  document.querySelectorAll('#finPlazos .fin-plazo').forEach(function(b){
+    b.addEventListener('click',function(){
+      document.querySelectorAll('#finPlazos .fin-plazo').forEach(function(x){x.classList.remove('active');});
+      b.classList.add('active'); meses=parseInt(b.dataset.meses); tin=parseFloat(b.dataset.tin); calc();
+    });
+  });
+  calc();
+})();
+</script>
+
+<script>
+(function(){
+  var d=document, root=d.documentElement;
+  if(!('IntersectionObserver' in window)){root.className=root.className.replace(' js-anim','');return;}
+
+  var bar=d.createElement('div'); bar.className='progress-bar'; d.body.appendChild(bar);
+  var ticking=false;
+  function progress(){
+    var h=d.documentElement.scrollHeight-window.innerHeight;
+    bar.style.transform='scaleX('+(h>0?Math.min(window.scrollY/h,1):0)+')';
+    ticking=false;
+  }
+  window.addEventListener('scroll',function(){if(!ticking){ticking=true;requestAnimationFrame(progress);}},{passive:true});
+  progress();
+
+  Array.prototype.forEach.call(d.querySelectorAll('.hero-pill'),function(el,i){
+    el.style.animationDelay=(0.36+i*0.06)+'s';
+  });
+
+  var groups=[
+    ['.section-title','reveal'],
+    ['.intro-text','reveal'],
+    ['.intro-point','reveal'],
+    ['.qs-hero','reveal-zoom'],
+    ['.qs-chapter','reveal'],
+    ['.alert-box','reveal'],
+    ['.note-box','reveal'],
+    ['.school-wrap','reveal-zoom'],
+    ['.aca-wrap','reveal-zoom'],
+    ['.timeline','reveal'],
+    ['.side-card','reveal'],
+    ['.cycle-wk','reveal'],
+    ['.board-card','reveal'],
+    ['.sport-card','reveal'],
+    ['.price-wrap','reveal-zoom'],
+    ['.payment-wrap','reveal-zoom'],
+    ['.financing-wrap','reveal-zoom'],
+    ['.steps-wrap','reveal-zoom']
+  ];
+  groups.forEach(function(g){
+    Array.prototype.forEach.call(d.querySelectorAll(g[0]),function(el,i){
+      el.classList.add(g[1]);
+      el.style.transitionDelay=Math.min(i*0.09,0.36)+'s';
+    });
+  });
+
+  var io=new IntersectionObserver(function(entries){
+    entries.forEach(function(e){
+      if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}
+    });
+  },{threshold:0.08,rootMargin:'0px 0px -6% 0px'});
+  Array.prototype.forEach.call(d.querySelectorAll('.reveal,.reveal-zoom'),function(el){io.observe(el);});
+
+  var cuota=d.getElementById('cuotaValor');
+  if(cuota&&'MutationObserver' in window){
+    new MutationObserver(function(){
+      cuota.classList.remove('pop'); void cuota.offsetWidth; cuota.classList.add('pop');
+    }).observe(cuota,{childList:true,characterData:true,subtree:true});
+  }
+})();
+</script>
+
+<!-- MLQ tracking -->
+<script>
+(function () {
+  var URL_TRACKING = 'https://script.google.com/macros/s/AKfycbygwC8SbNtpdSo9sEEyAOYnZR-7ui1jgk-7wF9gOhM5kJs2qLgBxhQI7MJHutokDSFajA/exec';
+  if (URL_TRACKING.indexOf('http') !== 0) return;
+
+  var archivo    = (location.pathname.split('/').pop() || 'index.html');
+  var estudiante = archivo.replace(/\.html?$/i, '').replace(/-/g, ' ');
+  var programa   = (document.title.split('·')[0] || '').trim();
+  var sesion     = Math.random().toString(36).slice(2, 10);
+
+  function enviar(evento, valor) {
+    var qs = '?evento=' + encodeURIComponent(evento) +
+             '&valor=' + encodeURIComponent(valor || '') +
+             '&archivo=' + encodeURIComponent(archivo) +
+             '&estudiante=' + encodeURIComponent(estudiante) +
+             '&programa=' + encodeURIComponent(programa) +
+             '&sesion=' + sesion +
+             '&referrer=' + encodeURIComponent(document.referrer || '') +
+             '&ua=' + encodeURIComponent(navigator.userAgent) +
+             '&t=' + Date.now();
+    try {
+      if (window.fetch) {
+        fetch(URL_TRACKING + qs, { mode: 'no-cors', keepalive: true });
+      } else {
+        new Image().src = URL_TRACKING + qs;
+      }
+    } catch (e) {}
+  }
+
+  try {
+    if (!sessionStorage.getItem('mlq_open_' + archivo)) {
+      sessionStorage.setItem('mlq_open_' + archivo, '1');
+      enviar('apertura');
+    }
+  } catch (e) { enviar('apertura'); }
+
+  var activo = 0, marca = Date.now(), visible = !document.hidden, hito30 = false;
+
+  function acumular() {
+    if (visible) activo += Date.now() - marca;
+    marca = Date.now();
+  }
+
+  document.addEventListener('visibilitychange', function () {
+    acumular();
+    visible = !document.hidden;
+  });
+
+  setInterval(function () {
+    acumular();
+    if (!hito30 && activo >= 30000) {
+      hito30 = true;
+      enviar('lectura_30s');
+    }
+  }, 1000);
+
+  var hitos = [25, 50, 75, 100], enviados = {};
+
+  function revisarScroll() {
+    var alto = document.documentElement.scrollHeight - window.innerHeight;
+    var pct  = alto <= 0 ? 100 : Math.round((window.pageYOffset / alto) * 100);
+    for (var i = 0; i < hitos.length; i++) {
+      var h = hitos[i];
+      if (pct >= h && !enviados[h]) {
+        enviados[h] = true;
+        enviar('scroll_' + h);
+      }
+    }
+  }
+
+  window.addEventListener('scroll', revisarScroll, { passive: true });
+  window.addEventListener('resize', revisarScroll, { passive: true });
+  setTimeout(revisarScroll, 1500);
+
+  var cerrado = false;
+  function alSalir() {
+    if (cerrado) return;
+    cerrado = true;
+    acumular();
+    enviar('salida', Math.round(activo / 1000));
+  }
+  window.addEventListener('pagehide', alSalir);
+  document.addEventListener('visibilitychange', function () {
+    if (document.hidden) { acumular(); }
+  });
+})();
+</script>
+</body>
+</html>
