@@ -354,6 +354,24 @@ details[open] summary{background:var(--red-light);border-bottom:1px solid var(--
 }
 
 
+.ski-cta{position:relative;overflow:hidden;background:linear-gradient(140deg,#0a2a52 0%,var(--blue) 45%,#0d1b2a 100%);border-radius:18px;padding:40px 44px;margin:8px 0 34px;color:#fff;box-shadow:0 14px 40px rgba(0,31,64,.28);}
+.ski-cta::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 70% 60% at 88% 12%,rgba(232,176,75,.22) 0%,transparent 60%),radial-gradient(ellipse 60% 60% at 8% 95%,rgba(177,41,0,.28) 0%,transparent 60%);}
+.ski-cta-mtn{position:absolute;left:0;right:0;bottom:0;height:52%;opacity:.5;}
+.ski-cta-mtn svg{width:100%;height:100%;display:block;}
+.ski-cta-inner{position:relative;z-index:2;display:flex;align-items:center;gap:36px;flex-wrap:wrap;}
+.ski-cta-text{flex:1 1 380px;min-width:280px;}
+.ski-cta-eyebrow{display:inline-flex;align-items:center;gap:8px;font-size:10.5px;letter-spacing:2.4px;text-transform:uppercase;color:var(--gold);font-weight:600;margin-bottom:12px;}
+.ski-cta-eyebrow::before{content:'';width:22px;height:1.5px;background:var(--gold);display:block;}
+.ski-cta-title{font-family:'Josefin Sans',sans-serif;font-size:clamp(23px,2.6vw,30px);font-weight:700;line-height:1.18;margin-bottom:12px;}
+.ski-cta-title em{font-style:italic;color:var(--gold);}
+.ski-cta-desc{font-size:13.5px;line-height:1.75;color:rgba(255,255,255,.72);max-width:520px;margin-bottom:18px;}
+.ski-cta-tags{display:flex;flex-wrap:wrap;gap:8px;}
+.ski-cta-tag{background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.2);border-radius:14px;padding:5px 12px;font-size:11.5px;color:rgba(255,255,255,.85);}
+.ski-cta-action{flex:0 0 auto;display:flex;flex-direction:column;align-items:center;gap:12px;}
+.ski-cta-btn{display:inline-flex;align-items:center;gap:10px;background:var(--gold);color:#2a1a00;text-decoration:none;font-family:'Josefin Sans',sans-serif;font-size:15px;font-weight:700;padding:16px 30px;border-radius:12px;box-shadow:0 8px 22px rgba(232,176,75,.34);transition:transform .2s,box-shadow .2s,background .2s;}
+.ski-cta-btn:hover{background:#f2bf5f;transform:translateY(-2px);box-shadow:0 12px 30px rgba(232,176,75,.45);}
+.ski-cta-note{font-size:11px;color:rgba(255,255,255,.45);text-align:center;}
+@media(max-width:760px){.ski-cta{padding:30px 24px;}.ski-cta-inner{gap:24px;}.ski-cta-action{width:100%;}.ski-cta-btn{width:100%;justify-content:center;}}
 .ski-chip{display:flex;flex-wrap:wrap;align-items:baseline;gap:6px;margin-top:8px;background:rgba(255,255,255,.14);border:1px solid rgba(255,255,255,.28);border-radius:8px;padding:8px 12px;font-size:12px;color:#fff;}
 .ski-chip b{font-size:14px;font-weight:700;}
 .ski-chip i{font-style:normal;opacity:.8;font-size:11px;}
@@ -575,6 +593,38 @@ details[open] summary{background:var(--red-light);border-bottom:1px solid var(--
   </div>
 
   <div class="nota-colegio" style="margin-bottom:28px;">🎿 <strong>Sobre el coste del esquí:</strong> el precio del programa escolar y el del programa de esquí se muestran por separado. En Livingstone Range la academia se contrata a través del colegio y se puede incluir en la financiación. En Rocky Mountain no hay academia de pago para este curso: basta el forfait de temporada, que abona la familia directamente a la estación. En Sea to Sky la tasa de la academia se confirma al matricularse.</div>
+
+  <div class="section-title"><h2>Anexo · El programa de esquí</h2></div>
+  <div class="ski-cta">
+    <div class="ski-cta-mtn">
+      <svg viewBox="0 0 1440 300" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+        <polygon points="0,300 0,190 140,110 280,165 420,80 560,150 700,60 840,130 980,55 1120,125 1260,75 1440,140 1440,300" fill="rgba(255,255,255,0.05)"/>
+        <polygon points="420,80 470,110 370,110" fill="rgba(255,255,255,0.14)"/>
+        <polygon points="700,60 755,95 645,95" fill="rgba(255,255,255,0.16)"/>
+        <polygon points="980,55 1035,92 925,92" fill="rgba(255,255,255,0.15)"/>
+        <polygon points="0,300 0,235 160,180 320,225 480,160 640,215 800,155 960,210 1120,165 1280,205 1440,170 1440,300" fill="rgba(10,27,42,0.5)"/>
+      </svg>
+    </div>
+    <div class="ski-cta-inner">
+      <div class="ski-cta-text">
+        <div class="ski-cta-eyebrow">Documento complementario</div>
+        <div class="ski-cta-title">Cómo se esquía<br><em>en cada distrito</em></div>
+        <p class="ski-cta-desc">
+          Los tres distritos permiten esquiar durante el curso, pero de formas muy distintas: academia dentro del horario lectivo, deporte oficial de invierno del instituto o bloque de asignaturas con titulación de monitor. En el anexo está el detalle de cada programa, los días en pista, las estaciones y el coste exacto de la parte de nieve.
+        </p>
+        <div class="ski-cta-tags">
+          <span class="ski-cta-tag">🎿 Castle Mountain</span>
+          <span class="ski-cta-tag">🏔 Kimberley · Kicking Horse</span>
+          <span class="ski-cta-tag">🚡 Whistler Blackcomb</span>
+          <span class="ski-cta-tag">💰 Coste de cada programa</span>
+        </div>
+      </div>
+      <div class="ski-cta-action">
+        <a class="ski-cta-btn" href="https://aescobarnic.github.io/Propuestas/nicolas-ski-canada.html" target="_blank" rel="noopener">🎿 Ver el anexo de esquí →</a>
+        <div class="ski-cta-note">Se abre en una pestaña nueva</div>
+      </div>
+    </div>
+  </div>
 
   <!-- ============ 6. VISADO Y VUELOS ============ -->
   <div class="section-title"><h2>Visado y vuelos</h2></div>
@@ -1001,6 +1051,7 @@ details[open] summary{background:var(--red-light);border-bottom:1px solid var(--
 
 
 
-<!-- build: 2026-09-24 13:31 UTC -->
+
+<!-- build: 2026-09-24 13:42 UTC -->
 </body>
 </html>
