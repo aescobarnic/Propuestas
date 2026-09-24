@@ -128,7 +128,8 @@ details summary:hover{background:var(--red-light);}
 details summary::-webkit-details-marker{display:none;}
 details summary::before{content:'▸';font-size:10px;transition:transform .2s;display:inline-block;}
 details[open] summary::before{transform:rotate(90deg);}
-.colegio-razon{padding:10px 14px 13px;font-size:12px;color:var(--text-mid);line-height:1.7;border-left:3px solid var(--red);margin:0 14px 12px;background:var(--red-light);border-radius:0 6px 6px 0;}
+.colegio-razon{padding:12px 14px;font-size:12px;color:var(--text-mid);line-height:1.7;border-left:3px solid var(--red);margin:0 14px 12px;background:var(--red-light);border-radius:0 6px 6px 0;}
+details[open] summary{background:var(--red-light);border-bottom:1px solid var(--gray-border);margin-bottom:12px;}
 .match-bar{display:flex;gap:6px;flex-wrap:wrap;padding:14px 22px;border-top:1px solid var(--gray-border);background:linear-gradient(to right,var(--gray-card),var(--white));}
 .match-tag{display:flex;align-items:center;gap:4px;font-size:10px;font-weight:600;color:var(--green-dark);background:var(--green-light);border:1px solid rgba(76,158,12,0.25);border-radius:20px;padding:3px 10px;}
 .match-tag::before{content:'✓';font-size:9px;}
@@ -353,8 +354,12 @@ details[open] summary::before{transform:rotate(90deg);}
 }
 
 
+.ski-chip{display:flex;flex-wrap:wrap;align-items:baseline;gap:6px;margin-top:8px;background:rgba(255,255,255,.14);border:1px solid rgba(255,255,255,.28);border-radius:8px;padding:8px 12px;font-size:12px;color:#fff;}
+.ski-chip b{font-size:14px;font-weight:700;}
+.ski-chip i{font-style:normal;opacity:.8;font-size:11px;}
 .nota-colegio{background:var(--blue-light);border-left:3px solid var(--blue);border-radius:0 8px 8px 0;padding:12px 14px;font-size:12.5px;line-height:1.6;color:var(--text-mid);margin-top:4px;}
-.colegio-web{display:inline-flex;align-items:center;gap:7px;margin-top:10px;background:var(--blue);color:#fff;text-decoration:none;font-size:12.5px;font-weight:600;padding:9px 16px;border-radius:8px;transition:background .2s,transform .2s;}
+.colegio-acciones{padding:0 14px 14px;}
+.colegio-web{display:inline-flex;align-items:center;gap:7px;background:var(--blue);color:#fff;text-decoration:none;font-size:12px;font-weight:600;padding:8px 14px;border-radius:8px;transition:background .2s,transform .2s;}
 .colegio-web:hover{background:var(--blue-mid);transform:translateY(-1px);}
 .colegio-web span{font-size:14px;}
 </style>
@@ -505,15 +510,17 @@ details[open] summary::before{transform:rotate(90deg);}
         <div class="opcion-num">Opción 01</div>
         <div class="opcion-distrito">Livingstone Range School Division</div>
         <div class="opcion-loc">📍 Sur de Alberta · Rocosas · A 2 h de Calgary</div>
-        <div class="precio-chip"><span class="val">25.500 €</span><span class="desc">/ año · Ski Academy incl. · vuelos incl.*</span></div>
+        <div class="precio-chip"><span class="val">22.350 €</span><span class="desc">/ año · programa escolar · vuelos incl.*</span></div>
+        <div class="ski-chip">🎿 Programa de esquí: <b>+ 3.150 €</b> <i>· Livingstone Ski Academy, curso completo</i></div>
+        <div class="ski-chip">💰 Total con esquí: <b>25.500 €</b></div>
       </div>
       <div class="opcion-body"><div class="colegios">
         <div class="colegio">
           <div class="colegio-top"><div class="colegio-nombre">Livingstone School</div><div class="colegio-meta"><span class="tag pub">Público</span><span class="tag info">K–12</span><span class="tag info">Lundbreck</span><span class="tag info">🎿 Livingstone Ski Academy</span></div></div>
-          <details open><summary>Por qué es el colegio de esta opción</summary><div class="colegio-razon">Es el único centro del distrito que imparte la <strong>Livingstone Ski Academy</strong>. Los alumnos de Grade 7 a 12 esquían <strong>lunes y miércoles por la tarde y el viernes entero</strong>, de diciembre a abril, en Castle Mountain Resort, a 35 minutos del colegio. El entrenamiento es en horario lectivo, con monitores acreditados de la propia estación y progresión tanto recreativa como de competición. Fuera de la temporada de nieve el programa continúa con kayak, canoa y senderismo, con créditos CTS reconocidos.<br><br>Para Nicolás encaja por dos motivos: convierte el esquí en parte de su curso en lugar de un plan suelto de fin de semana, y es un colegio rural pequeño donde un perfil tranquilo entra en un grupo estable desde el primer día en vez de tener que abrirse hueco en un instituto grande.</div></details>
-          <a class="colegio-web" href="https://www.livingstoneschool.ca/" target="_blank" rel="noopener"><span>🔗</span> Web del colegio</a>
+          <details open><summary>Por qué es el colegio de esta opción</summary><div class="colegio-razon">Es el único centro del distrito que imparte la <strong>Livingstone Ski Academy</strong>, abierta a alumnos de Grade 4 a 12. Los de secundaria esquían <strong>lunes y miércoles por la tarde y el viernes entero</strong>, de diciembre a abril, en Castle Mountain Resort, a 35 minutos del colegio. El entrenamiento es en horario lectivo, con monitores acreditados de la propia estación, y permite obtener la certificación CSIA de monitor de esquí y la formación en seguridad en avalanchas. Fuera de temporada el programa continúa con kayak, canoa y senderismo, con créditos reconocidos.<br><br>Para Nicolás encaja por dos motivos. Convierte el esquí en parte de su curso en lugar de un plan suelto de fin de semana, y deja los fines de semana libres. Y es un colegio rural pequeño, donde un perfil tranquilo entra en un grupo estable desde el primer día en vez de tener que abrirse hueco en un instituto grande.</div></details>
+          <div class="colegio-acciones"><a class="colegio-web" href="https://www.livingstoneschool.ca/" target="_blank" rel="noopener">🔗 Web del colegio</a></div>
         </div>
-        <div class="nota-colegio">ℹ️ En este distrito la academia de esquí se imparte únicamente en Livingstone School. El resto de centros de Livingstone Range no tienen programa de nieve, por lo que no los incluimos en esta propuesta.</div>
+        <div class="nota-colegio">ℹ️ La academia de esquí se imparte únicamente en Livingstone School. Ningún otro centro del distrito tiene programa de nieve, por eso esta opción presenta un solo colegio.</div>
       </div></div>
       <div class="match-bar"><span class="match-tag">Esquí en horario lectivo</span><span class="match-tag">Castle Mountain Resort</span><span class="match-tag">Grupo pequeño y estable</span><span class="match-tag">Certificación CSIA Nivel 1</span></div>
     </div>
@@ -522,22 +529,24 @@ details[open] summary::before{transform:rotate(90deg);}
       <div class="opcion-header">
         <div class="opcion-num">Opción 02</div>
         <div class="opcion-distrito">Rocky Mountain School District</div>
-        <div class="opcion-loc">📍 British Columbia · Golden · Kimberley</div>
-        <div class="precio-chip"><span class="val">25.300 €</span><span class="desc">/ año · vuelos incl.*</span></div>
+        <div class="opcion-loc">📍 British Columbia · Kimberley · Golden</div>
+        <div class="precio-chip"><span class="val">25.300 €</span><span class="desc">/ año · programa escolar · vuelos incl.*</span></div>
+        <div class="ski-chip">🎿 Programa de esquí: <b>+ 900 – 1.050 €</b> <i>· forfait de temporada, a cargo de la familia</i></div>
+        <div class="ski-chip">💰 Total con esquí: <b>26.200 – 26.350 €</b></div>
       </div>
       <div class="opcion-body"><div class="colegios">
         <div class="colegio">
-          <div class="colegio-top"><div class="colegio-nombre">Golden Secondary School</div><div class="colegio-meta"><span class="tag pub">Público</span><span class="tag info">Grade 8–12</span><span class="tag info">~350 alumnos</span><span class="tag info">🎿 GKHAT Ski Academy</span></div></div>
-          <details open><summary>Por qué encaja con Nicolás</summary><div class="colegio-razon">Es el colegio del distrito con <strong>academia de esquí propia</strong>, la GKHAT, vinculada a <strong>Kicking Horse Mountain Resort</strong>, a 15 km del centro y una de las estaciones con más desnivel de Canadá. El instituto ofrece además una Outdoor Education Academy con cuatro asignaturas oficiales de montaña. Golden es un pueblo de 7.000 habitantes rodeado de seis parques nacionales, a hora y media de Banff y dos horas y media de Calgary: entorno muy pequeño y muy volcado en la montaña, con solo unos 350 alumnos en todo el instituto.</div></details>
-          <a class="colegio-web" href="https://gss.sd6.bc.ca/" target="_blank" rel="noopener"><span>🔗</span> Web del colegio</a>
+          <div class="colegio-top"><div class="colegio-nombre">Selkirk Secondary School</div><div class="colegio-meta"><span class="tag pub">Público</span><span class="tag info">Grade 8–12</span><span class="tag info">~540 alumnos</span><span class="tag info">🎿 Estación a 4 km</span></div></div>
+          <details open><summary>Por qué encaja con Nicolás</summary><div class="colegio-razon">Kimberley Alpine Resort está <strong>a 4 km del colegio, dentro del propio municipio</strong>: la distancia más corta de toda la propuesta. Nicolás podría subir a esquiar al salir de clase sin depender de que nadie lo lleve. Esquí y snowboard son deporte oficial de invierno del instituto, junto con baloncesto y curling, y Outdoor Education está entre las asignaturas más solicitadas. Pueblo de 8.500 habitantes, con aeropuerto internacional a 20 minutos en Cranbrook.</div></details>
+          <div class="colegio-acciones"><a class="colegio-web" href="https://sss.sd6.bc.ca/" target="_blank" rel="noopener">🔗 Web del colegio</a></div>
         </div>
         <div class="colegio">
-          <div class="colegio-top"><div class="colegio-nombre">Selkirk Secondary School</div><div class="colegio-meta"><span class="tag pub">Público</span><span class="tag info">Grade 8–12</span><span class="tag info">~540 alumnos</span><span class="tag info">🎿 Estación a 4 km</span></div></div>
-          <details><summary>Por qué encaja con Nicolás</summary><div class="colegio-razon">Kimberley Alpine Resort está <strong>a 4 km del colegio, dentro del propio municipio</strong>: es la distancia más corta de todo el programa. Esquí y snowboard figuran como deporte oficial de invierno del instituto y Outdoor Education está entre las asignaturas más solicitadas. Pueblo de 8.500 habitantes con aeropuerto internacional a 20 minutos en Cranbrook.</div></details>
-          <a class="colegio-web" href="https://sss.sd6.bc.ca/" target="_blank" rel="noopener"><span>🔗</span> Web del colegio</a>
+          <div class="colegio-top"><div class="colegio-nombre">Golden Secondary School</div><div class="colegio-meta"><span class="tag pub">Público</span><span class="tag info">Grade 8–12</span><span class="tag info">~350 alumnos</span><span class="tag info">🎿 Kicking Horse a 15 km</span></div></div>
+          <details><summary>Por qué encaja con Nicolás</summary><div class="colegio-razon">Golden es un pueblo de 7.000 habitantes rodeado de seis parques nacionales, a hora y media de Banff, y es la puerta de <strong>Kicking Horse Mountain Resort</strong>, una de las estaciones con más desnivel de Canadá. El instituto tiene solo unos 350 alumnos e imparte una <strong>Outdoor Education Academy</strong> con cuatro asignaturas oficiales de montaña, además de esquí y snowboard como deporte escolar de invierno.<br><br>Nota: el club GKHAT del colegio tiene una academia de esquí de competición, pero está reservada a Grade 8 y 9, por lo que no aplica al curso de Nicolás.</div></details>
+          <div class="colegio-acciones"><a class="colegio-web" href="https://gss.sd6.bc.ca/" target="_blank" rel="noopener">🔗 Web del colegio</a></div>
         </div>
       </div></div>
-      <div class="match-bar"><span class="match-tag">Academia GKHAT</span><span class="match-tag">Kicking Horse</span><span class="match-tag">Esquí como deporte escolar</span><span class="match-tag">2 jornadas de nieve incluidas</span></div>
+      <div class="match-bar"><span class="match-tag">Estación a 4 km</span><span class="match-tag">Esquí como deporte escolar</span><span class="match-tag">2 jornadas de nieve incluidas</span><span class="match-tag">Sin academia de pago</span></div>
     </div>
 
     <div class="opcion-card">
@@ -545,24 +554,27 @@ details[open] summary::before{transform:rotate(90deg);}
         <div class="opcion-num">Opción 03</div>
         <div class="opcion-distrito">Sea to Sky School District</div>
         <div class="opcion-loc">📍 British Columbia · Corredor Vancouver–Whistler</div>
-        <div class="precio-chip"><span class="val">desde 25.970 €</span><span class="desc">/ año · vuelos incl.*</span></div>
+        <div class="precio-chip"><span class="val">desde 25.970 €</span><span class="desc">/ año · programa escolar · vuelos incl.*</span></div>
+        <div class="ski-chip">🎿 Programa de esquí: <b>tasa academia + forfait</b> <i>· importe pendiente de confirmar con el distrito</i></div>
       </div>
       <div class="opcion-body"><div class="colegios">
         <div class="colegio">
           <div class="colegio-top"><div class="colegio-nombre">Pemberton Secondary School</div><div class="colegio-meta"><span class="tag pub">Público</span><span class="tag info">Grade 8–12</span><span class="tag info">25.970 €</span><span class="tag info">🎿 Academia SBBA</span></div></div>
-          <details open><summary>Por qué encaja con Nicolás</summary><div class="colegio-razon">Sede de la <strong>Ski/Bike/Board Academy (SBBA)</strong>: un bloque de cuatro asignaturas oficiales —Outdoor Education, Active Living, Film &amp; Photo Media y BC First Peoples— centrado en mejorar la técnica de esquí, snowboard y bicicleta de montaña, de febrero a junio. Está reservada a alumnos de Grade 10 a 12 que cursen el año completo, con lo que Nicolás cumple los requisitos. Requiere inscripción aparte, carta de recomendación y tasa adicional. Whistler Blackcomb queda a media hora larga en coche.</div></details>
-          <a class="colegio-web" href="https://www.sd48pemberton.org/" target="_blank" rel="noopener"><span>🔗</span> Web del colegio</a>
+          <details open><summary>Por qué encaja con Nicolás</summary><div class="colegio-razon">Sede de la <strong>Ski/Board/Bike Academy</strong>, el programa de nieve más intensivo de la propuesta: <strong>18 jornadas completas en Whistler</strong> con monitores de Whistler Blackcomb, trabajando técnica, gigante, saltos y raíles, freeride de montaña y seguridad en el fuera de pista. Al terminar el bloque de invierno el alumno puede obtener la <strong>titulación de monitor de esquí o snowboard de nivel 1</strong> y la formación en avalanchas AST 1. Se cursa en el segundo semestre como cuatro asignaturas oficiales que cuentan para la graduación.<br><br>Está reservada a Grade 11 y 12 con año escolar completo, de modo que Nicolás cumple los requisitos. Requiere inscripción aparte y carta de recomendación. Del instituto han salido cuatro esquiadores del equipo nacional canadiense.</div></details>
+          <div class="colegio-acciones"><a class="colegio-web" href="https://www.sd48pemberton.org/" target="_blank" rel="noopener">🔗 Web del colegio</a></div>
         </div>
         <div class="colegio">
           <div class="colegio-top"><div class="colegio-nombre">Whistler Secondary School</div><div class="colegio-meta"><span class="tag pub">Público</span><span class="tag info">Grade 8–12</span><span class="tag info">26.700 €</span><span class="tag info">🎿 The Sports School</span></div></div>
-          <details><summary>Por qué encaja con Nicolás</summary><div class="colegio-razon">Está al pie de <strong>Whistler Blackcomb</strong>, la mayor estación de Norteamérica y sede de los Juegos de 2010. Cuenta con <strong>The Sports School</strong>, para alumnos que compiten en esquí y snowboard con el Whistler Mountain Ski Club y necesitan horario flexible, y con el curso <strong>Outdoor Recreational Leadership</strong> de Grade 11–12, que incluye esquí nórdico, travesía, raquetas y primeros auxilios en montaña. Del instituto han salido tres esquiadoras olímpicas de ski cross. Su tarifa es de 26.700 €, 730 € por encima de la de Pemberton.</div></details>
-          <a class="colegio-web" href="https://www.sd48whistlersecondary.org/" target="_blank" rel="noopener"><span>🔗</span> Web del colegio</a>
+          <details><summary>Por qué encaja con Nicolás</summary><div class="colegio-razon">Está al pie de <strong>Whistler Blackcomb</strong>, la mayor estación de Norteamérica y sede de los Juegos de 2010. Ofrece <strong>The Sports School</strong>, con horario flexible para quienes compiten con el Whistler Mountain Ski Club, y el curso <strong>Outdoor Recreational Leadership</strong> de Grade 11 y 12, con esquí nórdico, travesía, raquetas, escalada y primeros auxilios en montaña. Su tarifa es de 26.700 €, 730 € por encima de la de Pemberton.</div></details>
+          <div class="colegio-acciones"><a class="colegio-web" href="https://www.sd48whistlersecondary.org/" target="_blank" rel="noopener">🔗 Web del colegio</a></div>
         </div>
       </div></div>
-      <div class="match-bar"><span class="match-tag">Academia SBBA</span><span class="match-tag">Whistler Blackcomb</span><span class="match-tag">Corredor olímpico 2010</span><span class="match-tag">Esquí de competición</span></div>
+      <div class="match-bar"><span class="match-tag">18 días en Whistler</span><span class="match-tag">Academia SBBA</span><span class="match-tag">Titulación de monitor</span><span class="match-tag">Corredor olímpico 2010</span></div>
     </div>
 
   </div>
+
+  <div class="nota-colegio" style="margin-bottom:28px;">🎿 <strong>Sobre el coste del esquí:</strong> el precio del programa escolar y el del programa de esquí se muestran por separado. En Livingstone Range la academia se contrata a través del colegio y se puede incluir en la financiación. En Rocky Mountain no hay academia de pago para este curso: basta el forfait de temporada, que abona la familia directamente a la estación. En Sea to Sky la tasa de la academia se confirma al matricularse.</div>
 
   <!-- ============ 6. VISADO Y VUELOS ============ -->
   <div class="section-title"><h2>Visado y vuelos</h2></div>
@@ -724,7 +736,7 @@ details[open] summary::before{transform:rotate(90deg);}
       <div class="fin-opcion-selector">
         <div class="fin-opcion-label">Selecciona la opción del programa</div>
         <div class="fin-opcion-btns" id="finOpciones">
-          <button class="fin-opcion-btn active" data-precio="25500" data-nombre="⭐ Opción 1 · Livingstone Range + Ski Academy"><span class="fin-opcion-nombre">⭐ Opción 1 · Livingstone Range + Ski Academy</span><span class="fin-opcion-precio">25.500 €</span></button>
+          <button class="fin-opcion-btn active" data-precio="25500" data-nombre="⭐ Opción 1 · Livingstone Range con esquí"><span class="fin-opcion-nombre">⭐ Opción 1 · Livingstone Range con esquí</span><span class="fin-opcion-precio">25.500 €</span></button>
           <button class="fin-opcion-btn" data-precio="25300" data-nombre="Opción 2 · Rocky Mountain SD"><span class="fin-opcion-nombre">Opción 2 · Rocky Mountain SD</span><span class="fin-opcion-precio">25.300 €</span></button>
           <button class="fin-opcion-btn" data-precio="25970" data-nombre="Opción 3 · Sea to Sky · Pemberton"><span class="fin-opcion-nombre">Opción 3 · Sea to Sky · Pemberton</span><span class="fin-opcion-precio">25.970 €</span></button>
           <button class="fin-opcion-btn" data-precio="26700" data-nombre="Opción 3 · Sea to Sky · Whistler"><span class="fin-opcion-nombre">Opción 3 · Sea to Sky · Whistler</span><span class="fin-opcion-precio">26.700 €</span></button>
@@ -988,6 +1000,7 @@ details[open] summary::before{transform:rotate(90deg);}
 </script>
 
 
-<!-- build: 2026-09-24 13:25 UTC -->
+
+<!-- build: 2026-09-24 13:31 UTC -->
 </body>
 </html>
