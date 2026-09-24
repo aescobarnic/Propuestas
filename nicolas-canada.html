@@ -34,7 +34,8 @@ body{font-family:'Fira Sans',sans-serif;background:var(--gray-bg);color:var(--te
 .hero-inner{position:relative;z-index:2;}
 .hero-tag{display:inline-flex;align-items:center;gap:6px;background:rgba(255,255,255,0.1);border:1px solid rgba(255,255,255,0.2);border-radius:20px;padding:4px 12px;font-size:10px;font-weight:600;letter-spacing:2px;text-transform:uppercase;color:rgba(255,255,255,0.7);margin-bottom:12px;}
 .hero-tag::before{content:'🍁';font-size:11px;}
-.hero-name{font-family:'Josefin Sans',sans-serif;font-size:38px;font-weight:700;color:var(--white);line-height:1.05;margin-bottom:8px;}
+.hero-name{font-family:'Josefin Sans',sans-serif;font-size:44px;font-weight:700;color:var(--white);line-height:1.04;margin-bottom:10px;}
+.hero-name-alt{font-weight:300;font-style:italic;color:var(--gold);}
 .hero-subtitle{font-size:13px;color:rgba(255,255,255,0.55);font-weight:300;}
 .hero-pills{display:flex;flex-wrap:wrap;gap:8px;margin-top:20px;}
 .hero-pill{display:flex;align-items:center;gap:6px;background:rgba(255,255,255,0.1);border:1px solid rgba(255,255,255,0.18);border-radius:8px;padding:6px 12px;font-size:11px;color:var(--white);font-weight:500;}
@@ -271,7 +272,7 @@ details[open] summary{background:var(--red-light);border-bottom:1px solid var(--
   .qs-chapters{grid-template-columns:1fr;}
 }
 @media(max-width:720px){
-  .header{padding:16px 20px;}.hero{padding:28px 20px 24px;}.hero-name{font-size:28px;}
+  .header{padding:16px 20px;}.hero{padding:28px 20px 24px;}.hero-name{font-size:32px;}
   .main{padding:28px 16px 20px;}
   .includes-grid{grid-template-columns:1fr;}.opciones-grid{grid-template-columns:1fr;}
   .intro-points{grid-template-columns:1fr;}.info-blocks{grid-template-columns:1fr;}
@@ -398,7 +399,7 @@ details[open] summary{background:var(--red-light);border-bottom:1px solid var(--
   <div class="hero-dots"></div>
   <div class="hero-inner">
     <div class="hero-tag">Propuesta personalizada · Canadá</div>
-    <div class="hero-name">Nicolás</div>
+    <div class="hero-name">Nicolás<br><span class="hero-name-alt">en Canadá</span></div>
     <div class="hero-subtitle">Año escolar completo · Canadá · Distritos de montaña con esquí</div>
     <div class="hero-pills">
       <div class="hero-pill">🎓 Grade 10</div>
@@ -1053,6 +1054,7 @@ details[open] summary{background:var(--red-light);border-bottom:1px solid var(--
 
 
 
-<!-- build: 2026-09-24 14:03 UTC -->
+
+<!-- build: 2026-09-24 14:11 UTC -->
 </body>
 </html>
