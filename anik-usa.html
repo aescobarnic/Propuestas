@@ -1,4 +1,7 @@
 <!DOCTYPE html>
+
+
+
 <html lang="es">
 <head>
 <meta charset="UTF-8">
@@ -12,7 +15,7 @@
   --red:#B12900;--red-dark:#8A1F00;--red-light:#fdf0ec;
   --red-deep:#6E1600;--red-warm:#C8380C;--cream:#FFF6F2;--sand:#F7EDE6;--gold:#E8B04B;
   --green:#4C9E0C;--green-dark:#3A7A09;--green-light:#eef8e3;
-  --gray-bg:#f4eeea;--gray-card:#fbf7f4;--gray-border:#e4d9d2;
+  --gray-bg:#eef1f6;--gray-card:#f8fafc;--gray-border:#dbe1ea;
   --text:#0d1b2a;--text-mid:#3d4f62;--text-light:#7a8a9b;--white:#ffffff;
 }
 *,*::before,*::after{margin:0;padding:0;box-sizing:border-box;}
@@ -20,21 +23,21 @@ body{font-family:'Fira Sans',sans-serif;background:var(--gray-bg);color:var(--te
 
 /* HEADER */
 .header{background:var(--white);padding:18px 48px;display:flex;align-items:center;justify-content:space-between;box-shadow:0 1px 0 var(--gray-border),0 4px 24px rgba(0,51,102,0.07);position:relative;z-index:10;}
-.header::after{content:'';position:absolute;bottom:0;left:0;right:0;height:4px;background:linear-gradient(90deg,var(--red) 0%,var(--red) 22%,var(--white) 22%,var(--white) 78%,var(--red) 78%,var(--red) 100%);}
+.header::after{content:'';position:absolute;bottom:0;left:0;right:0;height:4px;background:linear-gradient(90deg,var(--red) 0%,var(--red) 34%,var(--white) 34%,var(--white) 66%,var(--blue) 66%,var(--blue) 100%);}
 .logo-area img{height:46px;width:auto;display:block;}
 .header-right{text-align:right;}
 .header-label{font-family:'Josefin Sans',sans-serif;font-size:9px;letter-spacing:3px;text-transform:uppercase;color:var(--text-light);}
-.header-year{font-family:'Josefin Sans',sans-serif;font-size:26px;font-weight:700;color:var(--red);line-height:1;margin-top:2px;}
+.header-year{font-family:'Josefin Sans',sans-serif;font-size:26px;font-weight:700;color:var(--blue);line-height:1;margin-top:2px;}
 
 /* HERO */
-.hero{background:linear-gradient(135deg,var(--red-deep) 0%,var(--red) 55%,var(--red-warm) 100%);position:relative;overflow:hidden;padding:40px 48px 36px;}
-.hero::after{content:'🍁';position:absolute;right:2%;top:50%;transform:translateY(-50%) rotate(-12deg);font-size:230px;line-height:1;opacity:0.09;pointer-events:none;z-index:1;}
+.hero{background:linear-gradient(135deg,var(--blue-dark) 0%,var(--blue) 55%,var(--blue-mid) 100%);position:relative;overflow:hidden;padding:40px 48px 36px;}
+.hero::after{content:'🗽';position:absolute;right:2%;top:50%;transform:translateY(-50%) rotate(-12deg);font-size:230px;line-height:1;opacity:0.09;pointer-events:none;z-index:1;}
 .hero::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 70% 110% at 100% 40%,rgba(255,255,255,0.12) 0%,transparent 60%),radial-gradient(ellipse 60% 80% at -10% 90%,rgba(0,31,64,0.28) 0%,transparent 60%);}
 .hero-dots{position:absolute;inset:0;pointer-events:none;background-image:radial-gradient(rgba(255,255,255,0.07) 1px,transparent 1px);background-size:28px 28px;}
 .hero-inner{position:relative;z-index:2;}
 .hero-tag{display:inline-flex;align-items:center;gap:6px;background:rgba(255,255,255,0.1);border:1px solid rgba(255,255,255,0.2);border-radius:20px;padding:4px 12px;font-size:10px;font-weight:600;letter-spacing:2px;text-transform:uppercase;color:rgba(255,255,255,0.7);margin-bottom:12px;}
-.hero-tag::before{content:'🍁';font-size:11px;}
-.hero-name{font-family:'Josefin Sans',sans-serif;font-size:44px;font-weight:700;color:var(--white);line-height:1.04;margin-bottom:10px;}
+.hero-tag::before{content:'🇺🇸';font-size:11px;}
+.hero-name{font-family:'Josefin Sans',sans-serif;font-size:38px;font-weight:700;color:var(--white);line-height:1.05;margin-bottom:8px;}
 .hero-subtitle{font-size:13px;color:rgba(255,255,255,0.55);font-weight:300;}
 .hero-pills{display:flex;flex-wrap:wrap;gap:8px;margin-top:20px;}
 .hero-pill{display:flex;align-items:center;gap:6px;background:rgba(255,255,255,0.1);border:1px solid rgba(255,255,255,0.18);border-radius:8px;padding:6px 12px;font-size:11px;color:var(--white);font-weight:500;}
@@ -245,6 +248,9 @@ details[open] summary::before{transform:rotate(90deg);}
 .steps-title{font-family:'Josefin Sans',sans-serif;font-size:18px;font-weight:700;color:var(--white);margin-bottom:6px;}
 .steps-sub{font-size:12px;color:rgba(255,255,255,0.5);margin-bottom:26px;}
 .steps-list{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;}
+.steps-list.steps-5{grid-template-columns:repeat(5,1fr);gap:13px;}
+@media(max-width:1000px){.steps-list.steps-5{grid-template-columns:repeat(2,1fr);}}
+@media(max-width:720px){.steps-list.steps-5{grid-template-columns:1fr;}}
 .step-item{background:rgba(255,255,255,0.07);border:1px solid rgba(255,255,255,0.12);border-radius:12px;padding:18px;}
 .step-num{font-family:'Josefin Sans',sans-serif;font-size:20px;font-weight:700;color:#7dd44a;margin-bottom:8px;}
 .step-title{font-size:13px;font-weight:600;color:var(--white);margin-bottom:4px;}
@@ -258,7 +264,7 @@ details[open] summary::before{transform:rotate(90deg);}
 
 /* FOOTER */
 .footer{background:var(--blue-dark);padding:30px 48px;margin-top:56px;text-align:center;position:relative;}
-.footer::before{content:'';position:absolute;top:0;left:0;right:0;height:4px;background:linear-gradient(90deg,var(--red) 0%,var(--red) 22%,var(--white) 22%,var(--white) 78%,var(--red) 78%,var(--red) 100%);}
+.footer::before{content:'';position:absolute;top:0;left:0;right:0;height:4px;background:linear-gradient(90deg,var(--red) 0%,var(--red) 34%,var(--white) 34%,var(--white) 66%,var(--blue) 66%,var(--blue) 100%);}
 .footer-logo{font-family:'Josefin Sans',sans-serif;font-size:15px;font-weight:700;color:var(--white);letter-spacing:1px;margin-bottom:6px;}
 .footer-tag{font-family:'Josefin Sans',sans-serif;font-size:10px;letter-spacing:4px;text-transform:uppercase;color:#ff9c7a;margin-bottom:14px;}
 .footer-meta{font-size:11px;color:rgba(255,255,255,0.4);line-height:1.7;}
@@ -270,7 +276,7 @@ details[open] summary::before{transform:rotate(90deg);}
   .qs-chapters{grid-template-columns:1fr;}
 }
 @media(max-width:720px){
-  .header{padding:16px 20px;}.hero{padding:28px 20px 24px;}.hero-name{font-size:32px;}
+  .header{padding:16px 20px;}.hero{padding:28px 20px 24px;}.hero-name{font-size:28px;}
   .main{padding:28px 16px 20px;}
   .includes-grid{grid-template-columns:1fr;}.opciones-grid{grid-template-columns:1fr;}
   .intro-points{grid-template-columns:1fr;}.info-blocks{grid-template-columns:1fr;}
@@ -305,7 +311,7 @@ details[open] summary::before{transform:rotate(90deg);}
 
 /* Barra de progreso de lectura */
 .progress-bar{position:fixed;top:0;left:0;height:3px;width:100%;transform:scaleX(0);transform-origin:0 50%;
-  background:linear-gradient(90deg,var(--red),var(--red-warm));z-index:999;transition:transform .1s linear;}
+  background:linear-gradient(90deg,var(--red),var(--blue) 60%,var(--blue-mid));z-index:999;transition:transform .1s linear;}
 
 /* Foto: zoom suave al pasar por encima */
 .qs-chapter-media img,.qs-media img,.qs-media-inset img{transition:transform .7s cubic-bezier(.22,.61,.36,1);}
@@ -353,14 +359,146 @@ details[open] summary::before{transform:rotate(90deg);}
 }
 
 
+/* ============ J1 · bloques propios ============ */
+/* --- NUEVA YORK: sección estrella --- */
+.ny-wrap{position:relative;border-radius:20px;overflow:hidden;background:linear-gradient(160deg,#06172e 0%,var(--blue-dark) 45%,#0b3566 100%);box-shadow:0 12px 48px rgba(0,20,45,0.28);}
+.ny-wrap::before{content:'';position:absolute;inset:0;background-image:radial-gradient(rgba(255,255,255,0.06) 1px,transparent 1px);background-size:26px 26px;}
+.ny-glow{position:absolute;inset:0;background:radial-gradient(ellipse 70% 90% at 85% 10%,rgba(232,176,75,0.20) 0%,transparent 60%),radial-gradient(ellipse 60% 70% at 5% 95%,rgba(177,41,0,0.22) 0%,transparent 60%);pointer-events:none;}
+.ny-skyline{position:absolute;left:0;right:0;bottom:0;height:150px;opacity:.20;pointer-events:none;}
+.ny-skyline svg{width:100%;height:100%;display:block;}
+.ny-inner{position:relative;z-index:3;padding:42px 44px 40px;}
+.ny-badge{display:inline-flex;align-items:center;gap:8px;background:rgba(232,176,75,0.16);border:1px solid rgba(232,176,75,0.45);color:#F5C976;font-family:'Josefin Sans',sans-serif;font-size:9.5px;font-weight:700;letter-spacing:2.5px;text-transform:uppercase;padding:6px 14px;border-radius:20px;margin-bottom:16px;}
+.ny-title{font-family:'Josefin Sans',sans-serif;font-size:34px;font-weight:700;color:var(--white);line-height:1.1;margin-bottom:12px;}
+.ny-title span{color:#F5C976;}
+.ny-lead{font-size:14px;color:rgba(255,255,255,0.66);line-height:1.75;max-width:620px;margin-bottom:26px;}
+.ny-lead strong{color:var(--white);font-weight:600;}
+.ny-stats{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-bottom:28px;}
+.ny-stat{background:rgba(255,255,255,0.07);border:1px solid rgba(255,255,255,0.15);border-radius:12px;padding:16px 16px;text-align:center;transition:transform .3s cubic-bezier(.22,.61,.36,1),background .3s ease;}
+.ny-stat:hover{transform:translateY(-4px);background:rgba(255,255,255,0.11);}
+.ny-stat-num{font-family:'Josefin Sans',sans-serif;font-size:26px;font-weight:700;color:#F5C976;line-height:1;margin-bottom:5px;}
+.ny-stat-lab{font-size:10.5px;color:rgba(255,255,255,0.55);line-height:1.4;}
+.ny-cols{display:grid;grid-template-columns:1fr 1fr;gap:16px;}
+.ny-col{background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.13);border-radius:14px;padding:20px 22px;}
+.ny-col-title{font-family:'Josefin Sans',sans-serif;font-size:9px;font-weight:700;letter-spacing:2.5px;text-transform:uppercase;color:#F5C976;margin-bottom:13px;}
+.ny-list{list-style:none;display:flex;flex-direction:column;gap:9px;}
+.ny-list li{font-size:12.5px;color:rgba(255,255,255,0.72);line-height:1.55;display:flex;gap:9px;align-items:flex-start;}
+.ny-list li::before{content:'★';color:#F5C976;flex-shrink:0;font-size:10px;margin-top:2px;}
+.ny-nota{margin-top:20px;font-size:11.5px;color:rgba(255,255,255,0.42);line-height:1.65;font-style:italic;border-top:1px solid rgba(255,255,255,0.12);padding-top:16px;}
+
+/* --- Qué destaca --- */
+.destaca-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;}
+.destaca-item{background:var(--white);border:1.5px solid var(--gray-border);border-radius:14px;padding:20px 20px;box-shadow:0 2px 14px rgba(0,51,102,0.05);transition:transform .3s cubic-bezier(.22,.61,.36,1),box-shadow .3s ease,border-color .3s ease;}
+.destaca-item:hover{transform:translateY(-4px);box-shadow:0 12px 32px rgba(0,51,102,0.13);border-color:var(--blue-mid);}
+.destaca-icon{font-size:24px;margin-bottom:10px;}
+.destaca-title{font-family:'Josefin Sans',sans-serif;font-size:13.5px;font-weight:700;color:var(--blue);margin-bottom:6px;line-height:1.3;}
+.destaca-desc{font-size:12px;color:var(--text-mid);line-height:1.6;}
+
+/* --- Precio destacado --- */
+.precio-hero{display:grid;grid-template-columns:auto 1fr;gap:28px;align-items:center;background:var(--white);border:1.5px solid var(--gray-border);border-left:5px solid var(--red);border-radius:16px;padding:26px 30px;box-shadow:0 2px 16px rgba(0,51,102,0.06);}
+.precio-hero-num{font-family:'Josefin Sans',sans-serif;font-size:44px;font-weight:700;color:var(--red);line-height:1;white-space:nowrap;}
+.precio-hero-sub{font-size:10.5px;letter-spacing:2px;text-transform:uppercase;color:var(--text-light);margin-top:6px;}
+.precio-hero-txt{font-size:13px;color:var(--text-mid);line-height:1.7;}
+.precio-hero-txt strong{color:var(--blue);font-weight:600;}
+
+/* --- Condiciones particulares --- */
+.cond-list{display:flex;flex-direction:column;gap:12px;}
+.cond-item{background:var(--white);border:1.5px solid var(--gray-border);border-radius:12px;padding:15px 20px;font-size:12.5px;color:var(--text-mid);line-height:1.7;display:flex;gap:14px;align-items:flex-start;}
+.cond-num{font-family:'Josefin Sans',sans-serif;font-size:13px;font-weight:700;color:var(--blue-light);background:var(--blue);width:26px;height:26px;border-radius:50%;display:flex;align-items:center;justify-content:center;flex-shrink:0;color:#fff;font-size:11px;}
+.cond-alert{background:#fff4f0;border:1.5px solid rgba(177,41,0,0.32);border-left:4px solid var(--red);border-radius:12px;padding:15px 20px;font-size:12.5px;color:#6b1a00;line-height:1.7;margin-top:4px;}
+.cond-alert strong{color:var(--red-dark);}
+
+/* --- Garantía de plaza --- */
+.garantia-wrap{background:linear-gradient(135deg,var(--green-dark),#5FB515);border-radius:16px;padding:28px 32px;position:relative;overflow:hidden;}
+.garantia-wrap::before{content:'🛡';position:absolute;right:-8px;bottom:-26px;font-size:130px;opacity:.12;line-height:1;}
+.garantia-inner{position:relative;z-index:2;}
+.garantia-title{font-family:'Josefin Sans',sans-serif;font-size:17px;font-weight:700;color:var(--white);margin-bottom:8px;}
+.garantia-text{font-size:12.5px;color:rgba(255,255,255,0.78);line-height:1.7;margin-bottom:18px;max-width:700px;}
+.garantia-opts{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;}
+.garantia-opt{background:rgba(255,255,255,0.14);border:1px solid rgba(255,255,255,0.28);border-radius:10px;padding:14px 16px;font-size:12px;color:rgba(255,255,255,0.82);line-height:1.55;}
+.garantia-opt strong{color:var(--white);font-family:'Josefin Sans',sans-serif;font-size:13px;}
+.garantia-nota{margin-top:16px;padding-top:14px;border-top:1px solid rgba(255,255,255,0.22);font-size:11.5px;color:rgba(255,255,255,0.65);line-height:1.65;font-style:italic;}
+
+/* --- Enlaces de interés --- */
+.links-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;}
+.link-item{display:flex;align-items:center;gap:14px;background:var(--white);border:1.5px solid var(--gray-border);border-radius:12px;padding:16px 18px;text-decoration:none;transition:transform .25s ease,box-shadow .25s ease,border-color .25s ease;}
+.link-item:hover{transform:translateY(-3px);box-shadow:0 10px 26px rgba(0,51,102,0.12);border-color:var(--blue-mid);}
+.link-icon{font-size:22px;flex-shrink:0;}
+.link-label{font-family:'Josefin Sans',sans-serif;font-size:13px;font-weight:700;color:var(--blue);line-height:1.35;}
+.link-sub{font-size:11px;color:var(--text-light);margin-top:2px;}
+
+@media(max-width:900px){
+  .ny-stats{grid-template-columns:repeat(2,1fr);}
+  .ny-cols{grid-template-columns:1fr;}
+  .destaca-grid{grid-template-columns:repeat(2,1fr);}
+  .garantia-opts{grid-template-columns:1fr;}
+  .links-grid{grid-template-columns:1fr;}
+}
+@media(max-width:720px){
+  .ny-inner{padding:28px 22px;}
+  .ny-title{font-size:25px;}
+  .destaca-grid{grid-template-columns:1fr;}
+  .precio-hero{grid-template-columns:1fr;gap:14px;}
+  .precio-hero-num{font-size:36px;}
+}
+
+/* OPCIONES */
+.alert-box{display:flex;gap:12px;align-items:flex-start;background:#fff4f0;border:1.5px solid rgba(177,41,0,0.3);border-radius:12px;padding:14px 18px;margin-bottom:22px;}
+.alert-icon{font-size:20px;flex-shrink:0;}
+.alert-text{font-size:12px;color:#6b1a00;line-height:1.6;}
+.alert-text strong{color:var(--red-dark);}
+.opciones-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(330px,1fr));gap:20px;}
+.opcion-card{background:var(--white);border-radius:16px;border:1.5px solid var(--gray-border);overflow:hidden;box-shadow:0 2px 16px rgba(0,51,102,0.06);position:relative;transition:transform .2s,box-shadow .2s,border-color .2s;}
+.opcion-card:hover{transform:translateY(-4px);box-shadow:0 12px 40px rgba(110,22,0,0.16);border-color:var(--red);}
+.opcion-card.recomendada{border-color:var(--blue);box-shadow:0 6px 28px rgba(0,51,102,0.20);}
+.badge-rec{position:absolute;top:14px;right:-32px;background:var(--blue);color:var(--white);font-size:8px;font-weight:700;letter-spacing:1.5px;padding:5px 40px;transform:rotate(45deg);width:130px;text-align:center;z-index:10;}
+.opcion-header{background:linear-gradient(135deg,var(--red-deep) 0%,var(--red) 100%);padding:22px 24px 18px;position:relative;overflow:hidden;}
+.opcion-header::after{content:'🍁';position:absolute;right:-10px;bottom:-22px;font-size:82px;opacity:0.11;line-height:1;transform:rotate(-14deg);}
+.opcion-header > *{position:relative;z-index:2;}
+.opcion-num{font-family:'Josefin Sans',sans-serif;font-size:9px;letter-spacing:3px;text-transform:uppercase;color:rgba(255,255,255,0.38);margin-bottom:8px;}
+.opcion-distrito{font-family:'Josefin Sans',sans-serif;font-size:16px;font-weight:700;color:var(--white);margin-bottom:5px;}
+.opcion-loc{font-size:11px;color:rgba(255,255,255,0.48);margin-bottom:12px;}
+.precio-chip{display:inline-flex;align-items:baseline;gap:4px;background:rgba(255,255,255,0.1);border:1px solid rgba(255,255,255,0.18);border-radius:8px;padding:6px 12px;}
+.precio-chip .val{font-family:'Josefin Sans',sans-serif;font-size:20px;font-weight:700;color:var(--white);}
+.precio-chip .desc{font-size:10px;color:rgba(255,255,255,0.5);}
+.precio-chip .tachado{font-size:10px;color:rgba(255,255,255,0.3);text-decoration:line-through;margin-left:6px;}
+.opcion-body{padding:20px 22px;}
+.colegios{display:flex;flex-direction:column;gap:12px;}
+.colegio{border:1.5px solid var(--gray-border);border-radius:12px;overflow:hidden;background:var(--gray-card);transition:border-color .2s;}
+.colegio:hover{border-color:var(--red);}
+.colegio-top{padding:12px 14px 10px;}
+.colegio-nombre{font-family:'Josefin Sans',sans-serif;font-size:13px;font-weight:700;color:var(--red-deep);margin-bottom:5px;}
+.colegio-meta{display:flex;flex-wrap:wrap;align-items:center;gap:6px;}
+.tag{border-radius:5px;padding:2px 8px;font-size:9px;font-weight:700;text-transform:uppercase;}
+.tag.pub{background:var(--green);color:var(--white);}
+.tag.info{background:var(--blue-light);color:var(--blue);}
+details{border-top:1px solid var(--gray-border);}
+details summary{list-style:none;cursor:pointer;padding:9px 14px;font-size:11px;font-weight:600;color:var(--red);display:flex;align-items:center;gap:6px;user-select:none;-webkit-user-select:none;}
+details summary:hover{background:var(--red-light);}
+details summary::-webkit-details-marker{display:none;}
+details summary::before{content:'▸';font-size:10px;transition:transform .2s;display:inline-block;}
+details[open] summary::before{transform:rotate(90deg);}
+.colegio-razon{padding:10px 14px 13px;font-size:12px;color:var(--text-mid);line-height:1.7;border-left:3px solid var(--red);margin:0 14px 12px;background:var(--red-light);border-radius:0 6px 6px 0;}
+.match-bar{display:flex;gap:6px;flex-wrap:wrap;padding:14px 22px;border-top:1px solid var(--gray-border);background:linear-gradient(to right,var(--gray-card),var(--white));}
+.match-tag{display:flex;align-items:center;gap:4px;font-size:10px;font-weight:600;color:var(--green-dark);background:var(--green-light);border:1px solid rgba(76,158,12,0.25);border-radius:20px;padding:3px 10px;}
+.match-tag::before{content:'✓';font-size:9px;}
+.opciones-grid{grid-template-columns:1fr;}
+/* Tarjetas de distrito: elevación más precisa */
+.opcion-card{transition:transform .35s cubic-bezier(.22,.61,.36,1),box-shadow .35s ease,border-color .3s ease;}
+.opcion-header::after{transition:transform .6s cubic-bezier(.22,.61,.36,1),opacity .4s ease;}
+.opcion-card:hover .opcion-header::after{transform:rotate(-4deg) scale(1.14);opacity:.17;}
+.js-anim details[open] .colegio-razon{animation:razonIn .38s ease both;}
 .colegio-acciones{padding:0 14px 14px;}
 .colegio-web{display:inline-flex;align-items:center;gap:7px;background:var(--blue);color:#fff;text-decoration:none;font-size:12px;font-weight:600;padding:8px 14px;border-radius:8px;transition:background .2s,transform .2s;}
 .colegio-web:hover{background:var(--blue-mid);transform:translateY(-1px);}
 details[open] summary{background:var(--red-light);border-bottom:1px solid var(--gray-border);margin-bottom:12px;}
+.opcion-header::after{content:'\1F1FA\1F1F8';}
 .hero-name-alt{font-weight:300;font-style:italic;color:var(--gold);}
 .nota-colegio{background:var(--blue-light);border-left:3px solid var(--blue);border-radius:0 8px 8px 0;padding:12px 14px;font-size:12.5px;line-height:1.6;color:var(--text-mid);margin-top:4px;}
-.sem-chip{display:flex;flex-wrap:wrap;align-items:baseline;gap:6px;margin-top:8px;background:rgba(255,255,255,.14);border:1px solid rgba(255,255,255,.28);border-radius:8px;padding:8px 12px;font-size:12px;color:#fff;}
-.sem-chip b{font-size:14px;font-weight:700;}
+.sem-chip{display:inline-flex;flex-wrap:wrap;align-items:baseline;gap:6px;margin-top:8px;background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.24);border-radius:8px;padding:6px 12px;font-size:11px;color:rgba(255,255,255,.85);}
+.sem-chip b{font-size:13px;font-weight:700;color:#fff;}
+.hero-name{font-size:44px;}
+@media(max-width:700px){.hero-name{font-size:32px;}}
+
 </style>
 </head>
 <body>
@@ -378,50 +516,70 @@ details[open] summary{background:var(--red-light);border-bottom:1px solid var(--
 <div class="hero">
   <div class="hero-dots"></div>
   <div class="hero-inner">
-    <div class="hero-tag">Propuesta personalizada · Estados Unidos · Programa F-1</div>
+    <div class="hero-tag">Propuesta personalizada · Programa F-1</div>
     <div class="hero-name">Anik<br><span class="hero-name-alt">en Estados Unidos</span></div>
-    <div class="hero-subtitle">Año escolar completo · Estados Unidos · Programa F-1 con elección de colegio</div>
+    <div class="hero-subtitle">Matrícula académica · Estados Unidos · Con elección de colegio, ciudad y estado</div>
     <div class="hero-pills">
       <div class="hero-pill">🎓 Curso y edad a confirmar</div>
       <div class="hero-pill">🏠 Familia anfitriona</div>
       <div class="hero-pill">🎨 Arte y dibujo</div>
       <div class="hero-pill">🎹 Piano</div>
       <div class="hero-pill">🎭 Teatro y música</div>
-      <div class="hero-pill">🏫 Elección de colegio y estado</div>
+      <div class="hero-pill ac">🏫 Elección de colegio y estado</div>
     </div>
-    <!-- ===== BLOQUE PROMO · DESACTIVADO POR DEFECTO =====
-         Los precios de la tabla son la TARIFA REAL (sin descuento).
-         Activar SOLO si el comercial pide aplicar el descuento. Al activarlo hay que:
-           1. Descontar 1.000 € del precio de cada tarjeta (.precio-chip .val)
-           2. Añadir la tarifa original tachada: <span class="tachado">20.430 €</span>
-           3. Actualizar data-precio de la calculadora con el precio ya rebajado
-         Descomentar la línea siguiente para mostrarlo:
-    <div class="hero-promo">🇺🇸 Reserva antes del 30 de septiembre de 2026 y obtén <strong>1.000 € de descuento</strong> — no acumulable con otras promociones.</div>
-    ===== FIN BLOQUE PROMO ===== -->
   </div>
 </div>
 
 <div class="main">
 
-  <!-- ============ 3. CONTEXTO: QUÉ ES EL PROGRAMA ============ -->
-  <div class="section-title"><h2>¿Qué es el programa F-1?</h2></div>
+  <!-- ============ 3. QUÉ ES EL F-1 ============ -->
+  <div class="section-title"><h2>¿Qué es el Programa F-1?</h2></div>
   <p class="intro-text">
-    Estados Unidos ofrece dos vías para cursar un año escolar. El <strong>J1</strong> es un programa de intercambio cultural
-    regulado por el Departamento de Estado, con familias anfitrionas voluntarias y sin posibilidad de elegir zona ni centro.
-    El <strong>F-1</strong> es una <strong>matrícula académica real</strong>: la familia elige el colegio, el estado y la ciudad,
-    y el alojamiento se coordina de forma dirigida en lugar de dejarse al azar. Es la vía que recomendamos cuando el perfil
-    del estudiante hace aconsejable tener control sobre dónde y con quién va a vivir.
+    Estados Unidos ofrece dos vías para cursar un año escolar. El <strong>J1</strong> es un intercambio cultural
+    subvencionado por el Gobierno americano: sale más barato, pero el destino, el colegio y la familia los asigna
+    el sponsor y no se eligen. El <strong>F-1</strong> es una <strong>matrícula académica real</strong>: la familia
+    elige el colegio, la ciudad y el estado, y la búsqueda de familia anfitriona se trabaja de forma dirigida
+    en lugar de dejarse al azar. Es la vía que recomendamos cuando conviene tener control sobre
+    <strong>dónde y con quién</strong> va a vivir el estudiante.
   </p>
   <div class="intro-points">
-    <div class="intro-point"><div class="intro-point-icon">🏫</div><div><div class="intro-point-title">Se elige el colegio</div><div class="intro-point-desc">La familia decide centro, estado y ciudad entre los colegios de la red, en lugar de recibir una asignación cerrada.</div></div></div>
-    <div class="intro-point"><div class="intro-point-icon">🏠</div><div><div class="intro-point-title">Búsqueda dirigida de familia</div><div class="intro-point-desc">Trasladamos el perfil deseado al equipo de colocación en destino y trabajamos la búsqueda de forma activa.</div></div></div>
+    <div class="intro-point"><div class="intro-point-icon">🏫</div><div><div class="intro-point-title">El colegio se elige</div><div class="intro-point-desc">Centro, ciudad y estado se deciden antes de firmar, entre los colegios de nuestra red.</div></div></div>
+    <div class="intro-point"><div class="intro-point-icon">🏠</div><div><div class="intro-point-title">Búsqueda dirigida de familia</div><div class="intro-point-desc">Trasladamos el perfil deseado al equipo de colocación en destino y se trabaja de forma activa, no por sorteo.</div></div></div>
     <div class="intro-point"><div class="intro-point-icon">📚</div><div><div class="intro-point-title">Matrícula académica</div><div class="intro-point-desc">Acceso a cursos AP, programas STEM, artes y deportes del centro elegido, con expediente oficial estadounidense.</div></div></div>
-    <div class="intro-point"><div class="intro-point-icon">🛂</div><div><div class="intro-point-title">Visado F-1</div><div class="intro-point-desc">El colegio emite el formulario I-20 y con él se tramita el visado de estudiante en el consulado.</div></div></div>
+    <div class="intro-point"><div class="intro-point-icon">📅</div><div><div class="intro-point-title">Año completo o semestre</div><div class="intro-point-desc">Según el centro. Algunos colegios admiten entrada en agosto o en enero; otros solo año completo.</div></div></div>
   </div>
 
-  <!-- ============ 4. QUIÉNES SOMOS ============ -->
-  <div class="section-title"><h2>Quiénes somos</h2></div>
+  <!-- ============ 4. REQUISITOS ============ -->
+  <div class="section-title"><h2>Requisitos de acceso</h2></div>
+  <div class="info-blocks">
+    <div class="info-block">
+      <div class="info-block-icon">📋</div>
+      <div class="info-block-title">Requisitos del estudiante</div>
+      <div class="info-block-text">
+        <ul>
+          <li>Cada colegio fija su propio <strong>rango de edad y de curso</strong>; se detalla en cada ficha</li>
+          <li>Expediente académico sin asignaturas suspensas relevantes</li>
+          <li>Nivel de inglés suficiente para seguir las clases, valorado mediante prueba</li>
+          <li>Carta de recomendación del centro actual en algunos colegios</li>
+        </ul>
+      </div>
+    </div>
+    <div class="info-block">
+      <div class="info-block-icon">📝</div>
+      <div class="info-block-title">Pruebas y visado</div>
+      <div class="info-block-text">
+        <ul>
+          <li>Prueba de nivel de inglés <strong>ELTIS</strong> o equivalente, según exija el centro</li>
+          <li>Entrevista personal online con el estudiante</li>
+          <li>El colegio emite el formulario <strong>I-20</strong> una vez aceptada la matrícula</li>
+          <li>Tasa SEVIS, visado F-1 y cita en la Embajada de EE.UU. en Madrid <strong>incluidos en el precio</strong></li>
+        </ul>
+      </div>
+    </div>
+  </div>
 
+  <!-- ============ 5. QUIÉNES SOMOS ============ -->
+  <div class="section-title"><h2>Quiénes somos</h2></div>
   <div class="qs-hero">
     <div class="qs-media">
       <img src="https://aescobarnic.github.io/Propuestas/img/mlq-grupo-aeropuerto.jpg" style="object-position:center 30%;" alt="Grupo de estudiantes de My Language Quest en el aeropuerto con su coordinadora" loading="lazy">
@@ -430,76 +588,29 @@ details[open] summary{background:var(--red-light);border-bottom:1px solid var(--
     <div class="qs-panel">
       <div class="qs-panel-inner">
         <div class="qs-eyebrow">My Language Quest</div>
-        <div class="qs-title">Nadie hace este viaje solo</div>
+        <div class="qs-title">Elegir bien el colegio<br>es la mitad del trabajo.<br>La otra mitad, acompañar</div>
         <p class="qs-lead">
-          Acompañamos a familias españolas en la experiencia de estudiar un año escolar en el extranjero.
-          No somos una plataforma de reservas: <strong>hay personas con nombre y apellido detrás de cada
-          estudiante</strong>, desde la primera reunión hasta la convalidación de las notas a la vuelta.
+          En el F-1 la elección de centro es vuestra, y ahí es donde aportamos criterio: conocemos los colegios,
+          sabemos qué tipo de comunidad hay detrás de cada uno y qué perfil de estudiante encaja en cada sitio.
+          Luego está lo otro, lo que se nota cuando vuestra hija lleva dos semanas fuera y llama un domingo por
+          la noche. <strong>En My Language Quest sabréis siempre con quién habláis, y esa persona conocerá a
+          vuestra hija por su nombre.</strong>
         </p>
         <div class="qs-pilares">
-          <div class="qs-pilar">
-            <div class="qs-pilar-icon">👩‍💼</div>
-            <div><div class="qs-pilar-title">Una asesora asignada en España</div><div class="qs-pilar-desc">La misma persona de principio a fin: nada de tickets ni centralitas.</div></div>
-          </div>
-          <div class="qs-pilar">
-            <div class="qs-pilar-icon">🧭</div>
-            <div><div class="qs-pilar-title">Un gestor estudiantil en destino</div><div class="qs-pilar-desc">Tutorías, notas oficiales cada trimestre e informe mensual a los padres.</div></div>
-          </div>
-          <div class="qs-pilar">
-            <div class="qs-pilar-icon">🏠</div>
-            <div><div class="qs-pilar-title">Un solo hispanohablante por familia</div><div class="qs-pilar-desc">Garantizado, para que la inmersión sea real desde el primer día.</div></div>
-          </div>
-          <div class="qs-pilar">
-            <div class="qs-pilar-icon">📞</div>
-            <div><div class="qs-pilar-title">Atención 24 h, aquí y allí</div><div class="qs-pilar-desc">Emergencias cubiertas en España y en destino, todo el curso.</div></div>
-          </div>
+          <div class="qs-pilar"><div class="qs-pilar-icon">👩‍💼</div><div><div class="qs-pilar-title">Una asesora asignada en España</div><div class="qs-pilar-desc">La misma persona de principio a fin: nada de tickets ni centralitas.</div></div></div>
+          <div class="qs-pilar"><div class="qs-pilar-icon">🧭</div><div><div class="qs-pilar-title">Gestor estudiantil personalizado</div><div class="qs-pilar-desc">Hace todos los trámites y es vuestro contacto único durante el año.</div></div></div>
+          <div class="qs-pilar"><div class="qs-pilar-icon">📞</div><div><div class="qs-pilar-title">Atención 24 h, aquí y allí</div><div class="qs-pilar-desc">Supervisión local en destino y emergencias desde España.</div></div></div>
+          <div class="qs-pilar"><div class="qs-pilar-icon">💬</div><div><div class="qs-pilar-title">Apoyo psicológico durante todo el curso</div><div class="qs-pilar-desc">Disponible para el estudiante siempre que lo necesite.</div></div></div>
         </div>
       </div>
     </div>
   </div>
 
-  <div class="qs-chapters-head">
-    <div class="qs-chapters-title">Cómo se vive el curso</div>
-    <div class="qs-chapters-sub">De la maleta en casa a la vida de instituto al otro lado del mundo</div>
-  </div>
-  <div class="qs-chapters">
-    <div class="qs-chapter">
-      <div class="qs-chapter-media">
-        <img src="https://aescobarnic.github.io/Propuestas/img/mlq-equipaje-salida.jpg" style="object-position:center 12%;" alt="Estudiante con su equipaje el día de la salida" loading="lazy">
-        <div class="qs-chapter-step">Antes de salir</div>
-      </div>
-      <div class="qs-chapter-body">
-        <div class="qs-chapter-title">Todo resuelto antes de la maleta</div>
-        <div class="qs-chapter-text">Entrevista, elección de colegio, matrícula, familia anfitriona, visado y vuelos. La familia solo se ocupa de preparar el equipaje.</div>
-      </div>
-    </div>
-    <div class="qs-chapter">
-      <div class="qs-chapter-media">
-        <img src="https://aescobarnic.github.io/Propuestas/img/mlq-salida-pista.jpg" style="object-position:center 8%;" alt="Estudiantes de My Language Quest el día de la salida" loading="lazy">
-        <div class="qs-chapter-step">El día de la salida</div>
-      </div>
-      <div class="qs-chapter-body">
-        <div class="qs-chapter-title">Salida acompañada</div>
-        <div class="qs-chapter-text">Orientación previa en Madrid o online, coordinación en el aeropuerto de salida y recibimiento en destino el día de la llegada.</div>
-      </div>
-    </div>
-    <div class="qs-chapter">
-      <div class="qs-chapter-media">
-        <img src="https://aescobarnic.github.io/Propuestas/img/mlq-vida-social.jpg" style="object-position:center 22%;" alt="Estudiante con sus nuevas amigas en un partido del instituto" loading="lazy">
-        <div class="qs-chapter-step">La vida allí</div>
-      </div>
-      <div class="qs-chapter-body">
-        <div class="qs-chapter-title">Un curso, no unas vacaciones</div>
-        <div class="qs-chapter-text">Instituto, extraescolares, partidos, amigos nuevos. Con supervisión local, acompañamiento psicológico y cambio de familia si hiciera falta.</div>
-      </div>
-    </div>
-  </div>
-
-  <!-- ============ 5. OPCIONES RECOMENDADAS — PERSONALIZABLE ============ -->
-  <div class="section-title"><h2>Opciones recomendadas</h2></div>
+  <!-- ============ 6. ★ COLEGIOS · SECCIÓN ESTRELLA ============ -->
+  <div class="section-title"><h2>Colegios recomendados</h2></div>
   <div class="alert-box">
     <div class="alert-icon">🎨</div>
-    <div class="alert-text"><strong>Selección orientada al perfil de Anik:</strong> los cuatro centros se han elegido por tener programas sólidos de arte, música y teatro, que es donde ella destaca, y por ser comunidades de tamaño manejable donde es más fácil integrarse en un grupo estable. Las edades y cursos admitidos varían entre centros y se confirmarán al concretar el curso de Anik.</div>
+    <div class="alert-text"><strong>Selección orientada al perfil de Anik:</strong> los cuatro centros se han elegido por tener programas sólidos de arte, música y teatro, que es donde ella destaca, y por ser comunidades de tamaño manejable donde resulta más fácil integrarse en un grupo estable. Cada colegio admite un rango de edad y de curso distinto, que se ajustará al confirmar el perfil definitivo.</div>
   </div>
   <div class="opciones-grid">
 
@@ -508,18 +619,19 @@ details[open] summary{background:var(--red-light);border-bottom:1px solid var(--
       <div class="opcion-header">
         <div class="opcion-num">Opción 01</div>
         <div class="opcion-distrito">Morgan High School</div>
-        <div class="opcion-loc">📍 Morgan, Utah · 4.200 habitantes · Aeropuerto de Salt Lake City</div>
+        <div class="opcion-loc">📍 Morgan, Utah · 4.200 hab. · Aeropuerto de Salt Lake City</div>
         <div class="precio-chip"><span class="val">23.590 €</span><span class="desc">/ año escolar completo</span></div>
         
       </div>
       <div class="opcion-body"><div class="colegios">
         <div class="colegio">
           <div class="colegio-top"><div class="colegio-nombre">Morgan High School</div><div class="colegio-meta"><span class="tag pub">Público</span><span class="tag info">Grade 10–12</span><span class="tag info">~1.100 alumnos</span><span class="tag info">Clase media 28</span></div></div>
-          <details open><summary>Por qué encaja con Anik</summary><div class="colegio-razon">Una comunidad de montaña pequeña y muy unida, con un instituto que ofrece mucho más de lo que su tamaño haría esperar. Para Anik el atractivo está en las artes: <strong>jazz band, banda sinfónica, orquesta Intermezzo, coro de cámara Ovation y coro pop</strong>, además de producciones teatrales y musicales, técnica de escena e interpretación para teatro y para cámara. En artes plásticas hay pintura acrílica, cerámica, caligrafía, dibujo, grabado, escultura, fotografía digital y el portfolio de AP Studio Art, que encaja con alguien que sacó un 10 en arte.<br><br>En lo académico hay AP de Lengua y Literatura, Cálculo, Biología, Química, Física e Historia Europea, con programa STEM. Entre las actividades, robótica, National Honor Society y consejo de estudiantes. Deporte hay de sobra si algún día le apetece probar, desde fútbol y natación hasta atletismo y tenis, pero no es en absoluto obligatorio.<br><br>Salt Lake City queda a 72 km. Es la opción más económica de las cuatro.</div></details>
+          <details open><summary>Por qué encaja con Anik</summary><div class="colegio-razon">Una comunidad de montaña pequeña y muy unida, con un instituto que da mucho más de lo que su tamaño haría esperar. Para Anik el atractivo está en las artes: <strong>jazz band, banda sinfónica, orquesta Intermezzo, coro de cámara Ovation y coro pop</strong>, más producciones teatrales y musicales, técnica de escena e interpretación para teatro y para cámara. En plástica hay pintura acrílica, cerámica, caligrafía, dibujo, grabado, escultura, fotografía digital y el portfolio de AP Studio Art, que encaja con alguien que sacó un 10 en arte el año pasado.<br><br>En lo académico, AP de Lengua y Literatura, Cálculo, Biología, Química, Física e Historia Europea, con programa STEM. Entre las actividades, robótica, National Honor Society y consejo de estudiantes. Deporte hay de sobra por si algún día le apetece probar, desde fútbol y natación hasta atletismo y tenis, pero no es obligatorio en absoluto.<br><br>Salt Lake City queda a 72 km. Es la opción más económica de las cuatro.</div></details>
           <div class="colegio-acciones"><a class="colegio-web" href="https://mhs.morgansd.org/" target="_blank" rel="noopener">🔗 Web del colegio</a></div>
         </div>
-        <div class="nota-colegio">ℹ️ Admite solo año escolar completo. El plazo de admisión cierra el 1 de junio.</div>
+        <div class="nota-colegio">ℹ️ Solo año escolar completo. El plazo de admisión cierra el 1 de junio.</div>
       </div></div>
+      <div class="match-bar"><span class="match-tag">Artes muy fuertes</span><span class="match-tag">Comunidad pequeña</span><span class="match-tag">AP Studio Art</span><span class="match-tag">Mejor precio</span></div>
     </div>
     <div class="opcion-card">
       <div class="opcion-header">
@@ -532,11 +644,12 @@ details[open] summary{background:var(--red-light);border-bottom:1px solid var(--
       <div class="opcion-body"><div class="colegios">
         <div class="colegio">
           <div class="colegio-top"><div class="colegio-nombre">Bonneville High School</div><div class="colegio-meta"><span class="tag pub">Público</span><span class="tag info">Grade 9–12</span><span class="tag info">~1.100 alumnos</span><span class="tag info">Clase media 25</span></div></div>
-          <details open><summary>Por qué encaja con Anik</summary><div class="colegio-razon">La experiencia clásica del instituto americano, la que se ve en las películas: partido de fútbol americano el viernes por la noche, voleibol, fútbol, baloncesto, lucha, béisbol, sóftbol, tenis y atletismo, más el equipo de animación durante todo el año. Para quien quiere vivir el ambiente estadounidense de verdad, es el que más lo da.<br><br>En lo académico, <strong>quince asignaturas AP</strong>, entre ellas Cálculo AB y BC, Física 1 y 2, Química, Biología, Estadística, Historia de Estados Unidos y Gobierno Comparado. En artes, desarrollo vocal, coro, historia del arte, dibujo, pintura, arte y diseño 3D, cerámica, fotografía digital, banda, guitarra, interpretación, teatro, dirección y escenografía. Hay anuario y periódico escolar, The Bonneville Buzz, que puede encajar con alguien a quien le gusta contar y expresarse.<br><br>Idaho Falls está junto al río Snake, con museo y zoo, y a un par de horas de Yellowstone. Es el único de los cuatro que también admite entrada por semestre.</div></details>
+          <details open><summary>Por qué encaja con Anik</summary><div class="colegio-razon">La experiencia clásica del instituto americano, la de las películas: partido de fútbol americano el viernes por la noche, voleibol, fútbol, baloncesto, lucha, béisbol, sóftbol, tenis y atletismo, con el equipo de animación todo el año. Para quien quiere vivir el ambiente estadounidense de verdad, es el que más lo da.<br><br>En lo académico, <strong>quince asignaturas AP</strong>: Cálculo AB y BC, Física 1 y 2, Química, Biología, Estadística, Lengua y Literatura, Historia de Estados Unidos, Historia Mundial, Gobierno Comparado, Español 5 y Dibujo. En artes, desarrollo vocal, coro, historia del arte, dibujo, pintura, arte y diseño 3D, cerámica, fotografía digital, banda, guitarra, interpretación, teatro, dirección y escenografía. Hay anuario y periódico escolar, The Bonneville Buzz, que puede encajar con alguien a quien le gusta contar y expresarse.<br><br>Idaho Falls está junto al río Snake, con museo y zoo, y a un par de horas de Yellowstone. Es el único de los cuatro que admite también entrada por semestre y por trimestre.</div></details>
           <div class="colegio-acciones"><a class="colegio-web" href="https://www.bonnevillebees.com/" target="_blank" rel="noopener">🔗 Web del colegio</a></div>
         </div>
-        <div class="nota-colegio">ℹ️ Admite año completo, semestre y trimestre. Hay que llegar dentro de los 10 días siguientes al inicio del curso.</div>
+        <div class="nota-colegio">ℹ️ Año completo, semestre o trimestre. Hay que llegar dentro de los 10 días siguientes al inicio del curso. El centro cobra aparte tasas de matrícula, libros, uniforme deportivo y exámenes AP.</div>
       </div></div>
+      <div class="match-bar"><span class="match-tag">15 asignaturas AP</span><span class="match-tag">Ambiente americano clásico</span><span class="match-tag">Periódico y anuario</span><span class="match-tag">Admite semestre</span></div>
     </div>
     <div class="opcion-card">
       <div class="opcion-header">
@@ -549,11 +662,12 @@ details[open] summary{background:var(--red-light);border-bottom:1px solid var(--
       <div class="opcion-body"><div class="colegios">
         <div class="colegio">
           <div class="colegio-top"><div class="colegio-nombre">Dominion Academy of Dayton</div><div class="colegio-meta"><span class="tag pub">Privado</span><span class="tag info">Grade 9–11</span><span class="tag info">~125 alumnos</span><span class="tag info">Uniforme</span></div></div>
-          <details open><summary>Por qué encaja con Anik</summary><div class="colegio-razon">Es el centro más pequeño de los cuatro, con unos 125 alumnos en total, y ese es exactamente su argumento: aquí los profesores conocen a cada estudiante por su nombre y nadie pasa desapercibido. Para una chica a la que le cuesta encontrar su grupo y que necesita que la vean, un entorno de este tamaño juega a favor.<br><br>Académicamente es un college prep exigente, con programa STEM propio y asignaturas AP. La parte artística tiene peso real: historia y teoría del arte, artes visuales, coro, teatro y danza, con un <strong>programa de teatro shakespeariano</strong> que es su seña de identidad. Hay también National Honor Society, gobierno estudiantil y voluntariado comunitario. En deporte, campo a través, fútbol, voleibol, baloncesto, animación y atletismo.<br><br>Es un colegio cristiano y con uniforme, dos cosas que conviene comentar con Anik antes de decidir.</div></details>
+          <details open><summary>Por qué encaja con Anik</summary><div class="colegio-razon">Es el centro más pequeño de los cuatro, con unos 125 alumnos en total, y ese es exactamente su argumento: aquí los profesores conocen a cada estudiante por su nombre y nadie pasa desapercibido. Para una chica a la que le cuesta encontrar su sitio en grupos grandes y que necesita que la vean, un entorno de este tamaño juega a favor.<br><br>Académicamente es un college prep exigente, con programa STEM propio y asignaturas AP. La parte artística tiene peso real: historia y teoría del arte, artes visuales, coro, teatro y danza, con un <strong>programa de teatro shakespeariano</strong> que es su seña de identidad. Hay National Honor Society, gobierno estudiantil y voluntariado comunitario. En deporte, campo a través, fútbol, voleibol, baloncesto, animación y atletismo.<br><br>Es un colegio cristiano y con uniforme, dos cosas que conviene comentar con Anik antes de decidir.</div></details>
           <div class="colegio-acciones"><a class="colegio-web" href="https://www.dominionacademy.org/" target="_blank" rel="noopener">🔗 Web del colegio</a></div>
         </div>
-        <div class="nota-colegio">ℹ️ Admite solo año escolar completo, de Grade 9 a 11.</div>
+        <div class="nota-colegio">ℹ️ Solo año escolar completo, de Grade 9 a 11.</div>
       </div></div>
+      <div class="match-bar"><span class="match-tag">125 alumnos</span><span class="match-tag">Teatro shakespeariano</span><span class="match-tag">Trato muy cercano</span><span class="match-tag">STEM propio</span></div>
     </div>
     <div class="opcion-card">
       <div class="opcion-header">
@@ -566,87 +680,85 @@ details[open] summary{background:var(--red-light);border-bottom:1px solid var(--
       <div class="opcion-body"><div class="colegios">
         <div class="colegio">
           <div class="colegio-top"><div class="colegio-nombre">Higley Unified School District</div><div class="colegio-meta"><span class="tag pub">Público</span><span class="tag info">Grade 10–12</span><span class="tag info">~2.000 por campus</span><span class="tag info">Clase media 22</span></div></div>
-          <details open><summary>Por qué encaja con Anik</summary><div class="colegio-razon">Sol casi todo el año, extrarradio de Phoenix y un distrito público de primer nivel, calificado con la <strong>máxima nota por el Departamento de Educación de Arizona</strong>. Pese a ser público tiene clases de unos 22 alumnos, por debajo de lo habitual en Estados Unidos.<br><br>La oferta artística es la más amplia de la propuesta: <strong>coro de concierto, coro de cámara, conjunto vocal, coro de voces blancas, compañía de danza con nivel avanzado y de élite, banda de concierto, banda sinfónica, big band de jazz, orquesta de cuerda, percusión, marching band y AP Teoría de la Música</strong>, además de historia del arte. Para alguien que aprende piano sola por YouTube, aquí encontraría por fin un contexto donde desarrollarlo en serio.<br><br>En lo académico la lista de AP es larguísima, desde Física C Mecánica y Electromagnetismo hasta Chino, Francés y Literatura Española. Hay ROTC y es el único centro donde se puede graduar en un solo año.<br><br>El año completo se va por encima del presupuesto de referencia; un semestre entra sin problema.</div></details>
+          <details open><summary>Por qué encaja con Anik</summary><div class="colegio-razon">Sol casi todo el año, extrarradio de Phoenix y un distrito público de primer nivel, con la <strong>máxima calificación del Departamento de Educación de Arizona</strong>. Pese a ser público tiene clases de unos 22 alumnos, por debajo de lo habitual en Estados Unidos.<br><br>La oferta artística es la más amplia de la propuesta: <strong>coro de concierto, coro de cámara, conjunto vocal, compañía de danza con niveles avanzado y de élite, banda de concierto, banda sinfónica, big band de jazz, orquesta de cuerda, percusión, marching band y AP Teoría de la Música</strong>, además de historia del arte. Para alguien que aprende piano sola con vídeos de YouTube, aquí encontraría por fin un contexto donde desarrollarlo en serio.<br><br>La lista de AP es larguísima, desde Física C Mecánica y Electromagnetismo hasta Chino, Francés y Literatura Española. Hay ROTC y es el único centro donde se puede graduar en un solo año.<br><br>El año completo se va por encima del presupuesto de referencia; un semestre entra sin problema.</div></details>
           <div class="colegio-acciones"><a class="colegio-web" href="https://www.husd.org/" target="_blank" rel="noopener">🔗 Web del colegio</a></div>
         </div>
-        <div class="nota-colegio">ℹ️ Admite año completo y semestre. Admisiones de enero a principios de julio. Requiere media mínima equivalente a 2.0 (aprobado alto).</div>
+        <div class="nota-colegio">ℹ️ Año completo o semestre. Admisiones de enero a principios de julio. Requiere media mínima equivalente a un aprobado alto.</div>
       </div></div>
+      <div class="match-bar"><span class="match-tag">Oferta musical más amplia</span><span class="match-tag">AP Teoría de la Música</span><span class="match-tag">Compañía de danza</span><span class="match-tag">Admite semestre</span></div>
     </div>
 
   </div>
 
-  <div class="nota-colegio" style="margin-bottom:28px;">💡 <strong>Sobre los precios:</strong> las cifras corresponden al curso 2027/28 e incluyen matrícula, familia anfitriona, seguro y la gestión completa de My Language Quest. Los importes de semestre son orientativos y se confirman con el centro al reservar. Las edades y cursos admitidos varían entre colegios y se ajustarán al perfil definitivo de Anik.</div>
+  <div class="nota-colegio" style="margin:20px 0 8px;">💡 <strong>Sobre los precios:</strong> corresponden al curso 2027/28 e incluyen matrícula, familia anfitriona, seguro y la gestión completa de My Language Quest. Los importes de semestre son orientativos y se confirman con el centro al reservar.</div>
 
-  <!-- ============ 6. VISADO Y VUELOS ============ -->
-  <div class="section-title"><h2>Visado y vuelos</h2></div>
-  <div class="info-blocks">
-    <div class="info-block">
-      <div class="info-block-icon">🛂</div>
-      <div class="info-block-title">Visado F-1</div>
-      <div class="info-block-text">La gestión del visado de estudiante está incluida en el programa.
-        <ul><li>El colegio emite el formulario <strong>I-20</strong> una vez aceptada la matrícula</li><li>Pago de la tasa SEVIS y solicitud del visado F-1</li><li>Entrevista consular en la embajada o consulado de Estados Unidos</li><li>MLQ prepara la documentación y acompaña en todo el proceso</li></ul>
-      </div>
-    </div>
-    <div class="info-block">
-      <div class="info-block-icon">✈</div>
-      <div class="info-block-title">Vuelos</div>
-      <div class="info-block-text">Los vuelos de ida y vuelta están incluidos en el precio del programa.
-        <ul><li>MLQ gestiona la búsqueda y la reserva</li><li>Ajustados al calendario del colegio elegido</li><li>Recibimiento en el aeropuerto de destino</li></ul>
-      </div>
-    </div>
+  <!-- ============ 7. QUÉ DESTACA ============ -->
+  <div class="section-title"><h2>Qué añade My Language Quest</h2></div>
+  <div class="destaca-grid">
+    <div class="destaca-item"><div class="destaca-icon">👤</div><div class="destaca-title">Gestor estudiantil personalizado</div><div class="destaca-desc">Una única persona asignada a la familia, que realiza todos los trámites y es el contacto principal durante el proceso y el año escolar.</div></div>
+    <div class="destaca-item"><div class="destaca-icon">🏫</div><div class="destaca-title">Elección real de colegio</div><div class="destaca-desc">Centro, ciudad y estado se deciden antes de firmar, con criterio nuestro sobre qué encaja con cada perfil.</div></div>
+    <div class="destaca-item"><div class="destaca-icon">📘</div><div class="destaca-title">Clases Cambridge incluidas</div><div class="destaca-desc">30 horas de clases online con profesor en vivo, más el libro.</div></div>
+    <div class="destaca-item"><div class="destaca-icon">🛂</div><div class="destaca-title">Visado F-1 completo</div><div class="destaca-desc">Emisión del I-20, tasa SEVIS, tramitación del visado y cita en la embajada incluidos. La familia solo tiene que presentarse.</div></div>
+    <div class="destaca-item"><div class="destaca-icon">💬</div><div class="destaca-title">Apoyo emocional y psicológico</div><div class="destaca-desc">Disponible para el estudiante durante todo el programa si lo necesita.</div></div>
+    <div class="destaca-item"><div class="destaca-icon">📜</div><div class="destaca-title">Legalización de notas en EE.UU.</div><div class="destaca-desc">Recogida de transcripts, firma de notario y Apostilla de La Haya.</div></div>
+    <div class="destaca-item"><div class="destaca-icon">📑</div><div class="destaca-title">Convalidación en España incluida</div><div class="destaca-desc">Nos encargamos del expediente completo y del pago de tasas ante el Ministerio de Educación.</div></div>
+    <div class="destaca-item"><div class="destaca-icon">🛡</div><div class="destaca-title">Búsqueda dirigida de familia</div><div class="destaca-desc">Trasladamos las preferencias al equipo de colocación en destino y trabajamos activamente el encaje.</div></div>
   </div>
 
-  <!-- ============ 7. EL PROGRAMA INCLUYE ============ -->
+  <!-- ============ 8. EL PROGRAMA INCLUYE ============ -->
   <div class="section-title"><h2>El programa incluye</h2></div>
   <div class="includes-wrap">
-    <div class="includes-head"><h3>📋 Todo lo que cubre My Language Quest</h3></div>
+    <div class="includes-head"><h3>📋 Todo lo que cubre My Language Quest · Programa F-1</h3></div>
     <div class="includes-body">
       <div class="includes-grid">
         <div>
           <div class="col-title">Antes del viaje</div>
           <ul class="inc-list">
             <li>Reunión inicial con padres o tutores</li>
-            <li>Prueba de inglés y entrevista personal online</li>
-            <li>Propuesta personalizada de colegios</li>
-            <li>Inscripción y matriculación en el centro</li>
-            <li>Familia anfitriona en pensión completa, habitación individual o compartida</li>
-            <li>Un único estudiante hispanohablante por familia</li>
+            <li>Prueba de nivel de inglés y entrevista personal online</li>
+            <li>Propuesta personalizada de colegios y elección de centro</li>
+            <li>Inscripción y matriculación en el centro elegido</li>
+            <li>Búsqueda dirigida de familia anfitriona en pensión completa</li>
             <li>Seguro médico y de accidentes</li>
-            <li>Libros (algunas asignaturas)</li>
-            <li>Gestión del visado F-1<small>Emisión del I-20, tasa SEVIS y cita consular</small></li>
-            <li>Vuelos de ida y vuelta<small>Búsqueda, reserva y ajuste al calendario escolar</small></li>
-            <li>Orientación pre-viaje en Madrid o online</li>
-            <li>Welcome pack sorpresa de My Language Quest</li>
+            <li>Emisión del I-20, tasa SEVIS, visado F-1 y cita en la Embajada</li>
+            <li>Programa formativo y de orientación para el estudiante<small>Obligatorio</small></li>
+            <li>Programa formativo y de orientación para los padres<small>No obligatorio</small></li>
+            <li>Orientación pre-viaje en Madrid</li>
+            <li>Pack sorpresa de My Language Quest</li>
           </ul>
         </div>
         <div>
           <div class="col-title">Durante el viaje</div>
           <ul class="inc-list">
-            <li>Recibimiento en aeropuerto y traslados</li>
-            <li>Asesoramiento en elección de asignaturas, garantizando convalidación</li>
-            <li>Clases de inglés Cambridge y libro incluido</li>
-            <li>Supervisión local: visitas, tutorías y emergencias 24 h</li>
+            <li>Orientación previa a la salida, en Madrid u online</li>
+            <li>Recibimiento en aeropuerto y traslados al inicio y fin del programa</li>
+            <li>Asesoramiento en elección de asignaturas</li>
+            <li>Libros de las asignaturas obligatorias</li>
+            <li>Transporte escolar</li>
+            <li>Clases de inglés Cambridge y su libro</li>
+            <li>Supervisión local en destino: visitas, tutorías y emergencias 24 h</li>
+            <li>Reportes periódicos del gestor estudiantil</li>
             <li>Acompañamiento psicológico</li>
             <li>Atención 24 h en España para emergencias</li>
-            <li>Apoyo para matriculación en extraescolares</li>
-            <li>Gestión de cambio de familia si fuera necesario</li>
-          </ul>
-          <div class="col-title" style="margin-top:24px;">Después del viaje</div>
-          <ul class="inc-list">
-            <li>Convalidación ante el Ministerio de Educación</li>
-            <li>Validación de notas y apostilla de la Haya</li>
-            <li>Dossier final detallando la experiencia</li>
+            <li>Gestión individualizada de los viajes del estudiante</li>
           </ul>
         </div>
         <div>
-          <div class="col-title">No incluido</div>
+          <div class="col-title">Después del viaje</div>
+          <ul class="inc-list">
+            <li>Recogida de los transcripts finales</li>
+            <li>Coordinación con el centro escolar y notario público</li>
+            <li>Apostilla de La Haya de las calificaciones</li>
+            <li>Presentación y seguimiento del expediente ante el Ministerio de Educación</li>
+            <li>Dossier final detallando la experiencia</li>
+          </ul>
+          <div class="col-title" style="margin-top:24px;">No incluido</div>
           <ul class="inc-list no">
-            <li>Tasas de matrícula de novato y de graduación, cuando el centro las aplique</li>
-            <li>Extracurriculares de pago: equipos con licencia, bandas, teatro</li>
+            <li>Vuelos<small>MLQ gestiona la búsqueda, coste a cargo de la familia</small></li>
+            <li>Actividades extracurriculares de pago</li>
             <li>Excursiones y viajes escolares</li>
-            <li>Material escolar y uniforme deportivo</li>
+            <li>Material escolar adicional</li>
             <li>Fotografía escolar y anuario</li>
-            <li>Tasas de exámenes opcionales (AP, Cambridge avanzado)</li>
             <li>Transporte local mensual</li>
             <li>Todo aquello que no esté especificado expresamente en el apartado &laquo;El programa incluye&raquo;</li>
           </ul>
@@ -668,29 +780,43 @@ details[open] summary{background:var(--red-light);border-bottom:1px solid var(--
     </div>
   </div>
 
-  <!-- ============ 9. FORMAS DE PAGO — MODELO NUEVO ============ -->
-  <div class="section-title"><h2>Formas de pago</h2></div>
-  <div class="payment-wrap">
+  <!-- ============ 9. PRECIO Y FORMAS DE PAGO ============ -->
+  <div class="section-title"><h2>Precio y formas de pago</h2></div>
+  <div class="precio-hero">
+    <div>
+      <div class="precio-hero-num">desde 23.590 €</div>
+      <div class="precio-hero-sub">Año escolar completo 2027/28</div>
+    </div>
+    <div class="precio-hero-txt">
+      En el F-1 el precio depende del colegio elegido, porque cada centro fija su propia matrícula.
+      Las cuatro opciones de esta propuesta van de <strong>23.590 € a 28.225 €</strong> el año completo.
+      Todas incluyen <strong>matrícula, familia anfitriona en pensión completa, seguro médico, visado F-1 con I-20 y tasa SEVIS,
+      vuelos, clases Cambridge y la convalidación completa en España</strong>.
+    </div>
+  </div>
+
+  <div class="nota-colegio" style="margin:16px 0 0;">📅 <strong>Semestre:</strong> Bonneville desde 17.025 € y Higley desde 18.600 €. Morgan y Dominion admiten únicamente año escolar completo.</div>
+
+  <div class="payment-wrap" style="margin-top:20px;">
     <div class="payment-inner">
       <div class="pay-title">💳 Condiciones económicas</div>
       <div class="pay-subtitle">Dos vías: pago directo o financiación. El importe de la reserva cambia según cuál elijas.</div>
 
       <div class="pay-route">
         <div class="pay-route-head"><span class="pay-route-icon">🏦</span><span class="pay-route-title">Opción A · Pago sin financiación</span></div>
-        <div class="pay-route-sub">La cantidad íntegra debe abonarse antes del 10 de abril de 2027.</div>
+        <div class="pay-route-sub">El importe íntegro debe estar abonado como máximo el 1 de marzo de 2027.</div>
         <div class="pay-entrada">
           <div class="pay-entrada-num">3.500 €</div>
-          <div class="pay-entrada-txt"><strong>Primer pago a la firma del contrato.</strong> Reserva la plaza e inicia la tramitación de matrícula, familia y visado.</div>
+          <div class="pay-entrada-txt"><strong>Reserva y firma de contrato.</strong> Activa la solicitud de plaza en el colegio elegido y el inicio de la búsqueda de familia.</div>
         </div>
         <div class="pay-cols">
           <div class="pay-col">
-            <div class="pay-col-title">Distritos con pago fraccionado</div>
-            <div class="pay-step"><div class="pay-step-num">Paso 2 · Aceptación en el programa</div><div class="pay-step-title">40 % del importe restante</div></div>
-            <div class="pay-step"><div class="pay-step-num">Paso 3</div><div class="pay-step-title">Resto del importe</div><div class="pay-step-desc">Antes del 10 de abril de 2027</div></div>
+            <div class="pay-col-title">Paso 2 · Resto del programa</div>
+            <div class="pay-step"><div class="pay-step-title">Precio del colegio − 3.500 €</div><div class="pay-step-desc">Como máximo el 1 de marzo de 2027</div></div>
           </div>
           <div class="pay-col">
-            <div class="pay-col-title">Distritos con pago completo</div>
-            <div class="pay-step"><div class="pay-step-num">Paso 2 · Aceptación en el programa</div><div class="pay-step-title">Resto del importe en su totalidad</div></div>
+            <div class="pay-col-title">Seguro de anulación</div>
+            <div class="pay-step"><div class="pay-step-title">350 € · opcional</div><div class="pay-step-desc">A abonar en el momento de la firma</div></div>
           </div>
         </div>
       </div>
@@ -705,7 +831,7 @@ details[open] summary{background:var(--red-light);border-bottom:1px solid var(--
         <div class="pay-cols">
           <div class="pay-col">
             <div class="pay-col-title">Capital financiado</div>
-            <div class="pay-step"><div class="pay-step-title">Precio del programa − 5.000 €</div><div class="pay-step-desc">Calcula tu cuota exacta en el simulador de la sección siguiente.</div></div>
+            <div class="pay-step"><div class="pay-step-title">Precio del colegio − 5.000 €</div><div class="pay-step-desc">Calcula tu cuota exacta en el simulador de la sección siguiente.</div></div>
           </div>
           <div class="pay-col">
             <div class="pay-col-title">Condiciones</div>
@@ -715,11 +841,11 @@ details[open] summary{background:var(--red-light);border-bottom:1px solid var(--
         </div>
       </div>
 
-      <div class="pay-note">El seguro de anulación e interrupción debe contratarse y abonarse en el momento de la firma del contrato. Su coste varía según el importe del programa y es emitido una vez el estudiante es aceptado por el centro escolar. Su importe no es reembolsable bajo ninguna circunstancia. Las inscripciones tardías deben cumplir con los plazos de pago ya pasados en el momento de la inscripción.</div>
+      <div class="pay-note">El seguro de anulación e interrupción es opcional, cuesta 350 € y debe contratarse y abonarse en el momento de la firma del contrato. Su importe no es reembolsable bajo ninguna circunstancia. Las inscripciones tardías deben cumplir con los plazos de pago ya pasados en el momento de la inscripción.</div>
     </div>
   </div>
 
-  <!-- ============ 10. FINANCIACIÓN — SIMULADOR ============ -->
+  <!-- ============ 10. FINANCIACIÓN ============ -->
   <div class="section-title"><h2>Financia tu programa</h2></div>
   <div class="financing-wrap">
     <div class="financing-head">
@@ -733,14 +859,13 @@ details[open] summary{background:var(--red-light);border-bottom:1px solid var(--
       <div class="fin-badge">Hasta 36 meses</div>
     </div>
     <div class="financing-body">
-
       <div class="fin-opcion-selector">
-        <div class="fin-opcion-label">Selecciona la opción del programa</div>
+        <div class="fin-opcion-label">Selecciona el colegio</div>
         <div class="fin-opcion-btns" id="finOpciones">
-          <button class="fin-opcion-btn active" data-precio="23590" data-nombre="⭐ Opción 1 · Morgan High School"><span class="fin-opcion-nombre">⭐ Opción 1 · Morgan High School</span><span class="fin-opcion-precio">23.590 €</span></button>
-          <button class="fin-opcion-btn" data-precio="24550" data-nombre="Opción 2 · Bonneville HS"><span class="fin-opcion-nombre">Opción 2 · Bonneville HS</span><span class="fin-opcion-precio">24.550 €</span></button>
-          <button class="fin-opcion-btn" data-precio="25690" data-nombre="Opción 3 · Dominion Academy"><span class="fin-opcion-nombre">Opción 3 · Dominion Academy</span><span class="fin-opcion-precio">25.690 €</span></button>
-          <button class="fin-opcion-btn" data-precio="28225" data-nombre="Opción 4 · Higley Unified SD"><span class="fin-opcion-nombre">Opción 4 · Higley Unified SD</span><span class="fin-opcion-precio">28.225 €</span></button>
+          <button class="fin-opcion-btn active" data-precio="23590"><span class="fin-opcion-nombre">⭐ Opción 1 · Morgan High School</span><span class="fin-opcion-precio">23.590 €</span></button>
+          <button class="fin-opcion-btn" data-precio="24550"><span class="fin-opcion-nombre">Opción 2 · Bonneville High School</span><span class="fin-opcion-precio">24.550 €</span></button>
+          <button class="fin-opcion-btn" data-precio="25690"><span class="fin-opcion-nombre">Opción 3 · Dominion Academy</span><span class="fin-opcion-precio">25.690 €</span></button>
+          <button class="fin-opcion-btn" data-precio="28225"><span class="fin-opcion-nombre">Opción 4 · Higley Unified SD</span><span class="fin-opcion-precio">28.225 €</span></button>
         </div>
       </div>
 
@@ -778,21 +903,54 @@ details[open] summary{background:var(--red-light);border-bottom:1px solid var(--
     </div>
   </div>
 
-  <!-- ============ 11. SIGUIENTES PASOS ============ -->
+  <!-- ============ 11. CONDICIONES PARTICULARES ============ -->
+  <div class="section-title"><h2>Condiciones particulares del F-1</h2></div>
+  <p class="intro-text">Aspectos que conviene entender antes de inscribirse, para llegar con expectativas claras.</p>
+  <div class="cond-list">
+    <div class="cond-item"><div class="cond-num">1</div><div>El <strong>colegio, la ciudad y el estado sí se eligen</strong>. Lo que no se puede garantizar es el perfil concreto de la familia anfitriona: trasladamos las preferencias al equipo de colocación y se trabajan de forma activa, pero la asignación final depende de las familias disponibles en esa comunidad.</div></div>
+    <div class="cond-item"><div class="cond-num">2</div><div>La selección de asignaturas se realiza según las preferencias del estudiante y los requisitos de convalidación, siempre supeditada a la oferta, el espacio en los grupos y la organización de horarios del centro americano.</div></div>
+    <div class="cond-item"><div class="cond-num">3</div><div>Cada colegio tiene su propio <strong>calendario de admisiones y su rango de edad y curso</strong>. Reservar pronto amplía las opciones: algunos centros cierran plazo en junio y otros trabajan por orden de llegada.</div></div>
+    <div class="cond-item"><div class="cond-num">4</div><div>Algunos centros aplican <strong>tasas propias no incluidas</strong> en el precio del programa: matrícula de novato o de graduación, libros, uniforme deportivo, exámenes AP o cuotas de equipos deportivos. Se detallan en la ficha de cada colegio.</div></div>
+    <div class="cond-item"><div class="cond-num">5</div><div>Una vez asignada la familia, el estudiante debe contactar con ella en un plazo máximo de 24 a 72 horas. Las visitas de familiares deben coordinarse previamente con la familia anfitriona y contar con su aprobación.</div></div>
+  </div>
+  <div class="cond-alert">⚠️ <strong>Importante:</strong> la falta de comunicación, o una comunicación inadecuada en forma o frecuencia con la familia anfitriona asignada, puede suponer el rechazo de la familia o incluso la salida del programa.</div>
+
+  <!-- ============ 12. GARANTÍA DE PLAZA ============ -->
+  <div class="section-title"><h2>Garantía de plaza</h2></div>
+  <div class="garantia-wrap">
+    <div class="garantia-inner">
+      <div class="garantia-title">🛡 Qué pasa si el colegio elegido se llena</div>
+      <div class="garantia-text">
+        Las plazas de cada centro son limitadas y se asignan por orden de reserva. Si el colegio elegido
+        se completara antes de formalizar la matrícula, <strong>proponemos alternativas equivalentes</strong>
+        en perfil, tamaño de comunidad y oferta de artes, y la familia vuelve a elegir.
+        <strong>Ninguna alternativa se impone</strong>: la decisión final siempre es vuestra.
+      </div>
+      <div class="garantia-opts">
+        <div class="garantia-opt"><strong>Reserva temprana</strong><br>Firmar pronto es lo que asegura el colegio preferido; los plazos varían por centro.</div>
+        <div class="garantia-opt"><strong>Alternativas equivalentes</strong><br>Si no hubiera plaza, proponemos centros con perfil y oferta artística similares.</div>
+        <div class="garantia-opt"><strong>Decisión de la familia</strong><br>Toda alternativa se presenta para que la elijáis vosotros, nunca se asigna sin consulta.</div>
+      </div>
+      <div class="garantia-nota">Si la alternativa elegida tuviera un precio distinto al del colegio inicialmente firmado, se ajustaría la diferencia de forma transparente antes de continuar.</div>
+    </div>
+  </div>
+
+  <!-- ============ 13. SIGUIENTES PASOS ============ -->
   <div class="section-title"><h2>Siguientes pasos</h2></div>
   <div class="steps-wrap">
     <div class="steps-inner">
       <div class="steps-title">¿Cómo seguimos?</div>
       <div class="steps-sub">Del sí a la salida hacia Estados Unidos, paso a paso</div>
-      <div class="steps-list">
-        <div class="step-item"><div class="step-num">1</div><div class="step-title">Eliges tu opción</div><div class="step-desc">Nos confirmas el colegio que más encaja de los propuestos.</div></div>
-        <div class="step-item"><div class="step-num">2</div><div class="step-title">Firma y reserva</div><div class="step-desc">Firma del contrato y primer pago. Se bloquea la plaza.</div></div>
-        <div class="step-item"><div class="step-num">3</div><div class="step-title">Matrícula y familia</div><div class="step-desc">Gestionamos la matrícula en el centro elegido y la búsqueda de familia anfitriona.</div></div>
-        <div class="step-item"><div class="step-num">4</div><div class="step-title">Visado y vuelos</div><div class="step-desc">Tramitamos el I-20 y el visado F-1, y reservamos los vuelos.</div></div>
+      <div class="steps-list steps-5">
+        <div class="step-item"><div class="step-num">1</div><div class="step-title">Entrevista</div><div class="step-desc">Reunión con los padres y entrevista personal con el estudiante para conocerle y resolver dudas.</div></div>
+        <div class="step-item"><div class="step-num">2</div><div class="step-title">Firma y reserva</div><div class="step-desc">Elegís colegio, se firma el contrato y se paga la reserva. Cuanto antes, más opciones de plaza.</div></div>
+        <div class="step-item"><div class="step-num">3</div><div class="step-title">Solicitud y documentación</div><div class="step-desc">Rellenamos juntos la solicitud y recopilamos la documentación que pide el colegio.</div></div>
+        <div class="step-item"><div class="step-num">4</div><div class="step-title">I-20 y visado</div><div class="step-desc">El colegio emite el I-20 y tramitamos el visado F-1 y la cita en la Embajada.</div></div>
+        <div class="step-item"><div class="step-num">5</div><div class="step-title">Familia y salida</div><div class="step-desc">Se confirma la familia anfitriona y se reservan los vuelos hacia el destino.</div></div>
       </div>
-      <div class="cta-line">¿Dudas con alguna de las opciones? Tu asesora las resuelve contigo.</div>
+      <div class="cta-line">¿Dudas sobre el programa o los requisitos? Tu asesora las resuelve contigo.</div>
       <div class="pasos-cta-wrap">
-        <a class="pasos-cta" href="mailto:aescobar@mylanguagequest.com,gespinoza@mylanguagequest.com?subject=Confirmaci%C3%B3n%20de%20opci%C3%B3n%20%C2%B7%20Anik%20%C2%B7%20Estados%20Unidos%202027%2F28&amp;body=Hola%2C%0A%0AHemos%20revisado%20la%20propuesta%20de%20Estados%20Unidos%20para%20Anik%20y%20queremos%20confirmar%20la%20siguiente%20opci%C3%B3n%3A%0A%0AOpci%C3%B3n%20elegida%3A%20%0A%0AGracias.">🇺🇸 Confirmar mi opción</a>
+        <a class="pasos-cta" href="mailto:aescobar@mylanguagequest.com,gespinoza@mylanguagequest.com?subject=Confirmaci%C3%B3n%20Programa%20F-1%20%C2%B7%20Anik%20%C2%B7%20EE.UU.%202027%2F28&amp;body=Hola%2C%0A%0AHemos%20revisado%20la%20propuesta%20del%20Programa%20F-1%20para%20Anik%20y%20queremos%20continuar.%0A%0AColegio%20elegido%3A%20%0A%0ADudas%20o%20comentarios%3A%20%0A%0AGracias.">🇺🇸 Confirmar mi colegio</a>
         <a class="pasos-cta pasos-cta-alt" href="https://asesoramientosmlq.zohobookings.eu/mylanguagequest" target="_blank" rel="noopener">📅 Agendar llamada con mi asesora</a>
       </div>
     </div>
@@ -800,15 +958,16 @@ details[open] summary{background:var(--red-light);border-bottom:1px solid var(--
 
 </div>
 
-<!-- ============ 12. FOOTER ============ -->
+<!-- ============ 14. FOOTER ============ -->
 <div class="footer">
   <div class="footer-logo">MY LANGUAGE QUEST</div>
   <div class="footer-tag">Explore · Learn · Grow</div>
   <div class="footer-meta">
-    Propuesta personalizada para Anik · Curso 2027/28<br>
+    Propuesta personalizada para Anik · Programa F-1 · Curso 2027/28<br>
     Precios orientativos sujetos a disponibilidad de plaza y a confirmación del centro escolar.
   </div>
 </div>
+
 
 <script>
 (function(){
@@ -999,7 +1158,6 @@ details[open] summary{background:var(--red-light);border-bottom:1px solid var(--
   });
 })();
 </script>
-
-<!-- build: 2026-09-24 14:31 UTC -->
+<!-- build: 2026-09-24 14:37 UTC -->
 </body>
 </html>
