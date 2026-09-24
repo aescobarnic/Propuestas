@@ -499,6 +499,26 @@ details[open] summary{background:var(--red-light);border-bottom:1px solid var(--
 .hero-name{font-size:44px;}
 @media(max-width:700px){.hero-name{font-size:32px;}}
 
+
+.gal{padding:0 14px 12px;}
+.gal-strip{display:grid;grid-template-columns:repeat(3,1fr);gap:6px;}
+.gal-thumb{position:relative;width:100%;aspect-ratio:4/3;border-radius:8px;overflow:hidden;background:var(--gray-border);cursor:pointer;border:none;padding:0;display:block;}
+.gal-thumb img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .35s ease,filter .25s ease;}
+.gal-thumb:hover img{transform:scale(1.07);filter:brightness(1.05);}
+.gal-thumb::after{content:'';position:absolute;inset:0;box-shadow:inset 0 0 0 1px rgba(0,0,0,.08);border-radius:8px;}
+.gal-more{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;background:rgba(0,31,64,.62);color:#fff;font-family:'Josefin Sans',sans-serif;font-size:15px;font-weight:700;letter-spacing:.5px;}
+.gal-cap{font-size:10.5px;color:var(--text-soft);margin-top:7px;letter-spacing:.3px;}
+.lb{position:fixed;inset:0;z-index:9999;background:rgba(6,14,24,.94);display:none;align-items:center;justify-content:center;padding:24px;}
+.lb.open{display:flex;}
+.lb-img{max-width:min(1100px,92vw);max-height:78vh;border-radius:10px;box-shadow:0 24px 70px rgba(0,0,0,.6);object-fit:contain;}
+.lb-cap{position:absolute;bottom:26px;left:0;right:0;text-align:center;color:rgba(255,255,255,.8);font-size:13px;padding:0 24px;}
+.lb-count{position:absolute;top:26px;left:0;right:0;text-align:center;color:rgba(255,255,255,.45);font-size:11px;letter-spacing:2px;}
+.lb-btn{position:absolute;background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.22);color:#fff;width:46px;height:46px;border-radius:50%;font-size:20px;line-height:1;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:background .2s;}
+.lb-btn:hover{background:rgba(255,255,255,.22);}
+.lb-prev{left:18px;top:50%;transform:translateY(-50%);}
+.lb-next{right:18px;top:50%;transform:translateY(-50%);}
+.lb-close{top:18px;right:18px;}
+@media(max-width:700px){.lb-img{max-height:64vh;}.lb-btn{width:40px;height:40px;font-size:17px;}}
 </style>
 </head>
 <body>
@@ -625,9 +645,10 @@ details[open] summary{background:var(--red-light);border-bottom:1px solid var(--
       </div>
       <div class="opcion-body"><div class="colegios">
         <div class="colegio">
-          <div class="colegio-top"><div class="colegio-nombre">Morgan High School</div><div class="colegio-meta"><span class="tag pub">Público</span><span class="tag info">Grade 10–12</span><span class="tag info">~1.100 alumnos</span><span class="tag info">Clase media 28</span></div></div>
+          <div class="colegio-top"><div class="colegio-nombre">Morgan High School</div><div class="colegio-meta"><span class="tag pub">Público</span><span class="tag info">Grade 10–12</span><span class="tag info">~1.100 alumnos</span><span class="tag info">Clase media 28</span></div>
+          <div class="gal" data-gal-wrap="morgan"><div class="gal-strip"><button class="gal-thumb" data-gal="morgan" data-idx="0" type="button"><img src="img/colegios/morgan-1.jpg" alt="El instituto y el valle de Morgan" loading="lazy" onerror="galFail(this)"></button><button class="gal-thumb" data-gal="morgan" data-idx="1" type="button"><img src="img/colegios/morgan-2.jpg" alt="Banda y artes escénicas" loading="lazy" onerror="galFail(this)"></button><button class="gal-thumb" data-gal="morgan" data-idx="2" type="button"><img src="img/colegios/morgan-3.jpg" alt="Vida del campus" loading="lazy" onerror="galFail(this)"><span class="gal-more">+2</span></button></div><div class="gal-cap">Pulsa para ampliar · 5 fotografías</div></div></div>
           <details open><summary>Por qué encaja con Anik</summary><div class="colegio-razon">Una comunidad de montaña pequeña y muy unida, con un instituto que da mucho más de lo que su tamaño haría esperar. Para Anik el atractivo está en las artes: <strong>jazz band, banda sinfónica, orquesta Intermezzo, coro de cámara Ovation y coro pop</strong>, más producciones teatrales y musicales, técnica de escena e interpretación para teatro y para cámara. En plástica hay pintura acrílica, cerámica, caligrafía, dibujo, grabado, escultura, fotografía digital y el portfolio de AP Studio Art, que encaja con alguien que sacó un 10 en arte el año pasado.<br><br>En lo académico, AP de Lengua y Literatura, Cálculo, Biología, Química, Física e Historia Europea, con programa STEM. Entre las actividades, robótica, National Honor Society y consejo de estudiantes. Deporte hay de sobra por si algún día le apetece probar, desde fútbol y natación hasta atletismo y tenis, pero no es obligatorio en absoluto.<br><br>Salt Lake City queda a 72 km. Es la opción más económica de las cuatro.</div></details>
-          <div class="colegio-acciones"><a class="colegio-web" href="https://mhs.morgansd.org/" target="_blank" rel="noopener">🔗 Web del colegio</a></div>
+          <div class="colegio-acciones"><a class="colegio-web" href="https://www.morgansd.org/" target="_blank" rel="noopener">🔗 Web del colegio</a></div>
         </div>
         <div class="nota-colegio">ℹ️ Solo año escolar completo. El plazo de admisión cierra el 1 de junio.</div>
       </div></div>
@@ -643,9 +664,10 @@ details[open] summary{background:var(--red-light);border-bottom:1px solid var(--
       </div>
       <div class="opcion-body"><div class="colegios">
         <div class="colegio">
-          <div class="colegio-top"><div class="colegio-nombre">Bonneville High School</div><div class="colegio-meta"><span class="tag pub">Público</span><span class="tag info">Grade 9–12</span><span class="tag info">~1.100 alumnos</span><span class="tag info">Clase media 25</span></div></div>
+          <div class="colegio-top"><div class="colegio-nombre">Bonneville High School</div><div class="colegio-meta"><span class="tag pub">Público</span><span class="tag info">Grade 9–12</span><span class="tag info">~1.100 alumnos</span><span class="tag info">Clase media 25</span></div>
+          <div class="gal" data-gal-wrap="bonneville"><div class="gal-strip"><button class="gal-thumb" data-gal="bonneville" data-idx="0" type="button"><img src="img/colegios/bonneville-1.jpg" alt="El campus de Bonneville" loading="lazy" onerror="galFail(this)"></button><button class="gal-thumb" data-gal="bonneville" data-idx="1" type="button"><img src="img/colegios/bonneville-2.jpg" alt="Deporte escolar" loading="lazy" onerror="galFail(this)"></button><button class="gal-thumb" data-gal="bonneville" data-idx="2" type="button"><img src="img/colegios/bonneville-3.jpg" alt="Idaho Falls y el río Snake" loading="lazy" onerror="galFail(this)"><span class="gal-more">+2</span></button></div><div class="gal-cap">Pulsa para ampliar · 5 fotografías</div></div></div>
           <details open><summary>Por qué encaja con Anik</summary><div class="colegio-razon">La experiencia clásica del instituto americano, la de las películas: partido de fútbol americano el viernes por la noche, voleibol, fútbol, baloncesto, lucha, béisbol, sóftbol, tenis y atletismo, con el equipo de animación todo el año. Para quien quiere vivir el ambiente estadounidense de verdad, es el que más lo da.<br><br>En lo académico, <strong>quince asignaturas AP</strong>: Cálculo AB y BC, Física 1 y 2, Química, Biología, Estadística, Lengua y Literatura, Historia de Estados Unidos, Historia Mundial, Gobierno Comparado, Español 5 y Dibujo. En artes, desarrollo vocal, coro, historia del arte, dibujo, pintura, arte y diseño 3D, cerámica, fotografía digital, banda, guitarra, interpretación, teatro, dirección y escenografía. Hay anuario y periódico escolar, The Bonneville Buzz, que puede encajar con alguien a quien le gusta contar y expresarse.<br><br>Idaho Falls está junto al río Snake, con museo y zoo, y a un par de horas de Yellowstone. Es el único de los cuatro que admite también entrada por semestre y por trimestre.</div></details>
-          <div class="colegio-acciones"><a class="colegio-web" href="https://www.bonnevillebees.com/" target="_blank" rel="noopener">🔗 Web del colegio</a></div>
+          <div class="colegio-acciones"><a class="colegio-web" href="https://bonnevillebees.com/" target="_blank" rel="noopener">🔗 Web del colegio</a></div>
         </div>
         <div class="nota-colegio">ℹ️ Año completo, semestre o trimestre. Hay que llegar dentro de los 10 días siguientes al inicio del curso. El centro cobra aparte tasas de matrícula, libros, uniforme deportivo y exámenes AP.</div>
       </div></div>
@@ -661,7 +683,8 @@ details[open] summary{background:var(--red-light);border-bottom:1px solid var(--
       </div>
       <div class="opcion-body"><div class="colegios">
         <div class="colegio">
-          <div class="colegio-top"><div class="colegio-nombre">Dominion Academy of Dayton</div><div class="colegio-meta"><span class="tag pub">Privado</span><span class="tag info">Grade 9–11</span><span class="tag info">~125 alumnos</span><span class="tag info">Uniforme</span></div></div>
+          <div class="colegio-top"><div class="colegio-nombre">Dominion Academy of Dayton</div><div class="colegio-meta"><span class="tag pub">Privado</span><span class="tag info">Grade 9–11</span><span class="tag info">~125 alumnos</span><span class="tag info">Uniforme</span></div>
+          <div class="gal" data-gal-wrap="dominion"><div class="gal-strip"><button class="gal-thumb" data-gal="dominion" data-idx="0" type="button"><img src="img/colegios/dominion-1.jpg" alt="El edificio de Dominion Academy" loading="lazy" onerror="galFail(this)"></button><button class="gal-thumb" data-gal="dominion" data-idx="1" type="button"><img src="img/colegios/dominion-2.jpg" alt="Aulas y grupos reducidos" loading="lazy" onerror="galFail(this)"></button><button class="gal-thumb" data-gal="dominion" data-idx="2" type="button"><img src="img/colegios/dominion-3.jpg" alt="Teatro y artes" loading="lazy" onerror="galFail(this)"><span class="gal-more">+1</span></button></div><div class="gal-cap">Pulsa para ampliar · 4 fotografías</div></div></div>
           <details open><summary>Por qué encaja con Anik</summary><div class="colegio-razon">Es el centro más pequeño de los cuatro, con unos 125 alumnos en total, y ese es exactamente su argumento: aquí los profesores conocen a cada estudiante por su nombre y nadie pasa desapercibido. Para una chica a la que le cuesta encontrar su sitio en grupos grandes y que necesita que la vean, un entorno de este tamaño juega a favor.<br><br>Académicamente es un college prep exigente, con programa STEM propio y asignaturas AP. La parte artística tiene peso real: historia y teoría del arte, artes visuales, coro, teatro y danza, con un <strong>programa de teatro shakespeariano</strong> que es su seña de identidad. Hay National Honor Society, gobierno estudiantil y voluntariado comunitario. En deporte, campo a través, fútbol, voleibol, baloncesto, animación y atletismo.<br><br>Es un colegio cristiano y con uniforme, dos cosas que conviene comentar con Anik antes de decidir.</div></details>
           <div class="colegio-acciones"><a class="colegio-web" href="https://www.dominionacademy.org/" target="_blank" rel="noopener">🔗 Web del colegio</a></div>
         </div>
@@ -679,7 +702,8 @@ details[open] summary{background:var(--red-light);border-bottom:1px solid var(--
       </div>
       <div class="opcion-body"><div class="colegios">
         <div class="colegio">
-          <div class="colegio-top"><div class="colegio-nombre">Higley Unified School District</div><div class="colegio-meta"><span class="tag pub">Público</span><span class="tag info">Grade 10–12</span><span class="tag info">~2.000 por campus</span><span class="tag info">Clase media 22</span></div></div>
+          <div class="colegio-top"><div class="colegio-nombre">Higley Unified School District</div><div class="colegio-meta"><span class="tag pub">Público</span><span class="tag info">Grade 10–12</span><span class="tag info">~2.000 por campus</span><span class="tag info">Clase media 22</span></div>
+          <div class="gal" data-gal-wrap="higley"><div class="gal-strip"><button class="gal-thumb" data-gal="higley" data-idx="0" type="button"><img src="img/colegios/higley-1.jpg" alt="Uno de los campus del distrito" loading="lazy" onerror="galFail(this)"></button><button class="gal-thumb" data-gal="higley" data-idx="1" type="button"><img src="img/colegios/higley-2.jpg" alt="Artes escénicas y música" loading="lazy" onerror="galFail(this)"></button><button class="gal-thumb" data-gal="higley" data-idx="2" type="button"><img src="img/colegios/higley-3.jpg" alt="Gilbert, Arizona" loading="lazy" onerror="galFail(this)"><span class="gal-more">+2</span></button></div><div class="gal-cap">Pulsa para ampliar · 5 fotografías</div></div></div>
           <details open><summary>Por qué encaja con Anik</summary><div class="colegio-razon">Sol casi todo el año, extrarradio de Phoenix y un distrito público de primer nivel, con la <strong>máxima calificación del Departamento de Educación de Arizona</strong>. Pese a ser público tiene clases de unos 22 alumnos, por debajo de lo habitual en Estados Unidos.<br><br>La oferta artística es la más amplia de la propuesta: <strong>coro de concierto, coro de cámara, conjunto vocal, compañía de danza con niveles avanzado y de élite, banda de concierto, banda sinfónica, big band de jazz, orquesta de cuerda, percusión, marching band y AP Teoría de la Música</strong>, además de historia del arte. Para alguien que aprende piano sola con vídeos de YouTube, aquí encontraría por fin un contexto donde desarrollarlo en serio.<br><br>La lista de AP es larguísima, desde Física C Mecánica y Electromagnetismo hasta Chino, Francés y Literatura Española. Hay ROTC y es el único centro donde se puede graduar en un solo año.<br><br>El año completo se va por encima del presupuesto de referencia; un semestre entra sin problema.</div></details>
           <div class="colegio-acciones"><a class="colegio-web" href="https://www.husd.org/" target="_blank" rel="noopener">🔗 Web del colegio</a></div>
         </div>
@@ -1182,6 +1206,56 @@ details[open] summary{background:var(--red-light);border-bottom:1px solid var(--
 
 
 
-<!-- build: 2026-09-24 16:38 UTC -->
+
+
+<div class="lb" id="lb" role="dialog" aria-modal="true" aria-label="Visor de fotografías">
+  <div class="lb-count" id="lbCount"></div>
+  <img class="lb-img" id="lbImg" alt="">
+  <div class="lb-cap" id="lbCap"></div>
+  <button class="lb-btn lb-prev" id="lbPrev" aria-label="Anterior">&#10094;</button>
+  <button class="lb-btn lb-next" id="lbNext" aria-label="Siguiente">&#10095;</button>
+  <button class="lb-btn lb-close" id="lbClose" aria-label="Cerrar">&#10005;</button>
+</div>
+<script>
+var GAL = {
+  morgan:   {n:5, t:'Morgan High School · Morgan, Utah'},
+  bonneville:{n:5, t:'Bonneville High School · Idaho Falls, Idaho'},
+  dominion: {n:4, t:'Dominion Academy of Dayton · Dayton, Ohio'},
+  higley:   {n:5, t:'Higley Unified School District · Gilbert, Arizona'}
+};
+function galFail(img){
+  var b=img.closest('.gal-thumb'); if(b) b.style.display='none';
+  var w=img.closest('.gal'); 
+  if(w && !w.querySelector('.gal-thumb:not([style*="none"])')) w.style.display='none';
+}
+(function(){
+  var lb=document.getElementById('lb'), im=document.getElementById('lbImg'),
+      cap=document.getElementById('lbCap'), cnt=document.getElementById('lbCount');
+  var cur=null, idx=0;
+  function show(){
+    var g=GAL[cur]; if(!g) return;
+    im.src='img/colegios/'+cur+'-'+(idx+1)+'.jpg';
+    cap.textContent=g.t; cnt.textContent=(idx+1)+' / '+g.n;
+  }
+  function open(k,i){ cur=k; idx=i; show(); lb.classList.add('open'); document.body.style.overflow='hidden'; }
+  function close(){ lb.classList.remove('open'); document.body.style.overflow=''; }
+  function step(d){ var g=GAL[cur]; if(!g) return; idx=(idx+d+g.n)%g.n; show(); }
+  document.querySelectorAll('.gal-thumb').forEach(function(b){
+    b.addEventListener('click',function(){ open(b.dataset.gal, parseInt(b.dataset.idx,10)); });
+  });
+  document.getElementById('lbPrev').addEventListener('click',function(e){e.stopPropagation();step(-1);});
+  document.getElementById('lbNext').addEventListener('click',function(e){e.stopPropagation();step(1);});
+  document.getElementById('lbClose').addEventListener('click',close);
+  lb.addEventListener('click',function(e){ if(e.target===lb) close(); });
+  document.addEventListener('keydown',function(e){
+    if(!lb.classList.contains('open')) return;
+    if(e.key==='Escape') close();
+    if(e.key==='ArrowLeft') step(-1);
+    if(e.key==='ArrowRight') step(1);
+  });
+  im.addEventListener('error',function(){ close(); });
+})();
+</script>
+<!-- build: 2026-09-24 16:49 UTC -->
 </body>
 </html>
