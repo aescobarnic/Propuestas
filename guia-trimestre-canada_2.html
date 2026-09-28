@@ -1,0 +1,589 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<script>document.documentElement.className+=" js-anim";</script>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Guía de Trimestre Escolar · Canadá · My Language Quest</title>
+<link href="https://fonts.googleapis.com/css2?family=Fira+Sans:wght@300;400;500;600;700&family=Josefin+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --blue:#003366;--blue-dark:#001f40;--blue-mid:#0a4a8a;--blue-light:#dce8f5;
+  --red:#B12900;--red-dark:#8A1F00;--red-light:#fdf0ec;--red-deep:#6E1600;
+  --green:#4C9E0C;--green-dark:#3A7A09;--green-light:#eef8e3;--green-bright:#7dd44a;
+  --gray-bg:#f1f3f7;--gray-card:#f8fafc;--gray-border:#dfe4ec;
+  --text:#0d1b2a;--text-mid:#3d4f62;--text-light:#7a8a9b;--white:#ffffff;
+}
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box;}
+body{font-family:'Fira Sans',sans-serif;background:var(--gray-bg);color:var(--text);}
+
+/* HEADER */
+.header{background:var(--white);padding:16px 48px;display:flex;align-items:center;justify-content:space-between;gap:16px;box-shadow:0 1px 0 var(--gray-border),0 4px 24px rgba(0,51,102,0.07);position:relative;z-index:10;}
+.header::after{content:'';position:absolute;bottom:0;left:0;right:0;height:4px;background:linear-gradient(90deg,var(--red) 0%,var(--red) 20%,var(--green) 20%,var(--green) 40%,var(--blue) 40%,var(--blue) 60%,var(--green) 60%,var(--green) 80%,var(--red) 80%,var(--red) 100%);}
+.logo-area img{height:46px;width:auto;display:block;}
+.header-right{text-align:right;}
+.header-label{font-family:'Josefin Sans',sans-serif;font-size:9px;letter-spacing:3px;text-transform:uppercase;color:var(--text-light);}
+.header-brand{font-family:'Josefin Sans',sans-serif;font-size:22px;font-weight:700;color:var(--blue);line-height:1.1;margin-top:2px;}
+
+/* HERO */
+.hero{background:linear-gradient(135deg,var(--blue-dark) 0%,var(--blue) 55%,var(--blue-mid) 100%);position:relative;overflow:hidden;padding:44px 48px 40px;}
+.hero::after{content:'🍁';position:absolute;right:3%;top:50%;transform:translateY(-50%) rotate(-8deg);font-size:200px;line-height:1;opacity:0.10;pointer-events:none;z-index:1;}
+.hero::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 70% 110% at 100% 40%,rgba(255,255,255,0.12) 0%,transparent 60%),radial-gradient(ellipse 60% 80% at -10% 90%,rgba(0,31,64,0.30) 0%,transparent 60%);}
+.hero-dots{position:absolute;inset:0;pointer-events:none;background-image:radial-gradient(rgba(255,255,255,0.07) 1px,transparent 1px);background-size:28px 28px;}
+.hero-inner{position:relative;z-index:2;max-width:1140px;margin:0 auto;}
+.hero-tag{display:inline-flex;align-items:center;gap:6px;background:rgba(255,255,255,0.1);border:1px solid rgba(255,255,255,0.2);border-radius:20px;padding:5px 14px;font-size:10px;font-weight:600;letter-spacing:2.5px;text-transform:uppercase;color:rgba(255,255,255,0.75);margin-bottom:14px;}
+.hero-tag::before{content:'🍁';font-size:11px;}
+.hero-name{font-family:'Josefin Sans',sans-serif;font-size:40px;font-weight:700;color:var(--white);line-height:1.05;margin-bottom:10px;}
+.hero-subtitle{font-size:14px;color:rgba(255,255,255,0.62);font-weight:300;line-height:1.7;max-width:720px;}
+.hero-pills{display:flex;flex-wrap:wrap;gap:8px;margin-top:22px;}
+.hero-pill{display:flex;align-items:center;gap:6px;background:rgba(255,255,255,0.1);border:1px solid rgba(255,255,255,0.18);border-radius:8px;padding:7px 13px;font-size:11.5px;color:var(--white);font-weight:500;}
+.hero-pill.money{background:rgba(125,212,74,0.16);border-color:rgba(125,212,74,0.45);color:#d8f5bd;font-weight:600;}
+
+/* LAYOUT */
+.main{max-width:1140px;margin:0 auto;padding:40px 24px 20px;}
+.section-title{display:flex;align-items:center;gap:12px;margin:46px 0 22px;}
+.section-title:first-of-type{margin-top:0;}
+.section-title h2{font-family:'Josefin Sans',sans-serif;font-size:11px;font-weight:700;letter-spacing:3px;text-transform:uppercase;color:var(--blue);white-space:nowrap;}
+.section-title::before{content:'';width:22px;height:3px;border-radius:3px;background:var(--red);flex-shrink:0;}
+.section-title::after{content:'';flex:1;height:1px;background:var(--gray-border);}
+
+.intro-text{font-size:14px;color:var(--text-mid);line-height:1.8;max-width:900px;margin-bottom:20px;}
+.intro-text strong{color:var(--blue);font-weight:600;}
+.intro-text + .intro-text{margin-top:-6px;}
+.intro-points{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-top:20px;}
+.intro-point{background:var(--white);border:1.5px solid var(--gray-border);border-radius:12px;padding:18px;}
+.intro-point-icon{font-size:22px;margin-bottom:8px;}
+.intro-point-title{font-family:'Josefin Sans',sans-serif;font-size:13px;font-weight:700;color:var(--blue);margin-bottom:5px;}
+.intro-point-desc{font-size:12px;color:var(--text-mid);line-height:1.6;}
+
+/* PRECIO */
+.price-wrap{background:var(--white);border-radius:16px;border:1.5px solid var(--gray-border);box-shadow:0 2px 16px rgba(0,51,102,0.06);overflow:hidden;}
+.price-head{background:linear-gradient(135deg,var(--blue-dark),var(--blue));padding:22px 32px;display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap;}
+.price-head-title{font-family:'Josefin Sans',sans-serif;font-size:16px;font-weight:700;color:var(--white);margin-bottom:3px;}
+.price-head-sub{font-size:11.5px;color:rgba(255,255,255,0.5);}
+.price-badge{background:rgba(125,212,74,0.2);border:1px solid rgba(125,212,74,0.4);color:var(--green-bright);font-family:'Josefin Sans',sans-serif;font-size:11px;font-weight:700;letter-spacing:1px;padding:6px 14px;border-radius:20px;white-space:nowrap;}
+.price-body{padding:28px 32px;display:grid;grid-template-columns:auto 1fr;gap:28px;align-items:center;}
+.price-main{text-align:center;border-right:1.5px solid var(--gray-border);padding-right:28px;}
+.price-label{font-size:9px;font-weight:700;letter-spacing:2.5px;text-transform:uppercase;color:var(--text-light);margin-bottom:6px;}
+.price-value{font-family:'Josefin Sans',sans-serif;font-size:44px;font-weight:700;color:var(--blue);line-height:1;}
+.price-unit{font-size:11.5px;color:var(--text-light);margin-top:6px;}
+.price-notes{list-style:none;display:flex;flex-direction:column;gap:9px;}
+.price-notes li{font-size:12.5px;color:var(--text-mid);display:flex;gap:9px;align-items:flex-start;line-height:1.6;}
+.price-notes li::before{content:'›';color:var(--red);font-weight:700;flex-shrink:0;}
+.price-notes li strong{color:var(--text);}
+
+/* UBICACIONES */
+.zonas-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:18px;}
+.zona-card{background:var(--white);border-radius:16px;border:1.5px solid var(--gray-border);overflow:hidden;box-shadow:0 2px 16px rgba(0,51,102,0.06);transition:transform .3s cubic-bezier(.22,.61,.36,1),box-shadow .3s ease,border-color .3s ease;}
+.zona-card:hover{transform:translateY(-4px);box-shadow:0 12px 34px rgba(0,51,102,0.14);border-color:var(--blue-mid);}
+.zona-header{background:linear-gradient(135deg,var(--blue-dark) 0%,var(--blue) 100%);padding:18px 22px 16px;position:relative;overflow:hidden;}
+.zona-header::after{content:'🍁';position:absolute;right:-6px;bottom:-20px;font-size:76px;opacity:0.09;line-height:1;color:#fff;}
+.zona-header > *{position:relative;z-index:2;}
+.zona-estado{font-family:'Josefin Sans',sans-serif;font-size:9px;letter-spacing:3px;text-transform:uppercase;color:rgba(255,255,255,0.45);margin-bottom:6px;}
+.zona-nombre{font-family:'Josefin Sans',sans-serif;font-size:19px;font-weight:700;color:var(--white);margin-bottom:6px;}
+.zona-plazas{display:inline-flex;align-items:center;gap:5px;background:rgba(255,255,255,0.12);border:1px solid rgba(255,255,255,0.2);border-radius:7px;padding:4px 10px;font-size:10.5px;color:#fff;font-weight:600;}
+.zona-body{padding:18px 22px 20px;}
+.zona-desc{font-size:12.5px;color:var(--text-mid);line-height:1.7;margin-bottom:14px;}
+.zona-tags{display:flex;flex-wrap:wrap;gap:6px;}
+.zona-tag{display:flex;align-items:center;gap:4px;font-size:10px;font-weight:600;color:var(--blue);background:var(--blue-light);border:1px solid rgba(0,51,102,0.15);border-radius:20px;padding:3px 10px;}
+
+/* INFO BLOCKS */
+.info-blocks{display:grid;grid-template-columns:1fr 1fr;gap:20px;}
+.info-block{background:var(--white);border-radius:16px;border:1.5px solid var(--gray-border);padding:24px 26px;box-shadow:0 2px 16px rgba(0,51,102,0.05);}
+.info-block-icon{font-size:24px;margin-bottom:10px;}
+.info-block-title{font-family:'Josefin Sans',sans-serif;font-size:14px;font-weight:700;color:var(--blue);margin-bottom:10px;}
+.info-block-text{font-size:12.5px;color:var(--text-mid);line-height:1.7;}
+.info-block-text strong{color:var(--text);}
+.info-block ul{margin-top:10px;padding-left:0;list-style:none;}
+.info-block ul li{font-size:12px;color:var(--text-mid);display:flex;gap:8px;align-items:flex-start;margin-bottom:7px;line-height:1.55;}
+.info-block ul li::before{content:'✓';color:var(--green);font-weight:700;flex-shrink:0;}
+.info-block ul.no li::before{content:'✗';color:var(--red);}
+
+/* INCLUDES */
+.includes-wrap{background:var(--white);border-radius:16px;border:1.5px solid var(--gray-border);box-shadow:0 2px 16px rgba(0,51,102,0.05);overflow:hidden;}
+.includes-head{background:linear-gradient(135deg,var(--blue-dark),var(--blue));padding:20px 32px;}
+.includes-head h3{font-family:'Josefin Sans',sans-serif;font-size:14px;font-weight:700;color:var(--white);letter-spacing:1px;}
+.includes-body{padding:28px 32px;}
+.includes-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:32px;}
+.col-title{font-family:'Josefin Sans',sans-serif;font-size:9px;font-weight:700;letter-spacing:2.5px;text-transform:uppercase;color:var(--red);margin-bottom:14px;padding-bottom:8px;border-bottom:2px solid var(--red-light);}
+.inc-list{list-style:none;display:flex;flex-direction:column;gap:8px;}
+.inc-list li{font-size:12px;color:var(--text-mid);display:flex;align-items:flex-start;gap:8px;line-height:1.55;}
+.inc-list li::before{content:'✓';color:var(--green);font-weight:700;font-size:11px;flex-shrink:0;margin-top:1px;}
+.inc-list.no li::before{content:'✗';color:var(--red);}
+.inc-list li small{font-size:10px;color:var(--text-light);display:block;margin-top:2px;}
+
+/* GESTOR */
+.gestor-wrap{background:linear-gradient(135deg,var(--blue-dark),var(--blue-mid));border-radius:12px;padding:20px 24px;margin-top:24px;}
+.gestor-title{font-family:'Josefin Sans',sans-serif;font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:rgba(255,255,255,0.6);margin-bottom:14px;}
+.gestor-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;}
+.gestor-item{background:rgba(255,255,255,0.08);border:1px solid rgba(255,255,255,0.12);border-radius:8px;padding:10px 12px;font-size:11px;color:rgba(255,255,255,0.85);line-height:1.4;}
+.gestor-item::before{content:'→';color:var(--green-bright);font-weight:700;margin-right:5px;}
+
+/* ALERT */
+.alert-box{display:flex;gap:12px;align-items:flex-start;background:#fff8ec;border:1.5px solid rgba(232,176,75,0.45);border-radius:12px;padding:14px 18px;margin-top:20px;}
+.alert-icon{font-size:20px;flex-shrink:0;}
+.alert-text{font-size:12px;color:#6b4a00;line-height:1.7;}
+.alert-text strong{color:#4a3300;}
+
+/* FINANCIACIÓN */
+.fin-grid{display:grid;grid-template-columns:1fr 1fr;gap:20px;}
+.fin-card{background:var(--white);border-radius:16px;border:1.5px solid var(--gray-border);padding:24px 26px;box-shadow:0 2px 16px rgba(0,51,102,0.05);}
+.fin-card.zero{border-color:rgba(76,158,12,0.45);background:linear-gradient(180deg,var(--green-light) 0%,var(--white) 55%);}
+.fin-card-icon{font-size:24px;margin-bottom:8px;}
+.fin-card-title{font-family:'Josefin Sans',sans-serif;font-size:16px;font-weight:700;color:var(--blue);margin-bottom:6px;}
+.fin-card-desc{font-size:12.5px;color:var(--text-mid);line-height:1.7;}
+.fin-nota{font-size:11px;color:var(--text-light);line-height:1.7;background:var(--gray-card);border-radius:8px;padding:12px 16px;border-left:3px solid var(--blue-light);margin-top:16px;}
+
+/* PASOS */
+.steps-wrap{background:linear-gradient(135deg,var(--blue-dark) 0%,var(--blue) 60%,var(--blue-mid) 100%);border-radius:16px;padding:34px 36px;position:relative;overflow:hidden;}
+.steps-wrap::before{content:'';position:absolute;inset:0;background-image:radial-gradient(rgba(255,255,255,0.05) 1px,transparent 1px);background-size:22px 22px;}
+.steps-inner{position:relative;z-index:2;}
+.steps-title{font-family:'Josefin Sans',sans-serif;font-size:18px;font-weight:700;color:var(--white);margin-bottom:6px;}
+.steps-sub{font-size:12px;color:rgba(255,255,255,0.5);margin-bottom:26px;}
+.steps-list{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;}
+.step-item{background:rgba(255,255,255,0.07);border:1px solid rgba(255,255,255,0.12);border-radius:12px;padding:18px;transition:transform .3s cubic-bezier(.22,.61,.36,1),background .3s ease;}
+.step-item:hover{transform:translateY(-4px);background:rgba(255,255,255,0.11);}
+.step-num{font-family:'Josefin Sans',sans-serif;font-size:20px;font-weight:700;color:var(--green-bright);margin-bottom:8px;}
+.step-title{font-size:13px;font-weight:600;color:var(--white);margin-bottom:4px;}
+.step-desc{font-size:11px;color:rgba(255,255,255,0.5);line-height:1.5;}
+.cta-line{margin-top:26px;text-align:center;font-size:12.5px;color:rgba(255,255,255,0.75);}
+.pasos-cta-wrap{text-align:center;margin-top:16px;display:flex;gap:12px;justify-content:center;flex-wrap:wrap;}
+.pasos-cta{display:inline-flex;align-items:center;gap:8px;background:var(--green-bright);color:var(--blue-dark);font-family:'Josefin Sans',sans-serif;font-size:13px;font-weight:700;padding:12px 26px;border-radius:10px;text-decoration:none;transition:transform .15s,box-shadow .15s;position:relative;overflow:hidden;}
+.pasos-cta:hover{transform:translateY(-2px);box-shadow:0 8px 20px rgba(125,212,74,0.35);}
+.pasos-cta-alt{background:rgba(255,255,255,0.12);color:var(--white);border:1.5px solid rgba(255,255,255,0.35);}
+.pasos-cta-alt:hover{box-shadow:0 8px 20px rgba(255,255,255,0.15);}
+.pasos-cta::after{content:'';position:absolute;top:0;left:-120%;width:60%;height:100%;background:linear-gradient(100deg,transparent,rgba(255,255,255,.55),transparent);transform:skewX(-18deg);}
+.pasos-cta:hover::after{animation:shine .85s ease;}
+@keyframes shine{to{left:140%;}}
+
+/* FOOTER */
+.footer{background:var(--blue-dark);padding:30px 48px;margin-top:56px;text-align:center;position:relative;}
+.footer::before{content:'';position:absolute;top:0;left:0;right:0;height:4px;background:linear-gradient(90deg,var(--red) 0%,var(--red) 20%,var(--green) 20%,var(--green) 40%,var(--white) 40%,var(--white) 60%,var(--green) 60%,var(--green) 80%,var(--red) 80%,var(--red) 100%);}
+.footer-logo{font-family:'Josefin Sans',sans-serif;font-size:15px;font-weight:700;color:var(--white);letter-spacing:1px;margin-bottom:6px;}
+.footer-tag{font-family:'Josefin Sans',sans-serif;font-size:10px;letter-spacing:4px;text-transform:uppercase;color:#9fd0ff;margin-bottom:14px;}
+.footer-meta{font-size:11px;color:rgba(255,255,255,0.4);line-height:1.7;}
+
+@media(max-width:980px){
+  .intro-points{grid-template-columns:repeat(2,1fr);}
+  .gestor-grid{grid-template-columns:repeat(2,1fr);}
+}
+@media(max-width:720px){
+  .header{padding:14px 20px;flex-direction:column;align-items:flex-start;gap:10px;}
+  .header-right{text-align:left;}
+  .hero{padding:28px 20px 26px;}.hero-name{font-size:28px;}
+  .main{padding:28px 16px 20px;}
+  .includes-grid{grid-template-columns:1fr;}
+  .intro-points{grid-template-columns:1fr;}.info-blocks{grid-template-columns:1fr;}
+  .fin-grid{grid-template-columns:1fr;}
+  .steps-list{grid-template-columns:1fr;}
+  .price-body{grid-template-columns:1fr;}
+  .price-main{border-right:none;border-bottom:1.5px solid var(--gray-border);padding-right:0;padding-bottom:20px;}
+  .footer{padding:26px 20px;}
+}
+
+/* ANIMACIONES */
+.js-anim .reveal{opacity:0;transform:translateY(20px);will-change:opacity,transform;transition:opacity .75s cubic-bezier(.22,.61,.36,1),transform .75s cubic-bezier(.22,.61,.36,1);}
+.js-anim .reveal.in{opacity:1;transform:none;}
+.js-anim .reveal-zoom{opacity:0;transform:scale(.975);transition:opacity .8s ease,transform .8s cubic-bezier(.22,.61,.36,1);}
+.js-anim .reveal-zoom.in{opacity:1;transform:none;}
+@keyframes heroUp{from{opacity:0;transform:translateY(16px);}to{opacity:1;transform:none;}}
+.js-anim .hero-tag{animation:heroUp .7s cubic-bezier(.22,.61,.36,1) .05s both;}
+.js-anim .hero-name{animation:heroUp .7s cubic-bezier(.22,.61,.36,1) .16s both;}
+.js-anim .hero-subtitle{animation:heroUp .7s cubic-bezier(.22,.61,.36,1) .26s both;}
+.js-anim .hero-pill{animation:heroUp .55s cubic-bezier(.22,.61,.36,1) both;}
+.progress-bar{position:fixed;top:0;left:0;height:3px;width:100%;transform:scaleX(0);transform-origin:0 50%;background:linear-gradient(90deg,var(--blue),var(--green-bright));z-index:999;transition:transform .1s linear;}
+@media(prefers-reduced-motion:reduce){
+  .js-anim .reveal,.js-anim .reveal-zoom{opacity:1!important;transform:none!important;transition:none!important;}
+  .js-anim .hero-tag,.js-anim .hero-name,.js-anim .hero-subtitle,.js-anim .hero-pill{animation:none!important;opacity:1;}
+  .progress-bar{display:none;}
+  *{transition-duration:.01ms!important;}
+}
+</style>
+</head>
+<body>
+
+<div class="header">
+  <div class="logo-area"><img src="https://aescobarnic.github.io/Propuestas/img/mlq-logo.png" alt="My Language Quest"></div>
+  <div class="header-right">
+    <div class="header-label">Guía informativa · Canadá</div>
+    <div class="header-brand">My Language Quest</div>
+  </div>
+</div>
+
+<div class="hero">
+  <div class="hero-dots"></div>
+  <div class="hero-inner">
+    <div class="hero-tag">Guía completa · Curso 2027/28</div>
+    <div class="hero-name">Trimestre Escolar en Canadá</div>
+    <div class="hero-subtitle">Un trimestre dentro del sistema público canadiense, con familia anfitriona y con los vuelos y el visado gestionados por MLQ. La inmersión del año escolar, en formato corto.</div>
+    <div class="hero-pills">
+      <div class="hero-pill money">💶 Desde 11.200 €</div>
+      <div class="hero-pill">🏫 Sistema público de distritos</div>
+      <div class="hero-pill">🏠 Familia anfitriona</div>
+      <div class="hero-pill">📍 6 distritos disponibles</div>
+      <div class="hero-pill">✈️ Vuelos incluidos hasta 1.000 €</div>
+    </div>
+  </div>
+</div>
+
+<div class="main">
+
+  <!-- 1. QUÉ ES -->
+  <div class="section-title"><h2>¿Qué es el trimestre escolar en Canadá?</h2></div>
+  <p class="intro-text">
+    El trimestre escolar en Canadá permite cursar <strong>un periodo escolar completo dentro del sistema público canadiense</strong>,
+    conviviendo con una familia anfitriona en régimen de pensión completa. El estudiante se incorpora a un instituto público como un alumno
+    más: mismas asignaturas, mismas evaluaciones y mismas actividades extraescolares que sus compañeros canadienses.
+  </p>
+  <p class="intro-text">
+    A diferencia de otros destinos, en Canadá la elección se hace por <strong>distrito escolar</strong>: cada distrito agrupa varios colegios
+    públicos y fija sus propias tarifas. Para el programa de trimestre trabajamos con una <strong>selección cerrada de distritos</strong>
+    —los que aceptan estancias de un solo periodo— y dentro del distrito elegido se pueden indicar los colegios preferidos. La plaza definitiva
+    la confirma el distrito según disponibilidad y curso del estudiante.
+  </p>
+  <div class="intro-points">
+    <div class="intro-point"><div class="intro-point-icon">🏫</div><div class="intro-point-title">Sistema de distritos</div><div class="intro-point-desc">Elegís distrito y podéis señalar colegios preferidos dentro de su red de centros públicos.</div></div>
+    <div class="intro-point"><div class="intro-point-icon">📅</div><div class="intro-point-title">Un trimestre completo</div><div class="intro-point-desc">Un periodo escolar canadiense íntegro, con boletín de notas oficial del centro.</div></div>
+    <div class="intro-point"><div class="intro-point-icon">🏠</div><div class="intro-point-title">Familia anfitriona</div><div class="intro-point-desc">Pensión completa, habitación individual o compartida y un único estudiante hispanohablante por familia.</div></div>
+    <div class="intro-point"><div class="intro-point-icon">✈️</div><div class="intro-point-title">Vuelos incluidos</div><div class="intro-point-desc">Ida y vuelta incluidos con un coste máximo reconocido de 1.000 €, gestionados por MLQ.</div></div>
+  </div>
+
+  <!-- 2. PRECIO -->
+  <div class="section-title"><h2>Precio del programa</h2></div>
+  <div class="price-wrap">
+    <div class="price-head">
+      <div>
+        <div class="price-head-title">💶 Trimestre escolar · Canadá</div>
+        <div class="price-head-sub">Curso 2027/28 · Sistema público · Familia anfitriona</div>
+      </div>
+    </div>
+    <div class="price-body">
+      <div class="price-main">
+        <div class="price-label">Desde</div>
+        <div class="price-value">11.200 €</div>
+        <div class="price-unit">/ trimestre escolar</div>
+      </div>
+      <ul class="price-notes">
+        <li><strong>Precio orientativo «desde».</strong> El importe final depende del distrito escolar elegido: cada distrito fija sus propias tarifas.</li>
+        <li><strong>Vuelos incluidos</strong> hasta un máximo de 1.000 €; el exceso corre a cargo de la familia.</li>
+        <li>Los distritos urbanos y de la costa oeste son los más altos; los de Ontario y el este resultan más asequibles con la misma calidad de enseñanza pública.</li>
+        <li>Tu asesora te confirmará el precio exacto una vez elegido el distrito.</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- 3. DISTRITOS -->
+  <div class="section-title"><h2>Distritos disponibles para trimestre</h2></div>
+  <p class="intro-text">
+    Estos son los distritos escolares con los que MLQ puede tramitar un trimestre en el curso 2027/28. Cada uno tiene su propia tarifa,
+    su calendario y su red de colegios públicos; dentro del distrito elegido podéis indicar los centros que más os interesen.
+  </p>
+  <div class="zonas-grid">
+
+    <div class="zona-card">
+      <div class="zona-header">
+        <div class="zona-estado">Ontario</div>
+        <div class="zona-nombre">Avon Maitland DSB</div>
+        <div class="zona-plazas">📍 Stratford · Goderich · Sur de Ontario</div>
+      </div>
+      <div class="zona-body">
+        <div class="zona-desc">Distrito del suroeste de Ontario, entre poblaciones medianas y entorno rural, a distancia cómoda de Toronto. Comunidades muy acogedoras, con muy poca presencia de estudiantes españoles y una vida de instituto muy participativa.</div>
+        <div class="zona-tags"><span class="zona-tag">Inmersión alta</span><span class="zona-tag">Entorno rural y ciudades medias</span><span class="zona-tag">Opción más económica</span></div>
+      </div>
+    </div>
+
+    <div class="zona-card">
+      <div class="zona-header">
+        <div class="zona-estado">Ontario</div>
+        <div class="zona-nombre">Upper Canada DSB</div>
+        <div class="zona-plazas">📍 Este de Ontario · Brockville · Cornwall</div>
+      </div>
+      <div class="zona-body">
+        <div class="zona-desc">Uno de los distritos más extensos de Ontario, en el corredor entre Ottawa, Kingston y Montreal, junto al río San Lorenzo. Institutos de tamaño contenido, mucho deporte escolar y acceso fácil a las grandes ciudades del este.</div>
+        <div class="zona-tags"><span class="zona-tag">Cerca de Ottawa y Montreal</span><span class="zona-tag">Institutos medianos</span><span class="zona-tag">Deporte escolar</span></div>
+      </div>
+    </div>
+
+    <div class="zona-card">
+      <div class="zona-header">
+        <div class="zona-estado">Quebec</div>
+        <div class="zona-nombre">Sir Wilfrid Laurier SB</div>
+        <div class="zona-plazas">📍 Laval · Laurentides · Área de Montreal</div>
+      </div>
+      <div class="zona-body">
+        <div class="zona-desc">Distrito de lengua inglesa en la provincia de Quebec, al norte de Montreal. Enseñanza en inglés en un entorno bilingüe inglés-francés: una oportunidad poco habitual de sumar contacto con el francés sin renunciar a la inmersión en inglés.</div>
+        <div class="zona-tags"><span class="zona-tag">Entorno bilingüe</span><span class="zona-tag">Área de Montreal</span><span class="zona-tag">Provincia de Quebec</span></div>
+      </div>
+    </div>
+
+    <div class="zona-card">
+      <div class="zona-header">
+        <div class="zona-estado">British Columbia</div>
+        <div class="zona-nombre">Saanich SD</div>
+        <div class="zona-plazas">📍 Isla de Vancouver · Área de Victoria</div>
+      </div>
+      <div class="zona-body">
+        <div class="zona-desc">En la isla de Vancouver, junto a Victoria: el clima más suave de todo Canadá, mar y naturaleza a la puerta del instituto y un distrito con mucha experiencia en estudiantes internacionales y muy buen nivel académico.</div>
+        <div class="zona-tags"><span class="zona-tag">Clima suave</span><span class="zona-tag">Mar y naturaleza</span><span class="zona-tag">Nivel académico alto</span></div>
+      </div>
+    </div>
+
+    <div class="zona-card">
+      <div class="zona-header">
+        <div class="zona-estado">British Columbia</div>
+        <div class="zona-nombre">Sea to Sky SD</div>
+        <div class="zona-plazas">📍 Squamish · Whistler</div>
+      </div>
+      <div class="zona-body">
+        <div class="zona-desc">Entre Vancouver y Whistler, en plena montaña. El destino natural para un perfil deportivo y de aire libre: esquí y snowboard en temporada, senderismo, escalada y deportes de montaña integrados en la vida escolar.</div>
+        <div class="zona-tags"><span class="zona-tag">Esquí y snowboard</span><span class="zona-tag">Deportes de montaña</span><span class="zona-tag">Cerca de Vancouver</span></div>
+      </div>
+    </div>
+
+    <div class="zona-card">
+      <div class="zona-header">
+        <div class="zona-estado">British Columbia</div>
+        <div class="zona-nombre">Surrey SD</div>
+        <div class="zona-plazas">📍 Gran Vancouver</div>
+      </div>
+      <div class="zona-body">
+        <div class="zona-desc">El mayor distrito escolar de British Columbia, dentro del área metropolitana de Vancouver. Enorme oferta de asignaturas optativas, programas académicos avanzados y extraescolares, en una zona urbana muy bien comunicada.</div>
+        <div class="zona-tags"><span class="zona-tag">Gran ciudad</span><span class="zona-tag">Máxima oferta de asignaturas</span><span class="zona-tag">Programas avanzados</span></div>
+      </div>
+    </div>
+
+  </div>
+  <div class="alert-box">
+    <div class="alert-icon">⏳</div>
+    <div class="alert-text"><strong>Plazas sujetas a disponibilidad del distrito.</strong> No todos los distritos canadienses admiten estancias de un solo trimestre, y los que lo hacen reservan un cupo reducido. Cuanto antes se confirme la inscripción, más margen hay para respetar tanto el distrito como los colegios preferidos.</div>
+  </div>
+
+  <!-- 4. VISADO Y VUELOS -->
+  <div class="section-title"><h2>Visado y vuelos</h2></div>
+  <div class="info-blocks">
+    <div class="info-block">
+      <div class="info-block-icon">🛂</div>
+      <div class="info-block-title">Autorización de viaje eTA</div>
+      <div class="info-block-text">Para una estancia de trimestre <strong>no es necesario tramitar el Study Permit</strong>: los ciudadanos españoles viajan a Canadá con la autorización <strong>eTA</strong>.
+        <ul>
+          <li><strong>eTA</strong> (Electronic Travel Authorisation) es el permiso electrónico obligatorio para entrar en Canadá por vía aérea</li>
+          <li>Se solicita en la web oficial del Gobierno de Canadá</li>
+          <li>Pensada para estancias cortas, sin permiso de estudios</li>
+          <li>MLQ os acompaña en la solicitud y revisa que todo esté correcto antes de la salida</li>
+        </ul>
+        <div class="op-nota" style="margin:12px 0 0;">ℹ️ Si por duración o por el distrito elegido fuera necesario un Study Permit, tu asesora os lo confirmará y MLQ se encarga de la tramitación.</div>
+      </div>
+    </div>
+    <div class="info-block">
+      <div class="info-block-icon">✈</div>
+      <div class="info-block-title">Vuelos — incluidos</div>
+      <div class="info-block-text">Los vuelos de ida y vuelta están incluidos, con un <strong>coste máximo reconocido de 1.000 €</strong>.
+        <ul>
+          <li>MLQ gestiona la búsqueda y la reserva de los vuelos</li>
+          <li>Ajustados a las fechas de inicio y fin del trimestre</li>
+        </ul>
+        <ul class="no">
+          <li>El exceso sobre 1.000 € corre a cargo de la familia</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <!-- 5. INCLUYE -->
+  <div class="section-title"><h2>El programa incluye</h2></div>
+  <div class="includes-wrap">
+    <div class="includes-head"><h3>📋 Todo lo que cubre My Language Quest · Trimestre en Canadá</h3></div>
+    <div class="includes-body">
+      <div class="includes-grid">
+        <div>
+          <div class="col-title">Antes del viaje</div>
+          <ul class="inc-list">
+            <li>Reunión inicial presencial, telefónica o por videoconferencia con padres o tutores</li>
+            <li>Prueba de inglés y entrevista personal online con el estudiante</li>
+            <li>Propuesta personalizada de distrito escolar</li>
+            <li>Inscripción y matriculación en centro público de educación secundaria en Canadá</li>
+            <li>Selección de familia anfitriona en pensión completa, habitación individual o compartida</li>
+            <li>Un único estudiante hispanohablante por familia garantizado</li>
+            <li>Seguro médico y de accidentes</li>
+            <li>Libros de algunas asignaturas</li>
+            <li>Acompañamiento en la solicitud de la autorización de viaje eTA <small>Si el caso requiriera Study Permit, MLQ se encarga de la tramitación</small></li>
+            <li>Vuelos de ida y vuelta <small>Coste máximo 1.000 €. Exceso a cargo de la familia</small></li>
+            <li>Orientación pre-viaje en Madrid o online</li>
+            <li>Welcome pack sorpresa de My Language Quest</li>
+          </ul>
+        </div>
+        <div>
+          <div class="col-title">Durante el viaje</div>
+          <ul class="inc-list">
+            <li>Recibimiento en aeropuerto y traslados en destino</li>
+            <li>Asesoramiento en la elección de asignaturas y cambio si fuera necesario</li>
+            <li>Clases de inglés Cambridge y libro incluido</li>
+            <li>Taller de 3 sesiones con el docente de MIT, Oscar Corominas</li>
+            <li>Supervisión local: visitas, tutorías y emergencias 24 h</li>
+            <li>Reportes periódicos del gestor estudiantil</li>
+            <li>Acompañamiento psicológico</li>
+            <li>Atención 24 horas en España para emergencias</li>
+            <li>Apoyo para la matriculación en actividades extraescolares</li>
+            <li>Gestión de cambio de familia si fuera necesario</li>
+          </ul>
+          <div class="col-title" style="margin-top:24px;">Después del viaje</div>
+          <ul class="inc-list">
+            <li>Recogida y validación de las notas del centro canadiense</li>
+            <li>Coordinación con el centro escolar de destino</li>
+            <li>Dossier final detallando la experiencia en Canadá</li>
+          </ul>
+        </div>
+        <div>
+          <div class="col-title">No incluido</div>
+          <ul class="inc-list no">
+            <li>Exceso de vuelos sobre 1.000 € (a cargo de la familia)</li>
+            <li>Actividades extracurriculares de pago: equipos deportivos con licencia, bandas, teatro</li>
+            <li>Excursiones y viajes escolares organizados por el colegio</li>
+            <li>Material escolar: cuadernos, calculadora, material de arte, uniforme deportivo</li>
+            <li>Fotografía escolar y anuario (<em>yearbook</em>)</li>
+            <li>Tasas de exámenes opcionales (AP, Cambridge avanzado)</li>
+            <li>Transporte local mensual (autobús, tarjeta de transporte)</li>
+          </ul>
+        </div>
+      </div>
+      <div class="gestor-wrap">
+        <div class="gestor-title">Gestor estudiantil · se encarga de</div>
+        <div class="gestor-grid">
+          <div class="gestor-item">Seguimiento personalizado del desempeño</div>
+          <div class="gestor-item">Información a padres mensualmente</div>
+          <div class="gestor-item">Notas oficiales cada trimestre</div>
+          <div class="gestor-item">Asesoría en cambio de asignaturas</div>
+          <div class="gestor-item">Todas las tutorías necesarias</div>
+          <div class="gestor-item">Reuniones con padres y/o estudiante</div>
+          <div class="gestor-item">Apoyo en actividades extraescolares</div>
+          <div class="gestor-item">Resolución de situaciones con familia o centro</div>
+        </div>
+      </div>
+      <div class="alert-box">
+        <div class="alert-icon">🎓</div>
+        <div class="alert-text"><strong>Sobre la vuelta al centro español:</strong> el trimestre no da lugar a una convalidación de curso completo como sí ocurre con el año escolar. El estudiante se reincorpora a su instituto en España con el informe de notas del centro canadiense. Conviene acordar con el centro español, antes de la salida, cómo se articula esa reincorporación; tu asesora os acompaña en esa conversación.</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 7. PASOS -->
+  <div class="section-title"><h2>Siguientes pasos</h2></div>
+  <div class="steps-wrap">
+    <div class="steps-inner">
+      <div class="steps-title">¿Cómo empezamos?</div>
+      <div class="steps-sub">Del primer contacto a la salida hacia Canadá, paso a paso</div>
+      <div class="steps-list">
+        <div class="step-item"><div class="step-num">1</div><div class="step-title">Reunión inicial</div><div class="step-desc">Nos contáis el perfil del estudiante y resolvemos todas las dudas sobre el trimestre.</div></div>
+        <div class="step-item"><div class="step-num">2</div><div class="step-title">Prueba y entrevista</div><div class="step-desc">Test de inglés y entrevista personal online con el estudiante.</div></div>
+        <div class="step-item"><div class="step-num">3</div><div class="step-title">Elección de distrito</div><div class="step-desc">Os proponemos los distritos que mejor encajan y señaláis los colegios preferidos.</div></div>
+        <div class="step-item"><div class="step-num">4</div><div class="step-title">Matrícula y viaje</div><div class="step-desc">Gestionamos matrícula, familia anfitriona, autorización eTA y vuelos.</div></div>
+      </div>
+      <div class="cta-line">¿Queréis saber qué distrito encaja mejor con vuestro hijo o hija?</div>
+      <div class="pasos-cta-wrap">
+        <a class="pasos-cta" href="https://asesoramientosmlq.zohobookings.eu/mylanguagequest" target="_blank" rel="noopener">📅 Agenda tu asesoramiento gratuito</a>
+        <a class="pasos-cta pasos-cta-alt" href="mailto:gespinoza@mylanguagequest.com?subject=Informaci%C3%B3n%20%C2%B7%20Trimestre%20escolar%20en%20Canad%C3%A1%20%C2%B7%202027%2F28">✉️ Escribir a mi asesora</a>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<div class="footer">
+  <div class="footer-logo">MY LANGUAGE QUEST</div>
+  <div class="footer-tag">Explore · Learn · Grow</div>
+  <div class="footer-meta">
+    Guía del trimestre escolar en Canadá · Curso 2027/28<br>
+    Precios orientativos «desde», sujetos a disponibilidad de plaza y al distrito escolar elegido. Para más información, contacta con tu asesora personal.
+  </div>
+</div>
+
+
+<script>
+(function(){
+  var d=document, root=d.documentElement;
+  if(!('IntersectionObserver' in window)){root.className=root.className.replace(' js-anim','');return;}
+  var bar=d.createElement('div'); bar.className='progress-bar'; d.body.appendChild(bar);
+  var ticking=false;
+  function progress(){
+    var h=d.documentElement.scrollHeight-window.innerHeight;
+    bar.style.transform='scaleX('+(h>0?Math.min(window.scrollY/h,1):0)+')';
+    ticking=false;
+  }
+  window.addEventListener('scroll',function(){if(!ticking){ticking=true;requestAnimationFrame(progress);}},{passive:true});
+  progress();
+  Array.prototype.forEach.call(d.querySelectorAll('.hero-pill'),function(el,i){el.style.animationDelay=(0.36+i*0.06)+'s';});
+  var groups=[['.section-title','reveal'],['.intro-text','reveal'],['.intro-point','reveal'],['.price-wrap','reveal-zoom'],['.zona-card','reveal'],['.alert-box','reveal'],['.info-block','reveal'],['.includes-wrap','reveal-zoom'],['.fin-card','reveal'],['.steps-wrap','reveal-zoom']];
+  groups.forEach(function(g){
+    Array.prototype.forEach.call(d.querySelectorAll(g[0]),function(el,i){
+      el.classList.add(g[1]); el.style.transitionDelay=Math.min(i*0.09,0.36)+'s';
+    });
+  });
+  var io=new IntersectionObserver(function(entries){
+    entries.forEach(function(e){ if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);} });
+  },{threshold:0.12,rootMargin:'0px 0px -8% 0px'});
+  Array.prototype.forEach.call(d.querySelectorAll('.reveal,.reveal-zoom'),function(el){io.observe(el);});
+})();
+</script>
+
+<!-- MLQ tracking -->
+<script>
+(function () {
+  var URL_TRACKING = 'https://script.google.com/macros/s/AKfycbygwC8SbNtpdSo9sEEyAOYnZR-7ui1jgk-7wF9gOhM5kJs2qLgBxhQI7MJHutokDSFajA/exec';
+  if (URL_TRACKING.indexOf('http') !== 0) return;
+  var archivo    = (location.pathname.split('/').pop() || 'index.html');
+  var estudiante = archivo.replace(/\.html?$/i, '').replace(/-/g, ' ');
+  var programa   = (document.title.split('·')[0] || '').trim();
+  var sesion     = Math.random().toString(36).slice(2, 10);
+  function enviar(evento, valor) {
+    var qs = '?evento=' + encodeURIComponent(evento) +
+             '&valor=' + encodeURIComponent(valor || '') +
+             '&archivo=' + encodeURIComponent(archivo) +
+             '&estudiante=' + encodeURIComponent(estudiante) +
+             '&programa=' + encodeURIComponent(programa) +
+             '&sesion=' + sesion +
+             '&referrer=' + encodeURIComponent(document.referrer || '') +
+             '&ua=' + encodeURIComponent(navigator.userAgent) +
+             '&t=' + Date.now();
+    try {
+      if (window.fetch) { fetch(URL_TRACKING + qs, { mode: 'no-cors', keepalive: true }); }
+      else { new Image().src = URL_TRACKING + qs; }
+    } catch (e) {}
+  }
+  try {
+    if (!sessionStorage.getItem('mlq_open_' + archivo)) {
+      sessionStorage.setItem('mlq_open_' + archivo, '1');
+      enviar('apertura');
+    }
+  } catch (e) { enviar('apertura'); }
+  var activo = 0, marca = Date.now(), visible = !document.hidden, hito30 = false;
+  function acumular() { if (visible) activo += Date.now() - marca; marca = Date.now(); }
+  document.addEventListener('visibilitychange', function () { acumular(); visible = !document.hidden; });
+  setInterval(function () {
+    acumular();
+    if (!hito30 && activo >= 30000) { hito30 = true; enviar('lectura_30s'); }
+  }, 1000);
+  var hitos = [25, 50, 75, 100], enviados = {};
+  function revisarScroll() {
+    var alto = document.documentElement.scrollHeight - window.innerHeight;
+    var pct  = alto <= 0 ? 100 : Math.round((window.pageYOffset / alto) * 100);
+    for (var i = 0; i < hitos.length; i++) {
+      var h = hitos[i];
+      if (pct >= h && !enviados[h]) { enviados[h] = true; enviar('scroll_' + h); }
+    }
+  }
+  window.addEventListener('scroll', revisarScroll, { passive: true });
+  window.addEventListener('resize', revisarScroll, { passive: true });
+  setTimeout(revisarScroll, 1500);
+  var cerrado = false;
+  function alSalir() {
+    if (cerrado) return;
+    cerrado = true;
+    acumular();
+    enviar('salida', Math.round(activo / 1000));
+  }
+  window.addEventListener('pagehide', alSalir);
+  document.addEventListener('visibilitychange', function () { if (document.hidden) { acumular(); } });
+})();
+</script>
+</body>
+</html>
