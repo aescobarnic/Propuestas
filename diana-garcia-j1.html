@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 
 
+
 <html lang="es">
 <head>
 <meta charset="UTF-8">
@@ -44,6 +45,9 @@ body{font-family:'Fira Sans',sans-serif;background:var(--gray-bg);color:var(--te
 .hero-promo{display:inline-flex;align-items:center;gap:8px;background:rgba(0,31,64,0.4);border:1px solid rgba(255,255,255,0.35);border-radius:10px;padding:10px 16px;font-size:12.5px;font-weight:600;color:#ffffff;margin-top:18px;max-width:640px;line-height:1.5;}
 
 /* LAYOUT */
+.hero-promo{display:flex;align-items:center;gap:12px;background:linear-gradient(135deg,rgba(214,158,46,0.28),rgba(0,31,64,0.45));border:1.5px solid rgba(255,255,255,0.45);border-radius:14px;padding:16px 20px;font-size:14px;font-weight:600;color:#ffffff;margin-top:22px;max-width:760px;line-height:1.55;}
+.hero-promo .hp-icon{font-size:26px;line-height:1;}
+.hero-promo strong{font-size:17px;}
 .main{max-width:1140px;margin:0 auto;padding:40px 24px 20px;}
 .section-title{display:flex;align-items:center;gap:12px;margin:44px 0 24px;}
 .section-title:first-of-type{margin-top:0;}
@@ -467,7 +471,7 @@ details[open] summary::before{transform:rotate(90deg);}
       <div class="hero-pill">📅 Curso 2027/28</div>
       <div class="hero-pill ac">🗽 Orientación en Nueva York incluida</div>
     </div>
-    <div class="hero-promo">🎁 Descuento de 600 € por inscripción en septiembre: <strong>13.300 €</strong> en lugar de 13.900 €</div>
+    <div class="hero-promo"><span class="hp-icon">✈️</span><span>Consideración especial: <strong>1.100 € en vuelos incluidos</strong><br>Madrid · Nueva York · destino final · regreso a España. Habitualmente los vuelos del J1 corren por cuenta de la familia.</span></div>
   </div>
 </div>
 
@@ -578,7 +582,7 @@ details[open] summary::before{transform:rotate(90deg);}
       <p class="ny-lead">
         Antes de conocer a su familia anfitriona, Diana aterriza en Nueva York junto al resto de estudiantes
         internacionales. Cuatro días para adaptarse al horario, entender cómo funciona la vida en Estados
-        Unidos y llegar a su destino <strong>habiendo hecho amigos y perdido el miedo</strong>. No es una
+        Unidos y llegar a su destino <strong>habiendo hecho amigas y perdido el miedo</strong>. No es una
         excursión turística: es la transición que convierte un salto al vacío en un aterrizaje suave.
       </p>
       <div class="ny-stats">
@@ -623,6 +627,7 @@ details[open] summary::before{transform:rotate(90deg);}
     <div class="destaca-item"><div class="destaca-icon">💬</div><div class="destaca-title">Apoyo emocional y psicológico</div><div class="destaca-desc">Disponible para el estudiante durante todo el programa si lo necesita.</div></div>
     <div class="destaca-item"><div class="destaca-icon">📜</div><div class="destaca-title">Legalización de notas en EE.UU.</div><div class="destaca-desc">Recogida de transcripts, firma de notario y Apostilla de La Haya.</div></div>
     <div class="destaca-item"><div class="destaca-icon">📑</div><div class="destaca-title">Convalidación en España incluida</div><div class="destaca-desc">Nos encargamos del expediente completo y del pago de tasas ante el Ministerio de Educación.</div></div>
+    <div class="destaca-item"><div class="destaca-icon">✈️</div><div class="destaca-title">Vuelos incluidos hasta 1.100 €</div><div class="destaca-desc">Madrid, Nueva York, destino final y regreso a España. Si el importe supera los 1.100 €, la diferencia corre a cargo de la familia.</div></div>
     <div class="destaca-item"><div class="destaca-icon">🛡</div><div class="destaca-title">Plaza garantizada</div><div class="destaca-desc">Público, privado o privado con boarding. Si hay sobrecoste de matriculación, lo asume MLQ.</div></div>
   </div>
 
@@ -644,6 +649,7 @@ details[open] summary::before{transform:rotate(90deg);}
             <li>Tasas y tramitación del visado J1, y cita en la Embajada</li>
             <li>Programa formativo y de orientación para el estudiante<small>Obligatorio</small></li>
             <li>Programa formativo y de orientación para los padres<small>No obligatorio</small></li>
+            <li>Vuelos internacionales hasta 1.100 €<small>Madrid · Nueva York · destino final · regreso a España</small></li>
             <li>Orientación pre-viaje en Madrid</li>
             <li>Pack sorpresa de My Language Quest</li>
           </ul>
@@ -675,7 +681,7 @@ details[open] summary::before{transform:rotate(90deg);}
           </ul>
           <div class="col-title" style="margin-top:24px;">No incluido</div>
           <ul class="inc-list no">
-            <li>Vuelos<small>MLQ gestiona la búsqueda, coste a cargo de la familia</small></li>
+            <li>Exceso del coste de los vuelos sobre 1.100 €<small>MLQ gestiona la reserva. La diferencia, si la hay, corre a cargo de la familia</small></li>
             <li>Actividades extracurriculares de pago</li>
             <li>Excursiones y viajes escolares</li>
             <li>Material escolar adicional</li>
@@ -705,16 +711,24 @@ details[open] summary::before{transform:rotate(90deg);}
   <div class="section-title"><h2>Precio y formas de pago</h2></div>
   <div class="precio-hero">
     <div>
-      <div style="font-family:'Josefin Sans',sans-serif;font-size:21px;font-weight:600;color:var(--text-light);text-decoration:line-through;line-height:1;margin-bottom:7px;">13.900 €</div>
-      <div class="precio-hero-num">13.300 €</div>
-      <div class="precio-hero-sub">Año escolar completo · Descuento de septiembre aplicado</div>
+      <div class="precio-hero-num">13.900 €</div>
+      <div class="precio-hero-sub">Año escolar completo · Vuelos incluidos</div>
     </div>
     <div class="precio-hero-txt">
-      Precio cerrado del programa J1 para el curso 2027/28, con el <strong>descuento de 600 € por inscripción en septiembre</strong> ya aplicado. Incluye <strong>matrícula, familia anfitriona en
+      Precio cerrado del programa J1 para el curso 2027/28. Incluye <strong>matrícula, familia anfitriona en
       pensión completa, seguro médico, visado J1 con tasa SEVIS, orientación en Nueva York, clases Cambridge,
-      transporte escolar y la convalidación completa en España</strong>. Los vuelos internacionales no están
-      incluidos: MLQ gestiona la búsqueda y el coste corre a cargo de la familia.
+      transporte escolar, los vuelos internacionales hasta 1.100 € y la convalidación completa en España</strong>.
+      La cobertura de vuelos comprende el trayecto Madrid, Nueva York, destino final y el regreso a España. Si el
+      importe total de los billetes supera los 1.100 €, la diferencia corre a cargo de la familia.
     </div>
+  </div>
+
+  <div class="hero-promo" style="max-width:none;margin-top:16px;background:linear-gradient(135deg,rgba(214,158,46,0.18),rgba(0,31,64,0.08));border-color:rgba(0,31,64,0.18);color:var(--navy);">
+    <span class="hp-icon">🎁</span>
+    <span>Los vuelos internacionales <strong>no forman parte del precio estándar del J1</strong>. En esta propuesta,
+    My Language Quest asume <strong>hasta 1.100 € de vuelos</strong> como consideración especial para
+    Diana: trayecto Madrid · Nueva York · destino final y regreso a España. Solo se abonaría la diferencia
+    si el billete superase ese importe.</span>
   </div>
 
   <div class="payment-wrap" style="margin-top:20px;">
@@ -727,12 +741,12 @@ details[open] summary::before{transform:rotate(90deg);}
         <div class="pay-route-sub">El importe íntegro debe estar abonado como máximo el 1 de marzo de 2027.</div>
         <div class="pay-entrada">
           <div class="pay-entrada-num">3.500 €</div>
-          <div class="pay-entrada-txt"><strong>Reserva y firma de contrato</strong>, antes del 30 de septiembre de 2026. Activa la solicitud ante el sponsor americano y consolida el descuento de 600 €.</div>
+          <div class="pay-entrada-txt"><strong>Reserva y firma de contrato</strong>, antes del 1 de septiembre de 2026. Activa la solicitud ante el sponsor americano.</div>
         </div>
         <div class="pay-cols">
           <div class="pay-col">
             <div class="pay-col-title">Paso 2 · Resto del programa</div>
-            <div class="pay-step"><div class="pay-step-title">9.800 €</div><div class="pay-step-desc">Como máximo el 1 de marzo de 2027</div></div>
+            <div class="pay-step"><div class="pay-step-title">10.400 €</div><div class="pay-step-desc">Como máximo el 1 de marzo de 2027</div></div>
           </div>
           <div class="pay-col">
             <div class="pay-col-title">Seguro de anulación</div>
@@ -751,7 +765,7 @@ details[open] summary::before{transform:rotate(90deg);}
         <div class="pay-cols">
           <div class="pay-col">
             <div class="pay-col-title">Capital financiado</div>
-            <div class="pay-step"><div class="pay-step-title">13.300 € − 5.000 € = 8.300 €</div><div class="pay-step-desc">Calcula tu cuota exacta en el simulador de la sección siguiente.</div></div>
+            <div class="pay-step"><div class="pay-step-title">13.900 € − 5.000 € = 8.900 €</div><div class="pay-step-desc">Calcula tu cuota exacta en el simulador de la sección siguiente.</div></div>
           </div>
           <div class="pay-col">
             <div class="pay-col-title">Condiciones</div>
@@ -782,7 +796,7 @@ details[open] summary::before{transform:rotate(90deg);}
       <div class="fin-opcion-selector">
         <div class="fin-opcion-label">Programa</div>
         <div class="fin-opcion-btns" id="finOpciones">
-          <button class="fin-opcion-btn active" data-precio="13300"><span class="fin-opcion-nombre">🇺🇸 J1 · Año escolar completo</span><span class="fin-opcion-precio">13.300 €</span></button>
+          <button class="fin-opcion-btn active" data-precio="13900"><span class="fin-opcion-nombre">🇺🇸 J1 · Año escolar completo</span><span class="fin-opcion-precio">13.900 €</span></button>
         </div>
       </div>
 
@@ -804,15 +818,15 @@ details[open] summary::before{transform:rotate(90deg);}
       <div class="fin-resultado">
         <div class="fin-resultado-main">
           <div class="fin-cuota-label">Cuota mensual estimada</div>
-          <div class="fin-cuota-valor" id="cuotaValor">691,67 €</div>
+          <div class="fin-cuota-valor" id="cuotaValor">741,67 €</div>
           <div class="fin-cuota-sub" id="cuotaSub">/mes · 12 pagos · TIN 0%</div>
         </div>
         <div class="fin-resultado-detalle">
-          <div class="fin-det-row"><span class="fin-det-label">Importe del programa</span><span class="fin-det-val" id="detPrecio">13.300 €</span></div>
+          <div class="fin-det-row"><span class="fin-det-label">Importe del programa</span><span class="fin-det-val" id="detPrecio">13.900 €</span></div>
           <div class="fin-det-row"><span class="fin-det-label">Entrada a la firma</span><span class="fin-det-val" id="detEntrada">5.000 €</span></div>
-          <div class="fin-det-row"><span class="fin-det-label">Capital financiado</span><span class="fin-det-val" id="detCapital">8.300 €</span></div>
+          <div class="fin-det-row"><span class="fin-det-label">Capital financiado</span><span class="fin-det-val" id="detCapital">8.900 €</span></div>
           <div class="fin-det-row"><span class="fin-det-label">Intereses totales</span><span class="fin-det-val fin-det-green" id="detIntereses">0 € · ¡MLQ los asume!</span></div>
-          <div class="fin-det-row fin-det-total"><span class="fin-det-label">Total a pagar</span><span class="fin-det-val" id="detTotal">13.300 €</span></div>
+          <div class="fin-det-row fin-det-total"><span class="fin-det-label">Total a pagar</span><span class="fin-det-val" id="detTotal">13.900 €</span></div>
         </div>
       </div>
 
@@ -888,7 +902,7 @@ details[open] summary::before{transform:rotate(90deg);}
 
 <script>
 (function(){
-  var precio=13300, meses=12, tin=0, ENTRADA=5000;
+  var precio=13900, meses=12, tin=0, ENTRADA=5000;
   function fmt(n){return n.toLocaleString('es-ES',{minimumFractionDigits:2,maximumFractionDigits:2})+' €';}
   function fmt0(n){return n.toLocaleString('es-ES',{maximumFractionDigits:0})+' €';}
   function calc(){
@@ -983,6 +997,98 @@ details[open] summary::before{transform:rotate(90deg);}
   }
 })();
 </script>
-<!-- MLQ build 2026-09-07 09:00:30 -->
+<!-- MLQ tracking -->
+<script>
+(function () {
+  var URL_TRACKING = 'https://script.google.com/macros/s/AKfycbygwC8SbNtpdSo9sEEyAOYnZR-7ui1jgk-7wF9gOhM5kJs2qLgBxhQI7MJHutokDSFajA/exec';
+  if (URL_TRACKING.indexOf('http') !== 0) return;
+
+  var archivo    = (location.pathname.split('/').pop() || 'index.html');
+  var estudiante = archivo.replace(/\.html?$/i, '').replace(/-/g, ' ');
+  var programa   = (document.title.split('·')[0] || '').trim();
+  var sesion     = Math.random().toString(36).slice(2, 10);
+
+  function enviar(evento, valor) {
+    var qs = '?evento=' + encodeURIComponent(evento) +
+             '&valor=' + encodeURIComponent(valor || '') +
+             '&archivo=' + encodeURIComponent(archivo) +
+             '&estudiante=' + encodeURIComponent(estudiante) +
+             '&programa=' + encodeURIComponent(programa) +
+             '&sesion=' + sesion +
+             '&referrer=' + encodeURIComponent(document.referrer || '') +
+             '&ua=' + encodeURIComponent(navigator.userAgent) +
+             '&t=' + Date.now();
+    try {
+      if (window.fetch) {
+        fetch(URL_TRACKING + qs, { mode: 'no-cors', keepalive: true });
+      } else {
+        new Image().src = URL_TRACKING + qs;
+      }
+    } catch (e) {}
+  }
+
+  // 1. Apertura (una vez por pestaña, no se repite al recargar)
+  try {
+    if (!sessionStorage.getItem('mlq_open_' + archivo)) {
+      sessionStorage.setItem('mlq_open_' + archivo, '1');
+      enviar('apertura');
+    }
+  } catch (e) { enviar('apertura'); }
+
+  // 2. Tiempo ACTIVO (solo cuenta con la pestaña visible)
+  var activo = 0, marca = Date.now(), visible = !document.hidden, hito30 = false;
+
+  function acumular() {
+    if (visible) activo += Date.now() - marca;
+    marca = Date.now();
+  }
+
+  document.addEventListener('visibilitychange', function () {
+    acumular();
+    visible = !document.hidden;
+  });
+
+  setInterval(function () {
+    acumular();
+    if (!hito30 && activo >= 30000) {
+      hito30 = true;
+      enviar('lectura_30s');
+    }
+  }, 1000);
+
+  // 3. Hitos de scroll 25 / 50 / 75 / 100
+  var hitos = [25, 50, 75, 100], enviados = {};
+
+  function revisarScroll() {
+    var alto = document.documentElement.scrollHeight - window.innerHeight;
+    var pct  = alto <= 0 ? 100 : Math.round((window.pageYOffset / alto) * 100);
+    for (var i = 0; i < hitos.length; i++) {
+      var h = hitos[i];
+      if (pct >= h && !enviados[h]) {
+        enviados[h] = true;
+        enviar('scroll_' + h);
+      }
+    }
+  }
+
+  window.addEventListener('scroll', revisarScroll, { passive: true });
+  window.addEventListener('resize', revisarScroll, { passive: true });
+  setTimeout(revisarScroll, 1500);
+
+  // 4. Salida: segundos activos totales de la sesión
+  var cerrado = false;
+  function alSalir() {
+    if (cerrado) return;
+    cerrado = true;
+    acumular();
+    enviar('salida', Math.round(activo / 1000));
+  }
+  window.addEventListener('pagehide', alSalir);
+  document.addEventListener('visibilitychange', function () {
+    if (document.hidden) { acumular(); }
+  });
+})();
+</script>
+<!-- build 2026-09-28 17:14 -->
 </body>
 </html>
