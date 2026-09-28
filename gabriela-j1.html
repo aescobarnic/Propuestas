@@ -45,6 +45,9 @@ body{font-family:'Fira Sans',sans-serif;background:var(--gray-bg);color:var(--te
 .hero-promo{display:inline-flex;align-items:center;gap:8px;background:rgba(0,31,64,0.4);border:1px solid rgba(255,255,255,0.35);border-radius:10px;padding:10px 16px;font-size:12.5px;font-weight:600;color:#ffffff;margin-top:18px;max-width:640px;line-height:1.5;}
 
 /* LAYOUT */
+.hero-promo{display:flex;align-items:center;gap:12px;background:linear-gradient(135deg,rgba(214,158,46,0.28),rgba(0,31,64,0.45));border:1.5px solid rgba(255,255,255,0.45);border-radius:14px;padding:16px 20px;font-size:14px;font-weight:600;color:#ffffff;margin-top:22px;max-width:760px;line-height:1.55;}
+.hero-promo .hp-icon{font-size:26px;line-height:1;}
+.hero-promo strong{font-size:17px;}
 .main{max-width:1140px;margin:0 auto;padding:40px 24px 20px;}
 .section-title{display:flex;align-items:center;gap:12px;margin:44px 0 24px;}
 .section-title:first-of-type{margin-top:0;}
@@ -462,11 +465,13 @@ details[open] summary::before{transform:rotate(90deg);}
     <div class="hero-name">Gabriela</div>
     <div class="hero-subtitle">Intercambio cultural · Año escolar completo · Estados Unidos</div>
     <div class="hero-pills">
+      <div class="hero-pill">🇺🇸 Año escolar completo</div>
       <div class="hero-pill">🏠 Familia anfitriona voluntaria</div>
-      <div class="hero-pill">🏫 Colegio público</div>
-      <div class="hero-pill ac">✈️ Vuelos incluidos hasta 1.100 €</div>
+      <div class="hero-pill">🏫 Colegio público americano</div>
+      <div class="hero-pill">📅 Curso 2027/28</div>
       <div class="hero-pill ac">🗽 Orientación en Nueva York incluida</div>
     </div>
+    <div class="hero-promo"><span class="hp-icon">✈️</span><span>Consideración especial: <strong>1.100 € en vuelos incluidos</strong><br>Madrid · Nueva York · destino final · regreso a España. Habitualmente los vuelos del J1 corren por cuenta de la familia.</span></div>
   </div>
 </div>
 
@@ -577,7 +582,7 @@ details[open] summary::before{transform:rotate(90deg);}
       <p class="ny-lead">
         Antes de conocer a su familia anfitriona, Gabriela aterriza en Nueva York junto al resto de estudiantes
         internacionales. Cuatro días para adaptarse al horario, entender cómo funciona la vida en Estados
-        Unidos y llegar a su destino <strong>habiendo hecho amigos y perdido el miedo</strong>. No es una
+        Unidos y llegar a su destino <strong>habiendo hecho amigas y perdido el miedo</strong>. No es una
         excursión turística: es la transición que convierte un salto al vacío en un aterrizaje suave.
       </p>
       <div class="ny-stats">
@@ -707,7 +712,7 @@ details[open] summary::before{transform:rotate(90deg);}
   <div class="precio-hero">
     <div>
       <div class="precio-hero-num">13.900 €</div>
-      <div class="precio-hero-sub">Año escolar completo</div>
+      <div class="precio-hero-sub">Año escolar completo · Vuelos incluidos</div>
     </div>
     <div class="precio-hero-txt">
       Precio cerrado del programa J1 para el curso 2027/28. Incluye <strong>matrícula, familia anfitriona en
@@ -716,6 +721,14 @@ details[open] summary::before{transform:rotate(90deg);}
       La cobertura de vuelos comprende el trayecto Madrid, Nueva York, destino final y el regreso a España. Si el
       importe total de los billetes supera los 1.100 €, la diferencia corre a cargo de la familia.
     </div>
+  </div>
+
+  <div class="hero-promo" style="max-width:none;margin-top:16px;background:linear-gradient(135deg,rgba(214,158,46,0.18),rgba(0,31,64,0.08));border-color:rgba(0,31,64,0.18);color:var(--navy);">
+    <span class="hp-icon">🎁</span>
+    <span>Los vuelos internacionales <strong>no forman parte del precio estándar del J1</strong>. En esta propuesta,
+    My Language Quest asume <strong>hasta 1.100 € de vuelos</strong> como consideración especial para
+    Gabriela: trayecto Madrid · Nueva York · destino final y regreso a España. Solo se abonaría la diferencia
+    si el billete superase ese importe.</span>
   </div>
 
   <div class="payment-wrap" style="margin-top:20px;">
@@ -1076,6 +1089,6 @@ details[open] summary::before{transform:rotate(90deg);}
   });
 })();
 </script>
-<!-- build 2026-09-25 14:57 -->
+<!-- build 2026-09-28 17:14 -->
 </body>
 </html>
