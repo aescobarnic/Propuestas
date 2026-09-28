@@ -1,0 +1,1312 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<script>document.documentElement.className+=" js-anim";</script>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Propuesta Canadá · Fuica · My Language Quest</title>
+<link href="https://fonts.googleapis.com/css2?family=Fira+Sans:wght@300;400;500;600;700&family=Josefin+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --blue:#003366;--blue-dark:#001f40;--blue-mid:#0a4a8a;--blue-light:#dce8f5;
+  --red:#B12900;--red-dark:#8A1F00;--red-light:#fdf0ec;
+  --red-deep:#6E1600;--red-warm:#C8380C;--cream:#FFF6F2;--sand:#F7EDE6;--gold:#E8B04B;
+  --green:#4C9E0C;--green-dark:#3A7A09;--green-light:#eef8e3;
+  --gray-bg:#f4eeea;--gray-card:#fbf7f4;--gray-border:#e4d9d2;
+  --text:#0d1b2a;--text-mid:#3d4f62;--text-light:#7a8a9b;--white:#ffffff;
+}
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box;}
+body{font-family:'Fira Sans',sans-serif;background:var(--gray-bg);color:var(--text);}
+
+/* HEADER */
+.header{background:var(--white);padding:18px 48px;display:flex;align-items:center;justify-content:space-between;box-shadow:0 1px 0 var(--gray-border),0 4px 24px rgba(0,51,102,0.07);position:relative;z-index:10;}
+.header::after{content:'';position:absolute;bottom:0;left:0;right:0;height:4px;background:linear-gradient(90deg,var(--red) 0%,var(--red) 22%,var(--white) 22%,var(--white) 78%,var(--red) 78%,var(--red) 100%);}
+.logo-area img{height:46px;width:auto;display:block;}
+.header-right{text-align:right;}
+.header-label{font-family:'Josefin Sans',sans-serif;font-size:9px;letter-spacing:3px;text-transform:uppercase;color:var(--text-light);}
+.header-year{font-family:'Josefin Sans',sans-serif;font-size:26px;font-weight:700;color:var(--red);line-height:1;margin-top:2px;}
+
+/* HERO */
+.hero{background:linear-gradient(135deg,var(--red-deep) 0%,var(--red) 55%,var(--red-warm) 100%);position:relative;overflow:hidden;padding:40px 48px 36px;}
+.hero::after{content:'🍁';position:absolute;right:2%;top:50%;transform:translateY(-50%) rotate(-12deg);font-size:230px;line-height:1;opacity:0.09;pointer-events:none;z-index:1;}
+.hero::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 70% 110% at 100% 40%,rgba(255,255,255,0.12) 0%,transparent 60%),radial-gradient(ellipse 60% 80% at -10% 90%,rgba(0,31,64,0.28) 0%,transparent 60%);}
+.hero-dots{position:absolute;inset:0;pointer-events:none;background-image:radial-gradient(rgba(255,255,255,0.07) 1px,transparent 1px);background-size:28px 28px;}
+.hero-inner{position:relative;z-index:2;}
+.hero-tag{display:inline-flex;align-items:center;gap:6px;background:rgba(255,255,255,0.1);border:1px solid rgba(255,255,255,0.2);border-radius:20px;padding:4px 12px;font-size:10px;font-weight:600;letter-spacing:2px;text-transform:uppercase;color:rgba(255,255,255,0.7);margin-bottom:12px;}
+.hero-tag::before{content:'🍁';font-size:11px;}
+.hero-name{font-family:'Josefin Sans',sans-serif;font-size:38px;font-weight:700;color:var(--white);line-height:1.05;margin-bottom:8px;}
+.hero-subtitle{font-size:13px;color:rgba(255,255,255,0.55);font-weight:300;}
+.hero-pills{display:flex;flex-wrap:wrap;gap:8px;margin-top:20px;}
+.hero-pill{display:flex;align-items:center;gap:6px;background:rgba(255,255,255,0.1);border:1px solid rgba(255,255,255,0.18);border-radius:8px;padding:6px 12px;font-size:11px;color:var(--white);font-weight:500;}
+.hero-pill.ac{background:rgba(0,31,64,0.35);border-color:rgba(255,255,255,0.4);color:#ffffff;}
+.hero-promo{display:block;background:rgba(0,31,64,0.4);border:1px solid rgba(255,255,255,0.35);border-radius:10px;padding:13px 18px;font-size:12.5px;font-weight:500;color:#ffffff;margin-top:18px;max-width:700px;line-height:1.65;}
+.hero-promo strong{font-weight:700;}
+
+/* LAYOUT */
+.main{max-width:1140px;margin:0 auto;padding:40px 24px 20px;}
+.section-title{display:flex;align-items:center;gap:12px;margin:44px 0 24px;}
+.section-title:first-of-type{margin-top:0;}
+.section-title h2{font-family:'Josefin Sans',sans-serif;font-size:11px;font-weight:700;letter-spacing:3px;text-transform:uppercase;color:var(--red-deep);white-space:nowrap;}
+.section-title::before{content:'';width:22px;height:3px;border-radius:3px;background:var(--red);flex-shrink:0;}
+.section-title::after{content:'';flex:1;height:1px;background:var(--gray-border);}
+
+/* INTRO / CONTEXTO */
+.intro-text{font-size:14px;color:var(--text-mid);line-height:1.75;max-width:860px;margin-bottom:20px;}
+.intro-text strong{color:var(--blue);font-weight:600;}
+.intro-points{display:grid;grid-template-columns:repeat(2,1fr);gap:14px;margin-top:20px;}
+.intro-point{background:var(--white);border:1.5px solid var(--gray-border);border-radius:12px;padding:16px 18px;display:flex;gap:12px;align-items:flex-start;}
+.intro-point-icon{font-size:20px;flex-shrink:0;}
+.intro-point-title{font-family:'Josefin Sans',sans-serif;font-size:13px;font-weight:700;color:var(--red-deep);margin-bottom:4px;}
+.intro-point-desc{font-size:12px;color:var(--text-mid);line-height:1.55;}
+
+/* CÓMO SE VIVE EL CURSO */
+.qs-chapters-head{display:flex;align-items:baseline;gap:14px;margin:38px 0 18px;flex-wrap:wrap;}
+.qs-chapters-title{font-family:'Josefin Sans',sans-serif;font-size:19px;font-weight:700;color:var(--red-deep);}
+.qs-chapters-sub{font-size:12.5px;color:var(--text-light);}
+.qs-chapters{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;}
+.qs-chapter{background:var(--white);border:1.5px solid var(--gray-border);border-radius:16px;overflow:hidden;box-shadow:0 2px 16px rgba(0,51,102,0.06);display:flex;flex-direction:column;transition:transform .2s,box-shadow .2s;}
+.qs-chapter:hover{transform:translateY(-4px);box-shadow:0 14px 38px rgba(0,51,102,0.13);}
+.qs-chapter-media{position:relative;aspect-ratio:4/3;overflow:hidden;background:var(--blue-light);}
+.qs-chapter-media img{width:100%;height:100%;object-fit:cover;object-position:center 15%;display:block;}
+.qs-chapter-step{position:absolute;top:12px;left:12px;background:rgba(0,31,64,0.82);backdrop-filter:blur(4px);color:#7dd44a;font-family:'Josefin Sans',sans-serif;font-size:9px;font-weight:700;letter-spacing:2px;text-transform:uppercase;padding:5px 11px;border-radius:20px;}
+.qs-chapter-body{padding:18px 20px 20px;}
+.qs-chapter-title{font-family:'Josefin Sans',sans-serif;font-size:15px;font-weight:700;color:var(--red-deep);margin-bottom:7px;}
+.qs-chapter-text{font-size:12.5px;color:var(--text-mid);line-height:1.65;}
+
+/* OPCIONES */
+.alert-box{display:flex;gap:12px;align-items:flex-start;background:#fff4f0;border:1.5px solid rgba(177,41,0,0.3);border-radius:12px;padding:14px 18px;margin-bottom:22px;}
+.alert-icon{font-size:20px;flex-shrink:0;}
+.alert-text{font-size:12px;color:#6b1a00;line-height:1.6;}
+.alert-text strong{color:var(--red-dark);}
+.opciones-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:20px;align-items:start;}
+.opcion-card{background:var(--white);border-radius:16px;border:1.5px solid var(--gray-border);overflow:hidden;box-shadow:0 2px 16px rgba(0,51,102,0.06);position:relative;transition:transform .2s,box-shadow .2s,border-color .2s;}
+.opcion-card:hover{transform:translateY(-4px);box-shadow:0 12px 40px rgba(110,22,0,0.16);border-color:var(--red);}
+.opcion-card.recomendada{border-color:var(--blue);box-shadow:0 6px 28px rgba(0,51,102,0.20);}
+.badge-rec{position:absolute;top:14px;right:-32px;background:var(--blue);color:var(--white);font-size:8px;font-weight:700;letter-spacing:1.5px;padding:5px 40px;transform:rotate(45deg);width:130px;text-align:center;z-index:10;}
+.opcion-header{background:linear-gradient(135deg,var(--red-deep) 0%,var(--red) 100%);padding:22px 24px 18px;position:relative;overflow:hidden;}
+.opcion-header::after{content:'🍁';position:absolute;right:-10px;bottom:-22px;font-size:82px;opacity:0.11;line-height:1;transform:rotate(-14deg);}
+.opcion-header > *{position:relative;z-index:2;}
+.opcion-num{font-family:'Josefin Sans',sans-serif;font-size:9px;letter-spacing:3px;text-transform:uppercase;color:rgba(255,255,255,0.38);margin-bottom:8px;}
+.opcion-distrito{font-family:'Josefin Sans',sans-serif;font-size:16px;font-weight:700;color:var(--white);margin-bottom:5px;}
+.opcion-loc{font-size:11px;color:rgba(255,255,255,0.48);margin-bottom:12px;}
+.precio-chip{display:inline-flex;align-items:baseline;gap:4px;background:rgba(255,255,255,0.1);border:1px solid rgba(255,255,255,0.18);border-radius:8px;padding:6px 12px;flex-wrap:wrap;}
+.precio-chip .val{font-family:'Josefin Sans',sans-serif;font-size:20px;font-weight:700;color:var(--white);}
+.precio-chip .desc{font-size:10px;color:rgba(255,255,255,0.5);}
+.precio-chip .tachado{font-size:10px;color:rgba(255,255,255,0.3);text-decoration:line-through;margin-left:6px;}
+.opcion-body{padding:20px 22px;}
+.colegios{display:flex;flex-direction:column;gap:12px;}
+.colegio{border:1.5px solid var(--gray-border);border-radius:12px;overflow:hidden;background:var(--gray-card);transition:border-color .2s;}
+.colegio:hover{border-color:var(--red);}
+.colegio-top{padding:12px 14px 10px;}
+.colegio-nombre{font-family:'Josefin Sans',sans-serif;font-size:13px;font-weight:700;color:var(--red-deep);margin-bottom:5px;}
+.colegio-meta{display:flex;flex-wrap:wrap;align-items:center;gap:6px;}
+.tag{border-radius:5px;padding:2px 8px;font-size:9px;font-weight:700;text-transform:uppercase;}
+.tag.pub{background:var(--green);color:var(--white);}
+.tag.info{background:var(--blue-light);color:var(--blue);}
+details{border-top:1px solid var(--gray-border);}
+details summary{list-style:none;cursor:pointer;padding:9px 14px;font-size:11px;font-weight:600;color:var(--red);display:flex;align-items:center;gap:6px;user-select:none;-webkit-user-select:none;}
+details summary:hover{background:var(--red-light);}
+details summary::-webkit-details-marker{display:none;}
+details summary::before{content:'▸';font-size:10px;transition:transform .2s;display:inline-block;}
+details[open] summary::before{transform:rotate(90deg);}
+.colegio-razon{padding:10px 14px 13px;font-size:12px;color:var(--text-mid);line-height:1.7;border-left:3px solid var(--red);margin:0 14px 12px;background:var(--red-light);border-radius:0 6px 6px 0;}
+.match-bar{display:flex;gap:6px;flex-wrap:wrap;padding:14px 22px;border-top:1px solid var(--gray-border);background:linear-gradient(to right,var(--gray-card),var(--white));}
+.match-tag{display:flex;align-items:center;gap:4px;font-size:10px;font-weight:600;color:var(--green-dark);background:var(--green-light);border:1px solid rgba(76,158,12,0.25);border-radius:20px;padding:3px 10px;}
+.match-tag::before{content:'✓';font-size:9px;}
+
+/* TABLA COMPARATIVA */
+.tabla-wrap{background:var(--white);border-radius:16px;border:1.5px solid var(--gray-border);box-shadow:0 2px 16px rgba(0,51,102,0.05);overflow-x:auto;}
+table.comp{width:100%;border-collapse:collapse;min-width:760px;}
+table.comp thead th{background:linear-gradient(135deg,var(--red-deep),var(--red));color:#fff;font-family:'Josefin Sans',sans-serif;font-size:9.5px;font-weight:700;letter-spacing:1.6px;text-transform:uppercase;padding:13px 14px;text-align:left;white-space:nowrap;}
+table.comp td{padding:13px 14px;font-size:12px;color:var(--text-mid);border-top:1px solid var(--gray-border);vertical-align:top;line-height:1.5;}
+table.comp tbody tr:nth-child(even){background:var(--gray-card);}
+table.comp td.op{font-family:'Josefin Sans',sans-serif;font-size:12.5px;font-weight:700;color:var(--red-deep);}
+table.comp td.pr{white-space:nowrap;font-weight:600;color:var(--text);}
+table.comp td.pr s{display:block;font-weight:400;font-size:10.5px;color:var(--text-light);}
+table.comp td.pr small{display:block;font-weight:400;font-size:10px;color:var(--text-light);}
+.badge-int{display:inline-block;border-radius:20px;padding:2px 9px;font-size:10px;font-weight:700;white-space:nowrap;}
+.int-alta{background:var(--red-light);color:var(--red-dark);border:1px solid rgba(177,41,0,0.25);}
+.int-media{background:var(--blue-light);color:var(--blue);border:1px solid rgba(0,51,102,0.2);}
+.int-baja{background:var(--gray-bg);color:var(--text-light);border:1px solid var(--gray-border);}
+.int-ok{background:var(--green-light);color:var(--green-dark);border:1px solid rgba(76,158,12,0.3);}
+table.comp.comp4{min-width:860px;}
+table.comp.comp4 td{font-size:12px;}
+table.comp.comp4 td.attr{font-family:'Josefin Sans',sans-serif;font-size:11px;font-weight:700;letter-spacing:0.5px;color:var(--red-deep);background:var(--gray-card);width:190px;}
+table.comp.comp4 tbody tr:nth-child(even){background:transparent;}
+table.comp.comp4 tbody tr:nth-child(even) td.attr{background:var(--gray-card);}
+table.comp.comp4 td.desc-verde{color:var(--green-dark);font-weight:700;}
+table.comp.comp4 tr.fila-precio td,table.comp.comp4 tr.fila-total td{background:var(--blue-light);}
+table.comp.comp4 tr.fila-precio td.attr,table.comp.comp4 tr.fila-total td.attr{background:#cfe0f2;color:var(--blue-dark);}
+table.comp.comp4 tr.fila-precio td.pr,table.comp.comp4 tr.fila-total td.pr{font-family:'Josefin Sans',sans-serif;font-size:15px;font-weight:700;color:var(--blue);}
+.honest-cols{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:14px;}
+.honest-item{border-radius:12px;padding:14px 16px;border:1.5px solid var(--gray-border);background:var(--gray-card);}
+.honest-item.honest-si{border-color:rgba(76,158,12,0.35);background:var(--green-light);}
+.honest-item.honest-no{border-color:rgba(0,51,102,0.2);background:var(--blue-light);}
+.honest-h{margin-bottom:8px;}
+.honest-item p{font-size:12.5px;line-height:1.65;color:var(--text-mid);margin-bottom:0;}
+.tabla-nota{font-size:11px;color:var(--text-light);line-height:1.65;margin-top:12px;font-style:italic;}
+
+/* DETALLE POR OPCIÓN */
+.det-list{display:flex;flex-direction:column;gap:16px;}
+details.det{background:var(--white);border:1.5px solid var(--gray-border);border-radius:16px;box-shadow:0 2px 16px rgba(0,51,102,0.05);overflow:hidden;border-top-width:1.5px;}
+details.det.top{border-color:var(--blue);box-shadow:0 6px 24px rgba(0,51,102,0.13);}
+details.det > summary{padding:18px 24px;font-size:inherit;color:inherit;display:flex;align-items:center;gap:14px;flex-wrap:wrap;}
+details.det > summary:hover{background:var(--gray-card);}
+details.det > summary::before{color:var(--red);font-size:12px;}
+.det-num{font-family:'Josefin Sans',sans-serif;font-size:20px;font-weight:700;color:var(--red);line-height:1;}
+.det-head{flex:1;min-width:180px;}
+.det-tit{font-family:'Josefin Sans',sans-serif;font-size:15px;font-weight:700;color:var(--red-deep);margin-bottom:3px;}
+.det-sub{font-size:11.5px;color:var(--text-light);line-height:1.4;}
+.det-pr{font-family:'Josefin Sans',sans-serif;font-size:16px;font-weight:700;color:var(--blue);white-space:nowrap;}
+.det-pr s{display:block;font-family:'Fira Sans',sans-serif;font-size:10.5px;font-weight:400;color:var(--text-light);text-align:right;}
+.det-body{padding:2px 26px 26px;}
+.det-body h4{font-family:'Josefin Sans',sans-serif;font-size:12.5px;font-weight:700;letter-spacing:0.4px;color:var(--red-deep);margin:20px 0 8px;text-transform:none;}
+.det-body h4:first-child{margin-top:8px;}
+.det-body p{font-size:12.5px;color:var(--text-mid);line-height:1.75;margin-bottom:10px;}
+.det-body p strong{color:var(--text);font-weight:600;}
+.det-body ul{list-style:none;margin:0 0 12px;}
+.det-body ul li{font-size:12.5px;color:var(--text-mid);line-height:1.65;position:relative;padding-left:16px;margin-bottom:6px;}
+.det-body ul li::before{content:'▪';color:var(--red);position:absolute;left:0;top:0;}
+.callout{background:var(--red-light);border-left:3px solid var(--red);border-radius:0 8px 8px 0;padding:13px 17px;font-size:12px;color:#6b1a00;line-height:1.7;margin:14px 0;}
+.callout strong{color:var(--red-dark);}
+.callout.blue{background:var(--blue-light);border-left-color:var(--blue);color:var(--blue-dark);}
+.callout.blue strong{color:var(--blue-dark);}
+.callout.green{background:var(--green-light);border-left-color:var(--green);color:var(--green-dark);}
+.callout.green strong{color:var(--green-dark);}
+.det-cols{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin:14px 0;}
+.det-mini{background:var(--gray-card);border:1.5px solid var(--gray-border);border-radius:12px;padding:14px 16px;}
+.det-mini-tit{font-family:'Josefin Sans',sans-serif;font-size:11px;font-weight:700;letter-spacing:1.2px;text-transform:uppercase;color:var(--red);margin-bottom:8px;}
+.det-mini p,.det-mini ul{margin-bottom:0;}
+
+/* COLEGIOS DENTRO DEL DETALLE */
+.det-tags{display:flex;flex-wrap:wrap;gap:6px;margin:0 0 11px;}
+.ficha{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin:0 0 13px;}
+.ficha > div{background:var(--gray-card);border:1.5px solid var(--gray-border);border-radius:10px;padding:9px 12px;}
+.ficha span{display:block;font-family:'Josefin Sans',sans-serif;font-size:8.5px;font-weight:700;letter-spacing:1.4px;text-transform:uppercase;color:var(--red);margin-bottom:3px;}
+.ficha strong{display:block;font-size:12px;font-weight:600;color:var(--text);line-height:1.4;}
+.det-colegio{border-top:1px solid var(--gray-border);padding-top:18px;margin-top:18px;}
+.det-colegio:first-of-type{border-top:none;padding-top:0;margin-top:10px;}
+.det-colegio-h{display:flex;align-items:baseline;gap:10px;flex-wrap:wrap;margin-bottom:7px;}
+.det-colegio-n{font-family:'Josefin Sans',sans-serif;font-size:14.5px;font-weight:700;color:var(--red-deep);}
+.det-colegio-r{font-size:9px;font-weight:700;letter-spacing:1.2px;text-transform:uppercase;color:var(--blue);background:var(--blue-light);border:1px solid rgba(0,51,102,0.18);border-radius:20px;padding:3px 10px;}
+.eq-badge{display:inline-flex;align-items:center;gap:6px;border-radius:8px;padding:5px 11px;font-size:10.5px;font-weight:700;letter-spacing:0.3px;margin-bottom:10px;}
+.eq-ok{background:var(--green-light);color:var(--green-dark);border:1px solid rgba(76,158,12,0.35);}
+.eq-conf{background:var(--blue-light);color:var(--blue);border:1px solid rgba(0,51,102,0.22);}
+
+/* DESGLOSE DE PRECIO */
+.precio-desglose{background:var(--gray-card);border:1.5px solid var(--gray-border);border-radius:12px;padding:6px 18px;margin:6px 0 12px;}
+.pd-row{display:flex;justify-content:space-between;align-items:baseline;gap:16px;padding:10px 0;border-top:1px solid var(--gray-border);font-size:12.5px;color:var(--text-mid);}
+.pd-row:first-child{border-top:none;}
+.pd-row strong{font-family:'Josefin Sans',sans-serif;font-size:14px;color:var(--text);white-space:nowrap;}
+.pd-row.pd-desc strong{color:var(--green-dark);}
+.pd-row.pd-tot{background:linear-gradient(to right,var(--blue-light),transparent);margin:0 -18px;padding:11px 18px;}
+.pd-row.pd-tot span{font-weight:600;color:var(--blue-dark);}
+.pd-row.pd-tot strong{font-size:16px;color:var(--blue);}
+.pd-row.pd-sep{border-top:2px solid var(--gray-border);}
+
+/* OPCIÓN PRINCIPAL A ANCHO COMPLETO */
+.opcion-card.principal{grid-column:1/-1;}
+.opcion-card.principal .opcion-header{padding:30px 34px 26px;}
+.opcion-card.principal .opcion-num{font-size:10px;margin-bottom:10px;}
+.opcion-card.principal .opcion-distrito{font-size:23px;margin-bottom:7px;}
+.opcion-card.principal .opcion-loc{font-size:12.5px;margin-bottom:16px;}
+.opcion-card.principal .precio-chip{padding:9px 18px;}
+.opcion-card.principal .precio-chip .val{font-size:27px;}
+.opcion-card.principal .precio-chip .desc{font-size:11px;}
+.opcion-card.principal .opcion-header::after{font-size:120px;bottom:-32px;right:-8px;}
+.opcion-card.principal .opcion-body{display:grid;grid-template-columns:1.3fr 1fr;gap:22px;align-items:start;padding:24px 28px;}
+.opcion-card.principal .badge-rec{font-size:9px;padding:6px 40px;}
+.destacado{background:linear-gradient(135deg,var(--blue-dark),var(--blue));border-radius:14px;padding:20px 22px;position:relative;overflow:hidden;}
+.destacado::before{content:'';position:absolute;inset:0;background-image:radial-gradient(rgba(255,255,255,0.055) 1px,transparent 1px);background-size:20px 20px;}
+.destacado-inner{position:relative;z-index:2;}
+.destacado-tit{font-family:'Josefin Sans',sans-serif;font-size:10px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:#7dd44a;margin-bottom:14px;}
+.destacado ul{list-style:none;display:flex;flex-direction:column;gap:11px;}
+.destacado li{font-size:12.5px;color:rgba(255,255,255,0.72);line-height:1.55;position:relative;padding-left:22px;}
+.destacado li::before{content:'✓';position:absolute;left:0;top:0;color:#7dd44a;font-weight:700;}
+.destacado li strong{color:var(--white);font-weight:600;}
+
+/* TERCERA ALTERNATIVA */
+.opcion-card.alternativa{border-style:dashed;}
+.badge-alt{position:absolute;top:14px;right:-38px;background:var(--text-mid);color:var(--white);font-size:8px;font-weight:700;letter-spacing:1.2px;padding:5px 40px;transform:rotate(45deg);width:150px;text-align:center;z-index:10;}
+
+/* INFO BLOCKS */
+.info-blocks{display:grid;grid-template-columns:1fr 1fr;gap:20px;}
+.info-block{background:var(--white);border-radius:16px;border:1.5px solid var(--gray-border);padding:24px 26px;box-shadow:0 2px 16px rgba(0,51,102,0.05);}
+.info-block-icon{font-size:24px;margin-bottom:10px;}
+.info-block-title{font-family:'Josefin Sans',sans-serif;font-size:14px;font-weight:700;color:var(--red-deep);margin-bottom:10px;}
+.info-block-text{font-size:12.5px;color:var(--text-mid);line-height:1.7;}
+.info-block-text strong{color:var(--text);}
+.info-block-text p{margin-bottom:0;}
+.info-block ul{margin-top:10px;padding-left:0;list-style:none;}
+.info-block ul li{font-size:12px;color:var(--text-mid);position:relative;padding-left:18px;margin-bottom:7px;line-height:1.55;}
+.info-block ul li::before{content:'✓';color:var(--green);font-weight:700;position:absolute;left:0;top:0;}
+.test-btn{display:flex;width:fit-content;align-items:center;gap:8px;background:var(--red);color:var(--white);font-family:'Josefin Sans',sans-serif;font-size:12.5px;font-weight:700;padding:11px 22px;border-radius:10px;text-decoration:none;margin-top:16px;transition:transform .15s,box-shadow .15s;}
+.test-btn:hover{transform:translateY(-2px);box-shadow:0 8px 20px rgba(177,41,0,0.28);}
+
+/* RANKING FINAL */
+.rank{display:flex;flex-direction:column;gap:12px;}
+.rank-item{display:flex;gap:16px;background:var(--white);border:1.5px solid var(--gray-border);border-radius:12px;padding:16px 20px;align-items:flex-start;}
+.rank-item.top{border-color:var(--blue);box-shadow:0 4px 20px rgba(0,51,102,0.12);}
+.rank-num{font-family:'Josefin Sans',sans-serif;font-size:22px;font-weight:700;color:var(--red);line-height:1;flex-shrink:0;width:26px;}
+.rank-item.top .rank-num{color:var(--blue);}
+.rank-tit{font-family:'Josefin Sans',sans-serif;font-size:14px;font-weight:700;color:var(--red-deep);margin-bottom:4px;}
+.rank-txt{font-size:12.5px;color:var(--text-mid);line-height:1.65;}
+
+/* INCLUDES */
+.includes-wrap{background:var(--white);border-radius:16px;border:1.5px solid var(--gray-border);box-shadow:0 2px 16px rgba(0,51,102,0.05);overflow:hidden;}
+.includes-head{background:linear-gradient(135deg,var(--red-deep),var(--red));padding:20px 32px;}
+.includes-head h3{font-family:'Josefin Sans',sans-serif;font-size:14px;font-weight:700;color:var(--white);letter-spacing:1px;}
+.includes-body{padding:28px 32px;}
+.includes-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:32px;}
+.col-title{font-family:'Josefin Sans',sans-serif;font-size:9px;font-weight:700;letter-spacing:2.5px;text-transform:uppercase;color:var(--red);margin-bottom:14px;padding-bottom:8px;border-bottom:2px solid var(--red-light);}
+.inc-list{list-style:none;display:flex;flex-direction:column;gap:8px;}
+.inc-list li{font-size:12px;color:var(--text-mid);line-height:1.55;position:relative;padding-left:18px;}
+.inc-list li::before{content:'✓';color:var(--green);font-weight:700;font-size:11px;position:absolute;left:0;top:1px;}
+.inc-list.no li::before{content:'✗';color:var(--red);}
+.inc-list li small{font-size:10px;color:var(--text-light);display:block;margin-top:2px;}
+
+/* GESTOR */
+.gestor-wrap{background:linear-gradient(135deg,var(--blue-dark),var(--blue-mid));border-radius:12px;padding:20px 24px;margin-top:20px;}
+.gestor-title{font-family:'Josefin Sans',sans-serif;font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:rgba(255,255,255,0.6);margin-bottom:14px;}
+.gestor-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;}
+.gestor-item{background:rgba(255,255,255,0.08);border:1px solid rgba(255,255,255,0.12);border-radius:8px;padding:10px 12px;font-size:11px;color:rgba(255,255,255,0.85);line-height:1.4;}
+.gestor-item::before{content:'→';color:#7dd44a;font-weight:700;margin-right:5px;}
+
+/* FORMAS DE PAGO */
+.payment-wrap{background:linear-gradient(135deg,var(--blue-dark) 0%,var(--blue) 60%,var(--blue-mid) 100%);border-radius:16px;padding:32px;position:relative;overflow:hidden;}
+.payment-wrap::before{content:'';position:absolute;inset:0;background-image:radial-gradient(rgba(255,255,255,0.05) 1px,transparent 1px);background-size:22px 22px;}
+.payment-inner{position:relative;z-index:2;}
+.pay-title{font-family:'Josefin Sans',sans-serif;font-size:16px;font-weight:700;color:var(--white);margin-bottom:6px;}
+.pay-subtitle{font-size:12px;color:rgba(255,255,255,0.45);margin-bottom:22px;}
+.pay-route{background:rgba(255,255,255,0.07);border:1px solid rgba(255,255,255,0.14);border-radius:14px;padding:20px 22px;margin-bottom:16px;}
+.pay-route-head{display:flex;align-items:center;gap:10px;margin-bottom:6px;}
+.pay-route-icon{font-size:20px;}
+.pay-route-title{font-family:'Josefin Sans',sans-serif;font-size:14px;font-weight:700;color:var(--white);}
+.pay-route-sub{font-size:11.5px;color:rgba(255,255,255,0.45);margin-bottom:16px;line-height:1.5;}
+.pay-entrada{display:flex;align-items:center;gap:14px;background:rgba(125,212,74,0.13);border:1px solid rgba(125,212,74,0.35);border-radius:10px;padding:14px 18px;margin-bottom:16px;}
+.pay-entrada-num{font-family:'Josefin Sans',sans-serif;font-size:26px;font-weight:700;color:#7dd44a;line-height:1;white-space:nowrap;}
+.pay-entrada-txt{font-size:11.5px;color:rgba(255,255,255,0.72);line-height:1.5;}
+.pay-entrada-txt strong{color:var(--white);font-weight:600;}
+.pay-cols{display:grid;grid-template-columns:1fr 1fr;gap:16px;}
+.pay-col{background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.12);border-radius:12px;padding:16px 18px;}
+.pay-col-title{font-family:'Josefin Sans',sans-serif;font-size:9px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:#7dd44a;margin-bottom:12px;}
+.pay-step{margin-bottom:11px;}
+.pay-step:last-child{margin-bottom:0;}
+.pay-step-num{font-size:9px;font-weight:700;color:rgba(255,255,255,0.4);text-transform:uppercase;letter-spacing:1px;margin-bottom:2px;}
+.pay-step-title{font-size:13px;font-weight:600;color:var(--white);margin-bottom:2px;}
+.pay-step-desc{font-size:11px;color:rgba(255,255,255,0.45);line-height:1.5;}
+.pay-note{font-size:11px;color:rgba(255,255,255,0.32);line-height:1.65;font-style:italic;border-top:1px solid rgba(255,255,255,0.1);padding-top:14px;margin-top:4px;}
+
+/* FINANCIACIÓN */
+.financing-wrap{background:var(--white);border-radius:16px;border:1.5px solid var(--gray-border);box-shadow:0 2px 16px rgba(0,51,102,0.06);overflow:hidden;}
+.financing-head{background:linear-gradient(135deg,var(--blue-dark),var(--blue));padding:22px 32px;display:flex;align-items:center;justify-content:space-between;gap:16px;}
+.financing-head-left{display:flex;align-items:center;gap:16px;}
+.fin-icon{font-size:28px;flex-shrink:0;}
+.fin-title{font-family:'Josefin Sans',sans-serif;font-size:16px;font-weight:700;color:var(--white);margin-bottom:3px;}
+.fin-sub{font-size:11px;color:rgba(255,255,255,0.5);line-height:1.4;}
+.fin-badge{background:rgba(125,212,74,0.2);border:1px solid rgba(125,212,74,0.4);color:#7dd44a;font-family:'Josefin Sans',sans-serif;font-size:11px;font-weight:700;letter-spacing:1px;padding:6px 14px;border-radius:20px;white-space:nowrap;}
+.financing-body{padding:28px 32px;}
+.fin-opcion-label,.fin-plazo-label{font-family:'Josefin Sans',sans-serif;font-size:9px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--text-light);margin-bottom:10px;}
+.fin-opcion-selector{margin-bottom:24px;}
+.fin-opcion-btns{display:flex;gap:10px;flex-wrap:wrap;}
+.fin-opcion-btn{background:var(--gray-card);border:1.5px solid var(--gray-border);border-radius:10px;padding:10px 16px;cursor:pointer;text-align:left;transition:all .2s;display:flex;flex-direction:column;gap:3px;font-family:'Fira Sans',sans-serif;}
+.fin-opcion-btn:hover{border-color:var(--blue-mid);background:var(--blue-light);}
+.fin-opcion-btn.active{border-color:var(--blue);background:var(--blue-light);}
+.fin-opcion-nombre{font-size:10px;font-weight:700;letter-spacing:1px;text-transform:uppercase;color:var(--text-light);}
+.fin-opcion-btn.active .fin-opcion-nombre{color:var(--blue);}
+.fin-opcion-precio{font-family:'Josefin Sans',sans-serif;font-size:16px;font-weight:700;color:var(--text);}
+.fin-opcion-btn.active .fin-opcion-precio{color:var(--blue);}
+.fin-entrada-fija{display:flex;align-items:center;gap:14px;background:var(--green-light);border:1.5px solid rgba(76,158,12,0.3);border-radius:12px;padding:14px 18px;margin-bottom:24px;}
+.fin-entrada-fija-num{font-family:'Josefin Sans',sans-serif;font-size:24px;font-weight:700;color:var(--green-dark);line-height:1;white-space:nowrap;}
+.fin-entrada-fija-txt{font-size:12px;color:var(--text-mid);line-height:1.55;}
+.fin-entrada-fija-txt strong{color:var(--text);font-weight:600;}
+.fin-plazo-wrap{margin-bottom:24px;}
+.fin-plazos{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;}
+.fin-plazo{background:var(--gray-card);border:1.5px solid var(--gray-border);border-radius:12px;padding:14px 12px;cursor:pointer;text-align:center;transition:all .2s;font-family:'Fira Sans',sans-serif;}
+.fin-plazo:hover{border-color:var(--blue-mid);transform:translateY(-2px);}
+.fin-plazo.active{border-color:var(--green);background:var(--green-light);box-shadow:0 4px 16px rgba(76,158,12,0.15);}
+.fin-plazo-meses{font-family:'Josefin Sans',sans-serif;font-size:15px;font-weight:700;color:var(--text);margin-bottom:6px;}
+.fin-plazo.active .fin-plazo-meses{color:var(--green-dark);}
+.fin-plazo-badge{display:inline-block;border-radius:20px;padding:2px 8px;font-size:9px;font-weight:700;letter-spacing:0.5px;margin-bottom:4px;}
+.fin-plazo-badge.sin-intereses{background:var(--green-light);color:var(--green-dark);border:1px solid rgba(76,158,12,0.3);}
+.fin-plazo-badge.con-intereses{background:var(--blue-light);color:var(--blue);border:1px solid rgba(0,51,102,0.2);}
+.fin-plazo-quien{font-size:9px;color:var(--text-light);line-height:1.3;}
+.fin-resultado{display:grid;grid-template-columns:auto 1fr;gap:24px;background:linear-gradient(135deg,var(--blue-dark),var(--blue));border-radius:14px;padding:24px 28px;margin-bottom:16px;align-items:center;}
+.fin-resultado-main{text-align:center;border-right:1px solid rgba(255,255,255,0.15);padding-right:24px;}
+.fin-cuota-label{font-size:10px;font-weight:600;letter-spacing:2px;text-transform:uppercase;color:rgba(255,255,255,0.5);margin-bottom:6px;}
+.fin-cuota-valor{font-family:'Josefin Sans',sans-serif;font-size:36px;font-weight:700;color:#7dd44a;line-height:1;margin-bottom:4px;}
+.fin-cuota-sub{font-size:11px;color:rgba(255,255,255,0.45);}
+.fin-resultado-detalle{display:flex;flex-direction:column;gap:10px;}
+.fin-det-row{display:flex;justify-content:space-between;align-items:center;gap:12px;}
+.fin-det-label{font-size:12px;color:rgba(255,255,255,0.55);}
+.fin-det-val{font-size:13px;font-weight:600;color:var(--white);}
+.fin-det-green{color:#7dd44a !important;}
+.fin-det-total{border-top:1px solid rgba(255,255,255,0.15);padding-top:10px;margin-top:2px;}
+.fin-det-total .fin-det-label{color:rgba(255,255,255,0.7);font-weight:600;}
+.fin-det-total .fin-det-val{font-family:'Josefin Sans',sans-serif;font-size:16px;color:var(--white);}
+.fin-nota{font-size:11px;color:var(--text-light);line-height:1.6;background:var(--gray-card);border-radius:8px;padding:12px 16px;border-left:3px solid var(--blue-light);}
+
+/* SIGUIENTES PASOS */
+.steps-wrap{background:linear-gradient(135deg,var(--blue-dark) 0%,var(--blue) 60%,var(--blue-mid) 100%);border-radius:16px;padding:34px 36px;position:relative;overflow:hidden;}
+.steps-wrap::before{content:'';position:absolute;inset:0;background-image:radial-gradient(rgba(255,255,255,0.05) 1px,transparent 1px);background-size:22px 22px;}
+.steps-inner{position:relative;z-index:2;}
+.steps-title{font-family:'Josefin Sans',sans-serif;font-size:18px;font-weight:700;color:var(--white);margin-bottom:6px;}
+.steps-sub{font-size:12px;color:rgba(255,255,255,0.5);margin-bottom:26px;}
+.steps-list{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;}
+.step-item{background:rgba(255,255,255,0.07);border:1px solid rgba(255,255,255,0.12);border-radius:12px;padding:18px;}
+.step-num{font-family:'Josefin Sans',sans-serif;font-size:20px;font-weight:700;color:#7dd44a;margin-bottom:8px;}
+.step-title{font-size:13px;font-weight:600;color:var(--white);margin-bottom:4px;}
+.step-desc{font-size:11px;color:rgba(255,255,255,0.5);line-height:1.5;}
+/* FOOTER */
+.footer{background:var(--blue-dark);padding:30px 48px;margin-top:56px;text-align:center;position:relative;}
+.footer::before{content:'';position:absolute;top:0;left:0;right:0;height:4px;background:linear-gradient(90deg,var(--red) 0%,var(--red) 22%,var(--white) 22%,var(--white) 78%,var(--red) 78%,var(--red) 100%);}
+.footer-logo{font-family:'Josefin Sans',sans-serif;font-size:15px;font-weight:700;color:var(--white);letter-spacing:1px;margin-bottom:6px;}
+.footer-tag{font-family:'Josefin Sans',sans-serif;font-size:10px;letter-spacing:4px;text-transform:uppercase;color:#ff9c7a;margin-bottom:14px;}
+.footer-meta{font-size:11px;color:rgba(255,255,255,0.4);line-height:1.7;}
+.footer-meta a{color:rgba(255,255,255,0.65);text-decoration:none;}
+
+@media(max-width:900px){
+  .qs-chapters{grid-template-columns:1fr;}
+  .det-cols{grid-template-columns:1fr;}
+  .honest-cols{grid-template-columns:1fr;}
+  .opcion-card.principal .opcion-body{grid-template-columns:1fr;}
+  .ficha{grid-template-columns:repeat(2,1fr);}
+}
+@media(max-width:720px){
+  .header{padding:16px 20px;}.hero{padding:28px 20px 24px;}.hero-name{font-size:28px;}
+  .main{padding:28px 16px 20px;}
+  .includes-grid{grid-template-columns:1fr;}.opciones-grid{grid-template-columns:1fr;}
+  .intro-points{grid-template-columns:1fr;}.info-blocks{grid-template-columns:1fr;}
+  .pay-cols{grid-template-columns:1fr;}.gestor-grid{grid-template-columns:repeat(2,1fr);}
+  .steps-list{grid-template-columns:1fr;}
+  .fin-plazos{grid-template-columns:repeat(2,1fr);}
+  .fin-resultado{grid-template-columns:1fr;}
+  .fin-resultado-main{border-right:none;border-bottom:1px solid rgba(255,255,255,0.15);padding-right:0;padding-bottom:20px;}
+  .financing-head{flex-direction:column;align-items:flex-start;}
+  .fin-opcion-btns{flex-direction:column;}
+  .det-body{padding:2px 18px 20px;}
+  details.det > summary{padding:16px 18px;}
+  .footer{padding:26px 20px;}
+}
+
+/* ================= ANIMACIONES ================= */
+.js-anim .reveal{opacity:0;transform:translateY(20px);will-change:opacity,transform;
+  transition:opacity .75s cubic-bezier(.22,.61,.36,1),transform .75s cubic-bezier(.22,.61,.36,1);}
+.js-anim .reveal.in{opacity:1;transform:none;}
+.js-anim .reveal-zoom{opacity:0;transform:scale(.975);transition:opacity .8s ease,transform .8s cubic-bezier(.22,.61,.36,1);}
+.js-anim .reveal-zoom.in{opacity:1;transform:none;}
+
+@keyframes heroUp{from{opacity:0;transform:translateY(16px);}to{opacity:1;transform:none;}}
+@keyframes leafIn{from{opacity:0;transform:translateY(-50%) rotate(-30deg) scale(.85);}to{opacity:.09;transform:translateY(-50%) rotate(-12deg) scale(1);}}
+.js-anim .hero::after{animation:leafIn 1.4s cubic-bezier(.22,.61,.36,1) .15s both;}
+.js-anim .hero-tag{animation:heroUp .7s cubic-bezier(.22,.61,.36,1) .05s both;}
+.js-anim .hero-name{animation:heroUp .7s cubic-bezier(.22,.61,.36,1) .16s both;}
+.js-anim .hero-subtitle{animation:heroUp .7s cubic-bezier(.22,.61,.36,1) .26s both;}
+.js-anim .hero-pill{animation:heroUp .55s cubic-bezier(.22,.61,.36,1) both;}
+.js-anim .hero-promo{animation:heroUp .7s cubic-bezier(.22,.61,.36,1) .7s both;}
+
+.progress-bar{position:fixed;top:0;left:0;height:3px;width:100%;transform:scaleX(0);transform-origin:0 50%;
+  background:linear-gradient(90deg,var(--red),var(--red-warm));z-index:999;transition:transform .1s linear;}
+
+.qs-chapter-media img{transition:transform .7s cubic-bezier(.22,.61,.36,1);}
+.qs-chapter:hover .qs-chapter-media img{transform:scale(1.06);}
+
+.opcion-card{transition:transform .35s cubic-bezier(.22,.61,.36,1),box-shadow .35s ease,border-color .3s ease;}
+.opcion-header::after{transition:transform .6s cubic-bezier(.22,.61,.36,1),opacity .4s ease;}
+.opcion-card:hover .opcion-header::after{transform:rotate(-4deg) scale(1.14);opacity:.17;}
+
+@keyframes razonIn{from{opacity:0;transform:translateY(-6px);}to{opacity:1;transform:none;}}
+.js-anim details[open] .colegio-razon{animation:razonIn .38s ease both;}
+.js-anim details.det[open] .det-body{animation:razonIn .38s ease both;}
+
+.fin-plazo,.fin-opcion-btn{transition:transform .25s cubic-bezier(.22,.61,.36,1),border-color .25s ease,background .25s ease,box-shadow .25s ease;}
+.fin-cuota-valor{transition:color .3s ease;}
+@keyframes cuotaPop{0%{opacity:.35;transform:translateY(6px);}100%{opacity:1;transform:none;}}
+.fin-cuota-valor.pop{animation:cuotaPop .42s cubic-bezier(.22,.61,.36,1);}
+
+.step-item{transition:transform .3s cubic-bezier(.22,.61,.36,1),background .3s ease;}
+.step-item:hover{transform:translateY(-4px);background:rgba(255,255,255,0.11);}
+
+@media(prefers-reduced-motion:reduce){
+  .js-anim .reveal,.js-anim .reveal-zoom{opacity:1!important;transform:none!important;transition:none!important;}
+  .js-anim .hero::after,.js-anim .hero-tag,.js-anim .hero-name,.js-anim .hero-subtitle,
+  .js-anim .hero-pill,.js-anim .hero-promo{animation:none!important;opacity:1;}
+  .js-anim .hero::after{opacity:.09;}
+  .progress-bar{display:none;}
+  *{transition-duration:.01ms!important;}
+}
+</style>
+</head>
+<body>
+
+<!-- ============ 1. HEADER ============ -->
+<div class="header">
+  <div class="logo-area"><img src="https://mylanguagequest.com/wp-content/uploads/2026/02/Logo-DY_J5B-1-1.png" alt="My Language Quest"></div>
+  <div class="header-right">
+    <div class="header-label">Curso académico</div>
+    <div class="header-year">2027/28</div>
+  </div>
+</div>
+
+<!-- ============ 2. HERO ============ -->
+<div class="hero">
+  <div class="hero-dots"></div>
+  <div class="hero-inner">
+    <div class="hero-tag">Propuesta personalizada · Canadá</div>
+    <div class="hero-name">Fuica</div>
+    <div class="hero-subtitle">Año escolar completo · British Columbia · Grade 10 con programa ecuestre integrado</div>
+    <div class="hero-pills">
+      <div class="hero-pill">🎓 4.º ESO · Grade 10</div>
+      <div class="hero-pill">📅 Año escolar completo</div>
+      <div class="hero-pill">🏠 Familia anfitriona</div>
+      <div class="hero-pill ac">🐴 Equitación y salto</div>
+      <div class="hero-pill">🧭 Perfil independiente</div>
+      <div class="hero-pill">🏡 Localidad pequeña o mediana, no aislada</div>
+    </div>
+    <div class="hero-promo">🍁 <strong>Descuento especial MLQ de 1.000 €</strong> — ya aplicado en todos los precios de programa de esta propuesta. No acumulable con otras promociones.</div>
+  </div>
+</div>
+
+<div class="main">
+
+  <!-- ============ 3. CONTEXTO ============ -->
+  <div class="section-title"><h2>¿Qué es el programa de Canadá?</h2></div>
+  <p class="intro-text">
+    El programa de Canadá de My Language Quest permite cursar un trimestre, un semestre o un año escolar completo
+    dentro del <strong>sistema público canadiense</strong>, conviviendo con una familia anfitriona o, si se prefiere,
+    en régimen de residencia. A diferencia de otros destinos, en Canadá no se elige colegio de forma directa:
+    se selecciona un <strong>distrito escolar</strong> según el perfil, los intereses y la disponibilidad del estudiante,
+    y es el propio distrito quien asigna el centro más adecuado dentro de su red de colegios públicos.
+  </p>
+  <p class="intro-text">
+    En esta propuesta hemos ido un paso más allá: para cada distrito hemos seleccionado <strong>el instituto concreto</strong>
+    que alberga el programa ecuestre, porque en los tres casos la equitación está ligada a un centro determinado.
+  </p>
+  <div class="intro-points">
+    <div class="intro-point"><div class="intro-point-icon">🏫</div><div><div class="intro-point-title">Sistema de distritos</div><div class="intro-point-desc">Cada distrito agrupa varios colegios públicos. Aquí proponemos el distrito y el instituto concreto donde está la academia ecuestre.</div></div></div>
+    <div class="intro-point"><div class="intro-point-icon">📐</div><div><div class="intro-point-title">Planificación académica</div><div class="intro-point-desc">Grade 10 se organiza por semestres. Elegimos las asignaturas con los requisitos de homologación españoles delante desde el primer día.</div></div></div>
+    <div class="intro-point"><div class="intro-point-icon">🏠</div><div><div class="intro-point-title">Familia anfitriona</div><div class="intro-point-desc">Pensión completa, habitación individual o compartida, con un único estudiante hispanohablante por familia.</div></div></div>
+    <div class="intro-point"><div class="intro-point-icon">🐴</div><div><div class="intro-point-title">El caballo, dentro del horario</div><div class="intro-point-desc">Las tres opciones integran la equitación en el programa escolar. Lo que cambia entre ellas es la frecuencia de monta y el enfoque.</div></div></div>
+  </div>
+
+  <!-- ============ 4. PERFIL DE FUICA ============ -->
+  <div class="section-title"><h2>El perfil de Fuica</h2></div>
+  <p class="intro-text">
+    Fuica cursará <strong>4.º de ESO</strong> durante el curso 2027/28, curso que en Canadá equivale a <strong>Grade 10</strong>,
+    en régimen de año escolar completo. La selección tiene en cuenta su <strong>interés por la equitación y el salto</strong>,
+    su carácter independiente, la preferencia por localidades pequeñas o medianas —pero evitando en lo posible un entorno
+    excesivamente aislado— y la necesidad de mantener un itinerario académico adecuado para su posterior
+    <strong>homologación en País Vasco</strong>.
+  </p>
+  <p class="intro-text">
+    Para Fuica hemos seleccionado <strong>tres opciones en British Columbia</strong> que permiten combinar un curso académico de
+    Grade 10 con una experiencia especialmente vinculada al mundo ecuestre. Las tres ofrecen experiencias muy distintas.
+  </p>
+  <div class="det-cols">
+    <div class="det-mini">
+      <div class="det-mini-tit">🐴 Su prioridad deportiva</div>
+      <p>La equitación, y concretamente el <strong>salto</strong>. Por eso no nos hemos limitado a buscar distritos con hípicas cerca: hemos buscado <strong>programas ecuestres integrados en el propio horario escolar</strong>, para que montar no dependa de encontrar un club después de clase.</p>
+    </div>
+    <div class="det-mini">
+      <div class="det-mini-tit">🏡 El tipo de entorno</div>
+      <p><strong>Pequeño sí, aislado no.</strong> Fuica es independiente y buscamos que pueda moverse con autonomía: localidades con servicios, comercio, transporte y vida social, sin la sensación de una gran metrópoli ni la de una comunidad rural remota.</p>
+    </div>
+  </div>
+
+  <!-- ============ 5. CÓMO HEMOS SELECCIONADO ============ -->
+  <div class="section-title"><h2>¿Cómo hemos seleccionado estas opciones?</h2></div>
+  <p class="intro-text">
+    Las tres alternativas ofrecen experiencias muy distintas: <strong>Sooke</strong> destaca por la frecuencia de monta dentro del
+    horario escolar; <strong>Langley</strong> por su equilibrio entre academia ecuestre, entorno semiurbano y cercanía a Vancouver;
+    y <strong>Peace River North</strong> por una experiencia canadiense mucho más pequeña e inmersiva centrada en Equine Studies
+    y Natural Horsemanship.
+  </p>
+
+  <div class="info-block" style="max-width:none;margin-top:24px;">
+    <div class="info-block-icon">🤝</div>
+    <div class="info-block-title">Un punto de honestidad que nos parece importante</div>
+    <div class="info-block-text">
+      <p>No todos los programas ecuestres publican con el mismo detalle cuántas veces se monta a la semana. Por eso diferenciamos claramente dos situaciones, y no presentamos como cerrado lo que todavía no lo está:</p>
+      <div class="honest-cols">
+        <div class="honest-item honest-si">
+          <div class="honest-h"><span class="eq-badge eq-ok">🐴 Frecuencia de monta confirmada</span></div>
+          <p>En <strong>Sooke</strong>, el distrito publica la estructura completa: 5 días de Academy, 3 de ellos en la hípica, con <strong>2 sesiones de monta y 1 de Stable Management</strong> a la semana.</p>
+        </div>
+        <div class="honest-item honest-no">
+          <div class="honest-h"><span class="eq-badge eq-conf">🐴 Frecuencia por confirmar</span></div>
+          <p>En <strong>Langley</strong> y <strong>Peace River North</strong>, el programa ecuestre está integrado en el colegio, pero no se publica un número fijo de sesiones semanales. Lo verificaremos con el centro antes de formalizar.</p>
+        </div>
+      </div>
+      <p style="margin-top:14px;">Preferimos deciros esto desde el principio a presentar las tres como equivalentes. <strong>Es exactamente la diferencia que puede inclinar la decisión</strong>, porque Fuica ya practica salto y la frecuencia real de monta le importa.</p>
+    </div>
+  </div>
+
+  <div class="qs-chapters-head" style="margin-bottom:14px;">
+    <div class="qs-chapters-title">Comparativa para Fuica</div>
+    <div class="qs-chapters-sub">Las tres opciones, atributo a atributo</div>
+  </div>
+  <div class="tabla-wrap">
+    <table class="comp comp4">
+      <thead>
+        <tr>
+          <th></th>
+          <th>Sooke SD62</th>
+          <th>Langley SD35</th>
+          <th>Peace River North SD60</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td class="attr">Colegio recomendado</td><td><strong>Belmont Secondary</strong></td><td><strong>Brookswood Secondary</strong></td><td><strong>Hudson's Hope Secondary</strong></td></tr>
+        <tr><td class="attr">Zona</td><td>Greater Victoria · Vancouver Island</td><td>Greater Vancouver</td><td>Norte de British Columbia</td></tr>
+        <tr><td class="attr">Tipo de entorno</td><td>Residencial, costero</td><td>Semiurbano / residencial</td><td>Comunidad pequeña</td></tr>
+        <tr><td class="attr">Programa ecuestre</td><td>Belmont Equine Academy</td><td>Equestrian Academy</td><td>Equine Studies / Natural Horsemanship</td></tr>
+        <tr><td class="attr">Dentro del horario</td><td><span class="badge-int int-ok">Sí</span></td><td><span class="badge-int int-ok">Sí</span></td><td><span class="badge-int int-media">Curso escolar · estructura 27/28 a confirmar</span></td></tr>
+        <tr><td class="attr">Monta confirmada</td><td><span class="badge-int int-ok">2 sesiones/semana</span></td><td><span class="badge-int int-media">Frecuencia a confirmar</span></td><td><span class="badge-int int-media">Frecuencia a confirmar</span></td></tr>
+        <tr><td class="attr">Formación adicional</td><td>Stable Management</td><td>Leadership, mentors, field trips</td><td>Natural Horsemanship</td></tr>
+        <tr><td class="attr">Clima</td><td><span class="badge-int int-ok">Muy suave</span></td><td><span class="badge-int int-ok">Suave</span></td><td><span class="badge-int int-alta">Frío / nieve</span></td></tr>
+        <tr><td class="attr">Aeropuerto</td><td>Victoria YYJ</td><td>Vancouver YVR</td><td>Fort St. John YXJ</td></tr>
+        <tr><td class="attr">Programa MLQ antes de descuento</td><td>27.400 €</td><td>25.700 €</td><td>23.200 €</td></tr>
+        <tr><td class="attr">Descuento MLQ</td><td class="desc-verde">–1.000 €</td><td class="desc-verde">–1.000 €</td><td class="desc-verde">–1.000 €</td></tr>
+        <tr class="fila-precio"><td class="attr">Programa MLQ</td><td class="pr">26.400 €</td><td class="pr">24.700 €</td><td class="pr">22.200 €</td></tr>
+        <tr><td class="attr">Referencia ecuestre</td><td>CAD 4.446 ≈ 2.758 €</td><td>CAD 3.000 ≈ 1.861 €</td><td>A confirmar</td></tr>
+        <tr class="fila-total"><td class="attr">Presupuesto orientativo<br>programa + equitación</td><td class="pr">≈ 29.158 €</td><td class="pr">≈ 26.561 €</td><td class="pr">A confirmar</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="callout blue" style="max-width:none;">
+    <strong>Nota sobre las tarifas ecuestres.</strong> Los precios MLQ indicados corresponden al programa de año académico y
+    <strong>no incluyen las Academies ni las actividades ecuestres especializadas</strong>. En Sooke, la referencia de CAD 4.446
+    corresponde a la tarifa oficial de Belmont Equine para 2026/27. En Langley, la referencia de CAD 3.000 corresponde a la última
+    tarifa oficial publicada que hemos localizado para la Equestrian Academy. Las cantidades en euros se muestran únicamente como
+    referencia utilizando el cambio actual aproximado de <strong>1 CAD = 0,620 €</strong>. Las tarifas de Academy 2027/28 y su
+    equivalencia final en euros se confirmarán antes de la inscripción.
+  </div>
+
+  <!-- ============ 6. HOMOLOGACIÓN ============ -->
+  <div class="section-title"><h2>4.º de ESO y homologación</h2></div>
+  <div class="alert-box">
+    <div class="alert-icon">⚠️</div>
+    <div class="alert-text"><strong>El punto que ha ordenado toda esta propuesta.</strong> Fuica cursará Grade 10, que posteriormente habrá que homologar al título español de Graduado en ESO. La normativa española vigente exige que el estudiante curse y apruebe <strong>en cada semestre un mínimo de cuatro asignaturas</strong> pertenecientes a determinadas áreas: Literatura, Historia, Geografía, Latín, Griego, Filosofía, Ciencias Naturales, Matemáticas, Física y Química.</div>
+  </div>
+  <div class="info-blocks">
+    <div class="info-block">
+      <div class="info-block-icon">✅</div>
+      <div class="info-block-title">Cómo encaja el programa ecuestre</div>
+      <div class="info-block-text">
+        En las tres opciones, Fuica <strong>sigue matriculada en su programa académico convencional de Grade 10</strong> y la academia ecuestre convive con él.
+        <ul>
+          <li>Mantiene English, Mathematics, Science, Social Studies y el resto de materias necesarias</li>
+          <li>La academia aporta créditos propios, no sustituye las materias de homologación</li>
+          <li>Grade 10 funciona por semestres, lo que facilita el encaje</li>
+        </ul>
+      </div>
+    </div>
+    <div class="info-block">
+      <div class="info-block-icon">📐</div>
+      <div class="info-block-title">Cómo lo planificamos</div>
+      <div class="info-block-text">
+        La elección de asignaturas no se deja al azar ni al criterio del colegio.
+        <ul>
+          <li>MLQ revisa la selección de asignaturas <strong>antes</strong> de formalizar el horario definitivo</li>
+          <li>Construimos las cuatro materias válidas de cada semestre junto a la Academy</li>
+          <li>El gestor estudiantil en destino vigila cualquier cambio durante el curso</li>
+          <li>A la vuelta gestionamos la convalidación y la apostilla de La Haya</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div class="callout" style="max-width:none;">
+    <strong>Atención especial en Langley.</strong> Su Equestrian Academy ocupa <strong>tres bloques del horario</strong> —uno en el primer
+    semestre y dos en el segundo— y aporta 8 créditos de Equestrian Leadership más 4 de Physical &amp; Health Education. Es un programa
+    académicamente potente, pero por eso mismo revisaremos con Brookswood la combinación exacta de materias antes de cerrar el horario.
+  </div>
+
+  <!-- ============ 8. LAS TRES OPCIONES ============ -->
+  <div class="section-title"><h2>Las tres opciones</h2></div>
+  <div class="opciones-grid">
+
+    <div class="opcion-card recomendada principal">
+      <div class="badge-rec">★ RECOMENDADA</div>
+      <div class="opcion-header">
+        <div class="opcion-num">Opción 01</div>
+        <div class="opcion-distrito">Sooke School District 62</div>
+        <div class="opcion-loc">📍 British Columbia · Greater Victoria · Vancouver Island</div>
+        <div class="precio-chip"><span class="val">26.400 €</span><span class="desc">/ año + Academy</span><span class="tachado">27.400 €</span></div>
+      </div>
+      <div class="opcion-body">
+        <div>
+        <div class="eq-badge eq-ok">🐴 2 sesiones de monta por semana, confirmadas</div>
+        <div class="colegios">
+        <div class="colegio">
+          <div class="colegio-top"><div class="colegio-nombre">Belmont Secondary School</div><div class="colegio-meta"><span class="tag pub">Público</span><span class="tag info">+1.700 alumnos</span><span class="tag info">Langford</span><span class="tag info">Belmont Equine</span></div></div>
+          <details><summary>Por qué es ideal para Fuica</summary><div class="colegio-razon">Es el centro que alberga <strong>Belmont Equine</strong>, la opción ecuestre integrada en horario escolar del distrito, disponible para Grades 9–12. La Academy funciona <strong>5 días por semana dentro del horario</strong>, con 3 días en Cedar Vista Stables: 2 sesiones de monta y 1 de Stable Management. <strong>No es necesario disponer de caballo propio.</strong> La equitación no dependería de encontrar una hípica después del colegio.</div></details>
+          <details><summary>El colegio y su oferta</summary><div class="colegio-razon">Instituto grande, con más de 1.700 estudiantes y una oferta académica muy amplia: English, Mathematics, Social Studies, Sciences, Physics, Chemistry, Biology, Languages, Arts, Technology, Outdoor Education y Sports Performance, entre otras. Vida estudiantil muy activa con fútbol, baloncesto, voleibol, rugby, golf, atletismo, cross-country, aquatics y fitness.</div></details>
+        </div>
+        </div>
+        </div>
+        <div class="destacado"><div class="destacado-inner">
+          <div class="destacado-tit">Por qué es nuestra recomendación</div>
+          <ul>
+            <li><strong>2 sesiones de monta y 1 de Stable Management</strong> a la semana, dentro del horario escolar</li>
+            <li>Academy <strong>5 días por semana</strong>, 3 de ellos en Cedar Vista Stables</li>
+            <li><strong>No hace falta caballo propio</strong></li>
+            <li>El <strong>clima más suave</strong> de las tres opciones: enero en torno a 4,6 °C de media</li>
+            <li>Instituto de <strong>+1.700 alumnos</strong> en Langford, con servicios y acceso fácil a Victoria</li>
+            <li>Es la única opción con la <strong>frecuencia de monta publicada y confirmada</strong></li>
+          </ul>
+        </div></div>
+      </div>
+      <div class="match-bar"><span class="match-tag">Monta dentro del horario</span><span class="match-tag">Clima muy suave</span><span class="match-tag">Sin caballo propio</span><span class="match-tag">Colegio grande</span></div>
+    </div>
+
+    <div class="opcion-card">
+      <div class="opcion-header">
+        <div class="opcion-num">Opción 02</div>
+        <div class="opcion-distrito">Langley School District 35</div>
+        <div class="opcion-loc">📍 British Columbia · Greater Vancouver · Langley</div>
+        <div class="precio-chip"><span class="val">24.700 €</span><span class="desc">/ año + Academy</span><span class="tachado">25.700 €</span></div>
+      </div>
+      <div class="opcion-body">
+        <div class="eq-badge eq-conf">🐴 Academia con créditos · frecuencia de monta a confirmar</div>
+        <div class="colegios">
+        <div class="colegio">
+          <div class="colegio-top"><div class="colegio-nombre">Brookswood Secondary School</div><div class="colegio-meta"><span class="tag pub">Público</span><span class="tag info">Grades 8–12</span><span class="tag info">Langley</span><span class="tag info">Equestrian Academy</span></div></div>
+          <details><summary>Por qué es ideal para Fuica</summary><div class="colegio-razon">Sede de la <strong>Langley School District Equestrian Academy</strong>, en funcionamiento desde 2016. Plantea la equitación desde un punto de vista más amplio: deporte ecuestre, liderazgo, formación, mentores, conocimiento del sector, visitas, experiencias prácticas y posibles carreras profesionales relacionadas con el caballo. Está preparada para estudiantes de <strong>diferentes niveles y disciplinas</strong> y busca adaptar el programa a sus intereses deportivos.</div></details>
+          <details><summary>Créditos y horario</summary><div class="colegio-razon">Académicamente es un programa potente: <strong>8 créditos en Equestrian Leadership / Equestrian Academy</strong> y <strong>4 créditos de Physical &amp; Health Education</strong>, e integra además requisitos de Career Education. Ocupa tres bloques durante el curso: 1 bloque en el primer semestre y 2 en el segundo. Fuica seguiría matriculada en Brookswood para sus materias académicas normales.</div></details>
+        </div>
+      </div></div>
+      <div class="match-bar"><span class="match-tag">Créditos académicos</span><span class="match-tag">Cerca de Vancouver</span><span class="match-tag">Mucha vida estudiantil</span><span class="match-tag">Máxima autonomía</span></div>
+    </div>
+
+    <div class="opcion-card alternativa">
+      <div class="badge-alt">TERCERA ALTERNATIVA</div>
+      <div class="opcion-header">
+        <div class="opcion-num">Opción 03</div>
+        <div class="opcion-distrito">Peace River North School District 60</div>
+        <div class="opcion-loc">📍 British Columbia · Norte · Hudson's Hope, Peace River Valley</div>
+        <div class="precio-chip"><span class="val">22.200 €</span><span class="desc">/ año · Equine a confirmar</span><span class="tachado">23.200 €</span></div>
+      </div>
+      <div class="opcion-body">
+        <div class="eq-badge eq-conf">🐴 Equine Studies / Natural Horsemanship · enfoque distinto al salto</div>
+        <div class="colegios">
+        <div class="colegio">
+          <div class="colegio-top"><div class="colegio-nombre">Hudson's Hope Elementary-Secondary School</div><div class="colegio-meta"><span class="tag pub">Público</span><span class="tag info">Comunidad pequeña</span><span class="tag info">Peace River Valley</span><span class="tag info">«Family School»</span></div></div>
+          <details><summary>Por qué la incluimos</summary><div class="colegio-razon">Un planteamiento deliberadamente diferente. El colegio confirma que su sección secundaria dispone de <strong>espacios específicos para Equine Studies / Natural Horsemanship</strong>, junto con Science, Mathematics, Social Studies, French, Fine Arts, Technology y Woodwork. La documentación del centro identifica Equine Studies y Natural Horsemanship como <strong>cursos desarrollados localmente</strong>, no como una simple actividad ecuestre externa.</div></details>
+          <details><summary>Qué tipo de equitación ofrece</summary><div class="colegio-razon"><strong>No es una academia orientada al salto.</strong> El enfoque está más relacionado con Natural Horsemanship: manejo del caballo, comunicación caballo-jinete, cuidado, conocimiento ecuestre y aprendizaje práctico. Puede ser interesante para Fuica precisamente como una experiencia <em>diferente</em> a la disciplina que ya practica en España. La frecuencia semanal no aparece publicada y habría que confirmarla con el centro.</div></details>
+        </div>
+      </div></div>
+      <div class="match-bar"><span class="match-tag">Máxima inmersión</span><span class="match-tag">Precio base más bajo</span><span class="match-tag">Nieve y deportes de invierno</span><span class="match-tag">Comunidad muy cercana</span></div>
+    </div>
+
+  </div>
+
+  <!-- ============ 9. DETALLE POR OPCIÓN ============ -->
+  <div class="section-title"><h2>Cada opción, en detalle</h2></div>
+  <div class="det-list">
+
+    <details class="det top" open>
+      <summary>
+        <span class="det-num">01</span>
+        <span class="det-head">
+          <span class="det-tit">Sooke School District 62 · Belmont Secondary School</span>
+          <span class="det-sub">La opción más potente si la prioridad es que Fuica siga montando con regularidad</span>
+        </span>
+        <span class="det-pr">26.400 €<s>27.400 €</s></span>
+      </summary>
+      <div class="det-body">
+        <h4>Precio</h4>
+        <div class="precio-desglose">
+          <div class="pd-row"><span>Programa académico 2027/28</span><strong>27.400 €</strong></div>
+          <div class="pd-row pd-desc"><span>Descuento especial MLQ</span><strong>–1.000 €</strong></div>
+          <div class="pd-row pd-tot"><span>Precio programa MLQ</span><strong>26.400 €</strong></div>
+          <div class="pd-row pd-sep"><span>Belmont Equine Academy · referencia 2026/27</span><strong>CAD 4.446 ≈ 2.758 €</strong></div>
+          <div class="pd-row"><span>Depósito actual de la Academy</span><strong>CAD 900 ≈ 558 €</strong></div>
+          <div class="pd-row pd-tot"><span>Presupuesto conjunto orientativo</span><strong>≈ 29.158 €</strong></div>
+        </div>
+        <p style="font-size:11.5px;color:var(--text-light);font-style:italic;">La Belmont Equine Academy no está incluida en el precio del programa. La tarifa 2027/28 todavía deberá ser publicada por el distrito, y tanto ese importe como el cambio CAD/EUR pueden variar.</p>
+
+        <h4>Por qué hemos seleccionado Sooke para Fuica</h4>
+        <p>Sooke School District está situado en <strong>Vancouver Island</strong>, en el área de Greater Victoria. Sus estudiantes viven principalmente en comunidades residenciales como Langford, Colwood, Metchosin y Sooke, por lo que ofrece algo que encaja especialmente bien con lo que buscáis: <strong>naturaleza y espacios abiertos, pero sin el aislamiento de una pequeña población del interior de Canadá</strong>.</p>
+        <p>Hemos seleccionado específicamente <strong>Belmont Secondary School</strong> porque actualmente es el centro que alberga Belmont Equine, la opción ecuestre integrada en horario escolar del distrito. El programa está disponible para Grades 9–12.</p>
+
+        <h4>Belmont Equine Academy</h4>
+        <div class="eq-badge eq-ok">🐴 Aquí sí podemos concretar la frecuencia real de equitación</div>
+        <p>La Academy funciona <strong>5 días por semana dentro del horario escolar</strong>. Los estudiantes acuden <strong>3 días por semana a Cedar Vista Stables</strong>:</p>
+        <ul>
+          <li><strong>2 sesiones semanales de monta</strong></li>
+          <li><strong>1 sesión semanal de Stable Management</strong></li>
+          <li>Los días restantes se destinan a trabajo académico de la Academy y Physical Education</li>
+        </ul>
+        <div class="callout green">
+          El distrito confirma además que <strong>no es necesario disponer de caballo propio</strong>. Esto es especialmente interesante para Fuica porque la equitación no dependería de encontrar una hípica después del colegio: queda integrada dentro de su experiencia escolar semanal.
+        </div>
+
+        <h4>Parte académica</h4>
+        <p>Fuica continuaría cursando Grade 10 y mantendría las materias académicas necesarias —English, Mathematics, Science, Social Studies, etc.— junto con la Academy. Nuestro equipo revisaría previamente la selección de asignaturas para asegurar que el expediente quede correctamente preparado para el posterior proceso de <strong>homologación de 4.º ESO en País Vasco</strong>.</p>
+
+        <h4>Colegio, deportes y vida escolar</h4>
+        <div class="ficha"><div><span>Alumnos</span><strong>+1.700</strong></div><div><span>Localidad</span><strong>Langford</strong></div><div><span>Entorno</span><strong>Residencial · costero</strong></div><div><span>Aeropuerto</span><strong>Victoria YYJ · 35–45 min</strong></div></div>
+        <p>Belmont es un instituto grande con una oferta académica muy amplia: English, Mathematics, Social Studies, Sciences, Physics, Chemistry, Biology, Languages, Arts, Technology, Outdoor Education, Sports Performance y muchas otras opciones. Además de Equine, ofrece una vida estudiantil muy activa: fútbol, baloncesto, voleibol, rugby, golf, atletismo y cross-country, además de Outdoor Education, aquatics, fitness y diferentes academias especializadas.</p>
+
+        <h4>Entorno</h4>
+        <p>Belmont se encuentra en <strong>Langford, dentro de Greater Victoria</strong>. Es un entorno residencial moderno, con zonas verdes, instalaciones deportivas, centros comerciales y fácil acceso a Victoria. Para una estudiante independiente como Fuica tiene la ventaja de ofrecer <strong>mucha más vida y servicios que un destino rural pequeño</strong>, sin tener que vivir en una gran metrópoli.</p>
+
+        <h4>Clima</h4>
+        <p>Es una de las grandes ventajas de Sooke: el área de Victoria disfruta de <strong>uno de los climas más suaves de Canadá</strong>. Las normales climáticas de Victoria Airport sitúan enero alrededor de <strong>4,6 °C de media</strong>, con máximas cercanas a 7–8 °C, y julio alrededor de <strong>17 °C de media</strong>, con máximas cercanas a 23 °C. Esto facilita considerablemente la práctica de actividades outdoor y ecuestres durante todo el año.</p>
+
+        <h4>Lo más interesante para Fuica</h4>
+        <div class="callout">
+          Equitación integrada dentro del horario + <strong>dos sesiones de monta semanales</strong> + entorno residencial cercano a Victoria + clima muy suave + colegio grande con mucha vida estudiantil.
+        </div>
+      </div>
+    </details>
+
+    <details class="det">
+      <summary>
+        <span class="det-num">02</span>
+        <span class="det-head">
+          <span class="det-tit">Langley School District 35 · Brookswood Secondary School</span>
+          <span class="det-sub">La opción más equilibrada: caballo, buen colegio, autonomía y cercanía a Vancouver</span>
+        </span>
+        <span class="det-pr">24.700 €<s>25.700 €</s></span>
+      </summary>
+      <div class="det-body">
+        <h4>Precio</h4>
+        <div class="precio-desglose">
+          <div class="pd-row"><span>Programa académico 2027/28</span><strong>25.700 €</strong></div>
+          <div class="pd-row pd-desc"><span>Descuento especial MLQ</span><strong>–1.000 €</strong></div>
+          <div class="pd-row pd-tot"><span>Precio programa MLQ</span><strong>24.700 €</strong></div>
+          <div class="pd-row pd-sep"><span>Equestrian Academy · última tarifa publicada</span><strong>CAD 3.000 ≈ 1.861 €</strong></div>
+          <div class="pd-row"><span>Depósito</span><strong>CAD 500 ≈ 310 €</strong></div>
+          <div class="pd-row pd-tot"><span>Presupuesto conjunto orientativo</span><strong>≈ 26.561 €</strong></div>
+        </div>
+        <p style="font-size:11.5px;color:var(--text-light);font-style:italic;">La Equestrian Academy no está incluida en el precio del programa. La tarifa 2027/28 deberá confirmarse cuando el distrito publique sus nuevos precios. Importe orientativo sujeto también al tipo de cambio.</p>
+
+        <h4>Por qué hemos seleccionado Langley para Fuica</h4>
+        <p>Langley se encuentra a <strong>aproximadamente 45 km al este de Vancouver</strong> y combina barrios residenciales, zonas verdes y espacios ecuestres con todas las ventajas de pertenecer al área metropolitana de Vancouver. El distrito <strong>recibe estudiantes internacionales desde 1989</strong>, dispone de coordinadores específicos para alumnado internacional en sus institutos y gestiona directamente su propio programa de homestay.</p>
+        <p>Brookswood Secondary School ofrece Grades 8–12 y es la sede de la <strong>Langley School District Equestrian Academy</strong>, en funcionamiento desde 2016.</p>
+
+        <h4>Equestrian Academy</h4>
+        <div class="eq-badge eq-conf">🐴 Enfoque más amplio que el de Sooke</div>
+        <p>Aquí la equitación se plantea desde un punto de vista más amplio: <strong>deporte ecuestre, liderazgo, formación, mentores, conocimiento del sector, visitas, experiencias prácticas y posibles carreras profesionales</strong> relacionadas con el caballo. La Academy está preparada para estudiantes de diferentes niveles y disciplinas ecuestres y busca adaptar el programa a sus intereses deportivos.</p>
+        <p>Académicamente es además un programa potente:</p>
+        <ul>
+          <li><strong>8 créditos</strong> en Equestrian Leadership / Equestrian Academy</li>
+          <li><strong>4 créditos</strong> de Physical &amp; Health Education</li>
+          <li>Integra también requisitos de Career Education</li>
+        </ul>
+        <p><strong>¿Cómo se distribuye en el horario?</strong> La Academy ocupa tres bloques durante el curso: <strong>1 bloque en el primer semestre y 2 bloques en el segundo</strong>. Fuica seguiría matriculada en Brookswood para sus materias académicas normales.</p>
+        <div class="callout">
+          <strong>¿Cuántas veces se monta? Aquí conviene distinguir Langley de Sooke.</strong> Langley no publica actualmente un número fijo de sesiones de monta semanales. La tarifa incluye <em>equestrian mentorship</em>, <em>field trips</em> y <em>speakers</em>, y la Academy incorpora experiencias ecuestres y actividades fuera del centro.<br><br>
+          Por eso, antes de formalizar esta opción, <strong>MLQ verificaría con Brookswood qué frecuencia concreta de práctica montada se prevé para 2027/28</strong>, especialmente teniendo en cuenta que Fuica ya practica salto.
+        </div>
+
+        <h4>Colegio y parte académica</h4>
+        <div class="ficha"><div><span>Grades</span><strong>8–12</strong></div><div><span>Localidad</span><strong>Langley</strong></div><div><span>Entorno</span><strong>Semiurbano · residencial</strong></div><div><span>Aeropuerto</span><strong>Vancouver YVR · 50–60 min</strong></div></div>
+        <p>Brookswood permite combinar la Academy con el programa académico convencional de Grade 10. Langley ofrece un abanico muy amplio de asignaturas, además de <strong>English Language Learning</strong> para estudiantes internacionales. El distrito confirma que sus institutos cuentan con materias académicas, idiomas, optativas, Fine Arts, clubes y equipos deportivos.</p>
+
+        <h4>Entorno</h4>
+        <p>Es probablemente <strong>la opción más equilibrada para vuestra preferencia de «pequeño sí, rural no»</strong>. Langley ofrece un ambiente residencial y bastante verde, pero con tiendas y centros comerciales, instalaciones deportivas, restauración y ocio, transporte, proximidad a Vancouver y <strong>mucha mayor autonomía</strong> para una estudiante que en una pequeña comunidad rural.</p>
+
+        <h4>Clima</h4>
+        <p>Clima oceánico y relativamente suave para Canadá. Los inviernos son húmedos, con temperaturas habitualmente alrededor de <strong>0–8 °C</strong>, mientras que los veranos son suaves y agradables, frecuentemente alrededor de <strong>20–23 °C</strong> durante el día. Los datos históricos de Environment Canada muestran máximas medias estivales cercanas a 23 °C.</p>
+
+        <h4>Mucha vida fuera del colegio</h4>
+        <p>Otro punto interesante de Langley es su programa de actividades para estudiantes internacionales. En el calendario 2026/27 aparecen, entre otras experiencias: <strong>Whistler Ski &amp; Snowboard, Tofino, Victoria, White Water Rafting y viaje a las Rocky Mountains</strong>. Para Fuica, que comentaba que estaría abierta incluso a probar esquí, puede ser un plus interesante.</p>
+
+        <h4>Lo más interesante para Fuica</h4>
+        <div class="callout">
+          Academia ecuestre con <strong>créditos académicos</strong> + excelente equilibrio entre colegio y deporte + entorno residencial con autonomía + cercanía a Vancouver + muchas actividades y vida estudiantil.
+        </div>
+      </div>
+    </details>
+
+    <details class="det">
+      <summary>
+        <span class="det-num">03</span>
+        <span class="det-head">
+          <span class="det-tit">Peace River North SD60 · Hudson's Hope Elementary-Secondary</span>
+          <span class="det-sub">La alternativa más aventurera y de inmersión, con el precio base más bajo</span>
+        </span>
+        <span class="det-pr">22.200 €<s>23.200 €</s></span>
+      </summary>
+      <div class="det-body">
+        <h4>Precio</h4>
+        <div class="precio-desglose">
+          <div class="pd-row"><span>Programa académico 2027/28</span><strong>23.200 €</strong></div>
+          <div class="pd-row pd-desc"><span>Descuento especial MLQ</span><strong>–1.000 €</strong></div>
+          <div class="pd-row pd-tot"><span>Precio programa MLQ</span><strong>22.200 €</strong></div>
+          <div class="pd-row pd-sep"><span>Equine Studies / Natural Horsemanship</span><strong>A confirmar con el distrito</strong></div>
+        </div>
+        <p style="font-size:11.5px;color:var(--text-light);font-style:italic;">A diferencia de Sooke y Langley, no existe una Academy Fee oficial publicada que podamos utilizar como referencia, por lo que preferimos no asignar una cifra estimada.</p>
+
+        <h4>Por qué hemos incluido Peace River North</h4>
+        <p>Esta tercera opción tiene un planteamiento <strong>deliberadamente diferente</strong>. Hudson's Hope Elementary-Secondary School se encuentra en una pequeña comunidad del <strong>Peace River Valley</strong>, en el norte de British Columbia.</p>
+        <p>El propio colegio confirma que su sección secundaria dispone de <strong>espacios específicos para Equine Studies / Natural Horsemanship</strong>, junto con Science, Mathematics, Social Studies, French, Fine Arts, Technology, Woodwork y otras materias. Además, la documentación del propio centro identifica Equine Studies y Natural Horsemanship como <strong>cursos desarrollados localmente</strong>, no simplemente como una actividad ecuestre externa.</p>
+
+        <h4>Qué tipo de equitación ofrece</h4>
+        <div class="eq-badge eq-conf">🐴 Natural Horsemanship · no orientada al salto</div>
+        <p>El enfoque está más relacionado con <strong>Natural Horsemanship</strong>: manejo del caballo, comunicación caballo-jinete, cuidado, conocimiento ecuestre y aprendizaje práctico. Por eso puede ser interesante para Fuica como una experiencia <strong>diferente a la disciplina que ya practica en España</strong>.</p>
+        <div class="callout">
+          No obstante, <strong>la frecuencia semanal de las sesiones no aparece publicada actualmente</strong>, por lo que MLQ tendría que confirmarla con el centro antes de presentar el componente ecuestre como cerrado.
+        </div>
+
+        <h4>Entorno</h4>
+        <div class="ficha"><div><span>Centro</span><strong>Elementary-Secondary</strong></div><div><span>Localidad</span><strong>Hudson's Hope</strong></div><div><span>Entorno</span><strong>Comunidad pequeña</strong></div><div><span>Aeropuerto</span><strong>Fort St. John YXJ · 85–90 km</strong></div></div>
+        <p>Es la opción más pequeña y auténticamente canadiense. Hudson's Hope se encuentra junto al <strong>Peace River</strong> y el propio centro se define como una <em>«Family School»</em>, destacando el carácter cercano de la comunidad educativa.</p>
+        <div class="callout blue">
+          <strong>Queremos ser claros:</strong> es también la opción que más se aleja de la preferencia inicial de Fuica por un entorno pequeño pero no demasiado rural. La mantenemos en la propuesta precisamente como <strong>tercera alternativa</strong>: más inmersión, más naturaleza y un estilo de vida canadiense mucho más local. No pretendemos presentarla como equivalente a las otras dos.
+        </div>
+
+        <h4>Clima</h4>
+        <p>Aquí sí hay una diferencia grande respecto a Sooke y Langley. Tomando como referencia Fort St. John, <strong>enero tiene una temperatura media histórica de aproximadamente –12,7 °C</strong>, con mínimas medias próximas a –17 °C. En julio la media es de unos 16 °C, con máximas alrededor de 22 °C. Es decir: <strong>invierno canadiense real, con frío y nieve</strong>.</p>
+
+        <h4>Aeropuerto</h4>
+        <p>Fort St. John Airport (YXJ). Hudson's Hope se encuentra aproximadamente a <strong>85–90 km, alrededor de 1 h – 1 h 20 min por carretera</strong>.</p>
+
+        <h4>Actividades y experiencia canadiense</h4>
+        <p>Peace River North tiene un programa internacional especialmente activo en naturaleza y deportes de invierno. El calendario facilitado por el distrito incluye experiencias como <strong>esquí en Powder King, patinaje sobre hielo, partido de hockey, Camp Cameron, hiking, picnic en la región de Peace River, musical escolar y paseo en trineo tirado por caballos</strong>. El programa internacional suele organizar aproximadamente <strong>una actividad al mes</strong>; las actividades ordinarias están incluidas en el programa y los viajes de varios días pueden tener coste adicional.</p>
+
+        <h4>Lo más interesante para Fuica</h4>
+        <div class="callout">
+          Equine Studies / Natural Horsemanship dentro del colegio + enorme inmersión + comunidad muy cercana + naturaleza + nieve y deportes de invierno + <strong>el precio base más bajo de las tres opciones</strong>.
+        </div>
+      </div>
+    </details>
+
+  </div>
+
+  <!-- ============ 10. PRUEBA DE INGLÉS ============ -->
+  <div class="section-title"><h2>La prueba de inglés</h2></div>
+  <p class="intro-text">
+    Como parte de nuestro proceso, Fuica realizará una <strong>prueba de nivel de inglés incluida</strong>.
+    No queremos utilizarla únicamente para asignarle una etiqueta como A2, B1 o B2.
+  </p>
+  <div class="info-blocks">
+    <div class="info-block">
+      <div class="info-block-icon">🎧</div>
+      <div class="info-block-title">Qué queremos comprobar</div>
+      <div class="info-block-text">
+        <ul>
+          <li>Comprensión oral</li>
+          <li>Capacidad para seguir instrucciones</li>
+          <li>Lectura</li>
+          <li>Expresión escrita</li>
+          <li>Capacidad para seguir una clase académica en inglés</li>
+        </ul>
+        <p>Los distritos canadienses piden un nivel suficiente para seguir las clases con normalidad, y en el caso de una academia ecuestre se añade algo más: entender instrucciones técnicas en la pista y en las sesiones de manejo.</p>
+        <a class="test-btn" href="https://form.jotform.com/262422713899062" target="_blank" rel="noopener">📝 Hacer la prueba de nivel de inglés</a>
+      </div>
+    </div>
+    <div class="info-block">
+      <div class="info-block-icon">⏳</div>
+      <div class="info-block-title">Si necesita mejorar, tenemos tiempo</div>
+      <div class="info-block-text">
+        Fuica tiene prácticamente un curso completo antes de su llegada a Canadá.
+        <ul>
+          <li>Clases individuales con profesor a <strong>20 €/hora</strong> si la valoración muestra que conviene reforzar</li>
+          <li>Refuerzo diseñado a medida: conversación, comprensión oral, seguimiento de instrucciones, vocabulario académico, gramática o expresión escrita</li>
+          <li>Durante el propio Año Escolar tendrá incluida <strong>1 hora semanal de inglés Cambridge</strong> con profesor</li>
+        </ul>
+        Por ello, el nivel actual de Fuica no tiene por qué ser un motivo para descartar de entrada una opción. Primero queremos conocer su punto de partida y después establecer, si fuera necesario, un plan de preparación.
+      </div>
+    </div>
+  </div>
+
+  <!-- ============ 11. VALORACIÓN FINAL ============ -->
+  <div class="section-title"><h2>Nuestra valoración final para Fuica</h2></div>
+  <div class="rank">
+    <div class="rank-item top">
+      <div class="rank-num">1</div>
+      <div>
+        <div class="rank-tit">Sooke · Belmont Secondary</div>
+        <div class="rank-txt">La opción más potente <strong>si la prioridad real es que Fuica continúe montando de manera regular</strong>. Tenemos una estructura extremadamente concreta: cinco días vinculados al programa, tres en la hípica, dos sesiones de monta y una de manejo semanal. Además, el clima más suave de las tres.</div>
+      </div>
+    </div>
+    <div class="rank-item">
+      <div class="rank-num">2</div>
+      <div>
+        <div class="rank-tit">Langley · Brookswood Secondary</div>
+        <div class="rank-txt">La opción <strong>más equilibrada para su perfil</strong>: caballo + buen colegio + bastante vida estudiantil + independencia + cercanía a Vancouver + entorno nada rural. La única razón por la que no la ponemos directamente por encima de Sooke es que <strong>no tenemos garantizado cuántas veces montará semanalmente</strong>.</div>
+      </div>
+    </div>
+    <div class="rank-item">
+      <div class="rank-num">3</div>
+      <div>
+        <div class="rank-tit">Peace River North · Hudson's Hope</div>
+        <div class="rank-txt">La alternativa <strong>más aventurera y de inmersión</strong>. Es bastante más pequeña y rural de lo que pedíais inicialmente, así que no la presentamos como equivalente a las otras dos. Su atractivo es otro: Natural Horsemanship, comunidad local, naturaleza, nieve y una experiencia canadiense muy auténtica, con el precio base más bajo.</div>
+      </div>
+    </div>
+  </div>
+  <div class="callout blue" style="max-width:none;">
+    <strong>Sooke y Langley son las dos opciones protagonistas de esta propuesta.</strong> La decisión entre ellas depende de una sola
+    pregunta: si lo que más pesa es <strong>la frecuencia garantizada de monta</strong>, Sooke; si lo que más pesa es el
+    <strong>equilibrio entre colegio, autonomía y vida social</strong>, Langley — y en ese caso confirmaremos antes con Brookswood
+    cuántas sesiones montadas se prevén.
+  </div>
+
+
+  <!-- ============ CÓMO SE VIVE EL CURSO ============ -->
+  <div class="qs-chapters-head">
+    <div class="qs-chapters-title">Cómo se vive el curso</div>
+    <div class="qs-chapters-sub">De la maleta en casa a la vida de instituto al otro lado del mundo</div>
+  </div>
+  <div class="qs-chapters">
+    <div class="qs-chapter">
+      <div class="qs-chapter-media">
+        <img src="https://aescobarnic.github.io/Propuestas/img/mlq-equipaje-salida.jpg" style="object-position:center 12%;" alt="Estudiante con su equipaje el día de la salida" loading="lazy">
+        <div class="qs-chapter-step">Antes de salir</div>
+      </div>
+      <div class="qs-chapter-body">
+        <div class="qs-chapter-title">Todo resuelto antes de la maleta</div>
+        <div class="qs-chapter-text">Entrevista, elección de distrito, matrícula, familia anfitriona, visado y vuelos. La familia solo se ocupa de preparar el equipaje.</div>
+      </div>
+    </div>
+    <div class="qs-chapter">
+      <div class="qs-chapter-media">
+        <img src="https://aescobarnic.github.io/Propuestas/img/mlq-salida-pista.jpg" style="object-position:center 8%;" alt="Estudiantes de My Language Quest el día de la salida" loading="lazy">
+        <div class="qs-chapter-step">El día de la salida</div>
+      </div>
+      <div class="qs-chapter-body">
+        <div class="qs-chapter-title">Salida acompañada</div>
+        <div class="qs-chapter-text">Orientación previa en Madrid o online, coordinación en el aeropuerto de salida y recibimiento en destino el día de la llegada.</div>
+      </div>
+    </div>
+    <div class="qs-chapter">
+      <div class="qs-chapter-media">
+        <img src="https://aescobarnic.github.io/Propuestas/img/mlq-vida-social.jpg" style="object-position:center 22%;" alt="Estudiante con sus nuevos amigos en un partido del instituto" loading="lazy">
+        <div class="qs-chapter-step">La vida allí</div>
+      </div>
+      <div class="qs-chapter-body">
+        <div class="qs-chapter-title">Un curso, no unas vacaciones</div>
+        <div class="qs-chapter-text">Instituto, extraescolares, partidos, amigos nuevos. Con supervisión local, acompañamiento psicológico y cambio de familia si hiciera falta.</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ============ 13. VISADO Y VUELOS ============ -->
+  <div class="section-title"><h2>Visado y vuelos</h2></div>
+  <div class="info-blocks">
+    <div class="info-block">
+      <div class="info-block-icon">🛂</div>
+      <div class="info-block-title">Visado — Study Permit</div>
+      <div class="info-block-text">La gestión y la tasa del <strong>Study Permit</strong> están incluidas en el programa.
+        <ul><li>Tramitación completa gestionada por MLQ</li><li>Tasa del visado incluida en el precio</li><li>Todas las opciones de esta propuesta están en British Columbia y Ontario, sin suplementos provinciales</li></ul>
+      </div>
+    </div>
+    <div class="info-block">
+      <div class="info-block-icon">✈</div>
+      <div class="info-block-title">Vuelos</div>
+      <div class="info-block-text">Los vuelos de ida y vuelta están incluidos, con un <strong>coste máximo reconocido de 1.000 €</strong>.
+        <ul><li>MLQ gestiona la búsqueda y reserva de los vuelos</li><li>Ajustados a las fechas de inicio y fin escolar</li><li>El exceso sobre 1.000 € corre a cargo de la familia</li></ul>
+      </div>
+    </div>
+  </div>
+
+  <!-- ============ 14. EL PROGRAMA INCLUYE ============ -->
+  <div class="section-title"><h2>El programa incluye</h2></div>
+  <div class="includes-wrap">
+    <div class="includes-head"><h3>📋 Todo lo que cubre My Language Quest</h3></div>
+    <div class="includes-body">
+      <div class="includes-grid">
+        <div>
+          <div class="col-title">Antes del viaje</div>
+          <ul class="inc-list">
+            <li>Reunión inicial con padres o tutores</li>
+            <li>Prueba de inglés y entrevista personal online</li>
+            <li>Propuesta personalizada de distrito y colegios</li>
+            <li>Inscripción y matriculación en el centro</li>
+            <li>Familia anfitriona en pensión completa, habitación individual o compartida</li>
+            <li>Un único estudiante hispanohablante por familia</li>
+            <li>Seguro médico y de accidentes</li>
+            <li>Libros (algunas asignaturas)</li>
+            <li>Gestión del visado Study Permit<small>Tasa incluida</small></li>
+            <li>Vuelos de ida y vuelta<small>Coste máximo 1.000 €. Exceso a cargo de la familia</small></li>
+            <li>Orientación pre-viaje en Madrid o online</li>
+            <li>Welcome pack sorpresa de My Language Quest</li>
+          </ul>
+        </div>
+        <div>
+          <div class="col-title">Durante el viaje</div>
+          <ul class="inc-list">
+            <li>Recibimiento en aeropuerto y traslados</li>
+            <li>Asesoramiento en elección de asignaturas, garantizando convalidación</li>
+            <li>Clases de inglés Cambridge y libro incluido</li>
+            <li>Taller MIT · 3 sesiones</li>
+            <li>Supervisión local: visitas, tutorías y emergencias 24 h</li>
+            <li>Acompañamiento psicológico</li>
+            <li>Atención 24 h en España para emergencias</li>
+            <li>Apoyo para matriculación en extraescolares</li>
+            <li>Gestión de cambio de familia si fuera necesario</li>
+          </ul>
+          <div class="col-title" style="margin-top:24px;">Después del viaje</div>
+          <ul class="inc-list">
+            <li>Convalidación ante el Ministerio de Educación</li>
+            <li>Validación de notas y apostilla de la Haya</li>
+            <li>Dossier final detallando la experiencia</li>
+          </ul>
+        </div>
+        <div>
+          <div class="col-title">No incluido</div>
+          <ul class="inc-list no">
+            <li>Exceso de vuelos sobre 1.000 €</li>
+            <li>Tarifas de academia ecuestre<small>Belmont Equine, Langley Equestrian Academy o Equine Studies, más sus depósitos</small></li>
+            <li>Equipación de equitación propia<small>Casco, botas, protecciones y ropa técnica</small></li>
+            <li>Transporte local mensual</li>
+            <li>Todo aquello que no esté especificado expresamente en el apartado &laquo;El programa incluye&raquo;</li>
+          </ul>
+        </div>
+      </div>
+      <div class="gestor-wrap">
+        <div class="gestor-title">Gestor estudiantil · se encarga de</div>
+        <div class="gestor-grid">
+          <div class="gestor-item">Seguimiento personalizado del desempeño</div>
+          <div class="gestor-item">Información a padres mensualmente</div>
+          <div class="gestor-item">Notas oficiales cada trimestre</div>
+          <div class="gestor-item">Asesoría en cambio de asignaturas</div>
+          <div class="gestor-item">Todas las tutorías necesarias</div>
+          <div class="gestor-item">Reuniones con padres y/o estudiante</div>
+          <div class="gestor-item">Apoyo en actividades extraescolares</div>
+          <div class="gestor-item">Resolución de situaciones con familia o centro</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ============ 15. FORMAS DE PAGO ============ -->
+  <div class="section-title"><h2>Formas de pago</h2></div>
+  <div class="payment-wrap">
+    <div class="payment-inner">
+      <div class="pay-title">💳 Condiciones económicas</div>
+      <div class="pay-subtitle">Dos vías: pago directo o financiación. El importe de la reserva cambia según cuál elijas.</div>
+
+      <div class="pay-route">
+        <div class="pay-route-head"><span class="pay-route-icon">🏦</span><span class="pay-route-title">Opción A · Pago sin financiación</span></div>
+        <div class="pay-route-sub">La cantidad íntegra debe abonarse antes del 10 de abril de 2027.</div>
+        <div class="pay-entrada">
+          <div class="pay-entrada-num">3.500 €</div>
+          <div class="pay-entrada-txt"><strong>Primer pago a la firma del contrato.</strong> Reserva la plaza e inicia la tramitación de matrícula, familia y visado.</div>
+        </div>
+        <div class="pay-cols">
+          <div class="pay-col">
+            <div class="pay-col-title">Distritos con pago fraccionado</div>
+            <div class="pay-step"><div class="pay-step-num">Paso 2 · Aceptación en el programa</div><div class="pay-step-title">40 % del importe restante</div></div>
+            <div class="pay-step"><div class="pay-step-num">Paso 3</div><div class="pay-step-title">Resto del importe</div><div class="pay-step-desc">Antes del 10 de abril de 2027</div></div>
+          </div>
+          <div class="pay-col">
+            <div class="pay-col-title">Distritos con pago completo</div>
+            <div class="pay-step"><div class="pay-step-num">Paso 2 · Aceptación en el programa</div><div class="pay-step-title">Resto del importe en su totalidad</div></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="pay-route">
+        <div class="pay-route-head"><span class="pay-route-icon">📆</span><span class="pay-route-title">Opción B · Con financiación Banco Sabadell</span></div>
+        <div class="pay-route-sub">Si se financia el programa, la entrada es siempre de 5.000 € y el resto se financia en cuotas mensuales.</div>
+        <div class="pay-entrada">
+          <div class="pay-entrada-num">5.000 €</div>
+          <div class="pay-entrada-txt"><strong>Entrada fija a la firma del contrato</strong> en todos los casos de financiación. El capital restante se financia en 12, 18, 24 o 36 meses.</div>
+        </div>
+        <div class="pay-cols">
+          <div class="pay-col">
+            <div class="pay-col-title">Capital financiado</div>
+            <div class="pay-step"><div class="pay-step-title">Precio del programa − 5.000 €</div><div class="pay-step-desc">Calcula tu cuota exacta en el simulador de la sección siguiente.</div></div>
+          </div>
+          <div class="pay-col">
+            <div class="pay-col-title">Condiciones</div>
+            <div class="pay-step"><div class="pay-step-title">12 meses · TIN 0 %</div><div class="pay-step-desc">MLQ asume los intereses</div></div>
+            <div class="pay-step"><div class="pay-step-title">18 / 24 / 36 meses · TIN 10,46 %</div><div class="pay-step-desc">Intereses a cargo del cliente</div></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="pay-note">Las tarifas de academia ecuestre y sus depósitos se abonan directamente al distrito según su propio calendario y no forman parte del importe MLQ ni del capital financiado. El seguro de anulación e interrupción debe contratarse y abonarse en el momento de la firma del contrato. Su coste varía según el importe del programa y es emitido una vez el estudiante es aceptado por el centro escolar. Su importe no es reembolsable bajo ninguna circunstancia. Las inscripciones tardías deben cumplir con los plazos de pago ya pasados en el momento de la inscripción.</div>
+    </div>
+  </div>
+
+  <!-- ============ 16. FINANCIACIÓN — SIMULADOR ============ -->
+  <div class="section-title"><h2>Financia tu programa</h2></div>
+  <div class="financing-wrap">
+    <div class="financing-head">
+      <div class="financing-head-left">
+        <div class="fin-icon">💳</div>
+        <div>
+          <div class="fin-title">Paga a tu ritmo, sin preocupaciones</div>
+          <div class="fin-sub">Entrada fija de 5.000 € · Aprobación rápida · 100 % online · Sin comisión de apertura</div>
+        </div>
+      </div>
+      <div class="fin-badge">Hasta 36 meses</div>
+    </div>
+    <div class="financing-body">
+
+      <div class="fin-opcion-selector">
+        <div class="fin-opcion-label">Selecciona la opción · precio de programa con descuento aplicado</div>
+        <div class="fin-opcion-btns" id="finOpciones">
+          <button class="fin-opcion-btn active" data-precio="26400" data-nombre="⭐ Opción 1 · Sooke SD62"><span class="fin-opcion-nombre">⭐ Op. 1 · Sooke SD62</span><span class="fin-opcion-precio">26.400 €</span></button>
+          <button class="fin-opcion-btn" data-precio="24700" data-nombre="Opción 2 · Langley SD35"><span class="fin-opcion-nombre">Op. 2 · Langley SD35</span><span class="fin-opcion-precio">24.700 €</span></button>
+          <button class="fin-opcion-btn" data-precio="22200" data-nombre="Opción 3 · Peace River North"><span class="fin-opcion-nombre">Op. 3 · Peace River North</span><span class="fin-opcion-precio">22.200 €</span></button>
+        </div>
+      </div>
+
+      <div class="fin-entrada-fija">
+        <div class="fin-entrada-fija-num">5.000 €</div>
+        <div class="fin-entrada-fija-txt"><strong>Entrada a la firma del contrato.</strong> Se descuenta del precio del programa; el resto es el capital que se financia.</div>
+      </div>
+
+      <div class="fin-plazo-wrap">
+        <div class="fin-plazo-label">Elige tu plazo de financiación</div>
+        <div class="fin-plazos" id="finPlazos">
+          <button class="fin-plazo active" data-meses="12" data-tin="0"><div class="fin-plazo-meses">12 meses</div><div class="fin-plazo-badge sin-intereses">TIN 0%</div><div class="fin-plazo-quien">¡MLQ asume los intereses!</div></button>
+          <button class="fin-plazo" data-meses="18" data-tin="10.46"><div class="fin-plazo-meses">18 meses</div><div class="fin-plazo-badge con-intereses">TIN 10,46%</div><div class="fin-plazo-quien">Intereses a cargo del cliente</div></button>
+          <button class="fin-plazo" data-meses="24" data-tin="10.46"><div class="fin-plazo-meses">24 meses</div><div class="fin-plazo-badge con-intereses">TIN 10,46%</div><div class="fin-plazo-quien">Intereses a cargo del cliente</div></button>
+          <button class="fin-plazo" data-meses="36" data-tin="10.46"><div class="fin-plazo-meses">36 meses</div><div class="fin-plazo-badge con-intereses">TIN 10,46%</div><div class="fin-plazo-quien">Intereses a cargo del cliente</div></button>
+        </div>
+      </div>
+
+      <div class="fin-resultado">
+        <div class="fin-resultado-main">
+          <div class="fin-cuota-label">Cuota mensual estimada</div>
+          <div class="fin-cuota-valor" id="cuotaValor">1.783,33 €</div>
+          <div class="fin-cuota-sub" id="cuotaSub">/mes · 12 pagos · TIN 0%</div>
+        </div>
+        <div class="fin-resultado-detalle">
+          <div class="fin-det-row"><span class="fin-det-label">Importe del programa</span><span class="fin-det-val" id="detPrecio">26.400 €</span></div>
+          <div class="fin-det-row"><span class="fin-det-label">Entrada a la firma</span><span class="fin-det-val" id="detEntrada">5.000 €</span></div>
+          <div class="fin-det-row"><span class="fin-det-label">Capital financiado</span><span class="fin-det-val" id="detCapital">21.400 €</span></div>
+          <div class="fin-det-row"><span class="fin-det-label">Intereses totales</span><span class="fin-det-val fin-det-green" id="detIntereses">0 € · ¡MLQ los asume!</span></div>
+          <div class="fin-det-row fin-det-total"><span class="fin-det-label">Total a pagar</span><span class="fin-det-val" id="detTotal">26.400 €</span></div>
+        </div>
+      </div>
+
+      <div class="fin-nota">ℹ️ Financiación sujeta a aprobación bancaria. La entrada de 5.000 € se abona a la firma del contrato y no se financia. Cuota orientativa calculada sobre el capital financiado. Sin comisión de apertura ni penalización por cancelación anticipada. Las tarifas de academia ecuestre (Belmont Equine, Equestrian Academy o Equine Studies) no están incluidas en el importe simulado: se abonan directamente al distrito.</div>
+    </div>
+  </div>
+
+  <!-- ============ 17. SIGUIENTES PASOS ============ -->
+  <div class="section-title"><h2>Siguientes pasos</h2></div>
+  <div class="steps-wrap">
+    <div class="steps-inner">
+      <div class="steps-title">¿Cómo seguimos?</div>
+      <div class="steps-sub">Del sí a la salida hacia Canadá, paso a paso</div>
+      <div class="steps-list">
+        <div class="step-item"><div class="step-num">1</div><div class="step-title">Prueba de nivel y vuestras preguntas</div><div class="step-desc">Fuica realiza el test de nivel de inglés y, en familia, anotad vuestras preguntas para comentarlas en nuestra videollamada.</div></div>
+        <div class="step-item"><div class="step-num">2</div><div class="step-title">Elegimos la opción</div><div class="step-desc">Confirmamos con el centro la frecuencia de monta y cerramos el distrito y la carga académica.</div></div>
+        <div class="step-item"><div class="step-num">3</div><div class="step-title">Firma y reserva</div><div class="step-desc">Firma del contrato y primer pago. Se bloquea la plaza.</div></div>
+        <div class="step-item"><div class="step-num">4</div><div class="step-title">Matrícula, familia y visado</div><div class="step-desc">Gestionamos matrícula, academia ecuestre, familia anfitriona, Study Permit y vuelos.</div></div>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<!-- ============ 18. FOOTER ============ -->
+<div class="footer">
+  <div class="footer-logo">MY LANGUAGE QUEST</div>
+  <div class="footer-tag">Explore · Learn · Grow</div>
+  <div class="footer-meta">
+    Propuesta personalizada para Fuica · Curso 2027/28<br>
+    Descuento especial MLQ de 1.000 € ya aplicado en los precios de programa, no acumulable con otras promociones.<br>
+    Precios orientativos sujetos a disponibilidad de plaza y confirmación del distrito escolar. Las tarifas de academia ecuestre 2027/28 y su equivalencia en euros se confirmarán antes de la inscripción.
+  </div>
+</div>
+
+<script>
+(function(){
+  var precio=26400, meses=12, tin=0, ENTRADA=5000;
+  function fmt(n){return n.toLocaleString('es-ES',{minimumFractionDigits:2,maximumFractionDigits:2})+' €';}
+  function fmt0(n){return n.toLocaleString('es-ES',{maximumFractionDigits:0})+' €';}
+  function calc(){
+    var capital=Math.max(precio-ENTRADA,0);
+    var cuota, total;
+    if(tin===0){ cuota=capital/meses; total=capital; }
+    else{ var i=tin/100/12; cuota=capital*i/(1-Math.pow(1+i,-meses)); total=cuota*meses; }
+    var intereses=total-capital;
+    document.getElementById('cuotaValor').textContent=fmt(cuota);
+    document.getElementById('cuotaSub').textContent='/mes · '+meses+' pagos · TIN '+(tin===0?'0%':'10,46%');
+    document.getElementById('detPrecio').textContent=fmt0(precio);
+    document.getElementById('detEntrada').textContent=fmt0(ENTRADA);
+    document.getElementById('detCapital').textContent=fmt0(capital);
+    var ei=document.getElementById('detIntereses');
+    if(tin===0){ ei.textContent='0 € · ¡MLQ los asume!'; ei.classList.add('fin-det-green'); }
+    else{ ei.textContent=fmt0(intereses); ei.classList.remove('fin-det-green'); }
+    document.getElementById('detTotal').textContent=fmt0(ENTRADA+total);
+  }
+  document.querySelectorAll('#finOpciones .fin-opcion-btn').forEach(function(b){
+    b.addEventListener('click',function(){
+      document.querySelectorAll('#finOpciones .fin-opcion-btn').forEach(function(x){x.classList.remove('active');});
+      b.classList.add('active'); precio=parseFloat(b.dataset.precio); calc();
+    });
+  });
+  document.querySelectorAll('#finPlazos .fin-plazo').forEach(function(b){
+    b.addEventListener('click',function(){
+      document.querySelectorAll('#finPlazos .fin-plazo').forEach(function(x){x.classList.remove('active');});
+      b.classList.add('active'); meses=parseInt(b.dataset.meses); tin=parseFloat(b.dataset.tin); calc();
+    });
+  });
+  calc();
+})();
+</script>
+
+<script>
+(function(){
+  var d=document, root=d.documentElement;
+  if(!('IntersectionObserver' in window)){root.className=root.className.replace(' js-anim','');return;}
+
+  var bar=d.createElement('div'); bar.className='progress-bar'; d.body.appendChild(bar);
+  var ticking=false;
+  function progress(){
+    var h=d.documentElement.scrollHeight-window.innerHeight;
+    bar.style.transform='scaleX('+(h>0?Math.min(window.scrollY/h,1):0)+')';
+    ticking=false;
+  }
+  window.addEventListener('scroll',function(){if(!ticking){ticking=true;requestAnimationFrame(progress);}},{passive:true});
+  progress();
+
+  Array.prototype.forEach.call(d.querySelectorAll('.hero-pill'),function(el,i){
+    el.style.animationDelay=(0.36+i*0.06)+'s';
+  });
+
+  var groups=[
+    ['.section-title','reveal'],
+    ['.intro-text','reveal'],
+    ['.intro-point','reveal'],
+    ['.qs-chapters-head','reveal'],
+    ['.qs-chapter','reveal'],
+    ['.alert-box','reveal'],
+    ['.tabla-wrap','reveal-zoom'],
+    ['.opcion-card','reveal'],
+    ['.det-list > details','reveal'],
+    ['.rank-item','reveal'],
+    ['.det-colegio','reveal'],
+    ['.precio-desglose','reveal'],
+    ['.info-block','reveal'],
+    ['.includes-wrap','reveal-zoom'],
+    ['.payment-wrap','reveal-zoom'],
+    ['.financing-wrap','reveal-zoom'],
+    ['.steps-wrap','reveal-zoom']
+  ];
+  groups.forEach(function(g){
+    Array.prototype.forEach.call(d.querySelectorAll(g[0]),function(el,i){
+      el.classList.add(g[1]);
+      el.style.transitionDelay=Math.min(i*0.09,0.36)+'s';
+    });
+  });
+
+  var io=new IntersectionObserver(function(entries){
+    entries.forEach(function(e){
+      if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}
+    });
+  },{threshold:0.12,rootMargin:'0px 0px -8% 0px'});
+  Array.prototype.forEach.call(d.querySelectorAll('.reveal,.reveal-zoom'),function(el){io.observe(el);});
+
+  var cuota=d.getElementById('cuotaValor');
+  if(cuota&&'MutationObserver' in window){
+    new MutationObserver(function(){
+      cuota.classList.remove('pop'); void cuota.offsetWidth; cuota.classList.add('pop');
+    }).observe(cuota,{childList:true,characterData:true,subtree:true});
+  }
+})();
+</script>
+</body>
+</html>
