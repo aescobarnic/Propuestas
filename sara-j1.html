@@ -709,19 +709,24 @@ details[open] summary::before{transform:rotate(90deg);}
   <div class="payment-wrap" style="margin-top:20px;">
     <div class="payment-inner">
       <div class="pay-title">💳 Condiciones económicas</div>
-      <div class="pay-subtitle">Dos vías: pago directo o financiación. El importe de la reserva cambia según cuál elijas.</div>
+      <div class="pay-subtitle">Dos pagos. Nada más: una reserva a la firma y el resto cuando Sara tenga plaza confirmada.</div>
 
       <div class="pay-route">
-        <div class="pay-route-head"><span class="pay-route-icon">🏦</span><span class="pay-route-title">Opción A · Pago sin financiación</span></div>
-        <div class="pay-route-sub">El importe íntegro debe estar abonado como máximo el 1 de marzo de 2027.</div>
+        <div class="pay-route-head"><span class="pay-route-icon">🖊</span><span class="pay-route-title">Paso 1 · Firma del contrato</span></div>
+        <div class="pay-route-sub">Activa la solicitud ante el sponsor americano y reserva la plaza de Sara.</div>
         <div class="pay-entrada">
-          <div class="pay-entrada-num">3.500 €</div>
-          <div class="pay-entrada-txt"><strong>Reserva y firma de contrato</strong>, antes del 1 de septiembre de 2026. Activa la solicitud ante el sponsor americano.</div>
+          <div class="pay-entrada-num">2.000 €</div>
+          <div class="pay-entrada-txt"><strong>Reserva y firma de contrato.</strong> Se descuenta del precio total del programa.</div>
         </div>
+      </div>
+
+      <div class="pay-route">
+        <div class="pay-route-head"><span class="pay-route-icon">✅</span><span class="pay-route-title">Paso 2 · Aceptación en el programa</span></div>
+        <div class="pay-route-sub">El importe restante se abona una vez Sara ha sido aceptada oficialmente en el programa J1.</div>
         <div class="pay-cols">
           <div class="pay-col">
-            <div class="pay-col-title">Paso 2 · Resto del programa</div>
-            <div class="pay-step"><div class="pay-step-title">8.900 €</div><div class="pay-step-desc">Como máximo el 1 de marzo de 2027</div></div>
+            <div class="pay-col-title">Resto del programa</div>
+            <div class="pay-step"><div class="pay-step-title">10.400 €</div><div class="pay-step-desc">12.400 € − 2.000 € de la firma</div></div>
           </div>
           <div class="pay-col">
             <div class="pay-col-title">Seguro de anulación</div>
@@ -730,82 +735,7 @@ details[open] summary::before{transform:rotate(90deg);}
         </div>
       </div>
 
-      <div class="pay-route">
-        <div class="pay-route-head"><span class="pay-route-icon">📆</span><span class="pay-route-title">Opción B · Con financiación Banco Sabadell</span></div>
-        <div class="pay-route-sub">Si se financia el programa, la entrada es siempre de 5.000 € y el resto se financia en cuotas mensuales.</div>
-        <div class="pay-entrada">
-          <div class="pay-entrada-num">5.000 €</div>
-          <div class="pay-entrada-txt"><strong>Entrada fija a la firma del contrato</strong> en todos los casos de financiación. El capital restante se financia en 12, 18, 24 o 36 meses.</div>
-        </div>
-        <div class="pay-cols">
-          <div class="pay-col">
-            <div class="pay-col-title">Capital financiado</div>
-            <div class="pay-step"><div class="pay-step-title">12.400 € − 5.000 € = 7.400 €</div><div class="pay-step-desc">Calcula tu cuota exacta en el simulador de la sección siguiente.</div></div>
-          </div>
-          <div class="pay-col">
-            <div class="pay-col-title">Condiciones</div>
-            <div class="pay-step"><div class="pay-step-title">12 meses · TIN 0 %</div><div class="pay-step-desc">MLQ asume los intereses</div></div>
-            <div class="pay-step"><div class="pay-step-title">18 / 24 / 36 meses · TIN 10,46 %</div><div class="pay-step-desc">Intereses a cargo del cliente</div></div>
-          </div>
-        </div>
-      </div>
-
       <div class="pay-note">El seguro de anulación e interrupción es opcional, cuesta 350 € y debe contratarse y abonarse en el momento de la firma del contrato. Su importe no es reembolsable bajo ninguna circunstancia. Las inscripciones tardías deben cumplir con los plazos de pago ya pasados en el momento de la inscripción.</div>
-    </div>
-  </div>
-
-  <!-- ============ 10. FINANCIACIÓN ============ -->
-  <div class="section-title"><h2>Financia tu programa</h2></div>
-  <div class="financing-wrap">
-    <div class="financing-head">
-      <div class="financing-head-left">
-        <div class="fin-icon">💳</div>
-        <div>
-          <div class="fin-title">Paga a tu ritmo, sin preocupaciones</div>
-          <div class="fin-sub">Entrada fija de 5.000 € · Aprobación rápida · 100 % online · Sin comisión de apertura</div>
-        </div>
-      </div>
-      <div class="fin-badge">Hasta 36 meses</div>
-    </div>
-    <div class="financing-body">
-      <div class="fin-opcion-selector">
-        <div class="fin-opcion-label">Programa</div>
-        <div class="fin-opcion-btns" id="finOpciones">
-          <button class="fin-opcion-btn active" data-precio="12400"><span class="fin-opcion-nombre">🇺🇸 J1 · Año escolar completo</span><span class="fin-opcion-precio">12.400 €</span></button>
-        </div>
-      </div>
-
-      <div class="fin-entrada-fija">
-        <div class="fin-entrada-fija-num">5.000 €</div>
-        <div class="fin-entrada-fija-txt"><strong>Entrada a la firma del contrato.</strong> Se descuenta del precio del programa; el resto es el capital que se financia.</div>
-      </div>
-
-      <div class="fin-plazo-wrap">
-        <div class="fin-plazo-label">Elige tu plazo de financiación</div>
-        <div class="fin-plazos" id="finPlazos">
-          <button class="fin-plazo active" data-meses="12" data-tin="0"><div class="fin-plazo-meses">12 meses</div><div class="fin-plazo-badge sin-intereses">TIN 0%</div><div class="fin-plazo-quien">¡MLQ asume los intereses!</div></button>
-          <button class="fin-plazo" data-meses="18" data-tin="10.46"><div class="fin-plazo-meses">18 meses</div><div class="fin-plazo-badge con-intereses">TIN 10,46%</div><div class="fin-plazo-quien">Intereses a cargo del cliente</div></button>
-          <button class="fin-plazo" data-meses="24" data-tin="10.46"><div class="fin-plazo-meses">24 meses</div><div class="fin-plazo-badge con-intereses">TIN 10,46%</div><div class="fin-plazo-quien">Intereses a cargo del cliente</div></button>
-          <button class="fin-plazo" data-meses="36" data-tin="10.46"><div class="fin-plazo-meses">36 meses</div><div class="fin-plazo-badge con-intereses">TIN 10,46%</div><div class="fin-plazo-quien">Intereses a cargo del cliente</div></button>
-        </div>
-      </div>
-
-      <div class="fin-resultado">
-        <div class="fin-resultado-main">
-          <div class="fin-cuota-label">Cuota mensual estimada</div>
-          <div class="fin-cuota-valor" id="cuotaValor">741,67 €</div>
-          <div class="fin-cuota-sub" id="cuotaSub">/mes · 12 pagos · TIN 0%</div>
-        </div>
-        <div class="fin-resultado-detalle">
-          <div class="fin-det-row"><span class="fin-det-label">Importe del programa</span><span class="fin-det-val" id="detPrecio">12.400 €</span></div>
-          <div class="fin-det-row"><span class="fin-det-label">Entrada a la firma</span><span class="fin-det-val" id="detEntrada">5.000 €</span></div>
-          <div class="fin-det-row"><span class="fin-det-label">Capital financiado</span><span class="fin-det-val" id="detCapital">8.900 €</span></div>
-          <div class="fin-det-row"><span class="fin-det-label">Intereses totales</span><span class="fin-det-val fin-det-green" id="detIntereses">0 € · ¡MLQ los asume!</span></div>
-          <div class="fin-det-row fin-det-total"><span class="fin-det-label">Total a pagar</span><span class="fin-det-val" id="detTotal">12.400 €</span></div>
-        </div>
-      </div>
-
-      <div class="fin-nota">ℹ️ Financiación sujeta a aprobación bancaria. La entrada de 5.000 € se abona a la firma del contrato y no se financia. Cuota orientativa calculada sobre el capital financiado. Sin comisión de apertura ni penalización por cancelación anticipada.</div>
     </div>
   </div>
 
@@ -875,42 +805,6 @@ details[open] summary::before{transform:rotate(90deg);}
 </div>
 
 
-<script>
-(function(){
-  var precio=12400, meses=12, tin=0, ENTRADA=5000;
-  function fmt(n){return n.toLocaleString('es-ES',{minimumFractionDigits:2,maximumFractionDigits:2})+' €';}
-  function fmt0(n){return n.toLocaleString('es-ES',{maximumFractionDigits:0})+' €';}
-  function calc(){
-    var capital=Math.max(precio-ENTRADA,0);
-    var cuota, total;
-    if(tin===0){ cuota=capital/meses; total=capital; }
-    else{ var i=tin/100/12; cuota=capital*i/(1-Math.pow(1+i,-meses)); total=cuota*meses; }
-    var intereses=total-capital;
-    document.getElementById('cuotaValor').textContent=fmt(cuota);
-    document.getElementById('cuotaSub').textContent='/mes · '+meses+' pagos · TIN '+(tin===0?'0%':'10,46%');
-    document.getElementById('detPrecio').textContent=fmt0(precio);
-    document.getElementById('detEntrada').textContent=fmt0(ENTRADA);
-    document.getElementById('detCapital').textContent=fmt0(capital);
-    var ei=document.getElementById('detIntereses');
-    if(tin===0){ ei.textContent='0 € · ¡MLQ los asume!'; ei.classList.add('fin-det-green'); }
-    else{ ei.textContent=fmt(intereses); ei.classList.remove('fin-det-green'); }
-    document.getElementById('detTotal').textContent=fmt(ENTRADA+total);
-  }
-  document.querySelectorAll('#finOpciones .fin-opcion-btn').forEach(function(b){
-    b.addEventListener('click',function(){
-      document.querySelectorAll('#finOpciones .fin-opcion-btn').forEach(function(x){x.classList.remove('active');});
-      b.classList.add('active'); precio=parseFloat(b.dataset.precio); calc();
-    });
-  });
-  document.querySelectorAll('#finPlazos .fin-plazo').forEach(function(b){
-    b.addEventListener('click',function(){
-      document.querySelectorAll('#finPlazos .fin-plazo').forEach(function(x){x.classList.remove('active');});
-      b.classList.add('active'); meses=parseInt(b.dataset.meses); tin=parseFloat(b.dataset.tin); calc();
-    });
-  });
-  calc();
-})();
-</script>
 
 <script>
 (function(){
@@ -946,7 +840,6 @@ details[open] summary::before{transform:rotate(90deg);}
     ['.info-block','reveal'],
     ['.includes-wrap','reveal-zoom'],
     ['.payment-wrap','reveal-zoom'],
-    ['.financing-wrap','reveal-zoom'],
     ['.steps-wrap','reveal-zoom']
   ];
   groups.forEach(function(g){
@@ -1064,6 +957,6 @@ details[open] summary::before{transform:rotate(90deg);}
   });
 })();
 </script>
-<!-- build 2026-09-25 17:55:10 -->
+<!-- build 2026-09-28 10:58:50 -->
 </body>
 </html>
