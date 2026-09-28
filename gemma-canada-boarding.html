@@ -262,8 +262,11 @@ details[open] summary::before{transform:rotate(90deg);}
 .footer::before{content:'';position:absolute;top:0;left:0;right:0;height:4px;background:linear-gradient(90deg,var(--red) 0%,var(--red) 22%,var(--white) 22%,var(--white) 78%,var(--red) 78%,var(--red) 100%);}
 .footer-logo{font-family:'Josefin Sans',sans-serif;font-size:15px;font-weight:700;color:var(--white);letter-spacing:1px;margin-bottom:6px;}
 .footer-tag{font-family:'Josefin Sans',sans-serif;font-size:10px;letter-spacing:4px;text-transform:uppercase;color:#ff9c7a;margin-bottom:14px;}
-.colegio-web{display:inline-flex;align-items:center;gap:5px;margin-top:9px;font-size:11.5px;font-weight:600;color:var(--blue);text-decoration:none;border-bottom:1px solid var(--blue-light);padding-bottom:1px;}
-.colegio-web:hover{color:var(--red);border-bottom-color:var(--red);}
+.colegio-web{display:inline-flex;align-items:center;justify-content:center;gap:7px;margin-top:14px;padding:9px 18px;border-radius:10px;background:var(--blue);color:var(--white);font-family:'Josefin Sans',sans-serif;font-size:11px;font-weight:700;letter-spacing:1.4px;text-transform:uppercase;text-decoration:none;border:1.5px solid var(--blue);box-shadow:0 2px 8px rgba(0,51,102,0.18);transition:background .2s,border-color .2s,transform .2s,box-shadow .2s;}
+.colegio-web::after{content:'\2197';font-size:13px;font-weight:700;line-height:1;transition:transform .2s;}
+.colegio-web:hover{background:var(--blue-dark);border-color:var(--blue-dark);transform:translateY(-2px);box-shadow:0 6px 18px rgba(0,51,102,0.28);}
+.colegio-web:hover::after{transform:translate(2px,-2px);}
+@media(max-width:720px){.colegio-web{width:100%;}}
 .footer-meta{font-size:11px;color:rgba(255,255,255,0.4);line-height:1.7;}
 .footer-meta a{color:rgba(255,255,255,0.65);text-decoration:none;}
 
@@ -514,7 +517,7 @@ details[open] summary::before{transform:rotate(90deg);}
         <div class="colegio">
           <div class="colegio-top"><div class="colegio-nombre">🔬 Académico y vida escolar</div><div class="colegio-meta"><span class="tag pub">IB World School</span><span class="tag info">Grade 9–12</span><span class="tag info">~420 alumnos</span><span class="tag info">35 nacionalidades</span></div></div>
           <details><summary>Academia, música y extraescolares</summary><div class="colegio-razon">Colegio del Bachillerato Internacional, con Diploma IB disponible en Grades 11 y 12: una base muy sólida de cara a una carrera de Medicina. Más del 96% de los graduados continúan estudios superiores y la clase media es de 23 alumnos. Fuera del aula hay <strong>baloncesto junior y senior</strong>, y el colegio organiza desde 1953 el LIT, el torneo de baloncesto de instituto más antiguo del oeste de Canadá. El departamento de música está muy consolidado, así que puede seguir con el piano sin interrupción. La residencia acoge hasta 40 chicos y 40 chicas en una comunidad pequeña y cercana, con todas las comidas en el comedor del colegio y enfermera escolar disponible.</div></details>
-          <a class="colegio-web" href="https://www.luthercollege.edu/highschool" target="_blank" rel="noopener">🔗 luthercollege.edu/highschool</a>
+          <a class="colegio-web" href="https://www.luthercollege.edu/highschool" target="_blank" rel="noopener">Ver web de Luther College</a>
         </div>
       </div></div>
       <div class="match-bar"><span class="match-tag">Equipo de hockey propio</span><span class="match-tag">Diploma IB</span><span class="match-tag">Baloncesto</span><span class="match-tag">Música · piano</span><span class="match-tag">Residencia 7 días</span></div>
@@ -535,7 +538,7 @@ details[open] summary::before{transform:rotate(90deg);}
         <div class="colegio">
           <div class="colegio-top"><div class="colegio-nombre">🔬 Académico, deporte y vida escolar</div><div class="colegio-meta"><span class="tag pub">STEM Academy</span><span class="tag info">AP + IB MYP</span><span class="tag info">Grade 8–12</span><span class="tag info">40+ países</span></div></div>
           <details><summary>Por qué encaja con su perfil</summary><div class="colegio-razon">Bodwell cuenta con <strong>STEM Academy y Advanced Placement</strong>, la ruta más directa desde 4º de la ESO hacia una carrera de ciencias de la salud. En lo deportivo es la opción más completa después del hockey: es el <strong>único colegio mixto de la Columbia Británica con piscina cubierta propia</strong>, además de dos gimnasios completos, sala de pesas y campo exterior, con equipos de baloncesto, voleibol, natación, bádminton, atletismo y campo a través. Ofrece más de 50 actividades extraescolares antes y después de clase y los sábados por la mañana, algo ideal para alguien a quien le gusta tenerlo todo ocupado. La residencia de 7 días incluye tutorías de estudio supervisadas cuatro tardes por semana.</div></details>
-          <a class="colegio-web" href="https://www.bodwell.edu" target="_blank" rel="noopener">🔗 bodwell.edu</a>
+          <a class="colegio-web" href="https://www.bodwell.edu" target="_blank" rel="noopener">Ver web de Bodwell</a>
         </div>
       </div></div>
       <div class="match-bar"><span class="match-tag">Piscina cubierta propia</span><span class="match-tag">STEM · Advanced Placement</span><span class="match-tag">Baloncesto</span><span class="match-tag">50+ extraescolares</span><span class="match-tag">Residencia 7 días</span></div>
@@ -556,7 +559,7 @@ details[open] summary::before{transform:rotate(90deg);}
         <div class="colegio">
           <div class="colegio-top"><div class="colegio-nombre">🔬 Académico y vida escolar</div><div class="colegio-meta"><span class="tag pub">22 cursos AP</span><span class="tag info">OSSD Ontario</span><span class="tag info">Clases de 17</span><span class="tag info">Habitación individual</span></div></div>
           <details><summary>Sus puntos fuertes</summary><div class="colegio-razon">Bronte es un colegio muy orientado a la preparación universitaria: <strong>22 cursos de Advanced Placement</strong>, diploma de Ontario (OSSD) y una media de 17 alumnos por clase. Los boarders tienen <strong>habitación individual</strong> y una jornada muy estructurada de 7:30 a 23:00 con sala de estudio supervisada por las tardes, lo que suele traducirse en muy buenos resultados académicos. Los clubes cubren robótica, ciencia, debate, juegos de mesa, cocina y arte, con más de 30 nacionalidades en el campus y excursiones mensuales organizadas por el equipo de Campus Life.</div></details>
-          <a class="colegio-web" href="https://brontecollege.ca" target="_blank" rel="noopener">🔗 brontecollege.ca</a>
+          <a class="colegio-web" href="https://brontecollege.ca" target="_blank" rel="noopener">Ver web de Bronte College</a>
         </div>
       </div></div>
       <div class="match-bar"><span class="match-tag">Mejor precio</span><span class="match-tag">22 cursos AP</span><span class="match-tag">Habitación individual</span><span class="match-tag">Clases reducidas</span><span class="match-tag">Residencia 7 días</span></div>
@@ -985,6 +988,6 @@ details[open] summary::before{transform:rotate(90deg);}
   });
 })();
 </script>
-<!-- build: 2026-09-28T11:31:32Z -->
+<!-- build: 2026-09-28T11:37:24Z -->
 </body>
 </html>
