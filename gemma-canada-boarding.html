@@ -190,55 +190,6 @@ details[open] summary::before{transform:rotate(90deg);}
 .pay-step-desc{font-size:11px;color:rgba(255,255,255,0.45);line-height:1.5;}
 .pay-note{font-size:11px;color:rgba(255,255,255,0.32);line-height:1.65;font-style:italic;border-top:1px solid rgba(255,255,255,0.1);padding-top:14px;margin-top:4px;}
 
-/* FINANCIACIÓN */
-.financing-wrap{background:var(--white);border-radius:16px;border:1.5px solid var(--gray-border);box-shadow:0 2px 16px rgba(0,51,102,0.06);overflow:hidden;}
-.financing-head{background:linear-gradient(135deg,var(--blue-dark),var(--blue));padding:22px 32px;display:flex;align-items:center;justify-content:space-between;gap:16px;}
-.financing-head-left{display:flex;align-items:center;gap:16px;}
-.fin-icon{font-size:28px;flex-shrink:0;}
-.fin-title{font-family:'Josefin Sans',sans-serif;font-size:16px;font-weight:700;color:var(--white);margin-bottom:3px;}
-.fin-sub{font-size:11px;color:rgba(255,255,255,0.5);line-height:1.4;}
-.fin-badge{background:rgba(125,212,74,0.2);border:1px solid rgba(125,212,74,0.4);color:#7dd44a;font-family:'Josefin Sans',sans-serif;font-size:11px;font-weight:700;letter-spacing:1px;padding:6px 14px;border-radius:20px;white-space:nowrap;}
-.financing-body{padding:28px 32px;}
-.fin-opcion-label,.fin-plazo-label{font-family:'Josefin Sans',sans-serif;font-size:9px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--text-light);margin-bottom:10px;}
-.fin-opcion-selector{margin-bottom:24px;}
-.fin-opcion-btns{display:flex;gap:10px;flex-wrap:wrap;}
-.fin-opcion-btn{background:var(--gray-card);border:1.5px solid var(--gray-border);border-radius:10px;padding:10px 16px;cursor:pointer;text-align:left;transition:all .2s;display:flex;flex-direction:column;gap:3px;font-family:'Fira Sans',sans-serif;}
-.fin-opcion-btn:hover{border-color:var(--blue-mid);background:var(--blue-light);}
-.fin-opcion-btn.active{border-color:var(--blue);background:var(--blue-light);}
-.fin-opcion-nombre{font-size:10px;font-weight:700;letter-spacing:1px;text-transform:uppercase;color:var(--text-light);}
-.fin-opcion-btn.active .fin-opcion-nombre{color:var(--blue);}
-.fin-opcion-precio{font-family:'Josefin Sans',sans-serif;font-size:16px;font-weight:700;color:var(--text);}
-.fin-opcion-btn.active .fin-opcion-precio{color:var(--blue);}
-.fin-entrada-fija{display:flex;align-items:center;gap:14px;background:var(--green-light);border:1.5px solid rgba(76,158,12,0.3);border-radius:12px;padding:14px 18px;margin-bottom:24px;}
-.fin-entrada-fija-num{font-family:'Josefin Sans',sans-serif;font-size:24px;font-weight:700;color:var(--green-dark);line-height:1;white-space:nowrap;}
-.fin-entrada-fija-txt{font-size:12px;color:var(--text-mid);line-height:1.55;}
-.fin-entrada-fija-txt strong{color:var(--text);font-weight:600;}
-.fin-plazo-wrap{margin-bottom:24px;}
-.fin-plazos{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;}
-.fin-plazo{background:var(--gray-card);border:1.5px solid var(--gray-border);border-radius:12px;padding:14px 12px;cursor:pointer;text-align:center;transition:all .2s;font-family:'Fira Sans',sans-serif;}
-.fin-plazo:hover{border-color:var(--blue-mid);transform:translateY(-2px);}
-.fin-plazo.active{border-color:var(--green);background:var(--green-light);box-shadow:0 4px 16px rgba(76,158,12,0.15);}
-.fin-plazo-meses{font-family:'Josefin Sans',sans-serif;font-size:15px;font-weight:700;color:var(--text);margin-bottom:6px;}
-.fin-plazo.active .fin-plazo-meses{color:var(--green-dark);}
-.fin-plazo-badge{display:inline-block;border-radius:20px;padding:2px 8px;font-size:9px;font-weight:700;letter-spacing:0.5px;margin-bottom:4px;}
-.fin-plazo-badge.sin-intereses{background:var(--green-light);color:var(--green-dark);border:1px solid rgba(76,158,12,0.3);}
-.fin-plazo-badge.con-intereses{background:var(--blue-light);color:var(--blue);border:1px solid rgba(0,51,102,0.2);}
-.fin-plazo-quien{font-size:9px;color:var(--text-light);line-height:1.3;}
-.fin-resultado{display:grid;grid-template-columns:auto 1fr;gap:24px;background:linear-gradient(135deg,var(--blue-dark),var(--blue));border-radius:14px;padding:24px 28px;margin-bottom:16px;align-items:center;}
-.fin-resultado-main{text-align:center;border-right:1px solid rgba(255,255,255,0.15);padding-right:24px;}
-.fin-cuota-label{font-size:10px;font-weight:600;letter-spacing:2px;text-transform:uppercase;color:rgba(255,255,255,0.5);margin-bottom:6px;}
-.fin-cuota-valor{font-family:'Josefin Sans',sans-serif;font-size:36px;font-weight:700;color:#7dd44a;line-height:1;margin-bottom:4px;}
-.fin-cuota-sub{font-size:11px;color:rgba(255,255,255,0.45);}
-.fin-resultado-detalle{display:flex;flex-direction:column;gap:10px;}
-.fin-det-row{display:flex;justify-content:space-between;align-items:center;gap:12px;}
-.fin-det-label{font-size:12px;color:rgba(255,255,255,0.55);}
-.fin-det-val{font-size:13px;font-weight:600;color:var(--white);}
-.fin-det-green{color:#7dd44a !important;}
-.fin-det-total{border-top:1px solid rgba(255,255,255,0.15);padding-top:10px;margin-top:2px;}
-.fin-det-total .fin-det-label{color:rgba(255,255,255,0.7);font-weight:600;}
-.fin-det-total .fin-det-val{font-family:'Josefin Sans',sans-serif;font-size:16px;color:var(--white);}
-.fin-nota{font-size:11px;color:var(--text-light);line-height:1.6;background:var(--gray-card);border-radius:8px;padding:12px 16px;border-left:3px solid var(--blue-light);}
-
 /* SIGUIENTES PASOS */
 .steps-wrap{background:linear-gradient(135deg,var(--blue-dark) 0%,var(--blue) 60%,var(--blue-mid) 100%);border-radius:16px;padding:34px 36px;position:relative;overflow:hidden;}
 .steps-wrap::before{content:'';position:absolute;inset:0;background-image:radial-gradient(rgba(255,255,255,0.05) 1px,transparent 1px);background-size:22px 22px;}
@@ -283,11 +234,6 @@ details[open] summary::before{transform:rotate(90deg);}
   .pay-cols{grid-template-columns:1fr;}.gestor-grid{grid-template-columns:repeat(2,1fr);}
   .steps-list{grid-template-columns:1fr;}
   .qs-panel{padding:28px 22px;}.qs-title{font-size:22px;}
-  .fin-plazos{grid-template-columns:repeat(2,1fr);}
-  .fin-resultado{grid-template-columns:1fr;}
-  .fin-resultado-main{border-right:none;border-bottom:1px solid rgba(255,255,255,0.15);padding-right:0;padding-bottom:20px;}
-  .financing-head{flex-direction:column;align-items:flex-start;}
-  .fin-opcion-btns{flex-direction:column;}
   .footer{padding:26px 20px;}
 }
 
@@ -336,11 +282,7 @@ details[open] summary::before{transform:rotate(90deg);}
 .pasos-cta:hover::after{animation:shine .85s ease;}
 @keyframes shine{to{left:140%;}}
 
-/* Botones del simulador */
-.fin-plazo,.fin-opcion-btn{transition:transform .25s cubic-bezier(.22,.61,.36,1),border-color .25s ease,background .25s ease,box-shadow .25s ease;}
-.fin-cuota-valor{transition:color .3s ease;}
-@keyframes cuotaPop{0%{opacity:.35;transform:translateY(6px);}100%{opacity:1;transform:none;}}
-.fin-cuota-valor.pop{animation:cuotaPop .42s cubic-bezier(.22,.61,.36,1);}
+/* Botones del simulador */}
 
 /* Pasos numerados */
 .step-item{transition:transform .3s cubic-bezier(.22,.61,.36,1),background .3s ease;}
@@ -386,15 +328,6 @@ details[open] summary::before{transform:rotate(90deg);}
       <div class="hero-pill">🏀 Baloncesto · ♟ Ajedrez · 🎹 Piano</div>
       <div class="hero-pill ac">🏒 Hockey hielo</div>
     </div>
-    <!-- ===== BLOQUE PROMO · DESACTIVADO POR DEFECTO =====
-         Los precios de la tabla son la TARIFA REAL (sin descuento).
-         Activar SOLO si el comercial pide aplicar el descuento. Al activarlo hay que:
-           1. Descontar 1.000 € del precio de cada tarjeta (.precio-chip .val)
-           2. Añadir la tarifa original tachada: <span class="tachado">20.430 €</span>
-           3. Actualizar data-precio de la calculadora con el precio ya rebajado
-         Descomentar la línea siguiente para mostrarlo:
-    <div class="hero-promo">🍁 Reserva antes del 30 de septiembre de 2026 y obtén <strong>1.000 € de descuento</strong> — no acumulable con otras promociones.</div>
-    ===== FIN BLOQUE PROMO ===== -->
   </div>
 </div>
 
@@ -663,10 +596,10 @@ details[open] summary::before{transform:rotate(90deg);}
   <div class="payment-wrap">
     <div class="payment-inner">
       <div class="pay-title">💳 Condiciones económicas</div>
-      <div class="pay-subtitle">Dos vías: pago directo o financiación. El importe de la reserva cambia según cuál elijas.</div>
+      <div class="pay-subtitle">Calendario de pagos del programa. El primer pago a la firma reserva la plaza.</div>
 
       <div class="pay-route">
-        <div class="pay-route-head"><span class="pay-route-icon">🏦</span><span class="pay-route-title">Opción A · Pago sin financiación</span></div>
+        <div class="pay-route-head"><span class="pay-route-icon">💶</span><span class="pay-route-title">Calendario de pagos</span></div>
         <div class="pay-route-sub">La cantidad íntegra debe abonarse antes del 10 de abril de 2028.</div>
         <div class="pay-entrada">
           <div class="pay-entrada-num">3.500 €</div>
@@ -685,85 +618,7 @@ details[open] summary::before{transform:rotate(90deg);}
         </div>
       </div>
 
-      <div class="pay-route">
-        <div class="pay-route-head"><span class="pay-route-icon">📆</span><span class="pay-route-title">Opción B · Con financiación Banco Sabadell</span></div>
-        <div class="pay-route-sub">Si se financia el programa, la entrada es siempre de 5.000 € y el resto se financia en cuotas mensuales.</div>
-        <div class="pay-entrada">
-          <div class="pay-entrada-num">5.000 €</div>
-          <div class="pay-entrada-txt"><strong>Entrada fija a la firma del contrato</strong> en todos los casos de financiación. El capital restante se financia en 12, 18, 24 o 36 meses.</div>
-        </div>
-        <div class="pay-cols">
-          <div class="pay-col">
-            <div class="pay-col-title">Capital financiado</div>
-            <div class="pay-step"><div class="pay-step-title">Precio del programa − 5.000 €</div><div class="pay-step-desc">Calcula tu cuota exacta en el simulador de la sección siguiente.</div></div>
-          </div>
-          <div class="pay-col">
-            <div class="pay-col-title">Condiciones</div>
-            <div class="pay-step"><div class="pay-step-title">12 meses · TIN 0 %</div><div class="pay-step-desc">MLQ asume los intereses</div></div>
-            <div class="pay-step"><div class="pay-step-title">18 / 24 / 36 meses · TIN 10,46 %</div><div class="pay-step-desc">Intereses a cargo del cliente</div></div>
-          </div>
-        </div>
-      </div>
-
       <div class="pay-note">El seguro de anulación e interrupción debe contratarse y abonarse en el momento de la firma del contrato. Su coste varía según el importe del programa y es emitido una vez el estudiante es aceptado por el centro escolar. Su importe no es reembolsable bajo ninguna circunstancia. Las inscripciones tardías deben cumplir con los plazos de pago ya pasados en el momento de la inscripción.</div>
-    </div>
-  </div>
-
-  <!-- ============ 10. FINANCIACIÓN — SIMULADOR ============ -->
-  <div class="section-title"><h2>Financia tu programa</h2></div>
-  <div class="financing-wrap">
-    <div class="financing-head">
-      <div class="financing-head-left">
-        <div class="fin-icon">💳</div>
-        <div>
-          <div class="fin-title">Paga a tu ritmo, sin preocupaciones</div>
-          <div class="fin-sub">Entrada fija de 5.000 € · Aprobación rápida · 100 % online · Sin comisión de apertura</div>
-        </div>
-      </div>
-      <div class="fin-badge">Hasta 36 meses</div>
-    </div>
-    <div class="financing-body">
-
-      <div class="fin-opcion-selector">
-        <div class="fin-opcion-label">Selecciona la opción del programa</div>
-        <div class="fin-opcion-btns" id="finOpciones">
-          <button class="fin-opcion-btn active" data-precio="45000" data-nombre="⭐ Opción 1 · Luther College"><span class="fin-opcion-nombre">⭐ Opción 1 · Luther College</span><span class="fin-opcion-precio">45.000 €</span></button>
-          <button class="fin-opcion-btn" data-precio="42000" data-nombre="Opción 2 · Bodwell High School"><span class="fin-opcion-nombre">Opción 2 · Bodwell High School</span><span class="fin-opcion-precio">42.000 €</span></button>
-          <button class="fin-opcion-btn" data-precio="38000" data-nombre="Opción 3 · Bronte College"><span class="fin-opcion-nombre">Opción 3 · Bronte College</span><span class="fin-opcion-precio">38.000 €</span></button>
-        </div>
-      </div>
-
-      <div class="fin-entrada-fija">
-        <div class="fin-entrada-fija-num">5.000 €</div>
-        <div class="fin-entrada-fija-txt"><strong>Entrada a la firma del contrato.</strong> Se descuenta del precio del programa; el resto es el capital que se financia.</div>
-      </div>
-
-      <div class="fin-plazo-wrap">
-        <div class="fin-plazo-label">Elige tu plazo de financiación</div>
-        <div class="fin-plazos" id="finPlazos">
-          <button class="fin-plazo active" data-meses="12" data-tin="0"><div class="fin-plazo-meses">12 meses</div><div class="fin-plazo-badge sin-intereses">TIN 0%</div><div class="fin-plazo-quien">¡MLQ asume los intereses!</div></button>
-          <button class="fin-plazo" data-meses="18" data-tin="10.46"><div class="fin-plazo-meses">18 meses</div><div class="fin-plazo-badge con-intereses">TIN 10,46%</div><div class="fin-plazo-quien">Intereses a cargo del cliente</div></button>
-          <button class="fin-plazo" data-meses="24" data-tin="10.46"><div class="fin-plazo-meses">24 meses</div><div class="fin-plazo-badge con-intereses">TIN 10,46%</div><div class="fin-plazo-quien">Intereses a cargo del cliente</div></button>
-          <button class="fin-plazo" data-meses="36" data-tin="10.46"><div class="fin-plazo-meses">36 meses</div><div class="fin-plazo-badge con-intereses">TIN 10,46%</div><div class="fin-plazo-quien">Intereses a cargo del cliente</div></button>
-        </div>
-      </div>
-
-      <div class="fin-resultado">
-        <div class="fin-resultado-main">
-          <div class="fin-cuota-label">Cuota mensual estimada</div>
-          <div class="fin-cuota-valor" id="cuotaValor">3.333,33 €</div>
-          <div class="fin-cuota-sub" id="cuotaSub">/mes · 12 pagos · TIN 0%</div>
-        </div>
-        <div class="fin-resultado-detalle">
-          <div class="fin-det-row"><span class="fin-det-label">Importe del programa</span><span class="fin-det-val" id="detPrecio">45.000 €</span></div>
-          <div class="fin-det-row"><span class="fin-det-label">Entrada a la firma</span><span class="fin-det-val" id="detEntrada">5.000 €</span></div>
-          <div class="fin-det-row"><span class="fin-det-label">Capital financiado</span><span class="fin-det-val" id="detCapital">40.000 €</span></div>
-          <div class="fin-det-row"><span class="fin-det-label">Intereses totales</span><span class="fin-det-val fin-det-green" id="detIntereses">0 € · ¡MLQ los asume!</span></div>
-          <div class="fin-det-row fin-det-total"><span class="fin-det-label">Total a pagar</span><span class="fin-det-val" id="detTotal">45.000 €</span></div>
-        </div>
-      </div>
-
-      <div class="fin-nota">ℹ️ Financiación sujeta a aprobación bancaria. La entrada de 5.000 € se abona a la firma del contrato y no se financia. Cuota orientativa calculada sobre el capital financiado. Sin comisión de apertura ni penalización por cancelación anticipada.</div>
     </div>
   </div>
 
@@ -801,44 +656,7 @@ details[open] summary::before{transform:rotate(90deg);}
 
 <script>
 (function(){
-  var precio=45000, meses=12, tin=0, ENTRADA=5000;
-  function fmt(n){return n.toLocaleString('es-ES',{minimumFractionDigits:2,maximumFractionDigits:2})+' €';}
-  function fmt0(n){return n.toLocaleString('es-ES',{maximumFractionDigits:0})+' €';}
-  function calc(){
-    var capital=Math.max(precio-ENTRADA,0);
-    var cuota, total;
-    if(tin===0){ cuota=capital/meses; total=capital; }
-    else{ var i=tin/100/12; cuota=capital*i/(1-Math.pow(1+i,-meses)); total=cuota*meses; }
-    var intereses=total-capital;
-    document.getElementById('cuotaValor').textContent=fmt(cuota);
-    document.getElementById('cuotaSub').textContent='/mes · '+meses+' pagos · TIN '+(tin===0?'0%':'10,46%');
-    document.getElementById('detPrecio').textContent=fmt0(precio);
-    document.getElementById('detEntrada').textContent=fmt0(ENTRADA);
-    document.getElementById('detCapital').textContent=fmt0(capital);
-    var ei=document.getElementById('detIntereses');
-    if(tin===0){ ei.textContent='0 € · ¡MLQ los asume!'; ei.classList.add('fin-det-green'); }
-    else{ ei.textContent=fmt(intereses); ei.classList.remove('fin-det-green'); }
-    document.getElementById('detTotal').textContent=fmt(ENTRADA+total);
-  }
-  document.querySelectorAll('#finOpciones .fin-opcion-btn').forEach(function(b){
-    b.addEventListener('click',function(){
-      document.querySelectorAll('#finOpciones .fin-opcion-btn').forEach(function(x){x.classList.remove('active');});
-      b.classList.add('active'); precio=parseFloat(b.dataset.precio); calc();
-    });
-  });
-  document.querySelectorAll('#finPlazos .fin-plazo').forEach(function(b){
-    b.addEventListener('click',function(){
-      document.querySelectorAll('#finPlazos .fin-plazo').forEach(function(x){x.classList.remove('active');});
-      b.classList.add('active'); meses=parseInt(b.dataset.meses); tin=parseFloat(b.dataset.tin); calc();
-    });
-  });
-  calc();
-})();
-</script>
-
-<script>
-(function(){
-  var d=document, root=d.documentElement;
+var d=document, root=d.documentElement;
   if(!('IntersectionObserver' in window)){root.className=root.className.replace(' js-anim','');return;}
 
   /* Barra de progreso */
@@ -870,7 +688,6 @@ details[open] summary::before{transform:rotate(90deg);}
     ['.info-block','reveal'],
     ['.includes-wrap','reveal-zoom'],
     ['.payment-wrap','reveal-zoom'],
-    ['.financing-wrap','reveal-zoom'],
     ['.steps-wrap','reveal-zoom']
   ];
   groups.forEach(function(g){
@@ -887,13 +704,6 @@ details[open] summary::before{transform:rotate(90deg);}
   },{threshold:0.12,rootMargin:'0px 0px -8% 0px'});
   Array.prototype.forEach.call(d.querySelectorAll('.reveal,.reveal-zoom'),function(el){io.observe(el);});
 
-  /* Rebote de la cuota al recalcular */
-  var cuota=d.getElementById('cuotaValor');
-  if(cuota&&'MutationObserver' in window){
-    new MutationObserver(function(){
-      cuota.classList.remove('pop'); void cuota.offsetWidth; cuota.classList.add('pop');
-    }).observe(cuota,{childList:true,characterData:true,subtree:true});
-  }
 })();
 </script>
 <!-- MLQ tracking -->
@@ -988,6 +798,6 @@ details[open] summary::before{transform:rotate(90deg);}
   });
 })();
 </script>
-<!-- build: 2026-09-28T11:37:24Z -->
+<!-- build: 2026-09-28T11:39:14Z -->
 </body>
 </html>
