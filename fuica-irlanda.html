@@ -1,0 +1,1366 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<script>document.documentElement.className+=" js-anim";</script>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Propuesta Irlanda · Fuica · My Language Quest</title>
+<link href="https://fonts.googleapis.com/css2?family=Fira+Sans:wght@300;400;500;600;700&family=Josefin+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --blue:#003366;--blue-dark:#001f40;--blue-mid:#0a4a8a;--blue-light:#dce8f5;
+  --red:#B12900;--red-dark:#8A1F00;--red-light:#fdf0ec;
+  --red-deep:#6E1600;--red-warm:#C8380C;--cream:#FFF6F2;--sand:#F7EDE6;--gold:#E8B04B;
+  --ie:#3A7A09;--ie-deep:#1F4A05;--ie-warm:#5FB515;--ie-light:#eef8e3;
+  --green:#4C9E0C;--green-dark:#3A7A09;--green-light:#eef8e3;
+  --gray-bg:#eef3ea;--gray-card:#f8fbf5;--gray-border:#d9e3d2;
+  --text:#0d1b2a;--text-mid:#3d4f62;--text-light:#7a8a9b;--white:#ffffff;
+}
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box;}
+body{font-family:'Fira Sans',sans-serif;background:var(--gray-bg);color:var(--text);}
+
+/* HEADER */
+.header{background:var(--white);padding:18px 48px;display:flex;align-items:center;justify-content:space-between;box-shadow:0 1px 0 var(--gray-border),0 4px 24px rgba(0,51,102,0.07);position:relative;z-index:10;}
+.header::after{content:'';position:absolute;bottom:0;left:0;right:0;height:4px;background:linear-gradient(90deg,var(--ie) 0%,var(--ie) 33%,var(--white) 33%,var(--white) 67%,#FF8200 67%,#FF8200 100%);}
+.logo-area img{height:46px;width:auto;display:block;}
+.header-right{text-align:right;}
+.header-label{font-family:'Josefin Sans',sans-serif;font-size:9px;letter-spacing:3px;text-transform:uppercase;color:var(--text-light);}
+.header-year{font-family:'Josefin Sans',sans-serif;font-size:26px;font-weight:700;color:var(--ie-deep);line-height:1;margin-top:2px;}
+
+/* HERO */
+.hero{background:linear-gradient(135deg,var(--ie-deep) 0%,var(--ie) 55%,var(--ie-warm) 100%);position:relative;overflow:hidden;padding:40px 48px 36px;}
+.hero::after{content:'☘';position:absolute;right:2%;top:50%;transform:translateY(-50%) rotate(-12deg);font-size:230px;line-height:1;opacity:0.09;pointer-events:none;z-index:1;}
+.hero::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 70% 110% at 100% 40%,rgba(255,255,255,0.12) 0%,transparent 60%),radial-gradient(ellipse 60% 80% at -10% 90%,rgba(0,31,64,0.28) 0%,transparent 60%);}
+.hero-dots{position:absolute;inset:0;pointer-events:none;background-image:radial-gradient(rgba(255,255,255,0.07) 1px,transparent 1px);background-size:28px 28px;}
+.hero-inner{position:relative;z-index:2;}
+.hero-tag{display:inline-flex;align-items:center;gap:6px;background:rgba(255,255,255,0.1);border:1px solid rgba(255,255,255,0.2);border-radius:20px;padding:4px 12px;font-size:10px;font-weight:600;letter-spacing:2px;text-transform:uppercase;color:rgba(255,255,255,0.7);margin-bottom:12px;}
+.hero-tag::before{content:'☘';font-size:12px;}
+.hero-name{font-family:'Josefin Sans',sans-serif;font-size:38px;font-weight:700;color:var(--white);line-height:1.05;margin-bottom:8px;}
+.hero-subtitle{font-size:13px;color:rgba(255,255,255,0.55);font-weight:300;}
+.hero-pills{display:flex;flex-wrap:wrap;gap:8px;margin-top:20px;}
+.hero-pill{display:flex;align-items:center;gap:6px;background:rgba(255,255,255,0.1);border:1px solid rgba(255,255,255,0.18);border-radius:8px;padding:6px 12px;font-size:11px;color:var(--white);font-weight:500;}
+.hero-pill.ac{background:rgba(0,31,64,0.35);border-color:rgba(255,255,255,0.4);color:#ffffff;}
+.hero-promo{display:block;background:rgba(0,31,64,0.4);border:1px solid rgba(255,255,255,0.35);border-radius:10px;padding:13px 18px;font-size:12.5px;font-weight:500;color:#ffffff;margin-top:18px;max-width:700px;line-height:1.65;}
+.hero-promo strong{font-weight:700;}
+
+/* LAYOUT */
+.main{max-width:1140px;margin:0 auto;padding:40px 24px 20px;}
+.section-title{display:flex;align-items:center;gap:12px;margin:44px 0 24px;}
+.section-title:first-of-type{margin-top:0;}
+.section-title h2{font-family:'Josefin Sans',sans-serif;font-size:11px;font-weight:700;letter-spacing:3px;text-transform:uppercase;color:var(--ie-deep);white-space:nowrap;}
+.section-title::before{content:'';width:22px;height:3px;border-radius:3px;background:var(--ie);flex-shrink:0;}
+.section-title::after{content:'';flex:1;height:1px;background:var(--gray-border);}
+
+/* INTRO */
+.intro-text{font-size:14px;color:var(--text-mid);line-height:1.75;max-width:860px;margin-bottom:20px;}
+.intro-text strong{color:var(--blue);font-weight:600;}
+.intro-points{display:grid;grid-template-columns:repeat(2,1fr);gap:14px;margin-top:20px;}
+.intro-point{background:var(--white);border:1.5px solid var(--gray-border);border-radius:12px;padding:16px 18px;display:flex;gap:12px;align-items:flex-start;}
+.intro-point-icon{font-size:20px;flex-shrink:0;}
+.intro-point-title{font-family:'Josefin Sans',sans-serif;font-size:13px;font-weight:700;color:var(--ie-deep);margin-bottom:4px;}
+.intro-point-desc{font-size:12px;color:var(--text-mid);line-height:1.55;}
+.det-cols{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin:14px 0;}
+.det-mini{background:var(--gray-card);border:1.5px solid var(--gray-border);border-radius:12px;padding:14px 16px;}
+.det-mini-tit{font-family:'Josefin Sans',sans-serif;font-size:11px;font-weight:700;letter-spacing:1.2px;text-transform:uppercase;color:var(--ie);margin-bottom:8px;}
+.det-mini p{font-size:12.5px;color:var(--text-mid);line-height:1.7;}
+
+/* CAPÍTULOS */
+.qs-chapters-head{display:flex;align-items:baseline;gap:14px;margin:38px 0 18px;flex-wrap:wrap;}
+.qs-chapters-title{font-family:'Josefin Sans',sans-serif;font-size:19px;font-weight:700;color:var(--ie-deep);}
+.qs-chapters-sub{font-size:12.5px;color:var(--text-light);}
+.qs-chapters{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;}
+.qs-chapter{background:var(--white);border:1.5px solid var(--gray-border);border-radius:16px;overflow:hidden;box-shadow:0 2px 16px rgba(0,51,102,0.06);display:flex;flex-direction:column;transition:transform .2s,box-shadow .2s;}
+.qs-chapter:hover{transform:translateY(-4px);box-shadow:0 14px 38px rgba(0,51,102,0.13);}
+.qs-chapter-media{position:relative;aspect-ratio:4/3;overflow:hidden;background:var(--ie-light);}
+.qs-chapter-media img{width:100%;height:100%;object-fit:cover;object-position:center 15%;display:block;}
+.qs-chapter-step{position:absolute;top:12px;left:12px;background:rgba(0,31,64,0.82);backdrop-filter:blur(4px);color:#7dd44a;font-family:'Josefin Sans',sans-serif;font-size:9px;font-weight:700;letter-spacing:2px;text-transform:uppercase;padding:5px 11px;border-radius:20px;}
+.qs-chapter-body{padding:18px 20px 20px;}
+.qs-chapter-title{font-family:'Josefin Sans',sans-serif;font-size:15px;font-weight:700;color:var(--ie-deep);margin-bottom:7px;}
+.qs-chapter-text{font-size:12.5px;color:var(--text-mid);line-height:1.65;}
+
+/* OPCIONES */
+.alert-box{display:flex;gap:12px;align-items:flex-start;background:#fff4f0;border:1.5px solid rgba(177,41,0,0.3);border-radius:12px;padding:14px 18px;margin-bottom:22px;}
+.alert-icon{font-size:20px;flex-shrink:0;}
+.alert-text{font-size:12px;color:#6b1a00;line-height:1.6;}
+.alert-text strong{color:var(--red-dark);}
+.opciones-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;align-items:start;}
+.opcion-card{background:var(--white);border-radius:16px;border:1.5px solid var(--gray-border);overflow:hidden;box-shadow:0 2px 16px rgba(0,51,102,0.06);position:relative;transition:transform .35s cubic-bezier(.22,.61,.36,1),box-shadow .35s ease,border-color .3s ease;}
+.opcion-card:hover{transform:translateY(-4px);box-shadow:0 12px 40px rgba(31,74,5,0.18);border-color:var(--ie);}
+.opcion-card.recomendada{border-color:var(--blue);box-shadow:0 6px 28px rgba(0,51,102,0.20);}
+.opcion-card.alternativa{border-style:dashed;}
+.badge-rec{position:absolute;top:14px;right:-32px;background:var(--blue);color:var(--white);font-size:8px;font-weight:700;letter-spacing:1.5px;padding:5px 40px;transform:rotate(45deg);width:130px;text-align:center;z-index:10;}
+.badge-alt{position:absolute;top:16px;right:-40px;background:var(--text-mid);color:var(--white);font-size:7.5px;font-weight:700;letter-spacing:1px;padding:5px 40px;transform:rotate(45deg);width:155px;text-align:center;z-index:10;}
+.opcion-header{background:linear-gradient(135deg,var(--ie-deep) 0%,var(--ie) 100%);padding:22px 24px 18px;position:relative;overflow:hidden;}
+.opcion-header::after{content:'☘';position:absolute;right:-10px;bottom:-22px;font-size:82px;opacity:0.11;line-height:1;transform:rotate(-14deg);transition:transform .6s cubic-bezier(.22,.61,.36,1),opacity .4s ease;}
+.opcion-card:hover .opcion-header::after{transform:rotate(-4deg) scale(1.14);opacity:.17;}
+.opcion-header > *{position:relative;z-index:2;}
+.opcion-distrito{font-family:'Josefin Sans',sans-serif;font-size:16px;font-weight:700;color:var(--white);margin-bottom:5px;}
+.opcion-loc{font-size:11px;color:rgba(255,255,255,0.48);margin-bottom:12px;}
+.opcion-body{padding:20px 22px;}
+.colegio-zona{font-family:'Josefin Sans',sans-serif;font-size:9px;letter-spacing:2.5px;text-transform:uppercase;color:rgba(255,255,255,0.42);margin-bottom:8px;}
+.colegio-chips{display:flex;flex-wrap:wrap;gap:6px;margin-top:10px;}
+.chip{border-radius:6px;padding:3px 9px;font-size:9.5px;font-weight:700;text-transform:uppercase;letter-spacing:.5px;background:rgba(255,255,255,0.14);color:rgba(255,255,255,0.9);border:1px solid rgba(255,255,255,0.2);}
+.chip.gold{background:rgba(232,176,75,0.22);border-color:rgba(232,176,75,0.5);color:#ffdda0;}
+.colegio-desc{font-size:12.5px;color:var(--text-mid);line-height:1.7;margin-bottom:16px;}
+.colegio-section-title{font-family:'Josefin Sans',sans-serif;font-size:9px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--ie);margin:0 0 9px;padding-bottom:6px;border-bottom:1.5px solid var(--ie-light);}
+.extra-tags{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:16px;}
+.extra-tag{font-size:10.5px;color:var(--text-mid);background:var(--gray-card);border:1px solid var(--gray-border);border-radius:20px;padding:3px 10px;}
+.actividades-ciudad{font-size:11.5px;color:var(--text-mid);line-height:1.65;background:var(--ie-light);border-left:3px solid var(--ie);border-radius:0 8px 8px 0;padding:10px 14px;margin-bottom:16px;}
+.por-que-list{list-style:none;display:flex;flex-direction:column;gap:7px;}
+.por-que-list li{font-size:12px;color:var(--text-mid);line-height:1.55;position:relative;padding-left:17px;}
+.por-que-list li::before{content:'☘';color:var(--ie);position:absolute;left:0;top:0;font-size:11px;}
+.match-bar{display:flex;gap:6px;flex-wrap:wrap;padding:14px 22px;border-top:1px solid var(--gray-border);background:linear-gradient(to right,var(--gray-card),var(--white));}
+.match-tag{display:flex;align-items:center;gap:4px;font-size:10px;font-weight:600;color:var(--green-dark);background:var(--green-light);border:1px solid rgba(76,158,12,0.25);border-radius:20px;padding:3px 10px;}
+.match-tag::before{content:'✓';font-size:9px;}
+
+/* BADGE DE EQUITACIÓN */
+.eq-badge{display:inline-flex;align-items:center;gap:6px;border-radius:8px;padding:5px 11px;font-size:10.5px;font-weight:700;letter-spacing:0.3px;margin-bottom:12px;}
+.eq-ok{background:var(--ie-light);color:var(--ie-deep);border:1px solid rgba(76,158,12,0.4);}
+.eq-conf{background:var(--blue-light);color:var(--blue);border:1px solid rgba(0,51,102,0.22);}
+
+/* OPCIÓN PRINCIPAL A ANCHO COMPLETO */
+.opcion-card.principal{grid-column:1/-1;}
+.opcion-card.principal .opcion-header{padding:30px 34px 26px;}
+.opcion-card.principal .opcion-distrito{font-size:24px;margin-bottom:7px;}
+.opcion-card.principal .opcion-loc{font-size:12.5px;margin-bottom:14px;}
+.opcion-card.principal .opcion-header::after{font-size:120px;bottom:-32px;right:-8px;}
+.opcion-card.principal .opcion-body{display:grid;grid-template-columns:1.35fr 1fr;gap:24px;align-items:start;padding:24px 28px;}
+.destacado{background:linear-gradient(135deg,var(--ie-deep),var(--ie));border-radius:14px;padding:20px 22px;position:relative;overflow:hidden;}
+.destacado::before{content:'';position:absolute;inset:0;background-image:radial-gradient(rgba(255,255,255,0.055) 1px,transparent 1px);background-size:20px 20px;}
+.destacado-inner{position:relative;z-index:2;}
+.destacado-tit{font-family:'Josefin Sans',sans-serif;font-size:10px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:#bff58a;margin-bottom:14px;}
+.destacado ul{list-style:none;display:flex;flex-direction:column;gap:11px;}
+.destacado li{font-size:12.5px;color:rgba(255,255,255,0.75);line-height:1.55;position:relative;padding-left:22px;}
+.destacado li::before{content:'☘';position:absolute;left:0;top:0;color:#bff58a;}
+.destacado li strong{color:var(--white);font-weight:600;}
+
+/* PRECIO */
+.precio-desglose{background:var(--white);border:1.5px solid var(--gray-border);border-radius:16px;padding:6px 24px;box-shadow:0 2px 16px rgba(31,74,5,0.05);max-width:620px;}
+.pd-row{display:flex;justify-content:space-between;align-items:baseline;gap:16px;padding:13px 0;border-top:1px solid var(--gray-border);font-size:13px;color:var(--text-mid);}
+.pd-row:first-child{border-top:none;}
+.pd-row strong{font-family:'Josefin Sans',sans-serif;font-size:15px;color:var(--text);white-space:nowrap;}
+.pd-row.pd-desc strong{color:var(--ie);}
+.pd-row.pd-tot{background:linear-gradient(to right,var(--ie-light),transparent);margin:0 -24px;padding:14px 24px;}
+.pd-row.pd-tot span{font-weight:600;color:var(--ie-deep);}
+.pd-row.pd-tot strong{font-size:22px;color:var(--ie-deep);}
+
+/* HONESTIDAD */
+.honest-cols{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:14px;}
+.honest-item{border-radius:12px;padding:14px 16px;border:1.5px solid var(--gray-border);background:var(--gray-card);}
+.honest-item.honest-si{border-color:rgba(76,158,12,0.35);background:var(--ie-light);}
+.honest-item.honest-no{border-color:rgba(0,51,102,0.2);background:var(--blue-light);}
+.honest-h{margin-bottom:8px;}
+.honest-item p{font-size:12.5px;line-height:1.65;color:var(--text-mid);margin-bottom:0;}
+
+/* INFO BLOCKS */
+.info-blocks{display:grid;grid-template-columns:1fr 1fr;gap:20px;}
+.info-block{background:var(--white);border-radius:16px;border:1.5px solid var(--gray-border);padding:24px 26px;box-shadow:0 2px 16px rgba(0,51,102,0.05);}
+.info-block-icon{font-size:24px;margin-bottom:10px;}
+.info-block-title{font-family:'Josefin Sans',sans-serif;font-size:14px;font-weight:700;color:var(--ie-deep);margin-bottom:10px;}
+.info-block-text{font-size:12.5px;color:var(--text-mid);line-height:1.7;}
+.info-block-text strong{color:var(--text);}
+.info-block-text p{margin-bottom:0;}
+.info-block ul{margin-top:10px;padding-left:0;list-style:none;}
+.info-block ul li{font-size:12px;color:var(--text-mid);position:relative;padding-left:18px;margin-bottom:7px;line-height:1.55;}
+.info-block ul li::before{content:'✓';color:var(--green);font-weight:700;position:absolute;left:0;top:0;}
+
+/* CALLOUTS */
+.callout{background:var(--ie-light);border-left:3px solid var(--ie);border-radius:0 8px 8px 0;padding:13px 17px;font-size:12px;color:var(--ie-deep);line-height:1.7;margin:14px 0;}
+.callout strong{color:var(--ie-deep);}
+.callout.blue{background:var(--blue-light);border-left-color:var(--blue);color:var(--blue-dark);}
+.callout.blue strong{color:var(--blue-dark);}
+.callout.rojo{background:var(--red-light);border-left-color:var(--red);color:#6b1a00;}
+.callout.rojo strong{color:var(--red-dark);}
+
+/* DETALLE POR COLEGIO */
+.det-list{display:flex;flex-direction:column;gap:16px;}
+details.det{background:var(--white);border:1.5px solid var(--gray-border);border-radius:16px;box-shadow:0 2px 16px rgba(31,74,5,0.05);overflow:hidden;}
+details.det.top{border-color:var(--ie);box-shadow:0 6px 24px rgba(76,158,12,0.16);}
+details.det > summary{padding:18px 24px;display:flex;align-items:center;gap:14px;flex-wrap:wrap;list-style:none;cursor:pointer;user-select:none;-webkit-user-select:none;}
+details.det > summary::-webkit-details-marker{display:none;}
+details.det > summary::before{content:'▸';font-size:12px;color:var(--ie);transition:transform .2s;display:inline-block;}
+details.det[open] > summary::before{transform:rotate(90deg);}
+details.det > summary:hover{background:var(--gray-card);}
+.det-num{font-family:'Josefin Sans',sans-serif;font-size:20px;font-weight:700;color:var(--ie);line-height:1;}
+.det-head{flex:1;min-width:200px;}
+.det-tit{font-family:'Josefin Sans',sans-serif;font-size:15px;font-weight:700;color:var(--ie-deep);margin-bottom:3px;}
+.det-sub{font-size:11.5px;color:var(--text-light);line-height:1.4;}
+.det-pr{font-family:'Josefin Sans',sans-serif;font-size:16px;font-weight:700;color:var(--ie);white-space:nowrap;}
+.det-body{padding:2px 26px 26px;}
+.det-body h4{font-family:'Josefin Sans',sans-serif;font-size:12.5px;font-weight:700;letter-spacing:0.4px;color:var(--ie-deep);margin:20px 0 8px;}
+.det-body h4:first-child{margin-top:8px;}
+.det-body p{font-size:12.5px;color:var(--text-mid);line-height:1.75;margin-bottom:10px;}
+.det-body p strong{color:var(--text);font-weight:600;}
+.det-body ul{list-style:none;margin:0 0 12px;}
+.det-body ul li{font-size:12.5px;color:var(--text-mid);line-height:1.65;position:relative;padding-left:16px;margin-bottom:6px;}
+.det-body ul li::before{content:'▪';color:var(--ie);position:absolute;left:0;top:0;}
+.ficha{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin:0 0 13px;}
+.ficha > div{background:var(--gray-card);border:1.5px solid var(--gray-border);border-radius:10px;padding:9px 12px;}
+.ficha span{display:block;font-family:'Josefin Sans',sans-serif;font-size:8.5px;font-weight:700;letter-spacing:1.4px;text-transform:uppercase;color:var(--ie);margin-bottom:3px;}
+.ficha strong{display:block;font-size:12px;font-weight:600;color:var(--text);line-height:1.4;}
+
+/* RANKING */
+.rank{display:flex;flex-direction:column;gap:12px;}
+.rank-item{display:flex;gap:16px;background:var(--white);border:1.5px solid var(--gray-border);border-radius:12px;padding:16px 20px;align-items:flex-start;}
+.rank-item.top{border-color:var(--ie);box-shadow:0 4px 20px rgba(76,158,12,0.14);}
+.rank-num{font-family:'Josefin Sans',sans-serif;font-size:22px;font-weight:700;color:var(--ie);line-height:1;flex-shrink:0;width:26px;}
+.rank-tit{font-family:'Josefin Sans',sans-serif;font-size:14px;font-weight:700;color:var(--ie-deep);margin-bottom:4px;}
+.rank-txt{font-size:12.5px;color:var(--text-mid);line-height:1.65;}
+
+/* MODALIDADES */
+.mod-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;}
+.mod-card{background:var(--white);border:1.5px solid var(--gray-border);border-radius:16px;overflow:hidden;box-shadow:0 2px 16px rgba(31,74,5,0.06);display:flex;flex-direction:column;position:relative;transition:transform .3s cubic-bezier(.22,.61,.36,1),box-shadow .3s ease;}
+.mod-card:hover{transform:translateY(-4px);box-shadow:0 12px 34px rgba(31,74,5,0.14);}
+.mod-card.destacado-mod{border-color:var(--ie);box-shadow:0 6px 28px rgba(76,158,12,0.20);}
+.mod-head{padding:20px 22px 16px;background:var(--gray-card);border-bottom:1.5px solid var(--gray-border);}
+.mod-card.destacado-mod .mod-head{background:linear-gradient(135deg,var(--ie-deep),var(--ie));border-bottom-color:transparent;}
+.mod-nombre{font-family:'Josefin Sans',sans-serif;font-size:15px;font-weight:700;color:var(--ie-deep);margin-bottom:4px;}
+.mod-card.destacado-mod .mod-nombre{color:var(--white);}
+.mod-desc-head{font-size:11.5px;color:var(--text-light);line-height:1.5;margin-bottom:14px;}
+.mod-card.destacado-mod .mod-desc-head{color:rgba(255,255,255,0.6);}
+.mod-precio-val{font-family:'Josefin Sans',sans-serif;font-size:27px;font-weight:700;color:var(--ie-deep);line-height:1;}
+.mod-card.destacado-mod .mod-precio-val{color:var(--white);}
+.mod-tachado{font-size:11px;color:var(--text-light);text-decoration:line-through;margin-left:8px;font-family:'Fira Sans',sans-serif;font-weight:400;}
+.mod-card.destacado-mod .mod-tachado{color:rgba(255,255,255,0.45);}
+.mod-precio-sub{font-size:10.5px;color:var(--text-light);text-transform:uppercase;letter-spacing:1px;margin-top:4px;}
+.mod-card.destacado-mod .mod-precio-sub{color:rgba(255,255,255,0.55);}
+.mod-body{padding:18px 22px 20px;flex:1;}
+.mod-extra{background:var(--ie-light);border:1px solid rgba(76,158,12,0.22);border-radius:10px;padding:11px 14px;margin-bottom:14px;}
+.mod-extra-title{font-family:'Josefin Sans',sans-serif;font-size:8.5px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--ie);margin-bottom:7px;}
+.mod-mini{display:flex;justify-content:space-between;gap:10px;font-size:11.5px;color:var(--text-mid);margin-bottom:4px;}
+.mod-mini:last-child{margin-bottom:0;}
+.mod-mini b{color:var(--ie-deep);font-weight:600;white-space:nowrap;}
+.mod-list{list-style:none;display:flex;flex-direction:column;gap:8px;}
+.mod-list li{font-size:12px;color:var(--text-mid);line-height:1.55;position:relative;padding-left:16px;}
+.mod-list li::before{content:'✓';color:var(--ie);font-weight:700;position:absolute;left:0;top:0;}
+.badge-rec-mod{position:absolute;top:0;right:0;background:var(--ie);color:var(--white);font-family:'Josefin Sans',sans-serif;font-size:8.5px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;padding:5px 14px;border-radius:0 0 0 10px;z-index:3;}
+
+/* TABLA */
+.tabla-wrap{background:var(--white);border:1.5px solid var(--gray-border);border-radius:16px;overflow-x:auto;box-shadow:0 2px 16px rgba(31,74,5,0.05);}
+.tabla-diff{width:100%;border-collapse:collapse;min-width:880px;}
+.tabla-diff th,.tabla-diff td{padding:12px 14px;text-align:center;font-size:12px;border-bottom:1px solid var(--gray-border);line-height:1.5;}
+.tabla-diff thead th{background:linear-gradient(135deg,var(--ie-deep),var(--ie));color:var(--white);font-family:'Josefin Sans',sans-serif;font-size:11.5px;font-weight:700;letter-spacing:.5px;}
+.tabla-diff tbody th{text-align:left;font-weight:600;color:var(--text);background:var(--gray-card);font-size:11.5px;width:180px;}
+.tabla-diff tr:last-child td,.tabla-diff tr:last-child th{border-bottom:none;}
+.tabla-diff .si{color:var(--ie);font-weight:700;}
+.tabla-diff .precio-fila td{font-family:'Josefin Sans',sans-serif;font-weight:700;font-size:15px;color:var(--ie-deep);background:var(--ie-light);}
+.tabla-diff .precio-fila th{background:#dcefc8;color:var(--ie-deep);}
+.tabla-diff .desc-verde{color:var(--ie);font-weight:700;}
+.tabla-nota{font-size:11px;color:var(--text-light);margin-top:12px;line-height:1.6;font-style:italic;}
+.badge-int{display:inline-block;border-radius:20px;padding:2px 9px;font-size:10px;font-weight:700;white-space:nowrap;}
+.int-ok{background:var(--ie-light);color:var(--ie-deep);border:1px solid rgba(76,158,12,0.35);}
+.int-media{background:var(--blue-light);color:var(--blue);border:1px solid rgba(0,51,102,0.2);}
+.int-alta{background:var(--red-light);color:var(--red-dark);border:1px solid rgba(177,41,0,0.25);}
+
+/* INCLUDES */
+.includes-wrap{background:var(--white);border-radius:16px;border:1.5px solid var(--gray-border);box-shadow:0 2px 16px rgba(0,51,102,0.05);overflow:hidden;}
+.includes-head{background:linear-gradient(135deg,var(--ie-deep),var(--ie));padding:20px 32px;}
+.includes-head h3{font-family:'Josefin Sans',sans-serif;font-size:14px;font-weight:700;color:var(--white);letter-spacing:1px;}
+.includes-body{padding:28px 32px;}
+.includes-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:32px;}
+.col-title{font-family:'Josefin Sans',sans-serif;font-size:9px;font-weight:700;letter-spacing:2.5px;text-transform:uppercase;color:var(--ie);margin-bottom:14px;padding-bottom:8px;border-bottom:2px solid var(--ie-light);}
+.inc-list{list-style:none;display:flex;flex-direction:column;gap:8px;}
+.inc-list li{font-size:12px;color:var(--text-mid);line-height:1.55;position:relative;padding-left:18px;}
+.inc-list li::before{content:'✓';color:var(--green);font-weight:700;font-size:11px;position:absolute;left:0;top:1px;}
+.inc-list.no li::before{content:'✗';color:var(--red);}
+.inc-list li small{font-size:10px;color:var(--text-light);display:block;margin-top:2px;}
+
+/* GESTOR */
+.gestor-wrap{background:linear-gradient(135deg,var(--blue-dark),var(--blue-mid));border-radius:12px;padding:20px 24px;margin-top:20px;}
+.gestor-title{font-family:'Josefin Sans',sans-serif;font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:rgba(255,255,255,0.6);margin-bottom:14px;}
+.gestor-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;}
+.gestor-item{background:rgba(255,255,255,0.08);border:1px solid rgba(255,255,255,0.12);border-radius:8px;padding:10px 12px;font-size:11px;color:rgba(255,255,255,0.85);line-height:1.4;}
+.gestor-item::before{content:'→';color:#7dd44a;font-weight:700;margin-right:5px;}
+
+/* PAGO */
+.payment-wrap{background:linear-gradient(135deg,var(--blue-dark) 0%,var(--blue) 60%,var(--blue-mid) 100%);border-radius:16px;padding:32px;position:relative;overflow:hidden;}
+.payment-wrap::before{content:'';position:absolute;inset:0;background-image:radial-gradient(rgba(255,255,255,0.05) 1px,transparent 1px);background-size:22px 22px;}
+.payment-inner{position:relative;z-index:2;}
+.pay-title{font-family:'Josefin Sans',sans-serif;font-size:16px;font-weight:700;color:var(--white);margin-bottom:6px;}
+.pay-subtitle{font-size:12px;color:rgba(255,255,255,0.45);margin-bottom:22px;}
+.pay-route{background:rgba(255,255,255,0.07);border:1px solid rgba(255,255,255,0.14);border-radius:14px;padding:20px 22px;margin-bottom:16px;}
+.pay-route-head{display:flex;align-items:center;gap:10px;margin-bottom:6px;}
+.pay-route-icon{font-size:20px;}
+.pay-route-title{font-family:'Josefin Sans',sans-serif;font-size:14px;font-weight:700;color:var(--white);}
+.pay-route-sub{font-size:11.5px;color:rgba(255,255,255,0.45);margin-bottom:16px;line-height:1.5;}
+.pay-entrada{display:flex;align-items:center;gap:14px;background:rgba(125,212,74,0.13);border:1px solid rgba(125,212,74,0.35);border-radius:10px;padding:14px 18px;margin-bottom:16px;}
+.pay-entrada-num{font-family:'Josefin Sans',sans-serif;font-size:26px;font-weight:700;color:#7dd44a;line-height:1;white-space:nowrap;}
+.pay-entrada-txt{font-size:11.5px;color:rgba(255,255,255,0.72);line-height:1.5;}
+.pay-entrada-txt strong{color:var(--white);font-weight:600;}
+.pay-cols{display:grid;grid-template-columns:1fr 1fr;gap:16px;}
+.pay-col{background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.12);border-radius:12px;padding:16px 18px;}
+.pay-col-title{font-family:'Josefin Sans',sans-serif;font-size:9px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:#7dd44a;margin-bottom:12px;}
+.pay-step{margin-bottom:11px;}
+.pay-step:last-child{margin-bottom:0;}
+.pay-step-title{font-size:13px;font-weight:600;color:var(--white);margin-bottom:2px;}
+.pay-step-desc{font-size:11px;color:rgba(255,255,255,0.45);line-height:1.5;}
+.pay-note{font-size:11px;color:rgba(255,255,255,0.32);line-height:1.65;font-style:italic;border-top:1px solid rgba(255,255,255,0.1);padding-top:14px;margin-top:4px;}
+
+/* FINANCIACIÓN */
+.financing-wrap{background:var(--white);border-radius:16px;border:1.5px solid var(--gray-border);box-shadow:0 2px 16px rgba(0,51,102,0.06);overflow:hidden;}
+.financing-head{background:linear-gradient(135deg,var(--blue-dark),var(--blue));padding:22px 32px;display:flex;align-items:center;justify-content:space-between;gap:16px;}
+.financing-head-left{display:flex;align-items:center;gap:16px;}
+.fin-icon{font-size:28px;flex-shrink:0;}
+.fin-title{font-family:'Josefin Sans',sans-serif;font-size:16px;font-weight:700;color:var(--white);margin-bottom:3px;}
+.fin-sub{font-size:11px;color:rgba(255,255,255,0.5);line-height:1.4;}
+.fin-badge{background:rgba(125,212,74,0.2);border:1px solid rgba(125,212,74,0.4);color:#7dd44a;font-family:'Josefin Sans',sans-serif;font-size:11px;font-weight:700;letter-spacing:1px;padding:6px 14px;border-radius:20px;white-space:nowrap;}
+.financing-body{padding:28px 32px;}
+.fin-opcion-label,.fin-plazo-label{font-family:'Josefin Sans',sans-serif;font-size:9px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--text-light);margin-bottom:10px;}
+.fin-opcion-selector{margin-bottom:24px;}
+.fin-opcion-btns{display:flex;gap:10px;flex-wrap:wrap;}
+.fin-opcion-btn{background:var(--gray-card);border:1.5px solid var(--gray-border);border-radius:10px;padding:10px 16px;cursor:pointer;text-align:left;display:flex;flex-direction:column;gap:3px;font-family:'Fira Sans',sans-serif;transition:transform .25s cubic-bezier(.22,.61,.36,1),border-color .25s ease,background .25s ease;}
+.fin-opcion-btn:hover{border-color:var(--ie);background:var(--ie-light);}
+.fin-opcion-btn.active{border-color:var(--ie);background:var(--ie-light);}
+.fin-opcion-nombre{font-size:10px;font-weight:700;letter-spacing:1px;text-transform:uppercase;color:var(--text-light);}
+.fin-opcion-btn.active .fin-opcion-nombre{color:var(--ie-deep);}
+.fin-opcion-precio{font-family:'Josefin Sans',sans-serif;font-size:16px;font-weight:700;color:var(--text);}
+.fin-opcion-btn.active .fin-opcion-precio{color:var(--ie-deep);}
+.fin-entrada-fija{display:flex;align-items:center;gap:14px;background:var(--ie-light);border:1.5px solid rgba(76,158,12,0.3);border-radius:12px;padding:14px 18px;margin-bottom:24px;}
+.fin-entrada-fija-num{font-family:'Josefin Sans',sans-serif;font-size:24px;font-weight:700;color:var(--ie-deep);line-height:1;white-space:nowrap;}
+.fin-entrada-fija-txt{font-size:12px;color:var(--text-mid);line-height:1.55;}
+.fin-entrada-fija-txt strong{color:var(--text);font-weight:600;}
+.fin-plazo-wrap{margin-bottom:24px;}
+.fin-plazos{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;}
+.fin-plazo{background:var(--gray-card);border:1.5px solid var(--gray-border);border-radius:12px;padding:14px 12px;cursor:pointer;text-align:center;font-family:'Fira Sans',sans-serif;transition:transform .25s cubic-bezier(.22,.61,.36,1),border-color .25s ease,background .25s ease,box-shadow .25s ease;}
+.fin-plazo:hover{border-color:var(--ie);transform:translateY(-2px);}
+.fin-plazo.active{border-color:var(--ie);background:var(--ie-light);box-shadow:0 4px 16px rgba(76,158,12,0.15);}
+.fin-plazo-meses{font-family:'Josefin Sans',sans-serif;font-size:15px;font-weight:700;color:var(--text);margin-bottom:6px;}
+.fin-plazo.active .fin-plazo-meses{color:var(--ie-deep);}
+.fin-plazo-badge{display:inline-block;border-radius:20px;padding:2px 8px;font-size:9px;font-weight:700;letter-spacing:0.5px;margin-bottom:4px;}
+.fin-plazo-badge.sin-intereses{background:var(--ie-light);color:var(--ie-deep);border:1px solid rgba(76,158,12,0.3);}
+.fin-plazo-badge.con-intereses{background:var(--blue-light);color:var(--blue);border:1px solid rgba(0,51,102,0.2);}
+.fin-plazo-quien{font-size:9px;color:var(--text-light);line-height:1.3;}
+.fin-resultado{display:grid;grid-template-columns:auto 1fr;gap:24px;background:linear-gradient(135deg,var(--blue-dark),var(--blue));border-radius:14px;padding:24px 28px;margin-bottom:16px;align-items:center;}
+.fin-resultado-main{text-align:center;border-right:1px solid rgba(255,255,255,0.15);padding-right:24px;}
+.fin-cuota-label{font-size:10px;font-weight:600;letter-spacing:2px;text-transform:uppercase;color:rgba(255,255,255,0.5);margin-bottom:6px;}
+.fin-cuota-valor{font-family:'Josefin Sans',sans-serif;font-size:36px;font-weight:700;color:#7dd44a;line-height:1;margin-bottom:4px;transition:color .3s ease;}
+.fin-cuota-sub{font-size:11px;color:rgba(255,255,255,0.45);}
+.fin-resultado-detalle{display:flex;flex-direction:column;gap:10px;}
+.fin-det-row{display:flex;justify-content:space-between;align-items:center;gap:12px;}
+.fin-det-label{font-size:12px;color:rgba(255,255,255,0.55);}
+.fin-det-val{font-size:13px;font-weight:600;color:var(--white);}
+.fin-det-green{color:#7dd44a !important;}
+.fin-det-total{border-top:1px solid rgba(255,255,255,0.15);padding-top:10px;margin-top:2px;}
+.fin-det-total .fin-det-label{color:rgba(255,255,255,0.7);font-weight:600;}
+.fin-det-total .fin-det-val{font-family:'Josefin Sans',sans-serif;font-size:16px;color:var(--white);}
+.fin-nota{font-size:11px;color:var(--text-light);line-height:1.6;background:var(--gray-card);border-radius:8px;padding:12px 16px;border-left:3px solid var(--ie-light);}
+@keyframes cuotaPop{0%{opacity:.35;transform:translateY(6px);}100%{opacity:1;transform:none;}}
+.fin-cuota-valor.pop{animation:cuotaPop .42s cubic-bezier(.22,.61,.36,1);}
+
+/* PASOS */
+.steps-wrap{background:linear-gradient(135deg,var(--blue-dark) 0%,var(--blue) 60%,var(--blue-mid) 100%);border-radius:16px;padding:34px 36px;position:relative;overflow:hidden;}
+.steps-wrap::before{content:'';position:absolute;inset:0;background-image:radial-gradient(rgba(255,255,255,0.05) 1px,transparent 1px);background-size:22px 22px;}
+.steps-inner{position:relative;z-index:2;}
+.steps-title{font-family:'Josefin Sans',sans-serif;font-size:18px;font-weight:700;color:var(--white);margin-bottom:6px;}
+.steps-sub{font-size:12px;color:rgba(255,255,255,0.5);margin-bottom:26px;}
+.steps-list{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;}
+.step-item{background:rgba(255,255,255,0.07);border:1px solid rgba(255,255,255,0.12);border-radius:12px;padding:18px;transition:transform .3s cubic-bezier(.22,.61,.36,1),background .3s ease;}
+.step-item:hover{transform:translateY(-4px);background:rgba(255,255,255,0.11);}
+.step-num{font-family:'Josefin Sans',sans-serif;font-size:20px;font-weight:700;color:#7dd44a;margin-bottom:8px;}
+.step-title{font-size:13px;font-weight:600;color:var(--white);margin-bottom:4px;}
+.step-desc{font-size:11px;color:rgba(255,255,255,0.5);line-height:1.5;}
+.test-btn{display:flex;width:fit-content;align-items:center;gap:8px;background:var(--ie);color:var(--white);font-family:'Josefin Sans',sans-serif;font-size:12.5px;font-weight:700;padding:11px 22px;border-radius:10px;text-decoration:none;margin-top:16px;transition:transform .15s,box-shadow .15s;}
+.test-btn:hover{transform:translateY(-2px);box-shadow:0 8px 20px rgba(76,158,12,0.3);}
+
+/* FOOTER */
+.footer{background:var(--blue-dark);padding:30px 48px;margin-top:56px;text-align:center;position:relative;}
+.footer::before{content:'';position:absolute;top:0;left:0;right:0;height:4px;background:linear-gradient(90deg,var(--ie) 0%,var(--ie) 33%,var(--white) 33%,var(--white) 67%,#FF8200 67%,#FF8200 100%);}
+.footer-logo{font-family:'Josefin Sans',sans-serif;font-size:15px;font-weight:700;color:var(--white);letter-spacing:1px;margin-bottom:6px;}
+.footer-tag{font-family:'Josefin Sans',sans-serif;font-size:10px;letter-spacing:4px;text-transform:uppercase;color:#9ee06a;margin-bottom:14px;}
+.footer-meta{font-size:11px;color:rgba(255,255,255,0.4);line-height:1.7;}
+
+@media(max-width:1000px){
+  .opciones-grid{grid-template-columns:repeat(2,1fr);}
+}
+@media(max-width:900px){
+  .qs-chapters{grid-template-columns:1fr;}
+  .mod-grid{grid-template-columns:1fr;}
+  .det-cols{grid-template-columns:1fr;}
+  .honest-cols{grid-template-columns:1fr;}
+  .opcion-card.principal .opcion-body{grid-template-columns:1fr;}
+}
+@media(max-width:720px){
+  .header{padding:16px 20px;}.hero{padding:28px 20px 24px;}.hero-name{font-size:28px;}
+  .main{padding:28px 16px 20px;}
+  .includes-grid{grid-template-columns:1fr;}.opciones-grid{grid-template-columns:1fr;}
+  .intro-points{grid-template-columns:1fr;}.info-blocks{grid-template-columns:1fr;}
+  .pay-cols{grid-template-columns:1fr;}.gestor-grid{grid-template-columns:repeat(2,1fr);}
+  .steps-list{grid-template-columns:1fr;}
+  .fin-plazos{grid-template-columns:repeat(2,1fr);}
+  .fin-resultado{grid-template-columns:1fr;}
+  .fin-resultado-main{border-right:none;border-bottom:1px solid rgba(255,255,255,0.15);padding-right:0;padding-bottom:20px;}
+  .financing-head{flex-direction:column;align-items:flex-start;}
+  .fin-opcion-btns{flex-direction:column;}
+  .ficha{grid-template-columns:repeat(2,1fr);}
+  .det-body{padding:2px 18px 20px;}
+  details.det > summary{padding:16px 18px;}
+  .footer{padding:26px 20px;}
+}
+
+/* ANIMACIONES */
+.js-anim .reveal{opacity:0;transform:translateY(20px);will-change:opacity,transform;
+  transition:opacity .75s cubic-bezier(.22,.61,.36,1),transform .75s cubic-bezier(.22,.61,.36,1);}
+.js-anim .reveal.in{opacity:1;transform:none;}
+.js-anim .reveal-zoom{opacity:0;transform:scale(.975);transition:opacity .8s ease,transform .8s cubic-bezier(.22,.61,.36,1);}
+.js-anim .reveal-zoom.in{opacity:1;transform:none;}
+@keyframes heroUp{from{opacity:0;transform:translateY(16px);}to{opacity:1;transform:none;}}
+@keyframes leafIn{from{opacity:0;transform:translateY(-50%) rotate(-30deg) scale(.85);}to{opacity:.09;transform:translateY(-50%) rotate(-12deg) scale(1);}}
+.js-anim .hero::after{animation:leafIn 1.4s cubic-bezier(.22,.61,.36,1) .15s both;}
+.js-anim .hero-tag{animation:heroUp .7s cubic-bezier(.22,.61,.36,1) .05s both;}
+.js-anim .hero-name{animation:heroUp .7s cubic-bezier(.22,.61,.36,1) .16s both;}
+.js-anim .hero-subtitle{animation:heroUp .7s cubic-bezier(.22,.61,.36,1) .26s both;}
+.js-anim .hero-pill{animation:heroUp .55s cubic-bezier(.22,.61,.36,1) both;}
+.js-anim .hero-promo{animation:heroUp .7s cubic-bezier(.22,.61,.36,1) .7s both;}
+.progress-bar{position:fixed;top:0;left:0;height:3px;width:100%;transform:scaleX(0);transform-origin:0 50%;
+  background:linear-gradient(90deg,var(--ie),var(--ie-warm));z-index:999;transition:transform .1s linear;}
+.qs-chapter-media img{transition:transform .7s cubic-bezier(.22,.61,.36,1);}
+.qs-chapter:hover .qs-chapter-media img{transform:scale(1.06);}
+@keyframes razonIn{from{opacity:0;transform:translateY(-6px);}to{opacity:1;transform:none;}}
+.js-anim details.det[open] .det-body{animation:razonIn .38s ease both;}
+@media(prefers-reduced-motion:reduce){
+  .js-anim .reveal,.js-anim .reveal-zoom{opacity:1!important;transform:none!important;transition:none!important;}
+  .js-anim .hero::after,.js-anim .hero-tag,.js-anim .hero-name,.js-anim .hero-subtitle,
+  .js-anim .hero-pill,.js-anim .hero-promo{animation:none!important;opacity:1;}
+  .js-anim .hero::after{opacity:.09;}
+  .progress-bar{display:none;}
+  *{transition-duration:.01ms!important;}
+}
+</style>
+</head>
+<body>
+
+<!-- ============ 1. HEADER ============ -->
+<div class="header">
+  <div class="logo-area"><img src="https://mylanguagequest.com/wp-content/uploads/2026/02/Logo-DY_J5B-1-1.png" alt="My Language Quest"></div>
+  <div class="header-right">
+    <div class="header-label">Curso académico</div>
+    <div class="header-year">2027/28</div>
+  </div>
+</div>
+
+<!-- ============ 2. HERO ============ -->
+<div class="hero">
+  <div class="hero-dots"></div>
+  <div class="hero-inner">
+    <div class="hero-tag">Propuesta personalizada · Irlanda</div>
+    <div class="hero-name">Fuica</div>
+    <div class="hero-subtitle">Programa Choice + 4 vuelos · Año escolar completo · Transition Year</div>
+    <div class="hero-pills">
+      <div class="hero-pill">🎓 4.º ESO · Transition Year</div>
+      <div class="hero-pill">📅 Año escolar completo</div>
+      <div class="hero-pill">🏠 Familia anfitriona</div>
+      <div class="hero-pill ac">🐴 Equitación y salto</div>
+      <div class="hero-pill">🧭 Perfil independiente</div>
+      <div class="hero-pill">🏡 Localidad pequeña o mediana, no aislada</div>
+    </div>
+    <div class="hero-promo">☘ <strong>Descuento especial MLQ de 500 €</strong> — ya aplicado en los programas Choice de esta propuesta. No acumulable con otras promociones.</div>
+  </div>
+</div>
+
+<div class="main">
+
+  <!-- ============ 3. CONTEXTO ============ -->
+  <div class="section-title"><h2>Cómo funciona el año escolar en Irlanda</h2></div>
+  <p class="intro-text">
+    En Irlanda el estudiante se integra en un <strong>colegio irlandés</strong> conviviendo con una familia anfitriona en
+    pensión completa. A diferencia de Canadá, aquí <strong>sí se elige colegio</strong>: con el Programa Choice, la familia decide
+    entre varias opciones seleccionadas para el perfil del estudiante. El sistema irlandés incluye además el
+    <strong>Transition Year</strong>, un curso orientado a proyectos, prácticas y desarrollo personal que muchos estudiantes
+    internacionales aprovechan para ganar autonomía sin la presión de los exámenes.
+  </p>
+  <p class="intro-text">
+    Fuica realizará <strong>Transition Year (TY)</strong>, equivalente a 4.º de ESO, durante el curso 2027/28.
+  </p>
+  <div class="intro-points">
+    <div class="intro-point"><div class="intro-point-icon">🏫</div><div><div class="intro-point-title">Vosotros elegís el colegio</div><div class="intro-point-desc">Preseleccionamos centros que encajan con el perfil y la familia decide entre ellos.</div></div></div>
+    <div class="intro-point"><div class="intro-point-icon">📘</div><div><div class="intro-point-title">Transition Year</div><div class="intro-point-desc">Curso de proyectos, módulos y prácticas. La tasa va incluida en los programas Choice.</div></div></div>
+    <div class="intro-point"><div class="intro-point-icon">🏠</div><div><div class="intro-point-title">Familia anfitriona</div><div class="intro-point-desc">Pensión completa y habitación individual garantizada, con un único hispanohablante por familia.</div></div></div>
+    <div class="intro-point"><div class="intro-point-icon">🐴</div><div><div class="intro-point-title">La equitación, según el centro</div><div class="intro-point-desc">En Irlanda no existe la figura de «Equestrian Academy» con tarifa anual. Cambia mucho de un colegio a otro, y aquí lo explicamos uno a uno.</div></div></div>
+  </div>
+
+  <!-- ============ 4. PERFIL ============ -->
+  <div class="section-title"><h2>Qué hemos buscado para Fuica</h2></div>
+  <p class="intro-text">
+    Para esta selección hemos buscado algo bastante concreto: colegios donde la <strong>vinculación con la equitación esté
+    documentada por el propio centro</strong>, un <strong>Transition Year activo</strong>, localidades pequeñas o medianas sin necesidad
+    de vivir en una gran ciudad y suficiente vida escolar para que pueda integrarse, hacer deporte y vivir una experiencia diferente.
+  </p>
+  <div class="det-cols">
+    <div class="det-mini">
+      <div class="det-mini-tit">🐴 Su prioridad deportiva</div>
+      <p>La equitación, y concretamente el <strong>salto</strong>. No nos hemos limitado a comprobar que haya hípicas en la zona: en los cuatro colegios <strong>es el propio centro quien documenta la actividad ecuestre</strong>, ya sea dentro de TY, como deporte escolar o como club de competición.</p>
+    </div>
+    <div class="det-mini">
+      <div class="det-mini-tit">🏡 El tipo de entorno</div>
+      <p><strong>Pequeño sí, aislado no.</strong> Tres de las cuatro localidades rondan los 5.000–6.000 habitantes y funcionan como centro de servicios de su zona. La cuarta, Borris, es mucho más rural, y lo decimos abiertamente.</p>
+    </div>
+  </div>
+
+  <!-- ============ 5. PRECIO ============ -->
+  <div class="section-title"><h2>Precio del programa</h2></div>
+  <div class="precio-desglose">
+    <div class="pd-row"><span>Programa Choice Irlanda + 4 vuelos</span><strong>18.200 €</strong></div>
+    <div class="pd-row pd-desc"><span>Descuento especial MLQ</span><strong>–500 €</strong></div>
+    <div class="pd-row pd-tot"><span>Precio final 2027/28</span><strong>17.700 €</strong></div>
+  </div>
+  <div class="callout blue" style="max-width:none;">
+    <strong>El precio es el mismo para los cuatro colegios.</strong> En el Programa Choice la tarifa no varía según el centro elegido,
+    así que la decisión puede tomarse pensando únicamente en qué colegio encaja mejor con Fuica.
+  </div>
+  <div class="callout rojo" style="max-width:none;">
+    <strong>Sobre el coste de la actividad ecuestre.</strong> La equitación en Irlanda funciona de manera diferente a las Academies
+    canadienses: <strong>no existe en estos colegios una tarifa anual de «Equestrian Academy» publicada</strong>. Dependiendo del centro,
+    puede plantearse como actividad de TY, como deporte escolar o como participación competitiva. Los posibles costes de clases,
+    transporte, inscripción en competiciones o caballo deberán confirmarse según la actividad concreta elegida.
+  </div>
+
+  <!-- ============ 6. HONESTIDAD ============ -->
+  <div class="info-block" style="max-width:none;margin-top:24px;">
+    <div class="info-block-icon">🤝</div>
+    <div class="info-block-title">Un punto de honestidad que nos parece importante</div>
+    <div class="info-block-text">
+      <p>Los cuatro colegios acreditan oficialmente su vinculación ecuestre, pero <strong>solo uno publica con qué frecuencia se monta</strong>. Preferimos decíroslo desde el principio a presentar los cuatro como equivalentes:</p>
+      <div class="honest-cols">
+        <div class="honest-item honest-si">
+          <div class="honest-h"><span class="eq-badge eq-ok">🐴 Frecuencia publicada</span></div>
+          <p>En <strong>Tullow</strong>, el TY Handbook establece Horse Riding dentro del bloque de Physical Recreation: <strong>1 hora semanal durante 13 semanas</strong>. Es la evidencia más concreta de las cuatro.</p>
+        </div>
+        <div class="honest-item honest-no">
+          <div class="honest-h"><span class="eq-badge eq-conf">🐴 Frecuencia por confirmar</span></div>
+          <p>En <strong>St Ciarán's, St. Louis y Borris</strong>, las fuentes oficiales acreditan la actividad ecuestre —tradición, deporte representativo o club de competición— pero <strong>no publican una frecuencia semanal</strong> para 2027/28.</p>
+        </div>
+      </div>
+      <p style="margin-top:14px;">Por eso no prometemos una frecuencia concreta en esos tres centros. En Tullow sí podemos mencionar la estructura publicada, aclarando que <strong>la programación de TY puede variar cada curso</strong>.</p>
+    </div>
+  </div>
+
+  <!-- ============ 7. LOS CUATRO COLEGIOS ============ -->
+  <div class="section-title"><h2>Los cuatro colegios</h2></div>
+  <div class="opciones-grid">
+
+    <div class="opcion-card recomendada principal">
+      <div class="badge-rec">★ RECOMENDADO</div>
+      <div class="opcion-header">
+        <div class="colegio-zona">County Carlow · Ciudad pequeña</div>
+        <div class="opcion-distrito">Tullow Community School</div>
+        <div class="opcion-loc">📍 Tullow · Segundo núcleo de County Carlow · ~5.138 habitantes</div>
+        <div class="colegio-chips"><span class="chip">Mixto</span><span class="chip">Público</span><span class="chip">871 alumnos</span><span class="chip">Transition Year</span><span class="chip gold">☘ Horse Riding en TY</span></div>
+      </div>
+      <div class="opcion-body">
+        <div>
+          <div class="eq-badge eq-ok">🐴 1 hora semanal durante 13 semanas, dentro de TY</div>
+          <div class="colegio-desc">La opción más completa para combinar TY y equitación. Tullow es una localidad pequeña pero no diminuta: el plan oficial del condado la identifica como el <strong>segundo núcleo de población más grande de County Carlow</strong> después de Carlow town, lo que encaja bien con el criterio de «pequeño sí, rural no».</div>
+          <div class="colegio-section-title">Equitación documentada</div>
+          <div class="extra-tags"><span class="extra-tag">🐴 Horse Riding en Physical Recreation</span><span class="extra-tag">🏆 Equestrian Team propio</span><span class="extra-tag">🥇 Competiciones representando al colegio</span></div>
+          <div class="colegio-section-title">Deportes y vida escolar</div>
+          <div class="extra-tags"><span class="extra-tag">🏀 Basketball</span><span class="extra-tag">🏐 Voleibol</span><span class="extra-tag">⚽ Soccer</span><span class="extra-tag">🏉 Rugby</span><span class="extra-tag">🏑 Hurling</span><span class="extra-tag">🥍 Gaelic football</span><span class="extra-tag">⛳ Golf</span><span class="extra-tag">🏃 Athletics</span></div>
+          <div class="actividades-ciudad">TY con talleres de Science &amp; Maths, Languages, Career Guidance, Work Experience, Coding, Enterprise, Gaisce, Health Education, Physical Education, Public Speaking y Music.</div>
+        </div>
+        <div class="destacado"><div class="destacado-inner">
+          <div class="destacado-tit">Por qué es nuestra recomendación</div>
+          <ul>
+            <li>Es el único centro con una <strong>frecuencia de monta publicada</strong>: 1 h semanal × 13 semanas dentro de TY</li>
+            <li>Horse Riding aparece expresamente en el <strong>TY Handbook oficial</strong> del colegio</li>
+            <li>Existe un <strong>Tullow Community School Equestrian Team</strong></li>
+            <li>La web de deportes confirma <strong>participación en competiciones ecuestres</strong> representando al colegio</li>
+            <li>871 alumnos: el <strong>colegio más grande</strong> de la selección, con mucha vida escolar</li>
+            <li>Localidad de <strong>~5.138 habitantes</strong>, segunda de su condado</li>
+          </ul>
+        </div></div>
+      </div>
+      <div class="match-bar"><span class="match-tag">Horse Riding en TY</span><span class="match-tag">Equestrian Team</span><span class="match-tag">Colegio grande</span><span class="match-tag">Pequeño pero no rural</span></div>
+    </div>
+
+    <div class="opcion-card">
+      <div class="opcion-header">
+        <div class="colegio-zona">County Meath · Ciudad pequeña</div>
+        <div class="opcion-distrito">St Ciarán's Community School</div>
+        <div class="opcion-loc">📍 Kells · Conectada por la M3 · +6.000 habitantes</div>
+        <div class="colegio-chips"><span class="chip">Mixto</span><span class="chip">Público</span><span class="chip">597 alumnos</span><span class="chip gold">☘ Tradición ecuestre</span></div>
+      </div>
+      <div class="opcion-body">
+        <div class="eq-badge eq-conf">🐴 Tradición acreditada · frecuencia a confirmar</div>
+        <div class="colegio-desc">Una opción muy equilibrada entre localidad, colegio y tradición ecuestre. Kells es una ciudad pequeña que funciona como centro de servicios de su zona y está bien conectada con Dublín.</div>
+        <div class="colegio-section-title">Equitación documentada</div>
+        <div class="extra-tags"><span class="extra-tag">🏆 Éxito en Equestrian Sport</span><span class="extra-tag">🌍 Antiguos alumnos con proyección internacional</span><span class="extra-tag">💼 Carreras profesionales del sector</span></div>
+        <div class="colegio-section-title">Deportes y vida escolar</div>
+        <div class="extra-tags"><span class="extra-tag">🥍 Gaelic football</span><span class="extra-tag">🏑 Hurling</span><span class="extra-tag">🤾 Handball</span><span class="extra-tag">⚽ Soccer</span><span class="extra-tag">🏀 Basketball</span><span class="extra-tag">🏃 Athletics</span><span class="extra-tag">⛳ Golf</span><span class="extra-tag">🏉 Rugby</span></div>
+        <div class="actividades-ciudad">TY definido como un año de <em>growth, exploration and opportunity</em>. El calendario incluye Adventure Centre, Enterprise Workshop, Ploughing Championships, Drivers Education y otros talleres.</div>
+        <div class="colegio-section-title">Por qué encaja con Fuica</div>
+        <ul class="por-que-list">
+          <li>Entorno pequeño pero con servicios propios y buena conexión</li>
+          <li>Colegio de tamaño manejable: 597 alumnos</li>
+          <li>Tradición ecuestre reconocida por el propio centro</li>
+          <li>TY muy activo, con experiencias fuera del aula</li>
+        </ul>
+      </div>
+      <div class="match-bar"><span class="match-tag">Equilibrio general</span><span class="match-tag">Kells con vida propia</span><span class="match-tag">TY muy activo</span></div>
+    </div>
+
+    <div class="opcion-card">
+      <div class="opcion-header">
+        <div class="colegio-zona">County Monaghan · Ciudad pequeña</div>
+        <div class="opcion-distrito">St. Louis Secondary School</div>
+        <div class="opcion-loc">📍 Carrickmacross · ~5.745 habitantes</div>
+        <div class="colegio-chips"><span class="chip gold">☘ Solo chicas</span><span class="chip">Público</span><span class="chip">409 alumnas</span><span class="chip">Transition Year</span></div>
+      </div>
+      <div class="opcion-body">
+        <div class="eq-badge eq-conf">🐴 Horse-riding como deporte escolar · frecuencia a confirmar</div>
+        <div class="colegio-desc">Una alternativa muy interesante si estáis abiertos a un colegio de chicas. Carrickmacross encaja muy bien con el entorno buscado: una localidad compacta que funciona como centro comercial y de servicios de su zona.</div>
+        <div class="colegio-section-title">Equitación documentada</div>
+        <div class="extra-tags"><span class="extra-tag">🐴 Horse-riding entre los deportes representativos</span><span class="extra-tag">🥇 Competición county, provincial y national</span></div>
+        <div class="colegio-section-title">Deportes y vida escolar</div>
+        <div class="extra-tags"><span class="extra-tag">🥍 Gaelic Football</span><span class="extra-tag">🏀 Basketball</span><span class="extra-tag">🏃 Athletics</span><span class="extra-tag">🏉 Rugby</span><span class="extra-tag">🏊 Swimming</span></div>
+        <div class="actividades-ciudad">TY con aproximadamente la mitad del horario en materias académicas que preparan el Leaving Certificate y la otra mitad en módulos propios: ICT, Dance, Mini-Company, Self-Defence, Ceramics, Work Experience, Personal Development, Art &amp; Design, Digital Media y Young Social Innovators. Cada año, producción musical completa.</div>
+        <div class="colegio-section-title">Por qué encaja con Fuica</div>
+        <ul class="por-que-list">
+          <li>Horse-riding reconocido oficialmente como deporte representativo del colegio</li>
+          <li>Localidad pequeña pero funcional, con servicios propios</li>
+          <li>Colegio de tamaño reducido: comunidad escolar muy cercana</li>
+          <li>TY equilibrado entre parte académica y experiencias</li>
+        </ul>
+      </div>
+      <div class="match-bar"><span class="match-tag">Deporte representativo</span><span class="match-tag">Comunidad cercana</span><span class="match-tag">TY equilibrado</span></div>
+    </div>
+
+    <div class="opcion-card alternativa">
+      <div class="badge-alt">OPCIÓN ESPECIAL DE SALTO</div>
+      <div class="opcion-header">
+        <div class="colegio-zona">County Carlow · Muy pequeño / rural</div>
+        <div class="opcion-distrito">Borris College</div>
+        <div class="opcion-loc">📍 Borris · ~652 habitantes (Census 2022)</div>
+        <div class="colegio-chips"><span class="chip">Mixto</span><span class="chip">Público</span><span class="chip">537 alumnos</span><span class="chip gold">☘ Show Jumping</span></div>
+      </div>
+      <div class="opcion-body">
+        <div class="eq-badge eq-conf">🐴 Competitive showjumping · caballo y acceso por confirmar</div>
+        <div class="colegio-desc">La opción más específica si el salto ecuestre pesa mucho en la decisión. Aquí encontramos la <strong>conexión más directa con la disciplina que practica Fuica</strong>, pero también el entorno más rural de los cuatro.</div>
+        <div class="colegio-section-title">Equitación documentada</div>
+        <div class="extra-tags"><span class="extra-tag">🏆 Equestrian Club activo y consolidado</span><span class="extra-tag">🐎 Competitive showjumping</span><span class="extra-tag">🥇 TRI Equestrian Interschools League</span></div>
+        <div class="actividades-ciudad">En la temporada 2023/24 su equipo compitió <strong>cada fin de semana entre septiembre y abril</strong>, y el propio colegio describe su Equestrian Club como uno de los más activos de la liga.</div>
+        <div class="colegio-section-title">Deportes y vida escolar</div>
+        <div class="extra-tags"><span class="extra-tag">🚣 Rowing</span><span class="extra-tag">🏃 Athletics</span><span class="extra-tag">🏀 Basketball</span><span class="extra-tag">🏑 Camogie</span><span class="extra-tag">⚽ Soccer</span><span class="extra-tag">⛳ Golf</span><span class="extra-tag">🏑 Hurling</span></div>
+        <div class="colegio-section-title">Lo que hay que saber</div>
+        <ul class="por-que-list">
+          <li>Borris tiene ~652 habitantes: es claramente el más rural de los cuatro</li>
+          <li>No asumimos que el colegio proporcione caballo a los estudiantes</li>
+          <li>Antes de presentarlo como opción cerrada hay que confirmar varios puntos</li>
+        </ul>
+      </div>
+      <div class="match-bar"><span class="match-tag">Show jumping real</span><span class="match-tag">Club muy activo</span><span class="match-tag">Requiere confirmaciones</span></div>
+    </div>
+
+  </div>
+
+  <!-- ============ 8. DETALLE POR COLEGIO ============ -->
+  <div class="section-title"><h2>Cada colegio, en detalle</h2></div>
+  <div class="det-list">
+
+    <details class="det top" open>
+      <summary>
+        <span class="det-num">01</span>
+        <span class="det-head">
+          <span class="det-tit">Tullow Community School · Tullow, County Carlow</span>
+          <span class="det-sub">La opción más completa para combinar TY y equitación</span>
+        </span>
+        <span class="det-pr">17.700 €</span>
+      </summary>
+      <div class="det-body">
+        <div class="ficha"><div><span>Alumnos</span><strong>871</strong></div><div><span>Localidad</span><strong>Tullow</strong></div><div><span>Habitantes</span><strong>~5.138</strong></div><div><span>Aeropuerto</span><strong>Dublin DUB</strong></div></div>
+        <p>Tullow Community School es un colegio <strong>público, mixto y con Transition Year</strong>, con 871 alumnos según los últimos datos publicados por el Department of Education. El plan oficial del condado sitúa la población de Tullow en 2022 en aproximadamente <strong>5.138 habitantes</strong> y la identifica como el segundo núcleo de población más grande de County Carlow después de Carlow town.</p>
+
+        <h4>Lo más interesante: Horse Riding dentro de Transition Year</h4>
+        <div class="eq-badge eq-ok">🐴 La documentación más concreta de las cuatro opciones</div>
+        <p>El <strong>TY Handbook 2025/26</strong> publicado por el propio colegio establece un componente denominado <strong>Physical Recreation</strong>: el alumno selecciona una actividad deportiva que quiere aprender o mejorar durante <strong>1 hora semanal a lo largo de 13 semanas</strong>. Y <strong>Horse Riding aparece expresamente entre las posibilidades</strong>.</p>
+        <p>El mismo documento muestra además al <strong>Tullow Community School Equestrian Team</strong>. Por otra parte, la página oficial de deportes confirma que los estudiantes de Tullow participan en <strong>competiciones de equitación representando al colegio</strong>, gracias también a la implicación de las familias.</p>
+        <div class="callout">
+          Esto hace que Tullow sea especialmente interesante para Fuica: <strong>no nos basamos en que «hay una hípica cerca»</strong>, sino en que Horse Riding aparece documentado dentro de TY y existe participación ecuestre competitiva del colegio.
+        </div>
+
+        <h4>Transition Year</h4>
+        <p>Tullow mantiene un TY formal y consolidado. La web oficial publica actualmente el programa y el proceso de admisión, describiéndolo como un año destinado a desarrollar <strong>independencia, competencias, madurez y conocimiento del mundo laboral</strong>. La oferta incluye actividades y talleres vinculados a Science &amp; Maths, Languages, Career Guidance, Work Experience, Coding, Enterprise, Gaisce, Health Education, Physical Education, Public Speaking y Music, entre otras áreas.</p>
+
+        <h4>Deportes y vida escolar</h4>
+        <p>Además de equitación, el colegio participa competitivamente en <strong>basketball, Gaelic football, soccer, rugby, hurling, golf y athletics</strong>, y su programa de PE incorpora una oferta deportiva muy amplia.</p>
+
+        <h4>Aeropuerto</h4>
+        <p>Para estudiantes internacionales, el aeropuerto de referencia sería <strong>Dublin Airport (DUB)</strong>, realizando posteriormente el traslado terrestre hasta County Carlow.</p>
+
+        <h4>Para Fuica</h4>
+        <div class="callout">
+          <strong>Punto diferencial:</strong> es el centro donde tenemos actualmente la evidencia oficial más concreta de Horse Riding integrado en TY, con una duración publicada de <strong>1 hora semanal durante 13 semanas</strong>, además de participación ecuestre competitiva.
+        </div>
+      </div>
+    </details>
+
+    <details class="det">
+      <summary>
+        <span class="det-num">02</span>
+        <span class="det-head">
+          <span class="det-tit">St Ciarán's Community School · Kells, County Meath</span>
+          <span class="det-sub">Una opción muy equilibrada entre localidad, colegio y tradición ecuestre</span>
+        </span>
+        <span class="det-pr">17.700 €</span>
+      </summary>
+      <div class="det-body">
+        <div class="ficha"><div><span>Alumnos</span><strong>597</strong></div><div><span>Localidad</span><strong>Kells</strong></div><div><span>Habitantes</span><strong>+6.000</strong></div><div><span>Aeropuerto</span><strong>Dublin DUB</strong></div></div>
+        <p>St Ciarán's es un colegio <strong>público/comunitario, mixto y con Transition Year</strong>, con 597 alumnos registrados actualmente por el Department of Education. Está situado en <strong>Kells, County Meath</strong>, una ciudad pequeña que funciona como centro de servicios de su zona y está conectada por la M3. El plan oficial de Meath sitúa su población en <strong>más de 6.000 habitantes</strong>, por lo que vuelve a encajar bien con la idea de una localidad pequeña pero con vida propia.</p>
+
+        <h4>Tradición ecuestre real dentro del colegio</h4>
+        <div class="eq-badge eq-conf">🐴 Tradición acreditada, frecuencia no publicada</div>
+        <p>Aquí también tenemos confirmación directa del propio centro. La página oficial de deportes señala expresamente que el colegio ha <strong>tenido éxito en Equestrian Sport</strong> y que antiguos alumnos han llegado a <strong>competir internacionalmente</strong> en diferentes disciplinas ecuestres, además de desarrollar carreras profesionales relacionadas con el sector. Su página de instalaciones también incluye <em>Equestrian</em> entre las áreas extracurriculares en las que sus estudiantes han destacado.</p>
+        <div class="callout blue">
+          <strong>Importante para la propuesta.</strong> Aquí no tenemos publicada una frecuencia del tipo «una hora semanal» o «dos sesiones por semana». La información oficial demuestra tradición y participación ecuestre escolar, pero no especifica cuántas veces montan actualmente ni cómo se organiza para un estudiante internacional.<br><br>
+          Por eso lo presentamos así: <strong>Equestrian Sport disponible en el entorno deportivo del colegio. Organización y frecuencia 2027/28 a confirmar antes de formalizar la actividad.</strong>
+        </div>
+
+        <h4>Transition Year</h4>
+        <p>St Ciarán's define su TY como un año de <em>growth, exploration and opportunity</em>, enfocado en independencia, confianza, resiliencia, trabajo en equipo, nuevas materias e intereses y preparación para el Senior Cycle. Su calendario demuestra que tiene bastante actividad: aparecen <strong>Adventure Centre, Enterprise Workshop, Ploughing Championships, Drivers Education</strong>, workshops y otras experiencias específicas de TY.</p>
+
+        <h4>Vida deportiva</h4>
+        <p>El colegio participa también en <strong>Gaelic football, hurling, handball, soccer, basketball, athletics, golf y rugby</strong>, con participación en competiciones regionales y nacionales.</p>
+
+        <h4>Aeropuerto</h4>
+        <p>El aeropuerto internacional de referencia sería igualmente <strong>Dublin Airport (DUB)</strong>, con traslado terrestre posterior a Kells.</p>
+
+        <h4>Para Fuica</h4>
+        <div class="callout">
+          <strong>Punto diferencial:</strong> entorno pequeño pero con servicios + colegio de tamaño manejable + una tradición ecuestre reconocida por el propio centro + TY muy activo.
+        </div>
+      </div>
+    </details>
+
+    <details class="det">
+      <summary>
+        <span class="det-num">03</span>
+        <span class="det-head">
+          <span class="det-tit">St. Louis Secondary School · Carrickmacross, County Monaghan</span>
+          <span class="det-sub">Una alternativa muy interesante si está abierta a un colegio de chicas</span>
+        </span>
+        <span class="det-pr">17.700 €</span>
+      </summary>
+      <div class="det-body">
+        <div class="ficha"><div><span>Alumnas</span><strong>409</strong></div><div><span>Localidad</span><strong>Carrickmacross</strong></div><div><span>Habitantes</span><strong>~5.745</strong></div><div><span>Aeropuerto</span><strong>Dublin DUB</strong></div></div>
+        <p>Aquí tenemos una propuesta algo diferente porque <strong>St. Louis es exclusivamente femenino</strong>. El Department of Education confirma que es un centro de chicas, con 409 alumnas, y que ofrece Transition Year. Carrickmacross, sin embargo, encaja muy bien con el entorno que buscáis: el plan oficial de Monaghan County Council sitúa su población en aproximadamente <strong>5.745 habitantes</strong>, y es una localidad compacta que funciona como centro comercial y de servicios para su entorno.</p>
+
+        <h4>Horse Riding como deporte escolar</h4>
+        <div class="eq-badge eq-conf">🐴 Deporte representativo del colegio, frecuencia no publicada</div>
+        <p>Aquí la confirmación es muy clara. La página oficial de deportes del colegio explica que las alumnas pueden <strong>representar a St. Louis en competiciones a nivel county, provincial and national</strong>, y dentro de la lista de deportes aparece expresamente <strong>Horse-riding</strong>, junto con Gaelic Football, Basketball, Athletics, Rugby y Swimming.</p>
+        <p>Eso significa que tampoco la estamos incluyendo simplemente porque haya centros ecuestres en Monaghan: <strong>el propio colegio identifica Horse Riding como deporte en el que sus alumnas pueden representar al centro</strong>. De nuevo, no publica una frecuencia semanal de monta, por lo que ese detalle deberá verificarse para 2027/28.</p>
+
+        <h4>Transition Year</h4>
+        <p>Su TY tiene una estructura bastante interesante: aproximadamente <strong>la mitad del horario se dedica a materias académicas</strong> que ayudan a preparar posteriormente el Leaving Certificate, y la otra mitad a experiencias y módulos más propios de Transition Year. Entre ellos aparecen ICT, Dance, Mini-Company, Self-Defence, Ceramics, Work Experience, Personal Development, Art &amp; Design, Digital Media y Young Social Innovators. Además, cada año los alumnos de TY preparan <strong>una producción musical completa</strong>.</p>
+
+        <h4>Ambiente escolar</h4>
+        <p>Es el colegio más pequeño de las opciones no rurales de la propuesta. Su carácter femenino y sus aproximadamente 400 alumnas pueden favorecer una comunidad escolar bastante cercana.</p>
+        <div class="callout blue">
+          <strong>Una pregunta para vosotros:</strong> ¿es un colegio solo de chicas una opción que queréis valorar? Es el único punto que condiciona esta alternativa, y preferimos preguntarlo antes de avanzar.
+        </div>
+
+        <h4>Aeropuerto</h4>
+        <p>Aeropuerto internacional de referencia: <strong>Dublin Airport (DUB)</strong>, con posterior traslado terrestre hacia County Monaghan.</p>
+
+        <h4>Para Fuica</h4>
+        <div class="callout">
+          <strong>Punto diferencial:</strong> localidad pequeña pero funcional + colegio de tamaño reducido + Horse Riding reconocido oficialmente como deporte representativo del colegio + TY equilibrado entre parte académica y experiencias.
+        </div>
+      </div>
+    </details>
+
+    <details class="det">
+      <summary>
+        <span class="det-num">04</span>
+        <span class="det-head">
+          <span class="det-tit">Borris College · Borris, County Carlow</span>
+          <span class="det-sub">La opción más específica si el salto ecuestre pesa mucho en la decisión</span>
+        </span>
+        <span class="det-pr">17.700 €</span>
+      </summary>
+      <div class="det-body">
+        <div class="ficha"><div><span>Alumnos</span><strong>537</strong></div><div><span>Localidad</span><strong>Borris</strong></div><div><span>Habitantes</span><strong>~652</strong></div><div><span>Aeropuerto</span><strong>Dublin DUB</strong></div></div>
+        <p>Borris College es un colegio <strong>público, mixto y con Transition Year</strong>, con 537 alumnos según el Department of Education. Y aquí encontramos la conexión más directa con la disciplina que practica Fuica: <strong>show jumping</strong>.</p>
+
+        <h4>Show Jumping</h4>
+        <div class="eq-badge eq-conf">🐴 La evidencia competitiva más potente de la propuesta</div>
+        <p>La página oficial del propio colegio define su <strong>Equestrian Club</strong> como un club activo y consolidado, y señala expresamente la fuerte afición de sus estudiantes por los caballos y el <strong>competitive showjumping</strong>. El colegio participó en la <strong>TRI Equestrian Interschools Showjumping League</strong>, y en la temporada 2023/24 su equipo compitió <strong>cada fin de semana entre septiembre y abril</strong>. La misma página describe al Equestrian Club de Borris como uno de los clubes más activos de la liga.</p>
+        <p>Para una estudiante que ya practica salto, es un dato bastante potente.</p>
+
+        <h4>Pero tiene una contrapartida</h4>
+        <div class="callout blue">
+          <strong>Borris es realmente pequeño.</strong> El Census 2022 del CSO contabiliza aproximadamente <strong>652 habitantes</strong>. Por eso no lo colocamos como primera alternativa general: nos dijisteis «pequeño sí, rural no», y de las cuatro opciones esta es claramente la más rural.<br><br>
+          Pero merece estar en la propuesta porque, si Fuica nos dice «para mí lo más importante es poder seguir vinculada al salto y competir», entonces <strong>Borris merece estudiarse muy seriamente</strong>.
+        </div>
+
+        <h4>Transition Year</h4>
+        <p>Borris mantiene un TY formal y tiene publicada la información correspondiente al curso más reciente. El colegio lo define como un <strong>puente entre Junior Cycle y Leaving Certificate</strong>, con énfasis en participación activa, madurez, debates, eventos y Work Experience.</p>
+
+        <h4>Otros deportes</h4>
+        <p>Además del Equestrian Club, la web deportiva del colegio incluye <strong>rowing, athletics, basketball, camogie, football, golf, soccer y hurling</strong>.</p>
+
+        <h4>Importante respecto al caballo</h4>
+        <div class="callout rojo">
+          <strong>No asumimos que el colegio proporcione caballo a los estudiantes.</strong> La web oficial documenta la existencia y la actividad del equipo de show jumping, pero no explica si un estudiante internacional puede participar sin caballo propio ni cómo se organiza el alquiler o el préstamo.<br><br>
+          Antes de presentarlo como opción competitiva cerrada, MLQ confirmaría: <strong>disponibilidad de caballo + nivel requerido + costes + transporte + posibilidad real de incorporarse al equipo 2027/28</strong>. Ese punto es imprescindible.
+        </div>
+
+        <h4>Para Fuica</h4>
+        <div class="callout">
+          <strong>Punto diferencial:</strong> es la opción con la evidencia oficial más potente en competitive showjumping, aunque no sea la que mejor responde al entorno solicitado.
+        </div>
+      </div>
+    </details>
+
+  </div>
+
+  <!-- ============ 9. COMPARATIVA ============ -->
+  <div class="section-title"><h2>Comparativa para Fuica</h2></div>
+  <div class="tabla-wrap">
+    <table class="tabla-diff">
+      <thead><tr><th style="text-align:left;">&nbsp;</th><th>Tullow CS</th><th>St Ciarán's</th><th>St. Louis</th><th>Borris College</th></tr></thead>
+      <tbody>
+        <tr><th>Localidad</th><td>Tullow</td><td>Kells</td><td>Carrickmacross</td><td>Borris</td></tr>
+        <tr><th>Entorno</th><td>Ciudad pequeña</td><td>Ciudad pequeña</td><td>Ciudad pequeña</td><td><span class="badge-int int-alta">Muy pequeño / rural</span></td></tr>
+        <tr><th>Población aprox.</th><td>5.138</td><td>+6.000</td><td>5.745</td><td>652</td></tr>
+        <tr><th>Colegio</th><td>Mixto</td><td>Mixto</td><td><span class="badge-int int-media">Chicas</span></td><td>Mixto</td></tr>
+        <tr><th>Alumnos</th><td>871</td><td>597</td><td>409</td><td>537</td></tr>
+        <tr><th>Transition Year</th><td class="si">Sí</td><td class="si">Sí</td><td class="si">Sí</td><td class="si">Sí</td></tr>
+        <tr><th>Equitación oficial</th><td class="si">Sí</td><td class="si">Sí</td><td class="si">Sí</td><td class="si">Sí</td></tr>
+        <tr><th>Evidencia más interesante</th><td>Horse Riding en TY</td><td>Tradición Equestrian Sport</td><td>Horse-riding como deporte escolar</td><td>Show Jumping Club</td></tr>
+        <tr><th>Frecuencia publicada</th><td><span class="badge-int int-ok">1 h/semana × 13 semanas</span></td><td><span class="badge-int int-media">No publicada</span></td><td><span class="badge-int int-media">No publicada</span></td><td><span class="badge-int int-media">Competición muy activa documentada</span></td></tr>
+        <tr><th>Encaje con salto</th><td>Bueno</td><td>Bueno</td><td>A confirmar</td><td><span class="badge-int int-ok">Especialmente alto</span></td></tr>
+        <tr><th>Aeropuerto de referencia</th><td>Dublin DUB</td><td>Dublin DUB</td><td>Dublin DUB</td><td>Dublin DUB</td></tr>
+        <tr class="precio-fila"><th>Precio MLQ 27/28</th><td>17.700 €</td><td>17.700 €</td><td>17.700 €</td><td>17.700 €</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="tabla-nota">Precio del Programa Choice + 4 vuelos con el descuento especial MLQ de 500 € ya aplicado. En el Programa Choice el precio no varía según el colegio elegido.</div>
+
+  <!-- ============ 10. CLIMA ============ -->
+  <div class="section-title"><h2>El clima</h2></div>
+  <p class="intro-text">
+    Las cuatro opciones están en la <strong>mitad oriental de Irlanda</strong> y tienen un clima oceánico templado, muy diferente
+    al invierno canadiense.
+  </p>
+  <div class="info-blocks">
+    <div class="info-block">
+      <div class="info-block-icon">🌡</div>
+      <div class="info-block-title">Referencia: normales 1991–2020 de Met Éireann</div>
+      <div class="info-block-text">
+        Datos de la estación de Dublin Airport, como referencia oficial para el este de Irlanda:
+        <ul>
+          <li><strong>Enero:</strong> máxima media 8 °C / mínima 2,3 °C</li>
+          <li><strong>Julio:</strong> máxima media 19,5 °C / mínima 11,3 °C</li>
+          <li><strong>Precipitación anual:</strong> unos 772 mm</li>
+        </ul>
+        En County Carlow, al estar algo más hacia el interior, puede haber algo más de heladas invernales que en la costa, pero las temperaturas siguen siendo mucho más moderadas que las de gran parte de Canadá.
+      </div>
+    </div>
+    <div class="info-block">
+      <div class="info-block-icon">🐴</div>
+      <div class="info-block-title">Qué significa para la equitación</div>
+      <div class="info-block-text">
+        <p>Para una estudiante que quiere continuar vinculada a la equitación, Irlanda ofrece una <strong>ventaja climática clara</strong> para la práctica outdoor durante buena parte del curso: sin las temperaturas bajo cero prolongadas ni la nieve que condicionan la actividad al aire libre en el interior de Canadá.</p>
+        <p style="margin-top:10px;">A cambio, hay que contar con <strong>lluvia frecuente</strong> y con el equipamiento adecuado para montar en condiciones húmedas.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- ============ 11. VALORACIÓN FINAL ============ -->
+  <div class="section-title"><h2>Nuestra valoración final para Fuica</h2></div>
+  <div class="rank">
+    <div class="rank-item top">
+      <div class="rank-num">1</div>
+      <div>
+        <div class="rank-tit">Tullow Community School</div>
+        <div class="rank-txt">La ponemos primero porque es <strong>la más fácil de defender con datos actuales</strong>: localidad pequeña pero con más de 5.000 habitantes, colegio mixto de buen tamaño, TY consolidado y, sobre todo, Horse Riding documentado durante <strong>1 hora semanal a lo largo de 13 semanas</strong> en el handbook oficial más reciente, además de participación en competiciones ecuestres.</div>
+      </div>
+    </div>
+    <div class="rank-item">
+      <div class="rank-num">2</div>
+      <div>
+        <div class="rank-tit">St Ciarán's Community School</div>
+        <div class="rank-txt">Segunda opción por el <strong>equilibrio general</strong>: Kells tiene vida propia, el colegio es manejable y el propio centro acredita una tradición fuerte en deporte ecuestre, incluso con antiguos alumnos que han llegado a competir internacionalmente.</div>
+      </div>
+    </div>
+    <div class="rank-item">
+      <div class="rank-num">3</div>
+      <div>
+        <div class="rank-tit">St. Louis Secondary School</div>
+        <div class="rank-txt">Una tercera opción muy buena <strong>si estáis abiertos a un colegio de chicas</strong>. Carrickmacross encaja mucho mejor con «pequeño pero no rural» que Borris, y la equitación está expresamente reconocida dentro de los deportes representativos del centro.</div>
+      </div>
+    </div>
+    <div class="rank-item">
+      <div class="rank-num">4</div>
+      <div>
+        <div class="rank-tit">Borris College</div>
+        <div class="rank-txt">La <strong>opción especial de salto ecuestre</strong>. No es la que mejor responde al entorno solicitado, pero sí la que tiene la evidencia oficial más potente en competitive showjumping. Si el salto y la competición pasan a ser la prioridad número uno, sube puestos de golpe.</div>
+      </div>
+    </div>
+  </div>
+  <div class="callout blue" style="max-width:none;">
+    <strong>Una cosa que queremos dejar clara:</strong> no prometemos una frecuencia concreta de equitación en St Ciarán's, St. Louis
+    ni Borris, porque sus fuentes oficiales no la publican para 2027/28. En Tullow sí podemos mencionar la estructura publicada de
+    1 hora semanal durante 13 semanas, aclarando que <strong>la programación de TY puede variar cada curso</strong>.
+  </div>
+
+  <!-- ============ 12. MODALIDADES ============ -->
+  <div class="section-title"><h2>Modalidades y precios</h2></div>
+  <div class="mod-grid">
+    <div class="mod-card">
+      <div class="mod-head">
+        <div class="mod-nombre">Programa No Choice</div>
+        <div class="mod-desc-head">La opción más ajustada en precio</div>
+        <div class="mod-precio-val">14.450 €</div>
+        <div class="mod-precio-sub">Año escolar completo</div>
+      </div>
+      <div class="mod-body">
+        <ul class="mod-list">
+          <li>Colegio asignado por MLQ según el perfil del estudiante</li>
+          <li>Familia anfitriona en pensión completa, habitación individual o compartida</li>
+          <li>Gestor estudiantil y coordinador local incluidos</li>
+          <li>Vuelos, orientación en Dublín, elección de zona y habitación individual como suplementos opcionales</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="mod-card">
+      <div class="mod-head">
+        <div class="mod-nombre">Programa Choice + 2 vuelos</div>
+        <div class="mod-desc-head">Elección de colegio con vuelos de ida y vuelta incluidos</div>
+        <div class="mod-precio-val">16.950 €<span class="mod-tachado">17.450 €</span></div>
+        <div class="mod-precio-sub">Año escolar completo</div>
+      </div>
+      <div class="mod-body">
+        <div class="mod-extra">
+          <div class="mod-extra-title">Otras duraciones</div>
+          <div class="mod-mini"><span>Trimestre (2 vuelos)</span><b>10.200 €</b></div>
+        </div>
+        <ul class="mod-list">
+          <li>Elección de colegio entre las opciones seleccionadas para el perfil</li>
+          <li>Habitación individual garantizada</li>
+          <li>Libros de asignaturas obligatorias y uniforme escolar incluidos</li>
+          <li>Tasa de Transition Year incluida</li>
+          <li>2 vuelos internacionales incluidos (ida y vuelta)</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="mod-card destacado-mod">
+      <div class="badge-rec-mod">Propuesto</div>
+      <div class="mod-head">
+        <div class="mod-nombre">Programa Choice + 4 vuelos</div>
+        <div class="mod-desc-head">La opción más completa, con vuelos de Navidad incluidos</div>
+        <div class="mod-precio-val">17.700 €<span class="mod-tachado">18.200 €</span></div>
+        <div class="mod-precio-sub">Año escolar completo</div>
+      </div>
+      <div class="mod-body">
+        <div class="mod-extra">
+          <div class="mod-extra-title">Otras duraciones</div>
+          <div class="mod-mini"><span>Semestre agosto–abril</span><b>15.200 €</b></div>
+          <div class="mod-mini"><span>Semestre agosto–enero</span><b>11.650 €</b></div>
+        </div>
+        <ul class="mod-list">
+          <li>Elección de colegio entre las opciones seleccionadas para el perfil</li>
+          <li>Habitación individual garantizada</li>
+          <li>Libros de asignaturas obligatorias y uniforme escolar incluidos</li>
+          <li>Tasa de Transition Year y orientación en Dublín incluidas</li>
+          <li><strong>4 vuelos incluidos:</strong> inicio, ida y vuelta de Navidad, y fin de curso</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div class="tabla-nota">El descuento especial MLQ de 500 € se aplica a los programas Choice. Las duraciones inferiores al año completo se indican como referencia, sin descuento aplicado.</div>
+
+  <!-- ============ 13. EL PROGRAMA INCLUYE ============ -->
+  <div class="section-title"><h2>El programa incluye</h2></div>
+  <div class="includes-wrap">
+    <div class="includes-head"><h3>☘ Todo lo que cubre el Programa Choice + 4 vuelos</h3></div>
+    <div class="includes-body">
+      <div class="includes-grid">
+        <div>
+          <div class="col-title">Antes del viaje</div>
+          <ul class="inc-list">
+            <li>Reunión inicial con padres o tutores</li>
+            <li>Entrevista personal online con la estudiante</li>
+            <li>Información completa sobre el programa en Irlanda</li>
+            <li>Inscripción y matriculación en el colegio elegido</li>
+            <li>Familia anfitriona en pensión completa, habitación individual</li>
+            <li>Un único estudiante hispanohablante por familia</li>
+            <li>Seguro médico privado y de responsabilidad civil</li>
+            <li>Libros de asignaturas obligatorias y uniforme escolar</li>
+            <li>Masterclass de cultura irlandesa<small>10 horas online en inglés</small></li>
+            <li>Orientación pre-viaje en Madrid u online</li>
+            <li>Welcome pack sorpresa de My Language Quest</li>
+          </ul>
+        </div>
+        <div>
+          <div class="col-title">Durante el viaje</div>
+          <ul class="inc-list">
+            <li>Recibimiento en aeropuerto y 4 traslados<small>Inicio, ida y vuelta de Navidad y fin de curso</small></li>
+            <li>Orientación de 2 días en Dublín al llegar</li>
+            <li>Asesoramiento en elección de asignaturas</li>
+            <li>Clases de inglés Cambridge y libro incluido</li>
+            <li>Taller MIT · 3 sesiones</li>
+            <li>Tasa de Transition Year</li>
+            <li>Coordinador local en Irlanda: visitas, tutorías y emergencias 24 h</li>
+            <li>Acompañamiento psicológico</li>
+            <li>Atención 24 h en España para emergencias</li>
+            <li>Apoyo para matriculación en extraescolares</li>
+            <li>Gestión de cambio de familia si fuera necesario</li>
+          </ul>
+          <div class="col-title" style="margin-top:24px;">Después del viaje</div>
+          <ul class="inc-list">
+            <li>Convalidación detallada ante el Ministerio de Educación</li>
+            <li>Recogida de notas y traducciones juradas</li>
+            <li>Dossier final detallando la experiencia</li>
+          </ul>
+        </div>
+        <div>
+          <div class="col-title">No incluido</div>
+          <ul class="inc-list no">
+            <li>Actividad ecuestre<small>Clases, transporte a la hípica, inscripción en competiciones y caballo, según la actividad concreta que se confirme en cada centro</small></li>
+            <li>Equipación de equitación propia<small>Casco, botas, protecciones y ropa técnica</small></li>
+            <li>Actividades extracurriculares de pago</li>
+            <li>Excursiones y viajes escolares</li>
+            <li>Material escolar adicional</li>
+            <li>Transporte local mensual</li>
+            <li>Todo aquello que no esté especificado expresamente en el apartado &laquo;El programa incluye&raquo;</li>
+          </ul>
+        </div>
+      </div>
+      <div class="gestor-wrap">
+        <div class="gestor-title">Gestor estudiantil · se encarga de</div>
+        <div class="gestor-grid">
+          <div class="gestor-item">Seguimiento personalizado del desempeño</div>
+          <div class="gestor-item">Información a padres mensualmente</div>
+          <div class="gestor-item">Notas oficiales cada trimestre</div>
+          <div class="gestor-item">Asesoría en cambio de asignaturas</div>
+          <div class="gestor-item">Todas las tutorías necesarias</div>
+          <div class="gestor-item">Reuniones con padres y/o estudiante</div>
+          <div class="gestor-item">Apoyo en actividades extraescolares</div>
+          <div class="gestor-item">Resolución de situaciones con familia o centro</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ============ 14. FORMAS DE PAGO ============ -->
+  <div class="section-title"><h2>Formas de pago</h2></div>
+  <div class="payment-wrap">
+    <div class="payment-inner">
+      <div class="pay-title">💳 Condiciones económicas</div>
+      <div class="pay-subtitle">Dos vías: pago directo o financiación. El importe de la reserva cambia según cuál elijáis.</div>
+
+      <div class="pay-route">
+        <div class="pay-route-head"><span class="pay-route-icon">🏦</span><span class="pay-route-title">Opción A · Pago sin financiación</span></div>
+        <div class="pay-route-sub">La cantidad íntegra debe abonarse antes del 1 de junio de 2027.</div>
+        <div class="pay-entrada">
+          <div class="pay-entrada-num">3.500 €</div>
+          <div class="pay-entrada-txt"><strong>Primer pago a la firma del contrato.</strong> Reserva la plaza e inicia la tramitación de matrícula y familia anfitriona.</div>
+        </div>
+        <div class="pay-cols">
+          <div class="pay-col">
+            <div class="pay-col-title">Paso 2 · Confirmación de plaza</div>
+            <div class="pay-step"><div class="pay-step-title">4.000 €</div><div class="pay-step-desc">Al confirmarse la plaza en el colegio elegido</div></div>
+          </div>
+          <div class="pay-col">
+            <div class="pay-col-title">Paso 3 · Resto del importe</div>
+            <div class="pay-step"><div class="pay-step-title">Antes del 1 de junio de 2027</div><div class="pay-step-desc">Importe restante hasta completar el precio del programa</div></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="pay-route">
+        <div class="pay-route-head"><span class="pay-route-icon">📆</span><span class="pay-route-title">Opción B · Con financiación Banco Sabadell</span></div>
+        <div class="pay-route-sub">Si se financia el programa, la entrada es siempre de 5.000 € y el resto se financia en cuotas mensuales.</div>
+        <div class="pay-entrada">
+          <div class="pay-entrada-num">5.000 €</div>
+          <div class="pay-entrada-txt"><strong>Entrada fija a la firma del contrato</strong> en todos los casos de financiación. El capital restante se financia en 12, 18, 24 o 36 meses.</div>
+        </div>
+        <div class="pay-cols">
+          <div class="pay-col">
+            <div class="pay-col-title">Capital financiado</div>
+            <div class="pay-step"><div class="pay-step-title">Precio del programa − 5.000 €</div><div class="pay-step-desc">Calcula la cuota exacta en el simulador de la sección siguiente.</div></div>
+          </div>
+          <div class="pay-col">
+            <div class="pay-col-title">Condiciones</div>
+            <div class="pay-step"><div class="pay-step-title">12 meses · TIN 0 %</div><div class="pay-step-desc">MLQ asume los intereses</div></div>
+            <div class="pay-step"><div class="pay-step-title">18 / 24 / 36 meses · TIN 10,46 %</div><div class="pay-step-desc">Intereses a cargo del cliente</div></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="pay-note">Los costes de la actividad ecuestre (clases, transporte, competiciones o caballo) se abonan directamente al proveedor correspondiente y no forman parte del importe MLQ ni del capital financiado. El seguro de anulación e interrupción es opcional, cuesta 500 € y debe contratarse y abonarse en el momento de la firma del contrato. Su importe no es reembolsable bajo ninguna circunstancia. Las inscripciones tardías deben cumplir con los plazos de pago ya pasados en el momento de la inscripción.</div>
+    </div>
+  </div>
+
+  <!-- ============ 15. FINANCIACIÓN ============ -->
+  <div class="section-title"><h2>Financia tu programa</h2></div>
+  <div class="financing-wrap">
+    <div class="financing-head">
+      <div class="financing-head-left">
+        <div class="fin-icon">💳</div>
+        <div>
+          <div class="fin-title">Paga a tu ritmo, sin preocupaciones</div>
+          <div class="fin-sub">Entrada fija de 5.000 € · Aprobación rápida · 100 % online · Sin comisión de apertura</div>
+        </div>
+      </div>
+      <div class="fin-badge">Hasta 36 meses</div>
+    </div>
+    <div class="financing-body">
+      <div class="fin-opcion-selector">
+        <div class="fin-opcion-label">Selecciona la modalidad · descuento ya aplicado en los Choice</div>
+        <div class="fin-opcion-btns" id="finOpciones">
+          <button class="fin-opcion-btn active" data-precio="17700"><span class="fin-opcion-nombre">☘ Choice + 4 vuelos</span><span class="fin-opcion-precio">17.700 €</span></button>
+          <button class="fin-opcion-btn" data-precio="16950"><span class="fin-opcion-nombre">Choice + 2 vuelos</span><span class="fin-opcion-precio">16.950 €</span></button>
+          <button class="fin-opcion-btn" data-precio="14450"><span class="fin-opcion-nombre">No Choice</span><span class="fin-opcion-precio">14.450 €</span></button>
+        </div>
+      </div>
+
+      <div class="fin-entrada-fija">
+        <div class="fin-entrada-fija-num">5.000 €</div>
+        <div class="fin-entrada-fija-txt"><strong>Entrada a la firma del contrato.</strong> Se descuenta del precio del programa; el resto es el capital que se financia.</div>
+      </div>
+
+      <div class="fin-plazo-wrap">
+        <div class="fin-plazo-label">Elige tu plazo de financiación</div>
+        <div class="fin-plazos" id="finPlazos">
+          <button class="fin-plazo active" data-meses="12" data-tin="0"><div class="fin-plazo-meses">12 meses</div><div class="fin-plazo-badge sin-intereses">TIN 0%</div><div class="fin-plazo-quien">¡MLQ asume los intereses!</div></button>
+          <button class="fin-plazo" data-meses="18" data-tin="10.46"><div class="fin-plazo-meses">18 meses</div><div class="fin-plazo-badge con-intereses">TIN 10,46%</div><div class="fin-plazo-quien">Intereses a cargo del cliente</div></button>
+          <button class="fin-plazo" data-meses="24" data-tin="10.46"><div class="fin-plazo-meses">24 meses</div><div class="fin-plazo-badge con-intereses">TIN 10,46%</div><div class="fin-plazo-quien">Intereses a cargo del cliente</div></button>
+          <button class="fin-plazo" data-meses="36" data-tin="10.46"><div class="fin-plazo-meses">36 meses</div><div class="fin-plazo-badge con-intereses">TIN 10,46%</div><div class="fin-plazo-quien">Intereses a cargo del cliente</div></button>
+        </div>
+      </div>
+
+      <div class="fin-resultado">
+        <div class="fin-resultado-main">
+          <div class="fin-cuota-label">Cuota mensual estimada</div>
+          <div class="fin-cuota-valor" id="cuotaValor">1.058,33 €</div>
+          <div class="fin-cuota-sub" id="cuotaSub">/mes · 12 pagos · TIN 0%</div>
+        </div>
+        <div class="fin-resultado-detalle">
+          <div class="fin-det-row"><span class="fin-det-label">Importe del programa</span><span class="fin-det-val" id="detPrecio">17.700 €</span></div>
+          <div class="fin-det-row"><span class="fin-det-label">Entrada a la firma</span><span class="fin-det-val" id="detEntrada">5.000 €</span></div>
+          <div class="fin-det-row"><span class="fin-det-label">Capital financiado</span><span class="fin-det-val" id="detCapital">12.700 €</span></div>
+          <div class="fin-det-row"><span class="fin-det-label">Intereses totales</span><span class="fin-det-val fin-det-green" id="detIntereses">0 € · ¡MLQ los asume!</span></div>
+          <div class="fin-det-row fin-det-total"><span class="fin-det-label">Total a pagar</span><span class="fin-det-val" id="detTotal">17.700 €</span></div>
+        </div>
+      </div>
+
+      <div class="fin-nota">ℹ️ Financiación sujeta a aprobación bancaria. La entrada de 5.000 € se abona a la firma del contrato y no se financia. Cuota orientativa calculada sobre el capital financiado. Sin comisión de apertura ni penalización por cancelación anticipada. Los costes de la actividad ecuestre no están incluidos en el importe simulado.</div>
+    </div>
+  </div>
+
+  <!-- ============ 16. SIGUIENTES PASOS ============ -->
+  <div class="section-title"><h2>Siguientes pasos</h2></div>
+  <div class="steps-wrap">
+    <div class="steps-inner">
+      <div class="steps-title">¿Cómo seguimos?</div>
+      <div class="steps-sub">Del sí a la salida hacia Irlanda, paso a paso</div>
+      <div class="steps-list">
+        <div class="step-item"><div class="step-num">1</div><div class="step-title">Vuestras preguntas</div><div class="step-desc">En familia, anotad vuestras dudas —incluida la de si un colegio de chicas es una opción— para comentarlas en nuestra videollamada.</div></div>
+        <div class="step-item"><div class="step-num">2</div><div class="step-title">Confirmamos la equitación</div><div class="step-desc">Verificamos con el centro elegido la organización y la frecuencia real de la actividad ecuestre para 2027/28.</div></div>
+        <div class="step-item"><div class="step-num">3</div><div class="step-title">Firma y reserva</div><div class="step-desc">Firma del contrato y primer pago. Se bloquea la plaza.</div></div>
+        <div class="step-item"><div class="step-num">4</div><div class="step-title">Matrícula, familia y vuelos</div><div class="step-desc">Gestionamos matrícula, familia anfitriona, uniforme, libros, vuelos y orientación en Dublín.</div></div>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<!-- ============ 17. FOOTER ============ -->
+<div class="footer">
+  <div class="footer-logo">MY LANGUAGE QUEST</div>
+  <div class="footer-tag">Explore · Learn · Grow</div>
+  <div class="footer-meta">
+    Propuesta personalizada para Fuica · Curso 2027/28<br>
+    Descuento especial MLQ de 500 € ya aplicado en los programas Choice, no acumulable con otras promociones.<br>
+    Precios sujetos a disponibilidad de plaza y confirmación del centro escolar. La organización y la frecuencia de la actividad ecuestre se confirmarán con cada colegio antes de formalizar la inscripción.
+  </div>
+</div>
+
+<script>
+(function(){
+  var precio=17700, meses=12, tin=0, ENTRADA=5000;
+  function fmt(n){return n.toLocaleString('es-ES',{minimumFractionDigits:2,maximumFractionDigits:2})+' €';}
+  function fmt0(n){return n.toLocaleString('es-ES',{maximumFractionDigits:0})+' €';}
+  function calc(){
+    var capital=Math.max(precio-ENTRADA,0);
+    var cuota, total;
+    if(tin===0){ cuota=capital/meses; total=capital; }
+    else{ var i=tin/100/12; cuota=capital*i/(1-Math.pow(1+i,-meses)); total=cuota*meses; }
+    var intereses=total-capital;
+    document.getElementById('cuotaValor').textContent=fmt(cuota);
+    document.getElementById('cuotaSub').textContent='/mes · '+meses+' pagos · TIN '+(tin===0?'0%':'10,46%');
+    document.getElementById('detPrecio').textContent=fmt0(precio);
+    document.getElementById('detEntrada').textContent=fmt0(ENTRADA);
+    document.getElementById('detCapital').textContent=fmt0(capital);
+    var ei=document.getElementById('detIntereses');
+    if(tin===0){ ei.textContent='0 € · ¡MLQ los asume!'; ei.classList.add('fin-det-green'); }
+    else{ ei.textContent=fmt0(intereses); ei.classList.remove('fin-det-green'); }
+    document.getElementById('detTotal').textContent=fmt0(ENTRADA+total);
+  }
+  document.querySelectorAll('#finOpciones .fin-opcion-btn').forEach(function(b){
+    b.addEventListener('click',function(){
+      document.querySelectorAll('#finOpciones .fin-opcion-btn').forEach(function(x){x.classList.remove('active');});
+      b.classList.add('active'); precio=parseFloat(b.dataset.precio); calc();
+    });
+  });
+  document.querySelectorAll('#finPlazos .fin-plazo').forEach(function(b){
+    b.addEventListener('click',function(){
+      document.querySelectorAll('#finPlazos .fin-plazo').forEach(function(x){x.classList.remove('active');});
+      b.classList.add('active'); meses=parseInt(b.dataset.meses); tin=parseFloat(b.dataset.tin); calc();
+    });
+  });
+  calc();
+})();
+</script>
+
+<script>
+(function(){
+  var d=document, root=d.documentElement;
+  if(!('IntersectionObserver' in window)){root.className=root.className.replace(' js-anim','');return;}
+
+  var bar=d.createElement('div'); bar.className='progress-bar'; d.body.appendChild(bar);
+  var ticking=false;
+  function progress(){
+    var h=d.documentElement.scrollHeight-window.innerHeight;
+    bar.style.transform='scaleX('+(h>0?Math.min(window.scrollY/h,1):0)+')';
+    ticking=false;
+  }
+  window.addEventListener('scroll',function(){if(!ticking){ticking=true;requestAnimationFrame(progress);}},{passive:true});
+  progress();
+
+  Array.prototype.forEach.call(d.querySelectorAll('.hero-pill'),function(el,i){
+    el.style.animationDelay=(0.36+i*0.06)+'s';
+  });
+
+  var groups=[
+    ['.section-title','reveal'],
+    ['.intro-text','reveal'],
+    ['.intro-point','reveal'],
+    ['.det-mini','reveal'],
+    ['.precio-desglose','reveal-zoom'],
+    ['.alert-box','reveal'],
+    ['.opcion-card','reveal'],
+    ['.det-list > details','reveal'],
+    ['.tabla-wrap','reveal-zoom'],
+    ['.rank-item','reveal'],
+    ['.mod-card','reveal'],
+    ['.info-block','reveal'],
+    ['.includes-wrap','reveal-zoom'],
+    ['.payment-wrap','reveal-zoom'],
+    ['.financing-wrap','reveal-zoom'],
+    ['.steps-wrap','reveal-zoom']
+  ];
+  groups.forEach(function(g){
+    Array.prototype.forEach.call(d.querySelectorAll(g[0]),function(el,i){
+      el.classList.add(g[1]);
+      el.style.transitionDelay=Math.min(i*0.09,0.36)+'s';
+    });
+  });
+
+  var io=new IntersectionObserver(function(entries){
+    entries.forEach(function(e){
+      if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}
+    });
+  },{threshold:0.12,rootMargin:'0px 0px -8% 0px'});
+  Array.prototype.forEach.call(d.querySelectorAll('.reveal,.reveal-zoom'),function(el){io.observe(el);});
+
+  var cuota=d.getElementById('cuotaValor');
+  if(cuota&&'MutationObserver' in window){
+    new MutationObserver(function(){
+      cuota.classList.remove('pop'); void cuota.offsetWidth; cuota.classList.add('pop');
+    }).observe(cuota,{childList:true,characterData:true,subtree:true});
+  }
+})();
+</script>
+<!-- MLQ tracking -->
+<script>
+(function () {
+  var URL_TRACKING = 'https://script.google.com/macros/s/AKfycbygwC8SbNtpdSo9sEEyAOYnZR-7ui1jgk-7wF9gOhM5kJs2qLgBxhQI7MJHutokDSFajA/exec';
+  if (URL_TRACKING.indexOf('http') !== 0) return;
+
+  var archivo    = (location.pathname.split('/').pop() || 'index.html');
+  var estudiante = archivo.replace(/\.html?$/i, '').replace(/-/g, ' ');
+  var programa   = (document.title.split('·')[0] || '').trim();
+  var sesion     = Math.random().toString(36).slice(2, 10);
+
+  function enviar(evento, valor) {
+    var qs = '?evento=' + encodeURIComponent(evento) +
+             '&valor=' + encodeURIComponent(valor || '') +
+             '&archivo=' + encodeURIComponent(archivo) +
+             '&estudiante=' + encodeURIComponent(estudiante) +
+             '&programa=' + encodeURIComponent(programa) +
+             '&sesion=' + sesion +
+             '&referrer=' + encodeURIComponent(document.referrer || '') +
+             '&ua=' + encodeURIComponent(navigator.userAgent) +
+             '&t=' + Date.now();
+    try {
+      if (window.fetch) {
+        fetch(URL_TRACKING + qs, { mode: 'no-cors', keepalive: true });
+      } else {
+        new Image().src = URL_TRACKING + qs;
+      }
+    } catch (e) {}
+  }
+
+  try {
+    if (!sessionStorage.getItem('mlq_open_' + archivo)) {
+      sessionStorage.setItem('mlq_open_' + archivo, '1');
+      enviar('apertura');
+    }
+  } catch (e) { enviar('apertura'); }
+
+  var activo = 0, marca = Date.now(), visible = !document.hidden, hito30 = false;
+
+  function acumular() {
+    if (visible) activo += Date.now() - marca;
+    marca = Date.now();
+  }
+
+  document.addEventListener('visibilitychange', function () {
+    acumular();
+    visible = !document.hidden;
+  });
+
+  setInterval(function () {
+    acumular();
+    if (!hito30 && activo >= 30000) {
+      hito30 = true;
+      enviar('lectura_30s');
+    }
+  }, 1000);
+
+  var hitos = [25, 50, 75, 100], enviados = {};
+
+  function revisarScroll() {
+    var alto = document.documentElement.scrollHeight - window.innerHeight;
+    var pct  = alto <= 0 ? 100 : Math.round((window.pageYOffset / alto) * 100);
+    for (var i = 0; i < hitos.length; i++) {
+      var h = hitos[i];
+      if (pct >= h && !enviados[h]) {
+        enviados[h] = true;
+        enviar('scroll_' + h);
+      }
+    }
+  }
+
+  window.addEventListener('scroll', revisarScroll, { passive: true });
+  window.addEventListener('resize', revisarScroll, { passive: true });
+  setTimeout(revisarScroll, 1500);
+
+  var cerrado = false;
+  function alSalir() {
+    if (cerrado) return;
+    cerrado = true;
+    acumular();
+    enviar('salida', Math.round(activo / 1000));
+  }
+  window.addEventListener('pagehide', alSalir);
+  document.addEventListener('visibilitychange', function () {
+    if (document.hidden) { acumular(); }
+  });
+})();
+</script>
+</body>
+</html>
