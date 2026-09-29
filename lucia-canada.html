@@ -58,7 +58,7 @@ body{font-family:'Fira Sans',sans-serif;background:var(--gray-bg);color:var(--te
 .intro-point-title{font-family:'Josefin Sans',sans-serif;font-size:13px;font-weight:700;color:var(--red-deep);margin-bottom:4px;}
 .intro-point-desc{font-size:12px;color:var(--text-mid);line-height:1.55;}
 
-/* QUIÉNES SOMOS — bloque editorial */
+/* QUIÉNES SOMOS · bloque editorial */
 .qs-hero{display:grid;grid-template-columns:1fr 1fr;gap:0;background:var(--white);border-radius:18px;overflow:hidden;border:1.5px solid var(--gray-border);box-shadow:0 4px 28px rgba(0,51,102,0.08);}
 .qs-media{position:relative;background:var(--blue-dark);min-height:440px;}
 .qs-media img{width:100%;height:100%;object-fit:cover;display:block;}
@@ -129,6 +129,9 @@ details summary::-webkit-details-marker{display:none;}
 details summary::before{content:'▸';font-size:10px;transition:transform .2s;display:inline-block;}
 details[open] summary::before{transform:rotate(90deg);}
 .colegio-razon{padding:10px 14px 13px;font-size:12px;color:var(--text-mid);line-height:1.7;border-left:3px solid var(--red);margin:0 14px 12px;background:var(--red-light);border-radius:0 6px 6px 0;}
+.web-btn-wrap{padding:0 22px 20px;}
+.web-btn{display:flex;align-items:center;justify-content:center;gap:8px;width:100%;padding:12px 16px;border-radius:10px;background:var(--white);border:1.5px solid var(--red);color:var(--red);font-family:'Josefin Sans',sans-serif;font-size:12px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;text-decoration:none;transition:background .18s,color .18s,transform .18s;}
+.web-btn:hover{background:var(--red);color:var(--white);transform:translateY(-2px);}
 .match-bar{display:flex;gap:6px;flex-wrap:wrap;padding:14px 22px;border-top:1px solid var(--gray-border);background:linear-gradient(to right,var(--gray-card),var(--white));}
 .match-tag{display:flex;align-items:center;gap:4px;font-size:10px;font-weight:600;color:var(--green-dark);background:var(--green-light);border:1px solid rgba(76,158,12,0.25);border-radius:20px;padding:3px 10px;}
 .match-tag::before{content:'✓';font-size:9px;}
@@ -365,7 +368,7 @@ details[open] summary::before{transform:rotate(90deg);}
   </div>
 </div>
 
-<!-- ============ 2. HERO — PERSONALIZABLE ============ -->
+<!-- ============ 2. HERO · PERSONALIZABLE ============ -->
 <div class="hero">
   <div class="hero-dots"></div>
   <div class="hero-inner">
@@ -387,7 +390,7 @@ details[open] summary::before{transform:rotate(90deg);}
            2. Añadir la tarifa original tachada: <span class="tachado">20.430 €</span>
            3. Actualizar data-precio de la calculadora con el precio ya rebajado
          Descomentar la línea siguiente para mostrarlo:
-    <div class="hero-promo">🍁 Reserva antes del 30 de septiembre de 2026 y obtén <strong>1.000 € de descuento</strong> — no acumulable con otras promociones.</div>
+    <div class="hero-promo">🍁 Reserva antes del 30 de septiembre de 2026 y obtén <strong>1.000 € de descuento</strong>, no acumulable con otras promociones.</div>
     ===== FIN BLOQUE PROMO ===== -->
   </div>
 </div>
@@ -397,28 +400,12 @@ details[open] summary::before{transform:rotate(90deg);}
   <!-- ============ 3. CONTEXTO: QUÉ ES EL PROGRAMA ============ -->
   <div class="section-title"><h2>¿Qué es el programa de Canadá?</h2></div>
   <p class="intro-text">
-    Un año escolar en Canadá no es un curso de idiomas: es <strong>un curso académico completo dentro del
-    sistema público canadiense</strong>, con los mismos compañeros, profesores y exámenes que cualquier
-    estudiante del país. Lucía viviría con una familia anfitriona en pensión completa y, al volver, el curso
-    se convalidaría ante el Ministerio de Educación español. No se pierde un año: se cursa el mismo año,
-    en inglés y en uno de los sistemas educativos mejor valorados del mundo.
-  </p>
-  <p class="intro-text">
-    La particularidad de Canadá está en cómo se organiza: <strong>no se elige colegio de forma directa, se
-    elige distrito escolar</strong>. Un distrito es el equivalente a una consejería local de educación, que
-    agrupa todos los colegios públicos de una zona. La familia escoge el distrito —es decir, la ciudad, el
-    entorno, el clima y el tipo de vida— y es el distrito quien asigna el instituto concreto dentro de su
-    red, en función de la disponibilidad de plazas y de las asignaturas que interesan al estudiante.
-    <strong>Elegir distrito es elegir dónde va a vivir Lucía</strong>, que es lo que de verdad marca la
-    experiencia.
-  </p>
-  <p class="intro-text">
-    Esta propuesta se centra en <strong>British Columbia</strong>, la provincia de la costa oeste. Es la más
-    solicitada por las familias españolas por tres razones: los inviernos son mucho más suaves que en el
-    resto del país, la naturaleza es espectacular —montaña, océano y parques nacionales— y sus distritos
-    llevan décadas recibiendo estudiantes internacionales con programas muy rodados. A continuación os
-    presentamos tres distritos de British Columbia muy distintos entre sí, con el enlace a la web oficial
-    de cada programa para que podáis verlos por vuestra cuenta.
+    Un año escolar en Canadá es un curso académico completo dentro del <strong>sistema público
+    canadiense</strong>, con familia anfitriona en pensión completa y convalidación en España al volver.
+    Su particularidad: <strong>no se elige colegio, se elige distrito escolar</strong>. El distrito agrupa
+    todos los colegios públicos de una zona y es quien asigna el instituto. Elegir distrito es elegir dónde
+    va a vivir Lucía. Estos son tres distritos de <strong>British Columbia</strong>, la provincia de la costa
+    oeste, muy distintos entre sí.
   </p>
   <div class="intro-points">
     <div class="intro-point"><div class="intro-point-icon">🏫</div><div><div class="intro-point-title">Sistema de distritos</div><div class="intro-point-desc">Cada distrito agrupa varios colegios públicos. La familia elige distrito; el colegio final lo asigna el distrito según disponibilidad y asignaturas.</div></div></div>
@@ -505,11 +492,11 @@ details[open] summary::before{transform:rotate(90deg);}
     </div>
   </div>
 
-  <!-- ============ 5. OPCIONES RECOMENDADAS — PERSONALIZABLE ============ -->
+  <!-- ============ 5. OPCIONES RECOMENDADAS · PERSONALIZABLE ============ -->
   <div class="section-title"><h2>Opciones recomendadas</h2></div>
   <div class="alert-box">
     <div class="alert-icon">🏔</div>
-    <div class="alert-text"><strong>Tres distritos de British Columbia, tres formas muy distintas de vivir el curso:</strong> montaña, isla y valle. Los precios son la tarifa real del curso 2027/28 e incluyen matrícula, familia anfitriona en pensión completa, seguro, visado y vuelos. Trabajamos con más de treinta distritos en todo Canadá; cuando conozcamos mejor a Lucía —curso, nivel de inglés, deportes y tipo de entorno que buscáis— afinaremos la selección.</div>
+    <div class="alert-text"><strong>Montaña, isla y valle.</strong> Precios reales del curso 2027/28, con matrícula, familia anfitriona, seguro, visado y vuelos incluidos. Cuando conozcamos mejor a Lucía afinaremos la selección.</div>
   </div>
   <div class="opciones-grid">
 
@@ -519,20 +506,20 @@ details[open] summary::before{transform:rotate(90deg);}
         <div class="opcion-num">Opción 01 · Montaña</div>
         <div class="opcion-distrito">Rocky Mountain School District</div>
         <div class="opcion-loc">📍 British Columbia · Montañas Rocosas · Kimberley, Invermere, Golden</div>
-        <div class="opcion-loc">🔗 <a href="https://rminternational.ca" target="_blank" rel="noopener" style="color:inherit;">rminternational.ca</a> · web oficial del programa internacional</div>
         <div class="precio-chip"><span class="val">25.300 €</span><span class="desc">/ año · vuelos incl.*</span></div>
       </div>
       <div class="opcion-body"><div class="colegios">
         <div class="colegio">
           <div class="colegio-top"><div class="colegio-nombre">Selkirk Secondary School</div><div class="colegio-meta"><span class="tag pub">Público</span><span class="tag info">Grade 8–12</span><span class="tag info">Kimberley · ~8.000 hab.</span><span class="tag info">Ciudad de montaña</span></div></div>
-          <details><summary>Cómo es estudiar aquí</summary><div class="colegio-razon">Kimberley es una pequeña ciudad alpina con estación de esquí propia. El colegio lleva recibiendo estudiantes internacionales desde los años ochenta y ofrece optativas que no existen en España: Outdoor Education, esquí y snowboard dentro del horario escolar, hockey sobre hielo y programas de liderazgo. La comunidad es pequeña y muy acogedora: el estudiante internacional se convierte enseguida en uno más.</div></details>
+          <details><summary>Cómo es estudiar aquí</summary><div class="colegio-razon">Kimberley es una pequeña ciudad alpina con estación de esquí propia. El colegio recibe estudiantes internacionales desde los años ochenta y ofrece optativas poco habituales: Outdoor Education, esquí y snowboard en horario escolar, hockey sobre hielo y liderazgo.</div></details>
         </div>
         <div class="colegio">
           <div class="colegio-top"><div class="colegio-nombre">David Thompson Secondary School</div><div class="colegio-meta"><span class="tag pub">Público</span><span class="tag info">Grade 8–12</span><span class="tag info">Invermere · ~4.000 hab.</span><span class="tag info">Valle de Columbia</span></div></div>
-          <details><summary>Cómo es estudiar aquí</summary><div class="colegio-razon">Invermere está junto al lago Windermere y a poco más de dos horas de Banff y Calgary. Es el entorno de montaña canadiense de postal: esquí, senderismo, bicicleta de montaña, aguas termales y lago en verano. Al ser un distrito con menos estudiantes internacionales que los urbanos, la inmersión lingüística es notablemente mayor.</div></details>
+          <details><summary>Cómo es estudiar aquí</summary><div class="colegio-razon">Invermere está junto al lago Windermere, a dos horas de Banff y Calgary. Esquí, senderismo, bicicleta de montaña y aguas termales. Al haber menos estudiantes internacionales que en los distritos urbanos, la inmersión es mayor.</div></details>
         </div>
       </div></div>
       <div class="match-bar"><span class="match-tag">Esquí y snowboard</span><span class="match-tag">Outdoor Education</span><span class="match-tag">Inmersión alta</span><span class="match-tag">Comunidad pequeña</span></div>
+      <div class="web-btn-wrap"><a class="web-btn" href="https://rminternational.ca" target="_blank" rel="noopener">🔗 Ver la web del distrito</a></div>
     </div>
 
     <div class="opcion-card">
@@ -540,20 +527,20 @@ details[open] summary::before{transform:rotate(90deg);}
         <div class="opcion-num">Opción 02 · Isla y océano</div>
         <div class="opcion-distrito">Nanaimo Ladysmith School District</div>
         <div class="opcion-loc">📍 British Columbia · Isla de Vancouver · Costa del Pacífico</div>
-        <div class="opcion-loc">🔗 <a href="https://ise.schools.sd68.bc.ca" target="_blank" rel="noopener" style="color:inherit;">ise.schools.sd68.bc.ca</a> · web oficial del programa internacional</div>
         <div class="precio-chip"><span class="val">24.650 €</span><span class="desc">/ año · vuelos incl.*</span></div>
       </div>
       <div class="opcion-body"><div class="colegios">
         <div class="colegio">
           <div class="colegio-top"><div class="colegio-nombre">Dover Bay Secondary School</div><div class="colegio-meta"><span class="tag pub">Público</span><span class="tag info">Grade 8–12</span><span class="tag info">Nanaimo · ~100.000 hab.</span><span class="tag info">Semiurbano</span></div></div>
-          <details><summary>Cómo es estudiar aquí</summary><div class="colegio-razon">Uno de los institutos de referencia de la isla, con academias deportivas y artísticas, cursos avanzados (AP) de biología, física y química y una vida extraescolar intensa: baloncesto, voleibol, remo, fútbol y rugby. El distrito recibe más de 400 estudiantes internacionales al año, con un programa muy estructurado de seguimiento académico y de homestay.</div></details>
+          <details><summary>Cómo es estudiar aquí</summary><div class="colegio-razon">Instituto de referencia en la isla, con academias deportivas y artísticas, cursos avanzados (AP) y mucha vida extraescolar: baloncesto, voleibol, remo, fútbol y rugby. El distrito recibe más de 400 estudiantes internacionales al año.</div></details>
         </div>
         <div class="colegio">
           <div class="colegio-top"><div class="colegio-nombre">Wellington Secondary School</div><div class="colegio-meta"><span class="tag pub">Público</span><span class="tag info">Grade 8–12</span><span class="tag info">Nanaimo</span><span class="tag info">Semiurbano</span></div></div>
-          <details><summary>Cómo es estudiar aquí</summary><div class="colegio-razon">Centro con fuerte tradición en atletismo y deportes de equipo, buen ambiente y tamaño manejable. Nanaimo es una ciudad costera con puerto, playas, bosque y clima suave para lo que es Canadá: entre 2 y 9 °C en invierno. Vancouver y Victoria están a un trayecto de ferry.</div></details>
+          <details><summary>Cómo es estudiar aquí</summary><div class="colegio-razon">Tamaño manejable y fuerte tradición en atletismo y deportes de equipo. Nanaimo es una ciudad costera con playas y bosque, invierno suave de 2 a 9 °C, y ferry directo a Vancouver y Victoria.</div></details>
         </div>
       </div></div>
       <div class="match-bar"><span class="match-tag">Clima suave</span><span class="match-tag">Academias deportivas</span><span class="match-tag">Mar y montaña</span><span class="match-tag">Programa muy rodado</span></div>
+      <div class="web-btn-wrap"><a class="web-btn" href="https://ise.schools.sd68.bc.ca" target="_blank" rel="noopener">🔗 Ver la web del distrito</a></div>
     </div>
 
     <div class="opcion-card">
@@ -561,20 +548,20 @@ details[open] summary::before{transform:rotate(90deg);}
         <div class="opcion-num">Opción 03 · Valle cerca de Vancouver</div>
         <div class="opcion-distrito">Chilliwack School District</div>
         <div class="opcion-loc">📍 British Columbia · Valle del Fraser · A 1 h 30 de Vancouver</div>
-        <div class="opcion-loc">🔗 <a href="https://isp.sd33.bc.ca" target="_blank" rel="noopener" style="color:inherit;">isp.sd33.bc.ca</a> · web oficial del programa internacional</div>
         <div class="precio-chip"><span class="val">24.620 €</span><span class="desc">/ año · vuelos incl.*</span></div>
       </div>
       <div class="opcion-body"><div class="colegios">
         <div class="colegio">
           <div class="colegio-top"><div class="colegio-nombre">Sardis Secondary School</div><div class="colegio-meta"><span class="tag pub">Público</span><span class="tag info">Grade 9–12</span><span class="tag info">Chilliwack · ~95.000 hab.</span><span class="tag info">Semiurbano</span></div></div>
-          <details><summary>Cómo es estudiar aquí</summary><div class="colegio-razon">Instituto grande y muy completo, con instalaciones deportivas de primer nivel y una oferta enorme de extraescolares: fútbol americano, baloncesto, natación, golf, rugby, voleibol, curling y ultimate frisbee. El distrito destaca porque el 98 % del alumnado tiene el inglés como lengua materna, lo que hace la inmersión mucho más real de lo habitual en un distrito cercano a una gran ciudad.</div></details>
+          <details><summary>Cómo es estudiar aquí</summary><div class="colegio-razon">Instituto grande, con instalaciones deportivas de primer nivel y mucha extraescolar: fútbol americano, baloncesto, natación, golf, rugby, voleibol y curling. El 98 % del alumnado del distrito tiene el inglés como lengua materna.</div></details>
         </div>
         <div class="colegio">
           <div class="colegio-top"><div class="colegio-nombre">G.W. Graham Secondary School</div><div class="colegio-meta"><span class="tag pub">Público</span><span class="tag info">Grade 9–12</span><span class="tag info">Chilliwack</span><span class="tag info">Semiurbano</span></div></div>
-          <details><summary>Cómo es estudiar aquí</summary><div class="colegio-razon">Centro con academias deportivas, programas de artes y música y formación tecnológica. Chilliwack está rodeada de montañas, ríos y lagos, con el invierno más suave de los tres distritos (2 a 8 °C) y Vancouver a hora y media por carretera para escapadas de fin de semana.</div></details>
+          <details><summary>Cómo es estudiar aquí</summary><div class="colegio-razon">Academias deportivas, artes, música y formación tecnológica. Chilliwack está rodeada de montañas, ríos y lagos, con el invierno más suave de los tres distritos (2 a 8 °C) y Vancouver a hora y media.</div></details>
         </div>
       </div></div>
       <div class="match-bar"><span class="match-tag">Invierno suave</span><span class="match-tag">Cerca de Vancouver</span><span class="match-tag">Instalaciones grandes</span><span class="match-tag">Adaptación fácil</span></div>
+      <div class="web-btn-wrap"><a class="web-btn" href="https://isp.sd33.bc.ca" target="_blank" rel="noopener">🔗 Ver la web del distrito</a></div>
     </div>
 
   </div>
@@ -584,7 +571,7 @@ details[open] summary::before{transform:rotate(90deg);}
   <div class="info-blocks">
     <div class="info-block">
       <div class="info-block-icon">🛂</div>
-      <div class="info-block-title">Visado — Study Permit</div>
+      <div class="info-block-title">Visado · Study Permit</div>
       <div class="info-block-text">La gestión y la tasa del <strong>Study Permit</strong> están incluidas en el programa.
         <ul><li>Tramitación completa gestionada por MLQ</li><li>Tasa del visado incluida en el precio</li><li>Suplemento de <strong>550 €</strong> para programas en la provincia de Quebec</li></ul>
       </div>
@@ -670,7 +657,7 @@ details[open] summary::before{transform:rotate(90deg);}
     </div>
   </div>
 
-  <!-- ============ 9. FORMAS DE PAGO — MODELO NUEVO ============ -->
+  <!-- ============ 9. FORMAS DE PAGO · MODELO NUEVO ============ -->
   <div class="section-title"><h2>Formas de pago</h2></div>
   <div class="payment-wrap">
     <div class="payment-inner">
@@ -721,7 +708,7 @@ details[open] summary::before{transform:rotate(90deg);}
     </div>
   </div>
 
-  <!-- ============ 10. FINANCIACIÓN — SIMULADOR ============ -->
+  <!-- ============ 10. FINANCIACIÓN · SIMULADOR ============ -->
   <div class="section-title"><h2>Financia tu programa</h2></div>
   <div class="financing-wrap">
     <div class="financing-head">
@@ -796,40 +783,6 @@ details[open] summary::before{transform:rotate(90deg);}
         <div class="step-item"><div class="step-num">3</div><div class="step-title">Primavera 2027</div><div class="step-desc">Tramitación del Study Permit, reserva de vuelos y orientación previa en Madrid u online.</div></div>
         <div class="step-item"><div class="step-num">4</div><div class="step-title">Curso 2027/28</div><div class="step-desc">Salida a finales de agosto. Regreso en junio. Convalidación y apostilla gestionadas por MLQ.</div></div>
       </div>
-    </div>
-  </div>
-
-  <div class="section-title"><h2>Las dudas que siempre nos hacen</h2></div>
-  <div class="info-blocks">
-    <div class="info-block">
-      <div class="info-block-icon">🏫</div>
-      <div class="info-block-title">¿Por qué no se puede elegir el colegio?</div>
-      <div class="info-block-text">Porque en Canadá la matrícula la gestiona el distrito, no el centro. Lo que sí hacemos es transmitir las preferencias de asignaturas y actividades del estudiante, que es lo que el distrito usa para asignar el instituto. Elegir bien el distrito es más determinante que el colegio concreto: define ciudad, clima, entorno y vida social.</div>
-    </div>
-    <div class="info-block">
-      <div class="info-block-icon">🗣</div>
-      <div class="info-block-title">¿Qué nivel de inglés hace falta?</div>
-      <div class="info-block-text">Los distritos de British Columbia no exigen examen oficial de acceso: aceptan estudiantes con distintos niveles y ofrecen apoyo lingüístico (ELL) en el propio instituto. El programa incluye además clases Cambridge con profesor y libro. Un B1 aproximado hace la adaptación más cómoda, pero no es un requisito eliminatorio.</div>
-    </div>
-    <div class="info-block">
-      <div class="info-block-icon">❄</div>
-      <div class="info-block-title">¿Hace mucho frío?</div>
-      <div class="info-block-text">Depende del distrito, y por eso conviene elegirlo bien. En la costa y la isla el invierno es suave (2 a 9 °C, con lluvia). En las Rocosas sí hay invierno de verdad, entre −15 y −5 °C, con nieve constante de diciembre a marzo: es lo que hace posible esquiar cada fin de semana. La ropa de abrigo no está incluida y conviene comprarla allí.</div>
-    </div>
-    <div class="info-block">
-      <div class="info-block-icon">🏠</div>
-      <div class="info-block-title">¿Cómo son las familias anfitrionas?</div>
-      <div class="info-block-text">Seleccionadas y supervisadas por el propio distrito, con visita al domicilio y comprobación de antecedentes. Pensión completa, habitación individual o compartida y un único estudiante hispanohablante por familia. Si la convivencia no funciona, el cambio de familia está incluido y no tiene coste.</div>
-    </div>
-    <div class="info-block">
-      <div class="info-block-icon">💶</div>
-      <div class="info-block-title">¿Cuánto dinero necesita allí?</div>
-      <div class="info-block-text">La pensión completa, el seguro médico, los libros de algunas asignaturas y el visado ya están cubiertos. El gasto mensual se limita al ocio, el móvil, el transporte local y las actividades de pago del instituto: la mayoría de familias calcula entre 150 y 250 CAD al mes.</div>
-    </div>
-    <div class="info-block">
-      <div class="info-block-icon">🎓</div>
-      <div class="info-block-title">¿Se pierde el curso en España?</div>
-      <div class="info-block-text">No. El curso realizado en Canadá se convalida ante el Ministerio de Educación y Lucía se incorpora al curso que le corresponde a la vuelta. MLQ prepara el expediente completo, la apostilla de La Haya y el dossier final. Las equivalencias son directas: 3º ESO = Grade 9, 4º ESO = Grade 10, 1º Bachillerato = Grade 11.</div>
     </div>
   </div>
 
@@ -1054,6 +1007,6 @@ details[open] summary::before{transform:rotate(90deg);}
   });
 })();
 </script>
-<!-- build 2026-09-29T17:06:39+00:00 -->
+<!-- build 2026-09-29T17:13:21+00:00 -->
 </body>
 </html>
