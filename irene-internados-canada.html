@@ -1,47 +1,4 @@
 <!DOCTYPE html>
-<!--
-=========================================================================
- PLANTILLA CANADÁ · My Language Quest · v2 (curso 2027/28)
- NO EDITAR ESTE ARCHIVO DIRECTAMENTE. Copiar y sustituir sobre la copia.
- Este bloque de documentación SE ELIMINA en el archivo que ve el cliente.
-=========================================================================
-
- ZONAS PERSONALIZABLES POR ESTUDIANTE
- 1. <title>                    Nombre del estudiante
- 2. .header-year               Curso académico
- 3. .hero-name                 Nombre del estudiante
- 4. .hero-subtitle             Duración · país · zona preferida
- 5. .hero-pills                Grade, alojamiento, nivel de inglés, intereses
- 6. .alert-box                 Solo si hay perfil especial (altas capacidades, etc.)
- 7. .opciones-grid             2-3 distritos, 2 colegios cada uno
- 8. .fin-opcion-btns           data-precio y etiquetas del simulador
- 9. mailto: del CTA            Asunto con nombre del estudiante
-10. .footer-meta               Nombre del estudiante y curso
-
- PRECIOS
- - La lista de precios es la TARIFA REAL, sin descuento aplicado.
- - El descuento de 1.000 € SOLO se aplica si el comercial lo indica.
-   Al aplicarlo hay que tocar CUATRO sitios a la vez:
-     a) .precio-chip .val   -> precio ya rebajado
-     b) .precio-chip        -> añadir <span class="tachado">TARIFA</span>
-     c) data-precio         -> precio rebajado en el simulador
-     d) .hero-promo         -> descomentar el banner
-
- FORMAS DE PAGO
- - Sin financiación: 3.500 € a la firma.
- - Con financiación: 5.000 € de entrada SIEMPRE, resto financiado.
- - El pago íntegro vence antes del 10 de abril ANTERIOR a la salida.
-
- FOTOS
- - Alojadas en https://aescobarnic.github.io/Propuestas/img/
- - No incrustar en base64: multiplica por diez el peso del archivo.
-
- SALIDA
- - Nombre de archivo: nombre-apellido-canada.html
- - Publicar en aescobarnic/Propuestas y actualizar el Deal en Zoho.
-=========================================================================
--->
-
 <html lang="es">
 <head>
 <meta charset="UTF-8">
@@ -256,7 +213,7 @@ details[open] summary::before{transform:rotate(90deg);}
 .fin-entrada-fija-txt{font-size:12px;color:var(--text-mid);line-height:1.55;}
 .fin-entrada-fija-txt strong{color:var(--text);font-weight:600;}
 .fin-plazo-wrap{margin-bottom:24px;}
-.fin-plazos{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;}
+.fin-plazos{display:grid;grid-template-columns:1fr;gap:10px;}
 .fin-plazo{background:var(--gray-card);border:1.5px solid var(--gray-border);border-radius:12px;padding:14px 12px;cursor:pointer;text-align:center;transition:all .2s;font-family:'Fira Sans',sans-serif;}
 .fin-plazo:hover{border-color:var(--blue-mid);transform:translateY(-2px);}
 .fin-plazo.active{border-color:var(--green);background:var(--green-light);box-shadow:0 4px 16px rgba(76,158,12,0.15);}
@@ -320,7 +277,7 @@ details[open] summary::before{transform:rotate(90deg);}
   .pay-cols{grid-template-columns:1fr;}.gestor-grid{grid-template-columns:repeat(2,1fr);}
   .steps-list{grid-template-columns:1fr;}
   .qs-panel{padding:28px 22px;}.qs-title{font-size:22px;}
-  .fin-plazos{grid-template-columns:repeat(2,1fr);}
+  
   .fin-resultado{grid-template-columns:1fr;}
   .fin-resultado-main{border-right:none;border-bottom:1px solid rgba(255,255,255,0.15);padding-right:0;padding-bottom:20px;}
   .financing-head{flex-direction:column;align-items:flex-start;}
@@ -720,34 +677,33 @@ details[open] summary::before{transform:rotate(90deg);}
   <div class="payment-wrap">
     <div class="payment-inner">
       <div class="pay-title">💳 Condiciones económicas</div>
-      <div class="pay-subtitle">Dos vías: pago directo o financiación. El importe de la reserva cambia según cuál elijas.</div>
+      <div class="pay-subtitle">Dos vías: pago directo o financiación. En ambos casos la reserva a la firma del contrato es de 5.000 €.</div>
 
       <div class="pay-route">
         <div class="pay-route-head"><span class="pay-route-icon">🏦</span><span class="pay-route-title">Opción A · Pago sin financiación</span></div>
-        <div class="pay-route-sub">La cantidad íntegra debe abonarse antes del 10 de abril de 2027.</div>
+        <div class="pay-route-sub">Dos pagos: la reserva a la firma y el resto cuando llega la carta de aceptación del colegio.</div>
         <div class="pay-entrada">
-          <div class="pay-entrada-num">3.500 €</div>
-          <div class="pay-entrada-txt"><strong>Primer pago a la firma del contrato.</strong> Reserva la plaza e inicia la tramitación de matrícula, familia y visado.</div>
+          <div class="pay-entrada-num">5.000 €</div>
+          <div class="pay-entrada-txt"><strong>Primer pago a la firma del contrato.</strong> Reserva la plaza e inicia la tramitación de matrícula, residencia y visado.</div>
         </div>
         <div class="pay-cols">
           <div class="pay-col">
-            <div class="pay-col-title">Centros con pago fraccionado</div>
-            <div class="pay-step"><div class="pay-step-num">Paso 2 · Aceptación en el programa</div><div class="pay-step-title">40 % del importe restante</div></div>
-            <div class="pay-step"><div class="pay-step-num">Paso 3</div><div class="pay-step-title">Resto del importe</div><div class="pay-step-desc">Antes del 10 de abril de 2027</div></div>
+            <div class="pay-col-title">Segundo y último pago</div>
+            <div class="pay-step"><div class="pay-step-num">Carta de aceptación del colegio</div><div class="pay-step-title">Resto del importe en su totalidad</div><div class="pay-step-desc">Se abona una vez el centro emite la carta de aceptación de Irene en el programa.</div></div>
           </div>
           <div class="pay-col">
-            <div class="pay-col-title">Centros con pago completo</div>
-            <div class="pay-step"><div class="pay-step-num">Paso 2 · Aceptación en el programa</div><div class="pay-step-title">Resto del importe en su totalidad</div></div>
+            <div class="pay-col-title">Qué significa esa carta</div>
+            <div class="pay-step"><div class="pay-step-title">La plaza de Irene queda confirmada</div><div class="pay-step-desc">Es el documento con el que el internado confirma su admisión y con el que se inicia la solicitud del permiso de estudios.</div></div>
           </div>
         </div>
       </div>
 
       <div class="pay-route">
         <div class="pay-route-head"><span class="pay-route-icon">📆</span><span class="pay-route-title">Opción B · Con financiación Banco Sabadell</span></div>
-        <div class="pay-route-sub">Si se financia el programa, la entrada es siempre de 5.000 € y el resto se financia en cuotas mensuales.</div>
+        <div class="pay-route-sub">Si se financia el programa, la entrada es de 5.000 € a la firma y el resto se financia en 12 cuotas mensuales sin intereses.</div>
         <div class="pay-entrada">
           <div class="pay-entrada-num">5.000 €</div>
-          <div class="pay-entrada-txt"><strong>Entrada fija a la firma del contrato</strong> en todos los casos de financiación. El capital restante se financia en 12, 18, 24 o 36 meses.</div>
+          <div class="pay-entrada-txt"><strong>Entrada fija a la firma del contrato</strong> en todos los casos de financiación. El capital restante se financia en 12 meses.</div>
         </div>
         <div class="pay-cols">
           <div class="pay-col">
@@ -757,7 +713,7 @@ details[open] summary::before{transform:rotate(90deg);}
           <div class="pay-col">
             <div class="pay-col-title">Condiciones</div>
             <div class="pay-step"><div class="pay-step-title">12 meses · TIN 0 %</div><div class="pay-step-desc">MLQ asume los intereses</div></div>
-            <div class="pay-step"><div class="pay-step-title">18 / 24 / 36 meses · TIN 10,46 %</div><div class="pay-step-desc">Intereses a cargo del cliente</div></div>
+            <div class="pay-step"><div class="pay-step-title">Sin comisión de apertura</div><div class="pay-step-desc">Ni penalización por cancelación anticipada</div></div>
           </div>
         </div>
       </div>
@@ -777,7 +733,7 @@ details[open] summary::before{transform:rotate(90deg);}
           <div class="fin-sub">Entrada fija de 5.000 € · Aprobación rápida · 100 % online · Sin comisión de apertura</div>
         </div>
       </div>
-      <div class="fin-badge">Hasta 36 meses</div>
+      <div class="fin-badge">12 meses sin intereses</div>
     </div>
     <div class="financing-body">
 
@@ -796,27 +752,25 @@ details[open] summary::before{transform:rotate(90deg);}
       </div>
 
       <div class="fin-plazo-wrap">
-        <div class="fin-plazo-label">Elige tu plazo de financiación</div>
+        <div class="fin-plazo-label">Plazo de financiación</div>
         <div class="fin-plazos" id="finPlazos">
           <button class="fin-plazo active" data-meses="12" data-tin="0"><div class="fin-plazo-meses">12 meses</div><div class="fin-plazo-badge sin-intereses">TIN 0%</div><div class="fin-plazo-quien">¡MLQ asume los intereses!</div></button>
-          <button class="fin-plazo" data-meses="18" data-tin="10.46"><div class="fin-plazo-meses">18 meses</div><div class="fin-plazo-badge con-intereses">TIN 10,46%</div><div class="fin-plazo-quien">Intereses a cargo del cliente</div></button>
-          <button class="fin-plazo" data-meses="24" data-tin="10.46"><div class="fin-plazo-meses">24 meses</div><div class="fin-plazo-badge con-intereses">TIN 10,46%</div><div class="fin-plazo-quien">Intereses a cargo del cliente</div></button>
-          <button class="fin-plazo" data-meses="36" data-tin="10.46"><div class="fin-plazo-meses">36 meses</div><div class="fin-plazo-badge con-intereses">TIN 10,46%</div><div class="fin-plazo-quien">Intereses a cargo del cliente</div></button>
+          
         </div>
       </div>
 
       <div class="fin-resultado">
         <div class="fin-resultado-main">
           <div class="fin-cuota-label">Cuota mensual estimada</div>
-          <div class="fin-cuota-valor" id="cuotaValor">3.506,17 €</div>
+          <div class="fin-cuota-valor" id="cuotaValor">3.224,58 €</div>
           <div class="fin-cuota-sub" id="cuotaSub">/mes · 12 pagos · TIN 0%</div>
         </div>
         <div class="fin-resultado-detalle">
-          <div class="fin-det-row"><span class="fin-det-label">Importe del programa</span><span class="fin-det-val" id="detPrecio">47.074 €</span></div>
+          <div class="fin-det-row"><span class="fin-det-label">Importe del programa</span><span class="fin-det-val" id="detPrecio">43.695 €</span></div>
           <div class="fin-det-row"><span class="fin-det-label">Entrada a la firma</span><span class="fin-det-val" id="detEntrada">5.000 €</span></div>
-          <div class="fin-det-row"><span class="fin-det-label">Capital financiado</span><span class="fin-det-val" id="detCapital">42.074 €</span></div>
+          <div class="fin-det-row"><span class="fin-det-label">Capital financiado</span><span class="fin-det-val" id="detCapital">38.695 €</span></div>
           <div class="fin-det-row"><span class="fin-det-label">Intereses totales</span><span class="fin-det-val fin-det-green" id="detIntereses">0 € · ¡MLQ los asume!</span></div>
-          <div class="fin-det-row fin-det-total"><span class="fin-det-label">Total a pagar</span><span class="fin-det-val" id="detTotal">47.074 €</span></div>
+          <div class="fin-det-row fin-det-total"><span class="fin-det-label">Total a pagar</span><span class="fin-det-val" id="detTotal">43.695 €</span></div>
         </div>
       </div>
 
@@ -868,7 +822,7 @@ details[open] summary::before{transform:rotate(90deg);}
     else{ var i=tin/100/12; cuota=capital*i/(1-Math.pow(1+i,-meses)); total=cuota*meses; }
     var intereses=total-capital;
     document.getElementById('cuotaValor').textContent=fmt(cuota);
-    document.getElementById('cuotaSub').textContent='/mes · '+meses+' pagos · TIN '+(tin===0?'0%':'10,46%');
+    document.getElementById('cuotaSub').textContent='/mes · '+meses+' pagos · TIN 0%';
     document.getElementById('detPrecio').textContent=fmt0(precio);
     document.getElementById('detEntrada').textContent=fmt0(ENTRADA);
     document.getElementById('detCapital').textContent=fmt0(capital);
@@ -953,6 +907,6 @@ details[open] summary::before{transform:rotate(90deg);}
   }
 })();
 </script>
-<!-- build:20260929-103208 -->
+<!-- build:20260929-103930 -->
 </body>
 </html>
