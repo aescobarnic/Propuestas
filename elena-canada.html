@@ -137,6 +137,24 @@ details[open] summary::before{transform:rotate(90deg);}
 .match-tag::before{content:'✓';font-size:9px;}
 
 /* INFO BLOCKS */
+.vv-panel{position:relative;background:linear-gradient(135deg,var(--cream) 0%,var(--blue-light) 100%);border:2px solid var(--red);border-radius:22px;padding:30px 28px 28px;box-shadow:0 10px 36px rgba(177,41,0,0.14);margin-bottom:10px;}
+.vv-panel::before{content:'';position:absolute;inset:0;border-radius:20px;border:1px solid rgba(255,255,255,.6);pointer-events:none;}
+.vv-eyebrow{display:inline-flex;align-items:center;gap:7px;background:var(--red);color:#fff;font-family:'Josefin Sans',sans-serif;font-size:10.5px;font-weight:700;letter-spacing:1.2px;text-transform:uppercase;padding:6px 14px;border-radius:999px;margin-bottom:14px;}
+.vv-lead{font-size:14px;line-height:1.65;color:var(--blue-dark);font-weight:600;margin-bottom:22px;max-width:760px;}
+.vv-grid{display:grid;grid-template-columns:1fr 1fr;gap:18px;}
+.vv-card{background:var(--white);border-radius:16px;border:1.5px solid rgba(177,41,0,.22);padding:24px 24px 22px;box-shadow:0 4px 18px rgba(0,51,102,.07);}
+.vv-card-head{display:flex;align-items:center;gap:12px;margin-bottom:14px;}
+.vv-card-icon{width:42px;height:42px;border-radius:12px;background:var(--red-light);display:flex;align-items:center;justify-content:center;font-size:21px;flex-shrink:0;}
+.vv-card-title{font-family:'Josefin Sans',sans-serif;font-size:16px;font-weight:700;color:var(--red-deep);line-height:1.2;}
+.vv-chip{display:inline-block;background:var(--blue);color:#fff;font-size:11px;font-weight:700;letter-spacing:.3px;padding:5px 12px;border-radius:999px;margin-bottom:12px;}
+.vv-chip.alt{background:var(--green,#2e7d32);}
+.vv-card-text{font-size:12.5px;color:var(--text-mid);line-height:1.7;}
+.vv-card ul{margin-top:12px;padding-left:0;list-style:none;}
+.vv-card ul li{font-size:12.5px;color:var(--text-mid);display:flex;gap:9px;align-items:flex-start;margin-bottom:9px;line-height:1.55;}
+.vv-card ul li::before{content:'✓';color:var(--green);font-weight:700;flex-shrink:0;}
+.vv-card ul li.warn::before{content:'!';color:var(--red);}
+.vv-foot{margin-top:20px;display:flex;align-items:flex-start;gap:11px;background:rgba(255,255,255,.75);border-left:4px solid var(--gold);border-radius:0 12px 12px 0;padding:14px 18px;font-size:12.5px;color:var(--blue-dark);line-height:1.6;}
+@media(max-width:760px){.vv-grid{grid-template-columns:1fr;}.vv-panel{padding:24px 18px;}}
 .info-blocks{display:grid;grid-template-columns:1fr 1fr;gap:20px;}
 .info-block{background:var(--white);border-radius:16px;border:1.5px solid var(--gray-border);padding:24px 26px;box-shadow:0 2px 16px rgba(0,51,102,0.05);}
 .info-block-icon{font-size:24px;margin-bottom:10px;}
@@ -583,21 +601,40 @@ details[open] summary::before{transform:rotate(90deg);}
 
   <!-- ============ 6. VISADO Y VUELOS ============ -->
   <div class="section-title"><h2>Visado y vuelos</h2></div>
-  <div class="info-blocks">
-    <div class="info-block">
-      <div class="info-block-icon">🛂</div>
-      <div class="info-block-title">Visado — Study Permit</div>
-      <div class="info-block-text">La gestión y la tasa del <strong>Study Permit</strong> están incluidas en el programa.
-        <ul><li>Tramitación completa gestionada por MLQ</li><li>Tasa del visado incluida en el precio</li><li>Suplemento de <strong>550 €</strong> para programas en la provincia de Quebec</li></ul>
+  <div class="vv-panel">
+    <div class="vv-eyebrow">🍁 Incluido en el precio del programa</div>
+    <div class="vv-lead">Dos de las partidas que más preocupan a las familias, el visado y los billetes, no son un coste aparte: van dentro del importe que aparece en cada opción y las gestiona MLQ de principio a fin.</div>
+    <div class="vv-grid">
+      <div class="vv-card">
+        <div class="vv-card-head">
+          <div class="vv-card-icon">🛂</div>
+          <div class="vv-card-title">Visado · Study Permit</div>
+        </div>
+        <div class="vv-chip">Tramitación y tasa incluidas</div>
+        <div class="vv-card-text">MLQ se encarga de todo el expediente ante las autoridades canadienses. La familia solo aporta la documentación personal.</div>
+        <ul>
+          <li>Tramitación completa gestionada por MLQ</li>
+          <li>Tasa oficial del visado incluida en el precio</li>
+          <li>Acompañamiento en la toma de datos biométricos</li>
+          <li class="warn">Suplemento de <strong>550 €</strong> solo para programas en la provincia de Quebec, que no afecta a ninguna de las opciones de esta propuesta</li>
+        </ul>
+      </div>
+      <div class="vv-card">
+        <div class="vv-card-head">
+          <div class="vv-card-icon">✈️</div>
+          <div class="vv-card-title">Vuelos de ida y vuelta</div>
+        </div>
+        <div class="vv-chip">Hasta 1.000 € incluidos</div>
+        <div class="vv-card-text">Los billetes van dentro del programa con un coste máximo reconocido de 1.000 €. MLQ busca, compara y reserva.</div>
+        <ul>
+          <li>Búsqueda y reserva gestionadas por MLQ</li>
+          <li>Ajustados a las fechas reales de inicio y fin de curso</li>
+          <li>Coordinados con el recibimiento en el aeropuerto de destino</li>
+          <li class="warn">Si la tarifa supera los 1.000 €, la diferencia corre a cargo de la familia</li>
+        </ul>
       </div>
     </div>
-    <div class="info-block">
-      <div class="info-block-icon">✈</div>
-      <div class="info-block-title">Vuelos</div>
-      <div class="info-block-text">Los vuelos de ida y vuelta están incluidos, con un <strong>coste máximo reconocido de 1.000 €</strong>.
-        <ul><li>MLQ gestiona la búsqueda y reserva de los vuelos</li><li>Ajustados a las fechas de inicio y fin escolar</li><li>El exceso sobre 1.000 € corre a cargo de la familia</li></ul>
-      </div>
-    </div>
+    <div class="vv-foot">🗓 <div>Conviene reservar pronto: los billetes de finales de agosto se encarecen a medida que se acerca la fecha, y la cita de biometría para el Study Permit puede tener semanas de espera en temporada alta.</div></div>
   </div>
 
   <!-- ============ 7. EL PROGRAMA INCLUYE ============ -->
@@ -1005,6 +1042,6 @@ details[open] summary::before{transform:rotate(90deg);}
   });
 })();
 </script>
-<!-- build:20261001-113016 -->
+<!-- build:20261001-113451 -->
 </body>
 </html>
