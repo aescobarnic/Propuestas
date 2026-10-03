@@ -352,6 +352,11 @@ details[open] summary::before{transform:rotate(90deg);}
   *{transition-duration:.01ms!important;}
 }
 
+/* Enlaces a webs de colegios */
+.web-link{display:inline-flex;align-items:center;gap:5px;margin-top:8px;font-size:11.5px;font-weight:600;color:var(--blue-mid);text-decoration:none;border-bottom:1px solid rgba(10,74,138,0.25);padding-bottom:1px;transition:color .2s ease,border-color .2s ease;}
+.web-link::before{content:'\2197';font-size:12px;}
+.web-link:hover{color:var(--red);border-color:var(--red);}
+.colegio .web-link{margin-top:6px;font-size:11px;}
 </style>
 
 </head>
@@ -484,6 +489,7 @@ details[open] summary::before{transform:rotate(90deg);}
         <div class="opcion-num">Ejemplo A1</div>
         <div class="opcion-distrito">The Phelps School</div>
         <div class="opcion-loc">📍 Malvern, Pensilvania · 40 min de Filadelfia · 2 h de Nueva York</div>
+        <a class="web-link" href="https://www.thephelpsschool.org" target="_blank" rel="noopener">thephelpsschool.org</a>
         <div class="precio-chip"><span class="val">≈ 32.700 €</span><span class="desc">/ año · escenario con beca del 50%</span></div>
       </div>
       <div class="opcion-body"><div class="colegios">
@@ -504,6 +510,7 @@ details[open] summary::before{transform:rotate(90deg);}
         <div class="opcion-num">Ejemplo A2</div>
         <div class="opcion-distrito">Lee Academy</div>
         <div class="opcion-loc">📍 Lee, Maine · Nueva Inglaterra · entorno rural</div>
+        <a class="web-link" href="https://www.leeacademy.org" target="_blank" rel="noopener">leeacademy.org</a>
         <div class="precio-chip"><span class="val">≈ 33.200 €</span><span class="desc">/ año · escenario con beca de 20.000 $</span></div>
       </div>
       <div class="opcion-body"><div class="colegios">
@@ -524,6 +531,7 @@ details[open] summary::before{transform:rotate(90deg);}
         <div class="opcion-num">Ejemplo A3</div>
         <div class="opcion-distrito">Washington Academy</div>
         <div class="opcion-loc">📍 East Machias, Maine · costa atlántica</div>
+        <a class="web-link" href="https://www.washingtonacademy.org" target="_blank" rel="noopener">washingtonacademy.org</a>
         <div class="precio-chip"><span class="val">≈ 41.600 €</span><span class="desc">/ año · sin beca · ≈ 32.700 € con beca del 25%</span></div>
       </div>
       <div class="opcion-body"><div class="colegios">
@@ -588,15 +596,16 @@ details[open] summary::before{transform:rotate(90deg);}
         <div class="opcion-num">Opción B1</div>
         <div class="opcion-distrito">New Brunswick International Student Program</div>
         <div class="opcion-loc">📍 New Brunswick · Costa este de Canadá</div>
+        <a class="web-link" href="https://www.nbisp.ca" target="_blank" rel="noopener">nbisp.ca</a>
         <div class="precio-chip"><span class="val">20.550 €</span><span class="desc">/ año · vuelos incl. hasta 1.000 €</span></div>
       </div>
       <div class="opcion-body"><div class="colegios">
         <div class="colegio">
-          <div class="colegio-top"><div class="colegio-nombre">Fredericton High School</div><div class="colegio-meta"><span class="tag pub">Público</span><span class="tag info">Grade 9-12</span><span class="tag info">Fredericton · ~65.000 hab.</span></div></div>
+          <div class="colegio-top"><div class="colegio-nombre">Fredericton High School</div><div class="colegio-meta"><span class="tag pub">Público</span><span class="tag info">Grade 9-12</span><span class="tag info">Fredericton · ~65.000 hab.</span></div><a class="web-link" href="https://frederictonhigh.nbed.ca" target="_blank" rel="noopener">frederictonhigh.nbed.ca</a></div>
           <details><summary>Por qué encaja con Mateo</summary><div class="colegio-razon">Baloncesto, voleibol, fútbol, atletismo, rugby y natación en el mismo centro, que es exactamente el escenario multideporte que buscáis. Ciudad pequeña, segura y muy comunitaria, donde el instituto es el centro de la vida social y un estudiante extranjero se integra rápido.</div></details>
         </div>
         <div class="colegio">
-          <div class="colegio-top"><div class="colegio-nombre">Rothesay High School</div><div class="colegio-meta"><span class="tag pub">Público</span><span class="tag info">Grade 9-12</span><span class="tag info">Rothesay · ~12.000 hab.</span></div></div>
+          <div class="colegio-top"><div class="colegio-nombre">Rothesay High School</div><div class="colegio-meta"><span class="tag pub">Público</span><span class="tag info">Grade 9-12</span><span class="tag info">Rothesay · ~12.000 hab.</span></div><a class="web-link" href="https://rothesayhigh.nbed.ca" target="_blank" rel="noopener">rothesayhigh.nbed.ca</a></div>
           <details><summary>Por qué encaja con Mateo</summary><div class="colegio-razon">Centro más pequeño y entorno semiurbano tranquilo. Para un chaval que necesita que le vean y no que le pierdan en un instituto de 2.000 alumnos, el tamaño juega a favor. Equipos escolares activos y buena relación con las familias anfitrionas de la zona.</div></details>
         </div>
       </div></div>
@@ -608,15 +617,16 @@ details[open] summary::before{transform:rotate(90deg);}
         <div class="opcion-num">Opción B2</div>
         <div class="opcion-distrito">Winnipeg School Division</div>
         <div class="opcion-loc">📍 Winnipeg, Manitoba · Centro de Canadá</div>
+        <a class="web-link" href="https://www.winnipegsd.ca/wsdinternational" target="_blank" rel="noopener">winnipegsd.ca/wsdinternational</a>
         <div class="precio-chip"><span class="val">21.150 €</span><span class="desc">/ año · vuelos incl. hasta 1.000 €</span></div>
       </div>
       <div class="opcion-body"><div class="colegios">
         <div class="colegio">
-          <div class="colegio-top"><div class="colegio-nombre">Kelvin High School</div><div class="colegio-meta"><span class="tag pub">Público</span><span class="tag info">Urbano</span><span class="tag info">Winnipeg</span></div></div>
+          <div class="colegio-top"><div class="colegio-nombre">Kelvin High School</div><div class="colegio-meta"><span class="tag pub">Público</span><span class="tag info">Urbano</span><span class="tag info">Winnipeg</span></div><a class="web-link" href="https://www.winnipegsd.ca/kelvin" target="_blank" rel="noopener">winnipegsd.ca/kelvin</a></div>
           <details><summary>Por qué encaja con Mateo</summary><div class="colegio-razon">Manitoba tiene una de las culturas de baloncesto escolar más fuertes de Canadá, con liga competitiva y seguimiento real. Kelvin es un instituto urbano consolidado, con programas deportivos escolares bien estructurados y oferta amplia de actividades fuera del aula.</div></details>
         </div>
         <div class="colegio">
-          <div class="colegio-top"><div class="colegio-nombre">Grant Park High School</div><div class="colegio-meta"><span class="tag pub">Público</span><span class="tag info">Urbano</span><span class="tag info">Winnipeg</span></div></div>
+          <div class="colegio-top"><div class="colegio-nombre">Grant Park High School</div><div class="colegio-meta"><span class="tag pub">Público</span><span class="tag info">Urbano</span><span class="tag info">Winnipeg</span></div><a class="web-link" href="https://www.winnipegsd.ca/grantpark" target="_blank" rel="noopener">winnipegsd.ca/grantpark</a></div>
           <details><summary>Por qué encaja con Mateo</summary><div class="colegio-razon">Mismo nivel de competición escolar y barrio residencial tranquilo. Ciudad real, no turística, con vida social activa todo el año. El punto a valorar es el invierno, que en Winnipeg es duro de verdad.</div></details>
         </div>
       </div></div>
@@ -628,15 +638,16 @@ details[open] summary::before{transform:rotate(90deg);}
         <div class="opcion-num">Opción B3</div>
         <div class="opcion-distrito">Upper Canada District School Board</div>
         <div class="opcion-loc">📍 Este de Ontario · entre Ottawa y la frontera con Quebec</div>
+        <a class="web-link" href="https://www.ucdsb.on.ca" target="_blank" rel="noopener">ucdsb.on.ca</a>
         <div class="precio-chip"><span class="val">25.850 €</span><span class="desc">/ año · vuelos incl. hasta 1.000 €</span></div>
       </div>
       <div class="opcion-body"><div class="colegios">
         <div class="colegio">
-          <div class="colegio-top"><div class="colegio-nombre">Brockville Collegiate Institute</div><div class="colegio-meta"><span class="tag pub">Público</span><span class="tag info">Semiurbano</span><span class="tag info">Brockville · ~22.000 hab.</span></div></div>
+          <div class="colegio-top"><div class="colegio-nombre">Brockville Collegiate Institute</div><div class="colegio-meta"><span class="tag pub">Público</span><span class="tag info">Semiurbano</span><span class="tag info">Brockville · ~22.000 hab.</span></div><a class="web-link" href="https://bci.ucdsb.on.ca" target="_blank" rel="noopener">bci.ucdsb.on.ca</a></div>
           <details><summary>Por qué encaja con Mateo</summary><div class="colegio-razon">Brockville está a orillas del San Lorenzo, en plena frontera con el estado de Nueva York. Es la opción geográficamente más cercana a vuestra familia en EE.UU. Distrito muy acostumbrado a estudiantes internacionales, con familias anfitrionas implicadas y comunidades acogedoras.</div></details>
         </div>
         <div class="colegio">
-          <div class="colegio-top"><div class="colegio-nombre">Cornwall Collegiate &amp; Vocational School</div><div class="colegio-meta"><span class="tag pub">Público</span><span class="tag info">Semiurbano</span><span class="tag info">Cornwall · ~47.000 hab.</span></div></div>
+          <div class="colegio-top"><div class="colegio-nombre">Cornwall Collegiate &amp; Vocational School</div><div class="colegio-meta"><span class="tag pub">Público</span><span class="tag info">Semiurbano</span><span class="tag info">Cornwall · ~47.000 hab.</span></div><a class="web-link" href="https://ccvs.ucdsb.on.ca" target="_blank" rel="noopener">ccvs.ucdsb.on.ca</a></div>
           <details><summary>Por qué encaja con Mateo</summary><div class="colegio-razon">Ontario compite en la OFSAA, la federación escolar más grande de Canadá, con mucho nivel en baloncesto. Cornwall está a una hora de Montreal y hora y media de Ottawa, así que el ocio de ciudad queda cerca sin vivir en una gran urbe.</div></details>
         </div>
       </div></div>
