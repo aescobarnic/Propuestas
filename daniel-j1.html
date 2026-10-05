@@ -393,6 +393,8 @@ details[open] summary::before{transform:rotate(90deg);}
 /* --- Precio destacado --- */
 .precio-hero{display:grid;grid-template-columns:auto 1fr;gap:28px;align-items:center;background:var(--white);border:1.5px solid var(--gray-border);border-left:5px solid var(--red);border-radius:16px;padding:26px 30px;box-shadow:0 2px 16px rgba(0,51,102,0.06);}
 .precio-hero-num{font-family:'Josefin Sans',sans-serif;font-size:44px;font-weight:700;color:var(--red);line-height:1;white-space:nowrap;}
+.precio-hero-old{font-family:'Josefin Sans',sans-serif;font-size:22px;font-weight:600;color:var(--text-light);text-decoration:line-through;line-height:1;white-space:nowrap;margin-bottom:4px;}
+.precio-hero-badge{display:inline-block;margin-top:8px;background:var(--green-light);color:var(--green-dark);font-size:10.5px;font-weight:700;letter-spacing:1px;text-transform:uppercase;padding:5px 11px;border-radius:20px;}
 .precio-hero-sub{font-size:10.5px;letter-spacing:2px;text-transform:uppercase;color:var(--text-light);margin-top:6px;}
 .precio-hero-txt{font-size:13px;color:var(--text-mid);line-height:1.7;}
 .precio-hero-txt strong{color:var(--blue);font-weight:600;}
@@ -435,7 +437,7 @@ details[open] summary::before{transform:rotate(90deg);}
   .ny-title{font-size:25px;}
   .destaca-grid{grid-template-columns:1fr;}
   .precio-hero{grid-template-columns:1fr;gap:14px;}
-  .precio-hero-num{font-size:36px;}
+  .precio-hero-num{font-size:36px;}.precio-hero-old{font-size:19px;}
 }
 
 </style>
@@ -456,7 +458,7 @@ details[open] summary::before{transform:rotate(90deg);}
   <div class="hero-dots"></div>
   <div class="hero-inner">
     <div class="hero-tag">Propuesta personalizada · Programa J1</div>
-    <div class="hero-name">Daniel</div>
+    <div class="hero-name">Daniel en Estados Unidos</div>
     <div class="hero-subtitle">Intercambio cultural · Año escolar completo · Estados Unidos</div>
     <div class="hero-pills">
       <div class="hero-pill">🎓 4º ESO · Grade 10</div>
@@ -702,8 +704,10 @@ details[open] summary::before{transform:rotate(90deg);}
   <div class="section-title"><h2>Precio y formas de pago</h2></div>
   <div class="precio-hero">
     <div>
+      <div class="precio-hero-old">13.900 €</div>
       <div class="precio-hero-num">13.400 €</div>
       <div class="precio-hero-sub">Año escolar completo</div>
+      <div class="precio-hero-badge">− 500 € descuento octubre</div>
     </div>
     <div class="precio-hero-txt">
       Precio cerrado del programa J1 para el curso 2027/28, con los <strong>500 € de descuento por inscripción en octubre</strong> ya aplicados sobre el precio de 13.900 €. Incluye <strong>matrícula, familia anfitriona en
