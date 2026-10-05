@@ -1,0 +1,946 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<script>document.documentElement.className+=" js-anim";</script>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Continuidad académica en Irlanda · Giselle · My Language Quest</title>
+<link href="https://fonts.googleapis.com/css2?family=Fira+Sans:wght@300;400;500;600;700&family=Josefin+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --blue:#003366;--blue-dark:#001f40;--blue-mid:#0a4a8a;--blue-light:#dce8f5;
+  --red:#B12900;--red-dark:#8A1F00;--red-light:#fdf0ec;
+  --ie:#3A7A09;--ie-deep:#1F4A05;--ie-warm:#5FB515;--ie-light:#eef8e3;
+  --green:#4C9E0C;--green-dark:#3A7A09;--green-light:#eef8e3;--gold:#E8B04B;
+  --gray-bg:#eef3ea;--gray-card:#f8fbf5;--gray-border:#d9e3d2;
+  --text:#0d1b2a;--text-mid:#3d4f62;--text-light:#7a8a9b;--white:#fff;
+}
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box;}
+body{font-family:'Fira Sans',sans-serif;background:var(--gray-bg);color:var(--text);}
+
+/* HEADER */
+.header{background:var(--white);padding:18px 48px;display:flex;align-items:center;justify-content:space-between;box-shadow:0 1px 0 var(--gray-border),0 4px 24px rgba(0,51,102,0.07);position:relative;z-index:10;}
+.header::after{content:'';position:absolute;bottom:0;left:0;right:0;height:4px;background:linear-gradient(90deg,var(--ie) 0%,var(--ie) 33%,var(--white) 33%,var(--white) 67%,#FF8200 67%,#FF8200 100%);}
+.logo-area img{height:46px;width:auto;display:block;}
+.header-right{text-align:right;}
+.header-label{font-family:'Josefin Sans',sans-serif;font-size:9px;letter-spacing:3px;text-transform:uppercase;color:var(--text-light);}
+.header-year{font-family:'Josefin Sans',sans-serif;font-size:26px;font-weight:700;color:var(--ie-deep);line-height:1;margin-top:2px;}
+
+/* HERO */
+.hero{background:linear-gradient(135deg,var(--ie-deep) 0%,var(--ie) 55%,var(--ie-warm) 100%);position:relative;overflow:hidden;padding:46px 48px 42px;}
+.hero::after{content:'☘';position:absolute;right:2%;top:50%;transform:translateY(-50%) rotate(-12deg);font-size:230px;line-height:1;opacity:0.09;pointer-events:none;z-index:1;}
+.hero::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 70% 110% at 100% 40%,rgba(255,255,255,0.12) 0%,transparent 60%),radial-gradient(ellipse 60% 80% at -10% 90%,rgba(0,31,64,0.28) 0%,transparent 60%);}
+.hero-dots{position:absolute;inset:0;pointer-events:none;background-image:radial-gradient(rgba(255,255,255,0.07) 1px,transparent 1px);background-size:28px 28px;}
+.hero-inner{position:relative;z-index:2;max-width:860px;}
+.hero-tag{display:inline-flex;align-items:center;gap:6px;background:rgba(255,255,255,0.1);border:1px solid rgba(255,255,255,0.2);border-radius:20px;padding:4px 12px;font-size:10px;font-weight:600;letter-spacing:2px;text-transform:uppercase;color:rgba(255,255,255,0.72);margin-bottom:14px;}
+.hero-tag::before{content:'☘';font-size:12px;}
+.hero-name{font-family:'Josefin Sans',sans-serif;font-size:40px;font-weight:700;color:var(--white);line-height:1.05;margin-bottom:10px;}
+.hero-subtitle{font-size:14px;color:rgba(255,255,255,0.72);font-weight:300;letter-spacing:.3px;}
+.hero-frase{margin-top:20px;font-size:15px;line-height:1.7;color:#fff;max-width:720px;border-left:3px solid rgba(255,255,255,0.45);padding-left:16px;}
+.hero-pills{display:flex;flex-wrap:wrap;gap:8px;margin-top:22px;}
+.hero-pill{display:flex;align-items:center;gap:6px;background:rgba(255,255,255,0.1);border:1px solid rgba(255,255,255,0.18);border-radius:8px;padding:6px 12px;font-size:11px;color:var(--white);font-weight:500;}
+.hero-pill.ac{background:rgba(0,31,64,0.35);border-color:rgba(255,255,255,0.4);}
+
+/* LAYOUT */
+.main{max-width:1060px;margin:0 auto;padding:40px 24px 20px;}
+.section-title{display:flex;align-items:center;gap:12px;margin:46px 0 22px;}
+.section-title:first-of-type{margin-top:0;}
+.section-title h2{font-family:'Josefin Sans',sans-serif;font-size:11px;font-weight:700;letter-spacing:3px;text-transform:uppercase;color:var(--ie-deep);white-space:nowrap;}
+.section-title::before{content:'';width:22px;height:3px;border-radius:3px;background:var(--ie);flex-shrink:0;}
+.section-title::after{content:'';flex:1;height:1px;background:var(--gray-border);}
+.block-title{font-family:'Josefin Sans',sans-serif;font-size:24px;font-weight:700;color:var(--ie-deep);line-height:1.25;margin-bottom:14px;}
+.block-title.sm{font-size:19px;}
+.intro-text{font-size:14px;color:var(--text-mid);line-height:1.8;max-width:860px;margin-bottom:16px;}
+.intro-text strong{color:var(--blue);font-weight:600;}
+.intro-text:last-child{margin-bottom:0;}
+
+/* CARD BASE */
+.card{background:var(--white);border:1.5px solid var(--gray-border);border-radius:16px;padding:26px 28px;box-shadow:0 2px 16px rgba(0,51,102,0.05);}
+.card + .card{margin-top:18px;}
+
+/* PUNTOS */
+.points-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:22px;}
+.point{background:var(--white);border:1.5px solid var(--gray-border);border-radius:12px;padding:16px 18px;display:flex;gap:12px;align-items:flex-start;}
+.point-icon{font-size:19px;flex-shrink:0;}
+.point-title{font-family:'Josefin Sans',sans-serif;font-size:13px;font-weight:700;color:var(--ie-deep);margin-bottom:4px;}
+.point-desc{font-size:12px;color:var(--text-mid);line-height:1.55;}
+
+/* AVISOS */
+.nota{display:flex;gap:12px;align-items:flex-start;background:#fff4f0;border:1.5px solid rgba(177,41,0,0.3);border-radius:12px;padding:14px 18px;margin-top:18px;}
+.nota-icon{font-size:19px;flex-shrink:0;}
+.nota-text{font-size:12.5px;color:#6b1a00;line-height:1.7;}
+.nota-text strong{color:var(--red-dark);}
+.nota.neutra{background:var(--gray-card);border-color:var(--gray-border);}
+.nota.neutra .nota-text{color:var(--text-mid);}
+.nota.verde{background:var(--ie-light);border-color:rgba(76,158,12,0.35);}
+.nota.verde .nota-text{color:var(--ie-deep);}
+
+/* PRECIOS */
+.precio-grid{display:grid;grid-template-columns:1fr 1fr;gap:20px;}
+.precio-card{background:var(--white);border:1.5px solid var(--gray-border);border-radius:16px;overflow:hidden;box-shadow:0 2px 16px rgba(31,74,5,0.06);display:flex;flex-direction:column;transition:transform .3s,box-shadow .3s;}
+.precio-card:hover{transform:translateY(-4px);box-shadow:0 12px 34px rgba(31,74,5,0.14);}
+.precio-card.destacada{border-color:var(--ie);box-shadow:0 6px 28px rgba(76,158,12,0.18);}
+.precio-head{padding:22px 24px 18px;background:var(--gray-card);border-bottom:1.5px solid var(--gray-border);}
+.precio-card.destacada .precio-head{background:linear-gradient(135deg,var(--ie-deep),var(--ie));border-bottom-color:transparent;}
+.precio-nombre{font-family:'Josefin Sans',sans-serif;font-size:15px;font-weight:700;color:var(--ie-deep);margin-bottom:10px;}
+.precio-card.destacada .precio-nombre{color:#fff;}
+.precio-val{font-family:'Josefin Sans',sans-serif;font-size:34px;font-weight:700;color:var(--ie-deep);line-height:1;}
+.precio-card.destacada .precio-val{color:#fff;}
+.precio-sub{font-size:10.5px;text-transform:uppercase;letter-spacing:1px;color:var(--text-light);margin-top:6px;}
+.precio-card.destacada .precio-sub{color:rgba(255,255,255,0.6);}
+.precio-body{padding:18px 24px 22px;flex:1;}
+.precio-list{list-style:none;display:flex;flex-direction:column;gap:9px;}
+.precio-list li{font-size:12.5px;color:var(--text-mid);line-height:1.6;display:flex;gap:8px;align-items:flex-start;}
+.precio-list li::before{content:'✓';color:var(--ie);font-weight:700;flex-shrink:0;}
+.precio-nota{font-size:12px;color:var(--text-mid);line-height:1.6;}
+.precio-tachado{font-family:'Josefin Sans',sans-serif;font-size:16px;font-weight:600;text-decoration:line-through;margin-left:8px;opacity:.55;}
+.precio-destaque{margin-top:16px;background:var(--ie-light);border:1px solid rgba(76,158,12,0.3);border-radius:10px;padding:13px 16px;display:flex;gap:13px;align-items:flex-start;}
+.precio-destaque-num{font-family:'Josefin Sans',sans-serif;font-size:21px;font-weight:700;color:var(--ie-deep);line-height:1.1;white-space:nowrap;}
+.precio-destaque-txt{font-size:11.8px;color:var(--text-mid);line-height:1.6;}
+.precio-destaque-txt b{color:var(--ie-deep);}
+.dif-banner b{color:#fff;}
+.dif-banner{margin-top:18px;background:linear-gradient(135deg,var(--blue-dark),var(--blue-mid));border-radius:12px;padding:16px 22px;display:flex;align-items:center;gap:16px;flex-wrap:wrap;}
+.dif-num{font-family:'Josefin Sans',sans-serif;font-size:26px;font-weight:700;color:#7dd44a;line-height:1;}
+.dif-txt{font-size:12.5px;color:rgba(255,255,255,0.78);line-height:1.6;}
+
+/* TIMELINE */
+.tl{position:relative;margin-top:8px;padding-left:28px;}
+.tl::before{content:'';position:absolute;left:7px;top:6px;bottom:6px;width:2px;background:linear-gradient(to bottom,var(--ie),var(--blue-mid));border-radius:2px;}
+.tl-item{position:relative;padding-bottom:26px;}
+.tl-item:last-child{padding-bottom:0;}
+.tl-item::before{content:'';position:absolute;left:-28px;top:4px;width:16px;height:16px;border-radius:50%;background:var(--white);border:3px solid var(--ie);}
+.tl-year{font-family:'Josefin Sans',sans-serif;font-size:10px;font-weight:700;letter-spacing:2.5px;text-transform:uppercase;color:var(--ie);margin-bottom:3px;}
+.tl-title{font-family:'Josefin Sans',sans-serif;font-size:16px;font-weight:700;color:var(--ie-deep);margin-bottom:7px;}
+.tl-text{font-size:12.8px;color:var(--text-mid);line-height:1.75;max-width:760px;}
+.tl-text + .tl-text{margin-top:8px;}
+.tl-list{list-style:none;margin-top:8px;display:flex;flex-direction:column;gap:6px;}
+.tl-list li{font-size:12.5px;color:var(--text-mid);line-height:1.5;display:flex;gap:8px;align-items:flex-start;}
+.tl-list li::before{content:'☘';color:var(--ie);font-size:11px;flex-shrink:0;}
+.destacado-ie{display:inline-block;background:var(--ie-light);border:1px solid rgba(76,158,12,0.35);border-radius:8px;padding:8px 14px;font-family:'Josefin Sans',sans-serif;font-size:14px;font-weight:700;color:var(--ie-deep);margin:10px 0;}
+
+/* FLUJO */
+.flujo{display:flex;flex-direction:column;align-items:stretch;gap:0;margin:18px 0 4px;max-width:560px;}
+.flujo-step{background:var(--white);border:1.5px solid var(--gray-border);border-left:4px solid var(--ie);border-radius:10px;padding:13px 18px;font-size:13px;color:var(--text);line-height:1.5;}
+.flujo-step b{font-family:'Josefin Sans',sans-serif;color:var(--ie-deep);}
+.flujo-arrow{text-align:center;color:var(--ie);font-size:16px;line-height:1;padding:5px 0;}
+.flujo.azul .flujo-step{border-left-color:var(--blue);}
+.flujo.azul .flujo-arrow{color:var(--blue);}
+
+/* REQUISITOS */
+.req-wrap{background:var(--white);border:1.5px solid var(--ie);border-radius:16px;overflow:hidden;box-shadow:0 4px 22px rgba(31,74,5,0.10);}
+.req-head{background:linear-gradient(135deg,var(--ie-deep),var(--ie));padding:18px 26px;}
+.req-head h3{font-family:'Josefin Sans',sans-serif;font-size:14px;font-weight:700;color:#fff;letter-spacing:.5px;}
+.req-head .req-sub{font-size:11.5px;color:rgba(255,255,255,0.6);margin-top:4px;}
+.req-body{padding:22px 26px;}
+.req-list{list-style:none;display:grid;grid-template-columns:1fr 1fr;gap:12px 24px;}
+.req-list li{font-size:13px;color:var(--text-mid);line-height:1.55;display:flex;gap:9px;align-items:flex-start;}
+.req-list li::before{content:'✓';color:var(--ie);font-weight:700;flex-shrink:0;}
+.req-list li b{color:var(--text);}
+
+/* ESCENARIOS */
+.esc-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;}
+.esc-card{background:var(--white);border:1.5px solid var(--gray-border);border-top:4px solid var(--ie);border-radius:14px;padding:20px 22px;transition:transform .3s,box-shadow .3s;}
+.esc-card:hover{transform:translateY(-3px);box-shadow:0 10px 28px rgba(31,74,5,0.12);}
+.esc-card.azul{border-top-color:var(--blue);}
+.esc-card.oro{border-top-color:var(--gold);}
+.esc-tag{font-family:'Josefin Sans',sans-serif;font-size:9px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--text-light);margin-bottom:6px;}
+.esc-title{font-family:'Josefin Sans',sans-serif;font-size:15px;font-weight:700;color:var(--ie-deep);margin-bottom:8px;}
+.esc-text{font-size:12.5px;color:var(--text-mid);line-height:1.7;}
+
+/* RESPUESTA DESTACADA */
+.respuesta{background:linear-gradient(135deg,var(--blue-dark) 0%,var(--blue) 60%,var(--blue-mid) 100%);border-radius:16px;padding:30px 34px;position:relative;overflow:hidden;}
+.respuesta::before{content:'';position:absolute;inset:0;background-image:radial-gradient(rgba(255,255,255,0.05) 1px,transparent 1px);background-size:22px 22px;}
+.respuesta-inner{position:relative;z-index:2;}
+.respuesta-eyebrow{font-family:'Josefin Sans',sans-serif;font-size:9px;font-weight:700;letter-spacing:3px;text-transform:uppercase;color:#7dd44a;margin-bottom:10px;}
+.respuesta-title{font-family:'Josefin Sans',sans-serif;font-size:26px;font-weight:700;color:#fff;line-height:1.2;margin-bottom:14px;}
+.respuesta-text{font-size:13.5px;color:rgba(255,255,255,0.72);line-height:1.8;max-width:760px;}
+.respuesta-text + .respuesta-text{margin-top:12px;}
+.respuesta-text strong{color:#fff;font-weight:600;}
+.flujo-dark{display:flex;flex-direction:column;gap:0;margin-top:20px;max-width:460px;}
+.flujo-dark .fd-step{background:rgba(255,255,255,0.08);border:1px solid rgba(255,255,255,0.16);border-radius:10px;padding:12px 16px;font-size:13px;color:#fff;font-weight:500;}
+.flujo-dark .fd-arrow{text-align:center;color:#7dd44a;font-size:15px;padding:5px 0;}
+
+/* LISTAS */
+.lista-check{list-style:none;display:flex;flex-direction:column;gap:9px;margin-top:4px;}
+.lista-check li{font-size:13px;color:var(--text-mid);line-height:1.6;display:flex;gap:9px;align-items:flex-start;}
+.lista-check li::before{content:'✓';color:var(--ie);font-weight:700;flex-shrink:0;}
+.lista-num{list-style:none;counter-reset:n;display:grid;grid-template-columns:1fr 1fr;gap:10px 22px;margin-top:6px;}
+.lista-num li{counter-increment:n;font-size:12.8px;color:var(--text-mid);line-height:1.5;display:flex;gap:10px;align-items:flex-start;}
+.lista-num li::before{content:counter(n);font-family:'Josefin Sans',sans-serif;font-size:11px;font-weight:700;color:var(--ie);background:var(--ie-light);border-radius:50%;width:20px;height:20px;display:flex;align-items:center;justify-content:center;flex-shrink:0;}
+.lista-dot{list-style:none;display:grid;grid-template-columns:1fr 1fr;gap:8px 22px;margin-top:10px;}
+.lista-dot li{font-size:12.5px;color:var(--text-mid);line-height:1.5;display:flex;gap:8px;align-items:flex-start;}
+.lista-dot li::before{content:'·';color:var(--ie);font-weight:700;font-size:18px;line-height:1.1;flex-shrink:0;}
+
+/* MENSAJE DESTACADO */
+.msg{background:linear-gradient(135deg,var(--ie-deep),var(--ie));border-radius:14px;padding:22px 26px;color:#fff;font-family:'Josefin Sans',sans-serif;font-size:17px;font-weight:600;line-height:1.5;margin-top:20px;position:relative;overflow:hidden;}
+.msg::after{content:'☘';position:absolute;right:-6px;bottom:-26px;font-size:92px;opacity:0.12;transform:rotate(-14deg);}
+.msg span{position:relative;z-index:2;display:block;}
+
+/* DOS COLUMNAS */
+.dos-col{display:grid;grid-template-columns:1fr 1fr;gap:20px;}
+
+/* PLAN */
+.plan-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;}
+.plan-card{background:var(--white);border:1.5px solid var(--gray-border);border-radius:14px;padding:18px 20px;position:relative;transition:transform .3s,box-shadow .3s;}
+.plan-card:hover{transform:translateY(-3px);box-shadow:0 10px 26px rgba(31,74,5,0.12);}
+.plan-when{font-family:'Josefin Sans',sans-serif;font-size:9px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:#fff;background:var(--ie);border-radius:20px;padding:4px 11px;display:inline-block;margin-bottom:10px;}
+.plan-card.azul .plan-when{background:var(--blue);}
+.plan-title{font-family:'Josefin Sans',sans-serif;font-size:14px;font-weight:700;color:var(--ie-deep);margin-bottom:8px;}
+.plan-text{font-size:12.3px;color:var(--text-mid);line-height:1.6;}
+.plan-list{list-style:none;margin-top:8px;display:flex;flex-direction:column;gap:5px;}
+.plan-list li{font-size:12px;color:var(--text-mid);line-height:1.45;display:flex;gap:7px;align-items:flex-start;}
+.plan-list li::before{content:'·';color:var(--ie);font-weight:700;font-size:17px;line-height:1;flex-shrink:0;}
+
+/* GESTIONA */
+.gest-wrap{background:var(--white);border:1.5px solid var(--gray-border);border-radius:16px;overflow:hidden;box-shadow:0 2px 16px rgba(0,51,102,0.05);}
+.gest-head{background:linear-gradient(135deg,var(--ie-deep),var(--ie));padding:20px 30px;}
+.gest-head h3{font-family:'Josefin Sans',sans-serif;font-size:14px;font-weight:700;color:#fff;letter-spacing:.5px;}
+.gest-body{padding:24px 30px;}
+.gest-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px 26px;}
+.gest-item{font-size:12.5px;color:var(--text-mid);line-height:1.55;display:flex;gap:9px;align-items:flex-start;}
+.gest-item::before{content:'→';color:var(--ie);font-weight:700;flex-shrink:0;}
+
+/* GUÍA CTA */
+.guia{background:var(--white);border:1.5px solid var(--gray-border);border-left:5px solid var(--gold);border-radius:16px;padding:26px 30px;display:flex;gap:26px;align-items:center;justify-content:space-between;flex-wrap:wrap;box-shadow:0 2px 16px rgba(0,51,102,0.05);}
+.guia-left{flex:1;min-width:280px;}
+.guia-title{font-family:'Josefin Sans',sans-serif;font-size:18px;font-weight:700;color:var(--ie-deep);margin-bottom:8px;}
+.guia-text{font-size:12.8px;color:var(--text-mid);line-height:1.7;margin-bottom:10px;}
+.guia-tags{display:flex;flex-wrap:wrap;gap:6px;}
+.guia-tag{font-size:10.5px;color:var(--text-mid);background:var(--gray-card);border:1px solid var(--gray-border);border-radius:20px;padding:3px 10px;}
+.btn-guia{display:inline-flex;align-items:center;gap:8px;background:var(--blue);color:#fff;font-family:'Josefin Sans',sans-serif;font-size:13px;font-weight:700;padding:13px 24px;border-radius:10px;text-decoration:none;transition:transform .15s,box-shadow .15s;white-space:nowrap;}
+.btn-guia:hover{transform:translateY(-2px);box-shadow:0 8px 20px rgba(0,51,102,0.3);}
+
+/* CIERRE */
+.cierre{background:linear-gradient(135deg,var(--blue-dark) 0%,var(--blue) 60%,var(--blue-mid) 100%);border-radius:16px;padding:36px 38px;position:relative;overflow:hidden;}
+.cierre::before{content:'';position:absolute;inset:0;background-image:radial-gradient(rgba(255,255,255,0.05) 1px,transparent 1px);background-size:22px 22px;}
+.cierre-inner{position:relative;z-index:2;}
+.cierre-title{font-family:'Josefin Sans',sans-serif;font-size:24px;font-weight:700;color:#fff;margin-bottom:16px;}
+.cierre-text{font-size:13.5px;color:rgba(255,255,255,0.72);line-height:1.85;max-width:780px;}
+.cierre-text + .cierre-text{margin-top:12px;}
+.cierre-text strong{color:#fff;font-weight:600;}
+.cta-wrap{margin-top:28px;display:flex;gap:12px;flex-wrap:wrap;}
+.cta{display:inline-flex;align-items:center;gap:8px;background:#7dd44a;color:var(--blue-dark);font-family:'Josefin Sans',sans-serif;font-size:13.5px;font-weight:700;padding:13px 26px;border-radius:10px;text-decoration:none;transition:transform .15s,box-shadow .15s;position:relative;overflow:hidden;}
+.cta:hover{transform:translateY(-2px);box-shadow:0 8px 20px rgba(125,212,74,0.35);}
+.cta::after{content:'';position:absolute;top:0;left:-120%;width:60%;height:100%;background:linear-gradient(100deg,transparent,rgba(255,255,255,.55),transparent);transform:skewX(-18deg);}
+.cta:hover::after{animation:shine .85s ease;}
+@keyframes shine{to{left:140%;}}
+.cta.alt{background:rgba(255,255,255,0.12);color:#fff;border:1.5px solid rgba(255,255,255,0.35);}
+
+/* FOOTER */
+.footer{background:var(--blue-dark);padding:30px 48px;margin-top:56px;text-align:center;position:relative;}
+.footer::before{content:'';position:absolute;top:0;left:0;right:0;height:4px;background:linear-gradient(90deg,var(--ie) 0%,var(--ie) 33%,var(--white) 33%,var(--white) 67%,#FF8200 67%,#FF8200 100%);}
+.footer-logo{font-family:'Josefin Sans',sans-serif;font-size:15px;font-weight:700;color:#fff;letter-spacing:1px;margin-bottom:6px;}
+.footer-tag{font-family:'Josefin Sans',sans-serif;font-size:10px;letter-spacing:4px;text-transform:uppercase;color:#9ee06a;margin-bottom:14px;}
+.footer-meta{font-size:11px;color:rgba(255,255,255,0.4);line-height:1.7;}
+
+@media(max-width:900px){
+  .points-grid,.esc-grid,.plan-grid{grid-template-columns:1fr;}
+  .precio-grid,.dos-col,.req-list,.lista-num,.lista-dot,.gest-grid{grid-template-columns:1fr;}
+}
+@media(max-width:720px){
+  .header{padding:16px 20px;}.hero{padding:28px 20px 26px;}.hero-name{font-size:28px;}
+  .main{padding:28px 16px 20px;}
+  .card,.req-body,.gest-body,.cierre,.respuesta{padding-left:20px;padding-right:20px;}
+  .block-title{font-size:20px;}
+  .footer{padding:26px 20px;}
+}
+
+/* ANIMACIONES */
+.js-anim .reveal{opacity:0;transform:translateY(20px);transition:opacity .75s cubic-bezier(.22,.61,.36,1),transform .75s cubic-bezier(.22,.61,.36,1);}
+.js-anim .reveal.in{opacity:1;transform:none;}
+.js-anim .reveal-zoom{opacity:0;transform:scale(.975);transition:opacity .8s ease,transform .8s cubic-bezier(.22,.61,.36,1);}
+.js-anim .reveal-zoom.in{opacity:1;transform:none;}
+@keyframes heroUp{from{opacity:0;transform:translateY(16px);}to{opacity:1;transform:none;}}
+@keyframes leafIn{from{opacity:0;transform:translateY(-50%) rotate(-30deg) scale(.85);}to{opacity:.09;transform:translateY(-50%) rotate(-12deg) scale(1);}}
+.js-anim .hero::after{animation:leafIn 1.4s cubic-bezier(.22,.61,.36,1) .15s both;}
+.js-anim .hero-tag{animation:heroUp .7s cubic-bezier(.22,.61,.36,1) .05s both;}
+.js-anim .hero-name{animation:heroUp .7s cubic-bezier(.22,.61,.36,1) .16s both;}
+.js-anim .hero-subtitle{animation:heroUp .7s cubic-bezier(.22,.61,.36,1) .26s both;}
+.js-anim .hero-frase{animation:heroUp .7s cubic-bezier(.22,.61,.36,1) .36s both;}
+.js-anim .hero-pill{animation:heroUp .55s cubic-bezier(.22,.61,.36,1) both;}
+.progress-bar{position:fixed;top:0;left:0;height:3px;width:100%;transform:scaleX(0);transform-origin:0 50%;background:linear-gradient(90deg,var(--ie),var(--ie-warm));z-index:999;transition:transform .1s linear;}
+@media(prefers-reduced-motion:reduce){
+  .js-anim .reveal,.js-anim .reveal-zoom{opacity:1!important;transform:none!important;transition:none!important;}
+  .js-anim .hero::after,.js-anim .hero-tag,.js-anim .hero-name,.js-anim .hero-subtitle,.js-anim .hero-frase,.js-anim .hero-pill{animation:none!important;opacity:1;}
+  .js-anim .hero::after{opacity:.09;}
+  .progress-bar{display:none;}
+  *{transition-duration:.01ms!important;}
+}
+</style>
+</head>
+<body>
+
+<!-- HEADER -->
+<div class="header">
+  <div class="logo-area"><img src="data:image/png;base64,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" alt="My Language Quest"></div>
+  <div class="header-right">
+    <div class="header-label">Curso académico</div>
+    <div class="header-year">2027/28</div>
+  </div>
+</div>
+
+<!-- 1. PORTADA -->
+<div class="hero">
+  <div class="hero-dots"></div>
+  <div class="hero-inner">
+    <div class="hero-tag">Propuesta de continuidad · Irlanda</div>
+    <div class="hero-name">Giselle · Continuidad académica en Irlanda</div>
+    <div class="hero-subtitle">Curso 2027/28 · Último año antes de la universidad</div>
+    <div class="hero-frase">Completar su etapa escolar en Irlanda manteniendo abiertas sus opciones universitarias en España, Irlanda o internacionalmente.</div>
+    <div class="hero-pills">
+      <div class="hero-pill">☘ Segundo curso en Irlanda</div>
+      <div class="hero-pill">🎓 Leaving Certificate Established</div>
+      <div class="hero-pill">🏠 Familia anfitriona</div>
+      <div class="hero-pill ac">🧭 Orientación universitaria durante el curso</div>
+    </div>
+  </div>
+</div>
+
+<div class="main">
+
+  <!-- 2. EXPERIENCIA QUE FUNCIONA -->
+  <div class="section-title"><h2>Punto de partida</h2></div>
+  <div class="block-title">Continuar donde Giselle ya se siente bien</div>
+  <p class="intro-text">
+    Giselle ya ha superado una de las partes más importantes de cualquier experiencia internacional: <strong>la adaptación</strong>.
+    Durante este curso ha conocido de primera mano el funcionamiento del sistema educativo irlandés, se ha integrado en su entorno
+    y la experiencia tanto con el colegio como con su familia anfitriona está siendo muy positiva.
+  </p>
+  <p class="intro-text">
+    Por eso, plantear un segundo curso en Irlanda no significa empezar de nuevo. Significa <strong>dar continuidad a una experiencia
+    que funciona</strong> y valorar la posibilidad de completar allí toda su etapa preuniversitaria antes de comenzar la universidad.
+  </p>
+  <div class="points-grid">
+    <div class="point"><div class="point-icon">🌱</div><div><div class="point-title">Adaptación ya hecha</div><div class="point-desc">El primer curso fuera es el que más cuesta. Giselle ya lo ha vivido y lo ha superado.</div></div></div>
+    <div class="point"><div class="point-icon">🏠</div><div><div class="point-title">Familia anfitriona</div><div class="point-desc">La valoración que nos ha trasladado la familia sobre la convivencia es muy positiva.</div></div></div>
+    <div class="point"><div class="point-icon">🏫</div><div><div class="point-title">Colegio</div><div class="point-desc">Conoce a sus profesores, su grupo y la dinámica del centro desde dentro.</div></div></div>
+    <div class="point"><div class="point-icon">📘</div><div><div class="point-title">Sistema educativo conocido</div><div class="point-desc">Sabe cómo funcionan las asignaturas, los niveles y la evaluación irlandesa.</div></div></div>
+    <div class="point"><div class="point-icon">🗣</div><div><div class="point-title">Adaptación lingüística</div><div class="point-desc">El salto de idioma ya está dado: el segundo curso se aprovecha mucho más.</div></div></div>
+    <div class="point"><div class="point-icon">🎓</div><div><div class="point-title">Una etapa de dos cursos</div><div class="point-desc">Posibilidad de completar los dos años preuniversitarios dentro del mismo sistema.</div></div></div>
+  </div>
+  <div class="nota">
+    <div class="nota-icon">☘</div>
+    <div class="nota-text">Nuestra prioridad será estudiar la continuidad manteniendo, <strong>siempre que exista disponibilidad y sea posible</strong>, el entorno que tan bien está funcionando actualmente para Giselle.</div>
+  </div>
+  <div class="nota verde">
+    <div class="nota-icon">🗓</div>
+    <div class="nota-text"><strong>Por eso conviene decidirlo con tiempo.</strong> Cuanto antes sepamos que Giselle quiere continuar, antes podremos hablar con el colegio y con su familia anfitriona para plantear la continuidad del curso 2027/28 y conocer su disponibilidad.
+      Los centros irlandeses organizan sus plazas y las familias anfitrionas sus acogidas con bastante antelación, así que anticiparse es lo que nos da margen para intentar mantener el mismo entorno. Si no fuera posible, también tendríamos tiempo de buscar la mejor alternativa sin prisas.</div>
+  </div>
+
+  <!-- 3. PROPUESTA ECONÓMICA -->
+  <div class="section-title"><h2>Propuesta económica 2027/28</h2></div>
+  <div class="block-title">Programa de continuidad · Curso 2027/28</div>
+  <div class="precio-grid">
+    <div class="precio-card destacada">
+      <div class="precio-head">
+        <div class="precio-nombre">Opción con vuelos</div>
+        <div class="precio-val">16.450 € <span class="precio-tachado">17.450 €</span></div>
+        <div class="precio-sub">Curso completo 2027/28 · tarifa general 17.450 €</div>
+      </div>
+      <div class="precio-body">
+        <p class="precio-nota" style="margin-bottom:12px;">Incluye los vuelos de inicio y final del curso.</p>
+        <ul class="precio-list">
+          <li>Vuelo España → Irlanda al inicio del programa</li>
+          <li>Vuelo Irlanda → España al finalizar el programa</li>
+        </ul>
+        <div class="precio-destaque">
+          <div class="precio-destaque-num">−500 €</div>
+          <div class="precio-destaque-txt">respecto al curso 2026/27, en el que el programa con dos vuelos fue de <b>16.950 €</b> · y eso con la tarifa general del programa ya revisada al alza para 2027/28.</div>
+        </div>
+      </div>
+    </div>
+    <div class="precio-card">
+      <div class="precio-head">
+        <div class="precio-nombre">Opción sin vuelos</div>
+        <div class="precio-val">15.950 €</div>
+        <div class="precio-sub">Curso completo 2027/28</div>
+      </div>
+      <div class="precio-body">
+        <p class="precio-nota">La familia gestiona directamente los vuelos de inicio y final del programa.</p>
+      </div>
+    </div>
+  </div>
+  <div class="dif-banner">
+    <div class="dif-num">1.000 €</div>
+    <div class="dif-txt"><b>Condición de continuidad.</b> La tarifa general del programa para el curso 2027/28 es de 17.450 € con vuelos; el precio reservado a Giselle por continuar con nosotros es de 16.450 €.<br>
+      Entre las dos opciones de arriba hay <b>500 € de diferencia</b>, que dependen únicamente de si preferís que MLQ gestione los vuelos de inicio y final de curso o encargaros vosotros.</div>
+  </div>
+
+  <!-- 4. RECONOCIMIENTO ACADÉMICO -->
+  <div class="section-title"><h2>Reconocimiento académico</h2></div>
+  <div class="block-title">Dos cursos en Irlanda · ¿Cómo se reconoce académicamente?</div>
+  <div class="card">
+    <div class="tl">
+      <div class="tl-item">
+        <div class="tl-year">2026/27 · Primer curso</div>
+        <div class="tl-title">El curso que Giselle está haciendo ahora</div>
+        <p class="tl-text">Giselle está realizando actualmente en Irlanda el curso equivalente a 1.º de Bachillerato.</p>
+        <p class="tl-text">Al finalizar el curso, My Language Quest coordinará la documentación correspondiente para realizar el
+          reconocimiento/convalidación de los estudios equivalentes a 1.º de Bachillerato, de acuerdo con la normativa española aplicable.
+          Forma parte de la <strong>gestión académica habitual</strong> que MLQ realiza con todos sus estudiantes al terminar el curso.</p>
+      </div>
+      <div class="tl-item">
+        <div class="tl-year">2027/28 · Último curso en Irlanda</div>
+        <div class="tl-title">Completar la etapa preuniversitaria en el sistema irlandés</div>
+        <p class="tl-text">Si Giselle continúa un curso más, completará su etapa preuniversitaria dentro del sistema educativo irlandés.
+          El objetivo académico será finalizar correctamente el programa que conduce al:</p>
+        <div class="destacado-ie">Leaving Certificate Established</div>
+        <p class="tl-text">Este punto cambia la lógica del proceso. Una vez que una alumna termina el sistema educativo irlandés y cumple
+          los requisitos establecidos para acceder a la universidad en dicho sistema, puede utilizar la vía correspondiente a estudiantes
+          procedentes de <strong>sistemas educativos de la Unión Europea</strong> para solicitar acceso a universidades españolas.</p>
+      </div>
+    </div>
+    <div class="nota neutra" style="margin-top:20px;">
+      <div class="nota-icon">🧭</div>
+      <div class="nota-text">
+        <strong>Así se ordena el proceso:</strong>
+        <div class="flujo" style="margin-top:12px;">
+          <div class="flujo-step"><b>1.º de Bachillerato</b> → reconocimiento/convalidación del curso</div>
+          <div class="flujo-arrow">↓</div>
+          <div class="flujo-step"><b>Finalización del sistema irlandés</b> → Leaving Certificate Established</div>
+          <div class="flujo-arrow">↓</div>
+          <div class="flujo-step"><b>Si quiere universidad en España</b> → acreditación UNEDasiss + requisitos de la universidad elegida</div>
+        </div>
+        Puede existir además la posibilidad de solicitar la homologación del título extranjero al título español de Bachiller si la familia
+        la necesita para otros efectos administrativos, pero no es el requisito previo de la vía universitaria UE.
+      </div>
+    </div>
+  </div>
+
+  <!-- 5. LEAVING CERTIFICATE -->
+  <div class="section-title"><h2>Leaving Certificate</h2></div>
+  <div class="block-title">La clave del último curso: Leaving Certificate</div>
+  <p class="intro-text">
+    El <strong>Leaving Certificate Established</strong> es la titulación final de la educación secundaria superior irlandesa y constituye
+    el elemento académico fundamental al completar esta etapa en Irlanda.
+  </p>
+  <p class="intro-text">
+    Para que un estudiante del sistema irlandés pueda acogerse actualmente a la vía de acceso universitaria correspondiente a sistemas
+    educativos de la Unión Europea en España, el Leaving Certificate debe cumplir determinados requisitos.
+  </p>
+  <div class="req-wrap">
+    <div class="req-head">
+      <h3>Requisitos vigentes actualmente para Irlanda</h3>
+      <div class="req-sub">Leaving Certificate Established</div>
+    </div>
+    <div class="req-body">
+      <ul class="req-list">
+        <li>Mínimo <b>6 materias</b></li>
+        <li>Mínimo <b>240 puntos</b></li>
+        <li>Al menos <b>2 materias Higher Level</b>, con calificaciones H1–H7</li>
+        <li>El resto pueden ser materias <b>Ordinary Level</b> con calificaciones O1–O6</li>
+      </ul>
+    </div>
+  </div>
+  <div class="nota">
+    <div class="nota-icon">📌</div>
+    <div class="nota-text">Estos son los requisitos <strong>vigentes actualmente</strong>. Giselle accedería a la universidad en 2028, por lo que MLQ
+      revisará nuevamente la normativa durante el curso 2027/28 para comprobar los requisitos aplicables en ese momento.</div>
+  </div>
+
+  <!-- 6. ¿CIERRA LA PUERTA A ESPAÑA? -->
+  <div class="section-title"><h2>La pregunta clave</h2></div>
+  <div class="respuesta">
+    <div class="respuesta-inner">
+      <div class="respuesta-eyebrow">¿Hacer 2.º en Irlanda le cierra la puerta a España?</div>
+      <div class="respuesta-title">No. España continúa siendo una opción.</div>
+      <p class="respuesta-text">Completar su etapa escolar en Irlanda <strong>no impide</strong> que Giselle estudie posteriormente una carrera
+        universitaria en España. Lo que cambia es la vía de acceso.</p>
+      <p class="respuesta-text">Al terminar en Irlanda, Giselle será académicamente una estudiante procedente del sistema educativo irlandés.
+        Actualmente Irlanda está incluida entre los sistemas educativos de la Unión Europea que pueden acceder a las universidades españolas
+        mediante la vía específica prevista para estos estudiantes.</p>
+      <div class="flujo-dark">
+        <div class="fd-step">Leaving Certificate</div>
+        <div class="fd-arrow">↓</div>
+        <div class="fd-step">Acreditación UNEDasiss</div>
+        <div class="fd-arrow">↓</div>
+        <div class="fd-step">Requisitos de la universidad / grado</div>
+        <div class="fd-arrow">↓</div>
+        <div class="fd-step">Solicitud de admisión</div>
+      </div>
+      <p class="respuesta-text" style="margin-top:18px;">Dependiendo de la carrera y de la universidad, pueden ser necesarias también
+        <strong>Pruebas de Competencias Específicas (PCE)</strong> u otros servicios de acreditación.</p>
+    </div>
+  </div>
+
+  <!-- ESCENARIOS -->
+  <div class="section-title"><h2>Tres escenarios abiertos</h2></div>
+  <div class="esc-grid">
+    <div class="esc-card azul">
+      <div class="esc-tag">Opción 1</div>
+      <div class="esc-title">Si estudia en España</div>
+      <div class="esc-text">Accedería por la vía prevista para estudiantes de sistemas educativos de la UE, con acreditación UNEDasiss y, según el grado y la universidad, PCE.</div>
+    </div>
+    <div class="esc-card">
+      <div class="esc-tag">Opción 2</div>
+      <div class="esc-title">Si estudia en Irlanda</div>
+      <div class="esc-text">Habría completado allí su etapa escolar, con el idioma, el sistema y la adaptación ya resueltos. La admisión se gestiona con el Leaving Certificate.</div>
+    </div>
+    <div class="esc-card oro">
+      <div class="esc-tag">Aún por decidir</div>
+      <div class="esc-title">Si todavía no lo sabe</div>
+      <div class="esc-text">No pasa nada: hoy no hay que decidirlo. Lo importante es usar el curso 2027/28 para ir concretando y preparar a tiempo la vía que corresponda.</div>
+    </div>
+  </div>
+
+  <!-- 7. UNEDasiss -->
+  <div class="section-title"><h2>UNEDasiss</h2></div>
+  <div class="block-title">UNEDasiss · El puente entre Irlanda y la universidad española</div>
+  <div class="dos-col">
+    <div class="card">
+      <p class="intro-text">UNEDasiss es el servicio de la UNED que gestiona la acreditación utilizada por estudiantes procedentes de
+        sistemas educativos internacionales para participar en los procesos de admisión de numerosas universidades españolas.</p>
+      <p class="intro-text">En el caso de Giselle, si finaliza sus estudios en Irlanda y posteriormente decide estudiar en España,
+        UNEDasiss permitirá acreditar su situación académica y obtener los servicios necesarios para participar en el proceso de admisión correspondiente.</p>
+    </div>
+    <div class="card">
+      <div class="block-title sm">Son procesos diferentes</div>
+      <ul class="lista-check">
+        <li><b>Convalidación / homologación</b> del Ministerio de Educación</li>
+        <li><b>Acreditación UNEDasiss</b> de la UNED</li>
+        <li><b>PCE</b> · Pruebas de Competencias Específicas</li>
+        <li><b>Admisión universitaria</b> en cada universidad y grado</li>
+      </ul>
+      <div class="nota neutra" style="margin-top:16px;">
+        <div class="nota-icon">ℹ️</div>
+        <div class="nota-text">Conviene no mezclarlos: cada uno tiene su propio trámite, su calendario y su finalidad.</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 8. PAU -->
+  <div class="section-title"><h2>Selectividad</h2></div>
+  <div class="block-title">¿Tendrá que hacer Selectividad o PAU?</div>
+  <div class="card">
+    <div class="destacado-ie" style="font-size:15px;margin-top:0;">No necesariamente de la misma forma que un alumno que termina 2.º de Bachillerato en España.</div>
+    <p class="intro-text" style="margin-top:14px;">Al haber finalizado el sistema educativo irlandés, Giselle accedería por la vía correspondiente
+      a estudiantes procedentes de sistemas educativos de la Unión Europea. Por tanto, no debemos plantear su situación como
+      «termina Irlanda, vuelve y hace la PAU española completa».</p>
+    <p class="intro-text">Su proceso dependerá de:</p>
+    <ul class="lista-dot">
+      <li>Universidad elegida</li>
+      <li>Comunidad autónoma</li>
+      <li>Grado</li>
+      <li>Nota necesaria</li>
+      <li>Criterios de admisión vigentes en 2028</li>
+    </ul>
+    <p class="intro-text" style="margin-top:14px;">En muchos casos, lo que deberá valorarse son las <strong>Pruebas de Competencias Específicas (PCE)</strong> de la UNED.</p>
+  </div>
+
+  <!-- 9. PCE -->
+  <div class="section-title"><h2>Las PCE</h2></div>
+  <div class="block-title">PCE · Cuando necesitamos mejorar o completar la admisión</div>
+  <div class="card">
+    <p class="intro-text">Las Pruebas de Competencias Específicas son exámenes organizados por la UNED que pueden utilizar los estudiantes
+      internacionales para acreditar determinadas materias y, según el sistema de admisión de cada universidad, mejorar o completar su nota de admisión.</p>
+    <p class="intro-text">Actualmente UNEDasiss permite realizar un máximo de <strong>6 materias PCE</strong>. Pero para estudiantes procedentes
+      de sistemas de la Unión Europea como Irlanda <strong>no existe una regla general</strong> que obligue a Giselle a realizar seis materias.</p>
+    <p class="intro-text">Actualmente UNEDasiss recomienda, en una primera solicitud para estudiantes UE, presentarse al menos a dos materias
+      que ponderen para la universidad, salvo que la nota de admisión obtenida ya sea suficiente.</p>
+    <p class="intro-text" style="margin-top:16px;"><strong>El número y las asignaturas concretas no se decidirán ahora.</strong> Dependerán de:</p>
+    <ul class="lista-dot">
+      <li>Carrera</li>
+      <li>Universidad</li>
+      <li>Tabla de ponderaciones</li>
+      <li>Nota objetivo</li>
+      <li>Criterios de admisión vigentes</li>
+    </ul>
+    <div class="nota" style="margin-top:18px;">
+      <div class="nota-icon">⚠️</div>
+      <div class="nota-text">Algunas universidades pueden exigir configuraciones distintas y, en determinados casos, pueden requerir seis materias
+        o una configuración equivalente a la PAU.</div>
+    </div>
+  </div>
+
+  <!-- 10. CARRERA ANTES QUE PCE -->
+  <div class="section-title"><h2>Estrategia</h2></div>
+  <div class="block-title">Primero la carrera; después, las PCE</div>
+  <p class="intro-text">No tendría sentido decir ahora a Giselle qué PCE debe preparar, porque todavía no sabe qué estudiará.
+    Una estudiante que quiera acceder a una carrera con una nota de admisión moderada puede necesitar una estrategia completamente diferente
+    a otra que aspire a Medicina, Fisioterapia, Psicología, determinadas Ingenierías u otro grado con notas de admisión elevadas.</p>
+  <div class="card">
+    <div class="block-title sm">Este mismo curso 2026/27 empezaremos a analizar</div>
+    <p class="intro-text">Giselle está ahora en el curso equivalente a 1.º de Bachillerato, así que este es el momento de empezar: cuanto antes tengamos
+      una primera lista de opciones, mejor podremos elegir las materias del Leaving Certificate y organizar el curso 2027/28.</p>
+    <ul class="lista-num">
+      <li>Qué áreas interesan a Giselle</li>
+      <li>Posibles carreras</li>
+      <li>Universidades</li>
+      <li>Notas de admisión</li>
+      <li>Materias que ponderen 0,1 o 0,2 según corresponda</li>
+      <li>Requisitos específicos de cada universidad</li>
+      <li>PCE que tendría sentido preparar</li>
+    </ul>
+    <div class="nota verde" style="margin-top:16px;">
+      <div class="nota-icon">☘</div>
+      <div class="nota-text">Durante el curso 2027/28 ese análisis se concreta y se ejecuta: confirmar universidades y requisitos vigentes en ese momento,
+        preparar las PCE si corresponden y presentar la documentación en plazo.</div>
+    </div>
+  </div>
+  <div class="msg"><span>Las PCE no se eligen por estudiar en Irlanda. Se eligen en función de dónde y qué quiera estudiar después.</span></div>
+
+  <!-- 11-12. PÚBLICA Y PRIVADA -->
+  <div class="section-title"><h2>Universidad en España</h2></div>
+  <div class="dos-col">
+    <div class="card">
+      <div class="block-title sm">Si Giselle quiere una universidad pública</div>
+      <p class="intro-text">Aquí la planificación será especialmente importante. Las universidades públicas españolas tienen criterios de admisión,
+        notas de corte y ponderaciones que pueden variar según universidad, comunidad autónoma y grado.</p>
+      <p class="intro-text">Si durante el curso Giselle empieza a plantearse una carrera concreta en España, MLQ deberá revisar con la familia:</p>
+      <ul class="lista-check">
+        <li>Universidades posibles</li>
+        <li>Nota de admisión</li>
+        <li>Criterios publicados</li>
+        <li>PCE recomendables</li>
+        <li>Ponderaciones</li>
+        <li>Requisitos de modalidad de Bachillerato, si los hubiera</li>
+        <li>Requisitos lingüísticos cuando correspondan</li>
+        <li>Calendario de inscripción y pruebas</li>
+      </ul>
+      <div class="nota" style="margin-top:16px;">
+        <div class="nota-icon">📌</div>
+        <div class="nota-text">Este trabajo de revisión no garantiza el acceso ni una nota determinada, y dos PCE no son necesariamente
+          suficientes para todas las universidades. Por eso lo revisaremos caso por caso cuando haya opciones concretas sobre la mesa.</div>
+      </div>
+    </div>
+    <div class="card">
+      <div class="block-title sm">Si opta por una universidad privada</div>
+      <p class="intro-text">Las universidades privadas pueden establecer sus propios procedimientos de admisión. Dependiendo de la universidad
+        y del grado, pueden utilizar:</p>
+      <ul class="lista-check">
+        <li>Expediente académico</li>
+        <li>Pruebas propias</li>
+        <li>Entrevistas</li>
+        <li>Pruebas de idiomas</li>
+        <li>Acreditación UNEDasiss</li>
+        <li>Otros requisitos propios del centro</li>
+      </ul>
+      <p class="intro-text" style="margin-top:14px;">Por tanto, las PCE pueden no tener el mismo peso o incluso no ser necesarias en determinados procesos.
+        Cuando Giselle tenga universidades concretas, habrá que consultar directamente sus requisitos vigentes.</p>
+    </div>
+  </div>
+
+  <!-- 14. PREPARACIÓN DURANTE EL CURSO -->
+  <div class="section-title"><h2>Preparación</h2></div>
+  <div class="block-title">Si necesita PCE, habrá que prepararlas durante el curso 2027/28</div>
+  <div class="card">
+    <p class="intro-text">Si Giselle finalmente aspira a una carrera o universidad para la que resulte conveniente realizar PCE,
+      <strong>no es recomendable esperar a terminar el curso irlandés</strong> para empezar a prepararlas.</p>
+    <p class="intro-text">Las PCE evalúan materias conforme al currículo establecido para estas pruebas en España. Por eso, normalmente la
+      preparación deberá realizarse <strong>en paralelo al Leaving Certificate, a lo largo del curso 2027/28</strong>, lo que supone una carga
+      académica adicional que conviene planificar con tiempo.</p>
+    <p class="intro-text">La carga de preparación dependerá del número de PCE, las materias elegidas, el nivel previo de Giselle y la carrera
+      a la que aspire. En perfiles que preparan varias materias para carreras competitivas, esta preparación puede requerir una dedicación
+      adicional importante durante el curso.</p>
+    <div class="nota neutra" style="margin-top:16px;">
+      <div class="nota-icon">🗒</div>
+      <div class="nota-text"><em>Orientación interna de MLQ:</em> en determinados perfiles nuestra especialista estima que puede ser necesario
+        dedicar alrededor de dos horas diarias adicionales, aunque dependerá completamente del caso. Es una referencia orientativa,
+        no un requisito oficial.</div>
+    </div>
+  </div>
+
+  <!-- 15-16. IDIOMA Y EXÁMENES -->
+  <div class="dos-col" style="margin-top:18px;">
+    <div class="card">
+      <div class="block-title sm">¿En qué idioma son las PCE?</div>
+      <p class="intro-text">Las PCE corresponden al sistema universitario español y las pruebas se realizan conforme a las normas de la UNED.
+        Las materias se examinan en español, salvo aquellas que por su propia naturaleza correspondan a una lengua extranjera.</p>
+    </div>
+    <div class="card">
+      <div class="block-title sm">Fechas y centros de examen</div>
+      <p class="intro-text">La UNED publica cada año sus convocatorias, el calendario, los centros de examen disponibles y los plazos de inscripción.</p>
+      <p class="intro-text">Como Giselle estará terminando su curso escolar en Irlanda, será necesario coordinar bien el
+        <strong>Leaving Certificate</strong>, el <strong>calendario de PCE</strong> y los viajes si fueran necesarios.</p>
+      <p class="intro-text">Durante el curso 2027/28 revisaremos el calendario oficial para organizar con antelación cualquier examen que Giselle necesite realizar.</p>
+    </div>
+  </div>
+
+  <!-- 17. ASIGNATURAS -->
+  <div class="section-title"><h2>Asignaturas en Irlanda</h2></div>
+  <div class="block-title">Las asignaturas del Leaving Certificate también importan</div>
+  <div class="card">
+    <p class="intro-text">La selección de materias para el último curso irlandés no debería realizarse de forma completamente aislada del futuro universitario.
+      Aunque las PCE son un proceso independiente, las asignaturas del Leaving Certificate:</p>
+    <ul class="lista-check">
+      <li>Forman parte de su expediente</li>
+      <li>Determinan su resultado final irlandés</li>
+      <li>Pueden ser relevantes para determinados grados o universidades</li>
+      <li>Condicionan su carga académica durante el curso</li>
+    </ul>
+    <div class="nota verde" style="margin-top:16px;">
+      <div class="nota-icon">☘</div>
+      <div class="nota-text">Antes de realizar cambios importantes de asignaturas, recomendamos que la familia lo consulte con MLQ para revisar
+        posibles implicaciones académicas.</div>
+    </div>
+    <div class="nota" style="margin-top:12px;">
+      <div class="nota-icon">📌</div>
+      <div class="nota-text">Actualmente UNEDasiss indica que para Irlanda todavía no se ha realizado un estudio general de equivalencia de asignaturas
+        que permita asumir automáticamente ese reconocimiento. Por tanto, no cabe dar por hecho que una materia irlandesa equivalga a una PCE española.</div>
+    </div>
+  </div>
+
+  <!-- 18. PLANIFICACIÓN -->
+  <div class="section-title"><h2>Planificación recomendada</h2></div>
+  <div class="block-title">El calendario que proponemos para Giselle</div>
+  <div class="plan-grid">
+    <div class="plan-card azul">
+      <div class="plan-when">Ahora · Curso 2026/27 · 1.º de Bachillerato</div>
+      <div class="plan-title">Decidir la continuidad</div>
+      <div class="plan-text">Decidir si Giselle quiere continuar un segundo curso en Irlanda, para que podamos plantear cuanto antes la continuidad al colegio y a su familia anfitriona. No necesita decidir todavía universidad ni carrera.</div>
+    </div>
+    <div class="plan-card azul">
+      <div class="plan-when">Durante 2026/27</div>
+      <div class="plan-title">Empezar a identificar</div>
+      <ul class="plan-list">
+        <li>Áreas de estudio que le interesan</li>
+        <li>Posibles carreras</li>
+        <li>Universidades</li>
+        <li>España / Irlanda / otros países</li>
+        <li>Posibles requisitos de acceso</li>
+      </ul>
+    </div>
+    <div class="plan-card azul">
+      <div class="plan-when">Final de 2026/27</div>
+      <div class="plan-title">Analizar con una primera lista</div>
+      <ul class="plan-list">
+        <li>Requisitos UNEDasiss</li>
+        <li>Notas de admisión</li>
+        <li>Ponderaciones</li>
+        <li>PCE que tendrían sentido</li>
+        <li>Requisitos propios de universidades</li>
+        <li>Elección de materias del Leaving Certificate con todo esto en mente</li>
+      </ul>
+    </div>
+    <div class="plan-card">
+      <div class="plan-when">Inicio de 2027/28</div>
+      <div class="plan-title">Cerrar el punto de partida</div>
+      <ul class="plan-list">
+        <li>Materias definitivas del Leaving Certificate</li>
+        <li>Escenario universitario de referencia</li>
+        <li>Revisión de la normativa vigente para 2028</li>
+      </ul>
+    </div>
+    <div class="plan-card">
+      <div class="plan-when">Durante el curso 2027/28</div>
+      <div class="plan-title">Preparar en paralelo</div>
+      <ul class="plan-list">
+        <li>Leaving Certificate</li>
+        <li>PCE, si corresponde</li>
+        <li>Documentación</li>
+        <li>Solicitudes</li>
+        <li>Calendario universitario</li>
+      </ul>
+    </div>
+    <div class="plan-card">
+      <div class="plan-when">Final de 2027/28</div>
+      <div class="plan-title">Completar</div>
+      <ul class="plan-list">
+        <li>Leaving Certificate</li>
+        <li>Documentación académica</li>
+        <li>Acreditación UNEDasiss si estudia en España</li>
+        <li>Admisión universitaria correspondiente</li>
+      </ul>
+    </div>
+  </div>
+  <div class="msg"><span>No necesitamos decidir hoy qué estudiará Giselle. Lo importante es no esperar hasta junio de 2028 para empezar a preparar su acceso universitario.</span></div>
+
+  <!-- 19-20. IRLANDA E INTERNACIONAL -->
+  <div class="section-title"><h2>Si quiere estudiar en Irlanda</h2></div>
+  <div>
+    <div class="card">
+      <div class="esc-tag" style="margin-bottom:6px;">Opción 2</div>
+      <div class="block-title sm">Continuar en Irlanda</div>
+      <p class="intro-text">Si Giselle decide posteriormente estudiar una carrera en Irlanda, haber completado allí esta etapa le aporta una
+        ventaja evidente en términos de conocimiento del sistema, idioma y adaptación.</p>
+      <p class="intro-text">La admisión dependerá del grado, la universidad, los resultados del Leaving Certificate y los requisitos correspondientes.
+        Cuando tenga una carrera concreta, se revisará:</p>
+      <ul class="lista-check">
+        <li>Requisitos académicos</li>
+        <li>Materias requeridas</li>
+        <li>Puntuación necesaria</li>
+        <li>Proceso de solicitud</li>
+        <li>Plazos</li>
+      </ul>
+      <p class="intro-text" style="margin-top:12px;">La solicitud a las universidades irlandesas se canaliza a través del sistema CAO.</p>
+    </div>
+  </div>
+
+  <!-- 21. QUÉ GESTIONA MLQ -->
+  <div class="section-title"><h2>Acompañamiento</h2></div>
+  <div class="gest-wrap">
+    <div class="gest-head"><h3>☘ Acompañamiento académico de MLQ</h3></div>
+    <div class="gest-body">
+      <div class="gest-grid">
+        <div class="gest-item">Seguimiento académico durante el programa</div>
+        <div class="gest-item">Coordinación con el equipo local en Irlanda</div>
+        <div class="gest-item">Revisión de la evolución de Giselle</div>
+        <div class="gest-item">Orientación sobre elección y cambios de asignaturas</div>
+        <div class="gest-item">Documentación necesaria del curso</div>
+        <div class="gest-item">Tramitación del reconocimiento/convalidación correspondiente a 1.º de Bachillerato</div>
+        <div class="gest-item">Orientación sobre el proceso académico al finalizar el sistema irlandés</div>
+        <div class="gest-item">Revisión general de requisitos UNEDasiss cuando Giselle concrete sus opciones</div>
+        <div class="gest-item">Información sobre calendarios y documentación</div>
+        <div class="gest-item">Gestión de la homologación o reconocimiento académico que corresponda cuando sea necesaria</div>
+        <div class="gest-item">Acompañamiento a la familia para entender los pasos a seguir</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 22. NO INCLUIDO -->
+  <div class="section-title"><h2>Servicios que dependerán de la opción universitaria elegida</h2></div>
+  <div class="card">
+    <p class="intro-text">Salvo que MLQ confirme lo contrario, estos conceptos no están incluidos en el programa, porque dependen de la vía
+      universitaria que Giselle escoja más adelante:</p>
+    <ul class="lista-dot">
+      <li>Tasas oficiales de UNEDasiss</li>
+      <li>Tasas de inscripción a PCE</li>
+      <li>Academia o preparación académica específica para PCE</li>
+      <li>Libros o material específico para dicha preparación</li>
+      <li>Desplazamientos o alojamiento derivados de la realización de exámenes</li>
+      <li>Tasas de solicitud de universidades</li>
+      <li>Servicios específicos de orientación universitaria internacional / MLQ Pathways, si se contratan aparte</li>
+    </ul>
+  </div>
+
+  <!-- 23. GUÍA -->
+  <div class="section-title"><h2>Para profundizar</h2></div>
+  <div class="guia">
+    <div class="guia-left">
+      <div class="guia-title">¿Queréis conocer el proceso universitario con más detalle?</div>
+      <div class="guia-text">Hemos preparado una guía específica sobre el acceso a la universidad después de estudiar Bachillerato en el extranjero,
+        donde lo explicamos con mayor detalle.</div>
+      <div class="guia-tags">
+        <span class="guia-tag">UNEDasiss</span><span class="guia-tag">PCE</span><span class="guia-tag">Homologación / convalidación</span>
+        <span class="guia-tag">Universidad pública y privada</span><span class="guia-tag">Planificación académica</span><span class="guia-tag">Diferencias según país</span>
+      </div>
+    </div>
+    <a class="btn-guia" href="https://aescobarnic.github.io/Propuestas/acceso-universidad-extranjero_2.html" target="_blank" rel="noopener">📘 Consultar guía de acceso universitario</a>
+  </div>
+
+  <!-- 24. CIERRE -->
+  <div class="section-title"><h2>Cierre</h2></div>
+  <div class="cierre">
+    <div class="cierre-inner">
+      <div class="cierre-title">Un segundo año para completar el camino</div>
+      <p class="cierre-text">Giselle ya conoce Irlanda, su sistema educativo y la experiencia de vivir fuera de España. Y, sobre todo, sabemos que
+        actualmente <strong>está contenta tanto con su colegio como con su familia anfitriona</strong>.</p>
+      <p class="cierre-text">Continuar durante el curso 2027/28 permitiría convertir esta experiencia en una etapa académica completa de dos cursos
+        y terminar sus estudios preuniversitarios dentro del sistema irlandés.</p>
+      <p class="cierre-text">Además, hacerlo no significa tener que decidir ahora dónde estudiará después. <strong>España, Irlanda y otros destinos
+        continúan siendo opciones abiertas.</strong> Lo importante será utilizar el próximo curso para ir definiendo ese siguiente paso y preparar
+        con tiempo la vía de acceso que corresponda.</p>
+      <p class="cierre-text">Nuestro objetivo será acompañar a Giselle durante todo el proceso para que, cuando llegue el momento de elegir universidad,
+        la familia sepa exactamente qué necesita hacer y cuáles son sus opciones.</p>
+      <div class="cta-wrap">
+        <a class="cta" href="mailto:gespinoza@mylanguagequest.com?subject=Continuidad%20de%20Giselle%20en%20Irlanda%20%C2%B7%20Curso%202027%2F28&amp;body=Hola%20Georgina%2C%0A%0AHemos%20revisado%20la%20propuesta%20de%20continuidad%20para%20Giselle%20y%20nos%20gustar%C3%ADa%20comentar%20los%20siguientes%20puntos%3A%0A%0A">☘ Hablar con Georgina sobre la continuidad de Giselle</a>
+        <a class="cta alt" href="https://asesoramientosmlq.zohobookings.eu/mylanguagequest" target="_blank" rel="noopener">📅 Agendar una llamada</a>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<!-- FOOTER -->
+<div class="footer">
+  <div class="footer-logo">MY LANGUAGE QUEST</div>
+  <div class="footer-tag">Explore · Learn · Grow</div>
+  <div class="footer-meta">
+    Propuesta personalizada de continuidad para Giselle · Curso 2027/28<br>
+    Los requisitos de acceso universitario recogidos son los vigentes actualmente y se revisarán durante el curso 2027/28.<br>
+    Precios sujetos a disponibilidad de plaza y confirmación del centro escolar.
+  </div>
+</div>
+
+<script>
+(function(){
+  var d=document, root=d.documentElement;
+  if(!('IntersectionObserver' in window)){root.className=root.className.replace(' js-anim','');return;}
+  var bar=d.createElement('div'); bar.className='progress-bar'; d.body.appendChild(bar);
+  var ticking=false;
+  function progress(){
+    var h=d.documentElement.scrollHeight-window.innerHeight;
+    bar.style.transform='scaleX('+(h>0?Math.min(window.scrollY/h,1):0)+')';
+    ticking=false;
+  }
+  window.addEventListener('scroll',function(){if(!ticking){ticking=true;requestAnimationFrame(progress);}},{passive:true});
+  progress();
+  Array.prototype.forEach.call(d.querySelectorAll('.hero-pill'),function(el,i){el.style.animationDelay=(0.46+i*0.06)+'s';});
+  var groups=[
+    ['.section-title','reveal'],['.block-title','reveal'],['.intro-text','reveal'],['.point','reveal'],
+    ['.precio-card','reveal'],['.dif-banner','reveal'],['.card','reveal-zoom'],['.req-wrap','reveal-zoom'],
+    ['.nota','reveal'],['.esc-card','reveal'],['.respuesta','reveal-zoom'],['.msg','reveal'],
+    ['.plan-card','reveal'],['.gest-wrap','reveal-zoom'],['.guia','reveal-zoom'],['.cierre','reveal-zoom']
+  ];
+  groups.forEach(function(g){
+    Array.prototype.forEach.call(d.querySelectorAll(g[0]),function(el,i){
+      if(el.classList.contains('reveal')||el.classList.contains('reveal-zoom'))return;
+      el.classList.add(g[1]);
+      el.style.transitionDelay=Math.min(i*0.07,0.3)+'s';
+    });
+  });
+  var io=new IntersectionObserver(function(entries){
+    entries.forEach(function(e){ if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);} });
+  },{threshold:0.08,rootMargin:'0px 0px -6% 0px'});
+  Array.prototype.forEach.call(d.querySelectorAll('.reveal,.reveal-zoom'),function(el){io.observe(el);});
+})();
+</script>
+
+<!-- MLQ tracking -->
+<script>
+(function () {
+  var URL_TRACKING = 'https://script.google.com/macros/s/AKfycbygwC8SbNtpdSo9sEEyAOYnZR-7ui1jgk-7wF9gOhM5kJs2qLgBxhQI7MJHutokDSFajA/exec';
+  if (URL_TRACKING.indexOf('http') !== 0) return;
+  var archivo    = (location.pathname.split('/').pop() || 'index.html');
+  var estudiante = archivo.replace(/\.html?$/i, '').replace(/-/g, ' ');
+  var programa   = (document.title.split('·')[0] || '').trim();
+  var sesion     = Math.random().toString(36).slice(2, 10);
+  function enviar(evento, valor) {
+    var qs = '?evento=' + encodeURIComponent(evento) +
+             '&valor=' + encodeURIComponent(valor || '') +
+             '&archivo=' + encodeURIComponent(archivo) +
+             '&estudiante=' + encodeURIComponent(estudiante) +
+             '&programa=' + encodeURIComponent(programa) +
+             '&sesion=' + sesion +
+             '&referrer=' + encodeURIComponent(document.referrer || '') +
+             '&ua=' + encodeURIComponent(navigator.userAgent) +
+             '&t=' + Date.now();
+    try {
+      if (window.fetch) { fetch(URL_TRACKING + qs, { mode: 'no-cors', keepalive: true }); }
+      else { new Image().src = URL_TRACKING + qs; }
+    } catch (e) {}
+  }
+  try {
+    if (!sessionStorage.getItem('mlq_open_' + archivo)) {
+      sessionStorage.setItem('mlq_open_' + archivo, '1');
+      enviar('apertura');
+    }
+  } catch (e) { enviar('apertura'); }
+  var activo = 0, marca = Date.now(), visible = !document.hidden, hito30 = false;
+  function acumular() { if (visible) activo += Date.now() - marca; marca = Date.now(); }
+  document.addEventListener('visibilitychange', function () { acumular(); visible = !document.hidden; });
+  setInterval(function () {
+    acumular();
+    if (!hito30 && activo >= 30000) { hito30 = true; enviar('lectura_30s'); }
+  }, 1000);
+  var hitos = [25, 50, 75, 100], enviados = {};
+  function revisarScroll() {
+    var alto = document.documentElement.scrollHeight - window.innerHeight;
+    var pct  = alto <= 0 ? 100 : Math.round((window.pageYOffset / alto) * 100);
+    for (var i = 0; i < hitos.length; i++) {
+      var h = hitos[i];
+      if (pct >= h && !enviados[h]) { enviados[h] = true; enviar('scroll_' + h); }
+    }
+  }
+  window.addEventListener('scroll', revisarScroll, { passive: true });
+  window.addEventListener('resize', revisarScroll, { passive: true });
+  setTimeout(revisarScroll, 1500);
+  var cerrado = false;
+  function alSalir() { if (cerrado) return; cerrado = true; acumular(); enviar('salida', Math.round(activo / 1000)); }
+  window.addEventListener('pagehide', alSalir);
+  document.addEventListener('visibilitychange', function () { if (document.hidden) { acumular(); } });
+})();
+</script>
+</body>
+</html>
