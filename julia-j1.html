@@ -36,7 +36,11 @@ body{font-family:'Fira Sans',sans-serif;background:var(--gray-bg);color:var(--te
 .hero-inner{position:relative;z-index:2;}
 .hero-tag{display:inline-flex;align-items:center;gap:6px;background:rgba(255,255,255,0.1);border:1px solid rgba(255,255,255,0.2);border-radius:20px;padding:4px 12px;font-size:10px;font-weight:600;letter-spacing:2px;text-transform:uppercase;color:rgba(255,255,255,0.7);margin-bottom:12px;}
 .hero-tag::before{content:'🇺🇸';font-size:11px;}
-.hero-name{font-family:'Josefin Sans',sans-serif;font-size:38px;font-weight:700;color:var(--white);line-height:1.05;margin-bottom:8px;}
+.hero-name{font-family:'Josefin Sans',sans-serif;font-size:46px;font-weight:700;color:var(--white);line-height:1.04;margin-bottom:10px;letter-spacing:-0.5px;}
+.hero-name .hn-soft{display:block;font-size:0.52em;font-weight:400;letter-spacing:4px;text-transform:uppercase;color:rgba(255,255,255,0.45);margin-bottom:4px;}
+.hero-name .hn-us{position:relative;display:inline-block;background:linear-gradient(100deg,#ffffff 0%,#ffffff 42%,var(--gold) 100%);-webkit-background-clip:text;background-clip:text;color:transparent;padding-bottom:10px;}
+.hero-name .hn-us::after{content:'';position:absolute;left:0;right:0;bottom:0;height:5px;border-radius:3px;background:linear-gradient(90deg,var(--red) 0%,var(--red) 34%,#ffffff 34%,#ffffff 66%,#2a6fc4 66%,#2a6fc4 100%);}
+@media(max-width:720px){.hero-name{font-size:33px;}}
 .hero-subtitle{font-size:13px;color:rgba(255,255,255,0.55);font-weight:300;}
 .hero-pills{display:flex;flex-wrap:wrap;gap:8px;margin-top:20px;}
 .hero-pill{display:flex;align-items:center;gap:6px;background:rgba(255,255,255,0.1);border:1px solid rgba(255,255,255,0.18);border-radius:8px;padding:6px 12px;font-size:11px;color:var(--white);font-weight:500;}
@@ -458,7 +462,7 @@ details[open] summary::before{transform:rotate(90deg);}
   <div class="hero-dots"></div>
   <div class="hero-inner">
     <div class="hero-tag">Propuesta personalizada · Programa J1</div>
-    <div class="hero-name">Julia</div>
+    <div class="hero-name"><span class="hn-soft">Julia en</span><span class="hn-us">Estados Unidos</span></div>
     <div class="hero-subtitle">Intercambio cultural · Año escolar completo · Estados Unidos</div>
     <div class="hero-pills">
       <div class="hero-pill">🎓 4º ESO · Grade 10</div>
