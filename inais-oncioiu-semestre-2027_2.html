@@ -1,0 +1,1030 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<script>document.documentElement.className+=" js-anim";</script>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Propuesta Semestre · Inais · My Language Quest</title>
+<link href="https://fonts.googleapis.com/css2?family=Fira+Sans:wght@300;400;500;600;700&family=Josefin+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --blue:#003366;--blue-dark:#001f40;--blue-mid:#0a4a8a;--blue-light:#dce8f5;
+  --red:#B12900;--red-dark:#8A1F00;--red-light:#fdf0ec;
+  --red-deep:#6E1600;--red-warm:#C8380C;--cream:#FFF6F2;--sand:#F7EDE6;--gold:#E8B04B;
+  --green:#4C9E0C;--green-dark:#3A7A09;--green-light:#eef8e3;
+  --ski:#0a6ea8;--ski-light:#e4f2fa;
+  --gray-bg:#f4eeea;--gray-card:#fbf7f4;--gray-border:#e4d9d2;
+  --text:#0d1b2a;--text-mid:#3d4f62;--text-light:#7a8a9b;--white:#ffffff;
+}
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box;}
+body{font-family:'Fira Sans',sans-serif;background:var(--gray-bg);color:var(--text);}
+
+/* HEADER */
+.header{background:var(--white);padding:18px 48px;display:flex;align-items:center;justify-content:space-between;box-shadow:0 1px 0 var(--gray-border),0 4px 24px rgba(0,51,102,0.07);position:relative;z-index:10;}
+.header::after{content:'';position:absolute;bottom:0;left:0;right:0;height:4px;background:linear-gradient(90deg,var(--red) 0%,var(--red) 22%,var(--white) 22%,var(--white) 78%,var(--red) 78%,var(--red) 100%);}
+.logo-area img{height:46px;width:auto;display:block;}
+.header-right{text-align:right;}
+.header-label{font-family:'Josefin Sans',sans-serif;font-size:9px;letter-spacing:3px;text-transform:uppercase;color:var(--text-light);}
+.header-year{font-family:'Josefin Sans',sans-serif;font-size:22px;font-weight:700;color:var(--red);line-height:1;margin-top:2px;}
+
+/* HERO */
+.hero{background:linear-gradient(135deg,var(--red-deep) 0%,var(--red) 55%,var(--red-warm) 100%);position:relative;overflow:hidden;padding:40px 48px 36px;}
+.hero::after{content:'🎿';position:absolute;right:2%;top:50%;transform:translateY(-50%) rotate(-12deg);font-size:210px;line-height:1;opacity:0.09;pointer-events:none;z-index:1;}
+.hero::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 70% 110% at 100% 40%,rgba(255,255,255,0.12) 0%,transparent 60%),radial-gradient(ellipse 60% 80% at -10% 90%,rgba(0,31,64,0.28) 0%,transparent 60%);}
+.hero-dots{position:absolute;inset:0;pointer-events:none;background-image:radial-gradient(rgba(255,255,255,0.07) 1px,transparent 1px);background-size:28px 28px;}
+.hero-inner{position:relative;z-index:2;}
+.hero-tag{display:inline-flex;align-items:center;gap:6px;background:rgba(255,255,255,0.1);border:1px solid rgba(255,255,255,0.2);border-radius:20px;padding:4px 12px;font-size:10px;font-weight:600;letter-spacing:2px;text-transform:uppercase;color:rgba(255,255,255,0.7);margin-bottom:12px;}
+.hero-name{font-family:'Josefin Sans',sans-serif;font-size:38px;font-weight:700;color:var(--white);line-height:1.05;margin-bottom:8px;}
+.hero-subtitle{font-size:13px;color:rgba(255,255,255,0.6);font-weight:300;}
+.hero-lead{font-size:13.5px;color:rgba(255,255,255,0.78);line-height:1.6;max-width:720px;margin-top:14px;}
+.hero-pills{display:flex;flex-wrap:wrap;gap:8px;margin-top:20px;}
+.hero-pill{display:flex;align-items:center;gap:6px;background:rgba(255,255,255,0.1);border:1px solid rgba(255,255,255,0.18);border-radius:8px;padding:6px 12px;font-size:11px;color:var(--white);font-weight:500;}
+
+/* LAYOUT */
+.main{max-width:1140px;margin:0 auto;padding:40px 24px 20px;}
+.section-title{display:flex;align-items:center;gap:12px;margin:44px 0 24px;}
+.section-title:first-of-type{margin-top:0;}
+.section-title h2{font-family:'Josefin Sans',sans-serif;font-size:11px;font-weight:700;letter-spacing:3px;text-transform:uppercase;color:var(--red-deep);white-space:nowrap;}
+.section-title::before{content:'';width:22px;height:3px;border-radius:3px;background:var(--red);flex-shrink:0;}
+.section-title::after{content:'';flex:1;height:1px;background:var(--gray-border);}
+
+.intro-text{font-size:14px;color:var(--text-mid);line-height:1.75;max-width:880px;margin-bottom:18px;}
+.intro-text strong{color:var(--blue);font-weight:600;}
+.intro-points{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:20px;}
+.intro-point{background:var(--white);border:1.5px solid var(--gray-border);border-radius:12px;padding:16px 18px;display:flex;gap:12px;align-items:flex-start;}
+.intro-point-icon{font-size:20px;flex-shrink:0;}
+.intro-point-title{font-family:'Josefin Sans',sans-serif;font-size:13px;font-weight:700;color:var(--red-deep);margin-bottom:4px;}
+.intro-point-desc{font-size:12px;color:var(--text-mid);line-height:1.55;}
+
+/* RESUMEN DE LAS 4 OPCIONES */
+.sel-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-top:20px;}
+.sel-card{background:var(--white);border:1.5px solid var(--gray-border);border-radius:12px;padding:16px;text-align:center;}
+.sel-flag{font-size:22px;}
+.sel-nombre{font-family:'Josefin Sans',sans-serif;font-size:13.5px;font-weight:700;color:var(--red-deep);margin:6px 0 3px;}
+.sel-loc{font-size:11px;color:var(--text-light);margin-bottom:10px;}
+.sel-precio{font-family:'Josefin Sans',sans-serif;font-size:18px;font-weight:700;color:var(--blue);}
+
+/* OPCIONES */
+.opciones-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:20px;align-items:start;}
+.opcion-card{background:var(--white);border-radius:16px;border:1.5px solid var(--gray-border);overflow:hidden;box-shadow:0 2px 16px rgba(0,51,102,0.06);position:relative;transition:transform .35s cubic-bezier(.22,.61,.36,1),box-shadow .35s ease,border-color .3s ease;display:flex;flex-direction:column;}
+.opcion-card:hover{transform:translateY(-4px);box-shadow:0 12px 40px rgba(110,22,0,0.16);border-color:var(--red);}
+.opcion-header{background:linear-gradient(135deg,var(--red-deep) 0%,var(--red) 100%);padding:22px 24px 18px;position:relative;overflow:hidden;}
+.opcion-header.usa{background:linear-gradient(135deg,#0d2b5c 0%,#1b4a8f 100%);}
+.opcion-header::after{content:'';background:var(--hoja) center/contain no-repeat;width:86px;height:86px;position:absolute;right:-10px;bottom:-22px;font-size:82px;opacity:0.11;line-height:1;transform:rotate(-14deg);transition:transform .6s cubic-bezier(.22,.61,.36,1),opacity .4s ease;}
+.opcion-header.usa::after{background-image:var(--estrella);}
+.opcion-card:hover .opcion-header::after{transform:rotate(-4deg) scale(1.14);opacity:.17;}
+.opcion-header > *{position:relative;z-index:2;}
+.opcion-num{font-family:'Josefin Sans',sans-serif;font-size:9px;letter-spacing:3px;text-transform:uppercase;color:rgba(255,255,255,0.4);margin-bottom:8px;}
+.opcion-distrito{font-family:'Josefin Sans',sans-serif;font-size:17px;font-weight:700;color:var(--white);margin-bottom:5px;}
+.opcion-loc{font-size:11px;color:rgba(255,255,255,0.5);margin-bottom:12px;}
+.precio-chip{display:inline-flex;align-items:baseline;gap:4px;background:rgba(255,255,255,0.1);border:1px solid rgba(255,255,255,0.18);border-radius:8px;padding:6px 12px;}
+.precio-chip .val{font-family:'Josefin Sans',sans-serif;font-size:20px;font-weight:700;color:var(--white);}
+.precio-chip .desc{font-size:10px;color:rgba(255,255,255,0.55);}
+.dispo{display:flex;align-items:center;gap:8px;background:var(--green-light);border-bottom:1.5px solid rgba(76,158,12,0.25);padding:10px 22px;font-size:11.5px;font-weight:600;color:var(--green-dark);letter-spacing:.4px;}
+.dispo::before{content:'✓';display:inline-flex;align-items:center;justify-content:center;width:17px;height:17px;border-radius:50%;background:var(--green);color:#fff;font-size:10px;flex-shrink:0;}
+.opcion-body{padding:20px 22px;flex:1;}
+.bloque{margin-bottom:18px;}
+.bloque:last-child{margin-bottom:0;}
+.bloque-title{font-family:'Josefin Sans',sans-serif;font-size:9px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--red);margin-bottom:9px;padding-bottom:6px;border-bottom:1.5px solid var(--red-light);}
+.bloque-text{font-size:12.5px;color:var(--text-mid);line-height:1.7;}
+.bloque-text strong{color:var(--text);font-weight:600;}
+.bloque-text + .bloque-text{margin-top:8px;}
+.ski-box{background:var(--ski-light);border:1px solid rgba(10,110,168,0.22);border-left:3px solid var(--ski);border-radius:0 10px 10px 0;padding:13px 16px;}
+.ski-box .bloque-title{color:var(--ski);border-bottom-color:rgba(10,110,168,0.2);}
+.ski-box .lista li::before{content:'•';color:var(--ski);}
+.lista{list-style:none;margin-top:9px;}
+.lista li{font-size:12px;color:var(--text-mid);line-height:1.6;position:relative;padding-left:15px;margin-bottom:7px;}
+.lista li:last-child{margin-bottom:0;}
+.lista li::before{content:'›';position:absolute;left:0;top:0;color:var(--red);font-weight:700;}
+.colegio{border:1.5px solid var(--gray-border);border-radius:12px;background:var(--gray-card);padding:13px 15px;margin-bottom:10px;}
+.colegio.primera{border-color:var(--blue);background:var(--blue-light);}
+.colegio-nombre{font-family:'Josefin Sans',sans-serif;font-size:13.5px;font-weight:700;color:var(--red-deep);margin-bottom:5px;}
+.colegio-meta{display:flex;flex-wrap:wrap;align-items:center;gap:6px;margin-bottom:8px;}
+.tag{border-radius:5px;padding:2px 8px;font-size:9px;font-weight:700;text-transform:uppercase;}
+.tag.pub{background:var(--green);color:var(--white);}
+.tag.info{background:#e9e1db;color:var(--text-mid);}
+.tag.pri{background:var(--blue);color:var(--white);}
+.colegio-desc{font-size:12px;color:var(--text-mid);line-height:1.6;}
+.extra-tags{display:flex;flex-wrap:wrap;gap:6px;margin-top:9px;}
+.extra-tag{font-size:10.5px;color:var(--text-mid);background:var(--white);border:1px solid var(--gray-border);border-radius:20px;padding:3px 10px;}
+.match-bar{display:flex;gap:6px;flex-wrap:wrap;padding:14px 22px;border-top:1px solid var(--gray-border);background:linear-gradient(to right,var(--gray-card),var(--white));}
+.match-tag{display:flex;align-items:center;gap:4px;font-size:10px;font-weight:600;color:var(--green-dark);background:var(--green-light);border:1px solid rgba(76,158,12,0.25);border-radius:20px;padding:3px 10px;}
+.match-tag::before{content:'✓';font-size:9px;}
+
+/* TABLA COMPARATIVA */
+.tabla-wrap{background:var(--white);border:1.5px solid var(--gray-border);border-radius:16px;overflow-x:auto;box-shadow:0 2px 16px rgba(0,51,102,0.05);}
+table.comp{width:100%;border-collapse:collapse;min-width:720px;}
+table.comp th,table.comp td{padding:12px 14px;text-align:left;font-size:12px;border-bottom:1px solid var(--gray-border);vertical-align:middle;}
+table.comp thead th{background:linear-gradient(135deg,var(--blue-dark),var(--blue));color:var(--white);font-family:'Josefin Sans',sans-serif;font-size:12px;font-weight:700;letter-spacing:.5px;border-bottom:none;}
+table.comp thead th:first-child{background:var(--blue-dark);}
+table.comp tbody th{font-weight:600;color:var(--text);background:var(--gray-card);white-space:nowrap;font-size:11.5px;}
+table.comp td{color:var(--text-mid);}
+table.comp tbody tr:last-child th,table.comp tbody tr:last-child td{border-bottom:none;}
+table.comp tr.precio-row td{font-family:'Josefin Sans',sans-serif;font-size:16px;font-weight:700;color:var(--blue);}
+.estrellas{color:var(--gold);letter-spacing:1px;font-size:13px;}
+.ok{color:var(--green-dark);font-weight:600;}
+
+/* RECOMENDACIÓN */
+.reco-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:18px;}
+.reco-card{background:var(--white);border:1.5px solid var(--gray-border);border-radius:14px;padding:20px 22px;}
+.reco-head{display:flex;align-items:center;gap:9px;margin-bottom:9px;}
+.reco-flag{font-size:18px;}
+.reco-nombre{font-family:'Josefin Sans',sans-serif;font-size:15px;font-weight:700;color:var(--red-deep);}
+.reco-claim{display:inline-block;font-size:10px;font-weight:700;letter-spacing:1px;text-transform:uppercase;color:var(--blue);background:var(--blue-light);border-radius:20px;padding:3px 10px;margin-bottom:10px;}
+.reco-text{font-size:12.5px;color:var(--text-mid);line-height:1.7;}
+
+/* RECUADRO FÚTBOL */
+.futbol-wrap{background:linear-gradient(135deg,var(--blue-dark) 0%,var(--blue) 60%,var(--blue-mid) 100%);border-radius:16px;padding:30px 34px;position:relative;overflow:hidden;}
+.futbol-wrap::before{content:'';position:absolute;inset:0;background-image:radial-gradient(rgba(255,255,255,0.05) 1px,transparent 1px);background-size:22px 22px;}
+.futbol-wrap::after{content:'⚽';position:absolute;right:3%;top:50%;transform:translateY(-50%);font-size:150px;opacity:.07;line-height:1;}
+.futbol-inner{position:relative;z-index:2;max-width:820px;}
+.futbol-title{font-family:'Josefin Sans',sans-serif;font-size:18px;font-weight:700;color:var(--white);margin-bottom:12px;}
+.futbol-text{font-size:13px;color:rgba(255,255,255,0.72);line-height:1.8;}
+.futbol-text strong{color:var(--white);font-weight:600;}
+.futbol-text + .futbol-text{margin-top:12px;}
+
+/* EL PROGRAMA INCLUYE */
+.includes-wrap{background:var(--white);border-radius:16px;border:1.5px solid var(--gray-border);box-shadow:0 2px 16px rgba(0,51,102,0.05);overflow:hidden;margin-bottom:22px;}
+.includes-head{background:linear-gradient(135deg,var(--red-deep),var(--red));padding:18px 32px;display:flex;align-items:center;justify-content:space-between;gap:14px;flex-wrap:wrap;}
+.includes-head.usa{background:linear-gradient(135deg,#0d2b5c,#1b4a8f);}
+.includes-head h3{font-family:'Josefin Sans',sans-serif;font-size:15px;font-weight:700;color:var(--white);letter-spacing:.5px;}
+.includes-head-sub{font-size:11.5px;color:rgba(255,255,255,0.55);margin-top:3px;}
+.includes-head .pais-chip{background:rgba(255,255,255,0.14);color:#fff;border:1px solid rgba(255,255,255,0.3);}
+.includes-body{padding:26px 32px;}
+.includes-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:30px;}
+.col-title{font-family:'Josefin Sans',sans-serif;font-size:9px;font-weight:700;letter-spacing:2.5px;text-transform:uppercase;color:var(--red);margin-bottom:13px;padding-bottom:8px;border-bottom:2px solid var(--red-light);}
+.includes-head.usa ~ .includes-body .col-title{color:var(--blue);border-bottom-color:var(--blue-light);}
+.inc-list{list-style:none;display:flex;flex-direction:column;gap:8px;}
+.inc-list li{font-size:12px;color:var(--text-mid);line-height:1.55;position:relative;padding-left:16px;}
+.inc-list li::before{content:'✓';position:absolute;left:0;top:0;color:var(--green);font-weight:700;font-size:11px;}
+.inc-list.no li::before{content:'✗';color:var(--red);}
+.inc-list li small{font-size:10px;color:var(--text-light);display:block;margin-top:2px;}
+.gestor-wrap{background:linear-gradient(135deg,var(--blue-dark),var(--blue-mid));border-radius:12px;padding:20px 24px;margin-top:24px;}
+.gestor-title{font-family:'Josefin Sans',sans-serif;font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:rgba(255,255,255,0.6);margin-bottom:14px;}
+.gestor-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;}
+.gestor-item{background:rgba(255,255,255,0.08);border:1px solid rgba(255,255,255,0.12);border-radius:8px;padding:10px 12px;font-size:11px;color:rgba(255,255,255,0.85);line-height:1.4;position:relative;padding-left:26px;}
+.gestor-item::before{content:'→';position:absolute;left:12px;top:10px;color:#7dd44a;font-weight:700;}
+
+/* CIERRE */
+.steps-wrap{background:linear-gradient(135deg,var(--blue-dark) 0%,var(--blue) 60%,var(--blue-mid) 100%);border-radius:16px;padding:34px 36px;position:relative;overflow:hidden;}
+.steps-wrap::before{content:'';position:absolute;inset:0;background-image:radial-gradient(rgba(255,255,255,0.05) 1px,transparent 1px);background-size:22px 22px;}
+.steps-inner{position:relative;z-index:2;}
+.steps-title{font-family:'Josefin Sans',sans-serif;font-size:18px;font-weight:700;color:var(--white);margin-bottom:10px;}
+.steps-text{font-size:13px;color:rgba(255,255,255,0.7);line-height:1.8;max-width:860px;margin-bottom:24px;}
+.steps-text strong{color:var(--white);font-weight:600;}
+.pasos-cta-wrap{text-align:center;margin-top:20px;display:flex;gap:12px;justify-content:center;flex-wrap:wrap;}
+.pasos-cta{display:inline-flex;align-items:center;gap:8px;background:#7dd44a;color:var(--blue-dark);font-family:'Josefin Sans',sans-serif;font-size:13px;font-weight:700;padding:12px 26px;border-radius:10px;text-decoration:none;transition:transform .15s,box-shadow .15s;position:relative;overflow:hidden;}
+.pasos-cta:hover{transform:translateY(-2px);box-shadow:0 8px 20px rgba(125,212,74,0.35);}
+.pasos-cta::after{content:'';position:absolute;top:0;left:-120%;width:60%;height:100%;background:linear-gradient(100deg,transparent,rgba(255,255,255,.55),transparent);transform:skewX(-18deg);}
+.pasos-cta:hover::after{animation:shine .85s ease;}
+@keyframes shine{to{left:140%;}}
+.pasos-cta-alt{background:rgba(255,255,255,0.12);color:var(--white);border:1.5px solid rgba(255,255,255,0.35);}
+.pasos-cta-alt:hover{box-shadow:0 8px 20px rgba(255,255,255,0.15);}
+
+/* FOOTER */
+.footer{background:var(--blue-dark);padding:30px 48px;margin-top:56px;text-align:center;position:relative;}
+.footer::before{content:'';position:absolute;top:0;left:0;right:0;height:4px;background:linear-gradient(90deg,var(--red) 0%,var(--red) 22%,var(--white) 22%,var(--white) 78%,var(--red) 78%,var(--red) 100%);}
+.footer-logo{font-family:'Josefin Sans',sans-serif;font-size:15px;font-weight:700;color:var(--white);letter-spacing:1px;margin-bottom:6px;}
+.footer-tag{font-family:'Josefin Sans',sans-serif;font-size:10px;letter-spacing:4px;text-transform:uppercase;color:#ff9c7a;margin-bottom:14px;}
+.footer-meta{font-size:11px;color:rgba(255,255,255,0.4);line-height:1.7;}
+
+@media(max-width:900px){
+  .opciones-grid{grid-template-columns:1fr;}
+  .includes-grid{grid-template-columns:1fr;}
+  .gestor-grid{grid-template-columns:repeat(2,1fr);}
+  .intro-points{grid-template-columns:1fr;}
+  .sel-grid{grid-template-columns:repeat(2,1fr);}
+  .reco-grid{grid-template-columns:1fr;}
+}
+@media(max-width:720px){
+  .header{padding:16px 20px;}.hero{padding:28px 20px 24px;}.hero-name{font-size:28px;}
+  .main{padding:28px 16px 20px;}
+  .opciones-grid{grid-template-columns:1fr;}
+  .sel-grid{grid-template-columns:1fr;}
+  .futbol-wrap{padding:24px 20px;}
+  .steps-wrap{padding:26px 20px;}
+  .footer{padding:26px 20px;}
+}
+
+/* ANIMACIONES */
+.js-anim .reveal{opacity:0;transform:translateY(20px);will-change:opacity,transform;transition:opacity .75s cubic-bezier(.22,.61,.36,1),transform .75s cubic-bezier(.22,.61,.36,1);}
+.js-anim .reveal.in{opacity:1;transform:none;}
+.js-anim .reveal-zoom{opacity:0;transform:scale(.975);transition:opacity .8s ease,transform .8s cubic-bezier(.22,.61,.36,1);}
+.js-anim .reveal-zoom.in{opacity:1;transform:none;}
+@keyframes heroUp{from{opacity:0;transform:translateY(16px);}to{opacity:1;transform:none;}}
+@keyframes skiIn{from{opacity:0;transform:translateY(-50%) rotate(-30deg) scale(.85);}to{opacity:.09;transform:translateY(-50%) rotate(-12deg) scale(1);}}
+.js-anim .hero::after{animation:skiIn 1.4s cubic-bezier(.22,.61,.36,1) .15s both;}
+.js-anim .hero-tag{animation:heroUp .7s cubic-bezier(.22,.61,.36,1) .05s both;}
+.js-anim .hero-name{animation:heroUp .7s cubic-bezier(.22,.61,.36,1) .16s both;}
+.js-anim .hero-subtitle{animation:heroUp .7s cubic-bezier(.22,.61,.36,1) .26s both;}
+.js-anim .hero-lead{animation:heroUp .7s cubic-bezier(.22,.61,.36,1) .32s both;}
+.js-anim .hero-pill{animation:heroUp .55s cubic-bezier(.22,.61,.36,1) both;}
+.progress-bar{position:fixed;top:0;left:0;height:3px;width:100%;transform:scaleX(0);transform-origin:0 50%;background:linear-gradient(90deg,var(--red),var(--red-warm));z-index:999;transition:transform .1s linear;}
+@keyframes cuotaPop{0%{opacity:.35;transform:translateY(6px);}100%{opacity:1;transform:none;}}
+.fin-cuota-valor.pop{animation:cuotaPop .42s cubic-bezier(.22,.61,.36,1);}
+@media(prefers-reduced-motion:reduce){
+  .js-anim .reveal,.js-anim .reveal-zoom{opacity:1!important;transform:none!important;transition:none!important;}
+  .js-anim .hero::after,.js-anim .hero-tag,.js-anim .hero-name,.js-anim .hero-subtitle,.js-anim .hero-lead,.js-anim .hero-pill{animation:none!important;opacity:1;}
+  .js-anim .hero::after{opacity:.09;}
+  .progress-bar{display:none;}
+  *{transition-duration:.01ms!important;}
+}
+
+:root{
+  --hoja:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'><path fill='%23ffffff' d='M32 4l4.6 9.3 7-2.6-2.3 9.6 8.4-1.2-4.1 7.4 9 1.4-6.7 5.6 7.9 4.6-9.6 3 3.6 6.9-9.4-1.4.9 8.2-6.6-4.4-2.7 9-2.7-9-6.6 4.4.9-8.2-9.4 1.4 3.6-6.9-9.6-3 7.9-4.6-6.7-5.6 9-1.4-4.1-7.4 8.4 1.2-2.3-9.6 7 2.6z'/></svg>");
+  --estrella:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'><path fill='%23ffffff' d='M32 3l7.7 21.1H62L44.2 37.2l6.8 21.3L32 45.3 13 58.5l6.8-21.3L2 24.1h22.3z'/></svg>");
+}
+.pais-chip{display:inline-block;font-family:'Josefin Sans',sans-serif;font-size:9px;font-weight:700;letter-spacing:1.6px;text-transform:uppercase;border-radius:20px;padding:3px 10px;white-space:nowrap;}
+.pais-chip.ca{background:var(--red-light);color:var(--red);border:1px solid rgba(177,41,0,0.25);}
+.pais-chip.us{background:var(--blue-light);color:var(--blue);border:1px solid rgba(0,51,102,0.22);}
+.sel-flag{margin-bottom:4px;}
+.reco-flag{margin-right:2px;}
+.th-pais{display:block;font-family:'Fira Sans',sans-serif;font-size:9.5px;font-weight:500;letter-spacing:1.2px;text-transform:uppercase;color:rgba(255,255,255,0.55);margin-bottom:2px;}
+.fin-pais{display:inline-block;font-size:8.5px;font-weight:700;letter-spacing:1.2px;color:var(--text-light);margin-right:5px;}
+.fin-opcion-btn.active .fin-pais{color:var(--blue);}
+</style>
+</head>
+<body>
+
+<!-- ============ HEADER ============ -->
+<div class="header">
+  <div class="logo-area"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAiIAAACgCAYAAAAxUwfQAABqxUlEQVR42u29d7xcV3X2/93nnJm5RcVFkm2MIRAHWzJ2wPRqEUwvDgE5pAeSQH7pBfKGJEQS6Qmp8L4JJCGEJEAsCLZpoUuYDsYU24CNMWDcJFu2yi0zc85evz/22nf2nHvO3Jlb5Hul/fgznquZM6fstp79rLXXNu86h2ckCWNiaGDJEkNDhARoGcgKaCaGpkDDWBoCTQxNoAlkQNO4zxoCDSwtEvdbERoYMqCBkAFmMmNyqstrf/gb/NNlO0gv3UPB6DCAADznTevekzbknKJrpo1IF2iD6ZDQFpGugVkwbRGZMZgZA22LzCJmBiNt971MW0zXYGaNNW1Jiw7GtE2RtCUrOuSmTZK0c5N0m3k+k84muaxLiuZUM98/eSA/p0Nxxm0Uu3djWS0QzM5dmOvPwwDsv869V2J76d973duW81wZe2zbgbCr9+/du/q/n6uZ8C4iIiIiIiIGIDOGd7YMkwKYFJJBRydV9q76GAm/FxADhcCYgSk4FWDz/gHGcXhK8oC0Yc4WgcQYZwgNGP/HnHHsXSqd+9v0PYhYQUQQmyAWJBFrisRiKAQpMptbm5DbSZsbke7MxHRnvZ1s35qZ7m0PpPOcf5W2ga4Y0wE6iHQMpiOO7LQxpp0IM5JIx1rTThIzI2I7BjMriZ1JCtMtjGljbTsV05HEdPLEtDMpOmJNhyRpi007RdHpNEi6UqRFsT4tsumDeT5LMXOQYt9ucn002T0sEdi9yLLfPUTt7MTsOK9X0Ht2YDGRoEREREREKBHBMN2FCStYEYxZplmszDP/gJB3hIYxaiyXA5au7SKSU+QhVRIZ/TkMxohyGDDGkGBIjCNsnuH0HsyY/r9Nj/iEx8+XCkwfc3PHpohAZkEkVVIEDStgE0hARAqT5LZhkkKQ3DTyTtotupKta2frpLt+PZ3nvsm0RegapIsxbYSOIB2MmUFog7QNZlZg1vjPsbOI6YiYGYxtp4npFNa0MbadYLoWMytiOpkUnbyRzDYl6YjtdGyRdtJmkotNCimyonXo7pyzKLZdR67qkLAb2RP7WURERERErSICXQNGIDEsg0JRYWoDcpLotZbtOhj3n547GXgDo964KKXxf0tJBTIEbEdA5pM4M+LsX0SfCDDB3wAmITWQktAwSnKSPiLUu2gfKVqQEKXBZyliwVhBJHGVZp1aVJjEJgVFLtaKyQqTSJ4Xti1I15i8M3PSZEeOkl/9ANN57ptog+RgOggdjEwnjcTYXP79PS85evmOHaR7FueWi4iIiIg4noiICPky0oLjEWYAuTFmIfZVKxgxX3sySMlbZMNjTKjz9EhQBf2RwaqP/uVJT0h4jPdomd7fSTZHdJxCNPe9KkRJ/4mrSqfoGBrjhum75Grg8v3bYquLiIiIiOgpInXWUmrs7Fo2IrUkoMKeD1Y4ZH7hiJTKJlQ0ArdPaOgDd8/c0dWuoJJ9D7+TXjxOT8Yp/1vAgrUgznFSGKELkgvkCLlgciN0EXJrJEdMG2iDi2UB2gIdA7MY2oh0xJgZRGaAWYOZxdi2YGadC8h2keQwRp6XNJOfFuHu2O0iIiIiIuaICAPiNVJvRqUUfFoiKWFciZT+XforFwFjlnV1SQHkOLVAygTAuCv3zL+fuCeBUQ/JwZzRN/VGn0AxqDP6fX8r97HBS+g64y+5ga5AIZiugS5IIY4gquEXJQHSBjqCmRWRTmJoC2ZWXR9tI2YGMR2MbYuYGTLTNta6mBCxHStmNiGZlazoYMklSzpJJ+kmWTuXIul0TNpNZ9O8PXWo86ANdN74MvLlCix97pvWbUkz8xJ9poiIiIiICCUiqoiYOQ4RWHhhGsiN0MAtNkmBNAES02+jjemXSua9u1Uz2YYMDs8yuYzPcHJj0mQmDcjAnDrg/pjzYViwBQXQdY8nXWPoIsYZfiNdR5ZMF2wbcATAMCsiXRfYSRukgyMAbaOrYUTsDJgOmHaS2BkR08GatiR2htR0DGY26SazhrwgM52ik3STNMmbzU4nn026aTPJZ+9tdGc2HOzwbfK51S/3JV5e1oxg5y5XpdcHK2H2by6pQHv729iW8+hOHyFxLcy2Y7eLiIiIiJgzEkboln37AnYsIZm1/Gqa84Fuk7F0FiMZKSlpXpCahCxJyIqcRmpoWEPDQiNxuUYaaUIm0DCGhuhnCOl+yzoxfAxg73Ys+xZ13z0Fxtg/bt9rTpXCTAmmYxI7izFtY007N9JOMLMUSTs1eTdPTJ4mpiu22zGZyfMk6Tamk27aTPPp9FD3pDG6e64jZzXlA1ECwC7MTv2gLzfI9tLR/SRgXi4Qj23X9X++G2BXn6LEPBHMwO4RV1VdtBP2XErxvH+zM5Cg7p3a+4qIiIiIOMGIiK1xzRggtdz6vBu5daUuvhwJwN73kuk3rygBoEYFWIAE1BKAclKwMgHokYA+AgBIZdqO3ctZISvX0CxmVhCsEpGIiIiIiAhwrpncGCitznD/zGAnJPeD9DYXixHaUPZUBa3u6P153X7M9oqL7t2H3c3yqA47LiPdvxlTlw20jgAMoQLMhZ3WqgDLZbh33yd134v+qFBb+giXx/Ye4dpyHrLtOmT3rh5RGnQxEdOhAMR2YreLiIiIiJgjIm7VREWACNDp0t0N9jIwL1fisKDN3HNsbeyeS5eYi2L3qq+jfjO/FNLgnlfKRIs6tWWYslrgh54YJoXp2gIMphu7XURERETEHBERyCuTjwkkKXVGw3zsor4sWJVQkYLztlTMlivSbe5Qc7ur4ly7ambcNeuI76v4g8WRBk8c5isNvfU3y0EaAuzcSXL9BlrT4xvH0mZnvDDNsZRirEjtuCmSccROQLKe1E6ITdYB6zEyaazZIEbWYcykQSZFzCRGWtlYsqnbLv70fS+Z/o8dl5GWCaKkRcfmKYiJikhERERERKCIuBUkVKV2N1BnNOQp+47tqo7da6M8F0caqh4w+PdFO8m2nEfj0KEN441Gd7xBY6ybF+MmseOJTcetsZNCMpkkdl1RmPWJMZOCTGLMBoOMg1kHMglmQpBJxExe7f49ZkzetCRNpGgW0ExI0qRlMInyTJPOS2kv2lpE3LvNDc0JQzGTPAAqVtEAFtO1hVBQREUkIiIiIiIgIjJf9RCXhh2RfrLhUoAgVz6ETaT8lrUg0DEJLgmWfxdygVwMeQJdEfIkce8i5AWQWnISChIKYykKg02F3BosVj8vKPIE27DkJqUwOUU3wbaa5LYgb89iiwTJMuxEguQp0prCdhOkkyLjLWy7gay/CzvTQI42kc2bsQf2ITvALmlfHcG87I1k32iSbpnanNHI04NjebbB2LTo2KwwzTGxRYvMtlLSscJIM8ntWJKlY4XYCSNmnSg5AJk0YtZhZFzErDO99wnBTBiRdTNHzFgjtU2KpJVjGyYxTWPShmlBlvZIQ4rPjRIsoA5Ig3uXuX8jLpOb0SXPYiHviC0nc5tL5Bb48HzyNgN5t00DI60+KSxAKqZjc0iMc82UV+1ERERERJygRKRI5hMRA1gBEievBy4TH8e6qZnwqlbas0tWvxDp/1voWXy1PEVq6EpKx0AXoWOhY1yCr44R2hi64ohNJ4WOTekAXTLaBjrdDh0xzKYtpjOXIGu6XTAjltlui9nUMo1hdjZnxnSYuXeSmTRntlEwe/AWppvnMLPnAqZZwl4nOy4lue3idRvHLVumJ6e3GOG0lmVL23K6SZJToNhoUk7Cmg0WOcnABhKzwVrZkGbGmNSQpMbteKzvJknUwLtC7CcPPhma0XfxeVFcXlRXwCJa3GIQ41LEuyoqZ34N87VJsP9PLz9MUlJ3TOnfYQZ3cdvemPXlctq2w1W7xXSTQmxKEhWRiIiIiIgeEUmk0v1iCiCz1e6XNMFaIT9c8CmT8orc7drbsZa8Ycklc4pFq0k+06VoWLrNDHt3hjSmsJvHKDoZ0j6ArG86tWLLRuyRdcj2fY7HmJWO8/jG0n6+Zw8Fe47eBdwFXD/o2Is+Rsa3yZjanJ002cm6RXfMdBsT1uSTSWHHxSSTJpFxJJnA2MnEmg02kXVGzHrBrDOJTCJsAMYRMwlMAOMYmUTMuCDjGJpgMgMNkzpO40nOQGHHJ4BT5tj/b/oSwgFWBDGGhHJ4joCIrIPSyqVdympM0UWSTmFisGpEREREREBEhHmKiBgwFmy36F+yuwsXutDNySZaZF249/nX8fljcJ9GeopMJXYNIC79+8gt/72FZ/U5R4JgU/Y9hRzI4cCyXXTHZaT7p2hsWUc23d3YSGc64yKNCRrFBJJM5B07LkYmMx8XglkvxkxiZQPGTJrEfYbIhIiZMEYmRMy4QcbFmElEJgw0BNPw5MakJElqKDpOjQnIjHF+O1ObMVes6ZhEOrnpdmHNxPxERERERKw0ESkHpM6FAAgFabXrQlJSDQ4YuwzSB0PyiIo8I8OQhBrCUCYNYhYgEvehYevb5m4u58juerJSt5pm3kqaAF5l2LMDi0F0VYrWzyGAe2BmyU+yYw+Ne2dpNI9ubMpEZwKbTYgUE0bS8W7XTtCxE4lJ/jZtmLOLrlijLhwnqDhFpAopSbfAdjKjrpldSGQjERERERGZmOolusZQNPN+14xPYGYSMk2CllwKxU6QRw5IUBbtDeU9eWUZymReGrHaDLADsOU8xJMbDLLHEdMOHJpy5GY+nvOv63abRObTRmPWQX8gqn9OaXY65I1OUaRx+W5ERERERI+IIHRMhYWzQkFWrYgUBW6TObNwLpGIFSQ3PTrijf5SXU+1eVD2QrLlPGTmHlog68XO168MMgHqlto9dw5hN3Rnk26aSqeVZDFGJCIiIiKiR0RMlSLibEwheXWwapaoa0bInK1Zlhl+xOojN716FaeY7LhsczJ9ZGasj/IYjLjVPeP673mEKGmYHMtMc7KZlwlURERERMSJi4SKpGU+RsQ05uI++gxLYck0RiSNNuXEwsE7Z1vGyJgmmwkoi2CQsZe9gUYfnVW0UmOBo/fOHoj5QyIiIiIiekSkYtWMNyPFdKfaNRMoImnfTDriuEfWLJoijEs5RERAMGP3dDe3qlpENzUWzJHWTGwrEREREREBEWGAIjIxXnLN7Jg7wAWr9seIRGHkeIYGwqapbRrMmAQZVs3cQmXGDrXazaqfj08nFuTIkeby7LocEREREXGcEBEppXj3icSMoUhmqhWRbuHkdxGynT4DZ8RxDR+0SiObwJBSoYgYZMzYvDWf1UInM9YYOTp+OCoiEREREREBEUkHKCJ3TVQTkcQ4ImIM6faLIhE5kWAknTAJpo9maOJ/MYynqXWKyK5+haydpdaIObr+jDkiEglJRERERES1a0aNS7FpunrVjCciQHbgQC+hVcTxC5+bJKWYNAmUNsUzThExjaLVGINAQdGmMXMotWLM0f3XRddMRERERETAKaqCVb0i8tkznSJi5h+Q6dYk2dRUVEROJNjCTprEbdo7r1kkkM0mldlV1zcOWBE52rcPTUREREREJCLlGJGAbBS7980pIgJw3X7lKIEicmonEpETAT5Dq5BMmsSUFREQxCSQmmIS+rO7Argg1eTInh1REYmIiIiICIiITeiWp6jGgEh1fAiAKWioGUpnT45E5MSCnTAGTEkREeOIiKR2oupXW76NJZUjVcnOIiIiIiJOYCJimCMiOuOdwzylZHvP6DT0PWsWcdnuCYHtc01m0qTMDwoSxCQGIancgXc/WGPlaCzIiIiIiIg+IoIltyWjollTu+E/Q6QaI2KEVMbifjMnBPZqYzBmUuo0DQNi7STM32xv+y6skeRwXZuKiIiIiDhBiYhXRGSOf8zNdbtQvRpGmFu+mzVsNConEsTa9VVUwuBcM3hFZHvph7vAGjnUa0IRERERERGQJBojMm8H3rogVkCsBqsKqW1HReSEgjHr6miEMWDEVK6a2b0LSYo5IhIREREREQFAJkIexoj4P2r3oCFYNWMw0oxE5ESAX3abJDKGmBzm5ZjJxYI14nbg3Tv/HIUpIhGJiIiIiOhDksj8VTM6u+0C7Krw5ws0xP++TVZ3XMTxB7Gc2VhnsmzcjDUmTeZf2YQZa6wzmUHOqPyhgUbaikQkIiIiIqIPWVfIXX4qJRIyxyjyuh8ZmdtrJjGZIyIRxze2XecUETFyZfugfC8vpGOkt3RbDFY6NBGzD2A72H0lDnPFtw8djiUZEREREdFHRJKUrhGsMaQSBBH6RGe7gN0Vv/OcpJNEInIiYPdul4jsvS+dfhPwpmGP7/8wJjOLiIiIiCgTEeeasdCL9TDu1QXYU+Vy6cWIJEkeiciJhB2Xke7fjKmKAWE7bN+L3R0JR0RERETEsERELLmk2IBtiDKR2mBVw1yKd2OiInJCYc+l9Rl32Q37YhFFRERERIyAJHUuGDFzLETfrRKRHRW/EiUfQpLnc8GqERERERERERGjERHJyBEnpXsSYgCTLLx810CSpFERiYiIiIiIiFgkEcksXQPz8qP6hGab98+PETG4FO9iSCRxsSV74vLdiIiIiIiIiFGJyHRBLqYvRsQlNKtQRA5sUdHE7zUDpllERSQiIiIiIiJikUQkG3PLd8tf2KI+jwhChkAC5DFYNSIiIiIiImKxRKTIyYV+RQRqYkT2zP3VEHRvEROJSERERERERMQiiUizgaUii6oM2PQucM1grBKRHbEwIyIiIiIiIkYkItNTWDHkoSKiJGMeEbmut7BmjogUURGJiIiIiIiIWCwRaTawRpwiYoIU72bA7rs+j0gSXTMRERERERERSyEiyToKmK+I2EGZVQPXTGrd8t3r9sfluxEREREREREjEpH1d2ExvRiRIMPqPCKySxUTCw3RXXqtrprZHssyIiIiIiIiYlQicmDSuWZMT88wCKTQqf2VumaMYyXRNRMRERERERGxOCLCeRSiq2bm9pmhl1k1hOn9kQXHNmIxRkRERERERCyKiOzY41wzpsQ2Cg1g3dt/vOghcyqIMZGIRERERERERCySiBgQSqtmhJ5r5rwtvZU0c2xEXEIzABtXzUREREREREQslogAmFIeEQBJ57lmwkPmyEdioyISERERERERsQQiQmmFTF2MiH5nhBgjEhERERGxJBh9JfoyxF3cT0hkACIUwbJdtximhojsgaQZKCKsXdeMAZcDpQYFzHdLLdO58+OY2CbzuStF7GoREZF4BITD6ouKcTatOCbieCciPkbE53ZXi9L1zCPE5oswh+7sLd+VteuakRUkBCt57tWMOHBERETUEZCiNCmZADbiVHUBZoCDpWM8cYmTmeOeiAQxIkZbRJ0isvkAySFIPYVN154i4h/xVOZv1Sfa8LvA24Cp4PhRzn1/4PnaeUzp3FPAfwPt42ygEeAi4Hx6OWiawA3AB/XZI0mJiDix4Pt9ofbmIuAZwGOAs4BTgJYeMwXs1zFjn44bXwtUEsviVeqIY2MHQvfa0KqWVzZy/emcJlImIv6Lb91DZk4i8R+swRgRz8y3Av844LhbgA8Exw+DVJWQnwL+dMBxHwW+dxwZZ19GLwd+rPTdByIRiYg4IZHquJAALwV+GXjYgOMngM3AecALdELzv8BfAx8vEZuI1QdZLFHM9NddE5ANEUjSakXk0CTZeiEV5TyydvOInKSkwdIf15DjyNUz1IiOEjzlO8h2PU/B/FgRAdYdpw3xqD53HrSvI7F/RkSccMh0HHg48Hrg8cEYGcbfJcEYawMzZHCK6vP19QbglTqepERXzWrEOpzKtQk4EzgHuAn4z4UIpFNEgg3uBIwFMqmOcUjGSU3eM9xm7SkivtFv0ecvkwUfcPnUEdUQL0NtAh6t505LRMaTnpNK93K8IIE+V13G/ODViIiIE4OEvBj4F2BS/50o0WgMUFDCsTIkJi/XcfWFwM1RGVmV9f1LwJ+X7No7lIiYBRURAjeMAWMF8sQZ4B0lqWV9m1TSwLjIml01sylQKMrGVIBtwLnA9UM2eu+WeawSDRucq1wJm2PbjViFBD1laavFIkYj7QnHX1C7Hwd/Qg0Q9OJDLL1Yj0/g4kBuBO7V708HLgB+CHhI8Fsft/dw4MO4OJPjybV9vGBCx5EOc3lROTwsk4FSHhHrqr9SCZjNyFo2cM2s3Twig8iA7zg/hAuWGqXBX1xSP0ISIiUSFNfMR9zX5MO/Ck7MlV7Hurz95OR4XGHmFeQnAP8WPF9KL1j/CuCPgKsHnGcMeB7wGp0MFqqi5MCDgf8Bnqx2a5TFBBEriyKoZ88v0mEbDkKfIgJQSOYGpV36+S79arxLKiZQRNZejIhvtKeW/n0zcE/p2GcEg8YwlZDg4kNCknETMFtDRCJW3sCWI7lXw/0cq2slpVeqrywwDt5nvwknrX7fGiXJ91V9j1rehZb5Q4BfU6O7mPJeTe07vP+NwH/Qm6B6cmKAVwA/rCTEu3GzinKaxSWOeDzwXnpKnXcBPAr4k2DMPV7HrbXWZxZ9jkR/3i2Z6qJOEZEGKaKdyvSpKmudiFwTsHRfmI/HLS+zCxSwn+WcjXPpSPDZu5ifuGcQEUmDDpqNwipHPOfxpMYkwTP6cq96JSxP3Eq5PJOaTll3P2aZ68CUjJ2UZt02IBxe+fAD++OAfwC+DPxf4JLgGctlvNR2mSxT2zYlw2Vq6pvAyJllbm9VdbtQeW/ABV5epuX997jl7gzZJk3wPDKgXaX3UR+0wKuBB9GLCfExeK/ArX7JgmPzoGzCcvLPcQ/wI8An6bl0fFzfrwMXUr0gYKXGwJUYR9PAhg6qT7NM48Sg64VjZLqIvjxoHMwGHe9WzVi6pG41rgHEUNisWqbtdMkaGclcindZs4pImQzcA3wK51rxg8opKjO+m8GBq75jPTmQEDPgVuBjwG+WCE5dfAqsTDT48RhhngR1Yisa/zjOZ5nicrZM43yXtkQeZQXKM6Xf1dHERZSnuJVFM8F3S1kBECaKyoPnmtTnbwSDz5jOVk/Dyd3n68zy3NJzPV8NZLlMl8OVsJRzmGDgKirKrKn13dLvpvVVVNTLUtpc+Tkaet3xwGBk+tnJ9OIeLtDyPjM4R6HE7/NDGJq04rnX63W6uBwc7aAd+NmpPUZ9scC5TX6JXiyIJwlXBCRkmBgkCcbQDvAzOlGcLBHMXdpe5RiNgcUyl1k56/Q6rU/ffsNxYqntt6r9TOgr0Wv569khrhn2AX+P0xXHtelfSVmJeatmtOkWzaL6h62MtPC79oJZg6tmPNM8taJhvA94Lf3r35+hRMQMQW4uDhpsBnwWF+xaZpeDiMiz1FiEBvNmXGDXYv2hl+igGJ7zs4we/7KaEHaE7wMegYuq36r/3qxGyQcEHsIFxn1GB8ZrSiRyFDwbt+rKD7Q3KIlNAwOzGfhR4Jm4vAgbtf6OAt/A5VZ5C3DHIu8hTBR1Os6n/jRV5LaoYU5Ls5dmzeCaB4b+MTqjvblkeLfqd2EbugX4yBDt0t/rOarAhOf4Hi4AcaFzhIP2euAH1bBfqAbwfvp5Ri9L5/eArwLvx0n8M0to7+GAvFXL+8lK5E5SQpIExzZq1OIu/bETz1ODWgwog/Daz8Tl2HgkbqlkU787inMDf07b96fpBQyu9ETEj42/rISsCNrTjKohnhSNMn55MnIT8P+A/xN8JtoPLwC+skC9ZsCLdDwIFw+8G5fJdZhxNcOt2Blbwjmq6vNJqvo8TsetMX2OaeDbOJX+3dpHikXUpwn6+biOEc/C5XN5gH5mtFzvBr6pxPh/1UYUJVLry/mJOA+AV6nauIUaZXVvK/CT2h9Cz0ACfF3HY3f8u87ljz/yUOSKc+m8exty+VYOvfsHHHPfqQf59ysfwrlXnEvn8q0UHz4PuXwr7wS4bMd9IgcutsOsU7VC6EX4vlm/+7b+u6vv1wcDihlwzgkd+MJz/qLKsTZg+aJGq3w+f41/qpDLvqsDzig+ON8YHlAjwV1UI8Evlm2DW6rny86X3ztLz7ccdWh0Rv/7uOj7KerdMVUvi8tue/8RZPGwvr5SOt97S3XzS0FbGPS6HfjxRdSDP3YD8MfAnSM8ez7EMb8Q1Jmvt1dWHPfRIe/dn+M3K86xb4Fz+HLdqMTurUOWbfn1df39KPVdLu8HKXlsj9DOiiGOu2DAfflrPyUgF8O8PqTEcbn6+EJ9Yr2Oqf6Zff9/6xLvwQf8P1CNs5+A+PO/dsD4Et5bp6KMHjFEewjP0V7kOarq82G4PFXD1udnlUAsZrwCeJn2gVH6zKeDPkOg9oFzL8oSXz7pZ+Yzq3bDnKwIxUzDsa5dILuVsu8GuglZakiNy3uG8ct396yJWbRnrRtU5quS3T4E/FzA3M7RGe2Xa1ivlyUfrrKrZ4hWB2o/O5sIfnNywCxNyUXwr3p9Cb67n57/syMwYn/+HwrIkZfpr8VlKlyLezj48n4F8NOlmWY4EwtjB2xpFpMCl+os5NlaHqPMlA+pQe8q0z9Jzz+BWy1waSBLNiokfX9fpwP/pYPcG4asW//8F+CWR54fPL/UqB5+dunjC74OHNA+MIVLEnW3KmRX64wI+v3vXrYtgjIcNVndbEn6TYY4h5+JnQ28vULJIWjXVeXsvz9Hf38ObjXGsP3IB0j+CPDPOHct2p+SGgMoJffENXp8C7ec8YiSx68CX1BFrUoh9b//HXr5GUJy06A/GVgeGIuLVbH5dZ3crJQy4tvjRTpOlRNE/hdLi2/w5/uOktZn0h+k+lzgVQxeQSOqWpxaGgdGWSXmz7FpCefwdfBTWicTpfrMSm04TAz5aFXsX+N0gQVT3oe27i30Yr/qrgf9MToNVTjejsuK+0ptryYYA2cD9d8/X1ajuFYpXV/qm6mIumak9wjFWF5TwCmpsUG8hFkTSkgZG+hlNzXBQItW9s8HRtp36i/XGCv/+x8KCrmpg/qNOpM7WiIi69QIHCl1OHTQulElLRsMaM9WImJG6DgAz6F/N+BUn1GCQXYt4u2qJuQqZzaodhOaUmfzBqqr0vblKvEfGkFeTQN5ONPBaQyXvOdZSkBa+urSy5Owgf7cMr7T/1+t2y8vQIj8d+crYd6i50+DZ/fuiHv0+g/S40NpNAf+FhdIPUwbguVJVueNZEhmFjqHr68vAV/USUGiz5MOqJ+0ZMj84Ltbpf7/GsI4e7fej+vxBMbeE76v4Vxt09qvf0D7bhrU713A74YD7xDl7X//B7jlriG5Ctv5Ub3PieCe/DM1cNtYyAhEd7GKyNMDAub73N2q/g678nBQPYgqCM8MXE6i5b1twESx3GdDorTYYNXFnMOX/c/qZIWS0feY0vfJUn36evtDvfarB9RnmJn2f3DJObtBnwivN6PnaOorDGTtBnV7Js4N6uvxJHorvhZ67nI/ben7rf5amR7ZoaSIJK3qBtsoSPFyiDs2g/mJz1a5a2Zj0JDDDg1wlQ4cmwIj/QxcsFVVZ/Ll9NTSYPLhQAo/okYjJEIb9PNQEfHE4MqAiPh7fhY9X/Iwz1nocz65JHGKGl9Ym+vvfR3sUwO/SZn5N3Qm/xWcn/MenYVOKOF4hsqMY8Fssgt8v86ofofF+1/HdHB5VjDz/SzwRpU39+v1zsG5614cEEw/O9iFW9poFrjWBtUftwS/NTro/46SoXISoXPVLfIyve5DdYB6rc50GkFbEFbf5mJp0C8uDAaxa/R1Hc7NNaXt/GQllz+qJMyWZpB/g4sbuYeF4zIuAN5E/6qCRNvZK1X1DMl8Q2evu3VMKLTtPUnr/j90wA/95UXNtV+oJCSnP97nm0per1JlJVVDsR2XgfQBwbNaPfYaXPzIcpMRf67H0h9LkAaEeKm5PnzZf77k3vATxUcNQeLv6/Zb4Fxl/xzcoydsd+DS4H9E27UBzsCt2vx5JVreFuRKTq/WcbyqPpNASXuqjknNYAL0PSWo+4DbdBycwLmqH6eT18dpW/aLAX5fz+NJzHvVfs0G5OwRuNilUPG8AbdgIyn1oVyV2d6YfvlWfv2jD0UuP5fOe7chV2zl1svPYb22AKMOoRTgf7bx6PdsQy4/l+4Hz0MuP5cPQy+GZJXDN+BnBwOAl7R/LzjunfTHidwbEAlTYRzO0ME/9ME/O6iML5a+K9QoUZoR+vt7DPOXArbpZRtMhnzOZwbX8zPC6wLjZZa5XI9FjEhY7r+Ey8XwA0M+y8NUbQrzOVh1U5w8xAzHf/cpquMtwrY06Dz/GPze38O0GpC6+vVl/Of0XG1eZr0X57orqxflmcgfBvfp7/3PFmhTvt5+raJu3126NxY4xy8Fz+2v/74hzuHvbSvwV0quh9mvqQX8XVDfYR39fwu0S084rgp+589xDb1tGsKZclr67Eo9PowteMECz+uvu1lJhi313ytL1y5jU6B4FkE5f47l33IhXAV4d0B8fBm/bpn6frgtx+GK6/xDzXXCmMADpXYg9DbgGyZGZJ1OKEY9hycbLSVm5fH4MzpRqsOkTnLC31lc3OCGinHc/32q1klRut6ncC7hhbAdF/QsuHCBYfr5KyvGiDcMK3mRaIr3ueW7gk3WVbPmzJKa/mLOcNO5taSIbK5QBMJZ5HsrlIUnVVSG//txOD+/n7ncpTNhz/aOlNh93X4zXqq7WiVfEzTAps6shiEipkS4whUmVwb3uVYzEvr7/n86CN0YKEphgqQwqVRTpfGfoj+2QHQgfcKQZVt3P1299stxQVhhHhETSLDG8XYOl9wH4zqzqyJDvh1uUlVDShLxH6hxbAUz0nI8R4rzL38hGLBzdRk8IZjFrmYV7Gs62H08cEnU1beP5P8NPT5MrCW4ZZ/UzKC9evJk3OqAMFamq7PUe0vSeV5yiRSqgByit6QfXGzAJupzE/n6eyW9lVn+82tV5bmXXuxRmDytoWPPC3XCEWbNfRRuhc5y1rPvK2cqkS9vZ/HNZW4H9+gMntK1vn9AXa6Gya8FXqJKZB7c9+2qgt6ibamcEC9Tle8lqrCHS37PwsVuSI1NehK9eCbfDrq4QPQ76K2qK7chP0ndi4srea6OEeWl4GFOlTF9n6x4/nH9rsWAHCyJ1l55p91idqYmdiAh1ZHVB6uuxRiRTQsQkQ/jfGdpUPjPGODOuLgkU35SO42XsQ5WGNHNC8jQVwSdy1fYc4bocCaQ7J9Gf/DmWnfLVJVVaOzLCZLC2WRHj/+Muk3CHCRh9PtiVCKrdf3HOHdMo6R4hIqJ0ZnVl4Pf+rp4SM09+AH/KfQvw0511vzvekyH+tw0/pz/Xqp/AX5rjdR3OcGTHVDfeUD8/ql0DoNzV43XEAL/7xfQvwIm0QH6ar2HTs19en/8bbhlkCZon1twyxmlghCEhPPnSscYldpntAy6zE+e5oOnZ3BLXcvbS/zCCvX9M+l3v4SGdrkmHt6QHqggImeu4jHNTyJ/I5iE+rb0GiUFjUDhDF95MGn4bX3+0MX+UupdbWczP1D/ZpyrxAQKX7kN5UG7S3RSfoD5OZeKYLzNmZ9/JBwb85qX9A1wJimleDcUXO8ertxDi4IsCT4UVUTM2jJsmysGnSPBbOa79PyRBEagWRrUvbJwUelcH6A/SPJg0FEW2m/Gf395qUF45eV0Bmd69Z9fgHP/hIPD13UQXYurZeo6ec7wMQ3eIHy+VNaG3lLexdxDivODvppenI8MmEUabWPlwfOkBer0UUEb8vX3uaDtLpSHA3rZg9PgXp6g0nPB6s64KwHxGDaJlSjps/RnqNxEvTvOl+3Dgzbjr/cRhnNr+mM+UzKcgnOZVk0oPOm4hF5GZ2+8rtVxZaGN8jzZ/aAanTCo8kk4N7JleVw0dQqzP/e9y0gQ/DkPVXy3kf4YiNU0UfKpEs4J7i/VycjbAoJaB5+h9is6wQ2f7zwd56WiPquyvo6SAqKo6DMrhnl7zWjryi/tdca+RmQSsjC60rAmd989taIzHS41+PcF34vKf+F6/9Bv/RB6Sye79JbtygBFZNOABmBwcSXX0++e2aCEyDDYx+wVHEN/5tHQLXMiodz5DlQcM7nEQfOfKup4kEGtWra6UF86s2JQ+C7zVwYNIiJ301vK7XFKMKs0x1Gdh2rndKkcxqhe6uz7WyMwsGH7+S7DZ+QVnfGG5/A5MaoCK21AREIlBlxw7bAEItVxaF9wH1bJ5qNWoJ7X17T76RWo1+mKazVV3VqtbfD59OeVQZW1Q/TcLQvZaYNbKUdgDxLqXcq3Bffg29oDlYx6BXcYknFMduN2RETIpb8bzmdoO+Z+0AhLWKRv8Fztg5itIAFlpu2P+V/6cwEYnKuD0sB/USCVojOXG+n3qd1VcS8L7TdTds/4KnruAgNhmIGRgLQcb26Zqk4fBg2GOx+H5SWlGYip6ciLHXSGLdtRFCkJ1LoyOiPWZ0hMTUCAxtZgnYf7XdTtdO2fuViAnFb1wUaN4jCqYkbFzLRRqgNTIgumZCg+zWirT4zOostj38NWYKxulsrdLLKshkGnos9lrM4JsbcbT6yYLHx6BHXCj19frai7h9fYuM/QH4/if/cm3AqnDv35RI6J8jGQiCRCV8StkDEVCklfySa9Chf3g1TWzg6IdW6RnJ6M6BvPdSVFAtx66jJLrFq2Ww4Iu2cAEZEB9/ku5rtnnqIzkCoZ3bPrBwQzH/+c38AFKsLxtf14SLTCoMHVtgR1OUjO4YrvTlnE7LVVMbgfXUPlUY4RqXLPmSVOkDr0cjqEffLkEQyIoeduC+9tJjCo5biKs+lf6u/j1G6meoffupehF6MR3uuDV3BcXY5yH8pm1Rjq1UaSBbddx4MrJrA3UL9rc93rQEkhgd5u2UUwtvtls+/Tv7sl23AVbiXOk4JJr7dpyX1BSlxCs4S8lIaw26ePhKVb0OgzsUK29yIS9q0J41beedejHQzyElTOB3CRzh6PxEnYt9JzlTw+LEv9Tblz3lPRMTcNwaSvUYXl/EDaOwMXK/JB5m/E5xvbD9Hb88Hfx7vpBT+t1SRmVQbJz3YntH4eiwtEfIAa6Rb9AX85Pck9XWOk7IaKAfmhQyosvm2cQ89l589xgP7VCKtZAQnjY87W/vdwHey3qKKQlRSqBj33gRlijPDt6ttB3yNQFEZxzVxQYTC/RX/gIsHf3xf06yQgoDcz/KaBnuTcVfHMW1ZgMtKuUAUNK7MPWZX60l0h9WU5Jg9nqZ2QUhu+aYT6DJX1sntuc2CnywHDr8St/DqJ/j16MlxitZ9V+/IRtVufpT+M4FjsUxQQESEXEzCPINNquddaQ6Okf2YHDszFmqxm34yvpMlgUCLo6LMVhOV9uGhlXyHrlEX6VNOPUMbrAxbvwAUPUmow95QGGwJjaAcYWe+eOb80YD1HiUjdzODZpUHVqyur3dAshoScCfwKLq36gxc5WKx2+Lr/WGlGJLjN3x6GC8gcRDL98TtKhDfVNjtzLAeeJdQ3Wte/gJO8x1ZorACnbj6/1I+eh9teoEO9q8R/3qQ/n5AfIvdWjAcep5eMLDqp+C8GpzEvE7Y8OFf4m3XLOA5IjVLn733dCtRNFaGcZWXiUZYDm4I+nAbl83pcnNgwMSJe/dvYrxeA2rOsRMRCVeQSegkQwxU0/n4eqq9fx63Auwq3D9d7Apu44oniMlDXTH8zmjeYXbffPXhmAteMK45sampNuGbC3PvlDnKIXor3cOD/LC4L3f3pLcl7ZkBEvFvGB4BepY0rLakRBys6z0nM32+myvi8C5fVLsz78Qx6mUHD5/MqzZODz0K3zLHaFvxYGaWfwyX4Cju7X8KYcPzADyxX4yLnn0D/viJ/ru3SL1m1pZmRl2efpIY1THtu6C3pXc1KSIELGP8nesvlCQjBcs6+PeG5DLfEckOgSJ6Fy8T7h/Snwxb6A1K7Ool5cEndmMZlv61TsdZXfNait3R/sWRBAnVoubG/NL759nXKMhL+Ihg3yzjI4N2L70usq2nPFy+RAIbZuJOaMSPF5dB5PC4z+CWlc5TV9NNwuxS/CBea8De4mBK70mSkp4gEMSKDZC5bbshCduomEr6zZgb19RWN43DFbCPF+Yg/ikuC5T/frjOUGXr7y4TLdqs63j30p+P291Heb6bckIzOdL+Kk3i9gXmIzoS/EBhlP1g/XhtUaIzeTS/h1lp3y/jnfQ1uuSyBUU510O6o5HgTzk8+E3Smjs6kn7LGSJknmr+Jy47o3UpWiekbcbkKpmsG8SeoYW0Eg1CGW1nxHua7+VYTCfFp6T+Ic02G9+ml+u/gEp59N+jPvh9twCWCa40w0PscLa/CZcLtBmX+B2p8Xz/gHC/B5ZWxgULRAP5e77FOfRpbwPiM2mbCjR6XeyLi7+e2mgnV/Zex7YuOu1Uqz3dKhHW19FevZi13fYarJge5d7zieRMucdp2VRKfSX9smTB/dcx5uIyqL8Yl8PvuSpIRp4ik/YqIjxHZFVT2dtzmCWJ7MSKCC1ZtddeExB3uM5OVCv1QRUP2x78Xt8urVyQeiMv9fzO9CPQGzk/6sZKa4a8xhQsGDNm8V2aOMHi/ixy32uWCkgF5VqByhPf7rAop8Hhxy/jB+yeVhIQ7yhoty7/BbT1+w4Dz/GpARNaKe8YPKp8Hfga3o2YazNR/QcnGm1XJ85vefZ+qID9Bf4xFhosNCXd6Xq199mRtw2cEhN4b+PdqnX+O+oDbCZ1MtEZ4Vl/e/6RKzCtKfeh1uAymb1XSe0QnF1tx2U+fHhzvScgncXvHDBrQbY3RWuoEwo8H91QY8qUSkVtx8QtbSuc8Z5mJyOklIuLL6hvLqLwsN0krBrQvWUI9+BijexdoG6Eat1dfp+v493Tcqs8HBepeEbRPi1spuhen/t+8UmTEKSKW3Abijo8RqWwRxuURCRWRmfaaksFPrWCkBwdIgXuVqGykJ/s/Uc8zTm9DoS/Ri2wvV9S0ztJOKikz6xmcfdCf53J6uy36z56tM66C/p2Cn1bqwDfQS+C1lt0y/hlPwm3WVk7icxvOf//FEnEJByivCE2u0TLwxvGtOvD/DS4w1xPobcBflo4NBy4/q8/UePyIzpZW62Zh/rleiQtM9f3Pk5Ddbr5UW9/+uU5ZpJHyg/Irddb9Kh3EfVvcrq+q8g63cPck5BJV5wbFBZS3gzA6/jwNlwNmmJiCQX3o6DKOBf7+7sGlLNhCf2zc+fTvMr2U+0ZJXjO4hr/O51fxROtoRXlZHau+HpDqxZbLLP3ut0F2xLfPO3DJ1N6mY+EjdbLyQp1oh/ygq0TlLaygitxzzbinMqZfEWH3/JbX8M1CLXnW6a6ZGBGo3mfmrgGMcz9OCn8W/TEaW0uV/CH6d9CtIiIhAfK7hA5i8qF75is4d4zHw3Wm9k168SLn059NFY4ft4xXh15If4CwH5ReriSkRS/9ddVsJF/jhKzQ+v6gzvI/poQ2LbUbb4R9WwvjKN6JS+s+yEWwWojnepybI1zNkuICyXfRL1FX7UJql/h8PvnT63XS8QbmBx5KSU1NgxnmNG73250BCRnU/u6oGBMmdIz69irulz52KZwgnIdbvfadZSBQ0Nvvy4+LiY6rn13FE61wyW3YNw/fB/UZqv1eTZ3CuWf34dzdv6j9yquHfp+kJ+LilK5YiTHDrXZJXYxIYIJzgD0VBtLY/hgRY0gnJteUIlKVv+PuGkLgn+u9pX9fBPy4/u191B+sOG+4RO9whWy3aciObul3rxTaUJ5WYrrPCAbE480tE+ZyKe//8RVcnEOKc5EdT3lSqvpsV4noFTgXnx9kvqjtLKF/j6FZXE6c/6fG4kX0fL7HkoSYUccm3Mq0UI735/h7+jd1kxUu759UBcqrJPdou2sH5e3dhEdxrqI/1vv3e8QMitHw939LcF1/fFPVroT5m92N+jIr1C//t3TfBU4xflqpPhdLSBP6VyB5kr0XF8uTrPAYZxZZLrcFdR+SpQv0npv3QX2GWyWEiSAPAX8B/Bjz8/KEK+6W3QXWv2rG9C/framOcga7ZHpmTaV5rzL+dy8gaX2IniwsOkMJ2e0t9PbwsDUN+J6KRnrqEBUbumf+sMRGn0svkA568SFeAryR48stY1QFCtMWJ8zfF2i5B5XVVA6iSto7cCs4fLt8Jc5ldSYuSHCjHntUB8NbA0UsoT99+LGsw1Hr6NyAfPvEftO4uAwZ8pyLrW/f1x6JWz3gd9Vt44L/rsLJ1vfDSdyFDubfo9/lmrJwgj1fFzfoWHFyiWw/hl6CqtXUl/29fAqnzn5/6f5eCvzLEkiCf97H00tjEK74+udj1KdHTZDoj/2ekv6yUv1YXPxRcR/Xp5SUkkxtzUd00lcEhOc8VmifMqeI2ECudtXpDNuOirsO8oiI+59JszVBRAapEAcHND5v0K8pNchwZ8N9OjimAxrr3cF9jKKI+Hv4Ks5FE3a4J+hsscD59h5Z+u27cXJyxvGRP6QRKAAhDo0wGBl6CZjWGnz7+jXcstCOlsktuOBJlHB8VhW6D+FSSX+HXpDnMEZxWMOejnC81NTdQjipol6P0J/3Z6Frd1l8QCDAn9ILSE+1bD+u330L+ARuxdyHlRTfHkz0kiEVG6+e3o2LNwtJiJ90LNYIrKSRlkCJfBP9OSosLvnic+nFsC2WfL+K/n23Um3n719CuaRDlI8JlIvWIsolx6VbL9fnxUpeFxMwb0Y4zox4z74dfrbUB8Atrhgl4Hs0ImIzchGslGJEfO6Q0pNl4W0LJEnXfbZr9e/cWTb+w+wS6Qf/95fUhvD1gQENxH826n4zVMyoLi8RlI30NsG7WJWasMMfb0nM6mbx60YgIWG2y7WkjIQS9QtKg8F31BA06AVHhq+QgCx29tWpKLPJIdQ2vwHb6UqgqnYKHYQqAzM5pFHw9f0gbSOjDKB+Jv4AXF6e8L6/pudp1ZR3Sr/7YKTxWCcQhn7X7sO1r8sIBj2MBVjJtm4DdeIA/W4SwbnRTmL0DTeb+ptLcW4ZW1LzfoP+VSGD2lC3QsUZJmjd95s/1PF2MTtUX0F/OnefiPHSEeuTEeoz3Jt2MZucFjWfFUPY2BDZMOWVAGRC14CdWwcqrtK2V11JSnlEDAnZmtrNdVMFW7xniMJ9f9CA/f4W0Av2WWhArnL/bB6SKNigQRelWe1z6M+m6jvKN3F+6hWR0kY0oOkSXmH64m5A6MLOuI2FXQ1+Z+Sn4Za/lvcDuk83fRqBiLVwwbomGJS34ZbpdrVddkuv8v47hvpESHXt/0AFuf6+gBCYmkHTt9f/0MF31BlgOXhTlFT4HWyTAWObH+T/nvmrE5Ihn/8MfcZwn5Dt+vdsTXkXAenzZGKYAdnf33/TS4wYJkt7bWCcsyEJSHEMJiP+Ge+itzy5COrgwbgkkGPBRCkZMHHzMQsdnMr7htLYm+FWEX6G4QInO1TvgP6gBe7DLwJ4cUB6RrF1vq1/kF7Abphv5TVqj7x7daH6pFSfZgESMqEqpK+LhcY4Eyhaj6kgNHfSv29NGUcrxohNVOdMMWGfcIpIQS6md6A19asrTFBg4khLkqRrwjXjG/IpFRV2cEBn9Q3nSzjZOwteKc5XfQsL+27vrqmkYTu6d898if7cId4985jSub1b5r4miX6Xx3bAqEd5SUlG/XJJQhQdrLbSC+xLA0Pj66mD8zH/R01dn7FGlKMuzhUVDkSn4BLv/YbO3s9XchK+tipxOIlesJodYnDyZXJjMCP1g9VZWvYSlHu4A3Khn/8XvUyS6Yj99Uul6/qB+CeC+w/rOw1Ih1Uj9lh6S5dDYruZ/g0lq3AwuKZvb4/G+dB/SvvdQyvK+xwtHy+/50PMTv3z3IZLUGcC41eoKvKWgIyERjvcdTrcJv5XdaK0nvk7wC73+JriAqL30lul50nJM1Q5/gH6NylMSnUYbl75Av3NScFEo6HKy58OQULClVY30Z+RFNwSWhsYxbAs/XL3S3CZh+0ixlL/fFNKIk1J1bk/bgXbKYFik5ZsTHl/pRfjXIEPqlEXwwn223GuwovprR4LiXHZloXP/PTgmX1/+URJuSvjexX38DAlRLakzkrQJxyBKLrkaYtCoBm6ZipLdv5eM0mSr3oiEjLEcgrlWXoxBoMaUxv4K1xiF18+DVwe/2Fk/qo078MqIuGy4MtxkfgeZ+Ki8k8vDfT3tVvGN9ZH4ZY+jrpe3jfct+pA6svtHcAvldj7GC4g7hLmu8D8NX9YjdKWGqnz4biMtTewOvNqhG3gI2roumqUvPvhbxc4R67Kxo06S3u7DtAMeGY/CH1djz2b/vTxf6MD+v6K3z5K7+kJeu579X7XDfm8Brfa5xrgwpIa+HJtF++o+f399dovqphx+gF2h86qB13/Zp0APCyYzQtu5dxFC9x/R0nFdToxeIeOA2aBiU8C/Ine3wNKZORH6aWZ/3iNId6Ei8v4ZXpxY6/DbXJmVrB9erLwU7jg1bMCBaNQkvx5XJDm27Ruy7bmZG03L8Mt1aekRPxf3N5Sw/ZR/7wfo7dvkB+LflgN+9srfrcBt8T91QEh3K/j7CiuLl+fb1Ql9pEVZXKV1uf7qE6xcJLanV/GuefQ8e6pJftGMCb+nfZLcLFiV+o9XIVbWWdrnvkluC0jklI/6CoJrlL+/b+/SC9VhK+303Crx367VNebtDw+qJN5+NC5nHrFVg5fsRX5yEORy7fy5wAfu6hHMPzfl2/ldR99KHLFuXSu3IpcsZX8nee6HUB3rt79PXyjOU2ViZCN3cnC+TyWAt+BLg46qr/2tSPMUMIkQeGMwrPYME3vjYwWWLVcz/gvpftZjteP6blDOfdjpev4srgZ+F3trD+IC5R7mc6qwoHyu7hVTrakvHxZB4qUwfE+nwrakK/LHx1yxu/71OuDZ/DP8delY6ragFHjtD8wdkXgIrAjlO0RJdcTC8x0/P38QU2534JLpPbTOL/3b+KWU+fBPfqZ1s3BZ6KDb125+c9eVPpN+IxvUYN1oZLJF6jRvUu/b+v7B0v9xu9L9Os6OUkGXP8ZwfV8eXcXUd63qjEpzxrr+vqT9XrhmJEH5/uCKhB/oAbzH/Q595fGhhn9+2UjqlJLGQvO1xmyBOWUl/rh17Rvvl1J2se1jMJjfN/cj0s1TjCzNiOMm2eqAS67KSWY3OzAZRp+nY4RYfv5e3WllMe3hy3Qd8LvzlUiGp4jLJPrcGnVX611+je41BFhmeS4hRGCW2oblrl//w39fqbCVnxXScmfaT/9dVz8y39rPw7L3gZ97jULtB3/jB+tGSOu1nJ9rZLyO0v9H95zPidffi4Hr1QicsW5/FEdEbliG//oicgVW5HLt2LffZ5LtCWrl4j4+zqbXp4J3zluoLe/gxniPFWvYa59YVC5vnF8O5gdDhtsaXRWUe7YYeX/7QIGbaUGn38OGq8NBpLOEl4XlsreqHJxd2AYwgGr7tUOyujxOpuVoD34399B/Zbx/t+fDNqQb0ejEpHXBWXln+G1Q9Sbb0+P1LY7jAG0gfHsBKTFf/85dU0xgIAluGC9G0ukYFC5h0TtF/Rc39H78eX+3gXKzX/+byUiMAwBaAdkZUxn4FX3/tIB5e7L+2fUkI1a3t2K8v73wBVhFnjuF5XablFhXKpeneB3os/+1BV2z5Tv/Wzcqq1wfMqHmKgUJcLwJVwMXLPmWmbI+/mdUp9fqB5ngv6R6ay+PL4NQ0TC758YkOQu893Qda9uqT6/p5O0sD69fXhERbl3KuxFXZ8tSnX0psANuFB7fXJF3y8G9M8CeHECMN3EonEhekR3gACXSX/pmrxYE64ZL3E16Q+UmWL4pYC25jUM7qV/wyKDyyMyChHxboTL6Q9gYpW4ZfxzNeiPEm8s8mXpz8fg/bk3qPT8veBa4eAbDnh+tUdTScbzVdH4OPCfQXvwx4Y7KMsAMuHbUMboy+TKZdWoqc9BUu8XVML+bb3nO6jvt74e/AqPlH6f8KO0zYzXPIsvh0NqGG+nl1PHBoOkJ1WzJTfKLypJ9YnATKkMh3nel+FiTXxCLyld1w98nUDebqpi8FK9p1+hl5nWD7jTWn7U9GV//X/XAf6v1DAepD4+ISzvjP7g0a4qR39P/3LOMnz5vUMJxLWBKpgEBL+tz+Zf7cCt2VTy9Je4WJaPDHjO5YS/928q4X+1llcYhxHefzuoxy7zVyaejXPR3qoz639UdW0yMHLpAveTaDm8OejznvCE128HY8aYKjbP1uMOV4xvo7hoUlycxUU6BoX1aUvlEdandwk29d9v1Pp8W6k+fT+9Oij3u0v9Pq84/2wwboaxdfeoe+qlwXVkgTL+uI5JaeBOtBV1ndNL5vZ/ALhsG+uu2MptV25FPnwecvm5/G5ZEblsh6voy8/hzR95KHL5uXSv2Iq8exty+VYXKHkZq3b1jL+vH9LB9KBW0GGViYZhtEslQZtVAblXr+/fHzzC9cPUyQfoBS2GrPObDF7JsJLl+zot07v0+Rb7OqjPdk2NWuWvd391Bx1agOUfxPmlz6ogEq/FRXv7Y188YHbs7+GD+px3B+3oR0ZURP4qKKu7lPz8yQhKVrm9nKID9raK10NVBXqpyuBl2dQrBL87hGvIz3SvWGBW2VW149Glc/6PPvd+fd8zRLmFA/7PBcrGoNcn6PnIw/M/nV4yNFGDMEz/K9/f6arMVZX3Beoe/LXAjSgl4ib0FiamQ1x3QqX0a4dUZb6h7enBA9rMsVKivWvkd5VAj+K6HaT+3IiLrThlBDUZ3AaGdyxw3W+pEQ7VhmfqWHN3MFadP2LZhm6Un8Pl6ximHL6t4+sFA9pkVbmfoUrQ50co92/igoEfMIQbse75dmgbHHSdO9X99GADcOUjmLBTfD1NOGvMwLTwikuu568/dhHZU/a52cVlO0gv3UNxxbn852TGTxzNyTGkmcEUOU+85AY+eRmkl67OfSs8xullLPQVNkN9QrPlJiSb6U8uZpRQdBdh+E9VufuPAxKSqVvmt7hv9pbZqAqPXaby6lCdfwX6g9XOohcXcpYSsSmcP/RLuCj+O4KyK2/C9SBVWM4Hfl/rZNAmXZv0Gja4l4PalhZbVqka5sMLENqqtjBqivPH4nzCZ5V+dwtudc3MgOcPy/1CXOzTVu1XXS3nr+ECSa8r3SN63ESgBgzb/8IAzxZu35HH4zJ5+vwO+1Utu0oNHoF6EubkGMMt475Yj30H81dgVKlCfrY4ar/6KVWEmiXF4F24+JaFVn+EZZ6pMvNo3AqU0/R5ZlWpulGf/Uv0EvctRxK7pfTj8lYCD1GDeraOieP6DE2tyy36+VklUhwuHQ3d4rfglg2/Tfv9IDXYt+tTcbE/j1SDm2nf+5aSg6voLUf15d+ktxzV465FjN/lQNsf1D55jhKHcT3nfiUFV+MCQY+OUJ9V5X6u9lm/omuDKiWz2m9v0rZzTTCWLWZfGf98E9rHHqeEeFzr52a9zsf7xvd/eyBjV5zLTe/ZhnzoPOTyc/i1eYqIMp0rzuXtH1ZF5PKt2PduQ64810WPr2JF5HiD74CfLs0aLL0o+ROhLswIz1m1TNMcR+VkGLwnRRrIu+jszjI/58Wjhmg/w+bgWIl4hHSJxybHuLz9GPpH9PvgvZ9/WNfsYtpqyuqJ2xvGDVeeNJ6NcwX+i04OQpXEq8DhLH/YOK10BdraSo5dS6nPUct9udrOSONyBjA5iUXI5xbYJ4P3mvEb5BmQBEyerKnBPCkpEnIMZwqG6qVWo1ZwgfNbPrb0+08oez7Wm5nVPd9Sz7VQ3YT5EsLlZlK6l7odWMu/lyFnjlX1OGo7GuUcCS6+KQmebSaY/THC9b0B/ajOJB8QPHOKk9AX2rvHlghJWOZhu64qy/C5F1NuRfAMZoFrFzX3Hv6+Ks6rqbPFsG6O0L81wLD37X3ll6naFg7up+rr6BD9RmqenVJ7Z4E2f19B6N/rqHy/5XKdUTXgm6pYvRqnAP+m9gWvKvnfvktfwyzrLUpEYJQxI6m438WWR1FB7Kva81Lqs1zuSem+V6rtDOqn854pAbhusyMicz1V5hORHf7GNbOq7o+HMVBYZVw71gQRqdor5lh2xvL1F6OEJDiXjJQG+L9k5dM5j/J8S3mNUjd+BVEYaV+UZp/D/H5YF4csQzsa5hwmMFifxeXyuFbf/2QJsx3/vPcuUTGwFWUerupY6LkX2/+qVlYMc+2q39uKWdzjtIy/hotH+TouBmgx5e2vdYT5WWUXE+RcfvZyex+lHd+XY3D5fsNnEfp3j05xbqfX4BTfK+nP2nsTLv6pMwI5kEWOGeXxbbnKIx/QnperPm1Fma9k26nrp/OukwDs2kchpqeIJOrz2huccVfvz7AjinFkZC3tvrtWEab4/QtczoRwJrsXFxx4X6khESuHKZ2hn4oLkjwV52NfzIDhZ4Ib6Q9G8wTkjhO4nH15zmoZb8bFK5yKi4MZdZ8c328NLqtt2bd/D73tJSQ280rCWgSz60xJxyWqjIRJ3u4NyjdijSHRUUhEesbLKyLnbanoHEaX75reCVIbY0NWAGH6ZgJy8We4qO9w8yWfmOm+VEMiVmYwNrglpt+kP//No3A+9Jz+1MkLxSv4wf1X6UncHgfoBZjaE7S8wQUsHqY//uoF9AKoswHlXU5z72MYXhFcw7+uxa3CSCIRGVrB8GX8dzgN/udx7ujFBFVGrCYion90vSKSpXMSV6iICIBI/+67xvQUkardeiOW1PG8jJUCz8JFGf8uvTXpXpr8HeArsTMel/Ak/yr6E2Ctw618uYD5G9uVX6H0uh4Xq7Cz1I4MbintIQbnUDne+1yihOzLJWL/UFwek9OZL6OXyzqUn8/C7W/0nKC8vYvm34JJR8RwsPTnWHkzUQVe88iUSwiG3Jh+RaRmmp4FUS4CYBNHRLYDu2OZLocSIsD9cMGoT8QtgTo/UEYSevtn/LPODiIJOX4HXnAJtV5Bf7DXhbjA0vfjgk9vVCM6FSglYzgXw/1xSz6fjnMTePh9L+6kF3dyIs/OfbDjG3FLhH0/89sNPBWXlvoTuNwOd+NcOX5557iSlQdp332aKk9+uXJHj/soLoA1GtHFIdx/JpbfWiciu/zAo8GqImAX2PRu3khZDNzCOGL0GXAO/CS9vQSgP7rfZ/d7Iy5rZfSNHt9EJMUFTv65qhnhwNvE+cwvKZGLcGfTMvJgFu4zKP4IboO25ARvS17+fzsurfvF9HbutbiYkZ/VV7m865Y8+vL2ZOUa4Mfpd69GLI6MRBwP7H9XT93IfY9IvCKyp2+aLsHAhQQdKIvBqiuBm3QAnKYXDe590wdwmzS9PDBW0cd8/JORP8Blgk2DV5iiuhsc2whIhU+FPktvd0z/+324/SE+FUnIPCO3A7d5XyMgdV3601Rbeim0PdkI01kX9MeTvAWX4flOFrd8PyLi+CMie3rLcOf2mhnomintNaN0vxmLctngi/cWHdwm6OXkvwknn1+I22+hvCY84vhtE372/Eqdpb9HSWqGyzTaCgxmmIPA7/XTwrlpGvq7D+PS2W/HBU1GVa2f+IFbifE8VUY+TW+fGl/eWUkB8eXdDI5Jcdkj36qE72f0vJH0RUTMzbB3qPIRJDSTtD6FsXfN9GViiorISgyC38X5/2/DpWv+OPAZNSIQY0JOVEKS4DYv+wguDuGxuKXcD8al+z45ICUFLjHUvdqOvoVLFf15XJrluQlJbEuVZe0J3Vv0dT5us7GHAQ/Exd5sUOKR0VMwD+Kypt6AS2X9BZyK6ct6MTmEIiKOYyLS63Vzq2ZSO4+IhLxjLrPq3Bc2xoisgCJyB70Nw0L4mWs0HCcuUfWrWm7W19tKx4QZTxfaIbaIRnHBvuj73Ff1VVWOZoHyjoGVERE1mJMVTeLiEAoBkWpFRMAg89WPqIiseB15H7Pfujq6Yk5sePIQ5ghJgxl8mPHUG8vwuIVISsT88pagL4YumXL2yKry9v02lndERJUi4nN/iKVrMh3EEtdhdpQM3h5IWmZ+jIgxURFZ4RlwnLFG1LWNKqWjamYfjeDK9MVY3hERSyUiQXfqAohg6xQRtpGKJSl3PSESkYiIVYKolsXyjohYU0i292h9R/eNyRuZIyK7Sj1tbJwMU5GXQKJrJiIiIiIiImIRRCSg9S5YVbBiqxURe9T5l3WjhDldxERFJCIiIiIiImIpRARNmmUMRTuv9m/KGCkyXxGJrpmIiIiIiIiIJRERI04RQSiajWpFZHqGDOMUkRBx1UxERERERETEkoiI6P4yAna2W62IrGtWKyLRNRMRERERERGxJCJCMhesWrRac8Gqou9OLOmSGjN/UyeRSEQiIiIiIiIiRsecS8UIXWNAhMLmNQnNMlJj57tmYoxIRDV2Juy4vn530T3bBHbHHCkRERERkYj0XDPGUJjpatfMWE7arlq+G2NEIiqx24Y7OEdERERERNQSETSPCILtTlYrIp2UzMh8RYSoiJyoMDziZRlXv7F/t+adOxN277Zc+PJXkGZPoOgWhC49wZK2UuzsR7j6n18/d3xERERExIlLRBJxigiGYvNUjWumIMWQmrLYHhOanZi4aGfKzK2n4XYa7W2MuHevbnFun0g2folrV0GjEQuNFsy2j/QfHxERERFxomFulmrpLd+9YZNzzXjTscsflJIa/Y0JLY+6Zg5siemOTygcvd2Qc9ocHZ3Ddv/HXRTtgqLTJu/kc6+i2yZvF8BdpeMjIiIiIk4w9GJEAkXktqtrEpoVpCR9q2YMAolf0hvjAU4szNxjaG44bQDP7eqWANIXRySAMSkal7QEmAHfyQK/kUV+N8w1hjnfsM8XnkMWWS6yxLJcyjMsdE05BnW+lOsutixlBZ79WLQhs8R6X+z1ZITyMSvYJiPuSyJivFEQ8t01FWwSsgSMBI1BnJrSgPm79UacADCcNuC72foWIWBoL/Hqssy/GfW7hQbEpRIQWzrHsANw1fcLub/ui74rx+g3SznHYsvSLKGtLQeSoP3ICARoMc+7lDYry9xPI9Y0EUnoau12g4oWFTpcY7KkSQqFzHU091tdSbMrlucJhm2Q3L6ldnCTAURDACtLISIpsLlm1mWAw8BM6fN1wMk4l9BMxeB8BpADByqudxIwTm9792ng6IDB3QCn6XGHF6ESCLBBz5EA+4F7hjAmLeCU4D67+ju7wO82AJPM377eaJkcXGYDMK5lehfDK2P+2WzNvdwzxLnG9Ry3DmGU/T36MmkDh4Yoy9OBOwYc09C2exCYXSEVxN/jGcBGvc5+YGoFnjdss+PA/fQZ7w76Ut3vT9H2dbh0HxMD2txGPd+9cQw+zohIIkpETHWgqvLiNNFWY7RpiTMqMVj1RMSGwykd2QI7DeyeP2AYTzRMtZCQmMUMwn5AOwXYqcYpdBdaJRyvA67S7/wgOQn8PnA78KfalBMdeLcDv6S/OxDMAv37C/WYrn6WA9cC/6XHm9JMuAW8Wu/h7SPMKkXJ0ouAxwBjAaG4Bvhv4M6Kgd2f/weA39LvUv3sduBdwBcG/O45wLOD5yN4ju8Bv6fPvFwz9YcDv6j1ccsChs7/5iH6bFafrXzMa4Bv1pS1/+x8rce/HOIeL9A2kQdl+V03N+O6AWX5IuDrwIf1d0Wpfk/X9vcPwOeHbBuj9o8nAs8Dzgw+awOfAt5cInNhnby89Lzf0ee9fgDhFm2nlwBP0f6HPvcN2v5vKj2n/91Pa5v9P0qSRMn3bu2LXyj14fXAXwAfB966zGUXcV8TkTzVQUbqBxuxpCad4x9z1kXU/78LZHcs0xMBbhCZOdgia51ar3rUEg1tQktSRLyRvAr4srZlG6glNwXHiQ5Yd+qg+OvAs4ArA+Xhx9QoXBXMKMt95bAO4l49eQGwRQ1gu55xjWRAztBBeSPwfiU7hRrhZwN/pEb0mzWGQXQ2+j/At/XZfgh4BfBnWlZ1hnoG+Fe9ngnKbaZCKVmudjRqnTeAdyh5SUuG7Y7guKrfAjxKycj9gNuGUEVSNXj7lSA+Q+tnt7axqt/nwM+rQnN1iYxAafxc9n4JLwZ2KFn6Dy2XlhKrdAHDnSjx8M/7zOB5v1V6XhMojb8NnAt8APiitpkH6O9fA/w98LkKwv5JJU0XKElKtd1+F3iqEhEJJgw/qH3jk3EYPo6IiF/pknTpShMwc9LmvA5mErLEZV/td/xFReQEpSNJA5FToCZ7qllIdvZEZe9iiYgnHF9c4DgCdWMv8EgdqL+sM74dOqP797q2r7+dVrLicZsO0ltVrUhYmvuiCfyyvv+eKhke31CS9ColUr+Hcw2V79UP2l9VsgLwGeC1wNP1meviXdrAZ9cACb42eLZBdV5WKk4HztNzPFlJ6UJExGj78i6GLwJ/rUayjogUer1fVQN8zRAEYLmUpsdoe34n8LbSvX1uyHNdXfO836ppbz8LnK2E42vBdzdqm/014Fe0zX6vdI6vaD96vBIRjw8qmduipMgf/3g973dqJgwRaxC93XdTdc2oIlITsdSo6fVZMM2NOGGIyEQD2MhFE43+GdJe3zDaA5uESdrLcBfpImbb/6kD2I/qLO5papT2M1jqTXVGnunrW0pOTlmGfijAo4FzgDcoCcn0u0T/vhd4PbAJuHiBmfWE/mZMCca3gvsc5Os3a6DlpYv83VNxMSnvBy7CxSLYIZ55UsuyqXXwPVyMR11ZtlSx+SrwSlVgiuC+V2Kc9M/xPCWtbw3IehK02WSE522oqnMLcGrp3n2bPRt4kl7va6U2mwId4J9wMSqXVBDmthLlh+o1vHJ0VNvwY4LnOxnYBnxikYpaxKolInvmarmr7/NdMzu05Zh+IiK6gsb0p3iPjeO4x06tY2lgOImZDc3q1mVn69uEgM0dEdmyZbEDs8UF152B84X791NrBnuvityhs8WtwG/qrOyDQ8yOLa6f5PrapoPlnctUsI9UI3et3oufWVt68Sy34Pz1j1hgRjitv5lVw/gg5vK21C5FToD7azneL3hvraLGJ0oCynW+cYF6a+FcAFcB71Wj9ughxyxflh1tb2cqaa37rTewr9e69KpZzsq5ZFCCepYadn8fRdB+cuoDfauet6vk9awBz/twnBvmMxVtttB7OKpqzPlKjMsE+pNaPxcGnz9Rj3uUEkCjbd4Gql2c+B4n6OURseTi+LrfeXf+oGzJghiRXi+QRc9QItYypGgCGynazd64EIwvVtrz92oOzZ5ZyoqBRI3s83GxGt7gTOL8yn9BfQxFAuzDuSpOU8NULKCGWB1EH6H/vj/wIzoLvIH+lQqLMa6ocTxIf4xGldG5Uwf1tMK4+fs4DxfYt04H9dOANwXHSMXzbcDFoJSDVf9Uydp9HRjoV/D8XKAuWH3Oy3HxEOV79P9+tM7wPwMcUbXiYlzQ40JLRR+Gc1VsUFVlDPjYAGMoajzbwN/g4nNeBfyJqhXJCpSLD+Rs0b9SBb3vs7RdZdp+DgxoY+HzXqzltrfmeU9VlWhqgELn22xL73G2pOJ8R/vQE4EP4dwx5+HiTR6rJO7L+v1XcCt5jlUelohjSURSXTWTmPrlb+Vddg0uXgRDJpCY6K870dDQwUrbxa7+waGOaBgxc0RlaTPjlhKKr9Dzwaf0lvXVGXKLCzo8WWdzT9VzDEKhs+FfCWaaXwHeojPl5Zjpzug1Fnru9fQHkIYGwBvrS/Tvpv77dcCXBqgoiRqTqmDV76ySGah3NbxDlSNPMjJ68TRVxNOoQb1Gy62Fk/dfjluxccMAkuVdeIkSkClczMQ3FzCG/rqzevzv4GIk/kCJ0EooI0VAmE3QTrfiXESHte38lxK3hPlByFJ63qO4+KJv1TzvtKqCTeqXTvs2WzB/ubI/58dxMSEbVBkslFh+P/A4vf6DgL8bQKYj1joRKbK5RuQVEcorYExSE5QqZHsvImFfJCInFFIZQ1hPYfqle+9qGaSIOMfeUomIj9P44oBZIhWz4zN1sL1MDdP/p+fYO8AgZTjXxp/RWwp5aIhB0ZReVBhM//tv4ByhZ+FcMFlgKLzR2IBzCX2G6sRZfmXJG1SteRjwUuYvIa26zw6DAxplyHIedTZfFZsyaCnvddQHq1Ytp/1+NWJbVKEISdtFSkRqWznwt1ofT9T6KYasd18/M7iVTq/S139QvcpqseXqjzugbfICVWy8K/JrSoLGgN9YQNUyOJfSLbiA3hfSc9dX3dPXcXEp56oSmVWUT4Jz4Xw3IGFSuvcv4FauPV3v/5PaHj+lk4YXav+7NiCIEccJEp8N1VryMFh1T0UnMdCoGi0EsgMHnMmJFPUEwA6/SsaMk6QZ1lTHEJik45ZYSU2MiCxHZtV0BKPpB8ef1UHtfbjYkK8CP47zsde5V7zScCfOX36I0pZLA2apErxLzawdXPzCjN6fVzIk+D3AT+GCLD8U3FfVTHy/PuOHVQn4eVWABgW4+ln0qHWwFPgEinZA+dROoIbExVpvb1HyeRkuRujTuGDIUxjsVrtDy/JKJb6/oCrAMMtwwyXQf6HnedkQhnTU7K9+VdcnlDA9MlBIDivZ+sqQBtw/7xWqhr1M21z4vP7+vgzcrO3y5FKb9XX6w8CDtb9RQcgT7U+fU1JzkrZblIhYJSifpj/PTcTxQkR6k1u66mZxysiO3kHX7df8ZbZ6ADCGbF0nBqmegJggyZwyUm3XOtXjnjHOp7fkvWZyXAzEKbgAxlP1tRkXK1KlhjwZFxT3nzortbjcIOtx+RfqYINBMyQgssD9jdfc31gFebgL5xp5KC4Z2g/qfU3gXAivwCWMejMu10KVm8WTliy4z7fov3cMuF9/Hn+fm4L7PbWG8KV6f4slkYWe+5TS9U6pMTb+NxuHKFNfNutx8SHvV0P2CSV8n8K5JyZxcQh1pC4sS4uLs9mMi02qIyLlgFBPcqZUGfm2Klt1uVka9JKCjVKeRsnDN7StvBiXy2O9ltej9byNBerEP2+h7fE04LkVRMQv+f4XrZNdWpYnaV08QEnbT9CfUK+ODH1S+8tXlEinuJip6/RePrNM5DdilSHb5f+w/a6ZENtxbhrrV83IPE6bnTTrBuhdvb1oBmJXqQPvCv7uU2NKhGj7Mj34gX3IpUtK0rQz4aLyYLm3/5/eRbFnW1Aku2UFZpX3EWQSk0BDJuaUknDjQ2M7iHHEozzzFgvS6M4vn6GRqmqwAxesaoJBf53Ovv6d3jJDi3N5/KLOvD4XGOpvqlH6aXoZMcsumnE977Cbz6X6erqSn6R0f/9IvyvIk5xP6eD+48Dv4qRsH0h6EOda+NQAJSbTY1N67qs7cRlZf1FnsJ+teL4GboXMn9aQgFfRS1vu2+wO3KqVv2V0F01DDeRvlc7pE8f9nr6b0m/G9Tmkos7/RZWiMNj22frvzwYk0v/2FlxOiku0LqYrrrchaEOZzv4vVyN/rb7KZTlRQSR8/R7VOny1HldWpATnKryH6uDbhYjIUeCvtP08VxWGKW0Pflnx12vGnarnvQl4t57vWpybJ2yzRtWWP1Il7zf0Hrr0AlP/VftjXRvxz/cNJWmfLn1/NS4HzPeIsSHHJxGZ00ebdJuuaeYAm/fPZ/pScs345bsC2V2nYfgesnv47Kp9jan2N6UdfVdP5tbddhljYgzsNOy43rB/f8UMa3uP6KwGctO7xwmMAZHJyuMK0yGRKinWIBSLVET8cx3G5SdIKr5v6IBbLodUZ7RfpD++wqhxuZ3eXhy29PsP6AA57IZzbSVCrZr7+0bF/fmZ89VKGM5T8pTi9ka5Vgf2utVA6HP/XfD8PvD0A0pqZkrH+/dP4GT4uiWmh0rXynDJpd5WMqLD1t83cCnOixIRSXCxATMV5fNdXNCtrWhT5TL1v7sRt9x5qsbo/ysuhiStuMcbtCzvKpXlu5SU5TVl+d4aRcPHbBzBBYCuK5EIn97/PJwbZ9R+7M9zSInuFbg8Hydru/mulkde08a/gUvAVn7ed+KSjtmKe/LXvEnJ1bk4N0xTCfD1QdtZKHFcruTrpgqCcjSa6xOAiNhCl+8OWDVjhKzGAZNlh8g+dhHZzK2uQx+dJdl4CslMm6TTJWkUGBknTdtk0iTNExpjGankpCYhK7o0JCUlJbU5jSwhNQVZkZCZgkwSUjE0UktqDQ3jVuo0jSGzlswYGmLd57rlfBP3eWYMDes6RmaErGEY7wo3XfJ1Xi1uuj58Z9+xI2XPnoILf/5S0sYPY/ODWKYxHMXIUYQjmPQoMI2xU0gygzHTiJ0BpkkaUzRmOtgjOa39XfbtU5/qbimTrh72LTO52d6v4lSSm11CJRf1v98HYichAUn6iYg/j5ju3LqqvhmsAWNzTNZZQtudZbg0z2HdfltfVd+1cZH7db//2oj3lzNcJsu65cW5kpEvl76vmyH789xbkuYkMCpXVXzu328KDMAC7QrBrWSwuEyzo2S49Ne7k+Hzr/jfHKypo0Fl+sUFjvkOvVVB5d8eqCnLds3n/v36AffmSdR+erk5JFAhnq5G/1uLnP2HStFt+qqrw4XqRIK+9rEF2qw/59cDxWWhNltVH1+t+OxoDXGPON6ISJErEbED9prp+Rb9NNcUzpKf3M34dPdODBmZQNZaRzbbJTWGrNV02fbEkDCGQUgakOQ5iRGMFCQmJTGQmAKyRDXzFDIDSRKE1ld5qpPefNeUxfGKUWAygQNdvgq8eteonX3/NqNd+VE0J3+MzgxuK8CK0hLN6yMWRFyCoKLTxWYdOHmK7snTPOKcGZ2tOaJimXKkhqMgR5HkKMYeQeSoIzV2CrJpyKcRmQaZJsmmVF1wr6vf2B1MboYhNrvryc34wZQdO4RvmXWYBFBFpEx4TN5BkgKTZH1FbAAxOUuPEUkWGNiqNugKZeXyd6Y0E6u6ll3B+ysbq6qYhWE2zqt7xkHPsFBW1fJs+Ls6e15skq5hrzfKb2TEZw7Lqxjhu0FlPMw1q4I+/bHXDEm2hjHqdW1ooRVedsTnDa+ZLKLNDiJJC30ecTwQkV3qSskybOG6Rz0RMc41UxGxlDYStlVOD0wF9daTzLGZUg8pREMZnQrjp9Siv1laYzQU1pJilrqFtJmiO5tTdHOqo/iNWy1iXOc2iSo1Zly/3tQLnTC9MIp0gXFWPLFJ/CzXE5A2IjMYM8WFL5udIzeGaYRpDEeQgOBgjjgFJ5mhsFNkTAPT5MkUtpjByjSm2aEwXTjQ4fo9PXLzv7jVLo94WYJJVBkJlJK54TjtqKHKKsaUHGaXSkRGdY0J9XFBC8V+2GNwf6Pcz2Ke0S7D9UIlgSXMUhfzfIv5jV1imyhG/M2w9V73HDcssVyXUl51xy/0vMvV5hmC6EQcz4qIaVEUHZABW30nNcvmBOjI/AYoQ86UTAUrDz7r/W2WJQuQMYYUu9RssCbBGDfTNyZb4MkCCjXX16XH2IxUd7Z5k/YSuSEFk2IYA7Me4wvI9JObqlKe4wMCyZxqA4kUpCZHTBdTzALTcPI0F/6CU2z8y5h7gK0UnRypWTlh0g5SFNURDZIjokRkl6ym6J+IkRSNmM9heZEsgYRGRKxtItKawnYaWDMos6rULvvyHWgQwTjRB+3yP83CBVWXzsIPVOJqRUIyI4IJiY1IieyU8noYb1DcJlWJSSFJSUwLzDr3deIOK/9ddCFrQmf69P57VGJhprvYVtH/GHNaV47YbmwpaxbRWK4MIrGLOHGJSDpBQZeuXzVTYxdThALTi3QPVY8FnApmSEt9vFolCd76B/CQJPS8UjWkRQK5I3G6iJeKTOgSLqsj1Fze8xkLUoBIB2wXa9oY2sytYJCjiHHxK14VETlM0emC+QAA27HOM6MXa020mcmL3iRvrikYjORI0Y1dMCIiIiISEQAOTWCb95IbBq6a2TCZknaENDXzQ8XLZlRq3kN7WBW6LSDllSxB9JVUmfeK09UxnkIEUTK1FF5hNQA1DyJaelZ4TnUwPeJgUOHB/10RIxISCJFSqQQihxSAdBDpIKaNoYPMLXucQmQKzBQwhWEK7JQjEMlh/ewowlEwU4g5gtgZ0nwWyWbIk1nETDPWmOXoHbNcf1l3qPQwu3f3z+ZS0wVTQ2xNTmOiE7tgRERERCQiAKy7C9vJyKVCETmwRa2h4auHCz7UFgShhZABDV0umyE0jCEVITGGBEgQUlVSEjFk9L5LRUiNIfHf6QIZjMH4BTCmQioxFdKJMfXfhZzFQjaZQLs7cNvwYTBBYywDyTBpBWnoeUocabBtrOm4/VWkgzVtEA0mNUcdWWAKZApJjoKdRjhCaqZckGlyFIppJDkMMkPRnaWRzmCTWWxrhubBNsXkjK6YWWaEopcuCYbeCqJ9WNg9X1JuHyiQkzs9b1JQSUKXq9+Yxy4YEREREYkIAONnUnT2062KEbl0j1MPLvka/4pLADRYKwCz9yLSmVtJ842k9iipjJGmMy6HSDMnmU3JyEltTkpG2kxIpSDtpKSNgrSTkGWaMySBxlw+EUMjsXPkp2k1b4gp3L8TR3oyC02ELEloCjSM0LCQYUgLoWWFbwHsGj4Bm4N3PxjzGbqz/0K3fS+YDkamMMlRrDiVITFHsHIUkRlSM4ttzJBOt5HmDK2iTTub5ep/XknXRDVpmMPeXv4Qj8F5RJRpDcp3UsJdp1s2tjtUM5FOjVgWEREREXEiEpG9+7AXnotzNQwgGLvUmOwKjEfZXWJA2Df4XKsFZlQj6N0PX3jj/wD/s3y3sGu5SENg3EcgDfMfdOlPduYpBUdu7/SHiPi7M+3Y/SIiIiIiMtMzO/ZyyO2AYFUTRMrvXtC41lv4XTUBqbu8ja0LWN3R/8/F7D3j3Uw79iBmSRHqOxOXtXTJpEHmiuu+JA3zylzJ0bw6uL66bvbvN3MZW4/eblh3hnDg+oSxk7p9pxbjntfM7bwbExVFREREREVkziTMuWb2Lu28UmHZ5n0/sjnds0ImeHHG3y6OOOweYPwXSwCgP217DTGq3p+mxj1SwyUHPnNFxtZHvKx6j4ioiEREREREKBGRwAbmSX/KZrMQeVijMPX8qEwCrjdlJaafAIxKAvoIgNTc2ogEoIYEjISdCQ/8dpPT8iZHxzLW06BoNkm6GdY2kayJSTLENpGkSVK0ENNymWKliaWFkXEwTQwtkHEwLeCBLtW9KeVNEV0xs9PUbNoXEREREXECKSJu9w/oau4I2f3xxcd3VOQWOVaGZljiJAN+foxJwM6Ei0g4enuTvN0ka2XYRpNm3qRNA2jQKJrkSUZStCBtIraJScaxtEiTJtaOYxhDpIkxYwhjff92G/61QD/zf7sVTy2Ecbgtw7QyilaDcUnp0oAiQ5IUkoZrK+LWMyVhYjN9jLSUxdUvQS46uudOKVWMISoiERERERGOiMwtZzAUAs1/eyBj6UbSTdPkR5vIg8eRq4GHrEMO7NMYC53RVwV7mvtOPZm/kdmOHS7j6/5thgPXJ7ANOgcNm7KE7pRhJktIpUGzSIEGNm+SZG5Zsi2aJGkGJkOKFtBwagBjGBlDlAQkpoWYJtgJhJbLSipjYJqOBKhSILTmCIInA+b2MY5KhtAgbWVAStJtkJORkAIZNslIjZ4uSFCWamknJR5Wtc1VVRKzQZ+FnCzMX0IuQXL6UjK2vhPpeUxaqUB518yO683iY2MiIiIiIo4LIrLL7zoiHBhP+eNTJnildLCdBtNNYfbWKWZOM8zeO8VsayvTQPvdbmvo6XdBOzHMYpkxwoyktIuCqQYcJmHaCNOdlOlMmJrtMDO2kannX83M8qkkOxMecft6YOPcy8h6CrOBVCa5ifUYsx5un2T8pPVw+zrGWEe3vR5kPePdCWBizsWQZEo4aJFkqdv6N3VeBpO4V53Br2IA4f4yEr4T5B4JvwsJQrgvjRWstZq+XeZnYK0lBmFKdzNPrBIx1YnY+k5QlRK+pgxqP+wni1ERiYiIiIjwRGS3rh4pmvxY1mXcWkyaYrsdbJpimwbppNjmLDZPkGaGnWlgW1NYmyJjLez6CWz7duTAJHbz6b3VKAf2ITtAdjnCI8vvqtltuZrDsPMIO66/dS52Y8sWYc824SISbj2YsrGdMtNIGM9TumnCWJLQLlJaSUKnSEm62ZwSUpgWmW2SS8MpGkXTKSS0SGwL0gYiY/PdIdJEzLiLkaDpCA6O2MAYglNIjDQ1fqLhfk8LoYExTU0Al6jekWrWVYMxRjfaY/6GdsPoQ6WY1DLhqVJI+j6S+exKzGj1aMRgsIBFmHVK1f640UxERETEiU5EPF74Ffav5MVWcIVLfc6MfVhWXT6TnQmPuD1lXTvlwGTGeJ4yW6RkjYyx3JGeImlRmBZGGiS0sLkSF+NcP2KbiGlhzHhAbMYRaTlik4yBbWH0c6QBpoGIEiMfVIojW85d5GNG5rLhYkzq/i0JJJ4QeXJUQ3oGVJPYJmkGRUfJ6naWHmgbEREREXFcEJG6hGWVk9sBc+9VjOFXy5SXy4Z5MgZib+/PMJ/Inm2iq0NEVRzLgH19jgkuuijjwPaE8dszxoqUqSIla2UUpkUjcSQolzFSVXgSUUKUNkHGsOLiXjATjtSYFjChZMb97YjRGJhJ95lkFPl64CZXRufFFTMRERERJzD+f3fbxgETDNK9AAAAAElFTkSuQmCC" alt="My Language Quest"></div>
+  <div class="header-right">
+    <div class="header-label">Semestre escolar</div>
+    <div class="header-year">Enero – Junio 2027</div>
+  </div>
+</div>
+
+<!-- ============ HERO ============ -->
+<div class="hero">
+  <div class="hero-dots"></div>
+  <div class="hero-inner">
+    <div class="hero-tag">Propuesta personalizada · Canadá + Estados Unidos</div>
+    <div class="hero-name">Inais</div>
+    <div class="hero-subtitle">Semestre escolar · Enero – junio 2027 · Canadá y Estados Unidos</div>
+    <p class="hero-lead">Cuatro opciones seleccionadas por esquí, entorno, experiencia escolar y posibilidad de continuar vinculado al fútbol.</p>
+    <div class="hero-pills">
+      <div class="hero-pill">🎓 1.º de Bachillerato</div>
+      <div class="hero-pill">📅 Segundo semestre</div>
+      <div class="hero-pill">🏠 Familia anfitriona</div>
+      <div class="hero-pill">🎿 Esquí</div>
+      <div class="hero-pill">⚽ Fútbol</div>
+      <div class="hero-pill">🗣 Facilidad para los idiomas</div>
+    </div>
+  </div>
+</div>
+
+<div class="main">
+
+  <!-- ============ PERFIL ============ -->
+  <div class="section-title"><h2>El perfil de Inais</h2></div>
+  <p class="intro-text">
+    Inais tiene <strong>16 años</strong> y actualmente cursa <strong>1.º de Bachillerato</strong> en España. La familia estaba valorando
+    inicialmente un curso escolar completo en el extranjero, pero ha cambiado el planteamiento: ahora quiere que Inais estudie
+    únicamente el <strong>segundo semestre de 1.º de Bachillerato, de enero a junio de 2027</strong>. Toda esta selección se ha
+    construido desde cero sobre ese nuevo escenario.
+  </p>
+  <p class="intro-text">
+    Su rendimiento académico general es bueno, en torno a un 7/10, y tiene buena facilidad para los idiomas. Sus dos grandes
+    intereses deportivos son el <strong>fútbol</strong> y el <strong>esquí</strong>. Puede mostrarse algo tímido al principio, pero cuando coge
+    confianza se integra bien, por lo que hemos valorado especialmente el tamaño de los centros y el ambiente de cada comunidad.
+    No tiene alergias ni condiciones médicas relevantes.
+  </p>
+  <div class="intro-points">
+    <div class="intro-point"><div class="intro-point-icon">🏠</div><div><div class="intro-point-title">Familia anfitriona</div><div class="intro-point-desc">También en Estados Unidos: la convivencia con una familia local es parte del objetivo de la experiencia.</div></div></div>
+    <div class="intro-point"><div class="intro-point-icon">🏘️</div><div><div class="intro-point-title">Entorno con vida</div><div class="intro-point-desc">Destinos con actividades y ambiente, evitando lugares excesivamente aislados.</div></div></div>
+    <div class="intro-point"><div class="intro-point-icon">🎿</div><div><div class="intro-point-title">El esquí, criterio principal</div><div class="intro-point-desc">Llegando en enero, el invierno es aprovechable de principio a fin: ha sido el primer filtro de esta selección.</div></div></div>
+  </div>
+
+  <!-- ============ LA NUEVA SELECCIÓN ============ -->
+  <div class="section-title"><h2>La nueva selección</h2></div>
+  <p class="intro-text">
+    Hemos revisado específicamente qué distritos y colegios <strong>aceptan estudiantes internacionales incorporándose en el segundo
+    semestre del curso 2026/27</strong>, y hemos reducido la selección a <strong>solo cuatro opciones</strong> para que la comparación sea sencilla
+    y la decisión, clara. Las cuatro cuentan con disponibilidad para enero de 2027.
+  </p>
+  <p class="intro-text">
+    Sobre el fútbol conviene anticipar una cuestión de calendario: en las cuatro opciones la <strong>temporada competitiva masculina del
+    instituto se juega fundamentalmente en otoño</strong>, antes de la llegada de Inais. Lo explicamos en detalle en cada ficha y en el
+    apartado específico más abajo.
+  </p>
+  <div class="sel-grid">
+    <div class="sel-card"><div class="sel-flag"><span class="pais-chip ca">Canadá</span></div><div class="sel-nombre">Qualicum SD69</div><div class="sel-loc">Vancouver Island · BC</div><div class="sel-precio">15.400 €</div></div>
+    <div class="sel-card"><div class="sel-flag"><span class="pais-chip ca">Canadá</span></div><div class="sel-nombre">Comox Valley SD71</div><div class="sel-loc">Vancouver Island · BC</div><div class="sel-precio">15.700 €</div></div>
+    <div class="sel-card"><div class="sel-flag"><span class="pais-chip us">EE. UU.</span></div><div class="sel-nombre">Bonneville High School</div><div class="sel-loc">Idaho Falls · Idaho</div><div class="sel-precio">16.500 €</div></div>
+    <div class="sel-card"><div class="sel-flag"><span class="pais-chip us">EE. UU.</span></div><div class="sel-nombre">Mount Everett Regional</div><div class="sel-loc">Sheffield · Massachusetts</div><div class="sel-precio">22.900 €</div></div>
+  </div>
+
+  <!-- ============ OPCIONES ============ -->
+  <div class="section-title"><h2>Las cuatro opciones en detalle</h2></div>
+  <div class="opciones-grid">
+
+    <!-- OPCIÓN 1 · QUALICUM -->
+    <div class="opcion-card">
+      <div class="opcion-header">
+        <div class="opcion-num">Opción 01 · Canadá</div>
+        <div class="opcion-distrito">Qualicum School District 69</div>
+        <div class="opcion-loc">📍 Vancouver Island · British Columbia</div>
+        <div class="precio-chip"><span class="val">15.400 €</span><span class="desc">/ semestre enero – junio 2027</span></div>
+      </div>
+      <div class="dispo">Plazas confirmadas para enero 2027 · Kwalikum y Ballenas</div>
+      <div class="opcion-body">
+
+        <div class="bloque">
+          <div class="bloque-title">Por qué lo recomendamos para Inais</div>
+          <p class="bloque-text">
+            Qualicum combina <strong>costa, naturaleza, montaña y comunidades pequeñas pero con servicios</strong>, sin llegar a ser un destino
+            completamente rural. Las principales localidades son <strong>Qualicum Beach</strong> y <strong>Parksville</strong>: un entorno tranquilo,
+            seguro y muy canadiense, especialmente adecuado para un perfil que disfruta de las actividades al aire libre.
+          </p>
+        </div>
+
+        <div class="bloque ski-box">
+          <div class="bloque-title">Esquí</div>
+          <p class="bloque-text">El propio distrito nos ha confirmado:</p>
+          <ul class="lista">
+            <li>Estación de esquí a aproximadamente <strong>1 hora</strong>.</li>
+            <li><strong>Autobús los fines de semana</strong> para subir a esquiar.</li>
+            <li>El <strong>International Student Program organiza además salidas de esquí</strong> durante el curso.</li>
+          </ul>
+          <p class="bloque-text">Para un estudiante que llega precisamente en enero, esto convierte el esquí en una actividad real y repetida durante su estancia, y no en una excursión puntual.</p>
+        </div>
+
+        <div class="bloque">
+          <div class="bloque-title">Fútbol</div>
+          <p class="bloque-text">
+            El <strong>boys soccer escolar se juega en otoño</strong>, por lo que Inais no llegaría a tiempo para disputar la temporada
+            competitiva del instituto. Dicho esto, el fútbol es muy popular en la comunidad y puede jugar de manera recreativa.
+            El distrito nos ha indicado que <strong>existe la posibilidad de que alguno de los institutos ofrezca soccer en primavera</strong>,
+            aunque dependerá de la programación definitiva. También podemos valorar fútbol de club o comunitario.
+          </p>
+        </div>
+
+        <div class="bloque">
+          <div class="bloque-title">¿Qué colegio recomendamos?</div>
+          <div class="colegio primera">
+            <div class="colegio-nombre">Kwalikum Secondary School</div>
+            <div class="colegio-meta"><span class="tag pri">1.ª opción</span><span class="tag pub">Público</span><span class="tag info">Qualicum Beach</span></div>
+            <div class="colegio-desc">Nuestra primera recomendación dentro del distrito: buen equilibrio entre tamaño manejable, actividades deportivas, vida escolar, entorno natural y proximidad al esquí.</div>
+          </div>
+          <div class="colegio">
+            <div class="colegio-nombre">Ballenas Secondary School</div>
+            <div class="colegio-meta"><span class="tag info">2.ª opción</span><span class="tag pub">Público</span><span class="tag info">Parksville</span></div>
+            <div class="colegio-desc">Situado en Parksville. Especialmente interesante si la familia prefiere una localidad algo mayor y con más servicios.</div>
+          </div>
+        </div>
+
+        <div class="bloque">
+          <div class="bloque-title">Otros deportes y actividades</div>
+          <div class="extra-tags">
+            <span class="extra-tag">Track &amp; Field</span><span class="extra-tag">Badminton</span><span class="extra-tag">Beach Volleyball</span>
+            <span class="extra-tag">Actividades outdoor</span><span class="extra-tag">Excursiones del International Student Program</span>
+          </div>
+        </div>
+
+      </div>
+      <div class="match-bar">
+        <span class="match-tag">Esquí muy accesible</span><span class="match-tag">Bus de fin de semana a la montaña</span>
+        <span class="match-tag">Ski trips del programa internacional</span><span class="match-tag">Entorno costero</span>
+        <span class="match-tag">Dos institutos disponibles</span><span class="match-tag">Familia anfitriona</span>
+        <span class="match-tag">Plaza enero confirmada</span>
+      </div>
+    </div>
+
+    <!-- OPCIÓN 2 · COMOX VALLEY -->
+    <div class="opcion-card">
+      <div class="opcion-header">
+        <div class="opcion-num">Opción 02 · Canadá</div>
+        <div class="opcion-distrito">Comox Valley School District 71</div>
+        <div class="opcion-loc">📍 Vancouver Island · British Columbia</div>
+        <div class="precio-chip"><span class="val">15.700 €</span><span class="desc">/ semestre enero – junio 2027</span></div>
+      </div>
+      <div class="dispo">Plazas confirmadas para enero 2027 · Highland y Mark R. Isfeld</div>
+      <div class="opcion-body">
+
+        <div class="bloque">
+          <div class="bloque-title">Por qué encaja especialmente bien</div>
+          <p class="bloque-text">
+            Comox Valley combina <strong>costa, montaña, ciudades pequeñas y medianas, mucha cultura outdoor, deportes escolares y un
+            acceso excepcional al esquí</strong>. Las comunidades principales son <strong>Comox</strong> y <strong>Courtenay</strong>: un destino algo más
+            activo que Qualicum, pero todavía muy manejable y alejado de una gran ciudad.
+          </p>
+        </div>
+
+        <div class="bloque ski-box">
+          <div class="bloque-title">Esquí · el gran diferencial</div>
+          <ul class="lista">
+            <li><strong>Mount Washington Alpine Resort</strong> a aproximadamente <strong>30–40 minutos</strong> desde la zona de Comox/Courtenay, según el punto de salida.</li>
+            <li>El <strong>esquí y el snowboard forman parte de la vida deportiva escolar e internacional del distrito</strong> durante el invierno.</li>
+            <li>Actividades del <strong>International Student Program en Mount Washington</strong>.</li>
+            <li>Enero, febrero y marzo son meses plenamente aprovechables.</li>
+          </ul>
+          <p class="bloque-text">Para el perfil de Inais, este es probablemente el punto más fuerte de Comox.</p>
+        </div>
+
+        <div class="bloque">
+          <div class="bloque-title">Colegios recomendados</div>
+          <div class="colegio primera">
+            <div class="colegio-nombre">Highland Secondary School</div>
+            <div class="colegio-meta"><span class="tag pri">1.ª opción</span><span class="tag pub">Público</span><span class="tag info">Tamaño medio</span></div>
+            <div class="colegio-desc">
+              Instituto de tamaño medio y ambiente comunitario. Buen encaje para un alumno que inicialmente puede ser algo tímido,
+              porque permite una integración más natural que un instituto enorme.
+            </div>
+            <div class="extra-tags">
+              <span class="extra-tag">Invierno: Skiing / Snowboarding</span><span class="extra-tag">Invierno: Basketball</span>
+              <span class="extra-tag">Primavera: Track &amp; Field</span><span class="extra-tag">Outdoor activities</span>
+              <span class="extra-tag">Robotics</span><span class="extra-tag">Model UN</span><span class="extra-tag">Environmental activities</span>
+              <span class="extra-tag">Música</span><span class="extra-tag">Programa internacional</span>
+            </div>
+          </div>
+          <div class="colegio">
+            <div class="colegio-nombre">Mark R. Isfeld Secondary School</div>
+            <div class="colegio-meta"><span class="tag info">2.ª opción</span><span class="tag pub">Público</span><span class="tag info">Oferta deportiva amplia</span></div>
+            <div class="colegio-desc">
+              Alternativa muy sólida: centro algo mayor y con una oferta deportiva muy amplia. Destaca especialmente su
+              <strong>Ski / Snowboard Team</strong>, un elemento que puede resultar muy atractivo para Inais.
+            </div>
+            <div class="extra-tags">
+              <span class="extra-tag">Ski / Snowboard Team</span><span class="extra-tag">Mountain Biking</span><span class="extra-tag">Track &amp; Field</span>
+              <span class="extra-tag">Golf</span><span class="extra-tag">Badminton</span><span class="extra-tag">Tennis</span><span class="extra-tag">Rugby</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="bloque">
+          <div class="bloque-title">Fútbol en Comox</div>
+          <p class="bloque-text">
+            Al igual que en Qualicum, el <strong>boys soccer se juega principalmente en otoño</strong>, por lo que la temporada oficial no
+            coincide con enero–junio. Estudiaremos <strong>fútbol comunitario o de club</strong> para complementar su estancia.
+          </p>
+        </div>
+
+      </div>
+      <div class="match-bar">
+        <span class="match-tag">Mount Washington a ~30–40 min</span><span class="match-tag">Ski/Snowboard escolar</span>
+        <span class="match-tag">Familia anfitriona</span><span class="match-tag">Costa + montaña</span>
+        <span class="match-tag">Muchísima vida outdoor</span><span class="match-tag">Plaza enero confirmada</span>
+        <span class="match-tag">Highland o Mark Isfeld</span>
+      </div>
+    </div>
+
+    <!-- OPCIÓN 3 · BONNEVILLE -->
+    <div class="opcion-card">
+      <div class="opcion-header usa">
+        <div class="opcion-num">Opción 03 · Estados Unidos</div>
+        <div class="opcion-distrito">Bonneville High School</div>
+        <div class="opcion-loc">📍 Idaho Falls · Idaho · Programa F1 · instituto público + familia anfitriona</div>
+        <div class="precio-chip"><span class="val">16.500 €</span><span class="desc">/ semestre enero – junio 2027</span></div>
+      </div>
+      <div class="dispo">Plaza confirmada para enero 2027</div>
+      <div class="opcion-body">
+
+        <div class="bloque">
+          <div class="bloque-title">El colegio y la ciudad</div>
+          <p class="bloque-text">
+            <strong>Bonneville High School</strong> es un instituto público de aproximadamente <strong>1.100 estudiantes</strong>, Grades 9–12. Es la
+            opción estadounidense con mejor relación entre precio, entorno y actividades outdoor.
+          </p>
+          <p class="bloque-text">
+            <strong>Idaho Falls</strong> es una ciudad de tamaño medio, rodeada de naturaleza y con una cultura muy ligada al aire libre, la
+            montaña y los deportes de invierno. No es un pequeño pueblo aislado, pero tampoco una gran ciudad: para Inais puede
+            suponer una <strong>experiencia americana bastante auténtica</strong>.
+          </p>
+        </div>
+
+        <div class="bloque ski-box">
+          <div class="bloque-title">Esquí</div>
+          <p class="bloque-text">
+            Uno de los motivos principales por los que hemos seleccionado esta opción. El instituto <strong>ha organizado Ski Club y
+            salidas a Kelly Canyon Resort en temporadas recientes</strong>; la programación concreta del club puede variar de un curso a otro.
+          </p>
+          <ul class="lista">
+            <li><strong>Kelly Canyon Resort</strong> — destino habitual de las salidas del Ski Club.</li>
+            <li><strong>Grand Targhee Resort</strong> — escapadas a estaciones mayores de la región.</li>
+            <li>Zona muy buena para los deportes de invierno en general.</li>
+          </ul>
+        </div>
+
+        <div class="bloque">
+          <div class="bloque-title">Fútbol y otros deportes</div>
+          <p class="bloque-text">
+            Bonneville cuenta con <strong>Boys Soccer</strong> y <strong>Girls Soccer</strong>, pero la temporada masculina competitiva es en otoño.
+            Como Inais llega en enero, valoraremos fútbol de club, fútbol recreativo u opciones deportivas alternativas durante la primavera.
+          </p>
+          <div class="extra-tags">
+            <span class="extra-tag">Invierno: Basketball</span><span class="extra-tag">Invierno: Wrestling</span>
+            <span class="extra-tag">Primavera: Track &amp; Field</span><span class="extra-tag">Primavera: Baseball</span><span class="extra-tag">Primavera: Tennis</span>
+          </div>
+        </div>
+
+        <div class="bloque">
+          <div class="bloque-title">Parte académica</div>
+          <p class="bloque-text">Catálogo académico amplio, con asignaturas de ciencias, humanidades y AP:</p>
+          <div class="extra-tags">
+            <span class="extra-tag">English</span><span class="extra-tag">Mathematics</span><span class="extra-tag">Biology</span>
+            <span class="extra-tag">Chemistry</span><span class="extra-tag">Physics</span><span class="extra-tag">Social Studies</span>
+            <span class="extra-tag">AP subjects</span>
+          </div>
+          <p class="bloque-text">Y una oferta de idiomas interesante para Inais: <strong>Spanish · German · French</strong>.</p>
+        </div>
+
+      </div>
+      <div class="match-bar">
+        <span class="match-tag">Idaho Falls</span><span class="match-tag">Ski Club histórico</span><span class="match-tag">Kelly Canyon</span>
+        <span class="match-tag">Grand Targhee</span><span class="match-tag">Familia anfitriona</span>
+        <span class="match-tag">Instituto americano grande</span><span class="match-tag">Muy buen precio</span>
+        <span class="match-tag">Plaza enero confirmada</span>
+      </div>
+    </div>
+
+    <!-- OPCIÓN 4 · MOUNT EVERETT -->
+    <div class="opcion-card">
+      <div class="opcion-header usa">
+        <div class="opcion-num">Opción 04 · Estados Unidos</div>
+        <div class="opcion-distrito">Mount Everett Regional School</div>
+        <div class="opcion-loc">📍 Sheffield · Massachusetts · Programa F1 · instituto público + familia anfitriona</div>
+        <div class="precio-chip"><span class="val">22.900 €</span><span class="desc">/ semestre enero – junio 2027</span></div>
+      </div>
+      <div class="dispo">Plaza confirmada para enero 2027</div>
+      <div class="opcion-body">
+
+        <div class="bloque">
+          <div class="bloque-title">Un colegio muy pequeño · su gran diferencial</div>
+          <p class="bloque-text">
+            Mount Everett es un centro pequeño, con aproximadamente <strong>360 estudiantes entre Grades 6 y 12</strong>. Eso define toda la
+            experiencia: <strong>cercana, personalizada y muy comunitaria</strong>, muy distinta a la de un gran high school americano.
+          </p>
+        </div>
+
+        <div class="bloque">
+          <div class="bloque-title">Sheffield y los Berkshires</div>
+          <p class="bloque-text">
+            Situado en Massachusetts, dentro de la región de los <strong>Berkshires</strong>: montañas, bosques, nieve, pequeñas localidades y
+            deportes de invierno. Muy buen encaje si la familia busca un entorno tranquilo pero con actividades.
+          </p>
+        </div>
+
+        <div class="bloque ski-box">
+          <div class="bloque-title">Esquí · probablemente la mejor ubicación de las cuatro</div>
+          <ul class="lista">
+            <li><strong>Catamount Mountain Resort</strong> — aproximadamente <strong>15 minutos</strong>.</li>
+            <li><strong>Ski Butternut</strong> — aproximadamente <strong>20–25 minutos</strong>.</li>
+          </ul>
+          <p class="bloque-text">
+            Aquí la gran ventaja no es un club escolar, sino la <strong>proximidad extraordinaria de las estaciones</strong>, que permite
+            esquiar de manera frecuente durante los fines de semana.
+          </p>
+        </div>
+
+        <div class="bloque">
+          <div class="bloque-title">Fútbol y deportes por temporada</div>
+          <p class="bloque-text"><strong>Otoño:</strong> Boys Soccer · Girls Soccer · Cross Country · Football · Golf · Volleyball</p>
+          <p class="bloque-text"><strong>Invierno:</strong> Basketball · Hockey · Wrestling</p>
+          <p class="bloque-text"><strong>Primavera:</strong> Baseball · Softball · Tennis</p>
+          <p class="bloque-text">De nuevo, el <strong>Boys Soccer no coincide con su llegada de enero</strong>.</p>
+        </div>
+
+        <div class="bloque">
+          <div class="bloque-title">Parte académica</div>
+          <p class="bloque-text">Pese a su tamaño, dispone de una oferta interesante, con varios AP:</p>
+          <div class="extra-tags">
+            <span class="extra-tag">AP English Literature</span><span class="extra-tag">AP English Language</span><span class="extra-tag">AP Calculus</span>
+            <span class="extra-tag">AP US History</span><span class="extra-tag">AP Spanish Language &amp; Culture</span>
+            <span class="extra-tag">French</span><span class="extra-tag">Spanish</span>
+          </div>
+        </div>
+
+        <div class="bloque">
+          <div class="bloque-title">Artes y clubes</div>
+          <p class="bloque-text">Pese a su tamaño, tiene bastante vida escolar:</p>
+          <div class="extra-tags">
+            <span class="extra-tag">Robotics</span><span class="extra-tag">Model UN</span><span class="extra-tag">Esports</span><span class="extra-tag">Drone Team</span>
+            <span class="extra-tag">Chess</span><span class="extra-tag">Student Council</span><span class="extra-tag">National Honor Society</span>
+            <span class="extra-tag">Digital Photography</span><span class="extra-tag">Ceramics</span><span class="extra-tag">Music</span>
+            <span class="extra-tag">Guitar</span><span class="extra-tag">Theatre</span>
+          </div>
+        </div>
+
+      </div>
+      <div class="match-bar">
+        <span class="match-tag">Colegio pequeño</span><span class="match-tag">Massachusetts / Berkshires</span>
+        <span class="match-tag">Catamount ~15 min</span><span class="match-tag">Ski Butternut ~20–25 min</span>
+        <span class="match-tag">Familia anfitriona</span><span class="match-tag">Experiencia muy personalizada</span>
+        <span class="match-tag">Plaza enero confirmada</span>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- ============ COMPARATIVA ============ -->
+  <div class="section-title"><h2>Comparativa final</h2></div>
+  <div class="tabla-wrap">
+    <table class="comp">
+      <thead>
+        <tr><th></th><th><span class="th-pais">Canadá</span>Qualicum</th><th><span class="th-pais">Canadá</span>Comox Valley</th><th><span class="th-pais">EE. UU.</span>Bonneville</th><th><span class="th-pais">EE. UU.</span>Mount Everett</th></tr>
+      </thead>
+      <tbody>
+        <tr><th>País</th><td>Canadá</td><td>Canadá</td><td>EE. UU.</td><td>EE. UU.</td></tr>
+        <tr><th>Programa</th><td>Semestre</td><td>Semestre</td><td>F1 semestre</td><td>F1 semestre</td></tr>
+        <tr><th>Alojamiento</th><td>Familia</td><td>Familia</td><td>Familia</td><td>Familia</td></tr>
+        <tr><th>Enero 2027</th><td class="ok">Confirmado</td><td class="ok">Confirmado</td><td class="ok">Confirmado</td><td class="ok">Confirmado</td></tr>
+        <tr><th>Colegio recomendado</th><td>Kwalikum</td><td>Highland</td><td>Bonneville High</td><td>Mount Everett</td></tr>
+        <tr><th>Esquí</th><td class="estrellas">★★★★</td><td class="estrellas">★★★★★</td><td class="estrellas">★★★★</td><td class="estrellas">★★★★★</td></tr>
+        <tr><th>Principal ventaja ski</th><td>Bus + trips</td><td>Mount Washington + ski escolar</td><td>Kelly Canyon / Ski Club</td><td>2 estaciones muy cerca</td></tr>
+        <tr><th>Boys Soccer enero–junio</th><td>No competitivo</td><td>No competitivo</td><td>No competitivo</td><td>No competitivo</td></tr>
+        <tr><th>Alternativa fútbol</th><td>Club / local</td><td>Club / local</td><td>Club / local</td><td>Club / local</td></tr>
+        <tr><th>Entorno</th><td>Costa / pequeño</td><td>Costa + montaña</td><td>Ciudad media / outdoor</td><td>Pueblo / montaña</td></tr>
+        <tr><th>Tamaño colegio</th><td>Medio</td><td>Medio</td><td>Grande</td><td>Muy pequeño</td></tr>
+        <tr class="precio-row"><th>Precio</th><td>15.400 €</td><td>15.700 €</td><td>16.500 €</td><td>22.900 €</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- ============ RECOMENDACIÓN ============ -->
+  <div class="section-title"><h2>Nuestra recomendación</h2></div>
+  <p class="intro-text">
+    No queremos señalar una única opción como «la mejor»: las cuatro son válidas y cada una destaca por un motivo distinto.
+    Esto es lo que aporta cada una.
+  </p>
+  <div class="reco-grid">
+    <div class="reco-card">
+      <div class="reco-head"><span class="reco-flag"><span class="pais-chip ca">Canadá</span></span><span class="reco-nombre">Comox Valley</span></div>
+      <span class="reco-claim">La más completa</span>
+      <p class="reco-text">
+        La opción más completa para combinar instituto y esquí. Mount Washington está muy cerca y el ski/snowboard tiene
+        presencia dentro de la propia experiencia escolar, no solo como actividad de fin de semana.
+      </p>
+    </div>
+    <div class="reco-card">
+      <div class="reco-head"><span class="reco-flag"><span class="pais-chip ca">Canadá</span></span><span class="reco-nombre">Qualicum</span></div>
+      <span class="reco-claim">Mejor equilibrio</span>
+      <p class="reco-text">
+        Excelente equilibrio entre precio, entorno y esquí. Tenemos plazas confirmadas en sus dos institutos, autobús de fin
+        de semana a la montaña y salidas organizadas por el International Program.
+      </p>
+    </div>
+    <div class="reco-card">
+      <div class="reco-head"><span class="reco-flag"><span class="pais-chip us">EE. UU.</span></span><span class="reco-nombre">Bonneville</span></div>
+      <span class="reco-claim">Mejor calidad / precio en EE. UU.</span>
+      <p class="reco-text">
+        La mejor relación calidad/precio en Estados Unidos. Idaho encaja muy bien con un perfil outdoor y existe además
+        precedente de Ski Club en el propio colegio.
+      </p>
+    </div>
+    <div class="reco-card">
+      <div class="reco-head"><span class="reco-flag"><span class="pais-chip us">EE. UU.</span></span><span class="reco-nombre">Mount Everett</span></div>
+      <span class="reco-claim">La mejor ubicación para esquiar</span>
+      <p class="reco-text">
+        La mejor ubicación pura para esquiar: dos estaciones prácticamente al lado. Y un colegio muy pequeño, ideal si la
+        familia valora especialmente un entorno académico cercano y personalizado.
+      </p>
+    </div>
+  </div>
+
+  <!-- ============ FÚTBOL ============ -->
+  <div class="section-title"><h2>Y el fútbol</h2></div>
+  <div class="futbol-wrap">
+    <div class="futbol-inner">
+      <div class="futbol-title">¿Qué ocurre con el fútbol de enero a junio?</div>
+      <p class="futbol-text">
+        Las cuatro opciones seleccionadas ofrecen fútbol en su entorno, pero la <strong>temporada competitiva masculina de los institutos
+        norteamericanos se desarrolla principalmente durante el otoño</strong>, antes de la llegada de Inais.
+      </p>
+      <p class="futbol-text">
+        Por este motivo, para el segundo semestre hemos priorizado especialmente destinos donde pueda <strong>aprovechar la temporada de
+        esquí</strong> y, paralelamente, podremos valorar <strong>clubes locales, fútbol comunitario o actividades recreativas</strong> para que
+        continúe jugando durante su estancia.
+      </p>
+    </div>
+  </div>
+
+  <!-- ============ EL PROGRAMA INCLUYE ============ -->
+  <div class="section-title"><h2>Qué incluye cada programa</h2></div>
+  <p class="intro-text">
+    Las opciones de Canadá y las de Estados Unidos corresponden a dos programas distintos, con contenidos propios.
+    Esto es lo que cubre cada uno.
+  </p>
+
+  <div class="includes-wrap">
+    <div class="includes-head">
+      <div>
+        <h3>Opciones de Canadá · Qualicum y Comox Valley</h3>
+        <div class="includes-head-sub">Semestre escolar · instituto público + familia anfitriona</div>
+      </div>
+      <span class="pais-chip ca">Canadá</span>
+    </div>
+    <div class="includes-body">
+      <div class="includes-grid">
+        <div>
+          <div class="col-title">Antes del viaje</div>
+          <ul class="inc-list">
+            <li>Reunión inicial con padres o tutores</li>
+            <li>Prueba de inglés y entrevista personal online</li>
+            <li>Propuesta personalizada de distrito y colegios</li>
+            <li>Inscripción y matriculación en el centro</li>
+            <li>Familia anfitriona en pensión completa, habitación individual o compartida</li>
+            <li>Un único estudiante hispanohablante por familia</li>
+            <li>Seguro médico y de accidentes</li>
+            <li>Libros de algunas asignaturas</li>
+            <li>Gestión del visado Study Permit<small>Tasa incluida</small></li>
+            <li>Vuelos de ida y vuelta<small>Coste máximo reconocido 1.000 €. El exceso corre a cargo de la familia</small></li>
+            <li>Orientación pre-viaje en Madrid o online</li>
+            <li>Welcome pack de My Language Quest</li>
+          </ul>
+        </div>
+        <div>
+          <div class="col-title">Durante el viaje</div>
+          <ul class="inc-list">
+            <li>Recibimiento en aeropuerto y traslados</li>
+            <li>Asesoramiento en elección de asignaturas, garantizando la convalidación</li>
+            <li>Clases de inglés Cambridge y libro incluido</li>
+            <li>Taller con docente del MIT (3 sesiones)</li>
+            <li>Supervisión local: visitas, tutorías y emergencias 24 h</li>
+            <li>Acompañamiento psicológico</li>
+            <li>Atención 24 h en España para emergencias</li>
+            <li>Apoyo para la matriculación en actividades extraescolares</li>
+            <li>Gestión de cambio de familia si fuera necesario</li>
+          </ul>
+          <div class="col-title" style="margin-top:22px;">Después del viaje</div>
+          <ul class="inc-list">
+            <li>Convalidación ante el Ministerio de Educación</li>
+            <li>Validación de notas y apostilla de la Haya</li>
+            <li>Dossier final detallando la experiencia</li>
+          </ul>
+        </div>
+        <div>
+          <div class="col-title">No incluido</div>
+          <ul class="inc-list no">
+            <li>Exceso de vuelos sobre 1.000 €</li>
+            <li>Actividades extracurriculares de pago</li>
+            <li>Excursiones y viajes escolares</li>
+            <li>Material escolar, uniformes y libros adicionales</li>
+            <li>Fotografía escolar y anuario</li>
+            <li>Transporte local mensual</li>
+            <li>Gastos de ocio personal</li>
+            <li>Cualquier gasto no mencionado explícitamente</li>
+          </ul>
+        </div>
+      </div>
+      <div class="gestor-wrap">
+        <div class="gestor-title">Gestor estudiantil · se encarga de</div>
+        <div class="gestor-grid">
+          <div class="gestor-item">Seguimiento personalizado del desempeño</div>
+          <div class="gestor-item">Información a padres mensualmente</div>
+          <div class="gestor-item">Notas oficiales de cada periodo</div>
+          <div class="gestor-item">Asesoría en cambio de asignaturas</div>
+          <div class="gestor-item">Todas las tutorías necesarias</div>
+          <div class="gestor-item">Reuniones con padres y/o estudiante</div>
+          <div class="gestor-item">Apoyo en actividades extraescolares</div>
+          <div class="gestor-item">Resolución de situaciones con familia o centro</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="includes-wrap">
+    <div class="includes-head usa">
+      <div>
+        <h3>Opciones de Estados Unidos · Bonneville y Mount Everett</h3>
+        <div class="includes-head-sub">Programa F1 · instituto público + familia anfitriona</div>
+      </div>
+      <span class="pais-chip us">EE. UU.</span>
+    </div>
+    <div class="includes-body">
+      <div class="includes-grid">
+        <div>
+          <div class="col-title">Antes del viaje</div>
+          <ul class="inc-list">
+            <li>Reunión inicial en persona, teléfono o videoconferencia</li>
+            <li>Examen ELTIS y entrevista personal online</li>
+            <li>Provisión de la información necesaria sobre el programa F1</li>
+            <li>Inscripción y matriculación en el centro de secundaria</li>
+            <li>Selección de familia anfitriona</li>
+            <li>Seguro médico y de accidentes</li>
+            <li>Tasas y tramitación del visado F1</li>
+            <li>Programa formativo y de orientación para el estudiante</li>
+            <li>Programa formativo y de orientación para los padres<small>No obligatorio</small></li>
+            <li>Orientación pre-viaje en Madrid</li>
+            <li>Pack sorpresa de My Language Quest</li>
+          </ul>
+        </div>
+        <div>
+          <div class="col-title">Durante el viaje</div>
+          <ul class="inc-list">
+            <li>Recibimiento en aeropuerto y traslados</li>
+            <li>Asesoramiento en elección de asignaturas</li>
+            <li>Clases de inglés Cambridge y su libro</li>
+            <li>Libros de las asignaturas obligatorias</li>
+            <li>Transporte escolar</li>
+            <li>Taller de 3 sesiones con docente del MIT</li>
+            <li>Supervisión local y visitas</li>
+            <li>Reportes periódicos del gestor estudiantil</li>
+            <li>Acompañamiento psicológico</li>
+            <li>Atención 24 horas en España para emergencias</li>
+            <li>Asesoramiento para universidades americanas</li>
+            <li>Gestión individualizada de los viajes del estudiante</li>
+          </ul>
+          <div class="col-title" style="margin-top:22px;">Después del viaje</div>
+          <ul class="inc-list">
+            <li>Convalidación del curso escolar</li>
+            <li>Recogida de los transcripts finales</li>
+            <li>Coordinación con el centro escolar</li>
+            <li>Apostilla de La Haya de las calificaciones</li>
+            <li>Presentación y seguimiento ante el Ministerio de Educación</li>
+            <li>Dossier final detallando la experiencia</li>
+          </ul>
+        </div>
+        <div>
+          <div class="col-title">No incluido</div>
+          <ul class="inc-list no">
+            <li>Vuelos<small>MLQ gestiona la búsqueda; el coste corre a cargo de la familia</small></li>
+            <li>Actividades extracurriculares de pago</li>
+            <li>Excursiones y viajes escolares</li>
+            <li>Material escolar, uniformes y libros adicionales</li>
+            <li>Fotografía escolar y anuario</li>
+            <li>Transporte local mensual</li>
+            <li>Gastos de ocio personal</li>
+            <li>Cualquier gasto no mencionado explícitamente</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ============ CIERRE ============ -->
+  <div class="section-title"><h2>Siguiente paso</h2></div>
+  <div class="steps-wrap">
+    <div class="steps-inner">
+      <div class="steps-title">Cinco meses que cambian un curso</div>
+      <p class="steps-text">
+        Esta nueva selección responde al cambio de planteamiento de la familia: en lugar de realizar un curso académico completo,
+        Inais viviría una experiencia de <strong>aproximadamente cinco meses durante el segundo semestre de 1.º de Bachillerato</strong>.
+      </p>
+      <p class="steps-text">
+        Hemos buscado específicamente destinos donde los meses de <strong>enero a marzo permitan aprovechar realmente el esquí</strong> y donde,
+        al mismo tiempo, pueda integrarse en un instituto local, convivir con una familia anfitriona y continuar desarrollándose
+        académica y personalmente.
+      </p>
+      <p class="steps-text">
+        Las cuatro opciones cuentan actualmente con <strong>disponibilidad para enero de 2027</strong>, por lo que el siguiente paso será decidir
+        cuáles encajan mejor con las prioridades de Inais y de la familia.
+      </p>
+      <div class="pasos-cta-wrap">
+        <a class="pasos-cta" href="mailto:gespinoza@mylanguagequest.com?subject=Propuesta%20semestre%20enero-junio%202027%20%C2%B7%20Inais&amp;body=Hola%20Georgina%2C%0A%0AHemos%20revisado%20la%20propuesta%20del%20semestre%20enero%E2%80%93junio%202027%20para%20Inais.%0A%0AOpci%C3%B3n%20que%20nos%20interesa%3A%20%0A%0AGracias.">✉️ Comentar las opciones</a>
+        <a class="pasos-cta pasos-cta-alt" href="https://asesoramientosmlq.zohobookings.eu/mylanguagequest" target="_blank" rel="noopener">📅 Agendar llamada con mi asesora</a>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<!-- ============ FOOTER ============ -->
+<div class="footer">
+  <div class="footer-logo">MY LANGUAGE QUEST</div>
+  <div class="footer-tag">Explore · Learn · Grow</div>
+  <div class="footer-meta">
+    Propuesta personalizada para Inais · Semestre escolar enero – junio 2027<br>
+    Precios orientativos sujetos a disponibilidad de plaza y confirmación del colegio o distrito escolar.
+  </div>
+</div>
+
+
+<script>
+(function(){
+  var d=document, root=d.documentElement;
+  if(!('IntersectionObserver' in window)){root.className=root.className.replace(' js-anim','');return;}
+
+  var bar=d.createElement('div'); bar.className='progress-bar'; d.body.appendChild(bar);
+  var ticking=false;
+  function progress(){
+    var h=d.documentElement.scrollHeight-window.innerHeight;
+    bar.style.transform='scaleX('+(h>0?Math.min(window.scrollY/h,1):0)+')';
+    ticking=false;
+  }
+  window.addEventListener('scroll',function(){if(!ticking){ticking=true;requestAnimationFrame(progress);}},{passive:true});
+  progress();
+
+  Array.prototype.forEach.call(d.querySelectorAll('.hero-pill'),function(el,i){
+    el.style.animationDelay=(0.36+i*0.06)+'s';
+  });
+
+  var groups=[
+    ['.section-title','reveal'],
+    ['.intro-text','reveal'],
+    ['.intro-point','reveal'],
+    ['.sel-card','reveal'],
+    ['.opcion-card','reveal'],
+    ['.tabla-wrap','reveal-zoom'],
+    ['.reco-card','reveal'],
+    ['.futbol-wrap','reveal-zoom'],
+    ['.includes-wrap','reveal-zoom'],
+    ['.steps-wrap','reveal-zoom']
+  ];
+  groups.forEach(function(g){
+    Array.prototype.forEach.call(d.querySelectorAll(g[0]),function(el,i){
+      el.classList.add(g[1]);
+      el.style.transitionDelay=Math.min(i*0.09,0.36)+'s';
+    });
+  });
+
+  var io=new IntersectionObserver(function(entries){
+    entries.forEach(function(e){
+      if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}
+    });
+  },{threshold:0.08,rootMargin:'0px 0px -6% 0px'});
+  Array.prototype.forEach.call(d.querySelectorAll('.reveal,.reveal-zoom'),function(el){io.observe(el);});
+
+})();
+</script>
+
+<!-- MLQ tracking -->
+<script>
+(function () {
+  var URL_TRACKING = 'https://script.google.com/macros/s/AKfycbygwC8SbNtpdSo9sEEyAOYnZR-7ui1jgk-7wF9gOhM5kJs2qLgBxhQI7MJHutokDSFajA/exec';
+  if (URL_TRACKING.indexOf('http') !== 0) return;
+
+  var archivo    = (location.pathname.split('/').pop() || 'index.html');
+  var estudiante = archivo.replace(/\.html?$/i, '').replace(/-/g, ' ');
+  var programa   = (document.title.split('·')[0] || '').trim();
+  var sesion     = Math.random().toString(36).slice(2, 10);
+
+  function enviar(evento, valor) {
+    var qs = '?evento=' + encodeURIComponent(evento) +
+             '&valor=' + encodeURIComponent(valor || '') +
+             '&archivo=' + encodeURIComponent(archivo) +
+             '&estudiante=' + encodeURIComponent(estudiante) +
+             '&programa=' + encodeURIComponent(programa) +
+             '&sesion=' + sesion +
+             '&referrer=' + encodeURIComponent(document.referrer || '') +
+             '&ua=' + encodeURIComponent(navigator.userAgent) +
+             '&t=' + Date.now();
+    try {
+      if (window.fetch) {
+        fetch(URL_TRACKING + qs, { mode: 'no-cors', keepalive: true });
+      } else {
+        new Image().src = URL_TRACKING + qs;
+      }
+    } catch (e) {}
+  }
+
+  try {
+    if (!sessionStorage.getItem('mlq_open_' + archivo)) {
+      sessionStorage.setItem('mlq_open_' + archivo, '1');
+      enviar('apertura');
+    }
+  } catch (e) { enviar('apertura'); }
+
+  var activo = 0, marca = Date.now(), visible = !document.hidden, hito30 = false;
+
+  function acumular() {
+    if (visible) activo += Date.now() - marca;
+    marca = Date.now();
+  }
+
+  document.addEventListener('visibilitychange', function () {
+    acumular();
+    visible = !document.hidden;
+  });
+
+  setInterval(function () {
+    acumular();
+    if (!hito30 && activo >= 30000) {
+      hito30 = true;
+      enviar('lectura_30s');
+    }
+  }, 1000);
+
+  var hitos = [25, 50, 75, 100], enviados = {};
+
+  function revisarScroll() {
+    var alto = document.documentElement.scrollHeight - window.innerHeight;
+    var pct  = alto <= 0 ? 100 : Math.round((window.pageYOffset / alto) * 100);
+    for (var i = 0; i < hitos.length; i++) {
+      var h = hitos[i];
+      if (pct >= h && !enviados[h]) {
+        enviados[h] = true;
+        enviar('scroll_' + h);
+      }
+    }
+  }
+
+  window.addEventListener('scroll', revisarScroll, { passive: true });
+  window.addEventListener('resize', revisarScroll, { passive: true });
+  setTimeout(revisarScroll, 1500);
+
+  var cerrado = false;
+  function alSalir() {
+    if (cerrado) return;
+    cerrado = true;
+    acumular();
+    enviar('salida', Math.round(activo / 1000));
+  }
+  window.addEventListener('pagehide', alSalir);
+  document.addEventListener('visibilitychange', function () {
+    if (document.hidden) { acumular(); }
+  });
+})();
+</script>
+</body>
+</html>
