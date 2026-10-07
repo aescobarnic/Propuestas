@@ -129,6 +129,12 @@ details summary::-webkit-details-marker{display:none;}
 details summary::before{content:'▸';font-size:10px;transition:transform .2s;display:inline-block;}
 details[open] summary::before{transform:rotate(90deg);}
 .colegio-razon{padding:10px 14px 13px;font-size:12px;color:var(--text-mid);line-height:1.7;border-left:3px solid var(--red);margin:0 14px 12px;background:var(--red-light);border-radius:0 6px 6px 0;}
+.colegio-web{display:flex;align-items:center;justify-content:center;gap:9px;margin:2px 14px 14px;padding:11px 16px;border:1px solid var(--gray-border);border-radius:10px;background:linear-gradient(180deg,var(--white) 0%,var(--cream) 100%);color:var(--blue);font-size:10.5px;font-weight:800;letter-spacing:.09em;text-transform:uppercase;text-decoration:none;box-shadow:0 1px 2px rgba(13,27,42,.05);transition:all .22s ease;}
+.colegio-web .cw-ico{width:14px;height:14px;flex:none;stroke:var(--red);transition:stroke .22s ease;}
+.colegio-web .cw-arrow{color:var(--red);font-weight:700;transition:transform .22s ease,color .22s ease;}
+.colegio-web:hover{border-color:var(--red);background:var(--red);color:var(--white);box-shadow:0 4px 14px rgba(177,41,0,.25);transform:translateY(-1px);}
+.colegio-web:hover .cw-ico{stroke:var(--white);}
+.colegio-web:hover .cw-arrow{color:var(--white);transform:translateX(3px);}
 .match-bar{display:flex;gap:6px;flex-wrap:wrap;padding:14px 22px;border-top:1px solid var(--gray-border);background:linear-gradient(to right,var(--gray-card),var(--white));}
 .match-tag{display:flex;align-items:center;gap:4px;font-size:10px;font-weight:600;color:var(--green-dark);background:var(--green-light);border:1px solid rgba(76,158,12,0.25);border-radius:20px;padding:3px 10px;}
 .match-tag::before{content:'✓';font-size:9px;}
@@ -506,10 +512,14 @@ details[open] summary::before{transform:rotate(90deg);}
         <div class="colegio">
           <div class="colegio-top"><div class="colegio-nombre">Lindsay Thurber Comprehensive High School</div><div class="colegio-meta"><span class="tag pub">Público</span><span class="tag info">Grade 10</span><span class="tag info">~1.800 alumnos</span><span class="tag info">Red Deer</span></div></div>
           <details><summary>Por qué encaja con Álvaro</summary><div class="colegio-razon">Es el distrito de los tres donde los dos deportes de Álvaro están cubiertos a la vez: el programa deportivo incluye tenis y bádminton junto a baloncesto, voleibol, balonmano, curling, golf, rugby y atletismo, y el instituto cuenta con sala de musculación propia. Entre los clubes hay uno de esquí y snowboard, y las salidas que ya van incluidas en la cuota de actividades del programa llevan a los estudiantes a esquiar y a conocer las Rocosas, Calgary, Edmonton y los Badlands. Un centro de este tamaño ofrece además una oferta de asignaturas muy amplia y un departamento de orientación con recorrido, que es justo lo que necesita un estudiante al que conviene acompañar de cerca en lo académico.</div></details>
+          <a class="colegio-web" href="https://lindsaythurber.rdpsd.ab.ca/" target="_blank" rel="noopener"><svg class="cw-ico" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c2.5 2.7 2.5 15.3 0 18M12 3c-2.5 2.7-2.5 15.3 0 18"/></svg><span>Web del colegio</span><span class="cw-arrow">↗</span></a>
+        
         </div>
         <div class="colegio">
           <div class="colegio-top"><div class="colegio-nombre">Hunting Hills High School</div><div class="colegio-meta"><span class="tag pub">Público</span><span class="tag info">Grade 10</span><span class="tag info">~1.400 alumnos</span><span class="tag info">Red Deer</span></div></div>
           <details><summary>Por qué encaja con Álvaro</summary><div class="colegio-razon">Red Deer ofrece Bachillerato Internacional, Advanced Placement, inmersión en francés y un itinerario de Sports Excellence, de modo que el nivel se ajusta al alumno y no al revés. El apoyo lingüístico se organiza en uno o dos periodos diarios de 70 minutos según lo que necesite cada estudiante, con una prueba de nivel al entrar: con un B2 de Cambridge ya en la mano, Álvaro entra directo a clase con sus compañeros canadienses. El distrito gestiona sus propias familias anfitrionas y admite estudiantes a partir de los catorce años.</div></details>
+          <a class="colegio-web" href="https://huntinghills.rdpsd.ab.ca/" target="_blank" rel="noopener"><svg class="cw-ico" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c2.5 2.7 2.5 15.3 0 18M12 3c-2.5 2.7-2.5 15.3 0 18"/></svg><span>Web del colegio</span><span class="cw-arrow">↗</span></a>
+        
         </div>
       </div></div>
       <div class="match-bar"><span class="match-tag">Tenis y bádminton</span><span class="match-tag">Club de esquí y snowboard</span><span class="match-tag">Esquí en actividades incluidas</span><span class="match-tag">IB · AP · Sports Excellence</span></div>
@@ -526,10 +536,14 @@ details[open] summary::before{transform:rotate(90deg);}
         <div class="colegio">
           <div class="colegio-top"><div class="colegio-nombre">Selkirk Secondary School</div><div class="colegio-meta"><span class="tag pub">Público</span><span class="tag info">Grade 10</span><span class="tag info">~540 alumnos</span><span class="tag info">Kimberley · ~8.500 hab.</span></div></div>
           <details><summary>Por qué encaja con Álvaro</summary><div class="colegio-razon">Kimberley tiene su estación de esquí a cuatro kilómetros del colegio, y el esquí y el snowboard figuran como deporte escolar junto a fútbol, voleibol, rugby, baloncesto, natación, atletismo, golf y cross. El programa internacional de Selkirk es uno de los más veteranos de Canadá: recibe estudiantes extranjeros desde principios de los ochenta. Con unos 25 internacionales sobre 540 alumnos, Álvaro no se cruzará con un grupo de hispanohablantes en el pasillo: el inglés es el idioma de todo el día.</div></details>
+          <a class="colegio-web" href="https://sss.sd6.bc.ca/" target="_blank" rel="noopener"><svg class="cw-ico" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c2.5 2.7 2.5 15.3 0 18M12 3c-2.5 2.7-2.5 15.3 0 18"/></svg><span>Web del colegio</span><span class="cw-arrow">↗</span></a>
+        
         </div>
         <div class="colegio">
           <div class="colegio-top"><div class="colegio-nombre">David Thompson Secondary School</div><div class="colegio-meta"><span class="tag pub">Público</span><span class="tag info">Grade 10</span><span class="tag info">~460 alumnos</span><span class="tag info">Invermere · ~4.000 hab.</span></div></div>
           <details><summary>Por qué encaja con Álvaro</summary><div class="colegio-razon">Invermere está en el valle del Columbia con la estación de Panorama a poco más de veinte kilómetros. Lo que distingue a este programa es el acompañamiento: los estudiantes internacionales se reúnen cada semana con su coordinador local, y las actividades quincenales incluidas cubren jornadas de esquí o snowboard con clases, alquiler de material y forfait, además de un campamento de invierno con pernocta, rafting, curling, senderismo y aguas termales. Un centro de este tamaño significa tutores que conocen a cada alumno por su nombre desde septiembre.</div></details>
+          <a class="colegio-web" href="https://dtss.sd6.bc.ca/" target="_blank" rel="noopener"><svg class="cw-ico" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c2.5 2.7 2.5 15.3 0 18M12 3c-2.5 2.7-2.5 15.3 0 18"/></svg><span>Web del colegio</span><span class="cw-arrow">↗</span></a>
+        
         </div>
       </div></div>
       <div class="match-bar"><span class="match-tag">Estación a 4 km</span><span class="match-tag">Esquí incluido con clases</span><span class="match-tag">Seguimiento semanal</span><span class="match-tag">Inmersión alta</span></div>
@@ -546,10 +560,14 @@ details[open] summary::before{transform:rotate(90deg);}
         <div class="colegio">
           <div class="colegio-top"><div class="colegio-nombre">Strathmore High School</div><div class="colegio-meta"><span class="tag pub">Público</span><span class="tag info">Grade 10</span><span class="tag info">~1.120 alumnos</span><span class="tag info">Strathmore · ~15.000 hab.</span></div></div>
           <details><summary>Por qué encaja con Álvaro</summary><div class="colegio-razon">Golden Hills asigna a los estudiantes internacionales un asesor académico propio, profesor titulado, cuyo trabajo es detectar las dificultades antes de que se conviertan en un problema, con orientadores en cada centro por encima de eso. Es el distrito que más lejos llega en la pregunta que más preocupa en casa: quién está pendiente de que estudie. Strathmore está a 25 minutos de Calgary, tiene tenis, bádminton, golf, ciclismo y curling en su programa deportivo, y optativas poco habituales como educación al aire libre y robótica.</div></details>
+          <a class="colegio-web" href="https://www.strathmorehighschool.com/" target="_blank" rel="noopener"><svg class="cw-ico" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c2.5 2.7 2.5 15.3 0 18M12 3c-2.5 2.7-2.5 15.3 0 18"/></svg><span>Web del colegio</span><span class="cw-arrow">↗</span></a>
+        
         </div>
         <div class="colegio">
           <div class="colegio-top"><div class="colegio-nombre">Drumheller Valley Secondary School</div><div class="colegio-meta"><span class="tag pub">Público</span><span class="tag info">Grade 10</span><span class="tag info">~500 alumnos</span><span class="tag info">Drumheller · ~8.000 hab.</span></div></div>
           <details><summary>Por qué encaja con Álvaro</summary><div class="colegio-razon">Centro de tamaño contenido en el valle de Drumheller, con equipos deportivos premiados y un programa amplio de clubes y comités estudiantiles. Todos los alumnos nuevos pasan por una jornada de orientación al inicio de curso pensada tanto para situarse en el colegio como para hacer los primeros amigos. Las familias anfitrionas las selecciona y entrevista de forma periódica un coordinador de alojamiento que trabaja dentro del propio distrito, no una empresa externa.</div></details>
+          <a class="colegio-web" href="https://www.drumvss.ca/" target="_blank" rel="noopener"><svg class="cw-ico" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c2.5 2.7 2.5 15.3 0 18M12 3c-2.5 2.7-2.5 15.3 0 18"/></svg><span>Web del colegio</span><span class="cw-arrow">↗</span></a>
+        
         </div>
       </div></div>
       <div class="match-bar"><span class="match-tag">Asesor académico propio</span><span class="match-tag">Tenis y bádminton</span><span class="match-tag">Orientación de entrada</span><span class="match-tag">A 25 min de Calgary</span></div>
