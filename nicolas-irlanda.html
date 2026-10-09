@@ -377,6 +377,26 @@ details[open] summary::before{transform:rotate(90deg);}
 .colegio-web::before{content:'🔗';font-size:10px;}
 .colegio-web:hover{background:rgba(255,255,255,0.16);color:#ffffff;}
 
+/* Estado de la informacion */
+.pend-block{background:#fffaf0;border:1px solid rgba(232,176,75,0.55);border-left:3px solid var(--gold);border-radius:0 8px 8px 0;padding:10px 14px;margin-bottom:16px;font-size:11.5px;color:#6b4a0a;line-height:1.6;}
+.pend-block b{color:#4d3405;font-weight:700;display:block;margin-bottom:3px;font-size:10px;letter-spacing:1.5px;text-transform:uppercase;}
+.estado-wrap{background:var(--white);border:1.5px solid var(--gray-border);border-radius:16px;overflow:hidden;box-shadow:0 2px 16px rgba(31,74,5,0.05);}
+.estado-head{background:linear-gradient(135deg,var(--blue-dark),var(--blue));padding:20px 32px;}
+.estado-head h3{font-family:'Josefin Sans',sans-serif;font-size:14px;font-weight:700;color:var(--white);letter-spacing:1px;margin-bottom:4px;}
+.estado-head p{font-size:11.5px;color:rgba(255,255,255,0.5);line-height:1.5;}
+.estado-body{padding:26px 32px;}
+.estado-grid{display:grid;grid-template-columns:1fr 1fr;gap:28px;}
+.estado-col-title{font-family:'Josefin Sans',sans-serif;font-size:9px;font-weight:700;letter-spacing:2.5px;text-transform:uppercase;margin-bottom:14px;padding-bottom:8px;border-bottom:2px solid var(--gray-border);}
+.estado-col-title.si{color:var(--ie);border-bottom-color:var(--ie-light);}
+.estado-col-title.no{color:var(--gold);border-bottom-color:rgba(232,176,75,0.3);}
+.estado-list{list-style:none;display:flex;flex-direction:column;gap:9px;}
+.estado-list li{font-size:12px;color:var(--text-mid);display:flex;gap:8px;align-items:flex-start;line-height:1.6;}
+.estado-list.si li::before{content:'\2713';color:var(--ie);font-weight:700;flex-shrink:0;}
+.estado-list.no li::before{content:'\25CB';color:var(--gold);font-weight:700;flex-shrink:0;}
+.estado-nota{margin-top:22px;padding-top:18px;border-top:1px solid var(--gray-border);font-size:12px;color:var(--text-mid);line-height:1.75;}
+.estado-nota strong{color:var(--text);}
+@media(max-width:720px){.estado-grid{grid-template-columns:1fr;}}
+
 /* Tarjetas de internado */
 .opcion-card.boarding .opcion-header{background:linear-gradient(135deg,var(--blue-dark) 0%,var(--blue) 60%,var(--blue-mid) 100%);}
 .opcion-card.boarding .opcion-header::after{content:'⚜';}
@@ -476,7 +496,7 @@ details[open] summary::before{transform:rotate(90deg);}
       <div class="hero-pill">🧳 Experiencia previa fuera de casa</div>
       <div class="hero-pill ac">🏙 Ciudades y localidades grandes</div>
     </div>
-    <div class="hero-promo">☘ Descuento aplicado de <strong>750 €</strong> sobre el Programa Choice y sobre cualquiera de los tres internados de esta propuesta. Los precios que aparecen más abajo ya lo llevan descontado.</div>
+    <div class="hero-promo">☘ Propuesta actualizada con las respuestas recibidas de los tres internados. Descuento aplicado de <strong>750 €</strong> sobre el Programa Choice y sobre cualquiera de los tres internados de esta propuesta. Los precios que aparecen más abajo ya lo llevan descontado.</div>
   </div>
 </div>
 
@@ -645,60 +665,69 @@ details[open] summary::before{transform:rotate(90deg);}
   <div class="section-title"><h2>Vía 2 · Internados privados · 7 días</h2></div>
   <div class="alert-box">
     <div class="alert-icon">⚜</div>
-    <div class="alert-text"><strong>Aquí el precio sí cambia según el colegio,</strong> porque lo fija el propio internado. Los importes que aparecen debajo son el total cerrado del curso: matrícula, internado de 7 días en pensión completa, tutor legal en Irlanda y toda la gestión de My Language Quest. Ya llevan descontados los 750 €. Los vuelos se gestionan aparte.</div>
+    <div class="alert-text"><strong>Aquí el precio sí cambia según el colegio,</strong> porque lo fija el propio internado. Los importes son el total del curso: matrícula, internado de 7 días en pensión completa, tutor legal en Irlanda y la gestión completa de My Language Quest, con los 750 € ya descontados. Los vuelos se gestionan aparte. Hemos preguntado a los tres centros por dormitorios, fútbol local y actividades religiosas: lo que han contestado está en cada ficha, y lo que falta aparece marcado como tal.</div>
   </div>
   <div class="opciones-grid">
+
+    <div class="opcion-card boarding recomendada">
+      <div class="badge-rec">★ RECOMENDADO</div>
+      <div class="opcion-header">
+        <div class="colegio-zona">Condado de Waterford · Ciudad</div>
+        <div class="opcion-distrito">Newtown School</div>
+        <div class="opcion-loc">📍 Waterford (53.000 hab.) · Sureste de Irlanda</div>
+        <div class="colegio-chips"><span class="chip">Mixto</span><span class="chip">Internado 7 días</span><span class="chip">Concertado</span><span class="chip gold">⚜ Tecnología + fútbol local</span></div>
+        <a class="colegio-web" href="https://www.newtownschool.ie" target="_blank" rel="noopener">newtownschool.ie</a>
+        <div class="precio-chip board"><span class="val">27.950 €</span><span class="desc">curso completo</span><span class="tachado">28.700 €</span></div>
+      </div>
+      <div class="opcion-body">
+        <div class="colegio-desc">Es el internado que mejor responde a las dos cosas que pedís. Su Transition Year tiene un bloque tecnológico real y es el único de los tres que ha señalado un club de fútbol concreto al que Nicolás podría apuntarse fuera del colegio. Waterford es una ciudad de 53.000 habitantes con casco histórico, puerto y vida propia.</div>
+        <div class="colegio-section-title">Transition Year · programa recibido</div>
+        <div class="extra-tags"><span class="extra-tag">💻 Programación</span><span class="extra-tag">📐 SolidWorks · Diseño técnico</span><span class="extra-tag">🎬 Producción audiovisual</span><span class="extra-tag">📷 Fotografía digital</span><span class="extra-tag">🎹 Música tecnológica</span><span class="extra-tag">🔬 Investigación forense</span><span class="extra-tag">📊 Empresa y gestión de proyectos</span></div>
+        <div class="colegio-section-title">Actividades y deporte</div>
+        <div class="extra-tags"><span class="extra-tag">🛶 Kayak · Surf</span><span class="extra-tag">⛰ Montañismo · Senderismo</span><span class="extra-tag">🚴 Ciclismo</span><span class="extra-tag">🏋️ Preparación física</span><span class="extra-tag">⛑ Primeros auxilios</span><span class="extra-tag">🧭 Liderazgo</span><span class="extra-tag">🇪🇺 Proyectos Erasmus+</span></div>
+        <div class="colegio-section-title">Fútbol fuera del colegio</div>
+        <div class="actividades-ciudad">El colegio apunta al <strong>Villa FC Waterford</strong>, a poca distancia del campus, y puede organizar los taxis. La inscripción la tramita la familia directamente con el club. Es una vía abierta, no una plaza reservada: quedan por confirmar el equipo por edad, el nivel de competición, si hay plazas libres, el calendario y el coste.</div>
+        <div class="colegio-section-title">Residencia y convivencia</div>
+        <div class="actividades-ciudad">Habitaciones de hasta cuatro estudiantes según la edad, con baños y duchas compartidos entre dormitorios. El colegio prevé entre 10 y 15 españoles en Transition Year para 2027/28, cifra no definitiva, y procura repartir a los alumnos de la misma nacionalidad en función de la disponibilidad.</div>
+        <div class="colegio-section-title">Vida religiosa</div>
+        <div class="actividades-ciudad">Hay un <em>Collect</em> matinal de asistencia obligatoria. La reunión religiosa del domingo no es obligatoria para los internos.</div>
+        <div class="pend-block"><b>Pendiente de confirmar</b>No hay fotos oficiales de las habitaciones. Los importes adicionales que maneja el colegio corresponden al curso 2026/27 y están sin actualizar: cuota de Transition Year 700 €, excursión a Killary 450 €, certificación de socorrismo 250 € y un viaje de esquí sin precio cerrado. Falta que el colegio confirme cuáles de estos conceptos son obligatorios y cuáles opcionales, además del calendario definitivo de las tres semanas de prácticas en empresa.</div>
+        <div class="colegio-section-title">Por qué encaja con Nicolás</div>
+        <ul class="por-que-list">
+          <li>Programación, diseño técnico con SolidWorks y producción audiovisual dentro del horario lectivo, no como taller suelto de tarde</li>
+          <li>Es el único de los tres que ha identificado un club de fútbol concreto al que podría apuntarse</li>
+          <li>Las tres semanas de prácticas en empresa son algo que en 4º de la ESO aquí no existe</li>
+          <li>Ciudad de tamaño medio con vida propia, lejos del perfil de pueblo pequeño que descartasteis</li>
+        </ul>
+      </div>
+      <div class="match-bar"><span class="match-tag">Tecnología en el currículo</span><span class="match-tag">Vía de fútbol local</span><span class="match-tag">Prácticas en empresa</span></div>
+    </div>
 
     <div class="opcion-card boarding">
       <div class="opcion-header">
         <div class="colegio-zona">Condado de Sligo · Ciudad</div>
         <div class="opcion-distrito">Sligo Grammar School</div>
         <div class="opcion-loc">📍 Sligo · Costa noroeste de Irlanda</div>
-        <div class="colegio-chips"><span class="chip">Mixto</span><span class="chip">Internado 7 días</span><span class="chip">+110 internos</span><span class="chip gold">⚜ TY internacional</span></div>
+        <div class="colegio-chips"><span class="chip">Mixto</span><span class="chip">Internado 7 días</span><span class="chip">+110 internos</span><span class="chip gold">⚜ Opción más económica</span></div>
         <a class="colegio-web" href="https://www.sligogrammarschool.org" target="_blank" rel="noopener">sligogrammarschool.org</a>
         <div class="precio-chip board"><span class="val">25.650 €</span><span class="desc">curso completo</span><span class="tachado">26.400 €</span></div>
       </div>
       <div class="opcion-body">
-        <div class="colegio-desc">Es el internado con más rodaje internacional de los tres y el que mejor relación precio y experiencia ofrece. Más de 110 alumnos viven en el centro, de forma que la vida de residencia está consolidada y no se vacía los fines de semana. Su proceso de admisión contempla de forma explícita la plaza de Transition Year en régimen de 7 días para estudiantes extranjeros.</div>
-        <div class="colegio-section-title">Deporte</div>
+        <div class="colegio-desc">La alternativa si la prioridad es contener el presupuesto: son 2.300 € menos que Newtown. Más de 110 alumnos viven en el centro, de forma que la vida de residencia está consolidada y no se vacía los fines de semana. Su proceso de admisión contempla de forma explícita la plaza de Transition Year en régimen de 7 días para estudiantes extranjeros, lo que simplifica la tramitación.</div>
+        <div class="colegio-section-title">Deporte en el colegio</div>
         <div class="extra-tags"><span class="extra-tag">⚽ Fútbol</span><span class="extra-tag">🏉 Rugby</span><span class="extra-tag">🏑 Hockey</span><span class="extra-tag">⛵ Vela</span><span class="extra-tag">⛳ Golf</span><span class="extra-tag">🏊 Natación</span><span class="extra-tag">🎾 Tenis</span><span class="extra-tag">🏃 Atletismo</span></div>
-        <div class="colegio-section-title">Transition Year</div>
-        <div class="actividades-ciudad">El TY se construye sobre los intereses de cada grupo, con aprendizaje práctico, Model United Nations y los premios Gaisce. Hay constancia de alumnos españoles y alemanes cursándolo en años recientes.</div>
+        <div class="colegio-section-title">Vida religiosa</div>
+        <div class="actividades-ciudad">Centro de tradición Church of Ireland, anglicana. Tiene una asamblea matinal que incluye culto.</div>
+        <div class="pend-block"><b>Pendiente de confirmar</b>El colegio todavía no ha respondido a cuatro cuestiones: fotografías o visita virtual de dormitorios y baños, si Nicolás podría incorporarse a un club de fútbol competitivo de la zona y a cuál, el programa actualizado de Transition Year, y qué actividades religiosas son obligatorias para un alumno no practicante. Hasta tener respuesta por escrito, el fútbol federado fuera del colegio no puede darse por hecho.</div>
         <div class="colegio-section-title">Por qué encaja con Nicolás</div>
         <ul class="por-que-list">
-          <li>Es la opción de internado más contenida en precio y deja margen cómodo dentro del presupuesto</li>
+          <li>Es la opción de internado más contenida y deja margen amplio dentro del presupuesto</li>
           <li>Comunidad de internos grande y estable: no se queda solo los fines de semana</li>
-          <li>Tradición deportiva fuerte, con fútbol y rugby en el propio centro</li>
-          <li>Vía de admisión ya definida para TY internacional, lo que simplifica y acelera el proceso</li>
+          <li>Fútbol dentro del colegio, junto a rugby y hockey</li>
+          <li>Vía de admisión ya definida para Transition Year internacional</li>
         </ul>
       </div>
-      <div class="match-bar"><span class="match-tag">Mejor precio</span><span class="match-tag">Internado consolidado</span><span class="match-tag">Fútbol</span></div>
-    </div>
-
-    <div class="opcion-card boarding">
-      <div class="opcion-header">
-        <div class="colegio-zona">Condado de Waterford · Ciudad</div>
-        <div class="opcion-distrito">Newtown School</div>
-        <div class="opcion-loc">📍 Waterford (53.000 hab.) · Sureste de Irlanda</div>
-        <div class="colegio-chips"><span class="chip">Mixto</span><span class="chip">Internado 7 días</span><span class="chip">Concertado</span><span class="chip gold">⚜ Soccer + Informática</span></div>
-        <a class="colegio-web" href="https://www.newtownschool.ie" target="_blank" rel="noopener">newtownschool.ie</a>
-        <div class="precio-chip board"><span class="val">27.950 €</span><span class="desc">curso completo</span><span class="tachado">28.700 €</span></div>
-      </div>
-      <div class="opcion-body">
-        <div class="colegio-desc">De los tres internados, es el que combina mejor las dos cosas que pedís: soccer y tecnología dentro del mismo programa de Transition Year. Su TY incluye Computers, Technical Graphics, Innovation &amp; Enterprise y Work Preparation, además de Sports Psychology y Fitness. Waterford es una ciudad de 53.000 habitantes con casco histórico y vida propia.</div>
-        <div class="colegio-section-title">Deporte</div>
-        <div class="extra-tags"><span class="extra-tag">⚽ Soccer</span><span class="extra-tag">🏉 Rugby</span><span class="extra-tag">🏑 Hockey</span><span class="extra-tag">🏊 Natación y salvamento</span><span class="extra-tag">🏐 Voleibol</span><span class="extra-tag">🎾 Tenis</span><span class="extra-tag">🏃 Campo a través</span></div>
-        <div class="colegio-section-title">Transition Year</div>
-        <div class="actividades-ciudad">Computers, Technical Graphics, Young Scientist, Innovation &amp; Enterprise, Student Enterprise, Work Preparation, Sports Psychology y proyectos comunitarios. Aulas de informática y de diseño gráfico técnico en el propio campus.</div>
-        <div class="colegio-section-title">Por qué encaja con Nicolás</div>
-        <ul class="por-que-list">
-          <li>Informática y diseño técnico dentro del horario lectivo, no como extraescolar suelta</li>
-          <li>Soccer en el colegio, algo poco habitual en internados irlandeses donde domina el rugby</li>
-          <li>Enfoque pedagógico abierto, orientado a autonomía y trato interpersonal</li>
-          <li>Recibe alumnado internacional de forma habitual, incluidos españoles</li>
-        </ul>
-      </div>
-      <div class="match-bar"><span class="match-tag">Informática</span><span class="match-tag">Soccer</span><span class="match-tag">Ciudad con vida</span></div>
+      <div class="match-bar"><span class="match-tag">Mejor precio</span><span class="match-tag">Internado consolidado</span><span class="match-tag">Fútbol escolar</span></div>
     </div>
 
     <div class="opcion-card boarding">
@@ -706,27 +735,76 @@ details[open] summary::before{transform:rotate(90deg);}
         <div class="colegio-zona">Condado de Cork · Localidad</div>
         <div class="opcion-distrito">Bandon Grammar School</div>
         <div class="opcion-loc">📍 Bandon · A 30 km de Cork ciudad</div>
-        <div class="colegio-chips"><span class="chip">Mixto</span><span class="chip">Internado 5 y 7 días</span><span class="chip">Privado</span><span class="chip gold">⚜ Robotics · DCG</span></div>
+        <div class="colegio-chips"><span class="chip">Mixto</span><span class="chip">Internado 5 y 7 días</span><span class="chip">Privado</span><span class="chip gold">⚜ TY técnico y creativo</span></div>
         <a class="colegio-web" href="https://www.bandongrammar.ie" target="_blank" rel="noopener">bandongrammar.ie</a>
         <div class="precio-chip board"><span class="val">31.950 €</span><span class="desc">curso completo</span><span class="tachado">32.700 €</span></div>
       </div>
       <div class="opcion-body">
-        <div class="colegio-desc">El más caro de los tres y también el de programa de Transition Year más técnico. Su TY incluye Robotics y Design &amp; Communications Graphics junto a un bloque deportivo muy desarrollado con Ball Games, LCPE y Sports Massage. El centro gestiona el internado de Form 4 con un calendario propio y atiende a los internacionales también en los periodos de cierre.</div>
-        <div class="colegio-section-title">Deporte</div>
-        <div class="extra-tags"><span class="extra-tag">🏉 Rugby</span><span class="extra-tag">🏑 Hockey</span><span class="extra-tag">⚽ Fútbol gaélico</span><span class="extra-tag">🏀 Baloncesto</span><span class="extra-tag">⛵ Navegación</span><span class="extra-tag">🤺 Esgrima</span><span class="extra-tag">🎾 Tenis</span><span class="extra-tag">🏃 Atletismo</span></div>
+        <div class="colegio-desc">El más caro de los tres y el de programa de Transition Year más técnico sobre el papel: robótica, diseño gráfico técnico, medios creativos, ciencia y emprendimiento. El internado es Roundhill House, una residencia propia dentro del recinto. El centro atiende a los alumnos internacionales también durante los periodos de cierre de curso.</div>
         <div class="colegio-section-title">Transition Year</div>
-        <div class="actividades-ciudad">Robotics, Design &amp; Communications Graphics, Creative Media, Young Scientist y Mini Company, con un bloque deportivo específico que incluye Ball Games, Leaving Certificate PE y Sports Massage.</div>
+        <div class="extra-tags"><span class="extra-tag">🤖 Robótica</span><span class="extra-tag">📐 Diseño gráfico técnico</span><span class="extra-tag">🎥 Medios creativos</span><span class="extra-tag">🔬 Young Scientist</span><span class="extra-tag">💼 Mini Company</span></div>
+        <div class="colegio-section-title">Deporte en el colegio</div>
+        <div class="extra-tags"><span class="extra-tag">🏉 Rugby</span><span class="extra-tag">🏑 Hockey</span><span class="extra-tag">⚽ Fútbol gaélico</span><span class="extra-tag">🏀 Baloncesto</span><span class="extra-tag">⛵ Navegación</span><span class="extra-tag">🤺 Esgrima</span><span class="extra-tag">🎾 Tenis</span></div>
+        <div class="colegio-section-title">Residencia y vida religiosa</div>
+        <div class="actividades-ciudad">Roundhill House aloja entre dos y seis estudiantes por habitación. El centro es de tradición Church of Ireland y organiza un servicio religioso dominical abierto a distintas confesiones.</div>
+        <div class="pend-block"><b>Pendiente de confirmar</b>Seguimos esperando cuatro respuestas del colegio: fotos de dormitorios y baños, si existe la posibilidad de jugar al fútbol en un club competitivo de la zona y con qué transporte, el programa actualizado de Transition Year, y si el servicio religioso del domingo es obligatorio para un alumno no practicante.</div>
         <div class="colegio-section-title">Por qué encaja con Nicolás</div>
         <ul class="por-que-list">
-          <li>Robotics y diseño gráfico técnico integrados en el currículo del TY</li>
-          <li>Bloque deportivo propio dentro del horario, no solo entrenamientos por la tarde</li>
-          <li>Cork capital a media hora para clubes federados y vida de ciudad los fines de semana</li>
+          <li>Robótica y diseño gráfico técnico integrados en el currículo del Transition Year</li>
+          <li>Cork capital a media hora, con vida de ciudad los fines de semana</li>
           <li>Atención a internacionales durante los cierres de curso, un punto práctico que no todos cubren</li>
         </ul>
       </div>
-      <div class="match-bar"><span class="match-tag">Robotics</span><span class="match-tag">Deporte curricular</span><span class="match-tag">Cercanía a Cork</span></div>
+      <div class="match-bar"><span class="match-tag">Robótica</span><span class="match-tag">Perfil creativo</span><span class="match-tag">Cercanía a Cork</span></div>
     </div>
 
+  </div>
+
+  <!-- ============ 5C. ESTADO DE LA INFORMACIÓN ============ -->
+  <div class="section-title"><h2>Qué está confirmado y qué no</h2></div>
+  <div class="estado-wrap">
+    <div class="estado-head">
+      <h3>⚜ Estado de la información de los internados</h3>
+      <p>Actualizado tras la ronda de preguntas a los tres centros</p>
+    </div>
+    <div class="estado-body">
+      <div class="estado-grid">
+        <div>
+          <div class="estado-col-title si">Confirmado por los colegios</div>
+          <ul class="estado-list si">
+            <li>Newtown: contenido del Transition Year, con programación, SolidWorks, producción audiovisual e investigación forense</li>
+            <li>Newtown: habitaciones de hasta cuatro alumnos, baños compartidos entre dormitorios</li>
+            <li>Newtown: <em>Collect</em> matinal obligatorio, reunión dominical no obligatoria para internos</li>
+            <li>Newtown: Villa FC Waterford como club de referencia cercano, con taxis organizables desde el colegio</li>
+            <li>Newtown: previsión de 10 a 15 españoles en Transition Year, sin cerrar</li>
+            <li>Sligo: vía de admisión específica para Transition Year internacional con internado de 7 días</li>
+            <li>Sligo: tradición Church of Ireland con asamblea matinal que incluye culto</li>
+            <li>Bandon: residencia Roundhill House, entre dos y seis alumnos por habitación</li>
+            <li>Bandon: tradición Church of Ireland con servicio dominical abierto a varias confesiones</li>
+          </ul>
+        </div>
+        <div>
+          <div class="estado-col-title no">A la espera de respuesta</div>
+          <ul class="estado-list no">
+            <li>Fotografías de dormitorios y baños en los tres centros</li>
+            <li>Newtown: equipo por edad, nivel, plazas, calendario y coste en Villa FC</li>
+            <li>Newtown: qué costes adicionales son obligatorios y sus importes de 2027/28</li>
+            <li>Newtown: calendario y condiciones de las tres semanas de prácticas</li>
+            <li>Sligo: club de fútbol competitivo de la zona y posibilidad real de plaza</li>
+            <li>Sligo: programa actualizado de Transition Year</li>
+            <li>Sligo: qué actividades religiosas son obligatorias</li>
+            <li>Bandon: club de fútbol competitivo y opciones de transporte</li>
+            <li>Bandon: programa actualizado de Transition Year</li>
+            <li>Bandon: si el servicio religioso dominical es obligatorio</li>
+          </ul>
+        </div>
+      </div>
+      <div class="estado-nota">
+        <strong>Sobre las fotos de las habitaciones.</strong> Las hemos pedido a los tres colegios y ninguno dispone de imágenes oficiales de dormitorios y baños para enviar. Seguimos insistiendo y, si llegan antes de la decisión, os las pasamos. Mientras tanto, lo que sí tenemos es el dato de ocupación por habitación de Newtown y Bandon, que es la información que de verdad cambia el día a día.<br><br>
+        <strong>Sobre el fútbol.</strong> Preferimos no vender lo que no está cerrado. Newtown es el único que ha nombrado un club concreto, y aun así la plaza depende del propio Villa FC. En Sligo y Bandon la pregunta sigue sin contestar. Si el fútbol federado es la condición innegociable del curso, el Programa Choice con familia anfitriona lo resuelve de forma mucho más directa, porque el estudiante se inscribe en el club de su barrio como cualquier otro chaval de la zona.<br><br>
+        <strong>Sobre los precios.</strong> Los importes de los tres internados son los vigentes y sirven como referencia de trabajo, sujetos a la confirmación de tarifas y de disponibilidad de plaza para 2027/28. Los costes adicionales que aparecen en la ficha de Newtown proceden del curso 2026/27 y el propio colegio los tiene aún sin actualizar.
+      </div>
+    </div>
   </div>
 
   <!-- ============ 6. PRECIOS ============ -->
@@ -736,13 +814,13 @@ details[open] summary::before{transform:rotate(90deg);}
       <thead><tr><th style="text-align:left;">Opción</th><th>Alojamiento</th><th>Tarifa</th><th>Descuento</th><th>Precio final</th></tr></thead>
       <tbody>
         <tr><th>Programa Choice · 2 vuelos<br><span style="font-weight:400;font-size:11px;color:var(--text-light);">Douglas, Bremore o Coolmine</span></th><td>Familia anfitriona</td><td>17.450 €</td><td style="color:var(--red);font-weight:600;">−750 €</td><td style="font-family:'Josefin Sans';font-weight:700;font-size:16px;color:var(--ie-deep);">16.700 €</td></tr>
+        <tr><th>Newtown School<br><span style="font-weight:400;font-size:11px;color:var(--text-light);">Internado recomendado</span></th><td>Internado 7 días</td><td>28.700 €</td><td style="color:var(--red);font-weight:600;">−750 €</td><td style="font-family:'Josefin Sans';font-weight:700;font-size:16px;color:var(--blue);">27.950 €</td></tr>
         <tr><th>Sligo Grammar School</th><td>Internado 7 días</td><td>26.400 €</td><td style="color:var(--red);font-weight:600;">−750 €</td><td style="font-family:'Josefin Sans';font-weight:700;font-size:16px;color:var(--blue);">25.650 €</td></tr>
-        <tr><th>Newtown School</th><td>Internado 7 días</td><td>28.700 €</td><td style="color:var(--red);font-weight:600;">−750 €</td><td style="font-family:'Josefin Sans';font-weight:700;font-size:16px;color:var(--blue);">27.950 €</td></tr>
         <tr><th>Bandon Grammar School</th><td>Internado 7 días</td><td>32.700 €</td><td style="color:var(--red);font-weight:600;">−750 €</td><td style="font-family:'Josefin Sans';font-weight:700;font-size:16px;color:var(--blue);">31.950 €</td></tr>
       </tbody>
     </table>
   </div>
-  <div class="tabla-nota">Curso escolar completo 2027/28. En el Programa Choice el precio es el mismo para los tres colegios e incluye los dos vuelos. En los internados el importe lo marca cada centro y cubre matrícula, internado de 7 días en pensión completa, tutor legal en Irlanda y la gestión completa de My Language Quest; los vuelos se buscan y se reservan aparte.</div>
+  <div class="tabla-nota">Curso escolar completo 2027/28. En el Programa Choice el precio es el mismo para los tres colegios e incluye los dos vuelos. En los internados el importe lo marca cada centro y cubre matrícula, internado de 7 días en pensión completa, tutor legal en Irlanda y la gestión completa de My Language Quest; los vuelos se buscan y se reservan aparte. Las tarifas de internado son la referencia vigente y quedan sujetas a la confirmación de precio y de plaza para el curso 2027/28.</div>
 
   <!-- ============ 7. TABLA COMPARATIVA ============ -->
   <div class="section-title"><h2>Programa Choice frente a internado</h2></div>
@@ -755,28 +833,28 @@ details[open] summary::before{transform:rotate(90deg);}
         <tr><th>Quién supervisa a diario</th><td>La familia anfitriona, con coordinador local de MLQ detrás</td><td>Personal del internado en turnos, con tutor legal designado</td></tr>
         <tr><th>Vida fuera de clase</th><td>Rutina familiar: cenas en casa, planes de fin de semana con ellos</td><td>Rutina de residencia: estudio dirigido, deporte y actividades organizadas</td></tr>
         <tr><th>Autonomía que gana</th><td>Alta: se mueve por la ciudad, gestiona sus horarios</td><td>Media: el día está más pautado</td></tr>
-        <tr><th>Deporte federado fuera del colegio</th><td><span class="si">✓</span><span class="sup">club local, entrena y compite</span></td><td><span class="no">✗</span><span class="sup">se compite con el equipo del colegio</span></td></tr>
+        <tr><th>Fútbol federado fuera del colegio</th><td><span class="si">✓</span><span class="sup">se inscribe en el club de la zona</span></td><td><span class="sup" style="font-size:11px;color:var(--text-mid);font-weight:400;">Solo Newtown ha señalado un club cercano, y la plaza depende del club. En Sligo y Bandon, sin confirmar</span></td></tr>
         <tr><th>Vuelos</th><td><b>2 incluidos</b></td><td><span class="no">✗</span><span class="sup">MLQ los gestiona, coste aparte</span></td></tr>
         <tr><th>Elección de colegio</th><td><span class="si">✓</span></td><td><span class="si">✓</span></td></tr>
       </tbody>
     </table>
   </div>
-  <div class="tabla-nota">Ninguna de las dos vías deja al estudiante sin supervisión adulta. La diferencia real está en el tipo de día a día, en el grado de autonomía y en si el fútbol se juega en un club federado del barrio o con el equipo del colegio.</div>
+  <div class="tabla-nota">Ninguna de las dos vías deja al estudiante sin supervisión adulta. La diferencia real está en el tipo de día a día, en el grado de autonomía y en cómo se resuelve el fútbol: con familia anfitriona Nicolás se apunta al club de su barrio como cualquier chaval de la zona, mientras que en internado depende de lo que cada centro pueda abrirle fuera del recinto.</div>
 
   <!-- ============ 8. QUÉ VÍA ENCAJA ============ -->
   <div class="section-title"><h2>Cómo decidir entre una y otra</h2></div>
   <div class="decision-grid">
     <div class="decision-card">
       <div class="decision-title">Si lo que pesa es el fútbol</div>
-      <div class="decision-text">El Programa Choice encaja mejor. Viviendo con una familia, Nicolás puede inscribirse en un club federado de la zona y mantener el ritmo de tres entrenamientos y partido el fin de semana, que es exactamente lo que hace ahora. En un internado el deporte se canaliza por los equipos del centro, con calendario propio y predominio del rugby y el hockey.</div>
+      <div class="decision-text">El Programa Choice encaja mejor. Viviendo con una familia, Nicolás se inscribe en un club de la zona y mantiene el ritmo de tres entrenamientos y partido el fin de semana, que es lo que hace ahora. En internado el deporte pasa sobre todo por los equipos del centro. Newtown ha señalado un club cercano al que podría optar, pero esa plaza la concede el club, no el colegio.</div>
     </div>
     <div class="decision-card">
       <div class="decision-title">Si lo que pesa es la estructura</div>
-      <div class="decision-text">El internado da un marco horario cerrado: estudio dirigido a la misma hora cada tarde, actividades organizadas y personal de residencia por turnos. Para un chico que estrena móvil este año, ese marco reduce las variables. Sligo Grammar es la puerta de entrada más razonable por precio y por volumen de internos.</div>
+      <div class="decision-text">El internado da un marco horario cerrado: estudio dirigido a la misma hora cada tarde, actividades organizadas y personal de residencia por turnos. Para un chico que estrena móvil este año, ese marco reduce las variables. Sligo es la puerta de entrada más razonable por precio y por volumen de internos; Newtown aporta el programa más rico a cambio de 2.300 € más.</div>
     </div>
     <div class="decision-card">
       <div class="decision-title">Si lo que pesa es la tecnología</div>
-      <div class="decision-text">Las dos vías la cubren, con matices. Bremore ETSS la trabaja desde clubes y proyectos, y no cuesta más que cualquier otro Choice. Newtown y Bandon la integran en el currículo del Transition Year con Computers, Technical Graphics y Robotics. Si queréis que aparezca en el expediente y no solo en la tarde, esa es la diferencia.</div>
+      <div class="decision-text">Las dos vías la cubren, con matices. Bremore ETSS la trabaja desde clubes y proyectos, y no cuesta más que cualquier otro Choice. Newtown la lleva al horario lectivo con programación, SolidWorks y producción audiovisual, y Bandon con robótica y diseño técnico. Si queréis que aparezca en el expediente y no solo en la tarde, esa es la diferencia.</div>
     </div>
   </div>
 
@@ -1179,6 +1257,6 @@ details[open] summary::before{transform:rotate(90deg);}
   });
 })();
 </script>
-<!-- build:20261001-175729 -->
+<!-- build:20261009-115413 -->
 </body>
 </html>
