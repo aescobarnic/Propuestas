@@ -377,6 +377,27 @@ details[open] summary::before{transform:rotate(90deg);}
 .colegio-web::before{content:'🔗';font-size:10px;}
 .colegio-web:hover{background:rgba(255,255,255,0.16);color:#ffffff;}
 
+/* Horarios de internado */
+.horarios-grid{display:grid;grid-template-columns:1fr 1fr;gap:26px;}
+.horario-card{background:var(--white);border:1.5px solid var(--gray-border);border-radius:16px;overflow:hidden;box-shadow:0 2px 16px rgba(31,74,5,0.05);}
+.horario-head{background:linear-gradient(135deg,var(--blue-dark),var(--blue));padding:18px 26px;}
+.horario-head h3{font-family:'Josefin Sans',sans-serif;font-size:14px;font-weight:700;color:var(--white);letter-spacing:.5px;margin-bottom:3px;}
+.horario-head p{font-size:11px;color:rgba(255,255,255,0.55);}
+.horario-body{padding:20px 26px 24px;}
+.hr-label{font-family:'Josefin Sans',sans-serif;font-size:9px;font-weight:700;letter-spacing:2.2px;text-transform:uppercase;color:var(--ie);margin:18px 0 10px;padding-bottom:7px;border-bottom:2px solid var(--ie-light);}
+.hr-label:first-child{margin-top:0;}
+.hr-row{display:grid;grid-template-columns:78px 1fr;gap:12px;padding:6px 0;border-bottom:1px dashed var(--gray-border);align-items:baseline;}
+.hr-row:last-child{border-bottom:none;}
+.hr-time{font-family:'Josefin Sans',sans-serif;font-size:11.5px;font-weight:700;color:var(--blue);letter-spacing:.3px;}
+.hr-what{font-size:12px;color:var(--text-mid);line-height:1.5;}
+.hr-what b{color:var(--text);font-weight:600;}
+.hr-row.hl{background:var(--ie-light);margin:0 -10px;padding:7px 10px;border-radius:7px;border-bottom:none;}
+.hr-row.hl .hr-time{color:var(--ie-deep);}
+.hr-row.hl .hr-what{color:var(--ie-deep);}
+.hr-note{margin-top:16px;padding:11px 14px;background:var(--cream);border-left:3px solid var(--gold);border-radius:0 8px 8px 0;font-size:11.5px;color:var(--text-mid);line-height:1.6;}
+.hr-note b{color:var(--text);}
+@media(max-width:860px){.horarios-grid{grid-template-columns:1fr;}}
+
 /* Estado de la informacion */
 .pend-block{background:#fffaf0;border:1px solid rgba(232,176,75,0.55);border-left:3px solid var(--gold);border-radius:0 8px 8px 0;padding:10px 14px;margin-bottom:16px;font-size:11.5px;color:#6b4a0a;line-height:1.6;}
 .pend-block b{color:#4d3405;font-weight:700;display:block;margin-bottom:3px;font-size:10px;letter-spacing:1.5px;text-transform:uppercase;}
@@ -758,6 +779,80 @@ details[open] summary::before{transform:rotate(90deg);}
     </div>
 
   </div>
+
+  <!-- ============ 5C. HORARIOS DE INTERNADO ============ -->
+  <div class="section-title"><h2>Cómo es un día en el internado</h2></div>
+  <div class="alert-box">
+    <div class="alert-icon">🕐</div>
+    <div class="alert-text"><strong>Esto es lo que de verdad cambia entre un colegio y otro.</strong> Los dos centros tienen publicado su horario de internos y lo reproducimos tal cual. Lo que más conviene mirar son tres cosas: a qué hora acaban las clases, cuánto estudio obligatorio hay por la tarde y qué queda libre después. Para Nicolás, que entra en 4º curso, el bloque de estudio es el corto en los dos casos.</div>
+  </div>
+  <div class="horarios-grid">
+
+    <div class="horario-card">
+      <div class="horario-head"><h3>⚜ Newtown School</h3><p>Día lectivo de lunes, martes, jueves y viernes</p></div>
+      <div class="horario-body">
+        <div class="hr-label">Mañana</div>
+        <div class="hr-row"><span class="hr-time">07:30</span><span class="hr-what">Se levantan</span></div>
+        <div class="hr-row"><span class="hr-time">08:00</span><span class="hr-what">Desayuno en el comedor, cierra a las 08:30</span></div>
+        <div class="hr-row"><span class="hr-time">08:40</span><span class="hr-what"><b>Collect</b>, la reunión matinal del colegio</span></div>
+        <div class="hr-row"><span class="hr-time">08:50</span><span class="hr-what">Clases 1, 2 y 3</span></div>
+        <div class="hr-row"><span class="hr-time">10:50</span><span class="hr-what">Recreo, 20 minutos</span></div>
+        <div class="hr-row"><span class="hr-time">11:10</span><span class="hr-what">Clases 4, 5 y 6</span></div>
+        <div class="hr-label">Tarde</div>
+        <div class="hr-row"><span class="hr-time">13:10</span><span class="hr-what">Comida, 55 minutos</span></div>
+        <div class="hr-row"><span class="hr-time">14:05</span><span class="hr-what">Clases 7, 8 y 9</span></div>
+        <div class="hr-row hl"><span class="hr-time">16:15</span><span class="hr-what"><b>Extraescolares hasta las 17:30</b><br>Deporte, natación, música, teatro, debate</span></div>
+        <div class="hr-row"><span class="hr-time">17:30</span><span class="hr-what">Cena</span></div>
+        <div class="hr-label">Noche</div>
+        <div class="hr-row hl"><span class="hr-time">18:30</span><span class="hr-what"><b>Estudio supervisado hasta las 20:15</b><br>Es el bloque de 1º a 4º curso, el de Nicolás. Los de 5º y 6º siguen hasta las 21:30</span></div>
+        <div class="hr-row"><span class="hr-time">20:15</span><span class="hr-what">Tiempo libre y vuelta a la residencia</span></div>
+        <div class="hr-label">Miércoles · tarde deportiva</div>
+        <div class="hr-row"><span class="hr-time">Mañana</span><span class="hr-what">Solo las seis clases de la mañana</span></div>
+        <div class="hr-row"><span class="hr-time">14:00</span><span class="hr-what">Salida al pueblo para los de 4º curso, hasta las 16:00</span></div>
+        <div class="hr-row"><span class="hr-time">14:05</span><span class="hr-what">Tarde entera de deporte, partidos y actividades</span></div>
+        <div class="hr-label">Fin de semana</div>
+        <div class="hr-row"><span class="hr-time">Sáb 09:00</span><span class="hr-what">Desayuno y, a las 10:00, actividades</span></div>
+        <div class="hr-row"><span class="hr-time">Sáb 14:00</span><span class="hr-what">Salida libre al centro de Waterford</span></div>
+        <div class="hr-row"><span class="hr-time">Sáb 19:00</span><span class="hr-what">Actividades de noche</span></div>
+        <div class="hr-row"><span class="hr-time">Dom 10:00</span><span class="hr-what">Estudio de una hora para quien no va a la iglesia</span></div>
+        <div class="hr-row hl"><span class="hr-time">Dom 14:00</span><span class="hr-what"><b>Salidas supervisadas hasta las 17:00</b><br>Cine, centro de aventura, rutas de montaña, playa, surf, escalada</span></div>
+        <div class="hr-note"><b>Móviles.</b> No se permiten después de apagar las luces en los dormitorios. Hay wifi de alumnos en el campus pero no en las habitaciones, y está filtrado: bloquea páginas inapropiadas y parte de las aplicaciones de uso habitual.</div>
+      </div>
+    </div>
+
+    <div class="horario-card">
+      <div class="horario-head"><h3>⚜ Bandon Grammar School</h3><p>Día lectivo de lunes a viernes</p></div>
+      <div class="horario-body">
+        <div class="hr-label">Mañana</div>
+        <div class="hr-row"><span class="hr-time">07:30</span><span class="hr-what">Se levantan</span></div>
+        <div class="hr-row"><span class="hr-time">08:00</span><span class="hr-what">Desayuno</span></div>
+        <div class="hr-row"><span class="hr-time">08:45</span><span class="hr-what">Preparan los libros de las tres primeras clases</span></div>
+        <div class="hr-row"><span class="hr-time">09:00</span><span class="hr-what">Clases 1, 2 y 3</span></div>
+        <div class="hr-row"><span class="hr-time">11:00</span><span class="hr-what">Recreo, 20 minutos</span></div>
+        <div class="hr-row"><span class="hr-time">11:20</span><span class="hr-what">Clases 4 y 5</span></div>
+        <div class="hr-label">Tarde</div>
+        <div class="hr-row"><span class="hr-time">12:40</span><span class="hr-what">Comida</span></div>
+        <div class="hr-row"><span class="hr-time">13:20</span><span class="hr-what">Clases 6, 7, 8 y 9</span></div>
+        <div class="hr-row"><span class="hr-time">16:00</span><span class="hr-what">Fin de las clases</span></div>
+        <div class="hr-row hl"><span class="hr-time">16:15</span><span class="hr-what"><b>Deporte y clubes, una hora</b><br>Hockey, baloncesto, club de arte, yoga y el resto de la oferta</span></div>
+        <div class="hr-row"><span class="hr-time">17:30</span><span class="hr-what">Cena</span></div>
+        <div class="hr-label">Noche</div>
+        <div class="hr-row hl"><span class="hr-time">18:30</span><span class="hr-what"><b>Primer bloque de estudio hasta las 19:45</b></span></div>
+        <div class="hr-row"><span class="hr-time">19:45</span><span class="hr-what">Pausa para merendar</span></div>
+        <div class="hr-row hl"><span class="hr-time">20:00</span><span class="hr-what"><b>Segundo bloque de estudio hasta las 21:00</b><br>El tercer bloque, hasta las 21:45, es solo para 5º y 6º</span></div>
+        <div class="hr-row"><span class="hr-time">21:00</span><span class="hr-what">Tiempo libre y vuelta al dormitorio</span></div>
+        <div class="hr-row"><span class="hr-time">22:00</span><span class="hr-what">Luces fuera</span></div>
+        <div class="hr-label">Fin de semana</div>
+        <div class="hr-row"><span class="hr-time">Sáb y dom</span><span class="hr-what">Desayuno servido en la propia residencia, así que se puede dormir más</span></div>
+        <div class="hr-row"><span class="hr-time">13:00</span><span class="hr-what">Horario de salida ampliado hasta las 17:30, sábado y domingo</span></div>
+        <div class="hr-row hl"><span class="hr-time">Domingo</span><span class="hr-what"><b>Opciones para los internos de 7 días</b><br>Fútbol sala, pimpón, sala de ordenadores, estudio o salida a Bandon y a Cork</span></div>
+        <div class="hr-row"><span class="hr-time">Entre semana</span><span class="hr-what">Salidas de 16:00 a 17:30 de lunes a viernes</span></div>
+        <div class="hr-note"><b>Móviles.</b> Se recogen al apagar las luces y se devuelven por la mañana. <b>Puentes y cierres.</b> El calendario del colegio especifica que la residencia permanece abierta para los internos de 7 días en los días de cierre escolar, y en enero un autobús recoge a los alumnos extranjeros en el aeropuerto de Dublín.</div>
+      </div>
+    </div>
+
+  </div>
+  <div class="tabla-nota">Horarios publicados por cada colegio para el curso en vigor. El reparto de clases puede variar ligeramente de un año a otro, pero la estructura del día de internado se mantiene estable.</div>
 
   <!-- ============ 6. PRECIOS ============ -->
   <div class="section-title"><h2>Resumen de precios</h2></div>
@@ -1209,6 +1304,6 @@ details[open] summary::before{transform:rotate(90deg);}
   });
 })();
 </script>
-<!-- build:20261009-135410 -->
+<!-- build:20261009-140038 -->
 </body>
 </html>
