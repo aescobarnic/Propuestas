@@ -377,6 +377,18 @@ details[open] summary::before{transform:rotate(90deg);}
 .colegio-web::before{content:'🔗';font-size:10px;}
 .colegio-web:hover{background:rgba(255,255,255,0.16);color:#ffffff;}
 
+/* Aviso de actualizacion */
+.upd-wrap{background:var(--white);border:1.5px solid var(--gray-border);border-left:4px solid var(--gold);border-radius:0 16px 16px 0;padding:24px 30px;margin-bottom:34px;box-shadow:0 2px 16px rgba(31,74,5,0.05);}
+.upd-top{display:flex;align-items:center;gap:12px;flex-wrap:wrap;margin-bottom:6px;}
+.upd-pill{display:inline-flex;align-items:center;gap:6px;background:var(--gold);color:#3d2a04;font-family:'Josefin Sans',sans-serif;font-size:9.5px;font-weight:700;letter-spacing:2px;text-transform:uppercase;padding:5px 12px;border-radius:20px;}
+.upd-date{font-size:11.5px;color:var(--text-light);font-weight:600;letter-spacing:.3px;}
+.upd-intro{font-size:12.5px;color:var(--text-mid);line-height:1.7;margin-bottom:16px;}
+.upd-list{list-style:none;display:grid;grid-template-columns:1fr 1fr;gap:10px 28px;}
+.upd-list li{font-size:12px;color:var(--text-mid);line-height:1.6;display:flex;gap:9px;align-items:flex-start;}
+.upd-list li::before{content:'\2192';color:var(--gold);font-weight:700;flex-shrink:0;}
+.upd-list li b{color:var(--text);font-weight:600;}
+@media(max-width:760px){.upd-list{grid-template-columns:1fr;}.upd-wrap{padding:20px 22px;}}
+
 /* Horarios de internado */
 .horarios-grid{display:grid;grid-template-columns:1fr 1fr;gap:26px;}
 .horario-card{background:var(--white);border:1.5px solid var(--gray-border);border-radius:16px;overflow:hidden;box-shadow:0 2px 16px rgba(31,74,5,0.05);}
@@ -522,6 +534,25 @@ details[open] summary::before{transform:rotate(90deg);}
 </div>
 
 <div class="main">
+
+  <!-- ============ 2B. ACTUALIZACIÓN ============ -->
+  <div class="upd-wrap">
+    <div class="upd-top">
+      <span class="upd-pill">☘ Actualizado</span>
+      <span class="upd-date">9 de octubre de 2026 · segunda versión</span>
+    </div>
+    <div class="upd-intro">Tras vuestras preguntas hemos vuelto a escribir a los tres internados. Esto es lo que ha cambiado respecto a la propuesta que recibisteis la primera vez:</div>
+    <ul class="upd-list">
+      <li><b>Newtown pasa a ser el internado recomendado</b>, por su encaje tecnológico y por el fútbol</li>
+      <li><b>Fútbol en Newtown:</b> Villa FC Waterford, con la inscripción gestionada por nosotros</li>
+      <li><b>Programa de Transition Year de Newtown</b> al detalle, con programación, SolidWorks y producción audiovisual</li>
+      <li><b>Sección nueva de horarios:</b> el día hora a hora en Newtown y en Bandon, de la mañana al fin de semana</li>
+      <li><b>Política de móvil</b> de cada internado, incluida la norma de noche y el acceso a wifi</li>
+      <li><b>Dormitorios:</b> cuántos alumnos por habitación en Newtown y en Bandon</li>
+      <li><b>Vida religiosa</b> en los tres centros y qué actos son obligatorios</li>
+      <li><b>Previsión de españoles</b> en Newtown para 2027/28 y cómo los reparten</li>
+    </ul>
+  </div>
 
   <!-- ============ 3. CONTEXTO ============ -->
   <div class="section-title"><h2>Cómo funciona el año escolar en Irlanda</h2></div>
@@ -1302,6 +1333,6 @@ details[open] summary::before{transform:rotate(90deg);}
   });
 })();
 </script>
-<!-- build:20261009-141632 -->
+<!-- build:20261009-142054 -->
 </body>
 </html>
