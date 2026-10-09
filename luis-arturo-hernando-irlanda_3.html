@@ -1,0 +1,1305 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<script>document.documentElement.className+=" js-anim";</script>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Propuesta Irlanda · Luis Arturo Hernando Ruiz · My Language Quest</title>
+<link href="https://fonts.googleapis.com/css2?family=Fira+Sans:wght@300;400;500;600;700&family=Josefin+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --blue:#003366;--blue-dark:#001f40;--blue-mid:#0a4a8a;--blue-light:#dce8f5;
+  --red:#B12900;--red-dark:#8A1F00;--red-light:#fdf0ec;
+  --red-deep:#6E1600;--red-warm:#C8380C;--cream:#FFF6F2;--sand:#F7EDE6;--gold:#E8B04B;
+  --ie:#3A7A09;--ie-deep:#1F4A05;--ie-warm:#5FB515;--ie-light:#eef8e3;
+  --green:#4C9E0C;--green-dark:#3A7A09;--green-light:#eef8e3;
+  --gray-bg:#eef3ea;--gray-card:#f8fbf5;--gray-border:#d9e3d2;
+  --text:#0d1b2a;--text-mid:#3d4f62;--text-light:#7a8a9b;--white:#ffffff;
+}
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box;}
+body{font-family:'Fira Sans',sans-serif;background:var(--gray-bg);color:var(--text);}
+
+/* HEADER */
+.header{background:var(--white);padding:18px 48px;display:flex;align-items:center;justify-content:space-between;box-shadow:0 1px 0 var(--gray-border),0 4px 24px rgba(0,51,102,0.07);position:relative;z-index:10;}
+.header::after{content:'';position:absolute;bottom:0;left:0;right:0;height:4px;background:linear-gradient(90deg,var(--ie) 0%,var(--ie) 33%,var(--white) 33%,var(--white) 67%,#FF8200 67%,#FF8200 100%);}
+.logo-area img{height:46px;width:auto;display:block;}
+.header-right{text-align:right;}
+.header-label{font-family:'Josefin Sans',sans-serif;font-size:9px;letter-spacing:3px;text-transform:uppercase;color:var(--text-light);}
+.header-year{font-family:'Josefin Sans',sans-serif;font-size:26px;font-weight:700;color:var(--ie-deep);line-height:1;margin-top:2px;}
+
+/* HERO */
+.hero{background:linear-gradient(135deg,var(--ie-deep) 0%,var(--ie) 55%,var(--ie-warm) 100%);position:relative;overflow:hidden;padding:40px 48px 36px;}
+.hero::after{content:'☘';position:absolute;right:2%;top:50%;transform:translateY(-50%) rotate(-12deg);font-size:230px;line-height:1;opacity:0.09;pointer-events:none;z-index:1;}
+.hero::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 70% 110% at 100% 40%,rgba(255,255,255,0.12) 0%,transparent 60%),radial-gradient(ellipse 60% 80% at -10% 90%,rgba(0,31,64,0.28) 0%,transparent 60%);}
+.hero-dots{position:absolute;inset:0;pointer-events:none;background-image:radial-gradient(rgba(255,255,255,0.07) 1px,transparent 1px);background-size:28px 28px;}
+.hero-inner{position:relative;z-index:2;}
+.hero-tag{display:inline-flex;align-items:center;gap:6px;background:rgba(255,255,255,0.1);border:1px solid rgba(255,255,255,0.2);border-radius:20px;padding:4px 12px;font-size:10px;font-weight:600;letter-spacing:2px;text-transform:uppercase;color:rgba(255,255,255,0.7);margin-bottom:12px;}
+.hero-tag::before{content:'☘';font-size:12px;}
+.hero-name{font-family:'Josefin Sans',sans-serif;font-size:38px;font-weight:700;color:var(--white);line-height:1.05;margin-bottom:8px;}
+.hero-subtitle{font-size:13px;color:rgba(255,255,255,0.55);font-weight:300;}
+.hero-pills{display:flex;flex-wrap:wrap;gap:8px;margin-top:20px;}
+.hero-pill{display:flex;align-items:center;gap:6px;background:rgba(255,255,255,0.1);border:1px solid rgba(255,255,255,0.18);border-radius:8px;padding:6px 12px;font-size:11px;color:var(--white);font-weight:500;}
+.hero-pill.ac{background:rgba(0,31,64,0.35);border-color:rgba(255,255,255,0.4);color:#ffffff;}
+.hero-promo{display:inline-flex;align-items:center;gap:8px;background:rgba(0,31,64,0.4);border:1px solid rgba(255,255,255,0.35);border-radius:10px;padding:10px 16px;font-size:12.5px;font-weight:600;color:#ffffff;margin-top:18px;max-width:640px;line-height:1.5;}
+
+/* LAYOUT */
+.main{max-width:1140px;margin:0 auto;padding:40px 24px 20px;}
+.section-title{display:flex;align-items:center;gap:12px;margin:44px 0 24px;}
+.section-title:first-of-type{margin-top:0;}
+.section-title h2{font-family:'Josefin Sans',sans-serif;font-size:11px;font-weight:700;letter-spacing:3px;text-transform:uppercase;color:var(--ie-deep);white-space:nowrap;}
+.section-title::before{content:'';width:22px;height:3px;border-radius:3px;background:var(--ie);flex-shrink:0;}
+.section-title::after{content:'';flex:1;height:1px;background:var(--gray-border);}
+
+/* INTRO / CONTEXTO */
+.intro-text{font-size:14px;color:var(--text-mid);line-height:1.75;max-width:860px;margin-bottom:20px;}
+.intro-text strong{color:var(--blue);font-weight:600;}
+.intro-points{display:grid;grid-template-columns:repeat(2,1fr);gap:14px;margin-top:20px;}
+.intro-point{background:var(--white);border:1.5px solid var(--gray-border);border-radius:12px;padding:16px 18px;display:flex;gap:12px;align-items:flex-start;}
+.intro-point-icon{font-size:20px;flex-shrink:0;}
+.intro-point-title{font-family:'Josefin Sans',sans-serif;font-size:13px;font-weight:700;color:var(--ie-deep);margin-bottom:4px;}
+.intro-point-desc{font-size:12px;color:var(--text-mid);line-height:1.55;}
+
+/* QUIÉNES SOMOS — bloque editorial */
+.qs-hero{display:grid;grid-template-columns:1fr 1fr;gap:0;background:var(--white);border-radius:18px;overflow:hidden;border:1.5px solid var(--gray-border);box-shadow:0 4px 28px rgba(0,51,102,0.08);}
+.qs-media{position:relative;background:var(--blue-dark);min-height:440px;}
+.qs-media img{width:100%;height:100%;object-fit:cover;display:block;}
+.qs-media-inset{position:absolute;right:-1px;bottom:-1px;width:44%;aspect-ratio:3/4;border-radius:14px 0 0 0;overflow:hidden;border-top:4px solid var(--white);border-left:4px solid var(--white);box-shadow:-8px -8px 28px rgba(0,31,64,0.28);}
+.qs-media-inset img{width:100%;height:100%;object-fit:cover;}
+.qs-panel{background:linear-gradient(155deg,var(--blue-dark) 0%,var(--blue) 55%,var(--blue-mid) 100%);padding:38px 40px;position:relative;overflow:hidden;display:flex;flex-direction:column;justify-content:center;}
+.qs-panel::before{content:'';position:absolute;inset:0;background-image:radial-gradient(rgba(255,255,255,0.055) 1px,transparent 1px);background-size:22px 22px;}
+.qs-panel-inner{position:relative;z-index:2;}
+.qs-eyebrow{font-family:'Josefin Sans',sans-serif;font-size:9px;font-weight:700;letter-spacing:3px;text-transform:uppercase;color:#7dd44a;margin-bottom:12px;}
+.qs-title{font-family:'Josefin Sans',sans-serif;font-size:26px;font-weight:700;color:var(--white);line-height:1.2;margin-bottom:14px;}
+.qs-lead{font-size:13.5px;color:rgba(255,255,255,0.62);line-height:1.75;margin-bottom:26px;}
+.qs-lead strong{color:var(--white);font-weight:600;}
+.qs-pilares{display:flex;flex-direction:column;gap:14px;}
+.qs-pilar{display:flex;gap:14px;align-items:flex-start;padding-top:14px;border-top:1px solid rgba(255,255,255,0.13);}
+.qs-pilar:first-child{border-top:none;padding-top:0;}
+.qs-pilar-icon{font-size:19px;flex-shrink:0;line-height:1.3;}
+.qs-pilar-title{font-family:'Josefin Sans',sans-serif;font-size:13px;font-weight:700;color:var(--white);margin-bottom:3px;}
+.qs-pilar-desc{font-size:11.5px;color:rgba(255,255,255,0.5);line-height:1.55;}
+
+/* Capítulos del viaje */
+.qs-chapters-head{display:flex;align-items:baseline;gap:14px;margin:38px 0 18px;flex-wrap:wrap;}
+.qs-chapters-title{font-family:'Josefin Sans',sans-serif;font-size:19px;font-weight:700;color:var(--ie-deep);}
+.qs-chapters-sub{font-size:12.5px;color:var(--text-light);}
+.qs-chapters{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;}
+.qs-chapter{background:var(--white);border:1.5px solid var(--gray-border);border-radius:16px;overflow:hidden;box-shadow:0 2px 16px rgba(0,51,102,0.06);display:flex;flex-direction:column;transition:transform .2s,box-shadow .2s;}
+.qs-chapter:hover{transform:translateY(-4px);box-shadow:0 14px 38px rgba(0,51,102,0.13);}
+.qs-chapter-media{position:relative;aspect-ratio:4/3;overflow:hidden;background:var(--blue-light);}
+.qs-chapter-media img{width:100%;height:100%;object-fit:cover;object-position:center 15%;display:block;}
+.qs-chapter-step{position:absolute;top:12px;left:12px;background:rgba(0,31,64,0.82);backdrop-filter:blur(4px);color:#7dd44a;font-family:'Josefin Sans',sans-serif;font-size:9px;font-weight:700;letter-spacing:2px;text-transform:uppercase;padding:5px 11px;border-radius:20px;}
+.qs-chapter-body{padding:18px 20px 20px;}
+.qs-chapter-title{font-family:'Josefin Sans',sans-serif;font-size:15px;font-weight:700;color:var(--ie-deep);margin-bottom:7px;}
+.qs-chapter-text{font-size:12.5px;color:var(--text-mid);line-height:1.65;}
+
+/* OPCIONES */
+.alert-box{display:flex;gap:12px;align-items:flex-start;background:#fff4f0;border:1.5px solid rgba(177,41,0,0.3);border-radius:12px;padding:14px 18px;margin-bottom:22px;}
+.alert-icon{font-size:20px;flex-shrink:0;}
+.alert-text{font-size:12px;color:#6b1a00;line-height:1.6;}
+.alert-text strong{color:var(--red-dark);}
+.opciones-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:20px;}
+.opcion-card{background:var(--white);border-radius:16px;border:1.5px solid var(--gray-border);overflow:hidden;box-shadow:0 2px 16px rgba(0,51,102,0.06);position:relative;transition:transform .2s,box-shadow .2s,border-color .2s;}
+.opcion-card:hover{transform:translateY(-4px);box-shadow:0 12px 40px rgba(31,74,5,0.18);border-color:var(--ie);}
+.opcion-card.recomendada{border-color:var(--blue);box-shadow:0 6px 28px rgba(0,51,102,0.20);}
+.badge-rec{position:absolute;top:14px;right:-32px;background:var(--blue);color:var(--white);font-size:8px;font-weight:700;letter-spacing:1.5px;padding:5px 40px;transform:rotate(45deg);width:130px;text-align:center;z-index:10;}
+.opcion-header{background:linear-gradient(135deg,var(--ie-deep) 0%,var(--ie) 100%);padding:22px 24px 18px;position:relative;overflow:hidden;}
+.opcion-header::after{content:'☘';position:absolute;right:-10px;bottom:-22px;font-size:82px;opacity:0.11;line-height:1;transform:rotate(-14deg);}
+.opcion-header > *{position:relative;z-index:2;}
+.opcion-num{font-family:'Josefin Sans',sans-serif;font-size:9px;letter-spacing:3px;text-transform:uppercase;color:rgba(255,255,255,0.38);margin-bottom:8px;}
+.opcion-distrito{font-family:'Josefin Sans',sans-serif;font-size:16px;font-weight:700;color:var(--white);margin-bottom:5px;}
+.opcion-loc{font-size:11px;color:rgba(255,255,255,0.48);margin-bottom:12px;}
+.opcion-body{padding:20px 22px;}
+.tag{border-radius:5px;padding:2px 8px;font-size:9px;font-weight:700;text-transform:uppercase;}
+.tag.pub{background:var(--green);color:var(--white);}
+.tag.info{background:var(--blue-light);color:var(--blue);}
+.match-bar{display:flex;gap:6px;flex-wrap:wrap;padding:14px 22px;border-top:1px solid var(--gray-border);background:linear-gradient(to right,var(--gray-card),var(--white));}
+.match-tag{display:flex;align-items:center;gap:4px;font-size:10px;font-weight:600;color:var(--green-dark);background:var(--green-light);border:1px solid rgba(76,158,12,0.25);border-radius:20px;padding:3px 10px;}
+.match-tag::before{content:'✓';font-size:9px;}
+
+/* INFO BLOCKS */
+.info-blocks{display:grid;grid-template-columns:1fr 1fr;gap:20px;}
+.info-block{background:var(--white);border-radius:16px;border:1.5px solid var(--gray-border);padding:24px 26px;box-shadow:0 2px 16px rgba(0,51,102,0.05);}
+.info-block-icon{font-size:24px;margin-bottom:10px;}
+.info-block-title{font-family:'Josefin Sans',sans-serif;font-size:14px;font-weight:700;color:var(--ie-deep);margin-bottom:10px;}
+.info-block-text{font-size:12.5px;color:var(--text-mid);line-height:1.7;}
+.info-block-text strong{color:var(--text);}
+.info-block ul{margin-top:10px;padding-left:0;list-style:none;}
+.info-block ul li{font-size:12px;color:var(--text-mid);display:flex;gap:8px;align-items:flex-start;margin-bottom:7px;line-height:1.5;}
+.info-block ul li::before{content:'✓';color:var(--green);font-weight:700;flex-shrink:0;}
+
+/* INCLUDES */
+.includes-wrap{background:var(--white);border-radius:16px;border:1.5px solid var(--gray-border);box-shadow:0 2px 16px rgba(0,51,102,0.05);overflow:hidden;}
+.includes-head{background:linear-gradient(135deg,var(--ie-deep),var(--ie));padding:20px 32px;}
+.includes-head h3{font-family:'Josefin Sans',sans-serif;font-size:14px;font-weight:700;color:var(--white);letter-spacing:1px;}
+.includes-body{padding:28px 32px;}
+.includes-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:32px;}
+.col-title{font-family:'Josefin Sans',sans-serif;font-size:9px;font-weight:700;letter-spacing:2.5px;text-transform:uppercase;color:var(--red);margin-bottom:14px;padding-bottom:8px;border-bottom:2px solid var(--red-light);}
+.inc-list{list-style:none;display:flex;flex-direction:column;gap:8px;}
+.inc-list li{font-size:12px;color:var(--text-mid);display:flex;align-items:flex-start;gap:8px;line-height:1.55;}
+.inc-list li::before{content:'✓';color:var(--green);font-weight:700;font-size:11px;flex-shrink:0;margin-top:1px;}
+.inc-list.no li::before{content:'✗';color:var(--red);}
+.inc-list li small{font-size:10px;color:var(--text-light);display:block;margin-top:2px;}
+.inc-list a{color:var(--ie-deep);font-weight:600;}
+
+/* GESTOR */
+.gestor-wrap{background:linear-gradient(135deg,var(--blue-dark),var(--blue-mid));border-radius:12px;padding:20px 24px;margin-top:20px;}
+.gestor-title{font-family:'Josefin Sans',sans-serif;font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:rgba(255,255,255,0.6);margin-bottom:14px;}
+.gestor-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;}
+.gestor-item{background:rgba(255,255,255,0.08);border:1px solid rgba(255,255,255,0.12);border-radius:8px;padding:10px 12px;font-size:11px;color:rgba(255,255,255,0.85);line-height:1.4;}
+.gestor-item::before{content:'→';color:#7dd44a;font-weight:700;margin-right:5px;}
+
+/* FORMAS DE PAGO */
+.payment-wrap{background:linear-gradient(135deg,var(--blue-dark) 0%,var(--blue) 60%,var(--blue-mid) 100%);border-radius:16px;padding:32px;position:relative;overflow:hidden;}
+.payment-wrap::before{content:'';position:absolute;inset:0;background-image:radial-gradient(rgba(255,255,255,0.05) 1px,transparent 1px);background-size:22px 22px;}
+.payment-inner{position:relative;z-index:2;}
+.pay-title{font-family:'Josefin Sans',sans-serif;font-size:16px;font-weight:700;color:var(--white);margin-bottom:6px;}
+.pay-subtitle{font-size:12px;color:rgba(255,255,255,0.45);margin-bottom:22px;}
+.pay-route{background:rgba(255,255,255,0.07);border:1px solid rgba(255,255,255,0.14);border-radius:14px;padding:20px 22px;margin-bottom:16px;}
+.pay-route-head{display:flex;align-items:center;gap:10px;margin-bottom:6px;}
+.pay-route-icon{font-size:20px;}
+.pay-route-title{font-family:'Josefin Sans',sans-serif;font-size:14px;font-weight:700;color:var(--white);}
+.pay-route-sub{font-size:11.5px;color:rgba(255,255,255,0.45);margin-bottom:16px;line-height:1.5;}
+.pay-entrada{display:flex;align-items:center;gap:14px;background:rgba(125,212,74,0.13);border:1px solid rgba(125,212,74,0.35);border-radius:10px;padding:14px 18px;margin-bottom:16px;}
+.pay-entrada-num{font-family:'Josefin Sans',sans-serif;font-size:26px;font-weight:700;color:#7dd44a;line-height:1;white-space:nowrap;}
+.pay-entrada-txt{font-size:11.5px;color:rgba(255,255,255,0.72);line-height:1.5;}
+.pay-entrada-txt strong{color:var(--white);font-weight:600;}
+.pay-cols{display:grid;grid-template-columns:1fr 1fr;gap:16px;}
+.pay-col{background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.12);border-radius:12px;padding:16px 18px;}
+.pay-col-title{font-family:'Josefin Sans',sans-serif;font-size:9px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:#7dd44a;margin-bottom:12px;}
+.pay-step{margin-bottom:11px;}
+.pay-step:last-child{margin-bottom:0;}
+.pay-step-num{font-size:9px;font-weight:700;color:rgba(255,255,255,0.4);text-transform:uppercase;letter-spacing:1px;margin-bottom:2px;}
+.pay-step-title{font-size:13px;font-weight:600;color:var(--white);margin-bottom:2px;}
+.pay-step-desc{font-size:11px;color:rgba(255,255,255,0.45);line-height:1.5;}
+.pay-note{font-size:11px;color:rgba(255,255,255,0.32);line-height:1.65;font-style:italic;border-top:1px solid rgba(255,255,255,0.1);padding-top:14px;margin-top:4px;}
+
+/* FINANCIACIÓN */
+.financing-wrap{background:var(--white);border-radius:16px;border:1.5px solid var(--gray-border);box-shadow:0 2px 16px rgba(0,51,102,0.06);overflow:hidden;}
+.financing-head{background:linear-gradient(135deg,var(--blue-dark),var(--blue));padding:22px 32px;display:flex;align-items:center;justify-content:space-between;gap:16px;}
+.financing-head-left{display:flex;align-items:center;gap:16px;}
+.fin-icon{font-size:28px;flex-shrink:0;}
+.fin-title{font-family:'Josefin Sans',sans-serif;font-size:16px;font-weight:700;color:var(--white);margin-bottom:3px;}
+.fin-sub{font-size:11px;color:rgba(255,255,255,0.5);line-height:1.4;}
+.fin-badge{background:rgba(125,212,74,0.2);border:1px solid rgba(125,212,74,0.4);color:#7dd44a;font-family:'Josefin Sans',sans-serif;font-size:11px;font-weight:700;letter-spacing:1px;padding:6px 14px;border-radius:20px;white-space:nowrap;}
+.financing-body{padding:28px 32px;}
+.fin-opcion-label,.fin-plazo-label{font-family:'Josefin Sans',sans-serif;font-size:9px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--text-light);margin-bottom:10px;}
+.fin-opcion-selector{margin-bottom:24px;}
+.fin-opcion-btns{display:flex;gap:10px;flex-wrap:wrap;}
+.fin-opcion-btn{background:var(--gray-card);border:1.5px solid var(--gray-border);border-radius:10px;padding:10px 16px;cursor:pointer;text-align:left;transition:all .2s;display:flex;flex-direction:column;gap:3px;font-family:'Fira Sans',sans-serif;}
+.fin-opcion-btn:hover{border-color:var(--blue-mid);background:var(--blue-light);}
+.fin-opcion-btn.active{border-color:var(--blue);background:var(--blue-light);}
+.fin-opcion-nombre{font-size:10px;font-weight:700;letter-spacing:1px;text-transform:uppercase;color:var(--text-light);}
+.fin-opcion-btn.active .fin-opcion-nombre{color:var(--blue);}
+.fin-opcion-precio{font-family:'Josefin Sans',sans-serif;font-size:16px;font-weight:700;color:var(--text);}
+.fin-opcion-btn.active .fin-opcion-precio{color:var(--blue);}
+.fin-opcion-tachado{font-size:10px;color:var(--text-light);text-decoration:line-through;}
+.fin-entrada-fija{display:flex;align-items:center;gap:14px;background:var(--green-light);border:1.5px solid rgba(76,158,12,0.3);border-radius:12px;padding:14px 18px;margin-bottom:24px;}
+.fin-entrada-fija-num{font-family:'Josefin Sans',sans-serif;font-size:24px;font-weight:700;color:var(--green-dark);line-height:1;white-space:nowrap;}
+.fin-entrada-fija-txt{font-size:12px;color:var(--text-mid);line-height:1.55;}
+.fin-entrada-fija-txt strong{color:var(--text);font-weight:600;}
+.fin-plazo-wrap{margin-bottom:24px;}
+.fin-plazos{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;}
+.fin-plazo{background:var(--gray-card);border:1.5px solid var(--gray-border);border-radius:12px;padding:14px 12px;cursor:pointer;text-align:center;transition:all .2s;font-family:'Fira Sans',sans-serif;}
+.fin-plazo:hover{border-color:var(--blue-mid);transform:translateY(-2px);}
+.fin-plazo.active{border-color:var(--green);background:var(--green-light);box-shadow:0 4px 16px rgba(76,158,12,0.15);}
+.fin-plazo-meses{font-family:'Josefin Sans',sans-serif;font-size:15px;font-weight:700;color:var(--text);margin-bottom:6px;}
+.fin-plazo.active .fin-plazo-meses{color:var(--green-dark);}
+.fin-plazo-badge{display:inline-block;border-radius:20px;padding:2px 8px;font-size:9px;font-weight:700;letter-spacing:0.5px;margin-bottom:4px;}
+.fin-plazo-badge.sin-intereses{background:var(--green-light);color:var(--green-dark);border:1px solid rgba(76,158,12,0.3);}
+.fin-plazo-badge.con-intereses{background:var(--blue-light);color:var(--blue);border:1px solid rgba(0,51,102,0.2);}
+.fin-plazo-quien{font-size:9px;color:var(--text-light);line-height:1.3;}
+.fin-resultado{display:grid;grid-template-columns:auto 1fr;gap:24px;background:linear-gradient(135deg,var(--blue-dark),var(--blue));border-radius:14px;padding:24px 28px;margin-bottom:16px;align-items:center;}
+.fin-resultado-main{text-align:center;border-right:1px solid rgba(255,255,255,0.15);padding-right:24px;}
+.fin-cuota-label{font-size:10px;font-weight:600;letter-spacing:2px;text-transform:uppercase;color:rgba(255,255,255,0.5);margin-bottom:6px;}
+.fin-cuota-valor{font-family:'Josefin Sans',sans-serif;font-size:36px;font-weight:700;color:#7dd44a;line-height:1;margin-bottom:4px;}
+.fin-cuota-sub{font-size:11px;color:rgba(255,255,255,0.45);}
+.fin-resultado-detalle{display:flex;flex-direction:column;gap:10px;}
+.fin-det-row{display:flex;justify-content:space-between;align-items:center;gap:12px;}
+.fin-det-label{font-size:12px;color:rgba(255,255,255,0.55);}
+.fin-det-val{font-size:13px;font-weight:600;color:var(--white);}
+.fin-det-green{color:#7dd44a !important;}
+.fin-det-total{border-top:1px solid rgba(255,255,255,0.15);padding-top:10px;margin-top:2px;}
+.fin-det-total .fin-det-label{color:rgba(255,255,255,0.7);font-weight:600;}
+.fin-det-total .fin-det-val{font-family:'Josefin Sans',sans-serif;font-size:16px;color:var(--white);}
+.fin-nota{font-size:11px;color:var(--text-light);line-height:1.6;background:var(--gray-card);border-radius:8px;padding:12px 16px;border-left:3px solid var(--blue-light);}
+
+/* SIGUIENTES PASOS */
+.steps-wrap{background:linear-gradient(135deg,var(--blue-dark) 0%,var(--blue) 60%,var(--blue-mid) 100%);border-radius:16px;padding:34px 36px;position:relative;overflow:hidden;}
+.steps-wrap::before{content:'';position:absolute;inset:0;background-image:radial-gradient(rgba(255,255,255,0.05) 1px,transparent 1px);background-size:22px 22px;}
+.steps-inner{position:relative;z-index:2;}
+.steps-title{font-family:'Josefin Sans',sans-serif;font-size:18px;font-weight:700;color:var(--white);margin-bottom:6px;}
+.steps-sub{font-size:12px;color:rgba(255,255,255,0.5);margin-bottom:26px;}
+.steps-list{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;}
+.step-item{background:rgba(255,255,255,0.07);border:1px solid rgba(255,255,255,0.12);border-radius:12px;padding:18px;}
+.step-num{font-family:'Josefin Sans',sans-serif;font-size:20px;font-weight:700;color:#7dd44a;margin-bottom:8px;}
+.step-title{font-size:13px;font-weight:600;color:var(--white);margin-bottom:4px;}
+.step-desc{font-size:11px;color:rgba(255,255,255,0.5);line-height:1.5;}
+.cta-line{margin-top:26px;text-align:center;font-size:12.5px;color:rgba(255,255,255,0.75);}
+.pasos-cta-wrap{text-align:center;margin-top:16px;display:flex;gap:12px;justify-content:center;flex-wrap:wrap;}
+.pasos-cta{display:inline-flex;align-items:center;gap:8px;background:#7dd44a;color:var(--blue-dark);font-family:'Josefin Sans',sans-serif;font-size:13px;font-weight:700;padding:12px 26px;border-radius:10px;text-decoration:none;transition:transform .15s,box-shadow .15s;}
+.pasos-cta:hover{transform:translateY(-2px);box-shadow:0 8px 20px rgba(125,212,74,0.35);}
+.pasos-cta-alt{background:rgba(255,255,255,0.12);color:var(--white);border:1.5px solid rgba(255,255,255,0.35);}
+.pasos-cta-alt:hover{box-shadow:0 8px 20px rgba(255,255,255,0.15);}
+
+/* FOOTER */
+.footer{background:var(--blue-dark);padding:30px 48px;margin-top:56px;text-align:center;position:relative;}
+.footer::before{content:'';position:absolute;top:0;left:0;right:0;height:4px;background:linear-gradient(90deg,var(--ie) 0%,var(--ie) 33%,var(--white) 33%,var(--white) 67%,#FF8200 67%,#FF8200 100%);}
+.footer-logo{font-family:'Josefin Sans',sans-serif;font-size:15px;font-weight:700;color:var(--white);letter-spacing:1px;margin-bottom:6px;}
+.footer-tag{font-family:'Josefin Sans',sans-serif;font-size:10px;letter-spacing:4px;text-transform:uppercase;color:#9ee06a;margin-bottom:14px;}
+.footer-meta{font-size:11px;color:rgba(255,255,255,0.4);line-height:1.7;}
+.footer-meta a{color:rgba(255,255,255,0.65);text-decoration:none;}
+
+@media(max-width:900px){
+  .qs-hero{grid-template-columns:1fr;}
+  .qs-media{min-height:320px;aspect-ratio:4/3;}
+  .qs-chapters{grid-template-columns:1fr;}
+}
+@media(max-width:720px){
+  .header{padding:16px 20px;}.hero{padding:28px 20px 24px;}.hero-name{font-size:28px;}
+  .main{padding:28px 16px 20px;}
+  .includes-grid{grid-template-columns:1fr;}.opciones-grid{grid-template-columns:1fr;}
+  .intro-points{grid-template-columns:1fr;}.info-blocks{grid-template-columns:1fr;}
+  .pay-cols{grid-template-columns:1fr;}.gestor-grid{grid-template-columns:repeat(2,1fr);}
+  .steps-list{grid-template-columns:1fr;}
+  .qs-panel{padding:28px 22px;}.qs-title{font-size:22px;}
+  .fin-plazos{grid-template-columns:repeat(2,1fr);}
+  .fin-resultado{grid-template-columns:1fr;}
+  .fin-resultado-main{border-right:none;border-bottom:1px solid rgba(255,255,255,0.15);padding-right:0;padding-bottom:20px;}
+  .financing-head{flex-direction:column;align-items:flex-start;}
+  .fin-opcion-btns{flex-direction:column;}
+  .footer{padding:26px 20px;}
+}
+
+/* ================= ANIMACIONES ================= */
+.js-anim .reveal{opacity:0;transform:translateY(20px);will-change:opacity,transform;
+  transition:opacity .75s cubic-bezier(.22,.61,.36,1),transform .75s cubic-bezier(.22,.61,.36,1);}
+.js-anim .reveal.in{opacity:1;transform:none;}
+.js-anim .reveal-zoom{opacity:0;transform:scale(.975);transition:opacity .8s ease,transform .8s cubic-bezier(.22,.61,.36,1);}
+.js-anim .reveal-zoom.in{opacity:1;transform:none;}
+
+@keyframes heroUp{from{opacity:0;transform:translateY(16px);}to{opacity:1;transform:none;}}
+@keyframes leafIn{from{opacity:0;transform:translateY(-50%) rotate(-30deg) scale(.85);}to{opacity:.09;transform:translateY(-50%) rotate(-12deg) scale(1);}}
+.js-anim .hero::after{animation:leafIn 1.4s cubic-bezier(.22,.61,.36,1) .15s both;}
+.js-anim .hero-tag{animation:heroUp .7s cubic-bezier(.22,.61,.36,1) .05s both;}
+.js-anim .hero-name{animation:heroUp .7s cubic-bezier(.22,.61,.36,1) .16s both;}
+.js-anim .hero-subtitle{animation:heroUp .7s cubic-bezier(.22,.61,.36,1) .26s both;}
+.js-anim .hero-pill{animation:heroUp .55s cubic-bezier(.22,.61,.36,1) both;}
+.js-anim .hero-promo{animation:heroUp .7s cubic-bezier(.22,.61,.36,1) .7s both;}
+
+.progress-bar{position:fixed;top:0;left:0;height:3px;width:100%;transform:scaleX(0);transform-origin:0 50%;
+  background:linear-gradient(90deg,var(--ie),var(--ie-warm));z-index:999;transition:transform .1s linear;}
+
+.qs-chapter-media img,.qs-media img,.qs-media-inset img{transition:transform .7s cubic-bezier(.22,.61,.36,1);}
+.qs-chapter:hover .qs-chapter-media img{transform:scale(1.06);}
+.qs-hero:hover .qs-media > img{transform:scale(1.03);}
+.qs-media-inset{transition:transform .45s cubic-bezier(.22,.61,.36,1),box-shadow .45s ease;}
+.qs-hero:hover .qs-media-inset{transform:translateY(-6px);box-shadow:-10px -10px 34px rgba(0,31,64,0.34);}
+
+.opcion-card{transition:transform .35s cubic-bezier(.22,.61,.36,1),box-shadow .35s ease,border-color .3s ease;}
+.opcion-header::after{transition:transform .6s cubic-bezier(.22,.61,.36,1),opacity .4s ease;}
+.opcion-card:hover .opcion-header::after{transform:rotate(-4deg) scale(1.14);opacity:.17;}
+
+.pasos-cta{position:relative;overflow:hidden;}
+.pasos-cta::after{content:'';position:absolute;top:0;left:-120%;width:60%;height:100%;
+  background:linear-gradient(100deg,transparent,rgba(255,255,255,.55),transparent);transform:skewX(-18deg);}
+.pasos-cta:hover::after{animation:shine .85s ease;}
+@keyframes shine{to{left:140%;}}
+
+.fin-plazo,.fin-opcion-btn{transition:transform .25s cubic-bezier(.22,.61,.36,1),border-color .25s ease,background .25s ease,box-shadow .25s ease;}
+.fin-cuota-valor{transition:color .3s ease;}
+@keyframes cuotaPop{0%{opacity:.35;transform:translateY(6px);}100%{opacity:1;transform:none;}}
+.fin-cuota-valor.pop{animation:cuotaPop .42s cubic-bezier(.22,.61,.36,1);}
+
+.step-item{transition:transform .3s cubic-bezier(.22,.61,.36,1),background .3s ease;}
+.step-item:hover{transform:translateY(-4px);background:rgba(255,255,255,0.11);}
+.qs-pilar{transition:transform .3s ease;}
+.qs-pilar:hover{transform:translateX(4px);}
+
+@media(prefers-reduced-motion:reduce){
+  .js-anim .reveal,.js-anim .reveal-zoom{opacity:1!important;transform:none!important;transition:none!important;}
+  .js-anim .hero::after,.js-anim .hero-tag,.js-anim .hero-name,.js-anim .hero-subtitle,
+  .js-anim .hero-pill,.js-anim .hero-promo{animation:none!important;opacity:1;}
+  .js-anim .hero::after{opacity:.09;}
+  .progress-bar{display:none;}
+  *{transition-duration:.01ms!important;}
+}
+
+/* ============ IRLANDA · bloques propios ============ */
+.colegio-chips{display:flex;flex-wrap:wrap;gap:6px;margin-top:10px;}
+.chip{border-radius:6px;padding:3px 9px;font-size:9.5px;font-weight:700;text-transform:uppercase;letter-spacing:.5px;background:rgba(255,255,255,0.14);color:rgba(255,255,255,0.9);border:1px solid rgba(255,255,255,0.2);}
+.chip.gold{background:rgba(232,176,75,0.22);border-color:rgba(232,176,75,0.5);color:#ffdda0;}
+.colegio-zona{font-family:'Josefin Sans',sans-serif;font-size:9px;letter-spacing:2.5px;text-transform:uppercase;color:rgba(255,255,255,0.42);margin-bottom:8px;}
+.colegio-desc{font-size:12.5px;color:var(--text-mid);line-height:1.7;margin-bottom:16px;}
+.colegio-section-title{font-family:'Josefin Sans',sans-serif;font-size:9px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--ie);margin:0 0 9px;padding-bottom:6px;border-bottom:1.5px solid var(--ie-light);}
+.extra-tags{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:16px;}
+.extra-tag{font-size:10.5px;color:var(--text-mid);background:var(--gray-card);border:1px solid var(--gray-border);border-radius:20px;padding:3px 10px;}
+.actividades-ciudad{font-size:11.5px;color:var(--text-mid);line-height:1.65;background:var(--ie-light);border-left:3px solid var(--ie);border-radius:0 8px 8px 0;padding:10px 14px;margin-bottom:16px;}
+.por-que-list{list-style:none;display:flex;flex-direction:column;gap:7px;margin-bottom:16px;}
+.por-que-list li{font-size:12px;color:var(--text-mid);line-height:1.55;display:flex;gap:8px;align-items:flex-start;}
+.por-que-list li::before{content:'☘';color:var(--ie);flex-shrink:0;font-size:11px;}
+.enlaces-list{list-style:none;display:flex;flex-direction:column;gap:5px;}
+.enlaces-list li{font-size:11px;line-height:1.5;word-break:break-all;}
+.enlaces-list a{color:var(--ie-deep);text-decoration:none;}
+.enlaces-list a:hover{text-decoration:underline;}
+
+/* Modalidades del programa */
+.mod-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:18px;}
+.mod-card{background:var(--white);border:1.5px solid var(--gray-border);border-radius:16px;overflow:hidden;box-shadow:0 2px 16px rgba(31,74,5,0.06);display:flex;flex-direction:column;position:relative;transition:transform .3s cubic-bezier(.22,.61,.36,1),box-shadow .3s ease;}
+.mod-card:hover{transform:translateY(-4px);box-shadow:0 12px 34px rgba(31,74,5,0.14);}
+.mod-card.destacado{border-color:var(--ie);box-shadow:0 6px 28px rgba(76,158,12,0.20);}
+.mod-head{padding:20px 22px 16px;background:var(--gray-card);border-bottom:1.5px solid var(--gray-border);}
+.mod-card.destacado .mod-head{background:linear-gradient(135deg,var(--ie-deep),var(--ie));border-bottom-color:transparent;}
+.mod-nombre{font-family:'Josefin Sans',sans-serif;font-size:15px;font-weight:700;color:var(--ie-deep);margin-bottom:4px;}
+.mod-card.destacado .mod-nombre{color:var(--white);}
+.mod-desc-head{font-size:11.5px;color:var(--text-light);line-height:1.5;margin-bottom:14px;}
+.mod-card.destacado .mod-desc-head{color:rgba(255,255,255,0.6);}
+.mod-precio-val{font-family:'Josefin Sans',sans-serif;font-size:27px;font-weight:700;color:var(--ie-deep);line-height:1;}
+.mod-card.destacado .mod-precio-val{color:var(--white);}
+.mod-precio-tachado{font-family:'Josefin Sans',sans-serif;font-size:14px;font-weight:600;color:var(--text-light);text-decoration:line-through;margin-right:8px;}
+.mod-card.destacado .mod-precio-tachado{color:rgba(255,255,255,0.5);}
+.mod-precio-sub{font-size:10.5px;color:var(--text-light);text-transform:uppercase;letter-spacing:1px;margin-top:4px;}
+.mod-card.destacado .mod-precio-sub{color:rgba(255,255,255,0.55);}
+.mod-body{padding:18px 22px 20px;flex:1;}
+.mod-list{list-style:none;display:flex;flex-direction:column;gap:8px;}
+.mod-list li{font-size:12px;color:var(--text-mid);line-height:1.55;display:flex;gap:8px;align-items:flex-start;}
+.mod-list li::before{content:'✓';color:var(--ie);font-weight:700;flex-shrink:0;}
+.badge-rec-mod{position:absolute;top:0;right:0;background:var(--ie);color:var(--white);font-family:'Josefin Sans',sans-serif;font-size:8.5px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;padding:5px 14px;border-radius:0 0 0 10px;z-index:3;}
+
+/* Tabla comparativa */
+.tabla-wrap{background:var(--white);border:1.5px solid var(--gray-border);border-radius:16px;overflow:hidden;box-shadow:0 2px 16px rgba(31,74,5,0.05);}
+.tabla-diff{width:100%;border-collapse:collapse;}
+.tabla-diff th,.tabla-diff td{padding:13px 16px;text-align:center;font-size:12.5px;border-bottom:1px solid var(--gray-border);}
+.tabla-diff thead th{background:linear-gradient(135deg,var(--ie-deep),var(--ie));color:var(--white);font-family:'Josefin Sans',sans-serif;font-size:11.5px;font-weight:700;letter-spacing:.5px;}
+.tabla-diff tbody th{text-align:left;font-weight:600;color:var(--text);background:var(--gray-card);font-size:12px;}
+.tabla-diff tr:last-child td,.tabla-diff tr:last-child th{border-bottom:none;}
+.tabla-diff .si{color:var(--ie);font-weight:700;font-size:15px;}
+.tabla-diff .no{color:var(--text-light);font-size:15px;}
+.tabla-diff .tachado{color:var(--text-light);text-decoration:line-through;font-weight:600;margin-right:6px;}
+.tabla-diff .precio-fila td{font-family:'Josefin Sans',sans-serif;font-weight:700;font-size:15px;color:var(--ie-deep);}
+.tabla-diff .nat-det{display:block;font-size:11px;color:var(--text-light);margin-top:3px;line-height:1.4;font-weight:400;}
+.tabla-diff td b{color:var(--ie-deep);font-size:12.5px;}
+.tabla-nota{font-size:11px;color:var(--text-light);margin-top:12px;line-height:1.6;font-style:italic;}
+
+/* Vuelos y acompañamiento */
+.vuelos-wrap{background:var(--white);border:1.5px solid var(--gray-border);border-radius:16px;padding:28px 32px;box-shadow:0 2px 16px rgba(31,74,5,0.05);}
+.vuelos-lead{font-size:13.5px;color:var(--text-mid);line-height:1.8;margin-bottom:18px;}
+.vuelos-lead strong{color:var(--ie-deep);font-weight:600;}
+.vuelos-sub{font-family:'Josefin Sans',sans-serif;font-size:15px;font-weight:700;color:var(--ie-deep);margin:26px 0 10px;}
+.vuelos-p{font-size:13px;color:var(--text-mid);line-height:1.8;margin-bottom:12px;}
+.vuelos-p strong{color:var(--text);font-weight:600;}
+.vuelos-destacado{background:var(--ie-light);border-left:3px solid var(--ie);border-radius:0 10px 10px 0;padding:14px 18px;font-size:12.5px;color:var(--text-mid);line-height:1.7;margin:16px 0;}
+.vuelos-destacado b{color:var(--ie-deep);}
+
+/* Decisión */
+.decision-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:18px;}
+.decision-card{background:var(--white);border:1.5px solid var(--gray-border);border-left:4px solid var(--ie);border-radius:12px;padding:20px 22px;transition:transform .3s ease,box-shadow .3s ease;}
+.decision-card:hover{transform:translateY(-3px);box-shadow:0 10px 28px rgba(31,74,5,0.12);}
+.decision-title{font-family:'Josefin Sans',sans-serif;font-size:14px;font-weight:700;color:var(--ie-deep);margin-bottom:8px;}
+.decision-text{font-size:12.5px;color:var(--text-mid);line-height:1.7;}
+
+/* Bandera alemana en línea */
+.flag-de{border-radius:2px;flex-shrink:0;vertical-align:-1px;box-shadow:0 0 0 1px rgba(0,0,0,0.12);}
+.hero-pill .flag-de{box-shadow:0 0 0 1px rgba(255,255,255,0.35);}
+.intro-point-icon .flag-de{display:block;margin-top:3px;}
+
+/* Precio destacado */
+.precio-nota{font-size:11.5px;color:var(--text-light);line-height:1.6;margin-top:12px;font-style:italic;}
+
+@media(max-width:900px){
+  .mod-grid{grid-template-columns:1fr;}
+  .decision-grid{grid-template-columns:1fr;}
+  .opciones-grid{grid-template-columns:1fr;}
+  .tabla-wrap{overflow-x:auto;}
+  .tabla-diff{min-width:600px;}
+  .vuelos-wrap{padding:22px 20px;}
+}
+</style>
+</head>
+<body>
+
+<!-- ============ 1. HEADER ============ -->
+<div class="header">
+  <div class="logo-area"><img src="https://aescobarnic.github.io/Propuestas/img/mlq-logo.png" alt="My Language Quest"></div>
+  <div class="header-right">
+    <div class="header-label">Curso académico</div>
+    <div class="header-year">2027/28</div>
+  </div>
+</div>
+
+<!-- ============ 2. HERO ============ -->
+<div class="hero">
+  <div class="hero-dots"></div>
+  <div class="hero-inner">
+    <div class="hero-tag">Propuesta personalizada · Irlanda</div>
+    <div class="hero-name">Luis Arturo Hernando Ruiz</div>
+    <div class="hero-subtitle">Programa Choice · Año escolar completo · Irlanda · Curso 2027/28</div>
+    <div class="hero-pills">
+      <div class="hero-pill">🎂 11 años</div>
+      <div class="hero-pill">🎓 First Year · 1.º ESO</div>
+      <div class="hero-pill">🏠 Familia anfitriona</div>
+      <div class="hero-pill">🗣 Inglés muy bueno · bilingüe</div>
+      <div class="hero-pill"><svg class="flag-de" viewBox="0 0 5 3" width="15" height="9" role="img" aria-label="Bandera de Alemania"><rect width="5" height="1" y="0" fill="#000000"/><rect width="5" height="1" y="1" fill="#DD0000"/><rect width="5" height="1" y="2" fill="#FFCE00"/></svg> Alemán curricular</div>
+      <div class="hero-pill">⚽ Fútbol · 🏊 Natación · 🏓 Tenis de mesa</div>
+      <div class="hero-pill ac">🌿 Entorno pequeño y tranquilo</div>
+    </div>
+    <div class="hero-promo">☘ Descuento de <strong>450 €</strong> aplicable a reservas formalizadas antes del <strong>1 de diciembre de 2026</strong>.</div>
+  </div>
+</div>
+
+<div class="main">
+
+  <!-- ============ 3. CONTEXTO ============ -->
+  <div class="section-title"><h2>Cómo funciona el año escolar en Irlanda</h2></div>
+  <p class="intro-text">
+    En Irlanda el estudiante se integra en un <strong>colegio irlandés</strong> conviviendo con una familia
+    anfitriona en pensión completa. Con el <strong>Programa Choice</strong> sois vosotros quienes elegís el
+    colegio entre las opciones que hemos seleccionado para el perfil de Luis Arturo. El sistema irlandés
+    organiza los tres primeros cursos de secundaria en el <strong>Junior Cycle</strong>, que es donde se
+    incorporará en <strong>First Year</strong>, el equivalente a 1.º de ESO.
+  </p>
+  <div class="intro-points">
+    <div class="intro-point"><div class="intro-point-icon">🏫</div><div><div class="intro-point-title">Vosotros elegís el colegio</div><div class="intro-point-desc">Preseleccionamos centros que encajan con el perfil y la familia decide entre ellos.</div></div></div>
+    <div class="intro-point"><div class="intro-point-icon">🏠</div><div><div class="intro-point-title">Familia anfitriona</div><div class="intro-point-desc">Pensión completa y habitación individual, con un único hispanohablante por familia.</div></div></div>
+    <div class="intro-point"><div class="intro-point-icon"><svg class="flag-de" viewBox="0 0 5 3" width="22" height="14" role="img" aria-label="Bandera de Alemania"><rect width="5" height="1" y="0" fill="#000000"/><rect width="5" height="1" y="1" fill="#DD0000"/><rect width="5" height="1" y="2" fill="#FFCE00"/></svg></div><div><div class="intro-point-title">Continuidad del alemán</div><div class="intro-point-desc">Los cuatro colegios ofrecen alemán como asignatura del Junior Cycle.</div></div></div>
+    <div class="intro-point"><div class="intro-point-icon">✈</div><div><div class="intro-point-title">Vuelos incluidos</div><div class="intro-point-desc">2 vuelos (inicio y fin de curso) o 4 vuelos añadiendo la ida y vuelta de Navidad.</div></div></div>
+  </div>
+
+  <!-- ============ 4. QUIÉNES SOMOS ============ -->
+  <div class="section-title"><h2>Quiénes somos</h2></div>
+  <div class="qs-hero">
+    <div class="qs-media">
+      <img src="https://aescobarnic.github.io/Propuestas/img/mlq-grupo-aeropuerto.jpg" style="object-position:center 30%;" alt="Grupo de estudiantes de My Language Quest en el aeropuerto con su coordinadora" loading="lazy">
+      <div class="qs-media-inset"><img src="https://aescobarnic.github.io/Propuestas/img/mlq-despedida-familia.jpg" style="object-position:center 25%;" alt="Estudiante despidiéndose de su familia antes de salir" loading="lazy"></div>
+    </div>
+    <div class="qs-panel">
+      <div class="qs-panel-inner">
+        <div class="qs-eyebrow">My Language Quest</div>
+        <div class="qs-title">Nadie hace este viaje solo</div>
+        <p class="qs-lead">
+          Acompañamos a familias españolas en la experiencia de estudiar un año escolar en el extranjero.
+          No somos una plataforma de reservas: <strong>hay personas con nombre y apellido detrás de cada
+          estudiante</strong>, desde la primera reunión hasta la convalidación de las notas a la vuelta.
+        </p>
+        <div class="qs-pilares">
+          <div class="qs-pilar"><div class="qs-pilar-icon">👩‍💼</div><div><div class="qs-pilar-title">Una asesora asignada en España</div><div class="qs-pilar-desc">La misma persona de principio a fin: nada de tickets ni centralitas.</div></div></div>
+          <div class="qs-pilar"><div class="qs-pilar-icon">🧭</div><div><div class="qs-pilar-title">Coordinador local en Irlanda</div><div class="qs-pilar-desc">Visitas, tutorías y emergencias 24 h sobre el terreno.</div></div></div>
+          <div class="qs-pilar"><div class="qs-pilar-icon">🏠</div><div><div class="qs-pilar-title">Un solo hispanohablante por familia</div><div class="qs-pilar-desc">Garantizado, para que la inmersión sea real desde el primer día.</div></div></div>
+          <div class="qs-pilar"><div class="qs-pilar-icon">📞</div><div><div class="qs-pilar-title">Atención 24 h, aquí y allí</div><div class="qs-pilar-desc">Emergencias cubiertas en España y en destino, todo el curso.</div></div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="qs-chapters-head">
+    <div class="qs-chapters-title">Cómo se vive el curso</div>
+    <div class="qs-chapters-sub">De la maleta en casa a la vida de instituto al otro lado del mar</div>
+  </div>
+  <div class="qs-chapters">
+    <div class="qs-chapter">
+      <div class="qs-chapter-media"><img src="https://aescobarnic.github.io/Propuestas/img/mlq-equipaje-salida.jpg" style="object-position:center 12%;" alt="Estudiante con su equipaje el día de la salida" loading="lazy"><div class="qs-chapter-step">Antes de salir</div></div>
+      <div class="qs-chapter-body"><div class="qs-chapter-title">Todo resuelto antes de la maleta</div><div class="qs-chapter-text">Entrevista, elección de colegio, matrícula, familia anfitriona y vuelos. Más la masterclass de cultura irlandesa, 10 horas online antes de salir.</div></div>
+    </div>
+    <div class="qs-chapter">
+      <div class="qs-chapter-media"><img src="https://aescobarnic.github.io/Propuestas/img/mlq-salida-pista.jpg" style="object-position:center 8%;" alt="Estudiantes de My Language Quest el día de la salida" loading="lazy"><div class="qs-chapter-step">El día de la salida</div></div>
+      <div class="qs-chapter-body"><div class="qs-chapter-title">Salida acompañada</div><div class="qs-chapter-text">Orientación previa en Madrid u online y <a href="https://aescobarnic.github.io/Propuestas/welcome-weekend-dublin.html" target="_blank" rel="noopener">orientación de 2 días en Dublín</a> al llegar, con recibimiento en el aeropuerto.</div></div>
+    </div>
+    <div class="qs-chapter">
+      <div class="qs-chapter-media"><img src="https://aescobarnic.github.io/Propuestas/img/mlq-vida-social.jpg" style="object-position:center 22%;" alt="Estudiante con sus nuevos amigos" loading="lazy"><div class="qs-chapter-step">La vida allí</div></div>
+      <div class="qs-chapter-body"><div class="qs-chapter-title">Un curso, no unas vacaciones</div><div class="qs-chapter-text">Colegio, uniforme, extraescolares y amigos nuevos. Con coordinador local, tutorías y cambio de familia si hiciera falta.</div></div>
+    </div>
+  </div>
+
+  <!-- ============ 5. SOBRE LUIS ARTURO ============ -->
+  <div class="section-title"><h2>Sobre Luis Arturo</h2></div>
+  <div class="tabla-wrap" style="margin-bottom:24px;">
+    <table class="tabla-diff">
+      <thead><tr><th style="text-align:left;">Dato</th><th style="text-align:left;">Valor</th></tr></thead>
+      <tbody>
+        <tr><th>Edad actual</th><td style="text-align:left;">11 años</td></tr>
+        <tr><th>Curso en destino</th><td style="text-align:left;">First Year · 1.º ESO</td></tr>
+        <tr><th>Residencia</th><td style="text-align:left;">Gran Canaria</td></tr>
+        <tr><th>Duración</th><td style="text-align:left;">Año escolar completo</td></tr>
+        <tr><th>Modalidad</th><td style="text-align:left;">Programa Choice + familia anfitriona</td></tr>
+        <tr><th>Destino</th><td style="text-align:left;">Irlanda</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="info-blocks">
+    <div class="info-block">
+      <div class="info-block-icon">📚</div>
+      <div class="info-block-title">Trayectoria académica e idiomas</div>
+      <div class="info-block-text">
+        Luis Arturo tiene una base muy buena de inglés: lleva escolarizado en centros bilingües desde sus
+        primeros años, con una distribución aproximada de cuatro horas en inglés y cuatro en español.
+        Primero estudió en un colegio público bilingüe de Madrid y actualmente asiste a un centro privado
+        en Canarias.<br><br>
+        También estudia alemán tres horas semanales y está previsto que haga una prueba o certificación de
+        este idioma. Para vosotros es importante que el año en Irlanda no interrumpa este aprendizaje. Por
+        eso hemos buscado centros que ofrecen <strong>alemán como asignatura curricular en Junior Cycle</strong>,
+        no solo actividades o intercambios puntuales relacionados con Alemania.
+      </div>
+    </div>
+    <div class="info-block">
+      <div class="info-block-icon">⚽</div>
+      <div class="info-block-title">Deportes y actividades</div>
+      <ul>
+        <li><strong>Fútbol:</strong> practicarlo con otros estudiantes, preferiblemente dentro del colegio.</li>
+        <li><strong>Natación:</strong> mantener una actividad física regular, con piscina accesible desde el colegio o desde la familia anfitriona.</li>
+        <li><strong>Tenis de mesa:</strong> una actividad de especial importancia familiar, ya que Arturo es profesor de este deporte y ha dado clases a niños y adolescentes.</li>
+      </ul>
+      <div class="info-block-text" style="margin-top:12px;">
+        No buscamos competición federada. El criterio principal es que Luis Arturo pueda disfrutar de estas
+        actividades y practicarlas con regularidad.
+      </div>
+    </div>
+  </div>
+
+  <div class="info-blocks" style="margin-top:20px;">
+    <div class="info-block">
+      <div class="info-block-icon">🌿</div>
+      <div class="info-block-title">Entorno ideal</div>
+      <div class="info-block-text">
+        Nos dejasteis clara una preferencia: <strong>nada de gran ciudad</strong>. Estáis acostumbrados a
+        vivir en localidades pequeñas, rodeadas de naturaleza. Ahora vivís en una población de montaña en
+        Canarias y antes vivisteis en la sierra de Madrid. Buscamos para Luis Arturo:
+      </div>
+      <ul>
+        <li>un entorno verde, seguro y tranquilo</li>
+        <li>una localidad pequeña o mediana</li>
+        <li>instalaciones deportivas, comercios y servicios cotidianos</li>
+        <li>posibilidad de hacer amigos e integrarse en la comunidad</li>
+        <li>una familia anfitriona implicada, que le acompañe y supervise como corresponde a su edad</li>
+      </ul>
+    </div>
+    <div class="info-block">
+      <div class="info-block-icon">🏠</div>
+      <div class="info-block-title">Familia anfitriona y acompañamiento</div>
+      <div class="info-block-text">
+        Por su edad, daremos prioridad a una familia <strong>muy implicada y acogedora</strong>, con una
+        rutina tranquila y acostumbrada a convivir con niños de la edad de Luis Arturo. Buscamos un hogar
+        donde se sienta cuidado desde el primer día y que le acompañe a establecer sus rutinas, a integrarse
+        en el colegio y a ganar autonomía poco a poco. Comprobaremos también los desplazamientos diarios:
+        colegio, piscina, entrenamientos y actividades.
+      </div>
+    </div>
+  </div>
+
+  <!-- ============ 6. COLEGIOS ============ -->
+  <div class="section-title"><h2>Los cuatro colegios</h2></div>
+  <div class="alert-box">
+    <div class="alert-icon">☘</div>
+    <div class="alert-text"><strong>Programa Choice · precio único:</strong> el precio no varía según el colegio elegido. Hay plaza confirmada en los cuatro centros. Los hemos seleccionado porque todos combinan <strong>alemán en Junior Cycle</strong>, <strong>fútbol</strong> y <strong>tenis de mesa</strong> en una localidad pequeña o mediana; la diferencia principal está en el acceso a la piscina.</div>
+  </div>
+  <div class="opciones-grid">
+
+    <div class="opcion-card recomendada">
+      <div class="badge-rec">★ RECOMENDADO</div>
+      <div class="opcion-header">
+        <div class="colegio-zona">Condado de Meath · Localidad histórica</div>
+        <div class="opcion-distrito">St. Ciarán's Community School</div>
+        <div class="opcion-loc">📍 Kells · Condado de Meath</div>
+        <div class="colegio-chips"><span class="chip">Mixto</span><span class="chip">≈592 alumnos</span><span class="chip gold">☘ Piscina junto al colegio</span></div>
+      </div>
+      <div class="opcion-body">
+        <div class="colegio-desc">Kells es una localidad histórica de unos 6.300 habitantes. Tiene un centro con comercios, cafeterías y servicios, además de espacios verdes y un entorno residencial y rural. Es lo bastante manejable para no tener la intensidad de una gran ciudad y ofrece suficiente actividad para integrarse. Cuenta con monumentos históricos, zonas verdes, instalaciones deportivas y conexiones con otras localidades de Meath.</div>
+        <div class="colegio-section-title">Lo que buscáis</div>
+        <ul class="por-que-list">
+          <li><strong>Alemán:</strong> forma parte de las asignaturas optativas de Junior Cycle, que los alumnos de First Year pueden elegir.</li>
+          <li><strong>Fútbol:</strong> el colegio participa en competiciones escolares de fútbol con equipos de distintas edades, incluido First Year.</li>
+          <li><strong>Tenis de mesa:</strong> figura entre las actividades deportivas del centro.</li>
+          <li><strong>Natación:</strong> Kells Swimming Pool es una piscina cubierta de 25 m a unos 140 m del colegio, con sesiones públicas y actividades de natación.</li>
+        </ul>
+        <div class="colegio-section-title">Otras actividades</div>
+        <div class="extra-tags"><span class="extra-tag">🏐 Fútbol gaélico</span><span class="extra-tag">🏀 Baloncesto</span><span class="extra-tag">🏑 Hurling</span><span class="extra-tag">🏃 Atletismo</span><span class="extra-tag">🌲 Campo a través</span><span class="extra-tag">🤾 Balonmano</span><span class="extra-tag">🏉 Rugby</span><span class="extra-tag">⛳ Golf</span><span class="extra-tag">🐴 Equitación</span></div>
+        <div class="actividades-ciudad">Concursos · debates · Games Club · iniciativas medioambientales · excursiones · espectáculos de talentos.</div>
+        <div class="colegio-section-title">Por qué lo recomendamos</div>
+        <ul class="por-que-list">
+          <li>Reúne una localidad equilibrada, alemán, fútbol, tenis de mesa y una piscina muy próxima.</li>
+          <li>Especialmente apropiado para un estudiante joven que necesita un entorno tranquilo sin renunciar a instalaciones deportivas ni a vida social.</li>
+        </ul>
+        <div class="colegio-section-title">Enlaces</div>
+        <ul class="enlaces-list">
+          <li><a href="https://www.stciaranscs.ie/" target="_blank" rel="noopener">www.stciaranscs.ie</a></li>
+          <li><a href="https://www.stciaranscs.ie/page/Junior-Cycle/23612/Index.html" target="_blank" rel="noopener">Junior Cycle · St. Ciarán's</a></li>
+        </ul>
+      </div>
+      <div class="match-bar"><span class="match-tag">Alemán</span><span class="match-tag">Fútbol</span><span class="match-tag">Tenis de mesa</span><span class="match-tag">Piscina a 140 m</span></div>
+    </div>
+
+    <div class="opcion-card recomendada">
+      <div class="badge-rec">★ RECOMENDADO</div>
+      <div class="opcion-header">
+        <div class="colegio-zona">Condado de Cavan · Localidad pequeña</div>
+        <div class="opcion-distrito">Bailieborough Community School</div>
+        <div class="opcion-loc">📍 Bailieborough · Condado de Cavan</div>
+        <div class="colegio-chips"><span class="chip">Mixto</span><span class="chip">≈742 alumnos</span><span class="chip gold">☘ Los tres deportes</span></div>
+      </div>
+      <div class="opcion-body">
+        <div class="colegio-desc">Bailieborough tiene unos 3.000 habitantes y un carácter residencial y comunitario, con comercios, cafeterías y servicios básicos. Destacan Castle Lake, los paseos forestales y los espacios naturales de los alrededores. Es más pequeña que Kells, pero tiene un centro deportivo que amplía las actividades fuera del horario escolar.</div>
+        <div class="colegio-section-title">Lo que buscáis</div>
+        <ul class="por-que-list">
+          <li><strong>Alemán:</strong> forma parte del programa de Junior Cycle, con un departamento propio.</li>
+          <li><strong>Fútbol:</strong> el colegio tiene equipos escolares de soccer que entrenan y compiten. También organiza sesiones deportivas al mediodía y después de clase.</li>
+          <li><strong>Tenis de mesa:</strong> se ofrece en las actividades de mediodía y extraescolares.</li>
+          <li><strong>Natación:</strong> el colegio incluye la natación entre sus actividades deportivas. Además, Bailieborough Leisure Centre está a unos 150 m y tiene una piscina cubierta de 20 × 8 m con clases y actividades acuáticas.</li>
+        </ul>
+        <div class="colegio-section-title">Otras actividades</div>
+        <div class="extra-tags"><span class="extra-tag">🏀 Baloncesto</span><span class="extra-tag">🏉 Rugby</span><span class="extra-tag">🏃 Atletismo</span><span class="extra-tag">🌲 Campo a través</span><span class="extra-tag">🏐 Fútbol gaélico</span><span class="extra-tag">🏸 Bádminton</span><span class="extra-tag">💪 Entrenamiento físico</span></div>
+        <div class="actividades-ciudad">Teatro · coro · música · debate · programación · proyectos científicos · participación estudiantil.</div>
+        <div class="colegio-section-title">Por qué lo recomendamos</div>
+        <ul class="por-que-list">
+          <li>Es una de las opciones más completas: combina alemán con los tres deportes que consideráis importantes, tiene piscina cercana y organiza muchas actividades dentro del propio colegio.</li>
+          <li>Frente a Kells, ofrece una localidad más pequeña y un ambiente más rural.</li>
+        </ul>
+        <div class="colegio-section-title">Enlaces</div>
+        <ul class="enlaces-list">
+          <li><a href="https://www.bailieborocs.ie/" target="_blank" rel="noopener">www.bailieborocs.ie</a></li>
+          <li><a href="https://www.bailieborocs.ie/sport/" target="_blank" rel="noopener">Deportes · Bailieborough</a></li>
+          <li><a href="https://www.bailieborocs.ie/swimming/" target="_blank" rel="noopener">Natación · Bailieborough</a></li>
+        </ul>
+      </div>
+      <div class="match-bar"><span class="match-tag">Alemán</span><span class="match-tag">Fútbol</span><span class="match-tag">Tenis de mesa</span><span class="match-tag">Piscina a 150 m</span></div>
+    </div>
+
+    <div class="opcion-card">
+      <div class="opcion-header">
+        <div class="colegio-zona">Condado de Carlow · Pueblo rural</div>
+        <div class="opcion-distrito">Borris College</div>
+        <div class="opcion-loc">📍 Borris · Condado de Carlow</div>
+        <div class="colegio-chips"><span class="chip">Mixto</span><span class="chip">≈550 alumnos</span><span class="chip gold">☘ Naturaleza y comunidad</span></div>
+      </div>
+      <div class="opcion-body">
+        <div class="colegio-desc">Borris es un pueblo rural de unos 800 habitantes en el sureste de Irlanda. Está en el valle del río Barrow, cerca de Mount Leinster y de las montañas Blackstairs. Destacan Borris House, el viaducto ferroviario histórico y las rutas de Barrow Way y South Leinster Way. Tiene pequeños comercios y servicios esenciales, aunque menos oferta de actividades que Kells o Bailieborough.</div>
+        <div class="colegio-section-title">Lo que buscáis</div>
+        <ul class="por-que-list">
+          <li><strong>Alemán:</strong> es optativa de Junior Cycle, junto con francés y español. Los alumnos eligen tres asignaturas de la oferta optativa.</li>
+          <li><strong>Fútbol:</strong> forma parte de la oferta deportiva del colegio.</li>
+          <li><strong>Tenis de mesa:</strong> el Games Club se reúne a la hora del almuerzo y en él se juega al tenis de mesa, a juegos de mesa y a las cartas.</li>
+          <li><strong>Natación:</strong> la opción local es Bagenalstown Outdoor Swimming Pool, a unos 13–15 km. Es una piscina exterior climatizada que funciona sobre todo de junio a finales de agosto, así que no sirve para nadar con regularidad durante el curso. Para eso habría que buscar una piscina cubierta en otra localidad y organizar el transporte con la familia anfitriona.</li>
+        </ul>
+        <div class="colegio-section-title">Otras actividades</div>
+        <div class="extra-tags"><span class="extra-tag">🚣 Remo</span><span class="extra-tag">🐴 Equitación</span><span class="extra-tag">⛳ Golf</span><span class="extra-tag">🏃 Atletismo</span><span class="extra-tag">🏀 Baloncesto</span><span class="extra-tag">🏑 Hockey</span><span class="extra-tag">🏐 Fútbol gaélico</span><span class="extra-tag">🥍 Camogie</span></div>
+        <div class="actividades-ciudad">Coro · debate · ajedrez · proyectos creativos · robótica · sostenibilidad · liderazgo · clubes estudiantiles. <b>Programa Meitheal:</b> los alumnos mayores ayudan a los de First Year a adaptarse al colegio y a conocer a sus compañeros.</div>
+        <div class="colegio-section-title">Por qué lo proponemos</div>
+        <ul class="por-que-list">
+          <li>Ofrece una experiencia muy cercana a la naturaleza, un colegio de tamaño moderado, alemán, fútbol y tenis de mesa, y una comunidad pequeña y cercana.</li>
+          <li>Hay que tener en cuenta que la localidad es muy reducida y que nadar con regularidad exigiría desplazamientos.</li>
+        </ul>
+        <div class="colegio-section-title">Enlaces</div>
+        <ul class="enlaces-list">
+          <li><a href="https://www.borriscollege.ie/" target="_blank" rel="noopener">www.borriscollege.ie</a></li>
+          <li><a href="https://www.borriscollege.ie/page/Junior-Cycle/29367/Index.html" target="_blank" rel="noopener">Junior Cycle · Borris College</a></li>
+          <li><a href="https://www.borriscollege.ie/Student-Activities/Index.html" target="_blank" rel="noopener">Actividades · Borris College</a></li>
+        </ul>
+      </div>
+      <div class="match-bar"><span class="match-tag">Alemán</span><span class="match-tag">Fútbol</span><span class="match-tag">Games Club</span><span class="match-tag">Entorno natural</span></div>
+    </div>
+
+    <div class="opcion-card">
+      <div class="opcion-header">
+        <div class="colegio-zona">Condado de Westmeath · Entorno rural</div>
+        <div class="opcion-distrito">Castlepollard Community College</div>
+        <div class="opcion-loc">📍 Castlepollard · Condado de Westmeath</div>
+        <div class="colegio-chips"><span class="chip">Mixto</span><span class="chip">≈330 alumnos</span><span class="chip gold">☘ Colegio pequeño</span></div>
+      </div>
+      <div class="opcion-body">
+        <div class="colegio-desc">Castlepollard tiene unos 1.200 habitantes y está a unos 20 km de Mullingar. Es un entorno residencial y rural, rodeado de campos y lagos. Destacan Tullynally Castle &amp; Gardens, Lough Lene y Lough Derravaragh. Tiene comercios y servicios cotidianos; para algunas instalaciones deportivas hay que ir a Mullingar.</div>
+        <div class="colegio-section-title">Lo que buscáis</div>
+        <ul class="por-que-list">
+          <li><strong>Alemán:</strong> forma parte del currículo de Junior Cycle, junto con francés.</li>
+          <li><strong>Fútbol:</strong> el colegio tiene campo de soccer propio y entrenamientos con entrenadores cualificados.</li>
+          <li><strong>Tenis de mesa:</strong> figura expresamente en la oferta deportiva. El colegio tiene pabellón para deportes bajo techo.</li>
+          <li><strong>Natación:</strong> la piscina cubierta más cercana es Mullingar Swimming Pool (25 m), a unos 20–24 km por carretera. Se puede nadar todo el año, pero hace falta organizar el desplazamiento con la familia anfitriona.</li>
+        </ul>
+        <div class="colegio-section-title">Otras actividades</div>
+        <div class="extra-tags"><span class="extra-tag">🏑 Hurling</span><span class="extra-tag">🏐 Fútbol gaélico</span><span class="extra-tag">🏑 Hockey</span><span class="extra-tag">🥍 Lacrosse</span><span class="extra-tag">🎾 Tenis</span><span class="extra-tag">🏸 Bádminton</span><span class="extra-tag">🤸 Gimnasia</span><span class="extra-tag">🐴 Equitación</span><span class="extra-tag">🏀 Baloncesto</span><span class="extra-tag">🏐 Voleibol</span><span class="extra-tag">♟ Ajedrez</span><span class="extra-tag">⛳ Pitch and putt</span></div>
+        <div class="actividades-ciudad">Coro · debate · teatro · artes escénicas · sostenibilidad · consejo estudiantil · robótica VEX. Bienvenida a First Year con jornadas de integración y acompañamiento.</div>
+        <div class="colegio-section-title">Por qué lo proponemos</div>
+        <ul class="por-que-list">
+          <li>Es un colegio pequeño, con una comunidad educativa cercana, que combina alemán, fútbol y tenis de mesa en un ambiente rural tranquilo.</li>
+          <li>Hay que tener en cuenta que la localidad es pequeña y que para nadar hay que salir de Castlepollard.</li>
+        </ul>
+        <div class="colegio-section-title">Enlaces</div>
+        <ul class="enlaces-list">
+          <li><a href="https://www.castlepollardcc.ie/" target="_blank" rel="noopener">www.castlepollardcc.ie</a></li>
+          <li><a href="https://www.castlepollardcc.ie/page/Junior-Cycle/9299/Index.html" target="_blank" rel="noopener">Junior Cycle · Castlepollard</a></li>
+          <li><a href="https://www.castlepollardcc.ie/page/Sport/9787/Index.html" target="_blank" rel="noopener">Deporte · Castlepollard</a></li>
+        </ul>
+      </div>
+      <div class="match-bar"><span class="match-tag">Alemán</span><span class="match-tag">Campo propio</span><span class="match-tag">Tenis de mesa</span><span class="match-tag">Colegio pequeño</span></div>
+    </div>
+
+  </div>
+
+  <div class="alert-box" style="margin-top:22px;margin-bottom:0;">
+    <div class="alert-icon">📝</div>
+    <div class="alert-text"><strong>Lo que necesitamos de vosotros:</strong> ordenad 2 o 3 colegios por preferencia y decídnoslo. Con eso ponemos en marcha la matrícula y la búsqueda de familia anfitriona.</div>
+  </div>
+
+  <!-- ============ 7. TABLA COMPARATIVA ============ -->
+  <div class="section-title"><h2>Comparativa de los cuatro colegios</h2></div>
+  <div class="tabla-wrap">
+    <table class="tabla-diff">
+      <thead><tr><th style="text-align:left;">Colegio</th><th>Alemán</th><th>Fútbol</th><th>Tenis de mesa</th><th>Natación</th></tr></thead>
+      <tbody>
+        <tr><th>St. Ciarán's</th><td><span class="si">✓</span></td><td><span class="si">✓</span></td><td><span class="si">✓</span></td><td><b>Fuera del colegio</b><span class="nat-det">Piscina cubierta a 140 m</span></td></tr>
+        <tr><th>Bailieborough</th><td><span class="si">✓</span></td><td><span class="si">✓</span></td><td><span class="si">✓</span></td><td><b>Dentro de sus deportes</b><span class="nat-det">Y piscina cubierta a 150 m</span></td></tr>
+        <tr><th>Borris College</th><td><span class="si">✓</span></td><td><span class="si">✓</span></td><td><span class="si">✓</span></td><td><b>Fuera del colegio</b><span class="nat-det">Solo piscina exterior de verano, a 13–15 km</span></td></tr>
+        <tr><th>Castlepollard</th><td><span class="si">✓</span></td><td><span class="si">✓</span></td><td><span class="si">✓</span></td><td><b>Fuera del colegio</b><span class="nat-det">Piscina cubierta a 20–24 km, en Mullingar</span></td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- ============ 8. NUESTRA RECOMENDACIÓN ============ -->
+  <div class="section-title"><h2>Nuestra recomendación</h2></div>
+  <p class="intro-text">
+    Teniendo en cuenta la importancia que dais a la continuidad del alemán, al deporte y al entorno,
+    os recomendamos empezar por <strong>St. Ciarán's</strong> y <strong>Bailieborough</strong>.
+  </p>
+  <div class="decision-grid">
+    <div class="decision-card">
+      <div class="decision-title">St. Ciarán's Community School</div>
+      <div class="decision-text">Equilibra muy bien la oferta académica, el deporte y una localidad con servicios suficientes. La piscina junto al colegio facilita que la natación forme parte de su rutina.</div>
+    </div>
+    <div class="decision-card">
+      <div class="decision-title">Bailieborough Community School</div>
+      <div class="decision-text">Reúne los tres deportes y tiene piscina cercana, en un entorno más pequeño y familiar.</div>
+    </div>
+  </div>
+  <p class="intro-text" style="margin-top:20px;">
+    <strong>Borris</strong> y <strong>Castlepollard</strong> son buenas alternativas si dais más peso al
+    ambiente rural y a una comunidad escolar pequeña, sabiendo que la natación exige más organización.
+    El objetivo no es elegir simplemente un buen colegio, sino encontrar un entorno donde Luis Arturo pueda
+    seguir creciendo académicamente, disfrutar de sus deportes y sentirse integrado desde el primer día.
+  </p>
+
+  <!-- ============ 9. MODALIDADES Y PRECIOS ============ -->
+  <div class="section-title"><h2>Modalidades y precios</h2></div>
+  <div class="mod-grid">
+    <div class="mod-card destacado">
+      <div class="badge-rec-mod">Propuesto</div>
+      <div class="mod-head">
+        <div class="mod-nombre">Programa Choice + 2 vuelos</div>
+        <div class="mod-desc-head">Ida al comenzar el curso y regreso al finalizarlo</div>
+        <div><span class="mod-precio-tachado">17.450 €</span><span class="mod-precio-val">17.000 €</span></div>
+        <div class="mod-precio-sub">Año escolar completo · descuento de 450 €</div>
+      </div>
+      <div class="mod-body">
+        <ul class="mod-list">
+          <li>Elección de colegio entre las cuatro opciones propuestas</li>
+          <li>Habitación individual garantizada</li>
+          <li>Libros de asignaturas obligatorias y uniforme escolar incluidos</li>
+          <li>Orientación previa en Dublín, 2 días, incluida</li>
+          <li>2 vuelos internacionales incluidos: ida al comenzar el curso y regreso al finalizarlo</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="mod-card">
+      <div class="mod-head">
+        <div class="mod-nombre">Programa Choice + 4 vuelos</div>
+        <div class="mod-desc-head">Ida al comenzar el curso, ida y vuelta en Navidad y regreso al finalizarlo</div>
+        <div><span class="mod-precio-tachado">18.200 €</span><span class="mod-precio-val">17.750 €</span></div>
+        <div class="mod-precio-sub">Año escolar completo · descuento de 450 €</div>
+      </div>
+      <div class="mod-body">
+        <ul class="mod-list">
+          <li>Elección de colegio entre las cuatro opciones propuestas</li>
+          <li>Habitación individual garantizada</li>
+          <li>Libros de asignaturas obligatorias y uniforme escolar incluidos</li>
+          <li>Orientación previa en Dublín, 2 días, incluida</li>
+          <li>4 vuelos incluidos: ida al comenzar el curso, ida y vuelta en Navidad y regreso al finalizarlo</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div class="precio-nota">Descuento aplicable a reservas formalizadas antes del 1 de diciembre de 2026.</div>
+
+  <!-- ============ 10. VUELOS Y ACOMPAÑAMIENTO ============ -->
+  <div class="section-title"><h2>Vuelos y acompañamiento</h2></div>
+  <div class="vuelos-wrap">
+    <div class="qs-chapters-title" style="margin-bottom:12px;">Una organización adaptada a vuestra familia</div>
+    <p class="vuelos-lead">
+      Sabemos que, por la edad de Luis Arturo y porque vivís en Gran Canaria, la organización de los viajes
+      es un aspecto importante de esta experiencia.<br><br>
+      Por eso, además de nuestros vuelos de grupo, queremos explicaros una alternativa que puede resultar
+      especialmente cómoda para vosotros: el <strong>servicio de menores no acompañados (UM) de Iberia</strong>.
+    </p>
+
+    <div class="vuelos-sub">El primer viaje: acompañado por nuestro grupo</div>
+    <p class="vuelos-p">
+      Nuestra recomendación es que Luis Arturo haga su primer viaje a Irlanda con el grupo de estudiantes de
+      My Language Quest. Estos vuelos salen habitualmente desde Madrid o Barcelona y van acompañados por un
+      monitor de nuestra organización.
+    </p>
+    <p class="vuelos-p">
+      Una vez en Irlanda, Luis Arturo participará en la
+      <a href="https://aescobarnic.github.io/Propuestas/welcome-weekend-dublin.html" target="_blank" rel="noopener">orientación inicial de dos días en Dublín</a>
+      junto con otros estudiantes. Después organizaremos su traslado hasta la localidad donde vivirá con su
+      familia anfitriona.
+    </p>
+
+    <div class="vuelos-sub">Una alternativa para los viajes posteriores: el servicio UM de Iberia</div>
+    <p class="vuelos-p">
+      Como comentamos en nuestra llamada, para los viajes posteriores podemos estudiar opciones de vuelo
+      entre Gran Canaria y Dublín, para que no tengáis que desplazaros siempre a Madrid o Barcelona.
+    </p>
+    <p class="vuelos-p">
+      Iberia ofrece un servicio especializado de acompañamiento de menores, conocido como
+      <strong>UM (Unaccompanied Minor)</strong>. Con este servicio, el personal de la aerolínea se hace cargo
+      del menor desde que sus padres o responsables lo entregan en el aeropuerto de salida, lo acompaña
+      durante el viaje y lo entrega exclusivamente a la persona autorizada en el aeropuerto de destino.
+    </p>
+    <p class="vuelos-p">
+      Si en el momento del viaje Luis Arturo tiene 12 años o más, el servicio es opcional, aunque consideramos
+      que puede daros una tranquilidad adicional. Si tuviera 11 años, Iberia lo exige.
+    </p>
+
+    <div class="vuelos-sub">¿Cuánto cuesta el servicio UM?</div>
+    <p class="vuelos-p">
+      Iberia ofrece este servicio en sus propios vuelos. Entre Gran Canaria y Dublín, el trayecto se hace con
+      conexión en Madrid. La tarifa que publica actualmente Iberia para este tipo de trayecto es de
+      <strong>180 € por trayecto</strong>.
+    </p>
+    <div class="vuelos-destacado">
+      Este servicio es un complemento opcional y <b>no está incluido en el precio del programa escolar</b>.
+      Si decidís contratarlo, su coste correría a cargo de vuestra familia y se pagaría aparte.<br><br>
+      Por ejemplo, si Luis Arturo usara el servicio UM para ir y volver en las vacaciones de Navidad, el coste
+      adicional sería de <b>360 € en total</b>, según las tarifas actuales.
+    </div>
+    <p class="vuelos-p">
+      Las rutas, los horarios, la disponibilidad y las tarifas definitivas se concretarán al organizar los
+      vuelos de 2027/28.
+    </p>
+
+    <div class="vuelos-sub">¿Qué opciones de programa podéis elegir?</div>
+    <div class="tabla-wrap">
+      <table class="tabla-diff">
+        <thead><tr><th style="text-align:left;">Modalidad</th><th>Vuelos incluidos</th><th>Precio</th></tr></thead>
+        <tbody>
+          <tr><th>Programa Choice + 2 vuelos</th><td>Ida al comenzar el curso y regreso al finalizarlo</td><td><span class="tachado">17.450 €</span><b>17.000 €</b></td></tr>
+          <tr><th>Programa Choice + 4 vuelos</th><td>Ida al comenzar el curso, ida y vuelta en Navidad y regreso al finalizarlo</td><td><span class="tachado">18.200 €</span><b>17.750 €</b></td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="tabla-nota">Descuento de 450 € aplicable a reservas formalizadas antes del 1 de diciembre de 2026.</div>
+
+    <p class="vuelos-p" style="margin-top:16px;">
+      En las dos modalidades están incluidos los vuelos previstos en el programa. El servicio UM, si decidís
+      contratarlo para alguno de los viajes, se paga por separado.
+    </p>
+    <p class="vuelos-p">
+      Nuestra recomendación para Luis Arturo es que haga el primer viaje con el grupo de My Language Quest y
+      que valoréis el servicio UM para los viajes posteriores, siempre que las rutas y las condiciones de
+      Iberia lo permitan. Así combinamos la tranquilidad de saber que viaja acompañado con la comodidad de
+      salir desde el aeropuerto que mejor os viene.
+    </p>
+    <p class="vuelos-p">
+      Más información:
+      <a href="https://www.iberia.com/es/viajar-con-iberia/menores/" target="_blank" rel="noopener">www.iberia.com/es/viajar-con-iberia/menores</a>
+    </p>
+  </div>
+
+  <!-- ============ 11. EL PROGRAMA INCLUYE ============ -->
+  <div class="section-title"><h2>El programa incluye</h2></div>
+  <div class="includes-wrap">
+    <div class="includes-head"><h3>☘ Programa Choice · Año escolar en Irlanda 2027/28</h3></div>
+    <div class="includes-body">
+      <div class="includes-grid">
+        <div>
+          <div class="col-title">Antes del viaje</div>
+          <ul class="inc-list">
+            <li>Reunión inicial con padres o tutores</li>
+            <li>Entrevista personal online con el estudiante</li>
+            <li>Información completa sobre el programa en Irlanda</li>
+            <li>Matriculación en el colegio elegido</li>
+            <li>Familia anfitriona en régimen de pensión completa</li>
+            <li>Habitación individual</li>
+            <li>Un único estudiante hispanohablante por familia</li>
+            <li>Seguro médico privado y de responsabilidad civil</li>
+            <li>Libros de las asignaturas obligatorias</li>
+            <li>Uniforme escolar</li>
+            <li>Masterclass de cultura irlandesa<small>10 horas online en inglés</small></li>
+            <li>Orientación pre-viaje en Madrid u online</li>
+            <li>Welcome pack sorpresa de My Language Quest</li>
+          </ul>
+        </div>
+        <div>
+          <div class="col-title">Durante el viaje</div>
+          <ul class="inc-list">
+            <li>Recibimiento en aeropuerto</li>
+            <li><a href="https://aescobarnic.github.io/Propuestas/welcome-weekend-dublin.html" target="_blank" rel="noopener">Orientación de 2 días en Dublín</a></li>
+            <li>4 traslados: inicio, ida y vuelta de Navidad y fin de curso</li>
+            <li>Asesoramiento en elección de asignaturas</li>
+            <li>Clases de inglés Cambridge y libro incluido</li>
+            <li>Taller MIT · 3 sesiones</li>
+            <li>Tasa de Transition Year si aplica</li>
+            <li>Coordinador local en Irlanda 24 h</li>
+            <li>Acompañamiento psicológico</li>
+            <li>Atención 24 h en España para emergencias</li>
+            <li>Apoyo para matriculación en extraescolares</li>
+            <li>Gestión de cambio de familia si fuera necesario</li>
+          </ul>
+        </div>
+        <div>
+          <div class="col-title">Después del viaje</div>
+          <ul class="inc-list">
+            <li>Convalidación detallada ante el Ministerio de Educación</li>
+            <li>Recogida de notas y traducciones juradas</li>
+            <li>Dossier final detallando la experiencia</li>
+          </ul>
+          <div class="col-title" style="margin-top:24px;">No incluido</div>
+          <ul class="inc-list no">
+            <li>Actividades extracurriculares de pago</li>
+            <li>Excursiones y viajes escolares</li>
+            <li>Material escolar adicional</li>
+            <li>Transporte local mensual</li>
+            <li>Ocio personal</li>
+            <li>Servicio UM de Iberia<small>opcional, 180 € por trayecto</small></li>
+            <li>Todo aquello que no esté especificado expresamente en el apartado &laquo;El programa incluye&raquo;</li>
+          </ul>
+        </div>
+      </div>
+      <div class="gestor-wrap">
+        <div class="gestor-title">Gestor estudiantil · se encarga de</div>
+        <div class="gestor-grid">
+          <div class="gestor-item">Seguimiento personalizado del desempeño</div>
+          <div class="gestor-item">Información a padres mensualmente</div>
+          <div class="gestor-item">Notas oficiales cada trimestre</div>
+          <div class="gestor-item">Asesoría en cambio de asignaturas</div>
+          <div class="gestor-item">Todas las tutorías necesarias</div>
+          <div class="gestor-item">Reuniones con padres y/o estudiante</div>
+          <div class="gestor-item">Apoyo en actividades extraescolares</div>
+          <div class="gestor-item">Resolución de situaciones con familia o centro</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ============ 12. FORMAS DE PAGO ============ -->
+  <div class="section-title"><h2>Formas de pago</h2></div>
+  <div class="payment-wrap">
+    <div class="payment-inner">
+      <div class="pay-title">💳 Condiciones económicas</div>
+      <div class="pay-subtitle">Dos vías: pago directo o financiación. El importe de la reserva cambia según cuál elijáis.</div>
+
+      <div class="pay-route">
+        <div class="pay-route-head"><span class="pay-route-icon">🏦</span><span class="pay-route-title">Opción A · Pago sin financiación</span></div>
+        <div class="pay-route-sub">La cantidad íntegra debe abonarse antes del 1 de junio de 2027.</div>
+        <div class="pay-entrada">
+          <div class="pay-entrada-num">3.500 €</div>
+          <div class="pay-entrada-txt"><strong>Primer pago a la firma del contrato.</strong> Con él iniciamos la tramitación de la matrícula y la búsqueda de familia anfitriona.</div>
+        </div>
+        <div class="pay-cols">
+          <div class="pay-col">
+            <div class="pay-col-title">Paso 2 · Matrícula</div>
+            <div class="pay-step"><div class="pay-step-title">4.000 €</div><div class="pay-step-desc">A la formalización de la matrícula en el colegio elegido</div></div>
+          </div>
+          <div class="pay-col">
+            <div class="pay-col-title">Paso 3 · Resto del importe</div>
+            <div class="pay-step"><div class="pay-step-title">Antes del 1 de junio de 2027</div><div class="pay-step-desc">Importe restante hasta completar el precio del programa</div></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="pay-route">
+        <div class="pay-route-head"><span class="pay-route-icon">📆</span><span class="pay-route-title">Opción B · Con financiación Banco Sabadell</span></div>
+        <div class="pay-route-sub">Si financiáis el programa, la entrada es siempre de 5.000 € y el resto se financia en cuotas mensuales.</div>
+        <div class="pay-entrada">
+          <div class="pay-entrada-num">5.000 €</div>
+          <div class="pay-entrada-txt"><strong>Entrada a la firma del contrato</strong> en todos los casos de financiación. El capital restante se financia en 12, 18, 24 o 36 meses.</div>
+        </div>
+        <div class="pay-cols">
+          <div class="pay-col">
+            <div class="pay-col-title">Capital financiado</div>
+            <div class="pay-step"><div class="pay-step-title">Precio del programa − 5.000 €</div><div class="pay-step-desc">Calculad vuestra cuota exacta en el simulador de la sección siguiente.</div></div>
+          </div>
+          <div class="pay-col">
+            <div class="pay-col-title">Condiciones</div>
+            <div class="pay-step"><div class="pay-step-title">12 meses · TIN 0 %</div><div class="pay-step-desc">MLQ asume los intereses</div></div>
+            <div class="pay-step"><div class="pay-step-title">18 / 24 / 36 meses · TIN 10,46 %</div><div class="pay-step-desc">Intereses a cargo del cliente</div></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="pay-note">El seguro de anulación e interrupción es opcional, cuesta 500 € y debe contratarse y abonarse en el momento de la firma del contrato. Su importe no es reembolsable bajo ninguna circunstancia. Las inscripciones tardías deben cumplir con los plazos de pago ya pasados en el momento de la inscripción.</div>
+    </div>
+  </div>
+
+  <!-- ============ 13. FINANCIACIÓN ============ -->
+  <div class="section-title"><h2>Financia tu programa</h2></div>
+  <div class="financing-wrap">
+    <div class="financing-head">
+      <div class="financing-head-left">
+        <div class="fin-icon">💳</div>
+        <div>
+          <div class="fin-title">Paga a tu ritmo, sin preocupaciones</div>
+          <div class="fin-sub">Entrada fija de 5.000 € · Aprobación rápida · 100 % online · Sin comisión de apertura</div>
+        </div>
+      </div>
+      <div class="fin-badge">Hasta 36 meses</div>
+    </div>
+    <div class="financing-body">
+      <div class="fin-opcion-selector">
+        <div class="fin-opcion-label">Selecciona la modalidad</div>
+        <div class="fin-opcion-btns" id="finOpciones">
+          <button class="fin-opcion-btn active" data-precio="17000"><span class="fin-opcion-nombre">☘ Choice + 2 vuelos</span><span class="fin-opcion-precio">17.000 €</span><span class="fin-opcion-tachado">antes 17.450 €</span></button>
+          <button class="fin-opcion-btn" data-precio="17750"><span class="fin-opcion-nombre">Choice + 4 vuelos</span><span class="fin-opcion-precio">17.750 €</span><span class="fin-opcion-tachado">antes 18.200 €</span></button>
+        </div>
+      </div>
+
+      <div class="fin-entrada-fija">
+        <div class="fin-entrada-fija-num">5.000 €</div>
+        <div class="fin-entrada-fija-txt"><strong>Entrada a la firma del contrato.</strong> Se descuenta del precio del programa; el resto es el capital que se financia.</div>
+      </div>
+
+      <div class="fin-plazo-wrap">
+        <div class="fin-plazo-label">Elige tu plazo de financiación</div>
+        <div class="fin-plazos" id="finPlazos">
+          <button class="fin-plazo active" data-meses="12" data-tin="0"><div class="fin-plazo-meses">12 meses</div><div class="fin-plazo-badge sin-intereses">TIN 0%</div><div class="fin-plazo-quien">¡MLQ asume los intereses!</div></button>
+          <button class="fin-plazo" data-meses="18" data-tin="10.46"><div class="fin-plazo-meses">18 meses</div><div class="fin-plazo-badge con-intereses">TIN 10,46%</div><div class="fin-plazo-quien">Intereses a cargo del cliente</div></button>
+          <button class="fin-plazo" data-meses="24" data-tin="10.46"><div class="fin-plazo-meses">24 meses</div><div class="fin-plazo-badge con-intereses">TIN 10,46%</div><div class="fin-plazo-quien">Intereses a cargo del cliente</div></button>
+          <button class="fin-plazo" data-meses="36" data-tin="10.46"><div class="fin-plazo-meses">36 meses</div><div class="fin-plazo-badge con-intereses">TIN 10,46%</div><div class="fin-plazo-quien">Intereses a cargo del cliente</div></button>
+        </div>
+      </div>
+
+      <div class="fin-resultado">
+        <div class="fin-resultado-main">
+          <div class="fin-cuota-label">Cuota mensual estimada</div>
+          <div class="fin-cuota-valor" id="cuotaValor">1.000,00 €</div>
+          <div class="fin-cuota-sub" id="cuotaSub">/mes · 12 pagos · TIN 0%</div>
+        </div>
+        <div class="fin-resultado-detalle">
+          <div class="fin-det-row"><span class="fin-det-label">Importe del programa</span><span class="fin-det-val" id="detPrecio">17.000 €</span></div>
+          <div class="fin-det-row"><span class="fin-det-label">Entrada a la firma</span><span class="fin-det-val" id="detEntrada">5.000 €</span></div>
+          <div class="fin-det-row"><span class="fin-det-label">Capital financiado</span><span class="fin-det-val" id="detCapital">12.000 €</span></div>
+          <div class="fin-det-row"><span class="fin-det-label">Intereses totales</span><span class="fin-det-val fin-det-green" id="detIntereses">0 € · ¡MLQ los asume!</span></div>
+          <div class="fin-det-row fin-det-total"><span class="fin-det-label">Total a pagar</span><span class="fin-det-val" id="detTotal">17.000 €</span></div>
+        </div>
+      </div>
+
+      <div class="fin-nota">ℹ️ Financiación sujeta a aprobación bancaria. La entrada de 5.000 € se abona a la firma del contrato y no se financia. Cuota orientativa calculada sobre el capital financiado. Sin comisión de apertura.</div>
+    </div>
+  </div>
+
+  <!-- ============ 14. SIGUIENTES PASOS ============ -->
+  <div class="section-title"><h2>Siguientes pasos</h2></div>
+  <div class="steps-wrap">
+    <div class="steps-inner">
+      <div class="steps-title">De lo que nos encargamos nosotros</div>
+      <div class="steps-sub">Una vez nos digáis vuestro orden de preferencia, esto es lo que hace My Language Quest</div>
+      <div class="steps-list">
+        <div class="step-item"><div class="step-num">1</div><div class="step-title">Matriculación</div><div class="step-desc">Tramitamos la matrícula en el colegio y la elección de asignaturas, con el alemán entre ellas.</div></div>
+        <div class="step-item"><div class="step-num">2</div><div class="step-title">Familia anfitriona</div><div class="step-desc">Seleccionamos una familia con experiencia con estudiantes jóvenes y comprobamos los desplazamientos a colegio, piscina y entrenamientos.</div></div>
+        <div class="step-item"><div class="step-num">3</div><div class="step-title">Vuelos y orientación</div><div class="step-desc">Organizamos el vuelo de grupo, la orientación de 2 días en Dublín y el traslado a su localidad. Estudiamos también las opciones UM desde Gran Canaria.</div></div>
+        <div class="step-item"><div class="step-num">4</div><div class="step-title">Acompañamiento y convalidación</div><div class="step-desc">Gestor estudiantil durante todo el curso, coordinador local en Irlanda y convalidación de las notas a la vuelta.</div></div>
+      </div>
+      <div class="cta-line">Lo único que necesitamos de vosotros ahora: <strong>ordenad 2 o 3 colegios por preferencia</strong>.</div>
+      <div class="pasos-cta-wrap">
+        <a class="pasos-cta" href="mailto:aescobar@mylanguagequest.com,gespinoza@mylanguagequest.com?subject=Orden%20de%20preferencia%20de%20colegios%20%C2%B7%20Luis%20Arturo%20Hernando%20Ruiz%20%C2%B7%20Irlanda%202027%2F28&amp;body=Hola%2C%0A%0AHemos%20revisado%20la%20propuesta%20de%20Irlanda%20para%20Luis%20Arturo%20y%20este%20es%20nuestro%20orden%20de%20preferencia%3A%0A%0A1.%20%0A2.%20%0A3.%20%0A%0AModalidad%20(Choice%202%20o%204%20vuelos)%3A%20%0A%0AGracias.">☘ Enviar nuestro orden de preferencia</a>
+        <a class="pasos-cta pasos-cta-alt" href="https://asesoramientosmlq.zohobookings.eu/mylanguagequest" target="_blank" rel="noopener">📅 Agendar llamada con nuestra asesora</a>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<!-- ============ 15. FOOTER ============ -->
+<div class="footer">
+  <div class="footer-logo">MY LANGUAGE QUEST</div>
+  <div class="footer-tag">Explore · Learn · Grow</div>
+  <div class="footer-meta">
+    Propuesta personalizada para Luis Arturo Hernando Ruiz · Curso 2027/28<br>
+    Descuento de 450 € aplicable a reservas formalizadas antes del 1 de diciembre de 2026.
+  </div>
+</div>
+
+<script>
+(function(){
+  var precio=17000, meses=12, tin=0, ENTRADA=5000;
+  function fmt(n){return n.toLocaleString('es-ES',{minimumFractionDigits:2,maximumFractionDigits:2})+' €';}
+  function fmt0(n){return n.toLocaleString('es-ES',{maximumFractionDigits:0})+' €';}
+  function calc(){
+    var capital=Math.max(precio-ENTRADA,0);
+    var cuota, total;
+    if(tin===0){ cuota=capital/meses; total=capital; }
+    else{ var i=tin/100/12; cuota=capital*i/(1-Math.pow(1+i,-meses)); total=cuota*meses; }
+    var intereses=total-capital;
+    document.getElementById('cuotaValor').textContent=fmt(cuota);
+    document.getElementById('cuotaSub').textContent='/mes · '+meses+' pagos · TIN '+(tin===0?'0%':'10,46%');
+    document.getElementById('detPrecio').textContent=fmt0(precio);
+    document.getElementById('detEntrada').textContent=fmt0(ENTRADA);
+    document.getElementById('detCapital').textContent=fmt0(capital);
+    var ei=document.getElementById('detIntereses');
+    if(tin===0){ ei.textContent='0 € · ¡MLQ los asume!'; ei.classList.add('fin-det-green'); }
+    else{ ei.textContent=fmt(intereses); ei.classList.remove('fin-det-green'); }
+    document.getElementById('detTotal').textContent=fmt(ENTRADA+total);
+  }
+  document.querySelectorAll('#finOpciones .fin-opcion-btn').forEach(function(b){
+    b.addEventListener('click',function(){
+      document.querySelectorAll('#finOpciones .fin-opcion-btn').forEach(function(x){x.classList.remove('active');});
+      b.classList.add('active'); precio=parseFloat(b.dataset.precio); calc();
+    });
+  });
+  document.querySelectorAll('#finPlazos .fin-plazo').forEach(function(b){
+    b.addEventListener('click',function(){
+      document.querySelectorAll('#finPlazos .fin-plazo').forEach(function(x){x.classList.remove('active');});
+      b.classList.add('active'); meses=parseInt(b.dataset.meses); tin=parseFloat(b.dataset.tin); calc();
+    });
+  });
+  calc();
+})();
+</script>
+
+<script>
+(function(){
+  var d=document, root=d.documentElement;
+  if(!('IntersectionObserver' in window)){root.className=root.className.replace(' js-anim','');return;}
+
+  var bar=d.createElement('div'); bar.className='progress-bar'; d.body.appendChild(bar);
+  var ticking=false;
+  function progress(){
+    var h=d.documentElement.scrollHeight-window.innerHeight;
+    bar.style.transform='scaleX('+(h>0?Math.min(window.scrollY/h,1):0)+')';
+    ticking=false;
+  }
+  window.addEventListener('scroll',function(){if(!ticking){ticking=true;requestAnimationFrame(progress);}},{passive:true});
+  progress();
+
+  Array.prototype.forEach.call(d.querySelectorAll('.hero-pill'),function(el,i){
+    el.style.animationDelay=(0.36+i*0.06)+'s';
+  });
+
+  var groups=[
+    ['.section-title','reveal'],
+    ['.intro-text','reveal'],
+    ['.intro-point','reveal'],
+    ['.qs-hero','reveal-zoom'],
+    ['.qs-chapters-head','reveal'],
+    ['.qs-chapter','reveal'],
+    ['.alert-box','reveal'],
+    ['.opcion-card','reveal'],
+    ['.info-block','reveal'],
+    ['.mod-card','reveal'],
+    ['.decision-card','reveal'],
+    ['.tabla-wrap','reveal'],
+    ['.vuelos-wrap','reveal-zoom'],
+    ['.includes-wrap','reveal-zoom'],
+    ['.payment-wrap','reveal-zoom'],
+    ['.financing-wrap','reveal-zoom'],
+    ['.steps-wrap','reveal-zoom']
+  ];
+  groups.forEach(function(g){
+    Array.prototype.forEach.call(d.querySelectorAll(g[0]),function(el,i){
+      el.classList.add(g[1]);
+      el.style.transitionDelay=Math.min(i*0.09,0.36)+'s';
+    });
+  });
+
+  var io=new IntersectionObserver(function(entries){
+    entries.forEach(function(e){
+      if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}
+    });
+  },{threshold:0.12,rootMargin:'0px 0px -8% 0px'});
+  Array.prototype.forEach.call(d.querySelectorAll('.reveal,.reveal-zoom'),function(el){io.observe(el);});
+
+  var cuota=d.getElementById('cuotaValor');
+  if(cuota&&'MutationObserver' in window){
+    new MutationObserver(function(){
+      cuota.classList.remove('pop'); void cuota.offsetWidth; cuota.classList.add('pop');
+    }).observe(cuota,{childList:true,characterData:true,subtree:true});
+  }
+})();
+</script>
+<!-- MLQ tracking -->
+<script>
+(function () {
+  var URL_TRACKING = 'https://script.google.com/macros/s/AKfycbygwC8SbNtpdSo9sEEyAOYnZR-7ui1jgk-7wF9gOhM5kJs2qLgBxhQI7MJHutokDSFajA/exec';
+  if (URL_TRACKING.indexOf('http') !== 0) return;
+
+  var archivo    = (location.pathname.split('/').pop() || 'index.html');
+  var estudiante = archivo.replace(/\.html?$/i, '').replace(/-/g, ' ');
+  var programa   = (document.title.split('·')[0] || '').trim();
+  var sesion     = Math.random().toString(36).slice(2, 10);
+
+  function enviar(evento, valor) {
+    var qs = '?evento=' + encodeURIComponent(evento) +
+             '&valor=' + encodeURIComponent(valor || '') +
+             '&archivo=' + encodeURIComponent(archivo) +
+             '&estudiante=' + encodeURIComponent(estudiante) +
+             '&programa=' + encodeURIComponent(programa) +
+             '&sesion=' + sesion +
+             '&referrer=' + encodeURIComponent(document.referrer || '') +
+             '&ua=' + encodeURIComponent(navigator.userAgent) +
+             '&t=' + Date.now();
+    try {
+      if (window.fetch) {
+        fetch(URL_TRACKING + qs, { mode: 'no-cors', keepalive: true });
+      } else {
+        new Image().src = URL_TRACKING + qs;
+      }
+    } catch (e) {}
+  }
+
+  try {
+    if (!sessionStorage.getItem('mlq_open_' + archivo)) {
+      sessionStorage.setItem('mlq_open_' + archivo, '1');
+      enviar('apertura');
+    }
+  } catch (e) { enviar('apertura'); }
+
+  var activo = 0, marca = Date.now(), visible = !document.hidden, hito30 = false;
+
+  function acumular() {
+    if (visible) activo += Date.now() - marca;
+    marca = Date.now();
+  }
+
+  document.addEventListener('visibilitychange', function () {
+    acumular();
+    visible = !document.hidden;
+  });
+
+  setInterval(function () {
+    acumular();
+    if (!hito30 && activo >= 30000) {
+      hito30 = true;
+      enviar('lectura_30s');
+    }
+  }, 1000);
+
+  var hitos = [25, 50, 75, 100], enviados = {};
+
+  function revisarScroll() {
+    var alto = document.documentElement.scrollHeight - window.innerHeight;
+    var pct  = alto <= 0 ? 100 : Math.round((window.pageYOffset / alto) * 100);
+    for (var i = 0; i < hitos.length; i++) {
+      var h = hitos[i];
+      if (pct >= h && !enviados[h]) {
+        enviados[h] = true;
+        enviar('scroll_' + h);
+      }
+    }
+  }
+
+  window.addEventListener('scroll', revisarScroll, { passive: true });
+  window.addEventListener('resize', revisarScroll, { passive: true });
+  setTimeout(revisarScroll, 1500);
+
+  var cerrado = false;
+  function alSalir() {
+    if (cerrado) return;
+    cerrado = true;
+    acumular();
+    enviar('salida', Math.round(activo / 1000));
+  }
+  window.addEventListener('pagehide', alSalir);
+  document.addEventListener('visibilitychange', function () {
+    if (document.hidden) { acumular(); }
+  });
+})();
+</script>
+</body>
+</html>
