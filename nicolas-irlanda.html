@@ -389,6 +389,65 @@ details[open] summary::before{transform:rotate(90deg);}
 .upd-list li b{color:var(--text);font-weight:600;}
 @media(max-width:760px){.upd-list{grid-template-columns:1fr;}.upd-wrap{padding:20px 22px;}}
 
+/* ===== PREGUNTAS Y RESPUESTAS ===== */
+.qa-wrap{display:grid;grid-template-columns:1fr 1fr;gap:18px;}
+.qa-item{background:var(--white);border:1.5px solid var(--gray-border);border-radius:14px;padding:20px 24px;box-shadow:0 2px 14px rgba(0,51,102,0.05);transition:box-shadow .2s,border-color .2s;}
+.qa-item:hover{box-shadow:0 8px 28px rgba(0,51,102,0.10);border-color:var(--blue-light);}
+.qa-q{font-family:'Josefin Sans',sans-serif;font-size:13.5px;font-weight:700;color:var(--blue);line-height:1.45;margin-bottom:9px;display:flex;gap:9px;align-items:flex-start;}
+.qa-q::before{content:'?';flex-shrink:0;width:19px;height:19px;border-radius:50%;background:var(--blue);color:#fff;font-size:11px;display:flex;align-items:center;justify-content:center;margin-top:1px;}
+.qa-a{font-size:12.5px;color:var(--text-mid);line-height:1.72;}
+.qa-a strong{color:var(--ie-deep);font-weight:600;}
+.qa-item.mlq{border-color:rgba(58,122,9,0.42);background:linear-gradient(180deg,var(--ie-light) 0%,var(--white) 48%);}
+.qa-item.mlq .qa-q{color:var(--ie-deep);}
+.qa-item.mlq .qa-q::before{background:var(--ie);}
+.qa-tag{display:inline-block;background:var(--ie);color:#fff;font-family:'Josefin Sans',sans-serif;font-size:8.5px;font-weight:700;letter-spacing:1.6px;text-transform:uppercase;padding:3px 9px;border-radius:20px;margin-bottom:9px;}
+.qa-item.wide{grid-column:1 / -1;}
+@media(max-width:820px){.qa-wrap{grid-template-columns:1fr;}}
+
+/* ===== CALENDARIO ORIENTATIVO ===== */
+.cal-wrap{background:var(--white);border:1.5px solid var(--gray-border);border-radius:16px;overflow:hidden;box-shadow:0 2px 16px rgba(0,51,102,0.05);}
+.cal-head{background:linear-gradient(135deg,var(--blue-dark),var(--blue));padding:20px 30px;}
+.cal-head h3{font-family:'Josefin Sans',sans-serif;font-size:14px;font-weight:700;color:#fff;margin-bottom:5px;}
+.cal-head p{font-size:11.5px;color:rgba(255,255,255,0.58);line-height:1.6;max-width:760px;}
+.cal-body{padding:28px 34px 30px;}
+.cal-line{position:relative;padding-left:26px;}
+.cal-line::before{content:'';position:absolute;left:6px;top:7px;bottom:7px;width:2px;background:linear-gradient(180deg,var(--ie-light),var(--gray-border));}
+.cal-mes{position:relative;padding:0 0 20px;}
+.cal-mes:last-child{padding-bottom:0;}
+.cal-mes::before{content:'';position:absolute;left:-24px;top:4px;width:14px;height:14px;border-radius:50%;background:var(--white);border:3px solid var(--gray-border);}
+.cal-mes.hito::before{border-color:var(--ie);background:var(--ie-light);}
+.cal-mes.cierre::before{border-color:var(--gold);background:#fffaf0;}
+.cal-nombre{font-family:'Josefin Sans',sans-serif;font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--blue);margin-bottom:5px;}
+.cal-texto{font-size:12.5px;color:var(--text-mid);line-height:1.65;}
+.cal-texto b{color:var(--text);font-weight:600;}
+.cal-chip{display:inline-block;font-family:'Josefin Sans',sans-serif;font-size:8.5px;font-weight:700;letter-spacing:1.4px;text-transform:uppercase;padding:2px 8px;border-radius:20px;margin-left:7px;vertical-align:1px;}
+.cal-chip.ty{background:var(--ie-light);color:var(--ie-deep);border:1px solid rgba(58,122,9,0.3);}
+.cal-chip.cerrado{background:#fffaf0;color:#8a6410;border:1px solid rgba(232,176,75,0.55);}
+.cal-leyenda{margin-top:24px;padding-top:18px;border-top:1px solid var(--gray-border);display:flex;gap:26px;flex-wrap:wrap;font-size:11px;color:var(--text-light);}
+.cal-leyenda span{display:flex;align-items:center;gap:7px;}
+.cal-leyenda i{width:10px;height:10px;border-radius:50%;display:inline-block;border:2px solid;}
+
+/* ===== PRESUPUESTO MENSUAL ===== */
+.pres-wrap{background:var(--white);border:1.5px solid var(--gray-border);border-radius:16px;overflow:hidden;box-shadow:0 2px 16px rgba(0,51,102,0.05);}
+.pres-hero{background:linear-gradient(135deg,var(--ie-deep) 0%,var(--ie) 65%,var(--ie-warm) 100%);padding:28px 34px;display:flex;align-items:center;gap:30px;flex-wrap:wrap;}
+.pres-cifra{font-family:'Josefin Sans',sans-serif;font-size:40px;font-weight:700;color:#fff;line-height:1;letter-spacing:-1px;white-space:nowrap;}
+.pres-cifra small{display:block;font-size:11px;font-weight:600;letter-spacing:2.4px;text-transform:uppercase;color:rgba(255,255,255,0.62);margin-top:8px;}
+.pres-hero-txt{font-size:12.5px;color:rgba(255,255,255,0.88);line-height:1.7;max-width:560px;}
+.pres-body{padding:26px 34px 30px;}
+.pres-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px 30px;}
+.pres-item{display:flex;gap:13px;align-items:flex-start;}
+.pres-ic{flex-shrink:0;width:30px;height:30px;border-radius:9px;background:var(--ie-light);display:flex;align-items:center;justify-content:center;font-size:14px;}
+.pres-t{font-family:'Josefin Sans',sans-serif;font-size:12.5px;font-weight:700;color:var(--ie-deep);margin-bottom:3px;}
+.pres-d{font-size:12px;color:var(--text-mid);line-height:1.62;}
+.pres-d b{color:var(--text);font-weight:600;}
+.pres-sub{font-family:'Josefin Sans',sans-serif;font-size:9.5px;font-weight:700;letter-spacing:2.4px;text-transform:uppercase;color:var(--blue);margin:28px 0 14px;padding-bottom:8px;border-bottom:2px solid var(--blue-light);}
+.pres-como{display:grid;grid-template-columns:1fr 1fr;gap:12px 30px;}
+.pres-como li{list-style:none;font-size:12px;color:var(--text-mid);line-height:1.65;display:flex;gap:9px;align-items:flex-start;}
+.pres-como li::before{content:'\2713';color:var(--ie);font-weight:700;flex-shrink:0;}
+.pres-como li b{color:var(--text);font-weight:600;}
+@media(max-width:820px){.pres-grid,.pres-como{grid-template-columns:1fr;}.pres-cifra{font-size:32px;}}
+
+
 /* Horarios de internado */
 .horarios-grid{display:grid;grid-template-columns:1fr 1fr;gap:26px;}
 .horario-card{background:var(--white);border:1.5px solid var(--gray-border);border-radius:16px;overflow:hidden;box-shadow:0 2px 16px rgba(31,74,5,0.05);}
@@ -539,18 +598,18 @@ details[open] summary::before{transform:rotate(90deg);}
   <div class="upd-wrap">
     <div class="upd-top">
       <span class="upd-pill">☘ Actualizado</span>
-      <span class="upd-date">9 de octubre de 2026 · segunda versión</span>
+      <span class="upd-date">16 de octubre de 2026 · tercera versión</span>
     </div>
-    <div class="upd-intro">Tras vuestras preguntas hemos vuelto a escribir a los tres internados. Esto es lo que ha cambiado respecto a la propuesta que recibisteis la primera vez:</div>
+    <div class="upd-intro">Después de la videollamada hemos trasladado vuestras preguntas a Newtown y esto es lo que hemos incorporado:</div>
     <ul class="upd-list">
-      <li><b>Newtown pasa a ser el internado recomendado</b>, por su encaje tecnológico y por el fútbol</li>
-      <li><b>Fútbol en Newtown:</b> Villa FC Waterford, con la inscripción gestionada por nosotros</li>
-      <li><b>Programa de Transition Year de Newtown</b> al detalle, con programación, SolidWorks y producción audiovisual</li>
-      <li><b>Sección nueva de horarios:</b> el día hora a hora en Newtown y en Bandon, de la mañana al fin de semana</li>
-      <li><b>Política de móvil</b> de cada internado, incluida la norma de noche y el acceso a wifi</li>
-      <li><b>Dormitorios:</b> cuántos alumnos por habitación en Newtown y en Bandon</li>
-      <li><b>Vida religiosa</b> en los tres centros y qué actos son obligatorios</li>
-      <li><b>Previsión de españoles</b> en Newtown para 2027/28 y cómo los reparten</li>
+      <li><b>Sección de preguntas y respuestas</b> con lo que contestó el colegio a cada una de vuestras dudas</li>
+      <li><b>Cocina propia y alergias:</b> cómo se elabora la comida y cómo gestionan la contaminación cruzada</li>
+      <li><b>Miércoles por la tarde:</b> deporte y salida al pueblo son consecutivos, no hay que elegir</li>
+      <li><b>Cierres de residencia:</b> My Language Quest cubre la familia anfitriona cada vez que la residencia cierra</li>
+      <li><b>Actividades de fin de semana</b> al detalle, sábado noche y domingo tarde</li>
+      <li><b>Control de entradas y salidas</b> y quién se responsabiliza de los alumnos en la residencia</li>
+      <li><b>Calendario del curso</b> mes a mes, con los periodos en que cierra la residencia</li>
+      <li><b>Presupuesto mensual recomendado</b> además del precio del programa</li>
     </ul>
   </div>
 
@@ -740,7 +799,7 @@ details[open] summary::before{transform:rotate(90deg);}
         <div class="colegio-section-title">Fútbol fuera del colegio</div>
         <div class="actividades-ciudad">El colegio apunta al <strong>Villa FC Waterford</strong>, a poca distancia del campus, y puede organizar los taxis a los entrenamientos. <strong>De la inscripción se encarga My Language Quest</strong>: la familia solo asume las cuotas del club. Es la única de las tres opciones de internado que tiene identificada una vía concreta para seguir jugando al fútbol fuera del colegio.</div>
         <div class="colegio-section-title">Residencia y convivencia</div>
-        <div class="actividades-ciudad">Habitaciones de hasta cuatro estudiantes según la edad, con baños y duchas compartidos entre dormitorios. El colegio prevé entre 5 y 10 estudiantes españoles en todo el centro a lo largo del curso 2027/28, repartidos en cursos distintos, y advierte de que la cifra no es definitiva. Procura además separar a los alumnos de la misma nacionalidad en función de la disponibilidad.</div>
+        <div class="actividades-ciudad">Habitaciones de dos a cuatro estudiantes según cómo se organice el curso, con baños y duchas compartidos entre dormitorios. El colegio prevé entre 5 y 10 estudiantes españoles en todo el centro a lo largo del curso 2027/28, repartidos en cursos distintos, y advierte de que la cifra no es definitiva. Procura además separar a los alumnos de la misma nacionalidad en función de la disponibilidad.</div>
         <div class="colegio-section-title">Vida religiosa</div>
         <div class="actividades-ciudad">Hay un <em>Collect</em> matinal de asistencia obligatoria. La reunión religiosa del domingo no es obligatoria para los internos.</div>
         <div class="colegio-section-title">Por qué encaja con Nicolás</div>
@@ -883,6 +942,111 @@ details[open] summary::before{transform:rotate(90deg);}
   </div>
   <div class="tabla-nota">Horarios publicados por cada colegio para el curso en vigor. El reparto de clases puede variar ligeramente de un año a otro, pero la estructura del día de internado se mantiene estable.</div>
 
+  <!-- ============ 5D. PREGUNTAS Y RESPUESTAS ============ -->
+  <div class="section-title"><h2>Preguntas que nos habéis hecho sobre Newtown</h2></div>
+  <div class="alert-box">
+    <div class="alert-icon">💬</div>
+    <div class="alert-text"><strong>Estas respuestas vienen del propio colegio,</strong> salvo donde se indica que la cobertura es nuestra. Son las cuestiones que planteasteis en la última videollamada, trasladadas a Newtown y contestadas por su equipo.</div>
+  </div>
+  <div class="qa-wrap">
+
+    <div class="qa-item">
+      <div class="qa-q">¿La comida la prepara el colegio o un catering externo?</div>
+      <div class="qa-a">La hace el colegio. Tiene <strong>cocina propia dentro del campus</strong>, con cocineros y personal de hostelería en plantilla, y se cocina fresco cada día. No hay catering subcontratado. Cubren cualquier necesidad dietética.</div>
+    </div>
+
+    <div class="qa-item">
+      <div class="qa-q">Nicolás es alérgico al pistacho y al anacardo. ¿Cómo lo gestionan?</div>
+      <div class="qa-a">La cocina trabaja con un <strong>protocolo propio de contaminación cruzada</strong> y con dietas individuales por alumno. Al elaborar las comidas en el propio centro, el control sobre ingredientes y manipulación está en manos del colegio y no de un proveedor externo. Antes de la llegada se registra la ficha de alergias de Nicolás para que cocina y personal de residencia la tengan.</div>
+    </div>
+
+    <div class="qa-item">
+      <div class="qa-q">¿Qué pasa exactamente los miércoles por la tarde?</div>
+      <div class="qa-a">Son actividades <strong>consecutivas, no alternativas</strong>. El miércoles hay solo las seis clases de la mañana, y la tarde se reparte entre actividades deportivas y la salida al pueblo. No hay que elegir entre una cosa y otra. A Nicolás, como alumno de 4º curso, le corresponde la salida de 14:00 a 16:00.</div>
+    </div>
+
+    <div class="qa-item">
+      <div class="qa-q">¿Quién controla que los alumnos entren y salgan?</div>
+      <div class="qa-a">El <strong>personal de la residencia</strong>. Son los responsables del registro de entradas y salidas de cada alumno y de su cuidado mientras están en la casa. Fuera de los horarios libres que figuran en el horario, los alumnos permanecen en el colegio y en la residencia.</div>
+    </div>
+
+    <div class="qa-item">
+      <div class="qa-q">¿Cuántos alumnos duermen en cada habitación?</div>
+      <div class="qa-a">Depende de cómo se organice el curso, pero lo habitual es de <strong>dos a cuatro alumnos</strong> por habitación. Los baños y las duchas se comparten entre dormitorios.</div>
+    </div>
+
+    <div class="qa-item mlq">
+      <span class="qa-tag">☘ Cubierto por MLQ</span>
+      <div class="qa-q">La residencia cierra algunos fines de semana. ¿Dónde está Nicolás esos días?</div>
+      <div class="qa-a">Son entre ocho y nueve fines de semana a lo largo del curso. <strong>My Language Quest lo cubre</strong>: cada vez que la residencia cierra, Nicolás se aloja con una familia anfitriona en Waterford. Va incluido en el programa. No es un coste aparte ni algo que tengáis que resolver vosotros.</div>
+    </div>
+
+    <div class="qa-item wide">
+      <div class="qa-q">¿Qué hacen los internos los fines de semana?</div>
+      <div class="qa-a">El colegio organiza actividades el sábado por la noche y el domingo por la tarde. Los <strong>sábados</strong> rotan entre karaoke, bolera, noche de juegos de mesa, cine con palomitas, concurso de preguntas, bingo, roller disco, noche de talentos, baile irlandés, taller de percusión, surf, una noche de deportes con bádminton, voleibol y fútbol sala, y ver en pantalla grande los partidos internacionales de fútbol y rugby. Los <strong>domingos</strong> van desde el paseo por la playa, la ruta de montaña o el bosque, hasta el minigolf, el cine, el parque acuático, el campo de prácticas de golf, la gymkana, el tour histórico de Waterford, hacer galletas o hacer pizzas en el horno de leña que el colegio tiene en el exterior.</div>
+    </div>
+
+    <div class="qa-item wide">
+      <div class="qa-q">¿Cómo nos comunicamos con la familia anfitriona?</div>
+      <div class="qa-a">Saludar y tener trato cordial es natural y está bien. Cualquier asunto sobre Nicolás, desde una incidencia hasta una duda del día a día, se canaliza a través de <strong>vuestra gestora en MLQ</strong>. Así evitamos que la información llegue por dos vías distintas y que algo se pierda por el camino.</div>
+    </div>
+
+  </div>
+
+  <!-- ============ 5E. CALENDARIO DEL CURSO ============ -->
+  <div class="section-title"><h2>Cómo se reparte el curso</h2></div>
+  <div class="cal-wrap">
+    <div class="cal-head">
+      <h3>📅 El año escolar en Newtown, mes a mes</h3>
+      <p>La estructura la marca el calendario escolar irlandés y se repite cada curso. Las fechas exactas de 2027/28 las publica el colegio en primavera, así que lo que sigue son las referencias del último calendario publicado.</p>
+    </div>
+    <div class="cal-body">
+      <div class="cal-line">
+        <div class="cal-mes inicio">
+          <div class="cal-nombre">Agosto</div>
+          <div class="cal-texto">Los internos entran la última semana de agosto, a partir de la tarde. Collect de apertura y comienzo de las clases al día siguiente.</div>
+        </div>
+        <div class="cal-mes cierre">
+          <div class="cal-nombre">Octubre</div>
+          <div class="cal-texto">Primer <b>half term</b>, la semana del festivo de octubre.<span class="cal-chip cerrado">Residencia cerrada</span></div>
+        </div>
+        <div class="cal-mes ">
+          <div class="cal-nombre">Noviembre</div>
+          <div class="cal-texto">Trimestre lectivo completo, sin interrupciones.</div>
+        </div>
+        <div class="cal-mes cierre">
+          <div class="cal-nombre">Diciembre</div>
+          <div class="cal-texto">El colegio cierra a mediados de mes. Vacaciones de Navidad, unas dos semanas y media.<span class="cal-chip cerrado">Residencia cerrada</span></div>
+        </div>
+        <div class="cal-mes ">
+          <div class="cal-nombre">Enero</div>
+          <div class="cal-texto">Vuelta a clase a primeros de mes.</div>
+        </div>
+        <div class="cal-mes cierre">
+          <div class="cal-nombre">Febrero</div>
+          <div class="cal-texto">Trimestre lectivo y, a mediados de mes, el <b>half term</b> de invierno.<span class="cal-chip cerrado">Residencia cerrada</span></div>
+        </div>
+        <div class="cal-mes ">
+          <div class="cal-nombre">Marzo</div>
+          <div class="cal-texto">Trimestre completo de clases. Celebración de San Patricio.</div>
+        </div>
+        <div class="cal-mes cierre">
+          <div class="cal-nombre">Abril</div>
+          <div class="cal-texto">Dos semanas de vacaciones de Semana Santa.<span class="cal-chip cerrado">Residencia cerrada</span></div>
+        </div>
+        <div class="cal-mes hito">
+          <div class="cal-nombre">Mayo</div>
+          <div class="cal-texto"><b>Excursión a Killary</b> a principios de mes. El curso termina a finales de mayo, al mediodía.<span class="cal-chip ty">Transition Year</span></div>
+        </div>
+      </div>
+      <div class="cal-leyenda">
+        <span><i style="border-color:var(--ie);background:var(--ie-light);"></i> Actividad del Transition Year</span>
+        <span><i style="border-color:var(--gold);background:#fffaf0;"></i> Periodo en que cierra la residencia</span>
+        <span><i style="border-color:var(--gray-border);background:#fff;"></i> Trimestre lectivo</span>
+      </div>
+    </div>
+  </div>
+
   <!-- ============ 6. PRECIOS ============ -->
   <div class="section-title"><h2>Resumen de precios</h2></div>
   <div class="tabla-wrap">
@@ -897,6 +1061,21 @@ details[open] summary::before{transform:rotate(90deg);}
     </table>
   </div>
   <div class="tabla-nota">Curso escolar completo 2027/28. En el Programa Choice el precio es el mismo para los tres colegios e incluye los dos vuelos. En los internados el importe lo marca cada centro y cubre matrícula, internado de 7 días en pensión completa, tutor legal en Irlanda y la gestión completa de My Language Quest; los vuelos se buscan y se reservan aparte. Las tarifas de internado son la referencia vigente y quedan sujetas a la confirmación de precio y de plaza para el curso 2027/28.</div>
+
+  <!-- ============ 6B. PRESUPUESTO MENSUAL ============ -->
+  <div class="section-title"><h2>Qué presupuestar al mes</h2></div>
+  <div class="pres-wrap">
+    <div class="pres-hero">
+      <div class="pres-cifra">300 – 450 €<small>al mes, además del programa</small></div>
+      <div class="pres-hero-txt">Esta cantidad cubre el gasto corriente de Nicolás y las aportaciones puntuales que pide el colegio a lo largo del curso. Abajo está el desglose completo, para que sepáis exactamente de dónde sale cada euro.</div>
+    </div>
+    <div class="pres-body">
+      <div class="pres-grid">
+        <div class="pres-item"><div class="pres-ic">💳</div><div><div class="pres-t">Gasto personal del día a día</div><div class="pres-d">Alrededor de <b>150 € al mes</b>. Cubre el móvil, la merienda del miércoles en el pueblo, el cine o el batido del domingo, material deportivo y sus caprichos. Las salidas de fin de semana que organiza el colegio suelen ser gratuitas.</div></div></div>
+        <div class="pres-item"><div class="pres-ic">🚌</div><div><div class="pres-t">Actividades y excursiones del colegio</div><div class="pres-d">Newtown organiza un par de salidas con coste por semestre, además de algún módulo específico del Transition Year. La <b>excursión a Killary</b> ronda los 450 € y la certificación de socorrismo, si Nicolás la cursa, unos 250 €. El colegio avisa con antelación y se facturan aparte.</div></div></div>
+      </div>
+    </div>
+  </div>
 
   <!-- ============ 7. TABLA COMPARATIVA ============ -->
   <div class="section-title"><h2>Programa Choice frente a internado</h2></div>
@@ -1333,6 +1512,6 @@ details[open] summary::before{transform:rotate(90deg);}
   });
 })();
 </script>
-<!-- build:20261009-142054 -->
+<!-- build:20261016-115503 -->
 </body>
 </html>
