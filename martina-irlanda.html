@@ -416,7 +416,7 @@ details[open] summary::before{transform:rotate(90deg);}
 .sup-row b{font-family:'Josefin Sans',sans-serif;color:var(--red);font-size:13px;white-space:nowrap;}
 
 /* ¿Qué programa es para mí? */
-.decision-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;}
+.decision-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:18px;}
 .decision-card{background:var(--white);border:1.5px solid var(--gray-border);border-left:4px solid var(--ie);border-radius:12px;padding:20px 22px;transition:transform .3s ease,box-shadow .3s ease;}
 .decision-card:hover{transform:translateY(-3px);box-shadow:0 10px 28px rgba(31,74,5,0.12);}
 .decision-title{font-family:'Josefin Sans',sans-serif;font-size:14px;font-weight:700;color:var(--ie-deep);margin-bottom:8px;}
@@ -488,7 +488,7 @@ html{scroll-behavior:smooth;}
     <a href="#quinto">5th Year</a>
     <a href="#meath">Meath</a>
     <a href="#colegios">Colegios</a>
-    <a href="#comparativa">Comparativa</a>
+    <a href="#comparativa">Qué aporta cada uno</a>
     <a href="#precios">Precios</a>
     <a href="#incluye">Incluye</a>
     <a href="#convalidacion">Convalidación</a>
@@ -870,29 +870,9 @@ html{scroll-behavior:smooth;}
 
   </div>
 
-  <!-- ============ 8. COMPARATIVA DE COLEGIOS ============ -->
-  <div class="section-title" id="comparativa"><h2>Comparativa de los cuatro colegios</h2></div>
-  <div class="tabla-wrap">
-    <table class="tabla-diff">
-      <thead><tr><th style="text-align:left;">&nbsp;</th><th>St. Ciarán's</th><th>Dunshaughlin</th><th>Athboy</th><th>Eureka</th></tr></thead>
-      <tbody>
-        <tr><th>Tipo</th><td>Mixto</td><td>Mixto</td><td>Mixto</td><td>Femenino</td></tr>
-        <tr><th>Localidad</th><td>Kells</td><td>Dunshaughlin</td><td>Athboy</td><td>Kells</td></tr>
-        <tr><th>Matemáticas</th><td><span class="si">✓</span></td><td><span class="si">✓</span></td><td><span class="si">✓</span></td><td><span class="si">✓</span></td></tr>
-        <tr><th>Física</th><td><span class="si">✓</span></td><td><span class="si">✓</span></td><td><span class="si">✓</span></td><td><span class="si">✓</span><span class="sup">documentada</span></td></tr>
-        <tr><th>Matemáticas aplicadas</th><td><span class="si">✓</span></td><td><span class="si">✓</span></td><td><span class="no">✗</span><span class="sup">no confirmadas</span></td><td><span class="no">✗</span><span class="sup">no confirmadas</span></td></tr>
-        <tr><th>Dibujo técnico / DCG</th><td><span class="si">✓</span></td><td><span class="si">✓</span></td><td><span class="si">✓</span></td><td><span class="si">✓</span></td></tr>
-        <tr><th>Construction Studies</th><td><span class="si">✓</span></td><td>Oferta tecnológica relacionada</td><td><span class="si">✓</span></td><td><span class="no">✗</span><span class="sup">no acreditada</span></td></tr>
-        <tr><th>Engineering</th><td><span class="si">✓</span></td><td>Tecnología y Metalwork</td><td><span class="si">✓</span></td><td><span class="no">✗</span><span class="sup">no acreditada</span></td></tr>
-        <tr><th>Art</th><td><span class="si">✓</span></td><td><span class="si">✓</span></td><td><span class="si">✓</span></td><td><span class="si">✓</span><span class="sup">documentada</span></td></tr>
-        <tr><th>Equitación</th><td>Participación documentada</td><td>Actividad externa potencial</td><td>Actividad externa potencial</td><td>Participación documentada</td></tr>
-        <tr><th>Entorno</th><td>Pueblo tradicional</td><td>Localidad residencial</td><td>Pueblo pequeño</td><td>Pueblo tradicional</td></tr>
-      </tbody>
-    </table>
-  </div>
-  <div class="tabla-nota">La disponibilidad de materias y su compatibilidad se determina por los horarios, el nivel académico y las plazas de 5th Year. La comparación no supone una garantía de matrícula en todas las asignaturas mencionadas.</div>
-
-  <div class="decision-grid" style="margin-top:22px;">
+  <!-- ============ 8. QUÉ APORTA CADA COLEGIO ============ -->
+  <div class="section-title" id="comparativa"><h2>Qué aporta cada colegio</h2></div>
+  <div class="decision-grid">
     <div class="decision-card">
       <div class="decision-title">St. Ciarán's · equilibrio entre estudios y actividades</div>
       <div class="decision-text">Interesante por reunir ciencias, materias técnicas, arte y participación ecuestre en un mismo centro.</div>
