@@ -416,7 +416,7 @@ details[open] summary::before{transform:rotate(90deg);}
 .sup-row b{font-family:'Josefin Sans',sans-serif;color:var(--red);font-size:13px;white-space:nowrap;}
 
 /* ¿Qué programa es para mí? */
-.decision-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:18px;}
+.decision-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;}
 .decision-card{background:var(--white);border:1.5px solid var(--gray-border);border-left:4px solid var(--ie);border-radius:12px;padding:20px 22px;transition:transform .3s ease,box-shadow .3s ease;}
 .decision-card:hover{transform:translateY(-3px);box-shadow:0 10px 28px rgba(31,74,5,0.12);}
 .decision-title{font-family:'Josefin Sans',sans-serif;font-size:14px;font-weight:700;color:var(--ie-deep);margin-bottom:8px;}
@@ -484,14 +484,14 @@ html{scroll-behavior:smooth;}
 <!-- ============ NAVEGACIÓN INTERNA ============ -->
 <nav class="mlq-nav" id="mlqNav">
   <div class="mlq-nav-inner">
-    <a href="#programa">La experiencia</a>
+    <a href="#programa">El programa</a>
     <a href="#quinto">5th Year</a>
     <a href="#meath">Meath</a>
     <a href="#colegios">Colegios</a>
-    <a href="#comparativa">Qué aporta cada uno</a>
-    <a href="#precios">Precios</a>
+    <a href="#vuelos">Vuelos</a>
     <a href="#incluye">Incluye</a>
-    <a href="#convalidacion">Convalidación</a>
+    <a href="#continuidad">Continuidad académica</a>
+    <a href="#recomendacion">Recomendación MLQ</a>
     <a href="#pagos">Pagos</a>
     <a href="#pasos">Siguientes pasos</a>
   </div>
@@ -499,7 +499,7 @@ html{scroll-behavior:smooth;}
 
 <div class="main">
 
-  <!-- ============ 3. UNA EXPERIENCIA CON VISIÓN DE FUTURO ============ -->
+  <!-- ============ 3. CONTEXTO: QUÉ ES EL PROGRAMA ============ -->
   <div class="section-title" id="programa"><h2>Una experiencia académica con visión de futuro</h2></div>
   <p class="intro-text">
     El programa de año escolar en Irlanda permite estudiar en un <strong>colegio irlandés</strong>, convivir con una
@@ -516,7 +516,7 @@ html{scroll-behavior:smooth;}
     <div class="intro-point"><div class="intro-point-icon">🌱</div><div><div class="intro-point-title">Autonomía y crecimiento personal</div><div class="intro-point-desc">Adaptación a otro sistema educativo, participación en una comunidad local y desarrollo de independencia y responsabilidad.</div></div></div>
   </div>
 
-  <!-- ============ 4. ESTUDIAR 5TH YEAR ============ -->
+  <!-- ============ 3b. ESTUDIAR 5TH YEAR ============ -->
   <div class="section-title" id="quinto"><h2>Estudiar 5th Year en Irlanda</h2></div>
   <p class="intro-text">
     El <strong>Senior Cycle</strong> es la etapa de secundaria superior de Irlanda y normalmente comprende dos cursos:
@@ -548,7 +548,7 @@ html{scroll-behavior:smooth;}
     que cada colegio pueda ofrecerle efectivamente.
   </div>
 
-  <!-- ============ 5. QUIÉNES SOMOS ============ -->
+  <!-- ============ 4. QUIÉNES SOMOS ============ -->
   <div class="section-title"><h2>Quiénes somos</h2></div>
   <div class="qs-hero">
     <div class="qs-media">
@@ -593,7 +593,7 @@ html{scroll-behavior:smooth;}
     </div>
   </div>
 
-  <!-- ============ 6. CONDADO DE MEATH ============ -->
+  <!-- ============ 5. CONDADO DE MEATH ============ -->
   <div class="section-title" id="meath"><h2>Condado de Meath</h2></div>
   <p class="intro-text">
     Los cuatro colegios seleccionados se encuentran en el <strong>condado de Meath</strong>, al norte y noroeste de Dublín.
@@ -637,7 +637,7 @@ html{scroll-behavior:smooth;}
     </div>
   </div>
 
-  <!-- ============ 7. COLEGIOS RECOMENDADOS ============ -->
+  <!-- ============ 6. OPCIONES RECOMENDADAS ============ -->
   <div class="section-title" id="colegios"><h2>Colegios recomendados</h2></div>
   <div class="alert-box">
     <div class="alert-icon">☘</div>
@@ -870,33 +870,18 @@ html{scroll-behavior:smooth;}
 
   </div>
 
-  <!-- ============ 8. QUÉ APORTA CADA COLEGIO ============ -->
-  <div class="section-title" id="comparativa"><h2>Qué aporta cada colegio</h2></div>
-  <div class="decision-grid">
-    <div class="decision-card">
-      <div class="decision-title">St. Ciarán's · equilibrio entre estudios y actividades</div>
-      <div class="decision-text">Interesante por reunir ciencias, materias técnicas, arte y participación ecuestre en un mismo centro.</div>
-    </div>
-    <div class="decision-card">
-      <div class="decision-title">Dunshaughlin · orientación científica y tecnológica</div>
-      <div class="decision-text">Ofrece una amplia combinación de matemáticas aplicadas, física, DCG, informática y arte.</div>
-    </div>
-    <div class="decision-card">
-      <div class="decision-title">Athboy · diseño, construcción e ingeniería</div>
-      <div class="decision-text">Destaca por el carácter práctico de su oferta, vinculada a la representación gráfica y los materiales.</div>
-    </div>
-    <div class="decision-card">
-      <div class="decision-title">Eureka · formación académica y creatividad</div>
-      <div class="decision-text">Incorpora una alternativa femenina, con tradición educativa, dibujo técnico y actividades artísticas.</div>
-    </div>
-  </div>
-
-  <!-- ============ 9. MODALIDADES Y PRECIOS ============ -->
-  <div class="section-title" id="precios"><h2>Inversión del programa · modalidades</h2></div>
+  <!-- ============ 7. VUELOS Y MODALIDADES ============ -->
+  <div class="section-title" id="vuelos"><h2>Vuelos y modalidades del programa</h2></div>
+  <p class="intro-text">
+    Al tratarse de un país de la Unión Europea, <strong>Irlanda no requiere visado de estudiante</strong>: basta con el
+    DNI o el pasaporte en vigor. Los vuelos incluidos en el programa operan
+    <strong>desde Madrid y Barcelona</strong>.
+  </p>
   <p class="intro-text">
     El <strong>Programa Choice</strong> de My Language Quest permite seleccionar el colegio de preferencia dentro de los
     centros con los que trabajamos y solicitar la admisión correspondiente. Para Martina, esto permite elegir colegios que
     ofrecen materias directamente relacionadas con Arquitectura, en lugar de basar la decisión exclusivamente en el destino.
+    Las tres modalidades se diferencian únicamente en el número de vuelos incluidos.
   </p>
   <div class="mod-grid">
     <div class="mod-card">
@@ -912,7 +897,7 @@ html{scroll-behavior:smooth;}
           <li>Habitación individual garantizada</li>
           <li>Libros de asignaturas obligatorias y uniforme escolar incluidos</li>
           <li>Orientación previa en Dublín incluida</li>
-          <li>Vuelos no incluidos: MLQ gestiona la búsqueda, coste a cargo de la familia</li>
+          <li>Vuelos no incluidos: MLQ gestiona la búsqueda desde Madrid o Barcelona, coste a cargo de la familia</li>
         </ul>
       </div>
     </div>
@@ -930,7 +915,7 @@ html{scroll-behavior:smooth;}
           <li>Habitación individual garantizada</li>
           <li>Libros de asignaturas obligatorias y uniforme escolar incluidos</li>
           <li>Orientación previa en Dublín incluida</li>
-          <li>2 vuelos internacionales incluidos (ida y vuelta)</li>
+          <li>2 vuelos incluidos desde Madrid o Barcelona: inicio y fin de curso</li>
         </ul>
       </div>
     </div>
@@ -949,15 +934,15 @@ html{scroll-behavior:smooth;}
           <li>Habitación individual garantizada</li>
           <li>Libros de asignaturas obligatorias y uniforme escolar incluidos</li>
           <li>Orientación previa en Dublín incluida</li>
-          <li>4 vuelos incluidos: inicio, ida y vuelta de Navidad y fin de curso</li>
+          <li>4 vuelos incluidos desde Madrid o Barcelona: inicio, ida y vuelta de Navidad y fin de curso</li>
           <li>Especialmente interesante para incorporar los desplazamientos del curso y facilitar el regreso a España en vacaciones</li>
         </ul>
       </div>
     </div>
   </div>
-  <div class="tabla-nota">Importes de referencia MLQ utilizados para esta propuesta. Sujetos a confirmación de las tarifas y condiciones contractuales 2027/28. La inclusión de trayectos concretos dependerá del aeropuerto de salida y de las condiciones de los vuelos contratados.</div>
+  <div class="tabla-nota">Importes de referencia MLQ utilizados para esta propuesta. Sujetos a confirmación de las tarifas y condiciones contractuales 2027/28. Los vuelos incluidos salen de Madrid y Barcelona; la inclusión de trayectos concretos dependerá de las condiciones de los vuelos contratados.</div>
 
-  <!-- ============ 10. EL PROGRAMA INCLUYE ============ -->
+  <!-- ============ 8. EL PROGRAMA INCLUYE ============ -->
   <div class="section-title" id="incluye"><h2>El programa incluye</h2></div>
   <div class="includes-wrap">
     <div class="includes-head"><h3>☘ Base común de los programas Choice</h3></div>
@@ -1036,67 +1021,66 @@ html{scroll-behavior:smooth;}
     </div>
   </div>
 
-  <!-- ============ 11. CONVALIDACIÓN ============ -->
-  <div class="section-title" id="convalidacion"><h2>Convalidación y regreso a 2.º de Bachillerato</h2></div>
+  <!-- ============ 9. CONTINUIDAD ACADÉMICA ============ -->
+  <div class="section-title" id="continuidad"><h2>Continuidad académica y regreso a España</h2></div>
   <p class="intro-text">
-    Cursar 1.º de Bachillerato en Irlanda requiere una planificación académica cuidadosa, especialmente cuando la
-    estudiante tiene una orientación universitaria definida. En el caso de Martina, la prioridad es mantener una buena
-    <strong>preparación matemática y científica</strong> que le permita continuar posteriormente hacia estudios de Arquitectura.
+    Para Martina, la experiencia internacional debe permitir disfrutar de Irlanda y, al mismo tiempo, mantener
+    una trayectoria académica adecuada para su incorporación a <strong>2.º de Bachillerato</strong>. El sistema
+    irlandés tiene una organización curricular distinta a la española, por lo que My Language Quest incorpora
+    asesoramiento académico y seguimiento durante toda la estancia.
   </p>
   <div class="info-blocks">
     <div class="info-block">
-      <div class="info-block-icon">📘</div>
-      <div class="info-block-title">Selección del curso</div>
-      <div class="info-block-text">Se propone la incorporación a <strong>5th Year</strong>, dentro del programa ordinario de Leaving Certificate. Esta elección es diferente a Transition Year, cuyo enfoque es principalmente exploratorio y de desarrollo personal.</div>
-    </div>
-    <div class="info-block">
-      <div class="info-block-icon">📐</div>
-      <div class="info-block-title">Selección de materias</div>
-      <div class="info-block-text">My Language Quest asesorará sobre las materias que deben incluirse para cumplir los requisitos académicos aplicables y conservar una trayectoria coherente con su modalidad de Bachillerato en España.</div>
+      <div class="info-block-icon">📝</div>
+      <div class="info-block-title">Selección de asignaturas</div>
+      <div class="info-block-text">El itinerario se diseñará teniendo en cuenta el nivel de Martina, las materias cursadas en España y los requisitos de convalidación de 1.º de Bachillerato. Se propone la incorporación a <strong>5th Year</strong>, dentro del programa ordinario de Leaving Certificate.
+        <ul><li>Prioridad: matemáticas, física y materias académicas relevantes</li><li>Dibujo técnico, DCG, construcción o arte cuando el horario lo permita</li></ul>
+      </div>
     </div>
     <div class="info-block">
       <div class="info-block-icon">📊</div>
-      <div class="info-block-title">Seguimiento del expediente</div>
-      <div class="info-block-text">Durante el curso se realizará un seguimiento de sus resultados y de su adaptación académica. El rendimiento obtenido en Irlanda será importante para la posterior convalidación.</div>
-    </div>
-    <div class="info-block">
-      <div class="info-block-icon">🏛</div>
-      <div class="info-block-title">Reconocimiento académico</div>
-      <div class="info-block-text">Al finalizar el año escolar se gestionará la documentación necesaria para solicitar la convalidación conforme a la normativa vigente. La calificación resultante se determinará mediante el procedimiento oficial aplicable y podrá influir en su expediente de Bachillerato.</div>
+      <div class="info-block-title">Seguimiento durante el curso</div>
+      <div class="info-block-text">Se hará seguimiento de su progreso escolar, su adaptación al sistema educativo y la convivencia con la familia anfitriona.
+        <ul><li>Revisión de asignaturas con los responsables académicos</li><li>Preparación de la documentación necesaria para la convalidación</li></ul>
+      </div>
     </div>
     <div class="info-block">
       <div class="info-block-icon">🎓</div>
-      <div class="info-block-title">Preparación de 2.º de Bachillerato</div>
-      <div class="info-block-text">Dado que los currículos de ambos países no son idénticos, será aconsejable identificar los contenidos que deba reforzar antes de reincorporarse a su colegio español, con atención especial a matemáticas, física y otras materias relevantes para su itinerario universitario.</div>
+      <div class="info-block-title">Convalidación y acceso universitario</div>
+      <div class="info-block-text">Al finalizar el curso se gestiona el procedimiento de convalidación conforme a la normativa aplicable.
+        <ul><li>La calificación resultante puede incidir en el expediente de Bachillerato</li><li>La experiencia no garantiza una subida de nota: será importante mantener un buen rendimiento durante toda la estancia</li></ul>
+      </div>
     </div>
     <div class="info-block">
-      <div class="info-block-icon">⚠️</div>
-      <div class="info-block-title">Con transparencia</div>
-      <div class="info-block-text"><strong>La experiencia internacional puede aportar competencias académicas y personales de gran valor, pero no garantiza una mejora de la nota media ni una equivalencia exacta de contenidos con el sistema español.</strong></div>
+      <div class="info-block-icon">📚</div>
+      <div class="info-block-title">Preparación para 2.º y la PAU</div>
+      <div class="info-block-text">Algunos contenidos de 1.º de Bachillerato español pueden no coincidir con el currículo irlandés.
+        <ul><li>Antes del regreso se identifican los contenidos que requieran repaso</li><li>Objetivo: facilitar la incorporación a 2.º y la posterior preparación de la PAU</li></ul>
+      </div>
     </div>
   </div>
 
-  <!-- ============ 12. IRLANDA O CANADÁ ============ -->
-  <div class="section-title" id="irlanda-canada"><h2>Canadá o Irlanda: dos experiencias diferentes</h2></div>
-  <div class="tabla-wrap">
-    <table class="tabla-diff">
-      <thead><tr><th style="text-align:left;">Aspecto</th><th>Irlanda</th><th>Canadá</th></tr></thead>
-      <tbody>
-        <tr><th>Idioma</th><td>Inglés</td><td>Inglés en los distritos seleccionados</td></tr>
-        <tr><th>Entorno</th><td>Comunidades locales, pueblos y campiña</td><td>Praderas, bosques, montaña o costa</td></tr>
-        <tr><th>Clima</th><td>Suave y húmedo</td><td>Muy variable según el distrito</td></tr>
-        <tr><th>Esquí</th><td>No es habitual en Meath</td><td>Posibilidades según la región</td></tr>
-        <tr><th>Equitación</th><td>Buena tradición regional</td><td>Disponible en determinadas zonas</td></tr>
-        <tr><th>Elección de colegio</th><td>Programa Choice</td><td>Según criterios y disponibilidad del distrito</td></tr>
-        <tr><th>Orientación académica</th><td>Matemáticas, física, DCG, construcción y arte</td><td>Matemáticas, ciencias, diseño y tecnología</td></tr>
-        <tr><th>Proximidad a España</th><td>Mayor</td><td>Menor</td></tr>
-        <tr class="precio-fila"><th>Presupuesto</th><td>Desde 16.950 €</td><td>Desde 20.200 € según los distritos comparados</td></tr>
-      </tbody>
-    </table>
+  <!-- ============ 10. RECOMENDACIÓN MLQ ============ -->
+  <div class="section-title" id="recomendacion"><h2>Recomendación de My Language Quest</h2></div>
+  <div class="alert-box">
+    <div class="alert-icon">☘</div>
+    <div class="alert-text">
+      Los cuatro colegios permiten realizar un año escolar completo en el condado de Meath, pero ofrecen experiencias
+      claramente diferentes. <strong>St. Ciarán's</strong> equilibra estudios y actividades: reúne ciencias, materias
+      técnicas, arte y participación ecuestre en un mismo centro. <strong>Dunshaughlin</strong> es la propuesta más
+      amplia en orientación científica y tecnológica, con matemáticas aplicadas, física, DCG, informática y arte.
+      <strong>Athboy</strong> destaca por el carácter práctico de su oferta, muy vinculada a la representación gráfica
+      y los materiales. <strong>Eureka</strong> incorpora una alternativa femenina, con tradición académica, dibujo
+      técnico y una vida escolar marcada por lo artístico.<br><br>
+      Nuestra <strong>primera recomendación es St. Ciarán's Community School</strong>: es el centro que mejor reúne los
+      objetivos académicos de Martina —dibujo técnico, construcción, física y arte en un mismo itinerario— y su interés
+      personal por la equitación. <strong>Dunshaughlin</strong> es la mejor alternativa si se prioriza la carga
+      científica y el acceso a más servicios y actividades externas. La elección dependerá del peso que se dé a cada
+      aspecto: itinerario académico, tipo de colegio, entorno y actividades fuera del aula.
+    </div>
   </div>
-  <div class="tabla-nota">Irlanda ofrece una alternativa especialmente atractiva para familias que valoran una buena selección académica, la cercanía a España y un presupuesto más contenido. Canadá destaca por la experiencia de naturaleza, los paisajes y las posibilidades de practicar deportes de invierno en determinadas regiones.</div>
 
-  <!-- ============ 13. FORMAS DE PAGO ============ -->
+  <!-- ============ 11. FORMAS DE PAGO ============ -->
   <div class="section-title" id="pagos"><h2>Formas de pago</h2></div>
   <div class="payment-wrap">
     <div class="payment-inner">
@@ -1146,7 +1130,7 @@ html{scroll-behavior:smooth;}
     </div>
   </div>
 
-  <!-- ============ 14. FINANCIACIÓN ============ -->
+  <!-- ============ 12. FINANCIACIÓN ============ -->
   <div class="section-title"><h2>Financia tu programa</h2></div>
   <div class="financing-wrap">
     <div class="financing-head">
@@ -1203,7 +1187,7 @@ html{scroll-behavior:smooth;}
     </div>
   </div>
 
-  <!-- ============ 15. SIGUIENTES PASOS ============ -->
+  <!-- ============ 13. SIGUIENTES PASOS ============ -->
   <div class="section-title" id="pasos"><h2>Siguientes pasos</h2></div>
   <div class="steps-wrap">
     <div class="steps-inner">
@@ -1226,7 +1210,7 @@ html{scroll-behavior:smooth;}
 
 </div>
 
-<!-- ============ 16. FOOTER ============ -->
+<!-- ============ 14. FOOTER ============ -->
 <div class="footer">
   <div class="footer-logo">MY LANGUAGE QUEST</div>
   <div class="footer-tag">Explore · Learn · Grow</div>
