@@ -408,7 +408,7 @@ details[open] summary::before{transform:rotate(90deg);}
 .tabla-diff .precio-fila td{font-family:'Josefin Sans',sans-serif;font-weight:700;font-size:15px;color:var(--ie-deep);}
 .tabla-nota{font-size:11px;color:var(--text-light);margin-top:12px;line-height:1.6;font-style:italic;}
 
-/* Suplementos opcionales */
+/* Suplementos No Choice */
 .sup-wrap{background:var(--white);border:1.5px solid var(--gray-border);border-radius:16px;padding:22px 26px;box-shadow:0 2px 16px rgba(31,74,5,0.05);}
 .sup-title{font-family:'Josefin Sans',sans-serif;font-size:14px;font-weight:700;color:var(--ie-deep);margin-bottom:14px;}
 .sup-rows{display:grid;grid-template-columns:repeat(2,1fr);gap:0 26px;}
@@ -422,24 +422,6 @@ details[open] summary::before{transform:rotate(90deg);}
 .decision-title{font-family:'Josefin Sans',sans-serif;font-size:14px;font-weight:700;color:var(--ie-deep);margin-bottom:8px;}
 .decision-text{font-size:12.5px;color:var(--text-mid);line-height:1.7;}
 
-/* Navegación interna */
-.nav{position:sticky;top:0;z-index:30;background:rgba(255,255,255,0.96);backdrop-filter:blur(8px);border-bottom:1px solid var(--gray-border);box-shadow:0 2px 14px rgba(0,51,102,0.05);}
-.nav-inner{max-width:1140px;margin:0 auto;display:flex;gap:2px;padding:0 16px;overflow-x:auto;scrollbar-width:none;}
-.nav-inner::-webkit-scrollbar{display:none;}
-.nav a{font-family:'Josefin Sans',sans-serif;font-size:10px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:var(--text-light);text-decoration:none;padding:13px 12px;white-space:nowrap;border-bottom:2px solid transparent;transition:color .2s,border-color .2s;}
-.nav a:hover{color:var(--ie-deep);border-bottom-color:var(--ie);}
-.section-title{scroll-margin-top:66px;}
-html{scroll-behavior:smooth;}
-
-/* Tablas de contenido académico */
-.tabla-diff td.l,.tabla-diff th.l{text-align:left;}
-.tabla-diff tbody td{color:var(--text-mid);}
-.tabla-diff tbody td b{color:var(--ie-deep);}
-
-/* Bloque destacado de itinerario */
-.nota-destacada{background:var(--ie-light);border:1.5px solid rgba(76,158,12,0.3);border-left:4px solid var(--ie);border-radius:0 12px 12px 0;padding:16px 20px;margin-top:16px;font-size:12.5px;color:var(--text-mid);line-height:1.7;}
-.nota-destacada strong{color:var(--ie-deep);font-weight:600;}
-
 @media(max-width:900px){
   .mod-grid{grid-template-columns:1fr;}
   .decision-grid{grid-template-columns:1fr;}
@@ -448,6 +430,26 @@ html{scroll-behavior:smooth;}
   .tabla-diff{min-width:600px;}
 }
 
+
+/* ============ AÑADIDOS DE ESTA PROPUESTA ============ */
+.mlq-nav{position:sticky;top:0;z-index:50;background:rgba(255,255,255,0.96);backdrop-filter:blur(8px);border-bottom:1.5px solid var(--gray-border);box-shadow:0 2px 14px rgba(0,51,102,0.06);}
+.mlq-nav-inner{max-width:1140px;margin:0 auto;display:flex;gap:4px;overflow-x:auto;padding:0 16px;scrollbar-width:none;}
+.mlq-nav-inner::-webkit-scrollbar{display:none;}
+.mlq-nav a{flex:0 0 auto;font-family:'Josefin Sans',sans-serif;font-size:11px;font-weight:600;letter-spacing:1px;text-transform:uppercase;color:var(--text-mid);text-decoration:none;padding:13px 12px;border-bottom:2.5px solid transparent;white-space:nowrap;transition:color .2s,border-color .2s;}
+.mlq-nav a:hover{color:var(--ie-deep);border-bottom-color:var(--ie);}
+.mlq-nav a.on{color:var(--ie-deep);border-bottom-color:var(--ie);}
+html{scroll-behavior:smooth;}
+[id]{scroll-margin-top:72px;}
+.tabla-diff.tabla-left th,.tabla-diff.tabla-left td{text-align:left;}
+.tabla-diff.tabla-left thead th{text-align:left;}
+.steps-list.steps-5{grid-template-columns:repeat(5,1fr);}
+@media(max-width:1000px){.steps-list.steps-5{grid-template-columns:repeat(2,1fr);}}
+@media(max-width:720px){.steps-list.steps-5{grid-template-columns:1fr;}.mlq-nav a{font-size:10px;padding:11px 9px;}}
+.opcion-body .tabla-wrap{border-radius:10px;}
+.opcion-body .tabla-diff th,.opcion-body .tabla-diff td{padding:9px 11px;font-size:11.5px;}
+.opcion-body .tabla-diff thead th{font-size:10px;letter-spacing:.3px;}
+.por-que-list li strong{color:var(--ie-deep);font-weight:600;}
+.actividades-ciudad strong{color:var(--ie-deep);}
 </style>
 </head>
 <body>
@@ -461,7 +463,7 @@ html{scroll-behavior:smooth;}
   </div>
 </div>
 
-<!-- ============ 2. HERO — PERSONALIZABLE ============ -->
+<!-- ============ 2. HERO ============ -->
 <div class="hero">
   <div class="hero-dots"></div>
   <div class="hero-inner">
@@ -469,124 +471,85 @@ html{scroll-behavior:smooth;}
     <div class="hero-name">Martina</div>
     <div class="hero-subtitle">Programa Choice · Año escolar completo · Irlanda · 1.º de Bachillerato</div>
     <div class="hero-pills">
-      <div class="hero-pill">🎓 1.º de Bachillerato · 5th Year</div>
+      <div class="hero-pill">🎓 1.º Bachillerato · 5th Year</div>
       <div class="hero-pill">🏠 Familia anfitriona</div>
       <div class="hero-pill">📐 Orientación a Arquitectura</div>
       <div class="hero-pill">🎨 Dibujo y creatividad</div>
-      <div class="hero-pill">🐴 Hípica</div>
-      <div class="hero-pill ac">🌿 Condado de Meath</div>
+      <div class="hero-pill">🐴 Equitación</div>
+      <div class="hero-pill ac">☘ Condado de Meath</div>
     </div>
-    <!-- ===== BLOQUE PROMO · DESACTIVADO POR DEFECTO =====
-         Los precios son la TARIFA REAL, sin descuento aplicado.
-         Activar SOLO si el comercial lo indica. Al activarlo hay que:
-           1. Descontar 500 € del precio de la modalidad Choice elegida
-           2. Añadir la tarifa original tachada
-           3. Actualizar data-precio del simulador
-    <div class="hero-promo">☘ Reserva antes del 30 de septiembre de 2026 y obtén <strong>500 € de descuento</strong> en los programas Choice — no acumulable con otras promociones.</div>
-    ===== FIN BLOQUE PROMO ===== -->
   </div>
 </div>
 
-<div class="nav">
-  <div class="nav-inner">
-    <a href="#s-programa">El programa</a>
-    <a href="#s-5thyear">5th Year</a>
-    <a href="#s-meath">Meath</a>
-    <a href="#s-mlq">Quiénes somos</a>
-    <a href="#s-colegios">Colegios</a>
-    <a href="#s-comparativa">Comparativa</a>
-    <a href="#s-convalidacion">Convalidación</a>
-    <a href="#s-precios">Precios</a>
-    <a href="#s-incluye">Qué incluye</a>
-    <a href="#s-pagos">Formas de pago</a>
-    <a href="#s-pasos">Siguientes pasos</a>
+<!-- ============ NAVEGACIÓN INTERNA ============ -->
+<nav class="mlq-nav" id="mlqNav">
+  <div class="mlq-nav-inner">
+    <a href="#programa">La experiencia</a>
+    <a href="#quinto">5th Year</a>
+    <a href="#meath">Meath</a>
+    <a href="#colegios">Colegios</a>
+    <a href="#comparativa">Comparativa</a>
+    <a href="#precios">Precios</a>
+    <a href="#incluye">Incluye</a>
+    <a href="#convalidacion">Convalidación</a>
+    <a href="#pagos">Pagos</a>
+    <a href="#pasos">Siguientes pasos</a>
   </div>
-</div>
+</nav>
 
 <div class="main">
 
-  <!-- ============ 3. CONTEXTO ============ -->
-  <div class="section-title" id="s-programa"><h2>Un año escolar con visión de futuro</h2></div>
+  <!-- ============ 3. UNA EXPERIENCIA CON VISIÓN DE FUTURO ============ -->
+  <div class="section-title" id="programa"><h2>Una experiencia académica con visión de futuro</h2></div>
   <p class="intro-text">
     El programa de año escolar en Irlanda permite estudiar en un <strong>colegio irlandés</strong>, convivir con una
-    familia anfitriona y desarrollar competencias académicas y personales en un entorno de habla inglesa. A diferencia
-    de Canadá, aquí <strong>sí se elige colegio</strong>: con el Programa Choice, la familia decide entre varias
-    opciones seleccionadas para el perfil de la estudiante.
-    La propuesta para <strong>Martina</strong> busca el equilibrio entre una formación exigente orientada a
-    <strong>Arquitectura</strong>, el desarrollo de sus intereses creativos y una experiencia de vida internacional.
+    familia anfitriona y desarrollar competencias académicas y personales en un entorno de habla inglesa.
+    La propuesta para Martina se centra en encontrar un equilibrio entre una <strong>formación exigente</strong>,
+    el desarrollo de sus <strong>intereses creativos</strong> y una experiencia de vida internacional.
   </p>
   <div class="intro-points">
-    <div class="intro-point"><div class="intro-point-icon">🏫</div><div><div class="intro-point-title">Tú eliges el colegio</div><div class="intro-point-desc">Preseleccionamos centros que encajan con el perfil y la familia decide entre ellos.</div></div></div>
-    <div class="intro-point"><div class="intro-point-icon">🏠</div><div><div class="intro-point-title">Familia anfitriona</div><div class="intro-point-desc">Pensión completa y habitación individual garantizada, con un único hispanohablante por familia.</div></div></div>
-    <div class="intro-point"><div class="intro-point-icon">📐</div><div><div class="intro-point-title">Preparación para Arquitectura</div><div class="intro-point-desc">Prioridad a centros con matemáticas, física, dibujo técnico, diseño, arte y materias tecnológicas.</div></div></div>
-    <div class="intro-point"><div class="intro-point-icon">✈</div><div><div class="intro-point-title">Vuelos incluidos</div><div class="intro-point-desc">2 vuelos (inicio y fin) o 4 vuelos añadiendo la ida y vuelta de Navidad.</div></div></div>
-    <div class="intro-point"><div class="intro-point-icon">🎨</div><div><div class="intro-point-title">Desarrollo creativo</div><div class="intro-point-desc">Artes visuales, dibujo, diseño, representación gráfica y proyectos prácticos.</div></div></div>
-    <div class="intro-point"><div class="intro-point-icon">🐴</div><div><div class="intro-point-title">Vida activa y deporte</div><div class="intro-point-desc">Centros con actividad deportiva y un entorno con fuerte tradición ecuestre.</div></div></div>
+    <div class="intro-point"><div class="intro-point-icon">📐</div><div><div class="intro-point-title">Preparación para Arquitectura</div><div class="intro-point-desc">Prioridad a colegios que ofrezcan matemáticas, física, dibujo técnico, diseño, arte y materias tecnológicas relacionadas con la construcción.</div></div></div>
+    <div class="intro-point"><div class="intro-point-icon">📘</div><div><div class="intro-point-title">Continuidad académica</div><div class="intro-point-desc">Selección de asignaturas de 5th Year teniendo en cuenta la futura incorporación a 2.º de Bachillerato en España y el acceso universitario.</div></div></div>
+    <div class="intro-point"><div class="intro-point-icon">🎨</div><div><div class="intro-point-title">Desarrollo creativo</div><div class="intro-point-desc">Posibilidad de trabajar artes visuales, dibujo, diseño, representación gráfica y proyectos prácticos.</div></div></div>
+    <div class="intro-point"><div class="intro-point-icon">🐴</div><div><div class="intro-point-title">Vida activa y deporte</div><div class="intro-point-desc">Interés especial por colegios con actividades deportivas, equitación, instalaciones recreativas y vida extracurricular.</div></div></div>
+    <div class="intro-point"><div class="intro-point-icon">🗣</div><div><div class="intro-point-title">Inmersión en inglés</div><div class="intro-point-desc">Convivencia cotidiana con alumnado irlandés, profesorado y familia anfitriona, con uso natural del inglés en contextos académicos y sociales.</div></div></div>
+    <div class="intro-point"><div class="intro-point-icon">🌱</div><div><div class="intro-point-title">Autonomía y crecimiento personal</div><div class="intro-point-desc">Adaptación a otro sistema educativo, participación en una comunidad local y desarrollo de independencia y responsabilidad.</div></div></div>
   </div>
 
-  <!-- ============ 3b. 5TH YEAR ============ -->
-  <div class="section-title" id="s-5thyear"><h2>Estudiar 5th Year en Irlanda</h2></div>
+  <!-- ============ 4. ESTUDIAR 5TH YEAR ============ -->
+  <div class="section-title" id="quinto"><h2>Estudiar 5th Year en Irlanda</h2></div>
   <p class="intro-text">
-    El <strong>Senior Cycle</strong> es la etapa de secundaria superior irlandesa y comprende normalmente dos cursos:
+    El <strong>Senior Cycle</strong> es la etapa de secundaria superior de Irlanda y normalmente comprende dos cursos:
     5th Year y 6th Year. <strong>5th Year es el curso que recomendamos</strong> para una alumna que desea realizar el
-    equivalente a 1.º de Bachillerato español. El alumnado cursa materias obligatorias y elige optativas, lo que permite
-    orientar la formación hacia áreas científicas, humanísticas, artísticas o tecnológicas. La organización varía según
-    el colegio y la compatibilidad de los bloques horarios.
+    equivalente a 1.º de Bachillerato español. El alumnado cursa materias obligatorias y elige asignaturas optativas,
+    que permiten orientar su formación hacia áreas científicas, humanísticas, artísticas o tecnológicas.
+    La organización varía según el colegio y la compatibilidad de los bloques horarios.
   </p>
   <div class="tabla-wrap">
-    <table class="tabla-diff">
-      <thead><tr><th class="l">Materia de interés para Arquitectura</th><th class="l">Competencias que desarrolla</th></tr></thead>
+    <table class="tabla-diff tabla-left">
+      <thead><tr><th>Materia</th><th>Competencias que desarrolla</th></tr></thead>
       <tbody>
-        <tr><th>Mathematics</th><td class="l">Álgebra, geometría, funciones y razonamiento matemático</td></tr>
-        <tr><th>Applied Mathematics</th><td class="l">Aplicaciones matemáticas a problemas físicos y mecánicos</td></tr>
-        <tr><th>Physics</th><td class="l">Fuerzas, movimiento, energía y fundamentos científicos</td></tr>
-        <tr><th>Design and Communication Graphics (DCG)</th><td class="l">Geometría, dibujo técnico y representación tridimensional</td></tr>
-        <tr><th>Technical Drawing</th><td class="l">Interpretación y representación gráfica de formas y objetos</td></tr>
-        <tr><th>Construction Studies</th><td class="l">Materiales, principios constructivos y procesos de construcción</td></tr>
-        <tr><th>Engineering</th><td class="l">Tecnología, materiales y resolución de problemas prácticos</td></tr>
-        <tr><th>Art</th><td class="l">Dibujo, composición, creatividad y expresión visual</td></tr>
-        <tr><th>Computer Science</th><td class="l">Pensamiento computacional, programación y competencias digitales</td></tr>
+        <tr><th>Mathematics</th><td>Álgebra, geometría, funciones y razonamiento matemático</td></tr>
+        <tr><th>Applied Mathematics</th><td>Aplicaciones matemáticas a problemas físicos y mecánicos</td></tr>
+        <tr><th>Physics</th><td>Fuerzas, movimiento, energía y fundamentos científicos</td></tr>
+        <tr><th>Design and Communication Graphics (DCG)</th><td>Geometría, dibujo técnico y representación tridimensional</td></tr>
+        <tr><th>Technical Drawing</th><td>Interpretación y representación gráfica de formas y objetos</td></tr>
+        <tr><th>Construction Studies</th><td>Materiales, principios constructivos y procesos de construcción</td></tr>
+        <tr><th>Engineering</th><td>Tecnología, materiales y resolución de problemas prácticos</td></tr>
+        <tr><th>Art</th><td>Dibujo, composición, creatividad y expresión visual</td></tr>
+        <tr><th>Computer Science</th><td>Pensamiento computacional, programación y competencias digitales</td></tr>
       </tbody>
     </table>
   </div>
-  <div class="nota-destacada">
-    <strong>Itinerario académico prioritario.</strong> La combinación más interesante para Martina incluiría
-    Mathematics, Physics, alguna materia de dibujo técnico o DCG y, cuando el horario lo permita, Art o
-    Construction Studies. El itinerario definitivo deberá respetar los requisitos de escolarización y convalidación,
-    así como las materias que cada colegio pueda ofrecerle efectivamente.
+  <div class="tabla-nota">
+    <strong>Itinerario académico prioritario:</strong> la combinación más interesante para Martina incluiría Mathematics,
+    Physics, alguna materia de dibujo técnico o DCG y, cuando el horario lo permita, Art o Construction Studies.
+    El itinerario definitivo deberá respetar los requisitos de escolarización y convalidación, así como las materias
+    que cada colegio pueda ofrecerle efectivamente.
   </div>
 
-  <!-- ============ 3c. CONDADO DE MEATH ============ -->
-  <div class="section-title" id="s-meath"><h2>Condado de Meath</h2></div>
-  <p class="intro-text">
-    Los cuatro colegios seleccionados se encuentran en el <strong>condado de Meath</strong>, al norte y noroeste de
-    Dublín. Meath es una región conocida por su historia, sus paisajes verdes, su <strong>tradición ecuestre</strong> y
-    sus pequeñas localidades residenciales. Ofrece una experiencia muy vinculada a la vida irlandesa, con colegios
-    integrados en sus comunidades, actividades deportivas y una convivencia cotidiana alejada del ritmo de las
-    grandes ciudades.
-  </p>
-  <div class="tabla-wrap">
-    <table class="tabla-diff">
-      <thead><tr><th class="l">Estación</th><th>Temperatura orientativa</th><th class="l">Características</th></tr></thead>
-      <tbody>
-        <tr><th>Otoño</th><td>8–15 °C</td><td class="l">Fresco, húmedo y variable</td></tr>
-        <tr><th>Invierno</th><td>2–9 °C</td><td class="l">Lluvias frecuentes y frío moderado</td></tr>
-        <tr><th>Primavera</th><td>6–15 °C</td><td class="l">Suave y con días progresivamente más largos</td></tr>
-        <tr><th>Verano</th><td>15–21 °C</td><td class="l">Templado y agradable</td></tr>
-      </tbody>
-    </table>
-  </div>
-  <div class="tabla-nota">El clima de Irlanda es considerablemente más suave que el de las regiones interiores o septentrionales de Canadá. La nieve no es habitual en el condado de Meath y el esquí no forma parte de la oferta deportiva local.</div>
-  <div class="nota-destacada">
-    <strong>Actividades fuera del colegio.</strong> La región dispone de centros ecuestres, instalaciones deportivas,
-    gimnasios y clubes de atletismo, fútbol y baloncesto. La tradición ecuestre de Meath es especialmente relevante
-    para una estudiante interesada en recuperar la práctica de la hípica. La participación en actividades externas
-    dependerá de las instalaciones próximas a la familia anfitriona, sus horarios, los costes y las posibilidades
-    de transporte.
-  </div>
-
-  <!-- ============ 4. QUIÉNES SOMOS ============ -->
-  <div class="section-title" id="s-mlq"><h2>Quiénes somos</h2></div>
+  <!-- ============ 5. QUIÉNES SOMOS ============ -->
+  <div class="section-title"><h2>Quiénes somos</h2></div>
   <div class="qs-hero">
     <div class="qs-media">
       <img src="https://aescobarnic.github.io/Propuestas/img/mlq-grupo-aeropuerto.jpg" style="object-position:center 30%;" alt="Grupo de estudiantes de My Language Quest en el aeropuerto con su coordinadora" loading="lazy">
@@ -630,44 +593,117 @@ html{scroll-behavior:smooth;}
     </div>
   </div>
 
-  <!-- ============ 5. COLEGIOS RECOMENDADOS — PERSONALIZABLE ============ -->
-  <div class="section-title" id="s-colegios"><h2>Colegios recomendados</h2></div>
+  <!-- ============ 6. CONDADO DE MEATH ============ -->
+  <div class="section-title" id="meath"><h2>Condado de Meath</h2></div>
+  <p class="intro-text">
+    Los cuatro colegios seleccionados se encuentran en el <strong>condado de Meath</strong>, al norte y noroeste de Dublín.
+    Meath es una región conocida por su historia, sus paisajes verdes, su <strong>tradición ecuestre</strong> y sus
+    pequeñas localidades residenciales. Ofrece una experiencia muy vinculada a la vida irlandesa, con colegios
+    integrados en sus comunidades, actividades deportivas y una convivencia cotidiana alejada del ritmo de las grandes ciudades.
+  </p>
+  <div class="info-blocks">
+    <div class="info-block">
+      <div class="info-block-icon">🌦</div>
+      <div class="info-block-title">Clima</div>
+      <div class="tabla-wrap" style="box-shadow:none;margin-top:4px;">
+        <table class="tabla-diff tabla-left">
+          <thead><tr><th>Estación</th><th>Temperatura</th><th>Características</th></tr></thead>
+          <tbody>
+            <tr><th>Otoño</th><td>8–15 °C</td><td>Fresco, húmedo y variable</td></tr>
+            <tr><th>Invierno</th><td>2–9 °C</td><td>Lluvias frecuentes y frío moderado</td></tr>
+            <tr><th>Primavera</th><td>6–15 °C</td><td>Suave y con días progresivamente más largos</td></tr>
+            <tr><th>Verano</th><td>15–21 °C</td><td>Templado y agradable</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="info-block-text" style="margin-top:12px;">
+        El clima de Irlanda es considerablemente más suave que el de las regiones interiores o septentrionales de Canadá.
+        <strong>La nieve no es habitual en el condado de Meath</strong> y el esquí no forma parte de la oferta deportiva local.
+      </div>
+    </div>
+    <div class="info-block">
+      <div class="info-block-icon">🐴</div>
+      <div class="info-block-title">Actividades fuera del colegio</div>
+      <div class="info-block-text">
+        La región dispone de centros ecuestres, instalaciones deportivas, gimnasios, clubes de atletismo, fútbol,
+        baloncesto y otras actividades comunitarias.
+        <br><br>
+        Meath cuenta con una <strong>tradición especialmente importante en deportes ecuestres</strong>, lo que
+        representa un atractivo para una estudiante interesada en recuperar la práctica de la hípica.
+        <br><br>
+        La participación en actividades externas dependerá de las instalaciones próximas a la familia anfitriona,
+        sus horarios, los costes y las posibilidades de transporte.
+      </div>
+    </div>
+  </div>
+
+  <!-- ============ 7. COLEGIOS RECOMENDADOS ============ -->
+  <div class="section-title" id="colegios"><h2>Colegios recomendados</h2></div>
   <div class="alert-box">
     <div class="alert-icon">☘</div>
-    <div class="alert-text"><strong>Programa Choice · precio único:</strong> el precio no varía según el colegio elegido. Hemos seleccionado cuatro centros del condado de Meath que combinan materias vinculadas a la Arquitectura —matemáticas, física, dibujo técnico, construcción y arte— con un entorno de inmersión real y una fuerte tradición ecuestre.</div>
+    <div class="alert-text"><strong>Programa Choice · precio único:</strong> el precio no varía según el colegio elegido. Hemos seleccionado cuatro centros del condado de Meath que combinan materias directamente relacionadas con Arquitectura —matemáticas, física, dibujo técnico, DCG, construcción y arte— con un entorno de inmersión real y acceso a actividades ecuestres.</div>
   </div>
   <div class="opciones-grid">
 
+    <!-- 1. ST. CIARÁN'S -->
     <div class="opcion-card recomendada">
       <div class="badge-rec">★ RECOMENDADO</div>
       <div class="opcion-header">
         <div class="colegio-zona">Condado de Meath · Pueblo tradicional</div>
         <div class="opcion-distrito">St. Ciarán's Community School</div>
         <div class="opcion-loc">📍 Kells · Condado de Meath</div>
-        <div class="colegio-chips"><span class="chip">Mixto</span><span class="chip">Público</span><span class="chip">≈590 alumnos</span><span class="chip gold">☘ Dibujo técnico · Equitación</span></div>
+        <div class="colegio-chips"><span class="chip">Mixto</span><span class="chip">Público</span><span class="chip">≈590 alumnos</span><span class="chip gold">☘ Equitación documentada</span></div>
       </div>
       <div class="opcion-body">
-        <div class="colegio-desc">St. Ciarán's se encuentra en Kells, una localidad tradicional de unos 6.000 habitantes. Ofrece una educación amplia que combina las asignaturas académicas habituales con materias científicas, técnicas y prácticas, e instalaciones de ciencias, tecnología, ingeniería y educación física. Su Senior Cycle resulta especialmente interesante para perfiles orientados a carreras técnicas, científicas o creativas.</div>
-        <div class="colegio-section-title">Oferta académica de Leaving Certificate</div>
-        <div class="actividades-ciudad"><b>Troncales:</b> English · Mathematics · Irish (salvo exenciones) · Physical Education · Religious Education.<br><b>Optativas documentadas:</b> Applied Mathematics · Physics · Chemistry · Biology · Technical Drawing · Construction Studies · Engineering · Art · Geography · History · French · German · Business · Economics · Accounting · Home Economics.</div>
-        <div class="colegio-section-title">Combinación de interés para Martina</div>
-        <div class="colegio-desc">Mathematics como troncal, junto con Physics, Technical Drawing, Construction Studies y Art: una orientación académica especialmente cercana a Arquitectura. Su viabilidad dependerá de los bloques de optativas de 5th Year.</div>
-        <div class="colegio-section-title">Extracurriculares destacados</div>
-        <div class="extra-tags"><span class="extra-tag">🐴 Equitación interescolar</span><span class="extra-tag">🏀 Baloncesto</span><span class="extra-tag">⚽ Fútbol</span><span class="extra-tag">🏉 Rugby</span><span class="extra-tag">🏃 Atletismo · Campo a través</span><span class="extra-tag">⛳ Golf</span><span class="extra-tag">🗣 Debate</span></div>
-        <div class="colegio-section-title">Kells: el entorno</div>
-        <div class="actividades-ciudad">Localidad histórica con comercios, cafeterías, zonas deportivas y servicios cotidianos, rodeada de paisaje rural y con conexión regional con otras localidades de Meath. La vida social gira en torno al colegio, la familia anfitriona, los deportes y las actividades locales.</div>
-        <div class="colegio-section-title">Por qué encaja con Martina</div>
+        <div class="colegio-desc">St. Ciarán's se encuentra en Kells, una localidad irlandesa tradicional de alrededor de 6.000 habitantes. El colegio ofrece una educación amplia que combina las asignaturas académicas habituales con materias científicas, técnicas y prácticas, y dispone de instalaciones de ciencias, tecnología, ingeniería y educación física.</div>
+
+        <div class="colegio-section-title">Oferta de Leaving Certificate</div>
+        <div class="info-block-text" style="margin-bottom:12px;">
+          <strong>Troncales:</strong> English · Mathematics · Irish (salvo exenciones) · Physical Education · Religious Education.
+        </div>
+        <div class="tabla-wrap" style="box-shadow:none;margin-bottom:14px;">
+          <table class="tabla-diff tabla-left">
+            <thead><tr><th>Ciencias y matemáticas</th><th>Diseño y tecnología</th><th>Artes y otras áreas</th></tr></thead>
+            <tbody>
+              <tr><td>Applied Mathematics</td><td>Technical Drawing</td><td>Art</td></tr>
+              <tr><td>Physics</td><td>Construction Studies</td><td>Geography</td></tr>
+              <tr><td>Chemistry</td><td>Engineering</td><td>History</td></tr>
+              <tr><td>Biology</td><td>—</td><td>French · German</td></tr>
+              <tr><td>—</td><td>—</td><td>Business · Economics · Accounting · Home Economics</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="actividades-ciudad">La oferta del colegio contempla la elección habitual de <strong>cuatro optativas</strong>, condicionada por la organización de horarios y la disponibilidad de plazas.</div>
+
+        <div class="colegio-section-title">Enfoque académico para Arquitectura</div>
         <ul class="por-que-list">
-          <li>Reúne Technical Drawing, Construction Studies, Physics y Art: la base más directa para Arquitectura</li>
-          <li>Participación ecuestre documentada, conexión con sus años de hípica</li>
-          <li>Applied Mathematics disponible para reforzar el perfil científico-técnico</li>
-          <li>Comunidad pequeña: inmersión lingüística real en el día a día</li>
+          <li><strong>Technical Drawing:</strong> geometría, representación de objetos e interpretación de dibujos técnicos</li>
+          <li><strong>Construction Studies:</strong> materiales, procesos constructivos y principios de la construcción</li>
+          <li><strong>Physics:</strong> fuerzas, energía, movimiento y bases científicas de las disciplinas técnicas</li>
+          <li><strong>Applied Mathematics:</strong> herramientas matemáticas aplicadas a mecánica y física</li>
+          <li><strong>Art:</strong> observación, creatividad, dibujo y expresión visual como complemento</li>
         </ul>
-        <div class="nota-destacada"><strong>Valoración MLQ: primera recomendación.</strong> Es el colegio que mejor reúne los objetivos académicos de Martina y su interés personal por la equitación. La existencia de actividad ecuestre no garantiza plaza ni entrenamientos regulares.</div>
+        <div class="actividades-ciudad" style="margin-top:14px;"><strong>Combinación de interés para Martina:</strong> Mathematics como troncal, junto con Physics, Technical Drawing, Construction Studies y Art. Es la orientación más cercana a Arquitectura de toda la selección; su viabilidad dependerá de los bloques de optativas de 5th Year.</div>
+
+        <div class="colegio-section-title">Extracurriculares documentados</div>
+        <div class="extra-tags"><span class="extra-tag">🐴 Equitación interescolar</span><span class="extra-tag">🏀 Baloncesto</span><span class="extra-tag">⚽ Fútbol</span><span class="extra-tag">🏉 Rugby</span><span class="extra-tag">🏃 Atletismo</span><span class="extra-tag">🌲 Campo a través</span><span class="extra-tag">⛳ Golf</span><span class="extra-tag">☘ Deportes tradicionales irlandeses</span><span class="extra-tag">🗣 Debate</span><span class="extra-tag">🤝 Participación estudiantil</span></div>
+        <div class="actividades-ciudad"><strong>Una ventaja especial:</strong> la participación ecuestre documentada del colegio supone un elemento diferenciador para Martina, que ha practicado hípica durante años. La existencia de actividades ecuestres no garantiza una plaza ni entrenamientos regulares, pero sí conecta sus intereses personales con el entorno escolar.</div>
+
+        <div class="colegio-section-title">Kells · el entorno</div>
+        <div class="colegio-desc">Localidad histórica con ambiente tradicional irlandés: comercios, cafeterías, zonas deportivas y servicios cotidianos, rodeada de paisajes rurales y con conexión regional con otras localidades de Meath. La vida social gira en torno al colegio, la familia anfitriona, los deportes y las actividades locales.</div>
+
+        <div class="colegio-section-title">Por qué lo recomendamos</div>
+        <ul class="por-que-list">
+          <li>Es el colegio que mejor reúne los objetivos académicos de Martina y su interés por la equitación</li>
+          <li>Combina materias directamente relacionadas con Arquitectura dentro de un mismo centro</li>
+          <li>Permite buscar un itinerario técnico y creativo en un colegio mixto de tamaño medio</li>
+          <li>Inmersión real en una comunidad irlandesa pequeña</li>
+        </ul>
       </div>
-      <div class="match-bar"><span class="match-tag">Dibujo técnico</span><span class="match-tag">Construcción</span><span class="match-tag">Equitación</span></div>
+      <div class="match-bar"><span class="match-tag">Valoración MLQ · 1.ª opción</span><span class="match-tag">Dibujo técnico + construcción</span><span class="match-tag">Equitación</span></div>
     </div>
 
+    <!-- 2. DUNSHAUGHLIN -->
     <div class="opcion-card">
       <div class="opcion-header">
         <div class="colegio-zona">Condado de Meath · Localidad residencial</div>
@@ -676,100 +712,179 @@ html{scroll-behavior:smooth;}
         <div class="colegio-chips"><span class="chip">Mixto</span><span class="chip">Público</span><span class="chip gold">☘ DCG · Ciencias · Informática</span></div>
       </div>
       <div class="opcion-body">
-        <div class="colegio-desc">Situado en una localidad residencial tranquila con conexión relativamente próxima a la región metropolitana de Dublín. Destaca por su diversidad de asignaturas académicas y tecnológicas y por su departamento de orientación educativa, que ayuda a elegir materias vinculadas a los intereses y los futuros estudios de cada alumno.</div>
-        <div class="colegio-section-title">Oferta académica de Leaving Certificate</div>
-        <div class="actividades-ciudad"><b>Troncales:</b> English · Mathematics · Irish (salvo exenciones).<br><b>Optativas documentadas:</b> Physics · Chemistry · Biology · Agricultural Science · Applied Mathematics · Design and Communication Graphics · Computer Science · Metalwork · Material Technologies Wood · Art · Music · History · Geography · Politics and Society · Business · Economics · Accounting · French · German · Spanish.</div>
-        <div class="colegio-section-title">Combinación de interés para Martina</div>
-        <div class="colegio-desc">Mathematics, Physics, Applied Mathematics, Design and Communication Graphics y Art. Esta combinación requeriría seleccionar las optativas compatibles disponibles en su curso.</div>
-        <div class="colegio-section-title">Extracurriculares destacados</div>
-        <div class="extra-tags"><span class="extra-tag">🏀 Baloncesto</span><span class="extra-tag">⚽ Fútbol gaélico</span><span class="extra-tag">🏃 Atletismo</span><span class="extra-tag">🎨 Actividades artísticas</span><span class="extra-tag">🎵 Música</span><span class="extra-tag">🗣 Debate</span><span class="extra-tag">🔬 Competiciones científicas</span><span class="extra-tag">🏅 Programa Gaisce</span></div>
-        <div class="colegio-section-title">Dunshaughlin: el entorno</div>
-        <div class="actividades-ciudad">Combina el ambiente de una localidad tranquila con la proximidad a centros deportivos, comerciales y educativos de la región de Dublín. Frente a pueblos más pequeños, da acceso a una mayor diversidad potencial de servicios y actividades externas. Los desplazamientos dependerán de la ubicación de la familia anfitriona.</div>
-        <div class="colegio-section-title">Por qué encaja con Martina</div>
+        <div class="colegio-desc">Situado en una localidad residencial de Meath, su ubicación permite un ambiente comunitario tranquilo manteniendo una conexión relativamente próxima con la región metropolitana de Dublín. Destaca por su diversidad de asignaturas académicas y tecnológicas y por su departamento de orientación educativa.</div>
+
+        <div class="colegio-section-title">Oferta de Leaving Certificate</div>
+        <div class="info-block-text" style="margin-bottom:12px;"><strong>Troncales:</strong> English · Mathematics · Irish (salvo exenciones).</div>
+        <div class="tabla-wrap" style="box-shadow:none;margin-bottom:14px;">
+          <table class="tabla-diff tabla-left">
+            <thead><tr><th>Área</th><th>Asignaturas</th></tr></thead>
+            <tbody>
+              <tr><th>Ciencias</th><td>Physics · Chemistry · Biology · Agricultural Science</td></tr>
+              <tr><th>Matemáticas</th><td>Applied Mathematics</td></tr>
+              <tr><th>Dibujo y diseño</th><td>Design and Communication Graphics</td></tr>
+              <tr><th>Tecnología</th><td>Computer Science · Metalwork · Material Technologies Wood</td></tr>
+              <tr><th>Artes</th><td>Art · Music</td></tr>
+              <tr><th>Humanidades</th><td>History · Geography · Politics and Society</td></tr>
+              <tr><th>Economía</th><td>Business · Economics · Accounting</td></tr>
+              <tr><th>Idiomas</th><td>French · German · Spanish</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="actividades-ciudad">El centro dispone de <strong>orientación académica</strong> para ayudar a los estudiantes a elegir materias vinculadas a sus intereses y futuros estudios.</div>
+
+        <div class="colegio-section-title">Enfoque académico para Arquitectura</div>
         <ul class="por-que-list">
-          <li>DCG: dibujo técnico, geometría, representación espacial y diseño gráfico</li>
-          <li>Applied Mathematics y Physics para consolidar la base científica</li>
-          <li>Computer Science como complemento tecnológico del perfil</li>
-          <li>Departamento de orientación que acompaña la elección de materias</li>
+          <li><strong>Design and Communication Graphics:</strong> dibujo técnico, geometría, representación espacial y diseño gráfico — una de las materias más interesantes para Martina</li>
+          <li><strong>Applied Mathematics:</strong> matemáticas aplicadas a situaciones físicas y técnicas</li>
+          <li><strong>Physics:</strong> base científica para estudios universitarios de Arquitectura e ingeniería</li>
+          <li><strong>Art:</strong> formación visual y creativa que complementa las materias técnicas</li>
+          <li><strong>Computer Science:</strong> programación y pensamiento computacional como complemento tecnológico</li>
         </ul>
-        <div class="nota-destacada"><strong>Valoración MLQ: segunda recomendación.</strong> Una alternativa muy completa si se prioriza la preparación académica, el diseño y las ciencias. El centro ha recogido la práctica de esgrima entre las actividades individuales de participantes de Gaisce, lo que no equivale a un club permanente de esgrima en el colegio.</div>
+        <div class="actividades-ciudad" style="margin-top:14px;"><strong>Combinación de interés para Martina:</strong> Mathematics, Physics, Applied Mathematics, Design and Communication Graphics y Art, seleccionando las optativas compatibles disponibles en su curso.</div>
+
+        <div class="colegio-section-title">Extracurriculares documentados</div>
+        <div class="extra-tags"><span class="extra-tag">🏀 Baloncesto y deportes de equipo</span><span class="extra-tag">☘ Fútbol gaélico y fútbol</span><span class="extra-tag">🏃 Atletismo y campo a través</span><span class="extra-tag">🎨 Actividades artísticas</span><span class="extra-tag">🎵 Música</span><span class="extra-tag">🗣 Debate</span><span class="extra-tag">🔬 Competiciones científicas</span><span class="extra-tag">💡 Emprendimiento</span><span class="extra-tag">🏅 Programa Gaisce</span></div>
+        <div class="actividades-ciudad">El centro también ha recogido la práctica de esgrima entre las actividades individuales realizadas por participantes de Gaisce. Esto <strong>no equivale</strong> a disponer de un club permanente de esgrima en el colegio.</div>
+
+        <div class="colegio-section-title">Dunshaughlin · el entorno</div>
+        <div class="colegio-desc">Combina el ambiente de una localidad tranquila con la proximidad a centros deportivos, comerciales y educativos de la región de Dublín. Frente a pueblos más pequeños, permite acceder a una mayor diversidad potencial de servicios y actividades externas. Los desplazamientos cotidianos dependerán de la ubicación de la familia anfitriona y de las conexiones de transporte disponibles.</div>
+
+        <div class="colegio-section-title">Por qué lo recomendamos</div>
+        <ul class="por-que-list">
+          <li>Opción especialmente atractiva por su orientación académica</li>
+          <li>La combinación de matemáticas aplicadas, física, DCG, arte e informática prepara muy bien para explorar Arquitectura</li>
+          <li>Alternativa completa para priorizar preparación académica, diseño y ciencias</li>
+        </ul>
       </div>
-      <div class="match-bar"><span class="match-tag">DCG</span><span class="match-tag">Ciencias</span><span class="match-tag">Cerca de Dublín</span></div>
+      <div class="match-bar"><span class="match-tag">Valoración MLQ · 2.ª opción</span><span class="match-tag">DCG + Applied Maths</span><span class="match-tag">Cerca de Dublín</span></div>
     </div>
 
+    <!-- 3. ATHBOY -->
     <div class="opcion-card">
       <div class="opcion-header">
         <div class="colegio-zona">Condado de Meath · Pueblo pequeño</div>
         <div class="opcion-distrito">Athboy Community School</div>
         <div class="opcion-loc">📍 Athboy · Condado de Meath</div>
-        <div class="colegio-chips"><span class="chip">Mixto</span><span class="chip">Público</span><span class="chip gold">☘ Construcción · Ingeniería</span></div>
+        <div class="colegio-chips"><span class="chip">Mixto</span><span class="chip">Público</span><span class="chip gold">☘ Construcción · DCG · Ingeniería</span></div>
       </div>
       <div class="opcion-body">
-        <div class="colegio-desc">Colegio de secundaria en una pequeña comunidad del condado de Meath. Su oferta combina asignaturas académicas con materias tecnológicas y formación práctica, y destaca por las áreas de construcción, diseño gráfico técnico, ingeniería y ciencias.</div>
-        <div class="colegio-section-title">Oferta académica de Senior Cycle</div>
-        <div class="actividades-ciudad"><b>Materias documentadas:</b> Mathematics · Physics · Chemistry y otras materias científicas · Design and Communication Graphics · Construction Studies · Engineering · Art · idiomas, humanidades y materias empresariales. La oferta de DCG, construcción y artes está respaldada por la información académica y docente publicada por el centro.</div>
-        <div class="colegio-section-title">Conexión directa con Arquitectura</div>
-        <div class="colegio-desc">El propio colegio ha publicado el testimonio de un antiguo alumno que continuó estudios de Arquitectura, y que identifica DCG, Construction Studies, Art, Engineering y Physics como especialmente útiles para su preparación universitaria. El aprendizaje de DCG puede incluir software de diseño tridimensional, como SolidWorks, y proyectos gráficos prácticos.</div>
-        <div class="colegio-section-title">Extracurriculares destacados</div>
-        <div class="extra-tags"><span class="extra-tag">🤸 Gimnasia</span><span class="extra-tag">🏃 Atletismo</span><span class="extra-tag">🎵 Coro</span><span class="extra-tag">🏐 Deportes de equipo</span><span class="extra-tag">🔬 Proyectos científicos</span><span class="extra-tag">🛠 Actividades tecnológicas</span></div>
-        <div class="colegio-section-title">Athboy: el entorno</div>
-        <div class="actividades-ciudad">Localidad pequeña de carácter tradicional, rodeada de campos y paisajes verdes, con un ritmo de vida tranquilo donde las actividades escolares y comunitarias tienen un papel importante. La equitación sería una posibilidad a organizar fuera del colegio, según los centros disponibles y la ubicación de la familia anfitriona.</div>
-        <div class="colegio-section-title">Por qué encaja con Martina</div>
+        <div class="colegio-desc">Colegio de secundaria situado en Athboy, una pequeña comunidad del condado de Meath. Su oferta educativa combina asignaturas académicas con materias tecnológicas y formación práctica, y destaca por las áreas de construcción, diseño gráfico técnico, ingeniería y ciencias.</div>
+
+        <div class="colegio-section-title">Oferta de Senior Cycle</div>
+        <div class="tabla-wrap" style="box-shadow:none;margin-bottom:14px;">
+          <table class="tabla-diff tabla-left">
+            <thead><tr><th>Área</th><th>Asignaturas</th></tr></thead>
+            <tbody>
+              <tr><th>Matemáticas</th><td>Mathematics</td></tr>
+              <tr><th>Ciencias</th><td>Physics · Chemistry y otras materias científicas</td></tr>
+              <tr><th>Diseño</th><td>Design and Communication Graphics</td></tr>
+              <tr><th>Construcción</th><td>Construction Studies</td></tr>
+              <tr><th>Tecnología</th><td>Engineering</td></tr>
+              <tr><th>Artes</th><td>Art</td></tr>
+              <tr><th>Otras áreas</th><td>Idiomas, humanidades y materias empresariales</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="actividades-ciudad">La oferta de DCG, construcción y artes está respaldada por la información académica y docente publicada por el centro.</div>
+
+        <div class="colegio-section-title">Enfoque académico para Arquitectura</div>
         <ul class="por-que-list">
-          <li>DCG, Construction Studies, Engineering, Physics y Art en el mismo centro</li>
-          <li>Enfoque práctico del diseño y la representación gráfica</li>
-          <li>Precedente documentado de un alumno orientado a Arquitectura</li>
-          <li>Comunidad pequeña y contacto frecuente con alumnado local</li>
+          <li><strong>Design and Communication Graphics:</strong> representación gráfica, geometría, dibujo técnico y visualización espacial; el aprendizaje puede incluir software de diseño tridimensional, como SolidWorks, y proyectos gráficos prácticos</li>
+          <li><strong>Construction Studies:</strong> materiales, métodos constructivos y soluciones técnicas</li>
+          <li><strong>Engineering:</strong> competencias prácticas sobre tecnología, materiales y resolución de problemas</li>
+          <li><strong>Physics:</strong> bases científicas para comprender fenómenos físicos y mecánicos</li>
+          <li><strong>Art:</strong> herramientas de expresión visual y desarrollo creativo</li>
         </ul>
-        <div class="nota-destacada"><strong>Valoración MLQ: tercera recomendación.</strong> Alternativa académicamente muy sólida, especialmente interesante por su orientación hacia diseño, construcción y tecnología.</div>
+        <div class="actividades-ciudad" style="margin-top:14px;"><strong>Conexión directa con Arquitectura:</strong> el propio colegio ha publicado el testimonio de un antiguo alumno que continuó estudios de Arquitectura, que identifica DCG, Construction Studies, Art, Engineering y Physics como especialmente útiles para su preparación universitaria.</div>
+
+        <div class="colegio-section-title">Extracurriculares documentados</div>
+        <div class="extra-tags"><span class="extra-tag">🤸 Gimnasia</span><span class="extra-tag">🏃 Atletismo</span><span class="extra-tag">🎵 Coro</span><span class="extra-tag">⚽ Deportes de equipo</span><span class="extra-tag">🎭 Actividades culturales</span><span class="extra-tag">🔬 Proyectos científicos</span><span class="extra-tag">⚙️ Actividades tecnológicas</span><span class="extra-tag">🤝 Desarrollo personal</span></div>
+        <div class="actividades-ciudad">Athboy cuenta además con clubes y actividades comunitarias externas. La participación en equitación sería una posibilidad a organizar <strong>fuera del colegio</strong>, en función de los centros disponibles y la ubicación de la familia anfitriona.</div>
+
+        <div class="colegio-section-title">Athboy · el entorno</div>
+        <div class="colegio-desc">Localidad pequeña de carácter tradicional, rodeada de campos y paisajes verdes. El ritmo de vida es tranquilo y las actividades escolares y comunitarias tienen un papel importante. La convivencia en una comunidad de este tamaño favorece el contacto frecuente con estudiantes locales y la participación en la vida cotidiana irlandesa.</div>
+
+        <div class="colegio-section-title">Por qué lo recomendamos</div>
+        <ul class="por-que-list">
+          <li>Combinación de dibujo técnico, construcción, ingeniería, física y arte, ideal para perfiles creativos con orientación técnica</li>
+          <li>Posibilidad de trabajar contenidos prácticos de diseño y representación gráfica</li>
+          <li>Entorno comunitario tranquilo y muy inmersivo</li>
+        </ul>
       </div>
-      <div class="match-bar"><span class="match-tag">Construcción</span><span class="match-tag">Ingeniería</span><span class="match-tag">Diseño gráfico</span></div>
+      <div class="match-bar"><span class="match-tag">Valoración MLQ · 3.ª opción</span><span class="match-tag">Enfoque práctico</span><span class="match-tag">Antiguo alumno en Arquitectura</span></div>
     </div>
 
+    <!-- 4. EUREKA -->
     <div class="opcion-card">
       <div class="opcion-header">
         <div class="colegio-zona">Condado de Meath · Pueblo tradicional</div>
         <div class="opcion-distrito">Eureka Secondary School</div>
         <div class="opcion-loc">📍 Kells · Condado de Meath</div>
-        <div class="colegio-chips"><span class="chip">Femenino</span><span class="chip">Tradición católica · CEIST</span><span class="chip gold">☘ Arte · DCG</span></div>
+        <div class="colegio-chips"><span class="chip">Femenino</span><span class="chip">Tradición católica · CEIST</span><span class="chip gold">☘ Arte · DCG · Equitación</span></div>
       </div>
       <div class="opcion-body">
-        <div class="colegio-desc">Colegio femenino situado en Kells, cuyas raíces educativas se remontan a 1924, cuando las Sisters of Mercy comenzaron a impartir educación secundaria a niñas en la localidad. Actualmente pertenece a la tradición educativa CEIST y combina una formación académica amplia con actividades artísticas, culturales, deportivas y de participación escolar.</div>
-        <div class="colegio-section-title">Oferta académica de Senior Cycle</div>
-        <div class="actividades-ciudad"><b>5th Year 2025/26:</b> Mathematics (Higher y Ordinary) · Design and Communication Graphics · History · Geography · Politics and Society · Business · Accounting · French · German · Spanish · Agricultural Science · Music.<br><b>6th Year 2024/25:</b> Physics · Chemistry · Biology · Art. Estas materias forman parte de la trayectoria del centro, aunque su disponibilidad en una combinación concreta de 5th Year debe ajustarse a la organización del curso.</div>
-        <div class="colegio-section-title">Extracurriculares destacados</div>
-        <div class="extra-tags"><span class="extra-tag">🎨 Proyectos artísticos</span><span class="extra-tag">🖋 Caligrafía artística</span><span class="extra-tag">🎵 Música</span><span class="extra-tag">🏐 Competiciones deportivas</span><span class="extra-tag">🐴 Participación ecuestre</span><span class="extra-tag">🌟 Liderazgo estudiantil</span></div>
-        <div class="colegio-section-title">Kells: el entorno</div>
-        <div class="actividades-ciudad">Comparte con St. Ciarán's las ventajas de Kells: localidad tradicional, ambiente familiar, servicios locales y entorno rural próximo. La principal diferencia es su carácter femenino, que proporciona una experiencia educativa distinta a la de los otros tres colegios.</div>
-        <div class="colegio-section-title">Por qué encaja con Martina</div>
+        <div class="colegio-desc">Colegio femenino situado en Kells. Sus raíces educativas se remontan a 1924, cuando las Sisters of Mercy comenzaron a impartir educación secundaria a niñas en la localidad; actualmente pertenece a la tradición educativa CEIST. Combina una formación académica amplia con actividades artísticas, culturales, deportivas y de participación escolar.</div>
+
+        <div class="colegio-section-title">Oferta de Senior Cycle</div>
+        <div class="tabla-wrap" style="box-shadow:none;margin-bottom:14px;">
+          <table class="tabla-diff tabla-left">
+            <thead><tr><th>Área</th><th>Asignaturas (documentación 5th Year 2025/26)</th></tr></thead>
+            <tbody>
+              <tr><th>Matemáticas</th><td>Mathematics (Higher y Ordinary)</td></tr>
+              <tr><th>Diseño técnico</th><td>Design and Communication Graphics</td></tr>
+              <tr><th>Humanidades</th><td>History · Geography · Politics and Society</td></tr>
+              <tr><th>Economía</th><td>Business · Accounting</td></tr>
+              <tr><th>Idiomas</th><td>French · German · Spanish</td></tr>
+              <tr><th>Ciencias</th><td>Agricultural Science</td></tr>
+              <tr><th>Artes</th><td>Music</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="actividades-ciudad">La documentación de 6th Year de 2024/25 también identifica <strong>Physics, Chemistry, Biology y Art</strong>. Estas materias forman parte de la trayectoria académica del centro, aunque su disponibilidad en una combinación concreta de 5th Year debe ajustarse a la organización del curso.</div>
+
+        <div class="colegio-section-title">Enfoque académico para Arquitectura</div>
         <ul class="por-que-list">
-          <li>Mathematics y DCG como eje del itinerario técnico</li>
-          <li>Tradición artística del centro, afín a su sensibilidad por el dibujo y la pintura</li>
-          <li>Participación ecuestre documentada</li>
-          <li>Opción para quien se sienta cómoda en un centro exclusivamente femenino</li>
+          <li><strong>Mathematics:</strong> base matemática sólida para la continuidad académica</li>
+          <li><strong>Design and Communication Graphics:</strong> dibujo técnico, geometría y representación espacial</li>
+          <li><strong>Art:</strong> la tradición artística del colegio complementa su sensibilidad por el dibujo y la pintura</li>
+          <li><strong>Physics:</strong> su presencia en la oferta histórica de Senior Cycle es otro elemento favorable para un perfil técnico</li>
         </ul>
-        <div class="nota-destacada"><strong>Valoración MLQ: cuarta recomendación.</strong> Amplía la selección con un entorno educativo femenino, tradición académica y actividades creativas.</div>
+
+        <div class="colegio-section-title">Creatividad y actividades escolares</div>
+        <div class="extra-tags"><span class="extra-tag">🎨 Proyectos artísticos</span><span class="extra-tag">🎵 Actividades musicales</span><span class="extra-tag">🏅 Competiciones deportivas</span><span class="extra-tag">🎭 Proyectos culturales</span><span class="extra-tag">🤝 Liderazgo estudiantil</span><span class="extra-tag">🐴 Participación ecuestre documentada</span><span class="extra-tag">✒️ Caligrafía artística</span></div>
+        <div class="actividades-ciudad">Su actividad cultural incluye trabajos estudiantiles de caligrafía y expresión artística exhibidos en instituciones culturales de Irlanda.</div>
+
+        <div class="colegio-section-title">Kells · el entorno</div>
+        <div class="colegio-desc">Comparte con St. Ciarán's las ventajas de Kells: localidad tradicional, ambiente familiar, servicios locales y entorno rural próximo. La principal diferencia es su <strong>carácter femenino</strong>, que proporciona una experiencia educativa distinta a la de los otros tres colegios seleccionados.</div>
+
+        <div class="colegio-section-title">Por qué lo recomendamos</div>
+        <ul class="por-que-list">
+          <li>Alternativa interesante para un perfil artístico y académico que se sienta cómodo en un centro exclusivamente femenino</li>
+          <li>Permite buscar un itinerario con matemáticas y dibujo técnico, junto a otras asignaturas científicas o creativas disponibles</li>
+          <li>Amplía la selección con tradición académica y actividades creativas</li>
+        </ul>
       </div>
-      <div class="match-bar"><span class="match-tag">Arte</span><span class="match-tag">DCG</span><span class="match-tag">Centro femenino</span></div>
+      <div class="match-bar"><span class="match-tag">Valoración MLQ · 4.ª opción</span><span class="match-tag">Entorno femenino</span><span class="match-tag">Arte y creatividad</span></div>
     </div>
 
   </div>
 
-  <!-- ============ 5b. COMPARATIVA DE COLEGIOS ============ -->
-  <div class="section-title" id="s-comparativa"><h2>Comparativa de los cuatro colegios</h2></div>
+  <!-- ============ 8. COMPARATIVA DE COLEGIOS ============ -->
+  <div class="section-title" id="comparativa"><h2>Comparativa de los cuatro colegios</h2></div>
   <div class="tabla-wrap">
     <table class="tabla-diff">
-      <thead><tr><th class="l">&nbsp;</th><th>St. Ciarán's</th><th>Dunshaughlin</th><th>Athboy</th><th>Eureka</th></tr></thead>
+      <thead><tr><th style="text-align:left;">&nbsp;</th><th>St. Ciarán's</th><th>Dunshaughlin</th><th>Athboy</th><th>Eureka</th></tr></thead>
       <tbody>
         <tr><th>Tipo</th><td>Mixto</td><td>Mixto</td><td>Mixto</td><td>Femenino</td></tr>
         <tr><th>Localidad</th><td>Kells</td><td>Dunshaughlin</td><td>Athboy</td><td>Kells</td></tr>
-        <tr><th>Mathematics</th><td><span class="si">✓</span></td><td><span class="si">✓</span></td><td><span class="si">✓</span></td><td><span class="si">✓</span></td></tr>
-        <tr><th>Physics</th><td><span class="si">✓</span></td><td><span class="si">✓</span></td><td><span class="si">✓</span></td><td>Documentada</td></tr>
-        <tr><th>Applied Mathematics</th><td><span class="si">✓</span></td><td><span class="si">✓</span></td><td>No confirmada</td><td>No confirmada</td></tr>
+        <tr><th>Matemáticas</th><td><span class="si">✓</span></td><td><span class="si">✓</span></td><td><span class="si">✓</span></td><td><span class="si">✓</span></td></tr>
+        <tr><th>Física</th><td><span class="si">✓</span></td><td><span class="si">✓</span></td><td><span class="si">✓</span></td><td><span class="si">✓</span><span class="sup">documentada</span></td></tr>
+        <tr><th>Matemáticas aplicadas</th><td><span class="si">✓</span></td><td><span class="si">✓</span></td><td><span class="no">✗</span><span class="sup">no confirmadas</span></td><td><span class="no">✗</span><span class="sup">no confirmadas</span></td></tr>
         <tr><th>Dibujo técnico / DCG</th><td><span class="si">✓</span></td><td><span class="si">✓</span></td><td><span class="si">✓</span></td><td><span class="si">✓</span></td></tr>
-        <tr><th>Construction Studies</th><td><span class="si">✓</span></td><td>Oferta tecnológica relacionada</td><td><span class="si">✓</span></td><td>No acreditada</td></tr>
-        <tr><th>Engineering</th><td><span class="si">✓</span></td><td>Tecnología y Metalwork</td><td><span class="si">✓</span></td><td>No acreditada</td></tr>
-        <tr><th>Art</th><td><span class="si">✓</span></td><td><span class="si">✓</span></td><td><span class="si">✓</span></td><td>Documentada</td></tr>
+        <tr><th>Construction Studies</th><td><span class="si">✓</span></td><td>Oferta tecnológica relacionada</td><td><span class="si">✓</span></td><td><span class="no">✗</span><span class="sup">no acreditada</span></td></tr>
+        <tr><th>Engineering</th><td><span class="si">✓</span></td><td>Tecnología y Metalwork</td><td><span class="si">✓</span></td><td><span class="no">✗</span><span class="sup">no acreditada</span></td></tr>
+        <tr><th>Art</th><td><span class="si">✓</span></td><td><span class="si">✓</span></td><td><span class="si">✓</span></td><td><span class="si">✓</span><span class="sup">documentada</span></td></tr>
         <tr><th>Equitación</th><td>Participación documentada</td><td>Actividad externa potencial</td><td>Actividad externa potencial</td><td>Participación documentada</td></tr>
         <tr><th>Entorno</th><td>Pueblo tradicional</td><td>Localidad residencial</td><td>Pueblo pequeño</td><td>Pueblo tradicional</td></tr>
       </tbody>
@@ -777,59 +892,37 @@ html{scroll-behavior:smooth;}
   </div>
   <div class="tabla-nota">La disponibilidad de materias y su compatibilidad se determina por los horarios, el nivel académico y las plazas de 5th Year. La comparación no supone una garantía de matrícula en todas las asignaturas mencionadas.</div>
 
-  <div class="decision-grid" style="margin-top:20px;">
-    <div class="decision-card"><div class="decision-title">St. Ciarán's · equilibrio</div><div class="decision-text">Reúne ciencias, materias técnicas, arte y participación ecuestre en un mismo centro.</div></div>
-    <div class="decision-card"><div class="decision-title">Dunshaughlin · ciencia y tecnología</div><div class="decision-text">Amplia combinación de matemáticas aplicadas, física, DCG, informática y arte.</div></div>
-    <div class="decision-card"><div class="decision-title">Athboy · diseño y construcción</div><div class="decision-text">Carácter práctico, muy vinculado a la representación gráfica y los materiales.</div></div>
+  <div class="decision-grid" style="margin-top:22px;">
+    <div class="decision-card">
+      <div class="decision-title">St. Ciarán's · equilibrio entre estudios y actividades</div>
+      <div class="decision-text">Interesante por reunir ciencias, materias técnicas, arte y participación ecuestre en un mismo centro.</div>
+    </div>
+    <div class="decision-card">
+      <div class="decision-title">Dunshaughlin · orientación científica y tecnológica</div>
+      <div class="decision-text">Ofrece una amplia combinación de matemáticas aplicadas, física, DCG, informática y arte.</div>
+    </div>
+    <div class="decision-card">
+      <div class="decision-title">Athboy · diseño, construcción e ingeniería</div>
+      <div class="decision-text">Destaca por el carácter práctico de su oferta, vinculada a la representación gráfica y los materiales.</div>
+    </div>
+    <div class="decision-card">
+      <div class="decision-title">Eureka · formación académica y creatividad</div>
+      <div class="decision-text">Incorpora una alternativa femenina, con tradición educativa, dibujo técnico y actividades artísticas.</div>
+    </div>
   </div>
 
-  <!-- ============ 5c. CONVALIDACIÓN ============ -->
-  <div class="section-title" id="s-convalidacion"><h2>Convalidación y regreso a 2.º de Bachillerato</h2></div>
+  <!-- ============ 9. MODALIDADES Y PRECIOS ============ -->
+  <div class="section-title" id="precios"><h2>Inversión del programa · modalidades</h2></div>
   <p class="intro-text">
-    Cursar 1.º de Bachillerato en Irlanda requiere una planificación académica cuidadosa cuando la estudiante tiene una
-    orientación universitaria definida. En el caso de Martina, la prioridad es mantener una buena <strong>preparación
-    matemática y científica</strong> que le permita continuar posteriormente hacia estudios de Arquitectura.
+    El <strong>Programa Choice</strong> de My Language Quest permite seleccionar el colegio de preferencia dentro de los
+    centros con los que trabajamos y solicitar la admisión correspondiente. Para Martina, esto permite elegir colegios que
+    ofrecen materias directamente relacionadas con Arquitectura, en lugar de basar la decisión exclusivamente en el destino.
   </p>
-  <div class="intro-points">
-    <div class="intro-point"><div class="intro-point-icon">📘</div><div><div class="intro-point-title">Selección del curso</div><div class="intro-point-desc">Incorporación a 5th Year, dentro del programa ordinario de Leaving Certificate. Es una elección distinta al Transition Year, cuyo enfoque es principalmente exploratorio y de desarrollo personal.</div></div></div>
-    <div class="intro-point"><div class="intro-point-icon">🧭</div><div><div class="intro-point-title">Selección de materias</div><div class="intro-point-desc">MLQ asesora sobre las materias que deben incluirse para cumplir los requisitos académicos aplicables y conservar una trayectoria coherente con su modalidad de Bachillerato en España.</div></div></div>
-    <div class="intro-point"><div class="intro-point-icon">📊</div><div><div class="intro-point-title">Seguimiento del expediente</div><div class="intro-point-desc">Durante el curso se hace seguimiento de sus resultados y de su adaptación académica. El rendimiento obtenido en Irlanda será importante para la posterior convalidación.</div></div></div>
-    <div class="intro-point"><div class="intro-point-icon">🏛</div><div><div class="intro-point-title">Reconocimiento académico</div><div class="intro-point-desc">Al finalizar el año se gestiona la documentación para solicitar la convalidación conforme a la normativa vigente. La calificación se determina mediante el procedimiento oficial aplicable.</div></div></div>
-  </div>
-  <div class="nota-destacada">
-    <strong>Preparación de 2.º de Bachillerato.</strong> Como los currículos de ambos países no son idénticos, será
-    aconsejable identificar los contenidos que deba reforzar antes de reincorporarse a su colegio español, con especial
-    atención a matemáticas, física y otras materias relevantes para su itinerario universitario. La experiencia
-    internacional aporta competencias académicas y personales de gran valor, pero no garantiza una mejora de la nota
-    media ni una equivalencia exacta de contenidos con el sistema español.
-  </div>
-
-  <!-- ============ 5d. IRLANDA O CANADÁ ============ -->
-  <div class="section-title"><h2>Irlanda o Canadá: dos experiencias diferentes</h2></div>
-  <div class="tabla-wrap">
-    <table class="tabla-diff">
-      <thead><tr><th class="l">&nbsp;</th><th>Irlanda</th><th>Canadá</th></tr></thead>
-      <tbody>
-        <tr><th>Idioma</th><td>Inglés</td><td>Inglés en los distritos seleccionados</td></tr>
-        <tr><th>Entorno</th><td>Comunidades locales, pueblos y campiña</td><td>Praderas, bosques, montaña o costa</td></tr>
-        <tr><th>Clima</th><td>Suave y húmedo</td><td>Muy variable según el distrito</td></tr>
-        <tr><th>Esquí</th><td>No es habitual en Meath</td><td>Posibilidades según la región</td></tr>
-        <tr><th>Equitación</th><td>Buena tradición regional</td><td>Disponible en determinadas zonas</td></tr>
-        <tr><th>Elección de colegio</th><td>Programa Choice</td><td>Según criterios y disponibilidad del distrito</td></tr>
-        <tr><th>Proximidad a España</th><td>Mayor</td><td>Menor</td></tr>
-        <tr class="precio-fila"><th>Presupuesto</th><td>Desde 16.950 €</td><td>Desde 20.200 €</td></tr>
-      </tbody>
-    </table>
-  </div>
-  <div class="tabla-nota">Irlanda resulta especialmente atractiva para familias que valoran una buena selección académica, la cercanía a España y un presupuesto más contenido. Canadá destaca por la experiencia de naturaleza, los paisajes y los deportes de invierno en determinadas regiones.</div>
-
-  <!-- ============ 6. MODALIDADES Y PRECIOS ============ -->
-  <div class="section-title" id="s-precios"><h2>Modalidades y precios</h2></div>
   <div class="mod-grid">
     <div class="mod-card">
       <div class="mod-head">
-        <div class="mod-nombre">Programa Choice sin vuelos</div>
-        <div class="mod-desc-head">Elección de colegio, con los vuelos a cargo de la familia</div>
+        <div class="mod-nombre">Choice sin vuelos</div>
+        <div class="mod-desc-head">Elección de colegio, vuelos a gestionar aparte</div>
         <div class="mod-precio-val">16.950 €</div>
         <div class="mod-precio-sub">Año escolar completo</div>
       </div>
@@ -838,102 +931,69 @@ html{scroll-behavior:smooth;}
           <li>Elección de colegio entre las opciones seleccionadas para el perfil</li>
           <li>Habitación individual garantizada</li>
           <li>Libros de asignaturas obligatorias y uniforme escolar incluidos</li>
-          <li>Orientación previa en Dublín, 2 días, incluida</li>
-          <li>MLQ gestiona la búsqueda de vuelos; el coste corre a cargo de la familia</li>
+          <li>Orientación previa en Dublín incluida</li>
+          <li>Vuelos no incluidos: MLQ gestiona la búsqueda, coste a cargo de la familia</li>
         </ul>
       </div>
     </div>
 
     <div class="mod-card">
       <div class="mod-head">
-        <div class="mod-nombre">Programa Choice + 2 vuelos</div>
-        <div class="mod-desc-head">Elección de colegio con los vuelos de inicio y fin de curso</div>
+        <div class="mod-nombre">Choice + 2 vuelos</div>
+        <div class="mod-desc-head">Vuelos de inicio y fin de curso incluidos</div>
         <div class="mod-precio-val">17.450 €</div>
         <div class="mod-precio-sub">Año escolar completo</div>
       </div>
       <div class="mod-body">
         <ul class="mod-list">
-          <li>Todo lo incluido en el Programa Choice</li>
-          <li>2 vuelos internacionales incluidos: inicio y fin de curso</li>
+          <li>Elección de colegio entre las opciones seleccionadas para el perfil</li>
           <li>Habitación individual garantizada</li>
-          <li>Libros, uniforme y orientación en Dublín incluidos</li>
+          <li>Libros de asignaturas obligatorias y uniforme escolar incluidos</li>
+          <li>Orientación previa en Dublín incluida</li>
+          <li>2 vuelos internacionales incluidos (ida y vuelta)</li>
         </ul>
       </div>
     </div>
 
     <div class="mod-card destacado">
-      <div class="badge-rec-mod">Propuesto</div>
+      <div class="badge-rec-mod">Destacada</div>
       <div class="mod-head">
-        <div class="mod-nombre">Programa Choice + 4 vuelos</div>
+        <div class="mod-nombre">Choice + 4 vuelos</div>
         <div class="mod-desc-head">La opción más completa, con los vuelos de Navidad incluidos</div>
         <div class="mod-precio-val">18.200 €</div>
         <div class="mod-precio-sub">Año escolar completo</div>
       </div>
       <div class="mod-body">
         <ul class="mod-list">
-          <li>Todo lo incluido en el Programa Choice</li>
-          <li>4 vuelos incluidos: inicio, ida y vuelta de Navidad, y fin de curso</li>
+          <li>Elección de colegio entre las opciones seleccionadas para el perfil</li>
           <li>Habitación individual garantizada</li>
-          <li>Libros, uniforme y orientación en Dublín incluidos</li>
-          <li>Minimiza gestiones y costes añadidos durante el curso</li>
+          <li>Libros de asignaturas obligatorias y uniforme escolar incluidos</li>
+          <li>Orientación previa en Dublín incluida</li>
+          <li>4 vuelos incluidos: inicio, ida y vuelta de Navidad y fin de curso</li>
+          <li>Especialmente interesante para incorporar los desplazamientos del curso y facilitar el regreso a España en vacaciones</li>
         </ul>
       </div>
     </div>
   </div>
-  <div class="tabla-nota">Importes de referencia MLQ utilizados para esta propuesta, sujetos a confirmación de tarifas y condiciones contractuales 2027/28. La inclusión de trayectos concretos dependerá del aeropuerto de salida y de las condiciones de los vuelos contratados.</div>
+  <div class="tabla-nota">Importes de referencia MLQ utilizados para esta propuesta. Sujetos a confirmación de las tarifas y condiciones contractuales 2027/28. La inclusión de trayectos concretos dependerá del aeropuerto de salida y de las condiciones de los vuelos contratados.</div>
 
-  <!-- ============ 7. TABLA COMPARATIVA ============ -->
-  <div class="section-title"><h2>Diferencias entre programas</h2></div>
-  <div class="tabla-wrap">
-    <table class="tabla-diff">
-      <thead><tr><th class="l">&nbsp;</th><th>Choice sin vuelos</th><th>Choice + 2 vuelos</th><th>Choice + 4 vuelos</th></tr></thead>
-      <tbody>
-        <tr class="precio-fila"><th>Precio · año completo</th><td>16.950 €</td><td>17.450 €</td><td>18.200 €</td></tr>
-        <tr><th>Elección de colegio</th><td><span class="si">✓</span></td><td><span class="si">✓</span></td><td><span class="si">✓</span></td></tr>
-        <tr><th>Habitación individual garantizada</th><td><span class="si">✓</span></td><td><span class="si">✓</span></td><td><span class="si">✓</span></td></tr>
-        <tr><th>Libros y uniforme incluidos</th><td><span class="si">✓</span></td><td><span class="si">✓</span></td><td><span class="si">✓</span></td></tr>
-        <tr><th>Tasa de Transition Year, si aplica</th><td><span class="si">✓</span></td><td><span class="si">✓</span></td><td><span class="si">✓</span></td></tr>
-        <tr><th>Orientación en Dublín · 2 días</th><td><span class="si">✓</span></td><td><span class="si">✓</span></td><td><span class="si">✓</span></td></tr>
-        <tr><th>Traslados en destino</th><td><span class="si">✓</span></td><td><span class="si">✓</span></td><td><span class="si">✓</span></td></tr>
-        <tr><th>Vuelos incluidos</th><td><span class="no">✗</span><span class="sup">a cargo de la familia</span></td><td><b>2 vuelos</b></td><td><b>4 vuelos</b></td></tr>
-      </tbody>
-    </table>
-  </div>
-  <div class="tabla-nota">Las tres modalidades son Programa Choice e incluyen desde el precio base la elección de colegio, la habitación individual, los libros y el uniforme, la tasa de Transition Year cuando aplica y la orientación en Dublín. Entre ellas solo varía el número de vuelos incluidos.</div>
-
-  <!-- ============ 8. QUÉ PROGRAMA ENCAJA ============ -->
-  <div class="section-title"><h2>¿Qué programa es para mí?</h2></div>
-  <div class="decision-grid">
-    <div class="decision-card">
-      <div class="decision-title">Prefiere gestionar sus vuelos</div>
-      <div class="decision-text">El Programa Choice sin vuelos mantiene la elección de colegio y todo el contenido del programa, dejando la compra de los billetes a la familia. MLQ gestiona la búsqueda y recomienda los trayectos.</div>
-    </div>
-    <div class="decision-card">
-      <div class="decision-title">Quiere los vuelos de inicio y fin resueltos</div>
-      <div class="decision-text">El Programa Choice + 2 vuelos cubre el viaje de ida al comenzar el curso y el de vuelta al terminarlo, sin gestiones adicionales por parte de la familia.</div>
-    </div>
-    <div class="decision-card">
-      <div class="decision-title">Busca la experiencia más completa</div>
-      <div class="decision-text">El Programa Choice + 4 vuelos añade la ida y la vuelta de Navidad. Es la modalidad que proponemos para Martina: facilita el regreso a España en vacaciones y minimiza costes añadidos durante el curso.</div>
-    </div>
-  </div>
-
-  <!-- ============ 9. EL PROGRAMA INCLUYE ============ -->
-  <div class="section-title" id="s-incluye"><h2>El programa incluye</h2></div>
+  <!-- ============ 10. EL PROGRAMA INCLUYE ============ -->
+  <div class="section-title" id="incluye"><h2>El programa incluye</h2></div>
   <div class="includes-wrap">
-    <div class="includes-head"><h3>☘ Base común de los tres programas</h3></div>
+    <div class="includes-head"><h3>☘ Base común de los programas Choice</h3></div>
     <div class="includes-body">
       <div class="includes-grid">
         <div>
           <div class="col-title">Antes del viaje</div>
           <ul class="inc-list">
             <li>Reunión inicial con padres o tutores</li>
-            <li>Entrevista personal online con el estudiante</li>
+            <li>Entrevista personal online con la estudiante</li>
             <li>Información completa sobre el programa en Irlanda</li>
-            <li>Inscripción y matriculación en colegio irlandés</li>
-            <li>Familia anfitriona en régimen de pensión completa</li>
+            <li>Inscripción y matriculación en el colegio elegido</li>
+            <li>Familia anfitriona en régimen de pensión completa<small>habitación individual garantizada</small></li>
             <li>Un único estudiante hispanohablante por familia</li>
             <li>Seguro médico privado y de responsabilidad civil</li>
+            <li>Libros de asignaturas obligatorias y uniforme escolar</li>
             <li>Masterclass de cultura irlandesa<small>10 horas online en inglés</small></li>
             <li>Orientación pre-viaje en Madrid u online</li>
             <li>Welcome pack sorpresa de My Language Quest</li>
@@ -945,7 +1005,10 @@ html{scroll-behavior:smooth;}
             <li>Recibimiento en aeropuerto y traslados en destino</li>
             <li>Asesoramiento en elección de asignaturas</li>
             <li>Clases de inglés Cambridge y libro incluido</li>
+            <li>Taller MIT · 3 sesiones</li>
+            <li>Tasa de Transition Year si aplica</li>
             <li>Coordinador local en Irlanda: visitas, tutorías y emergencias 24 h</li>
+            <li>Acompañamiento psicológico</li>
             <li>Apoyo para matriculación en extraescolares</li>
             <li>Gestión de cambio de familia si fuera necesario</li>
             <li>Atención 24 h en España para emergencias</li>
@@ -966,6 +1029,13 @@ html{scroll-behavior:smooth;}
             <li>Material escolar adicional</li>
             <li>Fotografía escolar y anuario</li>
             <li>Transporte local mensual</li>
+            <li>Teléfono móvil y datos</li>
+            <li>Ropa de abrigo para el invierno irlandés</li>
+            <li>Ocio personal</li>
+            <li>Medicamentos no cubiertos por el seguro</li>
+            <li>Dental y visión</li>
+            <li>Ordenador o tablet</li>
+            <li>Pasaporte si no está vigente</li>
             <li>Todo aquello que no esté especificado expresamente en el apartado &laquo;El programa incluye&raquo;</li>
           </ul>
         </div>
@@ -986,12 +1056,72 @@ html{scroll-behavior:smooth;}
     </div>
   </div>
 
-  <!-- ============ 10. FORMAS DE PAGO ============ -->
-  <div class="section-title" id="s-pagos"><h2>Formas de pago</h2></div>
+  <!-- ============ 11. CONVALIDACIÓN ============ -->
+  <div class="section-title" id="convalidacion"><h2>Convalidación y regreso a 2.º de Bachillerato</h2></div>
+  <p class="intro-text">
+    Cursar 1.º de Bachillerato en Irlanda requiere una planificación académica cuidadosa, especialmente cuando la
+    estudiante tiene una orientación universitaria definida. En el caso de Martina, la prioridad es mantener una buena
+    <strong>preparación matemática y científica</strong> que le permita continuar posteriormente hacia estudios de Arquitectura.
+  </p>
+  <div class="info-blocks">
+    <div class="info-block">
+      <div class="info-block-icon">📘</div>
+      <div class="info-block-title">Selección del curso</div>
+      <div class="info-block-text">Se propone la incorporación a <strong>5th Year</strong>, dentro del programa ordinario de Leaving Certificate. Esta elección es diferente a Transition Year, cuyo enfoque es principalmente exploratorio y de desarrollo personal.</div>
+    </div>
+    <div class="info-block">
+      <div class="info-block-icon">📐</div>
+      <div class="info-block-title">Selección de materias</div>
+      <div class="info-block-text">My Language Quest asesorará sobre las materias que deben incluirse para cumplir los requisitos académicos aplicables y conservar una trayectoria coherente con su modalidad de Bachillerato en España.</div>
+    </div>
+    <div class="info-block">
+      <div class="info-block-icon">📊</div>
+      <div class="info-block-title">Seguimiento del expediente</div>
+      <div class="info-block-text">Durante el curso se realizará un seguimiento de sus resultados y de su adaptación académica. El rendimiento obtenido en Irlanda será importante para la posterior convalidación.</div>
+    </div>
+    <div class="info-block">
+      <div class="info-block-icon">🏛</div>
+      <div class="info-block-title">Reconocimiento académico</div>
+      <div class="info-block-text">Al finalizar el año escolar se gestionará la documentación necesaria para solicitar la convalidación conforme a la normativa vigente. La calificación resultante se determinará mediante el procedimiento oficial aplicable y podrá influir en su expediente de Bachillerato.</div>
+    </div>
+    <div class="info-block">
+      <div class="info-block-icon">🎓</div>
+      <div class="info-block-title">Preparación de 2.º de Bachillerato</div>
+      <div class="info-block-text">Dado que los currículos de ambos países no son idénticos, será aconsejable identificar los contenidos que deba reforzar antes de reincorporarse a su colegio español, con atención especial a matemáticas, física y otras materias relevantes para su itinerario universitario.</div>
+    </div>
+    <div class="info-block">
+      <div class="info-block-icon">⚠️</div>
+      <div class="info-block-title">Con transparencia</div>
+      <div class="info-block-text"><strong>La experiencia internacional puede aportar competencias académicas y personales de gran valor, pero no garantiza una mejora de la nota media ni una equivalencia exacta de contenidos con el sistema español.</strong></div>
+    </div>
+  </div>
+
+  <!-- ============ 12. IRLANDA O CANADÁ ============ -->
+  <div class="section-title" id="irlanda-canada"><h2>Canadá o Irlanda: dos experiencias diferentes</h2></div>
+  <div class="tabla-wrap">
+    <table class="tabla-diff">
+      <thead><tr><th style="text-align:left;">Aspecto</th><th>Irlanda</th><th>Canadá</th></tr></thead>
+      <tbody>
+        <tr><th>Idioma</th><td>Inglés</td><td>Inglés en los distritos seleccionados</td></tr>
+        <tr><th>Entorno</th><td>Comunidades locales, pueblos y campiña</td><td>Praderas, bosques, montaña o costa</td></tr>
+        <tr><th>Clima</th><td>Suave y húmedo</td><td>Muy variable según el distrito</td></tr>
+        <tr><th>Esquí</th><td>No es habitual en Meath</td><td>Posibilidades según la región</td></tr>
+        <tr><th>Equitación</th><td>Buena tradición regional</td><td>Disponible en determinadas zonas</td></tr>
+        <tr><th>Elección de colegio</th><td>Programa Choice</td><td>Según criterios y disponibilidad del distrito</td></tr>
+        <tr><th>Orientación académica</th><td>Matemáticas, física, DCG, construcción y arte</td><td>Matemáticas, ciencias, diseño y tecnología</td></tr>
+        <tr><th>Proximidad a España</th><td>Mayor</td><td>Menor</td></tr>
+        <tr class="precio-fila"><th>Presupuesto</th><td>Desde 16.950 €</td><td>Desde 20.200 € según los distritos comparados</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="tabla-nota">Irlanda ofrece una alternativa especialmente atractiva para familias que valoran una buena selección académica, la cercanía a España y un presupuesto más contenido. Canadá destaca por la experiencia de naturaleza, los paisajes y las posibilidades de practicar deportes de invierno en determinadas regiones.</div>
+
+  <!-- ============ 13. FORMAS DE PAGO ============ -->
+  <div class="section-title" id="pagos"><h2>Formas de pago</h2></div>
   <div class="payment-wrap">
     <div class="payment-inner">
       <div class="pay-title">💳 Condiciones económicas</div>
-      <div class="pay-subtitle">Dos vías: pago directo o financiación. El importe de la reserva cambia según cuál elijas.</div>
+      <div class="pay-subtitle">Dos vías: pago directo o financiación. El importe de la reserva cambia según cuál elijáis.</div>
 
       <div class="pay-route">
         <div class="pay-route-head"><span class="pay-route-icon">🏦</span><span class="pay-route-title">Opción A · Pago sin financiación</span></div>
@@ -1022,7 +1152,7 @@ html{scroll-behavior:smooth;}
         <div class="pay-cols">
           <div class="pay-col">
             <div class="pay-col-title">Capital financiado</div>
-            <div class="pay-step"><div class="pay-step-title">Precio del programa − 5.000 €</div><div class="pay-step-desc">Calcula tu cuota exacta en el simulador de la sección siguiente.</div></div>
+            <div class="pay-step"><div class="pay-step-title">Precio del programa − 5.000 €</div><div class="pay-step-desc">Calcula la cuota exacta en el simulador de la sección siguiente.</div></div>
           </div>
           <div class="pay-col">
             <div class="pay-col-title">Condiciones</div>
@@ -1036,7 +1166,7 @@ html{scroll-behavior:smooth;}
     </div>
   </div>
 
-  <!-- ============ 11. FINANCIACIÓN ============ -->
+  <!-- ============ 14. FINANCIACIÓN ============ -->
   <div class="section-title"><h2>Financia tu programa</h2></div>
   <div class="financing-wrap">
     <div class="financing-head">
@@ -1093,21 +1223,22 @@ html{scroll-behavior:smooth;}
     </div>
   </div>
 
-  <!-- ============ 12. SIGUIENTES PASOS ============ -->
-  <div class="section-title" id="s-pasos"><h2>Siguientes pasos</h2></div>
+  <!-- ============ 15. SIGUIENTES PASOS ============ -->
+  <div class="section-title" id="pasos"><h2>Siguientes pasos</h2></div>
   <div class="steps-wrap">
     <div class="steps-inner">
       <div class="steps-title">¿Cómo seguimos?</div>
       <div class="steps-sub">Del sí a la salida hacia Irlanda, paso a paso</div>
-      <div class="steps-list">
-        <div class="step-item"><div class="step-num">1</div><div class="step-title">Eliges tu colegio</div><div class="step-desc">Nos confirmas el orden de preferencia entre los cuatro centros propuestos.</div></div>
-        <div class="step-item"><div class="step-num">2</div><div class="step-title">Firma y reserva</div><div class="step-desc">Firma del contrato y primer pago. Se bloquea la plaza.</div></div>
-        <div class="step-item"><div class="step-num">3</div><div class="step-title">Matrícula y asignaturas</div><div class="step-desc">Gestionamos la matrícula en 5th Year, la familia anfitriona, el uniforme y los libros, y revisamos las optativas disponibles.</div></div>
-        <div class="step-item"><div class="step-num">4</div><div class="step-title">Vuelos y orientación</div><div class="step-desc">Reservamos los vuelos y organizamos la orientación en Dublín.</div></div>
+      <div class="steps-list steps-5">
+        <div class="step-item"><div class="step-num">1</div><div class="step-title">Colegios preferidos</div><div class="step-desc">Definimos el orden definitivo de los centros según preferencias académicas, tipo de colegio y entorno.</div></div>
+        <div class="step-item"><div class="step-num">2</div><div class="step-title">Revisión del expediente</div><div class="step-desc">Estudiamos calificaciones y antecedentes académicos para preparar la solicitud de admisión a 5th Year.</div></div>
+        <div class="step-item"><div class="step-num">3</div><div class="step-title">Solicitud de plaza</div><div class="step-desc">Presentamos las preferencias escolares siguiendo el procedimiento del Programa Choice.</div></div>
+        <div class="step-item"><div class="step-num">4</div><div class="step-title">Confirmación académica</div><div class="step-desc">Revisamos las asignaturas disponibles para garantizar una selección compatible con el programa y la convalidación.</div></div>
+        <div class="step-item"><div class="step-num">5</div><div class="step-title">Preparación</div><div class="step-desc">Documentación, alojamiento, desplazamientos y orientación previa antes de la salida.</div></div>
       </div>
-      <div class="cta-line">¿Dudas con alguno de los colegios o con las asignaturas de 5th Year? Tu asesora las resuelve contigo.</div>
+      <div class="cta-line">¿Dudas con alguno de los colegios? Tu asesora las resuelve contigo.</div>
       <div class="pasos-cta-wrap">
-        <a class="pasos-cta" href="mailto:aescobar@mylanguagequest.com,gespinoza@mylanguagequest.com?subject=Confirmaci%C3%B3n%20de%20colegio%20%C2%B7%20Martina%20%C2%B7%20Irlanda%202027%2F28&amp;body=Hola%2C%0A%0AHemos%20revisado%20la%20propuesta%20de%20Irlanda%20para%20Martina%20y%20queremos%20confirmar%20la%20siguiente%20opci%C3%B3n%3A%0A%0AColegio%20elegido%3A%20%0AModalidad%20(Choice%20sin%20vuelos%2C%202%20o%204%20vuelos)%3A%20%0A%0AGracias.">☘ Confirmar mi colegio</a>
+        <a class="pasos-cta" href="mailto:aescobar@mylanguagequest.com,gespinoza@mylanguagequest.com?subject=Confirmaci%C3%B3n%20de%20colegio%20%C2%B7%20Martina%20%C2%B7%20Irlanda%202027%2F28&amp;body=Hola%2C%0A%0AHemos%20revisado%20la%20propuesta%20de%20Irlanda%20para%20Martina%20y%20queremos%20confirmar%20la%20siguiente%20opci%C3%B3n%3A%0A%0AColegio%20elegido%3A%20%0AModalidad%20(sin%20vuelos%20%2F%202%20vuelos%20%2F%204%20vuelos)%3A%20%0A%0AGracias.">☘ Confirmar mi colegio</a>
         <a class="pasos-cta pasos-cta-alt" href="https://asesoramientosmlq.zohobookings.eu/mylanguagequest" target="_blank" rel="noopener">📅 Agendar llamada con mi asesora</a>
       </div>
     </div>
@@ -1115,13 +1246,14 @@ html{scroll-behavior:smooth;}
 
 </div>
 
-<!-- ============ 13. FOOTER ============ -->
+<!-- ============ 16. FOOTER ============ -->
 <div class="footer">
   <div class="footer-logo">MY LANGUAGE QUEST</div>
   <div class="footer-tag">Explore · Learn · Grow</div>
   <div class="footer-meta">
-    Propuesta personalizada para Martina · Curso 2027/28<br>
-    Precios sujetos a disponibilidad de plaza y confirmación del centro escolar.
+    Propuesta personalizada para Martina · Irlanda 2027/28 · Programa Choice · Año escolar completo<br>
+    La asignación de colegio, familia anfitriona y asignaturas está sujeta a los procesos de admisión y a la disponibilidad.
+    Las actividades extracurriculares pueden variar de un curso a otro. Precios sujetos a disponibilidad de plaza y confirmación del centro escolar.
   </div>
 </div>
 
@@ -1313,6 +1445,20 @@ html{scroll-behavior:smooth;}
   document.addEventListener('visibilitychange', function () {
     if (document.hidden) { acumular(); }
   });
+})();
+</script>
+
+<script>
+(function(){
+  var links=[].slice.call(document.querySelectorAll('.mlq-nav a'));
+  var secciones=links.map(function(a){return document.querySelector(a.getAttribute('href'));});
+  function marcar(){
+    var y=window.scrollY+120, idx=-1;
+    secciones.forEach(function(s,i){ if(s && s.offsetTop<=y) idx=i; });
+    links.forEach(function(a,i){ a.classList.toggle('on', i===idx); });
+  }
+  window.addEventListener('scroll',marcar,{passive:true});
+  marcar();
 })();
 </script>
 </body>
