@@ -252,6 +252,22 @@ details[open] summary::before{transform:rotate(90deg);}
 .fin-det-total .fin-det-val{font-family:'Josefin Sans',sans-serif;font-size:16px;color:var(--white);}
 .fin-nota{font-size:11px;color:var(--text-light);line-height:1.6;background:var(--gray-card);border-radius:8px;padding:12px 16px;border-left:3px solid var(--blue-light);}
 
+
+/* DOCUMENTACIÓN Y RECURSOS */
+.docs-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:16px;}
+.doc-card{display:flex;flex-direction:column;background:var(--white);border:1.5px solid var(--gray-border);border-radius:14px;padding:22px 24px;text-decoration:none;transition:transform .3s cubic-bezier(.22,.61,.36,1),box-shadow .3s ease,border-color .3s ease;}
+.doc-card:hover{transform:translateY(-4px);box-shadow:0 12px 32px rgba(0,51,102,0.13);border-color:var(--blue);}
+.doc-icon{font-size:26px;line-height:1;margin-bottom:12px;}
+.doc-title{font-family:'Josefin Sans',sans-serif;font-size:15px;font-weight:700;color:var(--blue);margin-bottom:7px;}
+.doc-desc{font-size:12.5px;color:var(--text-mid);line-height:1.65;}
+.doc-body{flex:1;}
+.doc-go{margin-top:14px;font-family:'Josefin Sans',sans-serif;font-size:11px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:var(--red);}
+.doc-card.doc-cta{grid-column:span 2;background:linear-gradient(135deg,var(--blue-dark),var(--blue-mid));border-color:var(--blue-dark);}
+.doc-card.doc-cta .doc-title{color:var(--white);font-size:17px;}
+.doc-card.doc-cta .doc-desc{color:rgba(255,255,255,0.72);}
+.doc-card.doc-cta .doc-go{color:#FFE1A6;}
+@media(max-width:720px){.docs-grid{grid-template-columns:1fr;}.doc-card.doc-cta{grid-column:span 1;}}
+
 /* SIGUIENTES PASOS */
 .steps-wrap{background:linear-gradient(135deg,var(--blue-dark) 0%,var(--blue) 60%,var(--blue-mid) 100%);border-radius:16px;padding:34px 36px;position:relative;overflow:hidden;}
 .steps-wrap::before{content:'';position:absolute;inset:0;background-image:radial-gradient(rgba(255,255,255,0.05) 1px,transparent 1px);background-size:22px 22px;}
@@ -1162,7 +1178,59 @@ table.tabla tr.destacada td.num{color:var(--blue);}
     </div>
   </div>
 
-  <!-- ============ 16. SIGUIENTES PASOS ============ -->
+  <!-- ============ 16. DOCUMENTACIÓN Y RECURSOS ============ -->
+  <div class="section-title"><h2>Documentación y recursos</h2></div>
+  <p class="intro-text">Todo lo que podéis consultar ahora mismo, sin compromiso, para conocer el programa a fondo antes de decidir.</p>
+  <div class="docs-grid">
+
+    <a class="doc-card doc-cta" href="https://form.jotform.com/262652685614363" target="_blank" rel="noopener">
+      <div class="doc-icon">📝</div>
+      <div class="doc-body">
+        <div class="doc-title">Test de nivel de inglés gratuito</div>
+        <div class="doc-desc">El primer paso del proceso. Nahia puede hacerlo ahora, sin compromiso, y nos sirve para valorar su nivel de partida.</div>
+      </div>
+      <div class="doc-go">Hacer el test →</div>
+    </a>
+
+    <a class="doc-card" href="https://aescobarnic.github.io/Propuestas/seguro-medico-cigna-j1.html" target="_blank" rel="noopener">
+      <div class="doc-icon">🩺</div>
+      <div class="doc-body">
+        <div class="doc-title">Póliza del seguro médico</div>
+        <div class="doc-desc">Coberturas, límites y cómo utilizar el seguro médico y de accidentes incluido en el programa.</div>
+      </div>
+      <div class="doc-go">Ver póliza →</div>
+    </a>
+
+    <a class="doc-card" href="https://drive.google.com/file/d/1eJC9fMGKSZU6gCrvJkNgDLUbZ4eiUvB0/view?usp=drive_link" target="_blank" rel="noopener">
+      <div class="doc-icon">🧑‍🎓</div>
+      <div class="doc-body">
+        <div class="doc-title">Programa formativo · estudiantes</div>
+        <div class="doc-desc">La guía que recibe la estudiante: qué esperar del colegio, de la familia anfitriona y del día a día en Estados Unidos.</div>
+      </div>
+      <div class="doc-go">Abrir documento →</div>
+    </a>
+
+    <a class="doc-card" href="https://drive.google.com/file/d/1nuY34R2Um103RD8nR0Iv1Vsnr8SQqrs5/view?usp=drive_link" target="_blank" rel="noopener">
+      <div class="doc-icon">👪</div>
+      <div class="doc-body">
+        <div class="doc-title">Programa formativo · padres</div>
+        <div class="doc-desc">La misma información desde vuestra perspectiva: normas del programa, comunicación y cómo acompañar a Nahia desde España.</div>
+      </div>
+      <div class="doc-go">Abrir documento →</div>
+    </a>
+
+    <a class="doc-card" href="https://drive.google.com/file/d/1JTBkxeaE3VrpnU5JG04uHvfqeAPdFik2/view?usp=drive_link" target="_blank" rel="noopener">
+      <div class="doc-icon">🗣</div>
+      <div class="doc-body">
+        <div class="doc-title">Guía para la entrevista oral</div>
+        <div class="doc-desc">Cómo es la entrevista en inglés, qué se pregunta y cómo prepararla para llegar con confianza.</div>
+      </div>
+      <div class="doc-go">Abrir guía →</div>
+    </a>
+
+  </div>
+
+  <!-- ============ 17. SIGUIENTES PASOS ============ -->
   <div class="section-title"><h2>Siguientes pasos</h2></div>
   <div class="steps-wrap">
     <div class="steps-inner">
@@ -1185,7 +1253,7 @@ table.tabla tr.destacada td.num{color:var(--blue);}
 
 </div>
 
-<!-- ============ 17. FOOTER ============ -->
+<!-- ============ 18. FOOTER ============ -->
 <div class="footer">
   <div class="footer-logo">MY LANGUAGE QUEST</div>
   <div class="footer-tag">Explore · Learn · Grow</div>
