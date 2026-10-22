@@ -1,0 +1,428 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Diego Bonnín, dos caminos | My Language Quest</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,600;12..96,800&family=Newsreader:opsz,wght@6..72,400;6..72,500&display=swap" rel="stylesheet">
+<style>
+:root{
+  --paper:#F7F7F4; --surface:#FFFFFF; --ink:#0B1D3A; --muted:#55607A; --line:#D9DCE3;
+  --ca:#D52B1E; --ca-ink:#B3221A; --ca-soft:#FBE9E7;
+  --us:#0A3161; --us-ink:#0A3161; --us-red:#B31942; --us-soft:#E7ECF5;
+  --white:#FFFFFF;
+  --display:"Bricolage Grotesque","Helvetica Neue",Arial,sans-serif;
+  --body:"Newsreader",Georgia,"Times New Roman",serif;
+  color-scheme:light; box-sizing:border-box;
+  padding-top:env(safe-area-inset-top,0px); padding-bottom:env(safe-area-inset-bottom,0px);
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --paper:#0A1222; --surface:#111C31; --ink:#EEF1F6; --muted:#A5AEC2; --line:#26324A;
+    --ca-ink:#FF6B5E; --ca-soft:#2A1416; --us-ink:#8FB2EE; --us-soft:#14213B; color-scheme:dark;
+  }
+}
+:root[data-theme="dark"]{
+  --paper:#0A1222; --surface:#111C31; --ink:#EEF1F6; --muted:#A5AEC2; --line:#26324A;
+  --ca-ink:#FF6B5E; --ca-soft:#2A1416; --us-ink:#8FB2EE; --us-soft:#14213B; color-scheme:dark;
+}
+*,*::before,*::after{box-sizing:inherit}
+html{scroll-padding-top:env(safe-area-inset-top,0px)}
+body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--body);font-size:1.15rem;line-height:1.6;-webkit-font-smoothing:antialiased}
+h1,h2,h3,h4{font-family:var(--display);line-height:1.05;margin:0;letter-spacing:-0.02em}
+p{margin:0 0 1em}
+a{color:inherit}
+img{max-width:100%;display:block}
+:focus-visible{outline:3px solid var(--us-red);outline-offset:3px}
+.wrap{max-width:1180px;margin:0 auto;padding:0 clamp(20px,4vw,48px)}
+
+/* HERO */
+.hero{padding:clamp(28px,5vw,56px) 0 0}
+.brand{font-family:var(--display);font-weight:600;font-size:1rem;color:var(--muted);margin-bottom:clamp(24px,4vw,44px);display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
+.hero h1{font-weight:800;font-size:clamp(2.6rem,7.6vw,6.4rem);max-width:15ch}
+.hero .sub{font-size:clamp(1.05rem,1.6vw,1.3rem);max-width:50ch;margin-top:20px;color:var(--muted)}
+.pitch-wrap{margin-top:clamp(28px,4vw,48px)}
+.board{width:100%;height:auto;display:block;border-radius:10px}
+.board .chalk{fill:none;stroke:#fff;stroke-opacity:.75;stroke-width:3}
+.board .route{fill:none;stroke:#fff;stroke-width:9;stroke-linecap:round;stroke-dasharray:1200;stroke-dashoffset:1200;animation:draw 1.8s .3s cubic-bezier(.6,.1,.2,1) forwards}
+.board .route.b{animation-delay:.6s}
+.board text{font-family:var(--display);fill:#fff}
+.board .goal-name{font-weight:800;font-size:64px}
+.board .goal-sub{font-size:24px;opacity:.9}
+.board .kick{font-weight:600;font-size:26px}
+@keyframes draw{to{stroke-dashoffset:0}}
+@media (prefers-reduced-motion: reduce){.board .route{animation:none;stroke-dashoffset:0}}
+.legend{display:none;gap:10px;flex-wrap:wrap;margin-top:14px;font-family:var(--display);font-weight:600}
+.legend span{padding:6px 14px;border-radius:999px;color:#fff}
+@media (max-width:640px){.board .goal-name,.board .goal-sub,.board .kick{display:none}.legend{display:flex}}
+
+section{padding:clamp(56px,8vw,100px) 0}
+h2{font-size:clamp(2rem,4.4vw,3.4rem);font-weight:800;max-width:18ch;margin-bottom:28px}
+
+/* Starting point */
+.start{display:grid;grid-template-columns:1.1fr 1fr;gap:clamp(28px,5vw,72px);align-items:start}
+.start p{max-width:60ch}
+.needs{list-style:none;margin:0;padding:0;border-top:3px solid var(--ink)}
+.needs li{padding:18px 0;border-bottom:1px solid var(--line)}
+.needs b{font-family:var(--display);font-weight:600;display:block;font-size:1.2rem}
+.needs span{color:var(--muted);font-size:1.02rem}
+
+/* Path sections */
+.path{padding:0 0 clamp(56px,8vw,100px)}
+.band{color:#fff;padding:clamp(36px,6vw,72px) 0 clamp(30px,5vw,56px);position:relative;overflow:hidden}
+.band.ca{background:var(--ca)}
+.band.us{background:var(--us)}
+.band.us::after{content:"";position:absolute;inset:auto 0 0 0;height:14px;background:repeating-linear-gradient(90deg,var(--us-red) 0 40px,#fff 40px 80px);opacity:.9}
+.band .stars{position:absolute;right:clamp(16px,4vw,48px);top:clamp(20px,4vw,40px);width:clamp(120px,20vw,220px);opacity:.35}
+.band .tag{display:inline-block;font-family:var(--display);font-weight:600;font-size:.95rem;padding:5px 14px;border-radius:999px;background:#fff;margin-bottom:18px}
+.band.ca .tag{color:var(--ca)} .band.us .tag{color:var(--us)}
+.band h2{color:#fff;font-size:clamp(3rem,9vw,7.5rem);max-width:none;margin-bottom:10px;letter-spacing:-0.035em}
+.band .place{font-family:var(--display);font-size:clamp(1.1rem,2vw,1.45rem);opacity:.95;max-width:40ch}
+
+.gallery{display:grid;grid-template-columns:1.4fr 1fr;gap:clamp(12px,2vw,20px);margin-top:clamp(28px,4vw,44px)}
+.photo{margin:0;position:relative;border-radius:8px;overflow:hidden;background:var(--surface);height:clamp(240px,32vw,400px)}
+.photo img{width:100%;height:100%;object-fit:cover}
+.photo figcaption{position:absolute;left:12px;bottom:12px;font-family:var(--display);font-weight:600;font-size:.92rem;background:rgba(11,29,58,.82);color:#fff;padding:6px 12px;border-radius:999px}
+.photo .fallback{position:absolute;inset:0;display:none;align-items:flex-end;padding:24px;color:#fff;font-family:var(--display);font-weight:800;font-size:clamp(1.4rem,2.6vw,2rem);line-height:1.1}
+.photo.failed img{display:none}
+.photo.failed .fallback{display:flex}
+.photo.failed figcaption{display:none}
+.fb-ca{background:
+  linear-gradient(transparent 49.6%,rgba(255,255,255,.45) 49.6% 50.4%,transparent 50.4%),
+  radial-gradient(circle at 50% 50%,transparent 58px,rgba(255,255,255,.45) 59px 61px,transparent 62px),
+  var(--ca)}
+.fb-us{background:
+  linear-gradient(transparent 49.6%,rgba(255,255,255,.4) 49.6% 50.4%,transparent 50.4%),
+  radial-gradient(circle at 50% 50%,transparent 58px,rgba(255,255,255,.4) 59px 61px,transparent 62px),
+  var(--us)}
+.logo-panel{display:flex;align-items:center;justify-content:center;background:var(--us);padding:40px}
+.logo-panel img{width:min(320px,80%);height:auto;object-fit:contain}
+
+.path-body{display:grid;grid-template-columns:1.25fr 1fr;gap:clamp(28px,5vw,64px);margin-top:clamp(32px,5vw,56px)}
+.path-body h3{font-size:1.35rem;font-weight:800;margin:30px 0 10px}
+.path-body h3:first-child{margin-top:0}
+.fit{margin:0;padding:0;list-style:none}
+.fit li{padding-left:28px;position:relative;margin-bottom:12px}
+.fit li::before{content:"";position:absolute;left:0;top:.5em;width:14px;height:14px}
+.ca-path .fit li::before{background:var(--ca)}
+.us-path .fit li::before{background:var(--us-red);clip-path:polygon(50% 0,61% 35%,98% 35%,68% 57%,79% 91%,50% 70%,21% 91%,32% 57%,2% 35%,39% 35%)}
+.facts{background:var(--surface);border-radius:8px;padding:clamp(22px,3vw,32px);border-top:8px solid}
+.ca-path .facts{border-color:var(--ca)} .us-path .facts{border-color:var(--us)}
+.facts dl{margin:0}
+.facts dt{font-family:var(--display);font-weight:600;font-size:.98rem;color:var(--muted);margin-top:16px}
+.facts dt:first-child{margin-top:0}
+.facts dd{margin:2px 0 0;font-size:1.05rem}
+.links{margin-top:26px;display:flex;flex-direction:column;gap:10px}
+.links a{display:flex;justify-content:space-between;align-items:center;gap:12px;text-decoration:none;font-family:var(--display);font-weight:600;padding:14px 18px;border-radius:8px;border:2px solid var(--line);background:var(--surface)}
+.links a small{font-weight:400;color:var(--muted);font-size:.85rem;overflow-wrap:anywhere;text-align:right}
+.ca-path .links a:hover{border-color:var(--ca)} .us-path .links a:hover{border-color:var(--us)}
+.links-title{font-family:var(--display);font-weight:800;font-size:1.15rem;margin-top:30px}
+
+/* Comparison */
+.table-scroll{overflow-x:auto;border-top:3px solid var(--ink)}
+table{border-collapse:collapse;width:100%;min-width:640px}
+th,td{text-align:left;vertical-align:top;padding:18px 16px 18px 0;border-bottom:1px solid var(--line)}
+thead th{font-family:var(--display);font-weight:800;font-size:1.3rem;padding-top:22px}
+thead th.a{color:var(--ca-ink)} thead th.b{color:var(--us-ink)}
+tbody th{font-family:var(--display);font-weight:600;width:22%;font-size:1.02rem}
+td{font-size:1.05rem}
+
+/* Prices */
+.prices{display:grid;grid-template-columns:1fr 1fr;gap:clamp(20px,3vw,36px)}
+.price{background:var(--surface);border-radius:8px;padding:clamp(24px,3.5vw,40px);border-top:12px solid}
+.price.a{border-color:var(--ca)} .price.b{border-color:var(--us)}
+.price h3{font-size:1.5rem;font-weight:800;margin-bottom:22px}
+.amount{font-family:var(--display);font-weight:800;font-size:clamp(2.8rem,6vw,4.4rem);line-height:1;letter-spacing:-0.03em}
+.price.a .amount{color:var(--ca-ink)} .price.b .amount{color:var(--us-ink)}
+.amount-label{color:var(--muted);margin:8px 0 26px}
+.extra{border-top:1px solid var(--line);padding-top:16px;margin-top:16px}
+.extra b{font-family:var(--display);font-weight:600;display:block}
+.extra span{color:var(--muted);font-size:1rem}
+.note{margin-top:22px;font-size:1rem;padding:16px 18px;border-radius:6px;background:var(--us-soft);border-left:4px solid var(--us-red)}
+.finance{margin-top:32px;max-width:62ch;color:var(--muted)}
+
+/* Timeline */
+.steps{list-style:none;margin:0;padding:0;counter-reset:s;border-top:3px solid var(--ink)}
+.steps li{display:grid;grid-template-columns:72px 200px 1fr;gap:20px;padding:24px 0;border-bottom:1px solid var(--line);counter-increment:s}
+.steps li::before{content:counter(s);font-family:var(--display);font-weight:800;font-size:2.6rem;line-height:1;color:var(--us-red)}
+.steps .when{font-family:var(--display);font-weight:600}
+@media (max-width:760px){.steps li{grid-template-columns:52px 1fr}.steps li .what{grid-column:2}}
+
+/* Close */
+.close{background:linear-gradient(90deg,var(--ca) 0 50%,var(--us) 50% 100%);color:#fff;padding:0}
+.close .inner{background:var(--us);margin-left:0;padding:clamp(56px,8vw,100px) 0}
+.close-grid{display:grid;grid-template-columns:12px 1fr;gap:clamp(20px,4vw,44px)}
+.close-grid::before{content:"";background:linear-gradient(var(--ca) 0 50%,#fff 50% 100%);border-radius:6px}
+.close h2{color:#fff;max-width:20ch}
+.close p{max-width:56ch;opacity:.9}
+.cta{display:inline-block;margin-top:12px;font-family:var(--display);font-weight:600;font-size:1.1rem;background:var(--ca);color:#fff;text-decoration:none;padding:16px 28px;border-radius:999px}
+.sign{margin-top:40px;font-family:var(--display);opacity:.85;font-size:1rem}
+
+@media (max-width:860px){
+  .start,.prices,.path-body,.gallery{grid-template-columns:1fr}
+}
+</style>
+</head>
+<body>
+
+<header class="hero">
+  <div class="wrap">
+    <div class="brand"><span>My Language Quest</span><span>Curso 2027/2028</span></div>
+    <h1>Dos caminos para el año de Diego</h1>
+    <p class="sub">Propuesta preparada para Juan Martín Bonnín. Canadá o Estados Unidos, con el fútbol en el centro de la semana y el inglés como resultado.</p>
+
+    <div class="pitch-wrap">
+      <svg class="board" viewBox="0 0 1200 520" role="img" aria-label="Campo de fútbol dividido en dos mitades, roja para Canadá y azul para Estados Unidos, con una trayectoria desde el centro hacia cada portería: Sooke a la izquierda y Wichita a la derecha.">
+        <defs>
+          <marker id="head" viewBox="0 0 10 10" refX="6" refY="5" markerWidth="4" markerHeight="4" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#fff"/></marker>
+          <symbol id="star" viewBox="0 0 20 20"><path d="M10 0l2.4 7.2H20l-6.2 4.5 2.4 7.3L10 14.5 3.8 19l2.4-7.3L0 7.2h7.6z" fill="#fff"/></symbol>
+          <clipPath id="pitchClip"><rect x="0" y="0" width="1200" height="520" rx="10"/></clipPath>
+        </defs>
+        <g clip-path="url(#pitchClip)">
+          <rect x="0" y="0" width="600" height="520" fill="#D52B1E"/>
+          <rect x="600" y="0" width="600" height="520" fill="#0A3161"/>
+          <g opacity=".22">
+            <use href="#star" x="660" y="40" width="22" height="22"/><use href="#star" x="720" y="40" width="22" height="22"/><use href="#star" x="780" y="40" width="22" height="22"/><use href="#star" x="840" y="40" width="22" height="22"/>
+            <use href="#star" x="690" y="80" width="22" height="22"/><use href="#star" x="750" y="80" width="22" height="22"/><use href="#star" x="810" y="80" width="22" height="22"/>
+            <use href="#star" x="660" y="120" width="22" height="22"/><use href="#star" x="720" y="120" width="22" height="22"/><use href="#star" x="780" y="120" width="22" height="22"/><use href="#star" x="840" y="120" width="22" height="22"/>
+          </g>
+          <g opacity=".14">
+            <rect x="600" y="430" width="600" height="18" fill="#fff"/><rect x="600" y="466" width="600" height="18" fill="#fff"/><rect x="600" y="502" width="600" height="18" fill="#fff"/>
+          </g>
+        </g>
+        <rect class="chalk" x="20" y="20" width="1160" height="480" rx="6"/>
+        <line class="chalk" x1="600" y1="20" x2="600" y2="500"/>
+        <circle class="chalk" cx="600" cy="260" r="78"/>
+        <circle cx="600" cy="260" r="10" fill="#fff"/>
+        <rect class="chalk" x="20" y="130" width="170" height="260"/>
+        <rect class="chalk" x="20" y="195" width="62" height="130"/>
+        <rect class="chalk" x="1010" y="130" width="170" height="260"/>
+        <rect class="chalk" x="1118" y="195" width="62" height="130"/>
+        <path class="route a" d="M590,250 C470,70 260,90 120,232" marker-end="url(#head)"/>
+        <path class="route b" d="M610,270 C730,450 940,430 1080,288" marker-end="url(#head)"/>
+        <text class="kick" x="600" y="378" text-anchor="middle">Diego</text>
+        <text class="goal-name" x="230" y="436">Sooke</text>
+        <text class="goal-sub" x="232" y="474">Isla de Vancouver, Canadá</text>
+        <text class="goal-name" x="975" y="216" text-anchor="end">Wichita</text>
+        <text class="goal-sub" x="973" y="252" text-anchor="end">Kansas, Estados Unidos</text>
+      </svg>
+      <div class="legend" aria-hidden="true">
+        <span style="background:#D52B1E">Sooke, Canadá</span>
+        <span style="background:#0A3161">Wichita, Estados Unidos</span>
+      </div>
+    </div>
+  </div>
+</header>
+
+<main>
+  <section>
+    <div class="wrap start">
+      <div>
+        <h2>Lo que hemos tenido en cuenta</h2>
+        <p>Diego quiere jugar al fútbol en serio y volver con un inglés que le sirva de verdad. Es un chico que necesita un poco de tiempo para abrirse, y rinde mejor cuando tiene una rutina clara, adultos de referencia cerca y apoyo en clase cuando lo necesita.</p>
+        <p>Por eso hemos descartado colegios donde el fútbol es una actividad más de la tarde. Las dos opciones lo integran en la semana, y cada una resuelve de forma distinta dónde vive Diego y cómo se le acompaña.</p>
+      </div>
+      <ul class="needs">
+        <li><b>Fútbol dentro de la semana</b><span>Entrenamiento estructurado, con cuerpo técnico y partidos.</span></li>
+        <li><b>Amigos desde el primer mes</b><span>Un grupo natural (equipo o residencia) para no empezar solo.</span></li>
+        <li><b>Acompañamiento cercano</b><span>Seguimiento académico y personal durante todo el curso.</span></li>
+        <li><b>Inglés por inmersión real</b><span>Pocas ocasiones de refugiarse en el español.</span></li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- CANADA -->
+  <section class="path ca-path" aria-labelledby="ca-title" style="padding-top:0">
+    <div class="band ca">
+      <div class="wrap">
+        <span class="tag">Recomendado</span>
+        <h2 id="ca-title">Sooke, Canadá</h2>
+        <p class="place">Royal Bay Secondary School y su academia de fútbol. Colwood, isla de Vancouver (Columbia Británica).</p>
+      </div>
+    </div>
+    <div class="wrap">
+      <div class="gallery">
+        <figure class="photo">
+          <img src="https://www.colwood.ca/sites/default/files/rbssoutside-entrance-copy.jpg" alt="Entrada principal de Royal Bay Secondary School en Colwood" loading="lazy" onerror="this.parentNode.classList.add('failed')">
+          <div class="fallback fb-ca">Royal Bay Secondary School</div>
+          <figcaption>Royal Bay Secondary, Colwood</figcaption>
+        </figure>
+        <figure class="photo">
+          <img src="https://www.sd62.bc.ca/sites/default/files/images/programs/Boys-soccer-1024x949-600x550.jpg" alt="Alumnos de la academia de fútbol del distrito de Sooke durante un partido" loading="lazy" onerror="this.parentNode.classList.add('failed')">
+          <div class="fallback fb-ca">Academia de fútbol</div>
+          <figcaption>Academia de fútbol del distrito</figcaption>
+        </figure>
+      </div>
+
+      <div class="path-body">
+        <div>
+          <h3>El distrito</h3>
+          <p>El distrito escolar de Sooke está en la costa sur de la isla de Vancouver, a las afueras de Victoria. Fue de los primeros de Columbia Británica en abrir programa internacional y mantiene muy pocos alumnos extranjeros, así que Diego vivirá en inglés en clase, en el campo y en casa.</p>
+          <h3>Por qué Royal Bay</h3>
+          <p>Es el instituto del distrito con la academia de fútbol más completa. Abrió en 2015 frente al mar, en Colwood, y tiene un tercer gimnasio con césped artificial interior, ideal para los meses de lluvia. La academia funciona desde 2009 dentro del horario lectivo: el lunes se dedica a preparación física, prevención de lesiones y psicología deportiva, y de martes a viernes se entrena en el campo. Cuenta con fisioterapeuta deportivo, juega amistosos contra academias como Shawnigan Lake o St. John's y tiene contacto con entrenadores universitarios como los de la Universidad de Victoria.</p>
+          <h3>Dónde vive Diego</h3>
+          <p>Con una familia anfitriona elegida y supervisada por el propio distrito, que busca hogares con intereses y ritmo de vida parecidos a los del alumno. El equipo internacional sigue su evolución académica y personal durante todo el curso, y el distrito tiene servicios propios de apoyo al aprendizaje.</p>
+          <h3>Cómo encaja con Diego</h3>
+          <ul class="fit">
+            <li>El equipo de la academia le da compañeros fijos desde septiembre, con el balón como idioma común.</li>
+            <li>Abierta a jugadores comprometidos de cualquier nivel, sin prueba de acceso.</li>
+            <li>La inmersión más completa de las dos opciones.</li>
+          </ul>
+        </div>
+        <aside>
+          <div class="facts">
+            <dl>
+              <dt>Colegio</dt><dd>Instituto público, grados 9 a 12</dd>
+              <dt>Fútbol</dt><dd>Academia dentro del horario lectivo, cuatro días de campo y uno de preparación física</dd>
+              <dt>Alojamiento</dt><dd>Familia anfitriona del programa del distrito</dd>
+              <dt>Aeropuerto</dt><dd>Victoria International</dd>
+              <dt>Documentación</dt><dd>Permiso de estudios de Canadá</dd>
+            </dl>
+          </div>
+          <p class="links-title">Webs oficiales</p>
+          <div class="links">
+            <a href="https://www.sd62.bc.ca/programs/international-student-program" target="_blank" rel="noopener">Programa internacional de Sooke <small>sd62.bc.ca</small></a>
+            <a href="https://royalbay.web.sd62.bc.ca/" target="_blank" rel="noopener">Royal Bay Secondary <small>royalbay.web.sd62.bc.ca</small></a>
+            <a href="https://royalbay.wpweb.sd62.bc.ca/?p=1053" target="_blank" rel="noopener">Academia de fútbol Royal Bay <small>sd62.bc.ca</small></a>
+          </div>
+        </aside>
+      </div>
+    </div>
+  </section>
+
+  <!-- USA -->
+  <section class="path us-path" aria-labelledby="us-title" style="padding-top:0">
+    <div class="band us">
+      <svg class="stars" viewBox="0 0 220 90" aria-hidden="true"><g fill="#fff"><use href="#star" x="0" y="0" width="22" height="22"/><use href="#star" x="50" y="0" width="22" height="22"/><use href="#star" x="100" y="0" width="22" height="22"/><use href="#star" x="150" y="0" width="22" height="22"/><use href="#star" x="196" y="0" width="22" height="22"/><use href="#star" x="25" y="34" width="22" height="22"/><use href="#star" x="75" y="34" width="22" height="22"/><use href="#star" x="125" y="34" width="22" height="22"/><use href="#star" x="175" y="34" width="22" height="22"/><use href="#star" x="0" y="68" width="22" height="22"/><use href="#star" x="50" y="68" width="22" height="22"/><use href="#star" x="100" y="68" width="22" height="22"/><use href="#star" x="150" y="68" width="22" height="22"/><use href="#star" x="196" y="68" width="22" height="22"/></g></svg>
+      <div class="wrap">
+        <span class="tag">Alternativa internado</span>
+        <h2 id="us-title">Wichita, Estados Unidos</h2>
+        <p class="place">Life Prep Academy y la academia del FC Wichita. Wichita, Kansas.</p>
+      </div>
+    </div>
+    <div class="wrap">
+      <div class="gallery">
+        <figure class="photo logo-panel">
+          <img src="https://www.lifeprep.us/wp-content/uploads/2023/06/Life-Preparatory-Academy-Logo-white.png" alt="Logotipo de Life Preparatory Academy" loading="lazy" onerror="this.parentNode.classList.add('failed')">
+          <div class="fallback fb-us">Life Prep Academy</div>
+        </figure>
+        <figure class="photo">
+          <img src="" alt="Instalaciones del FC Wichita en Stryker Soccer Complex" loading="lazy" onerror="this.parentNode.classList.add('failed')">
+          <div class="fallback fb-us">FC Wichita<br>Stryker Soccer Complex</div>
+        </figure>
+      </div>
+
+      <div class="path-body">
+        <div>
+          <h3>El colegio</h3>
+          <p>Internado privado de inspiración cristiana con alumnos de más de veinte países y clases reducidas. La residencia está dentro del propio edificio del colegio, con piscina cubierta, gimnasio, biblioteca, comedor y salas comunes. Las clases van de lunes a jueves, y el viernes los alumnos pueden trabajar uno a uno con sus profesores, ponerse al día o adelantar tareas. Ya han estudiado allí alumnos españoles.</p>
+          <h3>El fútbol</h3>
+          <p>Diego entrenaría con la academia del FC Wichita, el club de referencia de la ciudad, con equipos en las ligas juveniles ECNL y NPL. Entrena en Stryker Soccer Complex, un complejo con once campos de césped artificial iluminados, estadio y campo cubierto. La plaza y las condiciones dependen de la valoración de su nivel, que organizaremos con el director deportivo.</p>
+          <h3>Dónde vive Diego</h3>
+          <p>En la residencia, con otros alumnos internacionales y con los responsables de residencia, que les recogen en el aeropuerto y les acompañan en el día a día. Sin tener que adaptarse a una casa nueva, y con una rutina muy pautada desde la primera semana.</p>
+          <h3>Cómo encaja con Diego</h3>
+          <ul class="fit">
+            <li>Convive con chicos en su misma situación, lo que facilita mucho los primeros meses.</li>
+            <li>El viernes de tutorías individuales le da un apoyo académico extra cada semana.</li>
+            <li>Visado de estudiante F1 con el respaldo del colegio, que emite el formulario I20.</li>
+          </ul>
+        </div>
+        <aside>
+          <div class="facts">
+            <dl>
+              <dt>Colegio</dt><dd>Internado privado, preparatorio universitario</dd>
+              <dt>Fútbol</dt><dd>Academia del FC Wichita (ECNL y NPL)</dd>
+              <dt>Alojamiento</dt><dd>Residencia dentro del colegio</dd>
+              <dt>Semana lectiva</dt><dd>Lunes a jueves, viernes de tutorías</dd>
+              <dt>Documentación</dt><dd>Visado F1 con formulario I20</dd>
+            </dl>
+          </div>
+          <p class="links-title">Webs oficiales</p>
+          <div class="links">
+            <a href="https://www.lifeprep.us/" target="_blank" rel="noopener">Life Prep Academy <small>lifeprep.us</small></a>
+            <a href="https://www.lifeprep.us/student-life/" target="_blank" rel="noopener">Vida en la residencia <small>lifeprep.us</small></a>
+            <a href="https://fcwichita.com/" target="_blank" rel="noopener">FC Wichita <small>fcwichita.com</small></a>
+          </div>
+        </aside>
+      </div>
+    </div>
+  </section>
+
+  <section style="padding-top:0">
+    <div class="wrap">
+      <h2>Cara a cara</h2>
+      <div class="table-scroll">
+        <table>
+          <thead><tr><td></td><th scope="col" class="a">Sooke</th><th scope="col" class="b">Wichita</th></tr></thead>
+          <tbody>
+            <tr><th scope="row">Colegio</th><td>Instituto público (Royal Bay)</td><td>Internado privado (Life Prep)</td></tr>
+            <tr><th scope="row">Alojamiento</th><td>Familia anfitriona supervisada por el distrito</td><td>Residencia en el colegio</td></tr>
+            <tr><th scope="row">Fútbol</th><td>Academia del instituto, dentro del horario lectivo</td><td>Academia del FC Wichita</td></tr>
+            <tr><th scope="row">Acceso al fútbol</th><td>Abierto a todos los niveles</td><td>Sujeto a valoración del nivel</td></tr>
+            <tr><th scope="row">Inglés</th><td>Inmersión total, muy pocos alumnos internacionales</td><td>Entorno internacional con el inglés como lengua común</td></tr>
+            <tr><th scope="row">Entorno</th><td>Costa del Pacífico, junto a Victoria</td><td>Ciudad del Medio Oeste, campus propio</td></tr>
+            <tr><th scope="row">Documentación</th><td>Permiso de estudios de Canadá</td><td>Visado F1 con formulario I20</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <section style="padding-top:0">
+    <div class="wrap">
+      <h2>Inversión del curso</h2>
+      <div class="prices">
+        <div class="price a">
+          <h3>Sooke, Royal Bay</h3>
+          <div class="amount">27.500 €</div>
+          <p class="amount-label">Programa completo del distrito: matrícula, familia anfitriona y seguimiento del programa internacional.</p>
+          <div class="extra"><b>Academia de fútbol Royal Bay: 1.535 CAD</b><span>Tarifa oficial 2026/27. El distrito publica la del 2027/28 en primavera.</span></div>
+        </div>
+        <div class="price b">
+          <h3>Life Prep + FC Wichita</h3>
+          <div class="amount">22.000 €</div>
+          <p class="amount-label">Matrícula del colegio (tuition).</p>
+          <div class="extra"><b>Academia FC Wichita: alrededor de 5.000 USD</b><span>Referencia del curso pasado. Estamos confirmando la cuota 2027/28 con el director deportivo.</span></div>
+          <p class="note">El importe del colegio incluye una beca deportiva que depende del nivel de fútbol de Diego. La valoración con el club es el primer paso antes de cerrar esta opción.</p>
+        </div>
+      </div>
+      <p class="finance">Las dos opciones se pueden financiar con Banco Sabadell, desde 12 meses sin intereses hasta 36 meses.</p>
+    </div>
+  </section>
+
+  <section style="padding-top:0">
+    <div class="wrap">
+      <h2>El calendario</h2>
+      <ol class="steps">
+        <li><span class="when">Noviembre</span><span class="what">Diego elige camino con vosotros. Si es Wichita, organizamos la valoración de su nivel con el club (vídeo de partido o prueba).</span></li>
+        <li><span class="when">Diciembre a febrero</span><span class="what">Reserva de plaza y matrícula, con la autorización firmada de ambos progenitores. Empezamos el calendario de vacunas que pide el colegio, porque algunas pautas necesitan seis meses.</span></li>
+        <li><span class="when">Marzo a mayo</span><span class="what">Carta de aceptación o formulario I20, y solicitud del permiso de estudios canadiense o del visado F1.</span></li>
+        <li><span class="when">Junio y julio</span><span class="what">Preparación del viaje y sesión de orientación con MLQ para Diego y la familia.</span></li>
+        <li><span class="when">Finales de agosto</span><span class="what">Llegada, bienvenida del colegio y primer entrenamiento.</span></li>
+      </ol>
+    </div>
+  </section>
+
+  <section class="close">
+    <div class="inner">
+      <div class="wrap close-grid">
+        <div>
+          <h2>Hablamos el lunes 26 a las 13:00</h2>
+          <p>Lo más importante ahora es lo que piense Diego. Cuéntanos qué camino le ilusiona más y qué dudas le surgen, y ajustamos la propuesta con él.</p>
+          <a class="cta" href="mailto:aescobar@mylanguagequest.com?subject=Propuesta%20Diego%20Bonn%C3%ADn">Escribir a Armando</a>
+          <p class="sign">Armando Escobar, My Language Quest</p>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+<script>
+document.querySelectorAll('.photo img').forEach(function(img){
+  if(!img.getAttribute('src')){img.parentNode.classList.add('failed');}
+  else if(img.complete && img.naturalWidth===0){img.parentNode.classList.add('failed');}
+});
+</script>
+</body>
+</html>
