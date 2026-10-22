@@ -162,6 +162,7 @@ details[open] summary::before{transform:rotate(90deg);}
 .includes-head{background:linear-gradient(135deg,var(--red-deep),var(--red));padding:20px 32px;}
 .includes-head h3{font-family:'Josefin Sans',sans-serif;font-size:14px;font-weight:700;color:var(--white);letter-spacing:1px;}
 .includes-body{padding:28px 32px;}
+.no-grid{display:grid;grid-template-columns:1fr 1fr;gap:0 32px;}
 .includes-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:32px;}
 .col-title{font-family:'Josefin Sans',sans-serif;font-size:9px;font-weight:700;letter-spacing:2.5px;text-transform:uppercase;color:var(--red);margin-bottom:14px;padding-bottom:8px;border-bottom:2px solid var(--red-light);}
 .inc-list{list-style:none;display:flex;flex-direction:column;gap:8px;}
@@ -288,7 +289,7 @@ details[open] summary::before{transform:rotate(90deg);}
 @media(max-width:720px){
   .header{padding:16px 20px;}.hero{padding:28px 20px 24px;}.hero-name{font-size:28px;}
   .main{padding:28px 16px 20px;}
-  .includes-grid{grid-template-columns:1fr;}.opciones-grid{grid-template-columns:1fr;}
+  .includes-grid{grid-template-columns:1fr;}.no-grid{grid-template-columns:1fr;}.opciones-grid{grid-template-columns:1fr;}
   .intro-points{grid-template-columns:1fr;}.info-blocks{grid-template-columns:1fr;}
   .pay-cols{grid-template-columns:1fr;}.gestor-grid{grid-template-columns:repeat(2,1fr);}
   .steps-list{grid-template-columns:1fr;}
@@ -395,6 +396,7 @@ details[open] summary::before{transform:rotate(90deg);}
 /* --- Qué destaca --- */
 .destaca-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;align-items:stretch;}
 .destaca-item.w2{grid-column:span 2;}
+.destaca-item.w4{grid-column:span 4;}
 .destaca-desc strong{color:var(--blue);font-weight:700;}
 .destaca-desc em{color:var(--green-dark);font-style:normal;font-weight:600;display:block;margin-top:8px;font-size:11.5px;}
 .destaca-sub{font-family:'Josefin Sans',sans-serif;font-size:9px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--red);margin:16px 0 10px;padding-bottom:7px;border-bottom:2px solid var(--red-light);}
@@ -444,6 +446,7 @@ details[open] summary::before{transform:rotate(90deg);}
   .ny-cols{grid-template-columns:1fr;}
   .destaca-grid{grid-template-columns:repeat(2,1fr);}
   .destaca-item.w2{grid-column:span 2;}
+  .destaca-item.w4{grid-column:span 2;}
   .garantia-opts{grid-template-columns:1fr;}
   .links-grid{grid-template-columns:1fr;}
 }
@@ -452,6 +455,7 @@ details[open] summary::before{transform:rotate(90deg);}
   .ny-title{font-size:25px;}
   .destaca-grid{grid-template-columns:1fr;}
   .destaca-item.w2{grid-column:span 1;}
+  .destaca-item.w4{grid-column:span 1;}
   .precio-hero{grid-template-columns:1fr;gap:14px;}
   .precio-hero-num{font-size:36px;}
 }
@@ -849,22 +853,38 @@ table.tabla tr.destacada td.num{color:var(--blue);}
       </div>
     </div>
 
-    <div class="destaca-item">
+    <div class="destaca-item w2">
       <div class="destaca-icon">📘</div>
-      <div class="destaca-title">Clases Cambridge</div>
+      <div class="destaca-title">Preparación Cambridge · mejora tu inglés mientras estudias</div>
       <div class="destaca-desc">
-        30 horas online, en directo y con profesor, antes de salir. No es un curso genérico de inglés:
-        se trabaja el inglés real de un aula americana, el vocabulario de las asignaturas y la soltura
-        para hablar sin pensar la frase antes.
-        <strong>Por qué lo valoramos:</strong> las primeras semanas son las que marcan el semestre.
-        Si Nahia llega entendiendo al profesor y pudiendo contestar en clase, deja de «sobrevivir»
-        y empieza a aprender desde el primer día. Además ayuda a subir la nota del ELTiS,
-        que condiciona la admisión.
-        <em>Incluidas en el J1 Completo; contratables con el Basic.</em>
+        <strong>En qué consiste:</strong> 30 horas de clases de inglés Cambridge online, en directo y con
+        profesor, antes de salir o durante el semestre. Según el nivel de partida de Nahia y sus necesidades,
+        las clases pueden ser <strong>individuales</strong>, con enfoque 100 % personalizado en sus áreas de
+        mejora, o <strong>grupales</strong>, con otros estudiantes internacionales de nivel similar en grupos
+        de cuatro a seis alumnos.
+        <strong>Por qué la incluimos:</strong> nuestro objetivo no es solo que apruebe el curso americano,
+        sino que domine el inglés de forma real, práctica y certificable. Las primeras semanas son las que
+        marcan el semestre: si Nahia llega entendiendo al profesor y pudiendo contestar en clase, deja de
+        «sobrevivir» y empieza a aprender desde el primer día. Además, la preparación ayuda a subir la nota
+        del ELTiS, que condiciona la admisión, y suma valor diferencial a su currículum académico y profesional.
+      </div>
+      <div class="destaca-sub">Qué se trabaja</div>
+      <div class="destaca-chips">
+        <span>Speaking</span>
+        <span>Listening</span>
+        <span>Reading</span>
+        <span>Writing</span>
+        <span>Gramática y estructuras avanzadas</span>
+        <span>Vocabulario de las asignaturas</span>
+        <span>Confianza al hablar en contextos reales</span>
+      </div>
+      <div class="destaca-desc" style="margin-top:12px;">
+        <em>Incluida en el J1 Completo; contratable con el Basic. La inscripción y las tasas del examen oficial
+        Cambridge no están incluidas, ya que presentarse es opcional y voluntario.</em>
       </div>
     </div>
 
-    <div class="destaca-item">
+    <div class="destaca-item w2">
       <div class="destaca-icon">💬</div>
       <div class="destaca-title">Apoyo emocional y psicológico</div>
       <div class="destaca-desc">
@@ -894,17 +914,18 @@ table.tabla tr.destacada td.num{color:var(--blue);}
       </div>
     </div>
 
-    <div class="destaca-item w2">
+    <div class="destaca-item w4">
       <div class="destaca-icon">🛡</div>
       <div class="destaca-title">Plaza garantizada</div>
       <div class="destaca-desc">
         La asignación la realiza el sponsor americano y suele comenzar en mayo, pudiendo prolongarse
         hasta el 31 de agosto. La espera puede hacerse larga, pero el resultado no está en duda:
         <strong>My Language Quest garantiza la plaza de Nahia.</strong> La vía habitual es el colegio
-        público y es la que se aplica en la práctica totalidad de los casos; si en el momento de la
-        asignación no quedara hueco, se ubica en un centro privado, incluso en régimen de boarding,
-        y MLQ asume la diferencia de matriculación. El precio firmado por la familia no varía en
-        ningún caso.
+        público con familia anfitriona voluntaria, y es la que se aplica en la práctica totalidad de
+        los casos. Si finalmente Nahia no fuera elegida por una familia anfitriona, o no hubiera plaza
+        disponible en un colegio cercano aunque sí tuviera familia, se la ubica en otro colegio, público
+        o privado, incluso en régimen de boarding, y <strong>MLQ asume la diferencia de
+        matriculación</strong>. El precio firmado por la familia no varía en ningún caso.
       </div>
       <div class="destaca-sub">Las tres vías posibles</div>
       <div class="destaca-chips">
@@ -913,63 +934,15 @@ table.tabla tr.destacada td.num{color:var(--blue);}
         <span>Privado con boarding · última alternativa</span>
       </div>
     </div>
-    <div class="destaca-item"><div class="destaca-icon">📜</div><div class="destaca-title">Legalización de notas en EE.UU.</div><div class="destaca-desc">Recogida de transcripts, notarización, Apostilla de La Haya y traducción jurada.</div></div>
-    <div class="destaca-item"><div class="destaca-icon">📞</div><div class="destaca-title">Atención 24 h, aquí y allí</div><div class="destaca-desc">Coordinador local en Estados Unidos, que vive cerca del destino de Nahia y la visita durante el programa, y teléfono de emergencias en España con horario español.</div></div>
-    <div class="destaca-item w2"><div class="destaca-icon">✈️</div><div class="destaca-title">Agencia de viajes propia</div><div class="destaca-desc">MLQ Travel S.L. busca y reserva los vuelos de Nahia, coordinados con las fechas del programa y con el aeropuerto que le corresponda según su familia anfitriona.</div></div>
 
   </div>
 
-  <!-- ============ 10. EL PROGRAMA INCLUYE ============ -->
-  <div class="section-title"><h2>El programa incluye</h2></div>
+  <!-- ============ 10. NO INCLUIDO ============ -->
+  <div class="section-title"><h2>Qué no incluye el programa</h2></div>
   <div class="includes-wrap">
-    <div class="includes-head"><h3>📋 Todo lo que cubre My Language Quest · Semestre J1</h3></div>
+    <div class="includes-head"><h3>📋 Conceptos que quedan fuera de ambas modalidades</h3></div>
     <div class="includes-body">
-      <div class="includes-grid">
-        <div>
-          <div class="col-title">Antes del viaje</div>
-          <ul class="inc-list">
-            <li>Reunión inicial con padres o tutores</li>
-            <li>Prueba de nivel de inglés y entrevista personal</li>
-            <li>Examen ELTiS<small>Solo J1 Completo</small></li>
-            <li>Información completa sobre el programa J1</li>
-            <li>Gestión de inscripción, documentación y coordinación con el sponsor</li>
-            <li>Matriculación en el centro que asigne el sponsor</li>
-            <li>Selección de familia anfitriona voluntaria en pensión completa</li>
-            <li>Seguro médico y de accidentes</li>
-            <li>Asesoramiento y tramitación del visado J1<small>Tasas oficiales incluidas solo en el J1 Completo</small></li>
-            <li>Orientación online obligatoria previa al viaje</li>
-            <li>Jornada de orientación presencial en Madrid<small>Solo J1 Completo</small></li>
-            <li>Clases Cambridge de 30 horas<small>Solo J1 Completo</small></li>
-            <li>Welcome Pack de My Language Quest<small>Solo J1 Completo</small></li>
-          </ul>
-        </div>
-        <div>
-          <div class="col-title">Durante el viaje</div>
-          <ul class="inc-list">
-            <li>Recogida y traslados en destino al inicio y al final del programa</li>
-            <li>Escolarización durante un semestre en un High School estadounidense</li>
-            <li>Asesoramiento en la elección de asignaturas</li>
-            <li>Libros de las asignaturas troncales</li>
-            <li>Transporte escolar</li>
-            <li>Coordinador local en Estados Unidos</li>
-            <li>Supervisión y seguimiento académico</li>
-            <li>Informes periódicos a la familia</li>
-            <li>Mediación y resolución de incidencias escolares o con la familia anfitriona</li>
-            <li>Acompañamiento psicológico especializado<small>Tres sesiones. Solo J1 Completo</small></li>
-            <li>Teléfono de emergencias 24 h en España</li>
-            <li>Coordinación individualizada de los desplazamientos</li>
-          </ul>
-        </div>
-        <div>
-          <div class="col-title">Después del viaje</div>
-          <ul class="inc-list">
-            <li>Solicitud y entrega de las calificaciones emitidas por el colegio</li>
-            <li>Gestión de las notas para su legalización<small>Solo J1 Completo</small></li>
-            <li>Notarización y Apostilla de La Haya<small>Solo J1 Completo</small></li>
-            <li>Traducción jurada de las calificaciones<small>Solo J1 Completo</small></li>
-          </ul>
-          <div class="col-title" style="margin-top:24px;">No incluido</div>
-          <ul class="inc-list no">
+      <ul class="inc-list no no-grid">
             <li>Vuelos internacionales y domésticos<small>MLQ Travel gestiona la búsqueda, coste a cargo de la familia</small></li>
             <li>Actividades extracurriculares de pago</li>
             <li>Excursiones y viajes escolares</li>
@@ -981,10 +954,9 @@ table.tabla tr.destacada td.num{color:var(--blue);}
             <li>Medicamentos no cubiertos, dental y visión</li>
             <li>Ordenador o tablet</li>
             <li>Pasaporte si no está vigente</li>
-            <li>Todo aquello que no esté especificado expresamente en el apartado &laquo;El programa incluye&raquo;</li>
-          </ul>
-        </div>
-      </div>
+            <li>Inscripción y tasas del examen oficial Cambridge<small>Opcional y voluntario</small></li>
+            <li>Todo aquello que no esté especificado expresamente en el listado de la modalidad contratada</li>
+      </ul>
     </div>
   </div>
 
