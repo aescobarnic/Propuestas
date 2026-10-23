@@ -354,7 +354,7 @@ details[open] summary::before{transform:rotate(90deg);}
 }
 
 
-:root{--acc:var(--red);--acc-deep:var(--red-deep);--acc-light:var(--red-light);--acc-soft:rgba(177,41,0,0.22);}
+:root{--acc:var(--red);--acc-deep:var(--red-deep);--acc-light:var(--red-light);--acc-soft:rgba(177,41,0,0.22);--prov-mark:"🍁";}
 
 /* ================= GUÍA DEL PROGRAMA · componentes añadidos ================= */
 .hero-lead{font-size:14px;color:rgba(255,255,255,0.82);max-width:660px;line-height:1.7;margin-top:10px;font-weight:300;}
@@ -468,8 +468,9 @@ details[open] summary::before{transform:rotate(90deg);}
 }
 .info-block ul li{display:block;position:relative;padding-left:18px;}
 .info-block ul li::before{position:absolute;left:0;top:0;}
-.inc-list li{flex-wrap:wrap;}
-.inc-list li small{flex-basis:100%;padding-left:19px;margin-top:0;}
+.inc-list li{display:block;position:relative;padding-left:19px;}
+.inc-list li::before{position:absolute;left:0;top:1px;}
+.inc-list li small{display:block;margin-top:2px;}
 .garantia-cond{margin-top:16px;background:rgba(255,255,255,0.96);border-radius:10px;padding:13px 16px;font-size:12.5px;color:var(--text);line-height:1.6;display:flex;gap:10px;align-items:flex-start;}
 .garantia-cond strong{color:var(--green-dark);}
 body{overflow-x:clip;}
@@ -477,6 +478,114 @@ body{overflow-x:clip;}
 @media(max-width:720px){ .section-title h2{white-space:normal;line-height:1.5;} .tabla-diff th,.tabla-diff td{padding:10px 8px;font-size:11.5px;} }
 @media(max-width:900px){ .qs-media{aspect-ratio:auto;min-height:0;height:340px;} }
 @media(max-width:720px){ .qs-media{height:280px;} }
+
+/* ================= V2 · rediseño ================= */
+/* HERO */
+.hero.hero2{padding:64px 48px 78px;}
+.hero2-grid{position:relative;z-index:2;max-width:1140px;margin:0 auto;display:grid;grid-template-columns:minmax(0,1.12fr) minmax(0,.88fr);gap:56px;align-items:center;}
+.hero2 .hero-inner{position:relative;z-index:2;}
+.hero2 .hero-tag{font-size:10.5px;padding:6px 14px;margin-bottom:22px;color:rgba(255,255,255,0.85);}
+.hero2 .hero-name{font-size:clamp(46px,6.6vw,88px);line-height:0.98;letter-spacing:-1.5px;margin-bottom:18px;text-wrap:balance;text-shadow:0 6px 30px rgba(0,0,0,0.18);}
+.hero2 .hero-subtitle{font-size:15px;color:rgba(255,255,255,0.78);font-weight:500;}
+.hero2 .hero-lead{font-size:15px;max-width:560px;color:rgba(255,255,255,0.8);margin-top:14px;}
+.hero2 .hero-pills{margin-top:26px;gap:8px;}
+.hero2 .hero-pill{font-size:12px;padding:8px 13px;border-radius:30px;background:rgba(255,255,255,0.13);border-color:rgba(255,255,255,0.22);backdrop-filter:blur(6px);}
+.hero2 .hero-cta-wrap{margin-top:30px;}
+.hero2 .hero-cta{font-size:14px;padding:15px 26px;border-radius:12px;}
+.hero2-media{position:relative;height:500px;}
+.hero2-media .ph{position:absolute;margin:0;border-radius:20px;overflow:hidden;border:6px solid var(--white);box-shadow:0 30px 70px rgba(0,0,0,0.38);background:rgba(255,255,255,0.2);}
+.hero2-media .ph img{width:100%;height:100%;object-fit:cover;display:block;}
+.hero2-media .ph-a{right:0;top:0;width:64%;aspect-ratio:3/4;transform:rotate(3deg);}
+.hero2-media .ph-b{left:2%;bottom:0;width:48%;aspect-ratio:3/4;transform:rotate(-5deg);}
+.hero2-badge{position:absolute;left:0;top:7%;z-index:3;background:var(--white);border-radius:16px;padding:16px 20px;box-shadow:0 20px 50px rgba(0,0,0,0.3);transform:rotate(-3deg);}
+.hero2-badge small{display:block;font-size:11px;font-weight:600;color:var(--text-light);letter-spacing:.3px;}
+.hero2-badge b{display:block;font-family:'Josefin Sans',sans-serif;font-size:34px;font-weight:700;color:var(--acc);line-height:1.05;margin-top:2px;white-space:nowrap;}
+@keyframes phIn{from{opacity:0;transform:translateY(30px) rotate(0deg);}}
+.js-anim .hero2-media .ph-a{animation:phIn 1s cubic-bezier(.22,.61,.36,1) .25s both;}
+.js-anim .hero2-media .ph-b{animation:phIn 1s cubic-bezier(.22,.61,.36,1) .4s both;}
+.js-anim .hero2-badge{animation:phIn .9s cubic-bezier(.22,.61,.36,1) .7s both;}
+
+/* TITULARES DE SECCIÓN */
+.section-title{margin:84px 0 26px;gap:18px;align-items:flex-end;}
+.section-title::before{width:6px;height:40px;border-radius:4px;align-self:center;background:var(--acc);}
+.section-title::after{align-self:center;opacity:.8;}
+.section-title h2{font-size:clamp(26px,3.3vw,40px);font-weight:700;letter-spacing:-0.6px;text-transform:none;color:var(--acc-deep);white-space:normal;line-height:1.08;max-width:820px;}
+.intro-text{font-size:15px;line-height:1.8;}
+
+/* BANDAS A ANCHO COMPLETO */
+.band{position:relative;isolation:isolate;padding:4px 0 72px;margin-top:84px;}
+.band::before{content:'';position:absolute;top:0;bottom:0;left:calc(50% - 50vw);right:calc(50% - 50vw);z-index:-1;}
+.band > .section-title:first-child{margin-top:64px;}
+.band-dark::before{background:linear-gradient(160deg,var(--blue-dark) 0%,var(--blue) 60%,var(--blue-mid) 100%);}
+.band-dark::after{content:'';position:absolute;top:0;bottom:0;left:calc(50% - 50vw);right:calc(50% - 50vw);z-index:-1;background-image:radial-gradient(rgba(255,255,255,0.05) 1px,transparent 1px);background-size:24px 24px;pointer-events:none;}
+.band-dark .section-title h2{color:var(--white);}
+.band-dark .section-title::before{background:var(--gold);}
+.band-dark .section-title::after{background:rgba(255,255,255,0.18);}
+.band-dark .intro-text{color:rgba(255,255,255,0.75);}
+.band-dark .intro-text strong{color:var(--white);}
+.band-dark .flow{border-color:transparent;box-shadow:0 30px 70px rgba(0,0,0,0.35);}
+.band-dark .criteria-box{background:rgba(255,255,255,0.07);border-color:rgba(255,255,255,0.16);}
+.band-dark .criteria-title{color:var(--white);}
+.band-dark .criteria span{background:rgba(255,255,255,0.1);border-color:rgba(255,255,255,0.22);color:var(--white);}
+.band-dark .fine-print{color:rgba(255,255,255,0.55);}
+.band-dark .alert-box{background:rgba(255,255,255,0.95);}
+.band-light::before{background:var(--white);}
+
+/* FLOW con más presencia */
+.flow-num{width:38px;height:38px;font-size:16px;}
+.flow-big{font-size:56px;}
+.flow-title{font-size:16px;}
+.flow-text{font-size:13px;}
+
+/* PROVINCIAS v2 */
+.prov-card{border:none;border-radius:20px;box-shadow:0 10px 34px rgba(0,31,64,0.10);}
+.prov-head{padding:24px 24px 22px;position:relative;overflow:hidden;}
+.prov-head::after{content:var(--prov-mark,'');position:absolute;right:-14px;bottom:-30px;font-size:110px;opacity:.12;transform:rotate(-14deg);line-height:1;}
+.prov-name{font-size:23px;letter-spacing:-0.3px;}
+.prov-tag{font-size:12px;margin-top:5px;}
+.prov-est{margin-top:18px;padding-top:14px;border-top:1px solid rgba(255,255,255,0.22);}
+.prov-est small{display:block;font-size:10px;letter-spacing:1.5px;text-transform:uppercase;color:rgba(255,255,255,0.62);margin-bottom:3px;}
+.prov-est b{font-family:'Josefin Sans',sans-serif;font-size:21px;font-weight:700;color:var(--white);}
+.prov-body{padding:20px 24px 24px;}
+.prov-desc{font-size:13px;margin-bottom:0;}
+.desde-strip{display:flex;align-items:center;justify-content:space-between;gap:24px;flex-wrap:wrap;background:var(--acc-deep);border-radius:20px;padding:26px 32px;margin-bottom:24px;color:var(--white);position:relative;overflow:hidden;}
+.desde-strip::after{content:var(--prov-mark,'');position:absolute;right:24px;top:50%;transform:translateY(-50%) rotate(-12deg);font-size:120px;opacity:.1;}
+.desde-strip-txt{font-size:14px;color:rgba(255,255,255,0.78);max-width:560px;line-height:1.65;position:relative;z-index:2;}
+.desde-strip-num{position:relative;z-index:2;}
+.desde-strip-num small{display:block;font-size:12px;color:rgba(255,255,255,0.7);font-weight:600;}
+.desde-strip-num b{font-family:'Josefin Sans',sans-serif;font-size:46px;font-weight:700;line-height:1;}
+
+/* SLIDER DEL SIMULADOR */
+.fin-slider-wrap{margin-bottom:24px;}
+.fin-slider-top{display:flex;justify-content:space-between;align-items:baseline;gap:12px;margin-bottom:12px;}
+.fin-slider-val{font-family:'Josefin Sans',sans-serif;font-size:28px;font-weight:700;color:var(--blue);}
+.fin-slider{width:100%;accent-color:var(--acc);height:28px;cursor:pointer;}
+.fin-slider-scale{display:flex;justify-content:space-between;font-size:11px;color:var(--text-light);margin-top:4px;}
+
+/* PEQUEÑOS AJUSTES */
+.faq details summary{font-size:14.5px;padding:18px 20px;}
+.faq-a{font-size:13.5px;}
+.contact-title{font-size:32px;letter-spacing:-0.4px;}
+.steps-title{font-size:24px;}
+
+@media(max-width:980px){
+  .hero2-grid{grid-template-columns:1fr;gap:34px;}
+  .hero2-media{height:380px;max-width:460px;width:100%;margin:0 auto;}
+}
+@media(max-width:720px){
+  .hero.hero2{padding:40px 20px 52px;}
+  .hero2-media{height:320px;}
+  .hero2-badge b{font-size:28px;}
+  .section-title{margin:64px 0 22px;}
+  .section-title::before{height:30px;}
+  .band{margin-top:64px;padding-bottom:56px;}
+  .desde-strip{padding:22px;}
+  .desde-strip-num b{font-size:38px;}
+}
+@media(prefers-reduced-motion:reduce){ .js-anim .hero2-media .ph-a,.js-anim .hero2-media .ph-b,.js-anim .hero2-badge{animation:none!important;} }
+
+.band + .band{margin-top:0;}
+.prov-desc + .prov-dist-title{margin-top:14px;}
 
 </style>
 </head>
@@ -489,28 +598,28 @@ body{overflow-x:clip;}
   </div>
 </div>
 
-<div class="hero">
+<header class="hero hero2">
   <div class="hero-dots"></div>
-  <div class="hero-inner">
-    <div class="hero-tag">Guía del programa · Canadá</div>
-    <div class="hero-name">Año escolar en Canadá</div>
-    <div class="hero-subtitle">Colegio público canadiense · Familia anfitriona · Trimestre, semestre o año completo</div>
-    <p class="hero-lead">Todo lo que necesitas saber para decidir: cómo funciona el sistema de distritos, cómo preparamos una propuesta pensada para tu hijo, qué incluye el programa, precios y formas de pago.</p>
-    <div class="hero-pills">
-      <div class="hero-pill">🏫 Sistema público por distritos</div>
-      <div class="hero-pill">🏠 Familia anfitriona o residencia</div>
-      <div class="hero-pill">📅 Trimestre, semestre o año</div>
-      <div class="hero-pill">✈ Vuelos incluidos hasta 1.000 €</div>
-      <div class="hero-pill">🛂 Visado incluido</div>
-      <div class="hero-pill ac">🍁 Año escolar desde 20.200 €</div>
+  <div class="hero2-grid">
+    <div class="hero-inner">
+      <div class="hero-tag">Guía del programa · Canadá</div>
+      <h1 class="hero-name">Año escolar en Canadá</h1>
+      <div class="hero-subtitle">Colegio público canadiense · Familia anfitriona · Trimestre, semestre o año completo</div>
+      <p class="hero-lead">Todo lo que necesitas saber para decidir: cómo funciona el sistema de distritos, cómo preparamos una propuesta pensada para tu hijo, qué incluye el programa y cómo se paga.</p>
+      <div class="hero-pills"><div class="hero-pill">🏫 Sistema público por distritos</div><div class="hero-pill">🏠 Familia anfitriona o residencia</div><div class="hero-pill">📅 Trimestre, semestre o año</div><div class="hero-pill">✈ Vuelos incluidos hasta 1.000 €</div><div class="hero-pill">🛂 Visado incluido</div><div class="hero-pill ac">🍁 Programas desde 20.500 €</div></div>
+      <div class="hero-cta-wrap">
+        <a class="hero-cta" href="#contacto">🍁 Pide tu propuesta personalizada</a>
+        <a class="hero-cta alt" href="https://wa.me/34659666387?text=Hola%2C%20he%20le%C3%ADdo%20la%20gu%C3%ADa%20del%20programa%20de%20Canad%C3%A1%20y%20me%20gustar%C3%ADa%20recibir%20informaci%C3%B3n." target="_blank" rel="noopener">💬 Escríbenos por WhatsApp</a>
+      </div>
     </div>
-    <div class="hero-cta-wrap">
-      <a class="hero-cta" href="#contacto">🍁 Pide tu propuesta personalizada</a>
-      <a class="hero-cta alt" href="https://wa.me/34659666387?text=Hola%2C%20he%20le%C3%ADdo%20la%20gu%C3%ADa%20del%20programa%20de%20Canad%C3%A1%20y%20me%20gustar%C3%ADa%20recibir%20informaci%C3%B3n." target="_blank" rel="noopener">💬 Escríbenos por WhatsApp</a>
+    <div class="hero2-media" aria-hidden="true">
+      <figure class="ph ph-a"><img src="https://aescobarnic.github.io/Propuestas/img/mlq-salida-pista.jpg" style="object-position:center 20%;" alt=""></figure>
+      <figure class="ph ph-b"><img src="https://aescobarnic.github.io/Propuestas/img/mlq-vida-social.jpg" style="object-position:center 30%;" alt=""></figure>
+      <div class="hero2-badge"><small>Programas desde</small><b>20.500 €</b></div>
     </div>
   </div>
-</div>
-<nav class="guide-nav" aria-label="Secciones de la guía"><div class="guide-nav-inner"><a href="#como-funciona">Cómo funciona</a><a href="#personalizamos">Tu propuesta</a><a href="#provincias">Provincias y precios</a><a href="#incluye">Qué incluye</a><a href="#pago">Pago y financiación</a><a href="#pasos">Paso a paso</a><a href="#faq">Preguntas</a><a href="#contacto">Contacto</a></div></nav>
+</header>
+<nav class="guide-nav" aria-label="Secciones de la guía"><div class="guide-nav-inner"><a href="#como-funciona">Cómo funciona</a><a href="#personalizamos">Tu propuesta</a><a href="#provincias">Provincias</a><a href="#incluye">Qué incluye</a><a href="#pago">Pago y financiación</a><a href="#pasos">Paso a paso</a><a href="#faq">Preguntas</a><a href="#contacto">Contacto</a></div></nav>
 
 <div class="main">
 
@@ -629,6 +738,7 @@ body{overflow-x:clip;}
   </div>
 
   
+  <section class="band band-dark">
   <div class="section-title" id="personalizamos"><h2>Cómo preparamos tu propuesta</h2></div>
   <p class="intro-text">No trabajamos con un catálogo cerrado. Cada familia recibe una <strong>propuesta personalizada</strong> con los
   distritos y colegios que mejor encajan con su hijo, explicando por qué, y marcamos cuál es la que recomendamos.</p>
@@ -643,30 +753,36 @@ body{overflow-x:clip;}
     <div class="criteria"><span>Curso y edad</span><span>Nivel de inglés</span><span>Deportes y extraescolares</span><span>Programas especiales: academias deportivas, artes, AP</span><span>Pueblo, ciudad mediana o gran ciudad</span><span>Clima</span><span>Tamaño del colegio</span><span>Presencia de estudiantes internacionales</span><span>Familia anfitriona o residencia</span><span>Presupuesto</span></div>
   </div>
 
-  <div class="section-title" id="provincias"><h2>Provincias y precios</h2></div>
-  <p class="intro-text">Trabajamos con distritos en seis provincias. Cada una tiene un carácter distinto, y dentro de cada provincia
-  hay distritos rurales, de ciudad mediana y urbanos. Estos son los <strong>precios de partida</strong> del curso 2027/28.</p>
+  </section>
+
+  <section class="band band-light">
+  <div class="section-title" id="provincias"><h2>Provincias en las que trabajamos</h2></div>
+  <div class="desde-strip">
+    <div class="desde-strip-num"><small>Programas desde</small><b>20.500 €</b></div>
+    <div class="desde-strip-txt">Año escolar completo con vuelos incluidos hasta 1.000 €, visado, seguro médico y todo el acompañamiento de My Language Quest. El precio exacto depende del distrito y te lo damos cerrado en tu propuesta.</div>
+  </div>
   <div class="prov-grid">
 <div class="prov-card"><div class="prov-head"><div class="prov-name">Columbia Británica</div><div class="prov-tag">Costa del Pacífico · Vancouver y su isla</div>
-<div class="prov-prices"><div class="prov-price"><small>Año desde</small><b>23.200 €</b></div><div class="prov-price"><small>Semestre desde</small><b>13.000 €</b></div></div></div>
-<div class="prov-body"><div class="prov-desc">La provincia con más variedad: el área de Vancouver, ciudades medianas en la isla de Vancouver y pueblos de montaña como Whistler o las Rocosas. En la costa, los inviernos son más suaves que en el resto del país.</div><div class="prov-dist-title">Distritos con los que trabajamos</div><div class="prov-dists"><span>Peace River North</span><span>Qualicum</span><span>Comox Valley</span><span>Langley</span><span>Rocky Mountain</span><span>Sea to Sky (Squamish y Whistler)</span><span>Saanich</span><span>Delta</span><span>Surrey</span><span>Richmond</span><span>Coquitlam</span><span>Burnaby</span><span>North Vancouver</span></div></div></div>
+<div class="prov-est"><small>Precio estimado · año escolar</small><b>Entre 23.500 y 30.500 €</b></div></div>
+<div class="prov-body"><div class="prov-desc">La provincia con más variedad: el área de Vancouver, ciudades medianas en la isla de Vancouver y pueblos de montaña junto a las Rocosas o Whistler. En la costa, los inviernos son más suaves que en el resto del país.</div></div></div>
 <div class="prov-card"><div class="prov-head"><div class="prov-name">Alberta</div><div class="prov-tag">Praderas y Montañas Rocosas</div>
-<div class="prov-prices"><div class="prov-price"><small>Año desde</small><b>20.200 €</b></div><div class="prov-price"><small>Semestre desde</small><b>11.000 €</b></div></div></div>
-<div class="prov-body"><div class="prov-desc">Comunidades pequeñas y muy acogedoras, donde el colegio es el centro de la vida social. Inviernos fríos y soleados. Es la provincia con el precio de partida más ajustado, y Golden Hills ofrece además la opción de residencia.</div><div class="prov-dist-title">Distritos con los que trabajamos</div><div class="prov-dists"><span>Battle River</span><span>Golden Hills (familia o residencia)</span></div></div></div>
+<div class="prov-est"><small>Precio estimado · año escolar</small><b>Entre 20.500 y 27.000 €</b></div></div>
+<div class="prov-body"><div class="prov-desc">Comunidades pequeñas y muy acogedoras, donde el colegio es el centro de la vida social. Inviernos fríos y soleados. Es la provincia con el precio de partida más ajustado, y algunos distritos ofrecen también residencia.</div></div></div>
 <div class="prov-card"><div class="prov-head"><div class="prov-name">Manitoba</div><div class="prov-tag">Centro de Canadá · Winnipeg</div>
-<div class="prov-prices"><div class="prov-price"><small>Año desde</small><b>23.650 €</b></div><div class="prov-price"><small>Semestre desde</small><b>13.000 €</b></div></div></div>
-<div class="prov-body"><div class="prov-desc">Winnipeg combina los servicios de una ciudad grande con un ritmo tranquilo y barrios residenciales. Inviernos muy fríos y una oferta deportiva y cultural amplia.</div><div class="prov-dist-title">Distritos con los que trabajamos</div><div class="prov-dists"><span>Pembina Trails (Winnipeg)</span></div></div></div>
+<div class="prov-est"><small>Precio estimado · año escolar</small><b>Aprox. 24.000 €</b></div></div>
+<div class="prov-body"><div class="prov-desc">Winnipeg combina los servicios de una ciudad grande con un ritmo tranquilo y barrios residenciales. Inviernos muy fríos y una oferta deportiva y cultural amplia.</div></div></div>
 <div class="prov-card"><div class="prov-head"><div class="prov-name">Ontario</div><div class="prov-tag">Ottawa, Toronto y el lago Superior</div>
-<div class="prov-prices"><div class="prov-price"><small>Año desde</small><b>25.600 €</b></div><div class="prov-price"><small>Semestre desde</small><b>13.950 €</b></div></div></div>
-<div class="prov-body"><div class="prov-desc">La provincia más poblada del país: desde la capital, Ottawa, y Toronto hasta localidades del sur de la provincia o Thunder Bay, a orillas del lago Superior.</div><div class="prov-dist-title">Distritos con los que trabajamos</div><div class="prov-dists"><span>Lakehead (Thunder Bay)</span><span>Avon Maitland</span><span>Upper Canada</span><span>Ottawa Catholic</span><span>Ottawa-Carleton</span><span>Toronto</span></div></div></div>
+<div class="prov-est"><small>Precio estimado · año escolar</small><b>Entre 26.000 y 30.000 €</b></div></div>
+<div class="prov-body"><div class="prov-desc">La provincia más poblada del país: desde la capital, Ottawa, y Toronto hasta localidades tranquilas del sur de la provincia o a orillas del lago Superior.</div></div></div>
 <div class="prov-card"><div class="prov-head"><div class="prov-name">Quebec</div><div class="prov-tag">Colegios en inglés · entorno de Montreal</div>
-<div class="prov-prices"><div class="prov-price"><small>Año desde</small><b>27.400 €</b></div><div class="prov-price"><small>Semestre desde</small><b>15.800 €</b></div></div></div>
-<div class="prov-body"><div class="prov-desc">Colegios de habla inglesa en el entorno de Montreal, con la ventaja de convivir también con el francés. El visado en Quebec lleva un suplemento de 550 €.</div><div class="prov-dist-title">Distritos con los que trabajamos</div><div class="prov-dists"><span>Sir Wilfrid Laurier</span></div></div></div>
+<div class="prov-est"><small>Precio estimado · año escolar</small><b>Aprox. 27.500 €</b></div></div>
+<div class="prov-body"><div class="prov-desc">Colegios de habla inglesa en el entorno de Montreal, con la ventaja de convivir también con el francés. El visado en Quebec lleva un suplemento de 550 €.</div></div></div>
 <div class="prov-card"><div class="prov-head"><div class="prov-name">Isla del Príncipe Eduardo</div><div class="prov-tag">Costa atlántica</div>
-<div class="prov-prices"><div class="prov-price"><small>Año desde</small><b>21.150 €</b></div><div class="prov-price"><small>Semestre desde</small><b>13.380 €</b></div></div></div>
-<div class="prov-body"><div class="prov-desc">La provincia más pequeña de Canadá: comunidades tranquilas, costa y un ritmo de vida muy familiar, ideal para una inmersión cercana.</div><div class="prov-dist-title">Distritos con los que trabajamos</div><div class="prov-dists"><span>Programa provincial de la isla</span></div></div></div>
+<div class="prov-est"><small>Precio estimado · año escolar</small><b>Aprox. 21.500 €</b></div></div>
+<div class="prov-body"><div class="prov-desc">La provincia más pequeña de Canadá: comunidades tranquilas, costa y un ritmo de vida muy familiar, ideal para una inmersión cercana.</div></div></div>
   </div>
-  <p class="fine-print">Precios de partida por provincia para el curso 2027/28, con vuelos incluidos hasta 1.000 €. El precio exacto depende del distrito elegido y aparece en tu propuesta personalizada. El trimestre está disponible en algunos distritos: consúltanos.</p>
+  <p class="fine-print">Precios estimados por provincia para el año escolar 2027/28. Semestre y trimestre según distrito: consúltanos.</p>
+  </section>
 
   <div class="section-title"><h2>Visado y vuelos</h2></div>
   <div class="info-blocks">
@@ -822,9 +938,10 @@ body{overflow-x:clip;}
       <div class="fin-badge">Hasta 36 meses</div>
     </div>
     <div class="financing-body">
-      <div class="fin-opcion-selector">
-        <div class="fin-opcion-label">Calcula con el precio de partida de cada provincia</div>
-        <div class="fin-opcion-btns" id="finOpciones"><button class="fin-opcion-btn active" data-precio="20200"><span class="fin-opcion-nombre">🍁 Alberta · desde</span><span class="fin-opcion-precio">20.200 €</span></button><button class="fin-opcion-btn" data-precio="21150"><span class="fin-opcion-nombre">Isla del Príncipe Eduardo · desde</span><span class="fin-opcion-precio">21.150 €</span></button><button class="fin-opcion-btn" data-precio="23200"><span class="fin-opcion-nombre">Columbia Británica · desde</span><span class="fin-opcion-precio">23.200 €</span></button><button class="fin-opcion-btn" data-precio="23650"><span class="fin-opcion-nombre">Manitoba · desde</span><span class="fin-opcion-precio">23.650 €</span></button><button class="fin-opcion-btn" data-precio="25600"><span class="fin-opcion-nombre">Ontario · desde</span><span class="fin-opcion-precio">25.600 €</span></button><button class="fin-opcion-btn" data-precio="27400"><span class="fin-opcion-nombre">Quebec · desde</span><span class="fin-opcion-precio">27.400 €</span></button></div>
+      <div class="fin-slider-wrap">
+        <div class="fin-slider-top"><div class="fin-opcion-label" style="margin:0;">Ajusta el precio del programa</div><div class="fin-slider-val" id="finSliderVal">20.500 €</div></div>
+        <input class="fin-slider" id="finSlider" type="range" min="20500" max="31000" step="500" value="20500" aria-label="Precio del programa">
+        <div class="fin-slider-scale"><span>20.500 €</span><span>31.000 €</span></div>
       </div>
       <div class="fin-entrada-fija">
         <div class="fin-entrada-fija-num">5.000 €</div>
@@ -867,7 +984,7 @@ body{overflow-x:clip;}
   </div>
 
   <div class="section-title" id="faq"><h2>Preguntas frecuentes</h2></div>
-  <div class="faq"><details><summary>¿Se puede elegir colegio en Canadá?</summary><div class="faq-a">Se elige <strong>distrito</strong>. En tu propuesta destacamos dos colegios por distrito y trasladamos vuestra preferencia; el distrito confirma el colegio final según la disponibilidad de plazas.</div></details><details><summary>¿Quién elige a la familia anfitriona?</summary><div class="faq-a">El propio distrito, que selecciona, visita y supervisa a sus familias. La familia anfitriona está garantizada, en pensión completa y con un único estudiante hispanohablante por casa. Si hubiera cualquier problema de convivencia, se gestiona el cambio de familia.</div></details><details><summary>¿El curso se convalida en España?</summary><div class="faq-a">Sí. Te asesoramos en la elección de asignaturas para que el curso sea convalidable y, a la vuelta, nos encargamos de la legalización de notas con Apostilla de La Haya y de la convalidación ante el Ministerio de Educación.</div></details><details><summary>¿Qué nivel de inglés necesita?</summary><div class="faq-a">En la entrevista hacemos una prueba de nivel y lo tenemos en cuenta al elegir distrito. Muchos distritos ofrecen apoyo de inglés para estudiantes internacionales, y el programa incluye clases de inglés Cambridge.</div></details><details><summary>¿Los vuelos están incluidos?</summary><div class="faq-a">Sí, hasta 1.000 €. Nosotros los buscamos y reservamos ajustados a las fechas del curso. Solo si el billete supera ese importe, la diferencia corre a cargo de la familia.</div></details><details><summary>¿Qué diferencia hay entre familia anfitriona y residencia?</summary><div class="faq-a">La mayoría de estudiantes elige familia anfitriona, porque es la mejor forma de practicar el inglés y vivir el día a día canadiense. Algunos distritos, como Golden Hills en Alberta, ofrecen también residencia para quien prefiere ese formato.</div></details><details><summary>¿Se puede financiar?</summary><div class="faq-a">Sí, con Banco Sabadell: 5.000 € de entrada y el resto en 12 meses sin intereses (MLQ asume los intereses) o en 18, 24 o 36 meses con un TIN del 10,46 %.</div></details></div>
+  <div class="faq"><details><summary>¿Se puede elegir colegio en Canadá?</summary><div class="faq-a">Se elige <strong>distrito</strong>. En tu propuesta destacamos dos colegios por distrito y trasladamos vuestra preferencia; el distrito confirma el colegio final según la disponibilidad de plazas.</div></details><details><summary>¿Quién elige a la familia anfitriona?</summary><div class="faq-a">El propio distrito, que selecciona, visita y supervisa a sus familias. La familia anfitriona está garantizada, en pensión completa y con un único estudiante hispanohablante por casa. Si hubiera cualquier problema de convivencia, se gestiona el cambio de familia.</div></details><details><summary>¿El curso se convalida en España?</summary><div class="faq-a">Sí. Te asesoramos en la elección de asignaturas para que el curso sea convalidable y, a la vuelta, nos encargamos de la legalización de notas con Apostilla de La Haya y de la convalidación ante el Ministerio de Educación.</div></details><details><summary>¿Qué nivel de inglés necesita?</summary><div class="faq-a">En la entrevista hacemos una prueba de nivel y lo tenemos en cuenta al elegir distrito. Muchos distritos ofrecen apoyo de inglés para estudiantes internacionales, y el programa incluye clases de inglés Cambridge.</div></details><details><summary>¿Los vuelos están incluidos?</summary><div class="faq-a">Sí, hasta 1.000 €. Nosotros los buscamos y reservamos ajustados a las fechas del curso. Solo si el billete supera ese importe, la diferencia corre a cargo de la familia.</div></details><details><summary>¿Qué diferencia hay entre familia anfitriona y residencia?</summary><div class="faq-a">La mayoría de estudiantes elige familia anfitriona, porque es la mejor forma de practicar el inglés y vivir el día a día canadiense. Algunos distritos ofrecen también residencia para quien prefiere ese formato.</div></details><details><summary>¿Se puede financiar?</summary><div class="faq-a">Sí, con Banco Sabadell: 5.000 € de entrada y el resto en 12 meses sin intereses (MLQ asume los intereses) o en 18, 24 o 36 meses con un TIN del 10,46 %.</div></details></div>
 
   <div class="section-title" id="contacto"><h2>Hablamos</h2></div>
   <div class="contact-wrap">
@@ -894,9 +1011,9 @@ body{overflow-x:clip;}
 </div>
 <script>
 (function(){
-  var btn0=document.querySelector('#finOpciones .fin-opcion-btn.active');
-  if(!btn0) return;
-  var precio=parseFloat(btn0.dataset.precio), meses=12, tin=0, ENTRADA=5000;
+  var btn0=document.querySelector('#finOpciones .fin-opcion-btn.active'), sl=document.getElementById('finSlider');
+  if(!btn0 && !sl) return;
+  var precio=parseFloat(btn0?btn0.dataset.precio:sl.value), meses=12, tin=0, ENTRADA=5000;
   function grp(s){return s.replace(/\B(?=(\d{3})+(?!\d))/g,'.');}
   function fmt(n){var p=n.toFixed(2).split('.');return grp(p[0])+','+p[1]+' €';}
   function fmt0(n){return grp(Math.round(n).toString())+' €';}
@@ -921,6 +1038,7 @@ body{overflow-x:clip;}
       b.classList.add('active'); precio=parseFloat(b.dataset.precio); calc();
     });
   });
+  if(sl){ sl.addEventListener('input',function(){ precio=parseFloat(sl.value); document.getElementById('finSliderVal').textContent=fmt0(precio); calc(); }); }
   document.querySelectorAll('#finPlazos .fin-plazo').forEach(function(b){
     b.addEventListener('click',function(){
       document.querySelectorAll('#finPlazos .fin-plazo').forEach(function(x){x.classList.remove('active');});
