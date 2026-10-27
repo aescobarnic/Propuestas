@@ -478,6 +478,18 @@ details[open] summary::before{transform:rotate(90deg);}
 .tabla-wrap{overflow-x:auto;}
 @media(max-width:720px){.descuento-box{padding:20px;}.descuento-num{font-size:30px;}}
 
+
+.ficha{display:grid;grid-template-columns:repeat(2,1fr);gap:7px;margin-bottom:6px;}
+.ficha-item{background:var(--gray-card);border:1px solid var(--gray-border);border-radius:8px;padding:7px 10px;}
+.ficha-lab{font-family:'Josefin Sans',sans-serif;font-size:8.5px;letter-spacing:1.2px;text-transform:uppercase;color:var(--text-light);margin-bottom:2px;}
+.ficha-val{font-size:12.5px;font-weight:600;color:var(--text);line-height:1.4;}
+.op-sub{font-family:'Josefin Sans',sans-serif;font-size:9.5px;letter-spacing:1.8px;text-transform:uppercase;color:var(--blue);font-weight:700;margin:16px 0 7px;}
+.op-txt{font-size:12.5px;color:var(--text-mid);line-height:1.75;}
+.op-txt strong{color:var(--text);}
+.op-tags{display:flex;flex-wrap:wrap;gap:6px;}
+.op-tag{background:var(--blue-light);color:var(--blue);border-radius:6px;padding:4px 9px;font-size:11px;font-weight:600;}
+.op-tag.dep{background:var(--red-light);color:var(--red-deep);}
+
 </style>
 </head>
 <body>
@@ -585,13 +597,51 @@ details[open] summary::before{transform:rotate(90deg);}
         <span class="precio-chip-sub">por estudiante · 40.000 € los dos hermanos</span>
       </div>
       <div class="opcion-body">
-        <ul>
-          <li>Colegio privado de orientación cristiana en el noreste del país</li>
-          <li>Programa competitivo de <strong>wrestling</strong>, con técnicas muy próximas a las artes marciales que ya practican</li>
-          <li>Vinculado a <strong>The Lion's Den Athletic Club</strong>, en la misma dirección del colegio: wrestling, jiu-jitsu brasileño y preparación física para jóvenes</li>
-          <li>Entorno que facilita conocer a otros chicos con los mismos intereses</li>
-        </ul>
-        <div class="colegio-razon"><strong>Por qué lo recomendamos:</strong> de las tres alternativas es la que ofrece el encaje deportivo más directo con lo que Helios y Hermes ya hacen. Las clases del club tienen coste adicional y su disponibilidad debe confirmarse.</div>
+      <div class="ficha">
+        <div class="ficha-item"><div class="ficha-lab">Cursos</div><div class="ficha-val">Grades 9–12</div></div>
+        <div class="ficha-item"><div class="ficha-lab">Alumnos</div><div class="ficha-val">250</div></div>
+        <div class="ficha-item"><div class="ficha-lab">Ratio</div><div class="ficha-val">15 alumnos / profesor</div></div>
+        <div class="ficha-item"><div class="ficha-lab">Carácter</div><div class="ficha-val">Privado cristiano, mixto</div></div>
+        <div class="ficha-item"><div class="ficha-lab">Uniforme</div><div class="ficha-val">Sí</div></div>
+        <div class="ficha-item"><div class="ficha-lab">Inicio de curso</div><div class="ficha-val">Finales de agosto</div></div>
+      </div>
+
+      <div class="op-sub">Dónde está</div>
+      <p class="op-txt">
+        Quakertown es una población del sureste de Pensilvania, a <strong>unos 75 km de Filadelfia</strong>
+        (media hora larga en coche), en una zona de pueblos tranquilos entre Filadelfia y el valle de Lehigh.
+        El aeropuerto de referencia es el <strong>Philadelphia International (PHL)</strong>. El clima tiene las
+        cuatro estaciones muy marcadas: otoños de colores, inviernos fríos con nieve y primaveras suaves.
+      </p>
+
+      <div class="op-sub">Académico</div>
+      <p class="op-txt">
+        Cursos <strong>Honors y AP</strong> y una oferta amplia de optativas: forensics, ceramics, drawing,
+        earth &amp; space science, interior design, digital arts, economía, español, STEAM, psicología,
+        escultura, pintura, public speaking y media. El programa de arte es uno de sus sellos: lo tratan como
+        parte del currículo, no como un extra.
+      </p>
+
+      <div class="op-sub">Deportes por temporada</div>
+      <div class="op-tags">
+        <span class="op-tag dep">Otoño: soccer, voleibol, field hockey, golf</span>
+        <span class="op-tag dep">Invierno: wrestling, baloncesto</span>
+        <span class="op-tag dep">Primavera: béisbol, softball, atletismo</span>
+      </div>
+
+      <div class="op-sub">Actividades y clubes</div>
+      <div class="op-tags">
+        <span class="op-tag">Digital Arts</span><span class="op-tag">Teatro</span><span class="op-tag">Artes visuales</span><span class="op-tag">Yearbook</span><span class="op-tag">Coro</span>
+      </div>
+
+      <div class="op-sub">El plus deportivo</div>
+      <p class="op-txt">
+        El colegio está vinculado a <strong>The Lion's Den Athletic Club</strong>, en la misma dirección:
+        wrestling, jiu-jitsu brasileño, entrenamiento técnico juvenil y preparación física. El wrestling
+        escolar comparte buena parte de la base técnica con lo que Helios y Hermes ya entrenan.
+      </p>
+
+      <div class="colegio-razon" style="margin-top:16px;"><strong>Por qué lo recomendamos:</strong> de las tres alternativas es la que ofrece el encaje deportivo más directo con lo que ya hacen, sin tener que buscar club por su cuenta. Las clases del club tienen coste adicional y su disponibilidad debe confirmarse.</div>
       </div>
     </div>
 
@@ -604,13 +654,44 @@ details[open] summary::before{transform:rotate(90deg);}
         <span class="precio-chip-sub">por estudiante · 39.600 € los dos hermanos</span>
       </div>
       <div class="opcion-body">
-        <ul>
-          <li>Colegio privado católico con experiencia recibiendo estudiantes internacionales</li>
-          <li>Deportes: fútbol, baloncesto, hockey sobre hielo, lacrosse y golf</li>
-          <li>Comunidad de tamaño moderado, con estaciones muy marcadas</li>
-          <li>Está en el estado de Nueva York, pero lejos de Manhattan y de la gran ciudad</li>
-        </ul>
-        <div class="colegio-razon"><strong>Por qué lo recomendamos:</strong> por su rodaje con alumnos internacionales y por la vida en una comunidad americana de tamaño medio. Para seguir con karate, jiu-jitsu o MMA habría que buscar clubes externos.</div>
+      <div class="ficha">
+        <div class="ficha-item"><div class="ficha-lab">Cursos</div><div class="ficha-val">Grades 7–12</div></div>
+        <div class="ficha-item"><div class="ficha-lab">Alumnos</div><div class="ficha-val">285</div></div>
+        <div class="ficha-item"><div class="ficha-lab">Ratio</div><div class="ficha-val">16 alumnos / profesor</div></div>
+        <div class="ficha-item"><div class="ficha-lab">Carácter</div><div class="ficha-val">Privado católico, mixto</div></div>
+        <div class="ficha-item"><div class="ficha-lab">Uniforme</div><div class="ficha-val">Sí</div></div>
+        <div class="ficha-item"><div class="ficha-lab">Inicio de curso</div><div class="ficha-val">Principios de septiembre</div></div>
+      </div>
+
+      <div class="op-sub">Dónde está</div>
+      <p class="op-txt">
+        Watertown está en el <strong>norte del estado de Nueva York</strong>, cerca del lago Ontario y del río
+        San Lorenzo, a <strong>91 km de Syracuse</strong>, que es la ciudad grande de referencia y también el
+        aeropuerto principal (<strong>Syracuse Hancock, SYR</strong>). Está lejos de la ciudad de Nueva York:
+        pese al nombre del estado, aquí la vida es de comunidad pequeña. El invierno es largo y muy nevado,
+        de los más nevados del país, lo que explica el peso del hockey sobre hielo en el colegio.
+      </p>
+
+      <div class="op-sub">Académico</div>
+      <p class="op-txt">
+        Matemáticas, sociales, ciencias, idiomas (francés, español y latín), artes (música, teatro, banda y
+        plástica) y optativas como programación, diseño gráfico o psicología. Décadas de trayectoria en la
+        comunidad y experiencia con estudiantes internacionales.
+      </p>
+
+      <div class="op-sub">Deportes por temporada</div>
+      <div class="op-tags">
+        <span class="op-tag dep">Otoño: soccer, tenis, fútbol americano</span>
+        <span class="op-tag dep">Invierno: baloncesto, hockey hielo, wrestling</span>
+        <span class="op-tag dep">Primavera: lacrosse, golf, béisbol, softball</span>
+      </div>
+
+      <div class="op-sub">Actividades y clubes</div>
+      <div class="op-tags">
+        <span class="op-tag">Arte</span><span class="op-tag">Math League</span><span class="op-tag">Artes escénicas</span><span class="op-tag">Yearbook</span><span class="op-tag">TV Club</span>
+      </div>
+
+      <div class="colegio-razon" style="margin-top:16px;"><strong>Por qué lo recomendamos:</strong> por su rodaje con alumnos internacionales y por la vida en una comunidad americana de tamaño medio. Tiene equipo de wrestling en invierno, aunque para seguir con karate, jiu-jitsu o MMA habría que buscar un club externo en la zona.</div>
       </div>
     </div>
 
@@ -623,13 +704,46 @@ details[open] summary::before{transform:rotate(90deg);}
         <span class="precio-chip-sub">por estudiante · 39.200 € los dos hermanos</span>
       </div>
       <div class="opcion-body">
-        <ul>
-          <li>Colegio privado cristiano de tamaño reducido, con clases de unos 15 alumnos</li>
-          <li>Atención académica muy cercana y seguimiento individualizado</li>
-          <li>Actividades deportivas y extraescolares propias</li>
-          <li>Hagerstown es una ciudad mediana del Atlántico medio</li>
-        </ul>
-        <div class="colegio-razon"><strong>Por qué lo recomendamos:</strong> por el ambiente cercano y los grupos pequeños, que suelen ayudar mucho en los primeros meses de adaptación de una primera estancia larga fuera de casa.</div>
+      <div class="ficha">
+        <div class="ficha-item"><div class="ficha-lab">Cursos</div><div class="ficha-val">Admite Grades 8–12</div></div>
+        <div class="ficha-item"><div class="ficha-lab">Alumnos</div><div class="ficha-val">350 (PreK–12)</div></div>
+        <div class="ficha-item"><div class="ficha-lab">Ratio</div><div class="ficha-val">15 alumnos / profesor</div></div>
+        <div class="ficha-item"><div class="ficha-lab">Carácter</div><div class="ficha-val">Privado cristiano, mixto</div></div>
+        <div class="ficha-item"><div class="ficha-lab">Uniforme</div><div class="ficha-val">Sí</div></div>
+        <div class="ficha-item"><div class="ficha-lab">Apoyo ESL</div><div class="ficha-val">Sí, con coste aparte</div></div>
+      </div>
+
+      <div class="op-sub">Dónde está</div>
+      <p class="op-txt">
+        Hagerstown es una ciudad mediana del oeste de Maryland, en el área del Atlántico medio, entre
+        montañas y a <strong>poco más de hora y media de Washington D.C. y de Baltimore</strong>. Tiene
+        aeropuerto local (<strong>HGR</strong>) y el de referencia para los vuelos internacionales es
+        <strong>Washington Dulles (IAD)</strong>. El clima es más suave que en Nueva York o Pensilvania:
+        inviernos fríos pero menos nevados y veranos cálidos.
+      </p>
+
+      <div class="op-sub">Académico</div>
+      <p class="op-txt">
+        Centro pequeño con <strong>clases de unos 15 alumnos</strong> y seguimiento muy individualizado, lo que
+        suele marcar la diferencia en los primeros meses de una primera estancia larga fuera de casa. Dispone
+        de apoyo ESL para estudiantes internacionales.
+      </p>
+
+      <div class="op-sub">Deportes por temporada</div>
+      <div class="op-tags">
+        <span class="op-tag dep">Otoño: soccer, voleibol, golf</span>
+        <span class="op-tag dep">Invierno: baloncesto</span>
+        <span class="op-tag dep">Primavera: tiro con arco, béisbol, soccer</span>
+      </div>
+
+      <div class="op-sub">A tener en cuenta</div>
+      <p class="op-txt">
+        El colegio cobra aparte el <strong>uniforme, la participación en deportes, las excursiones, los
+        retiros, el apoyo ESL y el comedor</strong>. No hay oferta de wrestling ni de artes marciales en el
+        centro, así que habría que buscar club externo.
+      </p>
+
+      <div class="colegio-razon" style="margin-top:16px;"><strong>Por qué lo recomendamos:</strong> por el ambiente cercano y los grupos pequeños. Es la opción más arropada de las tres y la más económica, a cambio de menos oferta deportiva.</div>
       </div>
     </div>
 
