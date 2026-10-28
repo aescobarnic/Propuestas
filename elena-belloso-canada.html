@@ -119,8 +119,7 @@ body{font-family:'Fira Sans',sans-serif;background:var(--gray-bg);color:var(--te
 .colegio{border:1.5px solid var(--gray-border);border-radius:12px;overflow:hidden;background:var(--gray-card);transition:border-color .2s;}
 .colegio:hover{border-color:var(--red);}
 .colegio-top{padding:12px 14px 10px;}
-.colegio-link{display:inline-block;margin-top:8px;font-size:11px;font-weight:700;color:var(--blue);text-decoration:none;}
-.colegio-link:hover{text-decoration:underline;}
+
 .colegio-nombre{font-family:'Josefin Sans',sans-serif;font-size:13px;font-weight:700;color:var(--red-deep);margin-bottom:5px;}
 .colegio-meta{display:flex;flex-wrap:wrap;align-items:center;gap:6px;}
 .tag{border-radius:5px;padding:2px 8px;font-size:9px;font-weight:700;text-transform:uppercase;}
@@ -138,6 +137,9 @@ details[open] summary::before{transform:rotate(90deg);}
 .match-tag::before{content:'✓';font-size:9px;}
 
 /* INFO BLOCKS */
+.colegio-btn-wrap{padding:0 14px 14px;}
+.web-btn{display:inline-flex;align-items:center;justify-content:center;gap:6px;width:100%;box-sizing:border-box;padding:9px 14px;border-radius:8px;background:var(--blue);color:#ffffff;font-size:11.5px;font-weight:700;letter-spacing:.3px;text-decoration:none;transition:background .2s,transform .15s;}
+.web-btn:hover{background:var(--blue-dark);transform:translateY(-1px);}
 .club-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;}
 .club-card{background:var(--white);border-radius:14px;border:1.5px solid var(--gray-border);padding:18px 20px;box-shadow:0 2px 16px rgba(0,51,102,0.05);display:flex;flex-direction:column;gap:8px;}
 .club-top{display:flex;justify-content:space-between;align-items:flex-start;gap:8px;}
@@ -511,12 +513,12 @@ details[open] summary::before{transform:rotate(90deg);}
       </div>
       <div class="opcion-body"><div class="colegios">
         <div class="colegio">
-          <div class="colegio-top"><div class="colegio-nombre">Heritage Woods Secondary (HWSS)</div><div class="colegio-meta"><span class="tag pub">Público</span><span class="tag info">Grade 9 a 12</span><span class="tag info">Port Moody</span><span class="tag info">Vuestra elección</span></div><a class="colegio-link" href="https://www.sd43.bc.ca/school/heritagewoods" target="_blank" rel="noopener">🌐 sd43.bc.ca/school/heritagewoods ↗</a></div>
-          <details><summary>Por qué encaja con Elena</summary><div class="colegio-razon">Es el colegio que elegisteis Elena y tú, y cumple lo que buscabais: mucho deporte, ambiente de instituto americano y un edificio rodeado de naturaleza. Ofrece cursos Honours para subir el nivel en matemáticas y ciencias, que son las materias que más pesan de cara a Arquitectura, y un equipo de orientación que acompaña la planificación universitaria. Acepta estudiantes internacionales en Grade 12 y las plazas se asignan por orden de llegada, así que conviene reservar cuanto antes.</div></details>
+          <div class="colegio-top"><div class="colegio-nombre">Heritage Woods Secondary (HWSS)</div><div class="colegio-meta"><span class="tag pub">Público</span><span class="tag info">Grade 9 a 12</span><span class="tag info">Port Moody</span><span class="tag info">Vuestra elección</span></div></div>
+          <details><summary>Por qué encaja con Elena</summary><div class="colegio-razon">Es el colegio que elegisteis Elena y tú, y cumple lo que buscabais: mucho deporte, ambiente de instituto americano y un edificio rodeado de naturaleza. Ofrece cursos Honours para subir el nivel en matemáticas y ciencias, que son las materias que más pesan de cara a Arquitectura, y un equipo de orientación que acompaña la planificación universitaria. Acepta estudiantes internacionales en Grade 12 y las plazas se asignan por orden de llegada, así que conviene reservar cuanto antes.</div></details><div class="colegio-btn-wrap"><a class="web-btn" href="https://www.sd43.bc.ca/school/heritagewoods" target="_blank" rel="noopener">Ver web del colegio ↗</a></div>
         </div>
         <div class="colegio">
-          <div class="colegio-top"><div class="colegio-nombre">Port Moody Secondary (PMSS)</div><div class="colegio-meta"><span class="tag pub">Público</span><span class="tag info">Grade 9 a 12</span><span class="tag info">~1.300 alumnos</span><span class="tag info">Programa IB</span></div><a class="colegio-link" href="https://www.sd43.bc.ca/school/portmoody" target="_blank" rel="noopener">🌐 sd43.bc.ca/school/portmoody ↗</a></div>
-          <details><summary>Por qué encaja con Elena</summary><div class="colegio-razon">Está en la misma ciudad que Heritage Woods y es la alternativa natural si allí se completan las plazas. Es centro IB desde 1986, lo que marca el nivel académico de todo el instituto aunque Elena curse el itinerario ordinario. Tiene un programa de arte avanzado, algo muy útil para quien piensa en Arquitectura o Diseño, y equipos de cheerleading y danza competitiva si quiere probar algo nuevo además de la rítmica. Queda en el centro de Port Moody, junto a la estación de SkyTrain Moody Centre.</div></details>
+          <div class="colegio-top"><div class="colegio-nombre">Port Moody Secondary (PMSS)</div><div class="colegio-meta"><span class="tag pub">Público</span><span class="tag info">Grade 9 a 12</span><span class="tag info">~1.300 alumnos</span><span class="tag info">Programa IB</span></div></div>
+          <details><summary>Por qué encaja con Elena</summary><div class="colegio-razon">Está en la misma ciudad que Heritage Woods y es la alternativa natural si allí se completan las plazas. Es centro IB desde 1986, lo que marca el nivel académico de todo el instituto aunque Elena curse el itinerario ordinario. Tiene un programa de arte avanzado, algo muy útil para quien piensa en Arquitectura o Diseño, y equipos de cheerleading y danza competitiva si quiere probar algo nuevo además de la rítmica. Queda en el centro de Port Moody, junto a la estación de SkyTrain Moody Centre.</div></details><div class="colegio-btn-wrap"><a class="web-btn" href="https://www.sd43.bc.ca/school/portmoody" target="_blank" rel="noopener">Ver web del colegio ↗</a></div>
         </div>
       </div></div>
       <div class="match-bar"><span class="match-tag">Tres clubes de rítmica en el distrito</span><span class="match-tag">SkyTrain directo a Vancouver</span><span class="match-tag">PCE sin dormir fuera</span><span class="match-tag">Pistas de esquí cercanas</span></div>
@@ -531,12 +533,12 @@ details[open] summary::before{transform:rotate(90deg);}
       </div>
       <div class="opcion-body"><div class="colegios">
         <div class="colegio">
-          <div class="colegio-top"><div class="colegio-nombre">Walnut Grove Secondary (WGSS)</div><div class="colegio-meta"><span class="tag pub">Público</span><span class="tag info">~2.000 alumnos</span><span class="tag info">Programa AP</span><span class="tag info">Deporte provincial</span></div><a class="colegio-link" href="https://wgss.ca" target="_blank" rel="noopener">🌐 wgss.ca ↗</a></div>
-          <details><summary>Por qué encaja con Elena</summary><div class="colegio-razon">Uno de los centros más grandes del distrito, con programa de Advanced Placement, un departamento de bellas artes muy potente y un programa deportivo reconocido a nivel provincial. Con dos mil alumnos hay vida social de instituto americano y, sobre todo, suficiente variedad de asignaturas para construir el horario que necesita de cara a la convalidación.</div></details>
+          <div class="colegio-top"><div class="colegio-nombre">Walnut Grove Secondary (WGSS)</div><div class="colegio-meta"><span class="tag pub">Público</span><span class="tag info">~2.000 alumnos</span><span class="tag info">Programa AP</span><span class="tag info">Deporte provincial</span></div></div>
+          <details><summary>Por qué encaja con Elena</summary><div class="colegio-razon">Uno de los centros más grandes del distrito, con programa de Advanced Placement, un departamento de bellas artes muy potente y un programa deportivo reconocido a nivel provincial. Con dos mil alumnos hay vida social de instituto americano y, sobre todo, suficiente variedad de asignaturas para construir el horario que necesita de cara a la convalidación.</div></details><div class="colegio-btn-wrap"><a class="web-btn" href="https://wgss.ca" target="_blank" rel="noopener">Ver web del colegio ↗</a></div>
         </div>
         <div class="colegio">
-          <div class="colegio-top"><div class="colegio-nombre">R.E. Mountain Secondary (REMSS)</div><div class="colegio-meta"><span class="tag pub">Público</span><span class="tag info">~2.300 alumnos</span><span class="tag info">Único con IB en Langley</span><span class="tag info">Langley Events Centre</span></div><a class="colegio-link" href="https://remss.sd35.bc.ca/" target="_blank" rel="noopener">🌐 remss.sd35.bc.ca ↗</a></div>
-          <details><summary>Por qué encaja con Elena</summary><div class="colegio-razon">El único colegio de Langley con Bachillerato Internacional, lo que eleva el nivel académico de todo el centro aunque Elena curse el itinerario provincial ordinario. Justo al lado está el Langley Events Centre, con pabellones multiusos y pista de hielo, unas instalaciones deportivas de nivel competitivo a pie de colegio.</div></details>
+          <div class="colegio-top"><div class="colegio-nombre">R.E. Mountain Secondary (REMSS)</div><div class="colegio-meta"><span class="tag pub">Público</span><span class="tag info">~2.300 alumnos</span><span class="tag info">Único con IB en Langley</span><span class="tag info">Langley Events Centre</span></div></div>
+          <details><summary>Por qué encaja con Elena</summary><div class="colegio-razon">El único colegio de Langley con Bachillerato Internacional, lo que eleva el nivel académico de todo el centro aunque Elena curse el itinerario provincial ordinario. Justo al lado está el Langley Events Centre, con pabellones multiusos y pista de hielo, unas instalaciones deportivas de nivel competitivo a pie de colegio.</div></details><div class="colegio-btn-wrap"><a class="web-btn" href="https://remss.sd35.bc.ca/" target="_blank" rel="noopener">Ver web del colegio ↗</a></div>
         </div>
       </div></div>
       <div class="match-bar"><span class="match-tag">Precio más ajustado</span><span class="match-tag">Distrito de trato cercano</span><span class="match-tag">Clubes de rítmica a unos 40 min en transporte público</span><span class="match-tag">Vancouver en bus y SkyTrain</span></div>
@@ -555,19 +557,19 @@ details[open] summary::before{transform:rotate(90deg);}
       <div class="club-top"><div class="club-nombre">Grace Rhythmics</div><span class="tag ext">Club externo</span></div>
       <div class="club-loc">📍 Port Moody y Port Coquitlam</div>
       <div class="club-txt">El club que encontrasteis vosotras. Compite en los campeonatos provinciales de British Columbia y está en la misma ciudad que los dos colegios de la opción recomendada.</div>
-      <a class="club-link" href="https://www.gracegymnast.com/" target="_blank" rel="noopener">gracegymnast.com ↗</a>
+      <a class="web-btn" href="https://www.gracegymnast.com/" target="_blank" rel="noopener">Ver web del club ↗</a>
     </div>
     <div class="club-card">
       <div class="club-top"><div class="club-nombre">Origami Rhythmics</div><span class="tag ext">Club externo</span></div>
       <div class="club-loc">📍 Port Coquitlam</div>
       <div class="club-txt">Programas recreativos y de competición. Es el club que mirasteis desde Langley; con Coquitlam queda dentro del mismo distrito.</div>
-      <a class="club-link" href="https://origamirhythmics.ca/" target="_blank" rel="noopener">origamirhythmics.ca ↗</a>
+      <a class="web-btn" href="https://origamirhythmics.ca/" target="_blank" rel="noopener">Ver web del club ↗</a>
     </div>
     <div class="club-card">
       <div class="club-top"><div class="club-nombre">Flamingo Rhythmic Gymnastics</div><span class="tag ext">Club externo</span></div>
       <div class="club-loc">📍 Port Coquitlam</div>
       <div class="club-txt">Tercera alternativa en la misma zona, por si los horarios de los otros dos no encajan con el instituto.</div>
-      <a class="club-link" href="https://flamingorhythmicsrg.com/" target="_blank" rel="noopener">flamingorhythmicsrg.com ↗</a>
+      <a class="web-btn" href="https://flamingorhythmicsrg.com/" target="_blank" rel="noopener">Ver web del club ↗</a>
     </div>
   </div>
   <div class="club-nota">🏫 <strong>Dentro del instituto:</strong> Port Moody Secondary tiene equipo de cheerleading y de danza competitiva, una forma de mantener la flexibilidad dentro del horario escolar si Elena quiere combinarlo con la rítmica o prefiere probar algo nuevo.</div>
