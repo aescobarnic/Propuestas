@@ -136,6 +136,18 @@ details[open] summary::before{transform:rotate(90deg);}
 .match-tag::before{content:'✓';font-size:9px;}
 
 /* INFO BLOCKS */
+.club-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;}
+.club-card{background:var(--white);border-radius:14px;border:1.5px solid var(--gray-border);padding:18px 20px;box-shadow:0 2px 16px rgba(0,51,102,0.05);display:flex;flex-direction:column;gap:8px;}
+.club-top{display:flex;justify-content:space-between;align-items:flex-start;gap:8px;}
+.club-nombre{font-family:'Josefin Sans',sans-serif;font-size:14px;font-weight:700;color:var(--red-deep);}
+.tag.ext{background:#fff4f0;color:var(--red-deep);border:1px solid rgba(177,41,0,0.3);white-space:nowrap;}
+.club-loc{font-size:11px;color:var(--text-mid);font-weight:600;}
+.club-txt{font-size:12px;color:var(--text-mid);line-height:1.6;flex:1;}
+.club-link{font-size:12px;font-weight:700;color:var(--blue);text-decoration:none;}
+.club-link:hover{text-decoration:underline;}
+.club-nota{margin-top:16px;font-size:12.5px;color:var(--text-mid);line-height:1.6;background:var(--blue-light);border-radius:12px;padding:12px 16px;}
+.club-nota strong{color:var(--text);}
+@media(max-width:760px){.club-grid{grid-template-columns:1fr;}}
 .info-blocks{display:grid;grid-template-columns:1fr 1fr;gap:20px;}
 .info-block{background:var(--white);border-radius:16px;border:1.5px solid var(--gray-border);padding:24px 26px;box-shadow:0 2px 16px rgba(0,51,102,0.05);}
 .info-block-icon{font-size:24px;margin-bottom:10px;}
@@ -483,7 +495,7 @@ details[open] summary::before{transform:rotate(90deg);}
   <div class="section-title"><h2>Opciones recomendadas</h2></div>
   <div class="alert-box">
     <div class="alert-icon">🎓</div>
-    <div class="alert-text"><strong>Elena cursa 2.º de Bachillerato fuera:</strong> los dos distritos admiten estudiantes internacionales en Grade 12 y permiten diseñar un horario compatible con la preparación de las PCE. Ambos están en British Columbia, con sede de examen en Vancouver, y cuentan con clubes federados de gimnasia rítmica a los que se llega en transporte público.</div>
+    <div class="alert-text"><strong>Elena cursa 2.º de Bachillerato fuera:</strong> los dos distritos admiten estudiantes internacionales en Grade 12 y permiten diseñar un horario compatible con la preparación de las PCE. Ambos están en el área metropolitana de Vancouver, donde se celebran los exámenes. Desde Port Moody se llega en SkyTrain directo, sin necesidad de dormir en la ciudad.</div>
   </div>
   <div class="opciones-grid">
 
@@ -491,21 +503,21 @@ details[open] summary::before{transform:rotate(90deg);}
       <div class="badge-rec">★ RECOMENDADA</div>
       <div class="opcion-header">
         <div class="opcion-num">Opción 01</div>
-        <div class="opcion-distrito">Central Okanagan School District · Kelowna</div>
-        <div class="opcion-loc">📍 British Columbia · Kelowna, ~145.000 habitantes · Área del Central Okanagan, ~250.000</div>
-        <div class="precio-chip"><span class="val">25.500 €</span><span class="desc">/ año · programa escolar · vuelos incl.*</span><span class="tachado">26.000 €</span></div>
+        <div class="opcion-distrito">Coquitlam School District (SD43) · Port Moody</div>
+        <div class="opcion-loc">📍 British Columbia · Tri-Cities (Coquitlam, Port Coquitlam y Port Moody) · Área metropolitana de Vancouver</div>
+        <div class="precio-chip"><span class="val">27.600 €</span><span class="desc">/ año · programa escolar · vuelos incl.*</span></div>
       </div>
       <div class="opcion-body"><div class="colegios">
         <div class="colegio">
-          <div class="colegio-top"><div class="colegio-nombre">Kelowna Secondary School (KSS)</div><div class="colegio-meta"><span class="tag pub">Público</span><span class="tag info">Grade 10–12</span><span class="tag info">~1.600 alumnos</span><span class="tag info">Centro de Kelowna</span></div></div>
-          <details><summary>Por qué encaja con Elena</summary><div class="colegio-razon">Solo acoge cursos 10 a 12, así que todo el centro está orientado al tramo final de secundaria y a la entrada en la universidad: es el ambiente natural para alguien que llega a hacer su último curso. El distrito concentra la mayor oferta de Advanced Placement fuera del área metropolitana de Vancouver, lo que permite cargar el horario de matemáticas, física y dibujo técnico, justo las materias que pesan en la ponderación de Arquitectura. Está en pleno centro, a pocos minutos en autobús del club de gimnasia rítmica de Kelowna.</div></details>
+          <div class="colegio-top"><div class="colegio-nombre">Heritage Woods Secondary (HWSS)</div><div class="colegio-meta"><span class="tag pub">Público</span><span class="tag info">Grade 9 a 12</span><span class="tag info">Port Moody</span><span class="tag info">Vuestra elección</span></div></div>
+          <details><summary>Por qué encaja con Elena</summary><div class="colegio-razon">Es el colegio que elegisteis Elena y tú, y cumple lo que buscabais: mucho deporte, ambiente de instituto americano y un edificio rodeado de naturaleza. Ofrece cursos Honours para subir el nivel en matemáticas y ciencias, que son las materias que más pesan de cara a Arquitectura, y un equipo de orientación que acompaña la planificación universitaria. Acepta estudiantes internacionales en Grade 12 y las plazas se asignan por orden de llegada, así que conviene reservar cuanto antes.</div></details>
         </div>
         <div class="colegio">
-          <div class="colegio-top"><div class="colegio-nombre">Okanagan Mission Secondary (OKM)</div><div class="colegio-meta"><span class="tag pub">Público</span><span class="tag info">Grade 9–12</span><span class="tag info">Zona residencial del lago</span><span class="tag info">Academias deportivas</span></div></div>
-          <details><summary>Por qué encaja con Elena</summary><div class="colegio-razon">Uno de los centros mejor valorados del distrito y con fuerte tradición deportiva, con academias propias de natación, fútbol y hockey. Para una gimnasta que quiere mantenerse en forma mientras prueba otros deportes, hay entrenamiento estructurado dentro del horario escolar. El barrio de Okanagan Mission es tranquilo y residencial, a orillas del lago, y bien conectado con el centro de la ciudad.</div></details>
+          <div class="colegio-top"><div class="colegio-nombre">Port Moody Secondary (PMSS)</div><div class="colegio-meta"><span class="tag pub">Público</span><span class="tag info">Grade 9 a 12</span><span class="tag info">~1.300 alumnos</span><span class="tag info">Programa IB</span></div></div>
+          <details><summary>Por qué encaja con Elena</summary><div class="colegio-razon">Está en la misma ciudad que Heritage Woods y es la alternativa natural si allí se completan las plazas. Es centro IB desde 1986, lo que marca el nivel académico de todo el instituto aunque Elena curse el itinerario ordinario. Tiene un programa de arte avanzado, algo muy útil para quien piensa en Arquitectura o Diseño, y equipos de cheerleading y danza competitiva si quiere probar algo nuevo además de la rítmica. Queda en el centro de Port Moody, junto a la estación de SkyTrain Moody Centre.</div></details>
         </div>
       </div></div>
-      <div class="match-bar"><span class="match-tag">Club de rítmica en la ciudad</span><span class="match-tag">Máxima oferta AP del interior de BC</span><span class="match-tag">Ciudad mediana, no pueblo</span><span class="match-tag">Sede PCE en Vancouver</span></div>
+      <div class="match-bar"><span class="match-tag">Tres clubes de rítmica en el distrito</span><span class="match-tag">SkyTrain directo a Vancouver</span><span class="match-tag">PCE sin dormir fuera</span><span class="match-tag">Pistas de esquí cercanas</span></div>
     </div>
 
     <div class="opcion-card">
@@ -518,24 +530,52 @@ details[open] summary::before{transform:rotate(90deg);}
       <div class="opcion-body"><div class="colegios">
         <div class="colegio">
           <div class="colegio-top"><div class="colegio-nombre">Walnut Grove Secondary (WGSS)</div><div class="colegio-meta"><span class="tag pub">Público</span><span class="tag info">~2.000 alumnos</span><span class="tag info">Programa AP</span><span class="tag info">Deporte provincial</span></div></div>
-          <details><summary>Por qué encaja con Elena</summary><div class="colegio-razon">El centro más grande del distrito, con programa de Advanced Placement, un departamento de bellas artes muy potente y un programa deportivo reconocido a nivel provincial. El tamaño importa aquí: con dos mil alumnos hay vida social de instituto americano de película y, sobre todo, suficiente variedad de asignaturas para construir el horario que necesita de cara a la convalidación.</div></details>
+          <details><summary>Por qué encaja con Elena</summary><div class="colegio-razon">El centro más grande del distrito, con programa de Advanced Placement, un departamento de bellas artes muy potente y un programa deportivo reconocido a nivel provincial. Con dos mil alumnos hay vida social de instituto americano y, sobre todo, suficiente variedad de asignaturas para construir el horario que necesita de cara a la convalidación.</div></details>
         </div>
         <div class="colegio">
           <div class="colegio-top"><div class="colegio-nombre">R.E. Mountain Secondary (REMSS)</div><div class="colegio-meta"><span class="tag pub">Público</span><span class="tag info">~1.200 alumnos</span><span class="tag info">Único con IB en Langley</span><span class="tag info">Langley Events Centre</span></div></div>
-          <details><summary>Por qué encaja con Elena</summary><div class="colegio-razon">El único colegio de Langley con Bachillerato Internacional, lo que eleva el nivel académico de todo el centro aunque Elena curse el itinerario provincial ordinario. Justo al lado está el Langley Events Centre, con pabellones multiusos y pista de hielo: instalaciones deportivas de nivel competitivo a pie de colegio, algo poco habitual.</div></details>
+          <details><summary>Por qué encaja con Elena</summary><div class="colegio-razon">El único colegio de Langley con Bachillerato Internacional, lo que eleva el nivel académico de todo el centro aunque Elena curse el itinerario provincial ordinario. Justo al lado está el Langley Events Centre, con pabellones multiusos y pista de hielo, unas instalaciones deportivas de nivel competitivo a pie de colegio.</div></details>
         </div>
       </div></div>
-      <div class="match-bar"><span class="match-tag">Clubes de rítmica del área de Vancouver</span><span class="match-tag">Buena red de bus metropolitana</span><span class="match-tag">Vancouver a una hora</span><span class="match-tag">Sede PCE en la propia ciudad</span></div>
+      <div class="match-bar"><span class="match-tag">Precio más ajustado</span><span class="match-tag">Distrito de trato cercano</span><span class="match-tag">Clubes de rítmica a unos 40 min en transporte público</span><span class="match-tag">Vancouver en bus y SkyTrain</span></div>
     </div>
 
   </div>
+
+  <!-- ============ 5b. GIMNASIA RÍTMICA ============ -->
+  <div class="section-title"><h2>Gimnasia rítmica en la zona</h2></div>
+  <div class="alert-box">
+    <div class="alert-icon">🎀</div>
+    <div class="alert-text"><strong>Clubes externos:</strong> los tres son clubes privados de la zona, independientes del colegio y del programa. Elena se inscribiría como cualquier gimnasta local, con la cuota a cargo de la familia. El gestor estudiantil ayuda con la inscripción y con encajar los horarios de entrenamiento con el instituto a la llegada.</div>
+  </div>
+  <div class="club-grid">
+    <div class="club-card">
+      <div class="club-top"><div class="club-nombre">Grace Rhythmics</div><span class="tag ext">Club externo</span></div>
+      <div class="club-loc">📍 Port Moody y Port Coquitlam</div>
+      <div class="club-txt">El club que encontrasteis vosotras. Compite en los campeonatos provinciales de British Columbia y está en la misma ciudad que los dos colegios de la opción recomendada.</div>
+      <a class="club-link" href="https://www.gracegymnast.com/" target="_blank" rel="noopener">gracegymnast.com ↗</a>
+    </div>
+    <div class="club-card">
+      <div class="club-top"><div class="club-nombre">Origami Rhythmics</div><span class="tag ext">Club externo</span></div>
+      <div class="club-loc">📍 Port Coquitlam</div>
+      <div class="club-txt">Programas recreativos y de competición. Es el club que mirasteis desde Langley; con Coquitlam queda dentro del mismo distrito.</div>
+      <a class="club-link" href="https://origamirhythmics.ca/" target="_blank" rel="noopener">origamirhythmics.ca ↗</a>
+    </div>
+    <div class="club-card">
+      <div class="club-top"><div class="club-nombre">Flamingo Rhythmic Gymnastics</div><span class="tag ext">Club externo</span></div>
+      <div class="club-loc">📍 Port Coquitlam</div>
+      <div class="club-txt">Tercera alternativa en la misma zona, por si los horarios de los otros dos no encajan con el instituto.</div>
+      <a class="club-link" href="https://flamingorhythmicsrg.com/" target="_blank" rel="noopener">flamingorhythmicsrg.com ↗</a>
+    </div>
+  </div>
+  <div class="club-nota">🏫 <strong>Dentro del instituto:</strong> Port Moody Secondary tiene equipo de cheerleading y de danza competitiva, una forma de mantener la flexibilidad dentro del horario escolar si Elena quiere combinarlo con la rítmica o prefiere probar algo nuevo.</div>
 
   <!-- ============ 6. VISADO Y VUELOS ============ -->
   <div class="section-title"><h2>Visado y vuelos</h2></div>
   <div class="info-blocks">
     <div class="info-block">
       <div class="info-block-icon">🛂</div>
-      <div class="info-block-title">Visado — Study Permit</div>
+      <div class="info-block-title">Visado: Study Permit</div>
       <div class="info-block-text">La gestión y la tasa del <strong>Study Permit</strong> están incluidas en el programa.
         <ul><li>Tramitación completa gestionada por MLQ</li><li>Tasa del visado incluida en el precio</li><li>Suplemento de <strong>550 €</strong> para programas en la provincia de Quebec</li></ul>
       </div>
@@ -600,6 +640,8 @@ details[open] summary::before{transform:rotate(90deg);}
             <li>Material escolar y uniforme deportivo</li>
             <li>Fotografía escolar y anuario</li>
             <li>Tasas de exámenes opcionales (AP, Cambridge avanzado)</li>
+            <li>Tasas de acreditación UNEDasiss y de los exámenes PCE</li>
+            <li>Clubes deportivos externos (cuota del club de gimnasia rítmica)</li>
             <li>Transporte local mensual</li>
             <li>Todo aquello que no esté especificado expresamente en el apartado &laquo;El programa incluye&raquo;</li>
           </ul>
@@ -690,7 +732,7 @@ details[open] summary::before{transform:rotate(90deg);}
       <div class="fin-opcion-selector">
         <div class="fin-opcion-label">Selecciona la opción del programa</div>
         <div class="fin-opcion-btns" id="finOpciones">
-          <button class="fin-opcion-btn active" data-precio="25500" data-nombre="⭐ Opción 1 · Central Okanagan"><span class="fin-opcion-nombre">⭐ Opción 1 · Central Okanagan</span><span class="fin-opcion-precio">25.500 €</span></button>
+          <button class="fin-opcion-btn active" data-precio="27600" data-nombre="⭐ Opción 1 · Coquitlam"><span class="fin-opcion-nombre">⭐ Opción 1 · Coquitlam</span><span class="fin-opcion-precio">27.600 €</span></button>
           <button class="fin-opcion-btn" data-precio="25609" data-nombre="Opción 2 · Langley"><span class="fin-opcion-nombre">Opción 2 · Langley</span><span class="fin-opcion-precio">25.609 €</span></button>
         </div>
       </div>
@@ -713,15 +755,15 @@ details[open] summary::before{transform:rotate(90deg);}
       <div class="fin-resultado">
         <div class="fin-resultado-main">
           <div class="fin-cuota-label">Cuota mensual estimada</div>
-          <div class="fin-cuota-valor" id="cuotaValor">1.708,33 €</div>
+          <div class="fin-cuota-valor" id="cuotaValor">1.883,33 €</div>
           <div class="fin-cuota-sub" id="cuotaSub">/mes · 12 pagos · TIN 0%</div>
         </div>
         <div class="fin-resultado-detalle">
-          <div class="fin-det-row"><span class="fin-det-label">Importe del programa</span><span class="fin-det-val" id="detPrecio">25.500 €</span></div>
+          <div class="fin-det-row"><span class="fin-det-label">Importe del programa</span><span class="fin-det-val" id="detPrecio">27.600 €</span></div>
           <div class="fin-det-row"><span class="fin-det-label">Entrada a la firma</span><span class="fin-det-val" id="detEntrada">5.000 €</span></div>
-          <div class="fin-det-row"><span class="fin-det-label">Capital financiado</span><span class="fin-det-val" id="detCapital">20.500 €</span></div>
+          <div class="fin-det-row"><span class="fin-det-label">Capital financiado</span><span class="fin-det-val" id="detCapital">22.600 €</span></div>
           <div class="fin-det-row"><span class="fin-det-label">Intereses totales</span><span class="fin-det-val fin-det-green" id="detIntereses">0 € · ¡MLQ los asume!</span></div>
-          <div class="fin-det-row fin-det-total"><span class="fin-det-label">Total a pagar</span><span class="fin-det-val" id="detTotal">25.500 €</span></div>
+          <div class="fin-det-row fin-det-total"><span class="fin-det-label">Total a pagar</span><span class="fin-det-val" id="detTotal">27.600 €</span></div>
         </div>
       </div>
 
@@ -735,7 +777,7 @@ details[open] summary::before{transform:rotate(90deg);}
     <div class="steps-inner">
       <div class="steps-title">🎓 Cursar 2.º de Bachillerato fuera</div>
       <div class="steps-sub">Homologación del título, acreditación UNEDasiss y PCE</div>
-      <div class="cta-line">Hemos preparado una guía con todo el proceso explicado paso a paso: cuándo son obligatorias las PCE, qué asignaturas hay que preparar según la comunidad y la carrera, cómo se calcula la nota de admisión hasta 14 puntos, el calendario del curso y dónde examinarse. La homologación del Bachillerato está incluida en el precio del programa.</div>
+      <div class="cta-line">Hemos preparado una guía con todo el proceso explicado paso a paso: cuándo son obligatorias las PCE, qué asignaturas hay que preparar según la comunidad y la carrera, cómo se calcula la nota de admisión hasta 14 puntos, el calendario del curso y dónde examinarse. La homologación del Bachillerato está incluida en el precio del programa; las tasas de acreditación UNEDasiss y de los exámenes PCE se abonan aparte.</div>
       <div class="pasos-cta-wrap">
         <a class="pasos-cta" href="https://aescobarnic.github.io/Propuestas/acceso-universidad-extranjero.html" target="_blank" rel="noopener">🎓 Leer la guía de acceso a la universidad</a>
       </div>
@@ -776,7 +818,7 @@ details[open] summary::before{transform:rotate(90deg);}
 
 <script>
 (function(){
-  var precio=25500, meses=12, tin=0, ENTRADA=5000;
+  var precio=27600, meses=12, tin=0, ENTRADA=5000;
   function fmt(n){return n.toLocaleString('es-ES',{minimumFractionDigits:2,maximumFractionDigits:2})+' €';}
   function fmt0(n){return n.toLocaleString('es-ES',{maximumFractionDigits:0})+' €';}
   function calc(){
