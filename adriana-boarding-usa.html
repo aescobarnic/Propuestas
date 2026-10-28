@@ -621,6 +621,76 @@ details[open] summary::before{transform:rotate(90deg);}
 .links-grid.l5{grid-template-columns:repeat(5,1fr);}
 .link-item{flex-direction:column;align-items:flex-start;gap:8px;}
 
+
+/* Simulador de prioridades */
+.mm-wrap{display:grid;grid-template-columns:1fr 1.05fr;gap:0;background:var(--white);border:1.5px solid var(--gray-border);border-radius:18px;overflow:hidden;box-shadow:0 4px 24px rgba(0,51,102,0.07);}
+.mm-controls{padding:24px 26px;border-right:1px solid var(--gray-border);}
+.mm-intro{font-size:12.5px;color:var(--text-mid);line-height:1.6;margin-bottom:16px;}
+.mm-crit{margin-bottom:13px;}
+.mm-label{font-size:12.5px;font-weight:600;color:var(--text);margin-bottom:6px;}
+.mm-seg{display:grid;grid-template-columns:repeat(4,1fr);background:var(--gray-bg);border-radius:9px;padding:3px;gap:3px;}
+.mm-seg button{border:0;background:transparent;font-family:'Fira Sans',sans-serif;font-size:11px;font-weight:600;color:var(--text-light);padding:7px 4px;border-radius:7px;cursor:pointer;transition:all .25s;}
+.mm-seg button:hover{color:var(--blue);}
+.mm-seg button.on{background:var(--white);color:var(--red);box-shadow:0 2px 8px rgba(0,51,102,0.12);}
+.mm-results{padding:24px 26px;background:linear-gradient(160deg,#06172e 0%,var(--blue-dark) 50%,#0b3566 100%);position:relative;overflow:hidden;}
+.mm-results::before{content:'';position:absolute;inset:0;background-image:radial-gradient(rgba(255,255,255,0.05) 1px,transparent 1px);background-size:22px 22px;}
+.mm-results > *{position:relative;z-index:2;}
+.mm-head{font-family:'Josefin Sans',sans-serif;font-size:9.5px;font-weight:700;letter-spacing:2.5px;text-transform:uppercase;color:#F5C976;margin-bottom:14px;}
+.mm-list{position:relative;height:330px;}
+.mm-row{position:absolute;left:0;right:0;top:0;height:58px;display:grid;grid-template-columns:30px 1fr 52px;gap:10px;align-items:center;cursor:pointer;transition:transform .7s cubic-bezier(.22,.61,.36,1);}
+.mm-rank{width:28px;height:28px;border-radius:50%;background:rgba(255,255,255,0.1);border:1px solid rgba(255,255,255,0.2);color:#fff;font-family:'Josefin Sans',sans-serif;font-weight:700;font-size:13px;display:flex;align-items:center;justify-content:center;transition:background .4s,color .4s;}
+.mm-row.first .mm-rank{background:#F5C976;color:var(--blue-dark);border-color:#F5C976;}
+.mm-name{font-size:13px;font-weight:600;color:#fff;margin-bottom:6px;}
+.mm-bar{height:8px;border-radius:8px;background:rgba(255,255,255,0.1);overflow:hidden;}
+.mm-bar i{display:block;height:100%;border-radius:8px;background:linear-gradient(90deg,var(--red-warm),#F5C976);transition:width .8s cubic-bezier(.22,.61,.36,1);}
+.mm-pct{font-family:'Josefin Sans',sans-serif;font-size:18px;font-weight:700;color:#fff;text-align:right;}
+.mm-row:hover .mm-name{color:#F5C976;}
+.mm-foot{display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap;margin-top:8px;padding-top:14px;border-top:1px solid rgba(255,255,255,0.12);}
+.mm-note{font-size:10.8px;color:rgba(255,255,255,0.45);line-height:1.5;max-width:320px;}
+.mm-reset{border:1px solid rgba(255,255,255,0.3);background:rgba(255,255,255,0.08);color:#fff;font-family:'Fira Sans',sans-serif;font-size:11.5px;font-weight:600;padding:8px 14px;border-radius:8px;cursor:pointer;transition:background .25s;}
+.mm-reset:hover{background:rgba(255,255,255,0.18);}
+
+/* Lightbox */
+.school-media img,.school.rec .tile img,.media-inset img{cursor:zoom-in;}
+.lb{position:fixed;inset:0;z-index:1000;background:rgba(0,15,35,0.88);backdrop-filter:blur(6px);display:flex;flex-direction:column;align-items:center;justify-content:center;padding:30px;opacity:0;pointer-events:none;transition:opacity .3s ease;}
+.lb.open{opacity:1;pointer-events:auto;}
+.lb img{max-width:min(1100px,92vw);max-height:78vh;border-radius:14px;box-shadow:0 20px 60px rgba(0,0,0,0.5);transform:scale(.94);transition:transform .35s cubic-bezier(.22,.61,.36,1);}
+.lb.open img{transform:none;}
+.lb-cap{color:rgba(255,255,255,0.75);font-size:13px;margin-top:14px;text-align:center;}
+.lb-x{position:absolute;top:18px;right:22px;width:42px;height:42px;border-radius:50%;border:0;background:rgba(255,255,255,0.12);color:#fff;font-size:22px;cursor:pointer;}
+.lb-x:hover{background:rgba(255,255,255,0.22);}
+
+/* Pasos que se iluminan */
+.step-item .step-num{display:inline-flex;width:38px;height:38px;border-radius:50%;align-items:center;justify-content:center;background:rgba(125,212,74,0.08);border:1.5px solid rgba(125,212,74,0.25);font-size:17px;transition:background .5s,border-color .5s,transform .5s cubic-bezier(.34,1.56,.64,1),color .5s;}
+.step-item.lit .step-num{background:#7dd44a;border-color:#7dd44a;color:var(--blue-dark);transform:scale(1.08);}
+.step-item.lit{border-color:rgba(125,212,74,0.35);}
+
+/* Botón flotante */
+.fab{position:fixed;right:22px;bottom:22px;z-index:200;display:flex;gap:8px;align-items:center;opacity:0;transform:translateY(20px);pointer-events:none;transition:opacity .35s ease,transform .35s cubic-bezier(.22,.61,.36,1);}
+.fab.show{opacity:1;transform:none;pointer-events:auto;}
+.fab a,.fab button{display:inline-flex;align-items:center;gap:8px;font-family:'Josefin Sans',sans-serif;font-weight:700;font-size:13px;text-decoration:none;border:0;cursor:pointer;box-shadow:0 10px 28px rgba(0,20,45,0.3);transition:transform .2s;}
+.fab a{background:var(--red);color:#fff;padding:13px 20px;border-radius:30px;}
+.fab a:hover,.fab button:hover{transform:translateY(-2px);}
+.fab button{width:44px;height:44px;border-radius:50%;justify-content:center;background:var(--white);color:var(--blue);font-size:18px;}
+
+/* Titular letra a letra */
+.js-anim .hero-name-sub .ch{display:inline-block;opacity:0;transform:translateY(10px);animation:chIn .5s cubic-bezier(.22,.61,.36,1) forwards;}
+@keyframes chIn{to{opacity:1;transform:none;}}
+
+@media(max-width:900px){
+  .mm-wrap{grid-template-columns:1fr;}
+  .mm-controls{border-right:none;border-bottom:1px solid var(--gray-border);}
+}
+@media(max-width:720px){
+  .mm-controls,.mm-results{padding:20px 18px;}
+  .fab{left:16px;right:16px;bottom:14px;justify-content:space-between;}
+  .fab a{flex:1;justify-content:center;}
+}
+@media(prefers-reduced-motion:reduce){
+  .mm-row,.mm-bar i{transition:none;}
+  .js-anim .hero-name-sub .ch{animation:none;opacity:1;transform:none;}
+}
+
 @media(max-width:1000px){
   .links-grid.l5{grid-template-columns:repeat(2,1fr);}
 }
@@ -741,6 +811,23 @@ details[open] summary::before{transform:rotate(90deg);}
     </div>
     <div class="cmp-panel active" data-panel="fin"><div class="cmp-row rec"><div class="cmp-name">Cushing</div><div class="cmp-fact"><strong>93 % de alumnos internos</strong>, el porcentaje más alto de la selección. Un equipo de estudiantes planifica cada semana los planes con el director de actividades y el Student Center abre los siete días.</div><div class="dots" aria-label="5 de 5"><i class="dot on" style="transition-delay:0.00s"></i><i class="dot on" style="transition-delay:0.06s"></i><i class="dot on" style="transition-delay:0.12s"></i><i class="dot on" style="transition-delay:0.18s"></i><i class="dot on" style="transition-delay:0.24s"></i></div></div><div class="cmp-row"><div class="cmp-name">Berkshire</div><div class="cmp-fact"><strong>87 % internos y el 75 % del profesorado vive en el campus.</strong> Winter Carnival, karaoke, bailes, Jazz Café, escalada, hoguera y salidas a la ciudad o a esquiar.</div><div class="dots" aria-label="5 de 5"><i class="dot on" style="transition-delay:0.00s"></i><i class="dot on" style="transition-delay:0.06s"></i><i class="dot on" style="transition-delay:0.12s"></i><i class="dot on" style="transition-delay:0.18s"></i><i class="dot on" style="transition-delay:0.24s"></i></div></div><div class="cmp-row"><div class="cmp-name">Brewster</div><div class="cmp-fact"><strong>85 % internos.</strong> Cada fin de semana hay planes dentro y fuera del campus, con un Coffee House el sábado por la noche en el que cualquiera puede actuar y salidas a Boston.</div><div class="dots" aria-label="5 de 5"><i class="dot on" style="transition-delay:0.00s"></i><i class="dot on" style="transition-delay:0.06s"></i><i class="dot on" style="transition-delay:0.12s"></i><i class="dot on" style="transition-delay:0.18s"></i><i class="dot on" style="transition-delay:0.24s"></i></div></div><div class="cmp-row"><div class="cmp-name">Proctor</div><div class="cmp-fact"><strong>Unos tres de cada cuatro alumnos son internos.</strong> La oficina de actividades organiza cada fin de semana noches de micro abierto, patinaje en la pista propia y excursiones.</div><div class="dots" aria-label="4 de 5"><i class="dot on" style="transition-delay:0.00s"></i><i class="dot on" style="transition-delay:0.06s"></i><i class="dot on" style="transition-delay:0.12s"></i><i class="dot on" style="transition-delay:0.18s"></i><i class="dot" style="transition-delay:0.24s"></i></div></div><div class="cmp-row"><div class="cmp-name">New Hampton</div><div class="cmp-fact"><strong>80 % internos y el 90 % de las familias del profesorado vive en el campus.</strong> Once casas con vida propia: cenas, cumpleaños y noches de película.</div><div class="dots" aria-label="4 de 5"><i class="dot on" style="transition-delay:0.00s"></i><i class="dot on" style="transition-delay:0.06s"></i><i class="dot on" style="transition-delay:0.12s"></i><i class="dot on" style="transition-delay:0.18s"></i><i class="dot" style="transition-delay:0.24s"></i></div></div></div><div class="cmp-panel" data-panel="teatro"><div class="cmp-row rec"><div class="cmp-name">Cushing</div><div class="cmp-fact"><strong>21 propuestas de artes escénicas.</strong> Obras en escenario principal y en black box, un musical cada invierno y dos galas de danza al año.</div><div class="dots" aria-label="5 de 5"><i class="dot on" style="transition-delay:0.00s"></i><i class="dot on" style="transition-delay:0.06s"></i><i class="dot on" style="transition-delay:0.12s"></i><i class="dot on" style="transition-delay:0.18s"></i><i class="dot on" style="transition-delay:0.24s"></i></div></div><div class="cmp-row"><div class="cmp-name">Berkshire</div><div class="cmp-fact"><strong>Dos obras y un musical cada año</strong> en el Allen Theater (Mamma Mia!, Legally Blonde, Hadestown), con formación en dirección técnica, regiduría, escenografía, luz y sonido.</div><div class="dots" aria-label="5 de 5"><i class="dot on" style="transition-delay:0.00s"></i><i class="dot on" style="transition-delay:0.06s"></i><i class="dot on" style="transition-delay:0.12s"></i><i class="dot on" style="transition-delay:0.18s"></i><i class="dot on" style="transition-delay:0.24s"></i></div></div><div class="cmp-row"><div class="cmp-name">Brewster</div><div class="cmp-fact">Black box, teatro de proscenio en Anderson Hall, <strong>musical de invierno y obras en un acto</strong>, además de clases de teatro en horario lectivo.</div><div class="dots" aria-label="4 de 5"><i class="dot on" style="transition-delay:0.00s"></i><i class="dot on" style="transition-delay:0.06s"></i><i class="dot on" style="transition-delay:0.12s"></i><i class="dot on" style="transition-delay:0.18s"></i><i class="dot" style="transition-delay:0.24s"></i></div></div><div class="cmp-row"><div class="cmp-name">Proctor</div><div class="cmp-fact"><strong>Tres producciones principales al año</strong>, una por trimestre, y proyectos dirigidos por alumnos en primavera. Últimos títulos: Mean Girls, Pippin, Little Shop of Horrors.</div><div class="dots" aria-label="5 de 5"><i class="dot on" style="transition-delay:0.00s"></i><i class="dot on" style="transition-delay:0.06s"></i><i class="dot on" style="transition-delay:0.12s"></i><i class="dot on" style="transition-delay:0.18s"></i><i class="dot on" style="transition-delay:0.24s"></i></div></div><div class="cmp-row"><div class="cmp-name">New Hampton</div><div class="cmp-fact"><strong>Tres producciones principales al año, al menos un musical</strong>, a menudo con orquesta en directo. Curso IB de Literatura y Performance.</div><div class="dots" aria-label="4 de 5"><i class="dot on" style="transition-delay:0.00s"></i><i class="dot on" style="transition-delay:0.06s"></i><i class="dot on" style="transition-delay:0.12s"></i><i class="dot on" style="transition-delay:0.18s"></i><i class="dot" style="transition-delay:0.24s"></i></div></div></div><div class="cmp-panel" data-panel="raqueta"><div class="cmp-row rec"><div class="cmp-name">Cushing</div><div class="cmp-fact"><strong>Seis pistas de tenis, tres de ellas también de pickleball</strong>, con equipos de varios niveles y opción recreativa.</div><div class="dots" aria-label="5 de 5"><i class="dot on" style="transition-delay:0.00s"></i><i class="dot on" style="transition-delay:0.06s"></i><i class="dot on" style="transition-delay:0.12s"></i><i class="dot on" style="transition-delay:0.18s"></i><i class="dot on" style="transition-delay:0.24s"></i></div></div><div class="cmp-row"><div class="cmp-name">Berkshire</div><div class="cmp-fact">Tenis femenino en <strong>equipos varsity y JV</strong>, con varios niveles deportivos.</div><div class="dots" aria-label="4 de 5"><i class="dot on" style="transition-delay:0.00s"></i><i class="dot on" style="transition-delay:0.06s"></i><i class="dot on" style="transition-delay:0.12s"></i><i class="dot on" style="transition-delay:0.18s"></i><i class="dot" style="transition-delay:0.24s"></i></div></div><div class="cmp-row"><div class="cmp-name">Brewster</div><div class="cmp-fact"><strong>Actividad de tarde centrada en deportes de raqueta y pala:</strong> tenis, pickleball y tenis de mesa. Lo más parecido al pádel que encontrará Adriana en la selección.</div><div class="dots" aria-label="5 de 5"><i class="dot on" style="transition-delay:0.00s"></i><i class="dot on" style="transition-delay:0.06s"></i><i class="dot on" style="transition-delay:0.12s"></i><i class="dot on" style="transition-delay:0.18s"></i><i class="dot on" style="transition-delay:0.24s"></i></div></div><div class="cmp-row"><div class="cmp-name">Proctor</div><div class="cmp-fact">Tenis como deporte de primavera dentro de una oferta de 26 deportes.</div><div class="dots" aria-label="3 de 5"><i class="dot on" style="transition-delay:0.00s"></i><i class="dot on" style="transition-delay:0.06s"></i><i class="dot on" style="transition-delay:0.12s"></i><i class="dot" style="transition-delay:0.18s"></i><i class="dot" style="transition-delay:0.24s"></i></div></div><div class="cmp-row"><div class="cmp-name">New Hampton</div><div class="cmp-fact">El tenis aparece de forma recurrente en su calendario de actividades de tarde.</div><div class="dots" aria-label="3 de 5"><i class="dot on" style="transition-delay:0.00s"></i><i class="dot on" style="transition-delay:0.06s"></i><i class="dot on" style="transition-delay:0.12s"></i><i class="dot" style="transition-delay:0.18s"></i><i class="dot" style="transition-delay:0.24s"></i></div></div></div><div class="cmp-panel" data-panel="ski"><div class="cmp-row rec"><div class="cmp-name">Cushing</div><div class="cmp-fact"><strong>Wachusett Mountain a 17 minutos</strong> del campus. El ski forma parte de las salidas de fin de semana y el colegio tiene pista de hielo propia para patinaje recreativo.</div><div class="dots" aria-label="4 de 5"><i class="dot on" style="transition-delay:0.00s"></i><i class="dot on" style="transition-delay:0.06s"></i><i class="dot on" style="transition-delay:0.12s"></i><i class="dot on" style="transition-delay:0.18s"></i><i class="dot" style="transition-delay:0.24s"></i></div></div><div class="cmp-row"><div class="cmp-name">Berkshire</div><div class="cmp-fact"><strong>Salidas de ski en fin de semana</strong> y equipos de alpino y freestyle. No tiene programa recreativo de tarde equivalente.</div><div class="dots" aria-label="3 de 5"><i class="dot on" style="transition-delay:0.00s"></i><i class="dot on" style="transition-delay:0.06s"></i><i class="dot on" style="transition-delay:0.12s"></i><i class="dot" style="transition-delay:0.18s"></i><i class="dot" style="transition-delay:0.24s"></i></div></div><div class="cmp-row"><div class="cmp-name">Brewster</div><div class="cmp-fact"><strong>Ski y snowboard libre en Gunstock Mountain tres tardes por semana</strong> como actividad de invierno (forfait y transporte aparte).</div><div class="dots" aria-label="4 de 5"><i class="dot on" style="transition-delay:0.00s"></i><i class="dot on" style="transition-delay:0.06s"></i><i class="dot on" style="transition-delay:0.12s"></i><i class="dot on" style="transition-delay:0.18s"></i><i class="dot" style="transition-delay:0.24s"></i></div></div><div class="cmp-row"><div class="cmp-name">Proctor</div><div class="cmp-fact"><strong>Estación de ski propia dentro del campus.</strong> Casi la mitad del alumnado pasa las tardes de invierno en la nieve y hay un programa no competitivo para quien quiere disfrutar.</div><div class="dots" aria-label="5 de 5"><i class="dot on" style="transition-delay:0.00s"></i><i class="dot on" style="transition-delay:0.06s"></i><i class="dot on" style="transition-delay:0.12s"></i><i class="dot on" style="transition-delay:0.18s"></i><i class="dot on" style="transition-delay:0.24s"></i></div></div><div class="cmp-row"><div class="cmp-name">New Hampton</div><div class="cmp-fact">A los pies de las White Mountains, con deportes de nieve en su oferta. La vía recreativa concreta la confirmamos con Admissions.</div><div class="dots" aria-label="3 de 5"><i class="dot on" style="transition-delay:0.00s"></i><i class="dot on" style="transition-delay:0.06s"></i><i class="dot on" style="transition-delay:0.12s"></i><i class="dot" style="transition-delay:0.18s"></i><i class="dot" style="transition-delay:0.24s"></i></div></div></div><div class="cmp-panel" data-panel="apoyo"><div class="cmp-row rec"><div class="cmp-name">Cushing</div><div class="cmp-fact">Academic Support en formato estándar y <strong>coaching individual</strong> si en algún momento lo necesitara. Ratio de 6 alumnos por profesor.</div><div class="dots" aria-label="4 de 5"><i class="dot on" style="transition-delay:0.00s"></i><i class="dot on" style="transition-delay:0.06s"></i><i class="dot on" style="transition-delay:0.12s"></i><i class="dot on" style="transition-delay:0.18s"></i><i class="dot" style="transition-delay:0.24s"></i></div></div><div class="cmp-row"><div class="cmp-name">Berkshire</div><div class="cmp-fact"><strong>Ratio 4:1, el más bajo de la selección</strong>, clases de 12 y estudio supervisado cada noche.</div><div class="dots" aria-label="4 de 5"><i class="dot on" style="transition-delay:0.00s"></i><i class="dot on" style="transition-delay:0.06s"></i><i class="dot on" style="transition-delay:0.12s"></i><i class="dot on" style="transition-delay:0.18s"></i><i class="dot" style="transition-delay:0.24s"></i></div></div><div class="cmp-row"><div class="cmp-name">Brewster</div><div class="cmp-fact"><strong>Modelo de equipos académicos</strong> en el que cada alumno pertenece a uno de siete equipos con profesores que le conocen, y apoyo escalable según necesidad.</div><div class="dots" aria-label="5 de 5"><i class="dot on" style="transition-delay:0.00s"></i><i class="dot on" style="transition-delay:0.06s"></i><i class="dot on" style="transition-delay:0.12s"></i><i class="dot on" style="transition-delay:0.18s"></i><i class="dot on" style="transition-delay:0.24s"></i></div></div><div class="cmp-row"><div class="cmp-name">Proctor</div><div class="cmp-fact">Una red alrededor de cada alumno: tutor, dorm parents, entrenadores, profesores y <strong>especialistas de aprendizaje</strong>.</div><div class="dots" aria-label="5 de 5"><i class="dot on" style="transition-delay:0.00s"></i><i class="dot on" style="transition-delay:0.06s"></i><i class="dot on" style="transition-delay:0.12s"></i><i class="dot on" style="transition-delay:0.18s"></i><i class="dot on" style="transition-delay:0.24s"></i></div></div><div class="cmp-row"><div class="cmp-name">New Hampton</div><div class="cmp-fact">Academic Support Program individual, compartido o en grupo, con <strong>ratio 5:1</strong>.</div><div class="dots" aria-label="4 de 5"><i class="dot on" style="transition-delay:0.00s"></i><i class="dot on" style="transition-delay:0.06s"></i><i class="dot on" style="transition-delay:0.12s"></i><i class="dot on" style="transition-delay:0.18s"></i><i class="dot" style="transition-delay:0.24s"></i></div></div></div><div class="cmp-panel" data-panel="intl"><div class="cmp-row rec"><div class="cmp-name">Cushing</div><div class="cmp-fact">Alumnos de <strong>31 países y 30 estados</strong>: mezcla equilibrada entre americanos e internacionales.</div><div class="dots" aria-label="5 de 5"><i class="dot on" style="transition-delay:0.00s"></i><i class="dot on" style="transition-delay:0.06s"></i><i class="dot on" style="transition-delay:0.12s"></i><i class="dot on" style="transition-delay:0.18s"></i><i class="dot on" style="transition-delay:0.24s"></i></div></div><div class="cmp-row"><div class="cmp-name">Berkshire</div><div class="cmp-fact"><strong>30 países y 28 estados</strong> en 430 alumnos.</div><div class="dots" aria-label="4 de 5"><i class="dot on" style="transition-delay:0.00s"></i><i class="dot on" style="transition-delay:0.06s"></i><i class="dot on" style="transition-delay:0.12s"></i><i class="dot on" style="transition-delay:0.18s"></i><i class="dot" style="transition-delay:0.24s"></i></div></div><div class="cmp-row"><div class="cmp-name">Brewster</div><div class="cmp-fact">En el curso 2026/27, <strong>355 alumnos de 26 estados y 27 países</strong>. Además, el colegio tiene campus en España.</div><div class="dots" aria-label="5 de 5"><i class="dot on" style="transition-delay:0.00s"></i><i class="dot on" style="transition-delay:0.06s"></i><i class="dot on" style="transition-delay:0.12s"></i><i class="dot on" style="transition-delay:0.18s"></i><i class="dot on" style="transition-delay:0.24s"></i></div></div><div class="cmp-row"><div class="cmp-name">Proctor</div><div class="cmp-fact"><strong>30 estados y 11 países.</strong> Es la opción más americana de la selección, algo valioso para una ciudadana estadounidense que quiere reconectar con su país.</div><div class="dots" aria-label="3 de 5"><i class="dot on" style="transition-delay:0.00s"></i><i class="dot on" style="transition-delay:0.06s"></i><i class="dot on" style="transition-delay:0.12s"></i><i class="dot" style="transition-delay:0.18s"></i><i class="dot" style="transition-delay:0.24s"></i></div></div><div class="cmp-row"><div class="cmp-name">New Hampton</div><div class="cmp-fact">Alumnos de <strong>30 países</strong> y un currículo de Bachillerato Internacional (IB).</div><div class="dots" aria-label="4 de 5"><i class="dot on" style="transition-delay:0.00s"></i><i class="dot on" style="transition-delay:0.06s"></i><i class="dot on" style="transition-delay:0.12s"></i><i class="dot on" style="transition-delay:0.18s"></i><i class="dot" style="transition-delay:0.24s"></i></div></div></div>
     <div class="cmp-foot">★ Colegio recomendado. Datos tomados de las webs y documentos oficiales de cada colegio en octubre de 2026.</div>
+  </div>
+
+
+  <div class="section-title"><h2>Ajusta las prioridades</h2></div>
+  <div class="mm-wrap">
+    <div class="mm-controls">
+      <p class="mm-intro">Marcad cuánto pesa cada aspecto para vosotros y mirad cómo se reordenan los colegios. Hemos dejado marcada la valoración que hicimos a partir del perfil de Adriana.</p>
+      <div class="mm-crit"><div class="mm-label">🏡 Vida de fin de semana</div><div class="mm-seg" data-k="fin"><button data-v="0" class="">Da igual</button><button data-v="1" class="">Algo</button><button data-v="2" class="">Mucho</button><button data-v="3" class="on">Clave</button></div></div><div class="mm-crit"><div class="mm-label">🎭 Teatro</div><div class="mm-seg" data-k="teatro"><button data-v="0" class="">Da igual</button><button data-v="1" class="">Algo</button><button data-v="2" class="">Mucho</button><button data-v="3" class="on">Clave</button></div></div><div class="mm-crit"><div class="mm-label">🎾 Tenis y raqueta</div><div class="mm-seg" data-k="raqueta"><button data-v="0" class="">Da igual</button><button data-v="1" class="">Algo</button><button data-v="2" class="on">Mucho</button><button data-v="3" class="">Clave</button></div></div><div class="mm-crit"><div class="mm-label">⛷ Ski recreativo</div><div class="mm-seg" data-k="ski"><button data-v="0" class="">Da igual</button><button data-v="1" class="">Algo</button><button data-v="2" class="on">Mucho</button><button data-v="3" class="">Clave</button></div></div><div class="mm-crit"><div class="mm-label">📚 Apoyo académico</div><div class="mm-seg" data-k="apoyo"><button data-v="0" class="">Da igual</button><button data-v="1" class="">Algo</button><button data-v="2" class="on">Mucho</button><button data-v="3" class="">Clave</button></div></div><div class="mm-crit"><div class="mm-label">🌍 Ambiente internacional</div><div class="mm-seg" data-k="intl"><button data-v="0" class="">Da igual</button><button data-v="1" class="on">Algo</button><button data-v="2" class="">Mucho</button><button data-v="3" class="">Clave</button></div></div>
+    </div>
+    <div class="mm-results">
+      <div class="mm-head">Encaje con Adriana</div>
+      <div class="mm-list" id="mmList"><div class="mm-row first" data-id="cushing" style="transform:translateY(0px)"><div class="mm-rank">1</div><div><div class="mm-name">Cushing Academy</div><div class="mm-bar"><i style="width:94%"></i></div></div><div class="mm-pct">94%</div></div><div class="mm-row" data-id="brewster" style="transform:translateY(66px)"><div class="mm-rank">2</div><div><div class="mm-name">Brewster Academy</div><div class="mm-bar"><i style="width:92%"></i></div></div><div class="mm-pct">92%</div></div><div class="mm-row" data-id="berkshire" style="transform:translateY(132px)"><div class="mm-rank">3</div><div><div class="mm-name">Berkshire School</div><div class="mm-bar"><i style="width:86%"></i></div></div><div class="mm-pct">86%</div></div><div class="mm-row" data-id="proctor" style="transform:translateY(198px)"><div class="mm-rank">4</div><div><div class="mm-name">Proctor Academy</div><div class="mm-bar"><i style="width:86%"></i></div></div><div class="mm-pct">86%</div></div><div class="mm-row" data-id="newhampton" style="transform:translateY(264px)"><div class="mm-rank">5</div><div><div class="mm-name">New Hampton School</div><div class="mm-bar"><i style="width:74%"></i></div></div><div class="mm-pct">74%</div></div></div>
+      <div class="mm-foot">
+        <div class="mm-note">Herramienta orientativa basada en nuestra valoración de cada colegio. Pulsa un colegio para ver su ficha.</div>
+        <button class="mm-reset" id="mmReset">↺ Valoración inicial</button>
+      </div>
+    </div>
   </div>
 
   <div class="section-title" id="colegios"><h2>Los cinco colegios</h2></div>
@@ -1031,6 +1118,9 @@ details[open] summary::before{transform:rotate(90deg);}
 
 </div>
 
+<div class="fab" id="fab"><a href="https://asesoramientosmlq.zohobookings.eu/mylanguagequest" target="_blank" rel="noopener">📅 Hablar con nuestra asesora</a><button type="button" id="fabTop" aria-label="Volver arriba">↑</button></div>
+<div class="lb" id="lb" role="dialog" aria-modal="true"><button class="lb-x" type="button" aria-label="Cerrar">×</button><img alt=""><div class="lb-cap"></div></div>
+
 <div class="footer">
   <div class="footer-logo">MY LANGUAGE QUEST</div>
   <div class="footer-tag">Explore · Learn · Grow</div>
@@ -1177,6 +1267,92 @@ details[open] summary::before{transform:rotate(90deg);}
   });
 
   applyMode('nat',false);
+})();
+</script>
+
+
+<script>
+(function(){
+  var d=document, MM={"w": {"fin": 3, "teatro": 3, "raqueta": 2, "ski": 2, "apoyo": 2, "intl": 1}, "sc": {"cushing": {"fin": 5, "teatro": 5, "raqueta": 5, "ski": 4, "apoyo": 4, "intl": 5}, "berkshire": {"fin": 5, "teatro": 5, "raqueta": 4, "ski": 3, "apoyo": 4, "intl": 4}, "brewster": {"fin": 5, "teatro": 4, "raqueta": 5, "ski": 4, "apoyo": 5, "intl": 5}, "proctor": {"fin": 4, "teatro": 5, "raqueta": 3, "ski": 5, "apoyo": 5, "intl": 3}, "newhampton": {"fin": 4, "teatro": 4, "raqueta": 3, "ski": 3, "apoyo": 4, "intl": 4}}};
+  /* Simulador */
+  var w=JSON.parse(JSON.stringify(MM.w)), W0=JSON.parse(JSON.stringify(MM.w)), ROW=66;
+  function pct(id){var tw=0,s=0;for(var k in w){tw+=w[k];s+=w[k]*MM.sc[id][k];}return tw?Math.round(s/(tw*5)*100):0;}
+  function render(){
+    var rows=[].slice.call(d.querySelectorAll('.mm-row'));
+    var data=rows.map(function(r){return {el:r,p:pct(r.dataset.id)};});
+    data.sort(function(a,b){return b.p-a.p;});
+    data.forEach(function(o,i){
+      o.el.style.transform='translateY('+(i*ROW)+'px)';
+      o.el.querySelector('.mm-rank').textContent=i+1;
+      o.el.querySelector('.mm-bar i').style.width=o.p+'%';
+      o.el.querySelector('.mm-pct').textContent=o.p+'%';
+      o.el.classList.toggle('first',i===0);
+    });
+  }
+  d.querySelectorAll('.mm-seg').forEach(function(seg){
+    seg.querySelectorAll('button').forEach(function(b){
+      b.addEventListener('click',function(){
+        seg.querySelectorAll('button').forEach(function(x){x.classList.remove('on');});
+        b.classList.add('on'); w[seg.dataset.k]=parseInt(b.dataset.v); render();
+      });
+    });
+  });
+  var rs=d.getElementById('mmReset');
+  if(rs)rs.addEventListener('click',function(){
+    w=JSON.parse(JSON.stringify(W0));
+    d.querySelectorAll('.mm-seg').forEach(function(seg){seg.querySelectorAll('button').forEach(function(b){b.classList.toggle('on',parseInt(b.dataset.v)===w[seg.dataset.k]);});});
+    render();
+  });
+  d.querySelectorAll('.mm-row').forEach(function(r){
+    r.addEventListener('click',function(){var t=d.getElementById(r.dataset.id);if(t)t.scrollIntoView({behavior:'smooth',block:'start'});});
+  });
+
+  /* Lightbox */
+  var lb=d.getElementById('lb'), lbImg=lb.querySelector('img'), lbCap=lb.querySelector('.lb-cap');
+  d.addEventListener('click',function(e){
+    var t=e.target;
+    if(t.tagName==='IMG'&&t.closest('.school-media')){lbImg.src=t.currentSrc||t.src;lbImg.alt=t.alt;lbCap.textContent=t.alt;lb.classList.add('open');}
+  });
+  function closeLb(){lb.classList.remove('open');}
+  lb.addEventListener('click',function(e){if(e.target!==lbImg)closeLb();});
+  d.addEventListener('keydown',function(e){if(e.key==='Escape')closeLb();});
+
+  /* Titular letra a letra */
+  var sub=d.querySelector('.hero-name-sub');
+  if(sub&&d.documentElement.className.indexOf('js-anim')>-1&&!window.matchMedia('(prefers-reduced-motion: reduce)').matches){
+    var txt=sub.textContent; sub.textContent='';
+    txt.split('').forEach(function(c,i){
+      var sp=d.createElement('span'); sp.className='ch';
+      sp.textContent=c===' '?'\u00a0':c; sp.style.animationDelay=(0.35+i*0.028)+'s'; sub.appendChild(sp);
+    });
+  }
+
+  if(!('IntersectionObserver' in window))return;
+
+  /* Pasos que se iluminan */
+  var steps=d.querySelectorAll('.step-item');
+  var ioS=new IntersectionObserver(function(en){
+    en.forEach(function(e){if(e.isIntersecting){steps.forEach(function(s,i){setTimeout(function(){s.classList.add('lit');},350+i*260);});ioS.disconnect();}});
+  },{threshold:0.35});
+  var sw=d.querySelector('.steps-wrap'); if(sw)ioS.observe(sw);
+
+  /* Listas en cascada */
+  d.querySelectorAll('.inc-list,.perfil-list,.why-list').forEach(function(ul){
+    var items=ul.querySelectorAll('li');
+    items.forEach(function(li,i){li.classList.add('reveal');li.style.transitionDelay=Math.min(i*0.06,0.5)+'s';});
+    var o=new IntersectionObserver(function(en){en.forEach(function(e){if(e.isIntersecting){items.forEach(function(li){li.classList.add('in');});o.disconnect();}});},{threshold:0.15});
+    o.observe(ul);
+  });
+
+  /* Botón flotante */
+  var fab=d.getElementById('fab'), start=d.querySelector('.rec-banner'), end=d.querySelector('.steps-wrap');
+  function fabCheck(){
+    var a=start.getBoundingClientRect().bottom<0;
+    var r=end.getBoundingClientRect(); var b=r.top<window.innerHeight&&r.bottom>0;
+    fab.classList.toggle('show',a&&!b);
+  }
+  window.addEventListener('scroll',fabCheck,{passive:true}); fabCheck();
+  d.getElementById('fabTop').addEventListener('click',function(){window.scrollTo({top:0,behavior:'smooth'});});
 })();
 </script>
 
