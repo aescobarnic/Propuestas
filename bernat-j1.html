@@ -21,6 +21,10 @@
 *,*::before,*::after{margin:0;padding:0;box-sizing:border-box;}
 body{font-family:'Fira Sans',sans-serif;background:var(--gray-bg);color:var(--text);}
 
+/* Rutas de pago: letra en vez de emoji */
+.pay-route-icon.letra{display:inline-flex;align-items:center;justify-content:center;width:27px;height:27px;border-radius:8px;background:var(--red);color:#ffffff;font-family:'Josefin Sans',sans-serif;font-size:14px;font-weight:700;line-height:1;flex-shrink:0;}
+.pay-route-icon.letra.b{background:var(--blue);}
+
 /* DIFERENCIA · dos pilares */
 .pilar-duo{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-bottom:26px;}
 .pilar-box{background:var(--white);border:1.5px solid var(--gray-border);border-left:5px solid var(--red);border-radius:14px;padding:22px 24px;box-shadow:0 2px 16px rgba(0,51,102,0.06);}
@@ -867,7 +871,7 @@ details[open] summary::before{transform:rotate(90deg);}
       <div class="pay-subtitle">Dos vías: pago directo o financiación. El importe de la reserva cambia según cuál elijas.</div>
 
       <div class="pay-route">
-        <div class="pay-route-head"><span class="pay-route-icon">💰</span><span class="pay-route-title">Opción A · Pago sin financiación · Black Month 12.900 €</span></div>
+        <div class="pay-route-head"><span class="pay-route-icon letra">A</span><span class="pay-route-title">Opción A · Pago sin financiación · Black Month 12.900 €</span></div>
         <div class="pay-route-sub">Reservando entre el 2 y el 30 de noviembre de 2026 se aplican los 1.000 € de descuento: 13.900 € − 1.000 € = <strong>12.900 €</strong>. El importe íntegro debe estar abonado como máximo el 1 de marzo de 2027.</div>
         <div class="pay-entrada">
           <div class="pay-entrada-num">3.500 €</div>
@@ -887,7 +891,7 @@ details[open] summary::before{transform:rotate(90deg);}
       </div>
 
       <div class="pay-route">
-        <div class="pay-route-head"><span class="pay-route-icon">📆</span><span class="pay-route-title">Opción B · Con financiación Banco Sabadell · 24 meses sin intereses</span></div>
+        <div class="pay-route-head"><span class="pay-route-icon letra b">B</span><span class="pay-route-title">Opción B · Con financiación Banco Sabadell · 24 meses sin intereses</span></div>
         <div class="pay-route-sub">Si se financia el programa, la entrada es siempre de 5.000 € y el resto se financia en cuotas mensuales sobre el precio de 13.900 €. Durante la campaña Black Month, los 24 meses son <strong>sin intereses</strong>. El descuento de 1.000 € no se acumula a esta opción.</div>
         <div class="pay-entrada">
           <div class="pay-entrada-num">5.000 €</div>
