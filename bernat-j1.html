@@ -21,6 +21,22 @@
 *,*::before,*::after{margin:0;padding:0;box-sizing:border-box;}
 body{font-family:'Fira Sans',sans-serif;background:var(--gray-bg);color:var(--text);}
 
+/* FOTOS REALES */
+.ny-fotos{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:26px;}
+.ny-foto{position:relative;border-radius:14px;overflow:hidden;border:3px solid rgba(255,255,255,0.9);box-shadow:0 10px 30px rgba(0,31,64,0.35);}
+.ny-foto img{width:100%;height:100%;aspect-ratio:16/10;object-fit:cover;display:block;}
+.ny-foto-cap{position:absolute;left:0;right:0;bottom:0;background:linear-gradient(transparent,rgba(0,31,64,0.88));color:#fff;font-size:11.5px;font-weight:500;padding:22px 12px 9px;line-height:1.4;}
+.gal-lead{font-size:14px;color:var(--text-mid);line-height:1.75;max-width:860px;margin-bottom:20px;}
+.gal-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:14px;}
+.gal-item{position:relative;border-radius:14px;overflow:hidden;background:var(--white);border:1.5px solid var(--gray-border);box-shadow:0 2px 16px rgba(0,51,102,0.07);transition:transform .2s,box-shadow .2s;}
+.gal-item:hover{transform:translateY(-4px);box-shadow:0 14px 38px rgba(0,51,102,0.16);}
+.gal-item img{width:100%;aspect-ratio:3/4;object-fit:cover;display:block;}
+.gal-cap{position:absolute;left:0;right:0;bottom:0;background:linear-gradient(transparent,rgba(0,31,64,0.9));color:#fff;padding:26px 11px 10px;}
+.gal-cap-state{font-family:'Josefin Sans',sans-serif;font-size:12px;font-weight:700;line-height:1.2;}
+.gal-cap-txt{font-size:10.5px;color:rgba(255,255,255,0.72);margin-top:2px;line-height:1.35;}
+.gal-nota{font-size:11.5px;color:var(--text-light);margin-top:14px;font-style:italic;}
+@media(max-width:900px){.gal-grid{grid-template-columns:repeat(2,1fr);}.ny-fotos{grid-template-columns:1fr;}}
+
 /* HEADER */
 .header{background:var(--white);padding:18px 48px;display:flex;align-items:center;justify-content:space-between;box-shadow:0 1px 0 var(--gray-border),0 4px 24px rgba(0,51,102,0.07);position:relative;z-index:10;}
 .header::after{content:'';position:absolute;bottom:0;left:0;right:0;height:4px;background:linear-gradient(90deg,var(--red) 0%,var(--red) 34%,var(--white) 34%,var(--white) 66%,var(--blue) 66%,var(--blue) 100%);}
@@ -627,11 +643,31 @@ details[open] summary::before{transform:rotate(90deg);}
           </ul>
         </div>
       </div>
+      <div class="ny-fotos">
+        <div class="ny-foto"><img src="https://aescobarnic.github.io/Propuestas/img/ny-camp-espanoles.jpg" alt="Estudiantes españoles de My Language Quest en el Orientation Camp de Nueva York" loading="lazy"><div class="ny-foto-cap">El grupo español del Orientation Camp, antes de salir cada uno hacia su destino</div></div>
+        <div class="ny-foto"><img src="https://aescobarnic.github.io/Propuestas/img/ny-camp-banderas.jpg" alt="Estudiantes internacionales con las banderas de sus países en el Orientation Camp" loading="lazy"><div class="ny-foto-cap">Los compañeros de camp: más de quince nacionalidades viviendo lo mismo que Bernat</div></div>
+      </div>
       <div class="ny-nota">La orientación en Nueva York está reservada al programa de año escolar completo y se realiza antes de que el estudiante viaje a su destino final. El itinerario detallado se entrega junto con la documentación del programa.</div>
     </div>
   </div>
 
-  <!-- ============ 7. QUÉ DESTACA ============ -->
+  <!-- ============ 7. RECIBIMIENTOS REALES ============ -->
+  <div class="section-title"><h2>Así llegan nuestros estudiantes</h2></div>
+  <p class="gal-lead">
+    Estas son llegadas reales de estudiantes de My Language Quest, con sus familias anfitrionas esperándoles en el
+    aeropuerto con el cartel hecho a mano. Es el momento del que todos hablan después: <strong>el minuto en que el
+    programa deja de ser un papel y pasa a ser una familia con nombres</strong>.
+  </p>
+  <div class="gal-grid">
+    <div class="gal-item"><img src="https://aescobarnic.github.io/Propuestas/img/llegada-michigan.jpg" alt="Estudiante española recibida por sus hermanas anfitrionas en el aeropuerto de Michigan" loading="lazy"><div class="gal-cap"><div class="gal-cap-state">Michigan</div><div class="gal-cap-txt">Recibida por sus hermanas de acogida</div></div></div>
+    <div class="gal-item"><img src="https://aescobarnic.github.io/Propuestas/img/llegada-west-virginia.jpg" alt="Estudiante español recibido por su familia anfitriona en el aeropuerto de West Virginia" loading="lazy"><div class="gal-cap"><div class="gal-cap-state">West Virginia</div><div class="gal-cap-txt">«Welcome to America» en la puerta de llegadas</div></div></div>
+    <div class="gal-item"><img src="https://aescobarnic.github.io/Propuestas/img/llegada-grand-rapids.jpg" alt="Estudiante recibida por su familia anfitriona al completo en el aeropuerto de Grand Rapids" loading="lazy"><div class="gal-cap"><div class="gal-cap-state">Grand Rapids</div><div class="gal-cap-txt">La familia al completo, hermanos pequeños incluidos</div></div></div>
+    <div class="gal-item"><img src="https://aescobarnic.github.io/Propuestas/img/llegada-alabama.jpg" alt="Estudiante recibida por su familia anfitriona en Alabama" loading="lazy"><div class="gal-cap"><div class="gal-cap-state">Alabama</div><div class="gal-cap-txt">Cartel pintado a mano para la llegada</div></div></div>
+    <div class="gal-item"><img src="https://aescobarnic.github.io/Propuestas/img/llegada-billings.jpg" alt="Estudiante recibida por sus hermanas anfitrionas en el aeropuerto de Billings, Montana" loading="lazy"><div class="gal-cap"><div class="gal-cap-state">Billings, Montana</div><div class="gal-cap-txt">Primer abrazo con las hermanas de acogida</div></div></div>
+  </div>
+  <div class="gal-nota">Fotografías reales de estudiantes de My Language Quest en sus programas en Estados Unidos. Los destinos que aparecen son los que les asignó el sponsor y no son seleccionables.</div>
+
+  <!-- ============ 8. QUÉ DESTACA ============ -->
   <div class="section-title"><h2>Qué añade My Language Quest</h2></div>
   <div class="destaca-grid">
     <div class="destaca-item"><div class="destaca-icon">👤</div><div class="destaca-title">Gestor estudiantil personalizado</div><div class="destaca-desc">Una única persona asignada a la familia, que realiza todos los trámites y es el contacto principal durante el proceso y el año escolar.</div></div>
@@ -975,6 +1011,8 @@ details[open] summary::before{transform:rotate(90deg);}
     ['.qs-chapters-head','reveal'],
     ['.qs-chapter','reveal'],
     ['.alert-box','reveal'],
+    ['.gal-item','reveal'],
+    ['.ny-foto','reveal-zoom'],
     ['.opcion-card','reveal'],
     ['.info-block','reveal'],
     ['.includes-wrap','reveal-zoom'],
