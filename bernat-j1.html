@@ -91,7 +91,8 @@ body{font-family:'Fira Sans',sans-serif;background:var(--gray-bg);color:var(--te
 .hero-pills{display:flex;flex-wrap:wrap;gap:8px;margin-top:20px;}
 .hero-pill{display:flex;align-items:center;gap:6px;background:rgba(255,255,255,0.1);border:1px solid rgba(255,255,255,0.18);border-radius:8px;padding:6px 12px;font-size:11px;color:var(--white);font-weight:500;}
 .hero-pill.ac{background:rgba(0,31,64,0.35);border-color:rgba(255,255,255,0.4);color:#ffffff;}
-.hero-promo{display:inline-flex;align-items:center;gap:8px;background:rgba(0,31,64,0.4);border:1px solid rgba(255,255,255,0.35);border-radius:10px;padding:10px 16px;font-size:12.5px;font-weight:600;color:#ffffff;margin-top:18px;max-width:640px;line-height:1.5;}
+.hero-promo{display:inline-flex;align-items:flex-start;gap:10px;background:rgba(0,31,64,0.4);border:1px solid rgba(255,255,255,0.35);border-radius:10px;padding:10px 16px;font-size:12.5px;font-weight:600;color:#ffffff;margin-top:18px;max-width:660px;line-height:1.55;}
+.hero-promo-tag{flex:0 0 auto;background:#ffffff;color:var(--blue-dark);font-family:'Josefin Sans',sans-serif;font-size:10px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;padding:4px 9px;border-radius:5px;line-height:1.3;margin-top:1px;}
 
 /* LAYOUT */
 .main{max-width:1140px;margin:0 auto;padding:40px 24px 20px;}
@@ -517,7 +518,7 @@ details[open] summary::before{transform:rotate(90deg);}
       <div class="hero-pill">🏫 Colegio público</div>
       <div class="hero-pill ac">🗽 Orientación en Nueva York incluida</div>
     </div>
-    <div class="hero-promo">🏷 <span><strong>Black Month:</strong> 1.000 € de descuento reservando entre el 2 y el 30 de noviembre de 2026, <strong>o</strong> 24 meses sin intereses en la financiación. Las dos ventajas no se acumulan: se elige una.</span></div>
+    <div class="hero-promo"><span class="hero-promo-tag">Black Month</span><span><strong>1.000 € de descuento</strong> reservando entre el 2 y el 30 de noviembre de 2026, <strong>o</strong> 24 meses sin intereses en la financiación. Las dos ventajas no se acumulan: se elige una.</span></div>
   </div>
 </div>
 
@@ -864,7 +865,7 @@ details[open] summary::before{transform:rotate(90deg);}
       <div class="pay-subtitle">Dos vías: pago directo o financiación. El importe de la reserva cambia según cuál elijas.</div>
 
       <div class="pay-route">
-        <div class="pay-route-head"><span class="pay-route-icon">🏷</span><span class="pay-route-title">Opción A · Pago sin financiación · Black Month 12.900 €</span></div>
+        <div class="pay-route-head"><span class="pay-route-icon">💰</span><span class="pay-route-title">Opción A · Pago sin financiación · Black Month 12.900 €</span></div>
         <div class="pay-route-sub">Reservando entre el 2 y el 30 de noviembre de 2026 se aplican los 1.000 € de descuento: 13.900 € − 1.000 € = <strong>12.900 €</strong>. El importe íntegro debe estar abonado como máximo el 1 de marzo de 2027.</div>
         <div class="pay-entrada">
           <div class="pay-entrada-num">3.500 €</div>
