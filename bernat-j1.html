@@ -21,6 +21,12 @@
 *,*::before,*::after{margin:0;padding:0;box-sizing:border-box;}
 body{font-family:'Fira Sans',sans-serif;background:var(--gray-bg);color:var(--text);}
 
+/* CTA ITINERARIO NY */
+.ny-cta-wrap{margin-top:24px;}
+.ny-cta{display:inline-flex;align-items:center;gap:9px;background:#ffffff;color:var(--blue-dark);font-family:'Josefin Sans',sans-serif;font-size:13.5px;font-weight:700;letter-spacing:.3px;text-decoration:none;padding:13px 24px;border-radius:10px;box-shadow:0 8px 24px rgba(0,31,64,0.3);transition:transform .18s,box-shadow .18s;}
+.ny-cta:hover{transform:translateY(-2px);box-shadow:0 14px 34px rgba(0,31,64,0.42);}
+.ny-cta-sub{font-size:11.5px;color:rgba(255,255,255,0.55);margin-top:9px;}
+
 /* FOTOS REALES */
 .ny-fotos{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:26px;}
 .ny-foto{position:relative;border-radius:14px;overflow:hidden;border:3px solid rgba(255,255,255,0.9);box-shadow:0 10px 30px rgba(0,31,64,0.35);}
@@ -643,11 +649,15 @@ details[open] summary::before{transform:rotate(90deg);}
           </ul>
         </div>
       </div>
+      <div class="ny-cta-wrap">
+        <a class="ny-cta" href="https://drive.google.com/file/d/1jjTrXMO6Yi10fAf-kK-XRMx7zKGc05VC/view?usp=sharing" target="_blank" rel="noopener">🗽 Ver el itinerario completo del Camp</a>
+        <div class="ny-cta-sub">Programa día a día de los 4 días y 3 noches en Nueva York · se abre en una pestaña nueva</div>
+      </div>
       <div class="ny-fotos">
         <div class="ny-foto"><img src="https://aescobarnic.github.io/Propuestas/img/ny-camp-espanoles.jpg" alt="Estudiantes españoles de My Language Quest en el Orientation Camp de Nueva York" loading="lazy"><div class="ny-foto-cap">El grupo español del Orientation Camp, antes de salir cada uno hacia su destino</div></div>
         <div class="ny-foto"><img src="https://aescobarnic.github.io/Propuestas/img/ny-camp-banderas.jpg" alt="Estudiantes internacionales con las banderas de sus países en el Orientation Camp" loading="lazy"><div class="ny-foto-cap">Los compañeros de camp: más de quince nacionalidades viviendo lo mismo que Bernat</div></div>
       </div>
-      <div class="ny-nota">La orientación en Nueva York está reservada al programa de año escolar completo y se realiza antes de que el estudiante viaje a su destino final. El itinerario detallado se entrega junto con la documentación del programa.</div>
+      <div class="ny-nota">La orientación en Nueva York está reservada al programa de año escolar completo y se realiza antes de que el estudiante viaje a su destino final. El itinerario detallado está disponible en el enlace de arriba y puede sufrir ajustes menores según el calendario del sponsor.</div>
     </div>
   </div>
 
