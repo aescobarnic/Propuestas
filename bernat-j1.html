@@ -21,6 +21,17 @@
 *,*::before,*::after{margin:0;padding:0;box-sizing:border-box;}
 body{font-family:'Fira Sans',sans-serif;background:var(--gray-bg);color:var(--text);}
 
+/* DIFERENCIA · dos pilares */
+.pilar-duo{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-bottom:26px;}
+.pilar-box{background:var(--white);border:1.5px solid var(--gray-border);border-left:5px solid var(--red);border-radius:14px;padding:22px 24px;box-shadow:0 2px 16px rgba(0,51,102,0.06);}
+.pilar-box.b{border-left-color:var(--blue);}
+.pilar-box-ico{font-size:24px;margin-bottom:10px;}
+.pilar-box-tit{font-family:'Josefin Sans',sans-serif;font-size:17px;font-weight:700;color:var(--red-deep);margin-bottom:9px;line-height:1.25;}
+.pilar-box.b .pilar-box-tit{color:var(--blue-dark);}
+.pilar-box-txt{font-size:12.8px;color:var(--text-mid);line-height:1.7;}
+.pilar-box-txt strong{color:var(--text);font-weight:600;}
+@media(max-width:900px){.pilar-duo{grid-template-columns:1fr;}}
+
 /* ENLACES DE INTERÉS */
 .link-sub{font-family:'Josefin Sans',sans-serif;font-size:13px;font-weight:700;color:var(--blue);letter-spacing:.4px;text-transform:uppercase;margin:0 0 14px;display:flex;align-items:center;gap:9px;}
 .link-sub::after{content:'';flex:1;height:1px;background:var(--gray-border);}
@@ -694,15 +705,42 @@ details[open] summary::before{transform:rotate(90deg);}
   <div class="gal-nota">Fotografías reales de estudiantes de My Language Quest en sus programas en Estados Unidos. Los destinos que aparecen son los que les asignó el sponsor y no son seleccionables.</div>
 
   <!-- ============ 8. QUÉ DESTACA ============ -->
-  <div class="section-title"><h2>Qué añade My Language Quest</h2></div>
+  <div class="section-title"><h2>¿Qué nos hace diferentes?</h2></div>
+  <p class="intro-text">
+    Las reglas del J1 las fija el Gobierno americano y son iguales en todas las agencias. La diferencia está en
+    otro sitio: en <strong>cómo se trata a cada estudiante</strong> y en <strong>cuántos trámites tenéis que hacer
+    vosotros</strong>. En My Language Quest la respuesta a lo segundo es: ninguno.
+  </p>
+  <div class="pilar-duo">
+    <div class="pilar-box">
+      <div class="pilar-box-ico">👤</div>
+      <div class="pilar-box-tit">Personalización real,<br>no un expediente más</div>
+      <div class="pilar-box-txt">
+        Bernat tendrá <strong>una asesora en España y un gestor estudiantil asignados con nombre y apellidos</strong>,
+        las mismas personas de principio a fin. Nada de centralitas ni tickets: quien coge el teléfono un domingo por
+        la noche conoce su caso, sabe cómo es y en qué momento del curso está. Seguimiento de su rendimiento,
+        información a casa cada mes y apoyo psicológico disponible todo el año.
+      </div>
+    </div>
+    <div class="pilar-box b">
+      <div class="pilar-box-ico">📋</div>
+      <div class="pilar-box-tit">Todos los trámites,<br>incluidos y hechos por nosotros</div>
+      <div class="pilar-box-txt">
+        Visado J1 con tasa SEVIS, cita en la Embajada, matriculación, seguro médico, legalización de notas en EE.UU.
+        con notario y Apostilla de La Haya, y el expediente de convalidación ante el Ministerio con sus tasas pagadas.
+        <strong>Todo va en el precio y todo lo gestionamos nosotros.</strong> A vosotros os toca presentaros a la
+        entrevista de la Embajada; del resto no tenéis que ocuparos.
+      </div>
+    </div>
+  </div>
   <div class="destaca-grid">
-    <div class="destaca-item"><div class="destaca-icon">👤</div><div class="destaca-title">Gestor estudiantil personalizado</div><div class="destaca-desc">Una única persona asignada a la familia, que realiza todos los trámites y es el contacto principal durante el proceso y el año escolar.</div></div>
+    <div class="destaca-item"><div class="destaca-icon">👤</div><div class="destaca-title">Gestor estudiantil asignado</div><div class="destaca-desc">Una única persona para la familia durante todo el proceso y el año escolar. Hace los trámites y responde siempre la misma voz.</div></div>
     <div class="destaca-item"><div class="destaca-icon">🗽</div><div class="destaca-title">Orientación en Nueva York</div><div class="destaca-desc">4 días y 3 noches incluidos en el precio, antes de comenzar el programa.</div></div>
     <div class="destaca-item"><div class="destaca-icon">📘</div><div class="destaca-title">Clases Cambridge incluidas</div><div class="destaca-desc">30 horas de clases online con profesor en vivo, más el libro.</div></div>
-    <div class="destaca-item"><div class="destaca-icon">🛂</div><div class="destaca-title">Visado J1 completo</div><div class="destaca-desc">Tasa SEVIS, tramitación del visado y cita en la embajada incluidos. La familia solo tiene que presentarse.</div></div>
-    <div class="destaca-item"><div class="destaca-icon">💬</div><div class="destaca-title">Apoyo emocional y psicológico</div><div class="destaca-desc">Disponible para el estudiante durante todo el programa si lo necesita.</div></div>
-    <div class="destaca-item"><div class="destaca-icon">📜</div><div class="destaca-title">Legalización de notas en EE.UU.</div><div class="destaca-desc">Recogida de transcripts, firma de notario y Apostilla de La Haya.</div></div>
-    <div class="destaca-item"><div class="destaca-icon">📑</div><div class="destaca-title">Convalidación en España incluida</div><div class="destaca-desc">Nos encargamos del expediente completo y del pago de tasas ante el Ministerio de Educación.</div></div>
+    <div class="destaca-item"><div class="destaca-icon">🛂</div><div class="destaca-title">Visado J1 completo</div><div class="destaca-desc">Tasa SEVIS, tramitación y cita en la Embajada incluidas. Vosotros solo tenéis que presentaros el día de la entrevista.</div></div>
+    <div class="destaca-item"><div class="destaca-icon">💬</div><div class="destaca-title">Apoyo emocional y psicológico</div><div class="destaca-desc">Disponible para el estudiante todo el curso, y atención 24 h en España para vosotros si surge cualquier cosa.</div></div>
+    <div class="destaca-item"><div class="destaca-icon">📜</div><div class="destaca-title">Legalización de notas en EE.UU.</div><div class="destaca-desc">Recogida de transcripts, notario y Apostilla de La Haya. Un trámite a distancia que no tendréis que perseguir.</div></div>
+    <div class="destaca-item"><div class="destaca-icon">📑</div><div class="destaca-title">Convalidación en España incluida</div><div class="destaca-desc">Expediente completo y tasas del Ministerio de Educación a nuestro cargo, para que Bernat se incorpore a 1º de Bachillerato sin sobresaltos.</div></div>
     <div class="destaca-item"><div class="destaca-icon">🛡</div><div class="destaca-title">Plaza garantizada</div><div class="destaca-desc">Público, privado o privado con boarding. Si hay sobrecoste de matriculación, lo asume MLQ.</div></div>
   </div>
 
@@ -1055,6 +1093,7 @@ details[open] summary::before{transform:rotate(90deg);}
     ['.alert-box','reveal'],
     ['.gal-item','reveal'],
     ['.link-card','reveal'],
+    ['.pilar-box','reveal'],
     ['.ny-foto','reveal-zoom'],
     ['.opcion-card','reveal'],
     ['.info-block','reveal'],
