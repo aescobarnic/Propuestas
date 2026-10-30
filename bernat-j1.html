@@ -21,6 +21,22 @@
 *,*::before,*::after{margin:0;padding:0;box-sizing:border-box;}
 body{font-family:'Fira Sans',sans-serif;background:var(--gray-bg);color:var(--text);}
 
+/* ENLACES DE INTERÉS */
+.link-sub{font-family:'Josefin Sans',sans-serif;font-size:13px;font-weight:700;color:var(--blue);letter-spacing:.4px;text-transform:uppercase;margin:0 0 14px;display:flex;align-items:center;gap:9px;}
+.link-sub::after{content:'';flex:1;height:1px;background:var(--gray-border);}
+.link-sub.opt{color:var(--red-deep);margin-top:28px;}
+.link-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:14px;}
+.link-card{display:flex;gap:14px;align-items:flex-start;background:var(--white);border:1.5px solid var(--gray-border);border-radius:12px;padding:16px 18px;text-decoration:none;transition:transform .18s,box-shadow .18s,border-color .18s;}
+.link-card:hover{transform:translateY(-3px);box-shadow:0 12px 30px rgba(0,51,102,0.12);border-color:var(--blue);}
+.link-card.opt:hover{border-color:var(--red);box-shadow:0 12px 30px rgba(110,22,0,0.14);}
+.link-ico{font-size:21px;flex-shrink:0;line-height:1.2;}
+.link-tit{font-family:'Josefin Sans',sans-serif;font-size:13.5px;font-weight:700;color:var(--blue-dark);margin-bottom:3px;}
+.link-card.opt .link-tit{color:var(--red-deep);}
+.link-desc{font-size:11.5px;color:var(--text-mid);line-height:1.5;}
+.link-arrow{margin-left:auto;align-self:center;font-size:15px;color:var(--text-light);flex-shrink:0;}
+.link-nota{font-size:11.5px;color:var(--text-light);margin-top:14px;font-style:italic;}
+@media(max-width:900px){.link-grid{grid-template-columns:1fr;}}
+
 /* CTA ITINERARIO NY */
 .ny-cta-wrap{margin-top:24px;}
 .ny-cta{display:inline-flex;align-items:center;gap:9px;background:#ffffff;color:var(--blue-dark);font-family:'Josefin Sans',sans-serif;font-size:13.5px;font-weight:700;letter-spacing:.3px;text-decoration:none;padding:13px 24px;border-radius:10px;box-shadow:0 8px 24px rgba(0,31,64,0.3);transition:transform .18s,box-shadow .18s;}
@@ -920,7 +936,23 @@ details[open] summary::before{transform:rotate(90deg);}
     </div>
   </div>
 
-  <!-- ============ 13. SIGUIENTES PASOS ============ -->
+  <!-- ============ 13. ENLACES DE INTERÉS ============ -->
+  <div class="section-title"><h2>Enlaces de interés</h2></div>
+  <div class="link-sub">Incluido en el programa</div>
+  <div class="link-grid">
+    <a class="link-card" href="https://drive.google.com/file/d/1eJC9fMGKSZU6gCrvJkNgDLUbZ4eiUvB0/view?usp=sharing" target="_blank" rel="noopener"><div class="link-ico">🎓</div><div><div class="link-tit">GAP Academy · Formación para el estudiante</div><div class="link-desc">El programa formativo obligatorio que prepara a Bernat antes de salir: convivencia, normas y adaptación.</div></div><div class="link-arrow">→</div></a>
+    <a class="link-card" href="https://drive.google.com/file/d/1nuY34R2Um103RD8nR0Iv1Vsnr8SQqrs5/view?usp=sharing" target="_blank" rel="noopener"><div class="link-ico">👨‍👩‍👦</div><div><div class="link-tit">GAP Academy · Formación para padres</div><div class="link-desc">No es obligatoria, pero ayuda a saber qué esperar de cada fase del curso y cómo acompañar desde España.</div></div><div class="link-arrow">→</div></a>
+    <a class="link-card" href="https://drive.google.com/file/d/1257tm23dG5pRFp8WdKlFTuPBPdnIdK5x/view?usp=sharing" target="_blank" rel="noopener"><div class="link-ico">📑</div><div><div class="link-tit">Guía de convalidación en España</div><div class="link-desc">Cómo se homologa el curso ante el Ministerio de Educación al volver. MLQ se encarga del expediente completo.</div></div><div class="link-arrow">→</div></a>
+    <a class="link-card" href="https://aescobarnic.github.io/Propuestas/seguro-medico-cigna-j1.html" target="_blank" rel="noopener"><div class="link-ico">🏥</div><div><div class="link-tit">Cobertura del seguro médico</div><div class="link-desc">Detalle de lo que cubre el seguro médico y de accidentes incluido en el precio del programa.</div></div><div class="link-arrow">→</div></a>
+  </div>
+  <div class="link-sub opt">Servicios opcionales</div>
+  <div class="link-grid">
+    <a class="link-card opt" href="https://drive.google.com/file/d/1g7QKU0wsUAS6-2k3SBsIAsnkI7PEZoVM/view?usp=sharing" target="_blank" rel="noopener"><div class="link-ico">📍</div><div><div class="link-tit">Opciones de suplementos</div><div class="link-desc">Suplementos disponibles sobre el programa estándar. Se solicitan junto con la candidatura y solo se abonan si la solicitud llega a cumplirse.</div></div><div class="link-arrow">→</div></a>
+    <a class="link-card opt" href="https://drive.google.com/file/d/1jidlTYbqb49o_4alTzs2RbVYOXAm53Kr/view?usp=sharing" target="_blank" rel="noopener"><div class="link-ico">🛡</div><div><div class="link-tit">Seguro de anulación · 350 €</div><div class="link-desc">Opcional. Se contrata y abona en el momento de la firma del contrato y su importe no es reembolsable.</div></div><div class="link-arrow">→</div></a>
+  </div>
+  <div class="link-nota">Los servicios opcionales no están incluidos en el precio del programa y se contratan aparte.</div>
+
+  <!-- ============ 14. SIGUIENTES PASOS ============ -->
   <div class="section-title"><h2>Siguientes pasos</h2></div>
   <div class="steps-wrap">
     <div class="steps-inner">
@@ -943,7 +975,7 @@ details[open] summary::before{transform:rotate(90deg);}
 
 </div>
 
-<!-- ============ 14. FOOTER ============ -->
+<!-- ============ 15. FOOTER ============ -->
 <div class="footer">
   <div class="footer-logo">MY LANGUAGE QUEST</div>
   <div class="footer-tag">Explore · Learn · Grow</div>
@@ -1022,6 +1054,7 @@ details[open] summary::before{transform:rotate(90deg);}
     ['.qs-chapter','reveal'],
     ['.alert-box','reveal'],
     ['.gal-item','reveal'],
+    ['.link-card','reveal'],
     ['.ny-foto','reveal-zoom'],
     ['.opcion-card','reveal'],
     ['.info-block','reveal'],
