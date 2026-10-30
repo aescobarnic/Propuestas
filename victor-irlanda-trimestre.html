@@ -42,7 +42,7 @@ body{font-family:'Fira Sans',sans-serif;background:var(--gray-bg);color:var(--te
 .hero-pills{display:flex;flex-wrap:wrap;gap:8px;margin-top:20px;}
 .hero-pill{display:flex;align-items:center;gap:6px;background:rgba(255,255,255,0.1);border:1px solid rgba(255,255,255,0.18);border-radius:8px;padding:6px 12px;font-size:11px;color:var(--white);font-weight:500;}
 .hero-pill.ac{background:rgba(0,31,64,0.35);border-color:rgba(255,255,255,0.4);color:#ffffff;}
-.hero-promo{display:inline-flex;align-items:center;gap:8px;background:rgba(0,31,64,0.4);border:1px solid rgba(255,255,255,0.35);border-radius:10px;padding:10px 16px;font-size:12.5px;font-weight:600;color:#ffffff;margin-top:18px;max-width:640px;line-height:1.5;}
+.hero-promo{display:inline-block;background:rgba(0,31,64,0.4);border:1px solid rgba(255,255,255,0.35);border-radius:10px;padding:10px 16px;font-size:12.5px;font-weight:600;color:#ffffff;margin-top:18px;max-width:640px;line-height:1.5;}
 
 /* LAYOUT */
 .main{max-width:1140px;margin:0 auto;padding:40px 24px 20px;}
@@ -103,7 +103,7 @@ body{font-family:'Fira Sans',sans-serif;background:var(--gray-bg);color:var(--te
 .opciones-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(330px,1fr));gap:20px;}
 .opciones-grid.cuatro{grid-template-columns:repeat(2,1fr);}
 @media(max-width:860px){.opciones-grid.cuatro{grid-template-columns:1fr;}}
-.opcion-card{background:var(--white);border-radius:16px;border:1.5px solid var(--gray-border);overflow:hidden;box-shadow:0 2px 16px rgba(0,51,102,0.06);position:relative;transition:transform .2s,box-shadow .2s,border-color .2s;}
+.opcion-card{background:var(--white);border-radius:16px;border:1.5px solid var(--gray-border);overflow:hidden;box-shadow:0 2px 16px rgba(0,51,102,0.06);position:relative;display:flex;flex-direction:column;transition:transform .2s,box-shadow .2s,border-color .2s;}
 .opcion-card:hover{transform:translateY(-4px);box-shadow:0 12px 40px rgba(31,74,5,0.18);border-color:var(--ie);}
 .opcion-card.recomendada{border-color:var(--blue);box-shadow:0 6px 28px rgba(0,51,102,0.20);}
 .badge-rec{position:absolute;top:14px;right:-32px;background:var(--blue);color:var(--white);font-size:8px;font-weight:700;letter-spacing:1.5px;padding:5px 40px;transform:rotate(45deg);width:130px;text-align:center;z-index:10;}
@@ -117,7 +117,7 @@ body{font-family:'Fira Sans',sans-serif;background:var(--gray-bg);color:var(--te
 .precio-chip .val{font-family:'Josefin Sans',sans-serif;font-size:20px;font-weight:700;color:var(--white);}
 .precio-chip .desc{font-size:10px;color:rgba(255,255,255,0.5);}
 .precio-chip .tachado{font-size:10px;color:rgba(255,255,255,0.3);text-decoration:line-through;margin-left:6px;}
-.opcion-body{padding:20px 22px;}
+.opcion-body{padding:20px 22px;flex:1;}
 .colegios{display:flex;flex-direction:column;gap:12px;}
 .colegio{border:1.5px solid var(--gray-border);border-radius:12px;overflow:hidden;background:var(--gray-card);transition:border-color .2s;}
 .colegio:hover{border-color:var(--red);}
@@ -134,7 +134,7 @@ details summary::-webkit-details-marker{display:none;}
 details summary::before{content:'▸';font-size:10px;transition:transform .2s;display:inline-block;}
 details[open] summary::before{transform:rotate(90deg);}
 .colegio-razon{padding:10px 14px 13px;font-size:12px;color:var(--text-mid);line-height:1.7;border-left:3px solid var(--red);margin:0 14px 12px;background:var(--red-light);border-radius:0 6px 6px 0;}
-.match-bar{display:flex;gap:6px;flex-wrap:wrap;padding:14px 22px;border-top:1px solid var(--gray-border);background:linear-gradient(to right,var(--gray-card),var(--white));}
+.match-bar{display:flex;gap:6px;flex-wrap:wrap;margin-top:auto;padding:14px 22px;border-top:1px solid var(--gray-border);background:linear-gradient(to right,var(--gray-card),var(--white));}
 .match-tag{display:flex;align-items:center;gap:4px;font-size:10px;font-weight:600;color:var(--green-dark);background:var(--green-light);border:1px solid rgba(76,158,12,0.25);border-radius:20px;padding:3px 10px;}
 .match-tag::before{content:'✓';font-size:9px;}
 
@@ -369,12 +369,13 @@ details[open] summary::before{transform:rotate(90deg);}
 .extra-tags{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:16px;}
 .extra-tag{font-size:10.5px;color:var(--text-mid);background:var(--gray-card);border:1px solid var(--gray-border);border-radius:20px;padding:3px 10px;}
 .actividades-ciudad{font-size:11.5px;color:var(--text-mid);line-height:1.65;background:var(--ie-light);border-left:3px solid var(--ie);border-radius:0 8px 8px 0;padding:10px 14px;margin-bottom:16px;}
-.por-que-list{list-style:none;display:flex;flex-direction:column;gap:7px;}
-.por-que-list li{font-size:12px;color:var(--text-mid);line-height:1.55;display:flex;gap:8px;align-items:flex-start;}
-.por-que-list li::before{content:'☘';color:var(--ie);flex-shrink:0;font-size:11px;}
+.por-que-list{list-style:none;display:flex;flex-direction:column;gap:7px;margin-bottom:18px;}
+.por-que-list li{font-size:12px;color:var(--text-mid);line-height:1.55;display:block;position:relative;padding-left:19px;}
+.por-que-list li::before{content:'☘';color:var(--ie);position:absolute;left:0;top:0;font-size:11px;}
 
 /* Modalidades del programa */
 .mod-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;}
+.mod-grid.una{grid-template-columns:1fr;max-width:620px;margin:0 auto;}
 .mod-card{background:var(--white);border:1.5px solid var(--gray-border);border-radius:16px;overflow:hidden;box-shadow:0 2px 16px rgba(31,74,5,0.06);display:flex;flex-direction:column;position:relative;transition:transform .3s cubic-bezier(.22,.61,.36,1),box-shadow .3s ease;}
 .mod-card:hover{transform:translateY(-4px);box-shadow:0 12px 34px rgba(31,74,5,0.14);}
 .mod-card.destacado{border-color:var(--ie);box-shadow:0 6px 28px rgba(76,158,12,0.20);}
@@ -412,7 +413,7 @@ details[open] summary::before{transform:rotate(90deg);}
 .tabla-diff .precio-fila td{font-family:'Josefin Sans',sans-serif;font-weight:700;font-size:15px;color:var(--ie-deep);}
 .tabla-nota{font-size:11px;color:var(--text-light);margin-top:12px;line-height:1.6;font-style:italic;}
 
-/* Suplementos No Choice */
+/* Suplementos */
 .sup-wrap{background:var(--white);border:1.5px solid var(--gray-border);border-radius:16px;padding:22px 26px;box-shadow:0 2px 16px rgba(31,74,5,0.05);}
 .sup-title{font-family:'Josefin Sans',sans-serif;font-size:14px;font-weight:700;color:var(--ie-deep);margin-bottom:14px;}
 .sup-rows{display:grid;grid-template-columns:repeat(2,1fr);gap:0 26px;}
@@ -461,7 +462,7 @@ details[open] summary::before{transform:rotate(90deg);}
       <div class="hero-pill">&#128300; Matem&aacute;ticas &middot; F&iacute;sica &middot; Tecnolog&iacute;a</div>
       <div class="hero-pill ac">&#127961; Dubl&iacute;n y Cork &middot; Entorno urbano</div>
     </div>
-    <div class="hero-promo">&#9752; Descuento especial por recomendaci&oacute;n aplicado: <strong>&minus;350 &euro;</strong> sobre la tarifa del trimestre &mdash; precio final para V&iacute;ctor <strong>9.150 &euro;</strong>.</div>
+    <div class="hero-promo"><span>&#9752; Descuento especial por recomendaci&oacute;n aplicado: <b>&minus;350 &euro;</b> sobre la tarifa del trimestre. Precio final para V&iacute;ctor: <b>9.150 &euro;</b>.</span></div>
   </div>
 </div>
 
@@ -673,7 +674,7 @@ details[open] summary::before{transform:rotate(90deg);}
 
   <!-- ============ 6. MODALIDADES Y PRECIOS ============ -->
   <div class="section-title"><h2>Inversi&oacute;n para el trimestre escolar 2027/28</h2></div>
-  <div class="mod-grid">
+  <div class="mod-grid una">
     <div class="mod-card destacado">
       <div class="badge-rec-mod">Propuesto</div>
       <div class="mod-head">
@@ -700,63 +701,7 @@ details[open] summary::before{transform:rotate(90deg);}
       </div>
     </div>
 
-    <div class="mod-card">
-      <div class="mod-head">
-        <div class="mod-nombre">A&ntilde;o completo &middot; Choice + 2 vuelos</div>
-        <div class="mod-desc-head">Si m&aacute;s adelante quisierais ampliar la estancia</div>
-        <div class="mod-precio-val">17.450 &euro;</div>
-        <div class="mod-precio-sub">A&ntilde;o escolar completo</div>
-      </div>
-      <div class="mod-body">
-        <ul class="mod-list">
-          <li>Mismas prestaciones que el trimestre, durante todo el curso</li>
-          <li>Elecci&oacute;n de colegio, habitaci&oacute;n individual, libros y uniforme</li>
-          <li>Orientaci&oacute;n previa en Dubl&iacute;n, 2 d&iacute;as, incluida</li>
-          <li>2 vuelos internacionales: inicio y fin de curso</li>
-        </ul>
-      </div>
-    </div>
-
-    <div class="mod-card">
-      <div class="mod-head">
-        <div class="mod-nombre">A&ntilde;o completo &middot; Choice + 4 vuelos</div>
-        <div class="mod-desc-head">La opci&oacute;n m&aacute;s completa, con vuelos de Navidad</div>
-        <div class="mod-precio-val">18.200 &euro;</div>
-        <div class="mod-precio-sub">A&ntilde;o escolar completo</div>
-      </div>
-      <div class="mod-body">
-        <div class="mod-extra">
-          <div class="mod-extra-title">Otras duraciones</div>
-          <div class="mod-mini"><span>Semestre agosto&ndash;abril</span><b>15.200 &euro;</b></div>
-          <div class="mod-mini"><span>Semestre agosto&ndash;enero</span><b>11.650 &euro;</b></div>
-        </div>
-        <ul class="mod-list">
-          <li>Elecci&oacute;n de colegio entre varias opciones seleccionadas</li>
-          <li>Habitaci&oacute;n individual, libros y uniforme incluidos</li>
-          <li>Orientaci&oacute;n previa en Dubl&iacute;n, 2 d&iacute;as, incluida</li>
-          <li>4 vuelos: inicio, ida y vuelta de Navidad y fin de curso</li>
-        </ul>
-      </div>
-    </div>
   </div>
-
-  <!-- ============ 7. TABLA COMPARATIVA ============ -->
-  <div class="section-title"><h2>Qu&eacute; aporta el Programa Choice</h2></div>
-  <div class="tabla-wrap">
-    <table class="tabla-diff">
-      <thead><tr><th style="text-align:left;">&nbsp;</th><th>No Choice</th><th>Choice + 2 vuelos</th><th>Choice + 4 vuelos</th></tr></thead>
-      <tbody>
-        <tr class="precio-fila"><th>Precio &middot; a&ntilde;o completo</th><td>14.450 &euro;</td><td>17.450 &euro;</td><td>18.200 &euro;</td></tr>
-        <tr><th>Elecci&oacute;n de colegio</th><td><span class="no">&#10007;</span><span class="sup">suplemento</span></td><td><span class="si">&#10003;</span></td><td><span class="si">&#10003;</span></td></tr>
-        <tr><th>Habitaci&oacute;n individual garantizada</th><td><span class="no">&#10007;</span><span class="sup">suplemento</span></td><td><span class="si">&#10003;</span></td><td><span class="si">&#10003;</span></td></tr>
-        <tr><th>Libros y uniforme incluidos</th><td><span class="no">&#10007;</span><span class="sup">suplemento</span></td><td><span class="si">&#10003;</span></td><td><span class="si">&#10003;</span></td></tr>
-        <tr><th>Tasa de Transition Year</th><td><span class="no">&#10007;</span><span class="sup">suplemento</span></td><td><span class="si">&#10003;</span></td><td><span class="si">&#10003;</span></td></tr>
-        <tr><th>Orientaci&oacute;n en Dubl&iacute;n &middot; 2 d&iacute;as</th><td><span class="no">&#10007;</span><span class="sup">suplemento</span></td><td><span class="si">&#10003;</span></td><td><span class="si">&#10003;</span></td></tr>
-        <tr><th>Vuelos incluidos</th><td><span class="no">&#10007;</span><span class="sup">suplemento</span></td><td><b>2 vuelos</b></td><td><b>4 vuelos</b></td></tr>
-      </tbody>
-    </table>
-  </div>
-  <div class="tabla-nota">La propuesta de V&iacute;ctor es un <strong>trimestre bajo Programa Choice + 2 vuelos</strong>. Incluimos esta comparativa para que se vea con claridad qu&eacute; aporta el Choice frente al No Choice: elecci&oacute;n de colegio, habitaci&oacute;n individual, libros y uniforme, tasa de Transition Year y orientaci&oacute;n en Dubl&iacute;n, todo desde el precio base. Los precios de la tabla corresponden al a&ntilde;o escolar completo.</div>
 
   <!-- ============ 8. DUBL&Iacute;N O CORK ============ -->
   <div class="section-title"><h2>Dubl&iacute;n o Cork: qu&eacute; experiencia encaja mejor</h2></div>
@@ -787,15 +732,10 @@ details[open] summary::before{transform:rotate(90deg);}
     <div class="intro-point"><div class="intro-point-icon">&#129352;</div><div><div class="intro-point-title">Cork ETSS &middot; Cork International HC</div><div class="intro-point-desc">En Bishopstown. La participaci&oacute;n depender&aacute; de la edad admitida, los entrenamientos y la ubicaci&oacute;n de la familia.</div></div></div>
     <div class="intro-point"><div class="intro-point-icon">&#129352;</div><div><div class="intro-point-title">Bremore &middot; Shamrock Saints HC</div><div class="intro-point-desc">En Swords, al norte de Dubl&iacute;n, como posible alternativa en la zona.</div></div></div>
   </div>
-  <div class="alert-box" style="margin-top:20px;">
-    <div class="alert-icon">&#9888;</div>
-    <div class="alert-text">Estas alternativas <strong>no suponen una plaza deportiva garantizada</strong>. Antes de formalizar la elecci&oacute;n, confirmar&iacute;amos si admiten estudiantes de la edad de V&iacute;ctor, los horarios de entrenamiento y c&oacute;mo podr&iacute;a desplazarse.</div>
-  </div>
-
   <!-- ============ 9. EL PROGRAMA INCLUYE ============ -->
   <div class="section-title"><h2>El programa incluye</h2></div>
   <div class="includes-wrap">
-    <div class="includes-head"><h3>☘ Base común de los tres programas</h3></div>
+    <div class="includes-head"><h3>☘ Programa Choice · Trimestre escolar</h3></div>
     <div class="includes-body">
       <div class="includes-grid">
         <div>
@@ -816,7 +756,8 @@ details[open] summary::before{transform:rotate(90deg);}
         <div>
           <div class="col-title">Durante el viaje</div>
           <ul class="inc-list">
-            <li>Recibimiento en aeropuerto y traslados en destino</li>
+            <li>2 vuelos internacionales<small>Ida al inicio y vuelta al final del trimestre</small></li>
+            <li>Recibimiento en aeropuerto y 2 traslados en destino<small>Llegada al inicio y regreso al final del trimestre</small></li>
             <li>Asesoramiento en elección de asignaturas</li>
             <li>Clases de inglés Cambridge y libro incluido</li>
             <li>Coordinador local en Irlanda: visitas, tutorías y emergencias 24 h</li>
@@ -834,7 +775,7 @@ details[open] summary::before{transform:rotate(90deg);}
         <div>
           <div class="col-title">No incluido</div>
           <ul class="inc-list no">
-            <li>Vuelos no contemplados en la opción elegida<small>MLQ gestiona la búsqueda, coste a cargo de la familia</small></li>
+            <li>Vuelos adicionales a los dos incluidos<small>MLQ gestiona la búsqueda, coste a cargo de la familia</small></li>
             <li>Actividades extracurriculares de pago</li>
             <li>Excursiones y viajes escolares</li>
             <li>Material escolar adicional</li>
@@ -891,7 +832,7 @@ details[open] summary::before{transform:rotate(90deg);}
         <div class="pay-route-sub">Si se financia el programa, la entrada es siempre de 5.000 € y el resto se financia en cuotas mensuales.</div>
         <div class="pay-entrada">
           <div class="pay-entrada-num">5.000 €</div>
-          <div class="pay-entrada-txt"><strong>Entrada fija a la firma del contrato</strong> en todos los casos de financiación. El capital restante se financia en 12, 18, 24 o 36 meses.</div>
+          <div class="pay-entrada-txt"><strong>Entrada fija a la firma del contrato</strong> en todos los casos de financiación. El capital restante se financia en 18, 24 o 36 meses.</div>
         </div>
         <div class="pay-cols">
           <div class="pay-col">
@@ -900,7 +841,6 @@ details[open] summary::before{transform:rotate(90deg);}
           </div>
           <div class="pay-col">
             <div class="pay-col-title">Condiciones</div>
-            <div class="pay-step"><div class="pay-step-title">12 meses · TIN 0 %</div><div class="pay-step-desc">MLQ asume los intereses</div></div>
             <div class="pay-step"><div class="pay-step-title">18 / 24 / 36 meses · TIN 10,46 %</div><div class="pay-step-desc">Intereses a cargo del cliente</div></div>
           </div>
         </div>
@@ -925,11 +865,9 @@ details[open] summary::before{transform:rotate(90deg);}
     </div>
     <div class="financing-body">
       <div class="fin-opcion-selector">
-        <div class="fin-opcion-label">Selecciona la modalidad</div>
+        <div class="fin-opcion-label">Modalidad propuesta</div>
         <div class="fin-opcion-btns" id="finOpciones">
           <button class="fin-opcion-btn active" data-precio="9150"><span class="fin-opcion-nombre">&#9752; Trimestre &middot; Choice + 2 vuelos</span><span class="fin-opcion-precio">9.150 &euro;</span></button>
-          <button class="fin-opcion-btn" data-precio="17450"><span class="fin-opcion-nombre">A&ntilde;o completo &middot; Choice + 2 vuelos</span><span class="fin-opcion-precio">17.450 &euro;</span></button>
-          <button class="fin-opcion-btn" data-precio="18200"><span class="fin-opcion-nombre">A&ntilde;o completo &middot; Choice + 4 vuelos</span><span class="fin-opcion-precio">18.200 &euro;</span></button>
         </div>
       </div>
 
@@ -941,8 +879,7 @@ details[open] summary::before{transform:rotate(90deg);}
       <div class="fin-plazo-wrap">
         <div class="fin-plazo-label">Elige tu plazo de financiaci&oacute;n</div>
         <div class="fin-plazos" id="finPlazos">
-          <button class="fin-plazo active" data-meses="12" data-tin="0"><div class="fin-plazo-meses">12 meses</div><div class="fin-plazo-badge sin-intereses">TIN 0%</div><div class="fin-plazo-quien">&iexcl;MLQ asume los intereses!</div></button>
-          <button class="fin-plazo" data-meses="18" data-tin="10.46"><div class="fin-plazo-meses">18 meses</div><div class="fin-plazo-badge con-intereses">TIN 10,46%</div><div class="fin-plazo-quien">Intereses a cargo del cliente</div></button>
+          <button class="fin-plazo active" data-meses="18" data-tin="10.46"><div class="fin-plazo-meses">18 meses</div><div class="fin-plazo-badge con-intereses">TIN 10,46%</div><div class="fin-plazo-quien">Intereses a cargo del cliente</div></button>
           <button class="fin-plazo" data-meses="24" data-tin="10.46"><div class="fin-plazo-meses">24 meses</div><div class="fin-plazo-badge con-intereses">TIN 10,46%</div><div class="fin-plazo-quien">Intereses a cargo del cliente</div></button>
           <button class="fin-plazo" data-meses="36" data-tin="10.46"><div class="fin-plazo-meses">36 meses</div><div class="fin-plazo-badge con-intereses">TIN 10,46%</div><div class="fin-plazo-quien">Intereses a cargo del cliente</div></button>
         </div>
@@ -951,15 +888,15 @@ details[open] summary::before{transform:rotate(90deg);}
       <div class="fin-resultado">
         <div class="fin-resultado-main">
           <div class="fin-cuota-label">Cuota mensual estimada</div>
-          <div class="fin-cuota-valor" id="cuotaValor">345,83 &euro;</div>
-          <div class="fin-cuota-sub" id="cuotaSub">/mes &middot; 12 pagos &middot; TIN 0%</div>
+          <div class="fin-cuota-valor" id="cuotaValor">250,12 &euro;</div>
+          <div class="fin-cuota-sub" id="cuotaSub">/mes &middot; 18 pagos &middot; TIN 10,46%</div>
         </div>
         <div class="fin-resultado-detalle">
           <div class="fin-det-row"><span class="fin-det-label">Importe del programa</span><span class="fin-det-val" id="detPrecio">9.150 &euro;</span></div>
           <div class="fin-det-row"><span class="fin-det-label">Entrada a la firma</span><span class="fin-det-val" id="detEntrada">5.000 &euro;</span></div>
           <div class="fin-det-row"><span class="fin-det-label">Capital financiado</span><span class="fin-det-val" id="detCapital">4.150 &euro;</span></div>
-          <div class="fin-det-row"><span class="fin-det-label">Intereses totales</span><span class="fin-det-val fin-det-green" id="detIntereses">0 &euro; &middot; &iexcl;MLQ los asume!</span></div>
-          <div class="fin-det-row fin-det-total"><span class="fin-det-label">Total a pagar</span><span class="fin-det-val" id="detTotal">9.150 &euro;</span></div>
+          <div class="fin-det-row"><span class="fin-det-label">Intereses totales</span><span class="fin-det-val" id="detIntereses">352,10 &euro;</span></div>
+          <div class="fin-det-row fin-det-total"><span class="fin-det-label">Total a pagar</span><span class="fin-det-val" id="detTotal">9.502,10 &euro;</span></div>
         </div>
       </div>
 
@@ -1000,7 +937,7 @@ details[open] summary::before{transform:rotate(90deg);}
 
 <script>
 (function(){
-  var precio=9150, meses=12, tin=0, ENTRADA=5000;
+  var precio=9150, meses=18, tin=10.46, ENTRADA=5000;
   function fmt(n){return n.toLocaleString('es-ES',{minimumFractionDigits:2,maximumFractionDigits:2})+' €';}
   function fmt0(n){return n.toLocaleString('es-ES',{maximumFractionDigits:0})+' €';}
   function calc(){
