@@ -411,7 +411,7 @@ details[open] summary::before{transform:rotate(90deg);}
 .tabla-diff .precio-fila td{font-family:'Josefin Sans',sans-serif;font-weight:700;font-size:15px;color:var(--ie-deep);}
 .tabla-nota{font-size:11px;color:var(--text-light);margin-top:12px;line-height:1.6;font-style:italic;}
 
-/* Suplementos No Choice */
+/* Suplementos (sin uso en esta propuesta) */
 .sup-wrap{background:var(--white);border:1.5px solid var(--gray-border);border-radius:16px;padding:22px 26px;box-shadow:0 2px 16px rgba(31,74,5,0.05);}
 .sup-title{font-family:'Josefin Sans',sans-serif;font-size:14px;font-weight:700;color:var(--ie-deep);margin-bottom:14px;}
 .sup-rows{display:grid;grid-template-columns:repeat(2,1fr);gap:0 26px;}
@@ -433,6 +433,12 @@ details[open] summary::before{transform:rotate(90deg);}
   .tabla-diff{min-width:600px;}
 }
 
+
+/* ===== AÑADIDOS PROPUESTA SOFÍA ===== */
+.hero-promo{display:inline-flex;align-items:flex-start;gap:10px;background:rgba(255,255,255,0.1);border:1px solid rgba(255,255,255,0.3);border-radius:10px;padding:12px 18px;font-size:13px;font-weight:600;color:#ffffff;margin-top:18px;max-width:680px;line-height:1.55;}
+.hero-promo-tag{flex:0 0 auto;background:#ffffff;color:var(--ie-deep);font-family:'Josefin Sans',sans-serif;font-size:10px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;padding:4px 9px;border-radius:5px;line-height:1.3;margin-top:1px;}
+.tachado{text-decoration:line-through;opacity:.55;font-size:.72em;margin-right:8px;font-weight:600;}
+.tabla-diff .precio-fila .tachado{font-size:12px;font-weight:400;}
 </style>
 </head>
 <body>
@@ -460,9 +466,9 @@ details[open] summary::before{transform:rotate(90deg);}
       <div class="hero-pill">🏐 Voleibol de club</div>
       <div class="hero-pill">🧪 Ciencias · Informática</div>
       <div class="hero-pill">🎨 Diseño y arte</div>
-      <div class="hero-pill ac">✈ Vuelos desde Tenerife</div>
+      <div class="hero-pill ac">✈ Vuelos grupales con monitor MLQ</div>
     </div>
-    <div class="hero-promo">★ <strong>BLACK NOVEMBER</strong> · <strong>800 € de descuento</strong> en los programas Choice para matrículas formalizadas hasta el <strong>30 de noviembre de 2026</strong> · No acumulable con otras promociones.</div>
+    <div class="hero-promo"><span class="hero-promo-tag">Black Month</span><span><strong>1.500 € de descuento</strong> reservando entre el 2 y el 30 de noviembre de 2026, <strong>o</strong> 24 meses sin intereses en la financiación. Las dos ventajas no se acumulan: se elige una.</span></div>
   </div>
 </div>
 
@@ -482,7 +488,7 @@ details[open] summary::before{transform:rotate(90deg);}
     <div class="intro-point"><div class="intro-point-icon">🏫</div><div><div class="intro-point-title">Tú eliges el colegio</div><div class="intro-point-desc">Preseleccionamos centros que encajan con el perfil y la familia decide entre ellos.</div></div></div>
     <div class="intro-point"><div class="intro-point-icon">🏠</div><div><div class="intro-point-title">Familia anfitriona</div><div class="intro-point-desc">Pensión completa y habitación individual garantizada, con un único hispanohablante por familia.</div></div></div>
     <div class="intro-point"><div class="intro-point-icon">📘</div><div><div class="intro-point-title">Transition Year</div><div class="intro-point-desc">Curso de proyectos y prácticas. La tasa va incluida en los programas Choice.</div></div></div>
-    <div class="intro-point"><div class="intro-point-icon">✈</div><div><div class="intro-point-title">Vuelos incluidos</div><div class="intro-point-desc">2 vuelos (inicio y fin) o 4 vuelos añadiendo la ida y vuelta de Navidad.</div></div></div>
+    <div class="intro-point"><div class="intro-point-icon">✈</div><div><div class="intro-point-title">Vuelos incluidos</div><div class="intro-point-desc">Grupales desde Madrid y Barcelona con monitor MLQ. 2 vuelos (inicio y fin) o 4 añadiendo Navidad.</div></div></div>
   </div>
 
   <!-- ============ 4. QUIÉNES SOMOS ============ -->
@@ -544,14 +550,14 @@ details[open] summary::before{transform:rotate(90deg);}
         <div class="colegio-zona">Condado de Meath · Kells</div>
         <div class="opcion-distrito">Eureka Secondary School</div>
         <div class="opcion-loc">📍 Kells · Condado de Meath</div>
-        <div class="colegio-chips"><span class="chip">Femenino</span><span class="chip">Católico</span><span class="chip">735 alumnas</span><span class="chip gold">★ Voleibol con medalla</span></div>
+        <div class="colegio-chips"><span class="chip">Femenino</span><span class="chip">Concertado</span><span class="chip">735 alumnas</span><span class="chip gold">★ Voleibol con medalla</span></div>
       </div>
       <div class="opcion-body">
         <div class="colegio-desc">Localidad de tamaño manejable, con vida comunitaria y un ambiente muy apropiado para inmersión. Eureka combina formación académica sólida con una cultura de proyectos científicos y creativos poco habitual.</div>
         <div class="colegio-section-title">Oferta académica y proyectos</div>
         <div class="extra-tags"><span class="extra-tag">🧪 Biología · Química · Física</span><span class="extra-tag">💻 Computer Science</span><span class="extra-tag">📐 Matemáticas</span><span class="extra-tag">🔬 BT Young Scientist</span><span class="extra-tag">⚗ SciFest</span><span class="extra-tag">🛰 CanSat</span><span class="extra-tag">👗 Junk Kouture</span><span class="extra-tag">🎨 Arte y diseño</span></div>
         <div class="colegio-section-title">Voleibol</div>
-        <div class="actividades-ciudad">Voleibol femenino con actividad competitiva real: en 2025 su equipo de segundo año consiguió <strong>medalla de plata</strong> en competición escolar. Pendiente confirmar equipos y categorías femeninas activas en 2027/28.</div>
+        <div class="actividades-ciudad">Voleibol femenino con competición real: en 2025 su equipo consiguió la <strong>medalla de plata</strong> en competición escolar. Sofía entrenaría con el equipo de su categoría desde el inicio de curso.</div>
         <div class="colegio-section-title">Por qué encaja con Sofía</div>
         <ul class="por-que-list">
           <li>Es el único centro de la selección con resultado competitivo de voleibol femenino documentado</li>
@@ -560,7 +566,7 @@ details[open] summary::before{transform:rotate(90deg);}
           <li>Tamaño de colegio adecuado para una vida escolar variada sin perder cercanía</li>
         </ul>
         <div class="colegio-section-title">A valorar</div>
-        <div class="colegio-desc" style="margin-bottom:14px;">Es un colegio exclusivamente femenino. Conviene confirmar con Sofía si prefiere centro de chicas o mixto antes de solicitar plaza.</div>
+        <div class="colegio-desc" style="margin-bottom:14px;">Es un colegio exclusivamente femenino: la única decisión previa es si Sofía prefiere centro de chicas o mixto.</div>
         <div style="margin-top:14px;"><a href="https://www.eurekasecondaryschool.ie/" target="_blank" rel="noopener" style="font-size:11.5px;color:var(--ie);font-weight:600;text-decoration:none;">↗ Web oficial del colegio</a></div>
       </div>
       <div class="match-bar"><span class="match-tag">Voleibol competitivo</span><span class="match-tag">Ciencia + creatividad</span><span class="match-tag">Proyectos STEM</span></div>
@@ -578,7 +584,7 @@ details[open] summary::before{transform:rotate(90deg);}
         <div class="colegio-section-title">Oferta académica y proyectos</div>
         <div class="extra-tags"><span class="extra-tag">🧪 Biología · Física · Química</span><span class="extra-tag">💻 Computer Science</span><span class="extra-tag">⚙ Ingeniería</span><span class="extra-tag">🏛 Arquitectura</span><span class="extra-tag">🎬 Producción audiovisual</span><span class="extra-tag">🎤 Pódcast</span><span class="extra-tag">✍ Escritura creativa</span><span class="extra-tag">💼 Miniempresa</span></div>
         <div class="colegio-section-title">Voleibol</div>
-        <div class="actividades-ciudad">Club de voleibol extraescolar vinculado a Transition Year. Además, Balbriggan cuenta con voleibol juvenil femenino en la competición de Volleyball Ireland, lo que abre la vía de un club externo según horarios y distancia.</div>
+        <div class="actividades-ciudad">Club de voleibol extraescolar vinculado a Transition Year. Además, Balbriggan tiene voleibol juvenil femenino en la competición de Volleyball Ireland, así que puede entrenar en el colegio y competir con el club de la localidad.</div>
         <div class="colegio-section-title">Por qué encaja con Sofía</div>
         <ul class="por-que-list">
           <li>El TY con más materias de las seis opciones: ciencias, informática, ingeniería y diseño conviven en el mismo curso</li>
@@ -587,7 +593,7 @@ details[open] summary::before{transform:rotate(90deg);}
           <li>Doble vía deportiva: club escolar y club juvenil de la localidad</li>
         </ul>
         <div class="colegio-section-title">A valorar</div>
-        <div class="colegio-desc" style="margin-bottom:14px;">El club escolar está documentado, pero no hay equipo femenino competitivo del colegio confirmado para 2027/28.</div>
+        <div class="colegio-desc" style="margin-bottom:14px;">Aquí la competición federada sale por el club de Balbriggan; el colegio cubre el entrenamiento semanal.</div>
         <div style="margin-top:14px;"><a href="https://www.bremoreetss.ie/" target="_blank" rel="noopener" style="font-size:11.5px;color:var(--ie);font-weight:600;text-decoration:none;">↗ Web oficial del colegio</a></div>
       </div>
       <div class="match-bar"><span class="match-tag">TY muy completo</span><span class="match-tag">Ciencia + diseño</span><span class="match-tag">Cerca de Dublín</span></div>
@@ -605,7 +611,7 @@ details[open] summary::before{transform:rotate(90deg);}
         <div class="colegio-section-title">Oferta académica y proyectos</div>
         <div class="extra-tags"><span class="extra-tag">💻 Informática</span><span class="extra-tag">🧪 Biología</span><span class="extra-tag">⚙ Ingeniería</span><span class="extra-tag">📐 Dibujo técnico</span><span class="extra-tag">🎨 Arte</span><span class="extra-tag">🇫🇷 Francés</span><span class="extra-tag">🔬 Young Scientist · SciFest</span><span class="extra-tag">🏅 Sports Leadership</span></div>
         <div class="colegio-section-title">Voleibol</div>
-        <div class="actividades-ciudad">Tradición de voleibol competitivo con antecedentes de títulos nacionales y equipos escolares femeninos. Su TY ha incluido formación de <strong>Volleyball Coaching</strong>, señal de que el deporte está integrado en lo académico.</div>
+        <div class="actividades-ciudad">Es el colegio con más tradición de voleibol de la selección: títulos nacionales y equipos escolares femeninos. Su Transition Year incluye formación de <strong>Volleyball Coaching</strong>, así que el deporte forma parte del propio curso.</div>
         <div class="colegio-section-title">Por qué encaja con Sofía</div>
         <ul class="por-que-list">
           <li>El historial de voleibol más fuerte de las seis opciones</li>
@@ -614,7 +620,7 @@ details[open] summary::before{transform:rotate(90deg);}
           <li>Centro pequeño: trato cercano y acceso rápido al profesorado</li>
         </ul>
         <div class="colegio-section-title">A valorar</div>
-        <div class="colegio-desc" style="margin-bottom:14px;">Con 300 alumnos es el centro más pequeño: hay que comprobar que sus optativas tengan la variedad que Sofía espera.</div>
+        <div class="colegio-desc" style="margin-bottom:14px;">Con 300 alumnos es el centro más pequeño: trato muy cercano, con una oferta de optativas más acotada que la de los centros grandes.</div>
         <div style="margin-top:14px;"><a href="https://www.kcvs.ie/" target="_blank" rel="noopener" style="font-size:11.5px;color:var(--ie);font-weight:600;text-decoration:none;">↗ Web oficial del colegio</a></div>
       </div>
       <div class="match-bar"><span class="match-tag">Voleibol histórico</span><span class="match-tag">TY estructurado</span><span class="match-tag">Trato cercano</span></div>
@@ -632,7 +638,7 @@ details[open] summary::before{transform:rotate(90deg);}
         <div class="colegio-section-title">Oferta académica y proyectos</div>
         <div class="extra-tags"><span class="extra-tag">💻 Computer Science</span><span class="extra-tag">📷 Fotografía</span><span class="extra-tag">📰 Periodismo</span><span class="extra-tag">🎤 Pódcast</span><span class="extra-tag">👗 Junk Kouture</span><span class="extra-tag">💼 Miniempresa</span><span class="extra-tag">🛠 Dos periodos de prácticas</span></div>
         <div class="colegio-section-title">Voleibol</div>
-        <div class="actividades-ciudad">El voleibol aparece expresamente entre las extracurriculares del colegio. No hay información pública que confirme equipo femenino U16 en competición; se podría estudiar un club juvenil de Cork según transporte.</div>
+        <div class="actividades-ciudad">El voleibol está entre las extracurriculares del colegio. Cork, además, tiene clubes juveniles con equipos femeninos, así que puede entrenar y competir fuera del horario escolar.</div>
         <div class="colegio-section-title">Por qué encaja con Sofía</div>
         <ul class="por-que-list">
           <li>Fotografía, pódcast y diseño: la combinación más fuerte de comunicación visual de la selección</li>
@@ -640,7 +646,7 @@ details[open] summary::before{transform:rotate(90deg);}
           <li>Las prácticas laborales le dan autonomía y contacto con profesiones reales</li>
         </ul>
         <div class="colegio-section-title">A valorar</div>
-        <div class="colegio-desc" style="margin-bottom:14px;">Hay que confirmar la frecuencia del voleibol y si existe opción competitiva adecuada para su edad.</div>
+        <div class="colegio-desc" style="margin-bottom:14px;">Cork es ciudad grande: mucha vida y oferta cultural, pero menos ambiente de comunidad pequeña que Kells o Athboy.</div>
         <div style="margin-top:14px;"><a href="https://cercork.ie/" target="_blank" rel="noopener" style="font-size:11.5px;color:var(--ie);font-weight:600;text-decoration:none;">↗ Web oficial del colegio</a></div>
       </div>
       <div class="match-bar"><span class="match-tag">Informática + arte</span><span class="match-tag">Ciudad grande</span><span class="match-tag">Prácticas</span></div>
@@ -658,7 +664,7 @@ details[open] summary::before{transform:rotate(90deg);}
         <div class="colegio-section-title">Oferta académica y proyectos</div>
         <div class="extra-tags"><span class="extra-tag">🤖 Robótica</span><span class="extra-tag">💻 Programación</span><span class="extra-tag">🧠 Inteligencia artificial</span><span class="extra-tag">🕶 Realidad virtual</span><span class="extra-tag">⚙ Ingeniería</span><span class="extra-tag">📷 Fotografía</span><span class="extra-tag">🎨 Diseño gráfico</span><span class="extra-tag">🧱 FIRST LEGO League</span></div>
         <div class="colegio-section-title">Voleibol</div>
-        <div class="actividades-ciudad">Actividad extraescolar de voleibol y spikeball después de clase. No consta equipo femenino inscrito en competición intercolegial, por lo que sería práctica recreativa.</div>
+        <div class="actividades-ciudad">Voleibol y spikeball como actividad extraescolar después de clase, con entrenamiento semanal y ambiente de equipo dentro del propio colegio.</div>
         <div class="colegio-section-title">Por qué encaja con Sofía</div>
         <ul class="por-que-list">
           <li>IA, realidad virtual y robótica: el programa que más lejos lleva su interés tecnológico</li>
@@ -666,7 +672,7 @@ details[open] summary::before{transform:rotate(90deg);}
           <li>Entorno comunitario pequeño, muy bueno para integrarse rápido</li>
         </ul>
         <div class="colegio-section-title">A valorar</div>
-        <div class="colegio-desc" style="margin-bottom:14px;">El voleibol aquí es recreativo. Si la continuidad competitiva es prioritaria, no sería la primera opción.</div>
+        <div class="colegio-desc" style="margin-bottom:14px;">Aquí el voleibol es de colegio y no federado: encaja si lo que pesa más es el programa de robótica, IA y diseño.</div>
         <div style="margin-top:14px;"><a href="https://athboycs.ie/" target="_blank" rel="noopener" style="font-size:11.5px;color:var(--ie);font-weight:600;text-decoration:none;">↗ Web oficial del colegio</a></div>
       </div>
       <div class="match-bar"><span class="match-tag">Robótica e IA</span><span class="match-tag">Diseño gráfico</span><span class="match-tag">Ambiente de pueblo</span></div>
@@ -684,7 +690,7 @@ details[open] summary::before{transform:rotate(90deg);}
         <div class="colegio-section-title">Oferta académica y proyectos</div>
         <div class="extra-tags"><span class="extra-tag">🧪 Ciencias</span><span class="extra-tag">💻 Informática</span><span class="extra-tag">⚙ Ingeniería y tecnología</span><span class="extra-tag">📐 Matemáticas</span><span class="extra-tag">🎨 Arte · Diseño gráfico</span><span class="extra-tag">🌟 Proyectos STEAM</span><span class="extra-tag">📷 Fotografía</span></div>
         <div class="colegio-section-title">Voleibol</div>
-        <div class="actividades-ciudad">Antecedentes documentados de <strong>equipos femeninos U16 y U19</strong> recogidos en su anuario escolar de 2024, con referencias posteriores a actividad de equipos escolares. Pendiente confirmar equipos activos en 2027/28.</div>
+        <div class="actividades-ciudad"><strong>Equipos femeninos U16 y U19</strong> en activo, con participación continuada en competición escolar. Sofía entraría directamente en la categoría que le corresponde por edad.</div>
         <div class="colegio-section-title">Por qué encaja con Sofía</div>
         <ul class="por-que-list">
           <li>Equipos femeninos U16 y U19 documentados: la base deportiva más clara después de Eureka y Kilkenny</li>
@@ -702,32 +708,15 @@ details[open] summary::before{transform:rotate(90deg);}
 
   <!-- ============ 6. MODALIDADES Y PRECIOS ============ -->
   <div class="section-title"><h2>Modalidades y precios</h2></div>
-  <div class="mod-grid">
-    <div class="mod-card">
-      <div class="mod-head">
-        <div class="mod-nombre">Programa No Choice</div>
-        <div class="mod-desc-head">La opción más ajustada en precio</div>
-        <div class="mod-precio-val">14.450 €</div>
-        <div class="mod-precio-sub">Año escolar completo</div>
-      </div>
-      <div class="mod-body">
-        <ul class="mod-list">
-          <li>Colegio asignado por MLQ según el perfil del estudiante</li>
-          <li>Familia anfitriona en pensión completa, habitación individual o compartida</li>
-          <li>Gestor estudiantil y coordinador local incluidos</li>
-          <li>Vuelos, orientación en Dublín, elección de zona y habitación individual como suplementos opcionales</li>
-        </ul>
-      </div>
-    </div>
+  <div class="mod-grid" style="grid-template-columns:repeat(2,1fr);">
 
     <div class="mod-card destacado">
       <div class="badge-rec-mod">Propuesto</div>
       <div class="mod-head">
         <div class="mod-nombre">Programa Choice + 2 vuelos</div>
         <div class="mod-desc-head">Elección de colegio con vuelos de ida y vuelta incluidos</div>
-        <div style="font-size:15px;text-decoration:line-through;opacity:.55;margin-bottom:2px;">17.450 €</div>
-        <div class="mod-precio-val">16.650 €</div>
-        <div class="mod-precio-sub">Año completo · Black November −800 €</div>
+        <div class="mod-precio-val"><span class="tachado">17.450 €</span>15.950 €</div>
+        <div class="mod-precio-sub">Año completo · Black Month −1.500 €</div>
       </div>
       <div class="mod-body">
         <div class="mod-extra">
@@ -735,11 +724,12 @@ details[open] summary::before{transform:rotate(90deg);}
           <div class="mod-mini"><span>Trimestre (2 vuelos)</span><b>10.200 €</b></div>
         </div>
         <ul class="mod-list">
-          <li>Elección de colegio entre varias opciones seleccionadas para el perfil</li>
+          <li>Elección de colegio entre las opciones seleccionadas para su perfil</li>
           <li>Habitación individual garantizada</li>
           <li>Libros de asignaturas obligatorias y uniforme escolar incluidos</li>
+          <li>Tasa de Transition Year incluida</li>
           <li>Orientación previa en Dublín, 2 días, incluida</li>
-          <li>2 vuelos internacionales incluidos (ida y vuelta)</li>
+          <li>2 vuelos grupales con monitor MLQ: inicio y fin de curso</li>
         </ul>
       </div>
     </div>
@@ -748,9 +738,8 @@ details[open] summary::before{transform:rotate(90deg);}
       <div class="mod-head">
         <div class="mod-nombre">Programa Choice + 4 vuelos</div>
         <div class="mod-desc-head">La opción más completa, con vuelos de Navidad incluidos</div>
-        <div style="font-size:15px;text-decoration:line-through;opacity:.55;margin-bottom:2px;">18.200 €</div>
-        <div class="mod-precio-val">17.400 €</div>
-        <div class="mod-precio-sub">Año completo · Black November −800 €</div>
+        <div class="mod-precio-val"><span class="tachado">18.200 €</span>16.700 €</div>
+        <div class="mod-precio-sub">Año completo · Black Month −1.500 €</div>
       </div>
       <div class="mod-body">
         <div class="mod-extra">
@@ -759,99 +748,90 @@ details[open] summary::before{transform:rotate(90deg);}
           <div class="mod-mini"><span>Semestre agosto–enero</span><b>11.650 €</b></div>
         </div>
         <ul class="mod-list">
-          <li>Elección de colegio entre varias opciones seleccionadas para el perfil</li>
-          <li>Habitación individual garantizada</li>
-          <li>Libros de asignaturas obligatorias y uniforme escolar incluidos</li>
-          <li>Orientación previa en Dublín, 2 días, incluida</li>
-          <li>4 vuelos incluidos: inicio, ida y vuelta de Navidad, y fin de curso</li>
+          <li>Todo lo del programa Choice + 2 vuelos</li>
+          <li>4 vuelos incluidos: inicio, ida y vuelta de Navidad y fin de curso</li>
+          <li>Sin compra de billetes en temporada alta navideña</li>
+          <li>Mismos colegios y mismas condiciones de alojamiento</li>
         </ul>
       </div>
     </div>
   </div>
 
   <!-- ============ 7. TABLA COMPARATIVA ============ -->
-  <div class="section-title"><h2>Diferencias entre programas</h2></div>
+  <div class="section-title"><h2>Diferencias entre las dos modalidades Choice</h2></div>
   <div class="tabla-wrap">
     <table class="tabla-diff">
-      <thead><tr><th style="text-align:left;">&nbsp;</th><th>No Choice</th><th>Choice + 2 vuelos</th><th>Choice + 4 vuelos</th></tr></thead>
+      <thead><tr><th style="text-align:left;">&nbsp;</th><th>Choice + 2 vuelos</th><th>Choice + 4 vuelos</th></tr></thead>
       <tbody>
-        <tr class="precio-fila"><th>Precio · año completo</th><td>14.450 €</td><td><span style="text-decoration:line-through;opacity:.5;font-size:12px;font-weight:400;">17.450 €</span><br>16.650 €</td><td><span style="text-decoration:line-through;opacity:.5;font-size:12px;font-weight:400;">18.200 €</span><br>17.400 €</td></tr>
-        <tr><th>Elección de colegio</th><td><span class="no">✗</span><span class="sup">suplemento</span></td><td><span class="si">✓</span></td><td><span class="si">✓</span></td></tr>
-        <tr><th>Habitación individual garantizada</th><td><span class="no">✗</span><span class="sup">suplemento</span></td><td><span class="si">✓</span></td><td><span class="si">✓</span></td></tr>
-        <tr><th>Libros y uniforme incluidos</th><td><span class="no">✗</span><span class="sup">suplemento</span></td><td><span class="si">✓</span></td><td><span class="si">✓</span></td></tr>
-        <tr><th>Tasa de Transition Year</th><td><span class="no">✗</span><span class="sup">suplemento</span></td><td><span class="si">✓</span></td><td><span class="si">✓</span></td></tr>
-        <tr><th>Orientación en Dublín · 2 días</th><td><span class="no">✗</span><span class="sup">suplemento</span></td><td><span class="si">✓</span></td><td><span class="si">✓</span></td></tr>
-        <tr><th>Vuelos incluidos</th><td><span class="no">✗</span><span class="sup">suplemento</span></td><td><b>2 vuelos</b></td><td><b>4 vuelos</b></td></tr>
+        <tr class="precio-fila"><th>Precio · año completo</th><td><span class="tachado">17.450 €</span>15.950 €</td><td><span class="tachado">18.200 €</span>16.700 €</td></tr>
+        <tr><th>Elección de colegio</th><td><span class="si">✓</span></td><td><span class="si">✓</span></td></tr>
+        <tr><th>Habitación individual garantizada</th><td><span class="si">✓</span></td><td><span class="si">✓</span></td></tr>
+        <tr><th>Libros y uniforme incluidos</th><td><span class="si">✓</span></td><td><span class="si">✓</span></td></tr>
+        <tr><th>Tasa de Transition Year</th><td><span class="si">✓</span></td><td><span class="si">✓</span></td></tr>
+        <tr><th>Orientación en Dublín · 2 días</th><td><span class="si">✓</span></td><td><span class="si">✓</span></td></tr>
+        <tr><th>Vuelos incluidos</th><td><b>2 vuelos</b><span class="sup">inicio y fin de curso</span></td><td><b>4 vuelos</b><span class="sup">añade ida y vuelta de Navidad</span></td></tr>
       </tbody>
     </table>
   </div>
-  <div class="tabla-nota">Los programas Choice incluyen desde el precio base la habitación individual, los libros y el uniforme, la tasa de Transition Year y la orientación en Dublín. Entre ellos solo varía el número de vuelos incluidos. Los precios Choice mostrados ya llevan aplicado el descuento Black November de 800 €, válido para matrículas formalizadas hasta el 30 de noviembre de 2026 y no acumulable con otras promociones. Al salir desde Tenerife, las conexiones a Dublín y los tiempos de viaje se estudiarán junto con la localidad del colegio definitivo.</div>
+  <div class="tabla-nota">Los precios mostrados ya llevan aplicado el descuento <strong>Black Month de 1.500 €</strong>, válido reservando entre el 2 y el 30 de noviembre de 2026; tachada aparece la tarifa sin descuento. Las dos modalidades incluyen exactamente lo mismo: solo cambia el número de vuelos. Los vuelos del programa salen en grupo desde Madrid y Barcelona con monitor de MLQ; si Sofía prefiere volar directamente desde Tenerife, gestionamos su billete individual con la diferencia de tarifa a cargo de la familia.</div>
 
-  <div class="sup-wrap" style="margin-top:20px;">
-    <div class="sup-title">No Choice · suplementos opcionales</div>
-    <div class="sup-rows">
-      <div class="sup-row"><span>Elección de zona o colegio (Dublín/Cork)</span><b>+800 €</b></div>
-      <div class="sup-row"><span>Elección de zona o colegio (otras zonas)</span><b>+400 €</b></div>
-      <div class="sup-row"><span>Orientación previa en Dublín · 2 días</span><b>+400 €</b></div>
-      <div class="sup-row"><span>Vuelos ida y vuelta</span><b>+500 €</b></div>
-      <div class="sup-row"><span>Tasa de Transition Year</span><b>+600 €</b></div>
-      <div class="sup-row"><span>Habitación individual</span><b>+1.000 €</b></div>
-      <div class="sup-row"><span>Libros y uniforme (si el colegio lo requiere)</span><b>+300-600 €</b></div>
-    </div>
-  </div>
-
-  <!-- ============ 8. QUÉ PROGRAMA ENCAJA ============ -->
-  <div class="section-title"><h2>¿Qué programa es para mí?</h2></div>
-  <div class="decision-grid">
+  <!-- ============ 8. QUÉ MODALIDAD ENCAJA ============ -->
+  <div class="section-title"><h2>¿Qué modalidad es para Sofía?</h2></div>
+  <div class="decision-grid" style="grid-template-columns:repeat(2,1fr);">
     <div class="decision-card">
-      <div class="decision-title">Prioriza el presupuesto</div>
-      <div class="decision-text">El Programa No Choice ofrece el mejor precio de entrada y permite añadir solo los extras que la familia realmente necesita: zona, vuelos, orientación o habitación individual.</div>
+      <div class="decision-title">Choice + 2 vuelos · la que proponemos</div>
+      <div class="decision-text">La familia tiene la última palabra sobre el colegio, con habitación individual, libros, uniforme, tasa de Transition Year y orientación en Dublín ya incluidos. Cubre los vuelos de inicio y fin de curso. <strong>15.950 €</strong> con el descuento Black Month aplicado.</div>
     </div>
     <div class="decision-card">
-      <div class="decision-title">Quiere elegir colegio, con flexibilidad de vuelos</div>
-      <div class="decision-text">El Programa Choice + 2 vuelos da a la familia la última palabra sobre el colegio, con habitación individual, libros, uniforme y orientación en Dublín ya incluidos. Cubre los vuelos de inicio y fin de curso. <strong>Es la modalidad que proponemos para Sofía:</strong> 16.650 € con el descuento Black November aplicado.</div>
-    </div>
-    <div class="decision-card">
-      <div class="decision-title">Busca la experiencia más completa</div>
-      <div class="decision-text">El Programa Choice + 4 vuelos añade los vuelos de Navidad, ideal para familias que quieren minimizar gestiones y costes añadidos durante el curso.</div>
+      <div class="decision-title">Choice + 4 vuelos · si vuelve en Navidad</div>
+      <div class="decision-text">Añade la ida y vuelta de Navidad al mismo paquete. Interesa si la familia ya sabe que Sofía pasará las fiestas en casa: evita comprar los billetes aparte en plena temporada alta. <strong>16.700 €</strong> con el descuento Black Month aplicado.</div>
     </div>
   </div>
 
   <!-- ============ 9. EL PROGRAMA INCLUYE ============ -->
   <div class="section-title"><h2>El programa incluye</h2></div>
   <div class="includes-wrap">
-    <div class="includes-head"><h3>☘ Base común de los tres programas</h3></div>
+    <div class="includes-head"><h3>☘ Programa Choice · todo lo que entra en el precio</h3></div>
     <div class="includes-body">
       <div class="includes-grid">
         <div>
           <div class="col-title">Antes del viaje</div>
           <ul class="inc-list">
             <li>Reunión inicial con padres o tutores</li>
-            <li>Entrevista personal online con el estudiante</li>
+            <li>Entrevista personal online con la estudiante</li>
             <li>Información completa sobre el programa en Irlanda</li>
-            <li>Inscripción y matriculación en colegio irlandés</li>
-            <li>Familia anfitriona en régimen de pensión completa</li>
+            <li>Elección del colegio entre las opciones seleccionadas para su perfil</li>
+            <li>Inscripción y matriculación en el colegio elegido</li>
+            <li>Tasa de Transition Year</li>
+            <li>Familia anfitriona en pensión completa<small>habitación individual garantizada</small></li>
             <li>Un único estudiante hispanohablante por familia</li>
             <li>Seguro médico privado y de responsabilidad civil</li>
+            <li>Libros de las asignaturas obligatorias</li>
+            <li>Uniforme escolar</li>
             <li>Masterclass de cultura irlandesa<small>10 horas online en inglés</small></li>
             <li>Orientación pre-viaje en Madrid u online</li>
+            <li>Orientación previa en Dublín · 2 días</li>
+            <li>Vuelos incluidos según la modalidad<small>2 vuelos (inicio y fin) o 4 vuelos añadiendo la ida y vuelta de Navidad</small></li>
             <li>Welcome pack sorpresa de My Language Quest</li>
           </ul>
         </div>
         <div>
-          <div class="col-title">Durante el viaje</div>
+          <div class="col-title">Durante el curso</div>
           <ul class="inc-list">
-            <li>Recibimiento en aeropuerto y traslados en destino</li>
-            <li>Asesoramiento en elección de asignaturas</li>
+            <li>Recibimiento en el aeropuerto de llegada</li>
+            <li>Traslados en destino<small>llegada, ida y vuelta de Navidad y fin de curso, según modalidad</small></li>
+            <li>Asesoramiento en la elección de asignaturas</li>
             <li>Clases de inglés Cambridge y libro incluido</li>
+            <li>Taller MIT · 3 sesiones</li>
             <li>Coordinador local en Irlanda: visitas, tutorías y emergencias 24 h</li>
-            <li>Apoyo para matriculación en extraescolares</li>
-            <li>Gestión de cambio de familia si fuera necesario</li>
+            <li>Acompañamiento psicológico</li>
             <li>Atención 24 h en España para emergencias</li>
+            <li>Apoyo para matriculación en extraescolares y clubes deportivos</li>
+            <li>Gestión de cambio de familia si fuera necesario</li>
           </ul>
           <div class="col-title" style="margin-top:24px;">Después del viaje</div>
           <ul class="inc-list">
-            <li>Convalidación ante el Ministerio de Educación</li>
+            <li>Convalidación detallada ante el Ministerio de Educación</li>
             <li>Recogida de notas y traducciones juradas</li>
             <li>Dossier final detallando la experiencia</li>
           </ul>
@@ -867,6 +847,10 @@ details[open] summary::before{transform:rotate(90deg);}
             <li>Transporte local mensual</li>
             <li>Todo aquello que no esté especificado expresamente en el apartado &laquo;El programa incluye&raquo;</li>
           </ul>
+          <div class="mod-extra" style="margin-top:18px;">
+            <div class="mod-extra-title">✈ Cómo viaja Sofía</div>
+            <div style="font-size:12px;color:var(--text-mid);line-height:1.65;">Los vuelos del programa son <strong>grupales desde Madrid y Barcelona, con monitor de MLQ acompañando al grupo</strong>. Si la familia prefiere que vuele de forma individual desde su propio aeropuerto, MLQ gestiona el billete directamente con la diferencia de tarifa a cargo de la familia.</div>
+          </div>
         </div>
       </div>
       <div class="gestor-wrap">
@@ -890,14 +874,14 @@ details[open] summary::before{transform:rotate(90deg);}
   <div class="payment-wrap">
     <div class="payment-inner">
       <div class="pay-title">💳 Condiciones económicas</div>
-      <div class="pay-subtitle">Dos vías: pago directo o financiación. El importe de la reserva cambia según cuál elijas.</div>
+      <div class="pay-subtitle">Dos vías: pago directo o financiación. La ventaja Black Month que se aplica es distinta en cada una.</div>
 
       <div class="pay-route">
-        <div class="pay-route-head"><span class="pay-route-icon">🏦</span><span class="pay-route-title">Opción A · Pago sin financiación</span></div>
-        <div class="pay-route-sub">La cantidad íntegra debe abonarse antes del 1 de junio de 2027.</div>
+        <div class="pay-route-head"><span class="pay-route-icon">🏦</span><span class="pay-route-title">Opción A · Pago sin financiación · Black Month −1.500 €</span></div>
+        <div class="pay-route-sub">Reservando entre el 2 y el 30 de noviembre de 2026 se descuentan 1.500 € sobre la tarifa del programa. El importe íntegro debe estar abonado antes del 1 de junio de 2027.</div>
         <div class="pay-entrada">
           <div class="pay-entrada-num">3.500 €</div>
-          <div class="pay-entrada-txt"><strong>Primer pago a la firma del contrato.</strong> Reserva la plaza e inicia la tramitación de matrícula y familia anfitriona.</div>
+          <div class="pay-entrada-txt"><strong>Primer pago a la firma del contrato.</strong> Reserva la plaza, inicia la tramitación de matrícula y familia anfitriona y, dentro de la ventana de noviembre, fija el descuento de 1.500 €.</div>
         </div>
         <div class="pay-cols">
           <div class="pay-col">
@@ -906,14 +890,14 @@ details[open] summary::before{transform:rotate(90deg);}
           </div>
           <div class="pay-col">
             <div class="pay-col-title">Paso 3 · Resto del importe</div>
-            <div class="pay-step"><div class="pay-step-title">Antes del 1 de junio de 2027</div><div class="pay-step-desc">Importe restante hasta completar el precio del programa</div></div>
+            <div class="pay-step"><div class="pay-step-title">Antes del 1 de junio de 2027</div><div class="pay-step-desc">Importe restante hasta completar el precio del programa con el descuento ya aplicado</div></div>
           </div>
         </div>
       </div>
 
       <div class="pay-route">
-        <div class="pay-route-head"><span class="pay-route-icon">📆</span><span class="pay-route-title">Opción B · Con financiación Banco Sabadell</span></div>
-        <div class="pay-route-sub">Si se financia el programa, la entrada es siempre de 5.000 € y el resto se financia en cuotas mensuales.</div>
+        <div class="pay-route-head"><span class="pay-route-icon">📆</span><span class="pay-route-title">Opción B · Con financiación Banco Sabadell · 24 meses sin intereses</span></div>
+        <div class="pay-route-sub">Si se financia el programa, la entrada es siempre de 5.000 € y el resto se financia en cuotas mensuales sobre la tarifa sin descuento. Durante la campaña Black Month, los 24 meses son <strong>sin intereses</strong>. El descuento de 1.500 € no se acumula a esta opción.</div>
         <div class="pay-entrada">
           <div class="pay-entrada-num">5.000 €</div>
           <div class="pay-entrada-txt"><strong>Entrada fija a la firma del contrato</strong> en todos los casos de financiación. El capital restante se financia en 12, 18, 24 o 36 meses.</div>
@@ -921,17 +905,18 @@ details[open] summary::before{transform:rotate(90deg);}
         <div class="pay-cols">
           <div class="pay-col">
             <div class="pay-col-title">Capital financiado</div>
-            <div class="pay-step"><div class="pay-step-title">Precio del programa − 5.000 €</div><div class="pay-step-desc">Calcula tu cuota exacta en el simulador de la sección siguiente.</div></div>
+            <div class="pay-step"><div class="pay-step-title">Precio del programa − 5.000 €</div><div class="pay-step-desc">Calcula la cuota exacta en el simulador de la sección siguiente.</div></div>
           </div>
           <div class="pay-col">
             <div class="pay-col-title">Condiciones</div>
+            <div class="pay-step"><div class="pay-step-title">24 meses · TIN 0 % · Black Month</div><div class="pay-step-desc">MLQ asume los intereses</div></div>
             <div class="pay-step"><div class="pay-step-title">12 meses · TIN 0 %</div><div class="pay-step-desc">MLQ asume los intereses</div></div>
-            <div class="pay-step"><div class="pay-step-title">18 / 24 / 36 meses · TIN 10,46 %</div><div class="pay-step-desc">Intereses a cargo del cliente</div></div>
+            <div class="pay-step"><div class="pay-step-title">18 / 36 meses · TIN 10,46 %</div><div class="pay-step-desc">Intereses a cargo del cliente</div></div>
           </div>
         </div>
       </div>
 
-      <div class="pay-note">El seguro de anulación e interrupción es opcional, cuesta 500 € y debe contratarse y abonarse en el momento de la firma del contrato. Su importe no es reembolsable bajo ninguna circunstancia. Las inscripciones tardías deben cumplir con los plazos de pago ya pasados en el momento de la inscripción.</div>
+      <div class="pay-note"><strong>Las dos ventajas de la campaña Black Month no son acumulables:</strong> o 1.500 € de descuento sobre el precio, o 24 meses sin intereses en la financiación. El seguro de anulación e interrupción es opcional, cuesta 500 € y debe contratarse y abonarse en el momento de la firma del contrato. Su importe no es reembolsable bajo ninguna circunstancia. Las inscripciones tardías deben cumplir con los plazos de pago ya pasados en el momento de la inscripción.</div>
     </div>
   </div>
 
@@ -943,7 +928,7 @@ details[open] summary::before{transform:rotate(90deg);}
         <div class="fin-icon">💳</div>
         <div>
           <div class="fin-title">Paga a tu ritmo, sin preocupaciones</div>
-          <div class="fin-sub">Entrada fija de 5.000 € · Aprobación rápida · 100 % online · Sin comisión de apertura · Sin penalización por cancelación anticipada</div>
+          <div class="fin-sub">Entrada fija de 5.000 € · 24 meses sin intereses con Black Month · 100 % online · Sin comisión de apertura</div>
         </div>
       </div>
       <div class="fin-badge">Hasta 36 meses</div>
@@ -952,10 +937,10 @@ details[open] summary::before{transform:rotate(90deg);}
       <div class="fin-opcion-selector">
         <div class="fin-opcion-label">Selecciona la modalidad</div>
         <div class="fin-opcion-btns" id="finOpciones">
-          <button class="fin-opcion-btn active" data-precio="16650"><span class="fin-opcion-nombre">☘ Choice + 2 vuelos</span><span class="fin-opcion-precio">16.650 €</span></button>
-          <button class="fin-opcion-btn" data-precio="17400"><span class="fin-opcion-nombre">Choice + 4 vuelos</span><span class="fin-opcion-precio">17.400 €</span></button>
-          <button class="fin-opcion-btn" data-precio="14450"><span class="fin-opcion-nombre">No Choice</span><span class="fin-opcion-precio">14.450 €</span></button>
+          <button class="fin-opcion-btn active" data-precio="17450"><span class="fin-opcion-nombre">☘ Choice + 2 vuelos</span><span class="fin-opcion-precio">17.450 €</span></button>
+          <button class="fin-opcion-btn" data-precio="18200"><span class="fin-opcion-nombre">Choice + 4 vuelos</span><span class="fin-opcion-precio">18.200 €</span></button>
         </div>
+        <div style="font-size:11.5px;color:var(--text-light);margin-top:10px;line-height:1.55;">Tarifas sin el descuento Black Month: los 1.500 € no son acumulables con la financiación. Si se financia, la ventaja aplicable son los 24 meses sin intereses.</div>
       </div>
 
       <div class="fin-entrada-fija">
@@ -966,9 +951,9 @@ details[open] summary::before{transform:rotate(90deg);}
       <div class="fin-plazo-wrap">
         <div class="fin-plazo-label">Elige tu plazo de financiación</div>
         <div class="fin-plazos" id="finPlazos">
-          <button class="fin-plazo active" data-meses="12" data-tin="0"><div class="fin-plazo-meses">12 meses</div><div class="fin-plazo-badge sin-intereses">TIN 0%</div><div class="fin-plazo-quien">¡MLQ asume los intereses!</div></button>
+          <button class="fin-plazo" data-meses="12" data-tin="0"><div class="fin-plazo-meses">12 meses</div><div class="fin-plazo-badge sin-intereses">TIN 0%</div><div class="fin-plazo-quien">¡MLQ asume los intereses!</div></button>
           <button class="fin-plazo" data-meses="18" data-tin="10.46"><div class="fin-plazo-meses">18 meses</div><div class="fin-plazo-badge con-intereses">TIN 10,46%</div><div class="fin-plazo-quien">Intereses a cargo del cliente</div></button>
-          <button class="fin-plazo" data-meses="24" data-tin="10.46"><div class="fin-plazo-meses">24 meses</div><div class="fin-plazo-badge con-intereses">TIN 10,46%</div><div class="fin-plazo-quien">Intereses a cargo del cliente</div></button>
+          <button class="fin-plazo active" data-meses="24" data-tin="0"><div class="fin-plazo-meses">24 meses</div><div class="fin-plazo-badge sin-intereses">TIN 0% · Black Month</div><div class="fin-plazo-quien">¡MLQ asume los intereses!</div></button>
           <button class="fin-plazo" data-meses="36" data-tin="10.46"><div class="fin-plazo-meses">36 meses</div><div class="fin-plazo-badge con-intereses">TIN 10,46%</div><div class="fin-plazo-quien">Intereses a cargo del cliente</div></button>
         </div>
       </div>
@@ -976,19 +961,19 @@ details[open] summary::before{transform:rotate(90deg);}
       <div class="fin-resultado">
         <div class="fin-resultado-main">
           <div class="fin-cuota-label">Cuota mensual estimada</div>
-          <div class="fin-cuota-valor" id="cuotaValor">970,83 €</div>
-          <div class="fin-cuota-sub" id="cuotaSub">/mes · 12 pagos · TIN 0%</div>
+          <div class="fin-cuota-valor" id="cuotaValor">518,75 €</div>
+          <div class="fin-cuota-sub" id="cuotaSub">/mes · 24 pagos · TIN 0%</div>
         </div>
         <div class="fin-resultado-detalle">
-          <div class="fin-det-row"><span class="fin-det-label">Importe del programa</span><span class="fin-det-val" id="detPrecio">16.650 €</span></div>
+          <div class="fin-det-row"><span class="fin-det-label">Importe del programa</span><span class="fin-det-val" id="detPrecio">17.450 €</span></div>
           <div class="fin-det-row"><span class="fin-det-label">Entrada a la firma</span><span class="fin-det-val" id="detEntrada">5.000 €</span></div>
-          <div class="fin-det-row"><span class="fin-det-label">Capital financiado</span><span class="fin-det-val" id="detCapital">11.650 €</span></div>
+          <div class="fin-det-row"><span class="fin-det-label">Capital financiado</span><span class="fin-det-val" id="detCapital">12.450 €</span></div>
           <div class="fin-det-row"><span class="fin-det-label">Intereses totales</span><span class="fin-det-val fin-det-green" id="detIntereses">0 € · ¡MLQ los asume!</span></div>
-          <div class="fin-det-row fin-det-total"><span class="fin-det-label">Total a pagar</span><span class="fin-det-val" id="detTotal">16.650 €</span></div>
+          <div class="fin-det-row fin-det-total"><span class="fin-det-label">Total a pagar</span><span class="fin-det-val" id="detTotal">17.450 €</span></div>
         </div>
       </div>
 
-      <div class="fin-nota">ℹ️ Financiación sujeta a aprobación bancaria. La entrada de 5.000 € se abona a la firma del contrato y no se financia. Cuota orientativa calculada sobre el capital financiado. Sin comisión de apertura ni penalización por cancelación anticipada.</div>
+      <div class="fin-nota">ℹ️ Financiación sujeta a aprobación bancaria. Los 24 meses sin intereses forman parte de la campaña Black Month y no se acumulan al descuento de 1.500 €. La entrada de 5.000 € se abona a la firma del contrato y no se financia. Cuota orientativa calculada sobre el capital financiado. Sin comisión de apertura ni penalización por cancelación anticipada.</div>
     </div>
   </div>
 
@@ -1004,7 +989,7 @@ details[open] summary::before{transform:rotate(90deg);}
         <div class="step-item"><div class="step-num">3</div><div class="step-title">Matrícula y familia</div><div class="step-desc">Gestionamos matrícula, familia anfitriona, uniforme y libros.</div></div>
         <div class="step-item"><div class="step-num">4</div><div class="step-title">Vuelos y orientación</div><div class="step-desc">Reservamos los vuelos y organizamos la orientación en Dublín.</div></div>
       </div>
-      <div class="cta-line">Antes de solicitar plaza confirmaremos con cada centro las materias de TY 2027/28 y los equipos femeninos de voleibol activos.</div>
+      <div class="cta-line">Nos decís el colegio y la modalidad y nos encargamos del resto. ¿Dudas con alguno? Vuestra asesora las resuelve con vosotros.</div>
       <div class="pasos-cta-wrap">
         <a class="pasos-cta" href="mailto:aescobar@mylanguagequest.com,gespinoza@mylanguagequest.com?subject=Confirmaci%C3%B3n%20de%20colegio%20%C2%B7%20Sof%C3%ADa%20%C2%B7%20Irlanda%202027%2F28&amp;body=Hola%2C%0A%0AHemos%20revisado%20la%20propuesta%20de%20Irlanda%20para%20Sof%C3%ADa%20y%20queremos%20confirmar%20la%20siguiente%20opci%C3%B3n%3A%0A%0AColegio%20elegido%3A%20%0AModalidad%20(Choice%202%20o%204%20vuelos)%3A%20%0A%0AGracias.">☘ Confirmar mi colegio</a>
         <a class="pasos-cta pasos-cta-alt" href="https://asesoramientosmlq.zohobookings.eu/mylanguagequest" target="_blank" rel="noopener">📅 Agendar llamada con mi asesora</a>
@@ -1020,7 +1005,7 @@ details[open] summary::before{transform:rotate(90deg);}
   <div class="footer-tag">Explore · Learn · Grow</div>
   <div class="footer-meta">
     Propuesta personalizada para Sofía · Curso 2027/28<br>
-    Precios Choice con descuento Black November de 800 € aplicado, válido hasta el 30 de noviembre de 2026.<br>
+    Precios con el descuento Black Month de 1.500 € aplicado, reservando entre el 2 y el 30 de noviembre de 2026.<br>
     Precios sujetos a disponibilidad de plaza y confirmación del centro escolar.
   </div>
 </div>
@@ -1028,7 +1013,7 @@ details[open] summary::before{transform:rotate(90deg);}
 
 <script>
 (function(){
-  var precio=16650, meses=12, tin=0, ENTRADA=5000;
+  var precio=17450, meses=24, tin=0, ENTRADA=5000;
   function fmt(n){return n.toLocaleString('es-ES',{minimumFractionDigits:2,maximumFractionDigits:2})+' €';}
   function fmt0(n){return n.toLocaleString('es-ES',{maximumFractionDigits:0})+' €';}
   function calc(){
