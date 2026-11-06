@@ -1020,7 +1020,7 @@ table.cmp td.precio{font-family:'Josefin Sans',sans-serif;font-weight:700;color:
         <div class="pay-route-sub">Disponible para las cuatro opciones. Si se financia el programa, la entrada es siempre de 5.000 € y el resto se financia en cuotas mensuales.</div>
         <div class="pay-entrada">
           <div class="pay-entrada-num">5.000 €</div>
-          <div class="pay-entrada-txt"><strong>Entrada fija a la firma del contrato</strong> en todos los casos de financiación. El capital restante se financia en 12, 18, 24 o 36 meses.</div>
+          <div class="pay-entrada-txt"><strong>Entrada fija a la firma del contrato</strong> en todos los casos de financiación. El capital restante se financia en 18, 24 o 36 meses.</div>
         </div>
         <div class="pay-cols">
           <div class="pay-col">
@@ -1029,8 +1029,7 @@ table.cmp td.precio{font-family:'Josefin Sans',sans-serif;font-weight:700;color:
           </div>
           <div class="pay-col">
             <div class="pay-col-title">Condiciones</div>
-            <div class="pay-step"><div class="pay-step-title">12 meses · TIN 0 %</div><div class="pay-step-desc">MLQ asume los intereses</div></div>
-            <div class="pay-step"><div class="pay-step-title">18 / 24 / 36 meses · TIN 10,46 %</div><div class="pay-step-desc">Intereses a cargo del cliente</div></div>
+            <div class="pay-step"><div class="pay-step-title">18, 24 o 36 meses · TIN 10,46 %</div><div class="pay-step-desc">Intereses a cargo del cliente</div></div>
           </div>
         </div>
       </div>
@@ -1048,7 +1047,7 @@ table.cmp td.precio{font-family:'Josefin Sans',sans-serif;font-weight:700;color:
           <div class="fin-sub">1.500 € de descuentos ya aplicados · Entrada fija de 5.000 € · 100 % online · Sin comisión de apertura</div>
         </div>
       </div>
-      <div class="fin-badge">Hasta 36 meses</div>
+      <div class="fin-badge">De 18 a 36 meses</div>
     </div>
     <div class="financing-body">
       <div class="fin-opcion-selector">
@@ -1075,8 +1074,7 @@ table.cmp td.precio{font-family:'Josefin Sans',sans-serif;font-weight:700;color:
       <div class="fin-plazo-wrap">
         <div class="fin-plazo-label">Elegid el plazo de financiación</div>
         <div class="fin-plazos" id="finPlazos">
-          <button class="fin-plazo active" data-meses="12" data-tin="0"><div class="fin-plazo-meses">12 meses</div><div class="fin-plazo-badge sin-intereses">TIN 0%</div><div class="fin-plazo-quien">MLQ asume los intereses</div></button>
-          <button class="fin-plazo" data-meses="18" data-tin="10.46"><div class="fin-plazo-meses">18 meses</div><div class="fin-plazo-badge con-intereses">TIN 10,46%</div><div class="fin-plazo-quien">Intereses a cargo del cliente</div></button>
+          <button class="fin-plazo active" data-meses="18" data-tin="10.46"><div class="fin-plazo-meses">18 meses</div><div class="fin-plazo-badge con-intereses">TIN 10,46%</div><div class="fin-plazo-quien">Intereses a cargo del cliente</div></button>
           <button class="fin-plazo" data-meses="24" data-tin="10.46"><div class="fin-plazo-meses">24 meses</div><div class="fin-plazo-badge con-intereses">TIN 10,46%</div><div class="fin-plazo-quien">Intereses a cargo del cliente</div></button>
           <button class="fin-plazo" data-meses="36" data-tin="10.46"><div class="fin-plazo-meses">36 meses</div><div class="fin-plazo-badge con-intereses">TIN 10,46%</div><div class="fin-plazo-quien">Intereses a cargo del cliente</div></button>
         </div>
@@ -1084,15 +1082,15 @@ table.cmp td.precio{font-family:'Josefin Sans',sans-serif;font-weight:700;color:
       <div class="fin-resultado">
         <div class="fin-resultado-main">
           <div class="fin-cuota-label">Cuota mensual estimada</div>
-          <div class="fin-cuota-valor" id="cuotaValor">1.600,00 €</div>
-          <div class="fin-cuota-sub" id="cuotaSub">/mes · 12 pagos · TIN 0%</div>
+          <div class="fin-cuota-valor" id="cuotaValor">1.157,17 €</div>
+          <div class="fin-cuota-sub" id="cuotaSub">/mes · 18 pagos · TIN 10,46%</div>
         </div>
         <div class="fin-resultado-detalle">
           <div class="fin-det-row"><span class="fin-det-label">Importe del programa</span><span class="fin-det-val" id="detPrecio">25.700 €</span></div>
           <div class="fin-det-row"><span class="fin-det-label">Descuento por recomendación</span><span class="fin-det-val fin-det-green">−1.000 €</span></div><div class="fin-det-row"><span class="fin-det-label">Descuento familia numerosa</span><span class="fin-det-val fin-det-green">−500 €</span></div><div class="fin-det-row"><span class="fin-det-label">Precio final del programa</span><span class="fin-det-val" id="detFinal">24.200 €</span></div><div class="fin-det-row"><span class="fin-det-label">Entrada a la firma</span><span class="fin-det-val" id="detEntrada">5.000 €</span></div>
           <div class="fin-det-row"><span class="fin-det-label">Capital financiado</span><span class="fin-det-val" id="detCapital">19.200 €</span></div>
-          <div class="fin-det-row"><span class="fin-det-label">Intereses totales</span><span class="fin-det-val fin-det-green" id="detIntereses">0 € · MLQ los asume</span></div>
-          <div class="fin-det-row fin-det-total"><span class="fin-det-label">Total a pagar</span><span class="fin-det-val" id="detTotal">24.200,00 €</span></div>
+          <div class="fin-det-row"><span class="fin-det-label">Intereses totales</span><span class="fin-det-val" id="detIntereses">1.629,00 €</span></div>
+          <div class="fin-det-row fin-det-total"><span class="fin-det-label">Total a pagar</span><span class="fin-det-val" id="detTotal">25.829,00 €</span></div>
         </div>
       </div>
       <div class="fin-nota">ℹ️ Financiación sujeta a aprobación bancaria. La entrada de 5.000 € se abona a la firma del contrato y no se financia. Cuota orientativa calculada sobre el capital financiado. El seguro de anulación es opcional y no se incluye en el capital financiado. Sin comisión de apertura ni penalización por cancelación anticipada.</div>
@@ -1164,7 +1162,7 @@ table.cmp td.precio{font-family:'Josefin Sans',sans-serif;font-weight:700;color:
 
 <script>
 (function(){
-  var precio=25700, meses=12, tin=0, ENTRADA=5000, desc=1500;
+  var precio=25700, meses=18, tin=10.46, ENTRADA=5000, desc=1500;
   function miles(s){return s.replace(/\B(?=(\d{3})+(?!\d))/g,'.');}
   function fmt(n){var p=n.toFixed(2).split('.');return miles(p[0])+','+p[1]+' €';}
   function fmt0(n){return miles(Math.round(n).toString())+' €';}
