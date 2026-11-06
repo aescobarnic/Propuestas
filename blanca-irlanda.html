@@ -430,6 +430,33 @@ details[open] summary::before{transform:rotate(90deg);}
   .tabla-diff{min-width:600px;}
 }
 
+
+/* BLACK NOVEMBER */
+.bn-wrap{background:radial-gradient(ellipse 90% 100% at 50% 0%,#241005 0%,#0b0b0d 65%);border-radius:18px;padding:36px 34px;position:relative;overflow:hidden;color:#fff;}
+.bn-wrap::before{content:'';position:absolute;inset:0;background-image:radial-gradient(rgba(255,255,255,0.05) 1px,transparent 1px);background-size:24px 24px;pointer-events:none;}
+.bn-inner{position:relative;z-index:2;}
+.bn-tag{display:inline-flex;align-items:center;gap:8px;background:rgba(177,41,0,0.18);border:1px solid rgba(200,56,12,0.55);border-radius:20px;padding:5px 14px;font-size:10px;font-weight:700;letter-spacing:2.5px;text-transform:uppercase;color:#ff8a5c;margin-bottom:16px;}
+.bn-title{font-family:'Josefin Sans',sans-serif;font-weight:700;font-size:40px;line-height:1;letter-spacing:-1px;background:linear-gradient(100deg,#ffffff 0%,#ffd9cb 45%,#C8380C 100%);-webkit-background-clip:text;background-clip:text;color:transparent;}
+.bn-lead{font-size:14px;color:rgba(255,255,255,0.65);line-height:1.7;max-width:680px;margin-top:14px;font-weight:300;}
+.bn-lead strong{color:#fff;font-weight:600;}
+.bn-rows{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:14px;margin-top:26px;}
+.bn-row{background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.1);border-radius:12px;padding:16px 18px;}
+.bn-row.main{background:rgba(177,41,0,0.14);border-color:rgba(200,56,12,0.5);}
+.bn-row-label{font-size:11px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:rgba(255,255,255,0.5);}
+.bn-row-desc{font-family:'Josefin Sans',sans-serif;font-size:28px;font-weight:700;color:#E8B04B;line-height:1;margin:10px 0 8px;}
+.bn-row-prices{font-size:13px;color:rgba(255,255,255,0.75);}
+.bn-row-prices s{color:rgba(255,255,255,0.35);margin-right:6px;}
+.bn-row-prices b{color:#fff;font-weight:700;}
+.bn-cond{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:12px 22px;margin-top:26px;padding-top:18px;border-top:1px solid rgba(255,255,255,0.1);}
+.bn-cond-item{font-size:12px;color:rgba(255,255,255,0.6);line-height:1.6;}
+.bn-cond-item strong{color:#fff;font-weight:600;}
+.bn-foot{margin-top:20px;font-size:12.5px;color:#ffd9cb;font-weight:600;}
+.mod-precio-old{font-size:13px;color:var(--text-light);text-decoration:line-through;margin-bottom:4px;}
+.mod-card.destacado .mod-precio-old{color:rgba(255,255,255,0.45);}
+.mod-mini s{color:var(--text-light);font-weight:400;margin-right:4px;}
+.tabla-diff .precio-fila s{display:block;font-size:11px;font-weight:400;color:var(--text-light);}
+.fin-opcion-precio s{font-size:10px;font-weight:400;color:var(--text-light);margin-right:4px;}
+@media(max-width:780px){.bn-wrap{padding:26px 20px;}.bn-title{font-size:30px;}}
 </style>
 </head>
 <body>
@@ -458,14 +485,7 @@ details[open] summary::before{transform:rotate(90deg);}
       <div class="hero-pill">✝ Colegio católico · Uniforme</div>
       <div class="hero-pill ac">🏘 Localidad media · Inmersión</div>
     </div>
-    <!-- ===== BLOQUE PROMO · DESACTIVADO POR DEFECTO =====
-         Los precios son la TARIFA REAL, sin descuento aplicado.
-         Activar SOLO si el comercial lo indica. Al activarlo hay que:
-           1. Descontar 500 € del precio de la modalidad Choice elegida
-           2. Añadir la tarifa original tachada
-           3. Actualizar data-precio del simulador
-    <div class="hero-promo">☘ Reserva antes del 30 de septiembre de 2026 y obtén <strong>500 € de descuento</strong> en los programas Choice — no acumulable con otras promociones.</div>
-    ===== FIN BLOQUE PROMO ===== -->
+    <div class="hero-promo">🖤 Black November: reservando antes del 30 de noviembre ahorráis <strong>1.500 €</strong> en el año escolar Choice (600 € en el trimestre). Precios de esta propuesta con el descuento ya aplicado.</div>
   </div>
 </div>
 
@@ -616,6 +636,27 @@ details[open] summary::before{transform:rotate(90deg);}
 
   </div>
 
+  <!-- ============ BLACK NOVEMBER ============ -->
+  <div class="section-title"><h2>Black November</h2></div>
+  <div class="bn-wrap"><div class="bn-inner">
+    <div class="bn-tag">Del 2 al 30 de noviembre</div>
+    <div class="bn-title">BLACK NOVEMBER</div>
+    <p class="bn-lead">Durante todo noviembre rebajamos el precio de los programas de año escolar para el curso <strong>2027/28</strong>. Si reserváis la plaza de Blanca antes del <strong>30 de noviembre</strong>, el descuento se aplica directamente sobre el precio del programa. Todos los precios de esta propuesta ya lo incluyen.</p>
+    <div class="bn-rows">
+      <div class="bn-row main"><div class="bn-row-label">Choice + 2 vuelos · año escolar</div><div class="bn-row-desc">−1.500 €</div><div class="bn-row-prices"><s>17.450 €</s><b>15.950 €</b></div></div>
+      <div class="bn-row main"><div class="bn-row-label">Choice + 4 vuelos · año escolar</div><div class="bn-row-desc">−1.500 €</div><div class="bn-row-prices"><s>18.200 €</s><b>16.700 €</b></div></div>
+      <div class="bn-row"><div class="bn-row-label">Choice · trimestre</div><div class="bn-row-desc">−600 €</div><div class="bn-row-prices"><s>10.200 €</s><b>9.600 €</b></div></div>
+    </div>
+    <div class="bn-cond">
+      <div class="bn-cond-item"><strong>Ventana de reserva.</strong> Solo reservas formalizadas entre el 2 y el 30 de noviembre, ambos incluidos.</div>
+      <div class="bn-cond-item"><strong>No acumulable</strong> con otras promociones, campañas o descuentos vigentes.</div>
+      <div class="bn-cond-item"><strong>Financiación.</strong> No es compatible con la financiación a 12 meses sin intereses. Los plazos de 18, 24 y 36 meses sí están disponibles.</div>
+      <div class="bn-cond-item"><strong>Sujeto a disponibilidad</strong> de plaza en el colegio y de familia anfitriona en el momento de la reserva.</div>
+      <div class="bn-cond-item"><strong>Cómo se aplica.</strong> El descuento queda reflejado en el contrato y se resta del precio total del programa.</div>
+    </div>
+    <div class="bn-foot">Repasamos la propuesta el lunes 9 de noviembre: desde ese día quedan tres semanas de promoción.</div>
+  </div></div>
+
   <!-- ============ 6. MODALIDADES Y PRECIOS ============ -->
   <div class="section-title"><h2>Modalidades y precios</h2></div>
   <div class="mod-grid">
@@ -623,7 +664,7 @@ details[open] summary::before{transform:rotate(90deg);}
       <div class="mod-head">
         <div class="mod-nombre">Programa No Choice</div>
         <div class="mod-desc-head">La opción más ajustada en precio</div>
-        <div class="mod-precio-val">14.450 €</div>
+        <div class="mod-precio-old">14.450 €</div><div class="mod-precio-val">13.950 €</div>
         <div class="mod-precio-sub">Año escolar completo</div>
       </div>
       <div class="mod-body">
@@ -641,13 +682,13 @@ details[open] summary::before{transform:rotate(90deg);}
       <div class="mod-head">
         <div class="mod-nombre">Programa Choice + 2 vuelos</div>
         <div class="mod-desc-head">Elección de colegio con vuelos de ida y vuelta incluidos</div>
-        <div class="mod-precio-val">17.450 €</div>
+        <div class="mod-precio-old">17.450 €</div><div class="mod-precio-val">15.950 €</div>
         <div class="mod-precio-sub">Año escolar completo</div>
       </div>
       <div class="mod-body">
         <div class="mod-extra">
           <div class="mod-extra-title">Otras duraciones</div>
-          <div class="mod-mini"><span>Trimestre (2 vuelos)</span><b>10.200 €</b></div>
+          <div class="mod-mini"><span>Trimestre (2 vuelos)</span><b><s>10.200 €</s>9.600 €</b></div>
         </div>
         <ul class="mod-list">
           <li>Elección de colegio entre varias opciones seleccionadas para el perfil</li>
@@ -663,7 +704,7 @@ details[open] summary::before{transform:rotate(90deg);}
       <div class="mod-head">
         <div class="mod-nombre">Programa Choice + 4 vuelos</div>
         <div class="mod-desc-head">La opción más completa, con vuelos de Navidad incluidos</div>
-        <div class="mod-precio-val">18.200 €</div>
+        <div class="mod-precio-old">18.200 €</div><div class="mod-precio-val">16.700 €</div>
         <div class="mod-precio-sub">Año escolar completo</div>
       </div>
       <div class="mod-body">
@@ -689,7 +730,7 @@ details[open] summary::before{transform:rotate(90deg);}
     <table class="tabla-diff">
       <thead><tr><th style="text-align:left;">&nbsp;</th><th>No Choice</th><th>Choice + 2 vuelos</th><th>Choice + 4 vuelos</th></tr></thead>
       <tbody>
-        <tr class="precio-fila"><th>Precio · año completo</th><td>14.450 €</td><td>17.450 €</td><td>18.200 €</td></tr>
+        <tr class="precio-fila"><th>Precio · año completo</th><td><s>14.450 €</s>13.950 €</td><td><s>17.450 €</s>15.950 €</td><td><s>18.200 €</s>16.700 €</td></tr>
         <tr><th>Elección de colegio</th><td><span class="no">✗</span><span class="sup">suplemento</span></td><td><span class="si">✓</span></td><td><span class="si">✓</span></td></tr>
         <tr><th>Habitación individual garantizada</th><td><span class="no">✗</span><span class="sup">suplemento</span></td><td><span class="si">✓</span></td><td><span class="si">✓</span></td></tr>
         <tr><th>Libros y uniforme incluidos</th><td><span class="no">✗</span><span class="sup">suplemento</span></td><td><span class="si">✓</span></td><td><span class="si">✓</span></td></tr>
@@ -830,7 +871,7 @@ details[open] summary::before{transform:rotate(90deg);}
         <div class="pay-route-sub">Si se financia el programa, la entrada es siempre de 5.000 € y el resto se financia en cuotas mensuales.</div>
         <div class="pay-entrada">
           <div class="pay-entrada-num">5.000 €</div>
-          <div class="pay-entrada-txt"><strong>Entrada fija a la firma del contrato</strong> en todos los casos de financiación. El capital restante se financia en 12, 18, 24 o 36 meses.</div>
+          <div class="pay-entrada-txt"><strong>Entrada fija a la firma del contrato</strong> en todos los casos de financiación. El capital restante se financia en 18, 24 o 36 meses.</div>
         </div>
         <div class="pay-cols">
           <div class="pay-col">
@@ -839,8 +880,7 @@ details[open] summary::before{transform:rotate(90deg);}
           </div>
           <div class="pay-col">
             <div class="pay-col-title">Condiciones</div>
-            <div class="pay-step"><div class="pay-step-title">12 meses · TIN 0 %</div><div class="pay-step-desc">MLQ asume los intereses</div></div>
-            <div class="pay-step"><div class="pay-step-title">18 / 24 / 36 meses · TIN 10,46 %</div><div class="pay-step-desc">Intereses a cargo del cliente</div></div>
+                        <div class="pay-step"><div class="pay-step-title">18 / 24 / 36 meses · TIN 10,46 %</div><div class="pay-step-desc">Intereses a cargo del cliente</div></div>
           </div>
         </div>
       </div>
@@ -866,10 +906,10 @@ details[open] summary::before{transform:rotate(90deg);}
       <div class="fin-opcion-selector">
         <div class="fin-opcion-label">Selecciona la modalidad</div>
         <div class="fin-opcion-btns" id="finOpciones">
-          <button class="fin-opcion-btn active" data-precio="17450"><span class="fin-opcion-nombre">☘ Choice + 2 vuelos</span><span class="fin-opcion-precio">17.450 €</span></button>
-          <button class="fin-opcion-btn" data-precio="10200"><span class="fin-opcion-nombre">Choice · Trimestre</span><span class="fin-opcion-precio">10.200 €</span></button>
-          <button class="fin-opcion-btn" data-precio="18200"><span class="fin-opcion-nombre">Choice + 4 vuelos</span><span class="fin-opcion-precio">18.200 €</span></button>
-          <button class="fin-opcion-btn" data-precio="14450"><span class="fin-opcion-nombre">No Choice</span><span class="fin-opcion-precio">14.450 €</span></button>
+          <button class="fin-opcion-btn active" data-precio="15950"><span class="fin-opcion-nombre">☘ Choice + 2 vuelos</span><span class="fin-opcion-precio"><s>17.450 €</s>15.950 €</span></button>
+          <button class="fin-opcion-btn" data-precio="9600"><span class="fin-opcion-nombre">Choice · Trimestre</span><span class="fin-opcion-precio"><s>10.200 €</s>9.600 €</span></button>
+          <button class="fin-opcion-btn" data-precio="16700"><span class="fin-opcion-nombre">Choice + 4 vuelos</span><span class="fin-opcion-precio"><s>18.200 €</s>16.700 €</span></button>
+          <button class="fin-opcion-btn" data-precio="13950"><span class="fin-opcion-nombre">No Choice</span><span class="fin-opcion-precio"><s>14.450 €</s>13.950 €</span></button>
         </div>
       </div>
 
@@ -880,9 +920,8 @@ details[open] summary::before{transform:rotate(90deg);}
 
       <div class="fin-plazo-wrap">
         <div class="fin-plazo-label">Elige tu plazo de financiación</div>
-        <div class="fin-plazos" id="finPlazos">
-          <button class="fin-plazo active" data-meses="12" data-tin="0"><div class="fin-plazo-meses">12 meses</div><div class="fin-plazo-badge sin-intereses">TIN 0%</div><div class="fin-plazo-quien">¡MLQ asume los intereses!</div></button>
-          <button class="fin-plazo" data-meses="18" data-tin="10.46"><div class="fin-plazo-meses">18 meses</div><div class="fin-plazo-badge con-intereses">TIN 10,46%</div><div class="fin-plazo-quien">Intereses a cargo del cliente</div></button>
+        <div class="fin-plazos" id="finPlazos" style="grid-template-columns:repeat(3,1fr);">
+                    <button class="fin-plazo active" data-meses="18" data-tin="10.46"><div class="fin-plazo-meses">18 meses</div><div class="fin-plazo-badge con-intereses">TIN 10,46%</div><div class="fin-plazo-quien">Intereses a cargo del cliente</div></button>
           <button class="fin-plazo" data-meses="24" data-tin="10.46"><div class="fin-plazo-meses">24 meses</div><div class="fin-plazo-badge con-intereses">TIN 10,46%</div><div class="fin-plazo-quien">Intereses a cargo del cliente</div></button>
           <button class="fin-plazo" data-meses="36" data-tin="10.46"><div class="fin-plazo-meses">36 meses</div><div class="fin-plazo-badge con-intereses">TIN 10,46%</div><div class="fin-plazo-quien">Intereses a cargo del cliente</div></button>
         </div>
@@ -891,19 +930,19 @@ details[open] summary::before{transform:rotate(90deg);}
       <div class="fin-resultado">
         <div class="fin-resultado-main">
           <div class="fin-cuota-label">Cuota mensual estimada</div>
-          <div class="fin-cuota-valor" id="cuotaValor">1.037,50 €</div>
-          <div class="fin-cuota-sub" id="cuotaSub">/mes · 12 pagos · TIN 0%</div>
+          <div class="fin-cuota-valor" id="cuotaValor"></div>
+          <div class="fin-cuota-sub" id="cuotaSub"></div>
         </div>
         <div class="fin-resultado-detalle">
-          <div class="fin-det-row"><span class="fin-det-label">Importe del programa</span><span class="fin-det-val" id="detPrecio">17.450 €</span></div>
+          <div class="fin-det-row"><span class="fin-det-label">Importe del programa</span><span class="fin-det-val" id="detPrecio">15.950 €</span></div>
           <div class="fin-det-row"><span class="fin-det-label">Entrada a la firma</span><span class="fin-det-val" id="detEntrada">5.000 €</span></div>
-          <div class="fin-det-row"><span class="fin-det-label">Capital financiado</span><span class="fin-det-val" id="detCapital">12.450 €</span></div>
-          <div class="fin-det-row"><span class="fin-det-label">Intereses totales</span><span class="fin-det-val fin-det-green" id="detIntereses">0 € · ¡MLQ los asume!</span></div>
-          <div class="fin-det-row fin-det-total"><span class="fin-det-label">Total a pagar</span><span class="fin-det-val" id="detTotal">17.450 €</span></div>
+          <div class="fin-det-row"><span class="fin-det-label">Capital financiado</span><span class="fin-det-val" id="detCapital">10.950 €</span></div>
+          <div class="fin-det-row"><span class="fin-det-label">Intereses totales</span><span class="fin-det-val" id="detIntereses"></span></div>
+          <div class="fin-det-row fin-det-total"><span class="fin-det-label">Total a pagar</span><span class="fin-det-val" id="detTotal"></span></div>
         </div>
       </div>
 
-      <div class="fin-nota">ℹ️ Financiación sujeta a aprobación bancaria. La entrada de 5.000 € se abona a la firma del contrato y no se financia. Cuota orientativa calculada sobre el capital financiado. Sin comisión de apertura ni penalización por cancelación anticipada.</div>
+      <div class="fin-nota">ℹ️ Con el descuento Black November no está disponible la financiación a 12 meses sin intereses. Financiación sujeta a aprobación bancaria. La entrada de 5.000 € se abona a la firma del contrato y no se financia. Cuota orientativa calculada sobre el capital financiado. Sin comisión de apertura ni penalización por cancelación anticipada.</div>
     </div>
   </div>
 
@@ -942,7 +981,7 @@ details[open] summary::before{transform:rotate(90deg);}
 
 <script>
 (function(){
-  var precio=17450, meses=12, tin=0, ENTRADA=5000;
+  var precio=15950, meses=18, tin=10.46, ENTRADA=5000;
   function fmt(n){return n.toLocaleString('es-ES',{minimumFractionDigits:2,maximumFractionDigits:2})+' €';}
   function fmt0(n){return n.toLocaleString('es-ES',{maximumFractionDigits:0})+' €';}
   function calc(){
