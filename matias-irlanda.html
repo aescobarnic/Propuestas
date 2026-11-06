@@ -414,6 +414,26 @@ body{font-family:'Fira Sans',sans-serif;background:var(--gray-bg);color:var(--te
   .tabla-diff{min-width:600px;}
   .vuelos-wrap{padding:22px 20px;}
 }
+
+/* WEB DEL COLEGIO AL PIE DE CADA TARJETA */
+.opcion-card{display:flex;flex-direction:column;}
+.opcion-card .opcion-body{flex:1;}
+.card-web{display:flex;align-items:center;justify-content:space-between;gap:10px;flex-wrap:wrap;padding:14px 22px;border-top:1px solid var(--gray-border);background:var(--ie-light);}
+.card-web-label{font-family:'Josefin Sans',sans-serif;font-size:9px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--ie-deep);}
+.card-web-links{display:flex;gap:8px;flex-wrap:wrap;}
+.card-web a{display:inline-flex;align-items:center;gap:6px;background:var(--ie-deep);color:var(--white);text-decoration:none;font-size:11.5px;font-weight:600;border-radius:8px;padding:7px 12px;transition:background .2s;}
+.card-web a:hover{background:var(--ie);}
+.card-web a.alt{background:var(--white);color:var(--ie-deep);border:1px solid rgba(31,74,5,0.3);}
+/* ENFOQUE */
+.enfoque-lead{background:linear-gradient(135deg,var(--ie-deep) 0%,var(--ie) 100%);border-radius:16px;padding:26px 30px;color:var(--white);margin-bottom:20px;position:relative;overflow:hidden;}
+.enfoque-lead::after{content:'☘';position:absolute;right:14px;bottom:-30px;font-size:120px;opacity:0.1;transform:rotate(-14deg);}
+.enfoque-lead-title{font-family:'Josefin Sans',sans-serif;font-size:20px;font-weight:700;margin-bottom:8px;position:relative;z-index:2;}
+.enfoque-lead-text{font-size:13.5px;line-height:1.75;color:rgba(255,255,255,0.85);max-width:860px;position:relative;z-index:2;}
+.criterios-list{list-style:none;display:grid;grid-template-columns:repeat(2,1fr);gap:10px;margin:6px 0 22px;}
+.criterios-list li{background:var(--white);border:1.5px solid var(--gray-border);border-radius:10px;padding:12px 14px;font-size:12.5px;color:var(--text-mid);line-height:1.55;display:flex;gap:10px;}
+.criterios-list li b{color:var(--ie-deep);}
+.criterios-list li::before{content:'✓';color:var(--green);font-weight:700;flex-shrink:0;}
+@media(max-width:760px){.criterios-list{grid-template-columns:1fr;}}
 </style>
 </head>
 <body>
@@ -585,6 +605,45 @@ body{font-family:'Fira Sans',sans-serif;background:var(--gray-bg);color:var(--te
     </div>
   </div>
 
+  <!-- ============ 5b. ENFOQUE ============ -->
+  <div class="section-title"><h2>El enfoque de este año</h2></div>
+  <div class="enfoque-lead">
+    <div class="enfoque-lead-title">Un año de inglés de verdad, sin renunciar a lo que Matías ya tiene</div>
+    <div class="enfoque-lead-text">
+      No planteamos este curso como un año de idiomas, sino como un año escolar completo en Irlanda que tiene
+      que sumar en tres frentes a la vez: que Matías vuelva hablando inglés con soltura, que mantenga su alemán
+      y que el curso le cuente en el Colegio Alemán. El rugby es lo que va a hacer que ese año sea suyo.
+    </div>
+  </div>
+  <div class="intro-points">
+    <div class="intro-point"><div class="intro-point-icon">🗣</div><div><div class="intro-point-title">Inmersión real en inglés</div><div class="intro-point-desc">Colegio público irlandés, familia irlandesa y un único hispanohablante en casa. Hemos elegido ciudades medianas y pequeñas fuera de Dublín, donde Matías vivirá en inglés desde el primer día y no en un entorno de estudiantes internacionales.</div></div></div>
+    <div class="intro-point"><div class="intro-point-icon"><svg class="flag-de" viewBox="0 0 5 3" width="22" height="14" role="img" aria-label="Bandera de Alemania"><rect width="5" height="1" y="0" fill="#000000"/><rect width="5" height="1" y="1" fill="#DD0000"/><rect width="5" height="1" y="2" fill="#FFCE00"/></svg></div><div><div class="intro-point-title">El alemán no se para</div><div class="intro-point-desc">El alemán es su lengua de escolarización. Por eso solo proponemos colegios donde es una asignatura del currículo, con profesor y evaluación, para que Matías mantenga el nivel y el Colegio Alemán pueda tenerlo en cuenta.</div></div></div>
+    <div class="intro-point"><div class="intro-point-icon">🏉</div><div><div class="intro-point-title">El rugby como puerta de entrada</div><div class="intro-point-desc">En Irlanda el rugby escolar es parte de la identidad del colegio. Entrar en el equipo es la forma más rápida de hacer amigos irlandeses, sentirse parte del centro y hablar inglés también fuera de clase.</div></div></div>
+    <div class="intro-point"><div class="intro-point-icon">🎓</div><div><div class="intro-point-title">Un curso que cuenta</div><div class="intro-point-desc">El curso en Irlanda se acuerda con el Colegio Alemán antes de matricular, y nosotros preparamos la documentación. Matías vuelve a 10.º con sus compañeros y con las notas convalidadas.</div></div></div>
+  </div>
+
+  <div class="section-title"><h2>Por qué estos colegios</h2></div>
+  <p class="intro-text">
+    Partimos de nuestra red de colegios públicos en Irlanda y solo hemos mantenido los que cumplen a la vez
+    todo lo que nos pedisteis:
+  </p>
+  <ul class="criterios-list">
+    <li><span><b>Alemán como asignatura del currículo</b>, no como club, intercambio o actividad puntual.</span></li>
+    <li><span><b>Rugby en el propio colegio</b>, para que Matías entre en el equipo desde septiembre.</span></li>
+    <li><span><b>Club de rugby en la localidad</b>, para poder seguir jugando en primavera, cuando acaba la temporada escolar.</span></li>
+    <li><span><b>Ciudad mediana o pequeña</b> con servicios, instalaciones deportivas y buena conexión con Dublín.</span></li>
+  </ul>
+  <p class="intro-text">
+    Los cuatro cumplen esos requisitos, y cada uno destaca en una de las prioridades que nos transmitisteis.
+    Así podéis elegir según lo que más pese para vosotros y para Matías:
+  </p>
+  <div class="decision-grid" style="margin-bottom:8px;">
+    <div class="decision-card"><div class="decision-title">🏉 Si lo que más pesa es el rugby: St Mel's</div><div class="decision-text">El colegio con el rugby de más nivel, campeón de Leinster en 2025.</div></div>
+    <div class="decision-card"><div class="decision-title">🏙 Si buscáis el equilibrio: Mullingar CC</div><div class="decision-text">Una ciudad de 22.600 habitantes, colegio mixto y rugby en el colegio y en el club.</div></div>
+    <div class="decision-card"><div class="decision-title">✈ Si queréis cercanía a Dublín: St. Ciarán's</div><div class="decision-text">A 35 minutos de Dublín, en una localidad tranquila con club de rugby.</div></div>
+    <div class="decision-card"><div class="decision-title">📚 Si prima lo académico: St. Macartan's</div><div class="decision-text">Uno de los mejores colegios de secundaria de Irlanda, con el rugby completado en el club.</div></div>
+  </div>
+
   <!-- ============ 6. COLEGIOS ============ -->
   <div class="section-title"><h2>Los cuatro colegios</h2></div>
   <div class="alert-box">
@@ -617,12 +676,9 @@ body{font-family:'Fira Sans',sans-serif;background:var(--gray-bg);color:var(--te
           <li>Es la opción donde el rugby tiene más nivel y más peso en la vida del colegio, con alemán en el currículo.</li>
           <li>Longford tiene el tamaño justo: servicios y club de rugby, sin la intensidad de una gran ciudad.</li>
         </ul>
-        <div class="colegio-section-title">Enlaces</div>
-        <ul class="enlaces-list">
-          <li><a href="https://www.stmelscollege.ie/" target="_blank" rel="noopener">www.stmelscollege.ie</a></li>
-        </ul>
       </div>
       <div class="match-bar"><span class="match-tag">Alemán</span><span class="match-tag">Rugby de alto nivel</span><span class="match-tag">Club en la ciudad</span><span class="match-tag">Estudio supervisado</span></div>
+      <div class="card-web"><span class="card-web-label">Web del colegio</span><span class="card-web-links"><a href="https://www.stmelscollege.ie/" target="_blank" rel="noopener">🌐 www.stmelscollege.ie</a></span></div>
     </div>
 
     <div class="opcion-card recomendada">
@@ -648,12 +704,9 @@ body{font-family:'Fira Sans',sans-serif;background:var(--gray-bg);color:var(--te
           <li>Es la opción más equilibrada: una ciudad del tamaño que buscáis, colegio mixto, alemán y rugby en el colegio y en el club.</li>
           <li>Ofrece la vida urbana más completa de las cuatro opciones.</li>
         </ul>
-        <div class="colegio-section-title">Enlaces</div>
-        <ul class="enlaces-list">
-          <li><a href="https://www.mullingarcc.ie/" target="_blank" rel="noopener">www.mullingarcc.ie</a></li>
-        </ul>
       </div>
       <div class="match-bar"><span class="match-tag">Alemán</span><span class="match-tag">Rugby</span><span class="match-tag">Club en la ciudad</span><span class="match-tag">22.600 habitantes</span></div>
+      <div class="card-web"><span class="card-web-label">Web del colegio</span><span class="card-web-links"><a href="https://www.mullingarcc.ie/" target="_blank" rel="noopener">🌐 www.mullingarcc.ie</a></span></div>
     </div>
 
     <div class="opcion-card">
@@ -678,13 +731,9 @@ body{font-family:'Fira Sans',sans-serif;background:var(--gray-bg);color:var(--te
           <li>Combina alemán, rugby y un colegio grande y activo, muy cerca de Dublín.</li>
           <li>Kells es más pequeña que Longford o Mullingar, con un ambiente más tranquilo.</li>
         </ul>
-        <div class="colegio-section-title">Enlaces</div>
-        <ul class="enlaces-list">
-          <li><a href="https://www.stciaranscs.ie/" target="_blank" rel="noopener">www.stciaranscs.ie</a></li>
-          <li><a href="https://www.stciaranscs.ie/page/Junior-Cycle/23612/Index.html" target="_blank" rel="noopener">Asignaturas · St. Ciarán's</a></li>
-        </ul>
       </div>
       <div class="match-bar"><span class="match-tag">Alemán</span><span class="match-tag">Rugby</span><span class="match-tag">Club en Kells</span><span class="match-tag">Cerca de Dublín</span></div>
+      <div class="card-web"><span class="card-web-label">Web del colegio</span><span class="card-web-links"><a href="https://www.stciaranscs.ie/" target="_blank" rel="noopener">🌐 www.stciaranscs.ie</a><a href="https://www.stciaranscs.ie/page/Junior-Cycle/23612/Index.html" target="_blank" rel="noopener" class="alt">📘 Asignaturas</a></span></div>
     </div>
 
     <div class="opcion-card">
@@ -710,12 +759,9 @@ body{font-family:'Fira Sans',sans-serif;background:var(--gray-bg);color:var(--te
           <li>Si dais más peso a la exigencia académica, es la mejor opción, con alemán en el currículo.</li>
           <li>El rugby tendría que combinarse con el club local para tener la misma continuidad que en St Mel's.</li>
         </ul>
-        <div class="colegio-section-title">Enlaces</div>
-        <ul class="enlaces-list">
-          <li><a href="https://www.stmacartanscollege.ie/" target="_blank" rel="noopener">www.stmacartanscollege.ie</a></li>
-        </ul>
       </div>
       <div class="match-bar"><span class="match-tag">Alemán</span><span class="match-tag">Rugby + club</span><span class="match-tag">Top 50 de Irlanda</span><span class="match-tag">Colegio histórico</span></div>
+      <div class="card-web"><span class="card-web-label">Web del colegio</span><span class="card-web-links"><a href="https://www.stmacartanscollege.ie/" target="_blank" rel="noopener">🌐 www.stmacartanscollege.ie</a></span></div>
     </div>
 
   </div>
@@ -1116,6 +1162,8 @@ body{font-family:'Fira Sans',sans-serif;background:var(--gray-bg);color:var(--te
     ['.info-block','reveal'],
     ['.mod-card','reveal'],
     ['.decision-card','reveal'],
+    ['.enfoque-lead','reveal-zoom'],
+    ['.criterios-list li','reveal'],
     ['.tabla-wrap','reveal'],
     ['.vuelos-wrap','reveal-zoom'],
     ['.includes-wrap','reveal-zoom'],
