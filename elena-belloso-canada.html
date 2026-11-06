@@ -140,6 +140,14 @@ details[open] summary::before{transform:rotate(90deg);}
 .colegio-btn-wrap{padding:0 14px 14px;}
 .web-btn{display:inline-flex;align-items:center;justify-content:center;gap:6px;width:100%;box-sizing:border-box;padding:9px 14px;border-radius:8px;background:var(--blue);color:#ffffff;font-size:11.5px;font-weight:700;letter-spacing:.3px;text-decoration:none;transition:background .2s,transform .15s;}
 .web-btn:hover{background:var(--blue-dark);transform:translateY(-1px);}
+.notas-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px;}
+.nota-col{background:var(--white);border-radius:14px;border:1.5px solid var(--gray-border);padding:16px 20px;}
+.nota-col.ok{border-left:4px solid #2e8b57;}
+.nota-col.pend{border-left:4px solid #d4a017;}
+.nota-head{font-family:'Josefin Sans',sans-serif;font-size:13px;font-weight:700;color:var(--text);margin-bottom:8px;}
+.nota-col ul{margin:0;padding-left:18px;}
+.nota-col li{font-size:12.5px;color:var(--text-mid);line-height:1.6;margin-bottom:4px;}
+@media(max-width:760px){.notas-grid{grid-template-columns:1fr;}}
 .club-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;}
 .club-card{background:var(--white);border-radius:14px;border:1.5px solid var(--gray-border);padding:18px 20px;box-shadow:0 2px 16px rgba(0,51,102,0.05);display:flex;flex-direction:column;gap:8px;}
 .club-top{display:flex;justify-content:space-between;align-items:flex-start;gap:8px;}
@@ -513,23 +521,23 @@ details[open] summary::before{transform:rotate(90deg);}
       </div>
       <div class="opcion-body"><div class="colegios">
         <div class="colegio">
-          <div class="colegio-top"><div class="colegio-nombre">Heritage Woods Secondary (HWSS)</div><div class="colegio-meta"><span class="tag pub">Público</span><span class="tag info">Grade 9 a 12</span><span class="tag info">Port Moody</span><span class="tag info">Vuestra elección</span></div></div>
-          <details><summary>Por qué encaja con Elena</summary><div class="colegio-razon">Es el colegio que elegisteis Elena y tú, y cumple lo que buscabais: mucho deporte, ambiente de instituto americano y un edificio rodeado de naturaleza. Ofrece cursos Honours para subir el nivel en matemáticas y ciencias, que son las materias que más pesan de cara a Arquitectura, y un equipo de orientación que acompaña la planificación universitaria. Acepta estudiantes internacionales en Grade 12 y las plazas se asignan por orden de llegada, así que conviene reservar cuanto antes.</div></details><div class="colegio-btn-wrap"><a class="web-btn" href="https://www.sd43.bc.ca/school/heritagewoods" target="_blank" rel="noopener">Ver web del colegio ↗</a></div>
+          <div class="colegio-top"><div class="colegio-nombre">Heritage Woods Secondary (HWSS)</div><div class="colegio-meta"><span class="tag pub">Público</span><span class="tag info">Grade 9 a 12</span><span class="tag info">Port Moody</span><span class="tag info">Vuestra elección</span><span class="tag info">Esquí y snowboard</span></div></div>
+          <details><summary>Por qué encaja con Elena</summary><div class="colegio-razon">Es el colegio que elegisteis Elena y tú, y cumple lo que buscabais: mucho deporte, ambiente de instituto americano y un edificio rodeado de naturaleza. Ofrece cursos Honours para subir el nivel en matemáticas y ciencias, que son las materias que más pesan de cara a Arquitectura, y un equipo de orientación que acompaña la planificación universitaria. Tiene club de esquí y snowboard con salidas de un día a la nieve, equipo de competición y club de fotografía. Acepta estudiantes internacionales en Grade 12 y las plazas se asignan por orden de llegada, así que conviene reservar cuanto antes.</div></details><div class="colegio-btn-wrap"><a class="web-btn" href="https://www.sd43.bc.ca/school/heritagewoods" target="_blank" rel="noopener">Ver web del colegio ↗</a></div>
         </div>
         <div class="colegio">
-          <div class="colegio-top"><div class="colegio-nombre">Port Moody Secondary (PMSS)</div><div class="colegio-meta"><span class="tag pub">Público</span><span class="tag info">Grade 9 a 12</span><span class="tag info">~1.300 alumnos</span><span class="tag info">Programa IB</span></div></div>
-          <details><summary>Por qué encaja con Elena</summary><div class="colegio-razon">Está en la misma ciudad que Heritage Woods y es la alternativa natural si allí se completan las plazas. Es centro IB desde 1986, lo que marca el nivel académico de todo el instituto aunque Elena curse el itinerario ordinario. Tiene un programa de arte avanzado, algo muy útil para quien piensa en Arquitectura o Diseño, y equipos de cheerleading y danza competitiva si quiere probar algo nuevo además de la rítmica. Queda en el centro de Port Moody, junto a la estación de SkyTrain Moody Centre.</div></details><div class="colegio-btn-wrap"><a class="web-btn" href="https://www.sd43.bc.ca/school/portmoody" target="_blank" rel="noopener">Ver web del colegio ↗</a></div>
+          <div class="colegio-top"><div class="colegio-nombre">Port Moody Secondary (PMSS)</div><div class="colegio-meta"><span class="tag pub">Público</span><span class="tag info">Grade 9 a 12</span><span class="tag info">~1.300 alumnos</span><span class="tag info">Programa IB</span><span class="tag info">Cheer y esquí</span></div></div>
+          <details><summary>Por qué encaja con Elena</summary><div class="colegio-razon">Está en la misma ciudad que Heritage Woods y es la alternativa natural si allí se completan las plazas. Es centro IB desde 1986, lo que marca el nivel académico de todo el instituto aunque Elena curse el itinerario ordinario. Tiene un programa de arte avanzado, algo muy útil para quien piensa en Arquitectura o Diseño, un equipo de cheerleading con títulos nacionales, equipos de danza competitiva y club de esquí y snowboard. Queda en el centro de Port Moody, junto a la estación de SkyTrain Moody Centre.</div></details><div class="colegio-btn-wrap"><a class="web-btn" href="https://www.sd43.bc.ca/school/portmoody" target="_blank" rel="noopener">Ver web del colegio ↗</a></div>
         </div>
         <div class="colegio">
           <div class="colegio-top"><div class="colegio-nombre">Terry Fox Secondary (TFSS)</div><div class="colegio-meta"><span class="tag pub">Público</span><span class="tag info">Grade 9 a 12</span><span class="tag info">~1.600 alumnos</span><span class="tag info">Port Coquitlam</span><span class="tag info">Alternativa</span></div></div>
-          <details><summary>Por qué encaja con Elena</summary><div class="colegio-razon">Está en Port Coquitlam, la ciudad donde entrenan los clubes de rítmica de la zona, y es la primera alternativa si en Port Moody se completan las plazas. Ofrece cursos Honours y Advanced Placement, tiene una de las tradiciones deportivas más fuertes del distrito (de aquí salió la gimnasta olímpica Brittany Rogers) y un departamento de tecnología con dibujo técnico y diseño, muy útil para quien piensa en Arquitectura. Para ir a Vancouver se combina autobús y SkyTrain.</div></details><div class="colegio-btn-wrap"><a class="web-btn" href="https://www.sd43.bc.ca/school/terryfox" target="_blank" rel="noopener">Ver web del colegio ↗</a></div>
+          <details><summary>Por qué encaja con Elena</summary><div class="colegio-razon">Está en Port Coquitlam, la ciudad donde entrenan los clubes de rítmica de la zona, y es la primera alternativa si en Port Moody se completan las plazas. Ofrece cursos Honours y Advanced Placement, tiene una de las tradiciones deportivas más fuertes del distrito (de aquí salió la gimnasta olímpica Brittany Rogers) y un departamento de tecnología con dibujo técnico y diseño, muy útil para quien piensa en Arquitectura. Tiene también equipo de cheerleading. Para ir a Vancouver se combina autobús y SkyTrain.</div></details><div class="colegio-btn-wrap"><a class="web-btn" href="https://www.sd43.bc.ca/school/terryfox" target="_blank" rel="noopener">Ver web del colegio ↗</a></div>
         </div>
         <div class="colegio">
           <div class="colegio-top"><div class="colegio-nombre">Riverside Secondary (RSS)</div><div class="colegio-meta"><span class="tag pub">Público</span><span class="tag info">Grade 9 a 12</span><span class="tag info">~1.400 alumnos</span><span class="tag info">Port Coquitlam</span><span class="tag info">Alternativa</span></div></div>
           <details><summary>Por qué encaja con Elena</summary><div class="colegio-razon">También en Port Coquitlam, cerca de los clubes de rítmica. Es un centro grande con trato de colegio pequeño: ofrece Honours y Advanced Placement, un departamento de artes visuales y escénicas con arte, teatro y música, y es pionero en tecnología, ya que todos los alumnos trabajan en clase con su propio portátil o tableta. Una buena opción para que Elena combine las asignaturas de convalidación con las optativas de arte que le interesan. Para ir a Vancouver se combina autobús y SkyTrain.</div></details><div class="colegio-btn-wrap"><a class="web-btn" href="https://www.sd43.bc.ca/school/riverside" target="_blank" rel="noopener">Ver web del colegio ↗</a></div>
         </div>
       </div></div>
-      <div class="match-bar"><span class="match-tag">Tres clubes de rítmica en el distrito</span><span class="match-tag">SkyTrain directo a Vancouver</span><span class="match-tag">PCE sin dormir fuera</span><span class="match-tag">Pistas de esquí cercanas</span></div>
+      <div class="match-bar"><span class="match-tag">Tres clubes de rítmica en el distrito</span><span class="match-tag">SkyTrain directo a Vancouver</span><span class="match-tag">PCE sin dormir fuera</span><span class="match-tag">Club de esquí y snowboard</span></div>
     </div>
 
     <div class="opcion-card">
@@ -580,7 +588,31 @@ details[open] summary::before{transform:rotate(90deg);}
       <a class="web-btn" href="https://flamingorhythmicsrg.com/" target="_blank" rel="noopener">Ver web del club ↗</a>
     </div>
   </div>
-  <div class="club-nota">🏫 <strong>Dentro del instituto:</strong> Port Moody Secondary tiene equipo de cheerleading y de danza competitiva, una forma de mantener la flexibilidad dentro del horario escolar si Elena quiere combinarlo con la rítmica o prefiere probar algo nuevo.</div>
+  <div class="club-nota">🏫 <strong>Dentro del instituto:</strong> Port Moody Secondary y Terry Fox tienen equipo de cheerleading, y Heritage Woods y Port Moody Secondary, club de esquí y snowboard. Cada equipo escolar es para los alumnos de su propio centro.</div>
+
+
+  <!-- ============ 5c. NOTAS ACLARATORIAS ============ -->
+  <div class="section-title"><h2>Notas aclaratorias</h2></div>
+  <div class="notas-grid">
+    <div class="nota-col ok">
+      <div class="nota-head">✅ Confirmado</div>
+      <ul>
+        <li>Heritage Woods admite estudiantes internacionales en Grade 12. Las plazas se asignan por orden de llegada.</li>
+        <li>Esquí y snowboard: club y equipo de competición en Heritage Woods y Port Moody Secondary.</li>
+        <li>Cheerleading: equipo en Port Moody Secondary y Terry Fox.</li>
+        <li>Gimnasia rítmica: tres clubes externos en Port Moody y Port Coquitlam.</li>
+      </ul>
+    </div>
+    <div class="nota-col pend">
+      <div class="nota-head">⏳ Por confirmar</div>
+      <ul>
+        <li>Si Heritage Woods tendrá equipo de cheerleading en 2027/28.</li>
+        <li>Estaciones y coste de las salidas de esquí.</li>
+        <li>Horarios, nivel de entrada y cuotas de los clubes de rítmica.</li>
+        <li>Sede de las PCE de junio de 2027 en Vancouver, pendiente de publicación por UNEDasiss.</li>
+      </ul>
+    </div>
+  </div>
 
   <!-- ============ 6. VISADO Y VUELOS ============ -->
   <div class="section-title"><h2>Visado y vuelos</h2></div>
