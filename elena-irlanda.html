@@ -436,6 +436,14 @@ details[open] summary::before{transform:rotate(90deg);}
 </style>
 </head>
 <body>
+<style>
+/* Ajustes propuesta Elena */
+.hero-promo{align-items:flex-start;display:block;}
+.hero-promo .promo-ico{float:left;margin-right:8px;}
+.por-que-list + .colegio-section-title{margin-top:18px;}
+.colegio-web{display:inline-flex;align-items:center;gap:7px;margin-top:18px;background:var(--ie);color:#fff;font-family:'Josefin Sans',sans-serif;font-size:11px;font-weight:700;letter-spacing:.5px;padding:9px 16px;border-radius:9px;text-decoration:none;transition:transform .15s,box-shadow .15s;}
+.colegio-web:hover{transform:translateY(-2px);box-shadow:0 8px 18px rgba(76,158,12,.3);}
+</style>
 
 <!-- ============ 1. HEADER ============ -->
 <div class="header">
@@ -452,7 +460,7 @@ details[open] summary::before{transform:rotate(90deg);}
   <div class="hero-inner">
     <div class="hero-tag">Propuesta personalizada · Irlanda</div>
     <div class="hero-name">Elena, tu año escolar en Irlanda</div>
-    <div class="hero-subtitle">Programa Choice · Año escolar completo · 4º ESO · Transition Year</div>
+    <div class="hero-subtitle">Programa Choice · Año escolar completo · 4º ESO · Transition Year · Curso 2027/28</div>
     <div class="hero-pills">
       <div class="hero-pill">🎓 4º ESO · Transition Year</div>
       <div class="hero-pill">🏠 Familia anfitriona</div>
@@ -461,7 +469,7 @@ details[open] summary::before{transform:rotate(90deg);}
       <div class="hero-pill">🎾 Deportes de raqueta</div>
       <div class="hero-pill ac">☘ Interés especial por Cork</div>
     </div>
-    <div class="hero-promo">🖤 <strong>Black November:</strong> 1.500 € de descuento sobre la tarifa del Programa Choice. El año completo se queda en <strong>15.450 €</strong> en lugar de 16.950 €.</div>
+    <div class="hero-promo"><span class="promo-ico">🖤</span><span><b>Black Month:</b> 1.500 € de descuento reservando entre el 2 y el 30 de noviembre de 2026, o 24 meses sin intereses en la financiación. Las dos ventajas no se acumulan: se elige una.</span></div>
   </div>
 </div>
 
@@ -644,7 +652,7 @@ details[open] summary::before{transform:rotate(90deg);}
   <div class="section-title"><h2>Los seis colegios que hemos seleccionado</h2></div>
   <div class="alert-box">
     <div class="alert-icon">☘</div>
-    <div class="alert-text"><strong>Programa Choice · precio único:</strong> el precio no cambia según el colegio elegido, así que la decisión es puramente de encaje. Los seis centros se han filtrado por tres criterios: <strong>artes escénicas en el colegio</strong>, <strong>alternativa de raqueta al pádel</strong> y <strong>localidad con vida</strong>. Las cifras de alumnado y población son las referencias de nuestro consolidado.</div>
+    <div class="alert-text"><strong>Programa Choice · precio único:</strong> el precio no cambia según el colegio elegido, así que la decisión es puramente de encaje. Los seis centros se han filtrado por tres criterios: <strong>artes escénicas en el colegio</strong>, <strong>alternativa de raqueta al pádel</strong> y <strong>localidad con vida</strong>.</div>
   </div>
   <div class="opciones-grid">
 
@@ -669,10 +677,9 @@ details[open] summary::before{transform:rotate(90deg);}
           <li><strong>Está en Cork</strong>, la ciudad que despertó su interés desde el principio</li>
           <li>Tamaño contenido, 400 alumnos: un centro donde se la conoce por su nombre dentro de una ciudad grande</li>
         </ul>
-        <div class="colegio-section-title">A valorar</div>
-        <div class="colegio-desc" style="margin-bottom:0;">Cork es una ciudad grande: conviene fijar bien la ubicación de la familia anfitriona y el trayecto diario al colegio. Lo cerramos con vosotros antes de confirmar la plaza.</div>
+        <a class="colegio-web" href="https://www.cetsl.ie/" target="_blank" rel="noopener">🌐 Ver la web del colegio · cetsl.ie</a>
       </div>
-      <div class="match-bar"><span class="match-tag">Teatro</span><span class="match-tag">Danza</span><span class="match-tag">Cork</span><span class="match-tag">Mixto</span><span class="match-tag"><a href="https://www.cetsl.ie/" target="_blank" rel="noopener" style="color:inherit;text-decoration:none;">cetsl.ie</a></span></div>
+      <div class="match-bar"><span class="match-tag">Teatro</span><span class="match-tag">Danza</span><span class="match-tag">Cork</span><span class="match-tag">Mixto</span></div>
     </div>
 
     <div class="opcion-card">
@@ -697,8 +704,9 @@ details[open] summary::before{transform:rotate(90deg);}
         </ul>
         <div class="colegio-section-title">A valorar</div>
         <div class="colegio-desc" style="margin-bottom:0;">Es un colegio exclusivamente femenino y de tradición católica. Merece la pena hablarlo con Elena: si esa idea le atrae, pasa directamente a finalista.</div>
+        <a class="colegio-web" href="https://www.christkingschool.com/" target="_blank" rel="noopener">🌐 Ver la web del colegio · christkingschool.com</a>
       </div>
-      <div class="match-bar"><span class="match-tag">Teatro</span><span class="match-tag">Danza</span><span class="match-tag">Tenis</span><span class="match-tag">Cork</span><span class="match-tag"><a href="https://www.christkingschool.com/" target="_blank" rel="noopener" style="color:inherit;text-decoration:none;">christkingschool.com</a></span></div>
+      <div class="match-bar"><span class="match-tag">Teatro</span><span class="match-tag">Danza</span><span class="match-tag">Tenis</span><span class="match-tag">Cork</span></div>
     </div>
 
     <div class="opcion-card">
@@ -721,8 +729,9 @@ details[open] summary::before{transform:rotate(90deg);}
           <li>Academias de música y baile en la propia localidad, fuera del horario escolar</li>
           <li><strong>El tamaño de ciudad ideal para ganar independencia:</strong> todo a mano, caminable, con servicios y sin la complejidad de una gran urbe</li>
         </ul>
+        <a class="colegio-web" href="https://www.mullingarcc.ie/" target="_blank" rel="noopener">🌐 Ver la web del colegio · mullingarcc.ie</a>
       </div>
-      <div class="match-bar"><span class="match-tag">Teatro</span><span class="match-tag">Ciudad mediana</span><span class="match-tag">Raqueta en la ciudad</span><span class="match-tag">Colegio pequeño</span><span class="match-tag"><a href="https://www.mullingarcc.ie/" target="_blank" rel="noopener" style="color:inherit;text-decoration:none;">mullingarcc.ie</a></span></div>
+      <div class="match-bar"><span class="match-tag">Teatro</span><span class="match-tag">Ciudad mediana</span><span class="match-tag">Raqueta en la ciudad</span><span class="match-tag">Colegio pequeño</span></div>
     </div>
 
     <div class="opcion-card">
@@ -745,8 +754,9 @@ details[open] summary::before{transform:rotate(90deg);}
           <li>El <strong>programa Cairde</strong> empareja a estudiantes para acompañar a los que llegan nuevos: una ayuda real en las primeras semanas</li>
           <li>Localidad con mucho movimiento y la oferta cultural de Dublín al alcance para salidas puntuales</li>
         </ul>
+        <a class="colegio-web" href="https://stfinianscc.ie/" target="_blank" rel="noopener">🌐 Ver la web del colegio · stfinianscc.ie</a>
       </div>
-      <div class="match-bar"><span class="match-tag">Musicales</span><span class="match-tag">Tenis</span><span class="match-tag">Mucha vida</span><span class="match-tag">Cerca de Dublín</span><span class="match-tag"><a href="https://stfinianscc.ie/" target="_blank" rel="noopener" style="color:inherit;text-decoration:none;">stfinianscc.ie</a></span></div>
+      <div class="match-bar"><span class="match-tag">Musicales</span><span class="match-tag">Tenis</span><span class="match-tag">Mucha vida</span><span class="match-tag">Cerca de Dublín</span></div>
     </div>
 
     <div class="opcion-card">
@@ -769,8 +779,9 @@ details[open] summary::before{transform:rotate(90deg);}
           <li>Colegio mixto de tamaño medio, en Cork, con buena reputación académica</li>
           <li>Las opciones de raqueta las cubre fuera del colegio, en los clubes de tenis de la ciudad</li>
         </ul>
+        <a class="colegio-web" href="http://www.cercork.ie/" target="_blank" rel="noopener">🌐 Ver la web del colegio · cercork.ie</a>
       </div>
-      <div class="match-bar"><span class="match-tag">Teatro</span><span class="match-tag">Música</span><span class="match-tag">Cork</span><span class="match-tag">Mixto</span><span class="match-tag"><a href="http://www.cercork.ie/" target="_blank" rel="noopener" style="color:inherit;text-decoration:none;">cercork.ie</a></span></div>
+      <div class="match-bar"><span class="match-tag">Teatro</span><span class="match-tag">Música</span><span class="match-tag">Cork</span><span class="match-tag">Mixto</span></div>
     </div>
 
     <div class="opcion-card">
@@ -794,8 +805,9 @@ details[open] summary::before{transform:rotate(90deg);}
         </ul>
         <div class="colegio-section-title">A valorar</div>
         <div class="colegio-desc" style="margin-bottom:0;">La actividad escénica la encontrará sobre todo en la ciudad más que dentro del colegio. Si para Elena lo prioritario es el teatro en el propio centro, Cork Educate Together o Christ King la cubren mejor.</div>
+        <a class="colegio-web" href="https://www.kcvs.ie/" target="_blank" rel="noopener">🌐 Ver la web del colegio · kcvs.ie</a>
       </div>
-      <div class="match-bar"><span class="match-tag">Tenis · Bádminton</span><span class="match-tag">Ciudad del teatro</span><span class="match-tag">Colegio pequeño</span><span class="match-tag">Tamaño Ávila</span><span class="match-tag"><a href="https://www.kcvs.ie/" target="_blank" rel="noopener" style="color:inherit;text-decoration:none;">kcvs.ie</a></span></div>
+      <div class="match-bar"><span class="match-tag">Tenis · Bádminton</span><span class="match-tag">Ciudad del teatro</span><span class="match-tag">Colegio pequeño</span><span class="match-tag">Tamaño Ávila</span></div>
     </div>
 
   </div>
@@ -851,39 +863,62 @@ details[open] summary::before{transform:rotate(90deg);}
       </tbody>
     </table>
   </div>
-  <div class="tabla-nota">Cifras de alumnado y población según el consolidado de centros de My Language Quest. El precio del Programa Choice es el mismo en los seis colegios: la elección depende solo del encaje con el perfil de Elena.</div>
+  <div class="tabla-nota">El precio del Programa Choice es el mismo en los seis colegios: la elección depende solo del encaje con el perfil de Elena.</div>
 
-  <!-- ============ 9. PRECIO ============ -->
-  <div class="section-title"><h2>Precio del programa · Black November</h2></div>
-  <div class="mod-grid" style="grid-template-columns:1fr;">
+  <!-- ============ 9. MODALIDADES Y PRECIOS ============ -->
+  <div class="section-title"><h2>Modalidades y precios</h2></div>
+  <div class="alert-box">
+    <div class="alert-icon">🖤</div>
+    <div class="alert-text"><strong>Campaña Black Month:</strong> 1.500 € de descuento reservando entre el 2 y el 30 de noviembre de 2026, o 24 meses sin intereses en la financiación. Las dos ventajas no se acumulan: se elige una.</div>
+  </div>
+  <div class="mod-grid" style="grid-template-columns:repeat(2,1fr);">
+
     <div class="mod-card destacado">
-      <div class="badge-rec-mod">🖤 Black November</div>
+      <div class="badge-rec-mod">Propuesto</div>
       <div class="mod-head">
-        <div class="mod-nombre">Programa Choice · Año escolar completo 2027/28</div>
-        <div class="mod-desc-head">Elección de colegio entre las seis opciones · 4º ESO · Transition Year</div>
-        <div class="mod-precio-val">15.450 € <span style="font-size:16px;font-weight:400;opacity:.55;text-decoration:line-through;margin-left:8px;">16.950 €</span></div>
-        <div class="mod-precio-sub">1.500 € de descuento aplicado</div>
+        <div class="mod-nombre">Programa Choice + 2 vuelos</div>
+        <div class="mod-desc-head">Elección de colegio con vuelos de ida y vuelta incluidos</div>
+        <div class="mod-precio-val"><span style="font-size:17px;font-weight:400;opacity:.5;text-decoration:line-through;margin-right:9px;">17.450 €</span>15.950 €</div>
+        <div class="mod-precio-sub">Año completo · Black Month −1.500 €</div>
       </div>
       <div class="mod-body">
         <div class="mod-extra">
-          <div class="mod-extra-title">Qué significa el descuento</div>
-          <div class="mod-mini"><span>Tarifa Programa Choice 2027/28</span><b>16.950 €</b></div>
-          <div class="mod-mini"><span>Descuento Black November</span><b>− 1.500 €</b></div>
-          <div class="mod-mini"><span>Precio final para Elena</span><b>15.450 €</b></div>
+          <div class="mod-extra-title">Otras duraciones</div>
+          <div class="mod-mini"><span>Trimestre (2 vuelos)</span><b>10.200 €</b></div>
         </div>
         <ul class="mod-list">
-          <li>Elección de colegio entre las seis opciones de esta propuesta</li>
-          <li>Familia anfitriona en pensión completa con habitación individual</li>
-          <li>Un único estudiante hispanohablante por familia</li>
-          <li>Libros de las asignaturas obligatorias y uniforme escolar incluidos</li>
+          <li>Elección de colegio entre las opciones seleccionadas para su perfil</li>
+          <li>Habitación individual garantizada</li>
+          <li>Libros de asignaturas obligatorias y uniforme escolar incluidos</li>
           <li>Tasa de Transition Year incluida</li>
-          <li>Cuatro traslados en destino: llegada, ida y vuelta de Navidad y fin de curso</li>
-          <li>Seguro médico privado y de responsabilidad civil</li>
-          <li>Gestor estudiantil, coordinador local 24 h y atención 24 h en España</li>
+          <li>Orientación previa en Dublín, 2 días, incluida</li>
+          <li>2 vuelos grupales con monitor MLQ: inicio y fin de curso</li>
         </ul>
-        <div class="tabla-nota" style="margin-top:14px;">Descuento no acumulable con otras promociones. Los vuelos no están incluidos: My Language Quest gestiona la búsqueda y la reserva, y el coste corre a cargo de la familia.</div>
       </div>
     </div>
+
+    <div class="mod-card">
+      <div class="mod-head">
+        <div class="mod-nombre">Programa Choice + 4 vuelos</div>
+        <div class="mod-desc-head">La opción más completa, con vuelos de Navidad incluidos</div>
+        <div class="mod-precio-val"><span style="font-size:17px;font-weight:400;opacity:.5;text-decoration:line-through;margin-right:9px;">18.200 €</span>16.700 €</div>
+        <div class="mod-precio-sub">Año completo · Black Month −1.500 €</div>
+      </div>
+      <div class="mod-body">
+        <div class="mod-extra">
+          <div class="mod-extra-title">Otras duraciones</div>
+          <div class="mod-mini"><span>Semestre agosto–abril</span><b>15.200 €</b></div>
+          <div class="mod-mini"><span>Semestre agosto–enero</span><b>11.650 €</b></div>
+        </div>
+        <ul class="mod-list">
+          <li>Todo lo del programa Choice + 2 vuelos</li>
+          <li>4 vuelos incluidos: inicio, ida y vuelta de Navidad y fin de curso</li>
+          <li>Sin compra de billetes en temporada alta navideña</li>
+          <li>Mismos colegios y mismas condiciones de alojamiento</li>
+        </ul>
+      </div>
+    </div>
+
   </div>
 
   <!-- ============ 10. EL PROGRAMA INCLUYE ============ -->
@@ -899,7 +934,7 @@ details[open] summary::before{transform:rotate(90deg);}
             <li>Entrevista personal con la estudiante</li>
             <li>Información completa sobre el programa</li>
             <li>Matriculación en el colegio elegido</li>
-            <li>Familia anfitriona en pensión completa<small>Habitación individual</small></li>
+            <li>Familia anfitriona en pensión completa<small>Habitación individual garantizada</small></li>
             <li>Un único estudiante hispanohablante por familia</li>
             <li>Seguro médico privado y de responsabilidad civil</li>
             <li>Libros de las asignaturas obligatorias</li>
@@ -912,8 +947,10 @@ details[open] summary::before{transform:rotate(90deg);}
         <div>
           <div class="col-title">Durante el viaje</div>
           <ul class="inc-list">
+            <li>Vuelos según la modalidad elegida<small>2 o 4 vuelos grupales desde Madrid o Barcelona con monitor de MLQ</small></li>
+            <li>Orientación en Dublín a la llegada<small>2 días</small></li>
             <li>Recibimiento en el aeropuerto</li>
-            <li>4 traslados<small>Inicio, ida y vuelta de Navidad y fin de curso</small></li>
+            <li>4 traslados en destino<small>Inicio, ida y vuelta de Navidad y fin de curso</small></li>
             <li>Asesoramiento en la elección de asignaturas</li>
             <li>Clases de inglés Cambridge y libro incluido</li>
             <li>Taller MIT · 3 sesiones</li>
@@ -934,7 +971,7 @@ details[open] summary::before{transform:rotate(90deg);}
         <div>
           <div class="col-title">No incluido</div>
           <ul class="inc-list no">
-            <li>Vuelos<small>MLQ gestiona la búsqueda, coste a cargo de la familia</small></li>
+            <li>Vuelos adicionales a los de la modalidad elegida<small>MLQ gestiona la búsqueda, coste a cargo de la familia</small></li>
             <li>Actividades extracurriculares de pago</li>
             <li>Excursiones y viajes escolares</li>
             <li>Material escolar adicional</li>
@@ -972,14 +1009,14 @@ details[open] summary::before{transform:rotate(90deg);}
   <div class="payment-wrap">
     <div class="payment-inner">
       <div class="pay-title">💳 Condiciones económicas</div>
-      <div class="pay-subtitle">Precio del programa para Elena: 15.450 € · Programa Choice · año escolar completo 2027/28</div>
+      <div class="pay-subtitle">Dos vías: pago directo o financiación. La ventaja Black Month que se aplica es distinta en cada una.</div>
 
       <div class="pay-route">
-        <div class="pay-route-head"><span class="pay-route-icon">🏦</span><span class="pay-route-title">Opción A · Pago sin financiación</span></div>
-        <div class="pay-route-sub">El importe íntegro queda abonado antes del 1 de junio de 2027.</div>
+        <div class="pay-route-head"><span class="pay-route-icon">🏦</span><span class="pay-route-title">Opción A · Pago sin financiación · Black Month −1.500 €</span></div>
+        <div class="pay-route-sub">Reservando entre el 2 y el 30 de noviembre de 2026 se descuentan 1.500 € sobre la tarifa del programa. El importe íntegro debe estar abonado antes del 1 de junio de 2027.</div>
         <div class="pay-entrada">
           <div class="pay-entrada-num">3.500 €</div>
-          <div class="pay-entrada-txt"><strong>Primer pago a la firma del contrato.</strong> Reserva la plaza e inicia la tramitación de matrícula y familia anfitriona.</div>
+          <div class="pay-entrada-txt"><strong>Primer pago a la firma del contrato.</strong> Reserva la plaza, inicia la tramitación de matrícula y familia anfitriona y, dentro de la ventana de noviembre, fija el descuento de 1.500 €.</div>
         </div>
         <div class="pay-cols">
           <div class="pay-col">
@@ -988,32 +1025,33 @@ details[open] summary::before{transform:rotate(90deg);}
           </div>
           <div class="pay-col">
             <div class="pay-col-title">Paso 3 · Resto del importe</div>
-            <div class="pay-step"><div class="pay-step-title">7.950 €</div><div class="pay-step-desc">Antes del 1 de junio de 2027</div></div>
+            <div class="pay-step"><div class="pay-step-title">Antes del 1 de junio de 2027</div><div class="pay-step-desc">Importe restante hasta completar el precio del programa con el descuento ya aplicado</div></div>
           </div>
         </div>
       </div>
 
       <div class="pay-route">
-        <div class="pay-route-head"><span class="pay-route-icon">📆</span><span class="pay-route-title">Opción B · Con financiación Banco Sabadell</span></div>
-        <div class="pay-route-sub">La entrada es siempre de 3.500 € y el resto se financia en cuotas mensuales.</div>
+        <div class="pay-route-head"><span class="pay-route-icon">📆</span><span class="pay-route-title">Opción B · Con financiación Banco Sabadell · 24 meses sin intereses</span></div>
+        <div class="pay-route-sub">Si se financia el programa, la entrada es siempre de 5.000 € y el resto se financia en cuotas mensuales sobre la tarifa sin descuento. Durante la campaña Black Month, los 24 meses son sin intereses. El descuento de 1.500 € no se acumula a esta opción.</div>
         <div class="pay-entrada">
-          <div class="pay-entrada-num">3.500 €</div>
-          <div class="pay-entrada-txt"><strong>Entrada a la firma del contrato.</strong> El capital restante, 11.950 €, se financia en 12, 18, 24 o 36 meses.</div>
+          <div class="pay-entrada-num">5.000 €</div>
+          <div class="pay-entrada-txt"><strong>Entrada fija a la firma del contrato</strong> en todos los casos de financiación. El capital restante se financia en 12, 18, 24 o 36 meses.</div>
         </div>
         <div class="pay-cols">
           <div class="pay-col">
             <div class="pay-col-title">Capital financiado</div>
-            <div class="pay-step"><div class="pay-step-title">11.950 €</div><div class="pay-step-desc">Calculad la cuota exacta en el simulador de la sección siguiente.</div></div>
+            <div class="pay-step"><div class="pay-step-title">Precio del programa − 5.000 €</div><div class="pay-step-desc">Calculad la cuota exacta en el simulador de la sección siguiente.</div></div>
           </div>
           <div class="pay-col">
             <div class="pay-col-title">Condiciones</div>
+            <div class="pay-step"><div class="pay-step-title">24 meses · TIN 0 % · Black Month</div><div class="pay-step-desc">MLQ asume los intereses</div></div>
             <div class="pay-step"><div class="pay-step-title">12 meses · TIN 0 %</div><div class="pay-step-desc">MLQ asume los intereses</div></div>
-            <div class="pay-step"><div class="pay-step-title">18 / 24 / 36 meses · TIN 10,46 %</div><div class="pay-step-desc">Intereses a cargo del cliente</div></div>
+            <div class="pay-step"><div class="pay-step-title">18 / 36 meses · TIN 10,46 %</div><div class="pay-step-desc">Intereses a cargo del cliente</div></div>
           </div>
         </div>
       </div>
 
-      <div class="pay-note">El seguro de anulación e interrupción es opcional, cuesta 500 € y se contrata y abona en el momento de la firma del contrato. Su importe no es reembolsable. Las inscripciones tardías deben cumplir con los plazos de pago ya vencidos en el momento de la inscripción.</div>
+      <div class="pay-note">Las dos ventajas de la campaña Black Month no son acumulables: o 1.500 € de descuento sobre el precio, o 24 meses sin intereses en la financiación. El seguro de anulación e interrupción es opcional, cuesta 500 € y debe contratarse y abonarse en el momento de la firma del contrato. Su importe no es reembolsable bajo ninguna circunstancia. Las inscripciones tardías deben cumplir con los plazos de pago ya pasados en el momento de la inscripción.</div>
     </div>
   </div>
 
@@ -1025,31 +1063,31 @@ details[open] summary::before{transform:rotate(90deg);}
         <div class="fin-icon">💳</div>
         <div>
           <div class="fin-title">Pagad a vuestro ritmo</div>
-          <div class="fin-sub">Entrada de 3.500 € · Aprobación rápida · 100 % online · Sin comisión de apertura</div>
+          <div class="fin-sub">Entrada fija de 5.000 € · Aprobación rápida · 100 % online · Sin comisión de apertura</div>
         </div>
       </div>
-      <div class="fin-badge">Hasta 36 meses</div>
+      <div class="fin-badge">24 meses sin intereses</div>
     </div>
     <div class="financing-body">
       <div class="fin-opcion-selector">
-        <div class="fin-opcion-label">Programa</div>
+        <div class="fin-opcion-label">Selecciona la modalidad</div>
         <div class="fin-opcion-btns" id="finOpciones">
-          <button class="fin-opcion-btn active" data-precio="15450"><span class="fin-opcion-nombre">🖤 Choice · Black November</span><span class="fin-opcion-precio">15.450 €</span></button>
-          <button class="fin-opcion-btn" data-precio="16950"><span class="fin-opcion-nombre">Choice · tarifa sin descuento</span><span class="fin-opcion-precio">16.950 €</span></button>
+          <button class="fin-opcion-btn active" data-precio="17450"><span class="fin-opcion-nombre">☘ Choice + 2 vuelos</span><span class="fin-opcion-precio">17.450 €</span></button>
+          <button class="fin-opcion-btn" data-precio="18200"><span class="fin-opcion-nombre">Choice + 4 vuelos</span><span class="fin-opcion-precio">18.200 €</span></button>
         </div>
       </div>
 
       <div class="fin-entrada-fija">
-        <div class="fin-entrada-fija-num">3.500 €</div>
-        <div class="fin-entrada-fija-txt"><strong>Entrada a la firma del contrato.</strong> Se descuenta del precio del programa; el resto es el capital que se financia.</div>
+        <div class="fin-entrada-fija-num">5.000 €</div>
+        <div class="fin-entrada-fija-txt"><strong>Entrada a la firma del contrato.</strong> Se descuenta del precio del programa; el resto es el capital que se financia. La financiación se calcula sobre la tarifa sin el descuento de 1.500 €.</div>
       </div>
 
       <div class="fin-plazo-wrap">
         <div class="fin-plazo-label">Elegid el plazo de financiación</div>
         <div class="fin-plazos" id="finPlazos">
-          <button class="fin-plazo active" data-meses="12" data-tin="0"><div class="fin-plazo-meses">12 meses</div><div class="fin-plazo-badge sin-intereses">TIN 0%</div><div class="fin-plazo-quien">¡MLQ asume los intereses!</div></button>
+          <button class="fin-plazo active" data-meses="24" data-tin="0"><div class="fin-plazo-meses">24 meses</div><div class="fin-plazo-badge sin-intereses">TIN 0% · Black Month</div><div class="fin-plazo-quien">¡MLQ asume los intereses!</div></button>
+          <button class="fin-plazo" data-meses="12" data-tin="0"><div class="fin-plazo-meses">12 meses</div><div class="fin-plazo-badge sin-intereses">TIN 0%</div><div class="fin-plazo-quien">¡MLQ asume los intereses!</div></button>
           <button class="fin-plazo" data-meses="18" data-tin="10.46"><div class="fin-plazo-meses">18 meses</div><div class="fin-plazo-badge con-intereses">TIN 10,46%</div><div class="fin-plazo-quien">Intereses a cargo del cliente</div></button>
-          <button class="fin-plazo" data-meses="24" data-tin="10.46"><div class="fin-plazo-meses">24 meses</div><div class="fin-plazo-badge con-intereses">TIN 10,46%</div><div class="fin-plazo-quien">Intereses a cargo del cliente</div></button>
           <button class="fin-plazo" data-meses="36" data-tin="10.46"><div class="fin-plazo-meses">36 meses</div><div class="fin-plazo-badge con-intereses">TIN 10,46%</div><div class="fin-plazo-quien">Intereses a cargo del cliente</div></button>
         </div>
       </div>
@@ -1057,19 +1095,19 @@ details[open] summary::before{transform:rotate(90deg);}
       <div class="fin-resultado">
         <div class="fin-resultado-main">
           <div class="fin-cuota-label">Cuota mensual estimada</div>
-          <div class="fin-cuota-valor" id="cuotaValor">995,83 €</div>
-          <div class="fin-cuota-sub" id="cuotaSub">/mes · 12 pagos · TIN 0%</div>
+          <div class="fin-cuota-valor" id="cuotaValor">518,75 €</div>
+          <div class="fin-cuota-sub" id="cuotaSub">/mes · 24 pagos · TIN 0%</div>
         </div>
         <div class="fin-resultado-detalle">
-          <div class="fin-det-row"><span class="fin-det-label">Importe del programa</span><span class="fin-det-val" id="detPrecio">15.450 €</span></div>
-          <div class="fin-det-row"><span class="fin-det-label">Entrada a la firma</span><span class="fin-det-val" id="detEntrada">3.500 €</span></div>
-          <div class="fin-det-row"><span class="fin-det-label">Capital financiado</span><span class="fin-det-val" id="detCapital">11.950 €</span></div>
+          <div class="fin-det-row"><span class="fin-det-label">Importe del programa</span><span class="fin-det-val" id="detPrecio">17.450 €</span></div>
+          <div class="fin-det-row"><span class="fin-det-label">Entrada a la firma</span><span class="fin-det-val" id="detEntrada">5.000 €</span></div>
+          <div class="fin-det-row"><span class="fin-det-label">Capital financiado</span><span class="fin-det-val" id="detCapital">12.450 €</span></div>
           <div class="fin-det-row"><span class="fin-det-label">Intereses totales</span><span class="fin-det-val fin-det-green" id="detIntereses">0 € · ¡MLQ los asume!</span></div>
-          <div class="fin-det-row fin-det-total"><span class="fin-det-label">Total a pagar</span><span class="fin-det-val" id="detTotal">15.450 €</span></div>
+          <div class="fin-det-row fin-det-total"><span class="fin-det-label">Total a pagar</span><span class="fin-det-val" id="detTotal">17.450 €</span></div>
         </div>
       </div>
 
-      <div class="fin-nota">ℹ️ Financiación sujeta a aprobación bancaria. La entrada de 3.500 € se abona a la firma del contrato y no se financia. Cuota orientativa calculada sobre el capital financiado. Sin comisión de apertura ni penalización por cancelación anticipada.</div>
+      <div class="fin-nota">ℹ️ Financiación sujeta a aprobación bancaria. La entrada de 5.000 € se abona a la firma del contrato y no se financia. Cuota orientativa calculada sobre el capital financiado. Sin comisión de apertura ni penalización por cancelación anticipada.</div>
     </div>
   </div>
 
@@ -1105,14 +1143,14 @@ details[open] summary::before{transform:rotate(90deg);}
       <div class="steps-title">¿Cómo seguimos?</div>
       <div class="steps-sub">Del sí a la salida hacia Irlanda, paso a paso</div>
       <div class="steps-list">
-        <div class="step-item"><div class="step-num">1</div><div class="step-title">Elegís colegio</div><div class="step-desc">Nos decís vuestras dos opciones preferidas por orden. Resolvemos antes cualquier duda sobre los centros.</div></div>
-        <div class="step-item"><div class="step-num">2</div><div class="step-title">Prueba de nivel y entrevista</div><div class="step-desc">Medimos el nivel de inglés de Elena y hacemos la entrevista personal con ella.</div></div>
-        <div class="step-item"><div class="step-num">3</div><div class="step-title">Firma y reserva</div><div class="step-desc">Firma del contrato y primer pago de 3.500 €. Se bloquea la plaza y arranca la matriculación.</div></div>
-        <div class="step-item"><div class="step-num">4</div><div class="step-title">Familia, libros y vuelos</div><div class="step-desc">Gestionamos familia anfitriona, uniforme y libros, y os buscamos los vuelos. Después, orientación previa y salida.</div></div>
+        <div class="step-item"><div class="step-num">1</div><div class="step-title">Elegís colegio</div><div class="step-desc">Nos confirmáis cuál de los seis centros propuestos preferís para empezar las gestiones. Podéis elegir hasta 3 opciones en orden de preferencia.</div></div>
+        <div class="step-item"><div class="step-num">2</div><div class="step-title">Test de nivel</div><div class="step-desc">Medimos el nivel de inglés de Elena y hacemos la entrevista personal con ella.</div></div>
+        <div class="step-item"><div class="step-num">3</div><div class="step-title">Firma y reserva</div><div class="step-desc">Firma del contrato y primer pago. Se bloquea la plaza.</div></div>
+        <div class="step-item"><div class="step-num">4</div><div class="step-title">Matrícula y familia</div><div class="step-desc">Gestionamos matrícula, familia anfitriona, uniforme y libros.</div></div>
       </div>
-      <div class="cta-line">¿Dudas con alguno de los seis colegios? Tu asesora las resuelve contigo.</div>
+      <div class="cta-line">Nos decís el colegio y la modalidad y nos encargamos del resto. ¿Dudas con alguno? Vuestra asesora las resuelve con vosotros.</div>
       <div class="pasos-cta-wrap">
-        <a class="pasos-cta" href="mailto:aescobar@mylanguagequest.com,gespinoza@mylanguagequest.com?subject=Confirmaci%C3%B3n%20de%20colegio%20%C2%B7%20Elena%20%C2%B7%20Irlanda%202027%2F28&amp;body=Hola%2C%0A%0AHemos%20revisado%20la%20propuesta%20de%20Irlanda%20para%20Elena%20y%20estas%20son%20nuestras%20opciones%20por%20orden%20de%20preferencia%3A%0A%0A1.%20%0A2.%20%0A%0AGracias.">☘ Elegir colegio</a>
+        <a class="pasos-cta" href="mailto:aescobar@mylanguagequest.com,gespinoza@mylanguagequest.com?subject=Confirmaci%C3%B3n%20de%20colegio%20%C2%B7%20Elena%20%C2%B7%20Irlanda%202027%2F28&amp;body=Hola%2C%0A%0AHemos%20revisado%20la%20propuesta%20de%20Irlanda%20para%20Elena%20y%20queremos%20confirmar%20la%20siguiente%20opci%C3%B3n%3A%0A%0AColegio%20elegido%3A%20%0AModalidad%20(Choice%202%20o%204%20vuelos)%3A%20%0A%0AGracias.">☘ Confirmar mi colegio</a>
         <a class="pasos-cta pasos-cta-alt" href="https://asesoramientosmlq.zohobookings.eu/mylanguagequest" target="_blank" rel="noopener">📅 Agendar llamada con mi asesora</a>
       </div>
     </div>
@@ -1133,7 +1171,7 @@ details[open] summary::before{transform:rotate(90deg);}
 
 <script>
 (function(){
-  var precio=15450, meses=12, tin=0, ENTRADA=3500;
+  var precio=17450, meses=24, tin=0, ENTRADA=5000;
   function sep(s){return s.replace(/\B(?=(\d{3})+(?!\d))/g,'.');}
   function fmt(n){
     var neg=n<0; n=Math.abs(n);
