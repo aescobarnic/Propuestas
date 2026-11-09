@@ -97,7 +97,7 @@ body{font-family:'Fira Sans',sans-serif;background:var(--gray-bg);color:var(--te
 .alert-icon{font-size:20px;flex-shrink:0;}
 .alert-text{font-size:12px;color:#6b1a00;line-height:1.6;}
 .alert-text strong{color:var(--red-dark);}
-.opciones-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(330px,1fr));gap:20px;}
+.opciones-grid{display:grid;grid-template-columns:1fr;gap:26px;}
 .opcion-card{background:var(--white);border-radius:16px;border:1.5px solid var(--gray-border);overflow:hidden;box-shadow:0 2px 16px rgba(0,51,102,0.06);position:relative;transition:transform .2s,box-shadow .2s,border-color .2s;}
 .opcion-card:hover{transform:translateY(-4px);box-shadow:0 12px 40px rgba(110,22,0,0.16);border-color:var(--red);}
 .opcion-card.recomendada{border-color:var(--blue);box-shadow:0 6px 28px rgba(0,51,102,0.20);}
@@ -113,7 +113,11 @@ body{font-family:'Fira Sans',sans-serif;background:var(--gray-bg);color:var(--te
 .precio-chip .desc{font-size:10px;color:rgba(255,255,255,0.5);}
 .precio-chip .tachado{font-size:10px;color:rgba(255,255,255,0.3);text-decoration:line-through;margin-left:6px;}
 .opcion-body{padding:20px 22px;}
-.colegios{display:flex;flex-direction:column;gap:12px;}
+.colegios{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;align-items:start;}
+.opcion-fotos{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;max-width:600px;margin:0 0 18px;}
+.opcion-fotos figure{margin:0;border-radius:8px;overflow:hidden;border:1px solid var(--gray-border);background:var(--gray-card);aspect-ratio:4/3;}
+.opcion-fotos img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .5s cubic-bezier(.22,.61,.36,1);}
+.opcion-fotos figure:hover img{transform:scale(1.07);}
 .colegio{border:1.5px solid var(--gray-border);border-radius:12px;overflow:hidden;background:var(--gray-card);transition:border-color .2s;}
 .colegio:hover{border-color:var(--red);}
 .colegio-top{padding:12px 14px 10px;}
@@ -265,6 +269,7 @@ details[open] summary::before{transform:rotate(90deg);}
 .footer-meta a{color:rgba(255,255,255,0.65);text-decoration:none;}
 
 @media(max-width:900px){
+  .colegios{grid-template-columns:1fr;}
   .qs-hero{grid-template-columns:1fr;}
   .qs-media{min-height:320px;aspect-ratio:4/3;}
   .qs-chapters{grid-template-columns:1fr;}
@@ -273,6 +278,7 @@ details[open] summary::before{transform:rotate(90deg);}
   .header{padding:16px 20px;}.hero{padding:28px 20px 24px;}.hero-name{font-size:28px;}
   .main{padding:28px 16px 20px;}
   .includes-grid{grid-template-columns:1fr;}.opciones-grid{grid-template-columns:1fr;}
+  .colegios{grid-template-columns:1fr;}.opcion-fotos{grid-template-columns:repeat(2,1fr);max-width:none;}
   .intro-points{grid-template-columns:1fr;}.info-blocks{grid-template-columns:1fr;}
   .pay-cols{grid-template-columns:1fr;}.gestor-grid{grid-template-columns:repeat(2,1fr);}
   .steps-list{grid-template-columns:1fr;}
@@ -530,7 +536,14 @@ details[open] summary::before{transform:rotate(90deg);}
         <div class="opcion-loc">📍 Charlottetown · Costa este de Canadá</div>
         <div class="precio-chip"><span class="val">19.700 €</span><span class="desc">/ curso 27-28 · vuelo internacional incl.*</span><span class="tachado">21.200 €</span></div>
       </div>
-      <div class="opcion-body"><div class="colegios">
+      <div class="opcion-body">
+      <div class="opcion-fotos">
+        <figure><img src="https://aescobarnic.github.io/Propuestas/img/pei-charlottetown-rural-colegio.jpg" alt="Charlottetown Rural High School" loading="lazy"></figure>
+        <figure><img src="https://aescobarnic.github.io/Propuestas/img/pei-charlottetown-rural-voluntariado.jpg" alt="Estudiantes de Charlottetown Rural en una plantación de árboles" loading="lazy"></figure>
+        <figure><img src="https://aescobarnic.github.io/Propuestas/img/pei-futbol-femenino.jpg" alt="Equipo femenino de fútbol del colegio" loading="lazy"></figure>
+        <figure><img src="https://aescobarnic.github.io/Propuestas/img/pei-charlottetown-ciudad.jpg" alt="Vista de Charlottetown" loading="lazy"></figure>
+      </div>
+      <div class="colegios">
         <div class="colegio">
           <div class="colegio-top"><div class="colegio-nombre">Charlottetown Rural High School</div><div class="colegio-meta"><span class="tag pub">Público</span><span class="tag info">Grade 10–12</span><span class="tag info">Programa IB</span><span class="tag info">Charlottetown</span></div></div>
           <details><summary>Por qué es nuestra primera elección para Alejandra</summary><div class="colegio-razon">Es el centro que mejor conecta con su futuro académico: imparte el <strong>Programa del Diploma IB</strong> de dos años —con Historia dentro de la oferta—, exactamente la continuidad natural de su trayectoria británica. Cuenta con <strong>Model United Nations</strong> y con la <strong>Student Debating Society</strong>, donde Alejandra podrá trabajar temas internacionales y argumentación, la mejor antesala posible de unos estudios en Relaciones Internacionales y Política. Su experiencia en scouts y en el Duke of Edinburgh encaja además con <strong>Envirothon</strong> y con los programas de liderazgo, voluntariado y participación comunitaria del centro. Completan la oferta las actividades artísticas y deportivas.<br><a href="https://therural.edu.pe.ca/" target="_blank" rel="noopener">Conocer Charlottetown Rural High School →</a></div></details>
@@ -554,7 +567,14 @@ details[open] summary::before{transform:rotate(90deg);}
         <div class="opcion-loc">📍 Camrose · Alberta · Centro-oeste de Canadá</div>
         <div class="precio-chip"><span class="val">18.700 €</span><span class="desc">/ curso 27-28 · vuelo internacional incl.*</span><span class="tachado">20.200 €</span></div>
       </div>
-      <div class="opcion-body"><div class="colegios">
+      <div class="opcion-body">
+      <div class="opcion-fotos">
+        <figure><img src="https://aescobarnic.github.io/Propuestas/img/battle-river-camrose-colegio.jpg" alt="École Camrose Composite High School" loading="lazy"></figure>
+        <figure><img src="https://aescobarnic.github.io/Propuestas/img/battle-river-estudiantes.jpg" alt="Estudiantes de Camrose Composite en una actividad del colegio" loading="lazy"></figure>
+        <figure><img src="https://aescobarnic.github.io/Propuestas/img/battle-river-baloncesto-provincial.jpg" alt="Equipo femenino de baloncesto, campeón provincial 2A" loading="lazy"></figure>
+        <figure><img src="https://aescobarnic.github.io/Propuestas/img/battle-river-cafeteria.jpg" alt="Estudiantes en la cafetería del colegio" loading="lazy"></figure>
+      </div>
+      <div class="colegios">
         <div class="colegio">
           <div class="colegio-top"><div class="colegio-nombre">École Camrose Composite High School</div><div class="colegio-meta"><span class="tag pub">Público</span><span class="tag info">Hasta Grade 12</span><span class="tag info">Camrose</span><span class="tag info">~19.000 hab.</span></div></div>
           <details><summary>Por qué es nuestra primera elección en Battle River</summary><div class="colegio-razon">Ofrece una base académica muy completa con <strong>English Language Arts</strong> y <strong>Social Studies</strong>, las materias que más contribuyen al análisis social, la comunicación y el pensamiento crítico que Alejandra necesita para su futuro universitario. Suma <strong>Drama, Arte y Música</strong>, programas de liderazgo y participación estudiantil y una oferta deportiva escolar muy activa, con un itinerario orientado a la continuidad de estudios.<br><a href="https://cchs.brsd.ab.ca/" target="_blank" rel="noopener">Conocer École Camrose Composite High School →</a></div></details>
@@ -578,7 +598,14 @@ details[open] summary::before{transform:rotate(90deg);}
         <div class="opcion-loc">📍 Winnipeg · Manitoba</div>
         <div class="precio-chip"><span class="val">21.350 €</span><span class="desc">/ curso 27-28 · vuelo internacional incl.*</span><span class="tachado">22.850 €</span></div>
       </div>
-      <div class="opcion-body"><div class="colegios">
+      <div class="opcion-body">
+      <div class="opcion-fotos">
+        <figure><img src="https://aescobarnic.github.io/Propuestas/img/pembina-vincent-massey-colegio.jpg" alt="Institut collégial Vincent Massey Collegiate" loading="lazy"></figure>
+        <figure><img src="https://aescobarnic.github.io/Propuestas/img/pembina-estudiantes.jpg" alt="Estudiantes de Vincent Massey Collegiate" loading="lazy"></figure>
+        <figure><img src="https://aescobarnic.github.io/Propuestas/img/pembina-baloncesto-winnipeg.jpg" alt="Equipo femenino de baloncesto, campeón de Winnipeg" loading="lazy"></figure>
+        <figure><img src="https://aescobarnic.github.io/Propuestas/img/pembina-artes-escenicas.jpg" alt="Actividad de artes escénicas del colegio" loading="lazy"></figure>
+      </div>
+      <div class="colegios">
         <div class="colegio">
           <div class="colegio-top"><div class="colegio-nombre">Institut collégial Vincent Massey Collegiate</div><div class="colegio-meta"><span class="tag pub">Público</span><span class="tag info">Ciencias Sociales</span><span class="tag info">AP</span><span class="tag info">Winnipeg</span></div></div>
           <details><summary>Por qué es la opción más académica para Alejandra</summary><div class="colegio-razon">Su catálogo de Ciencias Sociales es el más cercano a lo que Alejandra quiere estudiar después: <strong>Global Issues</strong>, <strong>Historia de la Civilización Occidental</strong>, <strong>Derecho</strong>, <strong>Economía</strong>, <strong>Psicología y AP Psychology</strong> y Geografía. Son exactamente las materias que construyen la base de un grado en Relaciones Internacionales y Política, y le permiten llegar a la universidad con criterio propio sobre qué rama le interesa más.<br><a href="https://www.pembinatrails.ca/vincentmassey" target="_blank" rel="noopener">Conocer Vincent Massey Collegiate →</a></div></details>
