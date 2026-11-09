@@ -440,6 +440,22 @@ details[open] summary::before{transform:rotate(90deg);}
   .precio-hero-num{font-size:36px;}
 }
 
+/* --- Black November --- */
+.bn-wrap{background:linear-gradient(135deg,#0b0b0d 0%,#1c1c22 60%,#2a2116 100%);border-radius:16px;padding:30px 34px;position:relative;overflow:hidden;box-shadow:0 10px 40px rgba(0,0,0,0.25);}
+.bn-wrap::before{content:'';position:absolute;inset:0;background-image:radial-gradient(rgba(232,176,75,0.07) 1px,transparent 1px);background-size:22px 22px;}
+.bn-inner{position:relative;z-index:2;display:grid;grid-template-columns:auto 1fr;gap:30px;align-items:center;}
+.bn-badge{display:inline-block;font-family:'Josefin Sans',sans-serif;font-size:9.5px;font-weight:700;letter-spacing:2.5px;text-transform:uppercase;color:#0b0b0d;background:var(--gold);padding:5px 12px;border-radius:20px;margin-bottom:12px;}
+.bn-old{font-family:'Josefin Sans',sans-serif;font-size:18px;color:rgba(255,255,255,0.4);text-decoration:line-through;}
+.bn-new{font-family:'Josefin Sans',sans-serif;font-size:46px;font-weight:700;color:var(--gold);line-height:1;white-space:nowrap;}
+.bn-save{font-size:12px;color:rgba(255,255,255,0.7);margin-top:6px;}
+.bn-title{font-family:'Josefin Sans',sans-serif;font-size:18px;font-weight:700;color:#fff;margin-bottom:8px;}
+.bn-text{font-size:12.5px;color:rgba(255,255,255,0.68);line-height:1.7;margin-bottom:14px;}
+.bn-text strong{color:#fff;font-weight:600;}
+.bn-conds{list-style:none;display:flex;flex-direction:column;gap:7px;}
+.bn-conds li{font-size:12px;color:rgba(255,255,255,0.72);line-height:1.5;display:flex;gap:8px;}
+.bn-conds li::before{content:'★';color:var(--gold);font-size:10px;margin-top:2px;flex-shrink:0;}
+.precio-tachado{font-family:'Josefin Sans',sans-serif;font-size:18px;color:var(--text-light);text-decoration:line-through;margin-bottom:4px;}
+@media(max-width:720px){.bn-inner{grid-template-columns:1fr;gap:18px;}.bn-wrap{padding:26px 22px;}.fin-plazos.tres{grid-template-columns:1fr!important;}}
 </style>
 </head>
 <body>
@@ -467,6 +483,7 @@ details[open] summary::before{transform:rotate(90deg);}
       <div class="hero-pill">🏫 Colegio público</div>
       <div class="hero-pill ac">🗽 Orientación en Nueva York incluida</div>
     </div>
+    <div class="hero-promo">🏷 Black November: 1.000 € de descuento aplicado a esta propuesta, válido reservando hasta el 30 de noviembre</div>
   </div>
 </div>
 
@@ -718,15 +735,39 @@ details[open] summary::before{transform:rotate(90deg);}
     </div>
   </div>
 
+  <!-- ============ BLACK NOVEMBER ============ -->
+  <div class="section-title"><h2>Promoción Black November</h2></div>
+  <div class="bn-wrap">
+    <div class="bn-inner">
+      <div>
+        <div class="bn-badge">Black November</div>
+        <div class="bn-old">13.900 €</div>
+        <div class="bn-new">12.900 €</div>
+        <div class="bn-save">Ahorro de 1.000 € sobre el año escolar J1</div>
+      </div>
+      <div>
+        <div class="bn-title">El descuento ya está aplicado en la propuesta de Dana</div>
+        <p class="bn-text">Durante noviembre rebajamos el programa J1 de año escolar en <strong>1.000 €</strong>. Todos los importes de esta propuesta (pago, financiación y simulador) ya están calculados con el precio promocional de <strong>12.900 €</strong>, que quedará reflejado en el contrato.</p>
+        <ul class="bn-conds">
+          <li>Válido para reservas formalizadas hasta el <strong style="color:#fff">30 de noviembre de 2026</strong>, incluido.</li>
+          <li>Compatible con la financiación a 18, 24 y 36 meses de Banco Sabadell.</li>
+          <li>No acumulable con otras promociones o descuentos vigentes.</li>
+          <li>Plaza sujeta a disponibilidad en el momento de la reserva.</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
   <!-- ============ 9. PRECIO Y FORMAS DE PAGO ============ -->
   <div class="section-title"><h2>Precio y formas de pago</h2></div>
   <div class="precio-hero">
     <div>
-      <div class="precio-hero-num">13.900 €</div>
-      <div class="precio-hero-sub">Año escolar completo</div>
+      <div class="precio-tachado">13.900 €</div>
+      <div class="precio-hero-num">12.900 €</div>
+      <div class="precio-hero-sub">Año escolar · Black November</div>
     </div>
     <div class="precio-hero-txt">
-      Precio cerrado del programa J1 para el curso 2027/28. Incluye <strong>matrícula, familia anfitriona en
+      Precio cerrado del programa J1 para el curso 2027/28, con el descuento Black November de 1.000 € ya aplicado. Incluye <strong>matrícula, familia anfitriona en
       pensión completa, seguro médico, visado J1 con tasa SEVIS, orientación en Nueva York, clases Cambridge,
       transporte escolar y la convalidación completa en España</strong>. Los vuelos internacionales no están
       incluidos: MLQ gestiona la búsqueda y el coste corre a cargo de la familia.
@@ -748,7 +789,7 @@ details[open] summary::before{transform:rotate(90deg);}
         <div class="pay-cols">
           <div class="pay-col">
             <div class="pay-col-title">Paso 2 · Resto del programa</div>
-            <div class="pay-step"><div class="pay-step-title">10.400 €</div><div class="pay-step-desc">Al recibir la carta de aceptación del sponsor y, como máximo, el 1 de marzo de 2027</div></div>
+            <div class="pay-step"><div class="pay-step-title">9.400 €</div><div class="pay-step-desc">Al recibir la carta de aceptación del sponsor y, como máximo, el 1 de marzo de 2027</div></div>
           </div>
           <div class="pay-col">
             <div class="pay-col-title">Seguro de anulación</div>
@@ -759,25 +800,24 @@ details[open] summary::before{transform:rotate(90deg);}
 
       <div class="pay-route">
         <div class="pay-route-head"><span class="pay-route-icon">📆</span><span class="pay-route-title">Opción B · Con financiación Banco Sabadell</span></div>
-        <div class="pay-route-sub">Si se financia el programa, la entrada es siempre de 5.000 € y el resto se financia en cuotas mensuales.</div>
+        <div class="pay-route-sub">Si se financia el programa, la entrada es siempre de 5.000 € y el resto se financia en cuotas mensuales a 18, 24 o 36 meses.</div>
         <div class="pay-entrada">
           <div class="pay-entrada-num">5.000 €</div>
-          <div class="pay-entrada-txt"><strong>Entrada fija a la firma del contrato</strong> en todos los casos de financiación. El capital restante se financia en 12, 18, 24 o 36 meses.</div>
+          <div class="pay-entrada-txt"><strong>Entrada fija a la firma del contrato</strong> en todos los casos de financiación. El capital restante se financia en 18, 24 o 36 meses.</div>
         </div>
         <div class="pay-cols">
           <div class="pay-col">
             <div class="pay-col-title">Capital financiado</div>
-            <div class="pay-step"><div class="pay-step-title">13.900 € − 5.000 € = 8.900 €</div><div class="pay-step-desc">Calcula tu cuota exacta en el simulador de la sección siguiente.</div></div>
+            <div class="pay-step"><div class="pay-step-title">12.900 € − 5.000 € = 7.900 €</div><div class="pay-step-desc">Calcula tu cuota exacta en el simulador de la sección siguiente.</div></div>
           </div>
           <div class="pay-col">
             <div class="pay-col-title">Condiciones</div>
-            <div class="pay-step"><div class="pay-step-title">12 meses · TIN 0 %</div><div class="pay-step-desc">MLQ asume los intereses</div></div>
-            <div class="pay-step"><div class="pay-step-title">18 / 24 / 36 meses · TIN 10,46 %</div><div class="pay-step-desc">Intereses a cargo del cliente</div></div>
+            <div class="pay-step"><div class="pay-step-title">18 / 24 / 36 meses · TIN 10,46 %</div><div class="pay-step-desc">Sin comisión de apertura ni penalización por cancelación anticipada</div></div>
           </div>
         </div>
       </div>
 
-      <div class="pay-note">El seguro de anulación e interrupción es opcional, cuesta 350 € y debe contratarse y abonarse en el momento de la firma del contrato. Su importe no es reembolsable bajo ninguna circunstancia. Las inscripciones tardías deben cumplir con los plazos de pago ya pasados en el momento de la inscripción.</div>
+      <div class="pay-note">El seguro de anulación e interrupción es opcional, cuesta 350 € y debe contratarse y abonarse en el momento de la firma del contrato. Su importe no es reembolsable bajo ninguna circunstancia. El precio promocional de Black November se aplica a reservas formalizadas hasta el 30 de noviembre de 2026 y es compatible con la financiación a 18, 24 y 36 meses. Las inscripciones tardías deben cumplir con los plazos de pago ya pasados en el momento de la inscripción.</div>
     </div>
   </div>
 
@@ -798,7 +838,7 @@ details[open] summary::before{transform:rotate(90deg);}
       <div class="fin-opcion-selector">
         <div class="fin-opcion-label">Programa</div>
         <div class="fin-opcion-btns" id="finOpciones">
-          <button class="fin-opcion-btn active" data-precio="13900"><span class="fin-opcion-nombre">🇺🇸 J1 · Año escolar completo</span><span class="fin-opcion-precio">13.900 €</span></button>
+          <button class="fin-opcion-btn active" data-precio="12900"><span class="fin-opcion-nombre">🇺🇸 J1 · Año escolar · Black November</span><span class="fin-opcion-precio"><span style="font-size:12px;color:var(--text-light);text-decoration:line-through;font-weight:400;margin-right:6px;">13.900 €</span>12.900 €</span></button>
         </div>
       </div>
 
@@ -809,9 +849,8 @@ details[open] summary::before{transform:rotate(90deg);}
 
       <div class="fin-plazo-wrap">
         <div class="fin-plazo-label">Elige tu plazo de financiación</div>
-        <div class="fin-plazos" id="finPlazos">
-          <button class="fin-plazo active" data-meses="12" data-tin="0"><div class="fin-plazo-meses">12 meses</div><div class="fin-plazo-badge sin-intereses">TIN 0%</div><div class="fin-plazo-quien">¡MLQ asume los intereses!</div></button>
-          <button class="fin-plazo" data-meses="18" data-tin="10.46"><div class="fin-plazo-meses">18 meses</div><div class="fin-plazo-badge con-intereses">TIN 10,46%</div><div class="fin-plazo-quien">Intereses a cargo del cliente</div></button>
+        <div class="fin-plazos tres" id="finPlazos" style="grid-template-columns:repeat(3,1fr);">
+          <button class="fin-plazo active" data-meses="18" data-tin="10.46"><div class="fin-plazo-meses">18 meses</div><div class="fin-plazo-badge con-intereses">TIN 10,46%</div><div class="fin-plazo-quien">Intereses a cargo del cliente</div></button>
           <button class="fin-plazo" data-meses="24" data-tin="10.46"><div class="fin-plazo-meses">24 meses</div><div class="fin-plazo-badge con-intereses">TIN 10,46%</div><div class="fin-plazo-quien">Intereses a cargo del cliente</div></button>
           <button class="fin-plazo" data-meses="36" data-tin="10.46"><div class="fin-plazo-meses">36 meses</div><div class="fin-plazo-badge con-intereses">TIN 10,46%</div><div class="fin-plazo-quien">Intereses a cargo del cliente</div></button>
         </div>
@@ -820,19 +859,19 @@ details[open] summary::before{transform:rotate(90deg);}
       <div class="fin-resultado">
         <div class="fin-resultado-main">
           <div class="fin-cuota-label">Cuota mensual estimada</div>
-          <div class="fin-cuota-valor" id="cuotaValor">741,67 €</div>
-          <div class="fin-cuota-sub" id="cuotaSub">/mes · 12 pagos · TIN 0%</div>
+          <div class="fin-cuota-valor" id="cuotaValor">476,13 €</div>
+          <div class="fin-cuota-sub" id="cuotaSub">/mes · 18 pagos · TIN 10,46%</div>
         </div>
         <div class="fin-resultado-detalle">
-          <div class="fin-det-row"><span class="fin-det-label">Importe del programa</span><span class="fin-det-val" id="detPrecio">13.900 €</span></div>
+          <div class="fin-det-row"><span class="fin-det-label">Importe del programa</span><span class="fin-det-val" id="detPrecio">12.900 €</span></div>
           <div class="fin-det-row"><span class="fin-det-label">Entrada a la firma</span><span class="fin-det-val" id="detEntrada">5.000 €</span></div>
-          <div class="fin-det-row"><span class="fin-det-label">Capital financiado</span><span class="fin-det-val" id="detCapital">8.900 €</span></div>
-          <div class="fin-det-row"><span class="fin-det-label">Intereses totales</span><span class="fin-det-val fin-det-green" id="detIntereses">0 € · ¡MLQ los asume!</span></div>
-          <div class="fin-det-row fin-det-total"><span class="fin-det-label">Total a pagar</span><span class="fin-det-val" id="detTotal">13.900 €</span></div>
+          <div class="fin-det-row"><span class="fin-det-label">Capital financiado</span><span class="fin-det-val" id="detCapital">7.900 €</span></div>
+          <div class="fin-det-row"><span class="fin-det-label">Intereses totales</span><span class="fin-det-val" id="detIntereses">670,27 €</span></div>
+          <div class="fin-det-row fin-det-total"><span class="fin-det-label">Total a pagar</span><span class="fin-det-val" id="detTotal">13.570,27 €</span></div>
         </div>
       </div>
 
-      <div class="fin-nota">ℹ️ Financiación sujeta a aprobación bancaria. La entrada de 5.000 € se abona a la firma del contrato y no se financia. Cuota orientativa calculada sobre el capital financiado. Sin comisión de apertura ni penalización por cancelación anticipada.</div>
+      <div class="fin-nota">ℹ️ Financiación sujeta a aprobación bancaria. La entrada de 5.000 € se abona a la firma del contrato y no se financia. Cuota orientativa calculada sobre el capital financiado. Sin comisión de apertura ni penalización por cancelación anticipada. Con el precio promocional de Black November, la financiación está disponible a 18, 24 y 36 meses.</div>
     </div>
   </div>
 
@@ -883,7 +922,7 @@ details[open] summary::before{transform:rotate(90deg);}
       </div>
       <div class="cta-line">¿Dudas sobre el programa o los requisitos? Tu asesor las resuelve contigo.</div>
       <div class="pasos-cta-wrap">
-        <a class="pasos-cta" href="mailto:aescobar@mylanguagequest.com,gespinoza@mylanguagequest.com?subject=Confirmaci%C3%B3n%20Programa%20J1%20%C2%B7%20Dana%20%C2%B7%20EE.UU.%202027%2F28&amp;body=Hola%2C%0A%0AHemos%20revisado%20la%20propuesta%20del%20Programa%20J1%20para%20Dana%20y%20queremos%20continuar%20con%20la%20inscripci%C3%B3n.%0A%0ADudas%20o%20comentarios%3A%20%0A%0AGracias.">🇺🇸 Quiero continuar con el J1</a>
+        <a class="pasos-cta" href="mailto:aescobar@mylanguagequest.com,gespinoza@mylanguagequest.com?subject=Confirmaci%C3%B3n%20Programa%20J1%20Black%20November%20%C2%B7%20Dana%20%C2%B7%20EE.UU.%202027%2F28&amp;body=Hola%2C%0A%0AHemos%20revisado%20la%20propuesta%20del%20Programa%20J1%20para%20Dana%20y%20queremos%20continuar%20con%20la%20inscripci%C3%B3n.%0A%0ADudas%20o%20comentarios%3A%20%0A%0AGracias.">🇺🇸 Quiero continuar con el J1</a>
         <a class="pasos-cta pasos-cta-alt" href="https://asesoramientosmlq.zohobookings.eu/mylanguagequest" target="_blank" rel="noopener">📅 Agendar llamada con mi asesor</a>
       </div>
     </div>
@@ -896,7 +935,7 @@ details[open] summary::before{transform:rotate(90deg);}
   <div class="footer-logo">MY LANGUAGE QUEST</div>
   <div class="footer-tag">Explore · Learn · Grow</div>
   <div class="footer-meta">
-    Propuesta personalizada para Dana · Programa J1 · Curso 2027/28<br>
+    Propuesta personalizada para Dana · Programa J1 · Curso 2027/28 · Black November: 12.900 € reservando hasta el 30/11/2026<br>
     La asignación de destino, colegio y familia anfitriona es competencia exclusiva del sponsor americano.
   </div>
 </div>
@@ -904,7 +943,7 @@ details[open] summary::before{transform:rotate(90deg);}
 
 <script>
 (function(){
-  var precio=13900, meses=12, tin=0, ENTRADA=5000;
+  var precio=12900, meses=18, tin=10.46, ENTRADA=5000;
   function fmt(n){return n.toLocaleString('es-ES',{minimumFractionDigits:2,maximumFractionDigits:2})+' €';}
   function fmt0(n){return n.toLocaleString('es-ES',{maximumFractionDigits:0})+' €';}
   function calc(){
