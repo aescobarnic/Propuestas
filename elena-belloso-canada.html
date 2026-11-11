@@ -148,6 +148,23 @@ details[open] summary::before{transform:rotate(90deg);}
 .nota-col ul{margin:0;padding-left:18px;}
 .nota-col li{font-size:12.5px;color:var(--text-mid);line-height:1.6;margin-bottom:4px;}
 @media(max-width:760px){.notas-grid{grid-template-columns:1fr;}}
+.upd-banner{background:#fff8e1;border:1.5px solid #f2c94c;border-radius:12px;padding:12px 16px;font-size:12.5px;color:#2b2b2b;line-height:1.6;margin-bottom:18px;}
+.upd-badge{display:inline-block;vertical-align:middle;margin-left:6px;padding:2px 8px;border-radius:20px;background:#f2c94c;color:#5a4300;font-family:'Josefin Sans',sans-serif;font-size:9.5px;font-weight:700;letter-spacing:.4px;text-transform:uppercase;}
+.upd-badge.new{background:#2e8b57;color:#ffffff;}
+.exc-box{background:var(--white);border-radius:14px;border:1.5px solid var(--gray-border);padding:18px 20px;}
+.exc-intro,.exc-foot{font-size:12.5px;color:var(--text-mid);line-height:1.6;margin:0 0 12px;}
+.exc-foot{margin:12px 0 0;font-style:italic;}
+.exc-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;}
+.exc-item{display:flex;gap:10px;align-items:flex-start;background:var(--blue-light);border-radius:10px;padding:10px 12px;}
+.exc-ico{font-size:20px;line-height:1;}
+.exc-item strong{display:block;font-size:12.5px;color:var(--text);}
+.exc-item span{font-size:11.5px;color:var(--text-mid);line-height:1.5;}
+@media(max-width:760px){.exc-grid{grid-template-columns:1fr;}}
+.map-wrap{position:relative;width:100%;height:460px;border-radius:14px;overflow:hidden;border:1.5px solid var(--gray-border);box-shadow:0 2px 16px rgba(0,51,102,0.05);}
+.map-wrap iframe{position:absolute;inset:0;width:100%;height:100%;border:0;}
+.map-btn-wrap{margin-top:12px;display:flex;justify-content:center;}
+.map-btn{width:auto;padding:10px 22px;}
+@media(max-width:760px){.map-wrap{height:360px;}}
 .club-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;}
 .club-card{background:var(--white);border-radius:14px;border:1.5px solid var(--gray-border);padding:18px 20px;box-shadow:0 2px 16px rgba(0,51,102,0.05);display:flex;flex-direction:column;gap:8px;}
 .club-top{display:flex;justify-content:space-between;align-items:flex-start;gap:8px;}
@@ -504,10 +521,11 @@ details[open] summary::before{transform:rotate(90deg);}
   </div>
 
   <!-- ============ 5. OPCIONES RECOMENDADAS — PERSONALIZABLE ============ -->
+  <div class="upd-banner">🔄 <strong>Propuesta actualizada el 11 de noviembre de 2026:</strong> nuevo colegio en Coquitlam (Pinetree Secondary), información de cheerleading y esquí confirmada por el distrito, mapa de los colegios, nueva sección de excursiones y aclaración sobre la sede de las PCE. Los cambios están marcados con las etiquetas <span class="upd-badge">Actualizado</span> y <span class="upd-badge new">Nuevo</span>.</div>
   <div class="section-title"><h2>Opciones recomendadas</h2></div>
   <div class="alert-box">
     <div class="alert-icon">🎓</div>
-    <div class="alert-text"><strong>Elena cursa 2.º de Bachillerato fuera:</strong> los dos distritos admiten estudiantes internacionales en Grade 12 y permiten diseñar un horario compatible con la preparación de las PCE. Ambos están en el área metropolitana de Vancouver, donde se celebran los exámenes. Desde Port Moody se llega en SkyTrain directo, sin necesidad de dormir en la ciudad.</div>
+    <div class="alert-text"><strong>Elena cursa 2.º de Bachillerato fuera:</strong> los dos distritos admiten estudiantes internacionales en Grade 12 y permiten diseñar un horario compatible con la preparación de las PCE. Ambos están en el área metropolitana de Vancouver, donde UNEDasiss ha tenido sede de examen en las últimas convocatorias. Desde Port Moody se llega en SkyTrain directo.</div>
   </div>
   <div class="opciones-grid">
 
@@ -521,12 +539,16 @@ details[open] summary::before{transform:rotate(90deg);}
       </div>
       <div class="opcion-body"><div class="colegios">
         <div class="colegio">
-          <div class="colegio-top"><div class="colegio-nombre">Heritage Woods Secondary (HWSS)</div><div class="colegio-meta"><span class="tag pub">Público</span><span class="tag info">Grade 9 a 12</span><span class="tag info">Port Moody</span><span class="tag info">Vuestra elección</span><span class="tag info">Esquí y snowboard</span></div></div>
-          <details><summary>Por qué encaja con Elena</summary><div class="colegio-razon">Es el colegio que elegisteis Elena y tú, y cumple lo que buscabais: mucho deporte, ambiente de instituto americano y un edificio rodeado de naturaleza. Ofrece cursos Honours para subir el nivel en matemáticas y ciencias, que son las materias que más pesan de cara a Arquitectura, y un equipo de orientación que acompaña la planificación universitaria. Tiene club de esquí y snowboard con salidas de un día a la nieve, equipo de competición y club de fotografía. Acepta estudiantes internacionales en Grade 12 y las plazas se asignan por orden de llegada, así que conviene reservar cuanto antes.</div></details><div class="colegio-btn-wrap"><a class="web-btn" href="https://www.sd43.bc.ca/school/heritagewoods" target="_blank" rel="noopener">Ver web del colegio ↗</a></div>
+          <div class="colegio-top"><div class="colegio-nombre">Heritage Woods Secondary (HWSS) <span class="upd-badge">Actualizado</span></div><div class="colegio-meta"><span class="tag pub">Público</span><span class="tag info">Grade 9 a 12</span><span class="tag info">Port Moody</span><span class="tag info">Vuestra elección</span></div></div>
+          <details><summary>Por qué encaja con Elena</summary><div class="colegio-razon">Es el colegio que elegisteis Elena y tú, y cumple lo que buscabais: mucho deporte, ambiente de instituto americano y un edificio rodeado de naturaleza. Ofrece cursos Honours para subir el nivel en matemáticas y ciencias, que son las materias que más pesan de cara a Arquitectura, y un equipo de orientación que acompaña la planificación universitaria. Cuenta además con equipo de esquí de competición (Cypress, Grouse y Seymour). Acepta estudiantes internacionales en Grade 12 y las plazas se asignan por orden de llegada, así que conviene reservar cuanto antes.</div></details><div class="colegio-btn-wrap"><a class="web-btn" href="https://www.sd43.bc.ca/school/heritagewoods" target="_blank" rel="noopener">Ver web del colegio ↗</a></div>
         </div>
         <div class="colegio">
-          <div class="colegio-top"><div class="colegio-nombre">Port Moody Secondary (PMSS)</div><div class="colegio-meta"><span class="tag pub">Público</span><span class="tag info">Grade 9 a 12</span><span class="tag info">~1.300 alumnos</span><span class="tag info">Programa IB</span><span class="tag info">Cheer y esquí</span></div></div>
-          <details><summary>Por qué encaja con Elena</summary><div class="colegio-razon">Está en la misma ciudad que Heritage Woods y es la alternativa natural si allí se completan las plazas. Es centro IB desde 1986, lo que marca el nivel académico de todo el instituto aunque Elena curse el itinerario ordinario. Tiene un programa de arte avanzado, algo muy útil para quien piensa en Arquitectura o Diseño, un equipo de cheerleading con títulos nacionales, equipos de danza competitiva y club de esquí y snowboard. Queda en el centro de Port Moody, junto a la estación de SkyTrain Moody Centre.</div></details><div class="colegio-btn-wrap"><a class="web-btn" href="https://www.sd43.bc.ca/school/portmoody" target="_blank" rel="noopener">Ver web del colegio ↗</a></div>
+          <div class="colegio-top"><div class="colegio-nombre">Port Moody Secondary (PMSS) <span class="upd-badge">Actualizado</span></div><div class="colegio-meta"><span class="tag pub">Público</span><span class="tag info">Grade 9 a 12</span><span class="tag info">~1.300 alumnos</span><span class="tag info">Programa IB</span></div></div>
+          <details><summary>Por qué encaja con Elena</summary><div class="colegio-razon">Está en la misma ciudad que Heritage Woods y es la alternativa natural si allí se completan las plazas. Es centro IB desde 1986, lo que marca el nivel académico de todo el instituto aunque Elena curse el itinerario ordinario. Tiene un programa de arte avanzado, algo muy útil para quien piensa en Arquitectura o Diseño, y equipos de danza competitiva. Queda en el centro de Port Moody, junto a la estación de SkyTrain Moody Centre.</div></details><div class="colegio-btn-wrap"><a class="web-btn" href="https://www.sd43.bc.ca/school/portmoody" target="_blank" rel="noopener">Ver web del colegio ↗</a></div>
+        </div>
+        <div class="colegio">
+          <div class="colegio-top"><div class="colegio-nombre">Pinetree Secondary <span class="upd-badge new">Nuevo</span></div><div class="colegio-meta"><span class="tag pub">Público</span><span class="tag info">Grade 9 a 12</span><span class="tag info">~1.500 alumnos</span><span class="tag info">Junto al SkyTrain</span><span class="tag info">Cheer y snowboard</span></div></div>
+          <details><summary>Por qué encaja con Elena</summary><div class="colegio-razon">Está en el centro de Coquitlam, frente al lago Lafarge y junto a la estación de SkyTrain del mismo nombre, con conexión directa con Vancouver para las PCE. Ofrece cursos Honours y Advanced Placement, con especial fuerza en matemáticas y ciencias, y programas destacados de artes plásticas y escénicas. Tiene equipo de cheerleading y un equipo de snowboard campeón provincial, y comparte instalaciones con el campus de Douglas College.</div></details><div class="colegio-btn-wrap"><a class="web-btn" href="https://www.sd43.bc.ca/school/pinetree" target="_blank" rel="noopener">Ver web del colegio ↗</a></div>
         </div>
         <div class="colegio">
           <div class="colegio-top"><div class="colegio-nombre">Terry Fox Secondary (TFSS)</div><div class="colegio-meta"><span class="tag pub">Público</span><span class="tag info">Grade 9 a 12</span><span class="tag info">~1.600 alumnos</span><span class="tag info">Port Coquitlam</span><span class="tag info">Alternativa</span></div></div>
@@ -537,7 +559,7 @@ details[open] summary::before{transform:rotate(90deg);}
           <details><summary>Por qué encaja con Elena</summary><div class="colegio-razon">También en Port Coquitlam, cerca de los clubes de rítmica. Es un centro grande con trato de colegio pequeño: ofrece Honours y Advanced Placement, un departamento de artes visuales y escénicas con arte, teatro y música, y es pionero en tecnología, ya que todos los alumnos trabajan en clase con su propio portátil o tableta. Una buena opción para que Elena combine las asignaturas de convalidación con las optativas de arte que le interesan. Para ir a Vancouver se combina autobús y SkyTrain.</div></details><div class="colegio-btn-wrap"><a class="web-btn" href="https://www.sd43.bc.ca/school/riverside" target="_blank" rel="noopener">Ver web del colegio ↗</a></div>
         </div>
       </div></div>
-      <div class="match-bar"><span class="match-tag">Tres clubes de rítmica en el distrito</span><span class="match-tag">SkyTrain directo a Vancouver</span><span class="match-tag">PCE sin dormir fuera</span><span class="match-tag">Club de esquí y snowboard</span></div>
+      <div class="match-bar"><span class="match-tag">Tres clubes de rítmica en el distrito</span><span class="match-tag">SkyTrain directo a Vancouver</span><span class="match-tag">Salidas de esquí a Whistler</span></div>
     </div>
 
     <div class="opcion-card">
@@ -561,6 +583,13 @@ details[open] summary::before{transform:rotate(90deg);}
     </div>
 
   </div>
+
+  <!-- ============ 5a. MAPA ============ -->
+  <div class="section-title"><h2>Mapa de los colegios <span class="upd-badge new">Nuevo</span></h2></div>
+  <div class="map-wrap">
+    <iframe src="https://www.google.com/maps/d/embed?mid=1lPNdYCq4ZCc4WhVVlh3cEKQjpSDkuRw" loading="lazy" allowfullscreen title="Mapa de los colegios de Elena"></iframe>
+  </div>
+  <div class="map-btn-wrap"><a class="web-btn map-btn" href="https://www.google.com/maps/d/viewer?mid=1lPNdYCq4ZCc4WhVVlh3cEKQjpSDkuRw" target="_blank" rel="noopener">Abrir el mapa en pantalla completa ↗</a></div>
 
   <!-- ============ 5b. GIMNASIA RÍTMICA ============ -->
   <div class="section-title"><h2>Gimnasia rítmica en la zona</h2></div>
@@ -588,17 +617,33 @@ details[open] summary::before{transform:rotate(90deg);}
       <a class="web-btn" href="https://flamingorhythmicsrg.com/" target="_blank" rel="noopener">Ver web del club ↗</a>
     </div>
   </div>
-  <div class="club-nota">🏫 <strong>Dentro del instituto:</strong> Port Moody Secondary y Terry Fox tienen equipo de cheerleading, y Heritage Woods y Port Moody Secondary, club de esquí y snowboard. Cada equipo escolar es para los alumnos de su propio centro.</div>
+  <div class="club-nota">🏫 <strong>Dentro del instituto:</strong> Terry Fox y Pinetree tienen equipo de cheerleading, y Heritage Woods, equipo de esquí de competición. Cada equipo escolar es para los alumnos de su propio centro.</div>
 
 
-  <!-- ============ 5c. NOTAS ACLARATORIAS ============ -->
-  <div class="section-title"><h2>Notas aclaratorias</h2></div>
+  <!-- ============ 5c. EXCURSIONES DEL DISTRITO ============ -->
+  <div class="section-title"><h2>Excursiones y esquí con el distrito <span class="upd-badge new">Nuevo</span></h2></div>
+  <div class="exc-box">
+    <p class="exc-intro">El distrito de Coquitlam organiza salidas y viajes abiertos a todos sus estudiantes internacionales, sea cual sea su colegio. Son opcionales y se pagan aparte. Calendario y precios de referencia del curso 2026/27, en dólares canadienses:</p>
+    <div class="exc-grid">
+      <div class="exc-item"><span class="exc-ico">⛷️</span><div><strong>Esquí y snowboard</strong><span>Varias salidas a lo largo del invierno (en 2026/27, tres a Whistler y una a Cypress), desde 288 $ cada una</span></div></div>
+      <div class="exc-item"><span class="exc-ico">🏔️</span><div><strong>Montañas Rocosas</strong><span>Septiembre (907 $) y marzo (801 $)</span></div></div>
+      <div class="exc-item"><span class="exc-ico">🌆</span><div><strong>Montreal y Quebec</strong><span>Marzo (1.152 $)</span></div></div>
+      <div class="exc-item"><span class="exc-ico">🌌</span><div><strong>Yukón y auroras boreales</strong><span>Marzo (1.886 $)</span></div></div>
+      <div class="exc-item"><span class="exc-ico">🌊</span><div><strong>Victoria y Tofino</strong><span>Mayo (459 $ y 735 $)</span></div></div>
+      <div class="exc-item"><span class="exc-ico">🏒</span><div><strong>Whitecaps y Canucks</strong><span>Partidos de fútbol y hockey en Vancouver</span></div></div>
+    </div>
+    <p class="exc-foot">El calendario de 2027/28 lo publica el distrito al inicio del curso.</p>
+  </div>
+
+  <!-- ============ 5d. NOTAS ACLARATORIAS ============ -->
+  <div class="section-title"><h2>Notas aclaratorias <span class="upd-badge">Actualizado</span></h2></div>
   <div class="notas-grid">
     <div class="nota-col ok">
       <div class="nota-head">✅ Confirmado</div>
       <ul>
-        <li>Esquí y snowboard: salidas recreativas de un día a la nieve y equipo de competición en Heritage Woods y Port Moody Secondary.</li>
-        <li>Cheerleading: equipo en Port Moody Secondary y Terry Fox.</li>
+        <li>Cheerleading: equipo en Terry Fox y Pinetree.</li>
+        <li>Esquí de competición: equipo en Heritage Woods.</li>
+        <li>Salidas de esquí y viajes: organizados por el distrito y abiertos a todos sus estudiantes internacionales.</li>
         <li>Gimnasia rítmica: tres clubes externos en Port Moody y Port Coquitlam.</li>
       </ul>
     </div>
