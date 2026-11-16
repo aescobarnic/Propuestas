@@ -442,6 +442,32 @@ details[open] summary::before{transform:rotate(90deg);}
 .mod-mini s{color:var(--text-light);font-weight:400;margin-right:6px;}
 .tabla-diff .precio-fila td s{display:block;font-size:11px;font-weight:500;color:var(--text-light);}
 .fin-opcion-precio s{font-size:11px;font-weight:500;color:var(--text-light);margin-right:5px;}
+
+/* FOTOS COLEGIOS */
+.opcion-img{height:170px;overflow:hidden;background:var(--ie-light);}
+.opcion-img img{width:100%;height:100%;object-fit:cover;display:block;}
+/* CLUBES DE RUGBY */
+.club-hero{position:relative;border-radius:16px;overflow:hidden;min-height:220px;display:flex;align-items:flex-end;background:var(--ie-deep);}
+.club-hero img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;}
+.club-hero::after{content:'';position:absolute;inset:0;background:linear-gradient(to top,rgba(10,30,5,0.88),rgba(10,30,5,0.15) 70%);}
+.club-hero-txt{position:relative;z-index:2;padding:24px 28px;color:#fff;max-width:640px;}
+.club-hero-title{font-family:'Josefin Sans',sans-serif;font-size:22px;font-weight:700;line-height:1.25;margin-bottom:6px;}
+.club-hero-sub{font-size:13px;color:rgba(255,255,255,0.8);line-height:1.5;}
+.club-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:18px;margin-top:20px;}
+.club-card{background:var(--white);border:1.5px solid var(--gray-border);border-radius:14px;overflow:hidden;}
+.club-img{height:140px;overflow:hidden;background:var(--ie-light);}
+.club-img img{width:100%;height:100%;object-fit:cover;display:block;}
+.club-body{padding:16px 18px 18px;}
+.club-near{font-size:10px;font-weight:600;color:var(--ie);text-transform:uppercase;letter-spacing:1px;margin-bottom:4px;}
+.club-name{font-family:'Josefin Sans',sans-serif;font-size:16px;font-weight:700;color:var(--ie-deep);margin-bottom:10px;}
+.club-chips{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:10px;}
+.club-chip{font-size:10.5px;font-weight:600;color:var(--green-dark);background:var(--green-light);border:1px solid rgba(76,158,12,0.25);border-radius:20px;padding:3px 10px;}
+.club-txt{font-size:12px;color:var(--text-mid);line-height:1.55;}
+.club-facts{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:12px;margin-top:18px;}
+.club-fact{background:var(--white);border:1.5px solid var(--gray-border);border-radius:12px;padding:14px 16px;display:flex;gap:10px;align-items:flex-start;}
+.club-fact-icon{font-size:20px;flex-shrink:0;}
+.club-fact-title{font-family:'Josefin Sans',sans-serif;font-size:12.5px;font-weight:700;color:var(--ie-deep);margin-bottom:2px;}
+.club-fact-desc{font-size:11.5px;color:var(--text-mid);line-height:1.45;}
 </style>
 </head>
 <body>
@@ -548,6 +574,7 @@ details[open] summary::before{transform:rotate(90deg);}
 
     <div class="opcion-card recomendada">
       <div class="badge-rec">★ RECOMENDADO</div>
+      <div class="opcion-img"><img src="https://commons.wikimedia.org/wiki/Special:FilePath/Tullow,_County_Carlow.JPG?width=900" alt="Centro de Tullow junto al río Slaney" loading="lazy" onerror="this.parentNode.style.display='none'"></div>
       <div class="opcion-header">
         <div class="colegio-zona">Condado de Carlow · Ciudad pequeña</div>
         <div class="opcion-distrito">Tullow Community School</div>
@@ -555,23 +582,20 @@ details[open] summary::before{transform:rotate(90deg);}
         <div class="colegio-chips"><span class="chip">Mixto</span><span class="chip">Público</span><span class="chip">800 alumnos</span><span class="chip gold">🏉 Tradición de rugby</span></div>
       </div>
       <div class="opcion-body">
-        <div class="colegio-desc">Tullow es un pueblo de unos 4.500 habitantes en el sureste de Irlanda, a algo más de una hora de Dublín, donde el rugby marca el ritmo de la semana. El colegio compite en las ligas escolares de Leinster y vive muy unido al Tullow RFC, club fundado en 1928. De sus aulas salió Seán O'Brien, internacional con Irlanda y con los British &amp; Irish Lions.</div>
-        <div class="colegio-section-title">Extracurriculares destacados</div>
-        <div class="extra-tags"><span class="extra-tag">🏉 Rugby</span><span class="extra-tag">⚽ Fútbol</span><span class="extra-tag">🏑 Hurling · Fútbol gaélico</span><span class="extra-tag">🏀 Baloncesto</span><span class="extra-tag">🏃 Atletismo</span><span class="extra-tag">🧗 Escalada · Piragüismo</span></div>
-        <div class="colegio-section-title">Actividades en la zona</div>
-        <div class="actividades-ciudad">Tullow RFC con campo y gimnasio · centro de ocio con piscina · parques forestales y rutas · club de golf · artes marciales · cine y comercio en Carlow.</div>
+        <div class="colegio-desc">Un pueblo de 4.500 habitantes donde el rugby marca la semana. Colegio de Seán O'Brien, internacional con Irlanda y los Lions.</div>
+        <div class="extra-tags"><span class="extra-tag">🏉 Rugby</span><span class="extra-tag">⚽ Fútbol</span><span class="extra-tag">🏑 Hurling</span><span class="extra-tag">🏀 Baloncesto</span><span class="extra-tag">🧗 Escalada</span></div>
         <div class="colegio-section-title">Por qué encaja con Nicolás</div>
         <ul class="por-que-list">
-          <li>Es el colegio con más recorrido en rugby de los tres: equipos en competición de Leinster y alumnos que han llegado a las selecciones juveniles de Irlanda</li>
-          <li>Puede entrenar y jugar también en el Tullow RFC, que es donde se hace la vida social del pueblo fuera del colegio</li>
-          <li>En un pueblo de este tamaño el equipo le da grupo de amigos irlandeses desde septiembre, que es justo lo que buscáis para que no se quede con otros españoles</li>
-          <li>El Transition Year con prácticas en empresa en una comunidad pequeña le obliga a moverse y ganar autonomía</li>
+          <li>El que más rugby tiene de los tres: liga escolar de Leinster y jugadores en selecciones juveniles</li>
+          <li>Club fuerte en el mismo pueblo, el Tullow RFC</li>
+          <li>Pueblo pequeño: el equipo le da amigos irlandeses desde septiembre</li>
         </ul>
       </div>
       <div class="match-bar"><span class="match-tag">Rugby con tradición</span><span class="match-tag">Club local</span><span class="match-tag">Inmersión total</span></div>
     </div>
 
     <div class="opcion-card">
+      <div class="opcion-img"><img src="https://commons.wikimedia.org/wiki/Special:FilePath/Cavan_centre.jpg?width=900" alt="Centro de Cavan" loading="lazy" onerror="this.parentNode.style.display='none'"></div>
       <div class="opcion-header">
         <div class="colegio-zona">Condado de Cavan · Ciudad pequeña</div>
         <div class="opcion-distrito">Royal School Cavan</div>
@@ -579,23 +603,20 @@ details[open] summary::before{transform:rotate(90deg);}
         <div class="colegio-chips"><span class="chip">Mixto</span><span class="chip">Público</span><span class="chip">323 alumnos</span><span class="chip gold">🏉 Rugby en Ulster</span></div>
       </div>
       <div class="opcion-body">
-        <div class="colegio-desc">Uno de los colegios históricos de Irlanda, fundado a comienzos del siglo XVII y hoy dentro de la red pública gratuita. Es el más pequeño de la selección. Sus equipos de rugby compiten en los torneos escolares de Ulster, como la Pollock Cup sub 16, con el apoyo del County Cavan RFC.</div>
-        <div class="colegio-section-title">Extracurriculares destacados</div>
-        <div class="extra-tags"><span class="extra-tag">🏉 Rugby</span><span class="extra-tag">🏑 Hockey</span><span class="extra-tag">🏀 Baloncesto</span><span class="extra-tag">⚽ Fútbol · Futsal</span><span class="extra-tag">🏃 Atletismo</span><span class="extra-tag">🎤 Debate</span></div>
-        <div class="colegio-section-title">Actividades en la zona</div>
-        <div class="actividades-ciudad">Lagos y bosques de Cavan · kayak y deportes de agua · centro de ocio con piscina y gimnasio · County Cavan RFC · kickboxing y artes marciales · equitación.</div>
+        <div class="colegio-desc">Colegio histórico del siglo XVII, el más pequeño de la selección, en una ciudad de 11.000 habitantes.</div>
+        <div class="extra-tags"><span class="extra-tag">🏉 Rugby</span><span class="extra-tag">🏑 Hockey</span><span class="extra-tag">🏀 Baloncesto</span><span class="extra-tag">⚽ Futsal</span><span class="extra-tag">🏃 Atletismo</span></div>
         <div class="colegio-section-title">Por qué encaja con Nicolás</div>
         <ul class="por-que-list">
-          <li>Equipo sub 16 con competición propia en Ulster, la categoría que le corresponde por edad</li>
-          <li>Con 323 alumnos, un chico deportista que llega de fuera se integra en el equipo y en el curso muy rápido</li>
-          <li>Hockey, baloncesto y futsal para alguien que rinde bien en cualquier deporte y quiere probar cosas nuevas</li>
-          <li>Ciudad de unos 11.000 habitantes: servicios suficientes y ambiente tranquilo, lejos del turismo de Dublín</li>
+          <li>Equipo sub 16 en la Pollock Cup de Ulster, su categoría por edad</li>
+          <li>Con 323 alumnos se integra en el equipo y en el curso muy rápido</li>
+          <li>Muchos deportes para probar, algo que a él se le da bien</li>
         </ul>
       </div>
       <div class="match-bar"><span class="match-tag">Rugby sub 16</span><span class="match-tag">Colegio pequeño</span><span class="match-tag">Multideporte</span></div>
     </div>
 
     <div class="opcion-card">
+      <div class="opcion-img"><img src="https://commons.wikimedia.org/wiki/Special:FilePath/Grange_Road_-_geograph.org.uk_-_760164.jpg?width=900" alt="Grange Road, Douglas, Cork" loading="lazy" onerror="this.parentNode.style.display='none'"></div>
       <div class="opcion-header">
         <div class="colegio-zona">Condado de Cork · Afueras de Cork</div>
         <div class="opcion-distrito">Douglas Community School</div>
@@ -603,22 +624,63 @@ details[open] summary::before{transform:rotate(90deg);}
         <div class="colegio-chips"><span class="chip">Solo chicos</span><span class="chip">Público</span><span class="chip">900 alumnos</span><span class="chip gold">⚽ Deporte para todos</span></div>
       </div>
       <div class="opcion-body">
-        <div class="colegio-desc">Douglas es una localidad de unos 28.000 habitantes al sur de Cork, en Munster, una provincia donde el rugby tiene un arraigo enorme. El colegio, solo de chicos, aplica una política de deporte para todos: entrenan y compiten todos los alumnos, no solo los mejores. Tiene historial ganador en fútbol, deportes gaélicos y atletismo.</div>
-        <div class="colegio-section-title">Extracurriculares destacados</div>
-        <div class="extra-tags"><span class="extra-tag">⚽ Fútbol</span><span class="extra-tag">🏑 Hurling · Fútbol gaélico</span><span class="extra-tag">🚣 Remo</span><span class="extra-tag">🏉 Tag rugby</span><span class="extra-tag">🏏 Críquet</span><span class="extra-tag">🤖 Robótica</span></div>
-        <div class="colegio-section-title">Actividades en la zona</div>
-        <div class="actividades-ciudad">Douglas RFC y Carrigaline RFC, a pocos minutos · Blarney Castle · Observatorio del castillo de Blackrock · centro comercial de Douglas · vida cultural de Cork.</div>
+        <div class="colegio-desc">Localidad de 28.000 habitantes al sur de Cork, en Munster, tierra de rugby. Aquí entrenan y compiten todos los alumnos, no solo los mejores.</div>
+        <div class="extra-tags"><span class="extra-tag">⚽ Fútbol</span><span class="extra-tag">🏑 Hurling</span><span class="extra-tag">🚣 Remo</span><span class="extra-tag">🏉 Tag rugby</span><span class="extra-tag">🏏 Críquet</span></div>
         <div class="colegio-section-title">Por qué encaja con Nicolás</div>
         <ul class="por-que-list">
-          <li>La zona de Cork es la que mejor encaja con lo que buscáis: buen tamaño y servicios, sin el ambiente turístico de Dublín</li>
-          <li>Rugby de club en el Douglas RFC, en un pueblo donde se juega al rugby desde 1903, y en el colegio la opción de probar remo, fútbol o hurling</li>
-          <li>Con la política de deporte para todos va a competir desde el primer trimestre, no a mirar desde la banda</li>
-          <li>Colegio grande, con muchos equipos y mucho movimiento: más opciones de hacer amigos dentro y fuera del campo</li>
+          <li>Zona de Cork: buen tamaño y servicios, sin el turismo de Dublín</li>
+          <li>Rugby de club en Douglas, donde se juega desde 1903</li>
+          <li>Colegio grande, con muchos equipos y mucho ambiente</li>
         </ul>
       </div>
       <div class="match-bar"><span class="match-tag">Zona Cork</span><span class="match-tag">Rugby de club</span><span class="match-tag">Multideporte</span></div>
     </div>
 
+  </div>
+
+  <!-- ============ 5b. RUGBY FUERA DEL COLEGIO ============ -->
+  <div class="section-title"><h2>Rugby fuera del colegio</h2></div>
+  <div class="club-hero">
+    <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Rugby_1_(Unsplash).jpg?width=1400" alt="Partido de rugby" loading="lazy" onerror="this.style.display='none'">
+    <div class="club-hero-txt">
+      <div class="club-hero-title">Juegue o no con el colegio, Nicolás tendrá rugby</div>
+      <div class="club-hero-sub">En Irlanda lo normal es combinar colegio y club. Cada opción tiene un club con cantera a pocos minutos.</div>
+    </div>
+  </div>
+  <div class="club-grid">
+    <div class="club-card">
+      <div class="club-img"><img src="https://commons.wikimedia.org/wiki/Special:FilePath/Clevedon_versus_Keynsham_under_16s_rugby_game._-_panoramio_(1).jpg?width=900" alt="Partido de rugby sub 16" loading="lazy" onerror="this.parentNode.style.display='none'"></div>
+      <div class="club-body">
+        <div class="club-near">Junto a Tullow Community School</div>
+        <div class="club-name">Tullow RFC</div>
+        <div class="club-chips"><span class="club-chip">Campeón de Irlanda sub 16</span><span class="club-chip">2 campos · gimnasio</span></div>
+        <div class="club-txt">El club del pueblo desde 1928. Su sub 17 ganó un torneo internacional en Lisboa sin encajar un punto.</div>
+      </div>
+    </div>
+    <div class="club-card">
+      <div class="club-img"><img src="https://commons.wikimedia.org/wiki/Special:FilePath/Junior_Cup.JPG?width=900" alt="Rugby juvenil en Irlanda" loading="lazy" onerror="this.parentNode.style.display='none'"></div>
+      <div class="club-body">
+        <div class="club-near">Junto a Royal School Cavan</div>
+        <div class="club-name">County Cavan RFC</div>
+        <div class="club-chips"><span class="club-chip">Sub 14 · Sub 16 · Sub 18</span><span class="club-chip">Liga de Ulster</span></div>
+        <div class="club-txt">Cantera premiada en Ulster y club que ya colabora con los equipos del colegio.</div>
+      </div>
+    </div>
+    <div class="club-card">
+      <div class="club-img"><img src="https://commons.wikimedia.org/wiki/Special:FilePath/Rugby_players_at_Trinity_College.jpg?width=900" alt="Jugadores de rugby" loading="lazy" onerror="this.parentNode.style.display='none'"></div>
+      <div class="club-body">
+        <div class="club-near">Junto a Douglas Community School</div>
+        <div class="club-name">Douglas RFC · Cork Constitution</div>
+        <div class="club-chips"><span class="club-chip">Sub 16 · Sub 18</span><span class="club-chip">Liga de Munster</span></div>
+        <div class="club-txt">Douglas compite con Carrigaline en juveniles. Muy cerca, el Cork Constitution, club de referencia en Munster.</div>
+      </div>
+    </div>
+  </div>
+  <div class="club-facts">
+    <div class="club-fact"><div class="club-fact-icon">📝</div><div><div class="club-fact-title">Alta sencilla</div><div class="club-fact-desc">Al ser menor y vivir en Irlanda, no necesita transfer internacional.</div></div></div>
+    <div class="club-fact"><div class="club-fact-icon">🇪🇸</div><div><div class="club-fact-title">Conserva su licencia</div><div class="club-fact-desc">Puede seguir federado en España durante el curso.</div></div></div>
+    <div class="club-fact"><div class="club-fact-icon">🏉</div><div><div class="club-fact-title">Categoría sub 16</div><div class="club-fact-desc">Y puede jugar también una categoría por encima.</div></div></div>
+    <div class="club-fact"><div class="club-fact-icon">🧭</div><div><div class="club-fact-title">Lo gestionamos</div><div class="club-fact-desc">Contactamos con el club antes de su llegada para que entrene desde septiembre.</div></div></div>
   </div>
 
   <!-- ============ 6. MODALIDADES Y PRECIOS ============ -->
@@ -941,7 +1003,7 @@ details[open] summary::before{transform:rotate(90deg);}
   <div class="footer-tag">Explore · Learn · Grow</div>
   <div class="footer-meta">
     Propuesta personalizada para Nicolás Sánchez · Curso 2027/28 · Promoción Black November válida hasta el 30 de noviembre de 2026<br>
-    Precios sujetos a disponibilidad de plaza y confirmación del centro escolar.
+    Precios sujetos a disponibilidad de plaza y confirmación del centro escolar.<br>Fotografías de Wikimedia Commons con licencia Creative Commons, de carácter ilustrativo.
   </div>
 </div>
 
@@ -1014,6 +1076,9 @@ details[open] summary::before{transform:rotate(90deg);}
     ['.qs-chapter','reveal'],
     ['.alert-box','reveal'],
     ['.opcion-card','reveal'],
+    ['.club-hero','reveal-zoom'],
+    ['.club-card','reveal'],
+    ['.club-fact','reveal'],
     ['.info-block','reveal'],
     ['.includes-wrap','reveal-zoom'],
     ['.payment-wrap','reveal-zoom'],
