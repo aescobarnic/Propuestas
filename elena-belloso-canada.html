@@ -165,6 +165,13 @@ details[open] summary::before{transform:rotate(90deg);}
 .map-btn-wrap{margin-top:12px;display:flex;justify-content:center;}
 .map-btn{width:auto;padding:10px 22px;}
 @media(max-width:760px){.map-wrap{height:360px;}}
+.bn-banner{background:#111111;color:#ffffff;border-radius:12px;padding:12px 16px;font-size:12.5px;line-height:1.6;margin-bottom:18px;}
+.bn-banner strong{color:#ffffff;}
+.bn-banner a{color:#f2c94c;font-weight:700;text-decoration:none;white-space:nowrap;}
+.bn-banner a:hover{text-decoration:underline;}
+.bn-tag{display:inline-block;margin-left:8px;padding:2px 8px;border-radius:20px;background:#111111;color:#ffffff;border:1px solid rgba(255,255,255,0.4);font-size:9px;font-weight:700;letter-spacing:.5px;text-transform:uppercase;vertical-align:middle;}
+.fin-bn-note{margin-top:10px;font-size:11.5px;color:var(--green-dark);font-weight:600;}
+.fin-bn-note.warn{color:#b12900;}
 .club-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;}
 .club-card{background:var(--white);border-radius:14px;border:1.5px solid var(--gray-border);padding:18px 20px;box-shadow:0 2px 16px rgba(0,51,102,0.05);display:flex;flex-direction:column;gap:8px;}
 .club-top{display:flex;justify-content:space-between;align-items:flex-start;gap:8px;}
@@ -522,6 +529,7 @@ details[open] summary::before{transform:rotate(90deg);}
 
   <!-- ============ 5. OPCIONES RECOMENDADAS — PERSONALIZABLE ============ -->
   <div class="upd-banner">🔄 <strong>Propuesta actualizada el 11 de noviembre de 2026:</strong> nuevo colegio en Coquitlam (Pinetree Secondary), información de cheerleading y esquí confirmada por el distrito, mapa de los colegios, nueva sección de excursiones y aclaración sobre la sede de las PCE. Los cambios están marcados con las etiquetas <span class="upd-badge">Actualizado</span> y <span class="upd-badge new">Nuevo</span>.</div>
+  <div class="bn-banner">🖤 <strong>Black November:</strong> 1.000 € de descuento ya aplicado en los precios para reservas formalizadas hasta el 30 de noviembre. No acumulable con otras promociones ni con la financiación a 12 meses al 0 %. <a href="https://aescobarnic.github.io/Propuestas/black-november.html" target="_blank" rel="noopener">Ver condiciones ↗</a></div>
   <div class="section-title"><h2>Opciones recomendadas</h2></div>
   <div class="alert-box">
     <div class="alert-icon">🎓</div>
@@ -535,7 +543,7 @@ details[open] summary::before{transform:rotate(90deg);}
         <div class="opcion-num">Opción 01</div>
         <div class="opcion-distrito">Coquitlam School District (SD43) · Port Moody</div>
         <div class="opcion-loc">📍 British Columbia · Tri-Cities (Coquitlam, Port Coquitlam y Port Moody) · Área metropolitana de Vancouver</div>
-        <div class="precio-chip"><span class="val">27.600 €</span><span class="desc">/ año · programa escolar · vuelos incl.*</span></div>
+        <div class="precio-chip"><span class="val">26.600 €</span><span class="desc">/ año · programa escolar · vuelos incl.*</span><span class="tachado">27.600 €</span><span class="bn-tag">Black November</span></div>
       </div>
       <div class="opcion-body"><div class="colegios">
         <div class="colegio">
@@ -567,7 +575,7 @@ details[open] summary::before{transform:rotate(90deg);}
         <div class="opcion-num">Opción 02</div>
         <div class="opcion-distrito">Langley School District</div>
         <div class="opcion-loc">📍 British Columbia · Área metropolitana de Vancouver</div>
-        <div class="precio-chip"><span class="val">25.609 €</span><span class="desc">/ año · programa escolar · vuelos incl.*</span><span class="tachado">26.109 €</span></div>
+        <div class="precio-chip"><span class="val">25.109 €</span><span class="desc">/ año · programa escolar · vuelos incl.*</span><span class="tachado">26.109 €</span><span class="bn-tag">Black November</span></div>
       </div>
       <div class="opcion-body"><div class="colegios">
         <div class="colegio">
@@ -783,7 +791,7 @@ details[open] summary::before{transform:rotate(90deg);}
           </div>
           <div class="pay-col">
             <div class="pay-col-title">Condiciones</div>
-            <div class="pay-step"><div class="pay-step-title">12 meses · TIN 0 %</div><div class="pay-step-desc">MLQ asume los intereses</div></div>
+            <div class="pay-step"><div class="pay-step-title">12 meses · TIN 0 %</div><div class="pay-step-desc">MLQ asume los intereses. No combinable con el descuento Black November</div></div>
             <div class="pay-step"><div class="pay-step-title">18 / 24 / 36 meses · TIN 10,46 %</div><div class="pay-step-desc">Intereses a cargo del cliente</div></div>
           </div>
         </div>
@@ -811,8 +819,8 @@ details[open] summary::before{transform:rotate(90deg);}
       <div class="fin-opcion-selector">
         <div class="fin-opcion-label">Selecciona la opción del programa</div>
         <div class="fin-opcion-btns" id="finOpciones">
-          <button class="fin-opcion-btn active" data-precio="27600" data-nombre="⭐ Opción 1 · Coquitlam"><span class="fin-opcion-nombre">⭐ Opción 1 · Coquitlam</span><span class="fin-opcion-precio">27.600 €</span></button>
-          <button class="fin-opcion-btn" data-precio="25609" data-nombre="Opción 2 · Langley"><span class="fin-opcion-nombre">Opción 2 · Langley</span><span class="fin-opcion-precio">25.609 €</span></button>
+          <button class="fin-opcion-btn active" data-precio="26600" data-full="27600" data-nombre="⭐ Opción 1 · Coquitlam"><span class="fin-opcion-nombre">⭐ Opción 1 · Coquitlam</span><span class="fin-opcion-precio">26.600 €</span></button>
+          <button class="fin-opcion-btn" data-precio="25109" data-full="26109" data-nombre="Opción 2 · Langley"><span class="fin-opcion-nombre">Opción 2 · Langley</span><span class="fin-opcion-precio">25.109 €</span></button>
         </div>
       </div>
 
@@ -824,11 +832,12 @@ details[open] summary::before{transform:rotate(90deg);}
       <div class="fin-plazo-wrap">
         <div class="fin-plazo-label">Elige tu plazo de financiación</div>
         <div class="fin-plazos" id="finPlazos">
-          <button class="fin-plazo active" data-meses="12" data-tin="0"><div class="fin-plazo-meses">12 meses</div><div class="fin-plazo-badge sin-intereses">TIN 0%</div><div class="fin-plazo-quien">¡MLQ asume los intereses!</div></button>
-          <button class="fin-plazo" data-meses="18" data-tin="10.46"><div class="fin-plazo-meses">18 meses</div><div class="fin-plazo-badge con-intereses">TIN 10,46%</div><div class="fin-plazo-quien">Intereses a cargo del cliente</div></button>
+          <button class="fin-plazo" data-meses="12" data-tin="0"><div class="fin-plazo-meses">12 meses</div><div class="fin-plazo-badge sin-intereses">TIN 0%</div><div class="fin-plazo-quien">¡MLQ asume los intereses!</div></button>
+          <button class="fin-plazo active" data-meses="18" data-tin="10.46"><div class="fin-plazo-meses">18 meses</div><div class="fin-plazo-badge con-intereses">TIN 10,46%</div><div class="fin-plazo-quien">Intereses a cargo del cliente</div></button>
           <button class="fin-plazo" data-meses="24" data-tin="10.46"><div class="fin-plazo-meses">24 meses</div><div class="fin-plazo-badge con-intereses">TIN 10,46%</div><div class="fin-plazo-quien">Intereses a cargo del cliente</div></button>
           <button class="fin-plazo" data-meses="36" data-tin="10.46"><div class="fin-plazo-meses">36 meses</div><div class="fin-plazo-badge con-intereses">TIN 10,46%</div><div class="fin-plazo-quien">Intereses a cargo del cliente</div></button>
         </div>
+        <div class="fin-bn-note" id="finBNnote"></div>
       </div>
 
       <div class="fin-resultado">
@@ -897,10 +906,14 @@ details[open] summary::before{transform:rotate(90deg);}
 
 <script>
 (function(){
-  var precio=27600, meses=12, tin=0, ENTRADA=5000;
+  var precioBN=26600, precioFull=27600, precio=26600, meses=18, tin=10.46, ENTRADA=5000;
   function fmt(n){return n.toLocaleString('es-ES',{minimumFractionDigits:2,maximumFractionDigits:2})+' €';}
   function fmt0(n){return n.toLocaleString('es-ES',{maximumFractionDigits:0})+' €';}
   function calc(){
+    var sinBN=(meses===12 && tin===0);
+    precio=sinBN?precioFull:precioBN;
+    var nb=document.getElementById('finBNnote');
+    if(nb){ nb.textContent=sinBN?'La financiación a 12 meses al 0 % no es combinable con el descuento Black November: la cuota se calcula sobre el precio sin descuento.':'Precio con el descuento Black November aplicado.'; nb.classList.toggle('warn',sinBN); }
     var capital=Math.max(precio-ENTRADA,0);
     var cuota, total;
     if(tin===0){ cuota=capital/meses; total=capital; }
@@ -919,7 +932,7 @@ details[open] summary::before{transform:rotate(90deg);}
   document.querySelectorAll('#finOpciones .fin-opcion-btn').forEach(function(b){
     b.addEventListener('click',function(){
       document.querySelectorAll('#finOpciones .fin-opcion-btn').forEach(function(x){x.classList.remove('active');});
-      b.classList.add('active'); precio=parseFloat(b.dataset.precio); calc();
+      b.classList.add('active'); precioBN=parseFloat(b.dataset.precio); precioFull=parseFloat(b.dataset.full); calc();
     });
   });
   document.querySelectorAll('#finPlazos .fin-plazo').forEach(function(b){
