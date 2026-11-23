@@ -468,6 +468,7 @@ details[open] summary::before{transform:rotate(90deg);}
       <div class="hero-pill">🏫 Colegio público</div>
       <div class="hero-pill ac">🗽 Orientación en Nueva York incluida</div>
     </div>
+    <div class="hero-promo">🖤 Black November · 1.000 € de descuento ya aplicado para reservas formalizadas hasta el 30 de noviembre</div>
   </div>
 </div>
 
@@ -721,11 +722,11 @@ details[open] summary::before{transform:rotate(90deg);}
   <div class="section-title"><h2>Precio y formas de pago</h2></div>
   <div class="precio-hero">
     <div>
-      <div class="precio-hero-num">13.900 €</div>
-      <div class="precio-hero-sub">Año escolar completo</div>
+      <div class="precio-hero-num">12.900 €</div>
+      <div class="precio-hero-sub">Año escolar completo · <span style="text-decoration:line-through;">13.900 €</span></div>
     </div>
     <div class="precio-hero-txt">
-      Precio cerrado del programa J1 para el curso 2027/28. Incluye <strong>matrícula, familia anfitriona en
+      Precio del programa J1 para el curso 2027/28 con el <strong>descuento Black November de 1.000 €</strong>, válido para reservas formalizadas hasta el 30 de noviembre. Incluye <strong>matrícula, familia anfitriona en
       pensión completa, seguro médico, visado J1 con tasa SEVIS, orientación en Nueva York, clases Cambridge,
       transporte escolar y la convalidación completa en España</strong>. Los vuelos internacionales no están
       incluidos: MLQ gestiona la búsqueda y el coste corre a cargo de la familia.
@@ -747,7 +748,7 @@ details[open] summary::before{transform:rotate(90deg);}
         <div class="pay-cols">
           <div class="pay-col">
             <div class="pay-col-title">Paso 2 · Resto del programa</div>
-            <div class="pay-step"><div class="pay-step-title">10.400 €</div><div class="pay-step-desc">A la aceptación del estudiante o el 1 de marzo de 2027, lo que suceda primero</div></div>
+            <div class="pay-step"><div class="pay-step-title">9.400 €</div><div class="pay-step-desc">A la aceptación del estudiante o el 1 de marzo de 2027, lo que suceda primero</div></div>
           </div>
           <div class="pay-col">
             <div class="pay-col-title">Seguro de anulación</div>
@@ -758,19 +759,18 @@ details[open] summary::before{transform:rotate(90deg);}
 
       <div class="pay-route">
         <div class="pay-route-head"><span class="pay-route-icon">📆</span><span class="pay-route-title">Opción B · Con financiación Banco Sabadell</span></div>
-        <div class="pay-route-sub">Si se financia el programa, la entrada es siempre de 5.000 € y el resto se financia en cuotas mensuales.</div>
+        <div class="pay-route-sub">Si se financia el programa, la entrada es siempre de 5.000 € y el resto se financia en cuotas mensuales. Con la promoción Black November, la financiación está disponible a 18, 24 y 36 meses.</div>
         <div class="pay-entrada">
           <div class="pay-entrada-num">5.000 €</div>
-          <div class="pay-entrada-txt"><strong>Entrada fija a la firma del contrato</strong> en todos los casos de financiación. El capital restante se financia en 12, 18, 24 o 36 meses.</div>
+          <div class="pay-entrada-txt"><strong>Entrada fija a la firma del contrato</strong> en todos los casos de financiación. El capital restante se financia en 18, 24 o 36 meses.</div>
         </div>
         <div class="pay-cols">
           <div class="pay-col">
             <div class="pay-col-title">Capital financiado</div>
-            <div class="pay-step"><div class="pay-step-title">13.900 € − 5.000 € = 8.900 €</div><div class="pay-step-desc">Calcula tu cuota exacta en el simulador de la sección siguiente.</div></div>
+            <div class="pay-step"><div class="pay-step-title">12.900 € − 5.000 € = 7.900 €</div><div class="pay-step-desc">Calcula tu cuota exacta en el simulador de la sección siguiente.</div></div>
           </div>
           <div class="pay-col">
             <div class="pay-col-title">Condiciones</div>
-            <div class="pay-step"><div class="pay-step-title">12 meses · TIN 0 %</div><div class="pay-step-desc">MLQ asume los intereses</div></div>
             <div class="pay-step"><div class="pay-step-title">18 / 24 / 36 meses · TIN 10,46 %</div><div class="pay-step-desc">Intereses a cargo del cliente</div></div>
           </div>
         </div>
@@ -797,7 +797,7 @@ details[open] summary::before{transform:rotate(90deg);}
       <div class="fin-opcion-selector">
         <div class="fin-opcion-label">Programa</div>
         <div class="fin-opcion-btns" id="finOpciones">
-          <button class="fin-opcion-btn active" data-precio="13900"><span class="fin-opcion-nombre">🇺🇸 J1 · Año escolar completo</span><span class="fin-opcion-precio">13.900 €</span></button>
+          <button class="fin-opcion-btn active" data-precio="12900"><span class="fin-opcion-nombre">🇺🇸 J1 · Año escolar completo · Black November</span><span class="fin-opcion-precio">12.900 €</span></button>
         </div>
       </div>
 
@@ -808,9 +808,8 @@ details[open] summary::before{transform:rotate(90deg);}
 
       <div class="fin-plazo-wrap">
         <div class="fin-plazo-label">Elige tu plazo de financiación</div>
-        <div class="fin-plazos" id="finPlazos">
-          <button class="fin-plazo active" data-meses="12" data-tin="0"><div class="fin-plazo-meses">12 meses</div><div class="fin-plazo-badge sin-intereses">TIN 0%</div><div class="fin-plazo-quien">¡MLQ asume los intereses!</div></button>
-          <button class="fin-plazo" data-meses="18" data-tin="10.46"><div class="fin-plazo-meses">18 meses</div><div class="fin-plazo-badge con-intereses">TIN 10,46%</div><div class="fin-plazo-quien">Intereses a cargo del cliente</div></button>
+        <div class="fin-plazos" id="finPlazos" style="grid-template-columns:repeat(3,1fr);">
+          <button class="fin-plazo active" data-meses="18" data-tin="10.46"><div class="fin-plazo-meses">18 meses</div><div class="fin-plazo-badge con-intereses">TIN 10,46%</div><div class="fin-plazo-quien">Intereses a cargo del cliente</div></button>
           <button class="fin-plazo" data-meses="24" data-tin="10.46"><div class="fin-plazo-meses">24 meses</div><div class="fin-plazo-badge con-intereses">TIN 10,46%</div><div class="fin-plazo-quien">Intereses a cargo del cliente</div></button>
           <button class="fin-plazo" data-meses="36" data-tin="10.46"><div class="fin-plazo-meses">36 meses</div><div class="fin-plazo-badge con-intereses">TIN 10,46%</div><div class="fin-plazo-quien">Intereses a cargo del cliente</div></button>
         </div>
@@ -819,19 +818,19 @@ details[open] summary::before{transform:rotate(90deg);}
       <div class="fin-resultado">
         <div class="fin-resultado-main">
           <div class="fin-cuota-label">Cuota mensual estimada</div>
-          <div class="fin-cuota-valor" id="cuotaValor">741,67 €</div>
-          <div class="fin-cuota-sub" id="cuotaSub">/mes · 12 pagos · TIN 0%</div>
+          <div class="fin-cuota-valor" id="cuotaValor">476,13 €</div>
+          <div class="fin-cuota-sub" id="cuotaSub">/mes · 18 pagos · TIN 10,46%</div>
         </div>
         <div class="fin-resultado-detalle">
-          <div class="fin-det-row"><span class="fin-det-label">Importe del programa</span><span class="fin-det-val" id="detPrecio">13.900 €</span></div>
+          <div class="fin-det-row"><span class="fin-det-label">Importe del programa</span><span class="fin-det-val" id="detPrecio">12.900 €</span></div>
           <div class="fin-det-row"><span class="fin-det-label">Entrada a la firma</span><span class="fin-det-val" id="detEntrada">5.000 €</span></div>
-          <div class="fin-det-row"><span class="fin-det-label">Capital financiado</span><span class="fin-det-val" id="detCapital">8.900 €</span></div>
-          <div class="fin-det-row"><span class="fin-det-label">Intereses totales</span><span class="fin-det-val fin-det-green" id="detIntereses">0 € · ¡MLQ los asume!</span></div>
-          <div class="fin-det-row fin-det-total"><span class="fin-det-label">Total a pagar</span><span class="fin-det-val" id="detTotal">13.900 €</span></div>
+          <div class="fin-det-row"><span class="fin-det-label">Capital financiado</span><span class="fin-det-val" id="detCapital">7.900 €</span></div>
+          <div class="fin-det-row"><span class="fin-det-label">Intereses totales</span><span class="fin-det-val" id="detIntereses">670,27 €</span></div>
+          <div class="fin-det-row fin-det-total"><span class="fin-det-label">Total a pagar</span><span class="fin-det-val" id="detTotal">13.570,27 €</span></div>
         </div>
       </div>
 
-      <div class="fin-nota">ℹ️ Financiación sujeta a aprobación bancaria. La entrada de 5.000 € se abona a la firma del contrato y no se financia. Cuota orientativa calculada sobre el capital financiado. Sin comisión de apertura ni penalización por cancelación anticipada.</div>
+      <div class="fin-nota">ℹ️ Financiación sujeta a aprobación bancaria. La entrada de 5.000 € se abona a la firma del contrato y no se financia. Cuota orientativa calculada sobre el capital financiado. Sin comisión de apertura ni penalización por cancelación anticipada. La promoción Black November no es compatible con la financiación a 12 meses sin intereses.</div>
     </div>
   </div>
 
@@ -903,7 +902,7 @@ details[open] summary::before{transform:rotate(90deg);}
 
 <script>
 (function(){
-  var precio=13900, meses=12, tin=0, ENTRADA=5000;
+  var precio=12900, meses=18, tin=10.46, ENTRADA=5000;
   function fmt(n){return n.toLocaleString('es-ES',{minimumFractionDigits:2,maximumFractionDigits:2})+' €';}
   function fmt0(n){return n.toLocaleString('es-ES',{maximumFractionDigits:0})+' €';}
   function calc(){
