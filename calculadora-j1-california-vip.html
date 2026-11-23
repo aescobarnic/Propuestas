@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>Calculadora de pago · J1 California VIP · My Language Quest</title>
+<title>Calendario de pagos · J1 California · My Language Quest</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@400;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
@@ -65,15 +65,15 @@ footer{text-align:center;font-size:11.5px;color:var(--text-light);margin-top:24p
 
 <header>
   <div class="eyebrow">My Language Quest</div>
-  <h1>Programa J1 California VIP</h1>
-  <p class="sub">Curso 2027/28 · Precio final 23.950 €</p>
+  <h1>Formas de pago · California</h1>
+  <p class="sub">Curso 2027/28 · Las dos vías para ir a California</p>
 </header>
 
 <div class="card">
-  <h2>Elige cómo pagarlo</h2>
+  <h2>Elige el programa</h2>
   <div class="tabs" role="tablist">
-    <button class="tab" id="tab-a" role="tab" aria-selected="true" onclick="setOpt('a')">A · Descuento 1.000 €</button>
-    <button class="tab" id="tab-b" role="tab" aria-selected="false" onclick="setOpt('b')">B · 12 meses sin intereses</button>
+    <button class="tab" id="tab-a" role="tab" aria-selected="true" onclick="setOpt('a')">J1 con petición de California</button>
+    <button class="tab" id="tab-b" role="tab" aria-selected="false" onclick="setOpt('b')">J1 California VIP</button>
   </div>
 
   <div class="big">
@@ -83,72 +83,63 @@ footer{text-align:center;font-size:11.5px;color:var(--text-light);margin-top:24p
   </div>
   <ul class="rows" id="rows"></ul>
 
-  <div class="slider-box" id="slider-box" hidden>
-    <div class="slider-head"><span>Entrada a la firma</span><b id="entrada-val">5.000 €</b></div>
-    <input type="range" id="entrada" min="5000" max="20000" step="250" value="5000" oninput="render()" aria-label="Importe de la entrada">
-    <div class="scale"><span>5.000 € mínimo</span><span>20.000 €</span></div>
-  </div>
-
-  <div class="warn"><b>No son acumulables.</b> O el descuento de 1.000 €, o la financiación sin intereses.</div>
+  <div class="warn" id="nota"></div>
 </div>
 
 <div class="card">
   <h2>Condiciones</h2>
   <ul class="rows terms">
-    <li><b>Primer pago.</b> Formaliza la reserva con MLQ e inicia las gestiones. El segundo se abona tras la preaprobación del sponsor.</li>
+    <li><b>Primer pago.</b> Formaliza la reserva con MLQ e inicia la aplicación del estudiante. Va siempre a cuenta del precio del programa.</li>
     <li><b>Aceptación.</b> Sujeta al cumplimiento de los requisitos y a la aprobación del sponsor estadounidense.</li>
     <li><b>Desistimiento.</b> 14 días naturales desde la firma, sin justificación y con devolución de lo abonado.</li>
     <li><b>Cancelación voluntaria.</b> Gastos de gestión MLQ: 1.500 € hasta el 31 de enero de 2027 y 3.000 € desde el 1 de febrero. Se añaden las penalizaciones del sponsor y los gastos no recuperables, justificados.</li>
     <li><b>Penalizaciones del sponsor.</b> Como referencia, Terra Lingua USA 2025: 1.000 USD tras la preaprobación y 2.000 USD tras la asignación de familia y colegio.</li>
-    <li><b>Vuelos.</b> No incluidos. MLQ gestiona la búsqueda y el coste corre a cargo de la familia.</li>
+    <li><b>Vuelos.</b> No incluidos en ninguno de los dos programas. MLQ gestiona la búsqueda y el coste corre a cargo de la familia.</li>
   </ul>
 </div>
 
 <footer>
   Calendario de pagos particular, a incorporar al contrato y su Anexo I.<br>
-  Sujeto a confirmación de las condiciones del sponsor para 2027/28. Financiación sujeta a aprobación bancaria.
+  Sujeto a confirmación de las condiciones del sponsor para 2027/28.
 </footer>
 
 </div>
 
 <script>
-var PRECIO=23950, DESC=1000, MESES=12, opt='a';
-var PLAN=[
-  ['Firma del contrato','Reserva e inicio de la aplicación',3500],
-  ['Tras la preaprobación del sponsor','Segundo pago',7000],
-  ['Hasta el 1 de marzo de 2027','Tercer pago',6000],
-  ['Hasta el 1 de mayo de 2027','Cuarto y último pago',7450]
-];
-function eur(n){return n.toLocaleString('es-ES',{minimumFractionDigits:0,maximumFractionDigits:2})+' €';}
+var opt='a';
+var PROG={
+ a:{total:15900,
+    lbl:'J1 + suplemento de California',
+    extra:'13.900 € de programa + 2.000 € de suplemento',
+    plan:[['Firma del contrato','Reserva e inicio de la aplicación',3500],
+          ['Al confirmar la reserva','Suplemento de estado · California',2000],
+          ['Hasta el 1 de marzo de 2027','Resto del programa',10400]],
+    nota:'<b>California es una petición, no una garantía.</b> El sponsor hace todo lo posible por cumplirla y, si finalmente no puede asignarla, los 2.000 € del suplemento se reembolsan íntegros.'},
+ b:{total:23950,
+    lbl:'precio final del programa',
+    extra:'California garantizada',
+    plan:[['Firma del contrato','Reserva e inicio de la aplicación',3500],
+          ['Tras la preaprobación del sponsor','Segundo pago',7000],
+          ['Hasta el 1 de marzo de 2027','Tercer pago',6000],
+          ['Hasta el 1 de mayo de 2027','Cuarto y último pago',7450]],
+    nota:'<b>Pago fraccionado en cuatro plazos.</b> Calendario particular, que se incorpora al contrato y a su Anexo I.'}
+};
+function eur(n){return n.toLocaleString('es-ES')+' €';}
 function fila(l,s,v){return '<li><span class="lbl">'+l+'<small>'+s+'</small></span><span class="val">'+v+'</span></li>';}
 function setOpt(o){
   opt=o;
   document.getElementById('tab-a').setAttribute('aria-selected',o==='a');
   document.getElementById('tab-b').setAttribute('aria-selected',o==='b');
-  document.getElementById('slider-box').hidden=(o!=='b');
   render();
 }
 function render(){
-  var t=document.getElementById('total'),l=document.getElementById('total-lbl'),
-      x=document.getElementById('total-extra'),h='';
-  if(opt==='a'){
-    t.textContent=eur(PRECIO-DESC); l.textContent='total del programa';
-    x.innerHTML='<span class="strike">'+eur(PRECIO)+'</span> &nbsp;<span class="badge">− 1.000 €</span>';
-    for(var i=0;i<PLAN.length;i++){
-      var imp=PLAN[i][2]-(i===PLAN.length-1?DESC:0);
-      h+=fila(PLAN[i][0],PLAN[i][1]+(i===PLAN.length-1?' · descuento aplicado aquí':''),eur(imp));
-    }
-  }else{
-    var e=parseInt(document.getElementById('entrada').value,10), cap=PRECIO-e;
-    document.getElementById('entrada-val').textContent=eur(e);
-    t.textContent=eur(cap/MESES); l.textContent='al mes durante 12 meses';
-    x.innerHTML='<span class="badge">TIN 0 %</span>';
-    h+=fila('Entrada a la firma','Mínimo 5.000 €',eur(e));
-    h+=fila('Capital financiado','23.950 € − entrada',eur(cap));
-    h+=fila('12 cuotas mensuales','Sin intereses ni comisión de apertura',eur(cap/MESES));
-    h+=fila('Coste total','Igual que al contado',eur(PRECIO));
-  }
+  var p=PROG[opt],h='';
+  document.getElementById('total').textContent=eur(p.total);
+  document.getElementById('total-lbl').textContent=p.lbl;
+  document.getElementById('total-extra').innerHTML='<span class="badge">'+p.extra+'</span>';
+  for(var i=0;i<p.plan.length;i++){h+=fila(p.plan[i][0],p.plan[i][1],eur(p.plan[i][2]));}
   document.getElementById('rows').innerHTML=h;
+  document.getElementById('nota').innerHTML=p.nota;
 }
 render();
 </script>
