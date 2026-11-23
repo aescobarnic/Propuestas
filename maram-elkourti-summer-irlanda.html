@@ -206,6 +206,26 @@ footer{background:var(--navy-deep);color:rgba(255,255,255,.8);padding:48px 0;fon
 .diet{margin-top:28px;background:var(--teal-soft);border-radius:16px;padding:20px 22px;max-width:760px}
 .diet strong{color:var(--navy)}
 @media (max-width:600px){.dur b{font-size:28px}.tabs button{padding:10px 16px}}
+.badge{display:inline-block;background:var(--sun);color:var(--navy);font-weight:700;font-size:13px;padding:6px 14px;border-radius:999px;margin-bottom:16px}
+.home{background:var(--white)}
+.home-grid{display:grid;grid-template-columns:1.15fr 1fr;gap:44px;align-items:start}
+.home-grid>div{min-width:0}
+.tl{list-style:none;border-left:3px solid var(--teal-soft);margin-left:6px}
+.tl li{position:relative;padding:0 0 18px 24px}
+.tl li::before{content:"";position:absolute;left:-8px;top:6px;width:13px;height:13px;border-radius:50%;background:var(--teal)}
+.tl time{display:block;font-weight:700;color:var(--teal);font-size:15px}
+.home h3{font-family:var(--display);font-size:22px;color:var(--navy);margin-bottom:14px}
+.wk{display:grid;gap:12px;margin-bottom:28px}
+.wk div{background:var(--paper);border-radius:14px;padding:14px 18px}
+.wk strong{color:var(--navy);display:block}
+.cmp-wrap{overflow-x:auto}
+.cmp{width:100%;border-collapse:collapse;font-size:15px;min-width:420px}
+.cmp th,.cmp td{text-align:left;padding:10px 12px;border-bottom:1px solid var(--line);vertical-align:top}
+.cmp th{color:var(--mute);font-weight:600;font-size:14px}
+.home-note{margin-top:28px;background:var(--teal-soft);border-radius:16px;padding:18px 22px;font-size:16px}
+.home-note strong{color:var(--navy)}
+.opt-link{display:inline-block;margin-top:10px;font-weight:700;color:var(--teal)}
+@media (max-width:960px){.home-grid{grid-template-columns:1fr}}
 </style>
 </head>
 <body>
@@ -307,7 +327,7 @@ footer{background:var(--navy-deep);color:rgba(255,255,255,.8);padding:48px 0;fon
       <div class="opt-body">
         <div class="opt-where">Athlone, en el centro de Irlanda</div>
         <h3>Athlone en familia</h3>
-        <p class="opt-desc">El mismo programa de clases, talleres y excursiones en el campus universitario de Athlone, pero viviendo con una familia irlandesa en pensión completa, con dieta vegetariana. El domingo lo pasa con la familia.</p>
+        <p class="opt-desc">El mismo programa de clases, talleres y excursiones en el campus universitario de Athlone, pero viviendo con una familia irlandesa en pensión completa, con dieta vegetariana. El domingo lo pasa con la familia.<br><a class="opt-link" href="#athlone-familia">Ver su día a día en familia</a></p>
         <div class="opt-specs"><span>Familia anfitriona</span><span>Pensión completa</span><span>Dieta vegetariana</span><span>15 h de inglés semanales</span></div>
         <div class="why"><h4>Por qué encaja con Maram</h4><ul><li>Ciudad pequeña y tranquila, con familias acostumbradas a recibir estudiantes de todo el mundo.</li><li>Con un A2, la vida diaria en casa le obliga a usar el inglés en situaciones sencillas, que es donde más rápido se gana soltura.</li><li>El domingo en familia le enseña la Irlanda del día a día, lejos de los circuitos turísticos.</li></ul></div>
         <div class="opt-price">
@@ -383,6 +403,51 @@ footer{background:var(--navy-deep);color:rgba(255,255,255,.8);padding:48px 0;fon
       <div class="week"><div class="day"><div class="day-name">Lunes</div><div class="day-am">Clases de inglés</div><div class="day-pm">Piscina, fútbol y baloncesto en el campus</div></div><div class="day"><div class="day-name">Martes</div><div class="day-am">Clases de inglés</div><div class="day-pm">Visita guiada por el centro de Dublín</div></div><div class="day"><div class="day-name">Miércoles</div><div class="day-am">Clases de inglés</div><div class="day-pm">Trinity College y el Book of Kells. Por la noche, disco</div></div><div class="day"><div class="day-name">Jueves</div><div class="day-am">Clases de inglés</div><div class="day-pm">Zoo de Dublín</div></div><div class="day"><div class="day-name">Viernes</div><div class="day-am">Clases de inglés</div><div class="day-pm">Taller de baile irlandés</div></div><div class="day out"><div class="day-name">Sábado</div><div class="day-am">Excursión de día completo</div><div class="day-pm">Wicklow y Glendalough, o los Acantilados de Moher</div></div><div class="day"><div class="day-name">Domingo</div><div class="day-am">Día libre</div><div class="day-pm">Planes con el grupo o con la familia anfitriona</div></div></div>
     </div>
     <p class="week-note">Calendario orientativo: el orden y las visitas concretas pueden cambiar según cada centro. En Athlone en familia, las tardes y los sábados son iguales; las noches y los domingos se pasan con la familia, salvo dos actividades de noche por semana. Con tres semanas, el programa suma una semana más de clases, talleres y excursiones.</p>
+  </div>
+</section>
+
+<section class="home" id="athlone-familia">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="badge">Actualizado el 23 de noviembre</span>
+      <h2>Athlone en familia: el día a día de Maram</h2>
+      <p>Clases, actividades y excursiones son las mismas que en residencia. Cambian la comida de mediodía, las noches y los domingos, porque vive con su familia anfitriona.</p>
+    </div>
+    <div class="home-grid">
+      <div>
+        <h3>De lunes a viernes</h3>
+        <ol class="tl">
+          <li><time>8:00</time>Desayuno en casa con la familia.</li>
+          <li><time>8:45</time>Salida hacia el campus. Las familias viven a entre 10 y 30 minutos.</li>
+          <li><time>9:30 a 12:50</time>Clases de inglés por proyectos.</li>
+          <li><time>13:00</time>Comida en el campus, con el picnic que prepara la familia.</li>
+          <li><time>14:00 a 16:30</time>Actividad con todo el grupo: tres tardes de talleres de tecnología y creatividad y dos tardes culturales, como la visita guiada por Athlone, baile irlandés o deportes gaélicos.</li>
+          <li><time>16:30</time>Vuelta a casa.</li>
+          <li><time>18:00</time>Cena con la familia.</li>
+          <li><time>Noche</time>Dos noches por semana, actividad con el grupo: música irlandesa, quiz o disco. El resto, en casa.</li>
+          <li><time>22:00</time>Siempre en casa con la familia.</li>
+        </ol>
+      </div>
+      <div>
+        <h3>Fin de semana</h3>
+        <div class="wk">
+          <div><strong>Sábado</strong>Excursión de día completo con todo el grupo, por ejemplo a Kilkenny o a Glendalough.</div>
+          <div><strong>Domingo</strong>Día con la familia anfitriona.</div>
+        </div>
+        <h3>Familia o residencia</h3>
+        <div class="cmp-wrap"><table class="cmp">
+          <thead><tr><th></th><th>Familia</th><th>Residencia</th></tr></thead>
+          <tbody>
+            <tr><td>Comida de mediodía</td><td>Picnic de la familia</td><td>Comida caliente en el comedor</td></tr>
+            <tr><td>Noches</td><td>2 actividades por semana; el resto, en casa</td><td>4 actividades y 3 noches supervisadas</td></tr>
+            <tr><td>Domingo</td><td>Con la familia</td><td>Media excursión con el grupo</td></tr>
+            <tr><td>Convivencia</td><td>3 o 4 estudiantes por casa, habitación normalmente compartida</td><td>Habitación doble con otra alumna</td></tr>
+            <tr><td>Alimentación</td><td>Dieta vegetariana</td><td>Menú sin cerdo garantizado</td></tr>
+          </tbody>
+        </table></div>
+      </div>
+    </div>
+    <div class="home-note"><strong>Seguridad.</strong> A sus 13 años, Maram nunca sale sin un adulto, y nuestro monitor está en Athlone durante toda la estancia. Os confirmaremos en los próximos días cómo se organizan exactamente los trayectos entre la casa y el campus. Los horarios son orientativos y pueden variar según el calendario del centro.</div>
   </div>
 </section>
 
