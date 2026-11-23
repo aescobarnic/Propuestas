@@ -433,6 +433,11 @@ details[open] summary::before{transform:rotate(90deg);}
   .tabla-diff{min-width:600px;}
 }
 
+.mod-precio-orig{font-size:15px;font-weight:600;color:var(--text-light);text-decoration:line-through;margin-bottom:-2px;}
+.mod-card.destacado .mod-precio-orig{color:rgba(255,255,255,0.55);}
+.tabla-diff s{color:var(--text-light);font-weight:400;margin-right:6px;font-size:.9em;}
+.fin-opcion-precio s{font-size:11px;font-weight:400;color:var(--text-light);margin-right:5px;}
+.fin-promo-nota{display:none;font-size:11.5px;color:#6b1a00;background:#fff4f0;border:1px solid rgba(177,41,0,0.25);border-radius:8px;padding:10px 14px;margin:0 0 16px;line-height:1.55;}
 </style>
 </head>
 <body>
@@ -461,14 +466,7 @@ details[open] summary::before{transform:rotate(90deg);}
       <div class="hero-pill">📚 Notables y sobresalientes</div>
       <div class="hero-pill ac">🎄 En casa por Navidad</div>
     </div>
-    <!-- ===== BLOQUE PROMO · DESACTIVADO POR DEFECTO =====
-         Los precios son la TARIFA REAL, sin descuento aplicado.
-         Activar SOLO si el comercial lo indica. Al activarlo hay que:
-           1. Descontar 500 € del precio de la modalidad Choice elegida
-           2. Añadir la tarifa original tachada
-           3. Actualizar data-precio del simulador
-    <div class="hero-promo">☘ Reserva antes del 30 de septiembre de 2026 y obtén <strong>500 € de descuento</strong> en los programas Choice — no acumulable con otras promociones.</div>
-    ===== FIN BLOQUE PROMO ===== -->
+    <div class="hero-promo"><span>🖤</span><span><strong>Black November:</strong> reservando antes del 30 de noviembre, el trimestre de Carmen pasa de 10.200 € a <strong>9.600 €</strong>. Descuento de 600 € no acumulable con otras promociones.</span></div>
   </div>
 </div>
 
@@ -627,8 +625,9 @@ details[open] summary::before{transform:rotate(90deg);}
       <div class="mod-head">
         <div class="mod-nombre">Trimestre · Choice + 2 vuelos</div>
         <div class="mod-desc-head">De finales de agosto a mediados de diciembre de 2027</div>
-        <div class="mod-precio-val">10.200 €</div>
-        <div class="mod-precio-sub">Precio cerrado, vuelos incluidos</div>
+        <div class="mod-precio-orig">10.200 €</div>
+        <div class="mod-precio-val">9.600 €</div>
+        <div class="mod-precio-sub">Black November · Reserva antes del 30 de noviembre</div>
       </div>
       <div class="mod-body">
         <ul class="mod-list">
@@ -661,8 +660,9 @@ details[open] summary::before{transform:rotate(90deg);}
       <div class="mod-head">
         <div class="mod-nombre">Año escolar · Choice + 2 vuelos</div>
         <div class="mod-desc-head">De finales de agosto de 2027 a finales de mayo de 2028</div>
-        <div class="mod-precio-val">17.450 €</div>
-        <div class="mod-precio-sub">Año escolar completo</div>
+        <div class="mod-precio-orig">17.450 €</div>
+        <div class="mod-precio-val">15.950 €</div>
+        <div class="mod-precio-sub">Black November · Reserva antes del 30 de noviembre</div>
       </div>
       <div class="mod-body">
         <ul class="mod-list">
@@ -680,7 +680,7 @@ details[open] summary::before{transform:rotate(90deg);}
     <table class="tabla-diff">
       <thead><tr><th style="text-align:left;">&nbsp;</th><th>Trimestre</th><th>Semestre</th><th>Año escolar</th></tr></thead>
       <tbody>
-        <tr class="precio-fila"><th>Precio</th><td>10.200 €</td><td>11.650 €</td><td>17.450 €</td></tr>
+        <tr class="precio-fila"><th>Precio con Black November</th><td><s>10.200 €</s>9.600 €</td><td>11.650 €</td><td><s>17.450 €</s>15.950 €</td></tr>
         <tr><th>Fechas</th><td><b>Agosto a diciembre</b></td><td><b>Agosto a enero</b></td><td><b>Agosto a mayo</b></td></tr>
         <tr><th>Elección de colegio</th><td><span class="si">✓</span></td><td><span class="si">✓</span></td><td><span class="si">✓</span></td></tr>
         <tr><th>Habitación individual garantizada</th><td><span class="si">✓</span></td><td><span class="si">✓</span></td><td><span class="si">✓</span></td></tr>
@@ -690,7 +690,7 @@ details[open] summary::before{transform:rotate(90deg);}
       </tbody>
     </table>
   </div>
-  <div class="tabla-nota">Las tres duraciones comparten las mismas condiciones del Programa Choice. Cambian las fechas, los vuelos incluidos y el trámite académico a la vuelta.</div>
+  <div class="tabla-nota">Las tres duraciones comparten las mismas condiciones del Programa Choice. Cambian las fechas, los vuelos incluidos y el trámite académico a la vuelta. El descuento Black November se aplica al trimestre (600 €) y al año escolar (1.500 €) en reservas formalizadas hasta el 30 de noviembre.</div>
 
   <!-- ============ 8. QUÉ PROGRAMA ENCAJA ============ -->
   <div class="section-title"><h2>¿Qué duración encaja con Carmen?</h2></div>
@@ -802,7 +802,7 @@ details[open] summary::before{transform:rotate(90deg);}
           </div>
           <div class="pay-col">
             <div class="pay-col-title">Paso 3 · Resto del importe</div>
-            <div class="pay-step"><div class="pay-step-title">2.700 € antes del 1 de junio de 2027</div><div class="pay-step-desc">Importe restante hasta completar los 10.200 € del trimestre</div></div>
+            <div class="pay-step"><div class="pay-step-title">2.100 € antes del 1 de junio de 2027</div><div class="pay-step-desc">Importe restante hasta completar los 9.600 € del trimestre con Black November</div></div>
           </div>
         </div>
       </div>
@@ -817,12 +817,12 @@ details[open] summary::before{transform:rotate(90deg);}
         <div class="pay-cols">
           <div class="pay-col">
             <div class="pay-col-title">Capital financiado</div>
-            <div class="pay-step"><div class="pay-step-title">5.200 € en el trimestre</div><div class="pay-step-desc">10.200 € menos la entrada. Calcula tu cuota exacta en el simulador de la sección siguiente.</div></div>
+            <div class="pay-step"><div class="pay-step-title">4.600 € en el trimestre</div><div class="pay-step-desc">9.600 € con Black November menos la entrada. Calcula tu cuota exacta en el simulador de la sección siguiente.</div></div>
           </div>
           <div class="pay-col">
             <div class="pay-col-title">Condiciones</div>
-            <div class="pay-step"><div class="pay-step-title">12 meses · TIN 0 %</div><div class="pay-step-desc">MLQ asume los intereses</div></div>
-            <div class="pay-step"><div class="pay-step-title">18 / 24 / 36 meses · TIN 10,46 %</div><div class="pay-step-desc">Intereses a cargo del cliente</div></div>
+            <div class="pay-step"><div class="pay-step-title">12 meses · TIN 0 %</div><div class="pay-step-desc">MLQ asume los intereses. Se calcula sobre la tarifa sin descuento: no es compatible con Black November</div></div>
+            <div class="pay-step"><div class="pay-step-title">18 / 24 / 36 meses · TIN 10,46 %</div><div class="pay-step-desc">Intereses a cargo del cliente. Compatible con Black November</div></div>
           </div>
         </div>
       </div>
@@ -848,9 +848,9 @@ details[open] summary::before{transform:rotate(90deg);}
       <div class="fin-opcion-selector">
         <div class="fin-opcion-label">Selecciona la modalidad</div>
         <div class="fin-opcion-btns" id="finOpciones">
-          <button class="fin-opcion-btn active" data-precio="10200"><span class="fin-opcion-nombre">☘ Trimestre</span><span class="fin-opcion-precio">10.200 €</span></button>
-          <button class="fin-opcion-btn" data-precio="11650"><span class="fin-opcion-nombre">Semestre</span><span class="fin-opcion-precio">11.650 €</span></button>
-          <button class="fin-opcion-btn" data-precio="17450"><span class="fin-opcion-nombre">Año escolar</span><span class="fin-opcion-precio">17.450 €</span></button>
+          <button class="fin-opcion-btn active" data-precio="9600" data-orig="10200"><span class="fin-opcion-nombre">☘ Trimestre</span><span class="fin-opcion-precio"><s>10.200 €</s>9.600 €</span></button>
+          <button class="fin-opcion-btn" data-precio="11650" data-orig="11650"><span class="fin-opcion-nombre">Semestre</span><span class="fin-opcion-precio">11.650 €</span></button>
+          <button class="fin-opcion-btn" data-precio="15950" data-orig="17450"><span class="fin-opcion-nombre">Año escolar</span><span class="fin-opcion-precio"><s>17.450 €</s>15.950 €</span></button>
         </div>
       </div>
 
@@ -862,12 +862,14 @@ details[open] summary::before{transform:rotate(90deg);}
       <div class="fin-plazo-wrap">
         <div class="fin-plazo-label">Elige tu plazo de financiación</div>
         <div class="fin-plazos" id="finPlazos">
-          <button class="fin-plazo active" data-meses="12" data-tin="0"><div class="fin-plazo-meses">12 meses</div><div class="fin-plazo-badge sin-intereses">TIN 0%</div><div class="fin-plazo-quien">¡MLQ asume los intereses!</div></button>
-          <button class="fin-plazo" data-meses="18" data-tin="10.46"><div class="fin-plazo-meses">18 meses</div><div class="fin-plazo-badge con-intereses">TIN 10,46%</div><div class="fin-plazo-quien">Intereses a cargo del cliente</div></button>
+          <button class="fin-plazo" data-meses="12" data-tin="0"><div class="fin-plazo-meses">12 meses</div><div class="fin-plazo-badge sin-intereses">TIN 0%</div><div class="fin-plazo-quien">¡MLQ asume los intereses! Sin Black November</div></button>
+          <button class="fin-plazo active" data-meses="18" data-tin="10.46"><div class="fin-plazo-meses">18 meses</div><div class="fin-plazo-badge con-intereses">TIN 10,46%</div><div class="fin-plazo-quien">Intereses a cargo del cliente</div></button>
           <button class="fin-plazo" data-meses="24" data-tin="10.46"><div class="fin-plazo-meses">24 meses</div><div class="fin-plazo-badge con-intereses">TIN 10,46%</div><div class="fin-plazo-quien">Intereses a cargo del cliente</div></button>
           <button class="fin-plazo" data-meses="36" data-tin="10.46"><div class="fin-plazo-meses">36 meses</div><div class="fin-plazo-badge con-intereses">TIN 10,46%</div><div class="fin-plazo-quien">Intereses a cargo del cliente</div></button>
         </div>
       </div>
+
+      <div class="fin-promo-nota" id="finPromoNota">La financiación a 12 meses sin intereses no es compatible con el descuento Black November, así que la cuota se calcula sobre la tarifa sin descuento. Con 18, 24 o 36 meses se mantiene el descuento.</div>
 
       <div class="fin-resultado">
         <div class="fin-resultado-main">
@@ -884,7 +886,7 @@ details[open] summary::before{transform:rotate(90deg);}
         </div>
       </div>
 
-      <div class="fin-nota">ℹ️ Financiación sujeta a aprobación bancaria. La entrada de 5.000 € se abona a la firma del contrato y no se financia. Cuota orientativa calculada sobre el capital financiado. Sin comisión de apertura ni penalización por cancelación anticipada.</div>
+      <div class="fin-nota">ℹ️ Financiación sujeta a aprobación bancaria. El descuento Black November no es compatible con la financiación a 12 meses sin intereses. La entrada de 5.000 € se abona a la firma del contrato y no se financia. Cuota orientativa calculada sobre el capital financiado. Sin comisión de apertura ni penalización por cancelación anticipada.</div>
     </div>
   </div>
 
@@ -923,18 +925,22 @@ details[open] summary::before{transform:rotate(90deg);}
 
 <script>
 (function(){
-  var precio=10200, meses=12, tin=0, ENTRADA=5000;
-  function fmt(n){return n.toLocaleString('es-ES',{minimumFractionDigits:2,maximumFractionDigits:2})+' €';}
-  function fmt0(n){return n.toLocaleString('es-ES',{maximumFractionDigits:0})+' €';}
+  var precio=9600, orig=10200, meses=18, tin=10.46, ENTRADA=5000;
+  function grp(x){return x.replace(/\B(?=(\d{3})+(?!\d))/g,'.');}
+  function fmt(n){var p=n.toFixed(2).split('.');return grp(p[0])+','+p[1]+' €';}
+  function fmt0(n){return grp(Math.round(n).toString())+' €';}
   function calc(){
-    var capital=Math.max(precio-ENTRADA,0);
+    var base=(tin===0)?orig:precio;
+    var nota=document.getElementById('finPromoNota');
+    if(nota) nota.style.display=(tin===0&&orig!==precio)?'block':'none';
+    var capital=Math.max(base-ENTRADA,0);
     var cuota, total;
     if(tin===0){ cuota=capital/meses; total=capital; }
     else{ var i=tin/100/12; cuota=capital*i/(1-Math.pow(1+i,-meses)); total=cuota*meses; }
     var intereses=total-capital;
     document.getElementById('cuotaValor').textContent=fmt(cuota);
     document.getElementById('cuotaSub').textContent='/mes · '+meses+' pagos · TIN '+(tin===0?'0%':'10,46%');
-    document.getElementById('detPrecio').textContent=fmt0(precio);
+    document.getElementById('detPrecio').textContent=fmt0(base);
     document.getElementById('detEntrada').textContent=fmt0(ENTRADA);
     document.getElementById('detCapital').textContent=fmt0(capital);
     var ei=document.getElementById('detIntereses');
@@ -945,7 +951,7 @@ details[open] summary::before{transform:rotate(90deg);}
   document.querySelectorAll('#finOpciones .fin-opcion-btn').forEach(function(b){
     b.addEventListener('click',function(){
       document.querySelectorAll('#finOpciones .fin-opcion-btn').forEach(function(x){x.classList.remove('active');});
-      b.classList.add('active'); precio=parseFloat(b.dataset.precio); calc();
+      b.classList.add('active'); precio=parseFloat(b.dataset.precio); orig=parseFloat(b.dataset.orig); calc();
     });
   });
   document.querySelectorAll('#finPlazos .fin-plazo').forEach(function(b){
