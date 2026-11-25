@@ -61,6 +61,10 @@ body{font-family:'Fira Sans',sans-serif;background:var(--gray-bg);color:var(--te
 .intro-text{font-size:14px;color:var(--text-mid);line-height:1.75;max-width:900px;margin-bottom:16px;}
 .intro-text strong{color:var(--acc-deep);font-weight:600;}
 
+.flag{display:inline-block;width:1.25em;height:.84em;border-radius:2px;vertical-align:-0.06em;margin-right:.42em;box-shadow:0 0 0 1px rgba(0,0,0,0.12);}
+.includes-head .flag,.eq-head .flag,.dest-chip .flag{box-shadow:0 0 0 1px rgba(255,255,255,0.5);}
+.tabla-diff thead .flag{box-shadow:0 0 0 1px rgba(255,255,255,0.55);}
+
 /* BLOQUES POR DESTINO */
 .dest{padding:30px 0 6px;}
 .dest.ie{--acc:var(--ie);--acc-deep:var(--ie-deep);--acc-light:var(--ie-light);--acc-border:var(--ie-border);}
@@ -77,7 +81,7 @@ body{font-family:'Fira Sans',sans-serif;background:var(--gray-bg);color:var(--te
 .dest-chip{background:rgba(255,255,255,0.14);border:1px solid rgba(255,255,255,0.24);border-radius:7px;padding:5px 11px;font-size:11px;font-weight:500;}
 
 /* FICHA PERFIL */
-.perfil-wrap{display:grid;grid-template-columns:1.15fr 1fr;gap:18px;align-items:start;}
+.perfil-wrap{display:grid;grid-template-columns:1.15fr 1fr;gap:18px;align-items:stretch;}
 .perfil-card{background:var(--white);border:1.5px solid var(--gray-border);border-radius:16px;overflow:hidden;box-shadow:0 3px 20px rgba(0,51,102,0.06);}
 .perfil-head{background:linear-gradient(135deg,var(--blue-dark),var(--blue) 70%,var(--blue-mid));padding:16px 20px;color:var(--white);}
 .perfil-head-t{font-family:'Josefin Sans',sans-serif;font-size:16px;font-weight:700;}
@@ -87,8 +91,8 @@ body{font-family:'Fira Sans',sans-serif;background:var(--gray-bg);color:var(--te
 .perfil-row:last-child{border-bottom:none;}
 .perfil-k{color:var(--text-light);font-weight:500;flex-shrink:0;}
 .perfil-v{color:var(--text);font-weight:600;text-align:right;}
-.pilares{display:grid;grid-template-columns:1fr 1fr;gap:12px;}
-.pilar{background:var(--white);border:1.5px solid var(--gray-border);border-radius:13px;padding:16px 17px;}
+.pilares{display:grid;grid-template-columns:1fr 1fr;grid-auto-rows:1fr;gap:12px;align-content:stretch;}
+.pilar{background:var(--white);border:1.5px solid var(--gray-border);border-radius:13px;padding:16px 17px;display:flex;flex-direction:column;justify-content:center;}
 .pilar-ic{font-size:20px;margin-bottom:7px;display:block;}
 .pilar-t{font-family:'Josefin Sans',sans-serif;font-size:13px;font-weight:700;color:var(--red-deep);margin-bottom:5px;}
 .pilar-d{font-size:11.8px;color:var(--text-mid);line-height:1.6;}
@@ -238,6 +242,7 @@ body{font-family:'Fira Sans',sans-serif;background:var(--gray-bg);color:var(--te
 /* RESPONSIVE */
 @media(max-width:960px){
   .perfil-wrap,.precios-grid,.dos-cards{grid-template-columns:1fr;}
+  .pilares{grid-auto-rows:auto;}
   .datos-grid,.includes-grid,.tres-cards{grid-template-columns:1fr 1fr;}
   .gestor-grid,.pasos-proc{grid-template-columns:1fr 1fr;}
   .steps-list{grid-template-columns:repeat(2,1fr);}
@@ -385,7 +390,7 @@ body{font-family:'Fira Sans',sans-serif;background:var(--gray-bg);color:var(--te
         diferentes características, todas ellas con oportunidades de participación académica, deportiva y social.
       </p>
       <div class="dest-chips">
-        <span class="dest-chip">🇮🇪 Third Year · Junior Cycle</span>
+        <span class="dest-chip"><svg class="flag" viewBox="0 0 900 600" role="img" aria-label="Irlanda"><rect width="300" height="600" fill="#169b62"/><rect x="300" width="300" height="600" fill="#fff"/><rect x="600" width="300" height="600" fill="#ff883e"/></svg>Third Year · Junior Cycle</span>
         <span class="dest-chip">📅 Primer trimestre</span>
         <span class="dest-chip">🏠 Habitación individual</span>
         <span class="dest-chip">✈ Vuelos incluidos</span>
@@ -992,7 +997,7 @@ body{font-family:'Fira Sans',sans-serif;background:var(--gray-bg);color:var(--te
 
   <div class="tabla-wrap">
     <table class="tabla-diff">
-      <thead><tr><th>Característica</th><th>🇮🇪 Irlanda</th><th>🇨🇦 Canadá</th></tr></thead>
+      <thead><tr><th>Característica</th><th><svg class="flag" viewBox="0 0 900 600" role="img" aria-label="Irlanda"><rect width="300" height="600" fill="#169b62"/><rect x="300" width="300" height="600" fill="#fff"/><rect x="600" width="300" height="600" fill="#ff883e"/></svg>Irlanda</th><th><svg class="flag" viewBox="0 0 1024 512" role="img" aria-label="Canadá"><rect width="1024" height="512" fill="#fff"/><rect width="256" height="512" fill="#d52b1e"/><rect x="768" width="256" height="512" fill="#d52b1e"/><path d="M512,128l-22,41c-2.5,4.5-7,4-11.5,2l-16-8.5l12,63c2.5,11.5-5.5,11.5-9.5,6.5l-28-31l-4.5,16c-0.5,2-3,4-6.5,3.5l-35-7.5l9,33.5c2,7.5,3.5,10.5-2,12.5l-12.5,6l60,49c2.5,2,3.5,5.5,2.5,8.5l-5.5,17.5l57-7c3.5,0,6,2,6,5l-2.5,64.5h21l-2.5-64.5c0-3,2.5-5,6-5l57,7l-5.5-17.5c-1-3,0-6.5,2.5-8.5l60-49l-12.5-6c-5.5-2-4-5-2-12.5l9-33.5l-35,7.5c-3.5,0.5-6-1.5-6.5-3.5l-4.5-16l-28,31c-4,5-12,5-9.5-6.5l12-63l-16,8.5c-4.5,2-9,2.5-11.5-2z" fill="#d52b1e"/></svg>Canadá</th></tr></thead>
       <tbody>
         <tr><th>Curso</th><td>Third Year</td><td>Grade 9</td></tr>
         <tr><th>Duración</th><td>Primer trimestre escolar</td><td>3 o 4 meses</td></tr>
@@ -1050,7 +1055,7 @@ body{font-family:'Fira Sans',sans-serif;background:var(--gray-bg);color:var(--te
 
   <div class="dest ie" style="padding:0;">
   <div class="includes-wrap">
-    <div class="includes-head"><h3>🇮🇪 Irlanda · Programa Choice</h3></div>
+    <div class="includes-head"><h3><svg class="flag" viewBox="0 0 900 600" role="img" aria-label="Irlanda"><rect width="300" height="600" fill="#169b62"/><rect x="300" width="300" height="600" fill="#fff"/><rect x="600" width="300" height="600" fill="#ff883e"/></svg>Irlanda · Programa Choice</h3></div>
     <div class="includes-body">
       <div class="includes-grid">
         <div>
@@ -1131,7 +1136,7 @@ body{font-family:'Fira Sans',sans-serif;background:var(--gray-bg);color:var(--te
 
   <div class="dest ca" style="padding:0;">
   <div class="includes-wrap">
-    <div class="includes-head"><h3>🇨🇦 Canadá · Trimestre y cuatrimestre escolar</h3></div>
+    <div class="includes-head"><h3><svg class="flag" viewBox="0 0 1024 512" role="img" aria-label="Canadá"><rect width="1024" height="512" fill="#fff"/><rect width="256" height="512" fill="#d52b1e"/><rect x="768" width="256" height="512" fill="#d52b1e"/><path d="M512,128l-22,41c-2.5,4.5-7,4-11.5,2l-16-8.5l12,63c2.5,11.5-5.5,11.5-9.5,6.5l-28-31l-4.5,16c-0.5,2-3,4-6.5,3.5l-35-7.5l9,33.5c2,7.5,3.5,10.5-2,12.5l-12.5,6l60,49c2.5,2,3.5,5.5,2.5,8.5l-5.5,17.5l57-7c3.5,0,6,2,6,5l-2.5,64.5h21l-2.5-64.5c0-3,2.5-5,6-5l57,7l-5.5-17.5c-1-3,0-6.5,2.5-8.5l60-49l-12.5-6c-5.5-2-4-5-2-12.5l9-33.5l-35,7.5c-3.5,0.5-6-1.5-6.5-3.5l-4.5-16l-28,31c-4,5-12,5-9.5-6.5l12-63l-16,8.5c-4.5,2-9,2.5-11.5-2z" fill="#d52b1e"/></svg>Canadá · Trimestre y cuatrimestre escolar</h3></div>
     <div class="includes-body">
       <div class="includes-grid">
         <div>
@@ -1344,7 +1349,7 @@ body{font-family:'Fira Sans',sans-serif;background:var(--gray-bg);color:var(--te
   <div class="dos-cards" style="margin-top:18px;">
     <div class="eq-card">
       <div class="eq-head" style="background:linear-gradient(135deg,var(--ie-deep),var(--ie));">
-        <div class="eq-t">🇮🇪 Documentación · Irlanda</div>
+        <div class="eq-t"><svg class="flag" viewBox="0 0 900 600" role="img" aria-label="Irlanda"><rect width="300" height="600" fill="#169b62"/><rect x="300" width="300" height="600" fill="#fff"/><rect x="600" width="300" height="600" fill="#ff883e"/></svg>Documentación · Irlanda</div>
         <div class="eq-s">Al finalizar el trimestre</div>
       </div>
       <div class="eq-body">
@@ -1354,7 +1359,7 @@ body{font-family:'Fira Sans',sans-serif;background:var(--gray-bg);color:var(--te
     </div>
     <div class="eq-card">
       <div class="eq-head alt">
-        <div class="eq-t">🇨🇦 Documentación · Canadá</div>
+        <div class="eq-t"><svg class="flag" viewBox="0 0 1024 512" role="img" aria-label="Canadá"><rect width="1024" height="512" fill="#fff"/><rect width="256" height="512" fill="#d52b1e"/><rect x="768" width="256" height="512" fill="#d52b1e"/><path d="M512,128l-22,41c-2.5,4.5-7,4-11.5,2l-16-8.5l12,63c2.5,11.5-5.5,11.5-9.5,6.5l-28-31l-4.5,16c-0.5,2-3,4-6.5,3.5l-35-7.5l9,33.5c2,7.5,3.5,10.5-2,12.5l-12.5,6l60,49c2.5,2,3.5,5.5,2.5,8.5l-5.5,17.5l57-7c3.5,0,6,2,6,5l-2.5,64.5h21l-2.5-64.5c0-3,2.5-5,6-5l57,7l-5.5-17.5c-1-3,0-6.5,2.5-8.5l60-49l-12.5-6c-5.5-2-4-5-2-12.5l9-33.5l-35,7.5c-3.5,0.5-6-1.5-6.5-3.5l-4.5-16l-28,31c-4,5-12,5-9.5-6.5l12-63l-16,8.5c-4.5,2-9,2.5-11.5-2z" fill="#d52b1e"/></svg>Documentación · Canadá</div>
         <div class="eq-s">Al finalizar el trimestre o cuatrimestre</div>
       </div>
       <div class="eq-body">
