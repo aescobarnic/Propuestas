@@ -323,6 +323,9 @@ table.t tr:last-child td{border-bottom:0}
 .final-box p{color:rgba(255,255,255,.8);margin-top:10px}
 
 /* Compactación de espacios */
+.col-fill{display:flex;flex-direction:column}
+.col-fill .photo-hero.fill{flex:1;min-height:220px;margin-top:20px;aspect-ratio:auto}
+@media (max-width:1000px){.col-fill .photo-hero.fill{aspect-ratio:16/10;min-height:0}}
 section{padding:56px 0}
 .sec-head{margin-bottom:26px}
 .sec-head p{margin-top:10px;font-size:17px}
@@ -514,7 +517,7 @@ section{padding:56px 0}
       <p>Una inmersión que continúa después de las clases.</p>
     </div>
     <div class="two">
-      <div>
+      <div class="col-fill">
         <p>La convivencia con una familia anfitriona permite experimentar la cultura irlandesa desde otra perspectiva. Las conversaciones durante la cena, las rutinas diarias, la organización de los desplazamientos y la vida en el hogar ofrecen oportunidades naturales para practicar inglés.</p>
         <p style="margin-top:14px">Es la modalidad más interesante para un estudiante que ya ha vivido una experiencia en residencia y quiere avanzar hacia una mayor independencia lingüística.</p>
         <div class="panel" style="margin-top:22px">
@@ -529,9 +532,10 @@ section{padding:56px 0}
           </ul>
         </div>
         <div class="notice">Las familias anfitrionas pueden estar ubicadas en diferentes zonas residenciales de Dublín. Los desplazamientos habituales hasta el centro de estudios oscilan entre <strong>40 y 70 minutos</strong>, según la ubicación del alojamiento.</div>
+        <div class="photo-hero fill"><img src="img/mlq-grupo-verano-irlanda.jpg" alt="Estudiantes de My Language Quest con su monitora antes de salir hacia Irlanda" loading="lazy" style="object-position:center 28%"></div>
       </div>
       <div>
-        <div class="photo-hero" style="aspect-ratio:4/3"><img src="img/mlq-grupo-verano-irlanda.jpg" alt="Estudiantes de My Language Quest con su monitora antes de salir hacia Irlanda" loading="lazy" style="object-position:center 30%"></div>
+        <div class="photo-hero" style="aspect-ratio:4/3"><img src="img/mlq-vida-cotidiana.jpg" alt="Estudiante conviviendo con su familia anfitriona" loading="lazy"></div>
         <div class="panel" style="margin-top:22px">
           <h3>¿Por qué recomendamos familia en esta ocasión?</h3>
           <div class="cmp-wrap">
