@@ -313,13 +313,31 @@ table.t tr:last-child td{border-bottom:0}
 .final .sec-head h2{color:#fff}
 .final .sec-head p{color:rgba(255,255,255,.75)}
 .final .metric{background:rgba(255,255,255,.1)}
+.final .step h3{color:#fff}
+.final .step p{color:rgba(255,255,255,.75)}
+.final .btn-alt{background:transparent;color:#fff;border-color:#fff}
 .final .metric b{color:#fff}
 .final .metric span{color:rgba(255,255,255,.7)}
 .final-box{background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.2);border-radius:20px;padding:30px 32px;margin-top:32px}
 .final-box .big{font-family:var(--display);font-size:40px;font-weight:800;color:var(--sun);line-height:1.05}
 .final-box p{color:rgba(255,255,255,.8);margin-top:10px}
 
+/* Compactación de espacios */
+section{padding:56px 0}
+.sec-head{margin-bottom:26px}
+.sec-head p{margin-top:10px;font-size:17px}
+.hero{min-height:76vh}
+.hero-inner{padding:120px 0 44px}
+.strip{margin-top:28px;gap:10px}
+.notice{margin-top:18px;padding:15px 20px}
+.two{align-items:stretch}
+.two>.photo-hero{height:100%;aspect-ratio:auto;min-height:300px}
+.panel{padding:24px 26px}
+.metrics{margin-top:22px}
+.lead-points li{font-size:15.5px}
+
 @media (max-width:1000px){
+  .two>.photo-hero{min-height:220px}
   .cal{grid-template-columns:repeat(7,210px);overflow-x:auto;scroll-snap-type:x mandatory;padding-bottom:8px}
   .calday{scroll-snap-align:start}
   .durs,.three{grid-template-columns:1fr}
@@ -448,7 +466,6 @@ table.t tr:last-child td{border-bottom:0}
         <div class="notice">
           <strong>Protección de menores.</strong> El equipo de ISI cuenta con formación en protección de menores y su personal, cuando corresponde, está sometido a los procedimientos irlandeses de comprobación de antecedentes <em>Garda Vetting</em>. La ubicación definitiva de las clases depende de las fechas seleccionadas y de la organización del grupo.
         </div>
-        <p style="margin-top:16px;font-size:15px"><a href="https://www.summercamp.studyinireland.ie/es/" target="_blank" rel="noopener" style="color:var(--teal);font-weight:700">Página oficial del programa →</a></p>
       </div>
     </div>
   </div>
@@ -654,7 +671,7 @@ table.t tr:last-child td{border-bottom:0}
   <div class="wrap">
     <div class="sec-head">
       <h2>¿Cuántas semanas elegir?</h2>
-      <p>Tres duraciones posibles, con el mismo programa de clases, actividades y convivencia familiar.</p>
+      <p>Tres duraciones posibles, con el mismo programa de clases, actividades, excursiones y convivencia familiar.</p>
     </div>
     <div class="durs">
       <div class="durcard">
@@ -676,11 +693,10 @@ table.t tr:last-child td{border-bottom:0}
         </div>
       </div>
 
-      <div class="durcard rec">
-        <span class="tag">Recomendación My Language Quest</span>
+      <div class="durcard">
         <h3>3 semanas</h3>
         <div class="sub">El equilibrio perfecto</div>
-        <p>La duración más adecuada para un estudiante que ya ha hecho una estancia de dos semanas y quiere aprovechar mejor su experiencia internacional. Permite dedicar más tiempo a la adaptación, ganar confianza con la familia y multiplicar las oportunidades de comunicación en inglés.</p>
+        <p>Más tiempo para la adaptación, para ganar confianza con la familia anfitriona y para multiplicar las oportunidades de comunicación en inglés.</p>
         <ul>
           <li>21 días de experiencia internacional</li>
           <li>45 horas de inglés</li>
@@ -752,43 +768,34 @@ table.t tr:last-child td{border-bottom:0}
   <div class="wrap">
     <div class="sec-head">
       <h2>¿Qué incluye el precio?</h2>
-      <p>Dos bloques de servicios: los que presta la academia irlandesa y los que aporta My Language Quest.</p>
+      <p>My Language Quest presta el servicio completo de principio a fin, desde el asesoramiento inicial hasta el regreso a casa, con ISI Dublin como centro colaborador en Irlanda.</p>
     </div>
-    <div class="inc-grid" style="grid-template-columns:1fr 1fr">
-      <div class="inc-col">
-        <h3>Servicios de ISI Dublin</h3>
-        <ul class="inc-list" style="columns:1">
-          <li>Matrícula en el programa de verano</li>
-          <li>Prueba de nivel de inglés</li>
-          <li>15 horas semanales de clases</li>
-          <li>Material académico</li>
-          <li>Certificado de finalización</li>
-          <li>Alojamiento en familia anfitriona</li>
-          <li>Pensión completa durante toda la estancia</li>
-          <li>5 actividades recreativas, deportivas o sociales por semana</li>
-          <li>2 actividades nocturnas por semana</li>
-          <li>1 excursión de día completo cada sábado fuera de Dublín</li>
-          <li>Abono de transporte público</li>
-          <li>Traslados al aeropuerto en Irlanda, a la llegada y al regreso</li>
-          <li>Asistencia del equipo local durante el programa</li>
-        </ul>
-      </div>
-      <div class="inc-col">
-        <h3>Servicios de My Language Quest</h3>
-        <ul class="inc-list" style="columns:1">
-          <li>Asesoramiento personalizado</li>
-          <li>Gestión de la inscripción y reserva</li>
-          <li>Coordinación con la academia y el proveedor irlandés</li>
-          <li>Gestión y revisión de la documentación necesaria</li>
-          <li>Orientación y preparación previa al viaje</li>
-          <li>Seguro de viaje Intermundial</li>
-          <li>Seguimiento del estudiante durante la estancia</li>
-          <li>Comunicación y asistencia a las familias</li>
-          <li>Apoyo ante incidencias y emergencias</li>
-          <li>Gestión y coordinación de los vuelos, cuando se contraten</li>
-          <li>Monitor acompañante en las salidas de grupo organizadas por MLQ</li>
-        </ul>
-      </div>
+    <div class="inc-col">
+      <ul class="inc-list">
+        <li>Asesoramiento personalizado y elección del programa</li>
+        <li>Gestión de la inscripción y de la reserva de plaza</li>
+        <li>Matrícula en el programa de verano</li>
+        <li>Prueba de nivel de inglés y asignación de grupo</li>
+        <li>15 horas semanales de clases de inglés</li>
+        <li>Material académico</li>
+        <li>Certificado de finalización del programa</li>
+        <li>Alojamiento en familia anfitriona</li>
+        <li>Pensión completa durante toda la estancia</li>
+        <li>5 actividades recreativas, deportivas o sociales por semana</li>
+        <li>2 actividades nocturnas por semana</li>
+        <li>1 excursión de día completo cada sábado fuera de Dublín</li>
+        <li>Abono de transporte público</li>
+        <li>Traslados al aeropuerto en Irlanda, a la llegada y al regreso</li>
+        <li>Gestión y revisión de la documentación necesaria</li>
+        <li>Orientación y preparación previa al viaje</li>
+        <li>Seguro de viaje Intermundial</li>
+        <li>Equipo de asistencia en Irlanda durante todo el programa</li>
+        <li>Seguimiento del estudiante durante la estancia</li>
+        <li>Comunicación y asistencia a las familias</li>
+        <li>Apoyo ante incidencias y emergencias</li>
+        <li>Gestión y coordinación de los vuelos, cuando se contraten</li>
+        <li>Monitor acompañante en las salidas de grupo organizadas por MLQ</li>
+      </ul>
     </div>
   </div>
 </section>
@@ -805,7 +812,7 @@ table.t tr:last-child td{border-bottom:0}
         <span class="lab">Opción A</span>
         <h3>Programa con vuelos organizados en grupo</h3>
         <span class="price-pill">Suplemento de vuelos: 700 €</span>
-        <p>My Language Quest organiza salidas de grupo desde Madrid o Barcelona. El estudiante viaja acompañado de otros participantes y del monitor asignado al grupo.</p>
+        <p>My Language Quest organiza salidas de grupo desde Madrid o Barcelona. El estudiante viaja acompañado de otros participantes y del monitor asignado al grupo. Las salidas de grupo se forman a partir de <strong>15 estudiantes</strong>.</p>
         <ul class="chk" style="margin-top:14px">
           <li>Gestión de los vuelos de ida y vuelta</li>
           <li>Coordinación del grupo</li>
@@ -841,7 +848,13 @@ table.t tr:last-child td{border-bottom:0}
       </div>
     </div>
 
-    <div class="notice"><strong>Nuestra recomendación para esta familia.</strong> Teniendo en cuenta la edad del estudiante y vuestra preferencia de que no viaje solo, recomendamos la incorporación a una salida organizada desde Madrid: empezará la experiencia acompañado de otros participantes y con la asistencia del monitor durante el viaje organizado.</div>
+    <div class="strip" style="grid-template-columns:repeat(4,1fr)">
+      <figure><img src="img/mlq-grupo-aeropuerto.jpg" alt="Grupo de estudiantes de MLQ en el aeropuerto antes de la salida" loading="lazy"></figure>
+      <figure><img src="img/mlq-checkin.jpg" alt="Facturación del grupo de MLQ con el monitor acompañante" loading="lazy"></figure>
+      <figure><img src="img/mlq-equipaje-salida.jpg" alt="Estudiantes de MLQ con su equipaje el día de la salida" loading="lazy"></figure>
+      <figure><img src="img/mlq-salida-pista.jpg" alt="Salida del grupo de MLQ hacia el avión" loading="lazy"></figure>
+    </div>
+    <div class="notice">En las salidas de grupo el estudiante viaja acompañado desde el aeropuerto de salida: asistencia en facturación, monitor durante el desplazamiento y coordinación de la recogida en Dublín.</div>
   </div>
 </section>
 
@@ -863,7 +876,7 @@ table.t tr:last-child td{border-bottom:0}
         </tbody>
       </table>
     </div>
-    <div class="notice">Estas fechas corresponden al calendario oficial del campamento. Las salidas organizadas de My Language Quest pueden tener un calendario diferente y se confirman según la disponibilidad del proveedor y la organización de los vuelos.</div>
+    <div class="notice">Estas son las <strong>fechas disponibles</strong> del campamento. Las salidas de grupo de My Language Quest se organizan sobre estas fechas cuando se forma un grupo de <strong>mínimo 15 estudiantes</strong>, y se confirman con antelación junto con los vuelos.</div>
   </div>
 </section>
 
@@ -907,36 +920,15 @@ table.t tr:last-child td{border-bottom:0}
         </ul>
         <p style="margin-top:18px">Después, My Language Quest os orientará en la elección de un programa escolar en Irlanda, Estados Unidos o Canadá.</p>
       </div>
-      <div class="photo-hero" style="aspect-ratio:4/3"><img src="img/mlq-diplomas.jpg" alt="Estudiantes de MLQ con su diploma al finalizar el programa" loading="lazy"></div>
-    </div>
-  </div>
-</section>
-
-<!-- 15. RECOMENDACIÓN -->
-<section class="final">
-  <div class="wrap">
-    <div class="sec-head">
-      <h2>Nuestra recomendación personalizada</h2>
-      <p>Tres semanas en familia anfitriona.</p>
-    </div>
-    <p style="max-width:72ch;color:rgba(255,255,255,.85)">Teniendo en cuenta que ya ha realizado una primera estancia de dos semanas en residencia y que ahora buscamos una experiencia con mayor inmersión lingüística, recomendamos ampliar la duración a tres semanas y optar por el alojamiento en familia. Esta modalidad combina 45 horas de inglés con actividades deportivas, culturales y sociales, además de la práctica cotidiana del idioma en el hogar.</p>
-    <div class="metrics">
-      <div class="metric"><b>45 h</b><span>de inglés</span></div>
-      <div class="metric"><b>15</b><span>actividades de tarde</span></div>
-      <div class="metric"><b>6</b><span>actividades nocturnas</span></div>
-      <div class="metric"><b>3</b><span>excursiones de día completo</span></div>
-    </div>
-    <div class="final-box">
-      <span class="big">2.760 € sin vuelos · 3.460 € con vuelos</span>
-      <p>21 días de experiencia internacional · Reserva inicial: 150 €</p>
+      <div class="photo-hero"><img src="img/mlq-vida-social.jpg" alt="Estudiantes de MLQ compartiendo actividades durante el programa de verano" loading="lazy"></div>
     </div>
   </div>
 </section>
 
 <!-- 16. PRÓXIMOS PASOS -->
-<section class="white">
+<section class="final">
   <div class="wrap">
-    <div class="sec-head"><h2>Próximos pasos</h2></div>
+    <div class="sec-head"><h2>Próximos pasos</h2><p>Estamos a vuestra disposición para resolver cualquier duda y reservar la plaza.</p></div>
     <div class="steps" style="grid-template-columns:repeat(5,1fr)">
       <div class="step"><h3>Duración</h3><p>Seleccionar la duración de la estancia.</p></div>
       <div class="step"><h3>Fechas</h3><p>Elegir entre las fechas disponibles.</p></div>
