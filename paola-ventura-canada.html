@@ -189,55 +189,6 @@ details[open] summary::before{transform:rotate(90deg);}
 .pay-step-desc{font-size:11px;color:rgba(255,255,255,0.45);line-height:1.5;}
 .pay-note{font-size:11px;color:rgba(255,255,255,0.32);line-height:1.65;font-style:italic;border-top:1px solid rgba(255,255,255,0.1);padding-top:14px;margin-top:4px;}
 
-/* FINANCIACIÓN */
-.financing-wrap{background:var(--white);border-radius:16px;border:1.5px solid var(--gray-border);box-shadow:0 2px 16px rgba(0,51,102,0.06);overflow:hidden;}
-.financing-head{background:linear-gradient(135deg,var(--blue-dark),var(--blue));padding:22px 32px;display:flex;align-items:center;justify-content:space-between;gap:16px;}
-.financing-head-left{display:flex;align-items:center;gap:16px;}
-.fin-icon{font-size:28px;flex-shrink:0;}
-.fin-title{font-family:'Josefin Sans',sans-serif;font-size:16px;font-weight:700;color:var(--white);margin-bottom:3px;}
-.fin-sub{font-size:11px;color:rgba(255,255,255,0.5);line-height:1.4;}
-.fin-badge{background:rgba(125,212,74,0.2);border:1px solid rgba(125,212,74,0.4);color:#7dd44a;font-family:'Josefin Sans',sans-serif;font-size:11px;font-weight:700;letter-spacing:1px;padding:6px 14px;border-radius:20px;white-space:nowrap;}
-.financing-body{padding:28px 32px;}
-.fin-opcion-label,.fin-plazo-label{font-family:'Josefin Sans',sans-serif;font-size:9px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--text-light);margin-bottom:10px;}
-.fin-opcion-selector{margin-bottom:24px;}
-.fin-opcion-btns{display:flex;gap:10px;flex-wrap:wrap;}
-.fin-opcion-btn{background:var(--gray-card);border:1.5px solid var(--gray-border);border-radius:10px;padding:10px 16px;cursor:pointer;text-align:left;transition:all .2s;display:flex;flex-direction:column;gap:3px;font-family:'Fira Sans',sans-serif;}
-.fin-opcion-btn:hover{border-color:var(--blue-mid);background:var(--blue-light);}
-.fin-opcion-btn.active{border-color:var(--blue);background:var(--blue-light);}
-.fin-opcion-nombre{font-size:10px;font-weight:700;letter-spacing:1px;text-transform:uppercase;color:var(--text-light);}
-.fin-opcion-btn.active .fin-opcion-nombre{color:var(--blue);}
-.fin-opcion-precio{font-family:'Josefin Sans',sans-serif;font-size:16px;font-weight:700;color:var(--text);}
-.fin-opcion-btn.active .fin-opcion-precio{color:var(--blue);}
-.fin-entrada-fija{display:flex;align-items:center;gap:14px;background:var(--green-light);border:1.5px solid rgba(76,158,12,0.3);border-radius:12px;padding:14px 18px;margin-bottom:24px;}
-.fin-entrada-fija-num{font-family:'Josefin Sans',sans-serif;font-size:24px;font-weight:700;color:var(--green-dark);line-height:1;white-space:nowrap;}
-.fin-entrada-fija-txt{font-size:12px;color:var(--text-mid);line-height:1.55;}
-.fin-entrada-fija-txt strong{color:var(--text);font-weight:600;}
-.fin-plazo-wrap{margin-bottom:24px;}
-.fin-plazos{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;}
-.fin-plazo{background:var(--gray-card);border:1.5px solid var(--gray-border);border-radius:12px;padding:14px 12px;cursor:pointer;text-align:center;transition:all .2s;font-family:'Fira Sans',sans-serif;}
-.fin-plazo:hover{border-color:var(--blue-mid);transform:translateY(-2px);}
-.fin-plazo.active{border-color:var(--green);background:var(--green-light);box-shadow:0 4px 16px rgba(76,158,12,0.15);}
-.fin-plazo-meses{font-family:'Josefin Sans',sans-serif;font-size:15px;font-weight:700;color:var(--text);margin-bottom:6px;}
-.fin-plazo.active .fin-plazo-meses{color:var(--green-dark);}
-.fin-plazo-badge{display:inline-block;border-radius:20px;padding:2px 8px;font-size:9px;font-weight:700;letter-spacing:0.5px;margin-bottom:4px;}
-.fin-plazo-badge.sin-intereses{background:var(--green-light);color:var(--green-dark);border:1px solid rgba(76,158,12,0.3);}
-.fin-plazo-badge.con-intereses{background:var(--blue-light);color:var(--blue);border:1px solid rgba(0,51,102,0.2);}
-.fin-plazo-quien{font-size:9px;color:var(--text-light);line-height:1.3;}
-.fin-resultado{display:grid;grid-template-columns:auto 1fr;gap:24px;background:linear-gradient(135deg,var(--blue-dark),var(--blue));border-radius:14px;padding:24px 28px;margin-bottom:16px;align-items:center;}
-.fin-resultado-main{text-align:center;border-right:1px solid rgba(255,255,255,0.15);padding-right:24px;}
-.fin-cuota-label{font-size:10px;font-weight:600;letter-spacing:2px;text-transform:uppercase;color:rgba(255,255,255,0.5);margin-bottom:6px;}
-.fin-cuota-valor{font-family:'Josefin Sans',sans-serif;font-size:36px;font-weight:700;color:#7dd44a;line-height:1;margin-bottom:4px;}
-.fin-cuota-sub{font-size:11px;color:rgba(255,255,255,0.45);}
-.fin-resultado-detalle{display:flex;flex-direction:column;gap:10px;}
-.fin-det-row{display:flex;justify-content:space-between;align-items:center;gap:12px;}
-.fin-det-label{font-size:12px;color:rgba(255,255,255,0.55);}
-.fin-det-val{font-size:13px;font-weight:600;color:var(--white);}
-.fin-det-green{color:#7dd44a !important;}
-.fin-det-total{border-top:1px solid rgba(255,255,255,0.15);padding-top:10px;margin-top:2px;}
-.fin-det-total .fin-det-label{color:rgba(255,255,255,0.7);font-weight:600;}
-.fin-det-total .fin-det-val{font-family:'Josefin Sans',sans-serif;font-size:16px;color:var(--white);}
-.fin-nota{font-size:11px;color:var(--text-light);line-height:1.6;background:var(--gray-card);border-radius:8px;padding:12px 16px;border-left:3px solid var(--blue-light);}
-
 /* SIGUIENTES PASOS */
 .steps-wrap{background:linear-gradient(135deg,var(--blue-dark) 0%,var(--blue) 60%,var(--blue-mid) 100%);border-radius:16px;padding:34px 36px;position:relative;overflow:hidden;}
 .steps-wrap::before{content:'';position:absolute;inset:0;background-image:radial-gradient(rgba(255,255,255,0.05) 1px,transparent 1px);background-size:22px 22px;}
@@ -277,11 +228,6 @@ details[open] summary::before{transform:rotate(90deg);}
   .pay-cols{grid-template-columns:1fr;}.gestor-grid{grid-template-columns:repeat(2,1fr);}
   .steps-list{grid-template-columns:1fr;}
   .qs-panel{padding:28px 22px;}.qs-title{font-size:22px;}
-  .fin-plazos{grid-template-columns:repeat(2,1fr);}
-  .fin-resultado{grid-template-columns:1fr;}
-  .fin-resultado-main{border-right:none;border-bottom:1px solid rgba(255,255,255,0.15);padding-right:0;padding-bottom:20px;}
-  .financing-head{flex-direction:column;align-items:flex-start;}
-  .fin-opcion-btns{flex-direction:column;}
   .footer{padding:26px 20px;}
 }
 
@@ -330,11 +276,7 @@ details[open] summary::before{transform:rotate(90deg);}
 .pasos-cta:hover::after{animation:shine .85s ease;}
 @keyframes shine{to{left:140%;}}
 
-/* Botones del simulador */
-.fin-plazo,.fin-opcion-btn{transition:transform .25s cubic-bezier(.22,.61,.36,1),border-color .25s ease,background .25s ease,box-shadow .25s ease;}
-.fin-cuota-valor{transition:color .3s ease;}
-@keyframes cuotaPop{0%{opacity:.35;transform:translateY(6px);}100%{opacity:1;transform:none;}}
-.fin-cuota-valor.pop{animation:cuotaPop .42s cubic-bezier(.22,.61,.36,1);}
+
 
 /* Pasos numerados */
 .step-item{transition:transform .3s cubic-bezier(.22,.61,.36,1),background .3s ease;}
@@ -823,7 +765,6 @@ details[open] summary::before{transform:rotate(90deg);}
     ['.info-block','reveal'],
     ['.includes-wrap','reveal-zoom'],
     ['.payment-wrap','reveal-zoom'],
-    ['.financing-wrap','reveal-zoom'],
     ['.steps-wrap','reveal-zoom']
   ];
   groups.forEach(function(g){
@@ -840,13 +781,6 @@ details[open] summary::before{transform:rotate(90deg);}
   },{threshold:0.12,rootMargin:'0px 0px -8% 0px'});
   Array.prototype.forEach.call(d.querySelectorAll('.reveal,.reveal-zoom'),function(el){io.observe(el);});
 
-  /* Rebote de la cuota al recalcular */
-  var cuota=d.getElementById('cuotaValor');
-  if(cuota&&'MutationObserver' in window){
-    new MutationObserver(function(){
-      cuota.classList.remove('pop'); void cuota.offsetWidth; cuota.classList.add('pop');
-    }).observe(cuota,{childList:true,characterData:true,subtree:true});
-  }
 })();
 </script>
 <!-- MLQ tracking -->
