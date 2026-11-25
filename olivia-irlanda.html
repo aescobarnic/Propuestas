@@ -431,14 +431,11 @@ details[open] summary::before{transform:rotate(90deg);}
 }
 
 /* Fotos en fichas de colegio */
-.colegio-fotos{display:grid;grid-template-columns:1.6fr 1fr;gap:4px;background:var(--white);}
-.colegio-fotos.una{grid-template-columns:1fr;}
-.colegio-foto{position:relative;margin:0;aspect-ratio:4/3;overflow:hidden;background:var(--ie-light);}
-.colegio-fotos .colegio-foto:first-child{aspect-ratio:auto;min-height:180px;}
-.colegio-fotos.una .colegio-foto{aspect-ratio:16/9;}
+.colegio-foto{position:relative;margin:0;height:200px;overflow:hidden;background:var(--ie-deep);}
 .colegio-foto img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .7s cubic-bezier(.22,.61,.36,1);}
-.opcion-card:hover .colegio-foto img{transform:scale(1.05);}
-.colegio-foto figcaption{position:absolute;left:8px;bottom:8px;background:rgba(0,31,64,0.72);color:#fff;font-size:9.5px;font-weight:600;letter-spacing:.3px;padding:3px 9px;border-radius:12px;backdrop-filter:blur(3px);}
+.colegio-foto::after{content:'';position:absolute;inset:0;background:linear-gradient(to top,rgba(0,31,64,0.55) 0%,transparent 45%);pointer-events:none;}
+.opcion-card:hover .colegio-foto img{transform:scale(1.04);}
+.colegio-foto figcaption{position:absolute;left:14px;bottom:12px;z-index:2;color:#fff;font-family:'Josefin Sans',sans-serif;font-size:11px;font-weight:700;letter-spacing:1px;text-transform:uppercase;}
 /* Precio con promo */
 .mod-precio-tachado{font-size:13px;color:var(--text-light);text-decoration:line-through;margin-left:8px;font-weight:600;}
 .mod-card.destacado .mod-precio-tachado{color:rgba(255,255,255,0.5);}
@@ -560,10 +557,7 @@ details[open] summary::before{transform:rotate(90deg);}
         <div class="opcion-loc">📍 Kilkenny · En el centro de la ciudad · Tren directo a Dublín</div>
         <div class="colegio-chips"><span class="chip">Mixto</span><span class="chip">Público</span><span class="chip">216 alumnos</span><span class="chip gold">☘ Arte · Diseño · Voleibol</span></div>
       </div>
-      <div class="colegio-fotos">
-        <figure class="colegio-foto"><img src="https://commons.wikimedia.org/wiki/Special:FilePath/KilkennyCastle.jpg?width=900" alt="Castillo de Kilkenny" loading="lazy" referrerpolicy="no-referrer" onerror="this.parentNode.style.display='none'"><figcaption>Castillo de Kilkenny</figcaption></figure>
-        <figure class="colegio-foto"><img src="https://commons.wikimedia.org/wiki/Special:FilePath/Old_Stables,_Kilkenny_Castle,_Cill_Chainnigh,_%C3%89ire_(46594981591).jpg?width=600" alt="Antiguas caballerizas del castillo, hoy talleres de diseño" loading="lazy" referrerpolicy="no-referrer" onerror="this.parentNode.style.display='none'"><figcaption>Patio de diseño y artesanía</figcaption></figure>
-      </div>
+      <figure class="colegio-foto"><img src="https://commons.wikimedia.org/wiki/Special:FilePath/KilkennyCastle.jpg?width=1000" alt="Castillo de Kilkenny" style="object-position:center 40%;" loading="lazy" referrerpolicy="no-referrer" onerror="this.parentNode.style.display='none'"><figcaption>Kilkenny · Castillo y jardines</figcaption></figure>
       <div class="opcion-body">
         <div class="colegio-desc">Kilkenny es una ciudad medieval de unos 27.000 habitantes y el gran referente del diseño y la artesanía en Irlanda: aquí nacieron los Kilkenny Design Workshops y hoy conviven galerías, talleres y festivales todo el año. El colegio está en pleno centro, es pequeño y cercano, y tiene experiencia acogiendo a estudiantes internacionales.</div>
         <div class="colegio-section-title">Extracurriculares destacados</div>
@@ -588,10 +582,7 @@ details[open] summary::before{transform:rotate(90deg);}
         <div class="opcion-loc">📍 Carlow · A 5 km del centro · Tren directo a Dublín</div>
         <div class="colegio-chips"><span class="chip">Mixto</span><span class="chip">Público</span><span class="chip">1.000 alumnos</span><span class="chip gold">☘ STEAM · Arte · Música</span></div>
       </div>
-      <div class="colegio-fotos">
-        <figure class="colegio-foto"><img src="https://commons.wikimedia.org/wiki/Special:FilePath/River_Barrow_with_swans_at_Carlow,_2021-07-03,_01.jpg?width=900" alt="Río Barrow a su paso por Carlow" loading="lazy" referrerpolicy="no-referrer" onerror="this.parentNode.style.display='none'"><figcaption>Río Barrow, Carlow</figcaption></figure>
-        <figure class="colegio-foto"><img src="https://commons.wikimedia.org/wiki/Special:FilePath/College_Street,_Carlow_-_geograph.org.uk_-_4195286.jpg?width=600" alt="Calle del centro de Carlow" loading="lazy" referrerpolicy="no-referrer" onerror="this.parentNode.style.display='none'"><figcaption>Centro de Carlow</figcaption></figure>
-      </div>
+      <figure class="colegio-foto"><img src="https://commons.wikimedia.org/wiki/Special:FilePath/Carlow_Town_Hall_2009_09_03.jpg?width=1000" alt="Centro de Carlow" style="object-position:center 45%;" loading="lazy" referrerpolicy="no-referrer" onerror="this.parentNode.style.display='none'"><figcaption>Carlow · Centro de la ciudad</figcaption></figure>
       <div class="opcion-body">
         <div class="colegio-desc">Carlow es la capital de su condado y una ciudad universitaria, con campus tecnológico propio y muy buena conexión en tren con Dublín y Kilkenny. Tyndall College es un colegio grande y mixto, con una oferta extracurricular muy amplia y un Transition Year conectado con la universidad: sus alumnos de TY participan en programas de innovación y diseño en el campus de SETU Carlow y en el STEM Passport de Maynooth University.</div>
         <div class="colegio-section-title">Extracurriculares destacados</div>
@@ -616,10 +607,7 @@ details[open] summary::before{transform:rotate(90deg);}
         <div class="opcion-loc">📍 Monaghan · Capital del condado</div>
         <div class="colegio-chips"><span class="chip">Mixto</span><span class="chip">Público</span><span class="chip">900 alumnos</span><span class="chip gold">☘ Ciencia · Cine · Teatro</span></div>
       </div>
-      <div class="colegio-fotos">
-        <figure class="colegio-foto"><img src="https://aescobarnic.github.io/Propuestas/img/beech-hill-college.jpg" alt="Beech Hill College" loading="lazy" referrerpolicy="no-referrer" onerror="this.parentNode.style.display='none'"><figcaption>Beech Hill College</figcaption></figure>
-        <figure class="colegio-foto"><img src="https://commons.wikimedia.org/wiki/Special:FilePath/Church_Square,_Monaghan.jpg?width=600" alt="Church Square, en el centro de Monaghan" loading="lazy" referrerpolicy="no-referrer" onerror="this.parentNode.style.display='none'"><figcaption>Church Square, Monaghan</figcaption></figure>
-      </div>
+      <figure class="colegio-foto"><img src="https://aescobarnic.github.io/Propuestas/img/beech-hill-college.jpg" alt="Beech Hill College, Monaghan" style="object-position:center 55%;" loading="lazy" referrerpolicy="no-referrer" onerror="this.parentNode.style.display='none'"><figcaption>Beech Hill College</figcaption></figure>
       <div class="opcion-body">
         <div class="colegio-desc">Monaghan, con unos 8.000 habitantes, es una ciudad compacta organizada alrededor de cuatro plazas comerciales, cómoda para moverse a pie. Beech Hill destaca por su nivel en Transition Year: dos de sus alumnos de TY completaron con la máxima calificación el programa de acceso temprano de Dublin City University, en Empresa y Biología.</div>
         <div class="colegio-section-title">Extracurriculares destacados</div>
