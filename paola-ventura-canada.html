@@ -315,6 +315,10 @@ details[open] summary::before{transform:rotate(90deg);}
 .colegio-web-wrap{padding:0 16px 14px;}
 .colegio-web{display:inline-flex;align-items:center;gap:7px;padding:8px 15px;border-radius:999px;font-size:12px;font-weight:700;letter-spacing:.2px;text-decoration:none;color:var(--blue);background:var(--white);border:1.5px solid var(--blue);transition:background .2s,color .2s,transform .2s;}
 .colegio-web:hover{background:var(--blue);color:#fff;transform:translateY(-1px);}
+
+/* Cuatro opciones en rejilla 2x2 */
+.opciones-grid{grid-template-columns:repeat(2,minmax(0,1fr));}
+@media(max-width:820px){.opciones-grid{grid-template-columns:1fr;}}
 </style>
 </head>
 <body>
@@ -445,7 +449,7 @@ details[open] summary::before{transform:rotate(90deg);}
   <div class="section-title"><h2>Opciones recomendadas</h2></div>
   <div class="alert-box">
     <div class="alert-icon">🎸</div>
-    <div class="alert-text"><strong>Cómo hemos elegido:</strong> buscamos en todo Canadá los distritos públicos donde Paola pueda seguir tocando el bajo, la guitarra y cantar a buen nivel dentro del horario escolar, con jazz y conjuntos que preparan para un perfil como el que pide Berklee. Las dos opciones cumplen; la primera es además la de mejor precio.</div>
+    <div class="alert-text"><strong>Cómo hemos elegido:</strong> buscamos en todo Canadá los distritos públicos donde Paola pueda seguir tocando el bajo, la guitarra y cantar a buen nivel dentro del horario escolar, con jazz y conjuntos que preparan para un perfil como el que pide Berklee. Las cuatro opciones cumplen; River East es además la de mejor precio.</div>
   </div>
   <div class="opciones-grid">
 
@@ -498,29 +502,72 @@ details[open] summary::before{transform:rotate(90deg);}
       <div class="match-bar"><span class="match-tag">Colegio de artes de referencia</span><span class="match-tag">Jazz y coro por audición</span><span class="match-tag">Estudio de audio</span><span class="match-tag">IB sin coste extra</span></div>
     </div>
 
+
+    <div class="opcion-card">
+      <div class="opcion-foto"><img src="https://en.wikipedia.org/wiki/Special:FilePath/Dusk_on_the_Inner_Harbour_(FP_explored).jpg?width=1200" style="object-position:center 50%;" alt="El puerto interior de Victoria al atardecer, a unos 20 minutos de Saanich" loading="lazy" onerror="if(!this.dataset.f){this.dataset.f=1;this.src='https://en.wikipedia.org/wiki/Special:FilePath/A_pier,_Victoria,_British_Columbia,_Canada_06.jpg?width=1200';}else{this.parentNode.style.display='none';}"></div>
+      <div class="opcion-header">
+        <div class="opcion-num">Opción 03</div>
+        <div class="opcion-distrito">Saanich School District</div>
+        <div class="opcion-loc">📍 Saanich · Isla de Vancouver · Columbia Británica</div>
+        <div class="precio-chip"><span class="val">26.150 €</span><span class="desc">/ año · vuelos no incl.</span></div>
+        <div class="precio-usd">≈ 29.300 USD</div>
+      </div>
+      <div class="opcion-body"><div class="colegios">
+        <div class="colegio">
+          <div class="colegio-top"><div class="colegio-nombre">Claremont Secondary School</div><div class="colegio-meta"><span class="tag pub">Público</span><span class="tag info">Grade 9 a 12</span><span class="tag info">~1.000 alumnos</span><span class="tag info">Junto a Elk Lake</span></div></div>
+          <details open><summary>Por qué es ideal para Paola</summary><div class="colegio-razon">Uno de los programas de música más completos de la isla: bandas de concierto, jazz band, guitarra, producción musical, orquesta para los musicales, coro, vocal jazz y formación de Broadway. Su jazz band toca funk, latin, rock y blues, con la guitarra y el bajo en la sección rítmica, justo donde encaja Paola. En 2025 el programa logró el nivel de excelencia en todas sus categorías en el festival Con Brio de Whistler, con oro para la jazz band. Los alumnos actúan en el Ridge Playhouse, el teatro del propio colegio, abierto al público.</div></details>
+          <div class="colegio-web-wrap"><a class="colegio-web" href="https://claremont.saanichschools.ca/" target="_blank" rel="noopener">🌐 Visitar la web del colegio</a></div>
+        </div>
+      </div></div>
+      <div class="match-bar"><span class="match-tag">Jazz band con oro en Whistler</span><span class="match-tag">Producción musical</span><span class="match-tag">Vocal jazz y Broadway</span><span class="match-tag">Teatro propio</span></div>
+    </div>
+
+    <div class="opcion-card">
+      <div class="opcion-foto"><img src="https://en.wikipedia.org/wiki/Special:FilePath/British_Columbia_Parliament_Buildings_in_Victoria,_British_Columbia,_Canada_03.jpg?width=1200" style="object-position:center 50%;" alt="El Parlamento de Columbia Británica y sus jardines, en el centro de Victoria" loading="lazy" onerror="if(!this.dataset.f){this.dataset.f=1;this.src='https://en.wikipedia.org/wiki/Special:FilePath/British_Columbia_Parliament_Buildings_in_Victoria,_British_Columbia,_Canada_05.jpg?width=1200';}else{this.parentNode.style.display='none';}"></div>
+      <div class="opcion-header">
+        <div class="opcion-num">Opción 04</div>
+        <div class="opcion-distrito">Greater Victoria School District</div>
+        <div class="opcion-loc">📍 Victoria · Isla de Vancouver · Columbia Británica</div>
+        <div class="precio-chip"><span class="val">26.750 €</span><span class="desc">/ año · vuelos no incl.</span></div>
+        <div class="precio-usd">≈ 29.900 USD</div>
+      </div>
+      <div class="opcion-body"><div class="colegios">
+        <div class="colegio">
+          <div class="colegio-top"><div class="colegio-nombre">Victoria High School</div><div class="colegio-meta"><span class="tag pub">Público</span><span class="tag info">Grade 9 a 12</span><span class="tag info">Fundado en 1876</span><span class="tag info">Centro de Victoria</span></div></div>
+          <details open><summary>Por qué es ideal para Paola</summary><div class="colegio-razon">El instituto público más antiguo al oeste de Winnipeg y al norte de San Francisco, que celebra sus 150 años. Su oferta de música incluye coro de concierto, vocal jazz, jazz band, orquesta, guitarra y una asignatura de Contemporary Music con banda de R&amp;B, perfecta para el bajo eléctrico y la guitarra. La banda de R&amp;B sale a tocar a la ciudad, desde conciertos solidarios en el teatro del colegio hasta el desfile del Victoria Day.</div></details>
+          <div class="colegio-web-wrap"><a class="colegio-web" href="https://vichigh.sd61.bc.ca/" target="_blank" rel="noopener">🌐 Visitar la web del colegio</a></div>
+        </div>
+        <div class="colegio">
+          <div class="colegio-top"><div class="colegio-nombre">Esquimalt High School</div><div class="colegio-meta"><span class="tag pub">Público</span><span class="tag info">Grade 9 a 12</span><span class="tag info">Esquimalt</span></div></div>
+          <details><summary>Por qué es ideal para Paola</summary><div class="colegio-razon">Un programa de música muy amplio para un instituto de tamaño medio: bandas de concierto, jazz band junior y senior, orquesta de cuerda, coro, conjunto vocal, banda de rhythm and blues, guitarra y teatro musical. Su jazz band ha recibido premios en festivales y varias invitaciones seguidas a los nacionales. Cada primavera monta un gran musical, como Hadestown en 2026, ideal para que Paola cante sobre un escenario.</div></details>
+          <div class="colegio-web-wrap"><a class="colegio-web" href="https://esquimalt.sd61.bc.ca/" target="_blank" rel="noopener">🌐 Visitar la web del colegio</a></div>
+        </div>
+      </div></div>
+      <div class="match-bar"><span class="match-tag">Banda de R&amp;B</span><span class="match-tag">Jazz y vocal jazz</span><span class="match-tag">Teatro musical</span><span class="match-tag">Instituto histórico</span></div>
+    </div>
   </div>
-  <p class="opciones-nota">El colegio definitivo lo asigna cada distrito según las plazas disponibles y la zona de la familia anfitriona. Pediremos expresamente estos centros por el perfil musical de Paola y te acompañaremos en las audiciones que haga falta. Precios en euros por año escolar completo, sin vuelos; la equivalencia en dólares es orientativa, al cambio de referencia de noviembre de 2026 (1 € ≈ 1,12 USD). En Edmonton la familia anfitriona pide además un depósito de 500 CAD que se devuelve al final del curso.</p>
+  <p class="opciones-nota">El colegio definitivo lo asigna cada distrito según las plazas disponibles y la zona de la familia anfitriona. Pediremos expresamente estos centros por el perfil musical de Paola y te acompañaremos en las audiciones que haga falta. Precios en euros por año escolar completo, sin vuelos; la equivalencia en dólares es orientativa, al cambio de referencia de noviembre de 2026 (1 € ≈ 1,12 USD). En Edmonton la familia anfitriona pide además un depósito de 500 CAD que se devuelve al final del curso. En Saanich y Greater Victoria, la legalización de notas para la revalidación se abona aparte (300 y 250 CAD).</p>
 
   <div class="compare-wrap">
-    <div class="compare-title">Las dos opciones, cara a cara</div>
+    <div class="compare-title">Las cuatro opciones, cara a cara</div>
     <div class="compare-scroll">
       <table class="compare">
-        <thead><tr><th></th><th>River East Transcona ★</th><th>Edmonton Public Schools</th></tr></thead>
+        <thead><tr><th></th><th>River East Transcona ★</th><th>Edmonton Public Schools</th><th>Saanich</th><th>Greater Victoria</th></tr></thead>
         <tbody>
-          <tr><td>Ciudad</td><td>Winnipeg, unos 750.000 habitantes</td><td>Edmonton, capital de Alberta, más de un millón</td></tr>
-          <tr><td>Lo más fuerte</td><td>Big band de jazz con trayectoria en Nueva York</td><td>Colegio de artes completo, con IB</td></tr>
-          <tr><td>Para el bajo y la guitarra</td><td>Jazz Band, Jazz Orchestra, clases de guitarra</td><td>Instrumental Jazz, guitarra, Contemporary Music</td></tr>
-          <tr><td>Para la voz</td><td>Vocal jazz y musicales</td><td>Vocal jazz y coro de concierto</td></tr>
-          <tr><td>Extra</td><td>Estudio de producción musical</td><td>Estudio de audio y teatro propio</td></tr>
-          <tr><td>Precio</td><td><strong>22.000 €</strong> · ≈ 24.600 USD</td><td><strong>24.350 €</strong> · ≈ 27.200 USD</td></tr>
+          <tr><td>Ciudad</td><td>Winnipeg, unos 750.000 habitantes</td><td>Edmonton, capital de Alberta, más de un millón</td><td>Saanich, junto a Victoria, en la isla de Vancouver</td><td>Victoria, capital de Columbia Británica</td></tr>
+          <tr><td>Lo más fuerte</td><td>Big band de jazz con trayectoria en Nueva York</td><td>Colegio de artes completo, con IB</td><td>Jazz band con oro en Whistler</td><td>Dos institutos con banda de R&amp;B y jazz</td></tr>
+          <tr><td>Para el bajo y la guitarra</td><td>Jazz Band, Jazz Orchestra, clases de guitarra</td><td>Instrumental Jazz, guitarra, Contemporary Music</td><td>Jazz band, guitarra, producción musical</td><td>Banda de R&amp;B, jazz band, guitarra</td></tr>
+          <tr><td>Para la voz</td><td>Vocal jazz y musicales</td><td>Vocal jazz y coro de concierto</td><td>Vocal jazz, coro y Broadway</td><td>Vocal jazz, coro y teatro musical</td></tr>
+          <tr><td>Extra</td><td>Estudio de producción musical</td><td>Estudio de audio y teatro propio</td><td>Teatro propio abierto al público</td><td>Instituto de 1876 y musical cada año</td></tr>
+          <tr><td>Precio</td><td><strong>22.000 €</strong> · ≈ 24.600 USD</td><td><strong>24.350 €</strong> · ≈ 27.200 USD</td><td><strong>26.150 €</strong> · ≈ 29.300 USD</td><td><strong>26.750 €</strong> · ≈ 29.900 USD</td></tr>
         </tbody>
       </table>
     </div>
   </div>
 
   <div class="qs-chapters-head">
-    <div class="qs-chapters-title">Dos ciudades donde suena la música</div>
-    <div class="qs-chapters-sub">Lo que Paola encontrará fuera del colegio</div>
+    <div class="qs-chapters-title">Tres destinos donde suena la música</div>
+    <div class="qs-chapters-sub">Lo que Paola encontrará fuera del colegio, del invierno de las praderas a la costa del Pacífico</div>
   </div>
   <div class="qs-chapters">
     <div class="qs-chapter">
@@ -545,12 +592,12 @@ details[open] summary::before{transform:rotate(90deg);}
     </div>
     <div class="qs-chapter">
       <div class="qs-chapter-media">
-        <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Arctic_Glacier_Winter_Park_at_The_Forks,_Winnipeg_Canada_(45588521135).jpg?width=900" style="object-position:center 50%;" alt="Pistas de patinaje en The Forks durante el invierno" loading="lazy" onerror="this.style.display='none'">
-        <div class="qs-chapter-step">Invierno</div>
+        <img src="https://en.wikipedia.org/wiki/Special:FilePath/A_pier,_Victoria,_British_Columbia,_Canada_06.jpg?width=900" style="object-position:center 50%;" alt="Muelle en la costa de Victoria, en la isla de Vancouver" loading="lazy" onerror="if(!this.dataset.f){this.dataset.f=1;this.src='https://en.wikipedia.org/wiki/Special:FilePath/British_Columbia_Parliament_Buildings_in_Victoria,_British_Columbia,_Canada_05.jpg?width=900';}else{this.style.display='none';}">
+        <div class="qs-chapter-step">Victoria y Saanich</div>
       </div>
       <div class="qs-chapter-body">
-        <div class="qs-chapter-title">El invierno canadiense de verdad</div>
-        <div class="qs-chapter-text">Las dos ciudades tienen inviernos fríos y luminosos. Los ríos se convierten en pistas de patinaje y la vida se mueve a los ensayos, los conciertos y la casa de la familia. Te ayudamos a preparar la ropa de abrigo antes de salir.</div>
+        <div class="qs-chapter-title">El clima más suave de Canadá</div>
+        <div class="qs-chapter-text">En la isla de Vancouver, frente al Pacífico, con inviernos templados y mucha vida al aire libre. Festival internacional de jazz, escuela de música en la Universidad de Victoria y conciertos de los institutos por toda la ciudad. En Winnipeg y Edmonton, en cambio, el invierno es frío de verdad: te ayudamos a preparar la ropa de abrigo.</div>
       </div>
     </div>
   </div>
@@ -679,11 +726,15 @@ details[open] summary::before{transform:rotate(90deg);}
             <div class="pay-col-title">Paso 2 · Aceptación en el programa</div>
             <div class="pay-step"><div class="pay-step-num">River East Transcona</div><div class="pay-step-title">8.800 €</div><div class="pay-step-desc">40 % del importe · ≈ 9.830 USD</div></div>
             <div class="pay-step"><div class="pay-step-num">Edmonton Public Schools</div><div class="pay-step-title">9.740 €</div><div class="pay-step-desc">40 % del importe · ≈ 10.880 USD</div></div>
+            <div class="pay-step"><div class="pay-step-num">Saanich School District</div><div class="pay-step-title">10.460 €</div><div class="pay-step-desc">40 % del importe · ≈ 11.680 USD</div></div>
+            <div class="pay-step"><div class="pay-step-num">Greater Victoria School District</div><div class="pay-step-title">10.700 €</div><div class="pay-step-desc">40 % del importe · ≈ 11.950 USD</div></div>
           </div>
           <div class="pay-col">
             <div class="pay-col-title">Paso 3 · Resto del importe</div>
             <div class="pay-step"><div class="pay-step-num">River East Transcona</div><div class="pay-step-title">9.700 €</div><div class="pay-step-desc">Antes del 10 de abril de 2027 · ≈ 10.830 USD</div></div>
             <div class="pay-step"><div class="pay-step-num">Edmonton Public Schools</div><div class="pay-step-title">11.110 €</div><div class="pay-step-desc">Antes del 10 de abril de 2027 · ≈ 12.410 USD</div></div>
+            <div class="pay-step"><div class="pay-step-num">Saanich School District</div><div class="pay-step-title">12.190 €</div><div class="pay-step-desc">Antes del 10 de abril de 2027 · ≈ 13.620 USD</div></div>
+            <div class="pay-step"><div class="pay-step-num">Greater Victoria School District</div><div class="pay-step-title">12.550 €</div><div class="pay-step-desc">Antes del 10 de abril de 2027 · ≈ 14.020 USD</div></div>
           </div>
         </div>
       </div>
@@ -694,12 +745,14 @@ details[open] summary::before{transform:rotate(90deg);}
         <div class="pay-cols">
           <div class="pay-col">
             <div class="pay-col-title">Paso 1 · Firma del contrato</div>
-            <div class="pay-step"><div class="pay-step-title">3.500 €</div><div class="pay-step-desc">≈ 3.910 USD, igual en las dos opciones</div></div>
+            <div class="pay-step"><div class="pay-step-title">3.500 €</div><div class="pay-step-desc">≈ 3.910 USD, igual en las cuatro opciones</div></div>
           </div>
           <div class="pay-col">
             <div class="pay-col-title">Paso 2 · Aceptación</div>
             <div class="pay-step"><div class="pay-step-num">River East Transcona</div><div class="pay-step-title">18.500 €</div><div class="pay-step-desc">≈ 20.660 USD</div></div>
             <div class="pay-step"><div class="pay-step-num">Edmonton Public Schools</div><div class="pay-step-title">20.850 €</div><div class="pay-step-desc">≈ 23.290 USD</div></div>
+            <div class="pay-step"><div class="pay-step-num">Saanich School District</div><div class="pay-step-title">22.650 €</div><div class="pay-step-desc">≈ 25.300 USD</div></div>
+            <div class="pay-step"><div class="pay-step-num">Greater Victoria School District</div><div class="pay-step-title">23.250 €</div><div class="pay-step-desc">≈ 25.970 USD</div></div>
           </div>
         </div>
       </div>
@@ -715,7 +768,7 @@ details[open] summary::before{transform:rotate(90deg);}
       <div class="steps-title">¿Cómo seguimos?</div>
       <div class="steps-sub">Del sí a la salida hacia Canadá, paso a paso</div>
       <div class="steps-list">
-        <div class="step-item"><div class="step-num">1</div><div class="step-title">Eliges tu opción</div><div class="step-desc">Nos confirmas el distrito que más les convence de los dos propuestos.</div></div>
+        <div class="step-item"><div class="step-num">1</div><div class="step-title">Eliges tu opción</div><div class="step-desc">Nos confirmas el distrito que más les convence de los cuatro propuestos.</div></div>
         <div class="step-item"><div class="step-num">2</div><div class="step-title">Firma y reserva</div><div class="step-desc">Firma del contrato y primer pago. Solicitamos la plaza pidiendo los colegios con mejor música.</div></div>
         <div class="step-item"><div class="step-num">3</div><div class="step-title">Matrícula y familia</div><div class="step-desc">Gestionamos matrícula, asignaturas de música, posibles audiciones y familia anfitriona.</div></div>
         <div class="step-item"><div class="step-num">4</div><div class="step-title">Visado y viaje</div><div class="step-desc">Tramitamos el permiso de estudios, te guiamos con el Formato SAM y buscamos contigo los vuelos.</div></div>
